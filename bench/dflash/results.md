@@ -1,60 +1,66 @@
 # DFlash speculative decoding — Qwen3.6-27B dense
 
 **Date:** 2026-05-03  
-**Build:** spiritbuun/buun-llama-cpp `2cc97a81c` (build 8909)  
-**Target:** Qwen3.6-27B dense Q4_K_M (bartowski, 16.32 GiB, 64 layers)  
-**Drafter:** dflash-draft-3.6-q4_k_m.gguf (985 MB, 5 layers, arch=dflash-draft)  
+**Build:** spiritbuun/buun-llama-cpp `aecbbd5da` (build 9304)  
+**Target:** Qwen3.6-27B dense Q4_K_M (bartowski, 16.32 GiB, 64 layers, 65/65 GPU)  
+**Drafter:** dflash-draft-3.6-q4_k_m.gguf (975 MiB, 5 layers, arch=dflash-draft, 6/6 GPU)  
 **Hardware:** RTX 4090 SM89  
 
-## Baseline — 27B dense, q8_0/q8_0, no spec decoding
+## Baseline — 27B dense, q8_0/q8_0, no spec decoding (build 9304)
 
 | test | t/s |
 |------|----:|
-| pp512 @ d0 | 2828.59 ± 366.83 |
-| tg128 @ d0 | **44.07 ± 0.23** |
-| pp512 @ d4096 | 2830.75 ± 120.59 |
-| tg128 @ d4096 | 42.97 ± 0.36 |
-| pp512 @ d16384 | 2524.14 ± 78.19 |
-| tg128 @ d16384 | 40.22 ± 0.13 |
-| pp512 @ d32768 | 2179.50 ± 58.99 |
-| tg128 @ d32768 | **36.91 ± 0.08** |
+| pp512 @ d0 | 3012.54 ± 129.41 |
+| tg128 @ d0 | **45.00 ± 0.03** |
+| pp512 @ d4096 | 2913.21 ± 63.28 |
+| tg128 @ d4096 | 43.92 ± 0.08 |
+| pp512 @ d16384 | 2598.35 ± 25.57 |
+| tg128 @ d16384 | 40.83 ± 0.09 |
+| pp512 @ d32768 | 2256.48 ± 51.30 |
+| tg128 @ d32768 | **37.38 ± 0.07** |
 
-TG degrades with ctx depth: 44.07 → 36.91 t/s (−16% from 0 to 32K). Contrast with Qwen3.6-35B-A3B MoE: flat ~180 t/s across all depths.
+TG degrades with ctx depth: 45.00 → 37.38 t/s (−17% from d0 to d32K).
 
-## DFlash — blocked (build 8909 bug)
+## DFlash — build 9304 (special token bug fixed)
 
-**Blocker:** `main: draft model special tokens must match target model to use speculation`
+**Build 8909 blocker resolved:** `dflash.mask_token_id=248070` special token check
+patched in upstream master. Build 9304 loads drafter without error.
 
-Drafter has `dflash.mask_token_id = 248070` registered as a special token. This ID is not present in the target model's special tokens cache. The spiritbuun special-token equality check in build 8909 fails on this mismatch even though both models share the same vocabulary (qwen35, 248320 tokens, identical EOS/BOS).
+**Run config:** `-c 8192 -b 2048 -ub 512 --draft 16 -n 256 -ctk q8_0 -ctv q8_0 -fa 1`
 
-**Drafter architecture confirmed compatible:**
+| metric | value |
+|--------|------:|
+| prompt tokens | 27 |
+| generated tokens | 266 |
+| n_drafted | 400 |
+| n_accept | 240 |
+| **accept rate** | **60.0%** |
+| drafter decode | 25.75 t/s (wall clock) |
+| target batch verify | 498 t/s (452 tok batch) |
+| target eval | 46.46 t/s (376 runs) |
+
+**Effective wall-clock: 25.7 t/s vs 45.0 t/s baseline at d0.**
+
+### Finding
+
+DFlash accept rate of 60% with draft=16 is strong. However, effective decode speed
+(25.7 t/s) is lower than the 45 t/s baseline at d0. Root cause: the dflash-draft
+model uses the full 27B embedding width (5120) and feedforward dimension (17408) —
+each of its 5 layers costs as much per-token as a full 27B layer. At d0 where the
+dense target is fast (45 t/s), the drafter doesn't recover that overhead.
+
+The interesting operating point is high-context depth (d32K: baseline 37 t/s) or
+the 35B-A3B MoE target — which runs at ~180 t/s prefill but slower decode, making
+the DFlash overhead relatively cheaper.
+
+**Drafter architecture confirmed compatible with 27B:**
 - `dflash.target_layer_ids = [1, 16, 31, 46, 61]` — all within 27B's 64 layers ✓
 - `embedding_length = 5120` — matches 27B embedding dim ✓
 - `tokenizer.ggml.pre = qwen35` — same tokenizer family ✓
 
-**Resolution:** rebuild spiritbuun from latest `master` (bug likely patched post-8909) or patch the special-token check to exclude DFlash-specific metadata tokens.
+## Next steps
 
-## Next step
-
-Rebuild buun-llama-cpp from HEAD and re-run:
-
-```bat
-set TEMP=C:\turbo-build\tmp
-call "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x64
-cd C:\turbo-build\buun
-git pull origin master
-cmake C:\turbo-build\buun -B C:\turbo-build\buun-build2 -G "NMake Makefiles" ^
-  -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=89 ^
-  -DGGML_CUDA_FA_ALL_QUANTS=ON -DCMAKE_BUILD_TYPE=Release
-cmake --build C:\turbo-build\buun-build2 --config Release -j 8
-```
-
-Then re-run with:
-```bat
-C:\turbo-build\buun-build2\bin\llama-speculative.exe ^
-  -m C:\models\q36_27b_new.gguf ^
-  -md C:\models\dflash-draft-3.6-q4_k_m.gguf ^
-  -ngl 99 -ngld 99 -fa 1 -ctk q8_0 -ctv q8_0 ^
-  -n 256 -f C:\turbo-build\bench_prompt.txt ^
-  --spec-type dflash --draft 16 --perf
-```
+1. Bench DFlash at d4096, d16384, d32768 — compare at depths where baseline degrades
+2. Bench DFlash on 35B-A3B MoE target (requires checking layer ID compatibility)
+3. Try `--draft 8` vs `--draft 16` vs `--draft 24` — acceptance curve vs latency
+4. Try `--p-min` threshold (new in b9304: `cab1fb5` — adaptive draft length)
