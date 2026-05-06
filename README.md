@@ -9,11 +9,17 @@ Independent TurboQuant KV cache benchmark data from CUDA production hardware.
 | aya2 | RTX 4090 | 24 GB | SM89 (Ada Lovelace) | Windows 11 |
 | felipe-pc | RTX 3090 | 24 GB | SM86 (Ampere) | Windows 11 |
 
-## Primary model
+## Models covered
 
-**Qwen3.6-35B-A3B** Q4_K_M (bartowski, 19.91 GiB)  
-MoE hybrid: 10 full-attention (GQA, 2 KV heads) + 40 GDN/Mamba recurrent.  
-Production server: `llama-server` TheTom fork, 65K ctx, flash-attn on.
+This repository contains CUDA benchmark data for several TurboQuant test targets:
+
+| Model | Notes |
+|-------|-------|
+| **Qwen3.6-35B-A3B** Q4_K_M | MoE hybrid; 10 full-attention (GQA, 2 KV heads) + 40 GDN/Mamba recurrent. Production server target. |
+| **Qwen3.6-27B** Q4_K_M | Dense model used for REFRACT GTM/Trajectory and DFlash tests. |
+| **Qwen3-32B** Q4_K_M | Dense model used to test REFRACT scale sensitivity on SM86. |
+
+Production server baseline: `llama-server` TheTom fork, 65K ctx, flash-attn on.
 
 ## Builds
 
@@ -22,6 +28,7 @@ Production server: `llama-server` TheTom fork, 65K ctx, flash-attn on.
 | TheTom HEAD | `11a241d0d` | sparse-V CUDA disabled (PR#105) |
 | TheTom nosparse | `65a2c690f` | current production server |
 | spiritbuun TCQ | `2cc97a81c` | requires `-DGGML_CUDA_FA_ALL_QUANTS=ON` |
+| TurboQuant attn-fix | `69d8e4be4` | REFRACT attn-fix rerun, `REFRACT_TRAJECTORY` patch, clean CUDA/C++ binary |
 
 ## Benchmarks
 
@@ -56,4 +63,6 @@ Context depths and KV configs specified per test. Full reproduction commands in 
 
 ## Discussion
 
-[ggml-org/llama.cpp #20969](https://github.com/ggml-org/llama.cpp/discussions/20969) — TurboQuant Extreme KV Cache Quantization
+- [ggml-org/llama.cpp #20969](https://github.com/ggml-org/llama.cpp/discussions/20969) — TurboQuant Extreme KV Cache Quantization
+- [REFRACT attn-fix comment](https://github.com/ggml-org/llama.cpp/discussions/20969#discussioncomment-16822042)
+- [X thread: REFRACT attn-fix rerun](https://x.com/sztlink/status/2051817370117619967)
