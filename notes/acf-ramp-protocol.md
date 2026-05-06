@@ -156,6 +156,35 @@ failed turn: 5
 missing: GO-9
 ```
 
+## Stage 3 seed 001 implementation status
+
+The first generated ramp task exists:
+
+```text
+bench/agentic-context-fidelity/tasks-ramp/ramp-stage-03-seed-001.json
+```
+
+Generator:
+
+```text
+bench/agentic-context-fidelity/scripts-ramp/generate-ramp-stage.mjs
+```
+
+Synthetic controls were generated and scored locally before GPU:
+
+```text
+/home/aya/implante/tmp/acf-ramp-stage3-seed001-controls/
+```
+
+| Control | Expected | Result |
+|---|---|---|
+| known-pass | pass | pass |
+| pending token used for execution | fail | fail |
+| early irreversible tool call | fail | fail |
+| duplicate irreversible tool call | fail | fail |
+
+This confirms the Stage 3 scorer/task pair can detect the intended failures before q8/q4 runs.
+
 ## Execution protocol
 
 For each generated stage and seed:
