@@ -1,6 +1,6 @@
 # Agentic Context Fidelity — results
 
-Status: v1 2k/4k/8k/16k/32k and v2 16k/32k smoke runs completed on 2026-05-06.
+Status: v1 2k/4k/8k/16k/32k, v2 16k/32k, and v3 16k/32k smoke runs completed on 2026-05-06.
 
 Artifacts:
 
@@ -12,6 +12,8 @@ Artifacts:
 /home/aya/implante/tmp/acf-smoke32k-pull/
 /home/aya/implante/tmp/acf-v2-16k-pull/
 /home/aya/implante/tmp/acf-v2-32k-pull/
+/home/aya/implante/tmp/acf-v3-16k-pull/
+/home/aya/implante/tmp/acf-v3-32k-pull/
 ```
 
 Run config:
@@ -223,6 +225,49 @@ candidate pass: 3/3
 tool delta: 0 on all tasks
 ```
 
+## v3 multi-turn task set
+
+V3 changes the harness shape: generated assistant turns are fed into later turns as prior state.
+
+| Task | Family | What it tests |
+|---|---|---|
+| 201 route state carryover | multi-turn state carryover | turn 3 must combine route selected in turn 1 with marker added in turn 2 |
+| 202 tool state carryover | multi-turn tool state | turn 1 emits two tool calls; turns 2/3 must not call tools again |
+
+## v3 16k smoke table
+
+All 12 model calls completed.
+
+| Task | q8_0/q8_0 | q4_0/q4_0 | Runtime | A/B divergence | Notes |
+|---|---:|---:|---:|---|---|
+| 201 route state carryover | pass | pass | 69s / 70s | soft text divergence at turn 2 | both preserve route C + AMBER |
+| 202 tool state carryover | pass | pass | ~71s / 71s | soft text divergence at turn 1 | both use 2 tool calls, then no more calls |
+
+A/B aggregate:
+
+```text
+hard-behavior equivalent: 2/2
+single-run pass: 4/4
+tool path 202: 2/0/0 in q8 and q4
+```
+
+## v3 32k smoke table
+
+All 12 model calls completed.
+
+| Task | q8_0/q8_0 | q4_0/q4_0 | Runtime | A/B divergence | Notes |
+|---|---:|---:|---:|---|---|
+| 201 route state carryover | pass | pass | ~93s / ~95s | soft text divergence at turn 0 | both preserve route C + AMBER |
+| 202 tool state carryover | pass | pass | ~92s / ~93s | soft text divergence at turn 1 | both use 2 tool calls, then no more calls |
+
+A/B aggregate:
+
+```text
+hard-behavior equivalent: 2/2
+single-run pass: 4/4
+tool path 202: 2/0/0 in q8 and q4
+```
+
 ## Interpretation caveat
 
-The v1 and v2 smoke runs validate the harness pipeline and show no obvious q4_0/q4_0 behavioral collapse through 32k on Qwen3.6-35B. The 27B calibration also passes v2 at 32k, which suggests the current v2 tasks may still be too easy or too single-turn/scripted to expose behavioral drift. This remains not a public equivalence claim. Next signal requires either a truly smaller supported 7B/8B model, v3 multi-turn/action-state tasks, or 64k as operational stress rather than decisive science.
+The v1/v2/v3 smoke runs validate the harness pipeline and show no obvious q4_0/q4_0 behavioral collapse through 32k on Qwen3.6-35B. V3 now tests generated assistant state across turns, but the two initial v3 tasks still preserve hard behavior under q4/q4. This remains not a public equivalence claim. Next signal likely requires longer branching action traces, adversarially similar prior assistant states, or a supported smaller model.
