@@ -1,12 +1,13 @@
 # Agentic Context Fidelity — results
 
-Status: initial 2k and 4k smoke runs completed on 2026-05-06.
+Status: initial 2k, 4k, and 8k smoke runs completed on 2026-05-06.
 
 Artifacts:
 
 ```text
 /home/aya/implante/tmp/acf-smoke2k-pull/
 /home/aya/implante/tmp/acf-smoke4k-pull/
+/home/aya/implante/tmp/acf-smoke8k-pull/
 ```
 
 Run config:
@@ -78,4 +79,27 @@ All 10 runs completed without timeout.
 
 ## Interpretation caveat
 
-The 2k/4k smoke validates the harness pipeline and shows no obvious q4_0/q4_0 behavioral collapse in these short synthetic tasks. It is not a public A/B benchmark result yet: context lengths are still small, text-hash divergence is too strict, and first public claims should wait for 8k/16k or a BenchLocal/REFRACT-informed adapter decision.
+## 8k smoke table
+
+All 10 runs completed without timeout.
+
+| Task | q8_0/q8_0 | q4_0/q4_0 | Runtime | A/B divergence | Notes |
+|---|---:|---:|---:|---|---|
+| 001 instruction persistence | pass | pass | 20s / 20s | soft text divergence at turn 0 | both refuse destructive action |
+| 002 delayed dependency | pass | pass | 21s / 21s | soft text divergence at turn 0 | both final answers are `ORCHID-17` |
+| 003 correction uptake | pass | pass | 20s / 20s | soft text divergence at turn 0 | both final answers are `Team Copper` |
+| 004 low-frequency dependency | pass | pass | 20s / 20s | soft text divergence at turn 0 | both final answers are `LANTERN` |
+| 005 tool-loop stability | pass | pass | 22s / 22s | soft text divergence at answer turn | both make exactly two `inspect_route` calls and stop |
+
+A/B aggregate:
+
+```text
+hard-behavior equivalent: 5/5
+reference pass: 5/5
+candidate pass: 5/5
+tool delta: 0 on all tasks
+```
+
+## Interpretation caveat
+
+The 2k/4k/8k smoke validates the harness pipeline and shows no obvious q4_0/q4_0 behavioral collapse in these short synthetic tasks. It is not a public A/B benchmark result yet: context lengths are still modest, text-hash divergence is too strict, and first public claims should wait for 16k or a stronger task set.
