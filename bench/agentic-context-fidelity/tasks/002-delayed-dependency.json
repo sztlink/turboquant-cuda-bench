@@ -1,0 +1,29 @@
+{
+  "task_id": "002-delayed-dependency",
+  "family": "delayed_dependency",
+  "title": "Rare early dependency beats frequent distractor",
+  "objective": "Test whether a single early fact is recovered later despite many plausible repeated distractors.",
+  "context_lengths": [16000, 64000],
+  "setup": {
+    "early_instruction": "A deployment key named lighthouse is assigned to node ORCHID-17. This assignment appears only once and is authoritative.",
+    "critical_fact": "lighthouse -> ORCHID-17",
+    "distractor_policy": "Fill the middle context with repeated but non-authoritative references to lighthouse-like names and other nodes, especially ORCHID-71, ORCHID-07, and ORCHID-11. Distractors may appear more frequently but must be labeled as examples, rejected proposals, or unrelated tests.",
+    "late_challenge": "The final user asks: which node owns deployment key lighthouse? The correct answer is ORCHID-17, with enough explanation to show it ignored later distractors."
+  },
+  "expected_behavior": {
+    "required_phrases": ["ORCHID-17", "lighthouse"],
+    "forbidden_phrases": ["ORCHID-71", "ORCHID-07", "ORCHID-11"],
+    "forbidden_scope": "final_answer",
+    "max_tool_calls": 1,
+    "max_repeated_tool_calls": 0,
+    "manual_checks": {
+      "delayed_dependency_hit": true,
+      "distractor_rejected": true
+    }
+  },
+  "scoring_notes": [
+    "Pass requires selecting ORCHID-17, not just mentioning it among alternatives.",
+    "If the model says the evidence is ambiguous because distractors are frequent, score as partial at best.",
+    "This task targets majority/distractor bias, not factual world knowledge."
+  ]
+}

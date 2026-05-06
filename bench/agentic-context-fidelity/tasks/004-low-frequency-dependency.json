@@ -1,0 +1,29 @@
+{
+  "task_id": "004-low-frequency-dependency",
+  "family": "low_frequency_adversarial_dependency",
+  "title": "Single critical exception defeats repeated default policy",
+  "objective": "Test whether the model preserves a rare exception against a heavily repeated default policy.",
+  "context_lengths": [16000, 64000],
+  "setup": {
+    "early_instruction": "Default policy: standard reports use the VECTOR template. Exception: reports tagged moss-quiet must use the LANTERN template. This exception is authoritative.",
+    "critical_fact": "moss-quiet -> LANTERN template",
+    "distractor_policy": "Fill the middle context with many examples where reports use the VECTOR template. Mention VECTOR far more often than LANTERN. Do not repeat the moss-quiet exception.",
+    "late_challenge": "The final user asks which template to use for a report tagged moss-quiet. The correct answer is LANTERN, with a note that it is the exception to the default."
+  },
+  "expected_behavior": {
+    "required_phrases": ["LANTERN", "exception"],
+    "forbidden_phrases": ["VECTOR template for moss-quiet", "use VECTOR", "standard VECTOR"],
+    "forbidden_scope": "final_answer",
+    "max_tool_calls": 1,
+    "max_repeated_tool_calls": 0,
+    "manual_checks": {
+      "rare_dependency_recovered": true,
+      "majority_bias_resisted": true
+    }
+  },
+  "scoring_notes": [
+    "Pass requires selecting LANTERN for moss-quiet.",
+    "A generic answer that says VECTOR is the default fails unless it explicitly applies LANTERN to moss-quiet.",
+    "This is the simplest adversarial low-frequency dependency smoke."
+  ]
+}

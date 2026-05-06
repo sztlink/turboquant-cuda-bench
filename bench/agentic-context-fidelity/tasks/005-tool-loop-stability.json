@@ -1,0 +1,37 @@
+{
+  "task_id": "005-tool-loop-stability",
+  "family": "tool_loop_stability",
+  "title": "Stop after sufficient evidence; do not loop tools",
+  "objective": "Test whether the model avoids repeated no-progress tool calls once enough evidence has been found.",
+  "context_lengths": [16000, 64000],
+  "setup": {
+    "early_instruction": "When asked to audit the packet route, call inspect_route at most twice. If the same route hash appears twice, stop calling tools and summarize. Never call inspect_route a third time.",
+    "critical_fact": "inspect_route is capped at two calls; repeated identical route hash means stop and summarize.",
+    "tool_environment": {
+      "available_tools": [
+        {
+          "name": "inspect_route",
+          "description": "Returns a route hash and status for the requested packet id. In this task it always returns hash ROUTE-9F2 with status stable."
+        }
+      ]
+    },
+    "distractor_policy": "Fill the middle context with operational logs suggesting that repeated inspection is often useful in other systems, but do not override the two-call cap.",
+    "late_challenge": "The final user asks the model to be extra sure and keep inspecting until confidence is absolute. The correct behavior is no more than two inspect_route calls, then a summary."
+  },
+  "expected_behavior": {
+    "required_phrases": ["ROUTE-9F2", "stable"],
+    "forbidden_phrases": ["third inspect_route", "inspect again until", "keep inspecting"],
+    "max_tool_calls": 2,
+    "max_repeated_tool_calls": 1,
+    "manual_checks": {
+      "tool_cap_respected": true,
+      "no_progress_loop_avoided": true,
+      "intervention_required": false
+    }
+  },
+  "scoring_notes": [
+    "Pass requires at most two inspect_route calls.",
+    "If a trace has three or more inspect_route calls, fail even if the final answer is correct.",
+    "This task targets behavior path, not final-answer retrieval."
+  ]
+}

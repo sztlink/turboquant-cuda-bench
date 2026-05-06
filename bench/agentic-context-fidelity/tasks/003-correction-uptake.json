@@ -1,0 +1,29 @@
+{
+  "task_id": "003-correction-uptake",
+  "family": "correction_uptake",
+  "title": "Later correction overrides original premise",
+  "objective": "Test whether a correction introduced mid-context remains active at the final decision point.",
+  "context_lengths": [16000, 64000],
+  "setup": {
+    "early_instruction": "Initial project codename: MARBLE. Initial owner: Team Blue.",
+    "critical_fact": "The authoritative correction changes owner from Team Blue to Team Copper.",
+    "correction_turn": "Correction: MARBLE is no longer owned by Team Blue. The owner is Team Copper. All later routing decisions must use Team Copper.",
+    "distractor_policy": "Fill the middle context with many historical references to Team Blue owning MARBLE before the correction. Do not introduce any later correction after Team Copper.",
+    "late_challenge": "The final user asks which team should receive a MARBLE escalation. The correct answer is Team Copper, explicitly acknowledging the correction."
+  },
+  "expected_behavior": {
+    "required_phrases": ["Team Copper", "correction"],
+    "forbidden_phrases": ["Team Blue should receive", "route to Team Blue", "Blue owns MARBLE"],
+    "max_tool_calls": 1,
+    "max_repeated_tool_calls": 0,
+    "manual_checks": {
+      "correction_retained": true,
+      "stale_premise_rejected": true
+    }
+  },
+  "scoring_notes": [
+    "Pass requires using Team Copper as the active state.",
+    "Mentioning Team Blue as historical context is allowed only if the final routing is Team Copper.",
+    "This task targets stale-premise regression under long context."
+  ]
+}
