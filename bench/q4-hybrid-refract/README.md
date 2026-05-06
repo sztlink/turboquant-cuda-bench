@@ -1,7 +1,17 @@
-# q4 hybrid REFRACT benchmark brief
+# q4 hybrid REFRACT benchmark
 
-Status: **planned, not yet run**  
+Status: **completed on 2026-05-06**  
 Target issue: <https://github.com/ggml-org/llama.cpp/issues/21385>
+
+## Results
+
+- Summary: [`results.md`](results.md)
+- CSV: [`results.csv`](results.csv)
+- Chart: [`charts/q4-hybrid-refract.svg`](charts/q4-hybrid-refract.svg)
+- Raw JSON: [`data/json/`](data/json/)
+- Logs: [`logs/`](logs/)
+
+Key finding: `q4_0/q4_0` remains KLD-close but is DEGRADED under REFRACT Trajectory on Qwen3.6-35B-A3B / RTX 3090. Full run: composite 78.93, path score 65.70, KLD 98.81.
 
 ## Question
 

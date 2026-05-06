@@ -1,0 +1,130 @@
+========================================================================
+Q4 HYBRID REFRACT — Qwen3.6-35B-A3B Q4_K_M on felipe-pc RTX 3090
+started   : 2026-05-06 00:42:05.792749
+BINDIR    : C:\turbo-build\llama-cpp-turboquant\build\bin
+MODEL     : C:\models\q36_35b.gguf
+REFERENCE : ctk=q8_0,ctv=q8_0
+phases    : smoke (q8/q8 self-check + q4/q4), then full matrix
+matrix    : q8/q8, q4/q4, q8/q4, q4/q8; trajectory+KLD plus GTM-only
+========================================================================
+
+========================================================================
+PHASE 1 — SMOKE
+========================================================================
+
+[2026-05-06 00:42:05.855527] START SMOKE trajectory+KLD q8q8
+  model     : C:\models\q36_35b.gguf
+  reference : ctk=q8_0,ctv=q8_0
+  candidate : ctk=q8_0,ctv=q8_0
+  axis      : trajectory
+  n_predict : 8
+  chunks    : 2
+  json      : C:\turbo-build\q4-hybrid-refract\json\q4hybrid-smoke-trajectory-q8q8.json
+  argv      : refract score --backend llamacpp --model C:\models\q36_35b.gguf --reference ctk=q8_0,ctv=q8_0 --candidate ctk=q8_0,ctv=q8_0 --axis-a trajectory --n-predict 8 --chunks 2 --json-out C:\turbo-build\q4-hybrid-refract\json\q4hybrid-smoke-trajectory-q8q8.json
+[2026-05-06 01:35:15.774094] DONE SMOKE trajectory+KLD q8q8
+
+[2026-05-06 01:35:15.774094] START SMOKE trajectory+KLD q4q4
+  model     : C:\models\q36_35b.gguf
+  reference : ctk=q8_0,ctv=q8_0
+  candidate : ctk=q4_0,ctv=q4_0
+  axis      : trajectory
+  n_predict : 8
+  chunks    : 2
+  json      : C:\turbo-build\q4-hybrid-refract\json\q4hybrid-smoke-trajectory-q4q4.json
+  argv      : refract score --backend llamacpp --model C:\models\q36_35b.gguf --reference ctk=q8_0,ctv=q8_0 --candidate ctk=q4_0,ctv=q4_0 --axis-a trajectory --n-predict 8 --chunks 2 --json-out C:\turbo-build\q4-hybrid-refract\json\q4hybrid-smoke-trajectory-q4q4.json
+[2026-05-06 01:51:56.900253] DONE SMOKE trajectory+KLD q4q4
+
+========================================================================
+PHASE 2 — FULL MATRIX
+========================================================================
+
+[2026-05-06 01:51:56.900253] START FULL trajectory+KLD q8q8
+  model     : C:\models\q36_35b.gguf
+  reference : ctk=q8_0,ctv=q8_0
+  candidate : ctk=q8_0,ctv=q8_0
+  axis      : trajectory
+  n_predict : 128
+  chunks    : 32
+  json      : C:\turbo-build\q4-hybrid-refract\json\q4hybrid-trajectory-q8q8.json
+  argv      : refract score --backend llamacpp --model C:\models\q36_35b.gguf --reference ctk=q8_0,ctv=q8_0 --candidate ctk=q8_0,ctv=q8_0 --axis-a trajectory --n-predict 128 --chunks 32 --json-out C:\turbo-build\q4-hybrid-refract\json\q4hybrid-trajectory-q8q8.json
+[2026-05-06 02:10:48.587187] DONE FULL trajectory+KLD q8q8
+
+[2026-05-06 02:10:48.587187] START FULL GTM-only q8q8
+  model     : C:\models\q36_35b.gguf
+  reference : ctk=q8_0,ctv=q8_0
+  candidate : ctk=q8_0,ctv=q8_0
+  axis      : gtm
+  n_predict : 128
+  chunks    : 32
+  json      : C:\turbo-build\q4-hybrid-refract\json\q4hybrid-gtm-q8q8.json
+  argv      : refract score --backend llamacpp --model C:\models\q36_35b.gguf --reference ctk=q8_0,ctv=q8_0 --candidate ctk=q8_0,ctv=q8_0 --axis-a gtm --n-predict 128 --chunks 32 --json-out C:\turbo-build\q4-hybrid-refract\json\q4hybrid-gtm-q8q8.json --skip-kld
+[2026-05-06 02:31:55.274691] DONE FULL GTM-only q8q8
+
+[2026-05-06 02:31:55.274691] START FULL trajectory+KLD q4q4
+  model     : C:\models\q36_35b.gguf
+  reference : ctk=q8_0,ctv=q8_0
+  candidate : ctk=q4_0,ctv=q4_0
+  axis      : trajectory
+  n_predict : 128
+  chunks    : 32
+  json      : C:\turbo-build\q4-hybrid-refract\json\q4hybrid-trajectory-q4q4.json
+  argv      : refract score --backend llamacpp --model C:\models\q36_35b.gguf --reference ctk=q8_0,ctv=q8_0 --candidate ctk=q4_0,ctv=q4_0 --axis-a trajectory --n-predict 128 --chunks 32 --json-out C:\turbo-build\q4-hybrid-refract\json\q4hybrid-trajectory-q4q4.json
+[2026-05-06 02:50:39.028466] DONE FULL trajectory+KLD q4q4
+
+[2026-05-06 02:50:39.028466] START FULL GTM-only q4q4
+  model     : C:\models\q36_35b.gguf
+  reference : ctk=q8_0,ctv=q8_0
+  candidate : ctk=q4_0,ctv=q4_0
+  axis      : gtm
+  n_predict : 128
+  chunks    : 32
+  json      : C:\turbo-build\q4-hybrid-refract\json\q4hybrid-gtm-q4q4.json
+  argv      : refract score --backend llamacpp --model C:\models\q36_35b.gguf --reference ctk=q8_0,ctv=q8_0 --candidate ctk=q4_0,ctv=q4_0 --axis-a gtm --n-predict 128 --chunks 32 --json-out C:\turbo-build\q4-hybrid-refract\json\q4hybrid-gtm-q4q4.json --skip-kld
+[2026-05-06 03:08:02.181885] DONE FULL GTM-only q4q4
+
+[2026-05-06 03:08:02.181885] START FULL trajectory+KLD q8q4
+  model     : C:\models\q36_35b.gguf
+  reference : ctk=q8_0,ctv=q8_0
+  candidate : ctk=q8_0,ctv=q4_0
+  axis      : trajectory
+  n_predict : 128
+  chunks    : 32
+  json      : C:\turbo-build\q4-hybrid-refract\json\q4hybrid-trajectory-q8q4.json
+  argv      : refract score --backend llamacpp --model C:\models\q36_35b.gguf --reference ctk=q8_0,ctv=q8_0 --candidate ctk=q8_0,ctv=q4_0 --axis-a trajectory --n-predict 128 --chunks 32 --json-out C:\turbo-build\q4-hybrid-refract\json\q4hybrid-trajectory-q8q4.json
+[2026-05-06 03:27:14.849530] DONE FULL trajectory+KLD q8q4
+
+[2026-05-06 03:27:14.849530] START FULL GTM-only q8q4
+  model     : C:\models\q36_35b.gguf
+  reference : ctk=q8_0,ctv=q8_0
+  candidate : ctk=q8_0,ctv=q4_0
+  axis      : gtm
+  n_predict : 128
+  chunks    : 32
+  json      : C:\turbo-build\q4-hybrid-refract\json\q4hybrid-gtm-q8q4.json
+  argv      : refract score --backend llamacpp --model C:\models\q36_35b.gguf --reference ctk=q8_0,ctv=q8_0 --candidate ctk=q8_0,ctv=q4_0 --axis-a gtm --n-predict 128 --chunks 32 --json-out C:\turbo-build\q4-hybrid-refract\json\q4hybrid-gtm-q8q4.json --skip-kld
+[2026-05-06 03:44:46.049043] DONE FULL GTM-only q8q4
+
+[2026-05-06 03:44:46.049043] START FULL trajectory+KLD q4q8
+  model     : C:\models\q36_35b.gguf
+  reference : ctk=q8_0,ctv=q8_0
+  candidate : ctk=q4_0,ctv=q8_0
+  axis      : trajectory
+  n_predict : 128
+  chunks    : 32
+  json      : C:\turbo-build\q4-hybrid-refract\json\q4hybrid-trajectory-q4q8.json
+  argv      : refract score --backend llamacpp --model C:\models\q36_35b.gguf --reference ctk=q8_0,ctv=q8_0 --candidate ctk=q4_0,ctv=q8_0 --axis-a trajectory --n-predict 128 --chunks 32 --json-out C:\turbo-build\q4-hybrid-refract\json\q4hybrid-trajectory-q4q8.json
+[2026-05-06 04:03:57.744785] DONE FULL trajectory+KLD q4q8
+
+[2026-05-06 04:03:57.744785] START FULL GTM-only q4q8
+  model     : C:\models\q36_35b.gguf
+  reference : ctk=q8_0,ctv=q8_0
+  candidate : ctk=q4_0,ctv=q8_0
+  axis      : gtm
+  n_predict : 128
+  chunks    : 32
+  json      : C:\turbo-build\q4-hybrid-refract\json\q4hybrid-gtm-q4q8.json
+  argv      : refract score --backend llamacpp --model C:\models\q36_35b.gguf --reference ctk=q8_0,ctv=q8_0 --candidate ctk=q4_0,ctv=q8_0 --axis-a gtm --n-predict 128 --chunks 32 --json-out C:\turbo-build\q4-hybrid-refract\json\q4hybrid-gtm-q4q8.json --skip-kld
+[2026-05-06 04:21:30.965954] DONE FULL GTM-only q4q8
+
+Q4_HYBRID_DONE
+finished: 2026-05-06 04:21:30.965954

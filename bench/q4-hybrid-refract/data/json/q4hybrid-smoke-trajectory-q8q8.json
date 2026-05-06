@@ -1,0 +1,975 @@
+{
+  "schema": "refract.report.v0.3.1",
+  "framework_version": "0.3.2.3",
+  "environment": {
+    "backend": "llamacpp",
+    "model": "C:\\models\\q36_35b.gguf",
+    "llama_cpp_bin_dir": "C:\\turbo-build\\llama-cpp-turboquant\\build\\bin",
+    "llama_cpp_commit": "69d8e4be4"
+  },
+  "repro_command": "refract score --backend llamacpp --model 'C:\\models\\q36_35b.gguf' --reference ctk=q8_0,ctv=q8_0 --candidate ctk=q8_0,ctv=q8_0 --axis-a trajectory --n-predict 8 --chunks 2 --json-out 'C:\\turbo-build\\q4-hybrid-refract\\json\\q4hybrid-smoke-trajectory-q8q8.json'",
+  "timestamp": "2026-05-06T01:35:15",
+  "score_direction": "higher_is_better",
+  "score_range": [
+    0,
+    100
+  ],
+  "model": "C:\\models\\q36_35b.gguf",
+  "reference": "ctk=q8_0,ctv=q8_0",
+  "candidate": "ctk=q8_0,ctv=q8_0",
+  "composite": 100.0,
+  "band": "EXCELLENT",
+  "summary": "Indistinguishable from the reference. Safe to deploy.",
+  "diagnosis": [
+    "All axes intact. Quantization is faithful to the fp16 reference across the surfaces tested."
+  ],
+  "composite_detail": {
+    "gtm_score": 100.0,
+    "kld_score": 100.0,
+    "rniah_score": null,
+    "plad_score": null,
+    "floor_score": null,
+    "floor_ok": null,
+    "floor_min": 99.5,
+    "notes": []
+  },
+  "axes": {
+    "gtm": {
+      "score": 100.0,
+      "full_match_rate": 1.0,
+      "median_first_divergence": null,
+      "mean_prefix_agreement_length": 8.0,
+      "mean_cand_length": 8.0,
+      "mean_ref_length": 8.0,
+      "n_prompts": 30,
+      "n_tokens_each": 8,
+      "per_prompt": [
+        {
+          "id": "fact-001",
+          "category": "factual",
+          "prompt": "The capital of France is",
+          "ref_token_ids": [
+            11751,
+            13,
+            198,
+            760,
+            6511,
+            314,
+            9338,
+            369
+          ],
+          "cand_token_ids": [
+            11751,
+            13,
+            198,
+            760,
+            6511,
+            314,
+            9338,
+            369
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "fact-002",
+          "category": "factual",
+          "prompt": "The largest ocean on Earth is the",
+          "ref_token_ids": [
+            15979,
+            20915,
+            11,
+            864,
+            14103,
+            12805,
+            220,
+            21
+          ],
+          "cand_token_ids": [
+            15979,
+            20915,
+            11,
+            864,
+            14103,
+            12805,
+            220,
+            21
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "fact-003",
+          "category": "factual",
+          "prompt": "The chemical symbol for gold is",
+          "ref_token_ids": [
+            30994,
+            13,
+            3437,
+            369,
+            279,
+            6042,
+            314,
+            411
+          ],
+          "cand_token_ids": [
+            30994,
+            13,
+            3437,
+            369,
+            279,
+            6042,
+            314,
+            411
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "fact-004",
+          "category": "factual",
+          "prompt": "The author of Romeo and Juliet is",
+          "ref_token_ids": [
+            198,
+            32,
+            13,
+            12021,
+            40014,
+            198,
+            33,
+            13
+          ],
+          "cand_token_ids": [
+            198,
+            32,
+            13,
+            12021,
+            40014,
+            198,
+            33,
+            13
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "fact-005",
+          "category": "factual",
+          "prompt": "The tallest mountain in the world is",
+          "ref_token_ids": [
+            10113,
+            83489,
+            11,
+            864,
+            682,
+            449,
+            25328,
+            314
+          ],
+          "cand_token_ids": [
+            10113,
+            83489,
+            11,
+            864,
+            682,
+            449,
+            25328,
+            314
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "arith-001",
+          "category": "arithmetic",
+          "prompt": "Two plus two equals",
+          "ref_token_ids": [
+            4097,
+            13,
+            198,
+            11280,
+            5346,
+            1330,
+            16327,
+            4097
+          ],
+          "cand_token_ids": [
+            4097,
+            13,
+            198,
+            11280,
+            5346,
+            1330,
+            16327,
+            4097
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "arith-002",
+          "category": "arithmetic",
+          "prompt": "17 times 24 equals",
+          "ref_token_ids": [
+            220,
+            19,
+            15,
+            23,
+            13,
+            1061,
+            1067,
+            369
+          ],
+          "cand_token_ids": [
+            220,
+            19,
+            15,
+            23,
+            13,
+            1061,
+            1067,
+            369
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "arith-003",
+          "category": "arithmetic",
+          "prompt": "100 divided by 4 is",
+          "ref_token_ids": [
+            220,
+            17,
+            20,
+            13,
+            198,
+            16,
+            15,
+            15
+          ],
+          "cand_token_ids": [
+            220,
+            17,
+            20,
+            13,
+            198,
+            16,
+            15,
+            15
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "arith-004",
+          "category": "arithmetic",
+          "prompt": "The square root of 81 is",
+          "ref_token_ids": [
+            220,
+            24,
+            11,
+            321,
+            279,
+            9057,
+            3578,
+            314
+          ],
+          "cand_token_ids": [
+            220,
+            24,
+            11,
+            321,
+            279,
+            9057,
+            3578,
+            314
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "arith-005",
+          "category": "arithmetic",
+          "prompt": "Half of 250 equals",
+          "ref_token_ids": [
+            220,
+            16,
+            17,
+            20,
+            13,
+            1061,
+            1067,
+            369
+          ],
+          "cand_token_ids": [
+            220,
+            16,
+            17,
+            20,
+            13,
+            1061,
+            1067,
+            369
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "code-001",
+          "category": "code",
+          "prompt": "def fib(n):\n    ",
+          "ref_token_ids": [
+            413,
+            307,
+            606,
+            220,
+            15,
+            25,
+            198,
+            260
+          ],
+          "cand_token_ids": [
+            413,
+            307,
+            606,
+            220,
+            15,
+            25,
+            198,
+            260
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "code-002",
+          "category": "code",
+          "prompt": "def is_prime(n):\n    ",
+          "ref_token_ids": [
+            413,
+            307,
+            2564,
+            220,
+            16,
+            25,
+            198,
+            260
+          ],
+          "cand_token_ids": [
+            413,
+            307,
+            2564,
+            220,
+            16,
+            25,
+            198,
+            260
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "code-003",
+          "category": "code",
+          "prompt": "// JavaScript function to reverse a string\nfunction reverse(s) {\n    ",
+          "ref_token_ids": [
+            460,
+            274,
+            5121,
+            78033,
+            25075,
+            973,
+            5799,
+            94540
+          ],
+          "cand_token_ids": [
+            460,
+            274,
+            5121,
+            78033,
+            25075,
+            973,
+            5799,
+            94540
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "code-004",
+          "category": "code",
+          "prompt": "# Python: list comprehension to square numbers 1 to 10\nsquares = ",
+          "ref_token_ids": [
+            498,
+            87,
+            332,
+            17,
+            364,
+            830,
+            303,
+            2020
+          ],
+          "cand_token_ids": [
+            498,
+            87,
+            332,
+            17,
+            364,
+            830,
+            303,
+            2020
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "code-005",
+          "category": "code",
+          "prompt": "SELECT name FROM users WHERE ",
+          "ref_token_ids": [
+            16,
+            28,
+            16,
+            3449,
+            318,
+            4703,
+            220,
+            16
+          ],
+          "cand_token_ids": [
+            16,
+            28,
+            16,
+            3449,
+            318,
+            4703,
+            220,
+            16
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "reason-001",
+          "category": "reasoning",
+          "prompt": "If a train leaves Boston at 3pm traveling 60 mph, after 2 hours it has traveled",
+          "ref_token_ids": [
+            220,
+            16,
+            17,
+            15,
+            8491,
+            13,
+            2500,
+            2944
+          ],
+          "cand_token_ids": [
+            220,
+            16,
+            17,
+            15,
+            8491,
+            13,
+            2500,
+            2944
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "reason-002",
+          "category": "reasoning",
+          "prompt": "If all roses are flowers and some flowers fade quickly, then",
+          "ref_token_ids": [
+            628,
+            567,
+            30076,
+            421,
+            1010,
+            58596,
+            14580,
+            5964
+          ],
+          "cand_token_ids": [
+            628,
+            567,
+            30076,
+            421,
+            1010,
+            58596,
+            14580,
+            5964
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "reason-003",
+          "category": "reasoning",
+          "prompt": "A bag has 3 red balls and 2 blue balls. The probability of drawing red is",
+          "ref_token_ids": [
+            220,
+            18,
+            14,
+            20,
+            321,
+            279,
+            18356,
+            314
+          ],
+          "cand_token_ids": [
+            220,
+            18,
+            14,
+            20,
+            321,
+            279,
+            18356,
+            314
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "reason-004",
+          "category": "reasoning",
+          "prompt": "If today is Wednesday, then in 10 days it will be",
+          "ref_token_ids": [
+            7483,
+            13,
+            198,
+            32,
+            13,
+            2912,
+            198,
+            33
+          ],
+          "cand_token_ids": [
+            7483,
+            13,
+            198,
+            32,
+            13,
+            2912,
+            198,
+            33
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "reason-005",
+          "category": "reasoning",
+          "prompt": "John is taller than Mary. Mary is taller than Sue. Therefore",
+          "ref_token_ids": [
+            11,
+            3629,
+            369,
+            48230,
+            1056,
+            46061,
+            13,
+            271
+          ],
+          "cand_token_ids": [
+            11,
+            3629,
+            369,
+            48230,
+            1056,
+            46061,
+            13,
+            271
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "instr-001",
+          "category": "instruction",
+          "prompt": "List three primary colors:",
+          "ref_token_ids": [
+            271,
+            248068,
+            198,
+            8160,
+            579,
+            264,
+            7047,
+            1817
+          ],
+          "cand_token_ids": [
+            271,
+            248068,
+            198,
+            8160,
+            579,
+            264,
+            7047,
+            1817
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "instr-002",
+          "category": "instruction",
+          "prompt": "Name three planets in our solar system:",
+          "ref_token_ids": [
+            271,
+            248068,
+            271,
+            248069,
+            271,
+            8160,
+            513,
+            2250
+          ],
+          "cand_token_ids": [
+            271,
+            248068,
+            271,
+            248069,
+            271,
+            8160,
+            513,
+            2250
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "instr-003",
+          "category": "instruction",
+          "prompt": "Give one example of a renewable energy source:",
+          "ref_token_ids": [
+            271,
+            248068,
+            198,
+            8160,
+            579,
+            264,
+            7047,
+            1817
+          ],
+          "cand_token_ids": [
+            271,
+            248068,
+            198,
+            8160,
+            579,
+            264,
+            7047,
+            1817
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "instr-004",
+          "category": "instruction",
+          "prompt": "Translate to French: Hello, how are you?",
+          "ref_token_ids": [
+            271,
+            248068,
+            271,
+            248069,
+            271,
+            78768,
+            11,
+            3847
+          ],
+          "cand_token_ids": [
+            271,
+            248068,
+            271,
+            248069,
+            271,
+            78768,
+            11,
+            3847
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "instr-005",
+          "category": "instruction",
+          "prompt": "Summarize in one sentence: The cat sat on the mat.",
+          "ref_token_ids": [
+            271,
+            248068,
+            271,
+            248069,
+            271,
+            32,
+            7993,
+            557
+          ],
+          "cand_token_ids": [
+            271,
+            248068,
+            271,
+            248069,
+            271,
+            32,
+            7993,
+            557
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "dlg-001",
+          "category": "dialogue",
+          "prompt": "User: What time is it?\nAssistant:",
+          "ref_token_ids": [
+            561,
+            1428,
+            854,
+            369,
+            220,
+            16,
+            15,
+            25
+          ],
+          "cand_token_ids": [
+            561,
+            1428,
+            854,
+            369,
+            220,
+            16,
+            15,
+            25
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "dlg-002",
+          "category": "dialogue",
+          "prompt": "Q: Who painted the Mona Lisa?\nA:",
+          "ref_token_ids": [
+            271,
+            248068,
+            271,
+            248069,
+            271,
+            69462,
+            19848,
+            2899
+          ],
+          "cand_token_ids": [
+            271,
+            248068,
+            271,
+            248069,
+            271,
+            69462,
+            19848,
+            2899
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "dlg-003",
+          "category": "dialogue",
+          "prompt": "Q: How many continents are there?\nA:",
+          "ref_token_ids": [
+            271,
+            248068,
+            271,
+            248069,
+            271,
+            3733,
+            513,
+            8524
+          ],
+          "cand_token_ids": [
+            271,
+            248068,
+            271,
+            248069,
+            271,
+            3733,
+            513,
+            8524
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "dlg-004",
+          "category": "dialogue",
+          "prompt": "Customer: I need help with my order.\nAgent:",
+          "ref_token_ids": [
+            21251,
+            0,
+            2500,
+            628,
+            353,
+            7543,
+            488,
+            3242
+          ],
+          "cand_token_ids": [
+            21251,
+            0,
+            2500,
+            628,
+            353,
+            7543,
+            488,
+            3242
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        },
+        {
+          "id": "dlg-005",
+          "category": "dialogue",
+          "prompt": "Teacher: What is photosynthesis?\nStudent:",
+          "ref_token_ids": [
+            16020,
+            71163,
+            369,
+            279,
+            1817,
+            539,
+            864,
+            10462
+          ],
+          "cand_token_ids": [
+            16020,
+            71163,
+            369,
+            279,
+            1817,
+            539,
+            864,
+            10462
+          ],
+          "first_divergence": null,
+          "prefix_agreement_length": 8,
+          "cand_length": 8,
+          "ref_length": 8,
+          "matched": true
+        }
+      ],
+      "notes": [],
+      "band": "EXCELLENT",
+      "skipped": false,
+      "description": "Token-level agreement with the fp16 reference."
+    },
+    "kld": {
+      "score": 100.0,
+      "mean_kld": -0.0,
+      "ppl": null,
+      "rms_dp_pct": null,
+      "same_topp_pct": null,
+      "base_path": "C:\\Users\\user\\AppData\\Local\\Temp\\refract-kldbase-9l3rbqy4.bin",
+      "chunks": 2,
+      "ctx": 512,
+      "is_self_reference": true,
+      "corpus": {
+        "path": "C:\\Users\\user\\.cache\\refract\\wikitext-2-raw\\wiki.test.raw",
+        "size_bytes": 1290590,
+        "sha256_head": "6cb1872543ff1f1b9c1b0ddce665aeb46322754d48d78dc5ecd631e7781c8729",
+        "sha256_head_bytes": 1048576
+      },
+      "band": "EXCELLENT",
+      "skipped": false,
+      "description": "Distribution-level divergence from the fp16 reference."
+    }
+  },
+  "extras": {}
+}
