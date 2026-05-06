@@ -157,6 +157,21 @@ node bench/agentic-context-fidelity/scripts/score-trace.mjs \
   --reference reference.json
 ```
 
+Aggregate an A/B run directory:
+
+```bash
+node bench/agentic-context-fidelity/scripts/summarize-ab.mjs \
+  --tasks bench/agentic-context-fidelity/tasks \
+  --traces /path/to/traces \
+  --context 4k \
+  --reference q8q8 \
+  --candidate q4q4 \
+  --out ab-summary.json \
+  --markdown ab-summary.md
+```
+
+The aggregate summary classifies divergence as `none`, `soft_text`, `hard_tool`, or `hard_status`.
+
 Scoring separates required evidence from forbidden answer signals:
 
 - required phrases are checked over the full trace corpus;
