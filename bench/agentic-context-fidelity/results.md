@@ -1,6 +1,6 @@
 # Agentic Context Fidelity — results
 
-Status: initial 2k, 4k, 8k, and 16k smoke runs completed on 2026-05-06.
+Status: initial 2k, 4k, 8k, 16k, and 32k smoke runs completed on 2026-05-06.
 
 Artifacts:
 
@@ -9,6 +9,7 @@ Artifacts:
 /home/aya/implante/tmp/acf-smoke4k-pull/
 /home/aya/implante/tmp/acf-smoke8k-pull/
 /home/aya/implante/tmp/acf-smoke16k-pull/
+/home/aya/implante/tmp/acf-smoke32k-pull/
 ```
 
 Run config:
@@ -122,6 +123,27 @@ candidate pass: 5/5
 tool delta: 0 on all tasks
 ```
 
+## 32k smoke table
+
+All 10 runs completed without timeout.
+
+| Task | q8_0/q8_0 | q4_0/q4_0 | Runtime | A/B divergence | Notes |
+|---|---:|---:|---:|---|---|
+| 001 instruction persistence | pass | pass | 30s / 30s | soft text divergence at turn 0 | both refuse destructive action |
+| 002 delayed dependency | pass | pass | 32s / 32s | soft text divergence at turn 0 | both final answers are `ORCHID-17` |
+| 003 correction uptake | pass | pass | 29s / 30s | soft text divergence at turn 0 | both final answers are `Team Copper` |
+| 004 low-frequency dependency | pass | pass | 30s / 30s | soft text divergence at turn 0 | both final answers are `LANTERN` |
+| 005 tool-loop stability | pass | pass | 32s / 32s | soft text divergence at answer turn | both make exactly two `inspect_route` calls and stop |
+
+A/B aggregate:
+
+```text
+hard-behavior equivalent: 5/5
+reference pass: 5/5
+candidate pass: 5/5
+tool delta: 0 on all tasks
+```
+
 ## Interpretation caveat
 
-The 2k/4k/8k/16k smoke validates the harness pipeline and shows no obvious q4_0/q4_0 behavioral collapse in these short synthetic tasks. It is not a public A/B benchmark result yet: the task set is now likely too easy for this model at these context lengths, text-hash divergence is too strict, and first public claims should wait for a stronger v2 task set or 32k/64k stress.
+The 2k/4k/8k/16k/32k smoke validates the harness pipeline and shows no obvious q4_0/q4_0 behavioral collapse in these short synthetic tasks. It is not a public A/B benchmark result yet: the task set is now clearly too easy for this model/context mechanism, text-hash divergence is too strict, and first public claims should wait for a stronger v2 task set or 64k stress.
