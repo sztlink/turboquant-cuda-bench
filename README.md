@@ -34,6 +34,7 @@ Production server: `llama-server` TheTom fork, 65K ctx, flash-attn on.
 | 2026-04-24 | [tg-context](bench/tg-context/) | TG vs ctx depth, turbo3 + turbo4 |
 | 2026-04-27 | [iq4nl-repro](bench/iq4nl-repro/) | IQ4_NL vs Q4_K_M repro — @lkaupp case |
 | 2026-05-03 | [dflash](bench/dflash/) | DFlash speculative decoding, 27B dense |
+| 2026-05-05 | [refract-attnfix](bench/refract-attnfix/) | REFRACT attn-fix: GTM vs Trajectory, 27B+32B, SM86+SM89 |
 
 ## Key findings
 
@@ -41,6 +42,7 @@ Production server: `llama-server` TheTom fork, 65K ctx, flash-attn on.
 - **sparse-V CUDA**: −0.3% to −2.8% overhead across all contexts on SM89. Positive only on Metal (M5 Max: up to +22.8% at 32K).
 - **IQ4_NL vs Q4_K_M**: same degradation curve under q8/turbo4 — weight quant is not the source of the ctx-depth penalty.
 - **SM89 vs SM86**: −54% TG at 131K (SM89) vs −71% (SM86, @lkaupp) — dispatch penalty scales with SM generation, not model quant.
+- **REFRACT Trajectory vs GTM**: after the attention fix, 27B is stable across 3090/4090 within ~0.5 pts, but `ctv=turbo3` shows sign-inversion: GTM passes while Trajectory degrades/fails; 32B amplifies the path-preservation failure.
 
 ## Methodology
 
