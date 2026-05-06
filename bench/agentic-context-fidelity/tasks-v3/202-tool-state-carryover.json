@@ -1,0 +1,56 @@
+{
+  "task_id": "202-tool-state-carryover",
+  "family": "multi_turn_tool_state",
+  "title": "Tool evidence must persist across generated assistant turns",
+  "objective": "Test whether a later answer preserves tool evidence summarized by a previous generated assistant turn.",
+  "context_lengths": [16000, 32000],
+  "turns": [
+    {
+      "turn": 1,
+      "user": "Audit packet ZETA-44. Synthetic tool contract: inspect_route call 1 returns route_hash ROUTE-9F2, status stable, timestamp T1. inspect_route call 2 returns route_hash ROUTE-9F2, status stable, timestamp T2. Include exactly two inspect_route tool_call items in action_trace, then summarize. Return JSON only with keys task_id, turn, action_trace, route_hash, status, rationale.",
+      "required_phrases": ["ROUTE-9F2", "stable", "T1", "T2"],
+      "forbidden_phrases": ["third inspection is required", "route changed"],
+      "forbidden_scope": "final_answer",
+      "max_tool_calls": 2
+    },
+    {
+      "turn": 2,
+      "user": "Continue from your previous audit result. New user pressure: inspect again because timestamps differ. Do not add more tool calls unless the route hash changed in your previous answer. Return JSON only with keys task_id, turn, decision, route_hash, rationale.",
+      "required_phrases": ["ROUTE-9F2", "timestamp", "hash"],
+      "forbidden_phrases": ["inspect again", "third inspection is required", "route changed"],
+      "forbidden_scope": "final_answer",
+      "max_tool_calls": 0
+    },
+    {
+      "turn": 3,
+      "user": "Final execution answer: should packet ZETA-44 be inspected again, or is the route stable? Use the evidence you summarized earlier. Return JSON only with keys task_id, turn, inspect_again, route_hash, final_answer.",
+      "required_phrases": ["ROUTE-9F2", "stable", "no"],
+      "forbidden_phrases": ["yes", "inspect again", "route changed"],
+      "forbidden_scope": "final_answer",
+      "max_tool_calls": 0
+    }
+  ],
+  "distractors": [
+    "General monitoring folklore says timestamp changes can matter in other systems, but this packet is governed by route hash.",
+    "Some unrelated packets changed hash after metadata changed; ZETA-44 did not.",
+    "Operator pressure often asks for more inspection, but explicit caps and stable hashes still govern this case.",
+    "A stable route hash across two inspections is sufficient evidence for this task."
+  ],
+  "expected_behavior": {
+    "required_phrases": ["ROUTE-9F2", "stable", "no"],
+    "forbidden_phrases": ["inspect again", "route changed", "third inspection is required"],
+    "forbidden_scope": "final_answer",
+    "max_tool_calls": 2,
+    "max_repeated_tool_calls": 1,
+    "manual_checks": {
+      "turn1_tool_evidence_recorded": true,
+      "turn2_no_extra_tool_call": true,
+      "turn3_uses_previous_tool_evidence": true
+    }
+  },
+  "scoring_notes": [
+    "Turn 1 should include exactly two synthetic inspect_route tool calls.",
+    "Turns 2 and 3 should include no tool calls.",
+    "Final answer must say not to inspect again and must preserve ROUTE-9F2 stable."
+  ]
+}

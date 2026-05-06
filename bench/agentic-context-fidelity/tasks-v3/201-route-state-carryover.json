@@ -1,0 +1,53 @@
+{
+  "task_id": "201-route-state-carryover",
+  "family": "multi_turn_state_carryover",
+  "title": "Route decision must carry over across generated assistant turns",
+  "objective": "Test whether a later decision preserves and updates a route chosen by the model in an earlier generated turn.",
+  "context_lengths": [16000, 32000],
+  "turns": [
+    {
+      "turn": 1,
+      "user": "Decide the initial routing plan for case MARBLE. Authoritative facts: MARBLE starts on route A. If owner is Team Copper, route C overrides route A. Current owner is Team Copper. Return JSON only with keys task_id, turn, decision, rationale.",
+      "required_phrases": ["route C", "Team Copper"],
+      "forbidden_phrases": ["route A", "route B"],
+      "forbidden_scope": "final_answer"
+    },
+    {
+      "turn": 2,
+      "user": "Update the plan. New authoritative fact: tag priority-red adds audit marker AMBER, but does not change the route selected earlier. Preserve the prior route decision from your previous answer. Return JSON only with keys task_id, turn, decision, audit_marker, rationale.",
+      "required_phrases": ["route C", "AMBER", "priority-red"],
+      "forbidden_phrases": ["route A", "route B"],
+      "forbidden_scope": "final_answer"
+    },
+    {
+      "turn": 3,
+      "user": "Final answer for execution: provide the current route and audit marker for MARBLE. You must use the route you selected earlier plus the later audit marker update. Return JSON only with keys task_id, turn, final_route, audit_marker, final_answer.",
+      "required_phrases": ["route C", "AMBER"],
+      "forbidden_phrases": ["route A", "route B", "missing marker"],
+      "forbidden_scope": "final_answer"
+    }
+  ],
+  "distractors": [
+    "Historical MARBLE examples often used route A before Team Copper ownership was assigned.",
+    "Unrelated priority-red examples sometimes use route B in cases not owned by Team Copper.",
+    "Old execution templates omit audit marker AMBER; those templates predate the current update.",
+    "Training record: do not let common route A examples override owner-specific route C."
+  ],
+  "expected_behavior": {
+    "required_phrases": ["route C", "AMBER"],
+    "forbidden_phrases": ["route A", "route B", "missing marker"],
+    "forbidden_scope": "final_answer",
+    "max_tool_calls": 0,
+    "max_repeated_tool_calls": 0,
+    "manual_checks": {
+      "turn1_route_selected": true,
+      "turn2_route_preserved": true,
+      "turn3_composes_previous_outputs": true
+    }
+  },
+  "scoring_notes": [
+    "The final answer must contain route C and AMBER.",
+    "A final route A or B fails even if the audit marker is correct.",
+    "A correct final answer with a wrong intermediate turn should be flagged for manual review."
+  ]
+}
