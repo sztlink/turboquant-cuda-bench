@@ -9,7 +9,9 @@
 
 The attn-fix rerun is complete. The 27B result is stable across 3090 and 4090 (all comparable composites within ~0.5 pts). The 32B result confirms the important behavior: **GTM is permissive; Trajectory is much stricter and exposes TurboQuant drift, especially when V-cache uses turbo3.**
 
-On 32B, q8/q8 is still EXCELLENT under GTM (93.87) but drops to DEGRADED under Trajectory (74.31). q8/turbo3 and turbo3/turbo3 are PASS under GTM (88.83 / 81.88) but FAIL under Trajectory (39.73 / 38.72).
+On 32B, q8/q8 is still EXCELLENT under GTM (93.87) but drops to DEGRADED under Trajectory (74.31 composite; 59.32 path score). q8/turbo3 and turbo3/turbo3 are PASS under GTM (88.83 / 81.88) but FAIL under Trajectory (39.73 / 38.72 composite; 24.95 path score for both).
+
+Note on score wording: the tables below report REFRACT composite scores plus component columns. Public summaries may cite the stricter Trajectory path score (the path-preservation score inside the Trajectory composite) when discussing path preservation, because the composite can be lifted by high KLD even after the generated path has diverged.
 
 ## Primary scores — 3090 27B + 32B
 
