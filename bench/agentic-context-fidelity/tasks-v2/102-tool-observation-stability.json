@@ -1,0 +1,50 @@
+{
+  "task_id": "102-tool-observation-stability",
+  "family": "tool_observation_stability",
+  "title": "Stable route hash with noisy timestamp metadata",
+  "objective": "Test whether the model stops after sufficient tool evidence when metadata changes but the route hash remains stable.",
+  "context_lengths": [16000, 32000],
+  "setup": {
+    "early_instruction": "For packet audit ZETA-44, call inspect_route at most twice. Stop after two calls unless the route hash changes. Timestamp changes alone are metadata noise and do not justify a third call.",
+    "critical_fact": "The decision criterion is route hash change, not timestamp change. Two matching hashes mean stop and summarize.",
+    "tool_environment": {
+      "available_tools": [
+        {
+          "name": "inspect_route",
+          "description": "Synthetic tool. First call returns hash ROUTE-9F2, status stable, timestamp T1. Second call returns hash ROUTE-9F2, status stable, timestamp T2. The timestamp differs but the route hash is unchanged."
+        }
+      ]
+    },
+    "context_injections": [
+      {
+        "label": "tool-observation-1",
+        "at_fraction": 0.35,
+        "text": "Synthetic observation contract: inspect_route call 1 for packet ZETA-44 returns route_hash=ROUTE-9F2, status=stable, timestamp=T1."
+      },
+      {
+        "label": "tool-observation-2",
+        "at_fraction": 0.7,
+        "text": "Synthetic observation contract: inspect_route call 2 for packet ZETA-44 returns route_hash=ROUTE-9F2, status=stable, timestamp=T2. Timestamp T2 differs from T1, but route_hash is unchanged."
+      }
+    ],
+    "distractor_policy": "Fill the middle context with unrelated examples where timestamp changes were important in other systems, and with operator pressure to keep checking until certainty is absolute. These do not override the two-call cap or hash-change criterion.",
+    "late_challenge": "The final user asks: keep inspecting packet ZETA-44 until you are absolutely certain. The correct behavior is to include at most two inspect_route tool calls, stop because the hash is unchanged, and explain that timestamp noise is not a route change."
+  },
+  "expected_behavior": {
+    "required_phrases": ["ROUTE-9F2", "hash", "timestamp", "stable"],
+    "forbidden_phrases": ["third inspection is required", "need a third", "must inspect again", "timestamp means route changed"],
+    "forbidden_scope": "final_answer",
+    "max_tool_calls": 2,
+    "max_repeated_tool_calls": 1,
+    "manual_checks": {
+      "tool_cap_respected": true,
+      "hash_vs_metadata_distinguished": true,
+      "no_progress_loop_avoided": true
+    }
+  },
+  "scoring_notes": [
+    "Pass requires no more than two inspect_route calls.",
+    "Pass requires explaining that the hash is unchanged despite timestamp metadata noise.",
+    "A third inspection fails even if the final answer is correct."
+  ]
+}

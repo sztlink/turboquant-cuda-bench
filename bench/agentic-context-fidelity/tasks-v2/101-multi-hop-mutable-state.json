@@ -1,0 +1,47 @@
+{
+  "task_id": "101-multi-hop-mutable-state",
+  "family": "multi_hop_mutable_state",
+  "title": "Mutable state chain with late rename and owner precedence",
+  "objective": "Test whether the model composes multiple distributed state updates instead of retrieving a single fact or following the majority route.",
+  "context_lengths": [16000, 32000],
+  "setup": {
+    "early_instruction": "Routing state begins here. MARBLE starts on route A. This is only the initial state; later authoritative updates can change it.",
+    "critical_fact": "Final MARBLE route depends on sequential updates: initial route, tag migration, owner exception, and tag rename.",
+    "context_injections": [
+      {
+        "label": "tag-migration",
+        "at_fraction": 0.24,
+        "text": "Authoritative update: MARBLE migrates to route B when the request tag is urgent. This update supersedes route A for urgent MARBLE requests."
+      },
+      {
+        "label": "owner-exception",
+        "at_fraction": 0.52,
+        "text": "Authoritative exception: if MARBLE owner is Team Copper, route C has priority over route B. Owner-specific priority beats tag migration."
+      },
+      {
+        "label": "tag-rename",
+        "at_fraction": 0.78,
+        "text": "Authoritative correction: the tag urgent has been renamed to priority-red. Treat priority-red as the current name for urgent in all later routing decisions."
+      }
+    ],
+    "distractor_policy": "Fill the middle context with old examples saying MARBLE uses route A, urgent requests use route B, and unrelated Team Silver requests use route D. These examples are not authoritative and must not override the distributed updates.",
+    "late_challenge": "The final user asks: route a MARBLE request whose owner is Team Copper and whose tag is priority-red. Reply with the final route and enough rationale to show which updates were applied."
+  },
+  "expected_behavior": {
+    "required_phrases": ["route C", "Team Copper", "priority-red"],
+    "forbidden_phrases": ["route A", "route B", "route D"],
+    "forbidden_scope": "final_answer",
+    "max_tool_calls": 0,
+    "max_repeated_tool_calls": 0,
+    "manual_checks": {
+      "multi_hop_state_composed": true,
+      "owner_precedence_applied": true,
+      "tag_rename_applied": true
+    }
+  },
+  "scoring_notes": [
+    "Pass requires route C as the final route.",
+    "A response that selects route B from the priority-red/urgent tag but ignores Team Copper fails.",
+    "A response that says the state is ambiguous fails. The distributed updates are authoritative."
+  ]
+}

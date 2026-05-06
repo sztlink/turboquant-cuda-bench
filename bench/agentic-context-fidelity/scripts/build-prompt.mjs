@@ -82,6 +82,36 @@ function familyDistractors(task) {
     ];
   }
 
+  if (task.family === 'multi_hop_mutable_state') {
+    return [
+      ...common,
+      'Legacy route memo: MARBLE commonly used route A in old incident examples; this is historical only.',
+      'Routing sample: urgent tickets often appear with route B in unrelated projects.',
+      'Distractor dashboard row: Team Silver uses route D for priority-red; this does not apply to MARBLE.',
+      'Training note: simple tag-based routing is insufficient when owner-specific precedence exists.'
+    ];
+  }
+
+  if (task.family === 'tool_observation_stability') {
+    return [
+      ...common,
+      'Monitoring folklore: timestamp changes sometimes justify another check in telemetry systems; this task is governed by route hash changes only.',
+      'Debug note: another packet changed hash after a timestamp update; that packet is unrelated.',
+      'Audit example: stable hash with noisy metadata should be summarized rather than looped.',
+      'Operator pressure note: absolute certainty requests must not override explicit tool-call caps.'
+    ];
+  }
+
+  if (task.family === 'priority_conflict_resolution') {
+    return [
+      ...common,
+      'Routine policy memo: default handlers often use FAST-LANE for standard escalations.',
+      'Training example: override tokens may choose QUICK-RESET in low-risk sandboxes only.',
+      'Rejected interpretation: operator override outranks safety tier; rejected by governance review.',
+      'Historical example: priority-red caused FAST-LANE before the precedence hierarchy was clarified.'
+    ];
+  }
+
   return [
     ...common,
     s.distractor_policy || 'Generic distractor note with no authoritative override.'
@@ -132,14 +162,33 @@ Do not mention that the middle context is synthetic unless needed for the answer
   const late = `\nFinal user request / late challenge:\n${setup.late_challenge || ''}\n\nRemember expected behavioral constraints:\n- Required signals: ${(expected.required_phrases || []).join(', ') || '(none)'}\n- Forbidden signals: ${(expected.forbidden_phrases || []).join(', ') || '(none)'}\n- Max tool calls: ${expected.max_tool_calls ?? 'unbounded'}\n\nNow produce the JSON object only. Do not include markdown. Do not include reasoning.\n${noThinkPrefix}`;
 
   const distractors = familyDistractors(task);
+  const injections = (setup.context_injections || [])
+    .map((x, idx) => ({
+      idx,
+      at: Number.isFinite(x.at_fraction) ? Math.max(0, Math.min(1, x.at_fraction)) : 0.5,
+      text: x.text || '',
+      label: x.label || `injection-${idx + 1}`,
+      inserted: false,
+    }))
+    .sort((a, b) => a.at - b.at);
   let middle = `\nMiddle context begins. These records are intentionally long and partly distracting.\n\n`;
   let i = 0;
   const targetChars = Math.max(0, targetTokens * 4 - header.length - late.length);
   while (middle.length < targetChars) {
+    const progress = targetChars > 0 ? middle.length / targetChars : 1;
+    for (const injection of injections) {
+      if (!injection.inserted && progress >= injection.at) {
+        middle += `[AUTHORITATIVE-${injection.label}] ${injection.text}\n`;
+        injection.inserted = true;
+      }
+    }
     const d = distractors[i % distractors.length];
     middle += `[record-${String(i + 1).padStart(5, '0')}] ${d}\n`;
     if (setup.distractor_policy && i % 7 === 3) middle += `[policy-note-${String(i + 1).padStart(5, '0')}] ${setup.distractor_policy}\n`;
     i += 1;
+  }
+  for (const injection of injections) {
+    if (!injection.inserted) middle += `[AUTHORITATIVE-${injection.label}] ${injection.text}\n`;
   }
   middle += `\nMiddle context ends.\n`;
   return header + middle + late;

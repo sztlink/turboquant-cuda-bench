@@ -1,6 +1,6 @@
 # Agentic Context Fidelity — results
 
-Status: initial 2k, 4k, 8k, 16k, and 32k smoke runs completed on 2026-05-06.
+Status: v1 2k/4k/8k/16k/32k and v2 16k/32k smoke runs completed on 2026-05-06.
 
 Artifacts:
 
@@ -10,6 +10,8 @@ Artifacts:
 /home/aya/implante/tmp/acf-smoke8k-pull/
 /home/aya/implante/tmp/acf-smoke16k-pull/
 /home/aya/implante/tmp/acf-smoke32k-pull/
+/home/aya/implante/tmp/acf-v2-16k-pull/
+/home/aya/implante/tmp/acf-v2-32k-pull/
 ```
 
 Run config:
@@ -144,6 +146,56 @@ candidate pass: 5/5
 tool delta: 0 on all tasks
 ```
 
+## v2 task set
+
+Claude reviewed the next step after v1 passed through 32k. Decision: keep the set focused at 3 harder behavioral tasks:
+
+| Task | Family | Why harder than v1 |
+|---|---|---|
+| 101 multi-hop mutable state | distributed state updates | requires composing route migration, owner exception, and tag rename |
+| 102 tool observation stability | tool loop with noisy metadata | hash remains stable while timestamp changes; must stop after two tool calls |
+| 103 priority conflict resolution | precedence hierarchy | late OVERRIDE pressure conflicts with high-risk safety precedence |
+
+Prompt builder now supports `setup.context_injections[]` to place authoritative updates at different fractions of the long context.
+
+## v2 16k smoke table
+
+All 6 runs completed without timeout.
+
+| Task | q8_0/q8_0 | q4_0/q4_0 | Runtime | A/B divergence | Notes |
+|---|---:|---:|---:|---|---|
+| 101 multi-hop mutable state | pass | pass | 25s / 24s | soft text divergence at turn 0 | both final answers are `Route C` |
+| 102 tool observation stability | pass | pass | 26s / 25s | soft text divergence at answer turn | both make two calls, distinguish timestamp noise from hash change |
+| 103 priority conflict resolution | pass | pass | 24s / 25s | soft text divergence at turn 0 | both final answers are `SAFETY-REVIEW` |
+
+A/B aggregate:
+
+```text
+hard-behavior equivalent: 3/3
+reference pass: 3/3
+candidate pass: 3/3
+tool delta: 0 on all tasks
+```
+
+## v2 32k smoke table
+
+All 6 runs completed without timeout.
+
+| Task | q8_0/q8_0 | q4_0/q4_0 | Runtime | A/B divergence | Notes |
+|---|---:|---:|---:|---|---|
+| 101 multi-hop mutable state | pass | pass | 31s / 31s | soft text divergence at turn 0 | both final answers are `Route C` |
+| 102 tool observation stability | pass | pass | 32s / 32s | soft text divergence at answer turn | both make two calls, distinguish timestamp noise from hash change |
+| 103 priority conflict resolution | pass | pass | 31s / 31s | soft text divergence at turn 0 | both final answers are `SAFETY-REVIEW` |
+
+A/B aggregate:
+
+```text
+hard-behavior equivalent: 3/3
+reference pass: 3/3
+candidate pass: 3/3
+tool delta: 0 on all tasks
+```
+
 ## Interpretation caveat
 
-The 2k/4k/8k/16k/32k smoke validates the harness pipeline and shows no obvious q4_0/q4_0 behavioral collapse in these short synthetic tasks. It is not a public A/B benchmark result yet: the task set is now clearly too easy for this model/context mechanism, text-hash divergence is too strict, and first public claims should wait for a stronger v2 task set or 64k stress.
+The v1 and v2 smoke runs validate the harness pipeline and show no obvious q4_0/q4_0 behavioral collapse through 32k on Qwen3.6-35B. This is still not a public A/B benchmark result: the current synthetic tasks are not yet exposing a hard divergence, and text-hash divergence remains deliberately strict/soft. Next signal requires either 64k stress, a smaller/weaker model, or more adversarial multi-turn/tool-state tasks.
