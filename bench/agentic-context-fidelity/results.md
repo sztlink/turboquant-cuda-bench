@@ -196,6 +196,33 @@ candidate pass: 3/3
 tool delta: 0 on all tasks
 ```
 
+## 27B calibration at 32k
+
+Claude recommended calibrating with a smaller/weaker model before 64k. A true 7B/8B model was not available in the current Windows llama.cpp setup. The available `dflash-draft-3.6-q4km.gguf` failed to load because this binary does not support `general.architecture=dflash-draft`.
+
+Fallback calibration used:
+
+```text
+C:\models\q36_27b_new.gguf
+```
+
+All 6 runs completed.
+
+| Task | q8_0/q8_0 | q4_0/q4_0 | Runtime | A/B divergence | Notes |
+|---|---:|---:|---:|---|---|
+| 101 multi-hop mutable state | pass | pass | 49s / 51s | soft text divergence at turn 0 | both final answers are `route C` |
+| 102 tool observation stability | pass | pass | 55s / 56s | none | identical stable route-hash answer |
+| 103 priority conflict resolution | pass | pass | 52s / 53s | soft text divergence at turn 0 | both final answers are `SAFETY-REVIEW` |
+
+A/B aggregate:
+
+```text
+hard-behavior equivalent: 3/3
+reference pass: 3/3
+candidate pass: 3/3
+tool delta: 0 on all tasks
+```
+
 ## Interpretation caveat
 
-The v1 and v2 smoke runs validate the harness pipeline and show no obvious q4_0/q4_0 behavioral collapse through 32k on Qwen3.6-35B. This is still not a public A/B benchmark result: the current synthetic tasks are not yet exposing a hard divergence, and text-hash divergence remains deliberately strict/soft. Next signal requires either 64k stress, a smaller/weaker model, or more adversarial multi-turn/tool-state tasks.
+The v1 and v2 smoke runs validate the harness pipeline and show no obvious q4_0/q4_0 behavioral collapse through 32k on Qwen3.6-35B. The 27B calibration also passes v2 at 32k, which suggests the current v2 tasks may still be too easy or too single-turn/scripted to expose behavioral drift. This remains not a public equivalence claim. Next signal requires either a truly smaller supported 7B/8B model, v3 multi-turn/action-state tasks, or 64k as operational stress rather than decisive science.
