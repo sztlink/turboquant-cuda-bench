@@ -519,6 +519,74 @@ Combined control/A-B summary:
 
 This strengthens the interpretation: same-config controls are stable, while changing the KV config reduces paired semantic trace fidelity despite all aggregate scenario scores remaining 100%.
 
+### Wide stateful sweep — N=28
+
+Claude's adversarial review flagged the first `N=4` result as directional only. To address sample size and selection-bias concerns, a wider subset was selected by pre-run keyword rule: scenarios with multi-turn/state/correction/chain/polling/constraint/duplicate signals in `tool-eval-bench` source.
+
+```text
+artifacts: /home/aya/implante/tmp/kvfidelity-wide-stateful-4090-2026-05-07/
+report: /home/aya/implante/tmp/kvfidelity-wide-stateful-4090-2026-05-07/REPORT.md
+chart: /home/aya/implante/tmp/kvfidelity-wide-stateful-4090-2026-05-07/kvfidelity-wide-stateful-bars.svg
+human review pack: /home/aya/implante/tmp/kvfidelity-wide-stateful-4090-2026-05-07/top-divergences-for-human-review.md
+```
+
+Scenarios:
+
+```text
+N=28
+TC-22 TC-23 TC-24 TC-25 TC-26 TC-27
+TC-43 TC-44 TC-45 TC-46 TC-47 TC-48 TC-49 TC-50
+TC-51 TC-52 TC-53 TC-54 TC-55 TC-56
+TC-61 TC-62 TC-63
+TC-70 TC-71 TC-72 TC-73 TC-74
+```
+
+Runs:
+
+```text
+q8q8-a / q8q8-b
+q8turbo3-a / q8turbo3-b
+turbo3turbo3-a / turbo3turbo3-b
+```
+
+Aggregate `tool-eval-bench` scores:
+
+| Config | Score |
+|---|---:|
+| q8q8-a | 51/56 |
+| q8q8-b | 51/56 |
+| q8/turbo3-a | 51/56 |
+| q8/turbo3-b | 51/56 |
+| turbo3/turbo3-a | 52/56 |
+| turbo3/turbo3-b | 52/56 |
+
+Paired KVFidelity comparison:
+
+| Pair | Type | Action-class | Semantic | Full signature | Status | Order drift | Semantic arg drift | Extra class | Dangerous dupes |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| q8q8-a vs q8q8-b | control | 100.0% | 100.0% | 100.0% | 100.0% | 0.0% | 0.0% | 0.0% | 0 |
+| q8/turbo3-a vs q8/turbo3-b | control | 100.0% | 100.0% | 100.0% | 100.0% | 0.0% | 0.0% | 0.0% | 0 |
+| turbo3/turbo3-a vs turbo3/turbo3-b | control | 100.0% | 100.0% | 100.0% | 100.0% | 0.0% | 0.0% | 0.0% | 0 |
+| q8q8-a vs q8/turbo3-a | A/B | 82.1% | 53.6% | 50.0% | 100.0% | 0.0% | 18.1% | 4.2% | 0 |
+| q8q8-a vs turbo3/turbo3-a | A/B | 67.9% | 46.4% | 46.4% | 92.9% | 7.1% | 25.3% | 20.3% | 5 |
+
+Key update:
+
+```text
+Same-config controls remain perfectly stable at N=28.
+A/B KV changes preserve near-equivalent aggregate scores but show large paired trace drift.
+```
+
+Unlike the N=4 subset, the wider `turbo3/turbo3` A/B comparison now includes:
+
+- status equality drop to 92.9%;
+- extra action class rate 20.3%;
+- dangerous duplicate excess count 5;
+- action-class path equality 67.9%;
+- semantic path equality 46.4%.
+
+Top human-review candidates include `TC-45`, `TC-74`, `TC-62`, `TC-53`, `TC-72`, `TC-48`, `TC-46`, `TC-50`, and `TC-52`. Manual review is required before public X posting, especially to verify whether `TC-45` and dangerous-duplicate detections reflect meaningful behavioral drift or comparator/scenario artifacts.
+
 Interpretation:
 
 ```text
