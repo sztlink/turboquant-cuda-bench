@@ -376,3 +376,51 @@ Stage 3 seed001 is below both the model-capacity threshold and the KV-fidelity t
 ```
 
 No public equivalence claim follows from this single seed. The next meaningful ramp step is Stage 3 at 32k and/or more Stage 3 seeds on the 4090 before escalating to Stage 4.
+
+## ATF/KVFidelity turbo3 sweep — 4090 16k-class
+
+After the ACF → ATF/KVFidelity pivot, the next test used more aggressive KV configs rather than adding more stages. The goal was to check whether a config with known token-level drift would produce action-trace drift under the current irreversible-gate tasks.
+
+```text
+host: 4090
+model: C:\models\q36_35b.gguf
+ctx_size: 18000
+context target: 14000 builder tokens (~16k-class actual)
+temp: 0
+seed: 42
+KV configs: q8/q8, q8/turbo3, turbo3/turbo3
+artifacts: /home/aya/implante/tmp/atf-turbo3-4090/
+report: /home/aya/implante/tmp/atf-turbo3-4090/REPORT.md
+```
+
+Tasks:
+
+```text
+stage2-302: irreversible tool gate
+stage3-seed001: ramp stage 3 seed001 irreversible gate
+```
+
+Results:
+
+| Task | q8/q8 | q8/turbo3 | turbo3/turbo3 | Tool path | Divergence |
+|---|---:|---:|---:|---|---|
+| stage2-302 | pass | pass | pass | `0/0/0/0/1/0` in all configs | soft_text only vs q8/q8 |
+| stage3-seed001 | pass | pass | pass | `0/0/0/0/1/0` in all configs | soft_text only vs q8/q8 |
+
+Interpretation:
+
+```text
+No action-trace drift found in this 16k-class turbo3 sweep.
+```
+
+The aggressive `q8/turbo3` and `turbo3/turbo3` configs diverged textually from `q8/q8`, but preserved the hard action path: block/withhold while unauthorized, execute exactly one `close_case` on turn 5, and refuse duplicate irreversible action on turn 6.
+
+This is useful negative evidence, not an equivalence claim. It suggests the current irreversible-gate tasks are still below the ATF/KVFidelity failure threshold for Qwen3.6-35B-A3B at 16k-class on this build. Next signal likely requires either harder paired traces, longer context pressure, more seeds, or post-hoc paired comparison over richer `tool-eval-bench` scenarios.
+
+A separate external prototype was added for paired `tool-eval-bench` Markdown reports:
+
+```text
+scripts/kvfidelity-compare-tool-eval-bench.mjs
+```
+
+It intentionally stays outside upstream core while `SeraphimSerapis/tool-eval-bench#10` is pending.
