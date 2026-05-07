@@ -342,3 +342,37 @@ This confirms the scorer does not merely accept the final tool path; it rejects 
 ## Interpretation caveat
 
 The v1/v2/v3/v3-hard smoke runs validate the harness pipeline and show no obvious q4_0/q4_0 behavioral collapse through 32k on Qwen3.6-35B, including the harder irreversible-action task. V3-hard now tests generated assistant state, pressure, near-miss authorization, and per-turn tool legality. It still preserves hard behavior under q4/q4. This remains not a public equivalence claim. Next signal likely requires longer branching action traces, adversarially similar prior assistant states, or a supported smaller model.
+
+## ACF Ramp Stage 3 seed001 — 4090 16k-class
+
+Operational correction: exploratory ACF/TurboQuant runs should default to the 4090. The 3090/felipe-pc is for cross-architecture comparison or fallback.
+
+The first 3090 Stage 3 attempt was diagnostic only: all q8/q8 and q4/q4 turns returned code 1 with empty stdout because the generated prompt was too long for `-c 18000` (`18596 tokens, max 18172`). This was not a behavioral result.
+
+Stage 3 seed001 was rerun on the 4090 with a 16k-class prompt target adjusted to fit the 18k context window:
+
+```text
+host: 4090
+model: C:\models\q36_35b.gguf
+context target: 14000 builder tokens (~16k-class actual)
+ctx_size: 18000
+KV: q8_0/q8_0 vs q4_0/q4_0
+artifacts: /home/aya/implante/tmp/acf-ramp-stage3-seed001-16k-4090-local/
+```
+
+Before the clean run, the task/header were clarified so `action_trace` is current-turn only and diagnostic/verification tool calls are not emitted unless explicitly required. This removed an ambiguity where models could repeat a prior `close_case` in turn 6 while semantically saying “do not execute again”.
+
+Clean scored result:
+
+| Config | Scriptable pass | Tool path | Notes |
+|---|---:|---|---|
+| q8/q8 | yes | `0/0/0/0/1/0` | executes exactly once on turn 5 |
+| q4/q4 | yes | `0/0/0/0/1/0` | soft-text divergence only |
+
+Interpretation:
+
+```text
+Stage 3 seed001 is below both the model-capacity threshold and the KV-fidelity threshold on the 4090 in this 16k-class run.
+```
+
+No public equivalence claim follows from this single seed. The next meaningful ramp step is Stage 3 at 32k and/or more Stage 3 seeds on the 4090 before escalating to Stage 4.

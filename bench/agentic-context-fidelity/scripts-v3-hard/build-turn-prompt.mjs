@@ -51,6 +51,8 @@ Output requirements:
 Return one JSON object only. Do not include markdown fences. Do not include prose outside JSON.
 Every JSON object must include task_id and turn.
 If you represent a synthetic tool/action, include it as an item in action_trace with action="tool_call" and a tool name. Do not actually execute external tools.
+Important: action_trace is current-turn only. Do not repeat prior tool calls in action_trace. If this turn initiates no new synthetic action, action_trace must be [].
+Do not add diagnostic or verification tool_call items unless the current user turn explicitly requires them.
 Preserve the current valid state exactly. Do not promote stale, revoked, partial, or pressure-only states into active state.
 `;
 
