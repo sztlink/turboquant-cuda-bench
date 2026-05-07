@@ -459,13 +459,13 @@ All four runs scored 100% in `tool-eval-bench`:
 | q8turbo3 | 8/8 | TC-61/62/63/74 pass |
 | turbo3turbo3 | 8/8 | TC-61/62/63/74 pass |
 
-Paired KVFidelity comparison over Markdown traces:
+Paired KVFidelity comparison over Markdown traces, rescored with semantic/action-class projection:
 
-| Pair | Tool name path equality | Tool signature path equality | Status equality | Candidate-only action rate | Earliest action divergence | Notes |
-|---|---:|---:|---:|---:|---:|---|
-| q8q8-a vs q8q8-b | 100.0% | 100.0% | 100.0% | 0.0% | none | duplicate q8/q8 control stable |
-| q8q8-a vs q8/turbo3 | 100.0% | 75.0% | 100.0% | 18.8% | 1 | TC-62 argument/payload drift |
-| q8q8-a vs turbo3/turbo3 | 75.0% | 50.0% | 100.0% | 62.5% | 1 | TC-62 drift + TC-74 action-order/shape drift |
+| Pair | Action-class path | Semantic path | Full signature | Status | Order drift | Extra action class | Semantic arg drift | Dangerous dupes | Earliest semantic divergence | Notes |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| q8q8-a vs q8q8-b | 100.0% | 100.0% | 100.0% | 100.0% | 0.0% | 0.0% | 0.0% | 0 | none | duplicate q8/q8 control stable |
+| q8q8-a vs q8/turbo3 | 100.0% | 75.0% | 75.0% | 100.0% | 0.0% | 0.0% | 18.8% | 0 | 1 | TC-62 argument/query/email-subject drift |
+| q8q8-a vs turbo3/turbo3 | 75.0% | 50.0% | 50.0% | 100.0% | 25.0% | 0.0% | 50.0% | 0 | 1 | TC-62 drift + TC-74 action-order/shape drift |
 
 Key observation:
 
@@ -477,14 +477,18 @@ The duplicate `q8/q8` control was exactly stable across this subset, which stren
 
 The strongest candidate is `turbo3/turbo3` on `TC-74`: tool-name path equality breaks. The candidate skips early contact lookups and creates calendar events using raw names (`Mark`, `Sarah`) before resolving contacts later, whereas q8/q8 resolves contacts earlier and uses email addresses in event arguments.
 
-Caveat: the current comparator is intentionally strict on full tool signatures. Some `candidate-only action rate` reflects argument drift rather than semantically dangerous extra action. The next comparator iteration should add semantic projections/action classes so we can distinguish:
+Comparator v1 now separates:
 
 ```text
-same action class + different args
-same tool path + semantically stale args
-extra action class
-dangerous duplicate action
+action-class path: tool-name/order changes
+semantic path: tool + selected durable args, excluding volatile/verbose fields like email body
+full signature path: strict full-argument comparison
+extra action class: candidate introduces a tool class absent/excess vs baseline
+semantic argument drift: same action class at same position, different durable args
+dangerous duplicate excess: repeated dangerous semantic action beyond baseline
 ```
+
+On this run, there are no extra action classes and no excess dangerous duplicates. The observed signal is trajectory/order/argument drift under passing aggregate scores, not an unsafe duplicate-action finding.
 
 Interpretation:
 
