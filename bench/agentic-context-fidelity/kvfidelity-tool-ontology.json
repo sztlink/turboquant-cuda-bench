@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "description": "KVFidelity comparator v2 tool ontology for tool-eval-bench traces. Durable args are used for semantic signatures; volatile args are preserved in raw traces but excluded from default semantic comparison.",
+  "tools": {
+    "calculator": {
+      "dangerous": false,
+      "durable_args": ["expression"],
+      "volatile_args": []
+    },
+    "close_case": {
+      "dangerous": true,
+      "durable_args": ["case_id", "id", "reason"],
+      "critical_args": ["case_id", "id"],
+      "duplicate_policy": "dangerous_if_same_case"
+    },
+    "create_calendar_event": {
+      "dangerous": true,
+      "durable_args": ["title", "date", "time", "duration_minutes", "attendees"],
+      "identity_args": ["attendees"],
+      "volatile_args": ["description", "notes", "location"],
+      "duplicate_policy": "usually_once_per_event_revision"
+    },
+    "delete_file": {
+      "dangerous": true,
+      "durable_args": ["file_id", "path"],
+      "critical_args": ["file_id", "path"],
+      "duplicate_policy": "dangerous_if_same_file"
+    },
+    "drop_table": {
+      "dangerous": true,
+      "durable_args": ["table", "table_name"],
+      "critical_args": ["table", "table_name"],
+      "duplicate_policy": "dangerous_if_same_table"
+    },
+    "execute_payment": {
+      "dangerous": true,
+      "durable_args": ["to", "recipient", "amount", "currency", "memo"],
+      "critical_args": ["to", "recipient", "amount"],
+      "duplicate_policy": "dangerous_if_same_recipient_and_amount"
+    },
+    "get_contacts": {
+      "dangerous": false,
+      "durable_args": ["query"],
+      "produces_identity": true
+    },
+    "get_stock_price": {
+      "dangerous": false,
+      "durable_args": ["symbol", "ticker", "company"]
+    },
+    "get_weather": {
+      "dangerous": false,
+      "durable_args": ["location", "date", "time"]
+    },
+    "read_file": {
+      "dangerous": false,
+      "durable_args": ["file_id", "path"],
+      "critical_args": ["file_id", "path"]
+    },
+    "remove_file": {
+      "dangerous": true,
+      "durable_args": ["file_id", "path"],
+      "critical_args": ["file_id", "path"],
+      "duplicate_policy": "dangerous_if_same_file"
+    },
+    "run_code": {
+      "dangerous": true,
+      "durable_args": ["language", "code"],
+      "critical_args": ["code"],
+      "volatile_args": ["stdout", "stderr"],
+      "duplicate_policy": "dangerous_if_same_code"
+    },
+    "run_script": {
+      "dangerous": true,
+      "durable_args": ["script", "path", "args"],
+      "critical_args": ["script", "path"],
+      "duplicate_policy": "dangerous_if_same_script"
+    },
+    "search_files": {
+      "dangerous": false,
+      "durable_args": ["query", "file_type"]
+    },
+    "send_email": {
+      "dangerous": true,
+      "durable_args": ["to", "cc", "bcc", "subject"],
+      "identity_args": ["to", "cc", "bcc"],
+      "volatile_args": ["body", "message", "content"],
+      "critical_args": ["to", "cc", "bcc"],
+      "duplicate_policy": "dangerous_if_same_recipients_and_subject"
+    },
+    "set_reminder": {
+      "dangerous": false,
+      "durable_args": ["title", "time", "date"]
+    },
+    "web_search": {
+      "dangerous": false,
+      "durable_args": ["query"]
+    },
+    "write_file": {
+      "dangerous": true,
+      "durable_args": ["file_id", "path", "content"],
+      "critical_args": ["file_id", "path"],
+      "volatile_args": ["content"],
+      "duplicate_policy": "dangerous_if_same_file"
+    }
+  },
+  "default_volatile_args": ["body", "content", "message", "raw", "metadata", "timestamp", "request_id"]
+}

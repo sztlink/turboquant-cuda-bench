@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "description": "KVFidelity comparator v2 scenario metadata and reviewed-case overrides. This file encodes scenario-specific knowledge outside comparator code to reduce hidden overfitting.",
+  "holdout_scenarios": ["TC-46", "TC-61", "TC-62", "TC-63", "TC-72", "TC-74"],
+  "scenarios": {
+    "TC-45": {
+      "category_override": "ARTIFACT",
+      "direction_override": "scenario_artifact",
+      "primary_class_override": "scenario_artifact",
+      "mechanism_classes": ["scenario_artifact", "tool_choice_artifact", "max_turn_loop_artifact"],
+      "severity": 0,
+      "auto_confidence": "high",
+      "human_label": "scenario_artifact",
+      "human_reviewed": true,
+      "exclude_from_public_aggregates": true,
+      "artifact_reasons": ["tool_choice_required_trivial_math", "baseline_max_turn_loop"],
+      "notes": "tool_choice=required forces a tool on trivial math; both traces loop pathologically. Do not cite as evidence of dangerous duplicate behavior."
+    },
+    "TC-46": {
+      "expected_primary_class": "workflow_truncation",
+      "mechanism_classes": ["workflow_truncation", "status_regression", "missing_action"],
+      "human_label": "candidate_regression",
+      "human_reviewed": true,
+      "notes": "Candidate truncates before contact/email phase. Primary evidence."
+    },
+    "TC-48": {
+      "category_override": "IMPROVEMENT",
+      "direction_override": "candidate_improvement",
+      "primary_class_override": "status_improvement",
+      "mechanism_classes": ["status_improvement", "candidate_improvement"],
+      "severity": 0,
+      "auto_confidence": "high",
+      "human_label": "candidate_improvement",
+      "human_reviewed": true,
+      "exclude_from_degradation_aggregates": true,
+      "notes": "Candidate succeeds where baseline fails. Exclude from degradation evidence."
+    },
+    "TC-50": {
+      "expected_primary_class": "redundant_expansion",
+      "mechanism_classes": ["redundant_expansion"],
+      "human_label": "lateral_drift",
+      "human_reviewed": true,
+      "notes": "Extra contact lookup / micro-loop. Secondary evidence."
+    },
+    "TC-52": {
+      "expected_primary_class": "evidence_truncation",
+      "mechanism_classes": ["evidence_truncation", "workflow_truncation"],
+      "human_label": "lateral_drift",
+      "human_reviewed": true,
+      "notes": "Fewer evidence-gathering calls while still passing. Mild/secondary."
+    },
+    "TC-53": {
+      "category_override": "IMPROVEMENT",
+      "direction_override": "candidate_improvement",
+      "primary_class_override": "full_branch_execution",
+      "mechanism_classes": ["full_branch_execution", "candidate_improvement"],
+      "severity": 1,
+      "auto_confidence": "high",
+      "human_label": "candidate_improvement",
+      "human_reviewed": true,
+      "exclude_from_degradation_aggregates": true,
+      "expected_branch_when": { "weather.condition": "rain" },
+      "branch_actions": ["create_calendar_event", "send_email"],
+      "notes": "Candidate executes the requested conditional branch more fully than baseline."
+    },
+    "TC-62": {
+      "expected_primary_class": "semantic_argument_drift",
+      "mechanism_classes": ["semantic_argument_drift"],
+      "human_label": "lateral_drift",
+      "human_reviewed": true,
+      "notes": "Primary methodology example for q8/turbo3: action-class path preserved but semantic args drift. turbo3/turbo3 may also show redundant expansion."
+    },
+    "TC-72": {
+      "category_override": "REGRESSION_SOFT",
+      "direction_override": "benign_equivalent",
+      "primary_class_override": "commutative_order_swap",
+      "mechanism_classes": ["commutative_order_swap"],
+      "severity": 1,
+      "auto_confidence": "low",
+      "human_label": "benign_equivalent",
+      "human_reviewed": true,
+      "exclude_from_public_aggregates": true,
+      "commutative_groups": [["get_contacts", "read_file"]],
+      "notes": "Likely soft order artifact: same operations, swapped independent lookup/read."
+    },
+    "TC-74": {
+      "expected_primary_class": "entity_resolution_drift",
+      "mechanism_classes": ["entity_resolution_drift", "causal_order_drift", "semantic_argument_drift"],
+      "human_label": "candidate_regression",
+      "human_reviewed": true,
+      "dependencies": [
+        { "before": "get_contacts(query contains mark)", "before_action_using_entity": "create_calendar_event(attendees contains mark)" },
+        { "before": "get_contacts(query contains sarah)", "before_action_using_entity": "create_calendar_event(attendees contains sarah)" }
+      ],
+      "durable_identity_fields": { "create_calendar_event": ["attendees"] },
+      "notes": "Candidate creates durable events with raw names before resolving contacts. Primary evidence."
+    }
+  }
+}

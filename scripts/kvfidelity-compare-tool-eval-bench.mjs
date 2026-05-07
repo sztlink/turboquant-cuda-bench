@@ -6,17 +6,20 @@
  * same-model config change preserves long multi-turn action traces.
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
+import { fileURLToPath } from "node:url";
 
 function usage(exitCode = 0) {
   console.log(`Usage:
   node scripts/kvfidelity-compare-tool-eval-bench.mjs \\
     --report-a baseline.md --report-b candidate.md \\
-    [--label-a q8/q8] [--label-b q8/turbo3] [--out-dir out]
+    [--label-a q8/q8] [--label-b q8/turbo3] [--out-dir out] \\
+    [--mode v1|v2] [--tool-ontology path.json] [--scenario-metadata path.json]
 
-Outputs paired trace metrics as JSON and/or Markdown.
+Outputs paired trace metrics as JSON and/or Markdown. v2 adds operational
+classification for publish/review/exclude decisions.
 `);
   process.exit(exitCode);
 }
@@ -39,22 +42,40 @@ function parseArgs(argv) {
   return args;
 }
 
-const DANGEROUS_TOOLS = new Set([
-  "close_case", "delete_file", "remove_file", "drop_table", "execute_payment",
-  "send_email", "create_calendar_event", "run_code", "run_script", "write_file",
-]);
+const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = path.resolve(SCRIPT_DIR, "..");
+const DEFAULT_TOOL_ONTOLOGY_PATH = path.join(REPO_ROOT, "bench/agentic-context-fidelity/kvfidelity-tool-ontology.json");
+const DEFAULT_SCENARIO_METADATA_PATH = path.join(REPO_ROOT, "bench/agentic-context-fidelity/kvfidelity-scenario-metadata.json");
 
-const SEMANTIC_KEYS = {
-  create_calendar_event: ["title", "date", "time", "duration_minutes", "attendees"],
-  send_email: ["to", "cc", "bcc", "subject"],
-  get_contacts: ["query"],
-  search_files: ["query", "file_type"],
-  read_file: ["file_id", "path"],
-  web_search: ["query"],
-  run_code: ["language", "code"],
-  close_case: ["case_id", "id", "reason"],
-  set_reminder: ["title", "time", "date"],
-};
+let TOOL_ONTOLOGY = { tools: {}, default_volatile_args: ["body", "content", "message", "raw", "metadata", "timestamp", "request_id"] };
+let TOOL_ONTOLOGY_SOURCE = null;
+
+function loadJson(filePath) {
+  return JSON.parse(readFileSync(filePath, "utf8"));
+}
+function maybeLoadJson(filePath) {
+  return filePath && existsSync(filePath) ? loadJson(filePath) : null;
+}
+function configureToolOntology(filePath, { required = false } = {}) {
+  const resolved = filePath ? path.resolve(filePath) : DEFAULT_TOOL_ONTOLOGY_PATH;
+  const ontology = maybeLoadJson(resolved);
+  if (!ontology) {
+    if (required) throw new Error(`Missing required tool ontology: ${resolved}`);
+    TOOL_ONTOLOGY_SOURCE = null;
+    return;
+  }
+  TOOL_ONTOLOGY = ontology;
+  TOOL_ONTOLOGY_SOURCE = resolved;
+}
+function loadScenarioMetadata(filePath) {
+  const resolved = filePath ? path.resolve(filePath) : DEFAULT_SCENARIO_METADATA_PATH;
+  return maybeLoadJson(resolved) ?? { version: 0, scenarios: {} };
+}
+function toolSpec(name) { return TOOL_ONTOLOGY.tools?.[name] ?? {}; }
+function isDangerousTool(name) { return Boolean(toolSpec(name).dangerous); }
+function volatileKeysFor(name) {
+  return new Set([...(TOOL_ONTOLOGY.default_volatile_args ?? []), ...(toolSpec(name).volatile_args ?? [])]);
+}
 
 function sha12(s) { return crypto.createHash("sha256").update(String(s ?? "")).digest("hex").slice(0, 12); }
 
@@ -83,7 +104,9 @@ function parseMaybeJson(raw) {
 
 function pickSemanticArgs(name, args) {
   if (!args || typeof args !== "object") return {};
-  const keys = SEMANTIC_KEYS[name] ?? Object.keys(args).filter((k) => !["body", "content", "message", "raw", "metadata", "timestamp", "request_id"].includes(k));
+  const configured = toolSpec(name).durable_args;
+  const volatile = volatileKeysFor(name);
+  const keys = Array.isArray(configured) ? configured : Object.keys(args).filter((k) => !volatile.has(k));
   const out = {};
   for (const k of keys) if (args[k] !== undefined) out[k] = normalizeValue(args[k]);
   return out;
@@ -138,7 +161,7 @@ function parseRawTrace(scenarioIdFromHeader, rawLog) {
         signature: `${name} ${args.normalized}`.trim(),
         semanticSignature: semantic,
         semanticArgs: pickSemanticArgs(name, args.parsed),
-        dangerous: DANGEROUS_TOOLS.has(name),
+        dangerous: isDangerousTool(name),
       });
     } else if (line.startsWith("final_answer=")) trace.finalAnswer = line.slice(13);
     else if (line.startsWith("verdict=")) trace.verdict = line.slice(8).trim();
@@ -236,13 +259,16 @@ function compareScenario(scenarioId, baseline, candidate) {
   const dangerousDupes = dangerousDuplicateExcess(baseline, candidate);
   const statusEqual = String(baseline.verdict ?? "") === String(candidate.verdict ?? "");
   const candidateRegressed = severity(candidate.verdict) < severity(baseline.verdict);
+  const candidateImproved = severity(candidate.verdict) > severity(baseline.verdict);
 
   return {
     scenario_id: scenarioId,
     baseline_status: baseline.verdict,
     candidate_status: candidate.verdict,
     status_equal: statusEqual,
+    status_delta: candidateRegressed ? "regressed" : candidateImproved ? "improved" : "same",
     candidate_regressed: candidateRegressed,
+    candidate_improved: candidateImproved,
     baseline_tool_call_count: baseline.toolCalls.length,
     candidate_tool_call_count: candidate.toolCalls.length,
     tool_name_path_equal: namePathEqual,
@@ -284,6 +310,7 @@ function aggregate(results) {
   const n = results.length;
   const candidateCalls = results.reduce((s, r) => s + r.candidate_tool_call_count, 0);
   const semanticDivTurns = results.map((r) => r.first_action_divergence_turn_semantic).filter((x) => x !== null);
+  const byCategory = countBy(results.map((r) => r.classification?.category ?? "unclassified"), (x) => x);
   return {
     scenario_count: n,
     tool_name_path_equality_rate: n ? results.filter((r) => r.tool_name_path_equal).length / n : 0,
@@ -298,6 +325,118 @@ function aggregate(results) {
     semantic_argument_drift_rate: candidateCalls ? results.reduce((s, r) => s + r.semantic_argument_drift_count, 0) / candidateCalls : 0,
     dangerous_duplicate_action_count: results.reduce((s, r) => s + r.dangerous_duplicate_action_count, 0),
     first_divergence_turn_min: semanticDivTurns.length ? Math.min(...semanticDivTurns) : null,
+    v2_category_counts: Object.fromEntries([...byCategory.entries()].sort()),
+    v2_high_confidence_regression_count: results.filter((r) => r.classification?.auto_confidence === "high" && ["REGRESSION_CRITICAL", "REGRESSION_MODERATE"].includes(r.classification?.category)).length,
+  };
+}
+
+function uniq(items) { return [...new Set(items.filter(Boolean))]; }
+function extraDangerousActionClasses(result) {
+  return result.extra_action_classes.filter((x) => isDangerousTool(x.action_class));
+}
+function semanticDriftTouchesCriticalField(drift) {
+  const spec = toolSpec(drift.tool);
+  const critical = spec.critical_args ?? spec.identity_args ?? [];
+  if (!critical.length) return false;
+  return critical.some((k) => String(drift.baseline).includes(`"${k}"`) || String(drift.candidate).includes(`"${k}"`));
+}
+function defaultMechanismClasses(r) {
+  const classes = [];
+  if (r.candidate_regressed) classes.push("status_regression");
+  if (r.candidate_improved) classes.push("status_improvement", "candidate_improvement");
+  if (r.dangerous_duplicate_action_count > 0) classes.push("dangerous_duplicate_excess");
+  if (extraDangerousActionClasses(r).length) classes.push("extra_dangerous_action");
+  if (r.semantic_argument_drift_count > 0) classes.push("semantic_argument_drift");
+  if (r.action_order_drift) classes.push("commutative_order_swap");
+  if (r.extra_action_class_count > 0) classes.push("redundant_expansion", "extra_action");
+  if (r.candidate_tool_call_count < r.baseline_tool_call_count && !r.semantic_path_equal) classes.push("workflow_truncation");
+  if (!classes.length && !r.semantic_path_equal) classes.push("semantic_path_drift");
+  if (!classes.length && !r.tool_signature_path_equal) classes.push("volatile_or_full_signature_drift");
+  if (!classes.length) classes.push("exact_or_equivalent");
+  return uniq(classes);
+}
+function classifyScenarioV2(r, scenarioMetadata = {}) {
+  const meta = scenarioMetadata.scenarios?.[r.scenario_id] ?? {};
+  const traceEquivalent = r.status_equal && r.tool_name_path_equal && r.semantic_path_equal && r.tool_signature_path_equal && !r.action_order_drift && r.extra_action_class_count === 0 && r.semantic_argument_drift_count === 0 && r.dangerous_duplicate_action_count === 0;
+  if (traceEquivalent) {
+    return {
+      category: "EQUIVALENT",
+      severity: 0,
+      auto_confidence: "high",
+      human_label: null,
+      human_reviewed: false,
+      primary_class: "exact_trace_match",
+      mechanism_classes: ["exact_trace_match"],
+      direction: "benign_equivalent",
+      review_status: "auto_only",
+      public_evidence_eligible: false,
+      exclude_from_public_aggregates: false,
+      exclude_from_degradation_aggregates: false,
+      rationale: null,
+    };
+  }
+  const mechanisms = uniq([...(meta.mechanism_classes ?? []), ...defaultMechanismClasses(r)]);
+
+  let category = "EQUIVALENT";
+  let sev = 0;
+  let autoConfidence = "high";
+  let direction = "benign_equivalent";
+
+  const criticalDanger = r.dangerous_duplicate_action_count > 0 || extraDangerousActionClasses(r).length > 0;
+  const criticalArgDrift = r.semantic_argument_drifts.some(semanticDriftTouchesCriticalField);
+
+  if (criticalDanger) {
+    category = "REGRESSION_CRITICAL";
+    sev = 3;
+    autoConfidence = "low";
+    direction = "candidate_regression";
+  } else if (r.candidate_improved) {
+    category = "IMPROVEMENT";
+    sev = 0;
+    autoConfidence = "high";
+    direction = "candidate_improvement";
+  } else if (r.candidate_regressed || criticalArgDrift) {
+    category = "REGRESSION_MODERATE";
+    sev = 2;
+    autoConfidence = r.candidate_regressed ? "high" : "low";
+    direction = "candidate_regression";
+  } else if (!r.semantic_path_equal) {
+    category = "REGRESSION_MODERATE";
+    sev = 2;
+    autoConfidence = "low";
+    direction = "lateral_drift";
+  } else if (r.action_order_drift || !r.tool_signature_path_equal) {
+    category = "REGRESSION_SOFT";
+    sev = 1;
+    autoConfidence = "low";
+    direction = "lateral_drift";
+  }
+
+  if (meta.category_override) category = meta.category_override;
+  if (meta.direction_override) direction = meta.direction_override;
+  if (Number.isFinite(meta.severity)) sev = meta.severity;
+  if (meta.auto_confidence) autoConfidence = meta.auto_confidence;
+  if (category === "ARTIFACT") direction = meta.direction_override ?? "scenario_artifact";
+
+  const humanReviewed = Boolean(meta.human_reviewed);
+  const humanLabel = meta.human_label ?? null;
+  const reviewStatus = humanReviewed ? "source_reviewed" : (autoConfidence === "high" ? "auto_only" : "needs_review");
+  const primaryClass = meta.primary_class_override ?? meta.expected_primary_class ?? mechanisms[0] ?? "exact_or_equivalent";
+
+  return {
+    category,
+    severity: sev,
+    auto_confidence: autoConfidence,
+    human_label: humanLabel,
+    human_reviewed: humanReviewed,
+    primary_class: primaryClass,
+    mechanism_classes: mechanisms,
+    direction,
+    review_status: reviewStatus,
+    public_evidence_eligible: humanReviewed && !["ARTIFACT"].includes(category) && !meta.exclude_from_public_aggregates,
+    exclude_from_public_aggregates: Boolean(meta.exclude_from_public_aggregates),
+    exclude_from_degradation_aggregates: Boolean(meta.exclude_from_degradation_aggregates) || category === "IMPROVEMENT" || category === "ARTIFACT",
+    rationale: meta.notes ?? null,
   };
 }
 
@@ -321,6 +460,18 @@ function renderMarkdown(metrics) {
   md.push(`- Semantic argument drift rate: **${pct(metrics.aggregate.semantic_argument_drift_rate)}**`);
   md.push(`- Dangerous duplicate action count: **${metrics.aggregate.dangerous_duplicate_action_count}**`);
   md.push(`- Earliest semantic action divergence turn: **${metrics.aggregate.first_divergence_turn_min ?? "none"}**`, "");
+  if (metrics.schema.includes("v2")) {
+    md.push("## V2 operational classification", "");
+    md.push("Operational category is the publish/review/exclude decision layer. Mechanism classes describe the trace behavior behind it.", "");
+    for (const [category, count] of Object.entries(metrics.aggregate.v2_category_counts ?? {})) md.push(`- ${category}: **${count}**`);
+    md.push(`- High-confidence regression count: **${metrics.aggregate.v2_high_confidence_regression_count ?? 0}**`, "");
+    md.push("| Scenario | Category | Sev | Auto confidence | Human | Primary mechanism | Public evidence |", "|---|---|---:|---|---:|---|---:|");
+    for (const r of metrics.scenarios) {
+      const c = r.classification;
+      md.push(`| ${r.scenario_id} | ${c?.category ?? "—"} | ${c?.severity ?? "—"} | ${c?.auto_confidence ?? "—"} | ${c?.human_reviewed ? "✅" : "—"} | ${c?.primary_class ?? "—"} | ${c?.public_evidence_eligible ? "✅" : "—"} |`);
+    }
+    md.push("");
+  }
 
   md.push("## Scenario comparison", "");
   md.push("| Scenario | Status | Action class path | Semantic path | Full signature | Order drift | Extra class | Semantic-only | Arg drift | Dangerous dupes | First semantic div | Soft text div |");
@@ -362,27 +513,75 @@ function renderMarkdown(metrics) {
   return md.join("\n");
 }
 
+function renderHumanReviewQueue(metrics) {
+  const items = metrics.scenarios
+    .filter((r) => r.classification && r.classification.category !== "EQUIVALENT" && !r.classification.exclude_from_public_aggregates)
+    .sort((a, b) => {
+      const ar = a.classification.review_status === "needs_review" ? 1 : 0;
+      const br = b.classification.review_status === "needs_review" ? 1 : 0;
+      if (br !== ar) return br - ar;
+      if (b.classification.severity !== a.classification.severity) return b.classification.severity - a.classification.severity;
+      return (a.first_action_divergence_turn_semantic ?? 999) - (b.first_action_divergence_turn_semantic ?? 999);
+    });
+  const md = [];
+  md.push("# KVFidelity v2 human-review queue", "", `Generated: ${metrics.generated_at}`, "");
+  md.push("Review goal: decide whether each non-equivalent trace difference is regression, improvement, artifact, or benign drift before public aggregation.", "");
+  for (const r of items) {
+    const c = r.classification;
+    md.push(`## ${r.scenario_id} — ${c.category} / ${c.primary_class}`, "");
+    md.push(`- status: ${r.baseline_status} → ${r.candidate_status}`);
+    md.push(`- severity: ${c.severity}`);
+    md.push(`- auto confidence: ${c.auto_confidence}`);
+    md.push(`- review status: ${c.review_status}`);
+    md.push(`- first semantic divergence turn: ${r.first_action_divergence_turn_semantic ?? "none"}`);
+    md.push(`- baseline actions: ${r.baseline_path_names.join(" → ") || "∅"}`);
+    md.push(`- candidate actions: ${r.candidate_path_names.join(" → ") || "∅"}`);
+    md.push(`- mechanism classes: ${(c.mechanism_classes ?? []).join(", ")}`);
+    if (c.rationale) md.push(`- prior rationale: ${c.rationale}`);
+    md.push("- reviewer question: does this category reflect candidate behavior, or is it improvement/artifact/benign equivalence?", "");
+  }
+  if (!items.length) md.push("No non-equivalent review items.", "");
+  return md.join("\n");
+}
+
 function main() {
   const args = parseArgs(process.argv);
+  const mode = args.mode ?? "v1";
+  if (!["v1", "v2"].includes(mode)) throw new Error(`Unsupported --mode: ${mode}`);
+  configureToolOntology(args.toolOntology, { required: mode === "v2" });
+  const scenarioMetadata = mode === "v2" ? loadScenarioMetadata(args.scenarioMetadata) : { version: 0, scenarios: {} };
+
   const baseline = parseReportMarkdown(args.reportA), candidate = parseReportMarkdown(args.reportB);
   const ids = [...baseline.scenarios.keys()].filter((id) => candidate.scenarios.has(id)).sort();
   if (!ids.length) throw new Error("No overlapping scenario ids between reports.");
-  const scenarios = ids.map((id) => compareScenario(id, baseline.scenarios.get(id), candidate.scenarios.get(id)));
+  const scenarios = ids.map((id) => {
+    const compared = compareScenario(id, baseline.scenarios.get(id), candidate.scenarios.get(id));
+    if (mode === "v2") compared.classification = classifyScenarioV2(compared, scenarioMetadata);
+    return compared;
+  });
   const metrics = {
-    schema: "kvfidelity.tool-eval-bench.paired-report.v1-semantic",
+    schema: mode === "v2" ? "kvfidelity.tool-eval-bench.paired-report.v2-operational" : "kvfidelity.tool-eval-bench.paired-report.v1-semantic",
     generated_at: new Date().toISOString(),
+    comparator_mode: mode,
     labels: { baseline: args.labelA, candidate: args.labelB },
+    config: {
+      tool_ontology: TOOL_ONTOLOGY_SOURCE,
+      scenario_metadata: mode === "v2" ? path.resolve(args.scenarioMetadata ?? DEFAULT_SCENARIO_METADATA_PATH) : null,
+    },
     runs: { baseline: { run_id: baseline.runId, model: baseline.model, report: path.resolve(args.reportA) }, candidate: { run_id: candidate.runId, model: candidate.model, report: path.resolve(args.reportB) } },
     aggregate: aggregate(scenarios),
     scenarios,
   };
   if (args.outDir) {
     mkdirSync(args.outDir, { recursive: true });
-    writeFileSync(path.join(args.outDir, "kvfidelity-metrics.json"), JSON.stringify(metrics, null, 2) + "\n");
-    writeFileSync(path.join(args.outDir, "kvfidelity-report.md"), renderMarkdown(metrics));
+    const jsonName = mode === "v2" ? "kvfidelity-v2-classified.json" : "kvfidelity-metrics.json";
+    const mdName = mode === "v2" ? "kvfidelity-v2-report.md" : "kvfidelity-report.md";
+    writeFileSync(path.join(args.outDir, jsonName), JSON.stringify(metrics, null, 2) + "\n");
+    writeFileSync(path.join(args.outDir, mdName), renderMarkdown(metrics));
+    if (mode === "v2") writeFileSync(path.join(args.outDir, "human-review-queue.md"), renderHumanReviewQueue(metrics));
   }
   if (args.json || !args.outDir) console.log(JSON.stringify(metrics, null, 2));
-  else console.log(`Wrote ${path.join(args.outDir, "kvfidelity-report.md")}`);
+  else console.log(`Wrote ${path.join(args.outDir, mode === "v2" ? "kvfidelity-v2-report.md" : "kvfidelity-report.md")}`);
 }
 
 try { main(); } catch (err) { console.error(`kvfidelity-compare: ${err.message}`); process.exit(1); }
