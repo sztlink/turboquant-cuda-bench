@@ -490,6 +490,35 @@ dangerous duplicate excess: repeated dangerous semantic action beyond baseline
 
 On this run, there are no extra action classes and no excess dangerous duplicates. The observed signal is trajectory/order/argument drift under passing aggregate scores, not an unsafe duplicate-action finding.
 
+### Candidate duplicate controls
+
+Before public posting, the candidate configs were rerun against themselves on the same scenarios to test whether the observed A/B drift was just candidate nondeterminism.
+
+```text
+artifacts: /home/aya/implante/tmp/kvfidelity-tool-eval-4090-duplicates-2026-05-07/
+summary: /home/aya/implante/tmp/kvfidelity-tool-eval-4090-duplicates-2026-05-07/KVFIDELITY-CONTROLS-AB-SUMMARY.md
+chart: /home/aya/implante/tmp/kvfidelity-tool-eval-4090-duplicates-2026-05-07/kvfidelity-controls-ab-bars.svg
+```
+
+Candidate duplicate controls:
+
+| Pair | Action-class path | Semantic path | Full signature | Status | Order drift | Semantic arg drift | Extra action class | Dangerous dupes |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| q8/turbo3 vs q8/turbo3 | 100.0% | 100.0% | 100.0% | 100.0% | 0.0% | 0.0% | 0.0% | 0 |
+| turbo3/turbo3 vs turbo3/turbo3 | 100.0% | 100.0% | 100.0% | 100.0% | 0.0% | 0.0% | 0.0% | 0 |
+
+Combined control/A-B summary:
+
+| Pair | Type | tool-eval status | Action-class path | Semantic path | Full signature | Order drift | Semantic arg drift | Extra class | Dangerous dupes |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| q8/q8 vs q8/q8 | control | 100% pass | 100% | 100% | 100% | 0% | 0% | 0% | 0 |
+| q8/turbo3 vs q8/turbo3 | control | 100% pass | 100% | 100% | 100% | 0% | 0% | 0% | 0 |
+| turbo3/turbo3 vs turbo3/turbo3 | control | 100% pass | 100% | 100% | 100% | 0% | 0% | 0% | 0 |
+| q8/q8 vs q8/turbo3 | A/B | 100% pass | 100% | 75% | 75% | 0% | 19% | 0% | 0 |
+| q8/q8 vs turbo3/turbo3 | A/B | 100% pass | 75% | 50% | 50% | 25% | 50% | 0% | 0 |
+
+This strengthens the interpretation: same-config controls are stable, while changing the KV config reduces paired semantic trace fidelity despite all aggregate scenario scores remaining 100%.
+
 Interpretation:
 
 ```text
