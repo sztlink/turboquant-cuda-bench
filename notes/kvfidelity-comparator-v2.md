@@ -61,6 +61,7 @@ Relevant files:
 scripts/kvfidelity-compare-tool-eval-bench.mjs
 bench/agentic-context-fidelity/kvfidelity-tool-ontology.json
 bench/agentic-context-fidelity/kvfidelity-scenario-metadata.json
+bench/agentic-context-fidelity/kvfidelity-review-overrides.json
 scripts/kvfidelity-comparator-v2-spec.md
 ```
 
@@ -84,6 +85,12 @@ kvfidelity-v2-report.md
 human-review-queue.md   # review queue; filename retained for compatibility
 ```
 
+Trace-bound review overrides can be supplied with:
+
+```bash
+--review-overrides bench/agentic-context-fidelity/kvfidelity-review-overrides.json
+```
+
 ## Methodology update: review metadata must be trace-bound
 
 During the severity sweep below, I found a methodology bug in v2: scenario-level review metadata could be reused by `scenario_id` even when the new baseline/candidate trace had a different direction or different argument values.
@@ -98,7 +105,7 @@ metadata_stale: true
 public_evidence_eligible: false
 ```
 
-unless the review is explicitly scenario-global, or future metadata is trace-bound by labels / hashes / drift predicates.
+unless the review is explicitly scenario-global, or review metadata is trace-bound by labels and semantic/signature path hashes.
 
 `TC-45` remains a scenario-global artifact. Other scenario metadata is not treated as fresh review by default.
 
@@ -132,7 +139,7 @@ Same-config controls were clean:
 
 ## Corrected same-build curve
 
-After the metadata guard and an explicit agent-assisted review pass for contested cases (`TC-43`, `TC-54`, `TC-56`), the corrected curve is:
+After the metadata guard and an explicit trace-bound, agent-assisted review pass encoded in `kvfidelity-review-overrides.json`, the corrected curve is reproducible directly from the comparator:
 
 | Candidate | Score | `EQUIVALENT` | `REGRESSION_MODERATE` | `REGRESSION_SOFT` | `IMPROVEMENT` | `ARTIFACT` | High-conf reg |
 |---|---:|---:|---:|---:|---:|---:|---:|

@@ -16,7 +16,8 @@ function usage(exitCode = 0) {
   node scripts/kvfidelity-compare-tool-eval-bench.mjs \\
     --report-a baseline.md --report-b candidate.md \\
     [--label-a q8/q8] [--label-b q8/turbo3] [--out-dir out] \\
-    [--mode v1|v2] [--tool-ontology path.json] [--scenario-metadata path.json]
+    [--mode v1|v2] [--tool-ontology path.json] [--scenario-metadata path.json] \\
+    [--review-overrides path.json]
 
 Outputs paired trace metrics as JSON and/or Markdown. v2 adds operational
 classification for publish/review/exclude decisions.
@@ -46,6 +47,7 @@ const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(SCRIPT_DIR, "..");
 const DEFAULT_TOOL_ONTOLOGY_PATH = path.join(REPO_ROOT, "bench/agentic-context-fidelity/kvfidelity-tool-ontology.json");
 const DEFAULT_SCENARIO_METADATA_PATH = path.join(REPO_ROOT, "bench/agentic-context-fidelity/kvfidelity-scenario-metadata.json");
+const DEFAULT_REVIEW_OVERRIDES_PATH = path.join(REPO_ROOT, "bench/agentic-context-fidelity/kvfidelity-review-overrides.json");
 
 let TOOL_ONTOLOGY = { tools: {}, default_volatile_args: ["body", "content", "message", "raw", "metadata", "timestamp", "request_id"] };
 let TOOL_ONTOLOGY_SOURCE = null;
@@ -70,6 +72,11 @@ function configureToolOntology(filePath, { required = false } = {}) {
 function loadScenarioMetadata(filePath) {
   const resolved = filePath ? path.resolve(filePath) : DEFAULT_SCENARIO_METADATA_PATH;
   return maybeLoadJson(resolved) ?? { version: 0, scenarios: {} };
+}
+function loadReviewOverrides(filePath) {
+  const resolved = filePath ? path.resolve(filePath) : DEFAULT_REVIEW_OVERRIDES_PATH;
+  const data = maybeLoadJson(resolved) ?? { version: 0, reviews: [] };
+  return { ...data, source: existsSync(resolved) ? resolved : null, reviews: Array.isArray(data.reviews) ? data.reviews : [] };
 }
 function toolSpec(name) { return TOOL_ONTOLOGY.tools?.[name] ?? {}; }
 function isDangerousTool(name) { return Boolean(toolSpec(name).dangerous); }
@@ -301,6 +308,10 @@ function compareScenario(scenarioId, baseline, candidate) {
     candidate_path_semantic: candidateSemanticPath,
     baseline_path_signatures: baselineSignaturePath,
     candidate_path_signatures: candidateSignaturePath,
+    baseline_semantic_path_hash: sha12(JSON.stringify(baselineSemanticPath)),
+    candidate_semantic_path_hash: sha12(JSON.stringify(candidateSemanticPath)),
+    baseline_signature_path_hash: sha12(JSON.stringify(baselineSignaturePath)),
+    candidate_signature_path_hash: sha12(JSON.stringify(candidateSignaturePath)),
     baseline_summary: baseline.summary,
     candidate_summary: candidate.summary,
   };
@@ -366,7 +377,46 @@ function reviewMetadataApplies(meta, r) {
 function hasReviewLikeMetadata(meta) {
   return Boolean(meta && (meta.human_reviewed || meta.human_label || meta.category_override || meta.direction_override || meta.primary_class_override || meta.severity !== undefined || meta.auto_confidence || meta.notes));
 }
-function classifyScenarioV2(r, scenarioMetadata = {}) {
+function reviewMatchesTrace(review, r, labels) {
+  if (!review || review.scenario_id !== r.scenario_id) return false;
+  if (review.baseline_label && review.baseline_label !== labels.baseline) return false;
+  if (review.candidate_label && review.candidate_label !== labels.candidate) return false;
+  if (review.baseline_semantic_path_hash && review.baseline_semantic_path_hash !== r.baseline_semantic_path_hash) return false;
+  if (review.candidate_semantic_path_hash && review.candidate_semantic_path_hash !== r.candidate_semantic_path_hash) return false;
+  if (review.baseline_signature_path_hash && review.baseline_signature_path_hash !== r.baseline_signature_path_hash) return false;
+  if (review.candidate_signature_path_hash && review.candidate_signature_path_hash !== r.candidate_signature_path_hash) return false;
+  return true;
+}
+function findTraceBoundReview(r, reviewOverrides = {}, labels = {}) {
+  return (reviewOverrides.reviews ?? []).find((review) => reviewMatchesTrace(review, r, labels)) ?? null;
+}
+function applyTraceBoundReview(classification, review) {
+  if (!review) return classification;
+  const category = review.category ?? classification.category;
+  return {
+    ...classification,
+    category,
+    severity: Number.isFinite(review.severity) ? review.severity : classification.severity,
+    auto_confidence: review.confidence ?? review.auto_confidence ?? classification.auto_confidence,
+    human_label: review.human_label ?? null,
+    human_reviewed: Boolean(review.human_reviewed),
+    source_reviewed: Boolean(review.human_reviewed),
+    agent_reviewed: review.review_kind === "agent" || Boolean(review.agent_reviewed),
+    review_kind: review.review_kind ?? "trace_bound",
+    review_id: review.id ?? null,
+    metadata_stale: false,
+    trace_bound_review_applied: true,
+    primary_class: review.primary_class ?? review.mechanism ?? classification.primary_class,
+    mechanism_classes: review.mechanism_classes ?? (review.mechanism ? [review.mechanism] : classification.mechanism_classes),
+    direction: review.direction ?? classification.direction,
+    review_status: (review.review_kind === "agent" || review.agent_reviewed) ? "agent_reviewed" : (review.human_reviewed ? "source_reviewed" : "trace_bound_reviewed"),
+    public_evidence_eligible: Boolean(review.public_evidence_eligible),
+    exclude_from_public_aggregates: Boolean(review.exclude_from_public_aggregates),
+    exclude_from_degradation_aggregates: Boolean(review.exclude_from_degradation_aggregates) || category === "IMPROVEMENT" || category === "ARTIFACT",
+    rationale: review.rationale ?? classification.rationale,
+  };
+}
+function classifyScenarioV2(r, scenarioMetadata = {}, reviewOverrides = {}, labels = {}) {
   const rawMeta = scenarioMetadata.scenarios?.[r.scenario_id] ?? {};
   const metadataReviewApplied = reviewMetadataApplies(rawMeta, r);
   const metadataStale = !metadataReviewApplied && hasReviewLikeMetadata(rawMeta);
@@ -437,15 +487,17 @@ function classifyScenarioV2(r, scenarioMetadata = {}) {
   const reviewStatus = sourceReviewed ? "source_reviewed" : (metadataStale ? "stale_metadata_needs_review" : (autoConfidence === "high" ? "auto_only" : "needs_review"));
   const primaryClass = meta.primary_class_override ?? meta.expected_primary_class ?? mechanisms[0] ?? "exact_or_equivalent";
 
-  return {
+  const classification = {
     category,
     severity: sev,
     auto_confidence: autoConfidence,
     human_label: humanLabel,
     human_reviewed: sourceReviewed,
     source_reviewed: sourceReviewed,
+    agent_reviewed: false,
     metadata_review_applied: metadataReviewApplied,
     metadata_stale: metadataStale,
+    trace_bound_review_applied: false,
     primary_class: primaryClass,
     mechanism_classes: mechanisms,
     direction,
@@ -455,6 +507,7 @@ function classifyScenarioV2(r, scenarioMetadata = {}) {
     exclude_from_degradation_aggregates: Boolean(meta.exclude_from_degradation_aggregates) || category === "IMPROVEMENT" || category === "ARTIFACT",
     rationale: metadataReviewApplied ? (meta.notes ?? null) : null,
   };
+  return applyTraceBoundReview(classification, findTraceBoundReview(r, reviewOverrides, labels));
 }
 
 function renderPath(pathItems) { return pathItems.length ? pathItems.map((x) => `\`${x}\``).join(" → ") : "∅"; }
@@ -568,13 +621,14 @@ function main() {
   if (!["v1", "v2"].includes(mode)) throw new Error(`Unsupported --mode: ${mode}`);
   configureToolOntology(args.toolOntology, { required: mode === "v2" });
   const scenarioMetadata = mode === "v2" ? loadScenarioMetadata(args.scenarioMetadata) : { version: 0, scenarios: {} };
+  const reviewOverrides = mode === "v2" ? loadReviewOverrides(args.reviewOverrides) : { version: 0, reviews: [] };
 
   const baseline = parseReportMarkdown(args.reportA), candidate = parseReportMarkdown(args.reportB);
   const ids = [...baseline.scenarios.keys()].filter((id) => candidate.scenarios.has(id)).sort();
   if (!ids.length) throw new Error("No overlapping scenario ids between reports.");
   const scenarios = ids.map((id) => {
     const compared = compareScenario(id, baseline.scenarios.get(id), candidate.scenarios.get(id));
-    if (mode === "v2") compared.classification = classifyScenarioV2(compared, scenarioMetadata);
+    if (mode === "v2") compared.classification = classifyScenarioV2(compared, scenarioMetadata, reviewOverrides, { baseline: args.labelA, candidate: args.labelB });
     return compared;
   });
   const metrics = {
@@ -585,6 +639,7 @@ function main() {
     config: {
       tool_ontology: TOOL_ONTOLOGY_SOURCE,
       scenario_metadata: mode === "v2" ? path.resolve(args.scenarioMetadata ?? DEFAULT_SCENARIO_METADATA_PATH) : null,
+      review_overrides: mode === "v2" ? reviewOverrides.source : null,
     },
     runs: { baseline: { run_id: baseline.runId, model: baseline.model, report: path.resolve(args.reportA) }, candidate: { run_id: candidate.runId, model: candidate.model, report: path.resolve(args.reportB) } },
     aggregate: aggregate(scenarios),
