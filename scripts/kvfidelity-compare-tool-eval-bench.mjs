@@ -355,8 +355,22 @@ function defaultMechanismClasses(r) {
   if (!classes.length) classes.push("exact_or_equivalent");
   return uniq(classes);
 }
+function reviewMetadataApplies(meta, r) {
+  if (!meta || !Object.keys(meta).length) return false;
+  if (meta.review_scope === "scenario_global") return true;
+  // Pair-specific/source-review metadata must not be reused by scenario id alone.
+  // Future trace-bound metadata should match labels and/or semantic path hashes here.
+  if (meta.review_scope === "trace_bound") return false;
+  return false;
+}
+function hasReviewLikeMetadata(meta) {
+  return Boolean(meta && (meta.human_reviewed || meta.human_label || meta.category_override || meta.direction_override || meta.primary_class_override || meta.severity !== undefined || meta.auto_confidence || meta.notes));
+}
 function classifyScenarioV2(r, scenarioMetadata = {}) {
-  const meta = scenarioMetadata.scenarios?.[r.scenario_id] ?? {};
+  const rawMeta = scenarioMetadata.scenarios?.[r.scenario_id] ?? {};
+  const metadataReviewApplied = reviewMetadataApplies(rawMeta, r);
+  const metadataStale = !metadataReviewApplied && hasReviewLikeMetadata(rawMeta);
+  const meta = metadataReviewApplied ? rawMeta : {};
   const traceEquivalent = r.status_equal && r.tool_name_path_equal && r.semantic_path_equal && r.tool_signature_path_equal && !r.action_order_drift && r.extra_action_class_count === 0 && r.semantic_argument_drift_count === 0 && r.dangerous_duplicate_action_count === 0;
   if (traceEquivalent) {
     return {
@@ -418,9 +432,9 @@ function classifyScenarioV2(r, scenarioMetadata = {}) {
   if (meta.auto_confidence) autoConfidence = meta.auto_confidence;
   if (category === "ARTIFACT") direction = meta.direction_override ?? "scenario_artifact";
 
-  const humanReviewed = Boolean(meta.human_reviewed);
+  const sourceReviewed = Boolean(meta.human_reviewed);
   const humanLabel = meta.human_label ?? null;
-  const reviewStatus = humanReviewed ? "source_reviewed" : (autoConfidence === "high" ? "auto_only" : "needs_review");
+  const reviewStatus = sourceReviewed ? "source_reviewed" : (metadataStale ? "stale_metadata_needs_review" : (autoConfidence === "high" ? "auto_only" : "needs_review"));
   const primaryClass = meta.primary_class_override ?? meta.expected_primary_class ?? mechanisms[0] ?? "exact_or_equivalent";
 
   return {
@@ -428,15 +442,18 @@ function classifyScenarioV2(r, scenarioMetadata = {}) {
     severity: sev,
     auto_confidence: autoConfidence,
     human_label: humanLabel,
-    human_reviewed: humanReviewed,
+    human_reviewed: sourceReviewed,
+    source_reviewed: sourceReviewed,
+    metadata_review_applied: metadataReviewApplied,
+    metadata_stale: metadataStale,
     primary_class: primaryClass,
     mechanism_classes: mechanisms,
     direction,
     review_status: reviewStatus,
-    public_evidence_eligible: humanReviewed && !["ARTIFACT"].includes(category) && !meta.exclude_from_public_aggregates,
+    public_evidence_eligible: sourceReviewed && metadataReviewApplied && !["ARTIFACT"].includes(category) && !meta.exclude_from_public_aggregates,
     exclude_from_public_aggregates: Boolean(meta.exclude_from_public_aggregates),
     exclude_from_degradation_aggregates: Boolean(meta.exclude_from_degradation_aggregates) || category === "IMPROVEMENT" || category === "ARTIFACT",
-    rationale: meta.notes ?? null,
+    rationale: metadataReviewApplied ? (meta.notes ?? null) : null,
   };
 }
 
@@ -465,10 +482,10 @@ function renderMarkdown(metrics) {
     md.push("Operational category is the publish/review/exclude decision layer. Mechanism classes describe the trace behavior behind it.", "");
     for (const [category, count] of Object.entries(metrics.aggregate.v2_category_counts ?? {})) md.push(`- ${category}: **${count}**`);
     md.push(`- High-confidence regression count: **${metrics.aggregate.v2_high_confidence_regression_count ?? 0}**`, "");
-    md.push("| Scenario | Category | Sev | Auto confidence | Human | Primary mechanism | Public evidence |", "|---|---|---:|---|---:|---|---:|");
+    md.push("| Scenario | Category | Sev | Auto confidence | Review status | Primary mechanism | Public evidence |", "|---|---|---:|---|---|---|---:|");
     for (const r of metrics.scenarios) {
       const c = r.classification;
-      md.push(`| ${r.scenario_id} | ${c?.category ?? "—"} | ${c?.severity ?? "—"} | ${c?.auto_confidence ?? "—"} | ${c?.human_reviewed ? "✅" : "—"} | ${c?.primary_class ?? "—"} | ${c?.public_evidence_eligible ? "✅" : "—"} |`);
+      md.push(`| ${r.scenario_id} | ${c?.category ?? "—"} | ${c?.severity ?? "—"} | ${c?.auto_confidence ?? "—"} | ${c?.review_status ?? "—"} | ${c?.primary_class ?? "—"} | ${c?.public_evidence_eligible ? "✅" : "—"} |`);
     }
     md.push("");
   }
@@ -524,7 +541,7 @@ function renderHumanReviewQueue(metrics) {
       return (a.first_action_divergence_turn_semantic ?? 999) - (b.first_action_divergence_turn_semantic ?? 999);
     });
   const md = [];
-  md.push("# KVFidelity v2 human-review queue", "", `Generated: ${metrics.generated_at}`, "");
+  md.push("# KVFidelity v2 review queue", "", `Generated: ${metrics.generated_at}`, "");
   md.push("Review goal: decide whether each non-equivalent trace difference is regression, improvement, artifact, or benign drift before public aggregation.", "");
   for (const r of items) {
     const c = r.classification;
@@ -537,7 +554,8 @@ function renderHumanReviewQueue(metrics) {
     md.push(`- baseline actions: ${r.baseline_path_names.join(" → ") || "∅"}`);
     md.push(`- candidate actions: ${r.candidate_path_names.join(" → ") || "∅"}`);
     md.push(`- mechanism classes: ${(c.mechanism_classes ?? []).join(", ")}`);
-    if (c.rationale) md.push(`- prior rationale: ${c.rationale}`);
+    if (c.rationale) md.push(`- source rationale: ${c.rationale}`);
+    if (c.metadata_stale) md.push("- stale metadata warning: scenario metadata exists but was not trace-bound/applied; do not reuse prior review blindly.");
     md.push("- reviewer question: does this category reflect candidate behavior, or is it improvement/artifact/benign equivalence?", "");
   }
   if (!items.length) md.push("No non-equivalent review items.", "");
