@@ -424,3 +424,72 @@ scripts/kvfidelity-compare-tool-eval-bench.mjs
 ```
 
 It intentionally stays outside upstream core while `SeraphimSerapis/tool-eval-bench#10` is pending.
+
+## KVFidelity tool-eval-bench long-stateful subset — 4090
+
+Following Casey/Giselle guidance, the next run moved from short irreversible-gate tasks to `tool-eval-bench` long/stateful scenarios where memory, correction, polling and accumulating constraints matter.
+
+```text
+host: 4090
+model: C:\models\q36_35b.gguf via llama-server
+ctx_size: 18000
+temp: 0
+seed: 42
+backend: llama.cpp OpenAI-compatible endpoint over SSH tunnel
+scenarios: TC-74, TC-63, TC-62, TC-61
+artifacts: /home/aya/implante/tmp/kvfidelity-tool-eval-4090-2026-05-07/
+report: /home/aya/implante/tmp/kvfidelity-tool-eval-4090-2026-05-07/REPORT.md
+```
+
+Runs:
+
+```text
+q8q8-a:        ctk=q8_0,  ctv=q8_0
+q8q8-b:        ctk=q8_0,  ctv=q8_0  (duplicate control)
+q8turbo3:      ctk=q8_0,  ctv=turbo3
+turbo3turbo3:  ctk=turbo3, ctv=turbo3
+```
+
+All four runs scored 100% in `tool-eval-bench`:
+
+| Config | tool-eval score | Scenario statuses |
+|---|---:|---|
+| q8q8-a | 8/8 | TC-61/62/63/74 pass |
+| q8q8-b | 8/8 | TC-61/62/63/74 pass |
+| q8turbo3 | 8/8 | TC-61/62/63/74 pass |
+| turbo3turbo3 | 8/8 | TC-61/62/63/74 pass |
+
+Paired KVFidelity comparison over Markdown traces:
+
+| Pair | Tool name path equality | Tool signature path equality | Status equality | Candidate-only action rate | Earliest action divergence | Notes |
+|---|---:|---:|---:|---:|---:|---|
+| q8q8-a vs q8q8-b | 100.0% | 100.0% | 100.0% | 0.0% | none | duplicate q8/q8 control stable |
+| q8q8-a vs q8/turbo3 | 100.0% | 75.0% | 100.0% | 18.8% | 1 | TC-62 argument/payload drift |
+| q8q8-a vs turbo3/turbo3 | 75.0% | 50.0% | 100.0% | 62.5% | 1 | TC-62 drift + TC-74 action-order/shape drift |
+
+Key observation:
+
+```text
+Same model/scenarios all pass aggregate scoring, while paired action traces diverge under turbo3 KV configs.
+```
+
+The duplicate `q8/q8` control was exactly stable across this subset, which strengthens the signal that the turbo3 differences are not just harness nondeterminism.
+
+The strongest candidate is `turbo3/turbo3` on `TC-74`: tool-name path equality breaks. The candidate skips early contact lookups and creates calendar events using raw names (`Mark`, `Sarah`) before resolving contacts later, whereas q8/q8 resolves contacts earlier and uses email addresses in event arguments.
+
+Caveat: the current comparator is intentionally strict on full tool signatures. Some `candidate-only action rate` reflects argument drift rather than semantically dangerous extra action. The next comparator iteration should add semantic projections/action classes so we can distinguish:
+
+```text
+same action class + different args
+same tool path + semantically stale args
+extra action class
+dangerous duplicate action
+```
+
+Interpretation:
+
+```text
+This is the first useful KVFidelity-shaped signal: aggregate tool-eval pass remains 100%, but paired trace fidelity drops under aggressive KV configs.
+```
+
+Still not a public safety/equivalence claim. It is a lab-notebook result showing why paired trace comparison is a meaningful additional lens over ordinary per-run scoring.
