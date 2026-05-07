@@ -1103,28 +1103,6 @@
       "rationale": "Same contact→translate→send workflow, same recipient and translated body; only email subject shifts from English to localized hybrid German subject."
     },
     {
-      "id": "holdout-final-turbo4-TC-29",
-      "scenario_id": "TC-29",
-      "baseline_label": "q8q8-a",
-      "candidate_label": "q8turbo4-a",
-      "baseline_semantic_path_hash": "4f53cda18c2b",
-      "candidate_semantic_path_hash": "4f53cda18c2b",
-      "baseline_signature_path_hash": "4f53cda18c2b",
-      "candidate_signature_path_hash": "4f53cda18c2b",
-      "review_kind": "agent",
-      "agent_reviewed": true,
-      "category": "ARTIFACT",
-      "severity": 0,
-      "confidence": "high",
-      "primary_class": "markdown_nested_code_fence_parse_artifact",
-      "mechanism_classes": [
-        "markdown_nested_code_fence_parse_artifact"
-      ],
-      "direction": "measurement_artifact",
-      "public_evidence_eligible": false,
-      "rationale": "Raw report shows candidate passed and used no tools; comparator status null is caused by nested markdown code fence in final answer breaking report parsing, not trace drift."
-    },
-    {
       "id": "holdout-final-turbo4-TC-38",
       "scenario_id": "TC-38",
       "baseline_label": "q8q8-a",
@@ -1189,50 +1167,6 @@
       "direction": "benign_equivalent",
       "public_evidence_eligible": false,
       "rationale": "Same weather request for München and German response; candidate omits explicit units=celsius default while semantic action is unchanged."
-    },
-    {
-      "id": "holdout-final-turbo2-TC-28",
-      "scenario_id": "TC-28",
-      "baseline_label": "q8q8-a",
-      "candidate_label": "q8turbo2-a",
-      "baseline_semantic_path_hash": "495d4f1d3896",
-      "candidate_semantic_path_hash": "495d4f1d3896",
-      "baseline_signature_path_hash": "495d4f1d3896",
-      "candidate_signature_path_hash": "495d4f1d3896",
-      "review_kind": "agent",
-      "agent_reviewed": true,
-      "category": "ARTIFACT",
-      "severity": 0,
-      "confidence": "high",
-      "primary_class": "markdown_nested_code_fence_parse_artifact",
-      "mechanism_classes": [
-        "markdown_nested_code_fence_parse_artifact"
-      ],
-      "direction": "measurement_artifact",
-      "public_evidence_eligible": false,
-      "rationale": "Raw baseline and candidate both pass with same search→read path and same localhost typo fix; baseline null status is a parser artifact from nested yaml code fence."
-    },
-    {
-      "id": "holdout-final-turbo2-TC-30",
-      "scenario_id": "TC-30",
-      "baseline_label": "q8q8-a",
-      "candidate_label": "q8turbo2-a",
-      "baseline_semantic_path_hash": "8f393cf7f116",
-      "candidate_semantic_path_hash": "8f393cf7f116",
-      "baseline_signature_path_hash": "8f393cf7f116",
-      "candidate_signature_path_hash": "8f393cf7f116",
-      "review_kind": "agent",
-      "agent_reviewed": true,
-      "category": "ARTIFACT",
-      "severity": 0,
-      "confidence": "high",
-      "primary_class": "markdown_nested_code_fence_parse_artifact",
-      "mechanism_classes": [
-        "markdown_nested_code_fence_parse_artifact"
-      ],
-      "direction": "measurement_artifact",
-      "public_evidence_eligible": false,
-      "rationale": "Raw baseline and candidate both run 2+2 then correct and pass; candidate null status is a parser artifact from nested code fence around final output."
     },
     {
       "id": "holdout-final-turbo2-TC-38",

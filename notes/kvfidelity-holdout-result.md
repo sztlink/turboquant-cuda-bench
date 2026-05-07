@@ -62,9 +62,9 @@ All same-config controls were exact under comparator v2:
 
 | Candidate | Score | Equivalent | Soft regression | Moderate regression | Artifact | High-confidence regression |
 |---|---:|---:|---:|---:|---:|---:|
-| q8/turbo4 | 38/40 | 18 | 1 | 0 | 1 | 0 |
+| q8/turbo4 | 38/40 | 19 | 1 | 0 | 0 | 0 |
 | q8/turbo3 | 38/40 | 20 | 0 | 0 | 0 | 0 |
-| q8/turbo2 | 36/40 | 17 | 0 | 1 | 2 | 1 |
+| q8/turbo2 | 36/40 | 19 | 0 | 1 | 0 | 1 |
 
 ## Remaining reviewed differences
 
@@ -73,17 +73,17 @@ All same-config controls were exact under comparator v2:
 | q8/turbo4 | TC-31 | REGRESSION_SOFT | agent_reviewed | Candidate asks for clarification before doing baseline's contact/file disambiguation; both pass. |
 | q8/turbo2 | TC-31 | REGRESSION_MODERATE | agent_reviewed | Candidate does not attempt ambiguity resolution and fails; baseline does contact/file disambiguation and passes. |
 
-## Artifacts
+## Parser correction
 
-Three apparent status differences were reviewed as report-parser artifacts caused by nested markdown code fences in model answers:
+The initial hold-out review found three apparent status differences caused by nested markdown code fences in model answers:
 
-| Config | Scenario | Raw outcome | Comparator artifact |
+| Config | Scenario | Raw outcome | Previous parser artifact |
 |---|---|---|---|
 | q8/turbo4 | TC-29 | pass, no tools | candidate parsed as null |
 | q8/turbo2 | TC-28 | pass, same search→read path | baseline parsed as null |
 | q8/turbo2 | TC-30 | pass, same run_code→run_code path | candidate parsed as null |
 
-These are not evidence of model/tool trace drift.
+The comparator parser was updated to parse scenario sections by `### TC-*` headings rather than the first closing code fence. These cases now parse as equivalent and are no longer artifact rows in the final curve.
 
 ## Interpretation
 
@@ -91,7 +91,7 @@ The hold-out result is narrower than the raw comparator output:
 
 - clean duplicate controls show the paired harness can be stable on this slice;
 - most raw non-equivalents were benign query/default/wording variations or parser artifacts;
-- after trace-bound review, `q8/turbo3` was 20/20 equivalent on this hold-out;
+- after the parser correction and trace-bound review, `q8/turbo3` was 20/20 equivalent on this hold-out;
 - `q8/turbo4` retained one soft behavioral contraction;
 - `q8/turbo2` retained one high-confidence moderate regression.
 
@@ -101,5 +101,5 @@ This supports the narrow KVFidelity framing: action traces can drift under KV/ca
 
 ```text
 /home/aya/implante/tmp/kvfidelity-holdout-samebuild-fix-unpad-4090-2026-05-07/HOLDOUT-FINAL-REVIEWED-SUMMARY.md
-/home/aya/implante/tmp/kvfidelity-holdout-samebuild-fix-unpad-4090-2026-05-07/compares-final-reviewed/
+/home/aya/implante/tmp/kvfidelity-holdout-samebuild-fix-unpad-4090-2026-05-07/compares-final-parserfix/
 ```

@@ -129,11 +129,42 @@ function parseReportMarkdown(filePath) {
   const runId = text.match(/\*\*Run ID\*\*:\s*`([^`]+)`/)?.[1] ?? path.basename(filePath, ".md");
   const model = text.match(/\*\*Model\*\*:\s*`?([^`\n]+?)`?\s*(?:\n|$)/)?.[1]?.trim() ?? null;
   const traces = new Map();
-  const re = /^###\s+([^\n]+)\n\s*```text\n([\s\S]*?)\n```/gm;
-  let m;
-  while ((m = re.exec(text))) traces.set(m[1].trim(), parseRawTrace(m[1].trim(), m[2]));
+
+  // Do not parse scenario traces with a single fenced-block regex. Some model
+  // final answers legitimately contain Markdown code fences (```python, ```yaml,
+  // etc.). In tool-eval-bench reports those nested fences appear inside the
+  // outer ```text trace block and can prematurely terminate a naive regex,
+  // dropping the later verdict=/summary= lines. Parse by scenario section
+  // instead: from `### TC-*` to the next `### TC-*`, then strip only the wrapper.
+  const headings = [...text.matchAll(/^###\s+(TC-\d+\b[^\n]*)\n/gm)];
+  for (let i = 0; i < headings.length; i++) {
+    const heading = headings[i];
+    const scenarioId = heading[1].trim();
+    const start = heading.index + heading[0].length;
+    const end = i + 1 < headings.length ? headings[i + 1].index : text.length;
+    const section = text.slice(start, end);
+    const rawLog = extractTraceSectionLog(section);
+    if (rawLog) traces.set(scenarioId, parseRawTrace(scenarioId, rawLog));
+  }
+
   if (!traces.size) throw new Error(`No trace blocks found in ${filePath}`);
   return { filePath, runId, model, scenarios: traces };
+}
+
+function extractTraceSectionLog(section) {
+  const lines = section.replace(/\r\n/g, "\n").split("\n");
+  let start = lines.findIndex((line) => line.trim() === "```text");
+  if (start === -1) start = lines.findIndex((line) => line.trim().startsWith("```") && line.includes("text"));
+  if (start === -1) return null;
+
+  let body = lines.slice(start + 1);
+  while (body.length && !body[body.length - 1].trim()) body.pop();
+
+  // Remove only the final wrapper fence. Earlier ``` lines may be part of the
+  // assistant's answer and must remain in the raw log so later verdict/summary
+  // lines are still visible to parseRawTrace().
+  if (body.length && body[body.length - 1].trim() === "```") body.pop();
+  return body.join("\n");
 }
 
 function parseRawTrace(scenarioIdFromHeader, rawLog) {
