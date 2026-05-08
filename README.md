@@ -46,6 +46,15 @@ Production server baseline: `llama-server` TheTom fork, 65K ctx, flash-attn on.
 | 2026-05-06 | [agentic-context-fidelity](bench/agentic-context-fidelity/) | A/B action-level fidelity smoke: q8/q8 vs q4/q4 through 32k |
 | 2026-05-06 | [acf-ramp-protocol](notes/acf-ramp-protocol.md) | Draft threshold/ramp protocol for action-level fidelity, analogous to FTP testing |
 
+## Recent results
+
+- **KVFidelity / Action-Trace Fidelity synthesis (2026-05-07):** [summary](notes/kvfidelity-2026-05-07-summary.md)
+- **Comparator v2 + same-build severity sweep:** [method/results](notes/kvfidelity-comparator-v2.md)
+- **Frozen hold-out:** [protocol](notes/kvfidelity-holdout-protocol.md) · [reviewed result](notes/kvfidelity-holdout-result.md)
+- **TC-31 steering/order follow-ups:** [steering](notes/kvfidelity-tc31-prompt-steering-result.md) · [batch/order](notes/kvfidelity-tc31-batch-order-result.md)
+
+Short read: same-config controls were stable, while cross-KV action traces could drift. Prompt/tool-use steering can recover benchmark pass/fail on TC-31, but it does not guarantee identical traces; TC-31 also depends on scenario order/context.
+
 ## Key findings
 
 - **q8_0-K + turbo4-V**: +0.48% PPL, ~178 t/s TG — production sweet spot for 35B-A3B
