@@ -1,0 +1,20 @@
+scope_status: ready
+scope_path: /home/aya/implante/research/turboquant-cuda-bench
+chunks: 5
+used_rerank: False
+paraphrases_count: 4
+
+## 1. score=0.6932 /home/aya/implante/research/turboquant-cuda-bench/notes/kvfidelity-cross-gpu-mini-check.md:1-72
+# KVFidelity cross-GPU mini-check Date: 2026-05-09 Status: methodological mini-check, not a public degradation benchmark ## Question Does the small KVFidelity action-trace drift signal survive outside the original 4090 setup, and what new controls are needed before calling a result cross-GPU reproducible? ## Short answer The same-host duplicate controls were clean on both machines, and within-host A/B drift appeared on both 4090 and 3090. However, the cross-GPU same-config traces were not stable
+
+## 2. score=0.6685 /home/aya/implante/research/turboquant-cuda-bench/notes/kvfidelity-positioning-one-pager.md:68-137
+- same-config duplicate controls; - trace-bound review categories; - runtime config labels; - scenario order as a measured axis. ## Current evidence package Cross-GPU mini-check: - 48 runs / 192 scenario traces across RTX 4090 and RTX 3090; - same-host duplicate controls were 96/96 equivalent; - within-host A/B drift appeared on both machines; - cross-host same-config traces also diverged, but binary hashes and drivers differed; - conclusion: host/binary/driver/runtime must be first-class KVFide
+
+## 3. score=0.5524 /home/aya/implante/research/turboquant-cuda-bench/notes/kvfidelity-cross-gpu-mini-check.md:215-272
+Reading: - TC-31 remains the strongest reviewed drift target. - The general ambiguity-resolution axis repeats: tools-first, safe clarification, or no-resolution failure. - The direction differs by host/config, especially q8/turbo2. - Because binary and driver differ, TC-31 should be described as deployment-stack sensitive, not hardware-only sensitive. ## What this adds to KVFidelity This mini-check adds a new control requirement: ```text For cross-host KVFidelity claims, same-build is not enough
+
+## 4. score=0.5336 /home/aya/implante/research/turboquant-cuda-bench/bench/thetom-stack-smoke/longctx-retrieval-2026-05-09/request.json:1-1
+{"session_id": "sztlink-longctx-smoke-20260509", "prefill_text": "Working in /home/aya/implante/research/turboquant-cuda-bench/notes/kvfidelity-cross-gpu-mini-check.md and /home/aya/implante/research/turboquant-cuda-bench/notes/thetom-stack-integration.md", "query": "KVFidelity cross GPU mini check binary hash driver deployment stack caveat", "top_k": 5, "explicit_scope": "/home/aya/implante/research/turboquant-cuda-bench"}
+
+## 5. score=0.4507 /home/aya/implante/research/turboquant-cuda-bench/notes/kvfidelity-positioning-one-pager.md:1-66
+# KVFidelity positioning one-pager Date: 2026-05-09 Status: draft canonical positioning note ## One-line framing KVFidelity applies trajectory-aware / trace-based evaluation to KV/V-cache compression: paired action-trace comparison across runtime inference configurations, with same-build controls and scenario order as a measured axis. ## What KVFidelity is KVFidelity is an evaluation harness, not a compression method. It asks: ```text If the model, task, prompt scaffold, decoding setup, seed, an

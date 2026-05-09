@@ -1,6 +1,6 @@
 {
   "schema": "sztlink.thetom_stack_smoke.v1",
-  "generatedAt": "2026-05-09T22:27:57.482Z",
+  "generatedAt": "2026-05-09T22:38:30.454Z",
   "repoRoot": "/home/aya/implante/research/turboquant-cuda-bench",
   "paths": {
     "tqkit": {
@@ -25,7 +25,7 @@
       "backends": {
         "command": "python3 -m tqkit.cli backends",
         "cwd": "/home/aya/implante/tmp/turboquant-build-context-2026-05-09/github/tqkit-clone",
-        "startedAt": "2026-05-09T22:27:57.483Z",
+        "startedAt": "2026-05-09T22:38:30.464Z",
         "exitCode": 0,
         "signal": null,
         "error": null,
@@ -35,7 +35,7 @@
       "reportQwen14b32k": {
         "command": "python3 -m tqkit.cli report --model qwen2.5-14b-instruct-1m --ctx 32K --layout tq+asym",
         "cwd": "/home/aya/implante/tmp/turboquant-build-context-2026-05-09/github/tqkit-clone",
-        "startedAt": "2026-05-09T22:27:57.567Z",
+        "startedAt": "2026-05-09T22:38:30.554Z",
         "exitCode": 0,
         "signal": null,
         "error": null,
@@ -45,7 +45,7 @@
       "strategiesQwen14b128k": {
         "command": "python3 -m tqkit.cli compare-strategies --model qwen2.5-14b-instruct-1m --ctx 128K",
         "cwd": "/home/aya/implante/tmp/turboquant-build-context-2026-05-09/github/tqkit-clone",
-        "startedAt": "2026-05-09T22:27:57.652Z",
+        "startedAt": "2026-05-09T22:38:30.629Z",
         "exitCode": 0,
         "signal": null,
         "error": null,
@@ -55,7 +55,7 @@
       "tableQwen35b": {
         "command": "python3 -m tqkit.cli table --model qwen3.6-35b-a3b --ctxs 18000 32768 65000 1M --layouts fp16 q8_0 tq+asym turbo4",
         "cwd": "/home/aya/implante/tmp/turboquant-build-context-2026-05-09/github/tqkit-clone",
-        "startedAt": "2026-05-09T22:27:57.735Z",
+        "startedAt": "2026-05-09T22:38:30.706Z",
         "exitCode": 0,
         "signal": null,
         "error": null,
@@ -65,7 +65,7 @@
       "tableQwen27b": {
         "command": "python3 -m tqkit.cli table --model qwen3.6-27b --ctxs 32768 65000 128K 1M --layouts fp16 q8_0 tq+asym turbo4",
         "cwd": "/home/aya/implante/tmp/turboquant-build-context-2026-05-09/github/tqkit-clone",
-        "startedAt": "2026-05-09T22:27:57.814Z",
+        "startedAt": "2026-05-09T22:38:30.781Z",
         "exitCode": 0,
         "signal": null,
         "error": null,
@@ -77,7 +77,7 @@
       "compareExamples": {
         "command": "python3 -m refract.cli compare refract/examples/catastrophic-symturbo.json refract/examples/clean-q8q8-mistral24b.json refract/examples/degraded-qwen7b.json refract/examples/distribution-broken-gemma26b.json",
         "cwd": "/home/aya/implante/tmp/turboquant-build-context-2026-05-09/github/turboquant_plus-clone",
-        "startedAt": "2026-05-09T22:27:57.895Z",
+        "startedAt": "2026-05-09T22:38:30.857Z",
         "exitCode": 0,
         "signal": null,
         "error": null,
@@ -89,17 +89,17 @@
       "dependencyProbe": {
         "command": "python3 -c \"import json\\nmods=['fastapi','uvicorn','pydantic','httpx','pathspec','watchdog','rank_bm25','sentence_transformers']\\nout={}\\nfor m in mods:\\n    try:\\n        __import__(m); out[m]='ok'\\n    except Exception as e:\\n        out[m]=type(e).__name__\\nprint(json.dumps(out, indent=2, sort_keys=True))\"",
         "cwd": "/home/aya/implante/tmp/turboquant-build-context-2026-05-09/github/longctx-clone/services/longctx-svc",
-        "startedAt": "2026-05-09T22:27:58.027Z",
+        "startedAt": "2026-05-09T22:38:30.994Z",
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "stdout": "{\n  \"fastapi\": \"ok\",\n  \"httpx\": \"ok\",\n  \"pathspec\": \"ok\",\n  \"pydantic\": \"ok\",\n  \"rank_bm25\": \"ok\",\n  \"sentence_transformers\": \"ModuleNotFoundError\",\n  \"uvicorn\": \"ok\",\n  \"watchdog\": \"ok\"\n}\n",
+        "stdout": "{\n  \"fastapi\": \"ok\",\n  \"httpx\": \"ok\",\n  \"pathspec\": \"ok\",\n  \"pydantic\": \"ok\",\n  \"rank_bm25\": \"ok\",\n  \"sentence_transformers\": \"ok\",\n  \"uvicorn\": \"ok\",\n  \"watchdog\": \"ok\"\n}\n",
         "stderr": ""
       },
       "version": {
         "command": "python3 -m longctx_svc.cli version",
         "cwd": "/home/aya/implante/tmp/turboquant-build-context-2026-05-09/github/longctx-clone/services/longctx-svc",
-        "startedAt": "2026-05-09T22:27:58.875Z",
+        "startedAt": "2026-05-09T22:38:39.805Z",
         "exitCode": 0,
         "signal": null,
         "error": null,
@@ -109,11 +109,11 @@
       "healthz": {
         "command": "bash -lc \"set -e\\nrm -f /tmp/thetom-longctx-smoke.log /tmp/thetom-longctx-health.json /tmp/thetom-longctx-status.txt\\nPYTHONPATH=\\\"/home/aya/implante/tmp/python-deps/longctx-svc-smoke:/home/aya/implante/tmp/turboquant-build-context-2026-05-09/github/longctx-clone/services/longctx-svc:/home/aya/implante/tmp/turboquant-build-context-2026-05-09/github/longctx-clone\\\" LONGCTX_NO_JANITOR=1 timeout 12s python3 -m longctx_svc.cli serve --host 127.0.0.1 --port 8876 > /tmp/thetom-longctx-smoke.log 2>&1 &\\npid=$!\\nfor i in $(seq 1 50); do\\n  if curl -fsS http://127.0.0.1:8876/healthz > /tmp/thetom-longctx-health.json 2>/tmp/thetom-longctx-curl.err; then\\n    curl -fsS -H 'Accept: text/plain' http://127.0.0.1:8876/longctx/status > /tmp/thetom-longctx-status.txt 2>/tmp/thetom-longctx-status.err || true\\n    kill $pid 2>/dev/null || true\\n    wait $pid 2>/dev/null || true\\n    echo 'healthz:'\\n    cat /tmp/thetom-longctx-health.json\\n    echo '\\nstatus:'\\n    cat /tmp/thetom-longctx-status.txt || true\\n    echo '\\nlog:'\\n    sed -n '1,80p' /tmp/thetom-longctx-smoke.log\\n    exit 0\\n  fi\\n  sleep 0.2\\ndone\\necho 'healthz failed'\\nsed -n '1,160p' /tmp/thetom-longctx-smoke.log || true\\nkill $pid 2>/dev/null || true\\nwait $pid 2>/dev/null || true\\nexit 1\"",
         "cwd": "/home/aya/implante/tmp/turboquant-build-context-2026-05-09/github/longctx-clone/services/longctx-svc",
-        "startedAt": "2026-05-09T22:27:58.923Z",
+        "startedAt": "2026-05-09T22:38:39.853Z",
         "exitCode": 0,
         "signal": null,
         "error": null,
-        "stdout": "healthz:\n{\"status\":\"ok\",\"version\":\"0.3.0a3\"}\nstatus:\n[longctx] mode: local-only\n[longctx] memory: 0 scopes loaded, 0.0 MB total\n[longctx] disk cache: /home/aya/.longctx, 0 scopes, 0.0 MB\nlog:\nINFO:     Started server process [3102332]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://127.0.0.1:8876 (Press CTRL+C to quit)\nlongctx-svc serving on http://127.0.0.1:8876 (local-only)\nINFO:     127.0.0.1:55318 - \"GET /healthz HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:55326 - \"GET /longctx/status HTTP/1.1\" 200 OK\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:     Application shutdown complete.\nINFO:     Finished server process [3102332]\n",
+        "stdout": "healthz:\n{\"status\":\"ok\",\"version\":\"0.3.0a3\"}\nstatus:\n[longctx] mode: local-only\n[longctx] memory: 0 scopes loaded, 0.0 MB total\n[longctx] disk cache: /home/aya/.longctx, 0 scopes, 0.0 MB\nlog:\nINFO:     Started server process [3105275]\nINFO:     Waiting for application startup.\nINFO:     Application startup complete.\nINFO:     Uvicorn running on http://127.0.0.1:8876 (Press CTRL+C to quit)\nlongctx-svc serving on http://127.0.0.1:8876 (local-only)\nINFO:     127.0.0.1:53938 - \"GET /healthz HTTP/1.1\" 200 OK\nINFO:     127.0.0.1:53952 - \"GET /longctx/status HTTP/1.1\" 200 OK\nINFO:     Shutting down\nINFO:     Waiting for application shutdown.\nINFO:     Application shutdown complete.\nINFO:     Finished server process [3105275]\n",
         "stderr": ""
       }
     }

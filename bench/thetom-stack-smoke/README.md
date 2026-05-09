@@ -2,10 +2,12 @@
 
 Local smoke adapter for incorporating public TheTom tools into this repo's validation workflow.
 
-Current receipt:
+Current receipts:
 
 - [latest/RESULTS.md](latest/RESULTS.md)
 - [latest/receipt.json](latest/receipt.json)
+- [longctx-retrieval-2026-05-09/RESULTS.md](longctx-retrieval-2026-05-09/RESULTS.md)
+- [refract-quick-cuda-2026-05-09/RESULTS.md](refract-quick-cuda-2026-05-09/RESULTS.md)
 
 Prepare minimal longctx web dependencies in a local pip target if needed:
 

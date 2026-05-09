@@ -1,6 +1,6 @@
 # TheTom stack smoke receipt
 
-Date: 2026-05-09T22:27:57.482Z
+Date: 2026-05-09T22:38:30.454Z
 
 ## Scope
 
@@ -114,7 +114,7 @@ distribution-broken-gemma26b       29.12 FAIL         17.32   17.59  100.00   78
   "pathspec": "ok",
   "pydantic": "ok",
   "rank_bm25": "ok",
-  "sentence_transformers": "ModuleNotFoundError",
+  "sentence_transformers": "ok",
   "uvicorn": "ok",
   "watchdog": "ok"
 }
@@ -140,17 +140,17 @@ status:
 [longctx] memory: 0 scopes loaded, 0.0 MB total
 [longctx] disk cache: /home/aya/.longctx, 0 scopes, 0.0 MB
 log:
-INFO:     Started server process [3102332]
+INFO:     Started server process [3105275]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8876 (Press CTRL+C to quit)
 longctx-svc serving on http://127.0.0.1:8876 (local-only)
-INFO:     127.0.0.1:55318 - "GET /healthz HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55326 - "GET /longctx/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53938 - "GET /healthz HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53952 - "GET /longctx/status HTTP/1.1" 200 OK
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [3102332]
+INFO:     Finished server process [3105275]
 ```
 
 ## Interpretation

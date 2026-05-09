@@ -96,9 +96,10 @@ export OPENAI_BASE_URL=http://localhost:8765/v1
 
 Current local status:
 
-- service boots with minimal web dependencies supplied via `PYTHONPATH`
+- service boots with dependencies supplied via `PYTHONPATH`
 - `/healthz` and `/longctx/status` pass
-- retrieval itself still needs `sentence-transformers` or a configured embedder package
+- real retrieval smoke passed with `sentence-transformers/all-MiniLM-L6-v2`
+- retrieval smoke artifact: [bench/thetom-stack-smoke/longctx-retrieval-2026-05-09/RESULTS.md](../bench/thetom-stack-smoke/longctx-retrieval-2026-05-09/RESULTS.md)
 
 Do not put `longctx` into the normal Pi path until a retrieval smoke has passed on a small repo and we can observe whether it improves or muddies actual work.
 
@@ -110,9 +111,22 @@ Do not put `longctx` into the normal Pi path until a retrieval smoke has passed 
 - REFRACT sample reports only prove the CLI can parse reports here. They do not score our hardware until we run real model/backend jobs.
 - `longctx-svc` boot is not a retrieval-quality claim.
 
+## CUDA REFRACT quick smoke
+
+Artifact: [bench/thetom-stack-smoke/refract-quick-cuda-2026-05-09/RESULTS.md](../bench/thetom-stack-smoke/refract-quick-cuda-2026-05-09/RESULTS.md)
+
+A trajectory-only REFRACT smoke ran on the RTX 4090 using `Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf`:
+
+| Config | Axis | Composite | Band | Full match | Median divergence |
+|---|---|---:|---|---:|---:|
+| q8/q8 self-check | Trajectory only | 100.00 | EXCELLENT | 100.0% | all matched |
+| q8/turbo4 | Trajectory only | 81.46 | PASS | 63.3% | token 8 |
+
+A default q8/turbo4 run that included KLD failed inside `llama-perplexity --kl-divergence` with a CUDA `SET_ROWS` backend error, so KLD is not yet usable for this cell without further setup work.
+
 ## Next local tests
 
-1. Run a tiny longctx retrieval smoke against this repo or the Portal repo with a local OpenAI-compatible server.
-2. Run one REFRACT quick score on an already available CUDA model/config, then attach the report to a KVFidelity note.
+1. Test `longctx-svc` proxy mode in front of an OpenAI-compatible local server.
+2. Fix or isolate the REFRACT CUDA KLD `SET_ROWS` failure before treating default quick scores as complete.
 3. Add exact `q8/turbo3` and `q8/turbo2` KV-layout accounting once `tqkit` exposes those aliases or we add a local compatibility shim.
 4. Only after those pass, consider a private proof-pack example for TheTom.
