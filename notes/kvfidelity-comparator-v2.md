@@ -3,6 +3,10 @@
 Date: 2026-05-07  
 Status: WIP external comparator over `tool-eval-bench` Markdown traces
 
+## Related-work / terminology note
+
+This comparator sits in the broader **trajectory-aware / trace-based evaluation** literature. SciBORG uses "action trace fidelity" as a benchmark dimension; TRAJECT-Bench, AgentPex, TraxGen, and trace-assurance work evaluate traces against blueprints, specifications, contracts, or gold trajectories. The narrower KVFidelity contribution is paired action-trace comparison across KV/V-cache runtime configurations with same-build controls. See [`kvfidelity-related-work.md`](./kvfidelity-related-work.md).
+
 ## Question
 
 If we hold constant:
@@ -15,7 +19,7 @@ If we hold constant:
 
 and only change the KV/context configuration, does the model preserve the same tool/action trace?
 
-This note calls that lens **Action-Trace Fidelity**. When the changed knob is KV cache / context configuration, I refer to it as **KVFidelity**.
+This note uses **action-trace fidelity** as the measured lens. When the changed knob is KV cache / context configuration, I refer to the specific harness as **KVFidelity**.
 
 ## Why v2
 

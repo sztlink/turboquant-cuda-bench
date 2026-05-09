@@ -100,7 +100,7 @@ TC-31 proves cache compression causes failures.
 Safer public wording:
 
 ```text
-In TC-31, changing the V-cache format did not merely change tokens; it changed whether the model used read-only tools, asked directly for clarification, or crossed the benchmark pass/fail boundary — and that behavior depended on run order/context. This is exactly the kind of drift Action-Trace Fidelity is meant to expose.
+In TC-31, changing the V-cache format did not merely change tokens; it changed whether the model used read-only tools, asked directly for clarification, or crossed the benchmark pass/fail boundary — and that behavior depended on run order/context. This is exactly the kind of drift KVFidelity is meant to expose.
 ```
 
 ## Trace anchors

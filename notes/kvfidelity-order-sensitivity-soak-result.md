@@ -5,6 +5,10 @@ Protocol: [`notes/kvfidelity-order-sensitivity-soak-protocol.md`](./kvfidelity-o
 Output: `/home/aya/implante/tmp/kvfidelity-order-sensitivity-soak-4090-2026-05-08/`  
 Review file: `/home/aya/implante/tmp/kvfidelity-order-sensitivity-soak-4090-2026-05-08/TRACE-REVIEW-TOP-SCENARIOS.md`
 
+## Related-work / terminology note
+
+This soak should be read as a KV-cache-level instantiation of **trajectory-aware / trace-based evaluation**. Related work evaluates traces against blueprints, specifications, contracts, gold trajectories, or full-KV token replay. The specific axis here is narrower: paired action-trace comparison across KV/V-cache configs, with scenario order as a measured variable. See [`kvfidelity-related-work.md`](./kvfidelity-related-work.md).
+
 ## Question
 
 After TC-31 showed different behavior when isolated versus embedded in a batch, this soak treated scenario order as an experimental axis:
@@ -122,7 +126,7 @@ Interpretation:
 Within a fixed order/config, duplicate traces were stable. Across order permutations and V-cache settings, action traces drifted.
 ```
 
-This supports treating **order/context** as a first-class axis of Action-Trace Fidelity.
+This supports treating **order/context** as a first-class axis of KVFidelity / trace-based evaluation under KV-cache config changes.
 
 ## Raw A/B map by candidate config
 
@@ -157,7 +161,7 @@ Review scope: TC-31, TC-33, TC-38, TC-60.
 
 | Scenario | Reviewed class | Use as evidence? | Short reading |
 |---|---|---|---|
-| TC-31 | real order-sensitive ambiguity-resolution drift | yes, with review | strongest Action-Trace Fidelity example |
+| TC-31 | real order-sensitive ambiguity-resolution drift | yes, with review | strongest KVFidelity / trace-based evaluation example |
 | TC-33 | rubric/wording + query-path sensitivity | weak / review queue | no external hallucination; mostly limitation wording and search query drift |
 | TC-38 | benign action-equivalent variation | no as regression | all runs pass same 4-step action path; raw drift from default args / subject punctuation |
 | TC-60 | baseline safety failure + failure-mode variation | not as KV regression | q8/q8 already fails 50/50; KV changes failure mode and sometimes improves |
@@ -273,10 +277,10 @@ TC-60 is a baseline safety failure with KV-dependent failure-mode variation. It 
 
 ## Central finding
 
-The soak strengthens the core KVFidelity / Action-Trace Fidelity claim, but also narrows it:
+The soak strengthens the core KVFidelity claim, but also narrows it:
 
 ```text
-Same-config controls were perfectly stable within fixed orders, yet action traces changed across V-cache settings and order permutations. Order/context is therefore not a nuisance variable; it is part of the behavioral surface that Action-Trace Fidelity must report.
+Same-config controls were perfectly stable within fixed orders, yet action traces changed across V-cache settings and order permutations. Order/context is therefore not a nuisance variable; it is part of the behavioral surface that KVFidelity must report.
 ```
 
 The strongest reviewed example is TC-31:
@@ -326,5 +330,5 @@ No new experiment is required before writing a public lab note. Recommended next
 ## One-line summary
 
 ```text
-The order-sensitivity soak shows that Action-Trace Fidelity is not just about A/B cache settings; it also has to track the order/context in which the same scenario is embedded.
+The order-sensitivity soak shows that KVFidelity is not just about A/B cache settings; it also has to track the order/context in which the same scenario is embedded.
 ```

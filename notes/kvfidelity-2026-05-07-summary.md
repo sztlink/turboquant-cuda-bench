@@ -4,6 +4,10 @@ Date: 2026-05-07
 Status: reviewed synthesis of the day’s KVFidelity work  
 Scope: same-build local inference traces on Qwen3.6-35B-A3B, RTX 4090
 
+## Related-work / terminology note
+
+This note used **Action-Trace Fidelity** as a working label for the measured lens. After related-work review, the safer positioning is: KVFidelity applies **trajectory-aware / trace-based evaluation** to KV/V-cache compression. SciBORG (Muhoberac, Chopra et al., arXiv:2507.00081) explicitly uses lower-case "action trace fidelity" as an agent-benchmark dimension, but does not appear to define a formal capitalized/hyphenated term. See [`kvfidelity-related-work.md`](./kvfidelity-related-work.md).
+
 ## Thesis
 
 **Action-Trace Fidelity** asks whether a local inference system preserves the same sequence of operational decisions when the model, prompt/scaffold, decoding setup, and benchmark scenario are held constant while a runtime/context knob changes.

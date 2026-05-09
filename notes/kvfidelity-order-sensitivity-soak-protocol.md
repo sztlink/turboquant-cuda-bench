@@ -134,7 +134,7 @@ The baseline action traces are robust to order under this runtime.
 If cross-KV drift concentrates in a few scenarios:
 
 ```text
-Those scenarios are priority review targets for Action-Trace Fidelity.
+Those scenarios are priority review targets for KVFidelity / trace-based evaluation.
 ```
 
 If drift changes substantially across order permutations:

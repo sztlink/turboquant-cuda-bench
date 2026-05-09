@@ -6,7 +6,9 @@ Scope: external paired-trace analysis for `tool-eval-bench` reports, with design
 
 ## 0. Context
 
-KVFidelity / Action-Trace Fidelity asks a config-level question:
+Terminology note: after related-work review, the safer public framing is that KVFidelity applies **trajectory-aware / trace-based evaluation** to KV/V-cache compression. SciBORG uses "action trace fidelity" as an agent-benchmark dimension, but this spec should not imply that the broader field or term originates here. See `notes/kvfidelity-related-work.md`.
+
+KVFidelity asks a config-level question:
 
 ```txt
 same model
