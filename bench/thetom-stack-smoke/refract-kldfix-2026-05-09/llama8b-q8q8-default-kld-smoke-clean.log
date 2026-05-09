@@ -1,0 +1,55 @@
+RUN_START 2026-05-09T20:30:23.3835647-03:00
+LLAMA_CPP_BIN_DIR=C:\turbo-build\llama-cpp-turboquant\build\bin
+llama_perplexity_sha256=C3E190FCBE78EA5950151D9EB73589CA782961CA26810AD95963F161F8C011DE
+candidate=ctk=q8_0,ctv=q8_0 chunks=2
+  using cached corpus  : C:\Users\Aya Render 1\.cache\refract\wikitext-2-raw\wiki.test.raw
+REFRACT v0.3.2.3
+  model     : C:\models\Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+  reference : ctk=q8_0,ctv=q8_0
+  candidate : ctk=q8_0,ctv=q8_0
+  backend   : llamacpp
+  axes      : A (~2 min) + B (~5 min)  (estimates for a 7B Q8 model on Apple Silicon)
+  thinking  : not detected
+
+Running Axis A (Trajectory, v0.1.4)...
+  Trajectory score: 100.00
+Running Axis B (KLD@D, corpus proxy)...
+  KLD score: 100.00  (mean KLD = 0.000001 nats)
+
+========================================================================
+[1m REFRACT v0.2 ΓÇö Reference-anchored Robust Acid-test[0m
+[2m Scoring: 0 = broken, 100 = matches the fp16 reference. Higher is better.[0m
+========================================================================
+ model     : C:\models\Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+ reference : ctk=q8_0,ctv=q8_0
+ candidate : ctk=q8_0,ctv=q8_0
+ timestamp : 2026-05-09T20:32:54
+------------------------------------------------------------------------
+[33m Noise floor: NOT MEASURED ΓÇö pass --measure-floor to verify.[0m
+------------------------------------------------------------------------
+[1m REFRACT score    : 100.00  [32m[########################################][0m  [32mEXCELLENT[0m[0m
+   (harmonic mean of 2 axes; any single low axis drops the score hard)
+ ΓåÆ Indistinguishable from the reference. Safe to deploy.
+
+ Axis A Trajectory: 100.00  [32m[########################################][0m  [32mEXCELLENT[0m  Token-level agreement with the fp16 reference.
+ Axis B KLD       : 100.00  [32m[########################################][0m  [32mEXCELLENT[0m  Distribution-level divergence from the fp16 reference.
+------------------------------------------------------------------------
+[1m Diagnosis[0m
+   All axes intact. Quantization is faithful to the fp16 reference
+   across the surfaces tested.
+------------------------------------------------------------------------
+ GTM diagnostics
+   prompts                    : 30
+   tokens decoded each        : 16
+   full match rate            : 100.0 %
+   median first divergence    : (all matched)
+   mean prefix agreement      :  16.0 tokens
+   mean cand / ref length     :  16.0 /  16.0 tokens
+
+ KLD diagnostics
+   chunks x ctx               : 2 x 512
+   mean KLD (nats)            : 0.000001
+========================================================================
+
+JSON report written to C:\turbo-build\refract-kldfix-smoke-20260509-clean\llama8b-q8q8-default-kld-smoke-clean.json
+RUN_EXIT 0 2026-05-09T20:32:54.6734549-03:00

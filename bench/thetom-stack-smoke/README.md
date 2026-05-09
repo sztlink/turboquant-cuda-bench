@@ -8,6 +8,7 @@ Current receipts:
 - [latest/receipt.json](latest/receipt.json)
 - [longctx-retrieval-2026-05-09/RESULTS.md](longctx-retrieval-2026-05-09/RESULTS.md)
 - [refract-quick-cuda-2026-05-09/RESULTS.md](refract-quick-cuda-2026-05-09/RESULTS.md)
+- [refract-kldfix-2026-05-09/RESULTS.md](refract-kldfix-2026-05-09/RESULTS.md)
 
 Prepare minimal longctx web dependencies in a local pip target if needed:
 
@@ -43,3 +44,5 @@ node scripts/thetom-stack-smoke.mjs
 ```
 
 This is intentionally a smoke, not a benchmark. It checks that the adapters can be called and that their outputs can be captured as receipts.
+
+KLD repair note: the 2026-05-09 KLD fix smoke applies the PR #138 style `size_t` cast to `llama-perplexity` on the 4090 and confirms that the small Llama 3.1 8B q8/turbo4 REFRACT default cell can complete Axis A + Axis B again.
