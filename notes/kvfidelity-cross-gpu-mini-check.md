@@ -56,6 +56,34 @@ max_turns: 12
 prompt scaffold: original tool-eval-bench hardmode, no-think
 ```
 
+## tqkit metadata adapter
+
+As part of the local TheTom-stack integration smoke, this run can now carry a `tqkit` KV-math block for the model/context family. This is metadata only, not a measured runtime result.
+
+Command:
+
+```bash
+python3 -m tqkit.cli table \
+  --model qwen3.6-35b-a3b \
+  --ctxs 18000 32768 65000 \
+  --layouts fp16 q8_0 tq+asym turbo4
+```
+
+Output:
+
+```text
+# Qwen/Qwen3.6-35B-A3B — KV cache size by layout × context
+
+| layout | per-token | 17K | 32K | 63K | savings vs FP16 |
+| ------ | --------- | --- | --- | --- | --- |
+| fp16 | 20.0 KB | 351.6 MB | 640.0 MB | 1.2 GB | — |
+| q8_0 | 10.0 KB | 175.8 MB | 320.0 MB | 634.8 MB | 50% |
+| tq+asym | 7.7 KB | 134.6 MB | 245.0 MB | 486.0 MB | 62% |
+| turbo4 | 5.2 KB | 92.0 MB | 167.5 MB | 332.3 MB | 74% |
+```
+
+Caveat: this run tested `q8/q8`, `q8/turbo3`, and `q8/turbo2` in llama.cpp. The current `tqkit` layout registry does not expose exact `q8/turbo3` or `q8/turbo2` aliases, so the block is a standardized context/KV scale reference, not exact per-config accounting for the two compressed candidates.
+
 ## Host / binary caveat
 
 Both hosts used the same path:
