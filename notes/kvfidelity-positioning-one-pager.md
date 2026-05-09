@@ -72,6 +72,16 @@ Then TRAJECT-style metrics can describe tool selection, inclusion, usage, and or
 
 ## Current evidence package
 
+Cross-GPU mini-check:
+
+- 48 runs / 192 scenario traces across RTX 4090 and RTX 3090;
+- same-host duplicate controls were 96/96 equivalent;
+- within-host A/B drift appeared on both machines;
+- cross-host same-config traces also diverged, but binary hashes and drivers differed;
+- conclusion: host/binary/driver/runtime must be first-class KVFidelity metadata before making cross-hardware claims.
+
+See `notes/kvfidelity-cross-gpu-mini-check.md`.
+
 Order-sensitivity soak:
 
 - 25 scenario orders;
@@ -141,6 +151,7 @@ Do not claim:
 - Related work note: `notes/kvfidelity-related-work.md`
 - Comparator v2: `notes/kvfidelity-comparator-v2.md`
 - Order-sensitivity soak: `notes/kvfidelity-order-sensitivity-soak-result.md`
+- Cross-GPU mini-check: `notes/kvfidelity-cross-gpu-mini-check.md`
 - CASK issue: https://github.com/Skyline-23/CASK/issues/1
 
 ## Current outreach state
