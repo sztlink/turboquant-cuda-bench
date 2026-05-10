@@ -142,11 +142,33 @@ The small Llama 3.1 8B default REFRACT cell then completed Axis A + Axis B:
 | q8/q8 self-check | 2 x 512 | 100.00 | EXCELLENT | 100.00 | 100.00 | 0.000001 | 100.0% | all matched |
 | q8/turbo4 | 32 x 512 | 89.50 | PASS | 81.46 | 99.30 | 0.006976 | 63.3% | token 8 |
 
-Safe reading: the local REFRACT KLD path is alive again for this small CUDA smoke cell. This does not yet prove Qwen3.6 35B long-context KLD is fixed.
+Safe reading: the local REFRACT KLD path is alive again for this small CUDA smoke cell.
+
+## Qwen-class KLD smoke
+
+Artifact: [bench/thetom-stack-smoke/qwen-kld-smoke-2026-05-09/RESULTS.md](../bench/thetom-stack-smoke/qwen-kld-smoke-2026-05-09/RESULTS.md)
+
+The patched `llama-perplexity` KLD path also completed on the actual Qwen3.6-35B-A3B large-vocab model at `ctx=14336`:
+
+```text
+reported n_vocab: 248320
+nv: 248324
+ctx * nv: 3,559,972,864
+INT32_MAX: 2,147,483,647
+```
+
+KLD-only results using one q8/q8 base:
+
+| Candidate | Status | Mean KLD | KLD score |
+|---|---|---:|---:|
+| q8/q8 | ok | 0.000000 | 100.00 |
+| q8/turbo4 | ok | 0.008476 | 99.16 |
+
+Safe reading: the PR #138 style `size_t` cast is sufficient for this Qwen3.6-35B-A3B KLD smoke above the int32 range. This is still harness repair evidence, not a full quality claim.
 
 ## Next local tests
 
 1. Test `longctx-svc` proxy mode in front of an OpenAI-compatible local server.
-2. Run a Qwen-class REFRACT KLD smoke with the patched `llama-perplexity`, starting at the smallest context that exercises the large-vocab path.
+2. If needed, repeat the Qwen-class KLD run through canonical `refract.cli score --skip-gtm` for a CLI-shaped receipt.
 3. Add exact `q8/turbo3` and `q8/turbo2` KV-layout accounting once `tqkit` exposes those aliases or we add a local compatibility shim.
 4. Only after those pass, consider a private proof-pack example for TheTom.

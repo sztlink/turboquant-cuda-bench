@@ -1,0 +1,97 @@
+{
+  "schema": "sztlink.qwen_kld_smoke.v1",
+  "started_at": "2026-05-09T20:57:32-0300",
+  "status": "ok",
+  "goal": "Exercise REFRACT/llama-perplexity KLD on a Qwen-class large-vocab model above the int32 overflow threshold.",
+  "host": {
+    "returncode": 0,
+    "text": "DESKTOP-CTAHC6D"
+  },
+  "gpu": {
+    "returncode": 0,
+    "text": "NVIDIA GeForce RTX 4090, 595.79, 41, 0 %, 66 MiB, 24564 MiB"
+  },
+  "repo": {
+    "path": "C:\\turbo-build\\llama-cpp-turboquant",
+    "commit": {
+      "returncode": 0,
+      "text": "69d8e4be4"
+    },
+    "status_short": {
+      "returncode": 0,
+      "text": "M tools/completion/completion.cpp\n M tools/perplexity/perplexity.cpp\n?? ggml/src/ggml-cuda/turbo-quant.cuh.new"
+    }
+  },
+  "paths": {
+    "model": "C:\\models\\q36_35b.gguf",
+    "corpus": "C:\\Users\\Aya Render 1\\.cache\\refract\\wikitext-2-raw\\wiki.test.raw",
+    "bin_dir": "C:\\turbo-build\\llama-cpp-turboquant\\build\\bin",
+    "llama_perplexity": "C:\\turbo-build\\llama-cpp-turboquant\\build\\bin\\llama-perplexity.exe",
+    "base_path": "C:\\turbo-build\\qwen-kld-smoke-20260509\\qwen35b-q8q8-ctx14336-chunks1.kldbase.bin"
+  },
+  "binary": {
+    "llama_perplexity_sha256": "C3E190FCBE78EA5950151D9EB73589CA782961CA26810AD95963F161F8C011DE"
+  },
+  "params": {
+    "ctx": 14336,
+    "chunks": 1,
+    "n_gpu_layers": 99,
+    "reference": "ctk=q8_0,ctv=q8_0",
+    "candidates": [
+      "ctk=q8_0,ctv=q8_0",
+      "ctk=q8_0,ctv=turbo4"
+    ]
+  },
+  "overflow_threshold_note": {
+    "vocab_observed_from_model_log": 248320,
+    "nv_for_qwen35moe_vocab_248320": 248324,
+    "ctx_times_nv": 3559972864,
+    "int32_max": 2147483647,
+    "threshold_exceeded": true,
+    "note": "The original script label mentioned 151936, but this Qwen3.6-35B-A3B GGUF reports n_vocab=248320; ctx=14336 still exercises the overflow-sensitive n_ctx * nv allocation path."
+  },
+  "corpus_identity": {
+    "path": "C:\\Users\\Aya Render 1\\.cache\\refract\\wikitext-2-raw\\wiki.test.raw",
+    "size_bytes": 1290590,
+    "sha256_head": "6cb1872543ff1f1b9c1b0ddce665aeb46322754d48d78dc5ecd631e7781c8729",
+    "sha256_head_bytes": 1048576
+  },
+  "base": {
+    "status": "ok",
+    "elapsed_sec": 22.397,
+    "path": "C:\\turbo-build\\qwen-kld-smoke-20260509\\qwen35b-q8q8-ctx14336-chunks1.kldbase.bin",
+    "size_bytes": 3559533580,
+    "stdout_tail": "0.07 minutes\n[1]3.6114,\n\n",
+    "deleted_after_run": true,
+    "deleted_size_bytes": 3559533580
+  },
+  "results": [
+    {
+      "candidate": "ctk=q8_0,ctv=q8_0",
+      "started_at": "2026-05-09T20:57:55-0300",
+      "status": "ok",
+      "elapsed_sec": 22.077,
+      "mean_kld": 0,
+      "kld_score": 100,
+      "ppl": null,
+      "rms_dp_pct": null,
+      "same_topp_pct": null,
+      "stdout_tail": "         :   3.610017 Â±   0.089263\nCor(ln(PPL(Q)), ln(PPL(base))):  99.99%\nMean ln(PPL(Q)/PPL(base))     :   0.000391 Â±   0.000391\nMean PPL(Q)/PPL(base)         :   1.000391 Â±   0.000391\nMean PPL(Q)-PPL(base)         :   0.001410 Â±   0.001415\n\n====== KL divergence statistics ======\nMean    KLD:   0.000000 Â±   0.000000\nMaximum KLD:   0.000059\n99.9%   KLD:   0.000051\n99.0%   KLD:   0.000038\n95.0%   KLD:   0.000022\n90.0%   KLD:   0.000014\nMedian  KLD:   0.000000\n10.0%   KLD:  -0.000013\n 5.0%   KLD:  -0.000021\n 1.0%   KLD:  -0.000037\n 0.1%   KLD:  -0.000049\nMinimum KLD:  -0.000061\n\n====== Token probability statistics ======\nMean    Î”p: -0.000 Â± 0.000 %\nMaximum Î”p:  0.005%\n99.9%   Î”p:  0.004%\n99.0%   Î”p:  0.002%\n95.0%   Î”p:  0.001%\n90.0%   Î”p:  0.000%\n75.0%   Î”p:  0.000%\nMedian  Î”p:  0.000%\n25.0%   Î”p:  0.000%\n10.0%   Î”p: -0.000%\n 5.0%   Î”p: -0.001%\n 1.0%   Î”p: -0.003%\n 0.1%   Î”p: -0.004%\nMinimum Î”p: -0.005%\nRMS Î”p    :  0.001 Â± 0.000 %\nSame top p: 100.000 Â± 0.000 %\n\n",
+      "finished_at": "2026-05-09T20:58:17-0300"
+    },
+    {
+      "candidate": "ctk=q8_0,ctv=turbo4",
+      "started_at": "2026-05-09T20:58:17-0300",
+      "status": "ok",
+      "elapsed_sec": 20.948,
+      "mean_kld": 0.008476,
+      "kld_score": 99.155982001308,
+      "ppl": null,
+      "rms_dp_pct": null,
+      "same_topp_pct": null,
+      "stdout_tail": "        :   3.610017 Â±   0.089263\nCor(ln(PPL(Q)), ln(PPL(base))):  99.74%\nMean ln(PPL(Q)/PPL(base))     :   0.001878 Â±   0.001781\nMean PPL(Q)/PPL(base)         :   1.001880 Â±   0.001784\nMean PPL(Q)-PPL(base)         :   0.006785 Â±   0.006439\n\n====== KL divergence statistics ======\nMean    KLD:   0.008476 Â±   0.000266\nMaximum KLD:   0.863122\n99.9%   KLD:   0.268864\n99.0%   KLD:   0.081373\n95.0%   KLD:   0.031459\n90.0%   KLD:   0.019519\nMedian  KLD:   0.002983\n10.0%   KLD:   0.000023\n 5.0%   KLD:   0.000006\n 1.0%   KLD:   0.000000\n 0.1%   KLD:  -0.000001\nMinimum KLD:  -0.000007\n\n====== Token probability statistics ======\nMean    Î”p: -0.057 Â± 0.034 %\nMaximum Î”p: 32.841%\n99.9%   Î”p: 17.633%\n99.0%   Î”p:  8.685%\n95.0%   Î”p:  3.986%\n90.0%   Î”p:  2.094%\n75.0%   Î”p:  0.306%\nMedian  Î”p: -0.002%\n25.0%   Î”p: -0.408%\n10.0%   Î”p: -2.255%\n 5.0%   Î”p: -3.929%\n 1.0%   Î”p: -9.543%\n 0.1%   Î”p: -18.835%\nMinimum Î”p: -31.495%\nRMS Î”p    :  2.863 Â± 0.077 %\nSame top p: 96.400 Â± 0.220 %\n\n",
+      "finished_at": "2026-05-09T20:58:38-0300"
+    }
+  ],
+  "finished_at": "2026-05-09T20:58:38-0300"
+}
