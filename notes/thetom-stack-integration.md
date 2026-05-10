@@ -166,9 +166,21 @@ KLD-only results using one q8/q8 base:
 
 Safe reading: the PR #138 style `size_t` cast is sufficient for this Qwen3.6-35B-A3B KLD smoke above the int32 range. This is still harness repair evidence, not a full quality claim.
 
+Canonical CLI receipt: [bench/thetom-stack-smoke/qwen-kld-cli-2026-05-09/RESULTS.md](../bench/thetom-stack-smoke/qwen-kld-cli-2026-05-09/RESULTS.md)
+
+The same Qwen KLD cell also completed through:
+
+```text
+python -m refract.cli score --skip-gtm
+```
+
+| Candidate | REFRACT composite | Band | KLD score | Mean KLD |
+|---|---:|---|---:|---:|
+| q8/q8 | 100.00 | EXCELLENT | 100.00 | 0.000000 |
+| q8/turbo4 | 99.16 | EXCELLENT | 99.16 | 0.008476 |
+
 ## Next local tests
 
 1. Test `longctx-svc` proxy mode in front of an OpenAI-compatible local server.
-2. If needed, repeat the Qwen-class KLD run through canonical `refract.cli score --skip-gtm` for a CLI-shaped receipt.
-3. Add exact `q8/turbo3` and `q8/turbo2` KV-layout accounting once `tqkit` exposes those aliases or we add a local compatibility shim.
-4. Only after those pass, consider a private proof-pack example for TheTom.
+2. Add exact `q8/turbo3` and `q8/turbo2` KV-layout accounting once `tqkit` exposes those aliases or we add a local compatibility shim.
+3. Consider a private proof-pack example for TheTom, but keep it private until TheTom validates fit.

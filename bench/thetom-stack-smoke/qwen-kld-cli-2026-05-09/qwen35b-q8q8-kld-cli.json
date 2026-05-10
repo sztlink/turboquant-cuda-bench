@@ -1,0 +1,74 @@
+{
+  "schema": "refract.report.v0.3.1",
+  "framework_version": "0.3.2.3",
+  "environment": {
+    "backend": "llamacpp",
+    "model": "C:\\models\\q36_35b.gguf",
+    "llama_cpp_bin_dir": "C:\\turbo-build\\llama-cpp-turboquant\\build\\bin",
+    "llama_cpp_commit": "69d8e4be4"
+  },
+  "repro_command": "",
+  "timestamp": "2026-05-09T21:10:07",
+  "score_direction": "higher_is_better",
+  "score_range": [
+    0,
+    100
+  ],
+  "model": "C:\\models\\q36_35b.gguf",
+  "reference": "ctk=q8_0,ctv=q8_0",
+  "candidate": "ctk=q8_0,ctv=q8_0",
+  "composite": 100.0,
+  "band": "EXCELLENT",
+  "summary": "Indistinguishable from the reference. Safe to deploy.",
+  "diagnosis": [
+    "All axes intact. Quantization is faithful to the fp16 reference across the surfaces tested."
+  ],
+  "composite_detail": {
+    "gtm_score": null,
+    "kld_score": 100.0,
+    "rniah_score": null,
+    "plad_score": null,
+    "floor_score": null,
+    "floor_ok": null,
+    "floor_min": 99.5,
+    "notes": []
+  },
+  "axes": {
+    "gtm": {
+      "score": null,
+      "full_match_rate": 1.0,
+      "median_first_divergence": null,
+      "mean_prefix_agreement_length": 0.0,
+      "mean_cand_length": 0.0,
+      "mean_ref_length": 0.0,
+      "n_prompts": 0,
+      "n_tokens_each": 0,
+      "per_prompt": [],
+      "notes": [],
+      "band": "skipped",
+      "skipped": true,
+      "description": "Token-level agreement with the fp16 reference."
+    },
+    "kld": {
+      "score": 100.0,
+      "mean_kld": 0.0,
+      "ppl": null,
+      "rms_dp_pct": null,
+      "same_topp_pct": null,
+      "base_path": "C:\\Users\\Aya Render 1\\AppData\\Local\\Temp\\refract-kldbase-qd7f__i5.bin",
+      "chunks": 1,
+      "ctx": 14336,
+      "is_self_reference": true,
+      "corpus": {
+        "path": "C:\\Users\\Aya Render 1\\.cache\\refract\\wikitext-2-raw\\wiki.test.raw",
+        "size_bytes": 1290590,
+        "sha256_head": "6cb1872543ff1f1b9c1b0ddce665aeb46322754d48d78dc5ecd631e7781c8729",
+        "sha256_head_bytes": 1048576
+      },
+      "band": "EXCELLENT",
+      "skipped": false,
+      "description": "Distribution-level divergence from the fp16 reference."
+    }
+  },
+  "extras": {}
+}
