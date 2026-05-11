@@ -46,7 +46,45 @@ The 8 spliced payloads at `top_k=16` are mapped to handles in `k16-mapping.json`
 
 If the wrong-answer DECOY id is exactly reproducible across stacks (`DECOY-0616-1` on brass), then the fix is in the splice/rerank layer, not the model. That's where the `bench/longctx-decoy-resolution-2026-05-10/` follow-up landed: server-side reranker + external splice both closed the gap to 16/16. Same fix should apply on vLLM.
 
-The natural next move is: replicate `decoy-resolution` on vLLM. Either (a) run a real reranker between the longctx-svc and the vLLM endpoint, or (b) splice the canonical chunk first in the user message instead of via the proxy header. Both worked on llama-cpp.
+## Resolution replay — does the same fix work on vLLM?
+
+Tested by replaying the **policy_splice** prompts from `bench/longctx-decoy-resolution-2026-05-10/raw/*` directly on vLLM. Those payloads inject the retrieved chunks into the user message itself (instead of via the longctx-svc proxy header), so they're stack-independent. The `rerank_proxy_*` payloads from the same bench depend on a live longctx-svc with a real cross-encoder reranker — not replicated here, would need a parallel service stand-up.
+
+The four hard tasks (the ones that failed under decoy at `top_k=16`): `brass-river-index`, `ceramic-lantern-field`, `glass-orchid-vector`, `jade-winter-circuit`.
+
+| condition | llama-cpp Qwen 27B | vLLM Qwen 2.5-7B (V3 off) | vLLM Qwen 2.5-7B (V3 on) |
+|---|---|---|---|
+| `policy_splice_orig_retrieval` | **4/4** | **4/4** | **4/4** |
+| `policy_splice_rewrite_retrieval` | **4/4** | **4/4** | **4/4** |
+
+Per-handle (V3 off, identical to V3 on):
+
+| handle | orig | rewrite | gen orig | gen rewrite |
+|---|---|---|---:|---:|
+| brass-river-index | ✓ AYA-HARD-BRASS-RIVER-180-Z9 | ✓ same | 3.7s | 0.4s |
+| ceramic-lantern-field | ✓ AYA-HARD-CERAMIC-LANTERN-310-Z9 | ✓ same | 0.7s | 0.5s |
+| glass-orchid-vector | ✓ AYA-HARD-GLASS-ORCHID-830-Z9 | ✓ same | 0.5s | 0.6s |
+| jade-winter-circuit | ✓ AYA-HARD-JADE-WINTER-960-Z9 | ✓ same | 0.5s | 0.5s |
+
+The first request (`brass-river-index, orig`) carries the one-time prefill cache warmup — 3.7s — then everything else is 0.4–0.7s.
+
+**Cross-stack consistency, full picture:**
+
+| | llama-cpp Qwen 27B | vLLM Qwen 2.5-7B (V3 off) | vLLM Qwen 2.5-7B (V3 on) |
+|---|---|---|---|
+| decoy at top_k=16 via proxy (8 handles) | 5/8 | 5/8 | 5/8 |
+| resolution `policy_splice_orig` (4 hard) | 4/4 | 4/4 | 4/4 |
+| resolution `policy_splice_rewrite` (4 hard) | 4/4 | 4/4 | 4/4 |
+
+Three independent (stack, model, V3) configurations. Same numbers. Same `DECOY-0616-1` literal for brass under the decoy condition. Same recovery to canonical secret under policy splice.
+
+**What this confirms:**
+
+- The decoy/ranking gap and its fix are **both** properties of how chunks reach the decoder, not of the inference stack or the model under it.
+- V3 eviction is orthogonal: it doesn't degrade the fix (4/4 holds) and it doesn't help the un-fixed decoy case (5/8 unchanged). V3 belongs in the long-context / memory-budget axis, not in the splice/ranking axis.
+- The `policy_splice` intervention is portable. Anyone reproducing this pipeline on a different vLLM build, different Qwen-family model, or different KV compression preset should expect the same recovery to 4/4 as long as the retrieved canonical chunk is in the user message instead of behind a header-injected proxy.
+
+The remaining `rerank_proxy` axis (server-side cross-encoder reranker before the proxy returns) was 4/4 on llama-cpp but not replicated here for the reasons above. That's the next bench if anyone wants to make the cross-stack table complete in 4 cells instead of 2.
 
 ## Timing & per-request stats
 
@@ -72,10 +110,14 @@ The aurora first-request bump (3.7s) is one-time warmup; subsequent requests run
 
 ## Artifacts
 
-- `vllm-decoy.py` — harness (loads payloads from `k16-mapping.json`, runs through `LLM.chat()`)
-- `k16-mapping.json` — mapping handle → expected key → exact `messages` list from llama-cpp debug-dump
-- `decoy-v3off.log` — full vLLM stdout, V3 disabled
-- `decoy-v3on.log` — full vLLM stdout, V3 enabled (worker init log shows `layers=28 heads=28 kv=4 head_dim=128 ... budget=2048`)
+- `vllm-decoy.py` — decoy harness (loads payloads from `k16-mapping.json`, runs through `LLM.chat()`)
+- `k16-mapping.json` — mapping handle → expected key → exact `messages` list from llama-cpp debug-dump (the top_k=16 decoy run)
+- `decoy-v3off.log` — decoy stdout, V3 disabled
+- `decoy-v3on.log` — decoy stdout, V3 enabled (worker init log shows `layers=28 heads=28 kv=4 head_dim=128 ... budget=2048`)
+- `vllm-decoy-resolution.py` — resolution harness (loads from `res-mapping.json`)
+- `res-mapping.json` — mapping (op, handle) → expected key → exact `messages` list from llama-cpp `bench/longctx-decoy-resolution-2026-05-10/raw/`
+- `decoy-res-v3off.log` — resolution stdout, V3 disabled
+- `decoy-res-v3on.log` — resolution stdout, V3 enabled
 
 ## Cross-link
 
