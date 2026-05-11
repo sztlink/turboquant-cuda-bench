@@ -145,7 +145,84 @@ The 32B-AWQ run recovers the glass-orchid-vector handle that the 7B run dropped.
 | `rerank_proxy_orig` | 4/4 | 3/4 (Qwen 7B) · **4/4 (Qwen 32B-AWQ)** | n/a | reranker enough at ≥27B, not at 7B |
 | `rerank_proxy_rewrite` | 4/4 | 3/4 (Qwen 7B) · **4/4 (Qwen 32B-AWQ)** | n/a | rewrite doesn't recover the 7B miss; 32B-AWQ doesn't need it |
 
-Three stacks × multiple model sizes. The decoy-only baseline and the policy_splice recovery are stack-invariant AND model-size-invariant. The rerank-only path is stack-invariant but **capacity-bound** — it breaks at 7B and recovers at ≥27B (both 27B llama-cpp and 32B-AWQ vLLM pass 4/4). This is the first dimension in the experiment where model capacity actually matters; the rest is splice/ranking plumbing.
+Three stacks × multiple model sizes. The decoy-only baseline and the policy_splice recovery are stack-invariant AND model-size-invariant. The rerank-only path appeared capacity-bound on first reading — but the deeper investigation below shows it's actually **format-mismatch-bound** (canonical chunk format vs system-prompt instruction strictness), with model size as a proxy.
+
+## Glass-orchid-vector deep dive (the canary)
+
+Pulling `/retrieve` directly on `longctx-svc` for glass with `top_k=16` reveals why glass is the only handle that flips between sizes:
+
+```
+rank= 1  score=0.61  shard_1586.md      DECOY LOOKUP: glass orchid vector sheet ... INVALID VALUE: DECOY-1586-...
+rank= 2  score=0.58  shard_1797.md      DECOY LOOKUP: glass orchid vector sheet ... INVALID VALUE: DECOY-1797-6
+rank= 3  score=0.59  shard_0531.md      DECOY LOOKUP: glass orchid vector sheet ... INVALID VALUE: DECOY-0531-...
+rank= 4  score=0.44  manifest.json:46-61   "handle":"glass-orchid-vector",...,"code":"AYA-HARD-GLASS-ORCHID-830-Z9"
+rank= 5  score=0.35  README.md          (project description, no secret)
+rank= 6-16  ...      filler shards + decoys for other handles
+```
+
+The canonical chunk for glass is **not a shard with `SECRET VALUE: AYA-HARD-GLASS-ORCHID-830-Z9`** like the canonical chunks for brass, ceramic, jade. It's a JSON entry in `manifest.json` (`"code": "AYA-HARD-GLASS-ORCHID-830-Z9"`). The reranker correctly surfaces it at rank 4, but ranks 1–3 are decoys with authoritative-sounding `SECRET VALUE: DECOY-NNNN-N` format. The same `/retrieve` for brass, ceramic, jade returns the canonical shard at rank 1 with `SECRET VALUE:` formatting; glass is the only handle without a dedicated canonical shard.
+
+That asymmetry is what 7B trips on under the `rewrite` prompt ("Use only a valid line beginning SECRET VALUE"). A line beginning `SECRET VALUE:` literally does not exist in the canonical chunk for glass — only the JSON `"code":"..."` does. The 7B can't reconcile the instruction with the format; the 32B can.
+
+Full dump: [`glass-retrieve-dump.txt`](glass-retrieve-dump.txt).
+
+## top_k sweep on 7B (changes the interpretation)
+
+Re-ran `rerank_proxy_{orig,rewrite}` × 4 handles on 7B with `top_k ∈ {2, 4, 8, 16}` to separate retrieval failure from decoder failure.
+
+| top_k | orig hits | rewrite hits | glass orig | glass rewrite |
+|---:|---:|---:|---|---|
+| 2 | 3/4 | 3/4 | ✗ `DECOY-1797-6` | ✗ `DECOY-1797-6` |
+| 4 | **4/4** | 3/4 | ✓ `AYA-HARD-GLASS-...` | ✗ `DECOY-1797-6` |
+| 8 | 4/4 | 3/4 | ✓ | ✗ `glass orchid vector sheet` (alias-response) |
+| 16 | 4/4 | 3/4 | ✓ | ✗ `glass orchid vector sheet` (alias-response) |
+
+Reading:
+- **top_k=2 is retrieval-limited** — the canonical (`manifest.json` at rank 4) is not in context for glass. Both orig and rewrite must fail. They do.
+- **top_k≥4 includes the canonical.** glass under `orig` recovers and stays recovered. glass under `rewrite` continues to fail — but the failure mode shifts from `DECOY-1797-6` at top_k≤4 to `glass orchid vector sheet` (the alias text from the question) at top_k≥8. The 7B is now seeing the JSON manifest entry but is honest enough not to emit it as a `SECRET VALUE:` line; instead it falls back to the alias.
+- **The fail mode is format-mismatch, not chunk count.** Adding more chunks (k=8, k=16) doesn't recover the 7B under `rewrite` — the model is stuck on the instruction shape, not the chunk supply.
+
+## Seed reproducibility on 7B
+
+Same setup as the sweep (top_k=16), three seeds (42, 7, 1234), same 4 handles × 2 ops.
+
+| seed | rerank_proxy_orig | rerank_proxy_rewrite | glass orig answer | glass rewrite answer |
+|---|---:|---:|---|---|
+| 42 | 4/4 | 3/4 | `AYA-HARD-GLASS-ORCHID-830-Z9` | `glass orchid vector sheet` |
+| 7 | 4/4 | 3/4 | same | same |
+| 1234 | 4/4 | 3/4 | same | same |
+
+100% deterministic at temp=0. The failure mode on glass under `rewrite` is reproducible — not seed noise.
+
+## Note on cross-run variation (GPU vs CPU reranker)
+
+The first run of this section (logged in `rerank-proxy-2026-05-11.log`) was 3/4 + 3/4 with glass failing as `DECOY-1797-6` on both `orig` and `rewrite`. The re-run after the 32B-AWQ scan (and after restarting `longctx-svc` with `LONGCTX_DEVICE=cpu` to preserve VRAM for 32B) is 4/4 + 3/4, with glass recovering under `orig` and falling back to alias under `rewrite`. Same prompts, same model build, same vLLM. The difference is **reranker scoring precision** — `bge-reranker-v2-m3` on CPU (fp32) returns slightly different scores than on GPU (fp16/tf32), which can flip chunks in the top-k ordering. We did not re-run the original GPU-mode rerank state. Treat the numbers as a range: 7B under `rerank_proxy_orig` lands in **3/4–4/4** depending on rerank precision; under `rewrite` it's solidly **3/4** with glass as the consistent miss (different failure word, same conclusion).
+
+## Replay 32B-AWQ on decoy-only and policy_splice
+
+To check whether 32B-AWQ is truly invariant or merely passes rerank_proxy, the same scripts were run against the 32B-AWQ vLLM endpoint (no reranker) — same `k16-mapping.json` for decoy and same `res-mapping.json` for policy_splice as the 7B runs above.
+
+| condition | 32B-AWQ hits |
+|---|---|
+| decoy at top_k=16 (no rerank) | **5/8** — identical failure set to 7B and to llama-cpp 27B: brass `DECOY-0616-1`, glass `DECOY-0742-6`, jade `DECOY-0725-7` |
+| `policy_splice_orig` | 4/4 |
+| `policy_splice_rewrite` | 4/4 |
+
+Decoy-only is exactly as stack/model-invariant as the 7B run already showed — including the literal DECOY ids on the failing handles. policy_splice is 4/4 invariant as predicted. The only thing that moved between 7B and 32B is the rerank_proxy answer on glass, and the deep dive above explains why: 32B can reconcile JSON canonical with instruction-strict prompts; 7B can't.
+
+## Updated headline: not "capacity-bound", "format-strictness mismatch"
+
+The first-pass reading of this experiment was that `rerank_proxy` is capacity-bound: 7B fails 3/4, ≥27B passes 4/4. The deeper read is more useful:
+
+- All sizes (7B, 27B, 32B-AWQ) recover the correct rank-1 canonical for 3 of the 4 hard handles (brass, ceramic, jade) and answer them correctly under both `orig` and `rewrite`.
+- glass-orchid-vector has its canonical in `manifest.json` (JSON `"code":"..."`), not in a shard with `SECRET VALUE:` formatting. This is a corpus-shape issue, not a retrieval issue.
+- Under the **loose `orig` prompt**, 7B/27B/32B all eventually answer glass correctly when the canonical is in-context (top_k≥4 on 7B; top_k≥16 on 32B by our test).
+- Under the **strict `rewrite` prompt** ("Use only a valid line beginning SECRET VALUE"), 7B fails on glass because the canonical literally does not contain that line. 32B passes because it infers the equivalence between `SECRET VALUE: X` and JSON `"code":"X"`.
+
+Practical takeaway:
+- The most robust intervention is `policy_splice` (canonical first, in plain text): invariant to model size, invariant to corpus shape.
+- If you have to rely on `rerank_proxy`, beware corpus shape: heterogeneous canonical formats (manifest entries, JSON, plain text) interact poorly with format-strict system prompts on smaller models.
+- "Smaller model fails" is a symptom; the underlying knob is corpus normalization + instruction strictness. A 7B with a *loose* rerank_proxy prompt is just as good as 32B on this corpus.
 
 ## Timing & per-request stats
 
@@ -181,8 +258,14 @@ The aurora first-request bump (3.7s) is one-time warmup; subsequent requests run
 - `decoy-res-v3on.log` — resolution stdout, V3 enabled
 - `vllm-rerank-proxy.py` — rerank-proxy client (queries longctx-svc → vLLM stack)
 - `rerank-mapping.json` — mapping for `rerank_proxy_{orig,rewrite}` payloads (no chunks in user msg)
-- `rerank-proxy-2026-05-11.log` — rerank-proxy stdout against Qwen 2.5-7B vLLM (3/4 + 3/4)
+- `rerank-proxy-2026-05-11.log` — rerank-proxy stdout against Qwen 2.5-7B vLLM (first GPU-mode reranker run, 3/4 + 3/4)
 - `rerank-proxy-32B-AWQ-2026-05-11.log` — same harness against Qwen 2.5-32B-Instruct-AWQ vLLM (4/4 + 4/4)
+- `vllm-direct.py` — direct vLLM endpoint client (no longctx-svc), parametric by mapping/model/tag
+- `32B-AWQ-decoy-k16-2026-05-11.log` — 32B-AWQ decoy_k16 (5/8 — same failures as 7B)
+- `32B-AWQ-policy-splice-2026-05-11.log` — 32B-AWQ policy_splice (8/8 — invariant)
+- `logs-topk-{2,4,8,16}.log` — top_k sweep on 7B, CPU-mode reranker
+- `logs-seed-{42,7,1234}.log` — seed reproducibility on 7B at top_k=16
+- `glass-retrieve-dump.txt` — raw `/retrieve` response for glass-orchid-vector, all 16 chunks with rerank scores and snippets
 
 ## Cross-link
 

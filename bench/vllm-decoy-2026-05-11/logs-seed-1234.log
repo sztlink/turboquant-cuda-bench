@@ -1,0 +1,120 @@
+# 8 payloads
+[rerank_proxy_orig                  ] brass-river-index         hit=True  el=9.77s  chunks=16  scope=ready  ans='AYA-HARD-BRASS-RIVER-180-Z9'
+[rerank_proxy_rewrite               ] brass-river-index         hit=True  el=9.8s  chunks=16  scope=ready  ans='AYA-HARD-BRASS-RIVER-180-Z9'
+[rerank_proxy_orig                  ] ceramic-lantern-field     hit=True  el=9.64s  chunks=16  scope=ready  ans='AYA-HARD-CERAMIC-LANTERN-310-Z9'
+[rerank_proxy_rewrite               ] ceramic-lantern-field     hit=True  el=9.79s  chunks=16  scope=ready  ans='AYA-HARD-CERAMIC-LANTERN-310-Z9'
+[rerank_proxy_orig                  ] glass-orchid-vector       hit=True  el=9.8s  chunks=16  scope=ready  ans='AYA-HARD-GLASS-ORCHID-830-Z9'
+[rerank_proxy_rewrite               ] glass-orchid-vector       hit=False  el=9.59s  chunks=16  scope=ready  ans='glass orchid vector sheet'
+[rerank_proxy_orig                  ] jade-winter-circuit       hit=True  el=9.75s  chunks=16  scope=ready  ans='AYA-HARD-JADE-WINTER-960-Z9'
+[rerank_proxy_rewrite               ] jade-winter-circuit       hit=True  el=9.62s  chunks=16  scope=ready  ans='AYA-HARD-JADE-WINTER-960-Z9'
+
+{
+  "endpoint": "http://127.0.0.1:8765/v1/chat/completions",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "kv_cache_dtype": "turboquant_k8v4",
+  "max_model_len": 16384,
+  "longctx_top_k": 16,
+  "n_prompts": 8,
+  "n_hits": 7,
+  "by_op": {
+    "rerank_proxy_orig": {
+      "hits": 4,
+      "n": 4
+    },
+    "rerank_proxy_rewrite": {
+      "hits": 3,
+      "n": 4
+    }
+  },
+  "results": [
+    {
+      "op": "rerank_proxy_orig",
+      "handle": "brass-river-index",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "hit": true,
+      "answer": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "llama_cpp_answer": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "elapsed_s": 9.77,
+      "chunks_used": "16",
+      "scope_status": "ready"
+    },
+    {
+      "op": "rerank_proxy_rewrite",
+      "handle": "brass-river-index",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "hit": true,
+      "answer": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "llama_cpp_answer": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "elapsed_s": 9.8,
+      "chunks_used": "16",
+      "scope_status": "ready"
+    },
+    {
+      "op": "rerank_proxy_orig",
+      "handle": "ceramic-lantern-field",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "llama_cpp_answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "elapsed_s": 9.64,
+      "chunks_used": "16",
+      "scope_status": "ready"
+    },
+    {
+      "op": "rerank_proxy_rewrite",
+      "handle": "ceramic-lantern-field",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "llama_cpp_answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "elapsed_s": 9.79,
+      "chunks_used": "16",
+      "scope_status": "ready"
+    },
+    {
+      "op": "rerank_proxy_orig",
+      "handle": "glass-orchid-vector",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "hit": true,
+      "answer": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "llama_cpp_answer": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "elapsed_s": 9.8,
+      "chunks_used": "16",
+      "scope_status": "ready"
+    },
+    {
+      "op": "rerank_proxy_rewrite",
+      "handle": "glass-orchid-vector",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "hit": false,
+      "answer": "glass orchid vector sheet",
+      "llama_cpp_answer": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "elapsed_s": 9.59,
+      "chunks_used": "16",
+      "scope_status": "ready"
+    },
+    {
+      "op": "rerank_proxy_orig",
+      "handle": "jade-winter-circuit",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "hit": true,
+      "answer": "AYA-HARD-JADE-WINTER-960-Z9",
+      "llama_cpp_answer": "AYA-HARD-JADE-WINTER-960-Z9",
+      "elapsed_s": 9.75,
+      "chunks_used": "16",
+      "scope_status": "ready"
+    },
+    {
+      "op": "rerank_proxy_rewrite",
+      "handle": "jade-winter-circuit",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "hit": true,
+      "answer": "AYA-HARD-JADE-WINTER-960-Z9",
+      "llama_cpp_answer": "AYA-HARD-JADE-WINTER-960-Z9",
+      "elapsed_s": 9.62,
+      "chunks_used": "16",
+      "scope_status": "ready"
+    }
+  ]
+}
+RERANK_PROXY_RESULT_OK hits=7/8
