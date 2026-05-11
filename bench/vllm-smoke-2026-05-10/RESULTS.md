@@ -117,6 +117,50 @@ Generation sanity (deterministic, temp=0, seed=42, max_tokens=300):
 - 80.98 tok/s decode for 7B / 16K and 61.9 tok/s for 32B-AWQ / 16K with `enforce_eager=True` (no CUDA graphs) are in the expected range for FA2 + TurboQuant on a single 4090. A full-throughput run would also enable graphs.
 - 32B-AWQ on a 24 GB 4090 is at the edge: it fits, but only with `max_num_seqs=4`, `gpu_memory_utilization=0.92`, and the Windows host kept clean of other GPU consumers. KV headroom collapses from 197K tokens (7B) to 21.8K tokens (32B) — single-stream 16K still fits with 1.33x concurrency. Above 16K context or above 4 simultaneous sequences likely needs the 4090+3090 split or a smaller quant.
 
+### Run 4 — 12-way concurrency @ 16K with V3 eviction enabled
+
+Added 2026-05-11 in response to a request for peak VRAM at 12-way concurrency and TriAttention V3 budget specifics.
+
+**Correction first**: runs 1–3 above had `VLLM_TRIATT_ENABLED=0` (default), so TriAttention V3 eviction was **not** firing. The `TriAttention V3 Tier 2: tokenizer bound` log line is only the tokenizer + session-id prep — the actual eviction loop is gated by `VLLM_TRIATT_ENABLED=1` plus a worker-side config that the fork can't always pick up from `VllmConfig` (especially under WSL `spawn`). Without those, the run is TurboQuant K8V4 + FA2 only, which is what the earlier numbers measured.
+
+Run 4 sets:
+
+```bash
+export VLLM_TRIATT_ENABLED=1
+export VLLM_TRIATT_HYBRID=2          # V3
+export VLLM_TRIATT_N_LAYERS=28
+export VLLM_TRIATT_N_HEADS=28
+export VLLM_TRIATT_N_KV_HEADS=4      # GQA — required; defaults to N_HEADS and crashes with tensor shape mismatch
+export VLLM_TRIATT_HEAD_DIM=128
+export VLLM_TRIATT_ROPE_THETA=1000000.0   # Qwen 2.5 uses 1M, not the V3 default 10000
+```
+
+Worker init logs (this is what V3 actually active looks like):
+
+```
+TriAttention V3 worker init: layers=28 heads=28 kv=4 head_dim=128 n_rot=128 theta=1000000.0 budget=2048 window=128 prefix=128 warmup=1024
+TriAttention V3 calibrated from 8192 Q samples (28 layers x 4 kv-heads)
+```
+
+| metric | value |
+|---|---|
+| model | `Qwen/Qwen2.5-7B-Instruct` |
+| max_model_len | 16384 |
+| max_num_seqs | 12 |
+| prompts | 12 × ~13.8K tokens each (single batch, deterministic) |
+| total input tokens | 182,714 |
+| GPU KV cache size | **225,712 tokens** (vs 197,104 in run 2 without V3 → **+14.5% headroom from V3 eviction**) |
+| max concurrency @ 16K req | **13.78x** (vs 12.03x without V3) |
+| GPU peak VRAM during 12-way gen | **22,343 MiB / 24,564 MiB (~91%)** |
+| GPU after model load (baseline) | 21,159 MiB |
+| V3 budget | 2048 cells/seq (default) |
+| longctx fallthrough | **off** — `LONGCTX_ENDPOINT` not set; pure V3 inside budget |
+| EXITCODE | 0 |
+
+Per-second VRAM samples during generation: 21.2 GiB → 22.3 GiB peak → ~22.3 GiB sustained. Peak occurs at the prefill→decode transition for the full 12-way batch; sustained sits ~1 GiB above the post-load baseline.
+
+V3 budget knob: 2048 cells/seq is the fork default (`VLLM_TRIATT_BUDGET=2048`). Window=128, prefix=128, segments=8. Configurable via `VLLM_TRIATT_*` envs. For longer contexts (32K+ requests) a wider budget is the obvious next sweep.
+
 ## Limitations / next steps
 
 - N=2 and N=3 prompts respectively. Throughput numbers are smoke-level, not benchmark-level.
