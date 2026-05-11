@@ -80,13 +80,42 @@ Generation sanity (deterministic, temp=0, seed=42, max_tokens=200):
 - "Three sentences describing blue from physicist / painter / poet" → distinct, substantive sentences across the three perspectives ("450-495 nanometers", "cool calming indigo", "melancholic whisper of the sky")
 - "Explain in one short paragraph what KV cache compression means" → coherent technical paragraph; correct framing of memory footprint vs accuracy trade-off
 
+### Run 3 — Qwen 2.5-32B-AWQ / 16K / 3 prompts
+
+Added 2026-05-11 to push the test up to a production-relevant model size on a single 4090.
+
+| metric | value |
+|---|---|
+| model | `Qwen/Qwen2.5-32B-Instruct-AWQ` |
+| quantization | `awq_marlin` (auto-converted on runtime) |
+| max_model_len | 16384 |
+| max_num_seqs | 4 |
+| gpu_memory_utilization | 0.92 |
+| weights load | 18.14 GiB / 14.5 s |
+| total load_time | 28.81 s |
+| generate_time | 8.55 s for 3 prompts, 529 output tokens total |
+| **decode throughput** | **61.9 tok/s** |
+| Available KV cache memory | 2.25 GiB |
+| GPU KV cache size | 21,872 tokens |
+| max concurrency @ 16K req | 1.33x |
+| EXITCODE | 0 |
+
+Memory tightness note: this run only fits cleanly after killing `llama-server.exe` and `ollama.exe` from the Windows host (they were idle but holding VRAM). With those running, free VRAM at startup was 21.93 GiB and 0.92 utilization (22.07 GiB) failed by a hair; with them killed, 22.45 GiB free → 0.92 fits. `nvidia-smi --query-compute-apps` on the Windows side is the right place to check before launching.
+
+Generation sanity (deterministic, temp=0, seed=42, max_tokens=300):
+
+- "Compute 17 * 23 step by step..." → `"17 × (20 + 3) = (17×20) + (17×3) = 340 + 51 = 391. The final answer is 391."` ✓
+- "Three sentences on KV cache compression with distinct angles: memory, latency, accuracy" → three structurally distinct claims, technically correct (compression reduces memory footprint; less data to fetch/process reduces latency; designed-for to maintain accuracy)
+- "What is unusual about `def f(x, cache={}): ...`" → started the explanation of Python mutable-default-argument trap (truncated at 300 tokens but framing correct)
+
 ## Readout
 
 - TheTom's `vllm-turboquant @ feature/turboquant_plus` builds and runs end-to-end on a stock 4090 + WSL2 with no system CUDA Toolkit. Driver alone (Windows 595.79) plus pip-distributed CUDA toolchain (cu13) is enough.
 - TURBOQUANT backend is auto-selected when `kv_cache_dtype` matches a turbo* preset; the older `q8_0`/`fp8` paths are not implicated.
 - TriAttention V3 binds at first scheduled request (Tier 2 path: tokenizer-aware), so on this stack TurboQuant + TriAttention V3 are active simultaneously by default. This is a difference from the llama-cpp main configs used in `bench/longctx-*` in this repo — those exercise TurboQuant without TriAttention V3.
 - KV-cache headroom is dramatic on small models: 1.5M tokens for 0.5B at 8K request size, 197K tokens for 7B at 16K — both far in excess of single-request needs. Useful for batch / longctx headroom rather than headline single-stream throughput.
-- 80.98 tok/s decode for 7B / 16K with `enforce_eager=True` (no CUDA graphs) is in the expected range for FA2 + TurboQuant on a single 4090. A full-throughput run would also enable graphs.
+- 80.98 tok/s decode for 7B / 16K and 61.9 tok/s for 32B-AWQ / 16K with `enforce_eager=True` (no CUDA graphs) are in the expected range for FA2 + TurboQuant on a single 4090. A full-throughput run would also enable graphs.
+- 32B-AWQ on a 24 GB 4090 is at the edge: it fits, but only with `max_num_seqs=4`, `gpu_memory_utilization=0.92`, and the Windows host kept clean of other GPU consumers. KV headroom collapses from 197K tokens (7B) to 21.8K tokens (32B) — single-stream 16K still fits with 1.33x concurrency. Above 16K context or above 4 simultaneous sequences likely needs the 4090+3090 split or a smaller quant.
 
 ## Limitations / next steps
 
