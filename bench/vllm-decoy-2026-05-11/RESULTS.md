@@ -84,7 +84,55 @@ Three independent (stack, model, V3) configurations. Same numbers. Same `DECOY-0
 - V3 eviction is orthogonal: it doesn't degrade the fix (4/4 holds) and it doesn't help the un-fixed decoy case (5/8 unchanged). V3 belongs in the long-context / memory-budget axis, not in the splice/ranking axis.
 - The `policy_splice` intervention is portable. Anyone reproducing this pipeline on a different vLLM build, different Qwen-family model, or different KV compression preset should expect the same recovery to 4/4 as long as the retrieved canonical chunk is in the user message instead of behind a header-injected proxy.
 
-The remaining `rerank_proxy` axis (server-side cross-encoder reranker before the proxy returns) was 4/4 on llama-cpp but not replicated here for the reasons above. That's the next bench if anyone wants to make the cross-stack table complete in 4 cells instead of 2.
+The remaining `rerank_proxy` axis (server-side cross-encoder reranker before the proxy returns) is now also tested — see next section.
+
+## rerank_proxy replay through longctx-svc → vLLM
+
+Set up after `TheTom/longctx` was published on 2026-05-11 with first-class `pip install longctx-svc` + generic OpenAI-compatible proxy mode (`--upstream`).
+
+Stack:
+- vLLM `feature/turboquant_plus` (commit `36fc04825`) serving `Qwen/Qwen2.5-7B-Instruct` on `127.0.0.1:8080` with `kv_cache_dtype=turboquant_k8v4`, `max_model_len=16384`, `enforce_eager=True`, `gpu_memory_utilization=0.80`.
+- `longctx-svc 0.3.0a3` on `127.0.0.1:8765` with `--upstream http://127.0.0.1:8080`, default cross-encoder reranker `bge-reranker-v2-m3` enabled.
+- Same `corpus/longctx-hard-lab` content, path-rewritten from the aya2 location to `/home/felipe/vllm-lab/longctx-corpus/longctx-hard-lab`.
+- Same 8 payloads from `bench/longctx-decoy-resolution-2026-05-10/raw/*rerank_proxy_{orig,rewrite}-{4 handles}.json` — i.e. **the user message contains only the question, not the chunks**. longctx-svc does the retrieval + rerank itself, then forwards to the upstream vLLM.
+
+Response headers confirm what longctx-svc did: `x-longctx-chunks-used=16`, `x-longctx-scope-status=ready` on every call.
+
+### Results
+
+| condition | llama-cpp Qwen 27B | vLLM Qwen 2.5-7B |
+|---|---|---|
+| `rerank_proxy_orig` | **4/4** | **3/4** |
+| `rerank_proxy_rewrite` | **4/4** | **3/4** |
+
+Per-handle (vLLM):
+
+| handle | orig | rewrite |
+|---|---|---|
+| brass-river-index | ✓ AYA-HARD-BRASS-RIVER-180-Z9 | ✓ same |
+| ceramic-lantern-field | ✓ AYA-HARD-CERAMIC-LANTERN-310-Z9 | ✓ same |
+| glass-orchid-vector | ✗ `DECOY-1797-6` | ✗ `DECOY-1797-6` |
+| jade-winter-circuit | ✓ AYA-HARD-JADE-WINTER-960-Z9 | ✓ same |
+
+This is the first **divergence** in the cross-stack table. llama-cpp Qwen 27B was 4/4 under `rerank_proxy`; vLLM Qwen 2.5-7B is 3/4 with the same retrieval + reranker. Failure mode is consistent across `orig` and `rewrite`: glass-orchid-vector emits `DECOY-1797-6` regardless of the system-prompt instruction to ignore DECOY entries. Note that `DECOY-1797-6` is a *different* decoy than the one the decoy-only run emitted on the same handle (`DECOY-0742-6`) — the reranker reordered the chunks; the canonical chunk is now somewhere in the top-16 (chunks_used=16, scope=ready), but a different decoy survived the rerank and won at decode.
+
+### Readout — when reranker is enough, when it isn't
+
+- **rerank is enough on the larger model** (Qwen 27B passes 4/4) but **not enough on the smaller model** (Qwen 7B passes 3/4) with the same retrieved set and same cross-encoder. The retrieval + ranking ceiling for `top_k=16` on this corpus is identical between stacks (8/8 retrieval, identical brass DECOY emitted under no-rerank); the model-side ceiling — *given correctly-ranked chunks, can it still be fooled* — is where size matters.
+- **policy_splice is invariant to model size in this run** (4/4 on both stacks). It forces the canonical chunk first in the user message rather than relying on the model to distinguish a top-1-ranked canonical from rank 2–16 decoys.
+- Operational implication: in production with a smaller model, the `policy_splice` path is the safer choice; `rerank_proxy` requires either a model big enough to resist decoy interference or further interventions (stricter system prompt, longer reranker context, fewer chunks).
+
+## Cross-stack table — full 4 cells (5 conditions)
+
+| condition | llama-cpp 27B | vLLM 7B (V3 off) | vLLM 7B (V3 on) | notes |
+|---|---:|---:|---:|---|
+| decoy at top_k=16 (no rerank) | 5/8 | 5/8 | 5/8 | same brass `DECOY-0616-1` literally identical across stacks |
+| `policy_splice_orig` | 4/4 | 4/4 | 4/4 | canonical first in user msg — invariant |
+| `policy_splice_rewrite` | 4/4 | 4/4 | 4/4 | system-prompt rewrite adds nothing |
+| `rerank_proxy_orig` | 4/4 | 3/4 | not retested | reranker enough on 27B, not on 7B |
+| `rerank_proxy_rewrite` | 4/4 | 3/4 | not retested | rewrite doesn't recover the 7B miss |
+
+Three independent (stack, model, V3) configurations and 5 conditions per stack. The decoy-only baseline and the policy_splice recovery are stack/model-invariant. The rerank-only path breaks down at smaller model size — the first dimension in this experiment where capacity actually matters.
 
 ## Timing & per-request stats
 
@@ -118,6 +166,9 @@ The aurora first-request bump (3.7s) is one-time warmup; subsequent requests run
 - `res-mapping.json` — mapping (op, handle) → expected key → exact `messages` list from llama-cpp `bench/longctx-decoy-resolution-2026-05-10/raw/`
 - `decoy-res-v3off.log` — resolution stdout, V3 disabled
 - `decoy-res-v3on.log` — resolution stdout, V3 enabled
+- `vllm-rerank-proxy.py` — rerank-proxy client (queries longctx-svc → vLLM stack)
+- `rerank-mapping.json` — mapping for `rerank_proxy_{orig,rewrite}` payloads (no chunks in user msg)
+- `rerank-proxy-2026-05-11.log` — rerank-proxy stdout, with `longctx-svc 0.3.0a3` + `bge-reranker-v2-m3` reranker
 
 ## Cross-link
 
