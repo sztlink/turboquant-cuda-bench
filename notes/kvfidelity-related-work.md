@@ -1,6 +1,7 @@
 # KVFidelity related work and terminology note
 
 Date: 2026-05-09  
+Updated: 2026-05-10  
 Status: positioning note for README / public summaries
 
 ## Conservative positioning
@@ -47,6 +48,17 @@ Action-Trace Fidelity was defined by Chopra et al.
 - **CurDKV** — Sengupta et al., arXiv:2509.15038. Uses fidelity in the attention-output similarity / CUR decomposition sense.
 - **VQKV** — Wang et al., arXiv:2603.16435. Uses high-fidelity for KV-vector reconstruction and downstream task-score retention.
 - **KQ-SVD** — Lesens, Rakhshan, Rabusseau, arXiv:2512.05916. Provides analytical attention-fidelity guarantees; adjacent unless discussing bounds.
+
+## Layered framing — CASK boundary endorsement (2026-05-10)
+
+The CASK authors (Skyline-23) reviewed this related-work boundary in [github.com/Skyline-23/CASK/issues/1](https://github.com/Skyline-23/CASK/issues/1) and endorsed a layered reading. Paraphrased from their wording:
+
+- **CASK** — token-distribution / teacher-forced replay fidelity for reasoning-oriented KV compression, measured via top-1 agreement, top-5 coverage, mean NLL, first mismatch.
+- **KVFidelity** — downstream paired action / tool-trace fidelity under runtime KV/V-cache configuration changes, with model, prompt scaffold, decoding setup, seed and temperature held fixed.
+
+KV-state perturbations can appear first as token-distribution drift and then amplify in closed-loop tool use into tool selection or action-trace changes — different evaluation layers, related effects, not equivalent objects.
+
+Open empirical question, suggested by the CASK authors: whether running CASK-style core-aware compression inside the KVFidelity harness reduces action-trace drift. Listed here as a future experiment, not a current result.
 
 ## What KVFidelity adds
 
