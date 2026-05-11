@@ -166,6 +166,27 @@ That asymmetry is what 7B trips on under the `rewrite` prompt ("Use only a valid
 
 Full dump: [`glass-retrieve-dump.txt`](glass-retrieve-dump.txt).
 
+### Correction (post Casey/Giselle audit)
+
+A second pass revealed the deep dive above is **partially wrong** in an important way. The canonical chunk for glass is **not** only in `manifest.json`. There is a dedicated `src/sector_13/shard_1380.md` with the same `SECRET VALUE: AYA-HARD-GLASS-ORCHID-830-Z9` formatting as the canonical shards for brass, ceramic, etc. The format-mismatch story isn't the whole picture.
+
+What's actually happening (re-verified at `top_k=50`, longctx-svc 0.3.0a3): the service caps at 20 returned chunks, and shard_1380 **does not appear** in any of those 20. The retrieval pipeline (BM25 + dense embedding inside `longctx-svc`, before the cross-encoder reranker even sees the candidates) misses shard_1380 entirely. The `manifest.json` entry surfaces because longctx-svc indexes structural/JSON data with a separate path, but the dedicated canonical shard never enters the reranker's input set.
+
+So there are three nested failures on glass, in order:
+
+1. **Retrieval miss.** shard_1380 doesn't make the longctx-svc top-20 for this query. This is the prior failure.
+2. **Top-3 decoy dominance.** The 3 chunks with highest reranker score are all DECOY shards (1586, 1797, 0531), denser in `glass orchid vector sheet` text per line than ordinary records.
+3. **JSON canonical at rank 4.** Manifest.json is the only thing in the retrieved set that contains the actual secret. Models with strong format-strictness under the rewrite prompt fail to reconcile.
+
+That ordering matters for fixes:
+
+- `policy_splice` (canonical injected first, plain text) **bypasses failures 1, 2, and 3 simultaneously**. It doesn't fix the retrieval pipeline — it sidesteps it.
+- A different retriever or larger pool size would address failure 1 but is out of scope for this bench (longctx-svc is the component under test).
+- The loose `rerank_proxy_orig` prompt addresses failure 3 (the model is allowed to extract from JSON format) — explaining why orig passes more often than rewrite.
+- The family/calibration finding (Mistral 7B passing where Qwen 2.5-7B fails) is about how each model handles the JSON canonical at rank 4 under strict instructions, given that retrieval 1 + dominance 2 have already happened. The 7B Qwen's specific failure is downstream of two earlier failures it can't fix.
+
+So the headline "family/calibration matters more than capacity" survives, but with a more honest scope: it matters **given a retrieval pipeline that doesn't recover the dedicated canonical chunk**. With a better retriever the model differences would likely collapse. With a worse retriever the family/calibration spread might widen further.
+
 ## top_k sweep on 7B (changes the interpretation)
 
 Re-ran `rerank_proxy_{orig,rewrite}` × 4 handles on 7B with `top_k ∈ {2, 4, 8, 16}` to separate retrieval failure from decoder failure.
