@@ -224,6 +224,55 @@ Practical takeaway:
 - If you have to rely on `rerank_proxy`, beware corpus shape: heterogeneous canonical formats (manifest entries, JSON, plain text) interact poorly with format-strict system prompts on smaller models.
 - "Smaller model fails" is a symptom; the underlying knob is corpus normalization + instruction strictness. A 7B with a *loose* rerank_proxy prompt is just as good as 32B on this corpus.
 
+## Family + size scan (Tier 3)
+
+Up to this point everything was Qwen 2.5 family (vLLM) + Qwen 27B base (llama-cpp older). Two questions remained: (a) is the decoy/rerank pattern Qwen-specific or general, (b) where exactly does the rerank_proxy passing threshold sit. Two extra models were downloaded and exercised through the same 3 conditions (decoy k=16, policy_splice, rerank_proxy with `bge-reranker-v2-m3`):
+
+- **Mistral 7B Instruct v0.3** — same parameter count as Qwen 2.5-7B, different family/training. Cross-family control.
+- **Qwen 2.5-14B-Instruct-AWQ** — same family as Qwen 2.5-7B/32B-AWQ, mid-size. Within-family curve.
+
+Each ran in the same vLLM `turboquant_k8v4` setup, max_model_len=16384, gpu_memory_utilization 0.80–0.92, enforce_eager. Same 8 prompts as the earlier runs.
+
+### Headline matrix
+
+| stack / family / size | decoy k=16 | rerank_proxy_orig | rerank_proxy_rewrite | policy_splice_orig | policy_splice_rewrite |
+|---|---:|---:|---:|---:|---:|
+| llama-cpp · Qwen 27B q8/turbo4 | 5/8 | 4/4 | 4/4 | 4/4 | 4/4 |
+| vLLM · Qwen 2.5-7B-Instruct | 5/8 | 3–4/4 | **3/4** | 4/4 | 4/4 |
+| vLLM · Qwen 2.5-14B-Instruct-AWQ | 5/8 | 4/4 | 4/4 | 4/4 | 4/4 |
+| vLLM · Qwen 2.5-32B-Instruct-AWQ | 5/8 | 4/4 | 4/4 | 4/4 | 4/4 |
+| vLLM · **Mistral 7B Instruct v0.3** | 5/8 | **4/4** | **4/4** | 4/4 | 4/4 |
+
+The "capacity-bound" story does not survive Mistral 7B. Mistral 7B and Qwen 2.5-7B are the **same parameter count**, the **same KV config**, hit the **same chunks**, and yet Mistral passes rerank_proxy 4/4+4/4 while Qwen 2.5-7B only manages 3/4 on rewrite. Whatever closes the gap is family-level (training data, instruction-tuning style, format-tolerance), not parameter-count-level.
+
+### Decoy failure modes by family and size
+
+Same 5/8 score, three distinct failure styles:
+
+| model | brass-river-index | glass-orchid-vector | jade-winter-circuit |
+|---|---|---|---|
+| llama-cpp Qwen 27B | DECOY-0616-1 | refusal ("provided context is decoy") | refusal |
+| vLLM Qwen 2.5-7B | DECOY-0616-1 | DECOY-0742-6 | DECOY-0725-7 |
+| vLLM Qwen 2.5-14B-AWQ | enumerates "INVALID VALUE: DECOY-0616-1\nINVALID VALUE: DECOY-0405-1\n..." | enumerates DECOYs | "There is no valid SECRET VALUE associated with the jade winter circuit card..." (refusal) |
+| vLLM Qwen 2.5-32B-AWQ | DECOY-0616-1 | DECOY-0742-6 | DECOY-0725-7 |
+| vLLM Mistral 7B | "DECOY-XX-1 (where XX is the shard number)" (confused/refusal-light) | "The SECRET VALUE for the glass orchid vector sheet is not provided in the context..." (refusal) | "jade-winter-circuit" (alias-response) |
+
+Three patterns:
+1. **Decoy commit** — Qwen 2.5-7B and Qwen 2.5-32B-AWQ both confidently emit one specific decoy id. Curiously, scale up from 7B to 32B-AWQ doesn't fix this on the decoy-only condition; the family signature is consistent across size within Qwen 2.5.
+2. **Enumerate-and-refuse** — Qwen 2.5-14B-AWQ (the AWQ-only mid-size) enumerates the DECOYs it sees, then refuses jade. Possibly an AWQ-quantization side effect, possibly a training stage difference.
+3. **Refusal / alias / confusion** — Mistral 7B and the older llama-cpp Qwen 27B both refuse or fall back to the alias instead of committing. This is the safer style operationally — closer to "I don't know" than "here's a decoy with confidence."
+
+The conclusion isn't that one family is better; it's that **the model's calibration under decoy pressure is a family/training trait, separate from raw capability**. For RAG production with adversarial chunks, calibration matters as much as accuracy.
+
+### Final headline
+
+- The decoy gap (5/8 at top_k=16, no rerank) is **stack-invariant, model-invariant, family-invariant, size-invariant** on this corpus. It's a property of the retrieved chunk set, not the inference stack.
+- The `rerank_proxy` recovery (4/4 with `bge-reranker-v2-m3`) is **family + size dependent**, not size-alone:
+  - Qwen 2.5-7B has the weakest performance (3/4 under rewrite). Mistral 7B at the same parameter count passes 4/4. Qwen 2.5-14B-AWQ, 32B-AWQ, and llama-cpp Qwen 27B all pass 4/4.
+  - The borderline is glass-orchid-vector, whose canonical is in `manifest.json` JSON instead of a shard with `SECRET VALUE:` formatting. Models tolerant to format mismatch under strict prompts recover; Qwen 2.5-7B does not.
+- `policy_splice` (canonical first in the user message, plain text) is **completely invariant** across all 5 (stack × family × size) combinations tested: 4/4 + 4/4 every time. It's the universal fix.
+- Practical takeaway for production: if you're shipping a 7B-class model in an adversarial-retrieval RAG, prefer policy_splice over rerank_proxy. If you must use rerank_proxy at 7B, prefer Mistral-7B-class calibration over Qwen-2.5-7B-class. If you go bigger (14B+), both paths converge.
+
 ## Timing & per-request stats
 
 | handle | gen V3 off | gen V3 on | prompt_tok | out_tok |
@@ -266,6 +315,8 @@ The aurora first-request bump (3.7s) is one-time warmup; subsequent requests run
 - `logs-topk-{2,4,8,16}.log` — top_k sweep on 7B, CPU-mode reranker
 - `logs-seed-{42,7,1234}.log` — seed reproducibility on 7B at top_k=16
 - `glass-retrieve-dump.txt` — raw `/retrieve` response for glass-orchid-vector, all 16 chunks with rerank scores and snippets
+- `mistral-{decoy-k16,policy-splice,rerank-proxy}.log` — Mistral 7B Instruct v0.3 cross-family runs (5/8, 4/4, 4/4 + 4/4)
+- `qwen14b-{decoy,policy-splice,rerank-proxy}.log` — Qwen 2.5-14B-Instruct-AWQ within-family curve (5/8, 4/4, 4/4 + 4/4)
 
 ## Cross-link
 

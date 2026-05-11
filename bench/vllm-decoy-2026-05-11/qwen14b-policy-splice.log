@@ -1,0 +1,100 @@
+# 8 payloads, model=Qwen/Qwen2.5-14B-Instruct-AWQ, endpoint=http://127.0.0.1:8080/v1/chat/completions
+[qwen14b-policy-splice] policy_splice_orig_retrieval       brass-river-index         hit=True  el=1.02s  ans='AYA-HARD-BRASS-RIVER-180-Z9'
+[qwen14b-policy-splice] policy_splice_rewrite_retrieval    brass-river-index         hit=True  el=0.58s  ans='AYA-HARD-BRASS-RIVER-180-Z9'
+[qwen14b-policy-splice] policy_splice_orig_retrieval       ceramic-lantern-field     hit=True  el=1.14s  ans='AYA-HARD-CERAMIC-LANTERN-310-Z9'
+[qwen14b-policy-splice] policy_splice_rewrite_retrieval    ceramic-lantern-field     hit=True  el=0.92s  ans='AYA-HARD-CERAMIC-LANTERN-310-Z9'
+[qwen14b-policy-splice] policy_splice_orig_retrieval       glass-orchid-vector       hit=True  el=0.88s  ans='AYA-HARD-GLASS-ORCHID-830-Z9'
+[qwen14b-policy-splice] policy_splice_rewrite_retrieval    glass-orchid-vector       hit=True  el=1.01s  ans='AYA-HARD-GLASS-ORCHID-830-Z9'
+[qwen14b-policy-splice] policy_splice_orig_retrieval       jade-winter-circuit       hit=True  el=0.84s  ans='AYA-HARD-JADE-WINTER-960-Z9'
+[qwen14b-policy-splice] policy_splice_rewrite_retrieval    jade-winter-circuit       hit=True  el=0.81s  ans='AYA-HARD-JADE-WINTER-960-Z9'
+
+{
+  "tag": "qwen14b-policy-splice",
+  "endpoint": "http://127.0.0.1:8080/v1/chat/completions",
+  "model": "Qwen/Qwen2.5-14B-Instruct-AWQ",
+  "n": 8,
+  "hits": 8,
+  "results": [
+    {
+      "tag": "qwen14b-policy-splice",
+      "op": "policy_splice_orig_retrieval",
+      "handle": "brass-river-index",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "answer": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "hit": true,
+      "elapsed_s": 1.02,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-policy-splice",
+      "op": "policy_splice_rewrite_retrieval",
+      "handle": "brass-river-index",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "answer": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "hit": true,
+      "elapsed_s": 0.58,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-policy-splice",
+      "op": "policy_splice_orig_retrieval",
+      "handle": "ceramic-lantern-field",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "elapsed_s": 1.14,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-policy-splice",
+      "op": "policy_splice_rewrite_retrieval",
+      "handle": "ceramic-lantern-field",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "elapsed_s": 0.92,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-policy-splice",
+      "op": "policy_splice_orig_retrieval",
+      "handle": "glass-orchid-vector",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "answer": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "hit": true,
+      "elapsed_s": 0.88,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-policy-splice",
+      "op": "policy_splice_rewrite_retrieval",
+      "handle": "glass-orchid-vector",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "answer": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "hit": true,
+      "elapsed_s": 1.01,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-policy-splice",
+      "op": "policy_splice_orig_retrieval",
+      "handle": "jade-winter-circuit",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "answer": "AYA-HARD-JADE-WINTER-960-Z9",
+      "hit": true,
+      "elapsed_s": 0.84,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-policy-splice",
+      "op": "policy_splice_rewrite_retrieval",
+      "handle": "jade-winter-circuit",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "answer": "AYA-HARD-JADE-WINTER-960-Z9",
+      "hit": true,
+      "elapsed_s": 0.81,
+      "err": null
+    }
+  ]
+}
+DIRECT_RESULT_OK tag=qwen14b-policy-splice hits=8/8

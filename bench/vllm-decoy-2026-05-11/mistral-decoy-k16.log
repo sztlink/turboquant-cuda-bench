@@ -1,0 +1,100 @@
+# 8 payloads, model=mistralai/Mistral-7B-Instruct-v0.3, endpoint=http://127.0.0.1:8080/v1/chat/completions
+[mistral-decoy-k16] decoy_k16                          aurora-blue-compass       hit=True  el=2.25s  ans='AYA-HARD-AURORA-BLUE-050-Z9'
+[mistral-decoy-k16] decoy_k16                          brass-river-index         hit=False  el=0.71s  ans='DECOY-XX-1 (where XX is the shard number)'
+[mistral-decoy-k16] decoy_k16                          ceramic-lantern-field     hit=True  el=0.79s  ans='AYA-HARD-CERAMIC-LANTERN-310-Z9'
+[mistral-decoy-k16] decoy_k16                          delta-archive-needle      hit=True  el=0.77s  ans='AYA-HARD-DELTA-ARCHIVE-440-Z9'
+[mistral-decoy-k16] decoy_k16                          ember-signal-route        hit=True  el=0.76s  ans='AYA-HARD-EMBER-SIGNAL-570-Z9'
+[mistral-decoy-k16] decoy_k16                          feldspar-memory-gate      hit=True  el=0.80s  ans='AYA-HARD-FELDSPAR-GATE-700-Z9'
+[mistral-decoy-k16] decoy_k16                          glass-orchid-vector       hit=False  el=1.50s  ans="The SECRET VALUE for the glass orchid vector sheet is not provided in the context you've g"
+[mistral-decoy-k16] decoy_k16                          jade-winter-circuit       hit=False  el=0.57s  ans='jade-winter-circuit'
+
+{
+  "tag": "mistral-decoy-k16",
+  "endpoint": "http://127.0.0.1:8080/v1/chat/completions",
+  "model": "mistralai/Mistral-7B-Instruct-v0.3",
+  "n": 8,
+  "hits": 5,
+  "results": [
+    {
+      "tag": "mistral-decoy-k16",
+      "op": "decoy_k16",
+      "handle": "aurora-blue-compass",
+      "expected": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "answer": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "hit": true,
+      "elapsed_s": 2.25,
+      "err": null
+    },
+    {
+      "tag": "mistral-decoy-k16",
+      "op": "decoy_k16",
+      "handle": "brass-river-index",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "answer": "DECOY-XX-1 (where XX is the shard number)",
+      "hit": false,
+      "elapsed_s": 0.71,
+      "err": null
+    },
+    {
+      "tag": "mistral-decoy-k16",
+      "op": "decoy_k16",
+      "handle": "ceramic-lantern-field",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "elapsed_s": 0.79,
+      "err": null
+    },
+    {
+      "tag": "mistral-decoy-k16",
+      "op": "decoy_k16",
+      "handle": "delta-archive-needle",
+      "expected": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "answer": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "hit": true,
+      "elapsed_s": 0.77,
+      "err": null
+    },
+    {
+      "tag": "mistral-decoy-k16",
+      "op": "decoy_k16",
+      "handle": "ember-signal-route",
+      "expected": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "answer": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "hit": true,
+      "elapsed_s": 0.76,
+      "err": null
+    },
+    {
+      "tag": "mistral-decoy-k16",
+      "op": "decoy_k16",
+      "handle": "feldspar-memory-gate",
+      "expected": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "answer": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "hit": true,
+      "elapsed_s": 0.8,
+      "err": null
+    },
+    {
+      "tag": "mistral-decoy-k16",
+      "op": "decoy_k16",
+      "handle": "glass-orchid-vector",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "answer": "The SECRET VALUE for the glass orchid vector sheet is not provided in the context you've given. The context only contains decoy values and filler paragraphs. The SECRET VALUE is typically hidden in the actual data, not in the decoy or filler data.",
+      "hit": false,
+      "elapsed_s": 1.5,
+      "err": null
+    },
+    {
+      "tag": "mistral-decoy-k16",
+      "op": "decoy_k16",
+      "handle": "jade-winter-circuit",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "answer": "jade-winter-circuit",
+      "hit": false,
+      "elapsed_s": 0.57,
+      "err": null
+    }
+  ]
+}
+DIRECT_RESULT_OK tag=mistral-decoy-k16 hits=5/8

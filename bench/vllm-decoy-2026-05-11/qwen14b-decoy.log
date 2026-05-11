@@ -1,0 +1,100 @@
+# 8 payloads, model=Qwen/Qwen2.5-14B-Instruct-AWQ, endpoint=http://127.0.0.1:8080/v1/chat/completions
+[qwen14b-decoy] decoy_k16                          aurora-blue-compass       hit=True  el=2.30s  ans='AYA-HARD-AURORA-BLUE-050-Z9'
+[qwen14b-decoy] decoy_k16                          brass-river-index         hit=False  el=2.90s  ans='INVALID VALUE: DECOY-0616-1\nINVALID VALUE: DECOY-0405-1\nINVALID VALUE: DECOY-1038-1\nINVALI'
+[qwen14b-decoy] decoy_k16                          ceramic-lantern-field     hit=True  el=1.09s  ans='AYA-HARD-CERAMIC-LANTERN-310-Z9'
+[qwen14b-decoy] decoy_k16                          delta-archive-needle      hit=True  el=1.02s  ans='AYA-HARD-DELTA-ARCHIVE-440-Z9'
+[qwen14b-decoy] decoy_k16                          ember-signal-route        hit=True  el=0.98s  ans='AYA-HARD-EMBER-SIGNAL-570-Z9'
+[qwen14b-decoy] decoy_k16                          feldspar-memory-gate      hit=True  el=1.03s  ans='AYA-HARD-FELDSPAR-GATE-700-Z9'
+[qwen14b-decoy] decoy_k16                          glass-orchid-vector       hit=False  el=2.28s  ans='INVALID VALUE: DECOY-0742-6\nINVALID VALUE: DECOY-1375-6\nINVALID VALUE: DECOY-1164-6\nINVALI'
+[qwen14b-decoy] decoy_k16                          jade-winter-circuit       hit=False  el=1.20s  ans='There is no valid SECRET VALUE associated with the jade winter circuit card or the green w'
+
+{
+  "tag": "qwen14b-decoy",
+  "endpoint": "http://127.0.0.1:8080/v1/chat/completions",
+  "model": "Qwen/Qwen2.5-14B-Instruct-AWQ",
+  "n": 8,
+  "hits": 5,
+  "results": [
+    {
+      "tag": "qwen14b-decoy",
+      "op": "decoy_k16",
+      "handle": "aurora-blue-compass",
+      "expected": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "answer": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "hit": true,
+      "elapsed_s": 2.3,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-decoy",
+      "op": "decoy_k16",
+      "handle": "brass-river-index",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "answer": "INVALID VALUE: DECOY-0616-1\nINVALID VALUE: DECOY-0405-1\nINVALID VALUE: DECOY-1038-1\nINVALID VALUE: DECOY-1671-1\n\nThere is no valid SECRET VALUE provided for the brass river indexing note in the given records. The note about the brass river indexing is a decoy and does not contain a valid secret valu",
+      "hit": false,
+      "elapsed_s": 2.9,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-decoy",
+      "op": "decoy_k16",
+      "handle": "ceramic-lantern-field",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "elapsed_s": 1.09,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-decoy",
+      "op": "decoy_k16",
+      "handle": "delta-archive-needle",
+      "expected": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "answer": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "hit": true,
+      "elapsed_s": 1.02,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-decoy",
+      "op": "decoy_k16",
+      "handle": "ember-signal-route",
+      "expected": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "answer": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "hit": true,
+      "elapsed_s": 0.98,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-decoy",
+      "op": "decoy_k16",
+      "handle": "feldspar-memory-gate",
+      "expected": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "answer": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "hit": true,
+      "elapsed_s": 1.03,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-decoy",
+      "op": "decoy_k16",
+      "handle": "glass-orchid-vector",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "answer": "INVALID VALUE: DECOY-0742-6\nINVALID VALUE: DECOY-1375-6\nINVALID VALUE: DECOY-1164-6\nINVALID VALUE: DECOY-1586-6\n\nThere is no valid SECRET VALUE provided for the glass orchid vector sheet in the given records.",
+      "hit": false,
+      "elapsed_s": 2.28,
+      "err": null
+    },
+    {
+      "tag": "qwen14b-decoy",
+      "op": "decoy_k16",
+      "handle": "jade-winter-circuit",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "answer": "There is no valid SECRET VALUE associated with the jade winter circuit card or the green winter circuit board in the provided records.",
+      "hit": false,
+      "elapsed_s": 1.2,
+      "err": null
+    }
+  ]
+}
+DIRECT_RESULT_OK tag=qwen14b-decoy hits=5/8
