@@ -1,0 +1,2046 @@
+{
+  "created_at": "2026-05-10T11:54:38.547Z",
+  "groups": {
+    "direct-upstream|k0": {
+      "mode": "direct-upstream",
+      "top_k": 0,
+      "runs": 4,
+      "hits": 0,
+      "retrievalHits": 0,
+      "errors": 0,
+      "elapsed": [
+        0.658,
+        0.365,
+        0.312,
+        0.266
+      ],
+      "chunks": [],
+      "promptTokS": [
+        266.3530143854199,
+        972.5345814193796,
+        861.0925790886382,
+        869.4842095456945
+      ],
+      "decodeTokS": [
+        47.88649532422578,
+        47.85854753659004,
+        48.220367077544374,
+        49.58882598454481
+      ]
+    },
+    "longctx-proxy|k2": {
+      "mode": "longctx-proxy",
+      "top_k": 2,
+      "runs": 8,
+      "hits": 1,
+      "retrievalHits": 1,
+      "errors": 0,
+      "elapsed": [
+        1.35,
+        1.396,
+        2.35,
+        1.425,
+        1.354,
+        1.577,
+        3.883,
+        3.842
+      ],
+      "chunks": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "promptTokS": [
+        2712.5530262293123,
+        2681.1873528997735,
+        2681.293339019729,
+        2681.120334679594,
+        2697.765428301747,
+        2606.6645130830207,
+        2701.53404289925,
+        2740.9315130426357
+      ],
+      "decodeTokS": [
+        44.0945386909534,
+        46.61767572744765,
+        44.135513681206774,
+        46.55454076061655,
+        46.60306055008558,
+        45.67083317871853,
+        44.04361492373848,
+        44.02495187522448
+      ]
+    },
+    "longctx-proxy|k4": {
+      "mode": "longctx-proxy",
+      "top_k": 4,
+      "runs": 8,
+      "hits": 5,
+      "retrievalHits": 3,
+      "errors": 0,
+      "elapsed": [
+        1.542,
+        1.455,
+        1.643,
+        1.645,
+        1.561,
+        1.574,
+        3.989,
+        4.006
+      ],
+      "chunks": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "promptTokS": [
+        2607.964473874371,
+        2603.1675363533395,
+        2543.7988842494965,
+        2542.047197045046,
+        2542.689512617172,
+        2576.9515462364325,
+        2566.652888291826,
+        2615.2888945131663
+      ],
+      "decodeTokS": [
+        45.28267711187085,
+        46.14423008352106,
+        45.16987859930863,
+        45.278192041791776,
+        45.55690056881045,
+        45.332713786244916,
+        43.57296892775275,
+        43.94261972716028
+      ]
+    },
+    "longctx-proxy|k8": {
+      "mode": "longctx-proxy",
+      "top_k": 8,
+      "runs": 8,
+      "hits": 5,
+      "retrievalHits": 7,
+      "errors": 0,
+      "elapsed": [
+        0.925,
+        0.814,
+        0.959,
+        0.93,
+        0.809,
+        0.955,
+        3.315,
+        3.35
+      ],
+      "chunks": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "promptTokS": [
+        71.0580544304697,
+        71.06436655000266,
+        71.64093563061934,
+        70.84912678451238,
+        70.97987720481244,
+        71.08078331023208,
+        70.94840277408255,
+        72.15267506042787
+      ],
+      "decodeTokS": [
+        45.289214090606734,
+        46.09724003251951,
+        45.206273567094094,
+        45.332456905833155,
+        45.509807363486836,
+        45.272170630811104,
+        43.60099134120646,
+        43.596809440162474
+      ]
+    },
+    "longctx-proxy|k16": {
+      "mode": "longctx-proxy",
+      "top_k": 16,
+      "runs": 8,
+      "hits": 5,
+      "retrievalHits": 8,
+      "errors": 0,
+      "elapsed": [
+        0.865,
+        0.806,
+        0.871,
+        0.848,
+        0.788,
+        0.869,
+        3.284,
+        3.271
+      ],
+      "chunks": [
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16,
+        16
+      ],
+      "promptTokS": [
+        71.70386304562159,
+        85.54868789699938,
+        81.2743823146944,
+        70.75513416942317,
+        92.45562130177514,
+        88.11931355054745,
+        71.30251876147526,
+        71.01642254771416
+      ],
+      "decodeTokS": [
+        45.269736897947865,
+        46.119272824847386,
+        45.144928498400006,
+        45.30999113623299,
+        46.34150378179771,
+        45.29870247529097,
+        43.609452639589314,
+        43.612495706894954
+      ]
+    }
+  },
+  "rows": [
+    {
+      "idx": 1,
+      "mode": "direct-upstream",
+      "top_k": 0,
+      "handle": "aurora-blue-compass",
+      "alias": "blue compass calibration entry",
+      "expected": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "retrieval_hit": null,
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.658,
+      "answer": "blue_compass_calibration_secret_value",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": null,
+        "x-longctx-scope-status": null,
+        "x-longctx-scope": null,
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 113,
+        "prompt_ms": 424.249,
+        "prompt_per_token_ms": 3.75441592920354,
+        "prompt_per_second": 266.3530143854199,
+        "predicted_n": 7,
+        "predicted_ms": 146.179,
+        "predicted_per_token_ms": 20.882714285714286,
+        "predicted_per_second": 47.88649532422578
+      },
+      "usage": {
+        "completion_tokens": 7,
+        "prompt_tokens": 113,
+        "total_tokens": 120,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "idx": 2,
+      "mode": "direct-upstream",
+      "top_k": 0,
+      "handle": "brass-river-index",
+      "alias": "brass river indexing note",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "retrieval_hit": null,
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.365,
+      "answer": "brass_river_index_2026",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": null,
+        "x-longctx-scope-status": null,
+        "x-longctx-scope": null,
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 112,
+        "prompt_ms": 115.163,
+        "prompt_per_token_ms": 1.0282410714285715,
+        "prompt_per_second": 972.5345814193796,
+        "predicted_n": 11,
+        "predicted_ms": 229.844,
+        "predicted_per_token_ms": 20.894909090909092,
+        "predicted_per_second": 47.85854753659004
+      },
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 112,
+        "total_tokens": 123,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "idx": 3,
+      "mode": "direct-upstream",
+      "top_k": 0,
+      "handle": "ceramic-lantern-field",
+      "alias": "ceramic lantern field record",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "retrieval_hit": null,
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.312,
+      "answer": "clay_lantern_field_marker",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": null,
+        "x-longctx-scope-status": null,
+        "x-longctx-scope": null,
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 111,
+        "prompt_ms": 128.906,
+        "prompt_per_token_ms": 1.1613153153153153,
+        "prompt_per_second": 861.0925790886382,
+        "predicted_n": 8,
+        "predicted_ms": 165.905,
+        "predicted_per_token_ms": 20.738125,
+        "predicted_per_second": 48.220367077544374
+      },
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 111,
+        "total_tokens": 119,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "idx": 4,
+      "mode": "direct-upstream",
+      "top_k": 0,
+      "handle": "delta-archive-needle",
+      "alias": "delta archive locator",
+      "expected": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "retrieval_hit": null,
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.266,
+      "answer": "delta_archive_locator_secret_value",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": null,
+        "x-longctx-scope-status": null,
+        "x-longctx-scope": null,
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 112,
+        "prompt_ms": 128.812,
+        "prompt_per_token_ms": 1.150107142857143,
+        "prompt_per_second": 869.4842095456945,
+        "predicted_n": 6,
+        "predicted_ms": 120.995,
+        "predicted_per_token_ms": 20.165833333333335,
+        "predicted_per_second": 49.58882598454481
+      },
+      "usage": {
+        "completion_tokens": 6,
+        "prompt_tokens": 112,
+        "total_tokens": 118,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "idx": 5,
+      "mode": "longctx-proxy",
+      "top_k": 2,
+      "handle": "aurora-blue-compass",
+      "alias": "blue compass calibration entry",
+      "expected": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 2,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1688.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_14/shard_1477.md:1-16"
+      ],
+      "top_scores": [
+        0.6072230339050293,
+        0.5966581106185913
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.35,
+      "answer": "DECOY-1688-0",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "2",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2043,
+        "prompt_ms": 753.165,
+        "prompt_per_token_ms": 0.3686563876651982,
+        "prompt_per_second": 2712.5530262293123,
+        "predicted_n": 11,
+        "predicted_ms": 249.464,
+        "predicted_per_token_ms": 22.678545454545453,
+        "predicted_per_second": 44.0945386909534
+      },
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2043,
+        "total_tokens": 2054,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "idx": 6,
+      "mode": "longctx-proxy",
+      "top_k": 2,
+      "handle": "brass-river-index",
+      "alias": "brass river indexing note",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 2,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_06/shard_0616.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1038.md:1-16"
+      ],
+      "top_scores": [
+        0.6332138776779175,
+        0.625346302986145
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.396,
+      "answer": "DECOY-0616-1",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "2",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2038,
+        "prompt_ms": 760.111,
+        "prompt_per_token_ms": 0.3729690873405299,
+        "prompt_per_second": 2681.1873528997735,
+        "predicted_n": 11,
+        "predicted_ms": 235.962,
+        "predicted_per_token_ms": 21.451090909090908,
+        "predicted_per_second": 46.61767572744765
+      },
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2038,
+        "total_tokens": 2049,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "idx": 7,
+      "mode": "longctx-proxy",
+      "top_k": 2,
+      "handle": "ceramic-lantern-field",
+      "alias": "ceramic lantern field record",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 2,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_04/shard_0440.md:1-20",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_12/shard_1232.md:1-16"
+      ],
+      "top_scores": [
+        0.6112936735153198,
+        0.6109440326690674
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 2.35,
+      "answer": "The provided context contains only decoy records (shard 1232 and shard 1021) which explicitly state they are **not** the requested record and contain no valid SECRET VALUE. The actual secret value is not present in the retrieved snippets.",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "2",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2037,
+        "prompt_ms": 759.708,
+        "prompt_per_token_ms": 0.3729543446244477,
+        "prompt_per_second": 2681.293339019729,
+        "predicted_n": 55,
+        "predicted_ms": 1246.162,
+        "predicted_per_token_ms": 22.65749090909091,
+        "predicted_per_second": 44.135513681206774
+      },
+      "usage": {
+        "completion_tokens": 55,
+        "prompt_tokens": 2037,
+        "total_tokens": 2092,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "idx": 8,
+      "mode": "longctx-proxy",
+      "top_k": 2,
+      "handle": "delta-archive-needle",
+      "alias": "delta archive locator",
+      "expected": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 2,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1004.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1637.md:1-16"
+      ],
+      "top_scores": [
+        0.6206214427947998,
+        0.6187492609024048
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.425,
+      "answer": "DECOY-1004-3",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "2",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2038,
+        "prompt_ms": 760.13,
+        "prompt_per_token_ms": 0.3729784102060844,
+        "prompt_per_second": 2681.120334679594,
+        "predicted_n": 11,
+        "predicted_ms": 236.282,
+        "predicted_per_token_ms": 21.48018181818182,
+        "predicted_per_second": 46.55454076061655
+      },
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2038,
+        "total_tokens": 2049,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "idx": 9,
+      "mode": "longctx-proxy",
+      "top_k": 2,
+      "handle": "ember-signal-route",
+      "alias": "ember signal routing memo",
+      "expected": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 2,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_05/shard_0565.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_03/shard_0354.md:1-16"
+      ],
+      "top_scores": [
+        0.660742461681366,
+        0.6558443307876587
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.354,
+      "answer": "DECOY-0565-4",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "2",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2035,
+        "prompt_ms": 754.328,
+        "prompt_per_token_ms": 0.3706771498771499,
+        "prompt_per_second": 2697.765428301747,
+        "predicted_n": 11,
+        "predicted_ms": 236.036,
+        "predicted_per_token_ms": 21.457818181818183,
+        "predicted_per_second": 46.60306055008558
+      },
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 2035,
+        "total_tokens": 2046,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "idx": 10,
+      "mode": "longctx-proxy",
+      "top_k": 2,
+      "handle": "feldspar-memory-gate",
+      "alias": "feldspar memory gate note",
+      "expected": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 2,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_13/shard_1392.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1181.md:1-16"
+      ],
+      "top_scores": [
+        0.5668841600418091,
+        0.5464695692062378
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.577,
+      "answer": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "2",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2098,
+        "prompt_ms": 804.86,
+        "prompt_per_token_ms": 0.3836320305052431,
+        "prompt_per_second": 2606.6645130830207,
+        "predicted_n": 16,
+        "predicted_ms": 350.333,
+        "predicted_per_token_ms": 21.8958125,
+        "predicted_per_second": 45.67083317871853
+      },
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 2098,
+        "total_tokens": 2114,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "idx": 11,
+      "mode": "longctx-proxy",
+      "top_k": 2,
+      "handle": "glass-orchid-vector",
+      "alias": "glass orchid vector sheet",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 2,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_13/shard_1375.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_15/shard_1586.md:1-16"
+      ],
+      "top_scores": [
+        0.6108585596084595,
+        0.6091338396072388
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 3.883,
+      "answer": "The provided text explicitly states that the \"glass orchid vector sheet\" is a **DECOY LOOKUP** and that the values associated with it (DECOY-0742-6 and DECOY-1375-6) are **INVALID**. The text further states that the records in shards 0742 and 1375 \"intentionally contain no valid SECRET VALUE.\"\n\nTherefore, there is no valid secret value in the provided context. However, based on the strict instruction to answer only the exact secret value and the presence of deco",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "2",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2043,
+        "prompt_ms": 756.237,
+        "prompt_per_token_ms": 0.37016005873715124,
+        "prompt_per_second": 2701.53404289925,
+        "predicted_n": 120,
+        "predicted_ms": 2724.572,
+        "predicted_per_token_ms": 22.704766666666668,
+        "predicted_per_second": 44.04361492373848
+      },
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 2043,
+        "total_tokens": 2163,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "idx": 12,
+      "mode": "longctx-proxy",
+      "top_k": 2,
+      "handle": "jade-winter-circuit",
+      "alias": "jade winter circuit card",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 2,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_07/shard_0725.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_13/shard_1358.md:1-16"
+      ],
+      "top_scores": [
+        0.6159721612930298,
+        0.6010791063308716
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 3.842,
+      "answer": "The provided text snippets (shard 0725 and shard 1147) explicitly state that the mention of \"jade winter circuit card\" and \"green winter circuit board\" is a **DECOY LOOKUP** and contains **INVALID VALUE**s (DECOY-0725-7 and DECOY-1147-7). The instructions in the shards say \"Do not answer with this decoy.\"\n\nFurthermore, the retrieved shards do not contain the actual `README.md` file content where the valid secret value for the \"jade winter",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "2",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2037,
+        "prompt_ms": 743.178,
+        "prompt_per_token_ms": 0.364839469808542,
+        "prompt_per_second": 2740.9315130426357,
+        "predicted_n": 120,
+        "predicted_ms": 2725.727,
+        "predicted_per_token_ms": 22.714391666666664,
+        "predicted_per_second": 44.02495187522448
+      },
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 2037,
+        "total_tokens": 2157,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "idx": 13,
+      "mode": "longctx-proxy",
+      "top_k": 4,
+      "handle": "aurora-blue-compass",
+      "alias": "blue compass calibration entry",
+      "expected": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 4,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1688.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_14/shard_1477.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_12/shard_1266.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1055.md:1-16"
+      ],
+      "top_scores": [
+        0.6072230339050293,
+        0.5966581106185913,
+        0.5898386240005493,
+        0.5503484010696411
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.542,
+      "answer": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "4",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 1527,
+        "prompt_n": 1985,
+        "prompt_ms": 761.13,
+        "prompt_per_token_ms": 0.38344080604534003,
+        "prompt_per_second": 2607.964473874371,
+        "predicted_n": 16,
+        "predicted_ms": 353.336,
+        "predicted_per_token_ms": 22.0835,
+        "predicted_per_second": 45.28267711187085
+      },
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 3512,
+        "total_tokens": 3528,
+        "prompt_tokens_details": {
+          "cached_tokens": 1527
+        }
+      }
+    },
+    {
+      "idx": 14,
+      "mode": "longctx-proxy",
+      "top_k": 4,
+      "handle": "brass-river-index",
+      "alias": "brass river indexing note",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 4,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_06/shard_0616.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1038.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_08/shard_0827.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_04/shard_0405.md:1-16"
+      ],
+      "top_scores": [
+        0.6332138776779175,
+        0.625346302986145,
+        0.6241506338119507,
+        0.622689962387085
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.455,
+      "answer": "DECOY-0616-1",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "4",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 1522,
+        "prompt_n": 1988,
+        "prompt_ms": 763.685,
+        "prompt_per_token_ms": 0.384147384305835,
+        "prompt_per_second": 2603.1675363533395,
+        "predicted_n": 11,
+        "predicted_ms": 238.383,
+        "predicted_per_token_ms": 21.671181818181818,
+        "predicted_per_second": 46.14423008352106
+      },
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 3510,
+        "total_tokens": 3521,
+        "prompt_tokens_details": {
+          "cached_tokens": 1522
+        }
+      }
+    },
+    {
+      "idx": 15,
+      "mode": "longctx-proxy",
+      "top_k": 4,
+      "handle": "ceramic-lantern-field",
+      "alias": "ceramic lantern field record",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 4,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_04/shard_0440.md:1-20",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_12/shard_1232.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1021.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1654.md:1-16"
+      ],
+      "top_scores": [
+        0.6112936735153198,
+        0.6109440326690674,
+        0.5949810743331909,
+        0.5766628980636597
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.643,
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "4",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 1521,
+        "prompt_n": 1994,
+        "prompt_ms": 783.867,
+        "prompt_per_token_ms": 0.3931128385155466,
+        "prompt_per_second": 2543.7988842494965,
+        "predicted_n": 17,
+        "predicted_ms": 376.357,
+        "predicted_per_token_ms": 22.13864705882353,
+        "predicted_per_second": 45.16987859930863
+      },
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 3515,
+        "total_tokens": 3532,
+        "prompt_tokens_details": {
+          "cached_tokens": 1521
+        }
+      }
+    },
+    {
+      "idx": 16,
+      "mode": "longctx-proxy",
+      "top_k": 4,
+      "handle": "delta-archive-needle",
+      "alias": "delta archive locator",
+      "expected": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 4,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1004.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1637.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_12/shard_1215.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_14/shard_1426.md:1-16"
+      ],
+      "top_scores": [
+        0.6206214427947998,
+        0.6187492609024048,
+        0.6132346987724304,
+        0.6074151396751404
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.645,
+      "answer": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "4",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 1522,
+        "prompt_n": 1991,
+        "prompt_ms": 783.227,
+        "prompt_per_token_ms": 0.39338372677046707,
+        "prompt_per_second": 2542.047197045046,
+        "predicted_n": 16,
+        "predicted_ms": 353.371,
+        "predicted_per_token_ms": 22.0856875,
+        "predicted_per_second": 45.278192041791776
+      },
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 3513,
+        "total_tokens": 3529,
+        "prompt_tokens_details": {
+          "cached_tokens": 1522
+        }
+      }
+    },
+    {
+      "idx": 17,
+      "mode": "longctx-proxy",
+      "top_k": 4,
+      "handle": "ember-signal-route",
+      "alias": "ember signal routing memo",
+      "expected": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 4,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_05/shard_0565.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_03/shard_0354.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1198.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_08/shard_0800.md:1-20"
+      ],
+      "top_scores": [
+        0.660742461681366,
+        0.6558443307876587,
+        0.6418105363845825,
+        0.6316284537315369
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.561,
+      "answer": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "4",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 1519,
+        "prompt_n": 1994,
+        "prompt_ms": 784.209,
+        "prompt_per_token_ms": 0.3932843530591775,
+        "prompt_per_second": 2542.689512617172,
+        "predicted_n": 14,
+        "predicted_ms": 307.308,
+        "predicted_per_token_ms": 21.95057142857143,
+        "predicted_per_second": 45.55690056881045
+      },
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 3513,
+        "total_tokens": 3527,
+        "prompt_tokens_details": {
+          "cached_tokens": 1519
+        }
+      }
+    },
+    {
+      "idx": 18,
+      "mode": "longctx-proxy",
+      "top_k": 4,
+      "handle": "feldspar-memory-gate",
+      "alias": "feldspar memory gate note",
+      "expected": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 4,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_13/shard_1392.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1181.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1020.md:1-20",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_01/shard_0126.md:1-16"
+      ],
+      "top_scores": [
+        0.5668841600418091,
+        0.5464695692062378,
+        0.5464608669281006,
+        0.5410876274108887
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.574,
+      "answer": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "4",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 1582,
+        "prompt_n": 1967,
+        "prompt_ms": 763.305,
+        "prompt_per_token_ms": 0.3880554143365531,
+        "prompt_per_second": 2576.9515462364325,
+        "predicted_n": 16,
+        "predicted_ms": 352.946,
+        "predicted_per_token_ms": 22.059125,
+        "predicted_per_second": 45.332713786244916
+      },
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 3549,
+        "total_tokens": 3565,
+        "prompt_tokens_details": {
+          "cached_tokens": 1582
+        }
+      }
+    },
+    {
+      "idx": 19,
+      "mode": "longctx-proxy",
+      "top_k": 4,
+      "handle": "glass-orchid-vector",
+      "alias": "glass orchid vector sheet",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 4,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_13/shard_1375.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_15/shard_1586.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_07/shard_0742.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1164.md:1-16"
+      ],
+      "top_scores": [
+        0.6108585596084595,
+        0.6091338396072388,
+        0.6090558767318726,
+        0.6018691062927246
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 3.989,
+      "answer": "The provided context snippets (shards 0742, 1375, 1164, 1586) explicitly state that the \"glass orchid vector sheet\" lookup is a **DECOY** and that the values associated with it (e.g., DECOY-0742-6, DECOY-1375-6, etc.) are **INVALID**. The snippets also state that the records within these shards \"intentionally contain no valid SECRET VALUE.\"\n\nSince the valid secret value is not present in the",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "4",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 1527,
+        "prompt_n": 1987,
+        "prompt_ms": 774.16,
+        "prompt_per_token_ms": 0.3896124811273276,
+        "prompt_per_second": 2566.652888291826,
+        "predicted_n": 120,
+        "predicted_ms": 2754.001,
+        "predicted_per_token_ms": 22.950008333333336,
+        "predicted_per_second": 43.57296892775275
+      },
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 3514,
+        "total_tokens": 3634,
+        "prompt_tokens_details": {
+          "cached_tokens": 1527
+        }
+      }
+    },
+    {
+      "idx": 20,
+      "mode": "longctx-proxy",
+      "top_k": 4,
+      "handle": "jade-winter-circuit",
+      "alias": "jade winter circuit card",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 4,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_07/shard_0725.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_13/shard_1358.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_09/shard_0936.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1147.md:1-16"
+      ],
+      "top_scores": [
+        0.6159721612930298,
+        0.6010791063308716,
+        0.5968560576438904,
+        0.5966475009918213
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 4.006,
+      "answer": "The provided context snippets (shards 0725, 1147, 1358, 0936) explicitly state that the \"jade winter circuit card\" lookup is a **DECOY** and that the lines mentioning \"green winter circuit board\" and \"jade-winter-circuit\" are **explicitly not the requested record**. They also state that the records in these shards \"intentionally contain no valid SECRET VALUE.\"\n\nSince the provided context does not contain the valid record for the \"jade winter circuit card\" (only decoys and",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "4",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 1521,
+        "prompt_n": 1984,
+        "prompt_ms": 758.616,
+        "prompt_per_token_ms": 0.38236693548387096,
+        "prompt_per_second": 2615.2888945131663,
+        "predicted_n": 120,
+        "predicted_ms": 2730.834,
+        "predicted_per_token_ms": 22.75695,
+        "predicted_per_second": 43.94261972716028
+      },
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 3505,
+        "total_tokens": 3625,
+        "prompt_tokens_details": {
+          "cached_tokens": 1521
+        }
+      }
+    },
+    {
+      "idx": 21,
+      "mode": "longctx-proxy",
+      "top_k": 8,
+      "handle": "aurora-blue-compass",
+      "alias": "blue compass calibration entry",
+      "expected": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 8,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1688.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_14/shard_1477.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_12/shard_1266.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1055.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_00/shard_0080.md:1-20"
+      ],
+      "top_scores": [
+        0.6072230339050293,
+        0.5966581106185913,
+        0.5898386240005493,
+        0.5503484010696411,
+        0.5412523746490479
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.925,
+      "answer": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "8",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3508,
+        "prompt_n": 4,
+        "prompt_ms": 56.292,
+        "prompt_per_token_ms": 14.073,
+        "prompt_per_second": 71.0580544304697,
+        "predicted_n": 16,
+        "predicted_ms": 353.285,
+        "predicted_per_token_ms": 22.0803125,
+        "predicted_per_second": 45.289214090606734
+      },
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 3512,
+        "total_tokens": 3528,
+        "prompt_tokens_details": {
+          "cached_tokens": 3508
+        }
+      }
+    },
+    {
+      "idx": 22,
+      "mode": "longctx-proxy",
+      "top_k": 8,
+      "handle": "brass-river-index",
+      "alias": "brass river indexing note",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 8,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_06/shard_0616.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1038.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_08/shard_0827.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_04/shard_0405.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1671.md:1-16"
+      ],
+      "top_scores": [
+        0.6332138776779175,
+        0.625346302986145,
+        0.6241506338119507,
+        0.622689962387085,
+        0.621975302696228
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.814,
+      "answer": "DECOY-0616-1",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "8",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3506,
+        "prompt_n": 4,
+        "prompt_ms": 56.287,
+        "prompt_per_token_ms": 14.07175,
+        "prompt_per_second": 71.06436655000266,
+        "predicted_n": 11,
+        "predicted_ms": 238.626,
+        "predicted_per_token_ms": 21.693272727272728,
+        "predicted_per_second": 46.09724003251951
+      },
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 3510,
+        "total_tokens": 3521,
+        "prompt_tokens_details": {
+          "cached_tokens": 3506
+        }
+      }
+    },
+    {
+      "idx": 23,
+      "mode": "longctx-proxy",
+      "top_k": 8,
+      "handle": "ceramic-lantern-field",
+      "alias": "ceramic lantern field record",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 8,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_04/shard_0440.md:1-20",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_12/shard_1232.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1021.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1654.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_14/shard_1443.md:1-16"
+      ],
+      "top_scores": [
+        0.6112936735153198,
+        0.6109440326690674,
+        0.5949810743331909,
+        0.5766628980636597,
+        0.5703980922698975
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.959,
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "8",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3511,
+        "prompt_n": 4,
+        "prompt_ms": 55.834,
+        "prompt_per_token_ms": 13.9585,
+        "prompt_per_second": 71.64093563061934,
+        "predicted_n": 17,
+        "predicted_ms": 376.054,
+        "predicted_per_token_ms": 22.120823529411762,
+        "predicted_per_second": 45.206273567094094
+      },
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 3515,
+        "total_tokens": 3532,
+        "prompt_tokens_details": {
+          "cached_tokens": 3511
+        }
+      }
+    },
+    {
+      "idx": 24,
+      "mode": "longctx-proxy",
+      "top_k": 8,
+      "handle": "delta-archive-needle",
+      "alias": "delta archive locator",
+      "expected": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 8,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1004.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1637.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_12/shard_1215.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_14/shard_1426.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_06/shard_0620.md:1-20"
+      ],
+      "top_scores": [
+        0.6206214427947998,
+        0.6187492609024048,
+        0.6132346987724304,
+        0.6074151396751404,
+        0.6039090156555176
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.93,
+      "answer": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "8",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3509,
+        "prompt_n": 4,
+        "prompt_ms": 56.458,
+        "prompt_per_token_ms": 14.1145,
+        "prompt_per_second": 70.84912678451238,
+        "predicted_n": 16,
+        "predicted_ms": 352.948,
+        "predicted_per_token_ms": 22.05925,
+        "predicted_per_second": 45.332456905833155
+      },
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 3513,
+        "total_tokens": 3529,
+        "prompt_tokens_details": {
+          "cached_tokens": 3509
+        }
+      }
+    },
+    {
+      "idx": 25,
+      "mode": "longctx-proxy",
+      "top_k": 8,
+      "handle": "ember-signal-route",
+      "alias": "ember signal routing memo",
+      "expected": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 8,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_05/shard_0565.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_03/shard_0354.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1198.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_08/shard_0800.md:1-20",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_09/shard_0987.md:1-16"
+      ],
+      "top_scores": [
+        0.660742461681366,
+        0.6558443307876587,
+        0.6418105363845825,
+        0.6316284537315369,
+        0.6138849258422852
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.809,
+      "answer": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "8",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3509,
+        "prompt_n": 4,
+        "prompt_ms": 56.354,
+        "prompt_per_token_ms": 14.0885,
+        "prompt_per_second": 70.97987720481244,
+        "predicted_n": 14,
+        "predicted_ms": 307.626,
+        "predicted_per_token_ms": 21.973285714285712,
+        "predicted_per_second": 45.509807363486836
+      },
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 3513,
+        "total_tokens": 3527,
+        "prompt_tokens_details": {
+          "cached_tokens": 3509
+        }
+      }
+    },
+    {
+      "idx": 26,
+      "mode": "longctx-proxy",
+      "top_k": 8,
+      "handle": "feldspar-memory-gate",
+      "alias": "feldspar memory gate note",
+      "expected": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 8,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_13/shard_1392.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1181.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1020.md:1-20",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_01/shard_0126.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_05/shard_0548.md:1-16"
+      ],
+      "top_scores": [
+        0.5668841600418091,
+        0.5464695692062378,
+        0.5464608669281006,
+        0.5410876274108887,
+        0.5358356237411499
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.955,
+      "answer": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "8",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3545,
+        "prompt_n": 4,
+        "prompt_ms": 56.274,
+        "prompt_per_token_ms": 14.0685,
+        "prompt_per_second": 71.08078331023208,
+        "predicted_n": 16,
+        "predicted_ms": 353.418,
+        "predicted_per_token_ms": 22.088625,
+        "predicted_per_second": 45.272170630811104
+      },
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 3549,
+        "total_tokens": 3565,
+        "prompt_tokens_details": {
+          "cached_tokens": 3545
+        }
+      }
+    },
+    {
+      "idx": 27,
+      "mode": "longctx-proxy",
+      "top_k": 8,
+      "handle": "glass-orchid-vector",
+      "alias": "glass orchid vector sheet",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 8,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_13/shard_1375.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_15/shard_1586.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_07/shard_0742.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1164.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_17/shard_1797.md:1-16"
+      ],
+      "top_scores": [
+        0.6108585596084595,
+        0.6091338396072388,
+        0.6090558767318726,
+        0.6018691062927246,
+        0.5963345766067505
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 3.315,
+      "answer": "The provided context snippets (shards 0742, 1375, 1164, 1586) explicitly state that the \"glass orchid vector sheet\" lookup is a **DECOY** and that the values associated with it (e.g., DECOY-0742-6, DECOY-1375-6, etc.) are **INVALID**. The snippets also state that the records within these shards \"intentionally contain no valid SECRET VALUE.\"\n\nSince the valid secret value is not present in the",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "8",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3510,
+        "prompt_n": 4,
+        "prompt_ms": 56.379,
+        "prompt_per_token_ms": 14.09475,
+        "prompt_per_second": 70.94840277408255,
+        "predicted_n": 120,
+        "predicted_ms": 2752.231,
+        "predicted_per_token_ms": 22.935258333333334,
+        "predicted_per_second": 43.60099134120646
+      },
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 3514,
+        "total_tokens": 3634,
+        "prompt_tokens_details": {
+          "cached_tokens": 3510
+        }
+      }
+    },
+    {
+      "idx": 28,
+      "mode": "longctx-proxy",
+      "top_k": 8,
+      "handle": "jade-winter-circuit",
+      "alias": "jade winter circuit card",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "retrieval_hit": false,
+      "chunks_count": 8,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_07/shard_0725.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_13/shard_1358.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_09/shard_0936.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1147.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_05/shard_0514.md:1-16"
+      ],
+      "top_scores": [
+        0.6159721612930298,
+        0.6010791063308716,
+        0.5968560576438904,
+        0.5966475009918213,
+        0.5769789218902588
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 3.35,
+      "answer": "The provided context snippets (shards 0725, 1147, 1358, 0936) explicitly state that the \"jade winter circuit card\" lookup is a **DECOY** and that the lines mentioning \"green winter circuit board\" and \"jade-winter-circuit\" are **explicitly not the requested record**. They also state that the records in these shards \"intentionally contain no valid SECRET VALUE.\"\n\nSince the provided context does not contain the valid record for the \"jade winter circuit card\" (only decoys and",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "8",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3501,
+        "prompt_n": 4,
+        "prompt_ms": 55.438,
+        "prompt_per_token_ms": 13.8595,
+        "prompt_per_second": 72.15267506042787,
+        "predicted_n": 120,
+        "predicted_ms": 2752.495,
+        "predicted_per_token_ms": 22.937458333333332,
+        "predicted_per_second": 43.596809440162474
+      },
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 3505,
+        "total_tokens": 3625,
+        "prompt_tokens_details": {
+          "cached_tokens": 3501
+        }
+      }
+    },
+    {
+      "idx": 29,
+      "mode": "longctx-proxy",
+      "top_k": 16,
+      "handle": "aurora-blue-compass",
+      "alias": "blue compass calibration entry",
+      "expected": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 16,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1688.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_14/shard_1477.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_12/shard_1266.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1055.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_00/shard_0080.md:1-20"
+      ],
+      "top_scores": [
+        0.6072230339050293,
+        0.5966581106185913,
+        0.5898386240005493,
+        0.5503484010696411,
+        0.5412523746490479
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.865,
+      "answer": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3508,
+        "prompt_n": 4,
+        "prompt_ms": 55.785,
+        "prompt_per_token_ms": 13.94625,
+        "prompt_per_second": 71.70386304562159,
+        "predicted_n": 16,
+        "predicted_ms": 353.437,
+        "predicted_per_token_ms": 22.0898125,
+        "predicted_per_second": 45.269736897947865
+      },
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 3512,
+        "total_tokens": 3528,
+        "prompt_tokens_details": {
+          "cached_tokens": 3508
+        }
+      }
+    },
+    {
+      "idx": 30,
+      "mode": "longctx-proxy",
+      "top_k": 16,
+      "handle": "brass-river-index",
+      "alias": "brass river indexing note",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 16,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_06/shard_0616.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1038.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_08/shard_0827.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_04/shard_0405.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1671.md:1-16"
+      ],
+      "top_scores": [
+        0.6332138776779175,
+        0.625346302986145,
+        0.6241506338119507,
+        0.622689962387085,
+        0.621975302696228
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.806,
+      "answer": "DECOY-0616-1",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3506,
+        "prompt_n": 4,
+        "prompt_ms": 46.757,
+        "prompt_per_token_ms": 11.68925,
+        "prompt_per_second": 85.54868789699938,
+        "predicted_n": 11,
+        "predicted_ms": 238.512,
+        "predicted_per_token_ms": 21.682909090909092,
+        "predicted_per_second": 46.119272824847386
+      },
+      "usage": {
+        "completion_tokens": 11,
+        "prompt_tokens": 3510,
+        "total_tokens": 3521,
+        "prompt_tokens_details": {
+          "cached_tokens": 3506
+        }
+      }
+    },
+    {
+      "idx": 31,
+      "mode": "longctx-proxy",
+      "top_k": 16,
+      "handle": "ceramic-lantern-field",
+      "alias": "ceramic lantern field record",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 16,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_04/shard_0440.md:1-20",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_12/shard_1232.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1021.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1654.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_14/shard_1443.md:1-16"
+      ],
+      "top_scores": [
+        0.6112936735153198,
+        0.6109440326690674,
+        0.5949810743331909,
+        0.5766628980636597,
+        0.5703980922698975
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.871,
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3511,
+        "prompt_n": 4,
+        "prompt_ms": 49.216,
+        "prompt_per_token_ms": 12.304,
+        "prompt_per_second": 81.2743823146944,
+        "predicted_n": 17,
+        "predicted_ms": 376.565,
+        "predicted_per_token_ms": 22.150882352941178,
+        "predicted_per_second": 45.144928498400006
+      },
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 3515,
+        "total_tokens": 3532,
+        "prompt_tokens_details": {
+          "cached_tokens": 3511
+        }
+      }
+    },
+    {
+      "idx": 32,
+      "mode": "longctx-proxy",
+      "top_k": 16,
+      "handle": "delta-archive-needle",
+      "alias": "delta archive locator",
+      "expected": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 16,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1004.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_16/shard_1637.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_12/shard_1215.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_14/shard_1426.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_06/shard_0620.md:1-20"
+      ],
+      "top_scores": [
+        0.6206214427947998,
+        0.6187492609024048,
+        0.6132346987724304,
+        0.6074151396751404,
+        0.6039090156555176
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.848,
+      "answer": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3509,
+        "prompt_n": 4,
+        "prompt_ms": 56.533,
+        "prompt_per_token_ms": 14.13325,
+        "prompt_per_second": 70.75513416942317,
+        "predicted_n": 16,
+        "predicted_ms": 353.123,
+        "predicted_per_token_ms": 22.0701875,
+        "predicted_per_second": 45.30999113623299
+      },
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 3513,
+        "total_tokens": 3529,
+        "prompt_tokens_details": {
+          "cached_tokens": 3509
+        }
+      }
+    },
+    {
+      "idx": 33,
+      "mode": "longctx-proxy",
+      "top_k": 16,
+      "handle": "ember-signal-route",
+      "alias": "ember signal routing memo",
+      "expected": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 16,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_05/shard_0565.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_03/shard_0354.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1198.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_08/shard_0800.md:1-20",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_09/shard_0987.md:1-16"
+      ],
+      "top_scores": [
+        0.660742461681366,
+        0.6558443307876587,
+        0.6418105363845825,
+        0.6316284537315369,
+        0.6138849258422852
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.788,
+      "answer": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3509,
+        "prompt_n": 4,
+        "prompt_ms": 43.264,
+        "prompt_per_token_ms": 10.816,
+        "prompt_per_second": 92.45562130177514,
+        "predicted_n": 14,
+        "predicted_ms": 302.105,
+        "predicted_per_token_ms": 21.578928571428573,
+        "predicted_per_second": 46.34150378179771
+      },
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 3513,
+        "total_tokens": 3527,
+        "prompt_tokens_details": {
+          "cached_tokens": 3509
+        }
+      }
+    },
+    {
+      "idx": 34,
+      "mode": "longctx-proxy",
+      "top_k": 16,
+      "handle": "feldspar-memory-gate",
+      "alias": "feldspar memory gate note",
+      "expected": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 16,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_13/shard_1392.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1181.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_10/shard_1020.md:1-20",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_01/shard_0126.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_05/shard_0548.md:1-16"
+      ],
+      "top_scores": [
+        0.5668841600418091,
+        0.5464695692062378,
+        0.5464608669281006,
+        0.5410876274108887,
+        0.5358356237411499
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 0.869,
+      "answer": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3545,
+        "prompt_n": 4,
+        "prompt_ms": 45.393,
+        "prompt_per_token_ms": 11.34825,
+        "prompt_per_second": 88.11931355054745,
+        "predicted_n": 16,
+        "predicted_ms": 353.211,
+        "predicted_per_token_ms": 22.0756875,
+        "predicted_per_second": 45.29870247529097
+      },
+      "usage": {
+        "completion_tokens": 16,
+        "prompt_tokens": 3549,
+        "total_tokens": 3565,
+        "prompt_tokens_details": {
+          "cached_tokens": 3545
+        }
+      }
+    },
+    {
+      "idx": 35,
+      "mode": "longctx-proxy",
+      "top_k": 16,
+      "handle": "glass-orchid-vector",
+      "alias": "glass orchid vector sheet",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 16,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_13/shard_1375.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_15/shard_1586.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_07/shard_0742.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1164.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_17/shard_1797.md:1-16"
+      ],
+      "top_scores": [
+        0.6108585596084595,
+        0.6091338396072388,
+        0.6090558767318726,
+        0.6018691062927246,
+        0.5963345766067505
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 3.284,
+      "answer": "The provided context snippets (shards 0742, 1375, 1164, 1586) explicitly state that the \"glass orchid vector sheet\" lookup is a **DECOY** and that the values associated with it (e.g., DECOY-0742-6, DECOY-1375-6, etc.) are **INVALID**. The snippets also state that the records within these shards \"intentionally contain no valid SECRET VALUE.\"\n\nSince the valid secret value is not present in the",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3510,
+        "prompt_n": 4,
+        "prompt_ms": 56.099,
+        "prompt_per_token_ms": 14.02475,
+        "prompt_per_second": 71.30251876147526,
+        "predicted_n": 120,
+        "predicted_ms": 2751.697,
+        "predicted_per_token_ms": 22.930808333333335,
+        "predicted_per_second": 43.609452639589314
+      },
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 3514,
+        "total_tokens": 3634,
+        "prompt_tokens_details": {
+          "cached_tokens": 3510
+        }
+      }
+    },
+    {
+      "idx": 36,
+      "mode": "longctx-proxy",
+      "top_k": 16,
+      "handle": "jade-winter-circuit",
+      "alias": "jade winter circuit card",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "retrieval_hit": true,
+      "chunks_count": 16,
+      "top_files": [
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_07/shard_0725.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_13/shard_1358.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_09/shard_0936.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_11/shard_1147.md:1-16",
+        "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/src/sector_05/shard_0514.md:1-16"
+      ],
+      "top_scores": [
+        0.6159721612930298,
+        0.6010791063308716,
+        0.5968560576438904,
+        0.5966475009918213,
+        0.5769789218902588
+      ],
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 3.271,
+      "answer": "The provided context snippets (shards 0725, 1147, 1358, 0936) explicitly state that the \"jade winter circuit card\" lookup is a **DECOY** and that the lines mentioning \"green winter circuit board\" and \"jade-winter-circuit\" are **explicitly not the requested record**. They also state that the records in these shards \"intentionally contain no valid SECRET VALUE.\"\n\nSince the provided context does not contain the valid record for the \"jade winter circuit card\" (only decoys and",
+      "hit": false,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 3501,
+        "prompt_n": 4,
+        "prompt_ms": 56.325,
+        "prompt_per_token_ms": 14.08125,
+        "prompt_per_second": 71.01642254771416,
+        "predicted_n": 120,
+        "predicted_ms": 2751.505,
+        "predicted_per_token_ms": 22.929208333333335,
+        "predicted_per_second": 43.612495706894954
+      },
+      "usage": {
+        "completion_tokens": 120,
+        "prompt_tokens": 3505,
+        "total_tokens": 3625,
+        "prompt_tokens_details": {
+          "cached_tokens": 3501
+        }
+      }
+    }
+  ]
+}

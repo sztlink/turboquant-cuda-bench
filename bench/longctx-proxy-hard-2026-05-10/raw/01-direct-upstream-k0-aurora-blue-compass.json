@@ -1,0 +1,64 @@
+{
+  "body": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 120,
+    "stream": false,
+    "longctx_top_k": 0,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/README.md\nWhich SECRET VALUE belongs to the blue compass calibration entry? The clue is navigation instrument that glows blue. Answer only the exact secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": null,
+    "x-longctx-scope-status": null,
+    "x-longctx-scope": null,
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"blue_compass_calibration_secret_value\"}}],\"created\":1778414021,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":7,\"prompt_tokens\":113,\"total_tokens\":120,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-zSkbh7P4vWzwq4jRGtWMPhH5eqE2RuzK\",\"timings\":{\"cache_n\":0,\"prompt_n\":113,\"prompt_ms\":424.249,\"prompt_per_token_ms\":3.75441592920354,\"prompt_per_second\":266.3530143854199,\"predicted_n\":7,\"predicted_ms\":146.179,\"predicted_per_token_ms\":20.882714285714286,\"predicted_per_second\":47.88649532422578}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "blue_compass_calibration_secret_value"
+        }
+      }
+    ],
+    "created": 1778414021,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 7,
+      "prompt_tokens": 113,
+      "total_tokens": 120,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-zSkbh7P4vWzwq4jRGtWMPhH5eqE2RuzK",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 113,
+      "prompt_ms": 424.249,
+      "prompt_per_token_ms": 3.75441592920354,
+      "prompt_per_second": 266.3530143854199,
+      "predicted_n": 7,
+      "predicted_ms": 146.179,
+      "predicted_per_token_ms": 20.882714285714286,
+      "predicted_per_second": 47.88649532422578
+    }
+  },
+  "answer": "blue_compass_calibration_secret_value"
+}

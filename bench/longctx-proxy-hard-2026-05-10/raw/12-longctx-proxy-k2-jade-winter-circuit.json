@@ -1,0 +1,64 @@
+{
+  "body": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 120,
+    "stream": false,
+    "longctx_top_k": 2,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/README.md\nWhich SECRET VALUE belongs to the jade winter circuit card? The clue is green winter circuit board. Answer only the exact secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "2",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"length\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The provided text snippets (shard 0725 and shard 1147) explicitly state that the mention of \\\"jade winter circuit card\\\" and \\\"green winter circuit board\\\" is a **DECOY LOOKUP** and contains **INVALID VALUE**s (DECOY-0725-7 and DECOY-1147-7). The instructions in the shards say \\\"Do not answer with this decoy.\\\"\\n\\nFurthermore, the retrieved shards do not contain the actual `README.md` file content where the valid secret value for the \\\"jade winter\"}}],\"created\":1778414040,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":120,\"prompt_tokens\":2037,\"total_tokens\":2157,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-afBWvei0EYnxlTLqTE8gmmAA86GNlhty\",\"timings\":{\"cache_n\":0,\"prompt_n\":2037,\"prompt_ms\":743.178,\"prompt_per_token_ms\":0.364839469808542,\"prompt_per_second\":2740.9315130426357,\"predicted_n\":120,\"predicted_ms\":2725.727,\"predicted_per_token_ms\":22.714391666666664,\"predicted_per_second\":44.02495187522448}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "The provided text snippets (shard 0725 and shard 1147) explicitly state that the mention of \"jade winter circuit card\" and \"green winter circuit board\" is a **DECOY LOOKUP** and contains **INVALID VALUE**s (DECOY-0725-7 and DECOY-1147-7). The instructions in the shards say \"Do not answer with this decoy.\"\n\nFurthermore, the retrieved shards do not contain the actual `README.md` file content where the valid secret value for the \"jade winter"
+        }
+      }
+    ],
+    "created": 1778414040,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 120,
+      "prompt_tokens": 2037,
+      "total_tokens": 2157,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-afBWvei0EYnxlTLqTE8gmmAA86GNlhty",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 2037,
+      "prompt_ms": 743.178,
+      "prompt_per_token_ms": 0.364839469808542,
+      "prompt_per_second": 2740.9315130426357,
+      "predicted_n": 120,
+      "predicted_ms": 2725.727,
+      "predicted_per_token_ms": 22.714391666666664,
+      "predicted_per_second": 44.02495187522448
+    }
+  },
+  "answer": "The provided text snippets (shard 0725 and shard 1147) explicitly state that the mention of \"jade winter circuit card\" and \"green winter circuit board\" is a **DECOY LOOKUP** and contains **INVALID VALUE**s (DECOY-0725-7 and DECOY-1147-7). The instructions in the shards say \"Do not answer with this decoy.\"\n\nFurthermore, the retrieved shards do not contain the actual `README.md` file content where the valid secret value for the \"jade winter"
+}

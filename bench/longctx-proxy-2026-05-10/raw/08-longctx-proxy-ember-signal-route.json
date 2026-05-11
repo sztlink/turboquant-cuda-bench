@@ -1,0 +1,64 @@
+{
+  "body": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 160,
+    "stream": false,
+    "longctx_top_k": 8,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab/README.md\nFind the lookup target named ember-signal-route. What is the exact SECRET VALUE assigned to it? Answer only the secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "8",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"AYA-LONGCTX-EMBER-SIGNAL-450-Z9\"}}],\"created\":1778398276,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":15,\"prompt_tokens\":3734,\"total_tokens\":3749,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-yzRZtMJDacwUhvm3OCfPSjmiuit0WZ47\",\"timings\":{\"cache_n\":0,\"prompt_n\":3734,\"prompt_ms\":1338.598,\"prompt_per_token_ms\":0.35848901981788966,\"prompt_per_second\":2789.485715651749,\"predicted_n\":15,\"predicted_ms\":330.378,\"predicted_per_token_ms\":22.025199999999998,\"predicted_per_second\":45.402538909975846}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "AYA-LONGCTX-EMBER-SIGNAL-450-Z9"
+        }
+      }
+    ],
+    "created": 1778398276,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 15,
+      "prompt_tokens": 3734,
+      "total_tokens": 3749,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-yzRZtMJDacwUhvm3OCfPSjmiuit0WZ47",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 3734,
+      "prompt_ms": 1338.598,
+      "prompt_per_token_ms": 0.35848901981788966,
+      "prompt_per_second": 2789.485715651749,
+      "predicted_n": 15,
+      "predicted_ms": 330.378,
+      "predicted_per_token_ms": 22.025199999999998,
+      "predicted_per_second": 45.402538909975846
+    }
+  },
+  "answer": "AYA-LONGCTX-EMBER-SIGNAL-450-Z9"
+}

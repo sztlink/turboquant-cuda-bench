@@ -1,0 +1,64 @@
+{
+  "body": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 160,
+    "stream": false,
+    "longctx_top_k": 8,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab/README.md\nFind the lookup target named aurora-blue-compass. What is the exact SECRET VALUE assigned to it? Answer only the secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": null,
+    "x-longctx-scope-status": null,
+    "x-longctx-scope": null,
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The provided project path and file (`/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab/README.md`) do not exist in my training data, nor do I have access to local file systems or future-dated directories (2026). Therefore, I cannot retrieve the specific secret value for `aurora-blue-compass` from that source.\\n\\nIf this is a test case for a retrieval system, the answer depends entirely on the content of that specific local file, which is not publicly available or known to me.\"}}],\"created\":1778398264,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":138,\"prompt_tokens\":110,\"total_tokens\":248,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-ej0smeO9FrpaCkIiOwsCgRkRWTKSeopt\",\"timings\":{\"cache_n\":0,\"prompt_n\":110,\"prompt_ms\":405.283,\"prompt_per_token_ms\":3.6843909090909093,\"prompt_per_second\":271.4152826543428,\"predicted_n\":138,\"predicted_ms\":3083.255,\"predicted_per_token_ms\":22.342427536231884,\"predicted_per_second\":44.75789384919509}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "The provided project path and file (`/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab/README.md`) do not exist in my training data, nor do I have access to local file systems or future-dated directories (2026). Therefore, I cannot retrieve the specific secret value for `aurora-blue-compass` from that source.\n\nIf this is a test case for a retrieval system, the answer depends entirely on the content of that specific local file, which is not publicly available or known to me."
+        }
+      }
+    ],
+    "created": 1778398264,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 138,
+      "prompt_tokens": 110,
+      "total_tokens": 248,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-ej0smeO9FrpaCkIiOwsCgRkRWTKSeopt",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 110,
+      "prompt_ms": 405.283,
+      "prompt_per_token_ms": 3.6843909090909093,
+      "prompt_per_second": 271.4152826543428,
+      "predicted_n": 138,
+      "predicted_ms": 3083.255,
+      "predicted_per_token_ms": 22.342427536231884,
+      "predicted_per_second": 44.75789384919509
+    }
+  },
+  "answer": "The provided project path and file (`/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab/README.md`) do not exist in my training data, nor do I have access to local file systems or future-dated directories (2026). Therefore, I cannot retrieve the specific secret value for `aurora-blue-compass` from that source.\n\nIf this is a test case for a retrieval system, the answer depends entirely on the content of that specific local file, which is not publicly available or known to me."
+}

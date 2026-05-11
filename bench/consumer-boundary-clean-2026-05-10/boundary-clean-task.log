@@ -1,0 +1,92 @@
+BOUNDARY_CLEAN_START 2026-05-09T23:20:16-03:00
+bench=C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe
+model=C:\models\q36_27b_new.gguf
+prompt_tokens=64 gen_tokens=16 sample_every_sec=5
+bench_sha256=3A397CC18F382136F1164665B118471F6E4E616A2AB747622DB285F530481280
+repo_commit=69d8e4be4
+gpu=NVIDIA GeForce RTX 4090, 595.79, 0 %, 66 MiB, 24564 MiB, 42, 16.84 W
+CELL_START 2026-05-09T23:20:17-03:00 idx=1 run=1 depth=131072 label=128K ctk=q8_0 ctv=q8_0 timeout_sec=240
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -p 64 -n 16 -d 131072 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:21:43-03:00 idx=1 run=1 status=ok exit=0 elapsed_sec=85 peak_mem_mib=21986 pp_tok_s=759.305947 tg_tok_s=24.088499 stdout_bytes=2458
+CELL_START 2026-05-09T23:21:43-03:00 idx=2 run=1 depth=131072 label=128K ctk=q8_0 ctv=turbo4 timeout_sec=240
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -p 64 -n 16 -d 131072 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:23:08-03:00 idx=2 run=1 status=ok exit=0 elapsed_sec=84 peak_mem_mib=20898 pp_tok_s=754.498995 tg_tok_s=22.800419 stdout_bytes=2462
+CELL_START 2026-05-09T23:23:08-03:00 idx=3 run=1 depth=131072 label=128K ctk=turbo4 ctv=turbo4 timeout_sec=240
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -p 64 -n 16 -d 131072 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:24:33-03:00 idx=3 run=1 status=ok exit=0 elapsed_sec=84 peak_mem_mib=20914 pp_tok_s=719.891386 tg_tok_s=22.663689 stdout_bytes=2466
+CELL_START 2026-05-09T23:24:33-03:00 idx=4 run=1 depth=163840 label=160K ctk=q8_0 ctv=q8_0 timeout_sec=300
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -p 64 -n 16 -d 163840 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:26:24-03:00 idx=4 run=1 status=ok exit=0 elapsed_sec=110 peak_mem_mib=23262 pp_tok_s=642.665778 tg_tok_s=21.975115 stdout_bytes=2458
+CELL_START 2026-05-09T23:26:24-03:00 idx=5 run=1 depth=163840 label=160K ctk=q8_0 ctv=turbo4 timeout_sec=300
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -p 64 -n 16 -d 163840 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:28:15-03:00 idx=5 run=1 status=ok exit=0 elapsed_sec=110 peak_mem_mib=21900 pp_tok_s=637.602614 tg_tok_s=20.401286 stdout_bytes=2464
+CELL_START 2026-05-09T23:28:15-03:00 idx=6 run=1 depth=163840 label=160K ctk=turbo4 ctv=turbo4 timeout_sec=300
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -p 64 -n 16 -d 163840 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:30:07-03:00 idx=6 run=1 status=ok exit=0 elapsed_sec=111 peak_mem_mib=21900 pp_tok_s=637.840909 tg_tok_s=20.503279 stdout_bytes=2468
+CELL_START 2026-05-09T23:30:07-03:00 idx=7 run=1 depth=196608 label=192K ctk=q8_0 ctv=q8_0 timeout_sec=300
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -p 64 -n 16 -d 196608 -r 1 -o json --no-warmup
+CELL_TIMEOUT 2026-05-09T23:35:12-03:00 idx=7 run=1 depth=196608 ctk=q8_0 ctv=q8_0 kill_llama_bench=true
+CELL_EXIT 2026-05-09T23:35:15-03:00 idx=7 run=1 status=timeout exit=124 elapsed_sec=305 peak_mem_mib=24122 pp_tok_s=null tg_tok_s=null stdout_bytes=0
+CELL_START 2026-05-09T23:35:15-03:00 idx=8 run=1 depth=196608 label=192K ctk=q8_0 ctv=turbo4 timeout_sec=420
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -p 64 -n 16 -d 196608 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:37:37-03:00 idx=8 run=1 status=ok exit=0 elapsed_sec=142 peak_mem_mib=22928 pp_tok_s=600.072946 tg_tok_s=18.341737 stdout_bytes=2464
+CELL_START 2026-05-09T23:37:37-03:00 idx=9 run=1 depth=196608 label=192K ctk=turbo4 ctv=turbo4 timeout_sec=420
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -p 64 -n 16 -d 196608 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:40:00-03:00 idx=9 run=1 status=ok exit=0 elapsed_sec=143 peak_mem_mib=22928 pp_tok_s=575.408135 tg_tok_s=18.353936 stdout_bytes=2468
+CELL_START 2026-05-09T23:40:00-03:00 idx=10 run=2 depth=131072 label=128K ctk=q8_0 ctv=q8_0 timeout_sec=240
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -p 64 -n 16 -d 131072 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:41:26-03:00 idx=10 run=2 status=ok exit=0 elapsed_sec=85 peak_mem_mib=22004 pp_tok_s=721.196646 tg_tok_s=24.370747 stdout_bytes=2458
+CELL_START 2026-05-09T23:41:26-03:00 idx=11 run=2 depth=131072 label=128K ctk=q8_0 ctv=turbo4 timeout_sec=240
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -p 64 -n 16 -d 131072 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:42:51-03:00 idx=11 run=2 status=ok exit=0 elapsed_sec=84 peak_mem_mib=20894 pp_tok_s=716.7375 tg_tok_s=22.743335 stdout_bytes=2462
+CELL_START 2026-05-09T23:42:51-03:00 idx=12 run=2 depth=131072 label=128K ctk=turbo4 ctv=turbo4 timeout_sec=240
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -p 64 -n 16 -d 131072 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:44:16-03:00 idx=12 run=2 status=ok exit=0 elapsed_sec=84 peak_mem_mib=20914 pp_tok_s=720.947235 tg_tok_s=22.860222 stdout_bytes=2466
+CELL_START 2026-05-09T23:44:16-03:00 idx=13 run=2 depth=163840 label=160K ctk=q8_0 ctv=q8_0 timeout_sec=300
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -p 64 -n 16 -d 163840 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:46:07-03:00 idx=13 run=2 status=ok exit=0 elapsed_sec=110 peak_mem_mib=23262 pp_tok_s=642.56512 tg_tok_s=22.107649 stdout_bytes=2458
+CELL_START 2026-05-09T23:46:07-03:00 idx=14 run=2 depth=163840 label=160K ctk=q8_0 ctv=turbo4 timeout_sec=300
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -p 64 -n 16 -d 163840 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:47:58-03:00 idx=14 run=2 status=ok exit=0 elapsed_sec=110 peak_mem_mib=21900 pp_tok_s=635.683076 tg_tok_s=20.404062 stdout_bytes=2464
+CELL_START 2026-05-09T23:47:58-03:00 idx=15 run=2 depth=163840 label=160K ctk=turbo4 ctv=turbo4 timeout_sec=300
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -p 64 -n 16 -d 163840 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:49:50-03:00 idx=15 run=2 status=ok exit=0 elapsed_sec=111 peak_mem_mib=21900 pp_tok_s=635.873815 tg_tok_s=20.575626 stdout_bytes=2468
+CELL_START 2026-05-09T23:49:50-03:00 idx=16 run=2 depth=196608 label=192K ctk=q8_0 ctv=q8_0 timeout_sec=300
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -p 64 -n 16 -d 196608 -r 1 -o json --no-warmup
+CELL_TIMEOUT 2026-05-09T23:54:55-03:00 idx=16 run=2 depth=196608 ctk=q8_0 ctv=q8_0 kill_llama_bench=true
+CELL_EXIT 2026-05-09T23:54:58-03:00 idx=16 run=2 status=timeout exit=124 elapsed_sec=305 peak_mem_mib=24122 pp_tok_s=null tg_tok_s=null stdout_bytes=0
+CELL_START 2026-05-09T23:54:58-03:00 idx=17 run=2 depth=196608 label=192K ctk=q8_0 ctv=turbo4 timeout_sec=420
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -p 64 -n 16 -d 196608 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:57:21-03:00 idx=17 run=2 status=ok exit=0 elapsed_sec=142 peak_mem_mib=22928 pp_tok_s=574.079589 tg_tok_s=18.226733 stdout_bytes=2463
+CELL_START 2026-05-09T23:57:21-03:00 idx=18 run=2 depth=196608 label=192K ctk=turbo4 ctv=turbo4 timeout_sec=420
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -p 64 -n 16 -d 196608 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-09T23:59:44-03:00 idx=18 run=2 status=ok exit=0 elapsed_sec=142 peak_mem_mib=22928 pp_tok_s=574.967703 tg_tok_s=18.246063 stdout_bytes=2468
+CELL_START 2026-05-09T23:59:44-03:00 idx=19 run=3 depth=131072 label=128K ctk=q8_0 ctv=q8_0 timeout_sec=240
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -p 64 -n 16 -d 131072 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-10T00:01:09-03:00 idx=19 run=3 status=ok exit=0 elapsed_sec=84 peak_mem_mib=21986 pp_tok_s=759.269014 tg_tok_s=24.238238 stdout_bytes=2458
+CELL_START 2026-05-10T00:01:09-03:00 idx=20 run=3 depth=131072 label=128K ctk=q8_0 ctv=turbo4 timeout_sec=240
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -p 64 -n 16 -d 131072 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-10T00:02:34-03:00 idx=20 run=3 status=ok exit=0 elapsed_sec=84 peak_mem_mib=20914 pp_tok_s=719.451149 tg_tok_s=22.530061 stdout_bytes=2462
+CELL_START 2026-05-10T00:02:34-03:00 idx=21 run=3 depth=131072 label=128K ctk=turbo4 ctv=turbo4 timeout_sec=240
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -p 64 -n 16 -d 131072 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-10T00:03:59-03:00 idx=21 run=3 status=ok exit=0 elapsed_sec=84 peak_mem_mib=20914 pp_tok_s=718.025699 tg_tok_s=22.505707 stdout_bytes=2466
+CELL_START 2026-05-10T00:03:59-03:00 idx=22 run=3 depth=163840 label=160K ctk=q8_0 ctv=q8_0 timeout_sec=300
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -p 64 -n 16 -d 163840 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-10T00:05:50-03:00 idx=22 run=3 status=ok exit=0 elapsed_sec=110 peak_mem_mib=23262 pp_tok_s=593.155541 tg_tok_s=21.953156 stdout_bytes=2460
+CELL_START 2026-05-10T00:05:50-03:00 idx=23 run=3 depth=163840 label=160K ctk=q8_0 ctv=turbo4 timeout_sec=300
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -p 64 -n 16 -d 163840 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-10T00:07:42-03:00 idx=23 run=3 status=ok exit=0 elapsed_sec=111 peak_mem_mib=21900 pp_tok_s=637.685838 tg_tok_s=20.477817 stdout_bytes=2464
+CELL_START 2026-05-10T00:07:42-03:00 idx=24 run=3 depth=163840 label=160K ctk=turbo4 ctv=turbo4 timeout_sec=300
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -p 64 -n 16 -d 163840 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-10T00:09:33-03:00 idx=24 run=3 status=ok exit=0 elapsed_sec=110 peak_mem_mib=21884 pp_tok_s=638.061569 tg_tok_s=20.264153 stdout_bytes=2468
+CELL_START 2026-05-10T00:09:33-03:00 idx=25 run=3 depth=196608 label=192K ctk=q8_0 ctv=q8_0 timeout_sec=300
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -p 64 -n 16 -d 196608 -r 1 -o json --no-warmup
+CELL_TIMEOUT 2026-05-10T00:14:38-03:00 idx=25 run=3 depth=196608 ctk=q8_0 ctv=q8_0 kill_llama_bench=true
+CELL_EXIT 2026-05-10T00:14:41-03:00 idx=25 run=3 status=timeout exit=124 elapsed_sec=305 peak_mem_mib=24122 pp_tok_s=null tg_tok_s=null stdout_bytes=0
+CELL_START 2026-05-10T00:14:41-03:00 idx=26 run=3 depth=196608 label=192K ctk=q8_0 ctv=turbo4 timeout_sec=420
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -p 64 -n 16 -d 196608 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-10T00:17:04-03:00 idx=26 run=3 status=ok exit=0 elapsed_sec=142 peak_mem_mib=22930 pp_tok_s=574.484109 tg_tok_s=18.251246 stdout_bytes=2464
+CELL_START 2026-05-10T00:17:04-03:00 idx=27 run=3 depth=196608 label=192K ctk=turbo4 ctv=turbo4 timeout_sec=420
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-bench.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -p 64 -n 16 -d 196608 -r 1 -o json --no-warmup
+CELL_EXIT 2026-05-10T00:19:27-03:00 idx=27 run=3 status=ok exit=0 elapsed_sec=142 peak_mem_mib=22928 pp_tok_s=599.090506 tg_tok_s=18.227669 stdout_bytes=2468
+BOUNDARY_CLEAN_DONE 2026-05-10T00:19:27-03:00

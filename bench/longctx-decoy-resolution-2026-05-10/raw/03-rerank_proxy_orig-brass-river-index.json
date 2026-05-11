@@ -1,0 +1,64 @@
+{
+  "payload": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 120,
+    "stream": false,
+    "longctx_top_k": 16,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/README.md\nWhich SECRET VALUE belongs to the brass river indexing note? The clue is river catalog made of brass.\nAnswer only the exact secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "16",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"AYA-HARD-BRASS-RIVER-180-Z9\"}}],\"created\":1778421876,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":15,\"prompt_tokens\":3514,\"total_tokens\":3529,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-bUE7NUZdpnQPQQUt7PacuSz9QvRepCH0\",\"timings\":{\"cache_n\":0,\"prompt_n\":3514,\"prompt_ms\":1560.416,\"prompt_per_token_ms\":0.4440569151963574,\"prompt_per_second\":2251.9635789430513,\"predicted_n\":15,\"predicted_ms\":338.157,\"predicted_per_token_ms\":22.543799999999997,\"predicted_per_second\":44.35809402141609}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "AYA-HARD-BRASS-RIVER-180-Z9"
+        }
+      }
+    ],
+    "created": 1778421876,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 15,
+      "prompt_tokens": 3514,
+      "total_tokens": 3529,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-bUE7NUZdpnQPQQUt7PacuSz9QvRepCH0",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 3514,
+      "prompt_ms": 1560.416,
+      "prompt_per_token_ms": 0.4440569151963574,
+      "prompt_per_second": 2251.9635789430513,
+      "predicted_n": 15,
+      "predicted_ms": 338.157,
+      "predicted_per_token_ms": 22.543799999999997,
+      "predicted_per_second": 44.35809402141609
+    }
+  },
+  "answer": "AYA-HARD-BRASS-RIVER-180-Z9"
+}

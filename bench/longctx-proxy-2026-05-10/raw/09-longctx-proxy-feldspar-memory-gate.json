@@ -1,0 +1,64 @@
+{
+  "body": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 160,
+    "stream": false,
+    "longctx_top_k": 8,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab/README.md\nFind the lookup target named feldspar-memory-gate. What is the exact SECRET VALUE assigned to it? Answer only the secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "8",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"AYA-LONGCTX-FELDSPAR-MEMORY-550-Z9\"}}],\"created\":1778398278,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":18,\"prompt_tokens\":3744,\"total_tokens\":3762,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-VitZRwfb6vJDgiwwSqc5yZ5ZCYM1FrkH\",\"timings\":{\"cache_n\":0,\"prompt_n\":3744,\"prompt_ms\":1358.973,\"prompt_per_token_ms\":0.36297355769230766,\"prompt_per_second\":2755.021622946151,\"predicted_n\":18,\"predicted_ms\":399.78,\"predicted_per_token_ms\":22.209999999999997,\"predicted_per_second\":45.024763619991}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "AYA-LONGCTX-FELDSPAR-MEMORY-550-Z9"
+        }
+      }
+    ],
+    "created": 1778398278,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 18,
+      "prompt_tokens": 3744,
+      "total_tokens": 3762,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-VitZRwfb6vJDgiwwSqc5yZ5ZCYM1FrkH",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 3744,
+      "prompt_ms": 1358.973,
+      "prompt_per_token_ms": 0.36297355769230766,
+      "prompt_per_second": 2755.021622946151,
+      "predicted_n": 18,
+      "predicted_ms": 399.78,
+      "predicted_per_token_ms": 22.209999999999997,
+      "predicted_per_second": 45.024763619991
+    }
+  },
+  "answer": "AYA-LONGCTX-FELDSPAR-MEMORY-550-Z9"
+}

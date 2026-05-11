@@ -1,0 +1,117 @@
+NEEDLE_RETRIEVAL_START 2026-05-10T00:30:27-03:00
+model=C:\models\q36_27b_new.gguf
+bin=C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe
+remote_dir=C:\turbo-build\needle-retrieval-20260510
+purpose=actual prompt needle retrieval after TurboQuant fit boundary
+prompts_generated_and_copied count=15
+CASE_START 2026-05-10T00:30:28-03:00 idx=1 label=128K ctx=131072 pos=p05 key=AYA-128K-p05-K050-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=700
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 131072 -f C:\turbo-build\needle-retrieval-20260510\prompts\128K-p05.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:31:40-03:00 idx=1 status=ok exit=0 elapsed_sec=71 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=21906
+CASE_START 2026-05-10T00:31:40-03:00 idx=2 label=128K ctx=131072 pos=p05 key=AYA-128K-p05-K050-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=700
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 131072 -f C:\turbo-build\needle-retrieval-20260510\prompts\128K-p05.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:33:03-03:00 idx=2 status=ok exit=0 elapsed_sec=82 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=20812
+CASE_START 2026-05-10T00:33:03-03:00 idx=3 label=128K ctx=131072 pos=p25 key=AYA-128K-p25-K250-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=700
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 131072 -f C:\turbo-build\needle-retrieval-20260510\prompts\128K-p25.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:34:26-03:00 idx=3 status=ok exit=0 elapsed_sec=82 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=21900
+CASE_START 2026-05-10T00:34:26-03:00 idx=4 label=128K ctx=131072 pos=p25 key=AYA-128K-p25-K250-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=700
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 131072 -f C:\turbo-build\needle-retrieval-20260510\prompts\128K-p25.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:35:49-03:00 idx=4 status=ok exit=0 elapsed_sec=82 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=20812
+CASE_START 2026-05-10T00:35:49-03:00 idx=5 label=128K ctx=131072 pos=p50 key=AYA-128K-p50-K500-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=700
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 131072 -f C:\turbo-build\needle-retrieval-20260510\prompts\128K-p50.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:37:12-03:00 idx=5 status=ok exit=0 elapsed_sec=82 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=21900
+CASE_START 2026-05-10T00:37:12-03:00 idx=6 label=128K ctx=131072 pos=p50 key=AYA-128K-p50-K500-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=700
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 131072 -f C:\turbo-build\needle-retrieval-20260510\prompts\128K-p50.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:38:35-03:00 idx=6 status=ok exit=0 elapsed_sec=82 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=20810
+CASE_START 2026-05-10T00:38:35-03:00 idx=7 label=128K ctx=131072 pos=p75 key=AYA-128K-p75-K750-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=700
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 131072 -f C:\turbo-build\needle-retrieval-20260510\prompts\128K-p75.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:39:58-03:00 idx=7 status=ok exit=0 elapsed_sec=82 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=21900
+CASE_START 2026-05-10T00:39:58-03:00 idx=8 label=128K ctx=131072 pos=p75 key=AYA-128K-p75-K750-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=700
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 131072 -f C:\turbo-build\needle-retrieval-20260510\prompts\128K-p75.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:41:21-03:00 idx=8 status=ok exit=0 elapsed_sec=82 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=20812
+CASE_START 2026-05-10T00:41:21-03:00 idx=9 label=128K ctx=131072 pos=p95 key=AYA-128K-p95-K950-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=700
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 131072 -f C:\turbo-build\needle-retrieval-20260510\prompts\128K-p95.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:42:44-03:00 idx=9 status=ok exit=0 elapsed_sec=82 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=21904
+CASE_START 2026-05-10T00:42:44-03:00 idx=10 label=128K ctx=131072 pos=p95 key=AYA-128K-p95-K950-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=700
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 131072 -f C:\turbo-build\needle-retrieval-20260510\prompts\128K-p95.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:44:07-03:00 idx=10 status=ok exit=0 elapsed_sec=82 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=20812
+CASE_START 2026-05-10T00:44:07-03:00 idx=11 label=160K ctx=163840 pos=p05 key=AYA-160K-p05-K050-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=850
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 163840 -f C:\turbo-build\needle-retrieval-20260510\prompts\160K-p05.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:45:50-03:00 idx=11 status=ok exit=0 elapsed_sec=103 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=23192
+CASE_START 2026-05-10T00:45:50-03:00 idx=12 label=160K ctx=163840 pos=p05 key=AYA-160K-p05-K050-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=850
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 163840 -f C:\turbo-build\needle-retrieval-20260510\prompts\160K-p05.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:47:34-03:00 idx=12 status=ok exit=0 elapsed_sec=103 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=21830
+CASE_START 2026-05-10T00:47:34-03:00 idx=13 label=160K ctx=163840 pos=p25 key=AYA-160K-p25-K250-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=850
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 163840 -f C:\turbo-build\needle-retrieval-20260510\prompts\160K-p25.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:49:17-03:00 idx=13 status=ok exit=0 elapsed_sec=103 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=23192
+CASE_START 2026-05-10T00:49:17-03:00 idx=14 label=160K ctx=163840 pos=p25 key=AYA-160K-p25-K250-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=850
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 163840 -f C:\turbo-build\needle-retrieval-20260510\prompts\160K-p25.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:51:01-03:00 idx=14 status=ok exit=0 elapsed_sec=103 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=21830
+CASE_START 2026-05-10T00:51:01-03:00 idx=15 label=160K ctx=163840 pos=p50 key=AYA-160K-p50-K500-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=850
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 163840 -f C:\turbo-build\needle-retrieval-20260510\prompts\160K-p50.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:52:44-03:00 idx=15 status=ok exit=0 elapsed_sec=103 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=23192
+CASE_START 2026-05-10T00:52:44-03:00 idx=16 label=160K ctx=163840 pos=p50 key=AYA-160K-p50-K500-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=850
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 163840 -f C:\turbo-build\needle-retrieval-20260510\prompts\160K-p50.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:54:28-03:00 idx=16 status=ok exit=0 elapsed_sec=103 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=21830
+CASE_START 2026-05-10T00:54:28-03:00 idx=17 label=160K ctx=163840 pos=p75 key=AYA-160K-p75-K750-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=850
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 163840 -f C:\turbo-build\needle-retrieval-20260510\prompts\160K-p75.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:56:11-03:00 idx=17 status=ok exit=0 elapsed_sec=103 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=23192
+CASE_START 2026-05-10T00:56:11-03:00 idx=18 label=160K ctx=163840 pos=p75 key=AYA-160K-p75-K750-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=850
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 163840 -f C:\turbo-build\needle-retrieval-20260510\prompts\160K-p75.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:57:55-03:00 idx=18 status=ok exit=0 elapsed_sec=103 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=21830
+CASE_START 2026-05-10T00:57:55-03:00 idx=19 label=160K ctx=163840 pos=p95 key=AYA-160K-p95-K950-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=850
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 163840 -f C:\turbo-build\needle-retrieval-20260510\prompts\160K-p95.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T00:59:38-03:00 idx=19 status=ok exit=0 elapsed_sec=103 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=23192
+CASE_START 2026-05-10T00:59:38-03:00 idx=20 label=160K ctx=163840 pos=p95 key=AYA-160K-p95-K950-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=850
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 163840 -f C:\turbo-build\needle-retrieval-20260510\prompts\160K-p95.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T01:01:22-03:00 idx=20 status=ok exit=0 elapsed_sec=103 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=21830
+CASE_START 2026-05-10T01:01:22-03:00 idx=21 label=192K ctx=196608 pos=p05 key=AYA-192K-p05-K050-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=600
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p05.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_TIMEOUT 2026-05-10T01:11:27-03:00 idx=21 kill_llama_completion=true
+CASE_EXIT 2026-05-10T01:11:30-03:00 idx=21 status=timeout exit=124 elapsed_sec=605 hit=false prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=24122
+CASE_START 2026-05-10T01:11:30-03:00 idx=22 label=192K ctx=196608 pos=p05 key=AYA-192K-p05-K050-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=1000
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p05.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T01:13:45-03:00 idx=22 status=ok exit=0 elapsed_sec=134 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=22902
+CASE_START 2026-05-10T01:13:45-03:00 idx=23 label=192K ctx=196608 pos=p05 key=AYA-192K-p05-K050-Z9 ctk=turbo4 ctv=turbo4 timeout_sec=1000
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p05.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T01:15:59-03:00 idx=23 status=ok exit=0 elapsed_sec=133 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=22902
+CASE_START 2026-05-10T01:15:59-03:00 idx=24 label=192K ctx=196608 pos=p25 key=AYA-192K-p25-K250-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=600
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p25.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_TIMEOUT 2026-05-10T01:26:04-03:00 idx=24 kill_llama_completion=true
+CASE_EXIT 2026-05-10T01:26:07-03:00 idx=24 status=timeout exit=124 elapsed_sec=605 hit=false prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=24122
+CASE_START 2026-05-10T01:26:07-03:00 idx=25 label=192K ctx=196608 pos=p25 key=AYA-192K-p25-K250-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=1000
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p25.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T01:28:22-03:00 idx=25 status=ok exit=0 elapsed_sec=134 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=22902
+CASE_START 2026-05-10T01:28:22-03:00 idx=26 label=192K ctx=196608 pos=p25 key=AYA-192K-p25-K250-Z9 ctk=turbo4 ctv=turbo4 timeout_sec=1000
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p25.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T01:30:36-03:00 idx=26 status=ok exit=0 elapsed_sec=133 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=22902
+CASE_START 2026-05-10T01:30:36-03:00 idx=27 label=192K ctx=196608 pos=p50 key=AYA-192K-p50-K500-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=600
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p50.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_TIMEOUT 2026-05-10T01:40:41-03:00 idx=27 kill_llama_completion=true
+CASE_EXIT 2026-05-10T01:40:45-03:00 idx=27 status=timeout exit=124 elapsed_sec=605 hit=false prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=24122
+CASE_START 2026-05-10T01:40:45-03:00 idx=28 label=192K ctx=196608 pos=p50 key=AYA-192K-p50-K500-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=1000
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p50.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T01:42:59-03:00 idx=28 status=ok exit=0 elapsed_sec=133 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=22902
+CASE_START 2026-05-10T01:42:59-03:00 idx=29 label=192K ctx=196608 pos=p50 key=AYA-192K-p50-K500-Z9 ctk=turbo4 ctv=turbo4 timeout_sec=1000
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p50.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T01:45:13-03:00 idx=29 status=ok exit=0 elapsed_sec=133 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=22880
+CASE_START 2026-05-10T01:45:13-03:00 idx=30 label=192K ctx=196608 pos=p75 key=AYA-192K-p75-K750-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=600
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p75.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_TIMEOUT 2026-05-10T01:55:19-03:00 idx=30 kill_llama_completion=true
+CASE_EXIT 2026-05-10T01:55:22-03:00 idx=30 status=timeout exit=124 elapsed_sec=606 hit=false prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=24122
+CASE_START 2026-05-10T01:55:22-03:00 idx=31 label=192K ctx=196608 pos=p75 key=AYA-192K-p75-K750-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=1000
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p75.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T01:57:36-03:00 idx=31 status=ok exit=0 elapsed_sec=133 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=22902
+CASE_START 2026-05-10T01:57:36-03:00 idx=32 label=192K ctx=196608 pos=p75 key=AYA-192K-p75-K750-Z9 ctk=turbo4 ctv=turbo4 timeout_sec=1000
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p75.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T01:59:50-03:00 idx=32 status=ok exit=0 elapsed_sec=133 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=22902
+CASE_START 2026-05-10T01:59:50-03:00 idx=33 label=192K ctx=196608 pos=p95 key=AYA-192K-p95-K950-Z9 ctk=q8_0 ctv=q8_0 timeout_sec=600
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv q8_0 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p95.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_TIMEOUT 2026-05-10T02:09:56-03:00 idx=33 kill_llama_completion=true
+CASE_EXIT 2026-05-10T02:09:59-03:00 idx=33 status=timeout exit=124 elapsed_sec=606 hit=false prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=24122
+CASE_START 2026-05-10T02:09:59-03:00 idx=34 label=192K ctx=196608 pos=p95 key=AYA-192K-p95-K950-Z9 ctk=q8_0 ctv=turbo4 timeout_sec=1000
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk q8_0 -ctv turbo4 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p95.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T02:12:13-03:00 idx=34 status=ok exit=0 elapsed_sec=133 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=22902
+CASE_START 2026-05-10T02:12:13-03:00 idx=35 label=192K ctx=196608 pos=p95 key=AYA-192K-p95-K950-Z9 ctk=turbo4 ctv=turbo4 timeout_sec=1000
+CMD C:\turbo-build\llama-cpp-turboquant\build\bin\llama-completion.exe -m C:\models\q36_27b_new.gguf -ngl 99 -fa 1 -ctk turbo4 -ctv turbo4 -c 196608 -f C:\turbo-build\needle-retrieval-20260510\prompts\192K-p95.txt -n 256 --temp 0 --seed 42 --no-display-prompt --no-conversation --simple-io --no-warmup --perf
+CASE_EXIT 2026-05-10T02:14:27-03:00 idx=35 status=ok exit=0 elapsed_sec=133 hit=true prompt_tokens=null prompt_tok_s=null eval_tok_s=null peak_mem_mib=22880
+NEEDLE_RETRIEVAL_DONE 2026-05-10T02:14:27-03:00

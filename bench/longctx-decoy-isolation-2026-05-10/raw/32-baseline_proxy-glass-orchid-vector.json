@@ -1,0 +1,64 @@
+{
+  "payload": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 120,
+    "stream": false,
+    "longctx_top_k": 16,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/README.md\nWhich SECRET VALUE belongs to the glass orchid vector sheet? The clue is transparent orchid vector mapping. Answer only the exact secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "16",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"length\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The provided context snippets (shards 0742, 1375, 1164, 1586) explicitly state that the \\\"glass orchid vector sheet\\\" lookup is a **DECOY** and that the values associated with it (e.g., DECOY-0742-6, DECOY-1375-6, etc.) are **INVALID**. The snippets also state that the records within these shards \\\"intentionally contain no valid SECRET VALUE.\\\"\\n\\nSince the valid secret value is not present in the\"}}],\"created\":1778416695,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":120,\"prompt_tokens\":3514,\"total_tokens\":3634,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-YybGt4LrXbxOutCSHYjDqV99bRXyVBtg\",\"timings\":{\"cache_n\":0,\"prompt_n\":3514,\"prompt_ms\":1258.885,\"prompt_per_token_ms\":0.35824843483210017,\"prompt_per_second\":2791.359020085234,\"predicted_n\":120,\"predicted_ms\":2753.392,\"predicted_per_token_ms\":22.94493333333333,\"predicted_per_second\":43.58260647230762}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "The provided context snippets (shards 0742, 1375, 1164, 1586) explicitly state that the \"glass orchid vector sheet\" lookup is a **DECOY** and that the values associated with it (e.g., DECOY-0742-6, DECOY-1375-6, etc.) are **INVALID**. The snippets also state that the records within these shards \"intentionally contain no valid SECRET VALUE.\"\n\nSince the valid secret value is not present in the"
+        }
+      }
+    ],
+    "created": 1778416695,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 120,
+      "prompt_tokens": 3514,
+      "total_tokens": 3634,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-YybGt4LrXbxOutCSHYjDqV99bRXyVBtg",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 3514,
+      "prompt_ms": 1258.885,
+      "prompt_per_token_ms": 0.35824843483210017,
+      "prompt_per_second": 2791.359020085234,
+      "predicted_n": 120,
+      "predicted_ms": 2753.392,
+      "predicted_per_token_ms": 22.94493333333333,
+      "predicted_per_second": 43.58260647230762
+    }
+  },
+  "answer": "The provided context snippets (shards 0742, 1375, 1164, 1586) explicitly state that the \"glass orchid vector sheet\" lookup is a **DECOY** and that the values associated with it (e.g., DECOY-0742-6, DECOY-1375-6, etc.) are **INVALID**. The snippets also state that the records within these shards \"intentionally contain no valid SECRET VALUE.\"\n\nSince the valid secret value is not present in the"
+}

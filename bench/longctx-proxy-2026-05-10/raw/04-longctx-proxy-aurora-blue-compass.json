@@ -1,0 +1,64 @@
+{
+  "body": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 160,
+    "stream": false,
+    "longctx_top_k": 8,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab/README.md\nFind the lookup target named aurora-blue-compass. What is the exact SECRET VALUE assigned to it? Answer only the secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "8",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"AYA-LONGCTX-AURORA-BLUE-050-Z9\"}}],\"created\":1778398268,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":17,\"prompt_tokens\":3741,\"total_tokens\":3758,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-nTij0RQ3JCDFY698TBJToefFDeOvhIxr\",\"timings\":{\"cache_n\":0,\"prompt_n\":3741,\"prompt_ms\":1323.497,\"prompt_per_token_ms\":0.3537816091954023,\"prompt_per_second\":2826.6025536892034,\"predicted_n\":17,\"predicted_ms\":381.416,\"predicted_per_token_ms\":22.436235294117647,\"predicted_per_second\":44.570757388258485}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "AYA-LONGCTX-AURORA-BLUE-050-Z9"
+        }
+      }
+    ],
+    "created": 1778398268,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 17,
+      "prompt_tokens": 3741,
+      "total_tokens": 3758,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-nTij0RQ3JCDFY698TBJToefFDeOvhIxr",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 3741,
+      "prompt_ms": 1323.497,
+      "prompt_per_token_ms": 0.3537816091954023,
+      "prompt_per_second": 2826.6025536892034,
+      "predicted_n": 17,
+      "predicted_ms": 381.416,
+      "predicted_per_token_ms": 22.436235294117647,
+      "predicted_per_second": 44.570757388258485
+    }
+  },
+  "answer": "AYA-LONGCTX-AURORA-BLUE-050-Z9"
+}

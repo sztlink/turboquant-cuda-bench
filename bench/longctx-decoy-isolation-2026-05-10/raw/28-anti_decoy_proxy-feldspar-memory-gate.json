@@ -1,0 +1,64 @@
+{
+  "payload": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 120,
+    "stream": false,
+    "longctx_top_k": 16,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value. Ignore every chunk or line marked DECOY LOOKUP, INVALID VALUE, or explicitly not the requested record. Use only a line beginning SECRET VALUE from a chunk that is not marked as decoy. No explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/README.md\nWhich SECRET VALUE belongs to the feldspar memory gate note? The clue is stone memory gate made of feldspar. Answer only the exact secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "16",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"AYA-HARD-FELDSPAR-GATE-700-Z9\"}}],\"created\":1778416687,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":16,\"prompt_tokens\":3589,\"total_tokens\":3605,\"prompt_tokens_details\":{\"cached_tokens\":3033}},\"id\":\"chatcmpl-99HjZHYNUjppinG3WpYo4gwF2yA6thIs\",\"timings\":{\"cache_n\":3033,\"prompt_n\":556,\"prompt_ms\":284.348,\"prompt_per_token_ms\":0.5114172661870504,\"prompt_per_second\":1955.3504860241676,\"predicted_n\":16,\"predicted_ms\":353.85,\"predicted_per_token_ms\":22.115625,\"predicted_per_second\":45.216899816306345}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "AYA-HARD-FELDSPAR-GATE-700-Z9"
+        }
+      }
+    ],
+    "created": 1778416687,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 16,
+      "prompt_tokens": 3589,
+      "total_tokens": 3605,
+      "prompt_tokens_details": {
+        "cached_tokens": 3033
+      }
+    },
+    "id": "chatcmpl-99HjZHYNUjppinG3WpYo4gwF2yA6thIs",
+    "timings": {
+      "cache_n": 3033,
+      "prompt_n": 556,
+      "prompt_ms": 284.348,
+      "prompt_per_token_ms": 0.5114172661870504,
+      "prompt_per_second": 1955.3504860241676,
+      "predicted_n": 16,
+      "predicted_ms": 353.85,
+      "predicted_per_token_ms": 22.115625,
+      "predicted_per_second": 45.216899816306345
+    }
+  },
+  "answer": "AYA-HARD-FELDSPAR-GATE-700-Z9"
+}

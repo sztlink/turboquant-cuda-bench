@@ -1,0 +1,64 @@
+{
+  "body": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 160,
+    "stream": false,
+    "longctx_top_k": 8,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab/README.md\nFind the lookup target named ceramic-lantern-field. What is the exact SECRET VALUE assigned to it? Answer only the secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": null,
+    "x-longctx-scope-status": null,
+    "x-longctx-scope": null,
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The provided project path and file (`/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab/README.md`) refer to a local file system location that is not accessible to me. I cannot read local files or access private repositories. Therefore, I cannot retrieve the secret value for `ceramic-lantern-field`.\"}}],\"created\":1778398266,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":95,\"prompt_tokens\":110,\"total_tokens\":205,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-g5xRfSpZW1DLPcMTOj2Ut3wTkcGh6FSx\",\"timings\":{\"cache_n\":0,\"prompt_n\":110,\"prompt_ms\":126.421,\"prompt_per_token_ms\":1.1492818181818183,\"prompt_per_second\":870.1086053741071,\"predicted_n\":95,\"predicted_ms\":2115.719,\"predicted_per_token_ms\":22.270726315789474,\"predicted_per_second\":44.9019931285771}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "The provided project path and file (`/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab/README.md`) refer to a local file system location that is not accessible to me. I cannot read local files or access private repositories. Therefore, I cannot retrieve the secret value for `ceramic-lantern-field`."
+        }
+      }
+    ],
+    "created": 1778398266,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 95,
+      "prompt_tokens": 110,
+      "total_tokens": 205,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-g5xRfSpZW1DLPcMTOj2Ut3wTkcGh6FSx",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 110,
+      "prompt_ms": 126.421,
+      "prompt_per_token_ms": 1.1492818181818183,
+      "prompt_per_second": 870.1086053741071,
+      "predicted_n": 95,
+      "predicted_ms": 2115.719,
+      "predicted_per_token_ms": 22.270726315789474,
+      "predicted_per_second": 44.9019931285771
+    }
+  },
+  "answer": "The provided project path and file (`/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-2026-05-10/corpus/longctx-lab/README.md`) refer to a local file system location that is not accessible to me. I cannot read local files or access private repositories. Therefore, I cannot retrieve the secret value for `ceramic-lantern-field`."
+}

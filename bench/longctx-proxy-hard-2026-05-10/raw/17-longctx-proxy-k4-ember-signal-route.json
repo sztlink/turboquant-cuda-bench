@@ -1,0 +1,64 @@
+{
+  "body": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 120,
+    "stream": false,
+    "longctx_top_k": 4,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/README.md\nWhich SECRET VALUE belongs to the ember signal routing memo? The clue is orange ember signal route. Answer only the exact secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "4",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"AYA-HARD-EMBER-SIGNAL-570-Z9\"}}],\"created\":1778414048,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":14,\"prompt_tokens\":3513,\"total_tokens\":3527,\"prompt_tokens_details\":{\"cached_tokens\":1519}},\"id\":\"chatcmpl-JomjDtcBDfFQ0v9ffosxtGTFxhA6p8Mc\",\"timings\":{\"cache_n\":1519,\"prompt_n\":1994,\"prompt_ms\":784.209,\"prompt_per_token_ms\":0.3932843530591775,\"prompt_per_second\":2542.689512617172,\"predicted_n\":14,\"predicted_ms\":307.308,\"predicted_per_token_ms\":21.95057142857143,\"predicted_per_second\":45.55690056881045}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "AYA-HARD-EMBER-SIGNAL-570-Z9"
+        }
+      }
+    ],
+    "created": 1778414048,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 14,
+      "prompt_tokens": 3513,
+      "total_tokens": 3527,
+      "prompt_tokens_details": {
+        "cached_tokens": 1519
+      }
+    },
+    "id": "chatcmpl-JomjDtcBDfFQ0v9ffosxtGTFxhA6p8Mc",
+    "timings": {
+      "cache_n": 1519,
+      "prompt_n": 1994,
+      "prompt_ms": 784.209,
+      "prompt_per_token_ms": 0.3932843530591775,
+      "prompt_per_second": 2542.689512617172,
+      "predicted_n": 14,
+      "predicted_ms": 307.308,
+      "predicted_per_token_ms": 21.95057142857143,
+      "predicted_per_second": 45.55690056881045
+    }
+  },
+  "answer": "AYA-HARD-EMBER-SIGNAL-570-Z9"
+}

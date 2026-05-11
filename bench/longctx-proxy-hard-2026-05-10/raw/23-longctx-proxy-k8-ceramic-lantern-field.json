@@ -1,0 +1,64 @@
+{
+  "body": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 120,
+    "stream": false,
+    "longctx_top_k": 8,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/README.md\nWhich SECRET VALUE belongs to the ceramic lantern field record? The clue is clay lantern field marker. Answer only the exact secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "8",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"AYA-HARD-CERAMIC-LANTERN-310-Z9\"}}],\"created\":1778414061,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":17,\"prompt_tokens\":3515,\"total_tokens\":3532,\"prompt_tokens_details\":{\"cached_tokens\":3511}},\"id\":\"chatcmpl-WtWbTpaEueDc3EDTRIUBgKUi429YtKlq\",\"timings\":{\"cache_n\":3511,\"prompt_n\":4,\"prompt_ms\":55.834,\"prompt_per_token_ms\":13.9585,\"prompt_per_second\":71.64093563061934,\"predicted_n\":17,\"predicted_ms\":376.054,\"predicted_per_token_ms\":22.120823529411762,\"predicted_per_second\":45.206273567094094}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "AYA-HARD-CERAMIC-LANTERN-310-Z9"
+        }
+      }
+    ],
+    "created": 1778414061,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 17,
+      "prompt_tokens": 3515,
+      "total_tokens": 3532,
+      "prompt_tokens_details": {
+        "cached_tokens": 3511
+      }
+    },
+    "id": "chatcmpl-WtWbTpaEueDc3EDTRIUBgKUi429YtKlq",
+    "timings": {
+      "cache_n": 3511,
+      "prompt_n": 4,
+      "prompt_ms": 55.834,
+      "prompt_per_token_ms": 13.9585,
+      "prompt_per_second": 71.64093563061934,
+      "predicted_n": 17,
+      "predicted_ms": 376.054,
+      "predicted_per_token_ms": 22.120823529411762,
+      "predicted_per_second": 45.206273567094094
+    }
+  },
+  "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9"
+}

@@ -1,0 +1,64 @@
+{
+  "body": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 120,
+    "stream": false,
+    "longctx_top_k": 4,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value, no explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/README.md\nWhich SECRET VALUE belongs to the jade winter circuit card? The clue is green winter circuit board. Answer only the exact secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "4",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"length\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The provided context snippets (shards 0725, 1147, 1358, 0936) explicitly state that the \\\"jade winter circuit card\\\" lookup is a **DECOY** and that the lines mentioning \\\"green winter circuit board\\\" and \\\"jade-winter-circuit\\\" are **explicitly not the requested record**. They also state that the records in these shards \\\"intentionally contain no valid SECRET VALUE.\\\"\\n\\nSince the provided context does not contain the valid record for the \\\"jade winter circuit card\\\" (only decoys and\"}}],\"created\":1778414058,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":120,\"prompt_tokens\":3505,\"total_tokens\":3625,\"prompt_tokens_details\":{\"cached_tokens\":1521}},\"id\":\"chatcmpl-ATF1yNj9P3peypaXytfEe5LUjH7dVkHw\",\"timings\":{\"cache_n\":1521,\"prompt_n\":1984,\"prompt_ms\":758.616,\"prompt_per_token_ms\":0.38236693548387096,\"prompt_per_second\":2615.2888945131663,\"predicted_n\":120,\"predicted_ms\":2730.834,\"predicted_per_token_ms\":22.75695,\"predicted_per_second\":43.94261972716028}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "The provided context snippets (shards 0725, 1147, 1358, 0936) explicitly state that the \"jade winter circuit card\" lookup is a **DECOY** and that the lines mentioning \"green winter circuit board\" and \"jade-winter-circuit\" are **explicitly not the requested record**. They also state that the records in these shards \"intentionally contain no valid SECRET VALUE.\"\n\nSince the provided context does not contain the valid record for the \"jade winter circuit card\" (only decoys and"
+        }
+      }
+    ],
+    "created": 1778414058,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 120,
+      "prompt_tokens": 3505,
+      "total_tokens": 3625,
+      "prompt_tokens_details": {
+        "cached_tokens": 1521
+      }
+    },
+    "id": "chatcmpl-ATF1yNj9P3peypaXytfEe5LUjH7dVkHw",
+    "timings": {
+      "cache_n": 1521,
+      "prompt_n": 1984,
+      "prompt_ms": 758.616,
+      "prompt_per_token_ms": 0.38236693548387096,
+      "prompt_per_second": 2615.2888945131663,
+      "predicted_n": 120,
+      "predicted_ms": 2730.834,
+      "predicted_per_token_ms": 22.75695,
+      "predicted_per_second": 43.94261972716028
+    }
+  },
+  "answer": "The provided context snippets (shards 0725, 1147, 1358, 0936) explicitly state that the \"jade winter circuit card\" lookup is a **DECOY** and that the lines mentioning \"green winter circuit board\" and \"jade-winter-circuit\" are **explicitly not the requested record**. They also state that the records in these shards \"intentionally contain no valid SECRET VALUE.\"\n\nSince the provided context does not contain the valid record for the \"jade winter circuit card\" (only decoys and"
+}

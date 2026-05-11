@@ -1,0 +1,64 @@
+{
+  "payload": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 120,
+    "stream": false,
+    "longctx_top_k": 16,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Ignore every chunk or line marked DECOY LOOKUP, INVALID VALUE, or explicitly not the requested record. Use only a valid line beginning SECRET VALUE from the canonical non-decoy record. Answer only the exact secret value."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/README.md\nFind the canonical non-decoy record for handle ceramic-lantern-field. Ignore all DECOY LOOKUP and INVALID VALUE lines. Return only the valid line beginning SECRET VALUE for alias ceramic lantern field record. Clue: clay lantern field marker.\nAnswer only the exact secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "16",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"AYA-HARD-CERAMIC-LANTERN-310-Z9\"}}],\"created\":1778422272,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":17,\"prompt_tokens\":3629,\"total_tokens\":3646,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-XrFqtdhTP0ZIzuWwh8gKEkcE6IdcXhjK\",\"timings\":{\"cache_n\":0,\"prompt_n\":3629,\"prompt_ms\":1495.898,\"prompt_per_token_ms\":0.41220666850372,\"prompt_per_second\":2425.9675459155637,\"predicted_n\":17,\"predicted_ms\":378.241,\"predicted_per_token_ms\":22.249470588235294,\"predicted_per_second\":44.94488963385778}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "AYA-HARD-CERAMIC-LANTERN-310-Z9"
+        }
+      }
+    ],
+    "created": 1778422272,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 17,
+      "prompt_tokens": 3629,
+      "total_tokens": 3646,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-XrFqtdhTP0ZIzuWwh8gKEkcE6IdcXhjK",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 3629,
+      "prompt_ms": 1495.898,
+      "prompt_per_token_ms": 0.41220666850372,
+      "prompt_per_second": 2425.9675459155637,
+      "predicted_n": 17,
+      "predicted_ms": 378.241,
+      "predicted_per_token_ms": 22.249470588235294,
+      "predicted_per_second": 44.94488963385778
+    }
+  },
+  "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9"
+}

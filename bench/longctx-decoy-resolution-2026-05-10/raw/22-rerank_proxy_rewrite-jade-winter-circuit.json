@@ -1,0 +1,64 @@
+{
+  "payload": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 120,
+    "stream": false,
+    "longctx_top_k": 16,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Ignore every chunk or line marked DECOY LOOKUP, INVALID VALUE, or explicitly not the requested record. Use only a valid line beginning SECRET VALUE from the canonical non-decoy record. Answer only the exact secret value."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/README.md\nFind the canonical non-decoy record for handle jade-winter-circuit. Ignore all DECOY LOOKUP and INVALID VALUE lines. Return only the valid line beginning SECRET VALUE for alias jade winter circuit card. Clue: green winter circuit board.\nAnswer only the exact secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "16",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"stop\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"AYA-HARD-JADE-WINTER-960-Z9\"}}],\"created\":1778422935,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":14,\"prompt_tokens\":3627,\"total_tokens\":3641,\"prompt_tokens_details\":{\"cached_tokens\":0}},\"id\":\"chatcmpl-JVi7gJXwqQpDp9Q62GaBj97tchgMW27T\",\"timings\":{\"cache_n\":0,\"prompt_n\":3627,\"prompt_ms\":1419.954,\"prompt_per_token_ms\":0.39149545078577336,\"prompt_per_second\":2554.3080973045603,\"predicted_n\":14,\"predicted_ms\":309.763,\"predicted_per_token_ms\":22.12592857142857,\"predicted_per_second\":45.19584327372863}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "AYA-HARD-JADE-WINTER-960-Z9"
+        }
+      }
+    ],
+    "created": 1778422935,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 14,
+      "prompt_tokens": 3627,
+      "total_tokens": 3641,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-JVi7gJXwqQpDp9Q62GaBj97tchgMW27T",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 3627,
+      "prompt_ms": 1419.954,
+      "prompt_per_token_ms": 0.39149545078577336,
+      "prompt_per_second": 2554.3080973045603,
+      "predicted_n": 14,
+      "predicted_ms": 309.763,
+      "predicted_per_token_ms": 22.12592857142857,
+      "predicted_per_second": 45.19584327372863
+    }
+  },
+  "answer": "AYA-HARD-JADE-WINTER-960-Z9"
+}

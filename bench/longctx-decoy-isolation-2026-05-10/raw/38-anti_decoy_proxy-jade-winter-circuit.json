@@ -1,0 +1,64 @@
+{
+  "payload": {
+    "model": "local",
+    "temperature": 0,
+    "max_tokens": 120,
+    "stream": false,
+    "longctx_top_k": 16,
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a precise retrieval assistant. Answer only the exact secret value. Ignore every chunk or line marked DECOY LOOKUP, INVALID VALUE, or explicitly not the requested record. Use only a line beginning SECRET VALUE from a chunk that is not marked as decoy. No explanation."
+      },
+      {
+        "role": "user",
+        "content": "Project path: /home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab/README.md\nWhich SECRET VALUE belongs to the jade winter circuit card? The clue is green winter circuit board. Answer only the exact secret value."
+      }
+    ]
+  },
+  "headers": {
+    "x-longctx-chunks-used": "16",
+    "x-longctx-scope-status": "ready",
+    "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+    "x-longctx-confidence": null
+  },
+  "httpStatus": 200,
+  "text": "{\"choices\":[{\"finish_reason\":\"length\",\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"The provided context does not contain a valid SECRET VALUE for the \\\"jade winter circuit card\\\". All retrieved shards (0725, 1147, 1358, 0936) explicitly mark the lookup for \\\"jade winter circuit card\\\" as a **DECOY LOOKUP** and state that the associated values (e.g., DECOY-0725-7, DECOY-1147-7, etc.) are **INVALID VALUE** and explicitly **not the requested record**. The remaining records in these shards are filler\"}}],\"created\":1778416709,\"model\":\"q36_27b_new.gguf\",\"system_fingerprint\":\"b9079-69d8e4be4\",\"object\":\"chat.completion\",\"usage\":{\"completion_tokens\":120,\"prompt_tokens\":3545,\"total_tokens\":3665,\"prompt_tokens_details\":{\"cached_tokens\":2989}},\"id\":\"chatcmpl-thzuwJhhOf9PP27My60tH74qAKSv0uPd\",\"timings\":{\"cache_n\":2989,\"prompt_n\":556,\"prompt_ms\":286.196,\"prompt_per_token_ms\":0.5147410071942446,\"prompt_per_second\":1942.7245663810813,\"predicted_n\":120,\"predicted_ms\":2755.6,\"predicted_per_token_ms\":22.96333333333333,\"predicted_per_second\":43.54768471476267}}",
+  "json": {
+    "choices": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "The provided context does not contain a valid SECRET VALUE for the \"jade winter circuit card\". All retrieved shards (0725, 1147, 1358, 0936) explicitly mark the lookup for \"jade winter circuit card\" as a **DECOY LOOKUP** and state that the associated values (e.g., DECOY-0725-7, DECOY-1147-7, etc.) are **INVALID VALUE** and explicitly **not the requested record**. The remaining records in these shards are filler"
+        }
+      }
+    ],
+    "created": 1778416709,
+    "model": "q36_27b_new.gguf",
+    "system_fingerprint": "b9079-69d8e4be4",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 120,
+      "prompt_tokens": 3545,
+      "total_tokens": 3665,
+      "prompt_tokens_details": {
+        "cached_tokens": 2989
+      }
+    },
+    "id": "chatcmpl-thzuwJhhOf9PP27My60tH74qAKSv0uPd",
+    "timings": {
+      "cache_n": 2989,
+      "prompt_n": 556,
+      "prompt_ms": 286.196,
+      "prompt_per_token_ms": 0.5147410071942446,
+      "prompt_per_second": 1942.7245663810813,
+      "predicted_n": 120,
+      "predicted_ms": 2755.6,
+      "predicted_per_token_ms": 22.96333333333333,
+      "predicted_per_second": 43.54768471476267
+    }
+  },
+  "answer": "The provided context does not contain a valid SECRET VALUE for the \"jade winter circuit card\". All retrieved shards (0725, 1147, 1358, 0936) explicitly mark the lookup for \"jade winter circuit card\" as a **DECOY LOOKUP** and state that the associated values (e.g., DECOY-0725-7, DECOY-1147-7, etc.) are **INVALID VALUE** and explicitly **not the requested record**. The remaining records in these shards are filler"
+}
