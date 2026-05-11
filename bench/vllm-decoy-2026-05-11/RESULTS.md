@@ -116,11 +116,24 @@ Per-handle (vLLM):
 
 This is the first **divergence** in the cross-stack table. llama-cpp Qwen 27B was 4/4 under `rerank_proxy`; vLLM Qwen 2.5-7B is 3/4 with the same retrieval + reranker. Failure mode is consistent across `orig` and `rewrite`: glass-orchid-vector emits `DECOY-1797-6` regardless of the system-prompt instruction to ignore DECOY entries. Note that `DECOY-1797-6` is a *different* decoy than the one the decoy-only run emitted on the same handle (`DECOY-0742-6`) — the reranker reordered the chunks; the canonical chunk is now somewhere in the top-16 (chunks_used=16, scope=ready), but a different decoy survived the rerank and won at decode.
 
+### Model-size scan on the rerank path
+
+To isolate model size from stack, the same rerank_proxy harness was re-run against `Qwen/Qwen2.5-32B-Instruct-AWQ` (still vLLM, still `longctx-svc 0.3.0a3` with `bge-reranker-v2-m3`, still same payloads):
+
+| size + stack | `rerank_proxy_orig` | `rerank_proxy_rewrite` |
+|---|---:|---:|
+| Qwen 2.5-7B / vLLM | 3/4 (glass fails `DECOY-1797-6`) | 3/4 (glass fails same) |
+| Qwen 27B / llama-cpp | 4/4 | 4/4 |
+| **Qwen 2.5-32B-AWQ / vLLM** | **4/4** | **4/4** |
+
+The 32B-AWQ run recovers the glass-orchid-vector handle that the 7B run dropped. Same reranker, same 16 retrieved chunks, same prompt — only the model is bigger. glass is the borderline handle: the canonical is in the top-16 with a competing high-rank decoy; a 7B will sometimes pick the decoy at decode, a 27B/32B will not. Latency on 32B-AWQ is ~11 s per query after a one-time 33 s warmup on the first request.
+
 ### Readout — when reranker is enough, when it isn't
 
-- **rerank is enough on the larger model** (Qwen 27B passes 4/4) but **not enough on the smaller model** (Qwen 7B passes 3/4) with the same retrieved set and same cross-encoder. The retrieval + ranking ceiling for `top_k=16` on this corpus is identical between stacks (8/8 retrieval, identical brass DECOY emitted under no-rerank); the model-side ceiling — *given correctly-ranked chunks, can it still be fooled* — is where size matters.
-- **policy_splice is invariant to model size in this run** (4/4 on both stacks). It forces the canonical chunk first in the user message rather than relying on the model to distinguish a top-1-ranked canonical from rank 2–16 decoys.
-- Operational implication: in production with a smaller model, the `policy_splice` path is the safer choice; `rerank_proxy` requires either a model big enough to resist decoy interference or further interventions (stricter system prompt, longer reranker context, fewer chunks).
+- **rerank is enough at ≥27B** (both Qwen 27B / llama-cpp and Qwen 2.5-32B-AWQ / vLLM pass 4/4) but **not enough at 7B** (3/4). The retrieval + ranking ceiling for `top_k=16` on this corpus is identical across stacks (8/8 retrieval, identical brass DECOY-0616-1 emitted under no-rerank); the model-side ceiling — *given correctly-ranked chunks, can it still be fooled* — is where size matters.
+- **policy_splice is invariant to model size in this run** (4/4 on 7B, 4/4 on 27B). It forces the canonical chunk first in the user message rather than relying on the model to distinguish a top-1-ranked canonical from rank 2–16 decoys.
+- **glass-orchid-vector is the canary handle.** It's the only handle that flips between 7B and ≥27B in the rerank path. It's also the same handle that emits a self-aware refusal on 27B without rerank ("the provided context snippets explicitly state that the lookup is DECOY...") and a direct decoy on 7B without rerank. Whichever knob you turn — model size, reranker, splice — glass is where the action is.
+- Operational implication: in production with a smaller model, the `policy_splice` path is the safer choice; `rerank_proxy` requires either ≥27B-class capacity or further interventions (stricter system prompt, longer reranker context, fewer chunks).
 
 ## Cross-stack table — full 4 cells (5 conditions)
 
@@ -129,10 +142,10 @@ This is the first **divergence** in the cross-stack table. llama-cpp Qwen 27B wa
 | decoy at top_k=16 (no rerank) | 5/8 | 5/8 | 5/8 | same brass `DECOY-0616-1` literally identical across stacks |
 | `policy_splice_orig` | 4/4 | 4/4 | 4/4 | canonical first in user msg — invariant |
 | `policy_splice_rewrite` | 4/4 | 4/4 | 4/4 | system-prompt rewrite adds nothing |
-| `rerank_proxy_orig` | 4/4 | 3/4 | not retested | reranker enough on 27B, not on 7B |
-| `rerank_proxy_rewrite` | 4/4 | 3/4 | not retested | rewrite doesn't recover the 7B miss |
+| `rerank_proxy_orig` | 4/4 | 3/4 (Qwen 7B) · **4/4 (Qwen 32B-AWQ)** | n/a | reranker enough at ≥27B, not at 7B |
+| `rerank_proxy_rewrite` | 4/4 | 3/4 (Qwen 7B) · **4/4 (Qwen 32B-AWQ)** | n/a | rewrite doesn't recover the 7B miss; 32B-AWQ doesn't need it |
 
-Three independent (stack, model, V3) configurations and 5 conditions per stack. The decoy-only baseline and the policy_splice recovery are stack/model-invariant. The rerank-only path breaks down at smaller model size — the first dimension in this experiment where capacity actually matters.
+Three stacks × multiple model sizes. The decoy-only baseline and the policy_splice recovery are stack-invariant AND model-size-invariant. The rerank-only path is stack-invariant but **capacity-bound** — it breaks at 7B and recovers at ≥27B (both 27B llama-cpp and 32B-AWQ vLLM pass 4/4). This is the first dimension in the experiment where model capacity actually matters; the rest is splice/ranking plumbing.
 
 ## Timing & per-request stats
 
@@ -168,7 +181,8 @@ The aurora first-request bump (3.7s) is one-time warmup; subsequent requests run
 - `decoy-res-v3on.log` — resolution stdout, V3 enabled
 - `vllm-rerank-proxy.py` — rerank-proxy client (queries longctx-svc → vLLM stack)
 - `rerank-mapping.json` — mapping for `rerank_proxy_{orig,rewrite}` payloads (no chunks in user msg)
-- `rerank-proxy-2026-05-11.log` — rerank-proxy stdout, with `longctx-svc 0.3.0a3` + `bge-reranker-v2-m3` reranker
+- `rerank-proxy-2026-05-11.log` — rerank-proxy stdout against Qwen 2.5-7B vLLM (3/4 + 3/4)
+- `rerank-proxy-32B-AWQ-2026-05-11.log` — same harness against Qwen 2.5-32B-Instruct-AWQ vLLM (4/4 + 4/4)
 
 ## Cross-link
 
