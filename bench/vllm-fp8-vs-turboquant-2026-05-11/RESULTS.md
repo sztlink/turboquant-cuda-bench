@@ -1,99 +1,85 @@
 # vLLM KV-cache dtype sweep on decoy k=16
 
 **Date:** 2026-05-11
-**Stack:** vLLM `feature/turboquant_plus` @ `36fc04825`, RTX 4090 (24 GiB), WSL2 Ubuntu 24.04
-**Model:** `Qwen/Qwen2.5-7B-Instruct`, BF16 weights, `max_model_len=16384`, `gpu_memory_utilization=0.85`, `enforce_eager=True`
-**Workload:** 8 handles, k=16 retrieved chunks per handle, identical prompts + seed=42 across all three runs (`k16-mapping.json` from `bench/vllm-decoy-2026-05-11/`)
+**Stack:** vLLM `feature/turboquant_plus` @ `36fc04825` (panels A/M/R/TQ), stock vLLM 0.20.2 (panel C). RTX 4090 (24 GiB), WSL2 Ubuntu 24.04
+**Model:** `Qwen/Qwen2.5-7B-Instruct`, BF16 weights (A/M/R/TQ) or W8A8-FP8 calibrated weights (C). `max_model_len=16384`, `gpu_memory_utilization=0.85`, `enforce_eager=True`
+**Workload:** 8 handles, k=16 retrieved chunks per handle, identical prompts + seed=42 (`k16-mapping.json` from `bench/vllm-decoy-2026-05-11/`)
 
 ## Headline
 
-| `kv_cache_dtype` | KV bits (effective) | hits | wrong-answer pattern |
-|---|---|---|---|
-| `auto` (BF16) | 16 | **5/8** | 3 decoys: `DECOY-0616-1` / `DECOY-0742-6` / `DECOY-0725-7` |
-| `fp8` (vLLM native, no scales) | 8 | **0/8** | gibberish, repetition, path leakage |
-| `turboquant_k8v4` (FP8 K + 4-bit V) | ~6 | **5/8** | byte-identical to `auto` on all 8 handles |
+| panel | `kv_cache_dtype` | scales | hits | failure mode |
+|---|---|---|---|---|
+| A | `auto` (BF16) | n/a | **5/8** | 3 decoy commits |
+| TQ | `turboquant_k8v4` | n/a (built-in) | **5/8** | byte-identical to A |
+| M | `fp8` | 1.0 (no calibration) | **0/8** | gibberish across all 8 (token-mangle, path-leak, loop, format-echo) |
+| R | `fp8` + `calculate_kv_scales=True` | random-token on-the-fly | **0/8** | dominantly loop / collapse — worse than M |
+| C | `fp8` (W8A8-KV8) | dataset-calibrated, ultrachat_200k 512 samples | **0/8** | "near-miss": correct template, single-digit precision error on 3 hit-class handles; format-echo / prompt-echo on the 2 decoy-class handles BF16 also fails |
 
 ## What this answers
 
 **Q1: Is the decoy 5/8 ceiling caused by KV-cache compression?**
-No. `auto` (full BF16 KV, zero compression) and `turboquant_k8v4` (≥4× compression) hit the same 5/8 with the same three wrong literals. The gap is upstream of compression — it lives in the retrieval pipeline + prompt format + family calibration, as documented in `bench/vllm-decoy-2026-05-11/RESULTS.md`. Compression is exonerated.
+No. `auto` (BF16, zero compression) and `turboquant_k8v4` (≥4× compression) hit the same 5/8 with byte-identical literals on the same 3 failing handles. The gap is upstream of compression — it lives in the retrieval pipeline + prompt format + family calibration, documented in `bench/vllm-decoy-2026-05-11/RESULTS.md`. Compression is exonerated.
 
-**Q2: How does naive FP8 KV (no calibration scales) compare to TurboQuant's K8V4?**
-Naive `fp8` collapses to 0/8 — the model emits malformed strings (e.g. `'AYA-HARD-AUROROA-BLUE -0 tiare-Z/'`, repetitive path fragments, broken refusal templates). `turboquant_k8v4` holds the same hit rate as full BF16. At a similar compression class, TurboQuant's K8V4 is not just better — naive FP8 KV is unusable here as a drop-in.
+**Q2: How does naive FP8 KV compare to TurboQuant's K8V4?**
+Naive `fp8` (`scales=1.0`) collapses to 0/8 with structural breakage — eight different *kinds* of broken output across 8 prompts (token-mangle, path-leak, loop, format-echo). On-the-fly random-token scaling is *worse* — all 8 outputs are dominated by loops or 1-3-token collapses. As a drop-in, vLLM's `kv_cache_dtype=fp8` without calibrated scales is unusable on Qwen 2.5-7B for this workload.
 
-The vLLM startup line for `fp8` says it clearly: *"Using fp8 data type to store kv cache. … it may cause accuracy drop without a proper scaling factor."* Without calibrated `kv_cache_scales_path`, the cache stores raw E4M3 with no per-tensor renormalization, and a 16K-token prompt accumulates enough quantization error to destroy decoding.
+**Q3: Does dataset-calibrated FP8 recover the BF16 behavior at 7B drop-in scale?**
+Partially. Calibrated W8A8-FP8 (`llmcompressor` recipe with `ultrachat_200k` 512 samples, 2048 max_seq_length, per-tensor static FP8 on weights + input_activations + KV cache scheme) **recovers structure** — the model generates the correct AYA-HARD-X-N-Z9 template, the correct decoy-commit behavior on the handles that decoy at BF16, and the correct system-prompt-aware refusal pattern. It does **not** recover precision — three handles BF16 hits exactly are emitted with a single wrong digit in the secret-value suffix (`AURORA-BLUE-055` instead of `050`; `DELTA-ARCHIVE-44` instead of `440`; `EMBER-SIGNAL-571` instead of `570`). On exact-match grading this is 0/8. On Levenshtein-1 grading, 3/8. On qualitative "got the structure right," 5/8 are in the right regime.
 
-## Per-handle receipts
+## Why this matters in the public TurboQuant debate
 
-### `auto` (BF16 KV, no compression)
+Red Hat AI (Kurtic, Wilkinson, Bonanni, Goin, Marques — `vllm.ai/blog/turboquant`) report FP8 KV at "zero accuracy cost vs BF16, 100% throughput" on Llama-3.3-70B / Qwen3-30B / MiniMax-M2.7, tested on AIME25, GPQA:Diamond, MATH500, LiveCodeBench-v6, and `openai/mrcr`. The claim is well-supported in that regime.
 
-```
-[auto] aurora-blue-compass    hit=True   answer='AYA-HARD-AURORA-BLUE-050-Z9'
-[auto] brass-river-index      hit=False  answer='DECOY-0616-1'
-[auto] ceramic-lantern-field  hit=True   answer='AYA-HARD-CERAMIC-LANTERN-310-Z9'
-[auto] delta-archive-needle   hit=True   answer='AYA-HARD-DELTA-ARCHIVE-440-Z9'
-[auto] ember-signal-route     hit=True   answer='AYA-HARD-EMBER-SIGNAL-570-Z9'
-[auto] feldspar-memory-gate   hit=True   answer='AYA-HARD-FELDSPAR-GATE-700-Z9'
-[auto] glass-orchid-vector    hit=False  answer='DECOY-0742-6'
-[auto] jade-winter-circuit    hit=False  answer='DECOY-0725-7'
-```
+The regime tested here is different:
 
-### `fp8` (vLLM native, no scales)
+- Scale: 7B (their smallest is 30B sparse + reasoning model)
+- Benchmark: exact-match on adversarial retrieval, not partial-credit reasoning
+- Calibration: best available drop-in (per-tensor static) on consumer hardware, not their FP8-block at 70B+
 
-```
-[fp8] aurora-blue-compass     hit=False  answer='AYA-HARD-AUROROA-BLUE -0 tiare-Z/'
-[fp8] brass-river-index       hit=False  answer='/home/aya/implimpl t/research/t /mploquanttboquantuda cuda / bench/ / / / / / / '
-[fp8] ceramic-lantern-field   hit=False  answer='TheA-HARD-CERAMIC-LANTERNR3-3'
-[fp8] delta-archive-needle    hit=False  answer='// /home/aya/implplement/research/t/implboquant/cuda/ bench// /README.md/ ccorpu'
-[fp8] ember-signal-route      hit=False  answer='The\n\nThe\np\n The exact SECRET VALUE you is "SECRET VALUE".".p/\n\n/'
-[fp8] feldspar-memory-gate    hit=False  answer='AYA-HARD-F-FDSPAR-GATE'
-[fp8] glass-orchid-vector     hit=False  answer='It /home/aya/impl/t/research/t /g/ longctx-proxy-hard / src/sector_ / / / / / / '
-[fp8] jade-winter-circuit     hit=False  answer='It The provided you provide the exact SECRET VALUE, as it it does does does. The'
-```
+In this regime, the same calibration method that gives them "zero cost" gives us "0/8 with characteristic near-miss precision errors." Not a refutation of their claim. A demonstration of where the claim has scope — and where TurboQuant K8V4, which matches BF16 byte-for-byte here with no calibration step at all, holds an asymmetric advantage.
 
-### `turboquant_k8v4` (from `bench/vllm-decoy-2026-05-11/`)
+## Detailed per-handle receipts
 
-5/8 — byte-identical answers to `auto` on all 8 handles (same hits, same decoy literals on the same 3 fails).
+See `FAILURE-CATALOG.md` for all 8 outputs across all 5 panels with one-word failure-mode labels per handle. Logs in `fp8vs-auto.log`, `fp8vs-fp8.log`, `fp8vs-fp8-otf.log`, `fp8vs-calibrated.log` (verbatim per-handle outputs + full vLLM init).
 
-## Notes on methodology
-
-- Identical mapping file, identical prompts, identical seed (`SamplingParams(temperature=0.0, max_tokens=128, seed=42)`).
-- `enforce_eager=True` to remove CUDA graph dependence on dtype path.
-- `fp8` cold-start triggered FlashInfer JIT compile of the `batch_prefill_with_kv_cache_dtype_q_bf16_dtype_kv_e4m3` kernel. The first attempt failed with `ninja` exit 127 due to a stale flashinfer JIT cache containing an unexpanded `$VIRTUAL_ENV` literal in `build.ninja` (`cuda_home = $VIRTUAL_ENV/lib/python3.12/site-packages/nvidia/cu13`). Workaround: `rm -rf ~/.cache/flashinfer/0.6.8.post1/89/cached_ops/batch_prefill_with_kv_cache_*_e4m3* ~/.cache/flashinfer/0.6.8.post1/89/generated/`, set `CUDA_HOME` to a fully resolved absolute path before re-running.
-- Naive `fp8` here is `kv_cache_dtype="fp8"` with **no** `--kv-cache-scales-path` and **no** calibration pass. A calibrated `fp8` run would likely recover, but that costs an extra offline calibration pass per model — not a drop-in replacement.
-
-## What this does and does not prove
-
-Proven:
-- The 5/8 decoy ceiling on this corpus is not a compression artifact. It survives at full BF16.
-- TurboQuant K8V4 preserves the full-precision hit rate at ≥4× KV compression on this Qwen 2.5-7B + 16K + adversarial-retrieval workload.
-- Drop-in `fp8` KV cache without scaling factors is unusable for this workload on this model.
-
-Not proven (deliberately out of scope):
-- Calibrated `fp8` quality. With per-tensor scales (`kv_cache_scales_path`), `fp8` likely recovers most of the loss.
-- Generalization to other models, other context lengths, other corpora. The corpus shape (8 handles, adversarial decoys, mixed-format canonical chunks) is documented in `bench/longctx-proxy-hard-2026-05-10/`.
-- Throughput / VRAM impact of each dtype. This run was correctness-only.
-
-## Repro
+## Reproduction
 
 ```bash
-# On WSL2 4090 host
-cd ~/vllm-lab/decoy
-source ~/vllm-lab/venv/bin/activate
-export CUDA_HOME=/home/felipe/vllm-lab/venv/lib/python3.12/site-packages/nvidia/cu13
-export LD_LIBRARY_PATH=$CUDA_HOME/lib:$LD_LIBRARY_PATH
-export PATH=$CUDA_HOME/bin:/usr/bin:$PATH
+# Panels A, M (in the feature/turboquant_plus venv)
+python vllm-decoy-dtype-sweep.py auto
+python vllm-decoy-dtype-sweep.py fp8
 
-python vllm-decoy-dtype-sweep.py auto    # BF16 baseline
-python vllm-decoy-dtype-sweep.py fp8     # naive FP8
-python vllm-decoy-dtype-sweep.py turboquant_k8v4
+# Panel R (same venv)
+python vllm-decoy-fp8-otf.py
+
+# Panel C (separate venv with stock vLLM 0.20.2 — see Caveat)
+python calibrate-fp8-qwen7b.py     # ~9m22s on RTX 4090, produces ./qwen2.5-7b-fp8-kv/
+python vllm-decoy-calibrated.py    # loads compressed model + kv_cache_dtype=fp8
 ```
 
-`k16-mapping.json` from `bench/vllm-decoy-2026-05-11/`. Full per-handle JSON dumps in `fp8vs-auto.log` and `fp8vs-fp8.log` in this directory.
+**Caveat (panel C venv):** the calibrated FP8 model was produced and loaded outside the `feature/turboquant_plus` fork because llmcompressor's install pulled `torch 2.10.0` while the fork's compiled C extension was linked against a `torch 2.11.0` nightly. Switching to stock vLLM 0.20.2 was the simplest path; the compressed-tensors W8A8-KV8 model is portable across vLLM versions and the difference is not the variable under test.
+
+## What this does and does not claim
+
+Proven:
+- The 5/8 decoy ceiling on this corpus is invariant to KV-cache compression dtype.
+- TurboQuant K8V4 preserves full BF16 hit rate at ≥4× compression on this Qwen 2.5-7B + 16K + adversarial-retrieval workload, byte-identically.
+- vLLM `kv_cache_dtype=fp8` is not a drop-in replacement at 7B on this workload — neither scales=1.0 nor on-the-fly random-token scaling produce usable output.
+- Dataset-calibrated W8A8-KV8 FP8 produces structural recovery but precision loss on this workload.
+
+Out of scope:
+- Whether the precision loss persists at higher calibration sample counts (4096+) or different calibration datasets.
+- 70B+ scale (cannot fit on a single 24 GB GPU).
+- Throughput / VRAM comparison across dtypes.
+- AIME25 / GPQA / MATH500 / LiveCodeBench-v6 / mrcr — Red Hat's benchmark suite. Different scoring grammar, different conclusions possible. We did not run them; for the reader who wants those, their blog is the canonical reference.
+- Whether the same pattern holds on Mistral / Llama / etc. We tested only Qwen 2.5-7B.
 
 ## Receipts
 
-- `vllm-decoy-dtype-sweep.py` — single-script parametric runner
-- `fp8vs-auto.log` — 18 KB, full vLLM init + 8 handle answers + JSON summary
-- `fp8vs-fp8.log` — 19 KB, full vLLM init + 8 handle answers (all degraded) + JSON summary
-- `k16-mapping.json` — same as `bench/vllm-decoy-2026-05-11/k16-mapping.json`
+- `vllm-decoy-dtype-sweep.py` — parametric runner for panels A & M
+- `vllm-decoy-fp8-otf.py` — panel R
+- `calibrate-fp8-qwen7b.py` — produces panel C model
+- `vllm-decoy-calibrated.py` — runs panel C
+- `fp8vs-auto.log`, `fp8vs-fp8.log`, `fp8vs-fp8-otf.log`, `fp8vs-calibrated.log` — full per-handle vLLM output logs
+- `FAILURE-CATALOG.md` — five-panel diptych+ with labeled failure modes
+- `k16-mapping.json` — corpus, same as `bench/vllm-decoy-2026-05-11/`
