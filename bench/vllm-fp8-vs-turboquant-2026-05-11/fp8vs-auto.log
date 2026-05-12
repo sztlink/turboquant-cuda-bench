@@ -1,0 +1,161 @@
+# 8 payloads · kv_cache_dtype=auto
+INFO 05-11 19:42:16 [utils.py:233] non-default args: {'max_model_len': 16384, 'gpu_memory_utilization': 0.85, 'disable_log_stats': True, 'enforce_eager': True, 'model': 'Qwen/Qwen2.5-7B-Instruct'}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+INFO 05-11 19:42:18 [model.py:563] Resolved architecture: Qwen2ForCausalLM
+INFO 05-11 19:42:18 [model.py:1692] Using max model len 16384
+INFO 05-11 19:42:18 [scheduler.py:239] Chunked prefill is enabled with max_num_batched_tokens=8192.
+INFO 05-11 19:42:18 [vllm.py:840] Asynchronous scheduling is enabled.
+WARNING 05-11 19:42:18 [vllm.py:896] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 05-11 19:42:18 [vllm.py:914] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 05-11 19:42:18 [kernel.py:205] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'])
+INFO 05-11 19:42:18 [vllm.py:1089] Cudagraph is disabled under eager mode
+INFO 05-11 19:42:18 [compilation.py:303] Enabled custom fusions: norm_quant, act_quant
+WARNING 05-11 19:42:20 [system_utils.py:157] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: WSL is detected and NVML is not compatible with fork
+(EngineCore pid=200) INFO 05-11 19:42:23 [core.py:109] Initializing a V1 LLM engine (v0.1.dev1+g36fc04825) with config: model='Qwen/Qwen2.5-7B-Instruct', speculative_config=None, tokenizer='Qwen/Qwen2.5-7B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=16384, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=Qwen/Qwen2.5-7B-Instruct, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, moe_backend='auto')
+(EngineCore pid=200) INFO 05-11 19:42:24 [nixl_utils.py:20] Setting UCX_RCACHE_MAX_UNRELEASED to '1024' to avoid a rare memory leak in UCX when using NIXL.
+(EngineCore pid=200) WARNING 05-11 19:42:24 [nixl_utils.py:34] NIXL is not available
+(EngineCore pid=200) WARNING 05-11 19:42:24 [nixl_utils.py:44] NIXL agent config is not available
+(EngineCore pid=200) WARNING 05-11 19:42:24 [interface.py:686] Using 'pin_memory=False' as WSL is detected. This may slow down the performance.
+(EngineCore pid=200) INFO 05-11 19:42:24 [parallel_state.py:1402] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.24.16.84:55923 backend=nccl
+(EngineCore pid=200) INFO 05-11 19:42:24 [parallel_state.py:1715] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=200) INFO 05-11 19:42:25 [topk_topp_sampler.py:45] Using FlashInfer for top-p & top-k sampling.
+(EngineCore pid=200) INFO 05-11 19:42:25 [gpu_model_runner.py:4841] Starting to load model Qwen/Qwen2.5-7B-Instruct...
+(EngineCore pid=200) INFO 05-11 19:42:25 [cuda.py:368] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=200) INFO 05-11 19:42:25 [flash_attn.py:647] Using FlashAttention version 2
+(EngineCore pid=200) Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+(EngineCore pid=200) INFO 05-11 19:42:26 [weight_utils.py:904] Filesystem type for checkpoints: EXT4. Checkpoint size: 14.19 GiB. Available RAM: 28.79 GiB.
+(EngineCore pid=200) INFO 05-11 19:42:26 [weight_utils.py:927] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+(EngineCore pid=200) Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+(EngineCore pid=200) Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:02<00:06,  2.00s/it]
+(EngineCore pid=200) Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:04<00:04,  2.01s/it]
+(EngineCore pid=200) Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:06<00:02,  2.05s/it]
+(EngineCore pid=200) Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:07<00:00,  1.97s/it]
+(EngineCore pid=200) Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:07<00:00,  1.99s/it]
+(EngineCore pid=200) 
+(EngineCore pid=200) INFO 05-11 19:42:34 [default_loader.py:391] Loading weights took 8.00 seconds
+(EngineCore pid=200) INFO 05-11 19:42:34 [gpu_model_runner.py:4943] Model loading took 14.25 GiB memory and 9.311037 seconds
+(EngineCore pid=200) INFO 05-11 19:43:16 [gpu_worker.py:433] Available KV cache memory: 4.96 GiB
+(EngineCore pid=200) INFO 05-11 19:43:16 [kv_cache_utils.py:1710] GPU KV cache size: 92,832 tokens
+(EngineCore pid=200) INFO 05-11 19:43:16 [kv_cache_utils.py:1711] Maximum concurrency for 16,384 tokens per request: 5.67x
+(EngineCore pid=200) INFO 05-11 19:43:16 [core.py:306] init engine (profile, create kv cache, warmup model) took 41.40 s
+(EngineCore pid=200) INFO 05-11 19:43:17 [vllm.py:840] Asynchronous scheduling is enabled.
+(EngineCore pid=200) WARNING 05-11 19:43:17 [vllm.py:896] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+(EngineCore pid=200) WARNING 05-11 19:43:17 [vllm.py:914] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore pid=200) INFO 05-11 19:43:17 [kernel.py:205] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'])
+(EngineCore pid=200) INFO 05-11 19:43:17 [vllm.py:1089] Cudagraph is disabled under eager mode
+(EngineCore pid=200) INFO 05-11 19:43:17 [compilation.py:303] Enabled custom fusions: norm_quant, act_quant
+WARNING 05-11 19:43:17 [interface.py:686] Using 'pin_memory=False' as WSL is detected. This may slow down the performance.
+[61.0s] LLM loaded
+Rendering conversations:   0%|          | 0/1 [00:00<?, ?it/s]INFO 05-11 19:43:20 [hf.py:314] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+Rendering conversations: 100%|██████████| 1/1 [00:02<00:00,  2.95s/it]Rendering conversations: 100%|██████████| 1/1 [00:02<00:00,  2.95s/it]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s](EngineCore pid=200) INFO 05-11 19:43:21 [gpu_model_runner.py:1171] TriAttention V3 Tier 2: tokenizer bound from Qwen/Qwen2.5-7B-Instruct on first scheduled_new_reqs.
+Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.17s/it, est. speed input: 1589.99 toks/s, output: 7.82 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.17s/it, est. speed input: 1589.99 toks/s, output: 7.82 toks/s]Processed prompts: 100%|██████████| 1/1 [00:02<00:00,  2.17s/it, est. speed input: 1589.99 toks/s, output: 7.82 toks/s]
+[auto] aurora-blue-compass       hit=True  gen=5.1s tok_in=3457 tok_out=17  answer='AYA-HARD-AURORA-BLUE-050-Z9'
+Rendering conversations:   0%|          | 0/1 [00:00<?, ?it/s]Rendering conversations: 100%|██████████| 1/1 [00:00<00:00, 257.57it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  2.08it/s, est. speed input: 7181.31 toks/s, output: 22.88 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  2.08it/s, est. speed input: 7181.31 toks/s, output: 22.88 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  2.08it/s, est. speed input: 7181.31 toks/s, output: 22.88 toks/s]
+[auto] brass-river-index         hit=False  gen=0.5s tok_in=3453 tok_out=11  answer='DECOY-0616-1'
+Rendering conversations:   0%|          | 0/1 [00:00<?, ?it/s]Rendering conversations: 100%|██████████| 1/1 [00:00<00:00, 269.06it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  1.68it/s, est. speed input: 5801.83 toks/s, output: 30.19 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  1.68it/s, est. speed input: 5801.83 toks/s, output: 30.19 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  1.68it/s, est. speed input: 5801.83 toks/s, output: 30.19 toks/s]
+[auto] ceramic-lantern-field     hit=True  gen=0.6s tok_in=3459 tok_out=18  answer='AYA-HARD-CERAMIC-LANTERN-310-Z9'
+Rendering conversations:   0%|          | 0/1 [00:00<?, ?it/s]Rendering conversations: 100%|██████████| 1/1 [00:00<00:00, 239.24it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s, est. speed input: 5953.10 toks/s, output: 29.27 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s, est. speed input: 5953.10 toks/s, output: 29.27 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s, est. speed input: 5953.10 toks/s, output: 29.27 toks/s]
+[auto] delta-archive-needle      hit=True  gen=0.6s tok_in=3457 tok_out=17  answer='AYA-HARD-DELTA-ARCHIVE-440-Z9'
+Rendering conversations:   0%|          | 0/1 [00:00<?, ?it/s]Rendering conversations: 100%|██████████| 1/1 [00:00<00:00, 267.77it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  1.82it/s, est. speed input: 6307.35 toks/s, output: 27.37 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  1.82it/s, est. speed input: 6307.35 toks/s, output: 27.37 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  1.82it/s, est. speed input: 6307.35 toks/s, output: 27.37 toks/s]
+[auto] ember-signal-route        hit=True  gen=0.6s tok_in=3457 tok_out=15  answer='AYA-HARD-EMBER-SIGNAL-570-Z9'
+Rendering conversations:   0%|          | 0/1 [00:00<?, ?it/s]Rendering conversations: 100%|██████████| 1/1 [00:00<00:00, 301.08it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s, est. speed input: 6000.35 toks/s, output: 29.21 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s, est. speed input: 6000.35 toks/s, output: 29.21 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s, est. speed input: 6000.35 toks/s, output: 29.21 toks/s]
+[auto] feldspar-memory-gate      hit=True  gen=0.6s tok_in=3492 tok_out=17  answer='AYA-HARD-FELDSPAR-GATE-700-Z9'
+Rendering conversations:   0%|          | 0/1 [00:00<?, ?it/s]Rendering conversations: 100%|██████████| 1/1 [00:00<00:00, 291.68it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s, est. speed input: 7168.03 toks/s, output: 22.81 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s, est. speed input: 7168.03 toks/s, output: 22.81 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s, est. speed input: 7168.03 toks/s, output: 22.81 toks/s]
+[auto] glass-orchid-vector       hit=False  gen=0.5s tok_in=3457 tok_out=11  answer='DECOY-0742-6'
+Rendering conversations:   0%|          | 0/1 [00:00<?, ?it/s]Rendering conversations: 100%|██████████| 1/1 [00:00<00:00, 302.77it/s]
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s, est. speed input: 7153.78 toks/s, output: 22.82 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s, est. speed input: 7153.78 toks/s, output: 22.82 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s, est. speed input: 7153.78 toks/s, output: 22.82 toks/s]
+[auto] jade-winter-circuit       hit=False  gen=0.5s tok_in=3448 tok_out=11  answer='DECOY-0725-7'
+(EngineCore pid=200) INFO 05-11 19:43:26 [core.py:1238] Shutdown initiated (timeout=0)
+(EngineCore pid=200) INFO 05-11 19:43:26 [core.py:1261] Shutdown complete
+[rank0]:[W511 19:43:27.503772592 ProcessGroupNCCL.cpp:1575] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "kv_cache_dtype": "auto",
+  "max_model_len": 16384,
+  "n_prompts": 8,
+  "n_hits": 5,
+  "results": [
+    {
+      "handle": "aurora-blue-compass",
+      "expected": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "answer": "AYA-HARD-AURORA-BLUE-050-Z9",
+      "hit": true,
+      "gen_time_s": 5.13,
+      "prompt_tok": 3457,
+      "out_tok": 17
+    },
+    {
+      "handle": "brass-river-index",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "answer": "DECOY-0616-1",
+      "hit": false,
+      "gen_time_s": 0.49,
+      "prompt_tok": 3453,
+      "out_tok": 11
+    },
+    {
+      "handle": "ceramic-lantern-field",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "gen_time_s": 0.6,
+      "prompt_tok": 3459,
+      "out_tok": 18
+    },
+    {
+      "handle": "delta-archive-needle",
+      "expected": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "answer": "AYA-HARD-DELTA-ARCHIVE-440-Z9",
+      "hit": true,
+      "gen_time_s": 0.59,
+      "prompt_tok": 3457,
+      "out_tok": 17
+    },
+    {
+      "handle": "ember-signal-route",
+      "expected": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "answer": "AYA-HARD-EMBER-SIGNAL-570-Z9",
+      "hit": true,
+      "gen_time_s": 0.55,
+      "prompt_tok": 3457,
+      "out_tok": 15
+    },
+    {
+      "handle": "feldspar-memory-gate",
+      "expected": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "answer": "AYA-HARD-FELDSPAR-GATE-700-Z9",
+      "hit": true,
+      "gen_time_s": 0.59,
+      "prompt_tok": 3492,
+      "out_tok": 17
+    },
+    {
+      "handle": "glass-orchid-vector",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "answer": "DECOY-0742-6",
+      "hit": false,
+      "gen_time_s": 0.49,
+      "prompt_tok": 3457,
+      "out_tok": 11
+    },
+    {
+      "handle": "jade-winter-circuit",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "answer": "DECOY-0725-7",
+      "hit": false,
+      "gen_time_s": 0.49,
+      "prompt_tok": 3448,
+      "out_tok": 11
+    }
+  ],
+  "vllm_version": "0.1.dev1+g36fc04825"
+}
+DECOY_RESULT_OK kv=auto hits=5/8
