@@ -1,6 +1,19 @@
 # turboquant-cuda-bench
 
-Independent TurboQuant KV cache benchmark data from CUDA production hardware.
+Independent TurboQuant / KVFidelity / CASK research archive from CUDA production hardware.
+
+## Canonical research structure
+
+This repository is the **material canonical archive** for the TurboQuant / KVFidelity front: protocols, raw logs, processed traces, scripts, analysis, and publicable artifacts. `memory-md` keeps synthesis and decisions; `/tmp` is only a scratch/bancada layer.
+
+Start here:
+
+- [CANON.md](CANON.md) — current canonical stance and caveats
+- [MANIFEST.md](MANIFEST.md) — promoted artifacts and checksums
+- [00-context/CURRENT.md](00-context/CURRENT.md) — current brief for the next session
+- [CASK/KVFidelity Trace Atlas experiment](03-lab/experiments/2026-05-13-cask-aime24-n30-trace-atlas/experiment.md)
+- [KVFidelity Trace Atlas lab note v2](05-analysis/kvfidelity/2026-05-15-trace-atlas-lab-note-v2.md)
+- [KVFidelity Casey Atlas v4](06-publicable/kvfidelity/2026-05-trace-atlas-v4/)
 
 ## Hardware
 

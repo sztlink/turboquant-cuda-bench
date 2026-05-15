@@ -1,0 +1,38 @@
+CASK_MINI_BEGIN 2026-05-13T02:26:52Z
+UPTIME=6335.77 202455.85
+deps_ok
+model-00001-of-00005.safetensors 3996250744
+model-00002-of-00005.safetensors 3993160032
+model-00003-of-00005.safetensors 3959604768
+model-00004-of-00005.safetensors 3187841392
+model-00005-of-00005.safetensors 1244659840
+CELL_BEGIN method=fullkv 2026-05-13T02:26:52Z
+670, 23469, 0, 34
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[download] dataset aime24 -> /home/felipe/CASK/data/aime24.jsonl from HuggingFaceH4/aime_2024
+Generating train split:   0%|          | 0/30 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 30/30 [00:00<00:00, 2502.57 examples/s]
+Merged 2 records into /home/felipe/CASK/experiments/outputs/aime24/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime24_20260513/merged/merged.jsonl
+Evaluate:   0%|          | 0/2 [00:00<?, ?it/s]Evaluate: 100%|██████████| 2/2 [00:00<00:00, 33689.19it/s]
+{'num_samples': 2, 'num_scores': 2, 'timeout_samples': 0, 'empty_samples': 0, 'acc': 0.0}
+Saved to /home/felipe/CASK/experiments/outputs/aime24/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime24_20260513/eval/aime24_Qwen3-8B_fullkv_full_pi_mini_fullkv_aime24_20260513/aime24/default-default_math_multi_eval.jsonl
+{'num_samples_total': 2, 'num_questions': 2, 'num_preds_per_question_expected': 1, 'num_preds_per_question_min': 1, 'num_preds_per_question_max': 1, 'num_samples': 2, 'num_scores': 2, 'timeout_samples': 0, 'empty_samples': 0, 'acc': 0.0}
+[warn] conda not found; falling back to current python: /home/felipe/cask-venv/bin/python
+[dispatch] shard-over-draws mode: 1 draws across 1 shards
+[launch] shard 0 -> GPU 0, log /home/felipe/CASK/experiments/logs/aime24/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime24_20260513/shard00_20260512_232659.log
+[done] shard 0 completed.
+[merge] /home/felipe/cask-venv/bin/python /home/felipe/CASK/scripts/merge_shards.py --method-output-dir /home/felipe/CASK/experiments/outputs/aime24/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime24_20260513/shards --merged-dir-name merged
+[eval] /home/felipe/cask-venv/bin/python -m cask.evaluation.eval_math_multi --base_dir /home/felipe/CASK/experiments/outputs/aime24/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime24_20260513/merged --dataset aime24 --exp_name aime24_Qwen3-8B_fullkv_full_pi_mini_fullkv_aime24_20260513 --output_dir /home/felipe/CASK/experiments/outputs/aime24/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime24_20260513/eval --num_samples 1
+CELL_EXIT method=fullkv rc=0 2026-05-13T02:27:31Z
+CELL_BEGIN method=triattention 2026-05-13T02:27:31Z
+670, 23469, 0, 37
+[info] triattention stats override: /home/felipe/CASK/experiments/cask/calibration/for_aime24_experiment/qwen3_8b.pt
+Traceback (most recent call last):
+  File "/home/felipe/CASK/scripts/cli.py", line 1264, in <module>
+    main()
+  File "/home/felipe/CASK/scripts/cli.py", line 1247, in main
+    run_one(
+  File "/home/felipe/CASK/scripts/cli.py", line 605, in run_one
+    raise FileNotFoundError(
+FileNotFoundError: Stats missing for triattention on aime24/Qwen3-8B/budget 256. Run scripts/experiments/build_all_stats.sh first.
+CELL_EXIT method=triattention rc=1 2026-05-13T02:27:31Z
+CASK_MINI_FAILED method=triattention rc=1

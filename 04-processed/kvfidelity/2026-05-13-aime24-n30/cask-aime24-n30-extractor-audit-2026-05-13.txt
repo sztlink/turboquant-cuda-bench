@@ -1,0 +1,121 @@
+# AIME24 n=30 extractor/postprocess audit
+Heuristic: failed sample is counted as contains_gt when the normalized ground-truth integer appears anywhere in the raw output with digit boundaries. boxed_gt requires a matching \boxed{...}.
+
+## Summary
+| run | acc | correct | failed_contains_gt | failed_boxed_gt | ok_unboxed | median_len |
+|---|---:|---:|---:|---:|---:|---:|
+| fullkv_2048 | 6.7 | 2/30 | 4 | 0 | 2 | 6252 |
+| tri_b256_2048 | 0.0 | 0/30 | 1 | 0 | 0 | 7044 |
+| cask_b256_2048 | 3.3 | 1/30 | 0 | 0 | 0 | 6847 |
+| fullkv_4096 | 13.3 | 4/30 | 7 | 0 | 0 | 11965 |
+| tri_b256_4096 | 3.3 | 1/30 | 0 | 0 | 0 | 13711 |
+| cask_b256_4096 | 3.3 | 1/30 | 1 | 0 | 0 | 13996 |
+| tri_b384_4096 | 0.0 | 0/30 | 3 | 0 | 0 | 13017 |
+| cask_b384_4096 | 0.0 | 0/30 | 3 | 0 | 0 | 13687 |
+| tri_b512_4096 | 3.3 | 1/30 | 2 | 0 | 0 | 12551 |
+| cask_b512_4096 | 3.3 | 1/30 | 3 | 0 | 1 | 12973 |
+
+## Failed but ground truth appears somewhere
+
+### fullkv_2048: 4 cases
+- idx 0 gt=204 pred=["2040Butletmecheckagainifthereisanymistakehere.Wait,letmecheckifthetotaltimewhenshewalksat3/isindeed3+240Butletmethinkagain.Wait,thetotaltimeiswalkingtimepluscoffeeshoptime.Thecoffeeshoptimeis,whichis240So,ifwalkingtimeis3,thentotaltimeis324,whichis3*60+24=180+24=2040Soyes,that'2040Butletmecheckifthere'anothertocomputethis.Alternatively,maybewecancomputethetotaltimeinconvertto0Walkingtimeat3/is9/3=30Thentotaltimeis3+24/600Whichis3+0.4=3.40Convertthatto:3.4*60=2040Yes,sameresult.Therefore,theanswer"] boxed_gt=False len=5778 boxes=[] tail=ly, maybe we can compute the total time in hours and convert to minutes. /  / Walking time at 3 km/h is 9 / 3 = 3 hours. Then total time is 3 + 24/60 hours. Which is 3 + 0.4 = 3.4 hours. Convert that to minutes: 3.4 * 60 = 204 minutes. Yes, same result. /  / Therefore, the answer
+- idx 11 gt=294 pred=['2'] boxed_gt=False len=7828 boxes=[] tail=o one segment (only 1 way) and split 1 U into one segment (only 1 way). So 1*1=1. Similarly starting with U: 1*1=1. Total 2, which is correct. So formula works here. /  / So seems like the formula is correct. Therefore, returning to original problem: 8x8 grid, paths of length 16,
+- idx 12 gt=540 pred=["540?Wait,butletmecheckmystepsagaintomakesureIdidn'makemistake.Letmeverify:Originalexpression:Re[(75+117i)z+(96+144i)/z]with|z|=4Expressedz4e^{iθ},so1/zis(1/4)e^{-iθ}.Thentheexpressionbecomes(75+117i)*4e^{iθ}+(96+144i)/4e^{-iθ}.Which"] boxed_gt=False len=4733 boxes=[] tail= steps again to make sure I didn't make a mistake. Let me verify: /  / Original expression: Re[(75 + 117i)z + (96 + 144i)/z] with |z| = 4. /  / Expressed z as 4e^{iθ}, so 1/z is (1/4)e^{-iθ}. /  / Then the expression becomes (75 + 117i)*4e^{iθ} + (96 + 144i)/4 e^{-iθ}. /  / Which
+- idx 22 gt=236 pred=['5.5'] boxed_gt=False len=6784 boxes=[] tail='s three, same as 9s). Not allowed. Or 1,1,2. Then 1 appears twice, 2 once. So 9 appears three times. So mode is 9. Then the list would be [1,1,2,9,9,9]. Let's check the median. The third and fourth numbers are 2 and 9. The median is (2 +9)/2=5.5, which is not integer. So invalid
+
+### tri_b256_2048: 1 cases
+- idx 7 gt=25 pred=['25?Wait,butletmecheckifthereanyconstraintsorifImadeanerrorinassumingsomething.Wait,theproblemsaysxybothgreaterthan1So,sincelogbasexlogbaseydefined,thenxymustbepositivenotequalto1,whichisalreadysatisfiedtheygreaterthan1So,seemsokay.Butletmecheckwithactual0Supposex25Letmefindxy.Fromequation(1):log_x(y^x)=10Whichcanberewrittenlog_x(y^x)=x*log_x(y)=10Similarly,equation(2):log_y(x^{4y})=4y*log_y(x)=10Letmedenotelog_x(y)somevariable.Letmesetlog_x(y).Then,sincelog_x(y)=,thenx^.Similarly,log_y(x)is1/,sincelog_y(x)=1/log_x(y)=1/.Sosubstitutingintoequation(1):x*10=>10/x.Equation(2):log_y(x^{4y})=10Letmewritethat4y*log_y(x)=10Sincelog_y(x)is1/log_x(y).Wait,butlog_y(x)is1/log_x(y).Earlier,wehadlog_x(y)=,solog_y(x)=1/.Wait,butequation(2):4y*log_y(x)=10=>4y*(1/)=10=>4y/10Butfromequation(1),10/x.Sosubstitutingintoequation(2):4y/(10/x)=4y*x/10=(4xy)/10=(4*25)/10=100/10=10Wait,butequation(2)saysthisequals10?Wait,equation(2)issupposedtoequal10?Wait,holdon.Letmecheckagain.Originalequations:Firstequation:log_x(y^x)=10Whichisx*log_x(y)=10Solog_x(y)=10/x.Secondequation:log_y(x^{4y})=10Whichis4y*log_y(x)=10Solog_y(x)=10/(4y)=5/(2y).Butlog_y(x)isreciprocaloflog_x(y).Sincelog_b()=1/log_a(b).Therefore:log_y(x)=1/log_x(y).Therefore:1/log_x(y)=5/(2y).Butlog_x(y)log_x(y^x)=10Whichisequivalenttox*log_x(y)=10,solog_x(y)=10/x.Whichimpliesthatx^{10/x}.Similarly,log_y(x^{4y})=10Whichis4y*log_y(x)=10Solog_y(x)=10/(4y)=5/(2y).Butsincelog_y(x)=1/log_x(y).Therefore:1/(10/x)=5/(2y).Wait:Wait,log_x(y^x)=10Letmere-expressthat:log_x(y^x)=x*log_x(y)=10Therefore,log_x(y)=10/x.Therefore,x^{10/x}.Similarly,log_y(x^{4y})=4y*log_y(x)=10Therefore,log_y(x)=10/(4y)=5/(2y).Butlog_y(x)is1/log_x(y).Therefore:1/(10/x)=5/(2y).Wait:Wait,log_y(x^{4y})=10Letmedothatagain.log_y(x^{4y})=4y*log_y(x)=10Therefore,log_y(x)=10/(4y)=5/(2y).Butlog_y(x)=1/log_x(y).Fromthefirstequation,log_x(y)=10/x.Therefore,log_y(x)=x/10Therefore,wehave:x/10=5/(2y).Wait,holdon:Wait,log_x(y)isequaltolog_x(y).Wait,thefirstequationislog_x(y^x)=10Whichisx*log_x(y)=10Therefore,log_x(y)=10/x.Then,log_y(x)isreciprocaloflog_x(y),solog_y(x)=x/10Butfromtheequation,log_y(x^{4y})='] boxed_gt=False len=5202 boxes=[] tail=/10 = 5/(2y). Wait, hold on: /  / Wait, log_x(y) is equal to log_x(y). Wait, the first equation is log_x(y^x) = 10. Which is x * log_x(y) = 10. Therefore, log_x(y) = 10/x. Then, log_y(x) is reciprocal of log_x(y), so log_y(x) = x/10. But from the second equation, log_y(x^{4y}) = 
+
+### cask_b256_2048: 0 cases
+
+### fullkv_4096: 7 cases
+- idx 7 gt=25 pred=["25ButthenwhywhenItriedspecific,like55,itdidn'work?Becausethosedon'satisfytheoriginalequations.Buttheremustbesomexythatdosatisfythem.Letmetrytosolvetheequationx^{(10/x+1)}=25Letmetakenaturallogs:(10/x+1)*lnln25Letmedenotef(x)=(10/x+1)*lnx.Weneedtofindxsuchthatf(x)=ln25≈3.218Letmetry5f(5)=(10/5+1)*ln5=(2+1)*ln5≈3*1.609≈4.827>3.218.10:f(10)=(1+1)*ln10≈2*2.302≈4.605>3.218.25:f(25)=(10/25+1)*ln25=(0.4+1)*3.218≈1.4*3.218≈4.505>3.218Wait,butwhenxapproaches1fromtheright,let'see.Letmetakexapproaching1Letmetry1.5f(1.5)=(10/1.5+1)*ln(1.5)≈(6.666+1)*0.405≈7.666*0.405≈3.103Closeto3.218Sof(1.5)≈3.103<3.218Sobetween1.55,f(x)goesfrom~3.103to~4.827Therefore,theremustbesolutionbetween1.55Letmetry2f(2)=(10/2+1)*ln2=(5+1)*0.693≈6*0.693≈4.158>3.218Sobetween1.52Letmetry1.61.6:10/1.6=6.25,so6.25+1=7.25ln(1.6)≈0.477.25*0.47≈3.4075Stillhigherthan3.218Try"] boxed_gt=False len=9982 boxes=[] tail=e a solution between x=1.5 and x=5. Let me try x=2. f(2) = (10/2 + 1) * ln2 = (5 + 1) * 0.693 ≈ 6 * 0.693 ≈ 4.158 > 3.218. So between 1.5 and 2. Let me try x=1.6.  /  / x=1.6: 10/1.6 = 6.25, so 6.25 + 1 = 7.25. ln(1.6) ≈ 0.47. 7.25 * 0.47 ≈ 3.4075. Still higher than 3.218. Try x=
+- idx 8 gt=809 pred=['2'] boxed_gt=False len=12446 boxes=[] tail=Numbers congruent to 0 mod5: 5,10 → 2 numbers. /  / Numbers congruent to 2 mod5: 2,7 → 2 numbers. Total 4. But according to our previous table, losing positions up to n=10 are 0,2,5,7,10. But since n starts at 1, the losing positions are 2,5,7,10. So 4 numbers. Which matches 2+2=
+- idx 9 gt=116 pred=['4'] boxed_gt=False len=13933 boxes=[] tail= Suppose that Jen has selected her four numbers. Let me think of the probability that the lottery has exactly k matches with her numbers, for k = 0,1,2,3,4. Then, the probability of winning a prize is P(k ≥ 2) = P(2) + P(3) + P(4). The probability of winning the grand prize is P(
+- idx 12 gt=540 pred=['540Butletmecheckifthere\'anymistakehere.Wait,buttheoriginalproblemsays"thelargestpossiblerealpart".Sothemaximumvalueoftherealpartis540?Letmecheckifthat\'possible.Letmethinkofanotherapproach.Alternatively,maybeusingthemethodofLagrangemultipliersorparametrizingz.Butsincewealreadyhavemethodthatgives540,thestepsseemcorrect,perhapsthat\'theanswer.ButmaybeIshouldcheckwithspecificvalues.Letmesupposethatθischosensuchthat324cosθ-432sinθismaximized.Themaximumoccurswhenθissuchthattanφ=b/?Wait,fortheexpressioncosθ+bsinθ,themaximumissqrt(a²+b²),achievedwhenθissuchthattanθ=b/?Wait,actually,it\'bitdifferent.Letmerecall:theexpressioncanbewrittenRcos(θ-φ),whereRissqrt(a²+b²)φissuchthatcosφ=/Rsinφ=b/R.Therefore,themaximumvalueisR,whichissqrt(a²+b²).Therefore,inourcase,sincetheexpressionis324cosθ-432sinθ,whichcanbewrittenRcos(θ+φ),whereRissqrt(324²+432²)=540Therefore,themaximumis540Sothatseemscorrect.Alternatively,letmecheckwithθsuchthatthevector(cosθ,sinθ)isinthedirectionof(324,-432).Wait,themaximumofcosθ+bsinθisachievedwhen(cosθ,sinθ)isinthedirectionof(,b).Wait,butheretheexpressionis324cosθ-432sinθ.Letmethinkofit324cosθ+(-432)sinθ.Therefore,themaximumissqrt(324²+(-432)^2)=540Therefore,yes,that\'correct.Therefore,theanswershouldbe540Butletmecheckagainwithanotherapproach.Letmethinkofzcomplexwith|z|=4Letmewritex+iy,withx²+y²=16Thencomputetheexpression(75+117i)z+(96+144i)/z,thentaketherealpart.Butthatmightbecomplicated,butletmetry.Letmedenotex+iy,|z|=4,sox²+y²=16Then1/conjugate(z)/|z|²=(x-iy)/16Therefore,(96+144i)/(96+144i)(x-iy)/16Sotheentireexpressionis:(75+117i)(x+iy)+(96+144i)(x-iy)/16Letmecomputeeachpart.Firstpart:(75+117i)(x+iy)=75x+75iy+117ix+117i²75x-117y+i(75y+117x).Secondpart:(96+144i)(x-iy)/16Letmecomputenumeratorfirst:(96+144i)(x-iy)=96x-96iy+144ix-144i²96x+144y+i(144x-96y).Thendivide16:[96x+144y]/16+i[144x-96y]/16=6x+9y+i(9x-6y).Therefore,theentireexpressionis:Firstpart+part:Realparts:(75x-117y)+(6x+9y)=(75x+6x)+(-117y+9y)=81x-108y.Imaginaryparts:(75y+117x)+(9x-6y)=(75y-6y)+(117x+9x)=69y+126x.Therefore,therealpartis81x-108y.Wait,butearlierIhad324cosθ-432sinθ.Letmecheckiftheyequivalent.Becauseifx+i4e^{iθ},then4cosθ,4sinθ.Therefore,substitutinginto81x-108y:81*(4cosθ)-108*(4sinθ)=324cosθ-432sinθ.Whichmatchesthepreviousresult.Therefore,therealpartis81x-108y,whichisequalto324cosθ-432sinθ.Therefore,themaximumofthisexpressionis540Therefore,thisconfirmsthepreviousresult.Butletmecheckifthere\'anotherapproach'] boxed_gt=False len=9560 boxes=[] tail=324 cosθ - 432 sinθ. Which matches the previous result. Therefore, the real part is 81x - 108y, which is equal to 324 cosθ - 432 sinθ. Therefore, the maximum of this expression is 540. Therefore, this confirms the previous result. /  / But let me check if there's another approach
+- idx 19 gt=321 pred=['321?Wait,butletmemakesurethattheproductisindeed8321Letmecheckagain.Alternatively,perhapsImademistakeinthecalculationofα^{13}?Letmerecomputeα^{13}whereα=1+i.First,letmecomputeα^ningeneral.Sinceα=1+i,whichhasmagnitudesqrt(2)angleπ/4Therefore,α^n=(sqrt(2))^n*e^{inπ/4}.Soforn=13:(sqrt(2))^{13}=2^{13/2}=2^6*2^{1/2'] boxed_gt=False len=10256 boxes=[] tail=e calculation of α^{13}? Let me recompute α^{13} where α = 1 + i.  /  / First, let me compute α^n in general. Since α = 1 + i, which has magnitude sqrt(2) and angle π/4. Therefore, α^n = (sqrt(2))^n * e^{i n π/4}.  /  / So for n = 13: /  / (sqrt(2))^{13} = 2^{13/2} = 2^6 * 2^{1/2
+- idx 22 gt=236 pred=['9'] boxed_gt=False len=13071 boxes=[] tail=e other possibilities? Let me check.  /  / Suppose the list is [a, b, c, d], sorted. Sum is 30. 9 appears twice. So two 9s. So the sum is a + b + c + d = 30. Also, two of the numbers are 9. Let me suppose that c and d are 9. Then the list is [a, b, 9, 9]. Then the median is (b +9
+- idx 23 gt=45 pred=['8'] boxed_gt=False len=10753 boxes=[] tail=olutions are valid. Therefore, there are 45 possible triples (a, b, c). Therefore, the total number of grids is 45? Wait, but let me check with the example given. /  / The example given is: /  / Row 1: 0, 0, 8 /  / Row 2: 9, 9, 1 /  / So, a=0, b=0, c=8. Then a + b + c = 0 + 0 + 8
+
+### tri_b256_4096: 0 cases
+
+### cask_b256_4096: 1 cases
+- idx 4 gt=110 pred=['2'] boxed_gt=False len=9389 boxes=[] tail=ible by p^2. /  / So first, find p. Let me think. Let's try small primes. /  / For p=2: n^4 +1 divisible by 4. Let's see. n^4 mod 4. For n even: n=2k, n^4=16k^4, which is 0 mod 4. Then n^4 +1=1 mod 4. Not divisible by 4. For n odd: n=2k+1, n^4= (2k+1)^4. Let's compute mod 4. (2k+
+
+### tri_b384_4096: 3 cases
+- idx 7 gt=25 pred=['4'] boxed_gt=False len=10844 boxes=[] tail=But then why when I tried plugging in numbers, like if xy = 25, and from above we also have that x = 4y? Wait, no, earlier we had from the equations: /  / Wait, let me check again. Wait, earlier when I thought I had x = 4y? Where did that come from? /  / Wait, no, in the previous
+- idx 9 gt=116 pred=['210'] boxed_gt=False len=13017 boxes=[] tail=Wait no, earlier I said that the number of favorable outcomes was 15? Wait no, let me go back. /  / Wait, when I calculated the number of ways she can have at least two numbers matching, I did: /  / Total number of ways to choose 4 numbers: C(10,4) = 210. /  / Number of favorable
+- idx 11 gt=294 pred=['8'] boxed_gt=False len=16002 boxes=[] tail=r of right moves is 8 and up moves is 8. So, depending on the starting direction, the number of segments of each direction will vary. /  / Let me think. Suppose the path starts with R. Then the directions are R, U, R, U, R. So there are three R segments and two U segments. Each R
+
+### cask_b384_4096: 3 cases
+- idx 7 gt=25 pred=["25Butinmyexampleabove,Ithoughtthatifx25,thenmaybetakingxysuchthat10k5/(2k),butwhenItriedk=1,10,5/2Letmecheckifthatsatisfiestheoriginalequations.Letmecheckwith10,5/2Let'computelog_x(y^x)seeifit'10First,log_x(y^x)=x*log_x(y).Sincelog_x(y)islogbasexofy.Letmecomputelog_x(y):log_x(y)=ln(y)/ln(x).Sox*ln(y)/ln(x)=10*ln(5/2)/ln(10).Letmecomputethisvaluenumerically.Computeln(5/2)≈ln(2.5)≈0.916291ln(10)≈2.302585So10*0.916291/2.302585≈10*0.398≈3.98,whichisnot10Sothisdoesnotsatisfytheequation.Therefore,mymistakewasinassumingthatifx25,thentheequationssatisfied.Butapparently,there'toit.Wait,somaybemypreviousreasoningisflawed?Letmecheckagain.Wehad:Fromthefirstequation,log_x(y^x)=10Letmerewritethis.log_x(y^x)=x*log_x(y)=10Similarly,log_y(x^{4y})=4y*log_y(x)=10So,wehave:x*log_x(y)=100.(1)4y*log_y(x)=100.(2)Butlog_x(y)isequalto1/log_y(x),changeofbaseformula.Letmedenotelog_y(x)somevariable.Letmesetlog_y(x)=k.Thenlog_x(y)=1/k.Sosubstitutingintoequations:From(1):x*(1/k)=10=>x/k=10=>10k.From(2):4y*k=10=>4yk=10=>10/(4k)=5/(2k).Sowehave10k5/(2k).Therefore,theproductx10k*5/(2k)=(50k)/(2k)=25Soregardlessofk,theproductis25Therefore,x25Butinmyexample,whenItriedtoplugin,itdidn'work.Why?BecauseIdidn'takeintoaccountthatkmustsatisfysomeotherconditions.Letmecheck.Forexample,ifx25,butalsowehavexygreaterthan1Soletmecheckifthereexistssuchthat10k>15/(2k)>1So:Forx>1:10k>1=>k>1/10Fory"] boxed_gt=False len=11181 boxes=[] tail=dn't take into account that k must satisfy some other conditions. Let me check. For example, if xy = 25, but also we have x and y greater than 1. So let me check if there exists a k such that x = 10k > 1 and y = 5/(2k) > 1. /  / So: /  / For x > 1: 10k > 1 => k > 1/10. /  / For y
+- idx 9 gt=116 pred=['1'] boxed_gt=False len=14246 boxes=[] tail=, the probability of winning the grand prize is the probability that her numbers are exactly the same as the four chosen numbers. Since she picks 4 numbers, and the lottery picks 4 numbers. So the number of ways she can have all four numbers correct is 1 (since she has a specific
+- idx 12 gt=540 pred=['4'] boxed_gt=False len=9409 boxes=[] tail=x number with |z| = 4. Let me denote z = 4e^{iθ}, since |z| = 4. Then 1/z = (1/4)e^{-iθ}. Therefore, the expression becomes: /  / (75 + 117i) * 4e^{iθ} + (96 + 144i) * (1/4)e^{-iθ} /  / Let me compute that: /  / First term: 4*(75 + 117i) e^{iθ} /  / Second term: (96 + 144i)/4 * e
+
+### tri_b512_4096: 2 cases
+- idx 9 gt=116 pred=['5'] boxed_gt=False len=13342 boxes=[] tail= n = 116. /  / Wait, but hold on. Let me check again. /  / Wait, the probability of winning the grand prize is 1/210. The probability of winning a prize is 23/42. So the conditional probability is (1/210) divided by (23/42) = (1/210)*(42/23) = (42)/(210*23) = (42/210)/23 = (1/5)/
+- idx 11 gt=294 pred=['3'] boxed_gt=False len=14960 boxes=[] tail=direction changes, it would have three segments. For example, R R U U (one direction change), R U R U (two direction changes), R U U R (two direction changes?), no. Wait: /  / Let me take specific examples. /  / Path 1: R R U U. Directions: right, right, up, up. Direction changes
+
+### cask_b512_4096: 3 cases
+- idx 9 gt=116 pred=['2'] boxed_gt=False len=14953 boxes=[] tail= of ways that exactly k of Jen's numbers are in the lottery is C(4, k) * C(6, 4 - k). Because she has 4 numbers, and the lottery has 4 numbers. So to have exactly k matches, we choose k numbers from her 4, and the remaining 4 - k numbers from the other 10 - 4 = 6 numbers. So that
+- idx 11 gt=294 pred=['2'] boxed_gt=False len=15741 boxes=[] tail=hts is 8, which is equal to the sum of 3 positive integers. Similarly for the ups. /  / But since the total number of rights is 8, and there are 3 segments, the number of ways to split 8 rights into 3 positive integers is C(8-1,3-1) = C(7,2). Similarly for the ups, if there are 2
+- idx 12 gt=540 pred=['432'] boxed_gt=False len=9546 boxes=[] tail=. Therefore sqrt(291600)=54*10=540. Therefore, the maximum value of 324 cosθ - 432 sinθ? Wait, no. Wait, the expression was 324 cosθ - 432 sinθ? Wait, no, the expression was 324 cosθ - 432 sinθ? Wait, no, earlier we had 324 cosθ - 432 sinθ? Wait, let me check again. /  / Wait, no
+
+## Correct but no matching boxed answer
+
+### fullkv_2048: 2 cases
+- idx 7 gt=25 pred=['25'] len=5647 tail=en y = 25/2 = 12.5. Let me check if this satisfies the original equations. /  / First equation: log base 2 of (y^x) = log_2( (12.5)^2 ). Let me compute log_2(12.5^2) = 2 log_2(12.5). Since 12.5 is 25/2, so log_2(25/2) = log_2(25) - log_2(2) = log_2(25) - 1. Therefore, 2*(log_2(25
+- idx 9 gt=116 pred=['116'] len=6062 tail=ay to think about it? Let me think. Given that she has at least two matches, what is the probability that all four are matches? So, another way is to compute the number of favorable cases over the number of cases in B. /  / So, the number of ways she can have at least two matches
+
+### tri_b256_2048: 0 cases
+
+### cask_b256_2048: 0 cases
+
+### fullkv_4096: 0 cases
+
+### tri_b256_4096: 0 cases
+
+### cask_b256_4096: 0 cases
+
+### tri_b384_4096: 0 cases
+
+### cask_b384_4096: 0 cases
+
+### tri_b512_4096: 0 cases
+
+### cask_b512_4096: 1 cases
+- idx 7 gt=25 pred=['25'] len=11014 tail=iprocals. /  / So from the first equation: x * a = 10. /  / From the second equation: 4y * (1/a) = 10. /  / So we have: /  / x * a = 10 ...(1) /  / 4y / a = 10 ...(2) /  / Multiply (1) and (2): /  / x * a * 4y / a = 10 * 10 => 4xy = 100 => xy = 25. So that's correct. /  / So xy =
+
+## Per-index correctness matrix
+| idx | gt | fullkv_2048 | tri_b256_2048 | cask_b256_2048 | fullkv_4096 | tri_b256_4096 | cask_b256_4096 | tri_b384_4096 | cask_b384_4096 | tri_b512_4096 | cask_b512_4096 |
+|---:|---|---|---|---|---|---|---|---|---|---|---|
+| 0 | 204 | ~ | · | · | ✓ | · | · | · | · | · | · |
+| 1 | 113 | · | · | · | · | · | · | · | · | · | · |
+| 2 | 371 | · | · | · | · | · | · | · | · | · | · |
+| 3 | 385 | · | · | · | · | · | · | · | · | · | · |
+| 4 | 110 | · | · | · | · | · | ~ | · | · | · | · |
+| 5 | 104 | · | · | · | · | · | · | · | · | · | · |
+| 6 | 721 | · | · | · | · | · | · | · | · | · | · |
+| 7 | 25 | ✓ | ~ | ✓ | ~ | ✓ | ✓ | ~ | ~ | ✓ | ✓ |
+| 8 | 809 | · | · | · | ~ | · | · | · | · | · | · |
+| 9 | 116 | ✓ | · | · | ~ | · | · | ~ | ~ | ~ | ~ |
+| 10 | 104 | · | · | · | · | · | · | · | · | · | · |
+| 11 | 294 | ~ | · | · | ✓ | · | · | ~ | · | ~ | ~ |
+| 12 | 540 | ~ | · | · | ~ | · | · | · | ~ | · | ~ |
+| 13 | 197 | · | · | · | · | · | · | · | · | · | · |
+| 14 | 480 | · | · | · | · | · | · | · | · | · | · |
+| 15 | 73 | · | · | · | · | · | · | · | · | · | · |
+| 16 | 468 | · | · | · | · | · | · | · | · | · | · |
+| 17 | 601 | · | · | · | · | · | · | · | · | · | · |
+| 18 | 23 | · | · | · | · | · | · | · | · | · | · |
+| 19 | 321 | · | · | · | ~ | · | · | · | · | · | · |
+| 20 | 211 | · | · | · | · | · | · | · | · | · | · |
+| 21 | 315 | · | · | · | · | · | · | · | · | · | · |
+| 22 | 236 | ~ | · | · | ~ | · | · | · | · | · | · |
+| 23 | 45 | · | · | · | ~ | · | · | · | · | · | · |
+| 24 | 33 | · | · | · | ✓ | · | · | · | · | · | · |
+| 25 | 80 | · | · | · | · | · | · | · | · | · | · |
+| 26 | 55 | · | · | · | ✓ | · | · | · | · | · | · |
+| 27 | 699 | · | · | · | · | · | · | · | · | · | · |
+| 28 | 127 | · | · | · | · | · | · | · | · | · | · |
+| 29 | 902 | · | · | · | · | · | · | · | · | · | · |

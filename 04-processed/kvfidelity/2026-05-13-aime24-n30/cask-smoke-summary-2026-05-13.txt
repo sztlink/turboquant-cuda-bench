@@ -1,0 +1,23 @@
+CASK 4090 AYA2-anchored breakthrough, 2026-05-13
+
+Runtime:
+- AYA2 anchored SSH -> Windows 4090 -> wsl.exe -> Ubuntu-24.04 user felipe.
+- No systemd-inside-WSL.
+- WSL uptime stayed continuous across runs.
+- Qwen3-8B downloaded fully: 5 safetensors, ~16G.
+- GPU free before/after cells: ~670MB used baseline.
+
+Fixes applied:
+- installed eval deps in ~/cask-venv: pebble, latex2sympy2, word2number, antlr4-python3-runtime==4.11.1, timeout-decorator and already-present small eval deps.
+- Correct stats handling: do not pass relative cask/calibration path; either omit --stats-path and let CLI fallback, or pass absolute packaged path.
+
+Successful cells:
+- math500 fullkv, Qwen3-8B, max_examples=2, max_new_tokens=256: run + merge + eval OK, acc 0.0.
+- aime24 fullkv, triattention b256, cask b256, Qwen3-8B, max_examples=2, max_new_tokens=256: all run + merge + eval OK, acc 0.0.
+- aime25 fullkv, triattention b256, cask b256, Qwen3-8B, max_examples=2, max_new_tokens=256: all run + merge + eval OK, acc 0.0; cask had empty_samples=1.
+
+Logs:
+- /home/aya/implante/tmp/cask-smoke-aya2-anchored-2026-05-13.log
+- /home/aya/implante/tmp/cask-clean-fullkv-smoke-2026-05-13.log
+- /home/aya/implante/tmp/cask-mini-aime24-repair-2026-05-13.log
+- /home/aya/implante/tmp/cask-mini-aime25-2026-05-13.log

@@ -1,0 +1,29 @@
+METRICS
+---experiments/outputs/aime24/Qwen3-8B/sample1/cask/budget_256_pi_aime24_n30_mnt4096_cask_20260513/eval/aime24_Qwen3-8B_cask_budget_256_pi_aime24_n30_mnt4096_cask_20260513/aime24/default-default_math_multi_eval_cot_metrics.json
+{
+    "num_samples": 30,
+    "num_scores": 30,
+    "timeout_samples": 0,
+    "empty_samples": 0,
+    "acc": 3.3
+}
+---experiments/outputs/aime24/Qwen3-8B/sample1/fullkv/full_pi_aime24_n30_mnt4096_fullkv_20260513/eval/aime24_Qwen3-8B_fullkv_full_pi_aime24_n30_mnt4096_fullkv_20260513/aime24/default-default_math_multi_eval_cot_metrics.json
+{
+    "num_samples": 30,
+    "num_scores": 30,
+    "timeout_samples": 0,
+    "empty_samples": 0,
+    "acc": 13.3
+}
+---experiments/outputs/aime24/Qwen3-8B/sample1/triattention/budget_256_pi_aime24_n30_mnt4096_triattention_20260513/eval/aime24_Qwen3-8B_triattention_budget_256_pi_aime24_n30_mnt4096_triattention_20260513/aime24/default-default_math_multi_eval_cot_metrics.json
+{
+    "num_samples": 30,
+    "num_scores": 30,
+    "timeout_samples": 0,
+    "empty_samples": 0,
+    "acc": 3.3
+}
+DIFF
+fullkv 4 [(0, ['204'], '204'), (11, ['294'], '294'), (24, ['33'], '33'), (26, ['55'], '55')]
+triattention 1 [(7, ['25'], '25')]
+cask 1 [(7, ['25'], '25')]

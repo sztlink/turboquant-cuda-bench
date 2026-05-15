@@ -1,0 +1,83 @@
+CASK_MINI_AIME25_BEGIN 2026-05-13T02:31:32Z
+UPTIME=6610.90 211102.38
+deps_ok
+model-00001-of-00005.safetensors 3996250744
+model-00002-of-00005.safetensors 3993160032
+model-00003-of-00005.safetensors 3959604768
+model-00004-of-00005.safetensors 3187841392
+model-00005-of-00005.safetensors 1244659840
+CELL_BEGIN method=fullkv 2026-05-13T02:31:33Z
+670, 23469, 0, 34
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[download] dataset aime25 -> /home/felipe/CASK/data/aime25.jsonl from MathArena/aime_2025
+Generating train split:   0%|          | 0/30 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 30/30 [00:00<00:00, 2729.13 examples/s]
+Merged 2 records into /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime25_20260513/merged/merged.jsonl
+Evaluate:   0%|          | 0/2 [00:00<?, ?it/s]Evaluate: 100%|██████████| 2/2 [00:00<00:00, 42581.77it/s]
+{'num_samples': 2, 'num_scores': 2, 'timeout_samples': 0, 'empty_samples': 0, 'acc': 0.0}
+Saved to /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime25_20260513/eval/aime25_Qwen3-8B_fullkv_full_pi_mini_fullkv_aime25_20260513/aime25/default-default_math_multi_eval.jsonl
+{'num_samples_total': 2, 'num_questions': 2, 'num_preds_per_question_expected': 1, 'num_preds_per_question_min': 1, 'num_preds_per_question_max': 1, 'num_samples': 2, 'num_scores': 2, 'timeout_samples': 0, 'empty_samples': 0, 'acc': 0.0}
+[warn] conda not found; falling back to current python: /home/felipe/cask-venv/bin/python
+[dispatch] shard-over-draws mode: 1 draws across 1 shards
+[launch] shard 0 -> GPU 0, log /home/felipe/CASK/experiments/logs/aime25/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime25_20260513/shard00_20260512_233139.log
+[done] shard 0 completed.
+[merge] /home/felipe/cask-venv/bin/python /home/felipe/CASK/scripts/merge_shards.py --method-output-dir /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime25_20260513/shards --merged-dir-name merged
+[eval] /home/felipe/cask-venv/bin/python -m cask.evaluation.eval_math_multi --base_dir /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime25_20260513/merged --dataset aime25 --exp_name aime25_Qwen3-8B_fullkv_full_pi_mini_fullkv_aime25_20260513 --output_dir /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime25_20260513/eval --num_samples 1
+CELL_EXIT method=fullkv rc=0 2026-05-13T02:32:10Z
+CELL_BEGIN method=triattention 2026-05-13T02:32:10Z
+670, 23469, 1, 36
+[info] triattention stats dataset: eval=aime25 stats=aime24
+[info] triattention stats fallback: using packaged stats /home/felipe/CASK/cask/calibration/for_aime24_experiment/qwen3_8b.pt
+Merged 2 records into /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/triattention/budget_256_pi_mini_triattention_aime25_20260513/merged/merged.jsonl
+Evaluate:   0%|          | 0/2 [00:00<?, ?it/s]Evaluate: 100%|██████████| 2/2 [00:00<00:00, 33420.75it/s]
+{'num_samples': 2, 'num_scores': 2, 'timeout_samples': 0, 'empty_samples': 0, 'acc': 0.0}
+Saved to /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/triattention/budget_256_pi_mini_triattention_aime25_20260513/eval/aime25_Qwen3-8B_triattention_budget_256_pi_mini_triattention_aime25_20260513/aime25/default-default_math_multi_eval.jsonl
+{'num_samples_total': 2, 'num_questions': 2, 'num_preds_per_question_expected': 1, 'num_preds_per_question_min': 1, 'num_preds_per_question_max': 1, 'num_samples': 2, 'num_scores': 2, 'timeout_samples': 0, 'empty_samples': 0, 'acc': 0.0}
+[warn] conda not found; falling back to current python: /home/felipe/cask-venv/bin/python
+[dispatch] shard-over-draws mode: 1 draws across 1 shards
+[launch] shard 0 -> GPU 0, log /home/felipe/CASK/experiments/logs/aime25/Qwen3-8B/sample1/triattention/budget_256_pi_mini_triattention_aime25_20260513/shard00_20260512_233211.log
+[done] shard 0 completed.
+[merge] /home/felipe/cask-venv/bin/python /home/felipe/CASK/scripts/merge_shards.py --method-output-dir /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/triattention/budget_256_pi_mini_triattention_aime25_20260513/shards --merged-dir-name merged
+[eval] /home/felipe/cask-venv/bin/python -m cask.evaluation.eval_math_multi --base_dir /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/triattention/budget_256_pi_mini_triattention_aime25_20260513/merged --dataset aime25 --exp_name aime25_Qwen3-8B_triattention_budget_256_pi_mini_triattention_aime25_20260513 --output_dir /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/triattention/budget_256_pi_mini_triattention_aime25_20260513/eval --num_samples 1
+CELL_EXIT method=triattention rc=0 2026-05-13T02:32:32Z
+CELL_BEGIN method=cask 2026-05-13T02:32:32Z
+670, 23469, 0, 39
+[info] triattention stats dataset: eval=aime25 stats=aime24
+[info] triattention stats fallback: using packaged stats /home/felipe/CASK/cask/calibration/for_aime24_experiment/qwen3_8b.pt
+Merged 2 records into /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/cask/budget_256_pi_mini_cask_aime25_20260513/merged/merged.jsonl
+Evaluate:   0%|          | 0/2 [00:00<?, ?it/s]Evaluate: 100%|██████████| 2/2 [00:00<00:00, 39568.91it/s]
+{'num_samples': 2, 'num_scores': 2, 'timeout_samples': 0, 'empty_samples': 1, 'acc': 0.0}
+Saved to /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/cask/budget_256_pi_mini_cask_aime25_20260513/eval/aime25_Qwen3-8B_cask_budget_256_pi_mini_cask_aime25_20260513/aime25/default-default_math_multi_eval.jsonl
+{'num_samples_total': 2, 'num_questions': 2, 'num_preds_per_question_expected': 1, 'num_preds_per_question_min': 1, 'num_preds_per_question_max': 1, 'num_samples': 2, 'num_scores': 2, 'timeout_samples': 0, 'empty_samples': 1, 'acc': 0.0}
+[warn] conda not found; falling back to current python: /home/felipe/cask-venv/bin/python
+[dispatch] shard-over-draws mode: 1 draws across 1 shards
+[launch] shard 0 -> GPU 0, log /home/felipe/CASK/experiments/logs/aime25/Qwen3-8B/sample1/cask/budget_256_pi_mini_cask_aime25_20260513/shard00_20260512_233232.log
+[done] shard 0 completed.
+[merge] /home/felipe/cask-venv/bin/python /home/felipe/CASK/scripts/merge_shards.py --method-output-dir /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/cask/budget_256_pi_mini_cask_aime25_20260513/shards --merged-dir-name merged
+[eval] /home/felipe/cask-venv/bin/python -m cask.evaluation.eval_math_multi --base_dir /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/cask/budget_256_pi_mini_cask_aime25_20260513/merged --dataset aime25 --exp_name aime25_Qwen3-8B_cask_budget_256_pi_mini_cask_aime25_20260513 --output_dir /home/felipe/CASK/experiments/outputs/aime25/Qwen3-8B/sample1/cask/budget_256_pi_mini_cask_aime25_20260513/eval --num_samples 1
+CELL_EXIT method=cask rc=0 2026-05-13T02:33:04Z
+METRICS_BEGIN
+--- experiments/outputs/aime25/Qwen3-8B/sample1/fullkv/full_pi_mini_fullkv_aime25_20260513/eval/aime25_Qwen3-8B_fullkv_full_pi_mini_fullkv_aime25_20260513/aime25/default-default_math_multi_eval_cot_metrics.json
+{
+    "num_samples": 2,
+    "num_scores": 2,
+    "timeout_samples": 0,
+    "empty_samples": 0,
+    "acc": 0.0
+}
+--- experiments/outputs/aime25/Qwen3-8B/sample1/triattention/budget_256_pi_mini_triattention_aime25_20260513/eval/aime25_Qwen3-8B_triattention_budget_256_pi_mini_triattention_aime25_20260513/aime25/default-default_math_multi_eval_cot_metrics.json
+{
+    "num_samples": 2,
+    "num_scores": 2,
+    "timeout_samples": 0,
+    "empty_samples": 0,
+    "acc": 0.0
+}
+--- experiments/outputs/aime25/Qwen3-8B/sample1/cask/budget_256_pi_mini_cask_aime25_20260513/eval/aime25_Qwen3-8B_cask_budget_256_pi_mini_cask_aime25_20260513/aime25/default-default_math_multi_eval_cot_metrics.json
+{
+    "num_samples": 2,
+    "num_scores": 2,
+    "timeout_samples": 0,
+    "empty_samples": 1,
+    "acc": 0.0
+}
+CASK_MINI_AIME25_DONE 2026-05-13T02:33:04Z

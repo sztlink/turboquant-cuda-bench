@@ -1,0 +1,239 @@
+CASK_SMOKE_BEGIN 2026-05-13T02:14:00Z
+HOST=DESKTOP-CTAHC6D USER=felipe PWD=/home/felipe/CASK
+UPTIME=5579.35 178485.04
+NVIDIA GeForce RTX 4090, 670, 23469, 1, 37
+STEP_DOWNLOAD_BEGIN 2026-05-13T02:14:00Z
+Fetching 15 files:   0%|          | 0/15 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 15 files:  47%|████▋     | 7/15 [05:32<06:19, 47.46s/it]Fetching 15 files:  60%|██████    | 9/15 [05:32<03:22, 33.82s/it]Fetching 15 files:  73%|███████▎  | 11/15 [05:40<01:40, 25.03s/it]Fetching 15 files: 100%|██████████| 15/15 [05:40<00:00, 22.71s/it]
+[32m✓ Downloaded[0m
+  path: /home/felipe/CASK/experiments/models/Qwen3-8B
+STEP_DOWNLOAD_EXIT=0 2026-05-13T02:19:41Z
+model-00001-of-00005.safetensors 3996250744
+model-00002-of-00005.safetensors 3993160032
+model-00003-of-00005.safetensors 3959604768
+model-00004-of-00005.safetensors 3187841392
+model-00005-of-00005.safetensors 1244659840
+STEP_FULLKV_SMOKE_BEGIN 2026-05-13T02:19:41Z
+Merged 2 records into /home/felipe/CASK/experiments/outputs/math500/Qwen3-8B/sample1/fullkv/full_pi_smoke_fullkv_20260513/merged/merged.jsonl
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/felipe/CASK/cask/evaluation/eval_math_multi.py", line 10, in <module>
+    from cask.evaluation.evaluate import evaluate
+  File "/home/felipe/CASK/cask/evaluation/evaluate.py", line 8, in <module>
+    from pebble import ProcessPool
+ModuleNotFoundError: No module named 'pebble'
+[warn] conda not found; falling back to current python: /home/felipe/cask-venv/bin/python
+[dispatch] shard-over-draws mode: 1 draws across 1 shards
+[launch] shard 0 -> GPU 0, log /home/felipe/CASK/experiments/logs/math500/Qwen3-8B/sample1/fullkv/full_pi_smoke_fullkv_20260513/shard00_20260512_231942.log
+[done] shard 0 completed.
+[merge] /home/felipe/cask-venv/bin/python /home/felipe/CASK/scripts/merge_shards.py --method-output-dir /home/felipe/CASK/experiments/outputs/math500/Qwen3-8B/sample1/fullkv/full_pi_smoke_fullkv_20260513/shards --merged-dir-name merged
+[eval] /home/felipe/cask-venv/bin/python -m cask.evaluation.eval_math_multi --base_dir /home/felipe/CASK/experiments/outputs/math500/Qwen3-8B/sample1/fullkv/full_pi_smoke_fullkv_20260513/merged --dataset math500 --exp_name math500_Qwen3-8B_fullkv_full_pi_smoke_fullkv_20260513 --output_dir /home/felipe/CASK/experiments/outputs/math500/Qwen3-8B/sample1/fullkv/full_pi_smoke_fullkv_20260513/eval --num_samples 1
+Traceback (most recent call last):
+  File "/home/felipe/CASK/scripts/dispatch.py", line 716, in <module>
+    main()
+  File "/home/felipe/CASK/scripts/dispatch.py", line 712, in main
+    run_evaluation(merged_dir, args.dataset, exp_name, eval_output_dir, python_cmd, args.dry_run, num_samples)
+  File "/home/felipe/CASK/scripts/dispatch.py", line 625, in run_evaluation
+    subprocess.check_call(cmd, cwd=str(REPO_ROOT))
+  File "/usr/lib/python3.12/subprocess.py", line 413, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['/home/felipe/cask-venv/bin/python', '-m', 'cask.evaluation.eval_math_multi', '--base_dir', '/home/felipe/CASK/experiments/outputs/math500/Qwen3-8B/sample1/fullkv/full_pi_smoke_fullkv_20260513/merged', '--dataset', 'math500', '--exp_name', 'math500_Qwen3-8B_fullkv_full_pi_smoke_fullkv_20260513', '--output_dir', '/home/felipe/CASK/experiments/outputs/math500/Qwen3-8B/sample1/fullkv/full_pi_smoke_fullkv_20260513/eval', '--num_samples', '1']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/home/felipe/CASK/scripts/cli.py", line 1264, in <module>
+    main()
+  File "/home/felipe/CASK/scripts/cli.py", line 1247, in main
+    run_one(
+  File "/home/felipe/CASK/scripts/cli.py", line 628, in run_one
+    dispatch_run(config_path, dataset, log_dir, dry_run)
+  File "/home/felipe/CASK/scripts/cli.py", line 552, in dispatch_run
+    subprocess.check_call(cmd, cwd=str(REPO_ROOT), env=env)
+  File "/usr/lib/python3.12/subprocess.py", line 413, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['/home/felipe/cask-venv/bin/python', '/home/felipe/CASK/scripts/dispatch.py', '--config', '/home/felipe/CASK/experiments/configs/generated/math500/qwen3-8b/fullkv_full_pi_smoke_fullkv_20260513.yaml', '--dataset', 'math500']' returned non-zero exit status 1.
+STEP_FULLKV_SMOKE_EXIT=1 2026-05-13T02:20:03Z
+CASK_SMOKE_FAILED fullkv exit=1
+REPAIR_EVAL_BEGIN 2026-05-13T02:21:43Z
+INSTALL_PEBBLE_BEGIN 2026-05-13T02:21:43Z
+Collecting pebble
+  Downloading pebble-5.2.0-py3-none-any.whl.metadata (3.8 kB)
+Downloading pebble-5.2.0-py3-none-any.whl (34 kB)
+Installing collected packages: pebble
+Successfully installed pebble-5.2.0
+INSTALL_PEBBLE_EXIT=0 2026-05-13T02:21:44Z
+pebble_import_ok
+REPAIR_EVAL_RUN_BEGIN 2026-05-13T02:21:44Z
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/felipe/CASK/cask/evaluation/eval_math_multi.py", line 10, in <module>
+    from cask.evaluation.evaluate import evaluate
+  File "/home/felipe/CASK/cask/evaluation/evaluate.py", line 11, in <module>
+    from cask.evaluation.grader import *
+  File "/home/felipe/CASK/cask/evaluation/grader.py", line 23, in <module>
+    from cask.evaluation.latex2sympy import latex2sympy
+  File "/home/felipe/CASK/cask/evaluation/latex2sympy/__init__.py", line 1, in <module>
+    from .latex2sympy2 import latex2sympy
+  File "/home/felipe/CASK/cask/evaluation/latex2sympy/latex2sympy2.py", line 8, in <module>
+    from antlr4 import InputStream, CommonTokenStream
+ModuleNotFoundError: No module named 'antlr4'
+REPAIR_EVAL_EXIT=1 2026-05-13T02:21:44Z
+CASK_SMOKE_FAILED repair_eval exit=1
+REPAIR_EVAL2_BEGIN 2026-05-13T02:22:15Z
+INSTALL_EVAL_DEPS_BEGIN 2026-05-13T02:22:15Z
+Requirement already satisfied: pebble>=5.0 in /home/felipe/cask-venv/lib/python3.12/site-packages (5.2.0)
+Requirement already satisfied: sympy>=1.13 in /home/felipe/cask-venv/lib/python3.12/site-packages (1.14.0)
+Collecting latex2sympy2
+  Downloading latex2sympy2-1.9.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting word2number
+  Downloading word2number-1.1.zip (9.7 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting antlr4-python3-runtime==4.11.1
+  Downloading antlr4_python3_runtime-4.11.1-py3-none-any.whl.metadata (291 bytes)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /home/felipe/cask-venv/lib/python3.12/site-packages (from sympy>=1.13) (1.3.0)
+INFO: pip is looking at multiple versions of latex2sympy2 to determine which version is compatible with other requirements. This could take a while.
+Collecting latex2sympy2
+  Downloading latex2sympy2-1.9.0-py3-none-any.whl.metadata (6.6 kB)
+  Downloading latex2sympy2-1.8.6-py3-none-any.whl.metadata (6.6 kB)
+  Downloading latex2sympy2-1.8.5-py3-none-any.whl.metadata (6.6 kB)
+  Downloading latex2sympy2-1.8.3-py3-none-any.whl.metadata (6.6 kB)
+  Downloading latex2sympy2-1.8.2-py3-none-any.whl.metadata (6.6 kB)
+  Downloading latex2sympy2-1.8.0-py3-none-any.whl.metadata (6.5 kB)
+  Downloading latex2sympy2-1.7.9-py3-none-any.whl.metadata (6.4 kB)
+INFO: pip is still looking at multiple versions of latex2sympy2 to determine which version is compatible with other requirements. This could take a while.
+  Downloading latex2sympy2-1.7.8-py3-none-any.whl.metadata (6.4 kB)
+  Downloading latex2sympy2-1.7.7-py3-none-any.whl.metadata (6.0 kB)
+  Downloading latex2sympy2-1.7.6-py3-none-any.whl.metadata (6.0 kB)
+  Downloading latex2sympy2-1.7.4-py3-none-any.whl.metadata (6.0 kB)
+  Downloading latex2sympy2-1.7.2-py3-none-any.whl.metadata (5.9 kB)
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+  Downloading latex2sympy2-1.6.20-py3-none-any.whl.metadata (5.9 kB)
+  Downloading latex2sympy2-1.6.19-py3-none-any.whl.metadata (5.9 kB)
+  Downloading latex2sympy2-1.6.18-py3-none-any.whl.metadata (5.9 kB)
+  Downloading latex2sympy2-1.6.16-py3-none-any.whl.metadata (5.9 kB)
+  Downloading latex2sympy2-1.6.14-py3-none-any.whl.metadata (5.9 kB)
+  Downloading latex2sympy2-1.6.12-py3-none-any.whl.metadata (5.9 kB)
+  Downloading latex2sympy2-1.6.11-py3-none-any.whl.metadata (5.9 kB)
+  Downloading latex2sympy2-1.6.10-py3-none-any.whl.metadata (5.9 kB)
+  Downloading latex2sympy2-1.6.9-py3-none-any.whl.metadata (5.8 kB)
+  Downloading latex2sympy2-1.6.8-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.6.7-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.6.6-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.6.5-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.6.4-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.6.3-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.6.2-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.6.1-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.6.0-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.5.9-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.5.8-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.5.7-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.5.6-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.5.5-py3-none-any.whl.metadata (399 bytes)
+  Downloading latex2sympy2-1.5.4-py3-none-any.whl.metadata (399 bytes)
+Downloading antlr4_python3_runtime-4.11.1-py3-none-any.whl (144 kB)
+Downloading latex2sympy2-1.5.4-py3-none-any.whl (73 kB)
+Building wheels for collected packages: word2number
+  Building wheel for word2number (pyproject.toml): started
+  Building wheel for word2number (pyproject.toml): finished with status 'done'
+  Created wheel for word2number: filename=word2number-1.1-py3-none-any.whl size=5659 sha256=34f4bde5512ea4a437f16e76ccea06668c1582ca41f6c64cd8e960dc65b78b93
+  Stored in directory: /home/felipe/.cache/pip/wheels/5b/79/fb/d25928e599c7e11fe4e00d32048cd74933f34a74c633d2aea6
+Successfully built word2number
+Installing collected packages: word2number, antlr4-python3-runtime, latex2sympy2
+
+Successfully installed antlr4-python3-runtime-4.11.1 latex2sympy2-1.5.4 word2number-1.1
+INSTALL_EVAL_DEPS_EXIT=0 2026-05-13T02:22:22Z
+Traceback (most recent call last):
+  File "/home/felipe/cask-venv/lib/python3.12/site-packages/latex2sympy2.py", line 7, in <module>
+    from gen.PSParser import PSParser
+  File "/home/felipe/cask-venv/lib/python3.12/site-packages/gen/PSParser.py", line 504, in <module>
+    class PSParser ( Parser ):
+  File "/home/felipe/cask-venv/lib/python3.12/site-packages/gen/PSParser.py", line 508, in PSParser
+    atn = ATNDeserializer().deserialize(serializedATN())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/felipe/cask-venv/lib/python3.12/site-packages/antlr4/atn/ATNDeserializer.py", line 28, in deserialize
+    self.checkVersion()
+  File "/home/felipe/cask-venv/lib/python3.12/site-packages/antlr4/atn/ATNDeserializer.py", line 50, in checkVersion
+    raise Exception("Could not deserialize ATN with version " + str(version) + " (expected " + str(SERIALIZED_VERSION) + ").")
+Exception: Could not deserialize ATN with version  (expected 4).
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+  File "/home/felipe/cask-venv/lib/python3.12/site-packages/latex2sympy2.py", line 11, in <module>
+    from .gen.PSParser import PSParser
+ImportError: attempted relative import with no known parent package
+REPAIR_EVAL2_RUN_BEGIN 2026-05-13T02:22:22Z
+/home/felipe/CASK/cask/evaluation/parser.py:290: SyntaxWarning: invalid escape sequence '\%'
+  string = string.replace("\%", "")
+/home/felipe/CASK/cask/evaluation/parser.py:546: SyntaxWarning: invalid escape sequence '\d'
+  pattern = "-?\d*\.?\d+"
+/home/felipe/CASK/cask/evaluation/parser.py:698: SyntaxWarning: invalid escape sequence '\)'
+  options = regex.sub(f" {ch}\) ", f" ({ch}) ", options)
+/home/felipe/CASK/cask/evaluation/parser.py:750: SyntaxWarning: invalid escape sequence '\c'
+  text = """
+/home/felipe/CASK/cask/evaluation/parser.py:764: SyntaxWarning: invalid escape sequence '\m'
+  print(choice_answer_clean("\mathrm{(D)\}1,008,016"))
+/home/felipe/CASK/cask/evaluation/utils.py:230: SyntaxWarning: invalid escape sequence '\p'
+  """Integrate step-by-step reasoning and Python code to solve math problems using the following guidelines:
+/home/felipe/CASK/cask/evaluation/trajectory.py:121: SyntaxWarning: invalid escape sequence '\l'
+  traj_text = """We can use the Chinese Remainder Theorem to solve this system of congruences. The Chinese Remainder Theorem states that if $n_1, n_2, \ldots, n_k$ are pairwise coprime (i.e., the greatest common divisor of any two of them is 1), and if $a_1, a_2, \ldots, a_k$ are any integers, then there is a number $x$ that satisfies the system of congruences:
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/felipe/CASK/cask/evaluation/eval_math_multi.py", line 10, in <module>
+    from cask.evaluation.evaluate import evaluate
+  File "/home/felipe/CASK/cask/evaluation/evaluate.py", line 15, in <module>
+    from cask.evaluation.python_executor import PythonExecutor
+  File "/home/felipe/CASK/cask/evaluation/python_executor.py", line 20, in <module>
+    from timeout_decorator import timeout
+ModuleNotFoundError: No module named 'timeout_decorator'
+REPAIR_EVAL2_EXIT=1 2026-05-13T02:22:23Z
+CASK_SMOKE_FAILED repair2_eval exit=1
+REPAIR_EVAL3_BEGIN 2026-05-13T02:23:02Z
+INSTALL_SMALL_EVAL_DEPS_BEGIN 2026-05-13T02:23:02Z
+Collecting timeout-decorator
+  Downloading timeout-decorator-0.5.0.tar.gz (4.8 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: regex in /home/felipe/cask-venv/lib/python3.12/site-packages (2026.5.9)
+Requirement already satisfied: fuzzywuzzy in /home/felipe/cask-venv/lib/python3.12/site-packages (0.18.0)
+Requirement already satisfied: python-Levenshtein in /home/felipe/cask-venv/lib/python3.12/site-packages (0.27.3)
+Requirement already satisfied: rouge in /home/felipe/cask-venv/lib/python3.12/site-packages (1.0.1)
+Requirement already satisfied: nltk in /home/felipe/cask-venv/lib/python3.12/site-packages (3.9.4)
+Requirement already satisfied: wonderwords in /home/felipe/cask-venv/lib/python3.12/site-packages (3.0.1)
+Requirement already satisfied: jieba in /home/felipe/cask-venv/lib/python3.12/site-packages (0.42.1)
+Requirement already satisfied: Levenshtein==0.27.3 in /home/felipe/cask-venv/lib/python3.12/site-packages (from python-Levenshtein) (0.27.3)
+Requirement already satisfied: rapidfuzz<4.0.0,>=3.9.0 in /home/felipe/cask-venv/lib/python3.12/site-packages (from Levenshtein==0.27.3->python-Levenshtein) (3.14.5)
+Requirement already satisfied: six in /home/felipe/cask-venv/lib/python3.12/site-packages (from rouge) (1.17.0)
+Requirement already satisfied: click in /home/felipe/cask-venv/lib/python3.12/site-packages (from nltk) (8.3.3)
+Requirement already satisfied: joblib in /home/felipe/cask-venv/lib/python3.12/site-packages (from nltk) (1.5.3)
+Requirement already satisfied: tqdm in /home/felipe/cask-venv/lib/python3.12/site-packages (from nltk) (4.67.3)
+Building wheels for collected packages: timeout-decorator
+  Building wheel for timeout-decorator (pyproject.toml): started
+  Building wheel for timeout-decorator (pyproject.toml): finished with status 'done'
+  Created wheel for timeout-decorator: filename=timeout_decorator-0.5.0-py3-none-any.whl size=5040 sha256=4f951bd7863786526ac8d194fd2e5aa6f904866d82f4bb275b6c7a40b5b3e852
+  Stored in directory: /home/felipe/.cache/pip/wheels/4d/6a/e3/c4f2cdd67648203ccf069daa31c3935a5c74ec04cccbac9411
+Successfully built timeout-decorator
+Installing collected packages: timeout-decorator
+Successfully installed timeout-decorator-0.5.0
+INSTALL_SMALL_EVAL_DEPS_EXIT=0 2026-05-13T02:23:04Z
+small_eval_imports_ok
+REPAIR_EVAL3_RUN_BEGIN 2026-05-13T02:23:04Z
+Evaluate:   0%|          | 0/2 [00:00<?, ?it/s]Evaluate: 100%|██████████| 2/2 [00:00<00:00, 55.49it/s]
+{'num_samples': 2, 'num_scores': 2, 'timeout_samples': 0, 'empty_samples': 0, 'acc': 0.0}
+Saved to /home/felipe/CASK/experiments/outputs/math500/Qwen3-8B/sample1/fullkv/full_pi_smoke_fullkv_20260513/eval/math500_Qwen3-8B_fullkv_full_pi_smoke_fullkv_20260513/math500/default-default_math_multi_eval.jsonl
+{'num_samples_total': 2, 'num_questions': 2, 'num_preds_per_question_expected': 1, 'num_preds_per_question_min': 1, 'num_preds_per_question_max': 1, 'num_samples': 2, 'num_scores': 2, 'timeout_samples': 0, 'empty_samples': 0, 'acc': 0.0}
+REPAIR_EVAL3_EXIT=0 2026-05-13T02:23:05Z
+CASK_SMOKE_DONE_AFTER_REPAIR3 2026-05-13T02:23:05Z
+CASK_SMOKE_DONE 2026-05-13T02:23:05Z
