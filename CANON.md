@@ -20,6 +20,25 @@ The latest consolidated package is:
 06-publicable/kvfidelity/2026-05-trace-atlas-v4/
 ```
 
+## Current TurboQuant / Tecnofagia package
+
+The latest sanitized long-context decoy package is:
+
+```txt
+bench/tecnofagia-discord-2026-05-14/README.md
+bench/tecnofagia-discord-2026-05-14/RESULTS.md
+bench/tecnofagia-discord-2026-05-14/sanitized-results-auto-20260515-015428.json
+```
+
+Current result:
+
+```txt
+vLLM auto / Qwen2.5-7B-Instruct / Discord decoys: 5/5 hits
+TurboQuant K8V4: not measured — custom vLLM environment failed before model load
+```
+
+This belongs to the longctx/retrieval-utilization front, not to the CASK/AIME/KVFidelity benchmark slice.
+
 ## Canonical thesis
 
 A correct answer is not a score. It is a temporal event: it emerges, persists, drifts, closes, or disappears.
