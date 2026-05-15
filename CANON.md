@@ -28,13 +28,14 @@ The latest sanitized long-context decoy package is:
 bench/tecnofagia-discord-2026-05-14/README.md
 bench/tecnofagia-discord-2026-05-14/RESULTS.md
 bench/tecnofagia-discord-2026-05-14/sanitized-results-auto-20260515-015428.json
+bench/tecnofagia-discord-2026-05-14/sanitized-results-turboquant_k8v4-20260515-090744.json
 ```
 
 Current result:
 
 ```txt
 vLLM auto / Qwen2.5-7B-Instruct / Discord decoys: 5/5 hits
-TurboQuant K8V4: not measured — custom vLLM environment failed before model load
+TurboQuant K8V4 / Qwen2.5-7B-Instruct / Discord decoys: 5/5 hits after fresh vLLM rebuild
 ```
 
 This belongs to the longctx/retrieval-utilization front, not to the CASK/AIME/KVFidelity benchmark slice.

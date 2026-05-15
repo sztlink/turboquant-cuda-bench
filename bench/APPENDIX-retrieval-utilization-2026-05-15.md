@@ -76,6 +76,7 @@ Source:
 ```txt
 bench/tecnofagia-discord-2026-05-14/RESULTS.md
 bench/tecnofagia-discord-2026-05-14/sanitized-results-auto-20260515-015428.json
+bench/tecnofagia-discord-2026-05-14/sanitized-results-turboquant_k8v4-20260515-090744.json
 ```
 
 Result:
@@ -102,18 +103,24 @@ This does not prove the original 8-handle invariant generalizes. The Tecnofagia 
 
 ## 5. TurboQuant K8V4 status
 
-No Tecnofagia `turboquant_k8v4` result exists yet.
-
-The run failed before model load due custom vLLM environment failure. Record as:
+A first TurboQuant attempt failed before model load due custom vLLM environment mismatch. A fresh venv rebuild following `bench/vllm-smoke-2026-05-10/BUILD-CUDA.md` passed import smoke and completed the same sanitized fixture.
 
 ```txt
-turboquant_k8v4: not measured — environment failure before run
+model: Qwen/Qwen2.5-7B-Instruct
+engine: vLLM 0.1.dev1+g36fc04825
+kv_cache_dtype: turboquant_k8v4
+fresh venv: /home/felipe/vllm-lab/venv-tq-fresh-20260515
+hits: 5/5
 ```
 
-Do not compare the Tecnofagia `auto 5/5` result against TurboQuant.
+Reading:
+
+```txt
+The five hit-class handles that survived synthetic decoys and real Discord decoys under vLLM auto also survived this narrow TurboQuant K8V4 cell. This is still not a broad TurboQuant quality claim; it only says this 5-handle sanitized fixture did not expose a utilization failure under K8V4.
+```
 
 ## Safe public sentence
 
 ```txt
-On the existing longctx decoy fixture, retrieval was not the bottleneck: canonical evidence reached context in 8/8 cases, while final answers closed only 5/8 until the canonical span was elevated by rerank or policy_splice. A follow-up Tecnofagia probe replaced synthetic decoys with real Discord/Waffle chunks for the five hit-class handles; vLLM auto preserved 5/5, while TurboQuant K8V4 remains unmeasured due an environment failure.
+On the existing longctx decoy fixture, retrieval was not the bottleneck: canonical evidence reached context in 8/8 cases, while final answers closed only 5/8 until the canonical span was elevated by rerank or policy_splice. A follow-up Tecnofagia probe replaced synthetic decoys with real Discord/Waffle chunks for the five hit-class handles; both vLLM auto and a freshly rebuilt TurboQuant K8V4 vLLM fork preserved 5/5 on this narrow sanitized fixture.
 ```
