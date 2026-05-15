@@ -29,6 +29,7 @@ bench/tecnofagia-discord-2026-05-14/README.md
 bench/tecnofagia-discord-2026-05-14/RESULTS.md
 bench/tecnofagia-discord-2026-05-14/sanitized-results-auto-20260515-015428.json
 bench/tecnofagia-discord-2026-05-14/sanitized-results-turboquant_k8v4-20260515-090744.json
+05-analysis/longctx/2026-05-15-retrieval-is-not-utilization.md
 ```
 
 Current result:
@@ -40,6 +41,12 @@ TurboQuant K8V4 / Qwen2.5-7B-Instruct / Discord decoys: 5/5 hits after fresh vLL
 
 This belongs to the longctx/retrieval-utilization front, not to the CASK/AIME/KVFidelity benchmark slice.
 
+Current longctx thesis:
+
+```txt
+Retrieval success is not utilization success. A retrieved chunk is not a used chunk.
+```
+
 ## Canonical thesis
 
 A correct answer is not a score. It is a temporal event: it emerges, persists, drifts, closes, or disappears.
@@ -48,8 +55,8 @@ In this CASK/AIME24 slice, CASK is not a performance claim. It is the experiment
 
 ## Current empirical stance
 
-Do not claim CASK wins.  
-Do not claim CASK loses globally.  
+Do not claim CASK wins.
+Do not claim CASK loses globally.
 Do not publish this as a benchmark result.
 
 The current value is methodological: final-answer accuracy hides trajectory phenomena. The trace atlas separates discovery, retention, closure, answer drift, candidate churn, and extraction contamination.
@@ -92,6 +99,6 @@ Mandatory caveats:
 
 ## Rule
 
-If it sustains a decision, it belongs in this repository.  
-If it explains a decision, it belongs in `memory-md`.  
+If it sustains a decision, it belongs in this repository.
+If it explains a decision, it belongs in `memory-md`.
 If it can disappear without epistemic loss, it may remain in `/tmp`.
