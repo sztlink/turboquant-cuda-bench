@@ -29,6 +29,7 @@ bench/tecnofagia-discord-2026-05-14/README.md
 bench/tecnofagia-discord-2026-05-14/RESULTS.md
 bench/tecnofagia-discord-2026-05-14/sanitized-results-auto-20260515-015428.json
 bench/tecnofagia-discord-2026-05-14/sanitized-results-turboquant_k8v4-20260515-090744.json
+bench/longctx-utilization-overnight-2026-05-16/RESULTS.md
 05-analysis/longctx/2026-05-15-retrieval-is-not-utilization.md
 ```
 
@@ -44,7 +45,7 @@ This belongs to the longctx/retrieval-utilization front, not to the CASK/AIME/KV
 Current longctx thesis:
 
 ```txt
-Retrieval success is not utilization success. A retrieved chunk is not a used chunk.
+Retrieval success is not utilization success. A retrieved chunk is not a used chunk. Prompting alone did not fix the observed decoy failure; evidence placement did.
 ```
 
 ## Canonical thesis

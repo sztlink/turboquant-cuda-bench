@@ -1,0 +1,775 @@
+{
+  "created_at": "2026-05-16T04:38:07.690Z",
+  "groups": {
+    "rerank_proxy_orig": {
+      "runs": 4,
+      "hits": 4,
+      "retrievalHits": 4,
+      "rank": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "decoys": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rerank": 4,
+      "elapsed": [
+        68.541,
+        67.636,
+        66.554,
+        66.784
+      ]
+    },
+    "rerank_proxy_rewrite": {
+      "runs": 4,
+      "hits": 4,
+      "retrievalHits": 4,
+      "rank": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "decoys": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rerank": 4,
+      "elapsed": [
+        77.925,
+        68.043,
+        68.028,
+        66.649
+      ]
+    },
+    "policy_splice_orig_retrieval": {
+      "runs": 4,
+      "hits": 4,
+      "retrievalHits": 4,
+      "rank": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "decoys": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rerank": 4,
+      "elapsed": [
+        1.731,
+        1.894,
+        1.383,
+        1.362
+      ]
+    },
+    "policy_splice_rewrite_retrieval": {
+      "runs": 4,
+      "hits": 4,
+      "retrievalHits": 4,
+      "rank": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "decoys": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "rerank": 4,
+      "elapsed": [
+        1.626,
+        1.795,
+        1.912,
+        1.6
+      ]
+    }
+  },
+  "rows": [
+    {
+      "idx": 3,
+      "arm": "rerank_proxy_orig",
+      "handle": "brass-river-index",
+      "alias": "brass river indexing note",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 68.541,
+      "answer": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3514,
+        "prompt_ms": 1480.587,
+        "prompt_per_token_ms": 0.42133949914627206,
+        "prompt_per_second": 2373.3829893143734,
+        "predicted_n": 15,
+        "predicted_ms": 338.309,
+        "predicted_per_token_ms": 22.553933333333337,
+        "predicted_per_second": 44.33816422264852
+      },
+      "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 3514,
+        "total_tokens": 3529,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 4,
+      "arm": "rerank_proxy_rewrite",
+      "handle": "brass-river-index",
+      "alias": "brass river indexing note",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 77.925,
+      "answer": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3625,
+        "prompt_ms": 1486.584,
+        "prompt_per_token_ms": 0.4100921379310345,
+        "prompt_per_second": 2438.4763995845506,
+        "predicted_n": 15,
+        "predicted_ms": 332.586,
+        "predicted_per_token_ms": 22.1724,
+        "predicted_per_second": 45.10111670364958
+      },
+      "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 3625,
+        "total_tokens": 3640,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 5,
+      "arm": "policy_splice_orig_retrieval",
+      "handle": "brass-river-index",
+      "alias": "brass river indexing note",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.731,
+      "answer": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": null,
+        "x-longctx-scope-status": null,
+        "x-longctx-scope": null,
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3581,
+        "prompt_ms": 1263.931,
+        "prompt_per_token_ms": 0.3529547612398771,
+        "prompt_per_second": 2833.2242820217243,
+        "predicted_n": 15,
+        "predicted_ms": 340.592,
+        "predicted_per_token_ms": 22.706133333333334,
+        "predicted_per_second": 44.040963968619344
+      },
+      "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 3581,
+        "total_tokens": 3596,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 6,
+      "arm": "policy_splice_rewrite_retrieval",
+      "handle": "brass-river-index",
+      "alias": "brass river indexing note",
+      "expected": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.626,
+      "answer": "AYA-HARD-BRASS-RIVER-180-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": null,
+        "x-longctx-scope-status": null,
+        "x-longctx-scope": null,
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3581,
+        "prompt_ms": 1262.198,
+        "prompt_per_token_ms": 0.3524708182072047,
+        "prompt_per_second": 2837.114303778012,
+        "predicted_n": 15,
+        "predicted_ms": 338.736,
+        "predicted_per_token_ms": 22.5824,
+        "predicted_per_second": 44.28227292050446
+      },
+      "usage": {
+        "completion_tokens": 15,
+        "prompt_tokens": 3581,
+        "total_tokens": 3596,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 9,
+      "arm": "rerank_proxy_orig",
+      "handle": "ceramic-lantern-field",
+      "alias": "ceramic lantern field record",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 67.636,
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3511,
+        "prompt_ms": 1402.247,
+        "prompt_per_token_ms": 0.39938678439191116,
+        "prompt_per_second": 2503.838482093383,
+        "predicted_n": 17,
+        "predicted_ms": 378.184,
+        "predicted_per_token_ms": 22.246117647058824,
+        "predicted_per_second": 44.95166374040149
+      },
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 3511,
+        "total_tokens": 3528,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 10,
+      "arm": "rerank_proxy_rewrite",
+      "handle": "ceramic-lantern-field",
+      "alias": "ceramic lantern field record",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 68.043,
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3629,
+        "prompt_ms": 1589.445,
+        "prompt_per_token_ms": 0.43798429319371723,
+        "prompt_per_second": 2283.186898571514,
+        "predicted_n": 17,
+        "predicted_ms": 378.145,
+        "predicted_per_token_ms": 22.243823529411763,
+        "predicted_per_second": 44.956299832075
+      },
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 3629,
+        "total_tokens": 3646,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 11,
+      "arm": "policy_splice_orig_retrieval",
+      "handle": "ceramic-lantern-field",
+      "alias": "ceramic lantern field record",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.894,
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": null,
+        "x-longctx-scope-status": null,
+        "x-longctx-scope": null,
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3955,
+        "prompt_ms": 1391.42,
+        "prompt_per_token_ms": 0.3518128950695323,
+        "prompt_per_second": 2842.4199738396746,
+        "predicted_n": 17,
+        "predicted_ms": 378.119,
+        "predicted_per_token_ms": 22.24229411764706,
+        "predicted_per_second": 44.95939109116442
+      },
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 3955,
+        "total_tokens": 3972,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 12,
+      "arm": "policy_splice_rewrite_retrieval",
+      "handle": "ceramic-lantern-field",
+      "alias": "ceramic lantern field record",
+      "expected": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.795,
+      "answer": "AYA-HARD-CERAMIC-LANTERN-310-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": null,
+        "x-longctx-scope-status": null,
+        "x-longctx-scope": null,
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3583,
+        "prompt_ms": 1255.59,
+        "prompt_per_token_ms": 0.3504298074239464,
+        "prompt_per_second": 2853.638528500546,
+        "predicted_n": 17,
+        "predicted_ms": 381.08,
+        "predicted_per_token_ms": 22.416470588235292,
+        "predicted_per_second": 44.610055631363494
+      },
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 3583,
+        "total_tokens": 3600,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 15,
+      "arm": "rerank_proxy_orig",
+      "handle": "glass-orchid-vector",
+      "alias": "glass orchid vector sheet",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 66.554,
+      "answer": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3528,
+        "prompt_ms": 1392.442,
+        "prompt_per_token_ms": 0.3946831065759637,
+        "prompt_per_second": 2533.6782429717,
+        "predicted_n": 17,
+        "predicted_ms": 378.184,
+        "predicted_per_token_ms": 22.246117647058824,
+        "predicted_per_second": 44.95166374040149
+      },
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 3528,
+        "total_tokens": 3545,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 16,
+      "arm": "rerank_proxy_rewrite",
+      "handle": "glass-orchid-vector",
+      "alias": "glass orchid vector sheet",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 68.028,
+      "answer": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3640,
+        "prompt_ms": 1499.861,
+        "prompt_per_token_ms": 0.4120497252747253,
+        "prompt_per_second": 2426.891558617765,
+        "predicted_n": 17,
+        "predicted_ms": 377.755,
+        "predicted_per_token_ms": 22.220882352941175,
+        "predicted_per_second": 45.00271339889611
+      },
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 3640,
+        "total_tokens": 3657,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 17,
+      "arm": "policy_splice_orig_retrieval",
+      "handle": "glass-orchid-vector",
+      "alias": "glass orchid vector sheet",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.383,
+      "answer": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": null,
+        "x-longctx-scope-status": null,
+        "x-longctx-scope": null,
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2425,
+        "prompt_ms": 875.581,
+        "prompt_per_token_ms": 0.36106432989690723,
+        "prompt_per_second": 2769.589563958103,
+        "predicted_n": 17,
+        "predicted_ms": 374.03,
+        "predicted_per_token_ms": 22.00176470588235,
+        "predicted_per_second": 45.45089966045505
+      },
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 2425,
+        "total_tokens": 2442,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 18,
+      "arm": "policy_splice_rewrite_retrieval",
+      "handle": "glass-orchid-vector",
+      "alias": "glass orchid vector sheet",
+      "expected": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.912,
+      "answer": "AYA-HARD-GLASS-ORCHID-830-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": null,
+        "x-longctx-scope-status": null,
+        "x-longctx-scope": null,
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3967,
+        "prompt_ms": 1406.435,
+        "prompt_per_token_ms": 0.3545336526342324,
+        "prompt_per_second": 2820.60671129487,
+        "predicted_n": 17,
+        "predicted_ms": 381.584,
+        "predicted_per_token_ms": 22.446117647058824,
+        "predicted_per_second": 44.55113421946413
+      },
+      "usage": {
+        "completion_tokens": 17,
+        "prompt_tokens": 3967,
+        "total_tokens": 3984,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 21,
+      "arm": "rerank_proxy_orig",
+      "handle": "jade-winter-circuit",
+      "alias": "jade winter circuit card",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 66.784,
+      "answer": "AYA-HARD-JADE-WINTER-960-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3513,
+        "prompt_ms": 1397.835,
+        "prompt_per_token_ms": 0.3979035012809565,
+        "prompt_per_second": 2513.1721555119166,
+        "predicted_n": 14,
+        "predicted_ms": 309.187,
+        "predicted_per_token_ms": 22.084785714285715,
+        "predicted_per_second": 45.28004088140834
+      },
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 3513,
+        "total_tokens": 3527,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 22,
+      "arm": "rerank_proxy_rewrite",
+      "handle": "jade-winter-circuit",
+      "alias": "jade winter circuit card",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 66.649,
+      "answer": "AYA-HARD-JADE-WINTER-960-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": "16",
+        "x-longctx-scope-status": "ready",
+        "x-longctx-scope": "/home/aya/implante/research/turboquant-cuda-bench/bench/longctx-proxy-hard-2026-05-10/corpus/longctx-hard-lab",
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3627,
+        "prompt_ms": 1412.596,
+        "prompt_per_token_ms": 0.3894667769506479,
+        "prompt_per_second": 2567.613103817369,
+        "predicted_n": 14,
+        "predicted_ms": 309.552,
+        "predicted_per_token_ms": 22.110857142857146,
+        "predicted_per_second": 45.226650126634624
+      },
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 3627,
+        "total_tokens": 3641,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 23,
+      "arm": "policy_splice_orig_retrieval",
+      "handle": "jade-winter-circuit",
+      "alias": "jade winter circuit card",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.362,
+      "answer": "AYA-HARD-JADE-WINTER-960-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": null,
+        "x-longctx-scope-status": null,
+        "x-longctx-scope": null,
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 2448,
+        "prompt_ms": 903.693,
+        "prompt_per_token_ms": 0.36915563725490197,
+        "prompt_per_second": 2708.884543755457,
+        "predicted_n": 14,
+        "predicted_ms": 306.645,
+        "predicted_per_token_ms": 21.903214285714284,
+        "predicted_per_second": 45.65539956627371
+      },
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 2448,
+        "total_tokens": 2462,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    },
+    {
+      "idx": 24,
+      "arm": "policy_splice_rewrite_retrieval",
+      "handle": "jade-winter-circuit",
+      "alias": "jade winter circuit card",
+      "expected": "AYA-HARD-JADE-WINTER-960-Z9",
+      "status": "ok",
+      "httpStatus": 200,
+      "elapsed_sec": 1.6,
+      "answer": "AYA-HARD-JADE-WINTER-960-Z9",
+      "hit": true,
+      "headers": {
+        "x-longctx-chunks-used": null,
+        "x-longctx-scope-status": null,
+        "x-longctx-scope": null,
+        "x-longctx-confidence": null
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 3159,
+        "prompt_ms": 1161.246,
+        "prompt_per_token_ms": 0.36759924026590696,
+        "prompt_per_second": 2720.3538268377242,
+        "predicted_n": 14,
+        "predicted_ms": 307.479,
+        "predicted_per_token_ms": 21.96278571428571,
+        "predicted_per_second": 45.53156475726797
+      },
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 3159,
+        "total_tokens": 3173,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "retrieval_hit": true,
+      "rank": 1,
+      "decoysBefore": 0,
+      "used_rerank": true,
+      "paraphrases_count": 4
+    }
+  ]
+}

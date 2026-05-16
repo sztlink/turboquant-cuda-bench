@@ -12,6 +12,13 @@ Core thesis:
 
 ```txt
 Retrieval success is not utilization success.
+Prompting alone did not fix the observed decoy failure; evidence placement did.
+```
+
+Current sanitized evidence package:
+
+```txt
+../bench/longctx-utilization-overnight-2026-05-16/RESULTS.md
 ```
 
 ## Current KVFidelity analysis

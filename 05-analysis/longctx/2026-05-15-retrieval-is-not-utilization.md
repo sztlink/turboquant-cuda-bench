@@ -1,6 +1,7 @@
 # Retrieval is not utilization
 
 Date: 2026-05-15
+Updated: 2026-05-16
 Status: internal field note / publicable draft after review
 Scope: long-context decoy fixtures, Qwen-family local inference, vLLM/llama.cpp/TurboQuant research front
 
@@ -76,6 +77,50 @@ The important distinction is not only accuracy. It is operational shape:
 - `policy_splice` fixes the evidence authority/position by moving the canonical span into the user-visible policy/evidence position with low latency.
 
 This suggests the failure mode is not “the model cannot know.” It is “the correct span did not occupy a strong enough position in the answer trajectory.”
+
+## Evidence set 2b — overnight confirmation, 2026-05-16
+
+Source:
+
+```txt
+bench/longctx-utilization-overnight-2026-05-16/RESULTS.md
+bench/longctx-utilization-overnight-2026-05-16/sanitized-overnight-summary.json
+bench/longctx-utilization-overnight-2026-05-16/sanitized-resolution-summary.json
+```
+
+Runtime:
+
+```txt
+AYA2 -> ssh 4090 Windows -> llama-server build-head3
+model: q36_27b_new.gguf
+ctx: 196608
+ctk: q8_0
+ctv: turbo3
+```
+
+### Isolation rerun
+
+| arm | runs | retrieval hits | final hits | reading |
+|---|---:|---:|---:|---|
+| baseline_proxy | 8 | 8/8 | 5/8 | evidence present, closure failed on 3 |
+| anti_decoy_proxy | 8 | 8/8 | 5/8 | stronger prompt did not close the gap |
+| filtered_splice | 8 | 8/8 | 8/8 | evidence elevation closed the gap |
+| oracle | 8 | 8/8 | 8/8 | isolated canonical shard closed the gap |
+
+### Targeted resolution rerun
+
+| arm | runs | retrieval hits | final hits | mean canonical rank | mean decoys before |
+|---|---:|---:|---:|---:|---:|
+| rerank_proxy_orig | 4 | 4/4 | 4/4 | 1.0 | 0.0 |
+| rerank_proxy_rewrite | 4 | 4/4 | 4/4 | 1.0 | 0.0 |
+| policy_splice_orig_retrieval | 4 | 4/4 | 4/4 | 1.0 | 0.0 |
+| policy_splice_rewrite_retrieval | 4 | 4/4 | 4/4 | 1.0 | 0.0 |
+
+Reading:
+
+```txt
+Prompting alone did not fix it. Evidence placement did. With reranker active, the canonical span reached rank 1, no decoy preceded it, and closure recovered on the targeted hard subset.
+```
 
 ## Evidence set 3 — Tecnofagia real Discord decoys
 
@@ -193,7 +238,7 @@ This should be measured from generated outputs or streaming traces, not inferred
 Safe public claim:
 
 ```txt
-On an existing long-context decoy fixture, retrieval was not the bottleneck: canonical evidence reached context in 8/8 cases, while final answers closed only 5/8 until the canonical span was elevated by rerank or policy_splice. A follow-up Tecnofagia probe replaced synthetic decoys with real Discord/Waffle chunks for the five hit-class handles; both vLLM auto and a freshly rebuilt TurboQuant K8V4 vLLM fork preserved 5/5 on this narrow sanitized fixture.
+On an existing long-context decoy fixture, retrieval was not the bottleneck: canonical evidence reached context in 8/8 cases, while final answers closed only 5/8. Stronger anti-decoy prompting remained 5/8. Filtered splice/oracle closed 8/8, and a targeted reranker run moved canonical evidence to rank 1 with 4/4 closure. A follow-up Tecnofagia probe replaced synthetic decoys with real Discord/Waffle chunks for the five hit-class handles; both vLLM auto and a freshly rebuilt TurboQuant K8V4 vLLM fork preserved 5/5 on this narrow sanitized fixture.
 ```
 
 Do not claim:
