@@ -30,6 +30,7 @@ bench/tecnofagia-discord-2026-05-14/RESULTS.md
 bench/tecnofagia-discord-2026-05-14/sanitized-results-auto-20260515-015428.json
 bench/tecnofagia-discord-2026-05-14/sanitized-results-turboquant_k8v4-20260515-090744.json
 bench/longctx-utilization-overnight-2026-05-16/RESULTS.md
+bench/longctx-utilization-expanded-2026-05-16/RESULTS.md
 05-analysis/longctx/2026-05-15-retrieval-is-not-utilization.md
 ```
 
@@ -47,6 +48,18 @@ Current longctx thesis:
 ```txt
 Retrieval success is not utilization success. A retrieved chunk is not a used chunk. Prompting alone did not fix the observed decoy failure; evidence placement did.
 ```
+
+Expanded synthetic staging confirmation, 2026-05-16:
+
+```txt
+n=24
+retrieval: 19/24
+baseline_proxy closure: 9/24
+anti_decoy_proxy closure: 9/24
+filtered_splice closure: 19/24
+```
+
+Operational correction attached to this package: the 4090 server path now requires preflight before disabling the watchdog because Windows Device Guard blocked prior `llama-server.exe` builds. Current runnable production binary: `C:\turbo-build\buun\build-may1\bin\llama-server.exe`.
 
 ## Canonical thesis
 

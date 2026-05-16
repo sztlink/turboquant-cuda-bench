@@ -15,10 +15,21 @@ Retrieval success is not utilization success.
 Prompting alone did not fix the observed decoy failure; evidence placement did.
 ```
 
-Current sanitized evidence package:
+Current sanitized evidence packages:
 
 ```txt
 ../bench/longctx-utilization-overnight-2026-05-16/RESULTS.md
+../bench/longctx-utilization-expanded-2026-05-16/RESULTS.md
+```
+
+Expanded staging confirmation:
+
+```txt
+n=24 synthetic
+retrieval 19/24
+baseline_proxy 9/24
+anti_decoy_proxy 9/24
+filtered_splice 19/24
 ```
 
 ## Current KVFidelity analysis

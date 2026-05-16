@@ -1,0 +1,33 @@
+[2026-05-16T15:22:49-03:00] EXPANDED_START job=longctx-utilization-expanded-2026-05-16
+[2026-05-16T15:22:49-03:00] scope=n24 synthetic retrieval-utilization; arms=baseline anti_prompt filtered_splice rerank_proxy
+[2026-05-16T15:22:49-03:00] runtime=AYA2 ssh 4090 build-may1 q36_27b_new ctx=196608 ctk=q8_0 ctv=turbo3
+[2026-05-16T15:22:49-03:00] GENERATE_CORPUS_START
+[2026-05-16T15:22:50-03:00] GENERATE_CORPUS_DONE files=2402 bytes=125093
+[2026-05-16T15:22:50-03:00] REMOTE_PREFLIGHT_START server=C:\turbo-build\buun\build-may1\bin\llama-server.exe
+[2026-05-16T15:22:51-03:00] REMOTE_PREFLIGHT_DONE preferred_server_ok
+[2026-05-16T15:22:51-03:00] DISABLE_WATCHDOG_AND_FREE_VRAM
+SUCCESS: The parameters of scheduled task "LlamaServer-AutoStart" have been changed.
+
+SUCCESS: The scheduled task "LlamaServer-AutoStart" has been terminated successfully.
+
+0 %, 41, 221 MiB, 24564 MiB
+[2026-05-16T15:22:57-03:00] START_UPSTREAM
+[2026-05-16T15:22:57-03:00] upstream_ssh_pid=2450030 tunnel_pid=2450031
+[2026-05-16T15:23:06-03:00] upstream_ready after=10s
+[2026-05-16T15:23:06-03:00] longctx_norank_started pid=2450218
+[2026-05-16T15:23:07-03:00] longctx_norank_ready after=2s
+[2026-05-16T15:23:07-03:00] PREINDEX_NORANK_START
+[2026-05-16T15:23:18-03:00] PREINDEX_NORANK_DONE
+[2026-05-16T15:25:46-03:00] RERANK_SKIPPED run_rerank=0
+[2026-05-16T15:25:46-03:00] PARSE_RESULTS_START
+[2026-05-16T15:25:46-03:00] PARSE_RESULTS_DONE
+[2026-05-16T15:25:46-03:00] EXPANDED_DONE
+[2026-05-16T15:25:46-03:00] TRAP_EXIT status=0
+[2026-05-16T15:25:47-03:00] RESTORE_SERVER_START
+SUCCESS: The parameters of scheduled task "LlamaServer-AutoStart" have been changed.
+
+SUCCESS: Attempted to run the scheduled task "LlamaServer-AutoStart".
+
+200
+0 %, 48, 21880 MiB, 24564 MiB
+[2026-05-16T15:26:22-03:00] RESTORE_SERVER_DONE

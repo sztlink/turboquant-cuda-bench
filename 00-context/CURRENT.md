@@ -1,6 +1,6 @@
 # CASK / KVFidelity — Current Brief for Next Session
 
-**Date:** 2026-05-15  
+**Date:** 2026-05-16  
 **Purpose:** single entry point for future Pi/Claude sessions without memory confusion.
 
 ## Canonical memory
@@ -42,6 +42,47 @@ Rules after closure:
 ```
 
 Old pending pi-ensemble messages were marked done/superseded.
+
+## Longctx / retrieval-utilization update — 2026-05-16
+
+Expanded synthetic staging package promoted:
+
+```txt
+bench/longctx-utilization-expanded-2026-05-16/RESULTS.md
+```
+
+Result:
+
+```txt
+n=24 synthetic
+retrieval: 19/24
+baseline_proxy closure: 9/24
+anti_decoy_proxy closure: 9/24
+filtered_splice closure: 19/24
+errors: 0
+```
+
+Interpretation:
+
+```txt
+When canonical evidence was retrieved, filtered splice closed 19/19.
+Prompting alone did not improve baseline closure.
+The gap remains retrieval-utilization, not merely retrieval.
+```
+
+Structural infra correction:
+
+```txt
+4090 production binary: C:\turbo-build\buun\build-may1\bin\llama-server.exe
+preflight: C:\ops\llama-server-preflight.ps1
+rule: validate benchmark binary before disabling LlamaServer-AutoStart
+```
+
+Rerank status:
+
+```txt
+Do not mix rerank into main benchmark yet. Rerank path hung longctx-svc in smoke; isolate as separate structural repro.
+```
 
 ## Runtime facts
 
