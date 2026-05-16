@@ -1,6 +1,6 @@
 # Start here
 
-If you came here from Discord: this repo is a small research archive from local RTX 4090 tests.
+If you came here from Discord, GitHub, X, or anywhere else: this repo is a small research archive from local RTX 4090 tests.
 
 The current question is simple:
 

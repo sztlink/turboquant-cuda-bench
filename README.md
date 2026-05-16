@@ -2,7 +2,7 @@
 
 Independent notes and results from local RTX 4090 / RTX 3090 tests around TurboQuant, KV-cache compression, and long-context quality.
 
-If you came from Discord, start here:
+If you came from Discord, GitHub, X, or anywhere else, start here:
 
 - [00-context/START-HERE.md](00-context/START-HERE.md) — short human entry point
 
