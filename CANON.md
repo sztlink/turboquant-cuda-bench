@@ -7,6 +7,7 @@ This repository is the **material canonical archive** for the TurboQuant / KVFid
 ## Current canonical entry point
 
 ```txt
+00-context/START-HERE.md
 00-context/CURRENT.md
 ```
 
@@ -60,6 +61,15 @@ filtered_splice closure: 19/24
 ```
 
 Operational correction attached to this package: the 4090 server path now requires preflight before disabling the watchdog because Windows Device Guard blocked prior `llama-server.exe` builds. Current runnable production binary: `C:\turbo-build\buun\build-may1\bin\llama-server.exe`.
+
+Rerank structural status:
+
+```txt
+bench/longctx-rerank-timeout-smoke-2026-05-16/RESULTS.md
+07-scripts/patches/longctx-svc-rerank-timeout-2026-05-16.patch
+```
+
+The local patch makes slow CPU cross-encoder rerank bounded: with `LONGCTX_RERANK_TIMEOUT_SECONDS > 0`, scoring runs in a killable subprocess and falls back to cosine/BM25 with `used_rerank=false` on timeout. This is a service-safety fix, not a rerank-quality result.
 
 ## Canonical thesis
 

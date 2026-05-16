@@ -8,6 +8,7 @@ This repository is the **material canonical archive** for the TurboQuant / KVFid
 
 Start here:
 
+- [00-context/START-HERE.md](00-context/START-HERE.md) — short entry point for readers coming from Discord/GitHub
 - [CANON.md](CANON.md) — current canonical stance and caveats
 - [MANIFEST.md](MANIFEST.md) — promoted artifacts and checksums
 - [00-context/CURRENT.md](00-context/CURRENT.md) — current brief for the next session
@@ -69,6 +70,7 @@ Production server baseline: `llama-server` TheTom fork, 65K ctx, flash-attn on.
 | 2026-05-10 | [longctx-decoy-isolation](bench/longctx-decoy-isolation-2026-05-10/) + [longctx-decoy-resolution](bench/longctx-decoy-resolution-2026-05-10/) | Targeted resolution of the proxy-hard gap: reranker / policy_splice / query rewrite **→ 16/16** |
 | 2026-05-16 | [longctx-utilization-overnight](bench/longctx-utilization-overnight-2026-05-16/) | Sanitized confirmation: retrieval 8/8 but baseline/anti-decoy prompt closure 5/8; filtered splice/oracle 8/8; targeted reranker rank 1 and closure 4/4 |
 | 2026-05-16 | [longctx-utilization-expanded](bench/longctx-utilization-expanded-2026-05-16/) | Synthetic n=24 staging confirmation: retrieval 19/24; baseline/anti-decoy closure 9/24; filtered splice closure 19/24; includes 4090 preflight/watchdog structural note |
+| 2026-05-16 | [longctx-rerank-timeout-smoke](bench/longctx-rerank-timeout-smoke-2026-05-16/) | Structural smoke for local `longctx-svc` patch: killable rerank timeout/fallback returns safely instead of hanging `/retrieve` |
 | 2026-05-10 | [vllm-migration-scout](bench/vllm-migration-scout-2026-05-10/) | Pre-WSL2 readiness scout for the vLLM CUDA branch (historical; superseded same day) |
 | 2026-05-10 | [vllm-smoke](bench/vllm-smoke-2026-05-10/) | First-light vLLM TurboQuant on 4090 WSL2: Qwen 0.5B/8K, 7B/16K, 32B-AWQ/16K + 12-way concurrency w/ V3 enabled; includes [BUILD-CUDA.md](bench/vllm-smoke-2026-05-10/BUILD-CUDA.md) |
 | 2026-05-11 | [vllm-needle](bench/vllm-needle-2026-05-11/) | Needle retrieval cross-stack: vLLM Qwen 2.5-7B + YaRN at 128K/160K/192K, with YaRN factor sweep at 160K |

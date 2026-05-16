@@ -1,0 +1,216 @@
+diff --git a/services/longctx-svc/longctx_svc/app.py b/services/longctx-svc/longctx_svc/app.py
+index 06b9b8e..ca687d0 100644
+--- a/services/longctx-svc/longctx_svc/app.py
++++ b/services/longctx-svc/longctx_svc/app.py
+@@ -97,6 +97,14 @@ class RetrieveRequest(BaseModel):
+             "don't put absolute paths in messages still get retrieval."
+         ),
+     )
++    use_rerank: bool = Field(
++        default=True,
++        description="Apply cross-encoder rerank when enabled by config.",
++    )
++    prefilter: int = Field(
++        default=32, ge=1, le=512,
++        description="Candidate pool size before cross-encoder rerank.",
++    )
+ 
+ 
+ class ChunkOut(BaseModel):
+@@ -465,6 +473,7 @@ async def retrieve(req: RetrieveRequest, request: Request,
+ 
+     result = state.pipeline.retrieve(
+         query=req.query, index=entry.index, top_k=req.top_k,
++        prefilter=req.prefilter, use_rerank=req.use_rerank,
+     )
+     entry.last_query_at = time.time()
+     # PRD §6.1 / v0.3.1: path-based promotion
+diff --git a/services/longctx-svc/longctx_svc/config.py b/services/longctx-svc/longctx_svc/config.py
+index 1d3a568..14b4fe5 100644
+--- a/services/longctx-svc/longctx_svc/config.py
++++ b/services/longctx-svc/longctx_svc/config.py
+@@ -114,6 +114,10 @@ class Limits:
+     multiquery_min_chunks: int = 1000
+     rerank_prefilter_small: int = 20   # cross-encoder pairs for <10k chunks
+     rerank_prefilter_large: int = 100  # cross-encoder pairs at scale
++    # Optional hard timeout for cross-encoder rerank. 0 preserves legacy
++    # in-process behavior. When >0, rerank runs in a subprocess so timeout
++    # can kill the scorer and safely fall back to cosine/BM25 order.
++    rerank_timeout_seconds: int = 0
+     # Max tokens to ever splice into a request. 50-line code chunks at
+     # ~30 tok/line × 8 = 12K tokens — blows out small-context windows.
+     # Approximated as chars/4 (English ~4 chars/tok). Truncate longest
+@@ -129,6 +133,20 @@ class Limits:
+                 "LONGCTX_MAX_HOT", cls.max_files_hot)),
+             max_files_package=int(os.environ.get(
+                 "LONGCTX_MAX_PACKAGE", cls.max_files_package)),
++            soft_index_seconds=int(os.environ.get(
++                "LONGCTX_SOFT_INDEX_SECONDS", cls.soft_index_seconds)),
++            hard_index_seconds=int(os.environ.get(
++                "LONGCTX_HARD_INDEX_SECONDS", cls.hard_index_seconds)),
++            rerank_min_chunks=int(os.environ.get(
++                "LONGCTX_RERANK_MIN_CHUNKS", cls.rerank_min_chunks)),
++            rerank_prefilter_small=int(os.environ.get(
++                "LONGCTX_RERANK_PREFILTER_SMALL", cls.rerank_prefilter_small)),
++            rerank_prefilter_large=int(os.environ.get(
++                "LONGCTX_RERANK_PREFILTER_LARGE", cls.rerank_prefilter_large)),
++            rerank_timeout_seconds=int(os.environ.get(
++                "LONGCTX_RERANK_TIMEOUT_SECONDS", cls.rerank_timeout_seconds)),
++            splice_max_chars=int(os.environ.get(
++                "LONGCTX_SPLICE_MAX_CHARS", cls.splice_max_chars)),
+         )
+ 
+ 
+diff --git a/services/longctx-svc/longctx_svc/proxy.py b/services/longctx-svc/longctx_svc/proxy.py
+index 5227e8b..a471161 100644
+--- a/services/longctx-svc/longctx_svc/proxy.py
++++ b/services/longctx-svc/longctx_svc/proxy.py
+@@ -141,6 +141,8 @@ def _format_chunks_block(chunks: list[Any]) -> str:
+ async def _retrieve_for_messages(
+     messages: list[dict[str, Any]], request: Request,
+     top_k: int = 8,
++    use_rerank: bool = True,
++    prefilter: int = 32,
+ ) -> tuple[str | None, list, dict[str, str]]:
+     """Run scope detect + retrieve. Returns (scope_path, chunks, hdrs)."""
+     state = get_state()
+@@ -199,6 +201,7 @@ async def _retrieve_for_messages(
+ 
+     result = state.pipeline.retrieve(
+         query=query, index=entry.index, top_k=top_k,
++        use_rerank=use_rerank, prefilter=prefilter,
+     )
+     hdrs.update({
+         "x-longctx-scope": str(scope.root),
+@@ -241,8 +244,11 @@ async def proxy_chat_completions(request: Request) -> Response:
+     body = await request.json()
+     messages = body.get("messages") or []
+     top_k = int(body.get("longctx_top_k", 8))
++    use_rerank = bool(body.get("longctx_use_rerank", True))
++    prefilter = int(body.get("longctx_prefilter", 32))
+     _, chunks, hdrs = await _retrieve_for_messages(
+         messages, request, top_k=top_k,
++        use_rerank=use_rerank, prefilter=prefilter,
+     )
+     if chunks:
+         block = _format_chunks_block(chunks)
+@@ -296,8 +302,11 @@ async def proxy_completions(request: Request) -> Response:
+         prompt = "\n".join(str(p) for p in prompt)
+     fake_messages = [{"role": "user", "content": str(prompt)}]
+     top_k = int(body.get("longctx_top_k", 8))
++    use_rerank = bool(body.get("longctx_use_rerank", True))
++    prefilter = int(body.get("longctx_prefilter", 32))
+     _, chunks, hdrs = await _retrieve_for_messages(
+         fake_messages, request, top_k=top_k,
++        use_rerank=use_rerank, prefilter=prefilter,
+     )
+     if chunks:
+         block = _format_chunks_block(chunks)
+diff --git a/services/longctx-svc/longctx_svc/retrieve/pipeline.py b/services/longctx-svc/longctx_svc/retrieve/pipeline.py
+index e2a738e..8b83956 100644
+--- a/services/longctx-svc/longctx_svc/retrieve/pipeline.py
++++ b/services/longctx-svc/longctx_svc/retrieve/pipeline.py
+@@ -8,7 +8,10 @@ Multi-query and rerank can each be disabled via config.
+ """
+ from __future__ import annotations
+ 
++import json
+ import re
++import subprocess
++import sys
+ from dataclasses import dataclass
+ 
+ import numpy as np
+@@ -29,6 +32,50 @@ class RetrieveResult:
+ 
+ 
+ # Generic paraphrase templates — work for code, prose, and config queries.
++def _rerank_predict_subprocess(
++    model: str, query: str, texts: list[str], timeout_seconds: int,
++) -> list[float] | None:
++    """Run CrossEncoder scoring in a killable subprocess.
++
++    The normal sentence-transformers CrossEncoder call is blocking and can
++    take minutes on CPU for large rerankers. Running the scorer in a child
++    process lets the service fall back cleanly when the timeout expires.
++    """
++    if timeout_seconds <= 0 or not texts:
++        return None
++    payload = json.dumps({"model": model, "query": query, "texts": texts})
++    code = r'''
++import json, sys
++from sentence_transformers import CrossEncoder
++payload = json.loads(sys.stdin.read())
++model = payload["model"]
++query = payload["query"]
++texts = payload["texts"]
++reranker = CrossEncoder(model, max_length=512)
++scores = reranker.predict(
++    [(query, t[:2000]) for t in texts],
++    batch_size=16,
++    show_progress_bar=False,
++)
++print(json.dumps([float(x) for x in scores]))
++'''
++    try:
++        proc = subprocess.run(
++            [sys.executable, "-c", code],
++            input=payload,
++            text=True,
++            capture_output=True,
++            timeout=timeout_seconds,
++            check=True,
++        )
++        data = json.loads(proc.stdout)
++        if isinstance(data, list) and len(data) == len(texts):
++            return [float(x) for x in data]
++    except Exception:
++        return None
++    return None
++
++
+ def _paraphrase(query: str, n: int = 3) -> list[str]:
+     """Template-based paraphrases. Caller may extend with LLM-generated ones."""
+     q = query.strip()
+@@ -179,19 +226,28 @@ class RetrievePipeline:
+         do_rerank = use_rerank and n_chunks >= cfg.limits.rerank_min_chunks
+         used_rerank = False
+         if do_rerank:
+-            reranker = self._ensure_reranker()
+-            if reranker is not None:
+-                pairs = [(query, index.chunks[i].text[:2000])
+-                         for i in cos_top]
+-                try:
+-                    scores = reranker.predict(
+-                        pairs, batch_size=16, show_progress_bar=False,
+-                    )
+-                    order_within = np.argsort(-scores).tolist()
+-                    cos_top = [cos_top[i] for i in order_within]
+-                    used_rerank = True
+-                except Exception:
+-                    used_rerank = False
++            scores = None
++            timeout_seconds = cfg.limits.rerank_timeout_seconds
++            if timeout_seconds > 0 and cfg.reranker_model:
++                texts = [index.chunks[i].text for i in cos_top]
++                scores = _rerank_predict_subprocess(
++                    cfg.reranker_model, query, texts, timeout_seconds,
++                )
++            else:
++                reranker = self._ensure_reranker()
++                if reranker is not None:
++                    pairs = [(query, index.chunks[i].text[:2000])
++                             for i in cos_top]
++                    try:
++                        scores = reranker.predict(
++                            pairs, batch_size=16, show_progress_bar=False,
++                        )
++                    except Exception:
++                        scores = None
++            if scores is not None:
++                order_within = np.argsort(-scores).tolist()
++                cos_top = [cos_top[i] for i in order_within]
++                used_rerank = True
+ 
+         picks = cos_top[:top_k]
+         if not used_rerank:

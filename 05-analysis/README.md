@@ -20,6 +20,7 @@ Current sanitized evidence packages:
 ```txt
 ../bench/longctx-utilization-overnight-2026-05-16/RESULTS.md
 ../bench/longctx-utilization-expanded-2026-05-16/RESULTS.md
+../bench/longctx-rerank-timeout-smoke-2026-05-16/RESULTS.md
 ```
 
 Expanded staging confirmation:

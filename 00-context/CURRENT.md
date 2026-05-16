@@ -84,6 +84,15 @@ Rerank status:
 Do not mix rerank into main benchmark yet. Rerank path hung longctx-svc in smoke; isolate as separate structural repro.
 ```
 
+Structural rerank mitigation now drafted locally:
+
+```txt
+bench/longctx-rerank-timeout-smoke-2026-05-16/RESULTS.md
+07-scripts/patches/longctx-svc-rerank-timeout-2026-05-16.patch
+```
+
+The patch adds `LONGCTX_RERANK_TIMEOUT_SECONDS`; on timeout, cross-encoder rerank falls back to cosine/BM25 and returns `used_rerank=false` instead of hanging `/retrieve`.
+
 ## Runtime facts
 
 Working execution path:
