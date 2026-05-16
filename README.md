@@ -1,14 +1,17 @@
 # turboquant-cuda-bench
 
-Independent TurboQuant / KVFidelity / CASK research archive from CUDA production hardware.
+Independent notes and results from local RTX 4090 / RTX 3090 tests around TurboQuant, KV-cache compression, and long-context quality.
+
+If you came from Discord, start here:
+
+- [00-context/START-HERE.md](00-context/START-HERE.md) — short human entry point
 
 ## Canonical research structure
 
 This repository is the **material canonical archive** for the TurboQuant / KVFidelity front: protocols, raw logs, processed traces, scripts, analysis, and publicable artifacts. `memory-md` keeps synthesis and decisions; `/tmp` is only a scratch/bancada layer.
 
-Start here:
+Other entry points:
 
-- [00-context/START-HERE.md](00-context/START-HERE.md) — short entry point for readers coming from Discord/GitHub
 - [CANON.md](CANON.md) — current canonical stance and caveats
 - [MANIFEST.md](MANIFEST.md) — promoted artifacts and checksums
 - [00-context/CURRENT.md](00-context/CURRENT.md) — current brief for the next session

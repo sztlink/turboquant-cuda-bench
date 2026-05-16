@@ -1,59 +1,61 @@
-# Start here — TurboQuant / KVFidelity / retrieval-utilization
+# Start here
 
-This repo is an independent research archive from local CUDA hardware, mainly an RTX 4090.
+If you came here from Discord: this repo is a small research archive from local RTX 4090 tests.
 
-It is **not** a benchmark leaderboard and does not claim that a method globally wins or loses.
+The current question is simple:
 
-## What to read first
+```txt
+When a system retrieves the right evidence, does the model actually use it?
+```
 
-Latest retrieval-utilization result:
+In one synthetic decoy-heavy test using TheTom's `longctx-svc` as the retrieval/proxy layer:
+
+```txt
+right evidence retrieved: 19/24
+baseline answers correct: 9/24
+stronger anti-decoy prompt: 9/24
+cleaner evidence splice: 19/24
+```
+
+Short read:
+
+```txt
+retrieved != used
+```
+
+The right chunk can be in context and still fail to become the final answer.
+
+## Where to look
+
+Latest result:
 
 ```txt
 bench/longctx-utilization-expanded-2026-05-16/RESULTS.md
 ```
 
-Core analysis note:
+Longer analysis:
 
 ```txt
 05-analysis/longctx/2026-05-15-retrieval-is-not-utilization.md
 ```
 
-Current canonical stance:
+Repo stance / caveats:
 
 ```txt
 CANON.md
 ```
 
-## Short version
-
-Using TheTom's `longctx-svc` as the retrieval/proxy layer, a synthetic decoy-heavy fixture separates retrieval from actual answer use.
-
-```txt
-n=24 synthetic
-retrieval_hit: 19/24
-baseline answer: 9/24
-anti-decoy prompt: 9/24
-filtered splice: 19/24
-```
-
-Readout:
-
-```txt
-A retrieved chunk is not necessarily a used chunk.
-Prompting alone did not fix this fixture; cleaner evidence placement did.
-```
-
 ## What this is
 
-A methodology probe for quality testing under long-context / retrieval / KV-cache work.
+A quality diagnostic for long-context / retrieval / KV-cache work.
 
-Useful fields:
+It tracks things like:
 
 ```txt
 retrieval_hit
 canonical_rank
 decoys_before
-closure / final answer correctness
+final answer correctness
 tokens_to_correct, when available
 action-trace drift, for agent/tool cases
 ```
@@ -61,27 +63,29 @@ action-trace drift, for agent/tool cases
 ## What this is not
 
 ```txt
-not a public benchmark claim
+not a leaderboard
 not a claim that longctx-svc is broken
 not a claim that Qwen 27B is bad
-not a claim about TurboQuant quality globally
+not a global TurboQuant quality claim
 ```
 
-The current finding is narrower:
+The only claim is narrower:
 
 ```txt
-In this fixture, evidence can be present in retrieved context and still fail to become the final answer.
+finding evidence is not the same as using evidence
 ```
 
 ## Credit / stack clarity
 
-`longctx-svc` is TheTom's retrieval/proxy layer. The fixtures and analysis here are local tests built around that layer.
+`longctx-svc` is TheTom's retrieval/proxy layer. The fixtures and analysis here are my local tests around that layer.
 
-## Current structural note
+## Current rerank note
 
-The rerank path is being handled separately. A local patch adds a killable rerank timeout/fallback so slow CPU cross-encoder scoring cannot hang `/retrieve` indefinitely:
+CPU rerank can be slow enough to hang a request. I drafted a local timeout/fallback patch so `/retrieve` can return safely instead of blocking forever:
 
 ```txt
 bench/longctx-rerank-timeout-smoke-2026-05-16/RESULTS.md
 07-scripts/patches/longctx-svc-rerank-timeout-2026-05-16.patch
 ```
+
+That patch is a service-safety smoke, not a rerank-quality result.
