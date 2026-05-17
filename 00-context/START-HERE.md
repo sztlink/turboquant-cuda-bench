@@ -8,26 +8,33 @@ The current question is simple:
 When a system retrieves the right evidence, does the model actually use it?
 ```
 
-In one synthetic decoy-heavy test using TheTom's `longctx-svc` as the retrieval/proxy layer:
+In synthetic decoy-heavy tests using TheTom's `longctx-svc` as the retrieval/proxy layer, the latest phase package found:
 
 ```txt
-right evidence retrieved: 19/24
-baseline answers correct: 9/24
-stronger anti-decoy prompt: 9/24
-cleaner evidence splice: 19/24
+phase diagram:        743/1200 closure, errors 0
+depth sweep:          3022/3840 closure, errors 0
+prompt scaffold:      2532/3456 closure, errors 0
+distractor taxonomy:  1605/2880 closure, errors 0
 ```
 
 Short read:
 
 ```txt
 retrieved != used
+depth != utilization
 ```
 
-The right chunk can be in context and still fail to become the final answer.
+The right chunk can be in context and still fail to become the final answer. In these fixtures, canonical rank, decoys-before, and distractor type mattered more than raw context depth.
 
 ## Where to look
 
 Latest result:
+
+```txt
+bench/evidence-utilization-phase-2026-05-17/RESULTS.md
+```
+
+Previous retrieval/proxy confirmation:
 
 ```txt
 bench/longctx-utilization-expanded-2026-05-16/RESULTS.md
@@ -73,6 +80,14 @@ The only claim is narrower:
 
 ```txt
 finding evidence is not the same as using evidence
+
+In the latest synthetic phase package:
+
+```txt
+Retrieval depth was not the main bottleneck.
+Answer closure was dominated by local evidence competition.
+Prompting harder did not reliably fix it.
+```
 ```
 
 ## Credit / stack clarity

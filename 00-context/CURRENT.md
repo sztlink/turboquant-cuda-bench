@@ -1,6 +1,6 @@
 # CASK / KVFidelity — Current Brief for Next Session
 
-**Date:** 2026-05-16  
+**Date:** 2026-05-17  
 **Purpose:** single entry point for future Pi/Claude sessions without memory confusion.
 
 ## Canonical memory
@@ -43,31 +43,43 @@ Rules after closure:
 
 Old pending pi-ensemble messages were marked done/superseded.
 
-## Longctx / retrieval-utilization update — 2026-05-16
+## Longctx / retrieval-utilization update — 2026-05-17
 
-Expanded synthetic staging package promoted:
+Latest synthetic phase package promoted:
 
 ```txt
-bench/longctx-utilization-expanded-2026-05-16/RESULTS.md
+bench/evidence-utilization-phase-2026-05-17/RESULTS.md
 ```
 
 Result:
 
 ```txt
+phase diagram:        743/1200 closure, errors 0
+depth sweep:          3022/3840 closure, errors 0
+prompt scaffold:      2532/3456 closure, errors 0
+distractor taxonomy:  1605/2880 closure, errors 0
+total promoted runs:  11376, errors 0
+```
+
+Interpretation:
+
+```txt
+Raw context depth was not the main bottleneck in this fixture: 20k, 80k, and 160k chars stayed close.
+Answer closure was dominated by local evidence competition: canonical rank, decoys-before, and distractor type.
+Prompting harder did not reliably fix it; baseline beat negative/positive/structured prompt scaffolds.
+Stale records and near-duplicates were much harder than unrelated noise.
+```
+
+Previous expanded synthetic staging package:
+
+```txt
+bench/longctx-utilization-expanded-2026-05-16/RESULTS.md
 n=24 synthetic
 retrieval: 19/24
 baseline_proxy closure: 9/24
 anti_decoy_proxy closure: 9/24
 filtered_splice closure: 19/24
 errors: 0
-```
-
-Interpretation:
-
-```txt
-When canonical evidence was retrieved, filtered splice closed 19/19.
-Prompting alone did not improve baseline closure.
-The gap remains retrieval-utilization, not merely retrieval.
 ```
 
 Structural infra correction:
@@ -82,6 +94,13 @@ Rerank status:
 
 ```txt
 Do not mix rerank into main benchmark yet. Rerank path hung longctx-svc in smoke; isolate as separate structural repro.
+```
+
+Promotion status:
+
+```txt
+The 2026-05-17 package includes aggregates, compact results, scripts, sequence log, privacy audit, and SHA256 manifest.
+Raw per-request summary.jsonl and raw prompt/answer traces remain local staging artifacts.
 ```
 
 Structural rerank mitigation now drafted locally:

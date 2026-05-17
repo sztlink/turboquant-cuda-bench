@@ -13,6 +13,17 @@ raw logs:   02-raw/benchmarks/cask/2026-05-13-aime24-n30/
 scripts:    07-scripts/kvfidelity/
 ```
 
+## Current longctx / evidence-utilization package
+
+```txt
+package: bench/evidence-utilization-phase-2026-05-17/
+results: bench/evidence-utilization-phase-2026-05-17/RESULTS.md
+manifest: bench/evidence-utilization-phase-2026-05-17/MANIFEST.sha256
+privacy audit: bench/evidence-utilization-phase-2026-05-17/PRIVACY-AUDIT.md
+```
+
+This package is self-manifested. It intentionally omits raw per-request `summary.jsonl` / raw answer traces.
+
 ## Checksums
 
 | Path | Size bytes | SHA256 |

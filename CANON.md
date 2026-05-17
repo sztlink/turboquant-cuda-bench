@@ -32,6 +32,7 @@ bench/tecnofagia-discord-2026-05-14/sanitized-results-auto-20260515-015428.json
 bench/tecnofagia-discord-2026-05-14/sanitized-results-turboquant_k8v4-20260515-090744.json
 bench/longctx-utilization-overnight-2026-05-16/RESULTS.md
 bench/longctx-utilization-expanded-2026-05-16/RESULTS.md
+bench/evidence-utilization-phase-2026-05-17/RESULTS.md
 05-analysis/longctx/2026-05-15-retrieval-is-not-utilization.md
 ```
 
@@ -47,7 +48,11 @@ This belongs to the longctx/retrieval-utilization front, not to the CASK/AIME/KV
 Current longctx thesis:
 
 ```txt
-Retrieval success is not utilization success. A retrieved chunk is not a used chunk. Prompting alone did not fix the observed decoy failure; evidence placement did.
+Retrieval success is not utilization success.
+A retrieved chunk is not a used chunk.
+Raw context depth was not the main bottleneck in the latest synthetic phase package.
+Answer closure was dominated by local evidence competition: canonical rank, decoys-before, and distractor type.
+Prompting harder did not reliably fix the observed failure mode.
 ```
 
 Expanded synthetic staging confirmation, 2026-05-16:
@@ -58,6 +63,16 @@ retrieval: 19/24
 baseline_proxy closure: 9/24
 anti_decoy_proxy closure: 9/24
 filtered_splice closure: 19/24
+```
+
+Evidence-utilization phase package, 2026-05-17:
+
+```txt
+bench/evidence-utilization-phase-2026-05-17/RESULTS.md
+phase diagram:        743/1200 closure, errors 0
+depth sweep:          3022/3840 closure, errors 0
+prompt scaffold:      2532/3456 closure, errors 0
+distractor taxonomy:  1605/2880 closure, errors 0
 ```
 
 Operational correction attached to this package: the 4090 server path now requires preflight before disabling the watchdog because Windows Device Guard blocked prior `llama-server.exe` builds. Current runnable production binary: `C:\turbo-build\buun\build-may1\bin\llama-server.exe`.
