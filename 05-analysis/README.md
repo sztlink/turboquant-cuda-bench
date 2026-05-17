@@ -6,6 +6,7 @@ Interpretive layer: lab notes, findings, contradictions, and decision-making ana
 
 ```txt
 longctx/2026-05-15-retrieval-is-not-utilization.md
+../06-publicable/longctx/evidence-path/README.md
 ```
 
 Core thesis:

@@ -28,7 +28,13 @@ The right chunk can be in context and still fail to become the final answer. In 
 
 ## Where to look
 
-Latest result:
+Most readable public entry:
+
+```txt
+06-publicable/longctx/evidence-path/README.md
+```
+
+Latest result package:
 
 ```txt
 bench/evidence-utilization-phase-2026-05-17/RESULTS.md

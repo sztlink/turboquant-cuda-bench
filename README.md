@@ -13,6 +13,7 @@ This repository is the **material canonical archive** for the TurboQuant / KVFid
 Other entry points:
 
 - [CANON.md](CANON.md) — current canonical stance and caveats
+- [06-publicable/longctx/evidence-path/README.md](06-publicable/longctx/evidence-path/README.md) — readable three-scene entry for `retrieved != used`
 - [MANIFEST.md](MANIFEST.md) — promoted artifacts and checksums
 - [00-context/CURRENT.md](00-context/CURRENT.md) — current brief for the next session
 - [CASK/KVFidelity Trace Atlas experiment](03-lab/experiments/2026-05-13-cask-aime24-n30-trace-atlas/experiment.md)

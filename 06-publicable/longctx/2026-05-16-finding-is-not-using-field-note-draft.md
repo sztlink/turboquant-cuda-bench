@@ -134,6 +134,14 @@ Prompting harder did not reliably fix the failure mode.
 
 ## Material
 
+Readable three-scene entry:
+
+```txt
+https://github.com/sztlink/turboquant-cuda-bench/tree/main/06-publicable/longctx/evidence-path
+```
+
+Full aggregate package:
+
 ```txt
 https://github.com/sztlink/turboquant-cuda-bench/tree/main/bench/evidence-utilization-phase-2026-05-17
 ```

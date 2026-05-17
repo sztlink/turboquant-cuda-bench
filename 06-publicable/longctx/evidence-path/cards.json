@@ -1,0 +1,44 @@
+[
+  {
+    "id": "rank-trap-solar-engine",
+    "title": "The rank trap",
+    "source": "phase/raw/0002-top-r4-d1-baseline.json",
+    "alias": "solar engine record",
+    "expected": "AYA-ZONE-SOLAR-ENGINE-1272-OK",
+    "distractor": "DECOY-16-00",
+    "canonical_rank": 4,
+    "found": true,
+    "presented": true,
+    "used": false,
+    "failure": "rank/local competition",
+    "summary": "Canonical evidence was present at rank 4, but the answer path spent its limited budget on earlier chunks and did not close on the canonical value."
+  },
+  {
+    "id": "stale-record-handle-58",
+    "title": "The stale record",
+    "source": "distractor-taxonomy summary row idx=5",
+    "alias": "distractor taxonomy handle 58",
+    "expected": "AYA-TAX-58-3334-OK",
+    "distractor": "AYA-TAX-58-OLD-3058-NO",
+    "canonical_rank": 8,
+    "found": true,
+    "presented": true,
+    "used": false,
+    "failure": "temporal competition / stale evidence",
+    "summary": "The current value existed, but same-alias archived records appeared before it; stale_record was the hardest distractor class in the taxonomy sweep."
+  },
+  {
+    "id": "near-duplicate-handle-46",
+    "title": "The near duplicate",
+    "source": "distractor-taxonomy summary row idx=106",
+    "alias": "distractor taxonomy handle 46",
+    "expected": "AYA-TAX-46-3058-OK",
+    "distractor": "DECOY-TAX-NEAR-46-0",
+    "canonical_rank": 16,
+    "found": true,
+    "presented": true,
+    "used": false,
+    "failure": "semantic proximity / near duplicate",
+    "summary": "The exact alias existed, but canonical-looking alternate records competed with it; near_duplicate closed only 46.0% in the taxonomy sweep."
+  }
+]
