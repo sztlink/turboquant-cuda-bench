@@ -24,6 +24,17 @@ privacy audit: bench/evidence-utilization-phase-2026-05-17/PRIVACY-AUDIT.md
 
 This package is self-manifested. It intentionally omits raw per-request `summary.jsonl` / raw answer traces.
 
+## Current CASK × KVFidelity bridge package
+
+```txt
+package: bench/cask-kvfidelity-bridge-v2-2026-05-17/
+results: bench/cask-kvfidelity-bridge-v2-2026-05-17/RESULTS.md
+manifest: bench/cask-kvfidelity-bridge-v2-2026-05-17/MANIFEST.sha256
+privacy audit: bench/cask-kvfidelity-bridge-v2-2026-05-17/PRIVACY-AUDIT.md
+```
+
+This package is self-manifested. It includes synthetic action-router metrics and omits private/Discord-derived raw data.
+
 ## Checksums
 
 | Path | Size bytes | SHA256 |

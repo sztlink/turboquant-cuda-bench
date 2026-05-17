@@ -46,6 +46,14 @@ Previous retrieval/proxy confirmation:
 bench/longctx-utilization-expanded-2026-05-16/RESULTS.md
 ```
 
+KV-cache / action-trace bridge:
+
+```txt
+bench/cask-kvfidelity-bridge-v2-2026-05-17/README.md
+```
+
+This bridge separates action choice, exact target payload, and source-rank fidelity under FullKV / TriAttention / CASK budget sweeps. It is a synthetic methodology probe, not a leaderboard.
+
 Longer analysis:
 
 ```txt
@@ -71,6 +79,7 @@ decoys_before
 final answer correctness
 tokens_to_correct, when available
 action-trace drift, for agent/tool cases
+action / target / source-rank separation, for CASK × KVFidelity bridge cases
 ```
 
 ## What this is not
