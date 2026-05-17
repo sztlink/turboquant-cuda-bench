@@ -1,10 +1,22 @@
 # turboquant-cuda-bench
 
-Independent notes and results from local RTX 4090 / RTX 3090 tests around TurboQuant, KV-cache compression, and long-context quality.
+> Your model found the right chunk. Why did it still answer wrong?
 
-If you came from Discord, GitHub, X, or anywhere else, start here:
+This is a public research archive for long-context quality probes and KV-cache experiments on local GPUs.
 
-- [00-context/START-HERE.md](00-context/START-HERE.md) — short human entry point
+The current front is **evidence utilization**:
+
+```txt
+retrieved != used
+```
+
+A long-context / RAG system can retrieve the correct evidence, place it in context, and still answer from the wrong record.
+
+Start here:
+
+- [Evidence Path: three scenes where finding is not using](06-publicable/longctx/evidence-path/README.md) — readable entry point
+- [Evidence-utilization phase package](bench/evidence-utilization-phase-2026-05-17/RESULTS.md) — aggregate results
+- [Start Here](00-context/START-HERE.md) — repo-level orientation and caveats
 
 ## Canonical research structure
 
@@ -13,7 +25,6 @@ This repository is the **material canonical archive** for the TurboQuant / KVFid
 Other entry points:
 
 - [CANON.md](CANON.md) — current canonical stance and caveats
-- [06-publicable/longctx/evidence-path/README.md](06-publicable/longctx/evidence-path/README.md) — readable three-scene entry for `retrieved != used`
 - [MANIFEST.md](MANIFEST.md) — promoted artifacts and checksums
 - [00-context/CURRENT.md](00-context/CURRENT.md) — current brief for the next session
 - [CASK/KVFidelity Trace Atlas experiment](03-lab/experiments/2026-05-13-cask-aime24-n30-trace-atlas/experiment.md)
