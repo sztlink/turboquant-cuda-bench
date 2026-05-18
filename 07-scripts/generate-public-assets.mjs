@@ -110,7 +110,7 @@ function groupedBars({ title, subtitle, name, groups, metrics, y=220, note='' })
 // 1. Hero social card.
 write('hero-retrieved-not-used.svg', frame({
   title: 'retrieved != used',
-  subtitle: 'KV-cache compression and long-context receipts up to 192K on local RTX 4090',
+  subtitle: 'Your model found the right chunk. Why did it still answer wrong?',
   body: `
     <rect x="56" y="190" width="1088" height="340" rx="28" fill="${C.panel}" stroke="${C.line}" filter="url(#shadow)"/>
     <text x="96" y="270" class="mono big">11,376 runs</text>
