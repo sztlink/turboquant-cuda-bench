@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>turboquant-cuda-bench public dashboard</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0d0f12; --panel:#151922; --ink:#e8edf2; --muted:#91a0ad; --line:#2a3240; --accent:#7df9ff; --hot:#ffcc66; --bad:#ff6b6b; --good:#9cff87; }
+    body { margin:0; background:radial-gradient(circle at top left,#17202f,#0d0f12 45%); color:var(--ink); font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    header { padding:40px 24px 18px; max-width:1180px; margin:auto; }
+    h1 { margin:0 0 8px; font-size:34px; letter-spacing:-0.04em; }
+    h2 { margin:0 0 14px; font-size:18px; }
+    p { color:var(--muted); max-width:900px; }
+    a { color:var(--accent); }
+    .grid { max-width:1180px; margin:0 auto 40px; padding:0 24px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+    .card { background:rgba(21,25,34,.88); border:1px solid var(--line); border-radius:16px; padding:18px; box-shadow:0 8px 32px rgba(0,0,0,.25); }
+    .kicker { color:var(--accent); text-transform:uppercase; font-size:11px; letter-spacing:.12em; }
+    .big { font-size:38px; font-weight:700; letter-spacing:-0.05em; margin:8px 0; }
+    .small { color:var(--muted); font-size:12px; }
+    .bar { height:9px; background:#222936; border-radius:99px; overflow:hidden; margin:12px 0; }
+    .fill { height:100%; background:linear-gradient(90deg,var(--accent),var(--good)); }
+    table { width:100%; border-collapse:collapse; margin-top:8px; }
+    th,td { border-bottom:1px solid var(--line); padding:8px 6px; text-align:left; vertical-align:top; }
+    th { color:var(--muted); font-weight:500; }
+    .tag { display:inline-block; padding:2px 7px; border:1px solid var(--line); border-radius:999px; color:var(--muted); font-size:11px; }
+    footer { max-width:1180px; margin:auto; padding:0 24px 40px; color:var(--muted); }
+  </style>
+</head>
+<body>
+<header>
+  <div class="kicker">retrieved ≠ used</div>
+  <h1>turboquant-cuda-bench</h1>
+  <p>Public dashboard for local 4090/3090 receipts around KV-cache compression, vLLM, llama.cpp, long-context decoys, and action-trace fidelity.</p>
+</header>
+
+<section class="grid">
+  <article class="card">
+    <div class="kicker">Evidence utilization</div>
+    <div class="big">11,376</div>
+    <div class="small">synthetic public-safe runs, 0 errors</div>
+    <div class="bar"><div class="fill" style="width:69.5%"></div></div>
+    <p><b>69.5%</b> answer closure overall. Rank and distractor type dominated more than raw depth.</p>
+  </article>
+  <article class="card">
+    <div class="kicker">Rank effect</div>
+    <div class="big">98.9 → 23.2%</div>
+    <div class="small">distractor taxonomy closure, rank 1 vs rank 16</div>
+    <p>The same canonical evidence becomes fragile when decoys or stale records appear before it.</p>
+  </article>
+  <article class="card">
+    <div class="kicker">192K retrieval</div>
+    <div class="big">5/5</div>
+    <div class="small">vLLM Qwen 2.5-7B + TurboQuant K8V4 + YaRN</div>
+    <p>Needle retrieval passed at 128K, 160K, and 192K. Retrieval ceiling was not the bottleneck.</p>
+  </article>
+  <article class="card">
+    <div class="kicker">Decoy replay</div>
+    <div class="big">5/8</div>
+    <div class="small">same failure set across llama.cpp and vLLM</div>
+    <p>At top_k=16, both stacks found enough context but emitted the same wrong decoy on key handles.</p>
+  </article>
+  <article class="card">
+    <div class="kicker">Policy splice</div>
+    <div class="big">4/4</div>
+    <div class="small">hard cases recovered across tested stacks</div>
+    <p>Putting canonical evidence first in the user message was the robust fix in this fixture.</p>
+  </article>
+  <article class="card">
+    <div class="kicker">KVFidelity</div>
+    <div class="big">100%</div>
+    <div class="small">same-config controls stable in N=28 sweep</div>
+    <p>Paired A/B KV changes showed trace drift while pass/fail stayed near-equivalent.</p>
+  </article>
+</section>
+
+<section class="grid">
+  <article class="card" style="grid-column:1/-1">
+    <h2>Public packages</h2>
+    <table>
+      <tr><th>Package</th><th>Public result</th><th>Link</th></tr>
+      <tr><td><span class="tag">evidence</span></td><td>11,376 runs; depth stable; rank/decoys dominate closure.</td><td><a href="evidence-utilization/RESULTS.md">RESULTS.md</a></td></tr>
+      <tr><td><span class="tag">vLLM</span></td><td>192K needles pass; decoy 5/8 repeats across stacks; policy splice recovers.</td><td><a href="vllm-cross-stack/decoy-replay-results.md">decoy replay</a></td></tr>
+      <tr><td><span class="tag">CASK × KVFidelity</span></td><td>Action/rank can survive while exact target identity fails under tight budgets.</td><td><a href="cask-kvfidelity-bridge/RESULTS.md">RESULTS.md</a></td></tr>
+      <tr><td><span class="tag">KVFidelity</span></td><td>Trace-level comparison for same-model KV/cache config changes.</td><td><a href="kvfidelity/kvfidelity-2026-05-07-summary.md">summary</a></td></tr>
+    </table>
+  </article>
+</section>
+
+<footer>
+  This dashboard is static and intentionally small. It points to public-safe summaries, not raw lab material.
+</footer>
+</body>
+</html>

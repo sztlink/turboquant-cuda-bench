@@ -1,0 +1,858 @@
+{
+  "created_at": "2026-05-17T02:58:38.014Z",
+  "job": "longctx-evidence-zone-phase-2026-05-16",
+  "base_url": "http://127.0.0.1:11436/v1",
+  "model": "local",
+  "runs": 1200,
+  "hits": 743,
+  "errors": 0,
+  "groups": {
+    "by_prompt": [
+      {
+        "keys": {
+          "prompt": "anti_decoy"
+        },
+        "runs": 600,
+        "hits": 302,
+        "wrong_decoy": 67,
+        "errors": 0,
+        "hit_rate": 0.5033333333333333,
+        "mean_elapsed_sec": 1.2453516666666662
+      },
+      {
+        "keys": {
+          "prompt": "baseline"
+        },
+        "runs": 600,
+        "hits": 441,
+        "wrong_decoy": 101,
+        "errors": 0,
+        "hit_rate": 0.735,
+        "mean_elapsed_sec": 1.2469383333333348
+      }
+    ],
+    "by_zone": [
+      {
+        "keys": {
+          "zone": "bottom"
+        },
+        "runs": 240,
+        "hits": 123,
+        "wrong_decoy": 35,
+        "errors": 0,
+        "hit_rate": 0.5125,
+        "mean_elapsed_sec": 1.3552500000000007
+      },
+      {
+        "keys": {
+          "zone": "early"
+        },
+        "runs": 240,
+        "hits": 158,
+        "wrong_decoy": 25,
+        "errors": 0,
+        "hit_rate": 0.6583333333333333,
+        "mean_elapsed_sec": 1.128404166666667
+      },
+      {
+        "keys": {
+          "zone": "late"
+        },
+        "runs": 240,
+        "hits": 163,
+        "wrong_decoy": 20,
+        "errors": 0,
+        "hit_rate": 0.6791666666666667,
+        "mean_elapsed_sec": 1.3575583333333334
+      },
+      {
+        "keys": {
+          "zone": "middle"
+        },
+        "runs": 240,
+        "hits": 161,
+        "wrong_decoy": 27,
+        "errors": 0,
+        "hit_rate": 0.6708333333333333,
+        "mean_elapsed_sec": 1.2902333333333338
+      },
+      {
+        "keys": {
+          "zone": "top"
+        },
+        "runs": 240,
+        "hits": 138,
+        "wrong_decoy": 61,
+        "errors": 0,
+        "hit_rate": 0.575,
+        "mean_elapsed_sec": 1.0992791666666668
+      }
+    ],
+    "by_rank": [
+      {
+        "keys": {
+          "canonical_rank": 1
+        },
+        "runs": 80,
+        "hits": 75,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 0.9375,
+        "mean_elapsed_sec": 1.2265250000000003
+      },
+      {
+        "keys": {
+          "canonical_rank": 16
+        },
+        "runs": 400,
+        "hits": 155,
+        "wrong_decoy": 84,
+        "errors": 0,
+        "hit_rate": 0.3875,
+        "mean_elapsed_sec": 1.2759100000000003
+      },
+      {
+        "keys": {
+          "canonical_rank": 2
+        },
+        "runs": 160,
+        "hits": 144,
+        "wrong_decoy": 15,
+        "errors": 0,
+        "hit_rate": 0.9,
+        "mean_elapsed_sec": 1.222643750000001
+      },
+      {
+        "keys": {
+          "canonical_rank": 4
+        },
+        "runs": 240,
+        "hits": 174,
+        "wrong_decoy": 27,
+        "errors": 0,
+        "hit_rate": 0.725,
+        "mean_elapsed_sec": 1.2257541666666676
+      },
+      {
+        "keys": {
+          "canonical_rank": 8
+        },
+        "runs": 320,
+        "hits": 195,
+        "wrong_decoy": 42,
+        "errors": 0,
+        "hit_rate": 0.609375,
+        "mean_elapsed_sec": 1.2408875000000013
+      }
+    ],
+    "by_decoys": [
+      {
+        "keys": {
+          "decoys_before": 0
+        },
+        "runs": 400,
+        "hits": 380,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 0.95,
+        "mean_elapsed_sec": 1.2476950000000002
+      },
+      {
+        "keys": {
+          "decoys_before": 1
+        },
+        "runs": 320,
+        "hits": 186,
+        "wrong_decoy": 102,
+        "errors": 0,
+        "hit_rate": 0.58125,
+        "mean_elapsed_sec": 1.2474937500000007
+      },
+      {
+        "keys": {
+          "decoys_before": 15
+        },
+        "runs": 80,
+        "hits": 17,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 0.2125,
+        "mean_elapsed_sec": 1.2291374999999998
+      },
+      {
+        "keys": {
+          "decoys_before": 3
+        },
+        "runs": 240,
+        "hits": 117,
+        "wrong_decoy": 40,
+        "errors": 0,
+        "hit_rate": 0.4875,
+        "mean_elapsed_sec": 1.2487833333333334
+      },
+      {
+        "keys": {
+          "decoys_before": 7
+        },
+        "runs": 160,
+        "hits": 43,
+        "wrong_decoy": 26,
+        "errors": 0,
+        "hit_rate": 0.26875,
+        "mean_elapsed_sec": 1.24411875
+      }
+    ],
+    "by_zone_rank_prompt": [
+      {
+        "keys": {
+          "zone": "bottom",
+          "canonical_rank": 1,
+          "prompt": "anti_decoy"
+        },
+        "runs": 8,
+        "hits": 3,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 0.375,
+        "mean_elapsed_sec": 1.34525
+      },
+      {
+        "keys": {
+          "zone": "bottom",
+          "canonical_rank": 1,
+          "prompt": "baseline"
+        },
+        "runs": 8,
+        "hits": 8,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.3362500000000002
+      },
+      {
+        "keys": {
+          "zone": "bottom",
+          "canonical_rank": 16,
+          "prompt": "anti_decoy"
+        },
+        "runs": 40,
+        "hits": 11,
+        "wrong_decoy": 7,
+        "errors": 0,
+        "hit_rate": 0.275,
+        "mean_elapsed_sec": 1.387675
+      },
+      {
+        "keys": {
+          "zone": "bottom",
+          "canonical_rank": 16,
+          "prompt": "baseline"
+        },
+        "runs": 40,
+        "hits": 9,
+        "wrong_decoy": 9,
+        "errors": 0,
+        "hit_rate": 0.225,
+        "mean_elapsed_sec": 1.390625
+      },
+      {
+        "keys": {
+          "zone": "bottom",
+          "canonical_rank": 2,
+          "prompt": "anti_decoy"
+        },
+        "runs": 16,
+        "hits": 7,
+        "wrong_decoy": 6,
+        "errors": 0,
+        "hit_rate": 0.4375,
+        "mean_elapsed_sec": 1.3208749999999998
+      },
+      {
+        "keys": {
+          "zone": "bottom",
+          "canonical_rank": 2,
+          "prompt": "baseline"
+        },
+        "runs": 16,
+        "hits": 16,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.334125
+      },
+      {
+        "keys": {
+          "zone": "bottom",
+          "canonical_rank": 4,
+          "prompt": "anti_decoy"
+        },
+        "runs": 24,
+        "hits": 8,
+        "wrong_decoy": 4,
+        "errors": 0,
+        "hit_rate": 0.3333333333333333,
+        "mean_elapsed_sec": 1.3359583333333331
+      },
+      {
+        "keys": {
+          "zone": "bottom",
+          "canonical_rank": 4,
+          "prompt": "baseline"
+        },
+        "runs": 24,
+        "hits": 24,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.3286666666666664
+      },
+      {
+        "keys": {
+          "zone": "bottom",
+          "canonical_rank": 8,
+          "prompt": "anti_decoy"
+        },
+        "runs": 32,
+        "hits": 7,
+        "wrong_decoy": 8,
+        "errors": 0,
+        "hit_rate": 0.21875,
+        "mean_elapsed_sec": 1.349875
+      },
+      {
+        "keys": {
+          "zone": "bottom",
+          "canonical_rank": 8,
+          "prompt": "baseline"
+        },
+        "runs": 32,
+        "hits": 30,
+        "wrong_decoy": 1,
+        "errors": 0,
+        "hit_rate": 0.9375,
+        "mean_elapsed_sec": 1.34528125
+      },
+      {
+        "keys": {
+          "zone": "early",
+          "canonical_rank": 1,
+          "prompt": "anti_decoy"
+        },
+        "runs": 8,
+        "hits": 8,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.095
+      },
+      {
+        "keys": {
+          "zone": "early",
+          "canonical_rank": 1,
+          "prompt": "baseline"
+        },
+        "runs": 8,
+        "hits": 8,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.1153749999999998
+      },
+      {
+        "keys": {
+          "zone": "early",
+          "canonical_rank": 16,
+          "prompt": "anti_decoy"
+        },
+        "runs": 40,
+        "hits": 16,
+        "wrong_decoy": 6,
+        "errors": 0,
+        "hit_rate": 0.4,
+        "mean_elapsed_sec": 1.1613
+      },
+      {
+        "keys": {
+          "zone": "early",
+          "canonical_rank": 16,
+          "prompt": "baseline"
+        },
+        "runs": 40,
+        "hits": 18,
+        "wrong_decoy": 10,
+        "errors": 0,
+        "hit_rate": 0.45,
+        "mean_elapsed_sec": 1.1566500000000004
+      },
+      {
+        "keys": {
+          "zone": "early",
+          "canonical_rank": 2,
+          "prompt": "anti_decoy"
+        },
+        "runs": 16,
+        "hits": 16,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.0992499999999998
+      },
+      {
+        "keys": {
+          "zone": "early",
+          "canonical_rank": 2,
+          "prompt": "baseline"
+        },
+        "runs": 16,
+        "hits": 16,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.1035624999999998
+      },
+      {
+        "keys": {
+          "zone": "early",
+          "canonical_rank": 4,
+          "prompt": "anti_decoy"
+        },
+        "runs": 24,
+        "hits": 15,
+        "wrong_decoy": 5,
+        "errors": 0,
+        "hit_rate": 0.625,
+        "mean_elapsed_sec": 1.10575
+      },
+      {
+        "keys": {
+          "zone": "early",
+          "canonical_rank": 4,
+          "prompt": "baseline"
+        },
+        "runs": 24,
+        "hits": 24,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.1115416666666667
+      },
+      {
+        "keys": {
+          "zone": "early",
+          "canonical_rank": 8,
+          "prompt": "anti_decoy"
+        },
+        "runs": 32,
+        "hits": 7,
+        "wrong_decoy": 3,
+        "errors": 0,
+        "hit_rate": 0.21875,
+        "mean_elapsed_sec": 1.1225000000000003
+      },
+      {
+        "keys": {
+          "zone": "early",
+          "canonical_rank": 8,
+          "prompt": "baseline"
+        },
+        "runs": 32,
+        "hits": 30,
+        "wrong_decoy": 1,
+        "errors": 0,
+        "hit_rate": 0.9375,
+        "mean_elapsed_sec": 1.126125
+      },
+      {
+        "keys": {
+          "zone": "late",
+          "canonical_rank": 1,
+          "prompt": "anti_decoy"
+        },
+        "runs": 8,
+        "hits": 8,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.34175
+      },
+      {
+        "keys": {
+          "zone": "late",
+          "canonical_rank": 1,
+          "prompt": "baseline"
+        },
+        "runs": 8,
+        "hits": 8,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.353375
+      },
+      {
+        "keys": {
+          "zone": "late",
+          "canonical_rank": 16,
+          "prompt": "anti_decoy"
+        },
+        "runs": 40,
+        "hits": 11,
+        "wrong_decoy": 5,
+        "errors": 0,
+        "hit_rate": 0.275,
+        "mean_elapsed_sec": 1.3859499999999998
+      },
+      {
+        "keys": {
+          "zone": "late",
+          "canonical_rank": 16,
+          "prompt": "baseline"
+        },
+        "runs": 40,
+        "hits": 27,
+        "wrong_decoy": 12,
+        "errors": 0,
+        "hit_rate": 0.675,
+        "mean_elapsed_sec": 1.3875500000000003
+      },
+      {
+        "keys": {
+          "zone": "late",
+          "canonical_rank": 2,
+          "prompt": "anti_decoy"
+        },
+        "runs": 16,
+        "hits": 16,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.3311875000000002
+      },
+      {
+        "keys": {
+          "zone": "late",
+          "canonical_rank": 2,
+          "prompt": "baseline"
+        },
+        "runs": 16,
+        "hits": 16,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.3379375
+      },
+      {
+        "keys": {
+          "zone": "late",
+          "canonical_rank": 4,
+          "prompt": "anti_decoy"
+        },
+        "runs": 24,
+        "hits": 11,
+        "wrong_decoy": 1,
+        "errors": 0,
+        "hit_rate": 0.4583333333333333,
+        "mean_elapsed_sec": 1.3311250000000001
+      },
+      {
+        "keys": {
+          "zone": "late",
+          "canonical_rank": 4,
+          "prompt": "baseline"
+        },
+        "runs": 24,
+        "hits": 24,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.3387083333333332
+      },
+      {
+        "keys": {
+          "zone": "late",
+          "canonical_rank": 8,
+          "prompt": "anti_decoy"
+        },
+        "runs": 32,
+        "hits": 11,
+        "wrong_decoy": 1,
+        "errors": 0,
+        "hit_rate": 0.34375,
+        "mean_elapsed_sec": 1.3494062499999997
+      },
+      {
+        "keys": {
+          "zone": "late",
+          "canonical_rank": 8,
+          "prompt": "baseline"
+        },
+        "runs": 32,
+        "hits": 31,
+        "wrong_decoy": 1,
+        "errors": 0,
+        "hit_rate": 0.96875,
+        "mean_elapsed_sec": 1.3546875
+      },
+      {
+        "keys": {
+          "zone": "middle",
+          "canonical_rank": 1,
+          "prompt": "anti_decoy"
+        },
+        "runs": 8,
+        "hits": 8,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.265625
+      },
+      {
+        "keys": {
+          "zone": "middle",
+          "canonical_rank": 1,
+          "prompt": "baseline"
+        },
+        "runs": 8,
+        "hits": 8,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.2645
+      },
+      {
+        "keys": {
+          "zone": "middle",
+          "canonical_rank": 16,
+          "prompt": "anti_decoy"
+        },
+        "runs": 40,
+        "hits": 14,
+        "wrong_decoy": 6,
+        "errors": 0,
+        "hit_rate": 0.35,
+        "mean_elapsed_sec": 1.31985
+      },
+      {
+        "keys": {
+          "zone": "middle",
+          "canonical_rank": 16,
+          "prompt": "baseline"
+        },
+        "runs": 40,
+        "hits": 25,
+        "wrong_decoy": 10,
+        "errors": 0,
+        "hit_rate": 0.625,
+        "mean_elapsed_sec": 1.32135
+      },
+      {
+        "keys": {
+          "zone": "middle",
+          "canonical_rank": 2,
+          "prompt": "anti_decoy"
+        },
+        "runs": 16,
+        "hits": 12,
+        "wrong_decoy": 3,
+        "errors": 0,
+        "hit_rate": 0.75,
+        "mean_elapsed_sec": 1.2661875000000002
+      },
+      {
+        "keys": {
+          "zone": "middle",
+          "canonical_rank": 2,
+          "prompt": "baseline"
+        },
+        "runs": 16,
+        "hits": 16,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.2663125
+      },
+      {
+        "keys": {
+          "zone": "middle",
+          "canonical_rank": 4,
+          "prompt": "anti_decoy"
+        },
+        "runs": 24,
+        "hits": 15,
+        "wrong_decoy": 2,
+        "errors": 0,
+        "hit_rate": 0.625,
+        "mean_elapsed_sec": 1.2678333333333331
+      },
+      {
+        "keys": {
+          "zone": "middle",
+          "canonical_rank": 4,
+          "prompt": "baseline"
+        },
+        "runs": 24,
+        "hits": 23,
+        "wrong_decoy": 1,
+        "errors": 0,
+        "hit_rate": 0.9583333333333334,
+        "mean_elapsed_sec": 1.2734999999999996
+      },
+      {
+        "keys": {
+          "zone": "middle",
+          "canonical_rank": 8,
+          "prompt": "anti_decoy"
+        },
+        "runs": 32,
+        "hits": 11,
+        "wrong_decoy": 2,
+        "errors": 0,
+        "hit_rate": 0.34375,
+        "mean_elapsed_sec": 1.2858749999999997
+      },
+      {
+        "keys": {
+          "zone": "middle",
+          "canonical_rank": 8,
+          "prompt": "baseline"
+        },
+        "runs": 32,
+        "hits": 29,
+        "wrong_decoy": 3,
+        "errors": 0,
+        "hit_rate": 0.90625,
+        "mean_elapsed_sec": 1.28459375
+      },
+      {
+        "keys": {
+          "zone": "top",
+          "canonical_rank": 1,
+          "prompt": "anti_decoy"
+        },
+        "runs": 8,
+        "hits": 8,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.0715
+      },
+      {
+        "keys": {
+          "zone": "top",
+          "canonical_rank": 1,
+          "prompt": "baseline"
+        },
+        "runs": 8,
+        "hits": 8,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.076625
+      },
+      {
+        "keys": {
+          "zone": "top",
+          "canonical_rank": 16,
+          "prompt": "anti_decoy"
+        },
+        "runs": 40,
+        "hits": 15,
+        "wrong_decoy": 5,
+        "errors": 0,
+        "hit_rate": 0.375,
+        "mean_elapsed_sec": 1.1242750000000004
+      },
+      {
+        "keys": {
+          "zone": "top",
+          "canonical_rank": 16,
+          "prompt": "baseline"
+        },
+        "runs": 40,
+        "hits": 9,
+        "wrong_decoy": 14,
+        "errors": 0,
+        "hit_rate": 0.225,
+        "mean_elapsed_sec": 1.1238750000000002
+      },
+      {
+        "keys": {
+          "zone": "top",
+          "canonical_rank": 2,
+          "prompt": "anti_decoy"
+        },
+        "runs": 16,
+        "hits": 16,
+        "wrong_decoy": 1,
+        "errors": 0,
+        "hit_rate": 1,
+        "mean_elapsed_sec": 1.0829374999999999
+      },
+      {
+        "keys": {
+          "zone": "top",
+          "canonical_rank": 2,
+          "prompt": "baseline"
+        },
+        "runs": 16,
+        "hits": 13,
+        "wrong_decoy": 5,
+        "errors": 0,
+        "hit_rate": 0.8125,
+        "mean_elapsed_sec": 1.0840625000000002
+      },
+      {
+        "keys": {
+          "zone": "top",
+          "canonical_rank": 4,
+          "prompt": "anti_decoy"
+        },
+        "runs": 24,
+        "hits": 21,
+        "wrong_decoy": 0,
+        "errors": 0,
+        "hit_rate": 0.875,
+        "mean_elapsed_sec": 1.0843749999999999
+      },
+      {
+        "keys": {
+          "zone": "top",
+          "canonical_rank": 4,
+          "prompt": "baseline"
+        },
+        "runs": 24,
+        "hits": 9,
+        "wrong_decoy": 14,
+        "errors": 0,
+        "hit_rate": 0.375,
+        "mean_elapsed_sec": 1.0800833333333333
+      },
+      {
+        "keys": {
+          "zone": "top",
+          "canonical_rank": 8,
+          "prompt": "anti_decoy"
+        },
+        "runs": 32,
+        "hits": 27,
+        "wrong_decoy": 2,
+        "errors": 0,
+        "hit_rate": 0.84375,
+        "mean_elapsed_sec": 1.09509375
+      },
+      {
+        "keys": {
+          "zone": "top",
+          "canonical_rank": 8,
+          "prompt": "baseline"
+        },
+        "runs": 32,
+        "hits": 12,
+        "wrong_decoy": 20,
+        "errors": 0,
+        "hit_rate": 0.375,
+        "mean_elapsed_sec": 1.0954375
+      }
+    ]
+  }
+}
