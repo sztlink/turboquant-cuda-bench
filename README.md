@@ -1,5 +1,10 @@
 # turboquant-cuda-bench
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/sztlink/turboquant-cuda-bench)](https://github.com/sztlink/turboquant-cuda-bench/commits/main)
+[![GitHub issues](https://img.shields.io/github/issues/sztlink/turboquant-cuda-bench)](https://github.com/sztlink/turboquant-cuda-bench/issues)
+[![GitHub discussions](https://img.shields.io/github/discussions/sztlink/turboquant-cuda-bench)](https://github.com/sztlink/turboquant-cuda-bench/discussions)
+
 > **retrieved ≠ used** - KV-cache compression and long-context benchmarks up to **192K** with Qwen3/Qwen2.5, llama.cpp, vLLM, TurboQuant, CASK, and local RTX 4090 receipts.
 >
 > Your model found the right chunk. Why did it still answer wrong?
@@ -25,6 +30,8 @@ Start here:
 - [bench-public/assets/](bench-public/assets/) - SVG cards/charts for the public readout.
 - [Evidence Path: three scenes where finding is not using](06-publicable/longctx/evidence-path/README.md) - readable narrative entry point.
 - [Start Here](00-context/START-HERE.md) - repo-level orientation and caveats.
+- [CONTRIBUTING.md](CONTRIBUTING.md) - how to report reproductions, bugs, or suggested tests.
+- [Welcome & Feedback thread](https://github.com/sztlink/turboquant-cuda-bench/discussions/2) - discussion entry point.
 
 ## Visual readout
 
