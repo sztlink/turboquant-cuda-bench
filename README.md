@@ -20,8 +20,24 @@ Start here:
 - [GLOSSARY.md](GLOSSARY.md) - terms and method names.
 - [bench-public/](bench-public/) - public-safe result packages.
 - [bench-public/dashboard.html](bench-public/dashboard.html) - static dashboard of the headline numbers.
+- [bench-public/assets/](bench-public/assets/) - SVG cards/charts for the public readout.
 - [Evidence Path: three scenes where finding is not using](06-publicable/longctx/evidence-path/README.md) - readable narrative entry point.
 - [Start Here](00-context/START-HERE.md) - repo-level orientation and caveats.
+
+## Visual readout
+
+<p>
+  <img src="bench-public/assets/hero-retrieved-not-used.svg" alt="retrieved != used hero card" width="720">
+</p>
+
+| Evidence utilization | Cross-stack behavior |
+|---|---|
+| ![Rank dominates answer closure](bench-public/assets/evidence-rank-closure.svg) | ![192K retrieval is not closure](bench-public/assets/needle-192k-vs-decoys.svg) |
+| ![Distractor taxonomy](bench-public/assets/distractor-taxonomy.svg) | ![Decoy replay versus policy splice](bench-public/assets/decoy-vs-policy-splice.svg) |
+
+| KV/cache diagnostics | Bridge probe |
+|---|---|
+| ![KVFidelity trace drift](bench-public/assets/kvfidelity-trace-drift.svg) | ![CASK bridge fidelity](bench-public/assets/cask-bridge-fidelity.svg) |
 
 ## Canonical research structure
 

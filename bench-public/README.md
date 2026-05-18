@@ -13,6 +13,22 @@ It contains only public-safe summaries, aggregate tables, sanitized JSON, and co
 | `cask-kvfidelity-bridge/` | Action/target/source-rank split under FullKV, CASK, and TriAttention. | [`RESULTS.md`](cask-kvfidelity-bridge/RESULTS.md) |
 | `kvfidelity/` | Paired action-trace evaluation for KV/cache changes, including v2 comparator, hold-out, and order-sensitivity notes. | [`kvfidelity-2026-05-07-summary.md`](kvfidelity/kvfidelity-2026-05-07-summary.md) |
 | `dashboard.html` | Static visual dashboard for the main numbers. | [`dashboard.html`](dashboard.html) |
+| `assets/` | SVG cards/charts that GitHub can render directly in the README. | [`assets/`](assets/) |
+
+## Visual assets
+
+<p>
+  <img src="assets/hero-retrieved-not-used.svg" alt="retrieved != used hero card" width="720">
+</p>
+
+| Chart | File |
+|---|---|
+| Rank closure | [`assets/evidence-rank-closure.svg`](assets/evidence-rank-closure.svg) |
+| Distractor taxonomy | [`assets/distractor-taxonomy.svg`](assets/distractor-taxonomy.svg) |
+| Needle 192K vs decoys | [`assets/needle-192k-vs-decoys.svg`](assets/needle-192k-vs-decoys.svg) |
+| Decoy vs policy splice | [`assets/decoy-vs-policy-splice.svg`](assets/decoy-vs-policy-splice.svg) |
+| CASK bridge fidelity | [`assets/cask-bridge-fidelity.svg`](assets/cask-bridge-fidelity.svg) |
+| KVFidelity trace drift | [`assets/kvfidelity-trace-drift.svg`](assets/kvfidelity-trace-drift.svg) |
 
 ## Boundary
 

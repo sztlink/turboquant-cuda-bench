@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="192K retrieval is not closure">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17202f"/>
+      <stop offset="0.55" stop-color="#0d0f12"/>
+      <stop offset="1" stop-color="#090a0d"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.32"/>
+    </filter>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
+      .title { font-size: 44px; font-weight: 800; letter-spacing: -1.8px; fill: #e8edf2; }
+      .sub { font-size: 18px; fill: #91a0ad; }
+      .axis { font-size: 13px; fill: #91a0ad; }
+      .label { font-size: 15px; fill: #e8edf2; }
+      .small { font-size: 12px; fill: #91a0ad; }
+      .big { font-size: 42px; font-weight: 800; fill: #e8edf2; letter-spacing: -1px; }
+      .kicker { font-size: 12px; fill: #7df9ff; letter-spacing: 2.5px; text-transform: uppercase; }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <circle cx="130" cy="-80" r="260" fill="#24344f" opacity="0.35"/>
+  <circle cx="1120" cy="560" r="320" fill="#16303a" opacity="0.32"/>
+  <text x="56" y="64" class="mono kicker">turboquant-cuda-bench</text>
+  <text x="56" y="118" class="mono title">192K retrieval is not closure</text>
+  <text x="56" y="150" class="mono sub">Needle retrieval passes; adversarial evidence still wins without splice/rerank control</text>
+  
+    <rect x="56" y="184" width="1088" height="390" rx="24" fill="#151922" stroke="#2a3240" filter="url(#shadow)"/>
+    <text x="100" y="268" class="mono big" fill="#9cff87">5/5</text>
+    <text x="100" y="305" class="mono label">needle @ 128K / 160K / 192K</text>
+    <text x="100" y="348" class="mono small">vLLM Qwen2.5-7B + TurboQuant K8V4 + YaRN</text>
+    <line x1="560" y1="230" x2="560" y2="510" stroke="#2a3240"/>
+    <text x="640" y="268" class="mono big" fill="#ff6b6b">5/8</text>
+    <text x="640" y="305" class="mono label">decoy replay at top_k=16</text>
+    <text x="640" y="348" class="mono small">same miss set across llama.cpp and vLLM</text>
+    <text x="100" y="470" class="mono label">Conclusion: context length/retrieval ceiling is separate from evidence utilization.</text>
+</svg>
