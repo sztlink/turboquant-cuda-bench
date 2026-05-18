@@ -12,6 +12,7 @@ It contains only public-safe summaries, aggregate tables, sanitized JSON, and co
 | `vllm-cross-stack/` | vLLM vs llama.cpp cross-stack replay: 192K needles pass, decoy failures replicate, policy splice recovers. | [`decoy-replay-results.md`](vllm-cross-stack/decoy-replay-results.md) |
 | `cask-kvfidelity-bridge/` | Action/target/source-rank split under FullKV, CASK, and TriAttention. | [`RESULTS.md`](cask-kvfidelity-bridge/RESULTS.md) |
 | `kvfidelity/` | Paired action-trace evaluation for KV/cache changes, including v2 comparator, hold-out, and order-sensitivity notes. | [`kvfidelity-2026-05-07-summary.md`](kvfidelity/kvfidelity-2026-05-07-summary.md) |
+| `evidence-paged-kv/` | CUDA kernel receipts v1→v7 for evidence-aware KV page access. v4 is the public receipt; v7 is the architecture direction. | [`RESULTS.md`](evidence-paged-kv/RESULTS.md) |
 | `dashboard.html` | Static visual dashboard for the main numbers. | [`dashboard.html`](dashboard.html) |
 | `assets/` | SVG cards/charts that GitHub can render directly in the README. | [`assets/`](assets/) |
 
@@ -29,6 +30,7 @@ It contains only public-safe summaries, aggregate tables, sanitized JSON, and co
 | Decoy vs policy splice | [`assets/decoy-vs-policy-splice.svg`](assets/decoy-vs-policy-splice.svg) |
 | CASK bridge fidelity | [`assets/cask-bridge-fidelity.svg`](assets/cask-bridge-fidelity.svg) |
 | KVFidelity trace drift | [`assets/kvfidelity-trace-drift.svg`](assets/kvfidelity-trace-drift.svg) |
+| Evidence-Paged KV kernel receipts | [`assets/evidence-paged-kv-kernel-receipts.svg`](assets/evidence-paged-kv-kernel-receipts.svg) |
 
 ## Boundary
 

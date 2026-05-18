@@ -19,5 +19,6 @@ node 07-scripts/generate-public-assets.mjs
 | `decoy-vs-policy-splice.svg` | Cross-stack decoy replay and policy-splice recovery. |
 | `cask-bridge-fidelity.svg` | CASK x KVFidelity action/target/rank split. |
 | `kvfidelity-trace-drift.svg` | Early paired trace drift diagnostic. |
+| `evidence-paged-kv-kernel-receipts.svg` | Evidence-Paged KV kernel receipts v1→v7: public receipt, throughput path, and architecture direction. |
 
 Boundary: these are public-facing summaries, not raw evidence.

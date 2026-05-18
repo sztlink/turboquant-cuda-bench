@@ -85,3 +85,15 @@ On the vLLM decoy k=16 workload with Qwen 2.5-7B:
 - calibrated W8A8-KV8 FP8: structure recovered, exact precision did not, **0/8** exact.
 
 This does not refute FP8 claims at 70B+ reasoning scale. It shows that for this 7B exact-match adversarial retrieval workload, TurboQuant K8V4 was the safer drop-in.
+
+## 7. Evidence-Paged KV has kernel receipts, not a production hook
+
+The 2026-05-18 Evidence-Paged KV CUDA series explores evidence-aware KV page access as a kernel shape:
+
+- **v4** is the best public receipt: score tiles → top-k/softmax → value accumulation. It is hybrid: Torch CUDA still handles top-k/softmax.
+- **v5** is the best current custom `K=32` path: staged custom top-k/value wins over materialized PyTorch in the tested shapes, but loses for naive `K=128`.
+- **v7** is the best architectural expression: page-local warp-scored top-k without full `[M,H]` score materialization, but it still loses to v5 at larger M.
+
+Do not read this as vLLM integration, serving speedup, production attention, or model-quality improvement. The next technical step is a vLLM hook around a v4/v5-style path.
+
+Public package: [`bench-public/evidence-paged-kv/`](bench-public/evidence-paged-kv/)
