@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/felipe/vllm-lab/kv-kernel-lab-remote-2026-05-18.py", line 120, in main
+    ext = load_inline(
+          ^^^^^^^^^^^^
+  File "/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2174, in load_inline
+    return _jit_compile(
+           ^^^^^^^^^^^^^
+  File "/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2268, in _jit_compile
+    _write_ninja_file_and_build_library(
+  File "/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2395, in _write_ninja_file_and_build_library
+    extra_ldflags = _prepare_ldflags(
+                    ^^^^^^^^^^^^^^^^^
+  File "/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 2503, in _prepare_ldflags
+    if (not os.path.exists(_join_cuda_home(extra_lib_dir)) and
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/torch/utils/cpp_extension.py", line 3182, in _join_cuda_home
+    raise OSError('CUDA_HOME environment variable is not set. '
+OSError: CUDA_HOME environment variable is not set. Please set it to your CUDA install root.
