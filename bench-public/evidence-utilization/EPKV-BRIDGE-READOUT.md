@@ -31,6 +31,7 @@ The bridge now has a staged chain of receipts:
 | Target queue v0.9 | [`../../bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/RESULTS.md) | 16 high-risk fixture families selected for next hook-off geometry bridge coverage | runtime execution, model behavior, evidence-use proof |
 | Target materialization v1.0 | [`../../bench/evidence-utilization-epkv-target-materialization-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-target-materialization-2026-05-19/RESULTS.md) | v0.9 target skeletons materialized into 16 schema-valid synthetic hook-off telemetry events | runtime behavior, live request tracing, evidence-use proof |
 | Audit-join v1.1 | [`../../bench/evidence-utilization-epkv-audit-join-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-audit-join-2026-05-19/RESULTS.md) | target queue + materialized events + validator report joined into action states: 13 bridge-ready, 3 needs fixture detail | runtime behavior, evidence-use proof, deployment readiness |
+| Replay pack v1.2 | [`../../bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/RESULTS.md) | 13 bridge-ready decoy-risk targets packed as compact hook-off replay records | runtime behavior, live request tracing, evidence-use proof |
 
 ## What was validated
 
@@ -269,10 +270,10 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-bridge replay pack v1.2:
-  use the 13 bridge-ready targets
-  produce replay-pack records with target, evidence geometry, selected geometry, and audit action
-  keep hook-off and schema-validated only
+replay-pack validator v1.3:
+  validate v1.2 replay-pack invariants
+  fail on raw selected-position samples, missing non-claim boundaries, or non-hook-off records
+  emit pass/fail receipt
 ```
 
 Alternative: refine the 3 needs-fixture-detail targets. Real prompts remain paused.

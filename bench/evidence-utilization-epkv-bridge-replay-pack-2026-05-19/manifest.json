@@ -1,0 +1,30 @@
+{
+  "manifest_schema": "epkv.bridge_replay_manifest.v1.2",
+  "created_at": "2026-05-19T23:09:59.056Z",
+  "source_files": {
+    "actions": "bench/evidence-utilization-epkv-audit-join-2026-05-19/target-action-table.jsonl",
+    "materialized": "bench/evidence-utilization-epkv-target-materialization-2026-05-19/materialized-records.jsonl",
+    "events": "bench/evidence-utilization-epkv-target-materialization-2026-05-19/events.jsonl"
+  },
+  "replay_pack": "bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/bridge-replay-pack.jsonl",
+  "records": 13,
+  "checks": {
+    "records_have_schema_v1": true,
+    "records_are_hook_off": true,
+    "records_are_dry_run": true,
+    "records_privacy_safe": true,
+    "records_decoy_risk_geometry": true,
+    "no_raw_selected_position_samples": true
+  },
+  "pack_sha256": "7677af156b38f5ada054df4cf61c404608d7a8a1e6a006ea510499ecd6116800",
+  "boundary": {
+    "replay_pack_only": true,
+    "synthetic_layout": true,
+    "hook_off": true,
+    "serving": false,
+    "runtime_hook": false,
+    "model_call": false,
+    "model_attention": false,
+    "evidence_use_proof": false
+  }
+}
