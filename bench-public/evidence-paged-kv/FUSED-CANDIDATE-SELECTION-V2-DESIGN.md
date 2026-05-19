@@ -129,3 +129,37 @@ The value kernel is not the bottleneck.
 The local candidate-generation kernel is the bottleneck.
 Next work should optimize chunk-local candidate generation, not global merge/softmax.
 ```
+
+## Phase 2c.2 approximate local-top sweep receipt
+
+Local repo receipt:
+
+```txt
+bench/evidence-paged-kv-approx-local-top-sweep-2026-05-19/RESULTS.md
+```
+
+Readout on random synthetic tensors:
+
+```txt
+GLOBAL_K=32
+LOCAL_TOP sweep: 4, 8, 16, 32
+chunk_rows=512
+local_top=4 temp ratio: 1.56% of full-score temp
+local_top=8 temp ratio: 3.12% of full-score temp
+local_top=32 temp ratio: 12.5% of full-score temp
+```
+
+Observed recall:
+
+```txt
+local_top=4: exact in 32768/65536 cases, but only ~0.971–0.977 mean recall at 8192
+local_top=8: 1.000 recall@32 in all tested shapes
+```
+
+Decision update:
+
+```txt
+Approximate local-top is promising for synthetic kernel design.
+local_top=8 is the safer next candidate than local_top=4.
+Do not install into serving; next validate against adversarial/top-heavy score fixtures.
+```

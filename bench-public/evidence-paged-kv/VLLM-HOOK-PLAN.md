@@ -171,6 +171,26 @@ The local candidate-generation kernel is the bottleneck.
 Next kernel work should optimize local candidate generation, not global merge/softmax.
 ```
 
+Phase 2c.2 approximate local-top sweep receipt:
+
+- [`../../bench/evidence-paged-kv-approx-local-top-sweep-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-approx-local-top-sweep-2026-05-19/RESULTS.md)
+
+Phase 2c.2 result on random synthetic tensors:
+
+```txt
+GLOBAL_K=32, chunk_rows=512
+LOCAL_TOP=4: temp 1.56% of full-score, exact at 32768/65536, ~0.97 recall at 8192
+LOCAL_TOP=8: temp 3.12% of full-score, recall@32 1.000 across tested shapes
+```
+
+Decision implication:
+
+```txt
+Approximate local-top is promising for kernel design.
+LOCAL_TOP=8 is the safer next candidate than LOCAL_TOP=4.
+Do not install into serving; next validate against adversarial/top-heavy score fixtures.
+```
+
 Phase 2a guarded runtime hook receipt:
 
 - [`../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md)
