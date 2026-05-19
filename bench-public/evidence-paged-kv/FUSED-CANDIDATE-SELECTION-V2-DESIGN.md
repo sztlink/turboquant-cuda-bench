@@ -310,3 +310,30 @@ Branchless dual-path is not the performance path because it computes both branch
 Next useful design is compact fallback: reuse probe for unflagged heads and compute exact LOCAL_TOP=32 only for flagged heads/chunks.
 Still do not install into serving.
 ```
+
+## Phase 2c.8 compact fallback candidate receipt
+
+Local repo receipt:
+
+```txt
+bench/evidence-paged-kv-compact-fallback-2026-05-19/RESULTS.md
+```
+
+Readout:
+
+```txt
+compact fallback preserves exact-reference output in tested cases
+random/spread 65K compact full p50: ~0.34 ms
+random/spread 65K exact full p50: ~0.96 ms
+adversarial all-head fallback 65K compact full p50: ~1.21 ms
+adversarial all-head exact full p50: ~0.95 ms
+```
+
+Decision update:
+
+```txt
+Compact fallback is useful when no heads or few heads are flagged.
+When all heads are flagged, compact fallback is slower than exact-only because it pays probe + fallback overhead.
+Next useful benchmark: partial-head flag-rate sweep to find the crossover point and decide whether policy should fall back exact-only when many heads are flagged.
+Still do not install into serving.
+```
