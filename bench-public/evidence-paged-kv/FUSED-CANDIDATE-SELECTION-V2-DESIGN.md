@@ -253,3 +253,35 @@ GPU overflow detector is a viable building block.
 Next step is a single adaptive offline path: probe -> GPU detector -> conditional exact fallback.
 Still do not install into serving.
 ```
+
+## Phase 2c.6 single adaptive offline path receipt
+
+Local repo receipt:
+
+```txt
+bench/evidence-paged-kv-adaptive-path-2026-05-19/RESULTS.md
+```
+
+Readout:
+
+```txt
+accepted probe cases: 4/8
+fallback exact cases: 4/8
+recall@32: 1.0 across tested random/spread/adversarial fixtures
+random/spread: accepted cheap probe
+one_chunk/two_chunks adversarial: exact fallback
+```
+
+Timing caveat:
+
+```txt
+adaptive wall timing includes Python CPU flag read/branch
+```
+
+Decision update:
+
+```txt
+Adaptive policy path is coherent offline.
+Next blocker is implementation form: remove Python branch/CPU read and express fallback decision as GPU-side mask/control.
+Still do not install into serving.
+```

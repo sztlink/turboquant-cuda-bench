@@ -263,6 +263,34 @@ Next step is a single adaptive offline path: probe -> GPU detector -> conditiona
 Still do not install into serving.
 ```
 
+Phase 2c.6 single adaptive offline path receipt:
+
+- [`../../bench/evidence-paged-kv-adaptive-path-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-adaptive-path-2026-05-19/RESULTS.md)
+
+Adaptive path result:
+
+```txt
+accepted probe cases: 4/8
+fallback exact cases: 4/8
+recall@32: 1.0 across tested random/spread/adversarial fixtures
+random/spread: accepted cheap probe
+one_chunk/two_chunks adversarial: exact fallback
+```
+
+Caveat:
+
+```txt
+adaptive wall timing includes Python CPU flag read/branch
+```
+
+Updated decision implication:
+
+```txt
+Adaptive policy path is coherent offline.
+Next blocker is implementation form: remove Python branch/CPU read and express fallback decision as GPU-side mask/control.
+Still do not install into serving.
+```
+
 Phase 2a guarded runtime hook receipt:
 
 - [`../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md)
