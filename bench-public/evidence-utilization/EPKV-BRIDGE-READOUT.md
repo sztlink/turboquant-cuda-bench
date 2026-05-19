@@ -22,6 +22,7 @@ The bridge now has a staged chain of receipts:
 | Bridge v0 | [`../../bench/evidence-utilization-epkv-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-2026-05-19/RESULTS.md) | deterministic evidence records with exact char spans | tokenizer-accurate positions, real selection |
 | Bridge v0.1 | [`../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md) | token spans and page ranges exist for canonical/decoy evidence | observed vLLM KV allocation, real selected positions |
 | Bridge v0.2 | [`../../bench/evidence-utilization-epkv-bridge-replay-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-replay-2026-05-19/RESULTS.md) | the alignment schema can carry `selected_positions_sample`-shaped data and overlap metrics | model attention, EPKV behavior, answer behavior |
+| Bridge v0.3 | [`../../bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/RESULTS.md) | synthetic Q/K tensors can run real offline score+topK and emit selected-position/page overlap records | model attention, serving behavior, real prompt KV allocation |
 
 ## What was validated
 
@@ -87,6 +88,29 @@ selection_answer_alignment
 
 The 100% synthetic alignment rate is expected by construction because the replay is aggregate-proxy-biased. It is a schema test, not a behavioral result.
 
+### 5. Synthetic Q/K tensors can drive real offline topK
+
+Bridge v0.3 replaced direct position fabrication with deterministic synthetic Q/K tensors and a real dot-product score + topK path:
+
+```txt
+records: 16
+selected-position samples: 16/16
+selected positions total: 14336
+seq_len range: 817..1549
+Hq/Hk/D/K: 28/4/64/32
+```
+
+Observed probe readout:
+
+```txt
+dominant regions: {"neither":6,"decoy":6,"canonical":4}
+proxy dominant answer classes: {"canonical":8,"decoy":8}
+probe alignment with proxy class: 62.5%
+query-label region consistency: 100% heads / 100% positions
+```
+
+This validates tensor → topK → selected-position → page-overlap plumbing. The 100% query-label consistency is expected from synthetic construction; it is still synthetic and not model behavior.
+
 ## What failed
 
 The original gate:
@@ -120,7 +144,7 @@ Allowed next work:
 offline metadata bridge
 token/page mapping
 offline selected-position replay
-real offline KV replay, if needed
+real offline KV replay
 serving baseline hook-off (B0)
 ```
 
@@ -142,6 +166,12 @@ Completed B1.1 serving synthetic dry-run with warmup separation:
 
 B1.1 result: event cap problem fixed (`3232` steady events, cap not hit, `3232/3232` selected summaries), all prompt bands covered, service restored. Serving latency still shows first-request-per-band warmup/autotune effects, so this is a stronger synthetic telemetry receipt but still not a real-prompt green light.
 
+Completed offline KV replay v0.3:
+
+- [`../../bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/RESULTS.md)
+
+v0.3 result: no serving and no model inference; deterministic synthetic Q/K tensors generated selected-position samples via real offline score+topK computation for all 16 bridge records. This advances the bridge plumbing, not the behavioral claim.
+
 Paused until explicit confirmation / additional control:
 
 ```txt
@@ -153,17 +183,16 @@ public EPKV claim
 
 ## Next experiment, if continuing
 
-The next non-serving experiment is **real offline KV replay**:
+The next non-serving experiment is a narrower Python/runtime harness:
 
 ```txt
-for each tokenized bridge fixture:
-  construct synthetic Q/KV tensors whose page ranges correspond to canonical/decoy spans
-  run Phase 2a selected-page path offline
-  attach actual selected_positions_sample from the kernel path
-  compute overlap against canonical/decoy page ranges
+construct synthetic packed TurboQuant-shaped cache tensors
+invoke the actual runtime score/topK path or a minimal extracted equivalent
+compare selected_positions_sample against v0.3 JS tensor replay
+keep real prompts paused
 ```
 
-This would replace the synthetic v0.2 replay with real offline selected-position behavior, still without serving prompts through the hook.
+This would test implementation parity more directly while still avoiding serving prompts through the hook.
 
 ## Safe public phrasing
 
@@ -193,3 +222,4 @@ The selected positions are model attention.
 - Not a PagedAttention/FlashAttention comparison.
 - Not model attention.
 - Not a real selected-position trace in bridge v0/v0.1/v0.2.
+- Bridge v0.3 selected positions are real topK over synthetic tensors, not model attention or behavioral evidence.

@@ -207,6 +207,7 @@ Metadata/offline bridge receipts:
 - [`../../bench/evidence-utilization-epkv-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-2026-05-19/RESULTS.md)
 - [`../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md)
 - [`../../bench/evidence-utilization-epkv-bridge-replay-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-replay-2026-05-19/RESULTS.md)
+- [`../../bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/RESULTS.md)
 
 Path B serving receipts:
 
@@ -220,6 +221,12 @@ B1.1 serving receipt:
 - [`../../bench/evidence-utilization-epkv-serving-dryrun-b11-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-serving-dryrun-b11-2026-05-19/RESULTS.md)
 
 B1.1 fixed the event-cap issue and covered all prompt bands (`3232` steady events, cap not hit, `3232/3232` selected summaries). It remains synthetic-only; real-prompt hook-on remains paused.
+
+Offline KV replay v0.3 receipt:
+
+- [`../../bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/RESULTS.md)
+
+v0.3 constructs deterministic synthetic Q/K tensors from token/page bridge spans and runs real offline score+topK to emit selected-position/page overlap records. This validates bridge plumbing only; it is not model attention or serving behavior.
 
 ## Stop criteria
 

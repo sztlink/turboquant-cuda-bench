@@ -1,0 +1,47 @@
+{
+  "created_at": "2026-05-19T12:15:42.797Z",
+  "bridge_version": "v0.3-offline-kv-replay",
+  "source_records": "bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/records.jsonl",
+  "total_records": 16,
+  "replay_policy": "aggregate_proxy_query_mix_over_span_labeled_synthetic_keys",
+  "Hq": 28,
+  "Hk": 4,
+  "D": 64,
+  "K": 32,
+  "block_size": 16,
+  "selected_position_samples": 16,
+  "selected_positions_total": 14336,
+  "seq_len_min": 817,
+  "seq_len_max": 1549,
+  "by_dominant_region": {
+    "neither": 6,
+    "decoy": 6,
+    "canonical": 4
+  },
+  "by_proxy_dominant_answer_class": {
+    "canonical": 8,
+    "decoy": 8
+  },
+  "probe_alignment_rate_with_proxy_class": 0.625,
+  "alignable_records": 16,
+  "mean_query_label_region_consistency_heads": 1,
+  "mean_query_label_region_consistency_positions": 1,
+  "boundary": {
+    "no_vllm_serving": true,
+    "no_model_inference": true,
+    "synthetic_qk_tensors": true,
+    "real_dot_product_topk": true,
+    "no_value_kernel": true,
+    "no_model_attention_claim": true,
+    "purpose": "validate offline tensor/topK/selected-position/page-overlap bridge plumbing before any real-prompt hook-on trace"
+  },
+  "non_claims": [
+    "no serving claim",
+    "no model-quality claim",
+    "no model attention claim",
+    "no real prompt hook-on trace",
+    "no production attention claim",
+    "no evidence that EPKV fixes retrieved-not-used",
+    "probe alignment is induced by synthetic tensor construction, not behavioral evidence"
+  ]
+}
