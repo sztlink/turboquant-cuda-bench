@@ -100,6 +100,27 @@ correctness vs dequant top-k reference: ~1e-4 max abs error
 65K rows: ~1.05-1.15 ms selected-page path, temp scores 7 MiB
 ```
 
+Phase 2b candidate-fusion receipt:
+
+- [`../../bench/evidence-paged-kv-page-candidate-triton-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-page-candidate-triton-2026-05-19/RESULTS.md)
+
+Phase 2b result:
+
+```txt
+chunk-local exact top-k candidates over real packed slots
+correctness restored: ~1e-4 max abs error vs dequant exact top-k reference
+K=32 at 65K rows: ~1.46 ms, temp candidates 5.25 MiB (75% of full-score temp)
+K=128 at 65K rows: ~6.42 ms, temp candidates 10.50 MiB (1.5x full-score temp)
+readout: partially falsified — less memory for K=32, but slower than Phase 2a; K=128 worse
+```
+
+Current hook candidate decision:
+
+```txt
+Prefer Phase 2a for any guarded runtime hook.
+Do not install Phase 2b into serving unless candidate storage/local selection is redesigned.
+```
+
 ### Phase 3 — evidence-utilization bridge
 
 - Only after runtime viability: connect selected evidence pages to retrieval/answer-closure fixtures.
