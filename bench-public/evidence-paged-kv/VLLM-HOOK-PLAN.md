@@ -121,6 +121,13 @@ Prefer Phase 2a for any guarded runtime hook.
 Do not install Phase 2b into serving unless candidate storage/local selection is redesigned.
 ```
 
+Phase 2c fused candidate-selection v2 design:
+
+- [`FUSED-CANDIDATE-SELECTION-V2-DESIGN.md`](FUSED-CANDIDATE-SELECTION-V2-DESIGN.md)
+- [`../../07-scripts/vllm-hook/epkv-fused-candidate-selection-v2-harness.py`](../../07-scripts/vllm-hook/epkv-fused-candidate-selection-v2-harness.py)
+
+Phase 2c targets the specific Phase 2b weakness: replacing the Torch global `topk`/`softmax` over candidates with a Triton global candidate selection + softmax kernel, while also storing candidate positions as `int32`. GPU benchmark pending explicit infra run.
+
 Phase 2a guarded runtime hook receipt:
 
 - [`../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md)
