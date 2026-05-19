@@ -84,6 +84,22 @@ caveat: current top-k rows are Python/Torch-loop reference paths, not final kern
 - Run only on synthetic selected-evidence workloads.
 - Validate health restoration after every run.
 
+Phase 2a offline selected-page Triton receipt:
+
+- [`../../bench/evidence-paged-kv-selected-page-triton-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-selected-page-triton-2026-05-19/RESULTS.md)
+
+Phase 2a result:
+
+```txt
+first selected-page path over real packed vLLM TQ slots
+score: Triton FP8-K packed slots -> scores [M,Hq]
+selection: torch.topk/softmax
+value: Triton 4-bit-V packed slots -> [1,Hq,D]
+no full K/V materialization; temp scores only
+correctness vs dequant top-k reference: ~1e-4 max abs error
+65K rows: ~1.05-1.15 ms selected-page path, temp scores 7 MiB
+```
+
 ### Phase 3 — evidence-utilization bridge
 
 - Only after runtime viability: connect selected evidence pages to retrieval/answer-closure fixtures.
