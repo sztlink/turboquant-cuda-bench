@@ -14,6 +14,7 @@ Bridge docs:
 EPKV-BRIDGE-SPEC.md
 EPKV-BRIDGE-READOUT.md
 EPKV-BEHAVIOR-MAP.md
+EVIDENCE-PATH-LEDGER.md
 ```
 
 Included sweeps:
