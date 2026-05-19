@@ -307,6 +307,22 @@ L1 schema validator receipt:
 bench/evidence-paged-kv-runtime-telemetry-schema-2026-05-19/RESULTS.md
 ```
 
+L2 hook-off bridge receipt:
+
+```txt
+07-scripts/evidence-utilization/build-epkv-hookoff-telemetry-bridge-v04.mjs
+bench/evidence-utilization-epkv-hookoff-telemetry-bridge-2026-05-19/RESULTS.md
+```
+
+L2 result:
+
+```txt
+16/16 offline KV replay records projected into epkv.runtime.telemetry.v1 events
+validator: PASS
+errors: 0
+serving mutation: no
+```
+
 ## Decision
 
 The next artifact should be the interface contract, not another kernel receipt by default.

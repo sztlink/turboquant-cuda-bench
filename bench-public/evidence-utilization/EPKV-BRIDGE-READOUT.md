@@ -23,6 +23,7 @@ The bridge now has a staged chain of receipts:
 | Bridge v0.1 | [`../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md) | token spans and page ranges exist for canonical/decoy evidence | observed vLLM KV allocation, real selected positions |
 | Bridge v0.2 | [`../../bench/evidence-utilization-epkv-bridge-replay-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-replay-2026-05-19/RESULTS.md) | the alignment schema can carry `selected_positions_sample`-shaped data and overlap metrics | model attention, EPKV behavior, answer behavior |
 | Bridge v0.3 | [`../../bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/RESULTS.md) | synthetic Q/K tensors can run real offline score+topK and emit selected-position/page overlap records | model attention, serving behavior, real prompt KV allocation |
+| Bridge v0.4 | [`../../bench/evidence-utilization-epkv-hookoff-telemetry-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-hookoff-telemetry-bridge-2026-05-19/RESULTS.md) | existing bridge records can be projected into the runtime telemetry schema and pass the L1 validator | serving behavior, hook-on traces, real evidence use |
 
 ## What was validated
 
@@ -111,6 +112,21 @@ query-label region consistency: 100% heads / 100% positions
 
 This validates tensor → topK → selected-position → page-overlap plumbing. The 100% query-label consistency is expected from synthetic construction; it is still synthetic and not model behavior.
 
+### 6. Hook-off bridge records can satisfy runtime telemetry contract
+
+Bridge v0.4 projects the v0.3 offline KV replay records into `epkv.runtime.telemetry.v1` events and validates them with the L1 schema validator:
+
+```txt
+records/events: 16/16
+validator: PASS
+validator errors: 0
+seq_len range: 817..1549
+selected positions total: 14336
+dominant regions: {"neither":6,"decoy":6,"canonical":4}
+```
+
+This validates representational fit between the evidence-span bridge and the Casey-guided runtime telemetry contract. It is hook-off: no serving mutation, no model inference, no real-prompt trace.
+
 ## What failed
 
 The original gate:
@@ -172,6 +188,12 @@ Completed offline KV replay v0.3:
 
 v0.3 result: no serving and no model inference; deterministic synthetic Q/K tensors generated selected-position samples via real offline score+topK computation for all 16 bridge records. This advances the bridge plumbing, not the behavioral claim.
 
+Completed hook-off telemetry bridge v0.4:
+
+- [`../../bench/evidence-utilization-epkv-hookoff-telemetry-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-hookoff-telemetry-bridge-2026-05-19/RESULTS.md)
+
+v0.4 result: the 16 offline KV replay records project into schema-valid `epkv.runtime.telemetry.v1` events (`16/16`, validator `PASS`, `0` errors). This proves representational fit with the runtime telemetry contract, not serving behavior.
+
 Paused until explicit confirmation / additional control:
 
 ```txt
@@ -183,16 +205,20 @@ public EPKV claim
 
 ## Next experiment, if continuing
 
-The next non-serving experiment is a narrower Python/runtime harness:
+The next non-serving experiment is one of two options:
 
 ```txt
-construct synthetic packed TurboQuant-shaped cache tensors
-invoke the actual runtime score/topK path or a minimal extracted equivalent
-compare selected_positions_sample against v0.3 JS tensor replay
-keep real prompts paused
+A) implementation parity harness:
+   construct synthetic packed TurboQuant-shaped cache tensors
+   invoke the actual runtime score/topK path or a minimal extracted equivalent
+   compare selected_positions_sample against v0.3/v0.4 bridge events
+
+B) runtime schema adapter patch, default-off:
+   make the runtime hook emit epkv.runtime.telemetry.v1-shaped events in dry-run only
+   validate emitted synthetic events with validate-epkv-runtime-telemetry.mjs
 ```
 
-This would test implementation parity more directly while still avoiding serving prompts through the hook.
+Both keep real prompts paused. Option B is a source-shaping step, not a serving install.
 
 ## Safe public phrasing
 

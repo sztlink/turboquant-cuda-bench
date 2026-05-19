@@ -1,0 +1,33 @@
+{
+  "bridge_version": "v0.4-hookoff-telemetry-schema-projection",
+  "source": "bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/records.jsonl",
+  "output_events": "bench/evidence-utilization-epkv-hookoff-telemetry-bridge-2026-05-19/events.jsonl",
+  "records": 16,
+  "events": 16,
+  "validation": {
+    "command": "node 07-scripts/vllm-hook/validate-epkv-runtime-telemetry.mjs --json bench/evidence-utilization-epkv-hookoff-telemetry-bridge-2026-05-19/events.jsonl",
+    "status": 0,
+    "valid": true,
+    "errors": 0
+  },
+  "coverage": {
+    "seq_len_min": 817,
+    "seq_len_max": 1549,
+    "selected_positions_total": 14336,
+    "dominant_regions": {
+      "neither": 6,
+      "decoy": 6,
+      "canonical": 4
+    },
+    "canonical_page_overlap_events": 16,
+    "decoy_page_overlap_events": 16
+  },
+  "boundary": {
+    "hook_off": true,
+    "serving_mutation": false,
+    "model_inference": false,
+    "runtime_trace_from_live_request": false,
+    "selected_positions_are_attention": false,
+    "behavioral_evidence": false
+  }
+}
