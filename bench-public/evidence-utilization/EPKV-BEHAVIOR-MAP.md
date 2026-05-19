@@ -42,7 +42,7 @@ This does **not** prove that the model used the evidence. It shows whether the i
 | Red | decoy/stale/conflicting region is geometry-compatible | the trace surfaces a decoy-risk path |
 | Gray | insufficient geometry or telemetry | no safe statement |
 
-Current v0.7 receipt:
+Current v0.7 geometry receipt:
 
 ```txt
 records: 16
@@ -57,6 +57,23 @@ Receipt:
 ```txt
 bench/evidence-utilization-epkv-answer-audit-bridge-2026-05-19/RESULTS.md
 ```
+
+Current v0.8 aggregate answer-side taxonomy:
+
+```txt
+records: 178
+green: 83
+yellow: 37
+red: 58
+```
+
+Receipt:
+
+```txt
+bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/RESULTS.md
+```
+
+The v0.8 taxonomy is not runtime geometry. It ranks existing aggregate fixture families so the next geometry/runtime bridge work can target the highest-risk families first.
 
 ## Failure classes
 
@@ -138,8 +155,8 @@ The bridge has reached a behavior-map milestone:
 retrieval spans -> token/page ranges -> selected-position geometry -> runtime schema -> audit label.
 
 Next technical work should either:
-  1. add unit tests for the runtime schema-v1 adapter, or
-  2. expand audit labels across more evidence-utilization fixtures.
+  1. select the highest-risk v0.8 fixture families for geometry/runtime bridge coverage, or
+  2. add more fixture families to the aggregate audit taxonomy.
 
 Do not run real-prompt hook-on yet.
 Do not install compact fallback into serving yet.

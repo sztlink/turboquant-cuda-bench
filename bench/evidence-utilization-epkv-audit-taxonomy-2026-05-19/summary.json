@@ -1,0 +1,991 @@
+{
+  "audit_version": "v0.8-aggregate-audit-taxonomy",
+  "records": 178,
+  "sources": {
+    "phase": "bench/evidence-utilization-phase-2026-05-17/phase/aggregate.json",
+    "depth": "bench/evidence-utilization-phase-2026-05-17/depth/aggregate.json",
+    "prompt_scaffold": "bench/evidence-utilization-phase-2026-05-17/prompt-scaffold/aggregate.json",
+    "distractor_taxonomy": "bench/evidence-utilization-phase-2026-05-17/distractor-taxonomy/aggregate.json"
+  },
+  "output_records": "bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/aggregate-audit-records.jsonl",
+  "by_severity": {
+    "green": 83,
+    "red": 58,
+    "yellow": 37
+  },
+  "by_label": {
+    "green_aggregate_stable": 83,
+    "red_low_hit_rate": 40,
+    "yellow_moderate_hit_rate": 24,
+    "red_high_wrong_distractor_rate": 18,
+    "yellow_wrong_distractor_watch": 13
+  },
+  "by_source": {
+    "depth": {
+      "records": 36,
+      "severities": {
+        "green": 29,
+        "red": 4,
+        "yellow": 3
+      },
+      "labels": {
+        "green_aggregate_stable": 29,
+        "red_low_hit_rate": 4,
+        "yellow_moderate_hit_rate": 3
+      }
+    },
+    "distractor_taxonomy": {
+      "records": 31,
+      "severities": {
+        "green": 8,
+        "red": 18,
+        "yellow": 5
+      },
+      "labels": {
+        "green_aggregate_stable": 8,
+        "red_high_wrong_distractor_rate": 11,
+        "red_low_hit_rate": 7,
+        "yellow_moderate_hit_rate": 3,
+        "yellow_wrong_distractor_watch": 2
+      }
+    },
+    "phase": {
+      "records": 67,
+      "severities": {
+        "green": 29,
+        "red": 25,
+        "yellow": 13
+      },
+      "labels": {
+        "green_aggregate_stable": 29,
+        "red_high_wrong_distractor_rate": 7,
+        "red_low_hit_rate": 18,
+        "yellow_wrong_distractor_watch": 11,
+        "yellow_moderate_hit_rate": 2
+      }
+    },
+    "prompt_scaffold": {
+      "records": 44,
+      "severities": {
+        "green": 17,
+        "red": 11,
+        "yellow": 16
+      },
+      "labels": {
+        "green_aggregate_stable": 17,
+        "red_low_hit_rate": 11,
+        "yellow_moderate_hit_rate": 16
+      }
+    }
+  },
+  "top_wrong_rate": [
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor_rank",
+      "keys": {
+        "distractor": "stale_record",
+        "canonical_rank": 16
+      },
+      "runs": 144,
+      "hits": 4,
+      "wrong_distractor_or_decoy": 135,
+      "errors": 0,
+      "hit_rate": 0.027777777777777776,
+      "wrong_rate": 0.9375,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor_rank",
+      "keys": {
+        "distractor": "conflicting_correction",
+        "canonical_rank": 16
+      },
+      "runs": 144,
+      "hits": 4,
+      "wrong_distractor_or_decoy": 112,
+      "errors": 0,
+      "hit_rate": 0.027777777777777776,
+      "wrong_rate": 0.7777777777777778,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor_rank",
+      "keys": {
+        "distractor": "stale_record",
+        "canonical_rank": 8
+      },
+      "runs": 144,
+      "hits": 31,
+      "wrong_distractor_or_decoy": 110,
+      "errors": 0,
+      "hit_rate": 0.2152777777777778,
+      "wrong_rate": 0.7638888888888888,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor_rank",
+      "keys": {
+        "distractor": "stale_record",
+        "canonical_rank": 4
+      },
+      "runs": 144,
+      "hits": 34,
+      "wrong_distractor_or_decoy": 102,
+      "errors": 0,
+      "hit_rate": 0.2361111111111111,
+      "wrong_rate": 0.7083333333333334,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "phase",
+      "group": "by_zone_rank_prompt",
+      "keys": {
+        "zone": "top",
+        "canonical_rank": 8,
+        "prompt": "baseline"
+      },
+      "runs": 32,
+      "hits": 12,
+      "wrong_distractor_or_decoy": 20,
+      "errors": 0,
+      "hit_rate": 0.375,
+      "wrong_rate": 0.625,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor",
+      "keys": {
+        "distractor": "stale_record"
+      },
+      "runs": 576,
+      "hits": 208,
+      "wrong_distractor_or_decoy": 347,
+      "errors": 0,
+      "hit_rate": 0.3611111111111111,
+      "wrong_rate": 0.6024305555555556,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "phase",
+      "group": "by_zone_rank_prompt",
+      "keys": {
+        "zone": "top",
+        "canonical_rank": 4,
+        "prompt": "baseline"
+      },
+      "runs": 24,
+      "hits": 9,
+      "wrong_distractor_or_decoy": 14,
+      "errors": 0,
+      "hit_rate": 0.375,
+      "wrong_rate": 0.5833333333333334,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor_rank",
+      "keys": {
+        "distractor": "conflicting_correction",
+        "canonical_rank": 8
+      },
+      "runs": 144,
+      "hits": 72,
+      "wrong_distractor_or_decoy": 63,
+      "errors": 0,
+      "hit_rate": 0.5,
+      "wrong_rate": 0.4375,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_rank",
+      "keys": {
+        "canonical_rank": 16
+      },
+      "runs": 720,
+      "hits": 167,
+      "wrong_distractor_or_decoy": 309,
+      "errors": 0,
+      "hit_rate": 0.23194444444444445,
+      "wrong_rate": 0.42916666666666664,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor_rank",
+      "keys": {
+        "distractor": "near_duplicate",
+        "canonical_rank": 16
+      },
+      "runs": 144,
+      "hits": 1,
+      "wrong_distractor_or_decoy": 56,
+      "errors": 0,
+      "hit_rate": 0.006944444444444444,
+      "wrong_rate": 0.3888888888888889,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor",
+      "keys": {
+        "distractor": "conflicting_correction"
+      },
+      "runs": 576,
+      "hits": 312,
+      "wrong_distractor_or_decoy": 221,
+      "errors": 0,
+      "hit_rate": 0.5416666666666666,
+      "wrong_rate": 0.3836805555555556,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "phase",
+      "group": "by_zone_rank_prompt",
+      "keys": {
+        "zone": "bottom",
+        "canonical_rank": 2,
+        "prompt": "anti_decoy"
+      },
+      "runs": 16,
+      "hits": 7,
+      "wrong_distractor_or_decoy": 6,
+      "errors": 0,
+      "hit_rate": 0.4375,
+      "wrong_rate": 0.375,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    }
+  ],
+  "lowest_hit_rate": [
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor_rank",
+      "keys": {
+        "distractor": "near_duplicate",
+        "canonical_rank": 16
+      },
+      "runs": 144,
+      "hits": 1,
+      "wrong_distractor_or_decoy": 56,
+      "errors": 0,
+      "hit_rate": 0.006944444444444444,
+      "wrong_rate": 0.3888888888888889,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor_rank",
+      "keys": {
+        "distractor": "conflicting_correction",
+        "canonical_rank": 16
+      },
+      "runs": 144,
+      "hits": 4,
+      "wrong_distractor_or_decoy": 112,
+      "errors": 0,
+      "hit_rate": 0.027777777777777776,
+      "wrong_rate": 0.7777777777777778,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor_rank",
+      "keys": {
+        "distractor": "stale_record",
+        "canonical_rank": 16
+      },
+      "runs": 144,
+      "hits": 4,
+      "wrong_distractor_or_decoy": 135,
+      "errors": 0,
+      "hit_rate": 0.027777777777777776,
+      "wrong_rate": 0.9375,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "prompt_scaffold",
+      "group": "by_prompt_decoys",
+      "keys": {
+        "prompt": "structured",
+        "decoys_before": 15
+      },
+      "runs": 108,
+      "hits": 15,
+      "wrong_distractor_or_decoy": 0,
+      "errors": 0,
+      "hit_rate": 0.1388888888888889,
+      "wrong_rate": 0,
+      "audit_severity": "red",
+      "audit_label": "red_low_hit_rate",
+      "audit_reason": "hit rate < 50%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "phase",
+      "group": "by_decoys",
+      "keys": {
+        "decoys_before": 15
+      },
+      "runs": 80,
+      "hits": 17,
+      "wrong_distractor_or_decoy": 0,
+      "errors": 0,
+      "hit_rate": 0.2125,
+      "wrong_rate": 0,
+      "audit_severity": "red",
+      "audit_label": "red_low_hit_rate",
+      "audit_reason": "hit rate < 50%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor_rank",
+      "keys": {
+        "distractor": "stale_record",
+        "canonical_rank": 8
+      },
+      "runs": 144,
+      "hits": 31,
+      "wrong_distractor_or_decoy": 110,
+      "errors": 0,
+      "hit_rate": 0.2152777777777778,
+      "wrong_rate": 0.7638888888888888,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "phase",
+      "group": "by_zone_rank_prompt",
+      "keys": {
+        "zone": "bottom",
+        "canonical_rank": 8,
+        "prompt": "anti_decoy"
+      },
+      "runs": 32,
+      "hits": 7,
+      "wrong_distractor_or_decoy": 8,
+      "errors": 0,
+      "hit_rate": 0.21875,
+      "wrong_rate": 0.25,
+      "audit_severity": "red",
+      "audit_label": "red_low_hit_rate",
+      "audit_reason": "hit rate < 50%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "phase",
+      "group": "by_zone_rank_prompt",
+      "keys": {
+        "zone": "early",
+        "canonical_rank": 8,
+        "prompt": "anti_decoy"
+      },
+      "runs": 32,
+      "hits": 7,
+      "wrong_distractor_or_decoy": 3,
+      "errors": 0,
+      "hit_rate": 0.21875,
+      "wrong_rate": 0.09375,
+      "audit_severity": "red",
+      "audit_label": "red_low_hit_rate",
+      "audit_reason": "hit rate < 50%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "phase",
+      "group": "by_zone_rank_prompt",
+      "keys": {
+        "zone": "bottom",
+        "canonical_rank": 16,
+        "prompt": "baseline"
+      },
+      "runs": 40,
+      "hits": 9,
+      "wrong_distractor_or_decoy": 9,
+      "errors": 0,
+      "hit_rate": 0.225,
+      "wrong_rate": 0.225,
+      "audit_severity": "red",
+      "audit_label": "red_low_hit_rate",
+      "audit_reason": "hit rate < 50%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "phase",
+      "group": "by_zone_rank_prompt",
+      "keys": {
+        "zone": "top",
+        "canonical_rank": 16,
+        "prompt": "baseline"
+      },
+      "runs": 40,
+      "hits": 9,
+      "wrong_distractor_or_decoy": 14,
+      "errors": 0,
+      "hit_rate": 0.225,
+      "wrong_rate": 0.35,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_rank",
+      "keys": {
+        "canonical_rank": 16
+      },
+      "runs": 720,
+      "hits": 167,
+      "wrong_distractor_or_decoy": 309,
+      "errors": 0,
+      "hit_rate": 0.23194444444444445,
+      "wrong_rate": 0.42916666666666664,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor_rank",
+      "keys": {
+        "distractor": "stale_record",
+        "canonical_rank": 4
+      },
+      "runs": 144,
+      "hits": 34,
+      "wrong_distractor_or_decoy": 102,
+      "errors": 0,
+      "hit_rate": 0.2361111111111111,
+      "wrong_rate": 0.7083333333333334,
+      "audit_severity": "red",
+      "audit_label": "red_high_wrong_distractor_rate",
+      "audit_reason": "wrong distractor rate >= 30%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    }
+  ],
+  "stable_green_examples": [
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "depth",
+      "group": "by_decoys",
+      "keys": {
+        "decoys_before": 0
+      },
+      "runs": 2400,
+      "hits": 2017,
+      "wrong_distractor_or_decoy": 0,
+      "errors": 0,
+      "hit_rate": 0.8404166666666667,
+      "wrong_rate": 0,
+      "audit_severity": "green",
+      "audit_label": "green_aggregate_stable",
+      "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "prompt_scaffold",
+      "group": "by_decoys",
+      "keys": {
+        "decoys_before": 0
+      },
+      "runs": 2160,
+      "hits": 1872,
+      "wrong_distractor_or_decoy": 0,
+      "errors": 0,
+      "hit_rate": 0.8666666666666667,
+      "wrong_rate": 0,
+      "audit_severity": "green",
+      "audit_label": "green_aggregate_stable",
+      "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "depth",
+      "group": "by_prompt",
+      "keys": {
+        "prompt": "baseline"
+      },
+      "runs": 1920,
+      "hits": 1577,
+      "wrong_distractor_or_decoy": 8,
+      "errors": 0,
+      "hit_rate": 0.8213541666666667,
+      "wrong_rate": 0.004166666666666667,
+      "audit_severity": "green",
+      "audit_label": "green_aggregate_stable",
+      "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "depth",
+      "group": "by_prompt",
+      "keys": {
+        "prompt": "anti_decoy"
+      },
+      "runs": 1920,
+      "hits": 1445,
+      "wrong_distractor_or_decoy": 7,
+      "errors": 0,
+      "hit_rate": 0.7526041666666666,
+      "wrong_rate": 0.0036458333333333334,
+      "audit_severity": "green",
+      "audit_label": "green_aggregate_stable",
+      "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "depth",
+      "group": "by_depth",
+      "keys": {
+        "depth_chars": 160000
+      },
+      "runs": 1280,
+      "hits": 1025,
+      "wrong_distractor_or_decoy": 8,
+      "errors": 0,
+      "hit_rate": 0.80078125,
+      "wrong_rate": 0.00625,
+      "audit_severity": "green",
+      "audit_label": "green_aggregate_stable",
+      "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "depth",
+      "group": "by_depth",
+      "keys": {
+        "depth_chars": 80000
+      },
+      "runs": 1280,
+      "hits": 1012,
+      "wrong_distractor_or_decoy": 3,
+      "errors": 0,
+      "hit_rate": 0.790625,
+      "wrong_rate": 0.00234375,
+      "audit_severity": "green",
+      "audit_label": "green_aggregate_stable",
+      "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "depth",
+      "group": "by_depth",
+      "keys": {
+        "depth_chars": 20000
+      },
+      "runs": 1280,
+      "hits": 985,
+      "wrong_distractor_or_decoy": 4,
+      "errors": 0,
+      "hit_rate": 0.76953125,
+      "wrong_rate": 0.003125,
+      "audit_severity": "green",
+      "audit_label": "green_aggregate_stable",
+      "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "prompt_scaffold",
+      "group": "by_rank",
+      "keys": {
+        "canonical_rank": 1
+      },
+      "runs": 864,
+      "hits": 854,
+      "wrong_distractor_or_decoy": 0,
+      "errors": 0,
+      "hit_rate": 0.9884259259259259,
+      "wrong_rate": 0,
+      "audit_severity": "green",
+      "audit_label": "green_aggregate_stable",
+      "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "prompt_scaffold",
+      "group": "by_prompt",
+      "keys": {
+        "prompt": "baseline"
+      },
+      "runs": 864,
+      "hits": 746,
+      "wrong_distractor_or_decoy": 1,
+      "errors": 0,
+      "hit_rate": 0.8634259259259259,
+      "wrong_rate": 0.0011574074074074073,
+      "audit_severity": "green",
+      "audit_label": "green_aggregate_stable",
+      "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "prompt_scaffold",
+      "group": "by_rank",
+      "keys": {
+        "canonical_rank": 4
+      },
+      "runs": 864,
+      "hits": 681,
+      "wrong_distractor_or_decoy": 6,
+      "errors": 0,
+      "hit_rate": 0.7881944444444444,
+      "wrong_rate": 0.006944444444444444,
+      "audit_severity": "green",
+      "audit_label": "green_aggregate_stable",
+      "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_rank",
+      "keys": {
+        "canonical_rank": 1
+      },
+      "runs": 720,
+      "hits": 712,
+      "wrong_distractor_or_decoy": 3,
+      "errors": 0,
+      "hit_rate": 0.9888888888888889,
+      "wrong_rate": 0.004166666666666667,
+      "audit_severity": "green",
+      "audit_label": "green_aggregate_stable",
+      "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    },
+    {
+      "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+      "source": "distractor_taxonomy",
+      "group": "by_distractor",
+      "keys": {
+        "distractor": "unrelated_noise"
+      },
+      "runs": 576,
+      "hits": 485,
+      "wrong_distractor_or_decoy": 0,
+      "errors": 0,
+      "hit_rate": 0.8420138888888888,
+      "wrong_rate": 0,
+      "audit_severity": "green",
+      "audit_label": "green_aggregate_stable",
+      "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+      "boundary": {
+        "aggregate_answer_side": true,
+        "runtime_geometry": false,
+        "model_attention": false,
+        "evidence_use_proof": false,
+        "epkv_behavior": false
+      }
+    }
+  ],
+  "thresholds": {
+    "red_high_wrong_distractor_rate": "wrong_rate >= 0.30",
+    "red_low_hit_rate": "hit_rate < 0.50",
+    "yellow_wrong_distractor_watch": "wrong_rate >= 0.10",
+    "yellow_moderate_hit_rate": "hit_rate < 0.75",
+    "green_aggregate_stable": "hit_rate >= 0.75 and wrong_rate < 0.10"
+  },
+  "boundary": {
+    "aggregate_answer_side": true,
+    "runtime_geometry": false,
+    "model_attention": false,
+    "evidence_use_proof": false,
+    "epkv_behavior": false
+  }
+}

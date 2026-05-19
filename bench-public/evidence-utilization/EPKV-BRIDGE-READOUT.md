@@ -27,6 +27,7 @@ The bridge now has a staged chain of receipts:
 | Bridge v0.5 | [`../../bench/evidence-utilization-epkv-runtime-parity-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-runtime-parity-bridge-2026-05-19/RESULTS.md) | actual runtime hook function can emit selected-position telemetry over synthetic packed KV bridge-band shapes and be projected to the L1 schema | serving readiness, stable latency, model behavior |
 | Bridge v0.6 | [`../../bench/evidence-utilization-epkv-runtime-schema-v1-adapter-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-runtime-schema-v1-adapter-2026-05-19/RESULTS.md) | default-off source adapter can emit `epkv.runtime.telemetry.v1` directly in dry-run mode | live deployment, serving readiness, real-prompt tracing |
 | Bridge v0.7 | [`../../bench/evidence-utilization-epkv-answer-audit-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-answer-audit-bridge-2026-05-19/RESULTS.md) | existing fixtures can be mapped to green/yellow/red audit labels from answer proxy + selected-position geometry | evidence-use proof, model behavior, quality evaluation |
+| Taxonomy v0.8 | [`../../bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/RESULTS.md) | existing aggregate sweeps can be ranked with answer-side risk labels to choose next bridge targets | runtime geometry, EPKV behavior, evidence-use proof |
 
 ## What was validated
 
@@ -265,13 +266,13 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-behavior map / public-safe audit taxonomy:
-  explain green/yellow/red labels as evidence-path compatibility states
-  list failure classes: retrieved-but-not-selected, selected-decoy, selected-neither, selected-canonical-but-proxy-wrong
-  keep thresholds and runtime details secondary
+bridge-target selection:
+  pick top red v0.8 fixture families
+  generate bridge-ready synthetic span/page fixtures for those families
+  keep runtime hook-off unless explicitly promoted later
 ```
 
-Alternative: add source-level unit tests for legacy-vs-schema runtime event mode preservation. Real prompts remain paused.
+Alternative: extend v0.8 taxonomy to more aggregate sweeps. Real prompts remain paused.
 
 ## Safe public phrasing
 
