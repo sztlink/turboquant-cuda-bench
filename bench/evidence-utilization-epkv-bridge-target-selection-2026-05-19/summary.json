@@ -1,0 +1,350 @@
+{
+  "selection_version": "v0.9-bridge-target-selection",
+  "targets": 16,
+  "source_records": 178,
+  "candidate_records": 71,
+  "by_risk": {
+    "decoy_capture_risk": 13,
+    "evidence_nonclosure_risk": 3
+  },
+  "by_distractor": {
+    "stale_record": 4,
+    "conflicting_correction": 2,
+    "near_duplicate": 2,
+    "phase_decoy": 6,
+    "generic_competitor": 2
+  },
+  "top_targets": [
+    {
+      "target_id": "bridge-target-01",
+      "priority_score": 243.156,
+      "source_audit_record": {
+        "source": "distractor_taxonomy",
+        "group": "by_distractor_rank",
+        "keys": {
+          "distractor": "stale_record",
+          "canonical_rank": 16
+        },
+        "runs": 144,
+        "hit_rate": 0.027777777777777776,
+        "wrong_rate": 0.9375,
+        "audit_label": "red_high_wrong_distractor_rate"
+      },
+      "bridge_family": {
+        "risk": "decoy_capture_risk",
+        "distractor_type": "stale_record",
+        "canonical_rank": 16,
+        "decoys_before": 15,
+        "prompt_variant": null,
+        "zone": null,
+        "depth_chars": null
+      },
+      "fixture_requirements": {
+        "include_canonical_span": true,
+        "include_decoy_spans": true,
+        "include_token_page_ranges": true,
+        "include_selected_position_geometry": true,
+        "include_schema_v1_runtime_event": true,
+        "hook_mode": "hook-off-or-offline-dry-run"
+      },
+      "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+      "non_claims": [
+        "not model attention",
+        "not evidence-use proof",
+        "not EPKV behavior until bridged through runtime schema",
+        "not serving readiness"
+      ]
+    },
+    {
+      "target_id": "bridge-target-02",
+      "priority_score": 230.378,
+      "source_audit_record": {
+        "source": "distractor_taxonomy",
+        "group": "by_distractor_rank",
+        "keys": {
+          "distractor": "conflicting_correction",
+          "canonical_rank": 16
+        },
+        "runs": 144,
+        "hit_rate": 0.027777777777777776,
+        "wrong_rate": 0.7777777777777778,
+        "audit_label": "red_high_wrong_distractor_rate"
+      },
+      "bridge_family": {
+        "risk": "decoy_capture_risk",
+        "distractor_type": "conflicting_correction",
+        "canonical_rank": 16,
+        "decoys_before": 15,
+        "prompt_variant": null,
+        "zone": null,
+        "depth_chars": null
+      },
+      "fixture_requirements": {
+        "include_canonical_span": true,
+        "include_decoy_spans": true,
+        "include_token_page_ranges": true,
+        "include_selected_position_geometry": true,
+        "include_schema_v1_runtime_event": true,
+        "hook_mode": "hook-off-or-offline-dry-run"
+      },
+      "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+      "non_claims": [
+        "not model attention",
+        "not evidence-use proof",
+        "not EPKV behavior until bridged through runtime schema",
+        "not serving readiness"
+      ]
+    },
+    {
+      "target_id": "bridge-target-03",
+      "priority_score": 221.767,
+      "source_audit_record": {
+        "source": "distractor_taxonomy",
+        "group": "by_distractor_rank",
+        "keys": {
+          "distractor": "stale_record",
+          "canonical_rank": 8
+        },
+        "runs": 144,
+        "hit_rate": 0.2152777777777778,
+        "wrong_rate": 0.7638888888888888,
+        "audit_label": "red_high_wrong_distractor_rate"
+      },
+      "bridge_family": {
+        "risk": "decoy_capture_risk",
+        "distractor_type": "stale_record",
+        "canonical_rank": 8,
+        "decoys_before": 7,
+        "prompt_variant": null,
+        "zone": null,
+        "depth_chars": null
+      },
+      "fixture_requirements": {
+        "include_canonical_span": true,
+        "include_decoy_spans": true,
+        "include_token_page_ranges": true,
+        "include_selected_position_geometry": true,
+        "include_schema_v1_runtime_event": true,
+        "hook_mode": "hook-off-or-offline-dry-run"
+      },
+      "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+      "non_claims": [
+        "not model attention",
+        "not evidence-use proof",
+        "not EPKV behavior until bridged through runtime schema",
+        "not serving readiness"
+      ]
+    },
+    {
+      "target_id": "bridge-target-04",
+      "priority_score": 216.489,
+      "source_audit_record": {
+        "source": "distractor_taxonomy",
+        "group": "by_distractor_rank",
+        "keys": {
+          "distractor": "stale_record",
+          "canonical_rank": 4
+        },
+        "runs": 144,
+        "hit_rate": 0.2361111111111111,
+        "wrong_rate": 0.7083333333333334,
+        "audit_label": "red_high_wrong_distractor_rate"
+      },
+      "bridge_family": {
+        "risk": "decoy_capture_risk",
+        "distractor_type": "stale_record",
+        "canonical_rank": 4,
+        "decoys_before": 3,
+        "prompt_variant": null,
+        "zone": null,
+        "depth_chars": null
+      },
+      "fixture_requirements": {
+        "include_canonical_span": true,
+        "include_decoy_spans": true,
+        "include_token_page_ranges": true,
+        "include_selected_position_geometry": true,
+        "include_schema_v1_runtime_event": true,
+        "hook_mode": "hook-off-or-offline-dry-run"
+      },
+      "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+      "non_claims": [
+        "not model attention",
+        "not evidence-use proof",
+        "not EPKV behavior until bridged through runtime schema",
+        "not serving readiness"
+      ]
+    },
+    {
+      "target_id": "bridge-target-05",
+      "priority_score": 200.1,
+      "source_audit_record": {
+        "source": "distractor_taxonomy",
+        "group": "by_distractor_rank",
+        "keys": {
+          "distractor": "near_duplicate",
+          "canonical_rank": 16
+        },
+        "runs": 144,
+        "hit_rate": 0.006944444444444444,
+        "wrong_rate": 0.3888888888888889,
+        "audit_label": "red_high_wrong_distractor_rate"
+      },
+      "bridge_family": {
+        "risk": "decoy_capture_risk",
+        "distractor_type": "near_duplicate",
+        "canonical_rank": 16,
+        "decoys_before": 15,
+        "prompt_variant": null,
+        "zone": null,
+        "depth_chars": null
+      },
+      "fixture_requirements": {
+        "include_canonical_span": true,
+        "include_decoy_spans": true,
+        "include_token_page_ranges": true,
+        "include_selected_position_geometry": true,
+        "include_schema_v1_runtime_event": true,
+        "hook_mode": "hook-off-or-offline-dry-run"
+      },
+      "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+      "non_claims": [
+        "not model attention",
+        "not evidence-use proof",
+        "not EPKV behavior until bridged through runtime schema",
+        "not serving readiness"
+      ]
+    },
+    {
+      "target_id": "bridge-target-06",
+      "priority_score": 199.041,
+      "source_audit_record": {
+        "source": "phase",
+        "group": "by_zone_rank_prompt",
+        "keys": {
+          "zone": "top",
+          "canonical_rank": 8,
+          "prompt": "baseline"
+        },
+        "runs": 32,
+        "hit_rate": 0.375,
+        "wrong_rate": 0.625,
+        "audit_label": "red_high_wrong_distractor_rate"
+      },
+      "bridge_family": {
+        "risk": "decoy_capture_risk",
+        "distractor_type": "phase_decoy",
+        "canonical_rank": 8,
+        "decoys_before": 7,
+        "prompt_variant": "baseline",
+        "zone": "top",
+        "depth_chars": null
+      },
+      "fixture_requirements": {
+        "include_canonical_span": true,
+        "include_decoy_spans": true,
+        "include_token_page_ranges": true,
+        "include_selected_position_geometry": true,
+        "include_schema_v1_runtime_event": true,
+        "hook_mode": "hook-off-or-offline-dry-run"
+      },
+      "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+      "non_claims": [
+        "not model attention",
+        "not evidence-use proof",
+        "not EPKV behavior until bridged through runtime schema",
+        "not serving readiness"
+      ]
+    },
+    {
+      "target_id": "bridge-target-07",
+      "priority_score": 195.833,
+      "source_audit_record": {
+        "source": "distractor_taxonomy",
+        "group": "by_distractor",
+        "keys": {
+          "distractor": "stale_record"
+        },
+        "runs": 576,
+        "hit_rate": 0.3611111111111111,
+        "wrong_rate": 0.6024305555555556,
+        "audit_label": "red_high_wrong_distractor_rate"
+      },
+      "bridge_family": {
+        "risk": "decoy_capture_risk",
+        "distractor_type": "stale_record",
+        "canonical_rank": null,
+        "decoys_before": null,
+        "prompt_variant": null,
+        "zone": null,
+        "depth_chars": null
+      },
+      "fixture_requirements": {
+        "include_canonical_span": true,
+        "include_decoy_spans": true,
+        "include_token_page_ranges": true,
+        "include_selected_position_geometry": true,
+        "include_schema_v1_runtime_event": true,
+        "hook_mode": "hook-off-or-offline-dry-run"
+      },
+      "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+      "non_claims": [
+        "not model attention",
+        "not evidence-use proof",
+        "not EPKV behavior until bridged through runtime schema",
+        "not serving readiness"
+      ]
+    },
+    {
+      "target_id": "bridge-target-08",
+      "priority_score": 194.708,
+      "source_audit_record": {
+        "source": "phase",
+        "group": "by_zone_rank_prompt",
+        "keys": {
+          "zone": "top",
+          "canonical_rank": 4,
+          "prompt": "baseline"
+        },
+        "runs": 24,
+        "hit_rate": 0.375,
+        "wrong_rate": 0.5833333333333334,
+        "audit_label": "red_high_wrong_distractor_rate"
+      },
+      "bridge_family": {
+        "risk": "decoy_capture_risk",
+        "distractor_type": "phase_decoy",
+        "canonical_rank": 4,
+        "decoys_before": 3,
+        "prompt_variant": "baseline",
+        "zone": "top",
+        "depth_chars": null
+      },
+      "fixture_requirements": {
+        "include_canonical_span": true,
+        "include_decoy_spans": true,
+        "include_token_page_ranges": true,
+        "include_selected_position_geometry": true,
+        "include_schema_v1_runtime_event": true,
+        "hook_mode": "hook-off-or-offline-dry-run"
+      },
+      "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+      "non_claims": [
+        "not model attention",
+        "not evidence-use proof",
+        "not EPKV behavior until bridged through runtime schema",
+        "not serving readiness"
+      ]
+    }
+  ],
+  "artifacts": {
+    "queue": "bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/bridge-target-queue.json",
+    "fixture_skeletons": "bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/bridge-fixture-skeletons.jsonl"
+  },
+  "boundary": {
+    "planning_only": true,
+    "serving": false,
+    "runtime_hook": false,
+    "model_call": false
+  }
+}

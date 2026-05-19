@@ -28,6 +28,7 @@ The bridge now has a staged chain of receipts:
 | Bridge v0.6 | [`../../bench/evidence-utilization-epkv-runtime-schema-v1-adapter-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-runtime-schema-v1-adapter-2026-05-19/RESULTS.md) | default-off source adapter can emit `epkv.runtime.telemetry.v1` directly in dry-run mode | live deployment, serving readiness, real-prompt tracing |
 | Bridge v0.7 | [`../../bench/evidence-utilization-epkv-answer-audit-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-answer-audit-bridge-2026-05-19/RESULTS.md) | existing fixtures can be mapped to green/yellow/red audit labels from answer proxy + selected-position geometry | evidence-use proof, model behavior, quality evaluation |
 | Taxonomy v0.8 | [`../../bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/RESULTS.md) | existing aggregate sweeps can be ranked with answer-side risk labels to choose next bridge targets | runtime geometry, EPKV behavior, evidence-use proof |
+| Target queue v0.9 | [`../../bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/RESULTS.md) | 16 high-risk fixture families selected for next hook-off geometry bridge coverage | runtime execution, model behavior, evidence-use proof |
 
 ## What was validated
 
@@ -266,10 +267,11 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-bridge-target selection:
-  pick top red v0.8 fixture families
-  generate bridge-ready synthetic span/page fixtures for those families
-  keep runtime hook-off unless explicitly promoted later
+bridge-target materialization:
+  take v0.9 fixture skeletons
+  emit concrete synthetic span/page records for the first target pack
+  project them into schema-valid hook-off telemetry events
+  keep runtime hook-off
 ```
 
 Alternative: extend v0.8 taxonomy to more aggregate sweeps. Real prompts remain paused.
