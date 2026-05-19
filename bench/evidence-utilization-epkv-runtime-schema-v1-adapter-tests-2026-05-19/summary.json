@@ -1,0 +1,24 @@
+{
+  "test": "epkv-runtime-schema-v1-adapter-source-level",
+  "runtime_hook_file": "/home/felipe/vllm-lab/runtime_hook_schema_v1.py",
+  "legacy_log": "/home/felipe/vllm-lab/evidence-utilization-epkv-runtime-schema-v1-adapter-tests-2026-05-19/legacy-default-events.jsonl",
+  "schema_log": "/home/felipe/vllm-lab/evidence-utilization-epkv-runtime-schema-v1-adapter-tests-2026-05-19/schema-v1-events.jsonl",
+  "checks": {
+    "legacy_has_no_schema_field": true,
+    "legacy_has_hook_field": true,
+    "legacy_mode_is_dry_run_legacy": true,
+    "legacy_has_selected_positions": true,
+    "schema_has_schema_v1": true,
+    "schema_mode_dry_run": true,
+    "schema_reason_dry_run": true,
+    "schema_has_selection_geometry": true,
+    "schema_privacy_contract": true
+  },
+  "passed": true,
+  "boundary": {
+    "serving_mutation": false,
+    "real_prompt": false,
+    "model_inference": false,
+    "dry_run": true
+  }
+}
