@@ -1,0 +1,105 @@
+{
+  "created_at": "2026-05-19T09:54:41.218Z",
+  "base_url": "http://192.168.15.133:11435/v1",
+  "model": "local-vllm",
+  "runs": 12,
+  "errors": 0,
+  "answer_ok": 12,
+  "target_prompt_tokens": [
+    512,
+    1024,
+    1536,
+    2048
+  ],
+  "repeats": 3,
+  "max_tokens": 32,
+  "health_start": 200,
+  "health_end": 200,
+  "remote_event_log": "/home/felipe/vllm-lab/evidence-utilization-epkv-serving-dryrun-b1-2026-05-19/events.jsonl",
+  "groups_by_target": [
+    {
+      "key": 512,
+      "runs": 3,
+      "errors": 0,
+      "prompt_tokens_mean": 433,
+      "completion_tokens_mean": 6,
+      "elapsed_ms_p50": 266.9157519999999,
+      "elapsed_ms_p90": 1916.645228,
+      "ms_per_completion_token_p50": 44.48595866666665,
+      "ms_per_completion_token_p90": 319.44087133333335
+    },
+    {
+      "key": 1024,
+      "runs": 3,
+      "errors": 0,
+      "prompt_tokens_mean": 816,
+      "completion_tokens_mean": 6,
+      "elapsed_ms_p50": 122.40805599999976,
+      "elapsed_ms_p90": 358.02520900000036,
+      "ms_per_completion_token_p50": 20.401342666666626,
+      "ms_per_completion_token_p90": 59.67086816666673
+    },
+    {
+      "key": 1536,
+      "runs": 3,
+      "errors": 0,
+      "prompt_tokens_mean": 1195,
+      "completion_tokens_mean": 6,
+      "elapsed_ms_p50": 123.94108400000005,
+      "elapsed_ms_p90": 167.5633160000002,
+      "ms_per_completion_token_p50": 20.656847333333342,
+      "ms_per_completion_token_p90": 27.92721933333337
+    },
+    {
+      "key": 2048,
+      "runs": 3,
+      "errors": 0,
+      "prompt_tokens_mean": 1576,
+      "completion_tokens_mean": 6,
+      "elapsed_ms_p50": 124.74015999999983,
+      "elapsed_ms_p90": 164.77358600000025,
+      "ms_per_completion_token_p50": 20.790026666666638,
+      "ms_per_completion_token_p90": 27.462264333333376
+    }
+  ],
+  "all_ms_per_completion_token_p90": 59.67086816666673,
+  "gate_note": "Compare this B1 synthetic dry-run p90 against B0 hook-off baseline and verify remote EPKV events before considering any broader dry-run trace.",
+  "boundary": {
+    "hook_on_expected": true,
+    "dry_run_expected": true,
+    "synthetic_prompts_only": true
+  },
+  "non_claims": [
+    "no real prompts",
+    "no quality result",
+    "no serving speedup claim",
+    "no production attention claim"
+  ],
+  "event_summary": {
+    "events": 512,
+    "events_with_selection": 512,
+    "decisions": {
+      "telemetry_only_fallback_to_original_tq": 512
+    },
+    "seq_len_min": 434,
+    "seq_len_max": 820,
+    "max_events_cap_hit": true,
+    "sync_timing_after_first_10": {
+      "p50_ms": 0.43007999658584595,
+      "p90_ms": 0.4833280146121979,
+      "max_ms": 31.564800262451172
+    },
+    "wall_timing_after_first_10": {
+      "p50_ms": 0.6443019956350327,
+      "p90_ms": 0.7016200106590986,
+      "max_ms": 31.77852602675557
+    }
+  },
+  "comparison_to_b0": {
+    "b0_all_ms_per_completion_token_p90": 33.41417779999999,
+    "b1_all_ms_per_completion_token_p90": 59.67086816666673,
+    "b0_steady_rep_gt0_ms_per_completion_token_p90": 22.248707800000012,
+    "b1_steady_rep_gt0_ms_per_completion_token_p90": 44.48595866666665,
+    "note": "B1 first request includes Triton compile/warmup; event cap hit before all prompt bands, so this is a contact receipt, not final latency characterization."
+  }
+}

@@ -128,7 +128,13 @@ Completed B0 serving baseline:
 
 - [`../../bench/evidence-utilization-epkv-serving-baseline-b0-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-serving-baseline-b0-2026-05-19/RESULTS.md)
 
-B0 result: hook-off synthetic serving p90 gives an approximate 15% per-completion-token overhead budget of ~5.01 ms. Track A K=32 trace overhead fits under that budget, so a **synthetic hook-on dry-run probe** is plausible with explicit infra confirmation.
+B0 result: hook-off synthetic serving p90 gives an approximate 15% per-completion-token overhead budget of ~5.01 ms. Track A K=32 trace overhead fits under that budget, so a **synthetic hook-on dry-run probe** was plausible with explicit infra confirmation.
+
+Completed B1 serving synthetic dry-run:
+
+- [`../../bench/evidence-utilization-epkv-serving-dryrun-b1-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-serving-dryrun-b1-2026-05-19/RESULTS.md)
+
+B1 result: contact succeeded and service was restored, but the event cap was hit before all prompt bands were represented. Treat it as a contact receipt, not final serving latency characterization.
 
 Paused until explicit confirmation / additional control:
 

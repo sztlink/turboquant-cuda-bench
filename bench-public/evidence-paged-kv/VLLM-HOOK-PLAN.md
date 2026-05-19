@@ -208,9 +208,12 @@ Metadata/offline bridge receipts:
 - [`../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md)
 - [`../../bench/evidence-utilization-epkv-bridge-replay-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-replay-2026-05-19/RESULTS.md)
 
-Path B baseline receipt:
+Path B serving receipts:
 
 - [`../../bench/evidence-utilization-epkv-serving-baseline-b0-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-serving-baseline-b0-2026-05-19/RESULTS.md)
+- [`../../bench/evidence-utilization-epkv-serving-dryrun-b1-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-serving-dryrun-b1-2026-05-19/RESULTS.md)
+
+B1 readout: synthetic dry-run contact succeeded and service was restored to default-off, but event cap was hit before all prompt bands were represented. Repeat with warmup separation before any broader dry-run trace.
 
 ## Stop criteria
 
