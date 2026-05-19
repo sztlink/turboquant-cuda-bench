@@ -359,6 +359,31 @@ Before serving integration, validate this threshold on more shapes and sequence 
 Still do not install into serving.
 ```
 
+Phase 2c.10 compact fallback shape sweep receipt:
+
+- [`../../bench/evidence-paged-kv-compact-fallback-shape-sweep-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-compact-fallback-shape-sweep-2026-05-19/RESULTS.md)
+
+Shape sweep result over `M={8192,16384,32768,65536}` synthetic partial-head fixtures:
+
+```txt
+threshold policy: exact-only if flagged_head_rate >= 0.75
+matches p50 best: 18/20 cases
+M=16K..65K: threshold direction held across tested flag rates
+M=8K: shape-sensitive; exact-only won at 0 flags and was effectively tied at 14 flags
+```
+
+Updated decision implication:
+
+```txt
+The 0.75 flag-rate exact-only threshold generalizes directionally across M=16K..65K in this synthetic sweep.
+For small M (~8K), compact overhead can erase benefits; policy likely needs a sequence-length guard in addition to flag-rate.
+Candidate policy v0:
+  if M <= 8192: exact-only or measured fallback disabled
+  else if flagged_head_rate >= 0.75: exact-only
+  else: compact fallback
+Do not install into serving before a broader grid and runtime integration plan.
+```
+
 Phase 2a guarded runtime hook receipt:
 
 - [`../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md)
