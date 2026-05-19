@@ -394,3 +394,41 @@ Candidate policy v0:
   else: compact fallback
 Do not install into serving before a broader grid and runtime integration plan.
 ```
+
+## Phase 2c.11 compact fallback policy grid receipt
+
+Local repo receipt:
+
+```txt
+bench/evidence-paged-kv-compact-fallback-policy-grid-2026-05-19/RESULTS.md
+```
+
+Grid:
+
+```txt
+M values: 4096, 8192, 12288, 16384, 24576, 32768, 49152, 65536
+requested flagged heads: 0, 7, 14, 21, 28
+seq guards tested: 0, 4096, 8192, 12288, 16384
+flag thresholds tested: 0.50, 0.625, 0.75, 0.875
+```
+
+Readout:
+
+```txt
+best policy accuracy: 40/40 synthetic cases
+best seq_guard: 4096
+flag_threshold 0.625 and 0.75 tie on sampled grid
+```
+
+Decision update:
+
+```txt
+Candidate policy v1:
+  if M <= 4096: exact-only / compact disabled
+  else if flagged_head_rate >= 0.75: exact-only
+  else: compact fallback
+
+The 0.625 threshold also fits this grid, but 0.75 preserves the previous boundary and is equivalent for sampled rates.
+Timing is shape-sensitive; some non-power-of-two lengths show large p50 swings.
+Do not install into serving. Next: runtime integration design doc with invariants, telemetry, kill switch, and exact-restore requirements.
+```
