@@ -1,0 +1,25 @@
+{
+  "ledger_version": "v1.4-evidence-path-ledger",
+  "stages": 6,
+  "chain": "v0.8 -> v0.9 -> v1.0 -> v1.1 -> v1.2 -> v1.3",
+  "chain_invariants": {
+    "all_receipts_present": true,
+    "all_primary_artifacts_present": true,
+    "all_boundaries_non_serving": true,
+    "no_stage_claims_model_attention": true,
+    "no_stage_claims_evidence_use_proof": true
+  },
+  "ledger_sha256": "31dc932e5d8152abf62165be7c94a124ba9693e1bbb9ee4930e65d5becb27fc6",
+  "artifacts": {
+    "ledger": "bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/evidence-path-ledger.json",
+    "summary": "bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/summary.json"
+  },
+  "boundary": {
+    "ledger_only": true,
+    "serving": false,
+    "runtime_hook_live": false,
+    "model_call": false,
+    "model_attention": false,
+    "evidence_use_proof": false
+  }
+}

@@ -33,6 +33,7 @@ The bridge now has a staged chain of receipts:
 | Audit-join v1.1 | [`../../bench/evidence-utilization-epkv-audit-join-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-audit-join-2026-05-19/RESULTS.md) | target queue + materialized events + validator report joined into action states: 13 bridge-ready, 3 needs fixture detail | runtime behavior, evidence-use proof, deployment readiness |
 | Replay pack v1.2 | [`../../bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/RESULTS.md) | 13 bridge-ready decoy-risk targets packed as compact hook-off replay records | runtime behavior, live request tracing, evidence-use proof |
 | Replay validator v1.3 | [`../../bench/evidence-utilization-epkv-replay-pack-validator-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-replay-pack-validator-2026-05-19/RESULTS.md) | v1.2 replay-pack invariants pass: 13 records, 0 errors | model behavior, runtime behavior, evidence-use proof |
+| Evidence-path ledger v1.4 | [`../../bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/RESULTS.md) | v0.8 → v1.3 chain indexed with hashes and boundary invariants | runtime behavior, live telemetry, evidence-use proof |
 
 ## What was validated
 
@@ -271,10 +272,10 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-evidence-path ledger v1.4:
-  index the chain v0.8 -> v0.9 -> v1.0 -> v1.1 -> v1.2 -> v1.3
-  emit a single audit ledger with artifact hashes and boundary states
-  make the offline evidence-utilization layer reproducible
+chain review + refinement:
+  incorporate Claude/reviewer audit of v1.1-v1.4
+  patch any framing or invariant gaps
+  then produce a concise public-safe technical note if no gaps remain
 ```
 
 Alternative: refine the 3 needs-fixture-detail targets. Real prompts remain paused.
