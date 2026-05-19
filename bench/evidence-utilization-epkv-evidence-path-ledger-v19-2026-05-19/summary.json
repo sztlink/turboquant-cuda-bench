@@ -1,0 +1,38 @@
+{
+  "ledger_version": "v1.9-evidence-path-ledger",
+  "stages": 10,
+  "chain": "v0.8 -> v0.9 -> v1.0 -> v1.1 -> v1.2 -> v1.3 -> v1.4 -> v1.5 -> v1.6 -> v1.8",
+  "coverage": {
+    "aggregate_records": 178,
+    "selected_targets": 16,
+    "materialized_events_v10": 16,
+    "bridge_ready_targets": 13,
+    "needs_fixture_detail_targets": 3,
+    "replay_records_v12": 13,
+    "refined_events_v15": 9,
+    "refined_replay_records_v16": 9,
+    "total_replay_records": 22
+  },
+  "chain_invariants": {
+    "all_receipts_present": true,
+    "all_primary_artifacts_present": true,
+    "all_boundaries_non_serving": true,
+    "no_stage_claims_model_attention": true,
+    "no_stage_claims_evidence_use_proof": true,
+    "combined_replay_coverage_is_22": true,
+    "provenance_validation_passed": true
+  },
+  "ledger_sha256": "2ae78265cd68e59c34f7372917f6d3fb99b165adc6667b026569d84d025f6982",
+  "artifacts": {
+    "ledger": "bench/evidence-utilization-epkv-evidence-path-ledger-v19-2026-05-19/evidence-path-ledger-v19.json",
+    "summary": "bench/evidence-utilization-epkv-evidence-path-ledger-v19-2026-05-19/summary.json"
+  },
+  "boundary": {
+    "ledger_only": true,
+    "serving": false,
+    "runtime_hook_live": false,
+    "model_call": false,
+    "model_attention": false,
+    "evidence_use_proof": false
+  }
+}

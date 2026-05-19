@@ -38,6 +38,7 @@ The bridge now has a staged chain of receipts:
 | Refined replay pack v1.6 | [`../../bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/RESULTS.md) | the 3 ambiguous targets now have 9 contrastive replay records: canonical/decoy/neither | runtime behavior, evidence-use proof, quality evaluation |
 | Evidence-path ledger v1.7 | [`../../bench/evidence-utilization-epkv-evidence-path-ledger-v17-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-evidence-path-ledger-v17-2026-05-19/RESULTS.md) | v0.8 → v1.6 chain indexed; total replay coverage is 22 records | live telemetry, evidence-use proof, serving readiness |
 | Replay provenance validator v1.8 | [`../../bench/evidence-utilization-epkv-bridge-replay-pack-provenance-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-replay-pack-provenance-2026-05-19/RESULTS.md) | Claude-review gaps closed: upstream sha256 pinning, referential closure, 13/13 doc rows | runtime behavior, evidence-use proof, serving readiness |
+| Evidence-path ledger v1.9 | [`../../bench/evidence-utilization-epkv-evidence-path-ledger-v19-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-evidence-path-ledger-v19-2026-05-19/RESULTS.md) | full v0.8 → v1.8 chain indexed; 22 replay records and provenance validation pass | live telemetry, evidence-use proof, serving readiness |
 
 ## What was validated
 
@@ -276,10 +277,10 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-ledger update v1.9:
-  include replay provenance validator v1.8
-  record that Claude-review gaps R1/R2/R3/R5/R8 are closed
-  keep hard stops closed for live serving
+stop at offline milestone unless new safe local packet is defined:
+  v1.9 ledger has 22 replay records and provenance validation
+  next meaningful boundary is either external review/publication or live-prompt/runtime contact
+  both remain hard-stop gated
 ```
 
 Real prompts remain paused.
