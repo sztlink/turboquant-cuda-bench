@@ -1,6 +1,6 @@
 # Evidence-Paged KV Phase 2a — runtime benchmark design
 
-> **Status:** design accepted; source hook + Track A offline harness prepared by Pi on 2026-05-19. Original design authored by codex-fallback (claude CLI) in response to `msg_f7cff5a24b274c26`.
+> **Status:** design accepted; source hook + Track A offline harness + selection tracing prepared by Pi on 2026-05-19. Original design authored by codex-fallback (claude CLI) in response to `msg_f7cff5a24b274c26`.
 > **Execution owner:** Pi (4090 host). No infra change, no service restart, no production touch happens at the design stage.
 > **Scope:** a controlled runtime benchmark for the guarded Phase 2a hook (`evidence_paged_kv.runtime.phase2a.v0`).
 > **Non-goals:** serving speedup claim, PagedAttention/FlashAttention comparison, answer-quality claim, evidence-utilization claim.
@@ -127,7 +127,7 @@ Three layered answers, recommended in this order:
 2. **If a serving probe is needed (Track B), keep prompts synthetic and short, bound by `VLLM_EPKV_RUNTIME_MAX_EVENTS`.** The current hook already enforces `max_events`; bump it from 64 → 256 and use `MAX_SEQ` to clamp the seq_len band per bucket.
 3. **Use dry-run telemetry mode (Track C / prepared patch).** When `VLLM_EPKV_RUNTIME_DRY_RUN=1`, the hook runs the kernels for `elapsed_ms_sync_timing` and writes an event, then returns `None` so vLLM falls back to original TurboQuant. Approximate output is **never** emitted; original output is always emitted. This is the only mode that is safe to enable on non-synthetic traffic in a future bridge experiment.
 
-Track C is also the right substrate for the evidence-utilization bridge: telemetry-only selection tracing is exactly what `EPKV-BRIDGE-SPEC.md §"Required instrumentation change"` requires.
+Track C is also the right substrate for the evidence-utilization bridge. The source hook now has default-off selection tracing (`VLLM_EPKV_RUNTIME_TRACE_SELECTION=1`, `VLLM_EPKV_RUNTIME_TRACE_TOP_N=32`) that records positions only, not prompt text or token ids.
 
 ### Q2 — how to isolate compile/warmup from steady-state
 
@@ -144,7 +144,7 @@ The bridge is observational. A speedup is *not* required. The bridge is unblocke
 1. **Cost ceiling.** Steady `p90_hook / p90_original_tq ≤ 2.5` for `seq_len ∈ {64, 512, 2048}`. This is the budget that lets us run the hook in telemetry mode during a bridge fixture without distorting wallclock to the point that the fixture stops representing normal answer behavior.
 2. **Stability.** Per-bucket steady max ≤ 5× steady p50 across the run. The 2026-05-19 receipt had one 28 ms outlier vs 0.19 ms p50 (~150×). We need to either confirm that was a one-off Triton autotuning artifact or accept a defined exclusion rule.
 3. **Restore fidelity.** Service returns to `VLLM_EPKV_RUNTIME_HOOK=0`, `/health → 200`, chat smoke (e.g. `13*37 → 481`) before and after the run.
-4. **Telemetry completeness.** Every recorded event has `seq_len`, `K`, `temp_scores_bytes`, `elapsed_ms_sync_timing` non-null, `query_shape == [1, 28, 128]`, `kv_cache_shape == [num_blocks, 16, 4, 196]` consistent with the production layout. No `decision != returned_phase2a_output` events except the intentional fallback after `MAX_EVENTS`.
+4. **Telemetry completeness.** Every recorded event has `seq_len`, `K`, `temp_scores_bytes`, `elapsed_ms_sync_timing`, `elapsed_ms_wall` non-null, `query_shape == [1, 28, 128]`, `kv_cache_shape == [num_blocks, 16, 4, 196]` consistent with the production layout. No `decision != returned_phase2a_output` events except the intentional fallback after `MAX_EVENTS`.
 
 If 1–3 hold but 2 fails systematically, the readout is *"hook usable for telemetry only if outlier band is excluded"* and the bridge starts in **Option B** (offline metadata-only) form from the EPKV-BRIDGE-SPEC.
 
@@ -207,9 +207,9 @@ Inside `maybe_decode`, after `out = _decode_phase2a(...)` and the elapsed_ms blo
 Semantics:
 - `VLLM_EPKV_RUNTIME_HOOK=0` (default): no change, no kernels run.
 - `VLLM_EPKV_RUNTIME_HOOK=1` and `VLLM_EPKV_RUNTIME_DRY_RUN=0` (current): unchanged behavior — hook returns Phase 2a output (approximate).
-- `VLLM_EPKV_RUNTIME_HOOK=1` and `VLLM_EPKV_RUNTIME_DRY_RUN=1` (new): hook runs kernels for timing, logs event with `decision: telemetry_only_fallback_to_original_tq`, returns `None`. vLLM falls back to original TurboQuant. Real prompts get the original (correct) output.
+- `VLLM_EPKV_RUNTIME_HOOK=1` and `VLLM_EPKV_RUNTIME_DRY_RUN=1` (new): hook runs kernels for timing, logs event with `decision: telemetry_only_fallback_to_original_tq`, returns `None`. vLLM falls back to original TurboQuant. Real prompts get the original (correct) output. Events include both CUDA event timing (`elapsed_ms_sync_timing`) and Python wall timing (`elapsed_ms_wall`) so selection telemetry copy overhead is visible.
 
-The `bench-public/evidence-paged-kv/VLLM-HOOK-PLAN.md` and `EPKV-BRIDGE-SPEC.md` now mention `DRY_RUN`. Deployment to the 4090 checkout remains a separate infra-confirmed step.
+The `bench-public/evidence-paged-kv/VLLM-HOOK-PLAN.md` and `EPKV-BRIDGE-SPEC.md` now mention `DRY_RUN` and `TRACE_SELECTION`. Deployment to the 4090 checkout remains a separate infra-confirmed step.
 
 ### Patch 2 — new script `07-scripts/vllm-hook/epkv-runtime-benchmark.py` (Track A)
 

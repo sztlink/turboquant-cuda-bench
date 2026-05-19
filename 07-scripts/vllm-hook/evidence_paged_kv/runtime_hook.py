@@ -9,6 +9,7 @@ Enable only for controlled experiments:
     VLLM_EPKV_RUNTIME_K=32
     VLLM_EPKV_RUNTIME_MAX_SEQ=256
     VLLM_EPKV_RUNTIME_DRY_RUN=1  # optional: telemetry only, fall back to original TQ
+    VLLM_EPKV_RUNTIME_TRACE_SELECTION=1  # optional: compact selected-position telemetry
 
 Boundary:
 - B=1 decode only.
@@ -54,6 +55,8 @@ _ENV_MAX_EVENTS = "VLLM_EPKV_RUNTIME_MAX_EVENTS"
 _ENV_SYNC_TIMING = "VLLM_EPKV_RUNTIME_SYNC_TIMING"
 _ENV_TAG = "VLLM_EPKV_RUNTIME_TAG"
 _ENV_DRY_RUN = "VLLM_EPKV_RUNTIME_DRY_RUN"
+_ENV_TRACE_SELECTION = "VLLM_EPKV_RUNTIME_TRACE_SELECTION"
+_ENV_TRACE_TOP_N = "VLLM_EPKV_RUNTIME_TRACE_TOP_N"
 
 _seen = 0
 _warned = False
@@ -78,6 +81,41 @@ def _write_event(event: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a", encoding="utf-8") as f:
         f.write(json.dumps(event, sort_keys=True) + "\n")
+
+
+def _trace_selection_enabled() -> bool:
+    return os.environ.get(_ENV_TRACE_SELECTION, "0") == "1"
+
+
+def _selection_summary(pos: torch.Tensor, *, M: int, Hq: int, K: int) -> dict[str, Any]:
+    """Return compact selected-position telemetry without prompt/token text.
+
+    ``pos`` has shape [K, Hq]. This intentionally records positions only,
+    never raw prompt text or token ids. It may synchronize CUDA when enabled,
+    so keep it behind ``VLLM_EPKV_RUNTIME_TRACE_SELECTION``.
+    """
+    top_n = max(0, min(_int_env(_ENV_TRACE_TOP_N, 32), K))
+    sample = []
+    if top_n > 0:
+        sample = pos[:top_n, :].transpose(0, 1).detach().cpu().tolist()
+    flat = pos.detach().flatten().cpu().tolist()
+    bin_size = 128
+    histogram: dict[str, int] = {}
+    for value in flat:
+        start = (int(value) // bin_size) * bin_size
+        key = f"{start}-{start + bin_size - 1}"
+        histogram[key] = histogram.get(key, 0) + 1
+    return {
+        "heads": Hq,
+        "K": K,
+        "trace_top_n": top_n,
+        "positions_by_head_first_n": sample,
+        "position_histogram_bin_size": bin_size,
+        "position_histogram": histogram,
+        "min_position": min(flat) if flat else None,
+        "max_position": max(flat) if flat else None,
+        "seq_len": M,
+    }
 
 
 @triton.jit
@@ -171,7 +209,7 @@ def _decode_phase2a(
     kv_cache: torch.Tensor,
     block_table: torch.Tensor,
     seq_lens: torch.Tensor,
-) -> torch.Tensor | None:
+) -> tuple[torch.Tensor, dict[str, Any] | None] | None:
     B, Hq, D = query.shape
     if B != 1:
         return None
@@ -231,6 +269,7 @@ def _decode_phase2a(
     vals, pos = torch.topk(scores, K, dim=0)
     weights = torch.softmax(vals, dim=0).contiguous()
     pos = pos.contiguous()
+    selection_summary = _selection_summary(pos, M=M, Hq=Hq, K=K) if _trace_selection_enabled() else None
     out = torch.empty((Hq, D), device=query.device, dtype=torch.float32)
     _epkv_value_kernel[(Hq,)](
         kv_cache,
@@ -252,7 +291,7 @@ def _decode_phase2a(
         num_warps=4,
         num_stages=1,
     )
-    return out.unsqueeze(0).to(query.dtype)
+    return out.unsqueeze(0).to(query.dtype), selection_summary
 
 
 def maybe_decode(
@@ -275,12 +314,13 @@ def maybe_decode(
         if _seen >= max_events:
             return None
         sync_timing = os.environ.get(_ENV_SYNC_TIMING, "0") == "1"
+        wall_start = time.perf_counter()
         start = end = None
         if sync_timing and query.is_cuda:
             start = torch.cuda.Event(enable_timing=True)
             end = torch.cuda.Event(enable_timing=True)
             start.record()
-        out = _decode_phase2a(
+        decoded = _decode_phase2a(
             impl=impl,
             query=query,
             kv_cache=kv_cache,
@@ -292,8 +332,10 @@ def maybe_decode(
             end.record()
             torch.cuda.synchronize(query.device)
             elapsed_ms = float(start.elapsed_time(end))
-        if out is None:
+        elapsed_ms_wall = (time.perf_counter() - wall_start) * 1000.0
+        if decoded is None:
             return None
+        out, selection_summary = decoded
         dry_run = os.environ.get(_ENV_DRY_RUN, "0") == "1"
         event = {
             "ts": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
@@ -303,6 +345,7 @@ def maybe_decode(
             "mode": "guarded_runtime_selected_page_dry_run" if dry_run else "guarded_runtime_selected_page",
             "decision": "telemetry_only_fallback_to_original_tq" if dry_run else "returned_phase2a_output",
             "elapsed_ms_sync_timing": elapsed_ms,
+            "elapsed_ms_wall": elapsed_ms_wall,
             "query_shape": list(query.shape),
             "kv_cache_shape": list(kv_cache.shape),
             "block_table_shape": list(attn_metadata.block_table.shape),
@@ -311,6 +354,8 @@ def maybe_decode(
             "temp_scores_bytes": int(attn_metadata.seq_lens[0].item()) * int(query.shape[1]) * 4,
             "fallback_after_max_events": max_events,
         }
+        if selection_summary is not None:
+            event["selected_positions_sample"] = selection_summary
         _write_event(event)
         if _seen == 0:
             logger.warning(

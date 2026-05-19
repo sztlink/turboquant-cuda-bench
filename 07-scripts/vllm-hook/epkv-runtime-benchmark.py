@@ -194,6 +194,12 @@ def write_results_md(out_dir: Path, report: dict[str, Any]) -> None:
         "",
         f"Raw runtime hook events: `{report['events_jsonl']}`",
         "",
+        "## Telemetry validation",
+        "",
+        "```json",
+        json.dumps(report.get("event_summary", {}), indent=2, sort_keys=True),
+        "```",
+        "",
         "## Non-claims",
         "",
         "- Not production attention.",
@@ -208,6 +214,42 @@ def parse_int_list(value: str) -> list[int]:
     return [int(part.strip()) for part in value.split(",") if part.strip()]
 
 
+def summarize_events(events_path: Path, *, require_selection: bool) -> dict[str, Any]:
+    required = {"seq_len", "K", "temp_scores_bytes", "elapsed_ms_sync_timing", "elapsed_ms_wall"}
+    summary: dict[str, Any] = {
+        "events": 0,
+        "events_with_selection": 0,
+        "missing_required_fields": {},
+        "decisions": {},
+        "tags": {},
+        "require_selection": require_selection,
+    }
+    for line in events_path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        event = json.loads(line)
+        summary["events"] += 1
+        decision = event.get("decision", "<missing>")
+        summary["decisions"][decision] = summary["decisions"].get(decision, 0) + 1
+        tag = event.get("tag", "<missing>")
+        summary["tags"][tag] = summary["tags"].get(tag, 0) + 1
+        if "selected_positions_sample" in event:
+            summary["events_with_selection"] += 1
+        for field in required:
+            if event.get(field) is None:
+                summary["missing_required_fields"][field] = summary["missing_required_fields"].get(field, 0) + 1
+    if summary["events"] == 0:
+        raise RuntimeError("runtime hook emitted no events")
+    if require_selection and summary["events_with_selection"] != summary["events"]:
+        raise RuntimeError(
+            "selection tracing incomplete: "
+            f"{summary['events_with_selection']} / {summary['events']} events have selected_positions_sample"
+        )
+    if summary["missing_required_fields"]:
+        raise RuntimeError(f"runtime hook events missing required fields: {summary['missing_required_fields']}")
+    return summary
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cuda-home", default=os.environ.get("CUDA_HOME", CUDA_HOME_DEFAULT))
@@ -217,6 +259,13 @@ def main() -> None:
     ap.add_argument("--warmup", type=int, default=4)
     ap.add_argument("--steady", type=int, default=30)
     ap.add_argument("--seed", type=int, default=20260519)
+    ap.add_argument(
+        "--trace-selection",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Enable compact selected-position telemetry in runtime hook events (default: enabled).",
+    )
+    ap.add_argument("--trace-top-n", type=int, default=32)
     args = ap.parse_args()
 
     configure_cuda_env(args.cuda_home)
@@ -264,6 +313,8 @@ def main() -> None:
         os.environ["VLLM_EPKV_RUNTIME_LOG"] = str(events_path)
         os.environ["VLLM_EPKV_RUNTIME_MAX_EVENTS"] = "8192"
         os.environ["VLLM_EPKV_RUNTIME_MAX_SEQ"] = str(max_M + 1)
+        os.environ["VLLM_EPKV_RUNTIME_TRACE_SELECTION"] = "1" if args.trace_selection else "0"
+        os.environ["VLLM_EPKV_RUNTIME_TRACE_TOP_N"] = str(args.trace_top_n)
         os.environ.pop("VLLM_EPKV_RUNTIME_DRY_RUN", None)
 
         meta = {
@@ -277,6 +328,8 @@ def main() -> None:
             "topks": topks,
             "warmup_n": args.warmup,
             "steady_n": args.steady,
+            "trace_selection": args.trace_selection,
+            "trace_top_n": args.trace_top_n,
             "layout": {
                 "kv_cache_dtype": "turboquant_k8v4",
                 "B": B,
@@ -403,11 +456,15 @@ def main() -> None:
                 results.append(hooked)
                 log_line(log_path, "RESULT " + json.dumps(hooked, sort_keys=True))
 
+        event_summary = summarize_events(events_path, require_selection=args.trace_selection)
+        log_line(log_path, "EVENT_SUMMARY " + json.dumps(event_summary, sort_keys=True))
+
         report = {
             "title": "Evidence-Paged KV Phase 2a — runtime benchmark — Track A",
             "boundary": "Offline direct call into guarded runtime_hook.maybe_decode; no serving mutation.",
             "meta": meta | {"nvidia_smi_end": smi()},
             "events_jsonl": str(events_path),
+            "event_summary": event_summary,
             "results": results,
         }
         (out_dir / "summary.json").write_text(json.dumps(report, indent=2), encoding="utf-8")

@@ -144,7 +144,7 @@ VLLM_EPKV_RUNTIME_TRACE_SELECTION=1
 VLLM_EPKV_RUNTIME_TRACE_TOP_N=32
 ```
 
-`VLLM_EPKV_RUNTIME_DRY_RUN=1` is the safety substrate for any future real-prompt telemetry run: the hook runs the Phase 2a kernels and logs timing/selection telemetry, then returns `None` so vLLM falls back to the original TurboQuant output. It is default-off.
+`VLLM_EPKV_RUNTIME_DRY_RUN=1` is the safety substrate for any future real-prompt telemetry run: the hook runs the Phase 2a kernels and logs timing/selection telemetry, then returns `None` so vLLM falls back to the original TurboQuant output. `TRACE_SELECTION` records compact position-only summaries: sampled selected positions by head and a histogram. Events include CUDA timing and wall timing so telemetry copy overhead is visible. Both flags are default-off.
 
 Suggested event fields:
 
@@ -366,10 +366,11 @@ Evidence-Paged KV is faster than production attention.
 
 ## Immediate next step
 
-Implement **telemetry-only selection tracing** in the runtime hook, default-off:
+Prepared in the source hook: **telemetry-only selection tracing**, default-off:
 
 ```txt
 VLLM_EPKV_RUNTIME_TRACE_SELECTION=1
+VLLM_EPKV_RUNTIME_TRACE_TOP_N=32
 ```
 
 Use the prepared dry-run safety flag for real-prompt telemetry:

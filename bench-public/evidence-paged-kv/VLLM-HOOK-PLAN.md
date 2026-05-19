@@ -147,16 +147,19 @@ Design readout:
 Track A: offline direct call into runtime_hook.maybe_decode, no service mutation
 Track B: optional serving probe only after Track A and explicit infra confirmation
 Track C: VLLM_EPKV_RUNTIME_DRY_RUN=1 for telemetry-only fallback to original TurboQuant
+Trace: VLLM_EPKV_RUNTIME_TRACE_SELECTION=1 logs compact selected-position summaries
 bridge gate: cost/stability/telemetry completeness, not speedup
 ```
 
-New safety flag prepared in the source hook:
+New safety/telemetry flags prepared in the source hook:
 
 ```txt
 VLLM_EPKV_RUNTIME_DRY_RUN=1
+VLLM_EPKV_RUNTIME_TRACE_SELECTION=1
+VLLM_EPKV_RUNTIME_TRACE_TOP_N=32
 ```
 
-When combined with `VLLM_EPKV_RUNTIME_HOOK=1`, dry-run mode executes the Phase 2a kernels and logs timing, but returns `None` so the backend falls back to the original TurboQuant output. It is default-off.
+When combined with `VLLM_EPKV_RUNTIME_HOOK=1`, dry-run mode executes the Phase 2a kernels and logs timing, but returns `None` so the backend falls back to the original TurboQuant output. Selection tracing logs positions only — sampled selected positions by head plus a histogram — never raw prompt text or token ids. All flags are default-off.
 
 ### Phase 3 — evidence-utilization bridge
 
