@@ -186,9 +186,29 @@ LOCAL_TOP=8: temp 3.12% of full-score, recall@32 1.000 across tested shapes
 Decision implication:
 
 ```txt
-Approximate local-top is promising for kernel design.
-LOCAL_TOP=8 is the safer next candidate than LOCAL_TOP=4.
+Approximate local-top is promising for kernel design on random fixtures.
+LOCAL_TOP=8 is the safer random-fixture candidate than LOCAL_TOP=4.
 Do not install into serving; next validate against adversarial/top-heavy score fixtures.
+```
+
+Phase 2c.3 adversarial local-top receipt:
+
+- [`../../bench/evidence-paged-kv-adversarial-local-top-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-adversarial-local-top-2026-05-19/RESULTS.md)
+
+Adversarial result:
+
+```txt
+one_chunk_32:     local_top=8 recall@32 = 0.25; local_top=32 required
+two_chunks_16_16: local_top=8 recall@32 = 0.50; local_top=16 required
+spread_32_chunks: local_top=8 exact in both M cases; local_top=4 exact only at 65K
+```
+
+Updated decision implication:
+
+```txt
+Fixed LOCAL_TOP=8 is not correctness-preserving under top-heavy score concentration.
+Required LOCAL_TOP tracks max true-topK concentration per chunk.
+Next design needs adaptive/local-overflow detection or exact fallback, not fixed approximate local_top.
 ```
 
 Phase 2a guarded runtime hook receipt:

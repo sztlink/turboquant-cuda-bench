@@ -160,6 +160,30 @@ Decision update:
 
 ```txt
 Approximate local-top is promising for synthetic kernel design.
-local_top=8 is the safer next candidate than local_top=4.
+local_top=8 is the safer next candidate than local_top=4 on random fixtures.
 Do not install into serving; next validate against adversarial/top-heavy score fixtures.
+```
+
+## Phase 2c.3 adversarial local-top receipt
+
+Local repo receipt:
+
+```txt
+bench/evidence-paged-kv-adversarial-local-top-2026-05-19/RESULTS.md
+```
+
+Adversarial readout:
+
+```txt
+one_chunk_32:     local_top=8 recall@32 = 0.25; local_top=32 required
+two_chunks_16_16: local_top=8 recall@32 = 0.50; local_top=16 required
+spread_32_chunks: local_top=8 exact in both M cases; local_top=4 exact only at 65K
+```
+
+Decision update:
+
+```txt
+Fixed LOCAL_TOP=8 is not correctness-preserving under top-heavy score concentration.
+Required LOCAL_TOP tracks max true-topK concentration per chunk.
+Next design needs adaptive/local-overflow detection or exact fallback, not fixed approximate local_top.
 ```
