@@ -65,6 +65,19 @@ layout: turboquant_k8v4 = FP8-K + 4-bit-V packed slot_size=196
 - Keep outside production vLLM server.
 - Compare with current receipt numbers.
 
+Phase 1 receipt:
+
+- [`../../bench/evidence-paged-kv-vllm-layout-harness-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-vllm-layout-harness-2026-05-19/RESULTS.md)
+
+Phase 1 result:
+
+```txt
+layout validated: FP8-K + 4-bit-V packed slot_size=196
+correctness: dequant+full-softmax vs original TurboQuant decode max abs ~1e-4
+boundary usable: block_table + packed TQ slots can represent selected evidence pages offline
+caveat: current top-k rows are Python/Torch-loop reference paths, not final kernels
+```
+
 ### Phase 2 — experimental hook
 
 - Add a guarded experimental path behind an env flag.
