@@ -136,6 +136,28 @@ service restored to default-off: VLLM_EPKV_RUNTIME_HOOK=0
 /health -> HTTP 200 after restore
 ```
 
+Phase 2a runtime benchmark design:
+
+- [`RUNTIME-BENCHMARK-DESIGN.md`](RUNTIME-BENCHMARK-DESIGN.md)
+- [`../../07-scripts/vllm-hook/epkv-runtime-benchmark.py`](../../07-scripts/vllm-hook/epkv-runtime-benchmark.py)
+
+Design readout:
+
+```txt
+Track A: offline direct call into runtime_hook.maybe_decode, no service mutation
+Track B: optional serving probe only after Track A and explicit infra confirmation
+Track C: VLLM_EPKV_RUNTIME_DRY_RUN=1 for telemetry-only fallback to original TurboQuant
+bridge gate: cost/stability/telemetry completeness, not speedup
+```
+
+New safety flag prepared in the source hook:
+
+```txt
+VLLM_EPKV_RUNTIME_DRY_RUN=1
+```
+
+When combined with `VLLM_EPKV_RUNTIME_HOOK=1`, dry-run mode executes the Phase 2a kernels and logs timing, but returns `None` so the backend falls back to the original TurboQuant output. It is default-off.
+
 ### Phase 3 — evidence-utilization bridge
 
 - Only after runtime viability: connect selected evidence pages to retrieval/answer-closure fixtures.
@@ -158,7 +180,7 @@ Recommended first bridge mode:
 
 ```txt
 telemetry-only selection tracing, default-off
-baseline default-off answer run + phase2a hook-on trace run
+baseline default-off answer run + phase2a hook-on dry-run trace when available
 ```
 
 ## Stop criteria

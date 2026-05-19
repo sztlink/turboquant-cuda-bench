@@ -8,6 +8,7 @@ Enable only for controlled experiments:
     VLLM_EPKV_RUNTIME_LOG=/home/felipe/vllm-lab/evidence-paged-kv-runtime/events.jsonl
     VLLM_EPKV_RUNTIME_K=32
     VLLM_EPKV_RUNTIME_MAX_SEQ=256
+    VLLM_EPKV_RUNTIME_DRY_RUN=1  # optional: telemetry only, fall back to original TQ
 
 Boundary:
 - B=1 decode only.
@@ -52,6 +53,7 @@ _ENV_MAX_SEQ = "VLLM_EPKV_RUNTIME_MAX_SEQ"
 _ENV_MAX_EVENTS = "VLLM_EPKV_RUNTIME_MAX_EVENTS"
 _ENV_SYNC_TIMING = "VLLM_EPKV_RUNTIME_SYNC_TIMING"
 _ENV_TAG = "VLLM_EPKV_RUNTIME_TAG"
+_ENV_DRY_RUN = "VLLM_EPKV_RUNTIME_DRY_RUN"
 
 _seen = 0
 _warned = False
@@ -292,13 +294,14 @@ def maybe_decode(
             elapsed_ms = float(start.elapsed_time(end))
         if out is None:
             return None
+        dry_run = os.environ.get(_ENV_DRY_RUN, "0") == "1"
         event = {
             "ts": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
             "tag": os.environ.get(_ENV_TAG, ""),
             "event_index": _seen,
             "hook": "evidence_paged_kv.runtime.phase2a.v0",
-            "mode": "guarded_runtime_selected_page",
-            "decision": "returned_phase2a_output",
+            "mode": "guarded_runtime_selected_page_dry_run" if dry_run else "guarded_runtime_selected_page",
+            "decision": "telemetry_only_fallback_to_original_tq" if dry_run else "returned_phase2a_output",
             "elapsed_ms_sync_timing": elapsed_ms,
             "query_shape": list(query.shape),
             "kv_cache_shape": list(kv_cache.shape),
@@ -317,7 +320,7 @@ def maybe_decode(
                 os.environ.get(_ENV_LOG, "<unset>"),
             )
         _seen += 1
-        return out
+        return None if dry_run else out
     except Exception as exc:  # noqa: BLE001
         if not _warned:
             logger.warning("Evidence-Paged KV runtime hook failed; falling back to original TurboQuant: %s", exc)
