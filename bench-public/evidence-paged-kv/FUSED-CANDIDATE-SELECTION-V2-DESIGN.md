@@ -1,6 +1,6 @@
 # Phase 2c — fused candidate selection v2 design
 
-> Status: harness prepared, GPU benchmark not run in this commit.
+> Status: harness prepared and GPU benchmark receipt recorded.
 
 ## Question
 
@@ -66,17 +66,40 @@ latency not worse than Phase 2b K=32; ideally approaches Phase 2a
 - not model-quality or evidence-utilization evidence;
 - not a comparison against PagedAttention/FlashAttention.
 
-## Run command, if infra-confirmed
+## Benchmark receipt
 
-On the 4090 vLLM environment:
+Local repo receipt:
+
+```txt
+bench/evidence-paged-kv-fused-candidate-selection-v2-2026-05-19/RESULTS.md
+```
+
+Remote run command used on 4090:
 
 ```bash
 /home/felipe/vllm-lab/venv-tq-fresh-20260515/bin/python \
   /home/felipe/vllm-lab/epkv-fused-candidate-selection-v2-harness.py
 ```
 
-Expected remote output directory:
+Remote output directory:
 
 ```txt
 /home/felipe/vllm-lab/evidence-paged-kv-fused-candidate-selection-v2-2026-05-19/
+```
+
+Readout:
+
+```txt
+correctness: max abs <= 0.000199 vs dequant exact topK reference
+candidate temp: 6.25–12.5% of full-score temp
+candidate temp vs Phase 2b int64 storage: 66.7%
+Torch topk/softmax boundary: removed from candidate path
+latency: mixed, not a general replacement yet
+```
+
+Decision:
+
+```txt
+Do not install into serving.
+Keep as kernel-design evidence: memory improved, boundary removed, but latency remains shape-sensitive.
 ```

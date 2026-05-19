@@ -126,7 +126,28 @@ Phase 2c fused candidate-selection v2 design:
 - [`FUSED-CANDIDATE-SELECTION-V2-DESIGN.md`](FUSED-CANDIDATE-SELECTION-V2-DESIGN.md)
 - [`../../07-scripts/vllm-hook/epkv-fused-candidate-selection-v2-harness.py`](../../07-scripts/vllm-hook/epkv-fused-candidate-selection-v2-harness.py)
 
-Phase 2c targets the specific Phase 2b weakness: replacing the Torch global `topk`/`softmax` over candidates with a Triton global candidate selection + softmax kernel, while also storing candidate positions as `int32`. GPU benchmark pending explicit infra run.
+Phase 2c targets the specific Phase 2b weakness: replacing the Torch global `topk`/`softmax` over candidates with a Triton global candidate selection + softmax kernel, while also storing candidate positions as `int32`.
+
+Phase 2c GPU receipt:
+
+- [`../../bench/evidence-paged-kv-fused-candidate-selection-v2-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-fused-candidate-selection-v2-2026-05-19/RESULTS.md)
+
+Phase 2c result:
+
+```txt
+correctness: max abs <= 0.000199 vs dequant exact topK reference
+candidate temp: 6.25–12.5% of full-score temp
+candidate temp vs Phase 2b int64 storage: 66.7%
+Torch topk/softmax boundary: removed from candidate path
+latency: mixed; not a general replacement yet
+```
+
+Decision implication:
+
+```txt
+Do not install Phase 2c into serving.
+Keep as kernel-design evidence: memory improved and Torch boundary removed, but latency remains shape-sensitive.
+```
 
 Phase 2a guarded runtime hook receipt:
 
