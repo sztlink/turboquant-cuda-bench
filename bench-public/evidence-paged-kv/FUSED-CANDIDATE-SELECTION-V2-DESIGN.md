@@ -103,3 +103,29 @@ Decision:
 Do not install into serving.
 Keep as kernel-design evidence: memory improved, boundary removed, but latency remains shape-sensitive.
 ```
+
+## Phase 2c.1 breakdown receipt
+
+Local repo receipt:
+
+```txt
+bench/evidence-paged-kv-fused-candidate-breakdown-2026-05-19/RESULTS.md
+```
+
+Readout:
+
+```txt
+global_select_only p50: ~0.016–0.040 ms
+value_only p50: ~0.029–0.054 ms
+candidate_only p50: ~0.157–1.040 ms
+full_path p50: ~0.171–1.053 ms
+```
+
+Decision update:
+
+```txt
+The Triton global selector is not the bottleneck.
+The value kernel is not the bottleneck.
+The local candidate-generation kernel is the bottleneck.
+Next work should optimize chunk-local candidate generation, not global merge/softmax.
+```

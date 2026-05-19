@@ -149,6 +149,28 @@ Do not install Phase 2c into serving.
 Keep as kernel-design evidence: memory improved and Torch boundary removed, but latency remains shape-sensitive.
 ```
 
+Phase 2c.1 latency-breakdown receipt:
+
+- [`../../bench/evidence-paged-kv-fused-candidate-breakdown-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-fused-candidate-breakdown-2026-05-19/RESULTS.md)
+
+Breakdown result:
+
+```txt
+global_select_only p50: ~0.016–0.040 ms
+value_only p50: ~0.029–0.054 ms
+candidate_only p50: ~0.157–1.040 ms
+full_path p50: ~0.171–1.053 ms
+```
+
+Updated decision implication:
+
+```txt
+The global Triton topK/softmax selector is not the bottleneck.
+The value kernel is not the bottleneck.
+The local candidate-generation kernel is the bottleneck.
+Next kernel work should optimize local candidate generation, not global merge/softmax.
+```
+
 Phase 2a guarded runtime hook receipt:
 
 - [`../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md)
