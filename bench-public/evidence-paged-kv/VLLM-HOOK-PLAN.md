@@ -419,10 +419,14 @@ Current integration decision:
 
 ```txt
 L0 offline synthetic candidate-policy receipts complete.
-L1 is design-only.
+L1 executable schema contract exists.
 No compact fallback serving install.
 Real-prompt hook-on remains paused.
 ```
+
+L1 schema validator receipt:
+
+- [`../../bench/evidence-paged-kv-runtime-telemetry-schema-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-telemetry-schema-2026-05-19/RESULTS.md)
 
 Phase 2a guarded runtime hook receipt:
 

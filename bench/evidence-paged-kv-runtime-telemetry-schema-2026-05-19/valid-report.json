@@ -1,0 +1,44 @@
+{
+  "valid": true,
+  "files": 1,
+  "events": 4,
+  "errors": 0,
+  "file_reports": [
+    {
+      "file": "bench/evidence-paged-kv-runtime-telemetry-schema-2026-05-19/fixtures/valid-events.jsonl",
+      "events": 4,
+      "errors": 0,
+      "valid": true,
+      "event_reports": [
+        {
+          "line": 1,
+          "mode": "dry-run",
+          "reason_code": "hook_disabled",
+          "valid": true,
+          "errors": []
+        },
+        {
+          "line": 2,
+          "mode": "compact-fallback",
+          "reason_code": "compact_fallback_selected",
+          "valid": true,
+          "errors": []
+        },
+        {
+          "line": 3,
+          "mode": "exact-only",
+          "reason_code": "flag_rate_exact_only",
+          "valid": true,
+          "errors": []
+        },
+        {
+          "line": 4,
+          "mode": "degraded-fallback",
+          "reason_code": "unsupported_shape",
+          "valid": true,
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

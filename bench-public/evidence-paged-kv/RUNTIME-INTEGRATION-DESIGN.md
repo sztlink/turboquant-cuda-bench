@@ -297,7 +297,14 @@ Current position:
 
 ```txt
 L0 complete for synthetic candidate-policy receipts
-L1 design only
+L1 executable schema contract exists
+```
+
+L1 schema validator receipt:
+
+```txt
+07-scripts/vllm-hook/validate-epkv-runtime-telemetry.mjs
+bench/evidence-paged-kv-runtime-telemetry-schema-2026-05-19/RESULTS.md
 ```
 
 ## Decision

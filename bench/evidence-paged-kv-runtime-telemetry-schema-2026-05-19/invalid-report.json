@@ -1,0 +1,122 @@
+{
+  "valid": false,
+  "files": 1,
+  "events": 4,
+  "errors": 15,
+  "file_reports": [
+    {
+      "file": "bench/evidence-paged-kv-runtime-telemetry-schema-2026-05-19/fixtures/invalid-events.jsonl",
+      "events": 4,
+      "errors": 15,
+      "valid": false,
+      "event_reports": [
+        {
+          "line": 1,
+          "mode": "dry-run",
+          "reason_code": "hook_disabled",
+          "valid": false,
+          "errors": [
+            {
+              "code": "privacy.prompt_text",
+              "path": "privacy.prompt_text",
+              "message": "privacy.prompt_text must be false"
+            },
+            {
+              "code": "privacy.forbidden_key",
+              "path": "prompt_text",
+              "message": "forbidden key 'prompt_text'"
+            }
+          ]
+        },
+        {
+          "line": 2,
+          "mode": "compact-fallback",
+          "valid": false,
+          "errors": [
+            {
+              "code": "required.missing",
+              "path": "reason_code",
+              "message": "missing required field 'reason_code'"
+            },
+            {
+              "code": "reason_code.invalid",
+              "path": "reason_code",
+              "message": "unknown reason_code 'undefined'"
+            },
+            {
+              "code": "mode_reason.mismatch",
+              "path": "reason_code",
+              "message": "compact-fallback requires compact_fallback_selected"
+            }
+          ]
+        },
+        {
+          "line": 3,
+          "mode": "exact-only",
+          "reason_code": "flag_rate_exact_only",
+          "valid": false,
+          "errors": [
+            {
+              "code": "timing.missing",
+              "path": "timing_ms.probe_candidates",
+              "message": "missing timing 'probe_candidates'"
+            },
+            {
+              "code": "timing.missing",
+              "path": "timing_ms.detector",
+              "message": "missing timing 'detector'"
+            },
+            {
+              "code": "timing.missing",
+              "path": "timing_ms.compact_merge",
+              "message": "missing timing 'compact_merge'"
+            },
+            {
+              "code": "timing.missing",
+              "path": "timing_ms.global_select",
+              "message": "missing timing 'global_select'"
+            },
+            {
+              "code": "timing.missing",
+              "path": "timing_ms.value",
+              "message": "missing timing 'value'"
+            },
+            {
+              "code": "timing.missing",
+              "path": "timing_ms.exact_fallback",
+              "message": "missing timing 'exact_fallback'"
+            },
+            {
+              "code": "timing.missing",
+              "path": "timing_ms.total_hook_wall",
+              "message": "missing timing 'total_hook_wall'"
+            },
+            {
+              "code": "timing.missing",
+              "path": "timing_ms.total_hook_cuda",
+              "message": "missing timing 'total_hook_cuda'"
+            }
+          ]
+        },
+        {
+          "line": 4,
+          "mode": "compact-fallback",
+          "reason_code": "cuda_error",
+          "valid": false,
+          "errors": [
+            {
+              "code": "mode_reason.mismatch",
+              "path": "reason_code",
+              "message": "compact-fallback requires compact_fallback_selected"
+            },
+            {
+              "code": "fail_closed.violation",
+              "path": "mode",
+              "message": "failure reason must force degraded-fallback mode"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
