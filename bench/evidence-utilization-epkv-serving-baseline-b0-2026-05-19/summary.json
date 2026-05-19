@@ -1,0 +1,85 @@
+{
+  "created_at": "2026-05-19T09:45:21.584Z",
+  "base_url": "http://192.168.15.133:11435/v1",
+  "model": "local-vllm",
+  "runs": 12,
+  "errors": 0,
+  "target_prompt_tokens": [
+    512,
+    1024,
+    1536,
+    2048
+  ],
+  "repeats": 3,
+  "max_tokens": 32,
+  "health_start": 200,
+  "health_end": 200,
+  "groups_by_target": [
+    {
+      "key": 512,
+      "runs": 3,
+      "errors": 0,
+      "prompt_tokens_mean": 409,
+      "completion_tokens_mean": 5,
+      "elapsed_ms_p50": 106.50503800000001,
+      "elapsed_ms_p90": 296.754059,
+      "ms_per_completion_token_p50": 21.301007600000002,
+      "ms_per_completion_token_p90": 59.350811799999995,
+      "ms_per_total_token_p50": 0.2572585458937198,
+      "ms_per_total_token_p90": 0.7167972439613526
+    },
+    {
+      "key": 1024,
+      "runs": 3,
+      "errors": 0,
+      "prompt_tokens_mean": 772,
+      "completion_tokens_mean": 5,
+      "elapsed_ms_p50": 107.15852999999993,
+      "elapsed_ms_p90": 167.07088899999997,
+      "ms_per_completion_token_p50": 21.431705999999984,
+      "ms_per_completion_token_p90": 33.41417779999999,
+      "ms_per_total_token_p50": 0.13791316602316592,
+      "ms_per_total_token_p90": 0.21502044916344912
+    },
+    {
+      "key": 1536,
+      "runs": 3,
+      "errors": 0,
+      "prompt_tokens_mean": 1132,
+      "completion_tokens_mean": 5,
+      "elapsed_ms_p50": 111.24353900000006,
+      "elapsed_ms_p90": 155.48578300000008,
+      "ms_per_completion_token_p50": 22.248707800000012,
+      "ms_per_completion_token_p90": 31.097156600000016,
+      "ms_per_total_token_p50": 0.09783952418645564,
+      "ms_per_total_token_p90": 0.1367509085312226
+    },
+    {
+      "key": 2048,
+      "runs": 3,
+      "errors": 0,
+      "prompt_tokens_mean": 1492,
+      "completion_tokens_mean": 5,
+      "elapsed_ms_p50": 108.37699399999997,
+      "elapsed_ms_p90": 157.71288099999992,
+      "ms_per_completion_token_p50": 21.675398799999993,
+      "ms_per_completion_token_p90": 31.542576199999985,
+      "ms_per_total_token_p50": 0.07239612157648628,
+      "ms_per_total_token_p90": 0.10535262591850363
+    }
+  ],
+  "all_ms_per_completion_token_p90": 33.41417779999999,
+  "proposed_trace_overhead_budget_15pct_ms": 5.012126669999998,
+  "gate_implication": "If future hook-on dry-run uses a 15% per-completion-token overhead budget, the current B0 p90 gives ~5.01 ms. Compare this against Track A trace overhead before any hook-on serving probe.",
+  "boundary": {
+    "hook_on": false,
+    "service_mutation": false,
+    "synthetic_prompts_only": true
+  },
+  "non_claims": [
+    "no EPKV hook-on result",
+    "no quality result",
+    "no serving speedup claim",
+    "no production attention claim"
+  ]
+}

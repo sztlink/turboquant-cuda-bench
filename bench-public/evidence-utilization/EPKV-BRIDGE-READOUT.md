@@ -121,13 +121,19 @@ offline metadata bridge
 token/page mapping
 offline selected-position replay
 real offline KV replay, if needed
+serving baseline hook-off (B0)
 ```
 
-Paused until separate evidence:
+Completed B0 serving baseline:
+
+- [`../../bench/evidence-utilization-epkv-serving-baseline-b0-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-serving-baseline-b0-2026-05-19/RESULTS.md)
+
+B0 result: hook-off synthetic serving p90 gives an approximate 15% per-completion-token overhead budget of ~5.01 ms. Track A K=32 trace overhead fits under that budget, so a **synthetic hook-on dry-run probe** is plausible with explicit infra confirmation.
+
+Paused until explicit confirmation / additional control:
 
 ```txt
 real-prompt hook-on dry-run trace
-serving-path probe
 intervention bridge
 quality comparison
 public EPKV claim
