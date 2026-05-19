@@ -32,6 +32,7 @@ The bridge now has a staged chain of receipts:
 | Target materialization v1.0 | [`../../bench/evidence-utilization-epkv-target-materialization-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-target-materialization-2026-05-19/RESULTS.md) | v0.9 target skeletons materialized into 16 schema-valid synthetic hook-off telemetry events | runtime behavior, live request tracing, evidence-use proof |
 | Audit-join v1.1 | [`../../bench/evidence-utilization-epkv-audit-join-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-audit-join-2026-05-19/RESULTS.md) | target queue + materialized events + validator report joined into action states: 13 bridge-ready, 3 needs fixture detail | runtime behavior, evidence-use proof, deployment readiness |
 | Replay pack v1.2 | [`../../bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/RESULTS.md) | 13 bridge-ready decoy-risk targets packed as compact hook-off replay records | runtime behavior, live request tracing, evidence-use proof |
+| Replay validator v1.3 | [`../../bench/evidence-utilization-epkv-replay-pack-validator-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-replay-pack-validator-2026-05-19/RESULTS.md) | v1.2 replay-pack invariants pass: 13 records, 0 errors | model behavior, runtime behavior, evidence-use proof |
 
 ## What was validated
 
@@ -270,10 +271,10 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-replay-pack validator v1.3:
-  validate v1.2 replay-pack invariants
-  fail on raw selected-position samples, missing non-claim boundaries, or non-hook-off records
-  emit pass/fail receipt
+evidence-path ledger v1.4:
+  index the chain v0.8 -> v0.9 -> v1.0 -> v1.1 -> v1.2 -> v1.3
+  emit a single audit ledger with artifact hashes and boundary states
+  make the offline evidence-utilization layer reproducible
 ```
 
 Alternative: refine the 3 needs-fixture-detail targets. Real prompts remain paused.
