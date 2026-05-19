@@ -35,6 +35,7 @@ The bridge now has a staged chain of receipts:
 | Replay validator v1.3 | [`../../bench/evidence-utilization-epkv-replay-pack-validator-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-replay-pack-validator-2026-05-19/RESULTS.md) | v1.2 replay-pack invariants pass: 13 records, 0 errors | model behavior, runtime behavior, evidence-use proof |
 | Evidence-path ledger v1.4 | [`../../bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/RESULTS.md) | v0.8 → v1.3 chain indexed with hashes and boundary invariants | runtime behavior, live telemetry, evidence-use proof |
 | Fixture refinement v1.5 | [`../../bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/RESULTS.md) | 3 ambiguous targets refined into 9 canonical/decoy/neither schema-valid hook-off events | runtime behavior, evidence-use proof, quality evaluation |
+| Refined replay pack v1.6 | [`../../bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/RESULTS.md) | the 3 ambiguous targets now have 9 contrastive replay records: canonical/decoy/neither | runtime behavior, evidence-use proof, quality evaluation |
 
 ## What was validated
 
@@ -273,10 +274,10 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-refined replay pack v1.6:
-  fold v1.5 contrastive events into a second replay pack
-  keep canonical/decoy/neither variants explicit
-  validate as hook-off/schema-v1/privacy-safe
+ledger update v1.7:
+  index v1.5 and v1.6 into the evidence-path ledger
+  report combined replay coverage: 13 decoy-risk + 9 contrastive records
+  keep non-serving invariants explicit
 ```
 
 Alternative: incorporate Claude/reviewer audit once output is available. Real prompts remain paused.
