@@ -373,8 +373,9 @@ Track A runtime benchmark and bridge receipts exist:
 - [`../../bench/evidence-paged-kv-runtime-benchmark-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-benchmark-2026-05-19/RESULTS.md)
 - [`../../bench/evidence-utilization-epkv-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-2026-05-19/RESULTS.md)
 - [`../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md)
+- [`../../bench/evidence-utilization-epkv-bridge-replay-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-replay-2026-05-19/RESULTS.md)
 
-Readout: telemetry completeness passed, but the original cost-ratio gate failed. The current bridge step is **metadata/offline bridge v0.1 tokenized**, not real-prompt hook-on serving telemetry.
+Readout: telemetry completeness passed, but the original cost-ratio gate failed. The current bridge step is **offline bridge v0.2 synthetic replay**, not real-prompt hook-on serving telemetry.
 
 Prepared in the source hook: **telemetry-only selection tracing**, default-off:
 

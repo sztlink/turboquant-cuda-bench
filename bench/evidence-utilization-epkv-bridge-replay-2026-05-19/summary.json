@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-05-19T09:16:19.838Z",
+  "bridge_version": "v0.2-synthetic-replay",
+  "source_records": "bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/records.jsonl",
+  "total_records": 16,
+  "replay_policy": "aggregate_proxy_biased_schema_replay",
+  "Hq": 28,
+  "K": 32,
+  "by_dominant_region": {
+    "canonical": 8,
+    "decoy": 8
+  },
+  "by_proxy_dominant_answer_class": {
+    "canonical": 8,
+    "decoy": 8
+  },
+  "synthetic_alignment_rate": 1,
+  "alignable_records": 16,
+  "boundary": {
+    "no_model_inference": true,
+    "no_vllm_serving": true,
+    "no_real_epkv_selection": true,
+    "purpose": "schema and alignment validation before real KV replay or serving dry-run"
+  },
+  "non_claims": [
+    "no serving claim",
+    "no model-quality claim",
+    "no real EPKV selection trace",
+    "no model attention claim",
+    "synthetic alignment is not evidence of causal behavior",
+    "no leaderboard score"
+  ]
+}
