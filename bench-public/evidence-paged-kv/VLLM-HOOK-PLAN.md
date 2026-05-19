@@ -44,6 +44,11 @@ A selected-evidence KV path can be inserted experimentally around vLLM attention
 - Identify whether an out-of-tree extension can be loaded without rebuilding the full server.
 - Identify the tensors available at the hook boundary: Q, K/V cache layout, block tables, sequence metadata.
 
+Prepared scaffold:
+
+- [`../../07-scripts/vllm-hook/README.md`](../../07-scripts/vllm-hook/README.md)
+- [`../../bench/evidence-paged-kv-vllm-hook-scout-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-vllm-hook-scout-2026-05-19/RESULTS.md)
+
 ### Phase 1 — offline harness near vLLM layout
 
 - Reproduce v4/v5 benchmark using tensors shaped closer to vLLM KV cache/block tables.
