@@ -213,7 +213,13 @@ Path B serving receipts:
 - [`../../bench/evidence-utilization-epkv-serving-baseline-b0-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-serving-baseline-b0-2026-05-19/RESULTS.md)
 - [`../../bench/evidence-utilization-epkv-serving-dryrun-b1-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-serving-dryrun-b1-2026-05-19/RESULTS.md)
 
-B1 readout: synthetic dry-run contact succeeded and service was restored to default-off, but event cap was hit before all prompt bands were represented. Repeat with warmup separation before any broader dry-run trace.
+B1 readout: synthetic dry-run contact succeeded and service was restored to default-off, but event cap was hit before all prompt bands were represented.
+
+B1.1 serving receipt:
+
+- [`../../bench/evidence-utilization-epkv-serving-dryrun-b11-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-serving-dryrun-b11-2026-05-19/RESULTS.md)
+
+B1.1 fixed the event-cap issue and covered all prompt bands (`3232` steady events, cap not hit, `3232/3232` selected summaries). It remains synthetic-only; real-prompt hook-on remains paused.
 
 ## Stop criteria
 

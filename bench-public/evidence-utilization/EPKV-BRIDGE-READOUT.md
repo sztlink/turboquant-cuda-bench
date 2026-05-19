@@ -136,6 +136,12 @@ Completed B1 serving synthetic dry-run:
 
 B1 result: contact succeeded and service was restored, but the event cap was hit before all prompt bands were represented. Treat it as a contact receipt, not final serving latency characterization.
 
+Completed B1.1 serving synthetic dry-run with warmup separation:
+
+- [`../../bench/evidence-utilization-epkv-serving-dryrun-b11-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-serving-dryrun-b11-2026-05-19/RESULTS.md)
+
+B1.1 result: event cap problem fixed (`3232` steady events, cap not hit, `3232/3232` selected summaries), all prompt bands covered, service restored. Serving latency still shows first-request-per-band warmup/autotune effects, so this is a stronger synthetic telemetry receipt but still not a real-prompt green light.
+
 Paused until explicit confirmation / additional control:
 
 ```txt
