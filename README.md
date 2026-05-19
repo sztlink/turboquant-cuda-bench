@@ -30,6 +30,7 @@ Start here:
 - [bench-public/dashboard.html](bench-public/dashboard.html) - static dashboard of the headline numbers.
 - [bench-public/assets/](bench-public/assets/) - SVG cards/charts for the public readout.
 - [Evidence-Paged KV kernel receipts](bench-public/evidence-paged-kv/) - CUDA v1→v7 summary, claims, non-claims, and next steps.
+- [Evidence-Paged KV audit v1→v8](AUDIT-EVIDENCE-PAGED-KV-v1-v8.md) - frozen taxonomy, vLLM hook target, and v8 stop/continue criteria.
 - [Evidence Path: three scenes where finding is not using](06-publicable/longctx/evidence-path/README.md) - readable narrative entry point.
 - [Start Here](00-context/START-HERE.md) - repo-level orientation and caveats.
 - [CONTRIBUTING.md](CONTRIBUTING.md) - how to report reproductions, bugs, or suggested tests.
