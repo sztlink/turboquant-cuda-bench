@@ -411,6 +411,19 @@ Timing is shape-sensitive; some non-power-of-two lengths show large p50 swings.
 Do not install into serving. Next: runtime integration design doc with invariants, telemetry, kill switch, and exact-restore requirements.
 ```
 
+Runtime integration design contract:
+
+- [`RUNTIME-INTEGRATION-DESIGN.md`](RUNTIME-INTEGRATION-DESIGN.md)
+
+Current integration decision:
+
+```txt
+L0 offline synthetic candidate-policy receipts complete.
+L1 is design-only.
+No compact fallback serving install.
+Real-prompt hook-on remains paused.
+```
+
 Phase 2a guarded runtime hook receipt:
 
 - [`../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md)
