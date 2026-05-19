@@ -226,3 +226,30 @@ Decision update:
 Adaptive overflow guard is conceptually valid.
 Next implementation step is a tiny GPU detector/fallback-mask kernel; still do not install into serving.
 ```
+
+## Phase 2c.5 GPU overflow detector receipt
+
+Local repo receipt:
+
+```txt
+bench/evidence-paged-kv-gpu-overflow-detector-2026-05-19/RESULTS.md
+```
+
+Readout:
+
+```txt
+Triton detector p50: ~0.0225–0.0352 ms
+previous Torch/CPU detector wall: ~0.39–0.42 ms
+accepted probe cases: 4/8
+fallback exact cases: 4/8
+adversarial concentrated cases flagged and recovered
+random/spread cases accepted
+```
+
+Decision update:
+
+```txt
+GPU overflow detector is a viable building block.
+Next step is a single adaptive offline path: probe -> GPU detector -> conditional exact fallback.
+Still do not install into serving.
+```

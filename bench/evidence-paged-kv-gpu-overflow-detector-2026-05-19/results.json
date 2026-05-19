@@ -1,0 +1,442 @@
+{
+  "title": "Evidence-Paged KV Phase 2c.5 \u2014 GPU overflow detector",
+  "meta": {
+    "host": "DESKTOP-CTAHC6D",
+    "python": "3.12.3",
+    "torch": "2.11.0+cu130",
+    "cuda_device": "NVIDIA GeForce RTX 4090",
+    "nvidia_smi_start": "NVIDIA GeForce RTX 4090, 595.79, 21839 MiB, 24564 MiB, 0 %, 39",
+    "policy": {
+      "global_k": 32,
+      "probe_local_top": 8,
+      "fallback_local_top": 32,
+      "chunk_rows": 512
+    },
+    "boundary": "offline GPU detector feasibility; no serving mutation"
+  },
+  "results": [
+    {
+      "scenario": "random",
+      "M": 8192,
+      "overflow": false,
+      "flag_heads": 0,
+      "probe_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_max_abs_error": 0.00014137104153633118,
+      "adaptive_max_abs_error": 0.00014137104153633118,
+      "timing": {
+        "detector_gpu": {
+          "name": "detector scenario=random M=8192",
+          "repeats": 10,
+          "p50_ms": 0.030719999223947525,
+          "p90_ms": 0.04668800160288811,
+          "min_ms": 0.029503999277949333,
+          "max_ms": 0.04668800160288811,
+          "checksum": 0.0
+        },
+        "probe_full": {
+          "name": "probe_full scenario=random M=8192",
+          "repeats": 5,
+          "p50_ms": 0.1013759970664978,
+          "p90_ms": 0.10662399977445602,
+          "min_ms": 0.08806400001049042,
+          "max_ms": 0.10662399977445602,
+          "checksum": -3.3721680641174316
+        },
+        "exact_full": {
+          "name": "exact_full scenario=random M=8192",
+          "repeats": 5,
+          "p50_ms": 0.17590400576591492,
+          "p90_ms": 0.32419198751449585,
+          "min_ms": 0.17212800681591034,
+          "max_ms": 0.32419198751449585,
+          "checksum": -3.3721680641174316
+        },
+        "adaptive_estimated_p50_ms": 0.13209599629044533
+      }
+    },
+    {
+      "scenario": "random",
+      "M": 65536,
+      "overflow": false,
+      "flag_heads": 0,
+      "probe_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_max_abs_error": 0.00017843768000602722,
+      "adaptive_max_abs_error": 0.00017843768000602722,
+      "timing": {
+        "detector_gpu": {
+          "name": "detector scenario=random M=65536",
+          "repeats": 10,
+          "p50_ms": 0.03174399957060814,
+          "p90_ms": 0.04915200173854828,
+          "min_ms": 0.02457600086927414,
+          "max_ms": 0.04915200173854828,
+          "checksum": 0.0
+        },
+        "probe_full": {
+          "name": "probe_full scenario=random M=65536",
+          "repeats": 5,
+          "p50_ms": 0.2979840040206909,
+          "p90_ms": 0.3033599853515625,
+          "min_ms": 0.29760000109672546,
+          "max_ms": 0.3033599853515625,
+          "checksum": 4.047945976257324
+        },
+        "exact_full": {
+          "name": "exact_full scenario=random M=65536",
+          "repeats": 5,
+          "p50_ms": 0.9758719801902771,
+          "p90_ms": 0.9943040013313293,
+          "min_ms": 0.92467200756073,
+          "max_ms": 0.9943040013313293,
+          "checksum": 4.047945976257324
+        },
+        "adaptive_estimated_p50_ms": 0.32972800359129906
+      }
+    },
+    {
+      "scenario": "one_chunk_32",
+      "M": 8192,
+      "overflow": true,
+      "flag_heads": 28,
+      "probe_recall_at_32": {
+        "mean": 0.25,
+        "min": 0.25,
+        "max": 0.25,
+        "heads_full_recall": 0,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_max_abs_error": 0.7570458650588989,
+      "adaptive_max_abs_error": 9.933114051818848e-05,
+      "timing": {
+        "detector_gpu": {
+          "name": "detector scenario=one_chunk_32 M=8192",
+          "repeats": 10,
+          "p50_ms": 0.03519999980926514,
+          "p90_ms": 0.4615040123462677,
+          "min_ms": 0.02969600073993206,
+          "max_ms": 0.4615040123462677,
+          "checksum": 28.0
+        },
+        "probe_full": {
+          "name": "probe_full scenario=one_chunk_32 M=8192",
+          "repeats": 5,
+          "p50_ms": 0.10547199845314026,
+          "p90_ms": 0.11299200356006622,
+          "min_ms": 0.10444799810647964,
+          "max_ms": 0.11299200356006622,
+          "checksum": -72.18446350097656
+        },
+        "exact_full": {
+          "name": "exact_full scenario=one_chunk_32 M=8192",
+          "repeats": 5,
+          "p50_ms": 0.19043199717998505,
+          "p90_ms": 0.2465279996395111,
+          "min_ms": 0.16896000504493713,
+          "max_ms": 0.2465279996395111,
+          "checksum": -40.80274200439453
+        },
+        "adaptive_estimated_p50_ms": 0.22563199698925018
+      }
+    },
+    {
+      "scenario": "one_chunk_32",
+      "M": 65536,
+      "overflow": true,
+      "flag_heads": 28,
+      "probe_recall_at_32": {
+        "mean": 0.25,
+        "min": 0.25,
+        "max": 0.25,
+        "heads_full_recall": 0,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_max_abs_error": 0.7167240381240845,
+      "adaptive_max_abs_error": 0.00010703504085540771,
+      "timing": {
+        "detector_gpu": {
+          "name": "detector scenario=one_chunk_32 M=65536",
+          "repeats": 10,
+          "p50_ms": 0.032575998455286026,
+          "p90_ms": 0.0613120011985302,
+          "min_ms": 0.03174399957060814,
+          "max_ms": 0.0613120011985302,
+          "checksum": 28.0
+        },
+        "probe_full": {
+          "name": "probe_full scenario=one_chunk_32 M=65536",
+          "repeats": 5,
+          "p50_ms": 0.2949120104312897,
+          "p90_ms": 0.30505600571632385,
+          "min_ms": 0.2945280075073242,
+          "max_ms": 0.30505600571632385,
+          "checksum": -23.801509857177734
+        },
+        "exact_full": {
+          "name": "exact_full scenario=one_chunk_32 M=65536",
+          "repeats": 5,
+          "p50_ms": 0.944159984588623,
+          "p90_ms": 0.9615359902381897,
+          "min_ms": 0.9193919897079468,
+          "max_ms": 0.9615359902381897,
+          "checksum": -22.962677001953125
+        },
+        "adaptive_estimated_p50_ms": 0.9767359830439091
+      }
+    },
+    {
+      "scenario": "two_chunks_16_16",
+      "M": 8192,
+      "overflow": true,
+      "flag_heads": 28,
+      "probe_recall_at_32": {
+        "mean": 0.5,
+        "min": 0.5,
+        "max": 0.5,
+        "heads_full_recall": 0,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_max_abs_error": 0.5716477632522583,
+      "adaptive_max_abs_error": 0.00011453777551651001,
+      "timing": {
+        "detector_gpu": {
+          "name": "detector scenario=two_chunks_16_16 M=8192",
+          "repeats": 10,
+          "p50_ms": 0.030719999223947525,
+          "p90_ms": 0.061503998935222626,
+          "min_ms": 0.028672000393271446,
+          "max_ms": 0.061503998935222626,
+          "checksum": 28.0
+        },
+        "probe_full": {
+          "name": "probe_full scenario=two_chunks_16_16 M=8192",
+          "repeats": 5,
+          "p50_ms": 0.10524799674749374,
+          "p90_ms": 0.11059200018644333,
+          "min_ms": 0.10335999727249146,
+          "max_ms": 0.11059200018644333,
+          "checksum": 6.666691303253174
+        },
+        "exact_full": {
+          "name": "exact_full scenario=two_chunks_16_16 M=8192",
+          "repeats": 5,
+          "p50_ms": 0.16998399794101715,
+          "p90_ms": 0.17283199727535248,
+          "min_ms": 0.1669120043516159,
+          "max_ms": 0.17283199727535248,
+          "checksum": -30.0451602935791
+        },
+        "adaptive_estimated_p50_ms": 0.20070399716496468
+      }
+    },
+    {
+      "scenario": "two_chunks_16_16",
+      "M": 65536,
+      "overflow": true,
+      "flag_heads": 28,
+      "probe_recall_at_32": {
+        "mean": 0.5,
+        "min": 0.5,
+        "max": 0.5,
+        "heads_full_recall": 0,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_max_abs_error": 0.46125030517578125,
+      "adaptive_max_abs_error": 0.00012238696217536926,
+      "timing": {
+        "detector_gpu": {
+          "name": "detector scenario=two_chunks_16_16 M=65536",
+          "repeats": 10,
+          "p50_ms": 0.02252800017595291,
+          "p90_ms": 0.029823999851942062,
+          "min_ms": 0.021503999829292297,
+          "max_ms": 0.029823999851942062,
+          "checksum": 28.0
+        },
+        "probe_full": {
+          "name": "probe_full scenario=two_chunks_16_16 M=65536",
+          "repeats": 5,
+          "p50_ms": 0.2969599962234497,
+          "p90_ms": 0.3110400140285492,
+          "min_ms": 0.2949120104312897,
+          "max_ms": 0.3110400140285492,
+          "checksum": -5.558921813964844
+        },
+        "exact_full": {
+          "name": "exact_full scenario=two_chunks_16_16 M=65536",
+          "repeats": 5,
+          "p50_ms": 0.9443519711494446,
+          "p90_ms": 0.9635840058326721,
+          "min_ms": 0.9226239919662476,
+          "max_ms": 0.9635840058326721,
+          "checksum": 10.80640983581543
+        },
+        "adaptive_estimated_p50_ms": 0.9668799713253975
+      }
+    },
+    {
+      "scenario": "spread_32_chunks",
+      "M": 8192,
+      "overflow": false,
+      "flag_heads": 0,
+      "probe_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_max_abs_error": 0.00012817978858947754,
+      "adaptive_max_abs_error": 0.00012817978858947754,
+      "timing": {
+        "detector_gpu": {
+          "name": "detector scenario=spread_32_chunks M=8192",
+          "repeats": 10,
+          "p50_ms": 0.030719999223947525,
+          "p90_ms": 0.03145600110292435,
+          "min_ms": 0.02969600073993206,
+          "max_ms": 0.03145600110292435,
+          "checksum": 0.0
+        },
+        "probe_full": {
+          "name": "probe_full scenario=spread_32_chunks M=8192",
+          "repeats": 5,
+          "p50_ms": 0.10524799674749374,
+          "p90_ms": 0.11161600053310394,
+          "min_ms": 0.10259199887514114,
+          "max_ms": 0.11161600053310394,
+          "checksum": 69.66152954101562
+        },
+        "exact_full": {
+          "name": "exact_full scenario=spread_32_chunks M=8192",
+          "repeats": 5,
+          "p50_ms": 0.20361599326133728,
+          "p90_ms": 0.2489279955625534,
+          "min_ms": 0.1666879951953888,
+          "max_ms": 0.2489279955625534,
+          "checksum": 69.66152954101562
+        },
+        "adaptive_estimated_p50_ms": 0.13596799597144127
+      }
+    },
+    {
+      "scenario": "spread_32_chunks",
+      "M": 65536,
+      "overflow": false,
+      "flag_heads": 0,
+      "probe_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_max_abs_error": 0.0001147836446762085,
+      "adaptive_max_abs_error": 0.0001147836446762085,
+      "timing": {
+        "detector_gpu": {
+          "name": "detector scenario=spread_32_chunks M=65536",
+          "repeats": 10,
+          "p50_ms": 0.02252800017595291,
+          "p90_ms": 0.03254399821162224,
+          "min_ms": 0.021503999829292297,
+          "max_ms": 0.03254399821162224,
+          "checksum": 0.0
+        },
+        "probe_full": {
+          "name": "probe_full scenario=spread_32_chunks M=65536",
+          "repeats": 5,
+          "p50_ms": 0.29795199632644653,
+          "p90_ms": 0.30480000376701355,
+          "min_ms": 0.2969599962234497,
+          "max_ms": 0.30480000376701355,
+          "checksum": 9.233634948730469
+        },
+        "exact_full": {
+          "name": "exact_full scenario=spread_32_chunks M=65536",
+          "repeats": 5,
+          "p50_ms": 0.9478719830513,
+          "p90_ms": 0.9728000164031982,
+          "min_ms": 0.9175040125846863,
+          "max_ms": 0.9728000164031982,
+          "checksum": 9.233634948730469
+        },
+        "adaptive_estimated_p50_ms": 0.32047999650239944
+      }
+    }
+  ],
+  "nvidia_smi_end": "NVIDIA GeForce RTX 4090, 595.79, 22287 MiB, 24564 MiB, 61 %, 41",
+  "non_claims": [
+    "not production attention",
+    "not serving",
+    "not a serving speedup claim",
+    "not model quality evidence"
+  ]
+}
