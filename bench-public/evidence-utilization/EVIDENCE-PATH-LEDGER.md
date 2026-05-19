@@ -21,7 +21,13 @@ aggregate answer-side risk
 The executable ledger is here:
 
 ```txt
-bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/evidence-path-ledger.json
+bench/evidence-utilization-epkv-evidence-path-ledger-v19-2026-05-19/evidence-path-ledger-v19.json
+```
+
+A local validator-first view is here:
+
+```txt
+bench-public/evidence-utilization/EVIDENCE-PATH-LEDGER-VIEW.html
 ```
 
 Receipt:
