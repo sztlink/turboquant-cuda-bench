@@ -77,14 +77,14 @@ function main() {
       source_wrong_rate: target.source_audit_record?.wrong_rate,
       materialized: Boolean(mat),
       telemetry_event: Boolean(event),
-      validator_pack_passed: validatorOk,
+      geometry_validator_passed: validatorOk,
       dominant_region: mat?.dominant_region || null,
       audit_projection: mat?.audit_projection || null,
-      next_packet: a.state === 'bridge-ready'
-        ? 'run hook-off bridge replay pack over this target family'
+      next_action_state: a.state === 'bridge-ready'
+        ? 'ready_for_hookoff_replay_pack'
         : a.state === 'needs-fixture-detail'
-          ? 'refine fixture layout before replay pack'
-          : 'do not advance until blocking issue fixed',
+          ? 'ready_for_fixture_refinement'
+          : 'blocked_until_issue_fixed',
       boundary: {
         planning_only: true,
         synthetic_layout: true,
@@ -115,7 +115,7 @@ function main() {
     by_state: byState,
     by_risk: byRisk,
     by_distractor: byDistractor,
-    validator_pack_passed: validatorOk,
+    geometry_validator_passed: validatorOk,
     ready_top_8: ready.slice(0, 8),
     needs_fixture_detail: needs,
     blocked,
@@ -135,7 +135,7 @@ function main() {
   };
   fs.writeFileSync(SUMMARY, JSON.stringify(summary, null, 2));
 
-  const rows = ready.slice(0, 12).map((a) => `| ${a.target_id} | ${a.risk} | ${a.distractor_type} | ${a.canonical_rank ?? 'any'} | ${a.source_hit_rate.toFixed(3)} | ${a.source_wrong_rate.toFixed(3)} | ${a.dominant_region} | ${a.action_state} |`).join('\n');
+  const rows = ready.map((a) => `| ${a.target_id} | ${a.risk} | ${a.distractor_type} | ${a.canonical_rank ?? 'rank_any'} | ${a.source_hit_rate.toFixed(3)} | ${a.source_wrong_rate.toFixed(3)} | ${a.dominant_region} | ${a.action_state} |`).join('\n');
   fs.writeFileSync(RESULTS, [
     '# EPKV audit-join v1.1 — 2026-05-19',
     '',
@@ -165,14 +165,16 @@ function main() {
     '```txt',
     `targets: ${actions.length}`,
     `by_state: ${JSON.stringify(byState)}`,
-    `validator_pack_passed: ${validatorOk}`,
+    `geometry_validator_passed: ${validatorOk}`,
     '```',
     '',
     '## Bridge-ready targets',
     '',
-    '| target | risk | distractor | rank | hit_rate | wrong_rate | dominant_region | state |',
+    '| target | risk | distractor | rank | source_hit_rate | source_wrong_rate | dominant_region | state |',
     '|---|---|---|---:|---:|---:|---|---|',
     rows || '| — | — | — | — | — | — | — | — |',
+    '',
+    '`rank_any` means the source aggregate had no canonical-rank key; it is not equivalent to a very large rank.',
     '',
     '## Decision',
     '',

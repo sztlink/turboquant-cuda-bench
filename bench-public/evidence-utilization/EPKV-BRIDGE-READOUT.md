@@ -37,6 +37,7 @@ The bridge now has a staged chain of receipts:
 | Fixture refinement v1.5 | [`../../bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/RESULTS.md) | 3 ambiguous targets refined into 9 canonical/decoy/neither schema-valid hook-off events | runtime behavior, evidence-use proof, quality evaluation |
 | Refined replay pack v1.6 | [`../../bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/RESULTS.md) | the 3 ambiguous targets now have 9 contrastive replay records: canonical/decoy/neither | runtime behavior, evidence-use proof, quality evaluation |
 | Evidence-path ledger v1.7 | [`../../bench/evidence-utilization-epkv-evidence-path-ledger-v17-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-evidence-path-ledger-v17-2026-05-19/RESULTS.md) | v0.8 → v1.6 chain indexed; total replay coverage is 22 records | live telemetry, evidence-use proof, serving readiness |
+| Replay provenance validator v1.8 | [`../../bench/evidence-utilization-epkv-bridge-replay-pack-provenance-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-replay-pack-provenance-2026-05-19/RESULTS.md) | Claude-review gaps closed: upstream sha256 pinning, referential closure, 13/13 doc rows | runtime behavior, evidence-use proof, serving readiness |
 
 ## What was validated
 
@@ -275,10 +276,10 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-review-gated consolidation:
-  collect Claude/reviewer audit if available
-  patch any wording or invariant issue
-  otherwise stop at the offline milestone: 22 replay records, v1.7 ledger, no live serving
+ledger update v1.9:
+  include replay provenance validator v1.8
+  record that Claude-review gaps R1/R2/R3/R5/R8 are closed
+  keep hard stops closed for live serving
 ```
 
 Real prompts remain paused.

@@ -32,6 +32,10 @@ function sha256(text) {
   return crypto.createHash('sha256').update(text).digest('hex');
 }
 
+function sha256File(file) {
+  return sha256(fs.readFileSync(file));
+}
+
 function compactEvent(event) {
   return {
     schema: event.schema,
@@ -143,6 +147,11 @@ function main() {
       materialized: path.relative(ROOT, MATERIALIZED),
       events: path.relative(ROOT, EVENTS),
     },
+    source_sha256: {
+      actions: sha256File(ACTIONS),
+      materialized: sha256File(MATERIALIZED),
+      events: sha256File(EVENTS),
+    },
     replay_pack: path.relative(ROOT, PACK),
     records: pack.length,
     checks,
@@ -173,7 +182,7 @@ function main() {
     boundary: manifest.boundary,
   };
   fs.writeFileSync(SUMMARY, JSON.stringify(summary, null, 2));
-  const rows = pack.slice(0, 12).map((r) => `| ${r.replay_id} | ${r.target_id} | ${r.source_risk.distractor_type} | ${r.source_risk.canonical_rank ?? 'any'} | ${r.source_risk.source_hit_rate.toFixed(3)} | ${r.source_risk.source_wrong_rate.toFixed(3)} | ${r.materialized_geometry.dominant_region} |`).join('\n');
+  const rows = pack.map((r) => `| ${r.replay_id} | ${r.target_id} | ${r.source_risk.distractor_type} | ${r.source_risk.canonical_rank ?? 'rank_any'} | ${r.source_risk.source_hit_rate.toFixed(3)} | ${r.source_risk.source_wrong_rate.toFixed(3)} | ${r.materialized_geometry.dominant_region} |`).join('\n');
   fs.writeFileSync(RESULTS, [
     '# EPKV bridge replay pack v1.2 — 2026-05-19',
     '',
@@ -211,9 +220,13 @@ function main() {
     '',
     '## Replay records',
     '',
-    '| replay | target | distractor | rank | hit_rate | wrong_rate | dominant_region |',
+    '| replay | target | distractor | rank | source_hit_rate | source_wrong_rate | dominant_region |',
     '|---|---|---|---:|---:|---:|---|',
     rows,
+    '',
+    '`rank_any` means the source aggregate had no canonical-rank key; it is not equivalent to a very large rank.',
+    '',
+    'Replay IDs are dense over the surviving bridge-ready target subset; gaps in target IDs are the targets routed to fixture refinement.',
     '',
     '## Decision',
     '',
