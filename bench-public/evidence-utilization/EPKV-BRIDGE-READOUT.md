@@ -30,6 +30,7 @@ The bridge now has a staged chain of receipts:
 | Taxonomy v0.8 | [`../../bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/RESULTS.md) | existing aggregate sweeps can be ranked with answer-side risk labels to choose next bridge targets | runtime geometry, EPKV behavior, evidence-use proof |
 | Target queue v0.9 | [`../../bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/RESULTS.md) | 16 high-risk fixture families selected for next hook-off geometry bridge coverage | runtime execution, model behavior, evidence-use proof |
 | Target materialization v1.0 | [`../../bench/evidence-utilization-epkv-target-materialization-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-target-materialization-2026-05-19/RESULTS.md) | v0.9 target skeletons materialized into 16 schema-valid synthetic hook-off telemetry events | runtime behavior, live request tracing, evidence-use proof |
+| Audit-join v1.1 | [`../../bench/evidence-utilization-epkv-audit-join-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-audit-join-2026-05-19/RESULTS.md) | target queue + materialized events + validator report joined into action states: 13 bridge-ready, 3 needs fixture detail | runtime behavior, evidence-use proof, deployment readiness |
 
 ## What was validated
 
@@ -268,13 +269,13 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-audit-join v1.1:
-  join v1.0 materialized events back to the v0.9 target queue
-  emit a target-level action table: bridge-ready / needs-fixture-detail / blocked
-  keep all labels as planning states
+bridge replay pack v1.2:
+  use the 13 bridge-ready targets
+  produce replay-pack records with target, evidence geometry, selected geometry, and audit action
+  keep hook-off and schema-validated only
 ```
 
-Alternative: extend v0.8 taxonomy to more aggregate sweeps. Real prompts remain paused.
+Alternative: refine the 3 needs-fixture-detail targets. Real prompts remain paused.
 
 ## Safe public phrasing
 
