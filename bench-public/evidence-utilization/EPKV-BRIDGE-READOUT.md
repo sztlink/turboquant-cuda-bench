@@ -34,6 +34,7 @@ The bridge now has a staged chain of receipts:
 | Replay pack v1.2 | [`../../bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/RESULTS.md) | 13 bridge-ready decoy-risk targets packed as compact hook-off replay records | runtime behavior, live request tracing, evidence-use proof |
 | Replay validator v1.3 | [`../../bench/evidence-utilization-epkv-replay-pack-validator-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-replay-pack-validator-2026-05-19/RESULTS.md) | v1.2 replay-pack invariants pass: 13 records, 0 errors | model behavior, runtime behavior, evidence-use proof |
 | Evidence-path ledger v1.4 | [`../../bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/RESULTS.md) | v0.8 → v1.3 chain indexed with hashes and boundary invariants | runtime behavior, live telemetry, evidence-use proof |
+| Fixture refinement v1.5 | [`../../bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/RESULTS.md) | 3 ambiguous targets refined into 9 canonical/decoy/neither schema-valid hook-off events | runtime behavior, evidence-use proof, quality evaluation |
 
 ## What was validated
 
@@ -272,13 +273,13 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-chain review + refinement:
-  incorporate Claude/reviewer audit of v1.1-v1.4
-  patch any framing or invariant gaps
-  then produce a concise public-safe technical note if no gaps remain
+refined replay pack v1.6:
+  fold v1.5 contrastive events into a second replay pack
+  keep canonical/decoy/neither variants explicit
+  validate as hook-off/schema-v1/privacy-safe
 ```
 
-Alternative: refine the 3 needs-fixture-detail targets. Real prompts remain paused.
+Alternative: incorporate Claude/reviewer audit once output is available. Real prompts remain paused.
 
 ## Safe public phrasing
 
