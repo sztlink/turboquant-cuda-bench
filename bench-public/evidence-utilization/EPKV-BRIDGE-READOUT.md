@@ -29,6 +29,7 @@ The bridge now has a staged chain of receipts:
 | Bridge v0.7 | [`../../bench/evidence-utilization-epkv-answer-audit-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-answer-audit-bridge-2026-05-19/RESULTS.md) | existing fixtures can be mapped to green/yellow/red audit labels from answer proxy + selected-position geometry | evidence-use proof, model behavior, quality evaluation |
 | Taxonomy v0.8 | [`../../bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/RESULTS.md) | existing aggregate sweeps can be ranked with answer-side risk labels to choose next bridge targets | runtime geometry, EPKV behavior, evidence-use proof |
 | Target queue v0.9 | [`../../bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/RESULTS.md) | 16 high-risk fixture families selected for next hook-off geometry bridge coverage | runtime execution, model behavior, evidence-use proof |
+| Target materialization v1.0 | [`../../bench/evidence-utilization-epkv-target-materialization-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-target-materialization-2026-05-19/RESULTS.md) | v0.9 target skeletons materialized into 16 schema-valid synthetic hook-off telemetry events | runtime behavior, live request tracing, evidence-use proof |
 
 ## What was validated
 
@@ -267,11 +268,10 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-bridge-target materialization:
-  take v0.9 fixture skeletons
-  emit concrete synthetic span/page records for the first target pack
-  project them into schema-valid hook-off telemetry events
-  keep runtime hook-off
+audit-join v1.1:
+  join v1.0 materialized events back to the v0.9 target queue
+  emit a target-level action table: bridge-ready / needs-fixture-detail / blocked
+  keep all labels as planning states
 ```
 
 Alternative: extend v0.8 taxonomy to more aggregate sweeps. Real prompts remain paused.
