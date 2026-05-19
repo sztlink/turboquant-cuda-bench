@@ -26,6 +26,7 @@ The bridge now has a staged chain of receipts:
 | Bridge v0.4 | [`../../bench/evidence-utilization-epkv-hookoff-telemetry-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-hookoff-telemetry-bridge-2026-05-19/RESULTS.md) | existing bridge records can be projected into the runtime telemetry schema and pass the L1 validator | serving behavior, hook-on traces, real evidence use |
 | Bridge v0.5 | [`../../bench/evidence-utilization-epkv-runtime-parity-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-runtime-parity-bridge-2026-05-19/RESULTS.md) | actual runtime hook function can emit selected-position telemetry over synthetic packed KV bridge-band shapes and be projected to the L1 schema | serving readiness, stable latency, model behavior |
 | Bridge v0.6 | [`../../bench/evidence-utilization-epkv-runtime-schema-v1-adapter-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-runtime-schema-v1-adapter-2026-05-19/RESULTS.md) | default-off source adapter can emit `epkv.runtime.telemetry.v1` directly in dry-run mode | live deployment, serving readiness, real-prompt tracing |
+| Bridge v0.7 | [`../../bench/evidence-utilization-epkv-answer-audit-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-answer-audit-bridge-2026-05-19/RESULTS.md) | existing fixtures can be mapped to green/yellow/red audit labels from answer proxy + selected-position geometry | evidence-use proof, model behavior, quality evaluation |
 
 ## What was validated
 
@@ -165,6 +166,24 @@ runtime selected positions sampled: 3584
 
 Legacy event format remains default. The adapter was tested as a standalone copied module, not deployed into the live vLLM service.
 
+### 9. Evidence-span + geometry can produce audit labels
+
+Bridge v0.7 joins existing offline bridge records with schema-valid selected-position geometry and emits green/yellow/red audit states:
+
+```txt
+records: 16
+severities: {"yellow":6,"red":6,"green":4}
+labels: {"yellow_neither_geometry_inconclusive":6,"red_decoy_geometry_compatible_with_wrong_proxy":6,"green_canonical_geometry_compatible":4}
+```
+
+This is the first complete scaffold for:
+
+```txt
+retrieval spans -> token/page ranges -> selected-position geometry -> audit label
+```
+
+The labels are compatibility states, not proof of model evidence use.
+
 ## What failed
 
 The original gate:
@@ -246,10 +265,10 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-answer-classification bridge:
-  map existing evidence-utilization fixtures into green/yellow/red/gray audit labels
-  join retrieval spans + selected-position geometry + known answer proxy classes
-  keep labels explicitly as audit states, not model-use proof
+behavior map / public-safe audit taxonomy:
+  explain green/yellow/red labels as evidence-path compatibility states
+  list failure classes: retrieved-but-not-selected, selected-decoy, selected-neither, selected-canonical-but-proxy-wrong
+  keep thresholds and runtime details secondary
 ```
 
 Alternative: add source-level unit tests for legacy-vs-schema runtime event mode preservation. Real prompts remain paused.

@@ -1,0 +1,33 @@
+{
+  "audit_version": "v0.7-answer-audit-bridge",
+  "records": 16,
+  "source_records": "bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/records.jsonl",
+  "source_events": "bench/evidence-utilization-epkv-hookoff-telemetry-bridge-2026-05-19/events.jsonl",
+  "output_records": "bench/evidence-utilization-epkv-answer-audit-bridge-2026-05-19/audit-records.jsonl",
+  "labels": {
+    "yellow_neither_geometry_inconclusive": 6,
+    "red_decoy_geometry_compatible_with_wrong_proxy": 6,
+    "green_canonical_geometry_compatible": 4
+  },
+  "severities": {
+    "yellow": 6,
+    "red": 6,
+    "green": 4
+  },
+  "proxy_classes": {
+    "canonical": 8,
+    "decoy": 8
+  },
+  "dominant_regions": {
+    "neither": 6,
+    "decoy": 6,
+    "canonical": 4
+  },
+  "boundary": {
+    "offline": true,
+    "synthetic_selected_positions": true,
+    "model_attention": false,
+    "evidence_use_proof": false,
+    "serving": false
+  }
+}
