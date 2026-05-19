@@ -36,6 +36,7 @@ The bridge now has a staged chain of receipts:
 | Evidence-path ledger v1.4 | [`../../bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/RESULTS.md) | v0.8 → v1.3 chain indexed with hashes and boundary invariants | runtime behavior, live telemetry, evidence-use proof |
 | Fixture refinement v1.5 | [`../../bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/RESULTS.md) | 3 ambiguous targets refined into 9 canonical/decoy/neither schema-valid hook-off events | runtime behavior, evidence-use proof, quality evaluation |
 | Refined replay pack v1.6 | [`../../bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/RESULTS.md) | the 3 ambiguous targets now have 9 contrastive replay records: canonical/decoy/neither | runtime behavior, evidence-use proof, quality evaluation |
+| Evidence-path ledger v1.7 | [`../../bench/evidence-utilization-epkv-evidence-path-ledger-v17-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-evidence-path-ledger-v17-2026-05-19/RESULTS.md) | v0.8 → v1.6 chain indexed; total replay coverage is 22 records | live telemetry, evidence-use proof, serving readiness |
 
 ## What was validated
 
@@ -274,13 +275,13 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-ledger update v1.7:
-  index v1.5 and v1.6 into the evidence-path ledger
-  report combined replay coverage: 13 decoy-risk + 9 contrastive records
-  keep non-serving invariants explicit
+review-gated consolidation:
+  collect Claude/reviewer audit if available
+  patch any wording or invariant issue
+  otherwise stop at the offline milestone: 22 replay records, v1.7 ledger, no live serving
 ```
 
-Alternative: incorporate Claude/reviewer audit once output is available. Real prompts remain paused.
+Real prompts remain paused.
 
 ## Safe public phrasing
 

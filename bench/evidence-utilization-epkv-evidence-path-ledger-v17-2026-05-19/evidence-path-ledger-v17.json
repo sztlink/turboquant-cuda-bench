@@ -1,0 +1,2277 @@
+{
+  "ledger_schema": "epkv.evidence_path_ledger.v1.7",
+  "created_at": "2026-05-19T23:21:43.940Z",
+  "chain": "v0.8 -> v0.9 -> v1.0 -> v1.1 -> v1.2 -> v1.3 -> v1.4 -> v1.5 -> v1.6",
+  "stages": [
+    {
+      "id": "v0.8",
+      "name": "aggregate audit taxonomy",
+      "commit": "0c9d461",
+      "artifacts": {
+        "receipt": {
+          "path": "bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/RESULTS.md",
+          "sha256": "a14d38254e644e61d26e057cd9e12bb1c18c71c15bbf72f93afe8ff294aa2bed",
+          "bytes": 4692
+        },
+        "primary": {
+          "path": "bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/aggregate-audit-records.jsonl",
+          "sha256": "bbe4f5bb2f28787329d1ce645e41393ddaef1ffdeb597cb14f424431fa481091",
+          "bytes": 92066
+        },
+        "summary": {
+          "path": "bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/summary.json",
+          "sha256": "cab40f2918c883f33344f9617aa7df381840727f9b4a08aa164170e7ba92df42",
+          "bytes": 29076
+        }
+      },
+      "summary_snapshot": {
+        "audit_version": "v0.8-aggregate-audit-taxonomy",
+        "records": 178,
+        "sources": {
+          "phase": "bench/evidence-utilization-phase-2026-05-17/phase/aggregate.json",
+          "depth": "bench/evidence-utilization-phase-2026-05-17/depth/aggregate.json",
+          "prompt_scaffold": "bench/evidence-utilization-phase-2026-05-17/prompt-scaffold/aggregate.json",
+          "distractor_taxonomy": "bench/evidence-utilization-phase-2026-05-17/distractor-taxonomy/aggregate.json"
+        },
+        "output_records": "bench/evidence-utilization-epkv-audit-taxonomy-2026-05-19/aggregate-audit-records.jsonl",
+        "by_severity": {
+          "green": 83,
+          "red": 58,
+          "yellow": 37
+        },
+        "by_label": {
+          "green_aggregate_stable": 83,
+          "red_low_hit_rate": 40,
+          "yellow_moderate_hit_rate": 24,
+          "red_high_wrong_distractor_rate": 18,
+          "yellow_wrong_distractor_watch": 13
+        },
+        "by_source": {
+          "depth": {
+            "records": 36,
+            "severities": {
+              "green": 29,
+              "red": 4,
+              "yellow": 3
+            },
+            "labels": {
+              "green_aggregate_stable": 29,
+              "red_low_hit_rate": 4,
+              "yellow_moderate_hit_rate": 3
+            }
+          },
+          "distractor_taxonomy": {
+            "records": 31,
+            "severities": {
+              "green": 8,
+              "red": 18,
+              "yellow": 5
+            },
+            "labels": {
+              "green_aggregate_stable": 8,
+              "red_high_wrong_distractor_rate": 11,
+              "red_low_hit_rate": 7,
+              "yellow_moderate_hit_rate": 3,
+              "yellow_wrong_distractor_watch": 2
+            }
+          },
+          "phase": {
+            "records": 67,
+            "severities": {
+              "green": 29,
+              "red": 25,
+              "yellow": 13
+            },
+            "labels": {
+              "green_aggregate_stable": 29,
+              "red_high_wrong_distractor_rate": 7,
+              "red_low_hit_rate": 18,
+              "yellow_wrong_distractor_watch": 11,
+              "yellow_moderate_hit_rate": 2
+            }
+          },
+          "prompt_scaffold": {
+            "records": 44,
+            "severities": {
+              "green": 17,
+              "red": 11,
+              "yellow": 16
+            },
+            "labels": {
+              "green_aggregate_stable": 17,
+              "red_low_hit_rate": 11,
+              "yellow_moderate_hit_rate": 16
+            }
+          }
+        },
+        "top_wrong_rate": [
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor_rank",
+            "keys": {
+              "distractor": "stale_record",
+              "canonical_rank": 16
+            },
+            "runs": 144,
+            "hits": 4,
+            "wrong_distractor_or_decoy": 135,
+            "errors": 0,
+            "hit_rate": 0.027777777777777776,
+            "wrong_rate": 0.9375,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor_rank",
+            "keys": {
+              "distractor": "conflicting_correction",
+              "canonical_rank": 16
+            },
+            "runs": 144,
+            "hits": 4,
+            "wrong_distractor_or_decoy": 112,
+            "errors": 0,
+            "hit_rate": 0.027777777777777776,
+            "wrong_rate": 0.7777777777777778,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor_rank",
+            "keys": {
+              "distractor": "stale_record",
+              "canonical_rank": 8
+            },
+            "runs": 144,
+            "hits": 31,
+            "wrong_distractor_or_decoy": 110,
+            "errors": 0,
+            "hit_rate": 0.2152777777777778,
+            "wrong_rate": 0.7638888888888888,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor_rank",
+            "keys": {
+              "distractor": "stale_record",
+              "canonical_rank": 4
+            },
+            "runs": 144,
+            "hits": 34,
+            "wrong_distractor_or_decoy": 102,
+            "errors": 0,
+            "hit_rate": 0.2361111111111111,
+            "wrong_rate": 0.7083333333333334,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "phase",
+            "group": "by_zone_rank_prompt",
+            "keys": {
+              "zone": "top",
+              "canonical_rank": 8,
+              "prompt": "baseline"
+            },
+            "runs": 32,
+            "hits": 12,
+            "wrong_distractor_or_decoy": 20,
+            "errors": 0,
+            "hit_rate": 0.375,
+            "wrong_rate": 0.625,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor",
+            "keys": {
+              "distractor": "stale_record"
+            },
+            "runs": 576,
+            "hits": 208,
+            "wrong_distractor_or_decoy": 347,
+            "errors": 0,
+            "hit_rate": 0.3611111111111111,
+            "wrong_rate": 0.6024305555555556,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "phase",
+            "group": "by_zone_rank_prompt",
+            "keys": {
+              "zone": "top",
+              "canonical_rank": 4,
+              "prompt": "baseline"
+            },
+            "runs": 24,
+            "hits": 9,
+            "wrong_distractor_or_decoy": 14,
+            "errors": 0,
+            "hit_rate": 0.375,
+            "wrong_rate": 0.5833333333333334,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor_rank",
+            "keys": {
+              "distractor": "conflicting_correction",
+              "canonical_rank": 8
+            },
+            "runs": 144,
+            "hits": 72,
+            "wrong_distractor_or_decoy": 63,
+            "errors": 0,
+            "hit_rate": 0.5,
+            "wrong_rate": 0.4375,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_rank",
+            "keys": {
+              "canonical_rank": 16
+            },
+            "runs": 720,
+            "hits": 167,
+            "wrong_distractor_or_decoy": 309,
+            "errors": 0,
+            "hit_rate": 0.23194444444444445,
+            "wrong_rate": 0.42916666666666664,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor_rank",
+            "keys": {
+              "distractor": "near_duplicate",
+              "canonical_rank": 16
+            },
+            "runs": 144,
+            "hits": 1,
+            "wrong_distractor_or_decoy": 56,
+            "errors": 0,
+            "hit_rate": 0.006944444444444444,
+            "wrong_rate": 0.3888888888888889,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor",
+            "keys": {
+              "distractor": "conflicting_correction"
+            },
+            "runs": 576,
+            "hits": 312,
+            "wrong_distractor_or_decoy": 221,
+            "errors": 0,
+            "hit_rate": 0.5416666666666666,
+            "wrong_rate": 0.3836805555555556,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "phase",
+            "group": "by_zone_rank_prompt",
+            "keys": {
+              "zone": "bottom",
+              "canonical_rank": 2,
+              "prompt": "anti_decoy"
+            },
+            "runs": 16,
+            "hits": 7,
+            "wrong_distractor_or_decoy": 6,
+            "errors": 0,
+            "hit_rate": 0.4375,
+            "wrong_rate": 0.375,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          }
+        ],
+        "lowest_hit_rate": [
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor_rank",
+            "keys": {
+              "distractor": "near_duplicate",
+              "canonical_rank": 16
+            },
+            "runs": 144,
+            "hits": 1,
+            "wrong_distractor_or_decoy": 56,
+            "errors": 0,
+            "hit_rate": 0.006944444444444444,
+            "wrong_rate": 0.3888888888888889,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor_rank",
+            "keys": {
+              "distractor": "conflicting_correction",
+              "canonical_rank": 16
+            },
+            "runs": 144,
+            "hits": 4,
+            "wrong_distractor_or_decoy": 112,
+            "errors": 0,
+            "hit_rate": 0.027777777777777776,
+            "wrong_rate": 0.7777777777777778,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor_rank",
+            "keys": {
+              "distractor": "stale_record",
+              "canonical_rank": 16
+            },
+            "runs": 144,
+            "hits": 4,
+            "wrong_distractor_or_decoy": 135,
+            "errors": 0,
+            "hit_rate": 0.027777777777777776,
+            "wrong_rate": 0.9375,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "prompt_scaffold",
+            "group": "by_prompt_decoys",
+            "keys": {
+              "prompt": "structured",
+              "decoys_before": 15
+            },
+            "runs": 108,
+            "hits": 15,
+            "wrong_distractor_or_decoy": 0,
+            "errors": 0,
+            "hit_rate": 0.1388888888888889,
+            "wrong_rate": 0,
+            "audit_severity": "red",
+            "audit_label": "red_low_hit_rate",
+            "audit_reason": "hit rate < 50%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "phase",
+            "group": "by_decoys",
+            "keys": {
+              "decoys_before": 15
+            },
+            "runs": 80,
+            "hits": 17,
+            "wrong_distractor_or_decoy": 0,
+            "errors": 0,
+            "hit_rate": 0.2125,
+            "wrong_rate": 0,
+            "audit_severity": "red",
+            "audit_label": "red_low_hit_rate",
+            "audit_reason": "hit rate < 50%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor_rank",
+            "keys": {
+              "distractor": "stale_record",
+              "canonical_rank": 8
+            },
+            "runs": 144,
+            "hits": 31,
+            "wrong_distractor_or_decoy": 110,
+            "errors": 0,
+            "hit_rate": 0.2152777777777778,
+            "wrong_rate": 0.7638888888888888,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "phase",
+            "group": "by_zone_rank_prompt",
+            "keys": {
+              "zone": "bottom",
+              "canonical_rank": 8,
+              "prompt": "anti_decoy"
+            },
+            "runs": 32,
+            "hits": 7,
+            "wrong_distractor_or_decoy": 8,
+            "errors": 0,
+            "hit_rate": 0.21875,
+            "wrong_rate": 0.25,
+            "audit_severity": "red",
+            "audit_label": "red_low_hit_rate",
+            "audit_reason": "hit rate < 50%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "phase",
+            "group": "by_zone_rank_prompt",
+            "keys": {
+              "zone": "early",
+              "canonical_rank": 8,
+              "prompt": "anti_decoy"
+            },
+            "runs": 32,
+            "hits": 7,
+            "wrong_distractor_or_decoy": 3,
+            "errors": 0,
+            "hit_rate": 0.21875,
+            "wrong_rate": 0.09375,
+            "audit_severity": "red",
+            "audit_label": "red_low_hit_rate",
+            "audit_reason": "hit rate < 50%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "phase",
+            "group": "by_zone_rank_prompt",
+            "keys": {
+              "zone": "bottom",
+              "canonical_rank": 16,
+              "prompt": "baseline"
+            },
+            "runs": 40,
+            "hits": 9,
+            "wrong_distractor_or_decoy": 9,
+            "errors": 0,
+            "hit_rate": 0.225,
+            "wrong_rate": 0.225,
+            "audit_severity": "red",
+            "audit_label": "red_low_hit_rate",
+            "audit_reason": "hit rate < 50%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "phase",
+            "group": "by_zone_rank_prompt",
+            "keys": {
+              "zone": "top",
+              "canonical_rank": 16,
+              "prompt": "baseline"
+            },
+            "runs": 40,
+            "hits": 9,
+            "wrong_distractor_or_decoy": 14,
+            "errors": 0,
+            "hit_rate": 0.225,
+            "wrong_rate": 0.35,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_rank",
+            "keys": {
+              "canonical_rank": 16
+            },
+            "runs": 720,
+            "hits": 167,
+            "wrong_distractor_or_decoy": 309,
+            "errors": 0,
+            "hit_rate": 0.23194444444444445,
+            "wrong_rate": 0.42916666666666664,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor_rank",
+            "keys": {
+              "distractor": "stale_record",
+              "canonical_rank": 4
+            },
+            "runs": 144,
+            "hits": 34,
+            "wrong_distractor_or_decoy": 102,
+            "errors": 0,
+            "hit_rate": 0.2361111111111111,
+            "wrong_rate": 0.7083333333333334,
+            "audit_severity": "red",
+            "audit_label": "red_high_wrong_distractor_rate",
+            "audit_reason": "wrong distractor rate >= 30%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          }
+        ],
+        "stable_green_examples": [
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "depth",
+            "group": "by_decoys",
+            "keys": {
+              "decoys_before": 0
+            },
+            "runs": 2400,
+            "hits": 2017,
+            "wrong_distractor_or_decoy": 0,
+            "errors": 0,
+            "hit_rate": 0.8404166666666667,
+            "wrong_rate": 0,
+            "audit_severity": "green",
+            "audit_label": "green_aggregate_stable",
+            "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "prompt_scaffold",
+            "group": "by_decoys",
+            "keys": {
+              "decoys_before": 0
+            },
+            "runs": 2160,
+            "hits": 1872,
+            "wrong_distractor_or_decoy": 0,
+            "errors": 0,
+            "hit_rate": 0.8666666666666667,
+            "wrong_rate": 0,
+            "audit_severity": "green",
+            "audit_label": "green_aggregate_stable",
+            "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "depth",
+            "group": "by_prompt",
+            "keys": {
+              "prompt": "baseline"
+            },
+            "runs": 1920,
+            "hits": 1577,
+            "wrong_distractor_or_decoy": 8,
+            "errors": 0,
+            "hit_rate": 0.8213541666666667,
+            "wrong_rate": 0.004166666666666667,
+            "audit_severity": "green",
+            "audit_label": "green_aggregate_stable",
+            "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "depth",
+            "group": "by_prompt",
+            "keys": {
+              "prompt": "anti_decoy"
+            },
+            "runs": 1920,
+            "hits": 1445,
+            "wrong_distractor_or_decoy": 7,
+            "errors": 0,
+            "hit_rate": 0.7526041666666666,
+            "wrong_rate": 0.0036458333333333334,
+            "audit_severity": "green",
+            "audit_label": "green_aggregate_stable",
+            "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "depth",
+            "group": "by_depth",
+            "keys": {
+              "depth_chars": 160000
+            },
+            "runs": 1280,
+            "hits": 1025,
+            "wrong_distractor_or_decoy": 8,
+            "errors": 0,
+            "hit_rate": 0.80078125,
+            "wrong_rate": 0.00625,
+            "audit_severity": "green",
+            "audit_label": "green_aggregate_stable",
+            "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "depth",
+            "group": "by_depth",
+            "keys": {
+              "depth_chars": 80000
+            },
+            "runs": 1280,
+            "hits": 1012,
+            "wrong_distractor_or_decoy": 3,
+            "errors": 0,
+            "hit_rate": 0.790625,
+            "wrong_rate": 0.00234375,
+            "audit_severity": "green",
+            "audit_label": "green_aggregate_stable",
+            "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "depth",
+            "group": "by_depth",
+            "keys": {
+              "depth_chars": 20000
+            },
+            "runs": 1280,
+            "hits": 985,
+            "wrong_distractor_or_decoy": 4,
+            "errors": 0,
+            "hit_rate": 0.76953125,
+            "wrong_rate": 0.003125,
+            "audit_severity": "green",
+            "audit_label": "green_aggregate_stable",
+            "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "prompt_scaffold",
+            "group": "by_rank",
+            "keys": {
+              "canonical_rank": 1
+            },
+            "runs": 864,
+            "hits": 854,
+            "wrong_distractor_or_decoy": 0,
+            "errors": 0,
+            "hit_rate": 0.9884259259259259,
+            "wrong_rate": 0,
+            "audit_severity": "green",
+            "audit_label": "green_aggregate_stable",
+            "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "prompt_scaffold",
+            "group": "by_prompt",
+            "keys": {
+              "prompt": "baseline"
+            },
+            "runs": 864,
+            "hits": 746,
+            "wrong_distractor_or_decoy": 1,
+            "errors": 0,
+            "hit_rate": 0.8634259259259259,
+            "wrong_rate": 0.0011574074074074073,
+            "audit_severity": "green",
+            "audit_label": "green_aggregate_stable",
+            "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "prompt_scaffold",
+            "group": "by_rank",
+            "keys": {
+              "canonical_rank": 4
+            },
+            "runs": 864,
+            "hits": 681,
+            "wrong_distractor_or_decoy": 6,
+            "errors": 0,
+            "hit_rate": 0.7881944444444444,
+            "wrong_rate": 0.006944444444444444,
+            "audit_severity": "green",
+            "audit_label": "green_aggregate_stable",
+            "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_rank",
+            "keys": {
+              "canonical_rank": 1
+            },
+            "runs": 720,
+            "hits": 712,
+            "wrong_distractor_or_decoy": 3,
+            "errors": 0,
+            "hit_rate": 0.9888888888888889,
+            "wrong_rate": 0.004166666666666667,
+            "audit_severity": "green",
+            "audit_label": "green_aggregate_stable",
+            "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          },
+          {
+            "audit_schema": "evidence_utilization.aggregate_audit.v0.8",
+            "source": "distractor_taxonomy",
+            "group": "by_distractor",
+            "keys": {
+              "distractor": "unrelated_noise"
+            },
+            "runs": 576,
+            "hits": 485,
+            "wrong_distractor_or_decoy": 0,
+            "errors": 0,
+            "hit_rate": 0.8420138888888888,
+            "wrong_rate": 0,
+            "audit_severity": "green",
+            "audit_label": "green_aggregate_stable",
+            "audit_reason": "hit rate >= 75% and wrong distractor rate < 10%",
+            "boundary": {
+              "aggregate_answer_side": true,
+              "runtime_geometry": false,
+              "model_attention": false,
+              "evidence_use_proof": false,
+              "epkv_behavior": false
+            }
+          }
+        ],
+        "thresholds": {
+          "red_high_wrong_distractor_rate": "wrong_rate >= 0.30",
+          "red_low_hit_rate": "hit_rate < 0.50",
+          "yellow_wrong_distractor_watch": "wrong_rate >= 0.10",
+          "yellow_moderate_hit_rate": "hit_rate < 0.75",
+          "green_aggregate_stable": "hit_rate >= 0.75 and wrong_rate < 0.10"
+        },
+        "boundary": {
+          "aggregate_answer_side": true,
+          "runtime_geometry": false,
+          "model_attention": false,
+          "evidence_use_proof": false,
+          "epkv_behavior": false
+        }
+      },
+      "boundary": {
+        "offline": true,
+        "serving": false,
+        "runtime_hook_live": false,
+        "model_call": false,
+        "model_attention": false,
+        "evidence_use_proof": false
+      }
+    },
+    {
+      "id": "v0.9",
+      "name": "bridge target selection",
+      "commit": "f1527a7",
+      "artifacts": {
+        "receipt": {
+          "path": "bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/RESULTS.md",
+          "sha256": "7d7d6e1f3dfd7476ee80eb474c7376ad91fee2d8fd8a8ca3b44dddf5f3570c53",
+          "bytes": 2546
+        },
+        "primary": {
+          "path": "bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/bridge-target-queue.json",
+          "sha256": "ce403ff007c2d89585c54b117b502af4e67724e071ce755acb4fab47a24428b0",
+          "bytes": 21901
+        },
+        "summary": {
+          "path": "bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/summary.json",
+          "sha256": "d9e6d1a9a91646f58d882a63223646487b3cc01432df43f63a7f6bcc1252569b",
+          "bytes": 11612
+        }
+      },
+      "summary_snapshot": {
+        "selection_version": "v0.9-bridge-target-selection",
+        "targets": 16,
+        "source_records": 178,
+        "candidate_records": 71,
+        "by_risk": {
+          "decoy_capture_risk": 13,
+          "evidence_nonclosure_risk": 3
+        },
+        "by_distractor": {
+          "stale_record": 4,
+          "conflicting_correction": 2,
+          "near_duplicate": 2,
+          "phase_decoy": 6,
+          "generic_competitor": 2
+        },
+        "top_targets": [
+          {
+            "target_id": "bridge-target-01",
+            "priority_score": 243.156,
+            "source_audit_record": {
+              "source": "distractor_taxonomy",
+              "group": "by_distractor_rank",
+              "keys": {
+                "distractor": "stale_record",
+                "canonical_rank": 16
+              },
+              "runs": 144,
+              "hit_rate": 0.027777777777777776,
+              "wrong_rate": 0.9375,
+              "audit_label": "red_high_wrong_distractor_rate"
+            },
+            "bridge_family": {
+              "risk": "decoy_capture_risk",
+              "distractor_type": "stale_record",
+              "canonical_rank": 16,
+              "decoys_before": 15,
+              "prompt_variant": null,
+              "zone": null,
+              "depth_chars": null
+            },
+            "fixture_requirements": {
+              "include_canonical_span": true,
+              "include_decoy_spans": true,
+              "include_token_page_ranges": true,
+              "include_selected_position_geometry": true,
+              "include_schema_v1_runtime_event": true,
+              "hook_mode": "hook-off-or-offline-dry-run"
+            },
+            "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+            "non_claims": [
+              "not model attention",
+              "not evidence-use proof",
+              "not EPKV behavior until bridged through runtime schema",
+              "not serving readiness"
+            ]
+          },
+          {
+            "target_id": "bridge-target-02",
+            "priority_score": 230.378,
+            "source_audit_record": {
+              "source": "distractor_taxonomy",
+              "group": "by_distractor_rank",
+              "keys": {
+                "distractor": "conflicting_correction",
+                "canonical_rank": 16
+              },
+              "runs": 144,
+              "hit_rate": 0.027777777777777776,
+              "wrong_rate": 0.7777777777777778,
+              "audit_label": "red_high_wrong_distractor_rate"
+            },
+            "bridge_family": {
+              "risk": "decoy_capture_risk",
+              "distractor_type": "conflicting_correction",
+              "canonical_rank": 16,
+              "decoys_before": 15,
+              "prompt_variant": null,
+              "zone": null,
+              "depth_chars": null
+            },
+            "fixture_requirements": {
+              "include_canonical_span": true,
+              "include_decoy_spans": true,
+              "include_token_page_ranges": true,
+              "include_selected_position_geometry": true,
+              "include_schema_v1_runtime_event": true,
+              "hook_mode": "hook-off-or-offline-dry-run"
+            },
+            "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+            "non_claims": [
+              "not model attention",
+              "not evidence-use proof",
+              "not EPKV behavior until bridged through runtime schema",
+              "not serving readiness"
+            ]
+          },
+          {
+            "target_id": "bridge-target-03",
+            "priority_score": 221.767,
+            "source_audit_record": {
+              "source": "distractor_taxonomy",
+              "group": "by_distractor_rank",
+              "keys": {
+                "distractor": "stale_record",
+                "canonical_rank": 8
+              },
+              "runs": 144,
+              "hit_rate": 0.2152777777777778,
+              "wrong_rate": 0.7638888888888888,
+              "audit_label": "red_high_wrong_distractor_rate"
+            },
+            "bridge_family": {
+              "risk": "decoy_capture_risk",
+              "distractor_type": "stale_record",
+              "canonical_rank": 8,
+              "decoys_before": 7,
+              "prompt_variant": null,
+              "zone": null,
+              "depth_chars": null
+            },
+            "fixture_requirements": {
+              "include_canonical_span": true,
+              "include_decoy_spans": true,
+              "include_token_page_ranges": true,
+              "include_selected_position_geometry": true,
+              "include_schema_v1_runtime_event": true,
+              "hook_mode": "hook-off-or-offline-dry-run"
+            },
+            "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+            "non_claims": [
+              "not model attention",
+              "not evidence-use proof",
+              "not EPKV behavior until bridged through runtime schema",
+              "not serving readiness"
+            ]
+          },
+          {
+            "target_id": "bridge-target-04",
+            "priority_score": 216.489,
+            "source_audit_record": {
+              "source": "distractor_taxonomy",
+              "group": "by_distractor_rank",
+              "keys": {
+                "distractor": "stale_record",
+                "canonical_rank": 4
+              },
+              "runs": 144,
+              "hit_rate": 0.2361111111111111,
+              "wrong_rate": 0.7083333333333334,
+              "audit_label": "red_high_wrong_distractor_rate"
+            },
+            "bridge_family": {
+              "risk": "decoy_capture_risk",
+              "distractor_type": "stale_record",
+              "canonical_rank": 4,
+              "decoys_before": 3,
+              "prompt_variant": null,
+              "zone": null,
+              "depth_chars": null
+            },
+            "fixture_requirements": {
+              "include_canonical_span": true,
+              "include_decoy_spans": true,
+              "include_token_page_ranges": true,
+              "include_selected_position_geometry": true,
+              "include_schema_v1_runtime_event": true,
+              "hook_mode": "hook-off-or-offline-dry-run"
+            },
+            "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+            "non_claims": [
+              "not model attention",
+              "not evidence-use proof",
+              "not EPKV behavior until bridged through runtime schema",
+              "not serving readiness"
+            ]
+          },
+          {
+            "target_id": "bridge-target-05",
+            "priority_score": 200.1,
+            "source_audit_record": {
+              "source": "distractor_taxonomy",
+              "group": "by_distractor_rank",
+              "keys": {
+                "distractor": "near_duplicate",
+                "canonical_rank": 16
+              },
+              "runs": 144,
+              "hit_rate": 0.006944444444444444,
+              "wrong_rate": 0.3888888888888889,
+              "audit_label": "red_high_wrong_distractor_rate"
+            },
+            "bridge_family": {
+              "risk": "decoy_capture_risk",
+              "distractor_type": "near_duplicate",
+              "canonical_rank": 16,
+              "decoys_before": 15,
+              "prompt_variant": null,
+              "zone": null,
+              "depth_chars": null
+            },
+            "fixture_requirements": {
+              "include_canonical_span": true,
+              "include_decoy_spans": true,
+              "include_token_page_ranges": true,
+              "include_selected_position_geometry": true,
+              "include_schema_v1_runtime_event": true,
+              "hook_mode": "hook-off-or-offline-dry-run"
+            },
+            "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+            "non_claims": [
+              "not model attention",
+              "not evidence-use proof",
+              "not EPKV behavior until bridged through runtime schema",
+              "not serving readiness"
+            ]
+          },
+          {
+            "target_id": "bridge-target-06",
+            "priority_score": 199.041,
+            "source_audit_record": {
+              "source": "phase",
+              "group": "by_zone_rank_prompt",
+              "keys": {
+                "zone": "top",
+                "canonical_rank": 8,
+                "prompt": "baseline"
+              },
+              "runs": 32,
+              "hit_rate": 0.375,
+              "wrong_rate": 0.625,
+              "audit_label": "red_high_wrong_distractor_rate"
+            },
+            "bridge_family": {
+              "risk": "decoy_capture_risk",
+              "distractor_type": "phase_decoy",
+              "canonical_rank": 8,
+              "decoys_before": 7,
+              "prompt_variant": "baseline",
+              "zone": "top",
+              "depth_chars": null
+            },
+            "fixture_requirements": {
+              "include_canonical_span": true,
+              "include_decoy_spans": true,
+              "include_token_page_ranges": true,
+              "include_selected_position_geometry": true,
+              "include_schema_v1_runtime_event": true,
+              "hook_mode": "hook-off-or-offline-dry-run"
+            },
+            "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+            "non_claims": [
+              "not model attention",
+              "not evidence-use proof",
+              "not EPKV behavior until bridged through runtime schema",
+              "not serving readiness"
+            ]
+          },
+          {
+            "target_id": "bridge-target-07",
+            "priority_score": 195.833,
+            "source_audit_record": {
+              "source": "distractor_taxonomy",
+              "group": "by_distractor",
+              "keys": {
+                "distractor": "stale_record"
+              },
+              "runs": 576,
+              "hit_rate": 0.3611111111111111,
+              "wrong_rate": 0.6024305555555556,
+              "audit_label": "red_high_wrong_distractor_rate"
+            },
+            "bridge_family": {
+              "risk": "decoy_capture_risk",
+              "distractor_type": "stale_record",
+              "canonical_rank": null,
+              "decoys_before": null,
+              "prompt_variant": null,
+              "zone": null,
+              "depth_chars": null
+            },
+            "fixture_requirements": {
+              "include_canonical_span": true,
+              "include_decoy_spans": true,
+              "include_token_page_ranges": true,
+              "include_selected_position_geometry": true,
+              "include_schema_v1_runtime_event": true,
+              "hook_mode": "hook-off-or-offline-dry-run"
+            },
+            "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+            "non_claims": [
+              "not model attention",
+              "not evidence-use proof",
+              "not EPKV behavior until bridged through runtime schema",
+              "not serving readiness"
+            ]
+          },
+          {
+            "target_id": "bridge-target-08",
+            "priority_score": 194.708,
+            "source_audit_record": {
+              "source": "phase",
+              "group": "by_zone_rank_prompt",
+              "keys": {
+                "zone": "top",
+                "canonical_rank": 4,
+                "prompt": "baseline"
+              },
+              "runs": 24,
+              "hit_rate": 0.375,
+              "wrong_rate": 0.5833333333333334,
+              "audit_label": "red_high_wrong_distractor_rate"
+            },
+            "bridge_family": {
+              "risk": "decoy_capture_risk",
+              "distractor_type": "phase_decoy",
+              "canonical_rank": 4,
+              "decoys_before": 3,
+              "prompt_variant": "baseline",
+              "zone": "top",
+              "depth_chars": null
+            },
+            "fixture_requirements": {
+              "include_canonical_span": true,
+              "include_decoy_spans": true,
+              "include_token_page_ranges": true,
+              "include_selected_position_geometry": true,
+              "include_schema_v1_runtime_event": true,
+              "hook_mode": "hook-off-or-offline-dry-run"
+            },
+            "expected_audit_question": "Do selected-position geometry and answer-side wrong-distractor risk point to the same decoy family?",
+            "non_claims": [
+              "not model attention",
+              "not evidence-use proof",
+              "not EPKV behavior until bridged through runtime schema",
+              "not serving readiness"
+            ]
+          }
+        ],
+        "artifacts": {
+          "queue": "bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/bridge-target-queue.json",
+          "fixture_skeletons": "bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/bridge-fixture-skeletons.jsonl"
+        },
+        "boundary": {
+          "planning_only": true,
+          "serving": false,
+          "runtime_hook": false,
+          "model_call": false
+        }
+      },
+      "boundary": {
+        "offline": true,
+        "serving": false,
+        "runtime_hook_live": false,
+        "model_call": false,
+        "model_attention": false,
+        "evidence_use_proof": false
+      }
+    },
+    {
+      "id": "v1.0",
+      "name": "target materialization",
+      "commit": "4270e00",
+      "artifacts": {
+        "receipt": {
+          "path": "bench/evidence-utilization-epkv-target-materialization-2026-05-19/RESULTS.md",
+          "sha256": "9b8f058c53642810d159b522934ad792850dc9655fc3a69200c7cec13d53f267",
+          "bytes": 1319
+        },
+        "primary": {
+          "path": "bench/evidence-utilization-epkv-target-materialization-2026-05-19/events.jsonl",
+          "sha256": "b9886a246e9578b45640d73f2d86a683375e2b2fefaf1526ced53ae992884eb3",
+          "bytes": 78436
+        },
+        "summary": {
+          "path": "bench/evidence-utilization-epkv-target-materialization-2026-05-19/summary.json",
+          "sha256": "831624f782239e76e18e479725b985f82a471b11cb31b8a39cea3b88661cfa09",
+          "bytes": 914
+        }
+      },
+      "summary_snapshot": {
+        "materialization_version": "v1.0-target-materialization",
+        "records": 16,
+        "events": 16,
+        "source_skeletons": "bench/evidence-utilization-epkv-bridge-target-selection-2026-05-19/bridge-fixture-skeletons.jsonl",
+        "output_records": "bench/evidence-utilization-epkv-target-materialization-2026-05-19/materialized-records.jsonl",
+        "output_events": "bench/evidence-utilization-epkv-target-materialization-2026-05-19/events.jsonl",
+        "by_dominant_region": {
+          "decoy": 16
+        },
+        "by_audit_projection": {
+          "red_decoy_geometry_risk": 16
+        },
+        "by_distractor": {
+          "stale_record": 4,
+          "conflicting_correction": 2,
+          "near_duplicate": 2,
+          "phase_decoy": 6,
+          "generic_competitor": 2
+        },
+        "boundary": {
+          "synthetic_layout": true,
+          "hook_off": true,
+          "serving": false,
+          "runtime_hook": false,
+          "model_call": false,
+          "model_attention": false,
+          "evidence_use_proof": false
+        }
+      },
+      "boundary": {
+        "offline": true,
+        "serving": false,
+        "runtime_hook_live": false,
+        "model_call": false,
+        "model_attention": false,
+        "evidence_use_proof": false
+      }
+    },
+    {
+      "id": "v1.1",
+      "name": "audit join action table",
+      "commit": "61b11eb",
+      "artifacts": {
+        "receipt": {
+          "path": "bench/evidence-utilization-epkv-audit-join-2026-05-19/RESULTS.md",
+          "sha256": "f932351dea3097fe2e9b7c185ae2f4f72215a0f78c1c2a03a4467130257fa5c0",
+          "bytes": 2393
+        },
+        "primary": {
+          "path": "bench/evidence-utilization-epkv-audit-join-2026-05-19/target-action-table.jsonl",
+          "sha256": "3b81213088bbbf70b83d15cb5a8c8b3c804c799ac65696ecbbeba6584eaaf4c2",
+          "bytes": 12204
+        },
+        "summary": {
+          "path": "bench/evidence-utilization-epkv-audit-join-2026-05-19/summary.json",
+          "sha256": "9c199d15eede7f0e945370d766a745ea9b5e80242a7f248eef017a7cc7b02e09",
+          "bytes": 11846
+        }
+      },
+      "summary_snapshot": {
+        "audit_join_version": "v1.1-target-action-table",
+        "targets": 16,
+        "by_state": {
+          "bridge-ready": 13,
+          "needs-fixture-detail": 3
+        },
+        "by_risk": {
+          "decoy_capture_risk": 13,
+          "evidence_nonclosure_risk": 3
+        },
+        "by_distractor": {
+          "stale_record": 4,
+          "conflicting_correction": 2,
+          "near_duplicate": 2,
+          "phase_decoy": 6,
+          "generic_competitor": 2
+        },
+        "validator_pack_passed": true,
+        "ready_top_8": [
+          {
+            "action_schema": "epkv.target_action.v1.1",
+            "target_id": "bridge-target-01",
+            "action_state": "bridge-ready",
+            "action_reason": "decoy-risk target has schema-valid decoy-dominant synthetic geometry",
+            "priority_score": 243.156,
+            "risk": "decoy_capture_risk",
+            "distractor_type": "stale_record",
+            "canonical_rank": 16,
+            "decoys_before": 15,
+            "source_hit_rate": 0.027777777777777776,
+            "source_wrong_rate": 0.9375,
+            "materialized": true,
+            "telemetry_event": true,
+            "validator_pack_passed": true,
+            "dominant_region": "decoy",
+            "audit_projection": "red_decoy_geometry_risk",
+            "next_packet": "run hook-off bridge replay pack over this target family",
+            "boundary": {
+              "planning_only": true,
+              "synthetic_layout": true,
+              "serving": false,
+              "runtime_hook": false,
+              "model_call": false,
+              "model_attention": false,
+              "evidence_use_proof": false
+            }
+          },
+          {
+            "action_schema": "epkv.target_action.v1.1",
+            "target_id": "bridge-target-02",
+            "action_state": "bridge-ready",
+            "action_reason": "decoy-risk target has schema-valid decoy-dominant synthetic geometry",
+            "priority_score": 230.378,
+            "risk": "decoy_capture_risk",
+            "distractor_type": "conflicting_correction",
+            "canonical_rank": 16,
+            "decoys_before": 15,
+            "source_hit_rate": 0.027777777777777776,
+            "source_wrong_rate": 0.7777777777777778,
+            "materialized": true,
+            "telemetry_event": true,
+            "validator_pack_passed": true,
+            "dominant_region": "decoy",
+            "audit_projection": "red_decoy_geometry_risk",
+            "next_packet": "run hook-off bridge replay pack over this target family",
+            "boundary": {
+              "planning_only": true,
+              "synthetic_layout": true,
+              "serving": false,
+              "runtime_hook": false,
+              "model_call": false,
+              "model_attention": false,
+              "evidence_use_proof": false
+            }
+          },
+          {
+            "action_schema": "epkv.target_action.v1.1",
+            "target_id": "bridge-target-03",
+            "action_state": "bridge-ready",
+            "action_reason": "decoy-risk target has schema-valid decoy-dominant synthetic geometry",
+            "priority_score": 221.767,
+            "risk": "decoy_capture_risk",
+            "distractor_type": "stale_record",
+            "canonical_rank": 8,
+            "decoys_before": 7,
+            "source_hit_rate": 0.2152777777777778,
+            "source_wrong_rate": 0.7638888888888888,
+            "materialized": true,
+            "telemetry_event": true,
+            "validator_pack_passed": true,
+            "dominant_region": "decoy",
+            "audit_projection": "red_decoy_geometry_risk",
+            "next_packet": "run hook-off bridge replay pack over this target family",
+            "boundary": {
+              "planning_only": true,
+              "synthetic_layout": true,
+              "serving": false,
+              "runtime_hook": false,
+              "model_call": false,
+              "model_attention": false,
+              "evidence_use_proof": false
+            }
+          },
+          {
+            "action_schema": "epkv.target_action.v1.1",
+            "target_id": "bridge-target-04",
+            "action_state": "bridge-ready",
+            "action_reason": "decoy-risk target has schema-valid decoy-dominant synthetic geometry",
+            "priority_score": 216.489,
+            "risk": "decoy_capture_risk",
+            "distractor_type": "stale_record",
+            "canonical_rank": 4,
+            "decoys_before": 3,
+            "source_hit_rate": 0.2361111111111111,
+            "source_wrong_rate": 0.7083333333333334,
+            "materialized": true,
+            "telemetry_event": true,
+            "validator_pack_passed": true,
+            "dominant_region": "decoy",
+            "audit_projection": "red_decoy_geometry_risk",
+            "next_packet": "run hook-off bridge replay pack over this target family",
+            "boundary": {
+              "planning_only": true,
+              "synthetic_layout": true,
+              "serving": false,
+              "runtime_hook": false,
+              "model_call": false,
+              "model_attention": false,
+              "evidence_use_proof": false
+            }
+          },
+          {
+            "action_schema": "epkv.target_action.v1.1",
+            "target_id": "bridge-target-05",
+            "action_state": "bridge-ready",
+            "action_reason": "decoy-risk target has schema-valid decoy-dominant synthetic geometry",
+            "priority_score": 200.1,
+            "risk": "decoy_capture_risk",
+            "distractor_type": "near_duplicate",
+            "canonical_rank": 16,
+            "decoys_before": 15,
+            "source_hit_rate": 0.006944444444444444,
+            "source_wrong_rate": 0.3888888888888889,
+            "materialized": true,
+            "telemetry_event": true,
+            "validator_pack_passed": true,
+            "dominant_region": "decoy",
+            "audit_projection": "red_decoy_geometry_risk",
+            "next_packet": "run hook-off bridge replay pack over this target family",
+            "boundary": {
+              "planning_only": true,
+              "synthetic_layout": true,
+              "serving": false,
+              "runtime_hook": false,
+              "model_call": false,
+              "model_attention": false,
+              "evidence_use_proof": false
+            }
+          },
+          {
+            "action_schema": "epkv.target_action.v1.1",
+            "target_id": "bridge-target-06",
+            "action_state": "bridge-ready",
+            "action_reason": "decoy-risk target has schema-valid decoy-dominant synthetic geometry",
+            "priority_score": 199.041,
+            "risk": "decoy_capture_risk",
+            "distractor_type": "phase_decoy",
+            "canonical_rank": 8,
+            "decoys_before": 7,
+            "source_hit_rate": 0.375,
+            "source_wrong_rate": 0.625,
+            "materialized": true,
+            "telemetry_event": true,
+            "validator_pack_passed": true,
+            "dominant_region": "decoy",
+            "audit_projection": "red_decoy_geometry_risk",
+            "next_packet": "run hook-off bridge replay pack over this target family",
+            "boundary": {
+              "planning_only": true,
+              "synthetic_layout": true,
+              "serving": false,
+              "runtime_hook": false,
+              "model_call": false,
+              "model_attention": false,
+              "evidence_use_proof": false
+            }
+          },
+          {
+            "action_schema": "epkv.target_action.v1.1",
+            "target_id": "bridge-target-07",
+            "action_state": "bridge-ready",
+            "action_reason": "decoy-risk target has schema-valid decoy-dominant synthetic geometry",
+            "priority_score": 195.833,
+            "risk": "decoy_capture_risk",
+            "distractor_type": "stale_record",
+            "canonical_rank": null,
+            "decoys_before": null,
+            "source_hit_rate": 0.3611111111111111,
+            "source_wrong_rate": 0.6024305555555556,
+            "materialized": true,
+            "telemetry_event": true,
+            "validator_pack_passed": true,
+            "dominant_region": "decoy",
+            "audit_projection": "red_decoy_geometry_risk",
+            "next_packet": "run hook-off bridge replay pack over this target family",
+            "boundary": {
+              "planning_only": true,
+              "synthetic_layout": true,
+              "serving": false,
+              "runtime_hook": false,
+              "model_call": false,
+              "model_attention": false,
+              "evidence_use_proof": false
+            }
+          },
+          {
+            "action_schema": "epkv.target_action.v1.1",
+            "target_id": "bridge-target-08",
+            "action_state": "bridge-ready",
+            "action_reason": "decoy-risk target has schema-valid decoy-dominant synthetic geometry",
+            "priority_score": 194.708,
+            "risk": "decoy_capture_risk",
+            "distractor_type": "phase_decoy",
+            "canonical_rank": 4,
+            "decoys_before": 3,
+            "source_hit_rate": 0.375,
+            "source_wrong_rate": 0.5833333333333334,
+            "materialized": true,
+            "telemetry_event": true,
+            "validator_pack_passed": true,
+            "dominant_region": "decoy",
+            "audit_projection": "red_decoy_geometry_risk",
+            "next_packet": "run hook-off bridge replay pack over this target family",
+            "boundary": {
+              "planning_only": true,
+              "synthetic_layout": true,
+              "serving": false,
+              "runtime_hook": false,
+              "model_call": false,
+              "model_attention": false,
+              "evidence_use_proof": false
+            }
+          }
+        ],
+        "needs_fixture_detail": [
+          {
+            "action_schema": "epkv.target_action.v1.1",
+            "target_id": "bridge-target-12",
+            "action_state": "needs-fixture-detail",
+            "action_reason": "target/materialized geometry mismatch requires fixture refinement",
+            "priority_score": 176.767,
+            "risk": "evidence_nonclosure_risk",
+            "distractor_type": "near_duplicate",
+            "canonical_rank": 8,
+            "decoys_before": 7,
+            "source_hit_rate": 0.3680555555555556,
+            "source_wrong_rate": 0.2777777777777778,
+            "materialized": true,
+            "telemetry_event": true,
+            "validator_pack_passed": true,
+            "dominant_region": "decoy",
+            "audit_projection": "red_decoy_geometry_risk",
+            "next_packet": "refine fixture layout before replay pack",
+            "boundary": {
+              "planning_only": true,
+              "synthetic_layout": true,
+              "serving": false,
+              "runtime_hook": false,
+              "model_call": false,
+              "model_attention": false,
+              "evidence_use_proof": false
+            }
+          },
+          {
+            "action_schema": "epkv.target_action.v1.1",
+            "target_id": "bridge-target-13",
+            "action_state": "needs-fixture-detail",
+            "action_reason": "target/materialized geometry mismatch requires fixture refinement",
+            "priority_score": 175.291,
+            "risk": "evidence_nonclosure_risk",
+            "distractor_type": "phase_decoy",
+            "canonical_rank": 8,
+            "decoys_before": 7,
+            "source_hit_rate": 0.21875,
+            "source_wrong_rate": 0.25,
+            "materialized": true,
+            "telemetry_event": true,
+            "validator_pack_passed": true,
+            "dominant_region": "decoy",
+            "audit_projection": "red_decoy_geometry_risk",
+            "next_packet": "refine fixture layout before replay pack",
+            "boundary": {
+              "planning_only": true,
+              "synthetic_layout": true,
+              "serving": false,
+              "runtime_hook": false,
+              "model_call": false,
+              "model_attention": false,
+              "evidence_use_proof": false
+            }
+          },
+          {
+            "action_schema": "epkv.target_action.v1.1",
+            "target_id": "bridge-target-15",
+            "action_state": "needs-fixture-detail",
+            "action_reason": "target/materialized geometry mismatch requires fixture refinement",
+            "priority_score": 173.816,
+            "risk": "evidence_nonclosure_risk",
+            "distractor_type": "phase_decoy",
+            "canonical_rank": 16,
+            "decoys_before": 15,
+            "source_hit_rate": 0.225,
+            "source_wrong_rate": 0.225,
+            "materialized": true,
+            "telemetry_event": true,
+            "validator_pack_passed": true,
+            "dominant_region": "decoy",
+            "audit_projection": "red_decoy_geometry_risk",
+            "next_packet": "refine fixture layout before replay pack",
+            "boundary": {
+              "planning_only": true,
+              "synthetic_layout": true,
+              "serving": false,
+              "runtime_hook": false,
+              "model_call": false,
+              "model_attention": false,
+              "evidence_use_proof": false
+            }
+          }
+        ],
+        "blocked": [],
+        "artifacts": {
+          "actions": "bench/evidence-utilization-epkv-audit-join-2026-05-19/target-action-table.jsonl",
+          "summary": "bench/evidence-utilization-epkv-audit-join-2026-05-19/summary.json"
+        },
+        "boundary": {
+          "planning_only": true,
+          "synthetic_layout": true,
+          "serving": false,
+          "runtime_hook": false,
+          "model_call": false,
+          "model_attention": false,
+          "evidence_use_proof": false
+        }
+      },
+      "boundary": {
+        "offline": true,
+        "serving": false,
+        "runtime_hook_live": false,
+        "model_call": false,
+        "model_attention": false,
+        "evidence_use_proof": false
+      }
+    },
+    {
+      "id": "v1.2",
+      "name": "bridge replay pack",
+      "commit": "8a56615",
+      "artifacts": {
+        "receipt": {
+          "path": "bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/RESULTS.md",
+          "sha256": "aa03da2dc5165da57c8052d50c3298596e7f00eac8eb40691fecc340fde320c1",
+          "bytes": 2413
+        },
+        "primary": {
+          "path": "bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/bridge-replay-pack.jsonl",
+          "sha256": "7677af156b38f5ada054df4cf61c404608d7a8a1e6a006ea510499ecd6116800",
+          "bytes": 33488
+        },
+        "summary": {
+          "path": "bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/summary.json",
+          "sha256": "df7361dd2077f5f1ceb9c4b53b8bad41b004006cf603b28cc973d30b55349858",
+          "bytes": 1109
+        }
+      },
+      "summary_snapshot": {
+        "replay_version": "v1.2-bridge-replay-pack",
+        "records": 13,
+        "checks": {
+          "records_have_schema_v1": true,
+          "records_are_hook_off": true,
+          "records_are_dry_run": true,
+          "records_privacy_safe": true,
+          "records_decoy_risk_geometry": true,
+          "no_raw_selected_position_samples": true
+        },
+        "by_distractor": {
+          "stale_record": 4,
+          "conflicting_correction": 2,
+          "near_duplicate": 1,
+          "phase_decoy": 4,
+          "generic_competitor": 2
+        },
+        "by_rank": {
+          "2": 1,
+          "4": 2,
+          "8": 3,
+          "16": 5,
+          "rank_any": 2
+        },
+        "artifacts": {
+          "replay_pack": "bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/bridge-replay-pack.jsonl",
+          "manifest": "bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/manifest.json",
+          "summary": "bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/summary.json"
+        },
+        "boundary": {
+          "replay_pack_only": true,
+          "synthetic_layout": true,
+          "hook_off": true,
+          "serving": false,
+          "runtime_hook": false,
+          "model_call": false,
+          "model_attention": false,
+          "evidence_use_proof": false
+        }
+      },
+      "boundary": {
+        "offline": true,
+        "serving": false,
+        "runtime_hook_live": false,
+        "model_call": false,
+        "model_attention": false,
+        "evidence_use_proof": false
+      }
+    },
+    {
+      "id": "v1.3",
+      "name": "replay pack validator",
+      "commit": "f8dc52f",
+      "artifacts": {
+        "receipt": {
+          "path": "bench/evidence-utilization-epkv-replay-pack-validator-2026-05-19/RESULTS.md",
+          "sha256": "153797a14d698a4d8a7e63a6b55b111ab261ce0862774900bd9b865791cf7b7f",
+          "bytes": 1438
+        },
+        "primary": {
+          "path": "bench/evidence-utilization-epkv-replay-pack-validator-2026-05-19/validation-report.json",
+          "sha256": "cf844fb552fb40d548285bdad695d74ab6b2001e6a085f33ba7e2c898f9eb14b",
+          "bytes": 2252
+        },
+        "summary": {
+          "path": "bench/evidence-utilization-epkv-replay-pack-validator-2026-05-19/validation-report.json",
+          "sha256": "cf844fb552fb40d548285bdad695d74ab6b2001e6a085f33ba7e2c898f9eb14b",
+          "bytes": 2252
+        }
+      },
+      "summary_snapshot": {
+        "validator": "epkv.bridge_replay_pack.validator.v1.3",
+        "valid": true,
+        "file": "bench/evidence-utilization-epkv-bridge-replay-pack-2026-05-19/bridge-replay-pack.jsonl",
+        "records": 13,
+        "errors": 0,
+        "reports": [
+          {
+            "line": 1,
+            "replay_id": "replay-01",
+            "target_id": "bridge-target-01",
+            "valid": true,
+            "errors": []
+          },
+          {
+            "line": 2,
+            "replay_id": "replay-02",
+            "target_id": "bridge-target-02",
+            "valid": true,
+            "errors": []
+          },
+          {
+            "line": 3,
+            "replay_id": "replay-03",
+            "target_id": "bridge-target-03",
+            "valid": true,
+            "errors": []
+          },
+          {
+            "line": 4,
+            "replay_id": "replay-04",
+            "target_id": "bridge-target-04",
+            "valid": true,
+            "errors": []
+          },
+          {
+            "line": 5,
+            "replay_id": "replay-05",
+            "target_id": "bridge-target-05",
+            "valid": true,
+            "errors": []
+          },
+          {
+            "line": 6,
+            "replay_id": "replay-06",
+            "target_id": "bridge-target-06",
+            "valid": true,
+            "errors": []
+          },
+          {
+            "line": 7,
+            "replay_id": "replay-07",
+            "target_id": "bridge-target-07",
+            "valid": true,
+            "errors": []
+          },
+          {
+            "line": 8,
+            "replay_id": "replay-08",
+            "target_id": "bridge-target-08",
+            "valid": true,
+            "errors": []
+          },
+          {
+            "line": 9,
+            "replay_id": "replay-09",
+            "target_id": "bridge-target-09",
+            "valid": true,
+            "errors": []
+          },
+          {
+            "line": 10,
+            "replay_id": "replay-10",
+            "target_id": "bridge-target-10",
+            "valid": true,
+            "errors": []
+          },
+          {
+            "line": 11,
+            "replay_id": "replay-11",
+            "target_id": "bridge-target-11",
+            "valid": true,
+            "errors": []
+          },
+          {
+            "line": 12,
+            "replay_id": "replay-12",
+            "target_id": "bridge-target-14",
+            "valid": true,
+            "errors": []
+          },
+          {
+            "line": 13,
+            "replay_id": "replay-13",
+            "target_id": "bridge-target-16",
+            "valid": true,
+            "errors": []
+          }
+        ],
+        "boundary": {
+          "replay_pack_only": true,
+          "serving": false,
+          "runtime_hook": false,
+          "model_call": false,
+          "model_attention": false,
+          "evidence_use_proof": false
+        }
+      },
+      "boundary": {
+        "offline": true,
+        "serving": false,
+        "runtime_hook_live": false,
+        "model_call": false,
+        "model_attention": false,
+        "evidence_use_proof": false
+      }
+    },
+    {
+      "id": "v1.4",
+      "name": "evidence path ledger",
+      "commit": "cd2350f",
+      "artifacts": {
+        "receipt": {
+          "path": "bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/RESULTS.md",
+          "sha256": "cffc9b6d1ef5e5a672a57e2cb55d685a06110c53ed94929100330ffa96eb9a9a",
+          "bytes": 2126
+        },
+        "primary": {
+          "path": "bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/evidence-path-ledger.json",
+          "sha256": "31dc932e5d8152abf62165be7c94a124ba9693e1bbb9ee4930e65d5becb27fc6",
+          "bytes": 78635
+        },
+        "summary": {
+          "path": "bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/summary.json",
+          "sha256": "ef75d0cabdab379406988694b7417c5a80eefa1b3c47bef02959fb346a70d77c",
+          "bytes": 860
+        }
+      },
+      "summary_snapshot": {
+        "ledger_version": "v1.4-evidence-path-ledger",
+        "stages": 6,
+        "chain": "v0.8 -> v0.9 -> v1.0 -> v1.1 -> v1.2 -> v1.3",
+        "chain_invariants": {
+          "all_receipts_present": true,
+          "all_primary_artifacts_present": true,
+          "all_boundaries_non_serving": true,
+          "no_stage_claims_model_attention": true,
+          "no_stage_claims_evidence_use_proof": true
+        },
+        "ledger_sha256": "31dc932e5d8152abf62165be7c94a124ba9693e1bbb9ee4930e65d5becb27fc6",
+        "artifacts": {
+          "ledger": "bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/evidence-path-ledger.json",
+          "summary": "bench/evidence-utilization-epkv-evidence-path-ledger-2026-05-19/summary.json"
+        },
+        "boundary": {
+          "ledger_only": true,
+          "serving": false,
+          "runtime_hook_live": false,
+          "model_call": false,
+          "model_attention": false,
+          "evidence_use_proof": false
+        }
+      },
+      "boundary": {
+        "offline": true,
+        "serving": false,
+        "runtime_hook_live": false,
+        "model_call": false,
+        "model_attention": false,
+        "evidence_use_proof": false
+      }
+    },
+    {
+      "id": "v1.5",
+      "name": "fixture refinement",
+      "commit": "c891233",
+      "artifacts": {
+        "receipt": {
+          "path": "bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/RESULTS.md",
+          "sha256": "d706fc94fa4d41483b54006d97965c99d79b82f1db0f9ffbe91a65a2a011d730",
+          "bytes": 1297
+        },
+        "primary": {
+          "path": "bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/events.jsonl",
+          "sha256": "aed03887035b1b44cbf5131fad6c72ccf3f56318e90262d7d2fcdb6dd4744d4e",
+          "bytes": 46326
+        },
+        "summary": {
+          "path": "bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/summary.json",
+          "sha256": "fdaeaaea78c9a86e1b1a8d912d6ce5bdf2baa1e9ad3b48d977eb1908cacd8300",
+          "bytes": 846
+        }
+      },
+      "summary_snapshot": {
+        "refinement_version": "v1.5-fixture-refinement",
+        "source_targets": 3,
+        "records": 9,
+        "events": 9,
+        "by_variant": {
+          "canonical": 3,
+          "decoy": 3,
+          "neither": 3
+        },
+        "by_dominant_region": {
+          "canonical": 3,
+          "decoy": 3,
+          "neither": 3
+        },
+        "by_audit_projection": {
+          "green_canonical_geometry_compatible": 3,
+          "red_decoy_geometry_risk": 3,
+          "yellow_neither_geometry_inconclusive": 3
+        },
+        "output_records": "bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/refined-fixture-records.jsonl",
+        "output_events": "bench/evidence-utilization-epkv-fixture-refinement-2026-05-19/events.jsonl",
+        "boundary": {
+          "synthetic_layout": true,
+          "hook_off": true,
+          "serving": false,
+          "runtime_hook": false,
+          "model_call": false,
+          "model_attention": false,
+          "evidence_use_proof": false
+        }
+      },
+      "boundary": {
+        "offline": true,
+        "serving": false,
+        "runtime_hook_live": false,
+        "model_call": false,
+        "model_attention": false,
+        "evidence_use_proof": false
+      }
+    },
+    {
+      "id": "v1.6",
+      "name": "refined replay pack",
+      "commit": "936294e",
+      "artifacts": {
+        "receipt": {
+          "path": "bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/RESULTS.md",
+          "sha256": "2a75f23acc7337c6a4822177e0eda3d61c7c40a285ea820bc6d451af24915da4",
+          "bytes": 1423
+        },
+        "primary": {
+          "path": "bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/refined-replay-pack.jsonl",
+          "sha256": "5f0745931e4dccf3e46f24d06e304426cfcdaec6c1a1cf4d7e6a390374387b32",
+          "bytes": 21471
+        },
+        "summary": {
+          "path": "bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/summary.json",
+          "sha256": "c178e7f37766914ce67ed491e8dcc180fa967c2319399517def5004ed5d306a4",
+          "bytes": 1352
+        }
+      },
+      "summary_snapshot": {
+        "replay_version": "v1.6-refined-replay-pack",
+        "records": 9,
+        "checks": {
+          "records": 9,
+          "validator_pack_passed": true,
+          "all_schema_v1": true,
+          "all_hook_off": true,
+          "all_dry_run": true,
+          "all_privacy_safe": true,
+          "all_without_raw_samples": true,
+          "all_variants_match_dominant_region": true,
+          "each_target_has_three_variants": true
+        },
+        "by_variant": {
+          "canonical": 3,
+          "decoy": 3,
+          "neither": 3
+        },
+        "by_dominant_region": {
+          "canonical": 3,
+          "decoy": 3,
+          "neither": 3
+        },
+        "by_audit_projection": {
+          "green_canonical_geometry_compatible": 3,
+          "red_decoy_geometry_risk": 3,
+          "yellow_neither_geometry_inconclusive": 3
+        },
+        "by_target": {
+          "bridge-target-12": 3,
+          "bridge-target-13": 3,
+          "bridge-target-15": 3
+        },
+        "refined_replay_pack_sha256": "5f0745931e4dccf3e46f24d06e304426cfcdaec6c1a1cf4d7e6a390374387b32",
+        "artifacts": {
+          "pack": "bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/refined-replay-pack.jsonl",
+          "summary": "bench/evidence-utilization-epkv-refined-replay-pack-2026-05-19/summary.json"
+        },
+        "boundary": {
+          "replay_pack_only": true,
+          "synthetic_layout": true,
+          "hook_off": true,
+          "serving": false,
+          "runtime_hook": false,
+          "model_call": false,
+          "model_attention": false,
+          "evidence_use_proof": false
+        }
+      },
+      "boundary": {
+        "offline": true,
+        "serving": false,
+        "runtime_hook_live": false,
+        "model_call": false,
+        "model_attention": false,
+        "evidence_use_proof": false
+      }
+    }
+  ],
+  "coverage": {
+    "aggregate_records": 178,
+    "selected_targets": 16,
+    "materialized_events_v10": 16,
+    "bridge_ready_targets": 13,
+    "needs_fixture_detail_targets": 3,
+    "replay_records_v12": 13,
+    "refined_events_v15": 9,
+    "refined_replay_records_v16": 9,
+    "total_replay_records": 22
+  },
+  "chain_invariants": {
+    "all_receipts_present": true,
+    "all_primary_artifacts_present": true,
+    "all_boundaries_non_serving": true,
+    "no_stage_claims_model_attention": true,
+    "no_stage_claims_evidence_use_proof": true,
+    "combined_replay_coverage_is_22": true
+  },
+  "boundary": {
+    "ledger_only": true,
+    "serving": false,
+    "runtime_hook_live": false,
+    "model_call": false,
+    "model_attention": false,
+    "evidence_use_proof": false
+  }
+}
