@@ -285,3 +285,28 @@ Adaptive policy path is coherent offline.
 Next blocker is implementation form: remove Python branch/CPU read and express fallback decision as GPU-side mask/control.
 Still do not install into serving.
 ```
+
+## Phase 2c.7 GPU-side mask/control receipt
+
+Local repo receipt:
+
+```txt
+bench/evidence-paged-kv-gpu-mask-control-2026-05-19/RESULTS.md
+```
+
+Readout:
+
+```txt
+GPU-side mask/control preserves exact-reference output in tested cases
+select kernel p50: ~0.048–0.081 ms
+branchless dual path computes both probe and exact branches
+```
+
+Decision update:
+
+```txt
+GPU-side mask/control is feasible.
+Branchless dual-path is not the performance path because it computes both branches.
+Next useful design is compact fallback: reuse probe for unflagged heads and compute exact LOCAL_TOP=32 only for flagged heads/chunks.
+Still do not install into serving.
+```

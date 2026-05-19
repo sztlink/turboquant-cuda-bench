@@ -291,6 +291,27 @@ Next blocker is implementation form: remove Python branch/CPU read and express f
 Still do not install into serving.
 ```
 
+Phase 2c.7 GPU-side mask/control receipt:
+
+- [`../../bench/evidence-paged-kv-gpu-mask-control-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-gpu-mask-control-2026-05-19/RESULTS.md)
+
+GPU-side mask/control result:
+
+```txt
+GPU-side mask/control preserves exact-reference output in tested cases
+select kernel p50: ~0.048–0.081 ms
+branchless dual path computes both probe and exact branches
+```
+
+Updated decision implication:
+
+```txt
+GPU-side mask/control is feasible.
+Branchless dual-path is not the performance path because it computes both branches.
+Next useful design is compact fallback: reuse probe for unflagged heads and compute exact LOCAL_TOP=32 only for flagged heads/chunks.
+Still do not install into serving.
+```
+
 Phase 2a guarded runtime hook receipt:
 
 - [`../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md)
