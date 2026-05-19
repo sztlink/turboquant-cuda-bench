@@ -25,6 +25,7 @@ The bridge now has a staged chain of receipts:
 | Bridge v0.3 | [`../../bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-offline-kv-replay-2026-05-19/RESULTS.md) | synthetic Q/K tensors can run real offline score+topK and emit selected-position/page overlap records | model attention, serving behavior, real prompt KV allocation |
 | Bridge v0.4 | [`../../bench/evidence-utilization-epkv-hookoff-telemetry-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-hookoff-telemetry-bridge-2026-05-19/RESULTS.md) | existing bridge records can be projected into the runtime telemetry schema and pass the L1 validator | serving behavior, hook-on traces, real evidence use |
 | Bridge v0.5 | [`../../bench/evidence-utilization-epkv-runtime-parity-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-runtime-parity-bridge-2026-05-19/RESULTS.md) | actual runtime hook function can emit selected-position telemetry over synthetic packed KV bridge-band shapes and be projected to the L1 schema | serving readiness, stable latency, model behavior |
+| Bridge v0.6 | [`../../bench/evidence-utilization-epkv-runtime-schema-v1-adapter-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-runtime-schema-v1-adapter-2026-05-19/RESULTS.md) | default-off source adapter can emit `epkv.runtime.telemetry.v1` directly in dry-run mode | live deployment, serving readiness, real-prompt tracing |
 
 ## What was validated
 
@@ -143,6 +144,27 @@ CUDA total p50/p90: ~1.25 / ~1.47 ms
 
 This advances implementation/schema parity: the real hook boundary can produce selected-position geometry in the bridge band. It is still dry-run, synthetic KV, no serving mutation, no real prompt, and not a stable latency table.
 
+### 8. Runtime hook can emit schema-v1 directly in dry-run mode
+
+Bridge v0.6 adds a default-off source adapter:
+
+```txt
+VLLM_EPKV_RUNTIME_SCHEMA_V1=1
+```
+
+When enabled together with dry-run, the runtime hook emits `epkv.runtime.telemetry.v1` directly instead of requiring post-hoc projection:
+
+```txt
+events: 4
+validator: PASS
+validator errors: 0
+modes: ["dry-run"]
+reason_codes: ["dry_run_telemetry_only"]
+runtime selected positions sampled: 3584
+```
+
+Legacy event format remains default. The adapter was tested as a standalone copied module, not deployed into the live vLLM service.
+
 ## What failed
 
 The original gate:
@@ -224,13 +246,13 @@ public EPKV claim
 The next non-serving experiment is now:
 
 ```txt
-runtime schema adapter patch, default-off:
-  make runtime_hook.py optionally emit epkv.runtime.telemetry.v1-shaped events in dry-run only
-  preserve legacy event format by default
-  validate emitted synthetic events with validate-epkv-runtime-telemetry.mjs
+answer-classification bridge:
+  map existing evidence-utilization fixtures into green/yellow/red/gray audit labels
+  join retrieval spans + selected-position geometry + known answer proxy classes
+  keep labels explicitly as audit states, not model-use proof
 ```
 
-Real prompts remain paused. This is a source-shaping step, not a serving install.
+Alternative: add source-level unit tests for legacy-vs-schema runtime event mode preservation. Real prompts remain paused.
 
 ## Safe public phrasing
 

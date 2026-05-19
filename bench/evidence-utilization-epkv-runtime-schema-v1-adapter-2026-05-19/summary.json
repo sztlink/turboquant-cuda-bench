@@ -1,0 +1,40 @@
+{
+  "bridge_version": "v0.6-runtime-schema-v1-adapter-smoke",
+  "runtime_hook_file": "/home/felipe/vllm-lab/runtime_hook_schema_v1.py",
+  "events": 4,
+  "seq_lens": [
+    817,
+    1041,
+    1139,
+    1549
+  ],
+  "runtime_selected_positions_sampled": 3584,
+  "schema": "epkv.runtime.telemetry.v1",
+  "modes": [
+    "dry-run"
+  ],
+  "reason_codes": [
+    "dry_run_telemetry_only"
+  ],
+  "elapsed_cuda_ms": {
+    "min": 1.4366719722747803,
+    "p50": 1.7409919500350952,
+    "p90": 51.884769439697266,
+    "max": 51.884769439697266,
+    "mean": 14.157104343175888
+  },
+  "elapsed_wall_ms": {
+    "min": 1.368242024909705,
+    "p50": 1.6537279589101672,
+    "p90": 47.688953985925764,
+    "max": 47.688953985925764,
+    "mean": 13.049663495621644
+  },
+  "boundary": {
+    "serving_mutation": false,
+    "model_inference": false,
+    "real_request": false,
+    "schema_v1_direct": true,
+    "dry_run": true
+  }
+}

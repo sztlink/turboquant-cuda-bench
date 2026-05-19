@@ -340,6 +340,24 @@ errors: 0
 serving mutation: no
 ```
 
+L2.2 direct runtime schema-v1 adapter receipt:
+
+```txt
+07-scripts/evidence-utilization/epkv-runtime-schema-v1-adapter-v06.py
+bench/evidence-utilization-epkv-runtime-schema-v1-adapter-2026-05-19/RESULTS.md
+```
+
+L2.2 result:
+
+```txt
+VLLM_EPKV_RUNTIME_SCHEMA_V1=1 makes dry-run emit epkv.runtime.telemetry.v1 directly
+legacy format remains default when the flag is unset
+validator: PASS
+errors: 0
+live vLLM service patch: no
+serving mutation: no
+```
+
 ## Decision
 
 The next artifact should be the interface contract, not another kernel receipt by default.

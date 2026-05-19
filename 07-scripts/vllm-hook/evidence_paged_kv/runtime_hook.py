@@ -10,6 +10,7 @@ Enable only for controlled experiments:
     VLLM_EPKV_RUNTIME_MAX_SEQ=256
     VLLM_EPKV_RUNTIME_DRY_RUN=1  # optional: telemetry only, fall back to original TQ
     VLLM_EPKV_RUNTIME_TRACE_SELECTION=1  # optional: compact selected-position telemetry
+    VLLM_EPKV_RUNTIME_SCHEMA_V1=1  # optional: dry-run emits epkv.runtime.telemetry.v1
 
 Boundary:
 - B=1 decode only.
@@ -57,6 +58,7 @@ _ENV_TAG = "VLLM_EPKV_RUNTIME_TAG"
 _ENV_DRY_RUN = "VLLM_EPKV_RUNTIME_DRY_RUN"
 _ENV_TRACE_SELECTION = "VLLM_EPKV_RUNTIME_TRACE_SELECTION"
 _ENV_TRACE_TOP_N = "VLLM_EPKV_RUNTIME_TRACE_TOP_N"
+_ENV_SCHEMA_V1 = "VLLM_EPKV_RUNTIME_SCHEMA_V1"
 
 _seen = 0
 _warned = False
@@ -87,6 +89,10 @@ def _trace_selection_enabled() -> bool:
     return os.environ.get(_ENV_TRACE_SELECTION, "0") == "1"
 
 
+def _schema_v1_enabled() -> bool:
+    return os.environ.get(_ENV_SCHEMA_V1, "0") == "1"
+
+
 def _selection_summary(pos: torch.Tensor, *, M: int, Hq: int, K: int) -> dict[str, Any]:
     """Return compact selected-position telemetry without prompt/token text.
 
@@ -115,6 +121,86 @@ def _selection_summary(pos: torch.Tensor, *, M: int, Hq: int, K: int) -> dict[st
         "min_position": min(flat) if flat else None,
         "max_position": max(flat) if flat else None,
         "seq_len": M,
+    }
+
+
+def _schema_v1_event_from_legacy(
+    legacy: dict[str, Any],
+    *,
+    event_cap: int,
+    dry_run: bool,
+) -> dict[str, Any]:
+    """Project legacy hook telemetry into the Casey-guided schema v1.
+
+    Only used when ``VLLM_EPKV_RUNTIME_SCHEMA_V1=1`` and dry-run is enabled.
+    This preserves the legacy default event format and avoids approximate output
+    on real prompts.
+    """
+    query_shape = legacy.get("query_shape") or [1, 0, 0]
+    kv_cache_shape = legacy.get("kv_cache_shape") or [0, 0, 0, 0]
+    seq_len = int(legacy.get("seq_len", 0))
+    K = int(legacy.get("K", 0))
+    Hq = int(query_shape[1]) if len(query_shape) > 1 else 0
+    Hk = int(kv_cache_shape[2]) if len(kv_cache_shape) > 2 else 0
+    D = int(query_shape[2]) if len(query_shape) > 2 else 0
+    selection = legacy.get("selected_positions_sample") or {}
+    return {
+        "schema": "epkv.runtime.telemetry.v1",
+        "tag": legacy.get("tag", ""),
+        "mode": "dry-run" if dry_run else "degraded-fallback",
+        "decision": "telemetry_only_fallback_to_original_tq" if dry_run else "schema_v1_requires_dry_run",
+        "reason_code": "dry_run_telemetry_only" if dry_run else "telemetry_incomplete",
+        "policy_version": "epkv.runtime.schema_v1_adapter.v0.1.default_off",
+        "seq_len": seq_len,
+        "Hq": Hq,
+        "Hk": Hk,
+        "D": D,
+        "global_k": K,
+        "probe_local_top": 8,
+        "fallback_local_top": 32,
+        "num_chunks": (seq_len + 511) // 512 if seq_len > 0 else 0,
+        "flagged_head_count": 0,
+        "flagged_head_rate": 0.0,
+        "seq_guard": 4096,
+        "flag_rate_threshold": 0.75,
+        "timing_ms": {
+            "probe_candidates": 0.0,
+            "detector": 0.0,
+            "compact_merge": 0.0,
+            "global_select": 0.0,
+            "value": 0.0,
+            "exact_fallback": 0.0,
+            "total_hook_wall": float(legacy.get("elapsed_ms_wall") or 0.0),
+            "total_hook_cuda": float(legacy.get("elapsed_ms_sync_timing") or 0.0),
+        },
+        "coverage": {
+            "event_index": int(legacy.get("event_index", 0)) + 1,
+            "event_cap": int(event_cap),
+            "cap_hit": False,
+            "bucket": f"runtime_schema_v1:seq_len:{seq_len}",
+        },
+        "privacy": {
+            "prompt_text": False,
+            "raw_token_ids": False,
+            "selected_positions_only": True,
+        },
+        "selection_geometry": {
+            "runtime_selected_positions_sample": selection.get("positions_by_head_first_n", []),
+            "runtime_position_histogram": selection.get("position_histogram", {}),
+            "runtime_position_histogram_bin_size": selection.get("position_histogram_bin_size"),
+            "runtime_min_position": selection.get("min_position"),
+            "runtime_max_position": selection.get("max_position"),
+            "runtime_trace_top_n": selection.get("trace_top_n"),
+            "runtime_heads": selection.get("heads"),
+            "runtime_K": selection.get("K"),
+        },
+        "runtime_boundary": {
+            "schema_v1_direct": True,
+            "dry_run_required": True,
+            "serving_output_changed": False,
+            "model_inference": False,
+            "selected_positions_are_attention": False,
+        },
     }
 
 
@@ -356,6 +442,8 @@ def maybe_decode(
         }
         if selection_summary is not None:
             event["selected_positions_sample"] = selection_summary
+        if dry_run and _schema_v1_enabled():
+            event = _schema_v1_event_from_legacy(event, event_cap=max_events, dry_run=True)
         _write_event(event)
         if _seen == 0:
             logger.warning(
