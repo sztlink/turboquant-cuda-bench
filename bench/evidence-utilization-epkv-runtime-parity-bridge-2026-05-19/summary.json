@@ -1,0 +1,32 @@
+{
+  "bridge_version": "v0.5-runtime-hook-parity-bridge",
+  "source_events": "/home/felipe/vllm-lab/epkv-hookoff-v04-events.jsonl",
+  "legacy_events": "/home/felipe/vllm-lab/evidence-utilization-epkv-runtime-parity-bridge-2026-05-19/legacy-runtime-events.jsonl",
+  "schema_events": "/home/felipe/vllm-lab/evidence-utilization-epkv-runtime-parity-bridge-2026-05-19/events.jsonl",
+  "events": 16,
+  "seq_len_min": 817,
+  "seq_len_max": 1549,
+  "runtime_selected_positions_sampled": 14336,
+  "elapsed_cuda_ms": {
+    "min": 1.1509759426116943,
+    "p50": 1.252351999282837,
+    "p90": 1.4727040529251099,
+    "max": 52.78239822387695,
+    "mean": 4.477037891745567
+  },
+  "elapsed_wall_ms": {
+    "min": 1.0864170035347342,
+    "p50": 1.1804720270447433,
+    "p90": 1.4268680242821574,
+    "max": 48.496584000531584,
+    "mean": 4.147272637055721
+  },
+  "boundary": {
+    "actual_runtime_hook_function": true,
+    "synthetic_packed_kv_cache": true,
+    "serving_mutation": false,
+    "model_inference": false,
+    "real_request": false,
+    "component_timings_instrumented": false
+  }
+}

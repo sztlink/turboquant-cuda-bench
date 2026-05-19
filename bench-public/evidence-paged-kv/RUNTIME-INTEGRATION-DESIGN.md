@@ -323,6 +323,23 @@ errors: 0
 serving mutation: no
 ```
 
+L2.1 runtime parity bridge receipt:
+
+```txt
+07-scripts/evidence-utilization/epkv-runtime-parity-bridge-v05.py
+bench/evidence-utilization-epkv-runtime-parity-bridge-2026-05-19/RESULTS.md
+```
+
+L2.1 result:
+
+```txt
+actual runtime_hook.maybe_decode driven offline on synthetic packed KV bridge-band shapes
+16/16 runtime-derived events projected into epkv.runtime.telemetry.v1
+validator: PASS
+errors: 0
+serving mutation: no
+```
+
 ## Decision
 
 The next artifact should be the interface contract, not another kernel receipt by default.

@@ -20,6 +20,7 @@ const MODES = new Set([
 
 const REASON_CODES = new Set([
   'hook_disabled',
+  'dry_run_telemetry_only',
   'seq_guard_exact_only',
   'flag_rate_exact_only',
   'compact_fallback_selected',
