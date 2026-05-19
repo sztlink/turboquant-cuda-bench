@@ -4,6 +4,14 @@
 >
 > The point is auditability, not speed. The chain below does not claim attention, answer improvement, serving readiness, or proof of evidence use.
 
+## Canonical milestone
+
+The sealed offline milestone is:
+
+```txt
+bench-public/evidence-utilization/OFFLINE-MILESTONE-v1.9.md
+```
+
 ## What exists now
 
 The offline bridge now has a reproducible evidence-path ledger:
