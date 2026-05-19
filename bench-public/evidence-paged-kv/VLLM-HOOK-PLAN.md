@@ -139,6 +139,7 @@ service restored to default-off: VLLM_EPKV_RUNTIME_HOOK=0
 Phase 2a runtime benchmark design:
 
 - [`RUNTIME-BENCHMARK-DESIGN.md`](RUNTIME-BENCHMARK-DESIGN.md)
+- [`RUNTIME-GATE-REDESIGN.md`](RUNTIME-GATE-REDESIGN.md)
 - [`../../07-scripts/vllm-hook/epkv-runtime-benchmark.py`](../../07-scripts/vllm-hook/epkv-runtime-benchmark.py)
 
 Design readout:
@@ -196,10 +197,14 @@ First connect evidence fixtures to runtime-selected positions/pages so answer cl
 Recommended first bridge mode after Track A:
 
 ```txt
-metadata/offline bridge first, or revisit gate definition
+metadata/offline bridge first
 baseline default-off answer run remains safe
-phase2a hook-on dry-run real-prompt trace is paused until cost gate is redesigned or passed
+phase2a hook-on dry-run real-prompt trace is paused until absolute telemetry gate + serving baseline exist
 ```
+
+Metadata/offline bridge v0 receipt:
+
+- [`../../bench/evidence-utilization-epkv-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-2026-05-19/RESULTS.md)
 
 ## Stop criteria
 

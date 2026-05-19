@@ -1,0 +1,49 @@
+{
+  "created_at": "2026-05-19T04:10:05.795Z",
+  "bridge_version": "v0",
+  "bridge_layer": "offline_metadata_only",
+  "date_stamp": "2026-05-19",
+  "sources": {
+    "spec": "bench-public/evidence-utilization/EPKV-BRIDGE-SPEC.md",
+    "phase_aggregate": "bench-public/evidence-utilization/phase-aggregate.json",
+    "distractor_aggregate": "bench-public/evidence-utilization/distractor-taxonomy-aggregate.json",
+    "runtime_results": "bench/evidence-paged-kv-runtime-benchmark-2026-05-19/RESULTS.md",
+    "runtime_hook_module": "07-scripts/vllm-hook/evidence_paged_kv/runtime_hook.py"
+  },
+  "total_records": 16,
+  "by_distractor_type": {
+    "explicit_decoy": 4,
+    "stale_record": 4,
+    "conflicting_correction": 4,
+    "near_duplicate": 4
+  },
+  "by_canonical_rank": {
+    "8": 8,
+    "16": 8
+  },
+  "by_decoys_before": {
+    "3": 8,
+    "7": 8
+  },
+  "token_estimate_method": "chars_per_token=3.6 (offline heuristic)",
+  "mean_estimated_prompt_tokens": 1279.1875,
+  "answer_observed": false,
+  "aggregate_proxy": {
+    "coverage": "16/16",
+    "mean_proxy_hit_rate": 0.24913194444444442,
+    "mean_proxy_wrong_distractor_rate": 0.45312500000000006
+  },
+  "runtime_layer_summary": {
+    "mode": "offline_metadata_only",
+    "no_real_selection": true,
+    "schema_reference_only": true,
+    "track_a_decision": "cost_ratio_gate_fail; bridge proceeds via metadata-only path"
+  },
+  "non_claims": [
+    "no serving claim",
+    "no model-quality claim",
+    "no real EPKV selection trace",
+    "no tokenizer-accurate spans",
+    "no leaderboard score"
+  ]
+}
