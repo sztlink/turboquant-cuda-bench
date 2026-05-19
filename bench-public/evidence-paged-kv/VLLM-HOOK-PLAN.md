@@ -121,6 +121,21 @@ Prefer Phase 2a for any guarded runtime hook.
 Do not install Phase 2b into serving unless candidate storage/local selection is redesigned.
 ```
 
+Phase 2a guarded runtime hook receipt:
+
+- [`../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md)
+
+Runtime hook result:
+
+```txt
+installed into vLLM TurboQuant backend behind VLLM_EPKV_RUNTIME_HOOK
+controlled temporary-on test produced 64 runtime decode events
+short prompt smoke succeeded: 7 * 8 -> 56
+steady sync timing p50 ~0.194 ms at seq_len 43-45, K=32
+service restored to default-off: VLLM_EPKV_RUNTIME_HOOK=0
+/health -> HTTP 200 after restore
+```
+
 ### Phase 3 — evidence-utilization bridge
 
 - Only after runtime viability: connect selected evidence pages to retrieval/answer-closure fixtures.
