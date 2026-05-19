@@ -335,6 +335,30 @@ Next useful benchmark: partial-head flag-rate sweep to find the crossover point 
 Still do not install into serving.
 ```
 
+Phase 2c.9 compact fallback flag-rate sweep receipt:
+
+- [`../../bench/evidence-paged-kv-compact-fallback-flag-sweep-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-compact-fallback-flag-sweep-2026-05-19/RESULTS.md)
+
+Flag-rate crossover result for `M=65536` synthetic partial-head fixture:
+
+```txt
+0/28 observed flags:  compact/exact p50 ratio 0.352
+7/28 observed flags:  compact/exact p50 ratio 0.580–0.605
+14/28 observed flags: compact/exact p50 ratio 0.836
+21/28 observed flags: compact/exact p50 ratio 1.036
+28/28 observed flags: compact/exact p50 ratio 1.277
+```
+
+Updated decision implication:
+
+```txt
+For this shape/fixture, compact fallback remains favorable through observed 14/28 flagged heads (~50%).
+At observed 21/28 flagged heads (~75%), exact-only becomes slightly faster.
+Candidate policy: if flagged_head_rate >= ~0.75, use exact-only; otherwise use compact fallback.
+Before serving integration, validate this threshold on more shapes and sequence lengths.
+Still do not install into serving.
+```
+
 Phase 2a guarded runtime hook receipt:
 
 - [`../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md)

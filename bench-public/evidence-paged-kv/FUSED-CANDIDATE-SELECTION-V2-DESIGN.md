@@ -337,3 +337,31 @@ When all heads are flagged, compact fallback is slower than exact-only because i
 Next useful benchmark: partial-head flag-rate sweep to find the crossover point and decide whether policy should fall back exact-only when many heads are flagged.
 Still do not install into serving.
 ```
+
+## Phase 2c.9 compact fallback flag-rate sweep receipt
+
+Local repo receipt:
+
+```txt
+bench/evidence-paged-kv-compact-fallback-flag-sweep-2026-05-19/RESULTS.md
+```
+
+Readout for `M=65536` synthetic partial-head fixture:
+
+```txt
+0/28 observed flags:  compact/exact p50 ratio 0.352
+7/28 observed flags:  compact/exact p50 ratio 0.580–0.605
+14/28 observed flags: compact/exact p50 ratio 0.836
+21/28 observed flags: compact/exact p50 ratio 1.036
+28/28 observed flags: compact/exact p50 ratio 1.277
+```
+
+Decision update:
+
+```txt
+For this shape/fixture, compact fallback remains favorable through observed 14/28 flagged heads (~50%).
+At observed 21/28 flagged heads (~75%), exact-only becomes slightly faster.
+Candidate policy: if flagged_head_rate >= ~0.75, use exact-only; otherwise use compact fallback.
+Before serving integration, validate this threshold on more shapes and sequence lengths.
+Still do not install into serving.
+```
