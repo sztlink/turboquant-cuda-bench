@@ -161,6 +161,20 @@ VLLM_EPKV_RUNTIME_TRACE_TOP_N=32
 
 When combined with `VLLM_EPKV_RUNTIME_HOOK=1`, dry-run mode executes the Phase 2a kernels and logs timing, but returns `None` so the backend falls back to the original TurboQuant output. Selection tracing logs positions only — sampled selected positions by head plus a histogram — never raw prompt text or token ids. All flags are default-off.
 
+Phase 2a Track A runtime benchmark receipt:
+
+- [`../../bench/evidence-paged-kv-runtime-benchmark-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-benchmark-2026-05-19/RESULTS.md)
+
+Track A result:
+
+```txt
+offline direct-call benchmark completed on 4090 while vLLM service stayed healthy
+trace telemetry: 272/272 events include selected-position summaries and timing
+service after run: /health 200; chat smoke 13*37 -> 481
+cost-ratio gate: failed under original p90_hook / p90_original_tq <= 2.5 threshold
+readout: telemetry substrate validated; do not run real-prompt hook-on bridge yet under the original gate
+```
+
 ### Phase 3 — evidence-utilization bridge
 
 - Only after runtime viability: connect selected evidence pages to retrieval/answer-closure fixtures.
@@ -179,11 +193,12 @@ Do not claim Evidence-Paged KV fixes retrieved≠used.
 First connect evidence fixtures to runtime-selected positions/pages so answer closure can be studied as an alignment problem.
 ```
 
-Recommended first bridge mode:
+Recommended first bridge mode after Track A:
 
 ```txt
-telemetry-only selection tracing, default-off
-baseline default-off answer run + phase2a hook-on dry-run trace when available
+metadata/offline bridge first, or revisit gate definition
+baseline default-off answer run remains safe
+phase2a hook-on dry-run real-prompt trace is paused until cost gate is redesigned or passed
 ```
 
 ## Stop criteria

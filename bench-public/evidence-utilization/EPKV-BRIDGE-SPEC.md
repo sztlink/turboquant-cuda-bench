@@ -366,6 +366,13 @@ Evidence-Paged KV is faster than production attention.
 
 ## Immediate next step
 
+Track A runtime benchmark receipt exists:
+
+- [`../evidence-paged-kv/VLLM-HOOK-PLAN.md`](../evidence-paged-kv/VLLM-HOOK-PLAN.md)
+- [`../../bench/evidence-paged-kv-runtime-benchmark-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-benchmark-2026-05-19/RESULTS.md)
+
+Readout: telemetry completeness passed, but the original cost-ratio gate failed. Therefore the next bridge step should be **metadata/offline bridge** or gate redesign, not real-prompt hook-on serving telemetry.
+
 Prepared in the source hook: **telemetry-only selection tracing**, default-off:
 
 ```txt
@@ -379,11 +386,11 @@ Use the prepared dry-run safety flag for real-prompt telemetry:
 VLLM_EPKV_RUNTIME_DRY_RUN=1
 ```
 
-Then run a tiny bridge fixture with:
+Then run a tiny bridge fixture in the safer offline/metadata form:
 
 ```txt
 baseline default-off: answer only
-phase2a hook-on dry-run trace: original answer + selected position summary
+metadata/offline EPKV trace: selected position summary over known fixture spans
 ```
 
-No public claim until the first bridge receipt exists.
+Only revisit real-prompt hook-on dry-run trace after the cost gate is redesigned or passed. No public claim until the first bridge receipt exists.
