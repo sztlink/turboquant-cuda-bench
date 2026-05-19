@@ -187,3 +187,42 @@ Fixed LOCAL_TOP=8 is not correctness-preserving under top-heavy score concentrat
 Required LOCAL_TOP tracks max true-topK concentration per chunk.
 Next design needs adaptive/local-overflow detection or exact fallback, not fixed approximate local_top.
 ```
+
+## Phase 2c.4 adaptive overflow guard receipt
+
+Local repo receipt:
+
+```txt
+bench/evidence-paged-kv-adaptive-local-overflow-2026-05-19/RESULTS.md
+```
+
+Policy tested:
+
+```txt
+probe LOCAL_TOP=8
+compute approximate global topK threshold over probe candidates
+if any chunk/head local tail score >= threshold: fallback to exact LOCAL_TOP=32
+else accept probe
+```
+
+Readout:
+
+```txt
+accepted probe cases: 4/8
+fallback exact cases: 4/8
+random + spread cases accepted with recall@32 = 1.0
+one_chunk_32 + two_chunks_16_16 adversarial failures flagged and recovered via fallback
+```
+
+Timing caveat:
+
+```txt
+Detector uses Torch/CPU in this harness (~0.39–0.42 ms wall), so adaptive timings are not final kernel timings.
+```
+
+Decision update:
+
+```txt
+Adaptive overflow guard is conceptually valid.
+Next implementation step is a tiny GPU detector/fallback-mask kernel; still do not install into serving.
+```

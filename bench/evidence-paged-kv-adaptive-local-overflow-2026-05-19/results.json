@@ -1,0 +1,864 @@
+{
+  "title": "Evidence-Paged KV Phase 2c.4 \u2014 adaptive local-overflow guard",
+  "meta": {
+    "host": "DESKTOP-CTAHC6D",
+    "python": "3.12.3",
+    "torch": "2.11.0+cu130",
+    "cuda_device": "NVIDIA GeForce RTX 4090",
+    "nvidia_smi_start": "NVIDIA GeForce RTX 4090, 595.79, 21839 MiB, 24564 MiB, 0 %, 39",
+    "layout": {
+      "kv_cache_dtype": "turboquant_k8v4",
+      "B": 1,
+      "Hq": 28,
+      "Hk": 4,
+      "D": 128,
+      "kv_group": 7,
+      "block_size": 16,
+      "key_packed_size": 128,
+      "value_quant_bits": 4,
+      "slot_size": 196,
+      "max_N": 65536
+    },
+    "policy": {
+      "global_k": 32,
+      "probe_local_top": 8,
+      "fallback_local_top": 32,
+      "chunk_rows": 512,
+      "overflow_rule": "fallback if any local probe tail score >= approximate global topK threshold for that head"
+    },
+    "boundary": "offline adaptive guard validation; Torch overflow detector for policy measurement; no serving mutation"
+  },
+  "results": [
+    {
+      "scenario": "random",
+      "M": 8192,
+      "global_k": 32,
+      "probe_local_top": 8,
+      "fallback_local_top": 32,
+      "chunk_rows": 512,
+      "target_positions_first_40": [],
+      "detection": {
+        "overflow_any": false,
+        "overflow_flag_count": 0,
+        "overflow_flag_heads": 0,
+        "overflow_flag_chunks": 0,
+        "num_chunks": 16,
+        "Hq": 28
+      },
+      "adaptive_mode": "accept_probe",
+      "probe_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_error": {
+        "max_abs_error_vs_exact_topk_output": 0.00014137104153633118,
+        "mean_abs_error_vs_exact_topk_output": 2.8302678401814774e-05
+      },
+      "adaptive_error": {
+        "max_abs_error_vs_exact_topk_output": 0.00014137104153633118,
+        "mean_abs_error_vs_exact_topk_output": 2.8302678401814774e-05
+      },
+      "timing": {
+        "probe_candidate": {
+          "name": "probe_candidate scenario=random M=8192",
+          "repeats": 4,
+          "p50_ms": 0.1013759970664978,
+          "p90_ms": 0.10393600165843964,
+          "min_ms": 0.09408000111579895,
+          "max_ms": 0.10393600165843964,
+          "checksum": 8723.4873046875
+        },
+        "detect_overflow_wall": {
+          "name": "detect_overflow scenario=random M=8192",
+          "repeats": 4,
+          "p50_ms": 0.39418897358700633,
+          "p90_ms": 0.417593983002007,
+          "min_ms": 0.3846710314974189,
+          "max_ms": 0.417593983002007
+        },
+        "probe_full": {
+          "name": "probe_full scenario=random M=8192",
+          "repeats": 4,
+          "p50_ms": 0.15452800691127777,
+          "p90_ms": 0.17977599799633026,
+          "min_ms": 0.15270400047302246,
+          "max_ms": 0.17977599799633026,
+          "checksum": -3.3721680641174316
+        },
+        "exact_full": {
+          "name": "exact_full scenario=random M=8192",
+          "repeats": 4,
+          "p50_ms": 0.19763199985027313,
+          "p90_ms": 0.2027519941329956,
+          "min_ms": 0.196383997797966,
+          "max_ms": 0.2027519941329956,
+          "checksum": -3.3721680641174316
+        },
+        "adaptive_estimated_p50_ms": 0.5487169804982841
+      }
+    },
+    {
+      "scenario": "random",
+      "M": 65536,
+      "global_k": 32,
+      "probe_local_top": 8,
+      "fallback_local_top": 32,
+      "chunk_rows": 512,
+      "target_positions_first_40": [],
+      "detection": {
+        "overflow_any": false,
+        "overflow_flag_count": 0,
+        "overflow_flag_heads": 0,
+        "overflow_flag_chunks": 0,
+        "num_chunks": 128,
+        "Hq": 28
+      },
+      "adaptive_mode": "accept_probe",
+      "probe_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_error": {
+        "max_abs_error_vs_exact_topk_output": 0.00017843768000602722,
+        "mean_abs_error_vs_exact_topk_output": 2.836931344063487e-05
+      },
+      "adaptive_error": {
+        "max_abs_error_vs_exact_topk_output": 0.00017843768000602722,
+        "mean_abs_error_vs_exact_topk_output": 2.836931344063487e-05
+      },
+      "timing": {
+        "probe_candidate": {
+          "name": "probe_candidate scenario=random M=65536",
+          "repeats": 4,
+          "p50_ms": 0.28892800211906433,
+          "p90_ms": 0.2905600070953369,
+          "min_ms": 0.2836480140686035,
+          "max_ms": 0.2905600070953369,
+          "checksum": 71068.5625
+        },
+        "detect_overflow_wall": {
+          "name": "detect_overflow scenario=random M=65536",
+          "repeats": 4,
+          "p50_ms": 0.4056969773955643,
+          "p90_ms": 0.41683303425088525,
+          "min_ms": 0.3803209983743727,
+          "max_ms": 0.41683303425088525
+        },
+        "probe_full": {
+          "name": "probe_full scenario=random M=65536",
+          "repeats": 4,
+          "p50_ms": 0.30403199791908264,
+          "p90_ms": 0.31200000643730164,
+          "min_ms": 0.2999039888381958,
+          "max_ms": 0.31200000643730164,
+          "checksum": 4.047945976257324
+        },
+        "exact_full": {
+          "name": "exact_full scenario=random M=65536",
+          "repeats": 4,
+          "p50_ms": 0.9550399780273438,
+          "p90_ms": 0.9574400186538696,
+          "min_ms": 0.9236479997634888,
+          "max_ms": 0.9574400186538696,
+          "checksum": 4.047945976257324
+        },
+        "adaptive_estimated_p50_ms": 0.709728975314647
+      }
+    },
+    {
+      "scenario": "one_chunk_32",
+      "M": 8192,
+      "global_k": 32,
+      "probe_local_top": 8,
+      "fallback_local_top": 32,
+      "chunk_rows": 512,
+      "target_positions_first_40": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "detection": {
+        "overflow_any": true,
+        "overflow_flag_count": 28,
+        "overflow_flag_heads": 28,
+        "overflow_flag_chunks": 1,
+        "num_chunks": 16,
+        "Hq": 28
+      },
+      "adaptive_mode": "fallback_exact",
+      "probe_recall_at_32": {
+        "mean": 0.25,
+        "min": 0.25,
+        "max": 0.25,
+        "heads_full_recall": 0,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_error": {
+        "max_abs_error_vs_exact_topk_output": 0.7570458650588989,
+        "mean_abs_error_vs_exact_topk_output": 0.16583473980426788
+      },
+      "adaptive_error": {
+        "max_abs_error_vs_exact_topk_output": 9.933114051818848e-05,
+        "mean_abs_error_vs_exact_topk_output": 2.6997888198820874e-05
+      },
+      "timing": {
+        "probe_candidate": {
+          "name": "probe_candidate scenario=one_chunk_32 M=8192",
+          "repeats": 4,
+          "p50_ms": 0.10979200154542923,
+          "p90_ms": 0.14732800424098969,
+          "min_ms": 0.09830400347709656,
+          "max_ms": 0.14732800424098969,
+          "checksum": 85.75809478759766
+        },
+        "detect_overflow_wall": {
+          "name": "detect_overflow scenario=one_chunk_32 M=8192",
+          "repeats": 4,
+          "p50_ms": 0.4076060140505433,
+          "p90_ms": 0.4130089655518532,
+          "min_ms": 0.38948794826865196,
+          "max_ms": 0.4130089655518532
+        },
+        "probe_full": {
+          "name": "probe_full scenario=one_chunk_32 M=8192",
+          "repeats": 4,
+          "p50_ms": 0.15564799308776855,
+          "p90_ms": 0.16335999965667725,
+          "min_ms": 0.15052799880504608,
+          "max_ms": 0.16335999965667725,
+          "checksum": -72.18446350097656
+        },
+        "exact_full": {
+          "name": "exact_full scenario=one_chunk_32 M=8192",
+          "repeats": 4,
+          "p50_ms": 0.19968000054359436,
+          "p90_ms": 0.20448000729084015,
+          "min_ms": 0.19622400403022766,
+          "max_ms": 0.20448000729084015,
+          "checksum": -40.80274200439453
+        },
+        "adaptive_estimated_p50_ms": 0.7170780161395669
+      }
+    },
+    {
+      "scenario": "one_chunk_32",
+      "M": 65536,
+      "global_k": 32,
+      "probe_local_top": 8,
+      "fallback_local_top": 32,
+      "chunk_rows": 512,
+      "target_positions_first_40": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "detection": {
+        "overflow_any": true,
+        "overflow_flag_count": 28,
+        "overflow_flag_heads": 28,
+        "overflow_flag_chunks": 1,
+        "num_chunks": 128,
+        "Hq": 28
+      },
+      "adaptive_mode": "fallback_exact",
+      "probe_recall_at_32": {
+        "mean": 0.25,
+        "min": 0.25,
+        "max": 0.25,
+        "heads_full_recall": 0,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_error": {
+        "max_abs_error_vs_exact_topk_output": 0.7167240381240845,
+        "mean_abs_error_vs_exact_topk_output": 0.16665731370449066
+      },
+      "adaptive_error": {
+        "max_abs_error_vs_exact_topk_output": 0.00010703504085540771,
+        "mean_abs_error_vs_exact_topk_output": 2.833666258084122e-05
+      },
+      "timing": {
+        "probe_candidate": {
+          "name": "probe_candidate scenario=one_chunk_32 M=65536",
+          "repeats": 4,
+          "p50_ms": 0.286080002784729,
+          "p90_ms": 0.28672000765800476,
+          "min_ms": 0.2813760042190552,
+          "max_ms": 0.28672000765800476,
+          "checksum": 140.73220825195312
+        },
+        "detect_overflow_wall": {
+          "name": "detect_overflow scenario=one_chunk_32 M=65536",
+          "repeats": 4,
+          "p50_ms": 0.40641200030222535,
+          "p90_ms": 0.41393400169909,
+          "min_ms": 0.3743360284715891,
+          "max_ms": 0.41393400169909
+        },
+        "probe_full": {
+          "name": "probe_full scenario=one_chunk_32 M=65536",
+          "repeats": 4,
+          "p50_ms": 0.3030399978160858,
+          "p90_ms": 0.3057279884815216,
+          "min_ms": 0.297760009765625,
+          "max_ms": 0.3057279884815216,
+          "checksum": -23.801509857177734
+        },
+        "exact_full": {
+          "name": "exact_full scenario=one_chunk_32 M=65536",
+          "repeats": 4,
+          "p50_ms": 0.9879680275917053,
+          "p90_ms": 1.0168319940567017,
+          "min_ms": 0.9215999841690063,
+          "max_ms": 1.0168319940567017,
+          "checksum": -22.962677001953125
+        },
+        "adaptive_estimated_p50_ms": 1.6804600306786597
+      }
+    },
+    {
+      "scenario": "two_chunks_16_16",
+      "M": 8192,
+      "global_k": 32,
+      "probe_local_top": 8,
+      "fallback_local_top": 32,
+      "chunk_rows": 512,
+      "target_positions_first_40": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        512,
+        513,
+        514,
+        515,
+        516,
+        517,
+        518,
+        519,
+        520,
+        521,
+        522,
+        523,
+        524,
+        525,
+        526,
+        527
+      ],
+      "detection": {
+        "overflow_any": true,
+        "overflow_flag_count": 56,
+        "overflow_flag_heads": 28,
+        "overflow_flag_chunks": 2,
+        "num_chunks": 16,
+        "Hq": 28
+      },
+      "adaptive_mode": "fallback_exact",
+      "probe_recall_at_32": {
+        "mean": 0.5,
+        "min": 0.5,
+        "max": 0.5,
+        "heads_full_recall": 0,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_error": {
+        "max_abs_error_vs_exact_topk_output": 0.5716477632522583,
+        "mean_abs_error_vs_exact_topk_output": 0.1373365819454193
+      },
+      "adaptive_error": {
+        "max_abs_error_vs_exact_topk_output": 0.00011453777551651001,
+        "mean_abs_error_vs_exact_topk_output": 2.6672272724681534e-05
+      },
+      "timing": {
+        "probe_candidate": {
+          "name": "probe_candidate scenario=two_chunks_16_16 M=8192",
+          "repeats": 4,
+          "p50_ms": 0.09734400361776352,
+          "p90_ms": 0.10140799731016159,
+          "min_ms": 0.0942080020904541,
+          "max_ms": 0.10140799731016159,
+          "checksum": 160.8193359375
+        },
+        "detect_overflow_wall": {
+          "name": "detect_overflow scenario=two_chunks_16_16 M=8192",
+          "repeats": 4,
+          "p50_ms": 0.39221899351105094,
+          "p90_ms": 0.4727159976027906,
+          "min_ms": 0.3844810416921973,
+          "max_ms": 0.4727159976027906
+        },
+        "probe_full": {
+          "name": "probe_full scenario=two_chunks_16_16 M=8192",
+          "repeats": 4,
+          "p50_ms": 0.15932799875736237,
+          "p90_ms": 0.16752000153064728,
+          "min_ms": 0.1512639969587326,
+          "max_ms": 0.16752000153064728,
+          "checksum": 6.666691303253174
+        },
+        "exact_full": {
+          "name": "exact_full scenario=two_chunks_16_16 M=8192",
+          "repeats": 4,
+          "p50_ms": 0.19865599274635315,
+          "p90_ms": 0.20272000133991241,
+          "min_ms": 0.19660800695419312,
+          "max_ms": 0.20272000133991241,
+          "checksum": -30.0451602935791
+        },
+        "adaptive_estimated_p50_ms": 0.6882189898751676
+      }
+    },
+    {
+      "scenario": "two_chunks_16_16",
+      "M": 65536,
+      "global_k": 32,
+      "probe_local_top": 8,
+      "fallback_local_top": 32,
+      "chunk_rows": 512,
+      "target_positions_first_40": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        512,
+        513,
+        514,
+        515,
+        516,
+        517,
+        518,
+        519,
+        520,
+        521,
+        522,
+        523,
+        524,
+        525,
+        526,
+        527
+      ],
+      "detection": {
+        "overflow_any": true,
+        "overflow_flag_count": 56,
+        "overflow_flag_heads": 28,
+        "overflow_flag_chunks": 2,
+        "num_chunks": 128,
+        "Hq": 28
+      },
+      "adaptive_mode": "fallback_exact",
+      "probe_recall_at_32": {
+        "mean": 0.5,
+        "min": 0.5,
+        "max": 0.5,
+        "heads_full_recall": 0,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_error": {
+        "max_abs_error_vs_exact_topk_output": 0.46125030517578125,
+        "mean_abs_error_vs_exact_topk_output": 0.13634149730205536
+      },
+      "adaptive_error": {
+        "max_abs_error_vs_exact_topk_output": 0.00012238696217536926,
+        "mean_abs_error_vs_exact_topk_output": 2.6584650186123326e-05
+      },
+      "timing": {
+        "probe_candidate": {
+          "name": "probe_candidate scenario=two_chunks_16_16 M=65536",
+          "repeats": 4,
+          "p50_ms": 0.31433600187301636,
+          "p90_ms": 0.32067200541496277,
+          "min_ms": 0.31113600730895996,
+          "max_ms": 0.32067200541496277,
+          "checksum": 215.78244018554688
+        },
+        "detect_overflow_wall": {
+          "name": "detect_overflow scenario=two_chunks_16_16 M=65536",
+          "repeats": 4,
+          "p50_ms": 0.39641401963308454,
+          "p90_ms": 0.41795900324359536,
+          "min_ms": 0.3884080215357244,
+          "max_ms": 0.41795900324359536
+        },
+        "probe_full": {
+          "name": "probe_full scenario=two_chunks_16_16 M=65536",
+          "repeats": 4,
+          "p50_ms": 0.32870399951934814,
+          "p90_ms": 0.3330880105495453,
+          "min_ms": 0.3256320059299469,
+          "max_ms": 0.3330880105495453,
+          "checksum": -5.558921813964844
+        },
+        "exact_full": {
+          "name": "exact_full scenario=two_chunks_16_16 M=65536",
+          "repeats": 4,
+          "p50_ms": 0.9664639830589294,
+          "p90_ms": 0.9796479940414429,
+          "min_ms": 0.9601600170135498,
+          "max_ms": 0.9796479940414429,
+          "checksum": 10.80640983581543
+        },
+        "adaptive_estimated_p50_ms": 1.6772140045650303
+      }
+    },
+    {
+      "scenario": "spread_32_chunks",
+      "M": 8192,
+      "global_k": 32,
+      "probe_local_top": 8,
+      "fallback_local_top": 32,
+      "chunk_rows": 512,
+      "target_positions_first_40": [
+        0,
+        512,
+        1024,
+        1536,
+        2048,
+        2560,
+        3072,
+        3584,
+        4096,
+        4608,
+        5120,
+        5632,
+        6144,
+        6656,
+        7168,
+        7680,
+        8192,
+        8704,
+        9216,
+        9728,
+        10240,
+        10752,
+        11264,
+        11776,
+        12288,
+        12800,
+        13312,
+        13824,
+        14336,
+        14848,
+        15360,
+        15872
+      ],
+      "detection": {
+        "overflow_any": false,
+        "overflow_flag_count": 0,
+        "overflow_flag_heads": 0,
+        "overflow_flag_chunks": 0,
+        "num_chunks": 16,
+        "Hq": 28
+      },
+      "adaptive_mode": "accept_probe",
+      "probe_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_error": {
+        "max_abs_error_vs_exact_topk_output": 0.00012817978858947754,
+        "mean_abs_error_vs_exact_topk_output": 2.6938289011013694e-05
+      },
+      "adaptive_error": {
+        "max_abs_error_vs_exact_topk_output": 0.00012817978858947754,
+        "mean_abs_error_vs_exact_topk_output": 2.6938289011013694e-05
+      },
+      "timing": {
+        "probe_candidate": {
+          "name": "probe_candidate scenario=spread_32_chunks M=8192",
+          "repeats": 4,
+          "p50_ms": 0.09625600278377533,
+          "p90_ms": 0.10147199779748917,
+          "min_ms": 0.09318400174379349,
+          "max_ms": 0.10147199779748917,
+          "checksum": 162.24913024902344
+        },
+        "detect_overflow_wall": {
+          "name": "detect_overflow scenario=spread_32_chunks M=8192",
+          "repeats": 4,
+          "p50_ms": 0.3890169900842011,
+          "p90_ms": 0.40424102917313576,
+          "min_ms": 0.37830998189747334,
+          "max_ms": 0.40424102917313576
+        },
+        "probe_full": {
+          "name": "probe_full scenario=spread_32_chunks M=8192",
+          "repeats": 4,
+          "p50_ms": 0.15228800475597382,
+          "p90_ms": 0.1637440025806427,
+          "min_ms": 0.1488959938287735,
+          "max_ms": 0.1637440025806427,
+          "checksum": 69.66152954101562
+        },
+        "exact_full": {
+          "name": "exact_full scenario=spread_32_chunks M=8192",
+          "repeats": 4,
+          "p50_ms": 0.19865599274635315,
+          "p90_ms": 0.20691199600696564,
+          "min_ms": 0.19660800695419312,
+          "max_ms": 0.20691199600696564,
+          "checksum": 69.66152954101562
+        },
+        "adaptive_estimated_p50_ms": 0.5413049948401749
+      }
+    },
+    {
+      "scenario": "spread_32_chunks",
+      "M": 65536,
+      "global_k": 32,
+      "probe_local_top": 8,
+      "fallback_local_top": 32,
+      "chunk_rows": 512,
+      "target_positions_first_40": [
+        0,
+        512,
+        1024,
+        1536,
+        2048,
+        2560,
+        3072,
+        3584,
+        4096,
+        4608,
+        5120,
+        5632,
+        6144,
+        6656,
+        7168,
+        7680,
+        8192,
+        8704,
+        9216,
+        9728,
+        10240,
+        10752,
+        11264,
+        11776,
+        12288,
+        12800,
+        13312,
+        13824,
+        14336,
+        14848,
+        15360,
+        15872
+      ],
+      "detection": {
+        "overflow_any": false,
+        "overflow_flag_count": 0,
+        "overflow_flag_heads": 0,
+        "overflow_flag_chunks": 0,
+        "num_chunks": 128,
+        "Hq": 28
+      },
+      "adaptive_mode": "accept_probe",
+      "probe_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "adaptive_recall_at_32": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "heads_full_recall": 28,
+        "heads": 28
+      },
+      "probe_error": {
+        "max_abs_error_vs_exact_topk_output": 0.0001147836446762085,
+        "mean_abs_error_vs_exact_topk_output": 2.6524779968895018e-05
+      },
+      "adaptive_error": {
+        "max_abs_error_vs_exact_topk_output": 0.0001147836446762085,
+        "mean_abs_error_vs_exact_topk_output": 2.6524779968895018e-05
+      },
+      "timing": {
+        "probe_candidate": {
+          "name": "probe_candidate scenario=spread_32_chunks M=65536",
+          "repeats": 4,
+          "p50_ms": 0.31436800956726074,
+          "p90_ms": 0.31865599751472473,
+          "min_ms": 0.30720001459121704,
+          "max_ms": 0.31865599751472473,
+          "checksum": 365.58197021484375
+        },
+        "detect_overflow_wall": {
+          "name": "detect_overflow scenario=spread_32_chunks M=65536",
+          "repeats": 4,
+          "p50_ms": 0.38553099147975445,
+          "p90_ms": 0.39129500510171056,
+          "min_ms": 0.3769060131162405,
+          "max_ms": 0.39129500510171056
+        },
+        "probe_full": {
+          "name": "probe_full scenario=spread_32_chunks M=65536",
+          "repeats": 4,
+          "p50_ms": 0.33136001229286194,
+          "p90_ms": 0.3370560109615326,
+          "min_ms": 0.3245120048522949,
+          "max_ms": 0.3370560109615326,
+          "checksum": 9.233634948730469
+        },
+        "exact_full": {
+          "name": "exact_full scenario=spread_32_chunks M=65536",
+          "repeats": 4,
+          "p50_ms": 0.9605119824409485,
+          "p90_ms": 0.982367992401123,
+          "min_ms": 0.9277439713478088,
+          "max_ms": 0.982367992401123,
+          "checksum": 9.233634948730469
+        },
+        "adaptive_estimated_p50_ms": 0.7168910037726164
+      }
+    }
+  ],
+  "nvidia_smi_end": "NVIDIA GeForce RTX 4090, 595.79, 22289 MiB, 24564 MiB, 39 %, 42",
+  "non_claims": [
+    "not production attention",
+    "not serving",
+    "not a serving speedup claim",
+    "not model quality evidence",
+    "not evidence-utilization evidence",
+    "Torch detector is policy validation, not final fused kernel"
+  ]
+}

@@ -211,6 +211,35 @@ Required LOCAL_TOP tracks max true-topK concentration per chunk.
 Next design needs adaptive/local-overflow detection or exact fallback, not fixed approximate local_top.
 ```
 
+Phase 2c.4 adaptive overflow guard receipt:
+
+- [`../../bench/evidence-paged-kv-adaptive-local-overflow-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-adaptive-local-overflow-2026-05-19/RESULTS.md)
+
+Adaptive policy result:
+
+```txt
+probe LOCAL_TOP=8
+if local tail score >= approximate global topK threshold: fallback exact LOCAL_TOP=32
+accepted probe cases: 4/8
+fallback exact cases: 4/8
+adversarial one/two-chunk failures caught and recovered
+random/spread cases accepted with recall@32 = 1.0
+```
+
+Caveat:
+
+```txt
+Current detector uses Torch/CPU for policy validation, not a final GPU kernel.
+Adaptive timings include detector wall overhead and are not final kernel performance.
+```
+
+Updated decision implication:
+
+```txt
+Adaptive overflow guard is conceptually valid.
+Next implementation step is a tiny GPU detector/fallback-mask kernel; still do not install into serving.
+```
+
 Phase 2a guarded runtime hook receipt:
 
 - [`../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-hook-2026-05-19/RESULTS.md)
