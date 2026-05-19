@@ -8,6 +8,12 @@ Entry point:
 RESULTS.md
 ```
 
+Bridge design:
+
+```txt
+EPKV-BRIDGE-SPEC.md
+```
+
 Included sweeps:
 
 - `phase/` — evidence zone, canonical rank, and decoys-before phase diagram.

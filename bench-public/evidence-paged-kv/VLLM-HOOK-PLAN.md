@@ -141,6 +141,26 @@ service restored to default-off: VLLM_EPKV_RUNTIME_HOOK=0
 - Only after runtime viability: connect selected evidence pages to retrieval/answer-closure fixtures.
 - Measure whether runtime-selected pages correspond to answer-closure behavior.
 
+## Evidence-utilization bridge
+
+Bridge spec:
+
+- [`../evidence-utilization/EPKV-BRIDGE-SPEC.md`](../evidence-utilization/EPKV-BRIDGE-SPEC.md)
+
+Bridge intent:
+
+```txt
+Do not claim Evidence-Paged KV fixes retrieved≠used.
+First connect evidence fixtures to runtime-selected positions/pages so answer closure can be studied as an alignment problem.
+```
+
+Recommended first bridge mode:
+
+```txt
+telemetry-only selection tracing, default-off
+baseline default-off answer run + phase2a hook-on trace run
+```
+
 ## Stop criteria
 
 Stop or downgrade if:
