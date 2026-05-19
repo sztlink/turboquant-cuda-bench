@@ -8,10 +8,11 @@ Entry point:
 RESULTS.md
 ```
 
-Bridge design:
+Bridge docs:
 
 ```txt
 EPKV-BRIDGE-SPEC.md
+EPKV-BRIDGE-READOUT.md
 ```
 
 Included sweeps:
