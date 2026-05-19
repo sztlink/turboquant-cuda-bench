@@ -13,6 +13,7 @@ Bridge docs:
 ```txt
 EPKV-BRIDGE-SPEC.md
 EPKV-BRIDGE-READOUT.md
+EPKV-BEHAVIOR-MAP.md
 ```
 
 Included sweeps:
