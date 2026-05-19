@@ -366,14 +366,15 @@ Evidence-Paged KV is faster than production attention.
 
 ## Immediate next step
 
-Track A runtime benchmark and bridge v0 receipts exist:
+Track A runtime benchmark and bridge receipts exist:
 
 - [`../evidence-paged-kv/VLLM-HOOK-PLAN.md`](../evidence-paged-kv/VLLM-HOOK-PLAN.md)
 - [`../evidence-paged-kv/RUNTIME-GATE-REDESIGN.md`](../evidence-paged-kv/RUNTIME-GATE-REDESIGN.md)
 - [`../../bench/evidence-paged-kv-runtime-benchmark-2026-05-19/RESULTS.md`](../../bench/evidence-paged-kv-runtime-benchmark-2026-05-19/RESULTS.md)
 - [`../../bench/evidence-utilization-epkv-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-2026-05-19/RESULTS.md)
+- [`../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md)
 
-Readout: telemetry completeness passed, but the original cost-ratio gate failed. The current bridge step is **metadata/offline bridge v0**, not real-prompt hook-on serving telemetry.
+Readout: telemetry completeness passed, but the original cost-ratio gate failed. The current bridge step is **metadata/offline bridge v0.1 tokenized**, not real-prompt hook-on serving telemetry.
 
 Prepared in the source hook: **telemetry-only selection tracing**, default-off:
 

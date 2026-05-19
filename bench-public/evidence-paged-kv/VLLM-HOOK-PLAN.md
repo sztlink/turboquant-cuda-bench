@@ -202,9 +202,10 @@ baseline default-off answer run remains safe
 phase2a hook-on dry-run real-prompt trace is paused until absolute telemetry gate + serving baseline exist
 ```
 
-Metadata/offline bridge v0 receipt:
+Metadata/offline bridge receipts:
 
 - [`../../bench/evidence-utilization-epkv-bridge-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-2026-05-19/RESULTS.md)
+- [`../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md`](../../bench/evidence-utilization-epkv-bridge-tokenized-2026-05-19/RESULTS.md)
 
 ## Stop criteria
 
