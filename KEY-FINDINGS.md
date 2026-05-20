@@ -8,7 +8,7 @@ These are the stable public findings from promoted receipts. The phrase **retrie
 
 ## 1. Public HotpotQA: answer closure is position-sensitive
 
-The RealRAG R1/R2/R3A/R3B/R3C runs move the evidence-placement claim beyond synthetic fixtures onto public HotpotQA dev distractor.
+The RealRAG R1/R2/R3A/R3B/R3C/R3D runs move the evidence-placement claim beyond synthetic fixtures onto public HotpotQA dev distractor.
 
 R1 full evidence-placement gate:
 
@@ -61,9 +61,18 @@ R3C metric/supporting-facts audit:
 - Stratified audit buckets: BM25 fail → BGE success **198** cases; BM25 success → BGE fail **111**; BM25/BGE fail → oracle success **86**; all support-present conditions fail **796**; no-support closure/leakage **136**.
 - The audit pack is not adjudicated yet: `audit_label` is `unreviewed`.
 
-Interpretation: answer closure is sensitive to where gold supporting evidence sits in the context field. Beginning helps, middle burial hurts, and end placement partially recovers. Simple citation or reasoning prompts do not remove the controlled position effect. R3B changes the practical verdict: a strong reranker mitigates most of the natural BM25-to-oracle gap on this HotpotQA slice. R3C changes the next question: remaining failures need semantic/judge audit before being interpreted as evidence-use failures.
+R3D local semantic-judge triage over R3C samples:
 
-Boundaries: this is answer-side EM/contains/F1-derived closure. Citation-hit is title-string overlap, not proof of internal citation use. Supporting-fact sentence presence validates prompt inclusion, not internal use. These results do not prove attention, internal evidence use, production RAG value, a dominant production-RAG bottleneck, or runtime readiness.
+- **210** stratified R3C sample rows; **684** unique condition predictions judged.
+- Metric closed / judge positive: **267**.
+- Metric closed / judge negative: **4**.
+- Metric open / judge negative: **354**.
+- Metric open / judge positive: **59**.
+- This is local Qwen judge triage, not ground truth; sample is stratified, not population-representative.
+
+Interpretation: answer closure is sensitive to where gold supporting evidence sits in the context field. Beginning helps, middle burial hurts, and end placement partially recovers. Simple citation or reasoning prompts do not remove the controlled position effect. R3B changes the practical verdict: a strong reranker mitigates most of the natural BM25-to-oracle gap on this HotpotQA slice. R3C/R3D change the next question: remaining failures need independent/human semantic audit before being interpreted as evidence-use failures.
+
+Boundaries: this is answer-side EM/contains/F1-derived closure. Citation-hit is title-string overlap, not proof of internal citation use. Supporting-fact sentence presence validates prompt inclusion, not internal use. Local judge labels are triage, not ground truth. These results do not prove attention, internal evidence use, production RAG value, a dominant production-RAG bottleneck, or runtime readiness.
 
 Public packages:
 
@@ -72,6 +81,7 @@ Public packages:
 - [RealRAG HotpotQA R3A prompt variants](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md)
 - [RealRAG HotpotQA R3B natural retrieval](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md)
 - [RealRAG HotpotQA R3C metric audit](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md)
+- [RealRAG HotpotQA R3D local judge](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md)
 - [RealRAG sample pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-SAMPLES-v1.md)
 - [RealRAG R3 plan](bench-public/evidence-utilization/REALRAG-R3-PLAN.md)
 

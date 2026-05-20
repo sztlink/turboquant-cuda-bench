@@ -18,6 +18,7 @@ REALRAG-HOTPOTQA-R2-RANKCURVE.md
 REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md
 REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md
 REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md
+REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md
 REALRAG-HOTPOTQA-SAMPLES-v1.md
 REALRAG-R3-PLAN.md
 RESULTS.md
@@ -51,6 +52,7 @@ Public-dataset gates:
 - `REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md` — direct/citation/reasoning prompt ablation; the position effect survives simple prompting changes.
 - `REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md` — BM25 vs BGE reranker vs oracle/no-support; strong reranking closes most of the natural BM25-to-oracle gap.
 - `REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md` — supporting-fact sentence audit and stratified sample pack for manual/judge review.
+- `REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md` — local Qwen semantic-judge triage over R3C samples; not ground-truth adjudication.
 - `REALRAG-HOTPOTQA-SAMPLES-v1.md` / `.jsonl` — audit sample pack with questions, gold answers, predictions, metrics, and context titles.
 - `REALRAG-R3-PLAN.md` — remaining reranker, judging, more-dataset, and multi-model gates.
 
@@ -71,7 +73,7 @@ retrieved != used is shorthand for operational separation, not proof of internal
 answer closure is sensitive to position/rank/recency under controlled evidence placement
 simple citation/reasoning prompts did not remove the HotpotQA position effect in R3A
 BGE reranking mitigated most of the BM25-to-oracle gap in R3B natural retrieval
-R3C confirms supporting-fact sentence presence and makes metric/judge audit the next gate
+R3C confirms supporting-fact sentence presence and R3D local judge makes independent/human adjudication the next gate
 evidence depth != answer closure
 local evidence competition can dominate closure in synthetic probes
 ```

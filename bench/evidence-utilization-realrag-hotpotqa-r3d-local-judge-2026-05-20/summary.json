@@ -1,0 +1,213 @@
+{
+  "schema": "realrag.hotpotqa.r3d.local_judge.summary.v1",
+  "status": "done",
+  "started_at": "2026-05-20T16:59:45.322Z",
+  "finished_at": "2026-05-20T17:03:10.168Z",
+  "endpoint": "http://192.168.15.133:11435/v1/chat/completions",
+  "model": "local-vllm",
+  "samples_path": "bench/evidence-utilization-realrag-hotpotqa-r3c-metric-audit-2026-05-20/samples.jsonl",
+  "samples_sha256": "861d1e24ea2072faf60c15b3f6ed76a252b62aaaa4ee6eabe54bf55308a6fe06",
+  "sample_rows": 210,
+  "unique_tasks": 684,
+  "completed_tasks": 684,
+  "membership_rows": 840,
+  "aggregate": {
+    "byCondition": [
+      {
+        "key": "bge_rerank_top10",
+        "n": 171,
+        "labels": {
+          "wrong": 70,
+          "correct": 81,
+          "partial": 20
+        },
+        "metricClosed": 81,
+        "judgePositive": 101,
+        "metricAgreementAgree": 151,
+        "parseErrors": 0,
+        "metricClosedRate": 0.47368421052631576,
+        "judgePositiveRate": 0.5906432748538012,
+        "metricAgreementAgreeRate": 0.8830409356725146
+      },
+      {
+        "key": "bm25_top10",
+        "n": 171,
+        "labels": {
+          "wrong": 85,
+          "partial": 21,
+          "correct": 65
+        },
+        "metricClosed": 69,
+        "judgePositive": 86,
+        "metricAgreementAgree": 152,
+        "parseErrors": 1,
+        "metricClosedRate": 0.40350877192982454,
+        "judgePositiveRate": 0.5029239766081871,
+        "metricAgreementAgreeRate": 0.8888888888888888
+      },
+      {
+        "key": "no_support",
+        "n": 171,
+        "labels": {
+          "wrong": 137,
+          "prior_knowledge_or_leakage": 34
+        },
+        "metricClosed": 30,
+        "judgePositive": 34,
+        "metricAgreementAgree": 163,
+        "parseErrors": 1,
+        "metricClosedRate": 0.17543859649122806,
+        "judgePositiveRate": 0.19883040935672514,
+        "metricAgreementAgreeRate": 0.9532163742690059
+      },
+      {
+        "key": "oracle_first",
+        "n": 171,
+        "labels": {
+          "wrong": 66,
+          "correct": 88,
+          "partial": 17
+        },
+        "metricClosed": 91,
+        "judgePositive": 105,
+        "metricAgreementAgree": 155,
+        "parseErrors": 0,
+        "metricClosedRate": 0.5321637426900585,
+        "judgePositiveRate": 0.6140350877192983,
+        "metricAgreementAgreeRate": 0.9064327485380117
+      }
+    ],
+    "byBucket": [
+      {
+        "key": "all_support_conditions_fail",
+        "n": 120,
+        "labels": {
+          "wrong": 97,
+          "partial": 16,
+          "correct": 5,
+          "prior_knowledge_or_leakage": 2
+        },
+        "metricClosed": 1,
+        "judgePositive": 23,
+        "metricAgreementAgree": 98,
+        "parseErrors": 1,
+        "metricClosedRate": 0.008333333333333333,
+        "judgePositiveRate": 0.19166666666666668,
+        "metricAgreementAgreeRate": 0.8166666666666667
+      },
+      {
+        "key": "bge_success_oracle_fail",
+        "n": 120,
+        "labels": {
+          "wrong": 74,
+          "correct": 35,
+          "partial": 10,
+          "prior_knowledge_or_leakage": 1
+        },
+        "metricClosed": 40,
+        "judgePositive": 46,
+        "metricAgreementAgree": 114,
+        "parseErrors": 0,
+        "metricClosedRate": 0.3333333333333333,
+        "judgePositiveRate": 0.38333333333333336,
+        "metricAgreementAgreeRate": 0.95
+      },
+      {
+        "key": "bm25_fail_bge_fail_oracle_success",
+        "n": 120,
+        "labels": {
+          "wrong": 80,
+          "partial": 11,
+          "correct": 28,
+          "prior_knowledge_or_leakage": 1
+        },
+        "metricClosed": 30,
+        "judgePositive": 40,
+        "metricAgreementAgree": 110,
+        "parseErrors": 0,
+        "metricClosedRate": 0.25,
+        "judgePositiveRate": 0.3333333333333333,
+        "metricAgreementAgreeRate": 0.9166666666666666
+      },
+      {
+        "key": "bm25_fail_bge_success",
+        "n": 120,
+        "labels": {
+          "wrong": 59,
+          "correct": 46,
+          "partial": 12,
+          "prior_knowledge_or_leakage": 3
+        },
+        "metricClosed": 52,
+        "judgePositive": 61,
+        "metricAgreementAgree": 111,
+        "parseErrors": 1,
+        "metricClosedRate": 0.43333333333333335,
+        "judgePositiveRate": 0.5083333333333333,
+        "metricAgreementAgreeRate": 0.925
+      },
+      {
+        "key": "bm25_success_bge_fail",
+        "n": 120,
+        "labels": {
+          "correct": 39,
+          "wrong": 67,
+          "partial": 13,
+          "prior_knowledge_or_leakage": 1
+        },
+        "metricClosed": 40,
+        "judgePositive": 53,
+        "metricAgreementAgree": 103,
+        "parseErrors": 0,
+        "metricClosedRate": 0.3333333333333333,
+        "judgePositiveRate": 0.44166666666666665,
+        "metricAgreementAgreeRate": 0.8583333333333333
+      },
+      {
+        "key": "no_support_success_leakage",
+        "n": 120,
+        "labels": {
+          "wrong": 5,
+          "prior_knowledge_or_leakage": 28,
+          "correct": 87
+        },
+        "metricClosed": 117,
+        "judgePositive": 115,
+        "metricAgreementAgree": 118,
+        "parseErrors": 0,
+        "metricClosedRate": 0.975,
+        "judgePositiveRate": 0.9583333333333334,
+        "metricAgreementAgreeRate": 0.9833333333333333
+      },
+      {
+        "key": "oracle_success_bge_fail",
+        "n": 120,
+        "labels": {
+          "wrong": 76,
+          "partial": 11,
+          "correct": 32,
+          "prior_knowledge_or_leakage": 1
+        },
+        "metricClosed": 37,
+        "judgePositive": 44,
+        "metricAgreementAgree": 109,
+        "parseErrors": 0,
+        "metricClosedRate": 0.30833333333333335,
+        "judgePositiveRate": 0.36666666666666664,
+        "metricAgreementAgreeRate": 0.9083333333333333
+      }
+    ],
+    "confusion": {
+      "metric_open:judge_negative": 354,
+      "metric_open:judge_positive": 59,
+      "metric_closed:judge_positive": 267,
+      "metric_closed:judge_negative": 4
+    }
+  },
+  "interpretation_boundary": [
+    "local Qwen judge triage, not ground-truth adjudication",
+    "judge model overlaps the evaluated setup and may share biases",
+    "use for metric debugging and manual review prioritization",
+    "no vLLM mutation, no serving claim, no internal evidence-use proof"
+  ]
+}
