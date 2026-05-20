@@ -1,0 +1,65 @@
+{
+  "schema": "realrag.hotpotqa.r3e.human_adjudication_pack.summary.v1",
+  "created_at": "2026-05-20T17:08:11.245Z",
+  "r3c_samples_path": "bench/evidence-utilization-realrag-hotpotqa-r3c-metric-audit-2026-05-20/samples.jsonl",
+  "r3c_samples_sha256": "861d1e24ea2072faf60c15b3f6ed76a252b62aaaa4ee6eabe54bf55308a6fe06",
+  "r3d_judge_path": "bench/evidence-utilization-realrag-hotpotqa-r3d-local-judge-2026-05-20/judge-records.jsonl",
+  "r3d_judge_sha256": "1bd843449c0691b2756e5373767c82b7470331114feb806a5aa5a8a0163a86ae",
+  "source_sample_rows": 210,
+  "source_judge_records": 684,
+  "review_items": 144,
+  "per_category_requested": 20,
+  "categories": [
+    {
+      "category": "metric_closed_judge_negative",
+      "available": 4,
+      "selected": 4
+    },
+    {
+      "category": "metric_open_judge_positive",
+      "available": 53,
+      "selected": 20
+    },
+    {
+      "category": "no_support_metric_closed",
+      "available": 0,
+      "selected": 0
+    },
+    {
+      "category": "no_support_prior_or_leakage",
+      "available": 34,
+      "selected": 20
+    },
+    {
+      "category": "bge_wrong_support_present",
+      "available": 70,
+      "selected": 20
+    },
+    {
+      "category": "oracle_wrong_support_first",
+      "available": 65,
+      "selected": 20
+    },
+    {
+      "category": "bm25_wrong_support_present",
+      "available": 84,
+      "selected": 20
+    },
+    {
+      "category": "metric_closed_judge_positive_control",
+      "available": 239,
+      "selected": 20
+    },
+    {
+      "category": "metric_open_judge_negative_control",
+      "available": 135,
+      "selected": 20
+    }
+  ],
+  "interpretation_boundary": [
+    "review packet only; no human labels have been assigned",
+    "local judge labels are included as triage hints, not ground truth",
+    "designed for human or independent judge adjudication before broader claims",
+    "do not treat R3E as additional benchmark evidence until reviewed"
+  ]
+}
