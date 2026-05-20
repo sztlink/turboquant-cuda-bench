@@ -8,7 +8,7 @@ These are the stable public findings from promoted receipts. The phrase **retrie
 
 ## 1. Public HotpotQA: answer closure is position-sensitive
 
-The RealRAG R1/R2 runs move the evidence-placement claim beyond synthetic fixtures onto public HotpotQA dev distractor.
+The RealRAG R1/R2/R3A runs move the evidence-placement claim beyond synthetic fixtures onto public HotpotQA dev distractor.
 
 R1 full evidence-placement gate:
 
@@ -35,14 +35,24 @@ Observed position curve:
 rank_1 > rank_last > rank_3 > rank_8 ≈ rank_5 >> no_support
 ```
 
-Interpretation: answer closure is sensitive to where gold supporting evidence sits in the context field. Beginning helps, middle burial hurts, and end placement partially recovers. This falsifies the simpler claim that closure always degrades monotonically with rank.
+R3A prompt/citation ablation:
 
-Boundaries: this is answer-side EM/contains/F1-derived closure. It does not prove attention, internal evidence use, production RAG value, or runtime readiness.
+- **1,991** questions, **23,892** records, **0 errors**.
+- `direct_short_answer`: `rank_1` **51.5%**, `rank_5` **38.4%**, `rank_last` **42.7%**, `no_support` **6.5%**.
+- `cite_then_answer`: `rank_1` **48.0%**, `rank_5` **37.2%**, `rank_last` **37.0%**, `no_support` **6.7%**.
+- `reason_then_answer`: `rank_1` **52.3%**, `rank_5` **39.3%**, `rank_last` **43.8%**, `no_support` **8.6%**.
+- Paired `rank_1 - rank_5` deltas remained large: direct **+13.1 pp**, cite **+10.8 pp**, reason **+13.1 pp**.
+- Citation-hit in `cite_then_answer` fell as evidence moved away from the start: `rank_1` **43.9%**, `rank_5` **32.9%**, `rank_last` **28.2%**.
+
+Interpretation: answer closure is sensitive to where gold supporting evidence sits in the context field. Beginning helps, middle burial hurts, and end placement partially recovers. This falsifies the simpler claim that closure always degrades monotonically with rank. Simple citation or reasoning prompts do not remove the position effect in this local setup.
+
+Boundaries: this is answer-side EM/contains/F1-derived closure. Citation-hit is title-string overlap, not proof of internal citation use. These results do not prove attention, internal evidence use, production RAG value, or runtime readiness.
 
 Public packages:
 
 - [RealRAG HotpotQA R1](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R1.md)
 - [RealRAG HotpotQA R2 rank curve](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md)
+- [RealRAG HotpotQA R3A prompt variants](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md)
 - [RealRAG sample pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-SAMPLES-v1.md)
 - [RealRAG R3 plan](bench-public/evidence-utilization/REALRAG-R3-PLAN.md)
 

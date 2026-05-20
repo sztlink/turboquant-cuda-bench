@@ -15,6 +15,7 @@ Start with:
 ```txt
 REALRAG-HOTPOTQA-R1.md
 REALRAG-HOTPOTQA-R2-RANKCURVE.md
+REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md
 REALRAG-HOTPOTQA-SAMPLES-v1.md
 REALRAG-R3-PLAN.md
 RESULTS.md
@@ -45,8 +46,9 @@ Public-dataset gates:
 
 - `REALRAG-HOTPOTQA-R1.md` — HotpotQA evidence-placement result: oracle-first vs BM25 vs oracle-last vs distractor-first vs no-support.
 - `REALRAG-HOTPOTQA-R2-RANKCURVE.md` — forced support-rank curve: beginning helps, middle burial hurts, end partially recovers.
+- `REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md` — direct/citation/reasoning prompt ablation; the position effect survives simple prompting changes.
 - `REALRAG-HOTPOTQA-SAMPLES-v1.md` / `.jsonl` — audit sample pack with questions, gold answers, predictions, metrics, and context titles.
-- `REALRAG-R3-PLAN.md` — next gate for rerankers, judging, more datasets, and multi-model checks.
+- `REALRAG-R3-PLAN.md` — remaining reranker, judging, more-dataset, and multi-model gates.
 
 Synthetic sweeps:
 
@@ -63,6 +65,7 @@ Core thesis, qualified:
 ```txt
 retrieved != used is an operational frame, not proof of internal evidence use
 answer closure is sensitive to position/rank/recency under controlled evidence placement
+simple citation/reasoning prompts did not remove the HotpotQA position effect in R3A
 evidence depth != answer closure
 local evidence competition can dominate closure in synthetic probes
 ```
