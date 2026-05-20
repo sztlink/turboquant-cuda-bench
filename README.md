@@ -7,7 +7,7 @@
 
 > **Position/rank/recency sensitivity in controlled evidence placement** — public HotpotQA + long-context/KV-cache receipts with Qwen3/Qwen2.5, llama.cpp, vLLM, TurboQuant, CASK, and local RTX 4090 runs.
 >
-> Operational frame: **retrieved ≠ used**. Finding or placing the right evidence is not the same as closing the answer.
+> Shorthand, not thesis: **retrieved ≠ used** means retrieval/presence is operationally separated from answer closure in these probes. It is not a claim about dominant production RAG bottlenecks or internal evidence use.
 
 This is a public research archive for answer-closure diagnostics, long-context quality probes, and KV-cache experiments on local GPUs.
 
@@ -17,7 +17,7 @@ Read it as three paths:
 2. **Bridge methodology** — KV/cache changes can preserve action or rank while losing payload identity.
 3. **Evidence-Paged KV** — exploratory kernel/runtime observability receipts, not a production hook.
 
-Boundary: this repo is receipts-first systems research. It does not claim serving speedup, production attention, production RAG value, answer-quality improvement, or proof that selected positions are model evidence use.
+Boundary: this repo is receipts-first systems research. It does not claim serving speedup, production attention, production RAG value, dominant RAG bottlenecks, answer-quality improvement, or proof that selected positions are model evidence use.
 
 <p>
   <img src="bench-public/assets/github-hero-evidence-path.svg" alt="retrieved != used evidence path hero" width="860">

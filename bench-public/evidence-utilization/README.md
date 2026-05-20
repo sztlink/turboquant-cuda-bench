@@ -63,7 +63,7 @@ Not included: raw per-request `summary.jsonl` / raw answers. Those remain local 
 Core thesis, qualified:
 
 ```txt
-retrieved != used is an operational frame, not proof of internal evidence use
+retrieved != used is shorthand for operational separation, not proof of internal evidence use or a dominant production-RAG bottleneck
 answer closure is sensitive to position/rank/recency under controlled evidence placement
 simple citation/reasoning prompts did not remove the HotpotQA position effect in R3A
 evidence depth != answer closure

@@ -4,7 +4,7 @@ This file is the short public readout of the repo. Numbers are from local RTX 40
 
 ## Core findings
 
-These are the stable public findings from promoted receipts. The phrase **retrieved ≠ used** is an operational frame, not a proof of internal evidence use.
+These are the stable public findings from promoted receipts. The phrase **retrieved ≠ used** is shorthand for an operational separation between evidence presence and answer closure. It is not a proof of internal evidence use or a claim that this is the dominant production RAG bottleneck.
 
 ## 1. Public HotpotQA: answer closure is position-sensitive
 
