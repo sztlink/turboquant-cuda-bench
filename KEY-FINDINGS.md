@@ -2,6 +2,10 @@
 
 This file is the short public readout of the repo. Numbers are from local RTX 4090 / RTX 3090 receipts unless stated otherwise.
 
+## Core findings
+
+These are the stable public findings from promoted receipts.
+
 ## 1. Retrieved is not used
 
 In the promoted synthetic evidence-utilization phase, the system ran **11,376** public-safe synthetic cases with **0 errors** and **7,902/11,376** answer closures (**69.5%**).
@@ -39,6 +43,10 @@ For the four hard decoy cases, injecting the canonical evidence first in the use
 - `policy_splice_rewrite`: **4/4** across the same tested stack/family cells.
 
 Reranking alone was more model/family/corpus-format dependent: Qwen 2.5-7B was weaker on `glass-orchid-vector` under strict format instructions, while Mistral 7B and Qwen 14B/32B recovered.
+
+## Method bridge
+
+These findings separate the evaluation layers: answer closure, action trace, target identity, and source rank.
 
 ## 4. KVFidelity detects trace drift hidden by pass/fail
 
@@ -86,6 +94,10 @@ On the vLLM decoy k=16 workload with Qwen 2.5-7B:
 
 This does not refute FP8 claims at 70B+ reasoning scale. It shows that for this 7B exact-match adversarial retrieval workload, TurboQuant K8V4 was the safer drop-in.
 
+## Exploratory runtime observability
+
+This section is architecture and instrumentation direction, not a production claim.
+
 ## 7. Evidence-Paged KV has kernel receipts, not a production hook
 
 The 2026-05-18 Evidence-Paged KV CUDA series explores evidence-aware KV page access as a kernel shape:
@@ -94,6 +106,6 @@ The 2026-05-18 Evidence-Paged KV CUDA series explores evidence-aware KV page acc
 - **v5** is the best current custom `K=32` path: staged custom top-k/value wins over materialized PyTorch in the tested shapes, but loses for naive `K=128`.
 - **v7** is the best architectural expression: page-local warp-scored top-k without full `[M,H]` score materialization, but it still loses to v5 at larger M.
 
-Do not read this as vLLM integration, serving speedup, production attention, or model-quality improvement. The next technical step is a vLLM hook around a v4/v5-style path.
+Do not read this as vLLM integration, serving speedup, production attention, evidence-use proof, or model-quality improvement. The live hook-on path remains paused behind an explicit runtime gate; the current durable milestone is the offline v1.9 evidence-path ledger and validator-first view.
 
 Public package: [`bench-public/evidence-paged-kv/`](bench-public/evidence-paged-kv/)

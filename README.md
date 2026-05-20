@@ -11,6 +11,14 @@
 
 This is a public research archive for long-context quality probes and KV-cache experiments on local GPUs.
 
+Read it as three paths:
+
+1. **Evidence utilization** — the main thesis: finding evidence is not the same as using evidence.
+2. **Bridge methodology** — KV/cache changes can preserve action or rank while losing payload identity.
+3. **Evidence-Paged KV** — exploratory kernel/runtime observability receipts, not a production hook.
+
+Boundary: this repo is receipts-first systems research. It does not claim serving speedup, production attention, answer-quality improvement, or proof that selected positions are model evidence use.
+
 ## TL;DR
 
 | Finding | Concrete receipt | Why it matters | Public entry |
@@ -20,7 +28,7 @@ This is a public research archive for long-context quality probes and KV-cache e
 | **192K needle retrieval passes, but decoy answer closure still fails.** | vLLM Qwen2.5-7B + TurboQuant K8V4: **5/5** at 128K, 160K, 192K. Decoy replay at top_k=16: **5/8** across llama.cpp Qwen 27B and vLLM Qwen 7B; `DECOY-0616-1` repeats byte-identically. | The bottleneck is not just context length or backend. It is presentation, rank, and competing evidence. | [`bench-public/vllm-cross-stack/`](bench-public/vllm-cross-stack/) |
 | **KVFidelity sees trace drift hidden by pass/fail.** | N=28: same-config controls **100% stable**; q8/q8→q8/turbo3 action-class **82.1%**, semantic **53.6%**, full-signature **50.0%**. Hold-out narrowed the claim: q8/turbo3 **20/20 equivalent**, q8/turbo2 retained one moderate regression. | Do not claim “KV compression breaks agents.” Claim: pass/fail can miss action-trace changes. | [`bench-public/kvfidelity/`](bench-public/kvfidelity/) |
 | **Action, target, and source-rank fidelity can split.** | CASK bridge v2: FullKV **119/120** exact. CASK b512: action **117/120**, rank **108/120**, target **2/120**. CASK b2048 returns to **119/120** exact. | Compression may preserve operation/rank while losing payload identity. Separate the layers. | [`bench-public/cask-kvfidelity-bridge/`](bench-public/cask-kvfidelity-bridge/) |
-| **Evidence-Paged KV has CUDA receipts, not a production hook.** | v4: score → top-k/softmax → value path; v5: custom top-k/value wins for `K=32`; v7: best no-full-score-materialization architecture but not fastest at scale. | The idea now has kernel receipts, but the honest next step is a vLLM hook around v4/v5-style paths. | [`bench-public/evidence-paged-kv/`](bench-public/evidence-paged-kv/) |
+| **Evidence-Paged KV has CUDA receipts, not a production hook.** | v4: score → top-k/softmax → value path; v5: custom top-k/value wins for `K=32`; v7: best no-full-score-materialization architecture but not fastest at scale. | The idea now has kernel and offline telemetry receipts; live hook-on remains paused behind an explicit runtime gate. | [`bench-public/evidence-paged-kv/`](bench-public/evidence-paged-kv/) |
 
 Start here:
 
@@ -30,9 +38,8 @@ Start here:
 - [bench-public/dashboard.html](bench-public/dashboard.html) - static dashboard of the headline numbers.
 - [bench-public/assets/](bench-public/assets/) - SVG cards/charts for the public readout.
 - [Evidence-Paged KV kernel receipts](bench-public/evidence-paged-kv/) - CUDA v1→v7 summary, claims, non-claims, and next steps.
-- [Evidence-Paged KV audit v1→v8](AUDIT-EVIDENCE-PAGED-KV-v1-v8.md) - frozen taxonomy, vLLM hook target, and v8 stop/continue criteria.
+- [Evidence-Paged KV audit v1→v8](AUDIT-EVIDENCE-PAGED-KV-v1-v8.md) - frozen taxonomy and paused runtime criteria.
 - [Evidence Path: three scenes where finding is not using](06-publicable/longctx/evidence-path/README.md) - readable narrative entry point.
-- [Start Here](00-context/START-HERE.md) - repo-level orientation and caveats.
 - [CONTRIBUTING.md](CONTRIBUTING.md) - how to report reproductions, bugs, or suggested tests.
 - [Welcome & Feedback thread](https://github.com/sztlink/turboquant-cuda-bench/discussions/2) - discussion entry point.
 
@@ -102,7 +109,7 @@ Current 4090 service baseline: vLLM TurboQuant K8V4 on Qwen2.5-7B at 65K context
 
 | Date | Benchmark | What |
 |------|-----------|------|
-| 2026-04-13 | [throughput-30b-moe](bench/throughput-30b-moe/) | Qwen3-30B-A3B MoE throughput + PPL |
+| 2026-04-13 | throughput-30b-moe (archived receipt; no promoted public folder) | Qwen3-30B-A3B MoE throughput + PPL |
 | 2026-04-14 | [niah](bench/niah/) | NIAH retrieval q8_0-K+turbo3-V, 65K ctx |
 | 2026-04-24 | [sparse-v](bench/sparse-v/) | sparse-V dequant skip - SM89 + SM86 |
 | 2026-04-24 | [ppl-35b-a3b](bench/ppl-35b-a3b/) | PPL wikitext-2, Qwen3.6-35B-A3B |
@@ -141,7 +148,7 @@ Current 4090 service baseline: vLLM TurboQuant K8V4 on Qwen2.5-7B at 65K context
 - **TheTom public-stack integration:** [integration note](notes/thetom-stack-integration.md) · [local smoke receipt](bench/thetom-stack-smoke/latest/RESULTS.md) · [REFRACT KLD fix smoke](bench/thetom-stack-smoke/refract-kldfix-2026-05-09/RESULTS.md) · [Qwen KLD smoke](bench/thetom-stack-smoke/qwen-kld-smoke-2026-05-09/RESULTS.md) · [Qwen KLD CLI receipt](bench/thetom-stack-smoke/qwen-kld-cli-2026-05-09/RESULTS.md)
 - **Longctx decoy/ranking gap (2026-05-10, confirmed 2026-05-17):** `longctx-svc` proxy on 4090 + Qwen 27B reaches retrieval 8/8 at `top_k=16` but final-answer 5/8 - three handles where the canonical chunk was in context but the model emitted a decoy or refused. The 2026-05-16 sanitized rerun confirms anti-decoy prompting alone remains 5/8, while filtered splice/oracle recover 8/8. In the targeted resolution run, reranking puts canonical evidence at rank 1 with no decoy before it and closes 4/4. The expanded synthetic staging fixture repeats the same pattern at n=24: retrieval 19/24, baseline/anti-decoy closure 9/24, filtered splice closure 19/24. The 2026-05-17 phase package extends this across 11,376 promoted synthetic runs: depth 20k/80k/160k stayed close, baseline prompt beat negative/positive/structured scaffolds, and stale records / near-duplicates were much harder than unrelated noise. See [longctx-utilization-overnight](bench/longctx-utilization-overnight-2026-05-16/RESULTS.md), [longctx-utilization-expanded](bench/longctx-utilization-expanded-2026-05-16/RESULTS.md), and [evidence-utilization-phase](bench/evidence-utilization-phase-2026-05-17/RESULTS.md).
 - **CASK × KVFidelity bridge (2026-05-17):** a 120-case synthetic action-router fixture separates upstream cache method from downstream `action` / `target` / `source_rank` fidelity. FullKV baseline was 119/120 exact. At tight budget 512, CASK preserved action 117/120 and rank 108/120 but exact target only 2/120; at 1024, CASK recovered to 109/120 exact; at 2048, CASK and TriAttention matched the FullKV ceiling on this fixture. This is a bridge/methodology probe, not a global method ranking. See [cask-kvfidelity-bridge-v2](bench/cask-kvfidelity-bridge-v2-2026-05-17/README.md).
-- **Evidence-Paged KV kernel receipts (2026-05-18):** v1→v7 CUDA microbenches explore evidence pages as an execution shape. Public readout: v4 is the cleanest end-to-end attention-like receipt, v5 is the best current `K=32` throughput path, and v7 is the best no-full-score-materialization architecture but still loses to v5 at larger M. This is not vLLM integration or a production attention kernel. See [bench-public/evidence-paged-kv](bench-public/evidence-paged-kv/RESULTS.md).
+- **Evidence-Paged KV kernel receipts and offline evidence-path ledger (2026-05-18/19):** v1→v7 CUDA microbenches explore evidence pages as an execution shape. Public readout: v4 is the cleanest end-to-end attention-like receipt, v5 is the best current `K=32` throughput path, and v7 is the best no-full-score-materialization architecture but still loses to v5 at larger M. The v1.9 offline milestone adds a validator-first evidence-path ledger with 22 hook-off replay records and provenance closure. This is not vLLM integration, not production attention, and not evidence-use proof. See [bench-public/evidence-paged-kv](bench-public/evidence-paged-kv/RESULTS.md) and [OFFLINE-MILESTONE-v1.9](bench-public/evidence-utilization/OFFLINE-MILESTONE-v1.9.md).
 - **Cross-stack (llama-cpp ↔ vLLM, 2026-05-11):** the same 5/8 decoy outcome reproduces on five independent (stack × family × size) configurations: llama-cpp Qwen 27B, vLLM Qwen 2.5-{7B, 14B-AWQ, 32B-AWQ}, vLLM Mistral 7B. Same 3 handles fail in all; brass-river-index emits **byte-identical** `DECOY-0616-1` on llama-cpp Qwen 27B, vLLM Qwen 7B, and vLLM Qwen 32B-AWQ. Corpus property, not stack/model property. Reranker-only path (`rerank_proxy` via `longctx-svc 0.3.0a3` → `bge-reranker-v2-m3`) is 4/4 on llama-cpp 27B, vLLM 14B/32B-AWQ, and **vLLM Mistral 7B** - but only 3/4 on vLLM Qwen 2.5-7B. Mistral 7B passes at the same parameter count where Qwen 2.5-7B fails, so the gap is family/calibration rather than capacity. A second-pass audit revealed three nested failures on the glass-orchid-vector handle: (1) the retriever in longctx-svc doesn't surface the dedicated canonical shard (`shard_1380.md` with `SECRET VALUE:` format) within `top_k=50`; (2) the top-3 reranker positions are decoys lexically dense in the alias phrase; (3) the only chunk in the returned set containing the secret is `manifest.json` in JSON format, which Qwen 2.5-7B under strict prompts refuses to reconcile. `policy_splice` (canonical first in plain text in the user message) is 4/4 invariant across all 5 configurations - it bypasses all three failures at once. Full readout in [vllm-decoy/RESULTS.md](bench/vllm-decoy-2026-05-11/RESULTS.md); narrative synthesis in [notes/longctx-cross-stack-synthesis-2026-05-11.md](notes/longctx-cross-stack-synthesis-2026-05-11.md).
 
 Short read: same-config controls were stable, while cross-KV action traces could drift. Prompt/tool-use steering can recover benchmark pass/fail on TC-31, but it does not guarantee identical traces; TC-31 also depends on scenario order/context. The order-sensitivity soak extends this: controls were stable within fixed orders, while traces varied across order permutations.

@@ -4,6 +4,18 @@ This directory is the public entry layer for `turboquant-cuda-bench`.
 
 It contains only public-safe summaries, aggregate tables, sanitized JSON, and copied notes. Raw logs, private traces, operational scripts, and lab materials remain in their original folders.
 
+This is a public index of receipts, **not a roadmap**.
+
+## Choose a question
+
+| If you want to know... | Start here |
+|---|---|
+| Why retrieved evidence still fails to close an answer | [`evidence-utilization/`](evidence-utilization/) |
+| Whether the offline evidence-path layer is sealed and auditable | [`evidence-utilization/OFFLINE-MILESTONE-v1.9.md`](evidence-utilization/OFFLINE-MILESTONE-v1.9.md) |
+| How KV/cache changes can preserve action while losing target identity | [`cask-kvfidelity-bridge/`](cask-kvfidelity-bridge/) |
+| What the Evidence-Paged KV CUDA receipts do and do not claim | [`evidence-paged-kv/`](evidence-paged-kv/) |
+| Whether the same decoy failures reproduce across stacks | [`vllm-cross-stack/`](vllm-cross-stack/) |
+
 ## Packages
 
 | Package | What it shows | Start here |

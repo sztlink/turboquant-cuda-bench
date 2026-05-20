@@ -2,10 +2,24 @@
 
 Synthetic long-context quality package for the retrieval-utilization front.
 
-Entry point:
+The central behavior:
+
+```txt
+FOUND      retrieved evidence is present
+PRESENTED  rank/decoys/context decide what competes locally
+USED       answer closure may still fail
+```
+
+Start with:
 
 ```txt
 RESULTS.md
+```
+
+Sealed offline milestone:
+
+```txt
+OFFLINE-MILESTONE-v1.9.md
 ```
 
 Bridge docs:

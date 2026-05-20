@@ -13,7 +13,7 @@ live runtime hook: no
 model call: no
 model attention claim: no
 evidence-use proof claim: no
-external publication: no
+external publication/posting: no
 ```
 
 This milestone closes the current offline evidence-path layer:
@@ -157,7 +157,7 @@ run phrase audit
 Still gated:
 
 ```txt
-public posting
+public posting beyond the repository
 sending to external reviewers
 claims beyond compatibility states
 ```
