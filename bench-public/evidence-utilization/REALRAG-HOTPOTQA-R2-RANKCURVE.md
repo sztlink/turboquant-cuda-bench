@@ -88,6 +88,11 @@ no_support:        6.8%
 
 R2 explains why the R1 `oracle_last` condition was not as bad as `distractor_first`: last-position evidence benefits from recency, while mid-context burial is worse.
 
+## Audit samples and next gate
+
+- [`REALRAG-HOTPOTQA-SAMPLES-v1.md`](REALRAG-HOTPOTQA-SAMPLES-v1.md) — 200 deterministic audit examples with predictions, closure labels, support ranks, and context titles.
+- [`REALRAG-R3-PLAN.md`](REALRAG-R3-PLAN.md) — next gate for rerankers, reasoning prompts, independent judging, more datasets, and multi-model checks.
+
 ## Source artifacts
 
 ```txt

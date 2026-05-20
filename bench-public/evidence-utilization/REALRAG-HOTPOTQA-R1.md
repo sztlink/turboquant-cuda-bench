@@ -97,20 +97,20 @@ bm25_retrieved support rank 1: 6005 / 7384
 
 So the `oracle_first - bm25_retrieved` gap is smaller than the deliberately adversarial `oracle_first - distractor_first` gap. This motivates the next gate: a controlled support-rank curve.
 
-## Next gate: R2 rank curve
+## Follow-on artifacts
 
-R2 should force the gold supporting evidence to fixed rank bands:
+R2 forced the gold supporting evidence to fixed rank bands and found a position-sensitive but non-monotonic curve:
 
 ```txt
-rank_1
-rank_3
-rank_5
-rank_8
-rank_last
-no_support
+rank_1 > rank_last > rank_3 > rank_8 ≈ rank_5 >> no_support
 ```
 
-The question is whether closure degrades monotonically or near-monotonically as gold evidence is moved down the context.
+See: [`REALRAG-HOTPOTQA-R2-RANKCURVE.md`](REALRAG-HOTPOTQA-R2-RANKCURVE.md)
+
+Audit samples and next-gate plan:
+
+- [`REALRAG-HOTPOTQA-SAMPLES-v1.md`](REALRAG-HOTPOTQA-SAMPLES-v1.md)
+- [`REALRAG-R3-PLAN.md`](REALRAG-R3-PLAN.md)
 
 ## Source artifacts
 

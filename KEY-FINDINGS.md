@@ -4,9 +4,49 @@ This file is the short public readout of the repo. Numbers are from local RTX 40
 
 ## Core findings
 
-These are the stable public findings from promoted receipts.
+These are the stable public findings from promoted receipts. The phrase **retrieved ≠ used** is an operational frame, not a proof of internal evidence use.
 
-## 1. Retrieved is not used
+## 1. Public HotpotQA: answer closure is position-sensitive
+
+The RealRAG R1/R2 runs move the evidence-placement claim beyond synthetic fixtures onto public HotpotQA dev distractor.
+
+R1 full evidence-placement gate:
+
+- **7,384** HotpotQA questions, **36,920** records, **0 errors**.
+- `oracle_first`: **51.1%** closure.
+- `bm25_retrieved`: **46.2%** closure.
+- `oracle_last`: **42.7%** closure.
+- `distractor_first`: **38.5%** closure.
+- `no_support`: **6.8%** closure.
+
+R2 forced support-rank curve:
+
+- **7,384** questions, **44,304** records, **0 errors**.
+- `rank_1`: **51.4%** closure.
+- `rank_last`: **42.4%** closure.
+- `rank_3`: **40.4%** closure.
+- `rank_8`: **38.7%** closure.
+- `rank_5`: **38.6%** closure.
+- `no_support`: **6.9%** closure.
+
+Observed position curve:
+
+```txt
+rank_1 > rank_last > rank_3 > rank_8 ≈ rank_5 >> no_support
+```
+
+Interpretation: answer closure is sensitive to where gold supporting evidence sits in the context field. Beginning helps, middle burial hurts, and end placement partially recovers. This falsifies the simpler claim that closure always degrades monotonically with rank.
+
+Boundaries: this is answer-side EM/contains/F1-derived closure. It does not prove attention, internal evidence use, production RAG value, or runtime readiness.
+
+Public packages:
+
+- [RealRAG HotpotQA R1](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R1.md)
+- [RealRAG HotpotQA R2 rank curve](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md)
+- [RealRAG sample pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-SAMPLES-v1.md)
+- [RealRAG R3 plan](bench-public/evidence-utilization/REALRAG-R3-PLAN.md)
+
+## 1b. Synthetic fixtures isolate stronger rank/decoy effects
 
 In the promoted synthetic evidence-utilization phase, the system ran **11,376** public-safe synthetic cases with **0 errors** and **7,902/11,376** answer closures (**69.5%**).
 
@@ -16,6 +56,8 @@ The main failure mode was not raw context depth. It was local evidence competiti
 - distractor taxonomy: rank 1 closed **98.9%**, rank 16 closed **23.2%**.
 - stale records were much harder than unrelated noise: **36.1%** vs **84.2%** closure.
 - prompt scaffolding did not reliably fix the problem: baseline **86.3%**, structured **67.6%**.
+
+Synthetic probes are useful because they isolate rank, decoys-before, and distractor type. They should not be read as production RAG evidence by themselves.
 
 Public package: [`bench-public/evidence-utilization/`](bench-public/evidence-utilization/)
 

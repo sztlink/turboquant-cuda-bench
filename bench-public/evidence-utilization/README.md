@@ -1,6 +1,6 @@
-# Evidence-utilization phase package — 2026-05-17
+# Evidence-placement / answer-closure diagnostics
 
-Synthetic long-context quality package for the retrieval-utilization front.
+Public HotpotQA gates plus synthetic long-context probes for the retrieval-utilization front.
 
 The central behavior:
 
@@ -13,6 +13,10 @@ USED       answer closure may still fail
 Start with:
 
 ```txt
+REALRAG-HOTPOTQA-R1.md
+REALRAG-HOTPOTQA-R2-RANKCURVE.md
+REALRAG-HOTPOTQA-SAMPLES-v1.md
+REALRAG-R3-PLAN.md
 RESULTS.md
 ```
 
@@ -37,7 +41,14 @@ EVIDENCE-PATH-LEDGER-VIEW.html
 OFFLINE-MILESTONE-v1.9.md
 ```
 
-Included sweeps:
+Public-dataset gates:
+
+- `REALRAG-HOTPOTQA-R1.md` — HotpotQA evidence-placement result: oracle-first vs BM25 vs oracle-last vs distractor-first vs no-support.
+- `REALRAG-HOTPOTQA-R2-RANKCURVE.md` — forced support-rank curve: beginning helps, middle burial hurts, end partially recovers.
+- `REALRAG-HOTPOTQA-SAMPLES-v1.md` / `.jsonl` — audit sample pack with questions, gold answers, predictions, metrics, and context titles.
+- `REALRAG-R3-PLAN.md` — next gate for rerankers, judging, more datasets, and multi-model checks.
+
+Synthetic sweeps:
 
 - `phase/` — evidence zone, canonical rank, and decoys-before phase diagram.
 - `depth/` — 20k / 80k / 160k context-depth sweep.
@@ -47,10 +58,11 @@ Included sweeps:
 
 Not included: raw per-request `summary.jsonl` / raw answers. Those remain local staging artifacts.
 
-Core thesis:
+Core thesis, qualified:
 
 ```txt
-retrieved != used
-evidence depth != evidence utilization
-local evidence competition dominates closure
+retrieved != used is an operational frame, not proof of internal evidence use
+answer closure is sensitive to position/rank/recency under controlled evidence placement
+evidence depth != answer closure
+local evidence competition can dominate closure in synthetic probes
 ```
