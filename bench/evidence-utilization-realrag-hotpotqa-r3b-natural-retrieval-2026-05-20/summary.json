@@ -1,0 +1,91 @@
+{
+  "schema": "realrag.hotpotqa.r3b.natural_retrieval.summary.v1",
+  "status": "done",
+  "started_at": "2026-05-20T16:08:36.900Z",
+  "finished_at": "2026-05-20T16:32:29.022Z",
+  "endpoint": "http://192.168.15.133:11435/v1/chat/completions",
+  "model": "local-vllm",
+  "dataset_path": "bench/_datasets/hotpot_dev_distractor_v1.json",
+  "dataset_sha256": "4e9ecb5c8d3b719f624d66b60f8d56bf227f03914f5f0753d6fa1b359d7104ea",
+  "limit": 2000,
+  "offset": 0,
+  "seed": 20260520,
+  "conditions": [
+    "bm25_top10",
+    "bge_rerank_top10",
+    "oracle_first",
+    "no_support"
+  ],
+  "candidate_k": 10,
+  "rerank_scores_path": "/home/aya/implante/research/turboquant-cuda-bench/bench/evidence-utilization-realrag-hotpotqa-r3b-natural-retrieval-2026-05-20/bge-rerank-scores.json",
+  "rerank_scores_schema": "realrag.hotpotqa.r3b.bge_rerank_scores.v1",
+  "selected_questions": 1991,
+  "expected_records": 7964,
+  "completed_records": 7964,
+  "aggregate": {
+    "byCondition": [
+      {
+        "condition": "bge_rerank_top10",
+        "n": 1991,
+        "em": 0.41235560020090406,
+        "f1": 0.5262038552014018,
+        "contains": 0.467101958814666,
+        "closure": 0.5012556504269211,
+        "supportPresent": 1,
+        "supportRecall": 1,
+        "bm25SupportRecallAtCandidateK": 1,
+        "errors": 0,
+        "supportRankMean": 1.0502260170768458,
+        "supportRankMedian": 1
+      },
+      {
+        "condition": "bm25_top10",
+        "n": 1991,
+        "em": 0.3802109492717228,
+        "f1": 0.48841582617550905,
+        "contains": 0.4289301858362632,
+        "closure": 0.4575590155700653,
+        "supportPresent": 1,
+        "supportRecall": 1,
+        "bm25SupportRecallAtCandidateK": 1,
+        "errors": 0,
+        "supportRankMean": 1.3415369161225514,
+        "supportRankMedian": 1
+      },
+      {
+        "condition": "no_support",
+        "n": 1991,
+        "em": 0.05474635861376193,
+        "f1": 0.07587347358818981,
+        "contains": 0.06479156202913108,
+        "closure": 0.0683073832245103,
+        "supportPresent": 0,
+        "supportRecall": 0,
+        "bm25SupportRecallAtCandidateK": 1,
+        "errors": 0,
+        "supportRankMean": null,
+        "supportRankMedian": null
+      },
+      {
+        "condition": "oracle_first",
+        "n": 1991,
+        "em": 0.43194374686087394,
+        "f1": 0.5424820913460181,
+        "contains": 0.47714716223003517,
+        "closure": 0.5118031140130588,
+        "supportPresent": 1,
+        "supportRecall": 1,
+        "bm25SupportRecallAtCandidateK": 1,
+        "errors": 0,
+        "supportRankMean": 1,
+        "supportRankMedian": 1
+      }
+    ]
+  },
+  "interpretation_boundary": [
+    "natural retrieval / reranker diagnostic gate",
+    "answer-side closure, not proof of internal evidence use",
+    "oracle_first remains ceiling; no_support remains floor",
+    "no vLLM mutation, no EPKV hook, no production-RAG claim"
+  ]
+}
