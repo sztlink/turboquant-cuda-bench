@@ -16,6 +16,7 @@ Start with:
 REALRAG-HOTPOTQA-R1.md
 REALRAG-HOTPOTQA-R2-RANKCURVE.md
 REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md
+REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md
 REALRAG-HOTPOTQA-SAMPLES-v1.md
 REALRAG-R3-PLAN.md
 RESULTS.md
@@ -47,6 +48,7 @@ Public-dataset gates:
 - `REALRAG-HOTPOTQA-R1.md` — HotpotQA evidence-placement result: oracle-first vs BM25 vs oracle-last vs distractor-first vs no-support.
 - `REALRAG-HOTPOTQA-R2-RANKCURVE.md` — forced support-rank curve: beginning helps, middle burial hurts, end partially recovers.
 - `REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md` — direct/citation/reasoning prompt ablation; the position effect survives simple prompting changes.
+- `REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md` — BM25 vs BGE reranker vs oracle/no-support; strong reranking closes most of the natural BM25-to-oracle gap.
 - `REALRAG-HOTPOTQA-SAMPLES-v1.md` / `.jsonl` — audit sample pack with questions, gold answers, predictions, metrics, and context titles.
 - `REALRAG-R3-PLAN.md` — remaining reranker, judging, more-dataset, and multi-model gates.
 
@@ -66,6 +68,7 @@ Core thesis, qualified:
 retrieved != used is shorthand for operational separation, not proof of internal evidence use or a dominant production-RAG bottleneck
 answer closure is sensitive to position/rank/recency under controlled evidence placement
 simple citation/reasoning prompts did not remove the HotpotQA position effect in R3A
+BGE reranking mitigated most of the BM25-to-oracle gap in R3B natural retrieval
 evidence depth != answer closure
 local evidence competition can dominate closure in synthetic probes
 ```

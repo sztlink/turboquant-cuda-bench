@@ -8,7 +8,7 @@ These are the stable public findings from promoted receipts. The phrase **retrie
 
 ## 1. Public HotpotQA: answer closure is position-sensitive
 
-The RealRAG R1/R2/R3A runs move the evidence-placement claim beyond synthetic fixtures onto public HotpotQA dev distractor.
+The RealRAG R1/R2/R3A/R3B runs move the evidence-placement claim beyond synthetic fixtures onto public HotpotQA dev distractor.
 
 R1 full evidence-placement gate:
 
@@ -44,15 +44,26 @@ R3A prompt/citation ablation:
 - Paired `rank_1 - rank_5` deltas remained large: direct **+13.1 pp**, cite **+10.8 pp**, reason **+13.1 pp**.
 - Citation-hit in `cite_then_answer` fell as evidence moved away from the start: `rank_1` **43.9%**, `rank_5` **32.9%**, `rank_last` **28.2%**.
 
-Interpretation: answer closure is sensitive to where gold supporting evidence sits in the context field. Beginning helps, middle burial hurts, and end placement partially recovers. This falsifies the simpler claim that closure always degrades monotonically with rank. Simple citation or reasoning prompts do not remove the position effect in this local setup.
+R3B natural retrieval + BGE reranker gate:
 
-Boundaries: this is answer-side EM/contains/F1-derived closure. Citation-hit is title-string overlap, not proof of internal citation use. These results do not prove attention, internal evidence use, production RAG value, or runtime readiness.
+- **1,991** questions, **7,964** records, **0 errors**.
+- `bm25_top10`: **45.8%** closure, support rank mean **1.34**.
+- `bge_rerank_top10`: **50.1%** closure, support rank mean **1.05**.
+- `oracle_first`: **51.2%** closure.
+- `no_support`: **6.8%** closure.
+- Paired `bge_rerank_top10 - bm25_top10`: **+4.4 pp**, 95% CI **+2.7 to +6.1 pp**.
+- Paired `oracle_first - bge_rerank_top10`: **+1.1 pp**, 95% CI **-0.6 to +2.7 pp**.
+
+Interpretation: answer closure is sensitive to where gold supporting evidence sits in the context field. Beginning helps, middle burial hurts, and end placement partially recovers. Simple citation or reasoning prompts do not remove the controlled position effect. But R3B changes the practical verdict: a strong reranker mitigates most of the natural BM25-to-oracle gap on this HotpotQA slice.
+
+Boundaries: this is answer-side EM/contains/F1-derived closure. Citation-hit is title-string overlap, not proof of internal citation use. These results do not prove attention, internal evidence use, production RAG value, a dominant production-RAG bottleneck, or runtime readiness.
 
 Public packages:
 
 - [RealRAG HotpotQA R1](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R1.md)
 - [RealRAG HotpotQA R2 rank curve](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md)
 - [RealRAG HotpotQA R3A prompt variants](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md)
+- [RealRAG HotpotQA R3B natural retrieval](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md)
 - [RealRAG sample pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-SAMPLES-v1.md)
 - [RealRAG R3 plan](bench-public/evidence-utilization/REALRAG-R3-PLAN.md)
 
