@@ -60,7 +60,7 @@ function shell({ w = 1200, h = 630, title, subtitle, tag = 'turboquant-cuda-benc
     </style>
   </defs>
   <rect width="${w}" height="${h}" fill="url(#papergrain)"/>
-  <rect x="28" y="28" width="${w - 56}" height="${h - 56}" rx="28" fill="none" stroke="${C.line}" stroke-width="1.5"/>
+  <rect x="28" y="28" width="${w - 56}" height="${h - 56}" fill="none" stroke="${C.line}" stroke-width="1.5"/>
   <rect x="62" y="78" width="10" height="${h - 156}" fill="${C.line}"/>
   <text x="96" y="70" class="mono tag">${esc(tag)}</text>
   <text x="96" y="128" class="mono title">${esc(title)}</text>
@@ -76,14 +76,14 @@ function barChart({ name, title, subtitle, rows, max = 100, note = '', x = 112, 
     const col = r.color || C.blue;
     return `
       <text x="${x}" y="${yy - 10}" class="mono label">${esc(r.label)}</text>
-      <rect x="${x}" y="${yy}" width="${w}" height="16" rx="8" fill="#eadfc7" stroke="${C.faint}"/>
-      <rect x="${x}" y="${yy}" width="${bw.toFixed(1)}" height="16" rx="8" fill="${col}"/>
+      <rect x="${x}" y="${yy}" width="${w}" height="16" fill="#eadfc7" stroke="${C.faint}"/>
+      <rect x="${x}" y="${yy}" width="${bw.toFixed(1)}" height="16" fill="${col}"/>
       <text x="${x + w + 24}" y="${yy + 13}" class="mono label">${esc(r.text || `${r.value}%`)}</text>`;
   }).join('');
   write(name, shell({
     title, subtitle,
     body: `
-      <rect x="86" y="190" width="1028" height="360" rx="24" fill="${C.panel}" stroke="${C.line}" stroke-width="1.4"/>
+      <rect x="86" y="190" width="1028" height="360" fill="${C.panel}" stroke="${C.line}" stroke-width="1.4"/>
       ${bars}
       <text x="112" y="522" class="mono small">${esc(note)}</text>`
   }));
@@ -92,7 +92,7 @@ function barChart({ name, title, subtitle, rows, max = 100, note = '', x = 112, 
 function groupedBars({ name, title, subtitle, groups, metrics, note = '' }) {
   const x0 = 110, y0 = 225, labelW = 190, chartW = 650, rowH = 58;
   const legend = metrics.map((m, i) => `
-    <rect x="${x0 + i * 150}" y="198" width="14" height="14" rx="3" fill="${m.color}"/>
+    <rect x="${x0 + i * 150}" y="198" width="14" height="14" fill="${m.color}"/>
     <text x="${x0 + 22 + i * 150}" y="211" class="mono small">${esc(m.label)}</text>`).join('');
   const rows = groups.map((g, i) => {
     const yy = y0 + i * rowH;
@@ -100,8 +100,8 @@ function groupedBars({ name, title, subtitle, groups, metrics, note = '' }) {
       const val = g[m.key];
       const bw = Math.max(2, (val / 120) * chartW);
       return `
-        <rect x="${x0 + labelW}" y="${yy + j * 13}" width="${chartW}" height="9" rx="4.5" fill="#eadfc7"/>
-        <rect x="${x0 + labelW}" y="${yy + j * 13}" width="${bw.toFixed(1)}" height="9" rx="4.5" fill="${m.color}"/>`;
+        <rect x="${x0 + labelW}" y="${yy + j * 13}" width="${chartW}" height="9" fill="#eadfc7"/>
+        <rect x="${x0 + labelW}" y="${yy + j * 13}" width="${bw.toFixed(1)}" height="9" fill="${m.color}"/>`;
     }).join('');
     return `
       <text x="${x0}" y="${yy + 18}" class="mono label">${esc(g.label)}</text>
@@ -111,7 +111,7 @@ function groupedBars({ name, title, subtitle, groups, metrics, note = '' }) {
   write(name, shell({
     title, subtitle,
     body: `
-      <rect x="86" y="180" width="1028" height="400" rx="24" fill="${C.panel}" stroke="${C.line}" stroke-width="1.4"/>
+      <rect x="86" y="180" width="1028" height="400" fill="${C.panel}" stroke="${C.line}" stroke-width="1.4"/>
       ${legend}
       ${rows}
       <text x="110" y="548" class="mono small">${esc(note)}</text>`
@@ -119,7 +119,7 @@ function groupedBars({ name, title, subtitle, groups, metrics, note = '' }) {
 }
 
 function miniNode({ x, y, n, label, color = C.ink }) {
-  return `<g><rect x="${x}" y="${y}" width="185" height="92" rx="18" fill="${C.panel}" stroke="${C.line}"/><text x="${x + 20}" y="${y + 40}" class="mono num" fill="${color}">${esc(n)}</text><text x="${x + 20}" y="${y + 68}" class="mono small">${esc(label)}</text></g>`;
+  return `<g><rect x="${x}" y="${y}" width="185" height="92" fill="${C.panel}" stroke="${C.line}"/><text x="${x + 20}" y="${y + 40}" class="mono num" fill="${color}">${esc(n)}</text><text x="${x + 20}" y="${y + 68}" class="mono small">${esc(label)}</text></g>`;
 }
 function tickArrow(x1, y1, x2, y2, color = C.line) {
   return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="2"/><path d="M${x2} ${y2} l-9 -5 v10 z" fill="${color}"/>`;
@@ -129,7 +129,7 @@ write('hero-retrieved-not-used.svg', shell({
   title: 'retrieved != used',
   subtitle: 'Your model found the right chunk. Why did it still answer wrong?',
   body: `
-    <rect x="92" y="210" width="1016" height="310" rx="24" fill="${C.panel}" stroke="${C.line}"/>
+    <rect x="92" y="210" width="1016" height="310" fill="${C.panel}" stroke="${C.line}"/>
     <text x="126" y="266" class="mono micro">promoted evidence-utilization phase</text>
     <text x="126" y="325" class="mono num">11,376 runs · 69.5% closure · 0 errors</text>
     <text x="126" y="376" class="mono label">Needle retrieval can pass at 192K while decoy answer closure still fails.</text>
@@ -214,7 +214,7 @@ write('needle-192k-vs-decoys.svg', shell({
   title: '192K retrieval is not closure',
   subtitle: 'Needles pass; adversarial evidence still wins without splice or rerank control',
   body: `
-    <rect x="92" y="210" width="1016" height="310" rx="24" fill="${C.panel}" stroke="${C.line}"/>
+    <rect x="92" y="210" width="1016" height="310" fill="${C.panel}" stroke="${C.line}"/>
     <text x="140" y="294" class="mono num" fill="${C.green}">5/5</text>
     <text x="140" y="330" class="mono label">needle @ 128K / 160K / 192K</text>
     <text x="140" y="365" class="mono small">vLLM Qwen2.5-7B + TurboQuant K8V4 + YaRN</text>
@@ -238,7 +238,7 @@ write('evidence-paged-kv-kernel-receipts.svg', shell({
       ${tickArrow(735, 46, 795, 46)}
       ${miniNode({ x: 810, y: 0, n: 'v1.9', label: 'offline ledger', color: C.green })}
     </g>
-    <rect x="92" y="390" width="1016" height="94" rx="18" fill="#f4ded7" stroke="${C.red}"/>
+    <rect x="92" y="390" width="1016" height="94" fill="#f4ded7" stroke="${C.red}"/>
     <text x="124" y="430" class="mono label" fill="${C.red}">Boundary: not production attention, not serving readiness, not evidence-use proof.</text>
     <text x="124" y="462" class="mono small">Live hook-on remains paused behind explicit runtime gates.</text>`
 }));
