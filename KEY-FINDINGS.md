@@ -108,9 +108,17 @@ R3G applies the natural-retrieval gate to 2WikiMultiHopQA dev.
 
 R3G does not reproduce the HotpotQA R3B ladder. BGE improves support rank almost to oracle-first, but closure does not materially improve. Support-present conditions still beat no-support by about 28–30 pp.
 
-Interpretation: HotpotQA's rank/reranker story does not generalize cleanly to 2Wiki under the same prompt/harness. The broader claim should remain dataset-sensitive.
+R3H diagnostic:
 
-Public package: [RealRAG 2Wiki R3G](bench-public/evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md)
+- BM25/BGE/oracle all have **100%** supporting-fact sentence recall.
+- BGE improves SF sentence rank mean **2.67 → 1.65**.
+- `natural_success_oracle_fail`: **302** cases.
+- By type: `comparison` shows BGE gain (**41.7% → 50.5%**), but `bridge_comparison` and `compositional` do not.
+- `yes_no` is near-zero closure under this prompt/eval setup.
+
+Interpretation: HotpotQA's rank/reranker story does not generalize cleanly to 2Wiki under the same prompt/harness. The broader claim should remain dataset-sensitive and type/prompt/schema-sensitive.
+
+Public packages: [RealRAG 2Wiki R3G](bench-public/evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md), [RealRAG 2Wiki R3H](bench-public/evidence-utilization/REALRAG-2WIKI-R3H-DIAGNOSTIC.md)
 
 ## 1c. Synthetic fixtures isolate stronger rank/decoy effects
 
