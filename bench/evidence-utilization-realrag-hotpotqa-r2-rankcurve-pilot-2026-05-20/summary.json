@@ -1,0 +1,138 @@
+{
+  "schema": "realrag.hotpotqa.r2.summary.v1",
+  "status": "done",
+  "started_at": "2026-05-20T11:05:25.147Z",
+  "finished_at": "2026-05-20T11:05:35.880Z",
+  "endpoint": "http://192.168.15.133:11435/v1/chat/completions",
+  "model": "local-vllm",
+  "dataset_path": "bench/_datasets/hotpot_dev_distractor_v1.json",
+  "dataset_sha256": "4e9ecb5c8d3b719f624d66b60f8d56bf227f03914f5f0753d6fa1b359d7104ea",
+  "limit": 8,
+  "offset": 0,
+  "seed": 20260520,
+  "conditions": [
+    "rank_1",
+    "rank_3",
+    "rank_5",
+    "rank_8",
+    "rank_last",
+    "no_support"
+  ],
+  "selected_questions": 8,
+  "expected_records": 48,
+  "completed_records": 48,
+  "aggregate": {
+    "byCondition": {
+      "rank_1": {
+        "n": 8,
+        "em": 0.375,
+        "f1": 0.4583333333333333,
+        "contains": 0.375,
+        "closure": 0.375,
+        "supportPresent": 1,
+        "errors": 0
+      },
+      "rank_3": {
+        "n": 8,
+        "em": 0.25,
+        "f1": 0.3333333333333333,
+        "contains": 0.25,
+        "closure": 0.25,
+        "supportPresent": 1,
+        "errors": 0
+      },
+      "rank_5": {
+        "n": 8,
+        "em": 0.5,
+        "f1": 0.5833333333333333,
+        "contains": 0.5,
+        "closure": 0.5,
+        "supportPresent": 1,
+        "errors": 0
+      },
+      "rank_8": {
+        "n": 8,
+        "em": 0.375,
+        "f1": 0.4583333333333333,
+        "contains": 0.375,
+        "closure": 0.375,
+        "supportPresent": 1,
+        "errors": 0
+      },
+      "rank_last": {
+        "n": 8,
+        "em": 0.375,
+        "f1": 0.375,
+        "contains": 0.375,
+        "closure": 0.375,
+        "supportPresent": 1,
+        "errors": 0
+      },
+      "no_support": {
+        "n": 8,
+        "em": 0.125,
+        "f1": 0.175,
+        "contains": 0.125,
+        "closure": 0.125,
+        "supportPresent": 0,
+        "errors": 0
+      }
+    },
+    "byRankBucket": [
+      {
+        "condition": "no_support",
+        "bucket": "none",
+        "n": 8,
+        "closure": 0.125,
+        "f1": 0.175
+      },
+      {
+        "condition": "rank_1",
+        "bucket": "1",
+        "n": 8,
+        "closure": 0.375,
+        "f1": 0.4583333333333333
+      },
+      {
+        "condition": "rank_3",
+        "bucket": "2-3",
+        "n": 8,
+        "closure": 0.25,
+        "f1": 0.3333333333333333
+      },
+      {
+        "condition": "rank_5",
+        "bucket": "4-8",
+        "n": 8,
+        "closure": 0.5,
+        "f1": 0.5833333333333333
+      },
+      {
+        "condition": "rank_8",
+        "bucket": "4-8",
+        "n": 8,
+        "closure": 0.375,
+        "f1": 0.4583333333333333
+      },
+      {
+        "condition": "rank_last",
+        "bucket": ">8",
+        "n": 8,
+        "closure": 0.375,
+        "f1": 0.375
+      }
+    ]
+  },
+  "deltas": {
+    "rank_1_minus_rank_3": 0.125,
+    "rank_1_minus_rank_5": -0.125,
+    "rank_1_minus_rank_8": 0,
+    "rank_1_minus_rank_last": 0,
+    "rank_1_minus_no_support": 0.25
+  },
+  "interpretation_boundary": [
+    "public HotpotQA distractor evidence-placement benchmark",
+    "answer closure is EM/contains/F1 over gold answers, not proof of model evidence use",
+    "no runtime hook, no serving mutation, no attention claim"
+  ]
+}
