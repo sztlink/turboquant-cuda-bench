@@ -1,0 +1,108 @@
+{
+  "schema": "realrag.hotpotqa.r3c.metric_support_audit.summary.v1",
+  "created_at": "2026-05-20T16:48:43.899Z",
+  "dataset_path": "bench/_datasets/hotpot_dev_distractor_v1.json",
+  "dataset_sha256": "4e9ecb5c8d3b719f624d66b60f8d56bf227f03914f5f0753d6fa1b359d7104ea",
+  "records_path": "bench/evidence-utilization-realrag-hotpotqa-r3b-natural-retrieval-2026-05-20/records.jsonl",
+  "records_sha256": "1430d05fb20ccee66560fae81be53fffe5c77369a90559a4061e9c5ba0282fb9",
+  "source_summary_path": "bench/evidence-utilization-realrag-hotpotqa-r3b-natural-retrieval-2026-05-20/summary.json",
+  "source_r3b_status": "done",
+  "selected_questions": 1991,
+  "records": 7964,
+  "conditions": [
+    "bm25_top10",
+    "bge_rerank_top10",
+    "oracle_first",
+    "no_support"
+  ],
+  "aggregate": [
+    {
+      "condition": "bge_rerank_top10",
+      "n": 1991,
+      "closure": 0.5012556504269211,
+      "em": 0.41235560020090406,
+      "f1": 0.5262038552014018,
+      "contains": 0.467101958814666,
+      "supporting_fact_sentence_recall": 1,
+      "supporting_fact_sentence_present_rate": 1,
+      "supporting_fact_sentence_rank_mean": 1.7694625816172778,
+      "supporting_fact_sentence_rank_median": 1,
+      "closure_risk_breakdown": {
+        "low_exact_match": 821,
+        "medium_contains_only": 109,
+        "medium_high_f1_only": 68,
+        "no_support_leakage_or_prior": 0
+      }
+    },
+    {
+      "condition": "bm25_top10",
+      "n": 1991,
+      "closure": 0.4575590155700653,
+      "em": 0.3802109492717228,
+      "f1": 0.48841582617550905,
+      "contains": 0.4289301858362632,
+      "supporting_fact_sentence_recall": 1,
+      "supporting_fact_sentence_present_rate": 1,
+      "supporting_fact_sentence_rank_mean": 3.1722752385735813,
+      "supporting_fact_sentence_rank_median": 1,
+      "closure_risk_breakdown": {
+        "low_exact_match": 757,
+        "medium_contains_only": 97,
+        "medium_high_f1_only": 57,
+        "no_support_leakage_or_prior": 0
+      }
+    },
+    {
+      "condition": "no_support",
+      "n": 1991,
+      "closure": 0.0683073832245103,
+      "em": 0.05474635861376193,
+      "f1": 0.07587347358818981,
+      "contains": 0.06479156202913108,
+      "supporting_fact_sentence_recall": 0,
+      "supporting_fact_sentence_present_rate": 0,
+      "supporting_fact_sentence_rank_mean": null,
+      "supporting_fact_sentence_rank_median": null,
+      "closure_risk_breakdown": {
+        "low_exact_match": 0,
+        "medium_contains_only": 0,
+        "medium_high_f1_only": 0,
+        "no_support_leakage_or_prior": 136
+      }
+    },
+    {
+      "condition": "oracle_first",
+      "n": 1991,
+      "closure": 0.5118031140130588,
+      "em": 0.43194374686087394,
+      "f1": 0.5424820913460181,
+      "contains": 0.47714716223003517,
+      "supporting_fact_sentence_recall": 1,
+      "supporting_fact_sentence_present_rate": 1,
+      "supporting_fact_sentence_rank_mean": 1.5399296835760925,
+      "supporting_fact_sentence_rank_median": 1,
+      "closure_risk_breakdown": {
+        "low_exact_match": 860,
+        "medium_contains_only": 90,
+        "medium_high_f1_only": 69,
+        "no_support_leakage_or_prior": 0
+      }
+    }
+  ],
+  "bucket_counts": {
+    "bm25_fail_bge_success": 198,
+    "bm25_success_bge_fail": 111,
+    "bm25_fail_bge_fail_oracle_success": 86,
+    "all_support_conditions_fail": 796,
+    "oracle_success_bge_fail": 145,
+    "bge_success_oracle_fail": 124,
+    "no_support_success_leakage": 136
+  },
+  "samples_per_bucket": 30,
+  "interpretation_boundary": [
+    "offline metric/supporting-facts audit pack",
+    "audit_label is unreviewed; this is not an LLM-as-judge result",
+    "supporting-fact sentence presence follows HotpotQA paragraph inclusion; it validates prompt inclusion, not internal use",
+    "closure remains answer-side EM/contains/F1 derived"
+  ]
+}
