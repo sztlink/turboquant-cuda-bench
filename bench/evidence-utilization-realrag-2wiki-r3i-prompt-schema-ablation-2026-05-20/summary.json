@@ -1,0 +1,1022 @@
+{
+  "schema": "realrag.2wiki.r3i.prompt_schema_ablation.summary.v1",
+  "status": "done",
+  "started_at": "2026-05-20T20:10:13.738Z",
+  "finished_at": "2026-05-20T20:14:24.962Z",
+  "endpoint": "http://192.168.15.133:11435/v1/chat/completions",
+  "model": "local-vllm",
+  "dataset_path": "bench/_datasets/2wiki/data/dev.json",
+  "dataset_sha256": "48b9bdc69654dc580fda5f935a48b88cb89f11887587310af60d406c8d0111a6",
+  "rerank_scores_path": "bench/evidence-utilization-realrag-2wiki-r3g-natural-retrieval-2026-05-20/bge-rerank-scores.json",
+  "limit": 400,
+  "per_type": 100,
+  "seed": 20260520,
+  "variants": [
+    "context_bge_direct",
+    "context_bge_typeaware",
+    "context_oracle_typeaware",
+    "support_sentences_typeaware",
+    "evidence_triples_direct",
+    "evidence_triples_typeaware",
+    "no_support_typeaware"
+  ],
+  "selected_questions": 400,
+  "expected_records": 2800,
+  "completed_records": 2800,
+  "aggregate": {
+    "byVariant": [
+      {
+        "key": "context_bge_direct",
+        "n": 400,
+        "closure": 0.3175,
+        "em": 0.2625,
+        "f1": 0.309458485958486,
+        "contains": 0.31,
+        "error_rate": 0,
+        "latency_ms_mean": 436.1825
+      },
+      {
+        "key": "context_bge_typeaware",
+        "n": 400,
+        "closure": 0.3175,
+        "em": 0.2775,
+        "f1": 0.31365293040293046,
+        "contains": 0.315,
+        "error_rate": 0,
+        "latency_ms_mean": 399.185
+      },
+      {
+        "key": "context_oracle_typeaware",
+        "n": 400,
+        "closure": 0.33,
+        "em": 0.2975,
+        "f1": 0.3231190476190477,
+        "contains": 0.33,
+        "error_rate": 0,
+        "latency_ms_mean": 335.0175
+      },
+      {
+        "key": "evidence_triples_direct",
+        "n": 400,
+        "closure": 0.755,
+        "em": 0.75,
+        "f1": 0.75125,
+        "contains": 0.755,
+        "error_rate": 0,
+        "latency_ms_mean": 343.62
+      },
+      {
+        "key": "evidence_triples_typeaware",
+        "n": 400,
+        "closure": 0.63,
+        "em": 0.6275,
+        "f1": 0.631359126984127,
+        "contains": 0.63,
+        "error_rate": 0,
+        "latency_ms_mean": 357.26
+      },
+      {
+        "key": "no_support_typeaware",
+        "n": 400,
+        "closure": 0.055,
+        "em": 0.0475,
+        "f1": 0.0586529304029304,
+        "contains": 0.0525,
+        "error_rate": 0,
+        "latency_ms_mean": 300.2925
+      },
+      {
+        "key": "support_sentences_typeaware",
+        "n": 400,
+        "closure": 0.55,
+        "em": 0.48,
+        "f1": 0.5351694000444002,
+        "contains": 0.54,
+        "error_rate": 0,
+        "latency_ms_mean": 313.425
+      }
+    ],
+    "byTypeVariant": [
+      {
+        "key": "bridge_comparison:context_bge_direct",
+        "n": 100,
+        "closure": 0.26,
+        "em": 0.26,
+        "f1": 0.26285714285714284,
+        "contains": 0.26,
+        "error_rate": 0,
+        "latency_ms_mean": 414.4
+      },
+      {
+        "key": "bridge_comparison:context_bge_typeaware",
+        "n": 100,
+        "closure": 0.25,
+        "em": 0.25,
+        "f1": 0.2561904761904762,
+        "contains": 0.25,
+        "error_rate": 0,
+        "latency_ms_mean": 398.52
+      },
+      {
+        "key": "bridge_comparison:context_oracle_typeaware",
+        "n": 100,
+        "closure": 0.27,
+        "em": 0.27,
+        "f1": 0.27,
+        "contains": 0.27,
+        "error_rate": 0,
+        "latency_ms_mean": 346.36
+      },
+      {
+        "key": "bridge_comparison:evidence_triples_direct",
+        "n": 100,
+        "closure": 0.6,
+        "em": 0.6,
+        "f1": 0.605,
+        "contains": 0.6,
+        "error_rate": 0,
+        "latency_ms_mean": 307.31
+      },
+      {
+        "key": "bridge_comparison:evidence_triples_typeaware",
+        "n": 100,
+        "closure": 0.47,
+        "em": 0.47,
+        "f1": 0.48035714285714287,
+        "contains": 0.47,
+        "error_rate": 0,
+        "latency_ms_mean": 385.65
+      },
+      {
+        "key": "bridge_comparison:no_support_typeaware",
+        "n": 100,
+        "closure": 0.02,
+        "em": 0.02,
+        "f1": 0.02,
+        "contains": 0.02,
+        "error_rate": 0,
+        "latency_ms_mean": 282.88
+      },
+      {
+        "key": "bridge_comparison:support_sentences_typeaware",
+        "n": 100,
+        "closure": 0.48,
+        "em": 0.48,
+        "f1": 0.485,
+        "contains": 0.48,
+        "error_rate": 0,
+        "latency_ms_mean": 318.01
+      },
+      {
+        "key": "comparison:context_bge_direct",
+        "n": 100,
+        "closure": 0.51,
+        "em": 0.51,
+        "f1": 0.51,
+        "contains": 0.51,
+        "error_rate": 0,
+        "latency_ms_mean": 396.02
+      },
+      {
+        "key": "comparison:context_bge_typeaware",
+        "n": 100,
+        "closure": 0.67,
+        "em": 0.67,
+        "f1": 0.6845238095238095,
+        "contains": 0.67,
+        "error_rate": 0,
+        "latency_ms_mean": 362.32
+      },
+      {
+        "key": "comparison:context_oracle_typeaware",
+        "n": 100,
+        "closure": 0.68,
+        "em": 0.68,
+        "f1": 0.6895238095238095,
+        "contains": 0.68,
+        "error_rate": 0,
+        "latency_ms_mean": 309.71
+      },
+      {
+        "key": "comparison:evidence_triples_direct",
+        "n": 100,
+        "closure": 0.75,
+        "em": 0.75,
+        "f1": 0.75,
+        "contains": 0.75,
+        "error_rate": 0,
+        "latency_ms_mean": 314.56
+      },
+      {
+        "key": "comparison:evidence_triples_typeaware",
+        "n": 100,
+        "closure": 0.86,
+        "em": 0.86,
+        "f1": 0.8628571428571428,
+        "contains": 0.86,
+        "error_rate": 0,
+        "latency_ms_mean": 383.66
+      },
+      {
+        "key": "comparison:no_support_typeaware",
+        "n": 100,
+        "closure": 0.19,
+        "em": 0.17,
+        "f1": 0.2062783882783883,
+        "contains": 0.19,
+        "error_rate": 0,
+        "latency_ms_mean": 352.32
+      },
+      {
+        "key": "comparison:support_sentences_typeaware",
+        "n": 100,
+        "closure": 0.81,
+        "em": 0.81,
+        "f1": 0.8128571428571427,
+        "contains": 0.81,
+        "error_rate": 0,
+        "latency_ms_mean": 263.32
+      },
+      {
+        "key": "compositional:context_bge_direct",
+        "n": 100,
+        "closure": 0.35,
+        "em": 0.19,
+        "f1": 0.27985714285714286,
+        "contains": 0.35,
+        "error_rate": 0,
+        "latency_ms_mean": 444.87
+      },
+      {
+        "key": "compositional:context_bge_typeaware",
+        "n": 100,
+        "closure": 0.3,
+        "em": 0.18,
+        "f1": 0.25999999999999995,
+        "contains": 0.3,
+        "error_rate": 0,
+        "latency_ms_mean": 402.34
+      },
+      {
+        "key": "compositional:context_oracle_typeaware",
+        "n": 100,
+        "closure": 0.34,
+        "em": 0.21,
+        "f1": 0.2986666666666667,
+        "contains": 0.34,
+        "error_rate": 0,
+        "latency_ms_mean": 347.1
+      },
+      {
+        "key": "compositional:evidence_triples_direct",
+        "n": 100,
+        "closure": 0.93,
+        "em": 0.91,
+        "f1": 0.91,
+        "contains": 0.93,
+        "error_rate": 0,
+        "latency_ms_mean": 316.05
+      },
+      {
+        "key": "compositional:evidence_triples_typeaware",
+        "n": 100,
+        "closure": 0.94,
+        "em": 0.93,
+        "f1": 0.93,
+        "contains": 0.94,
+        "error_rate": 0,
+        "latency_ms_mean": 375.64
+      },
+      {
+        "key": "compositional:no_support_typeaware",
+        "n": 100,
+        "closure": 0,
+        "em": 0,
+        "f1": 0,
+        "contains": 0,
+        "error_rate": 0,
+        "latency_ms_mean": 272.57
+      },
+      {
+        "key": "compositional:support_sentences_typeaware",
+        "n": 100,
+        "closure": 0.57,
+        "em": 0.4,
+        "f1": 0.5032380952380952,
+        "contains": 0.57,
+        "error_rate": 0,
+        "latency_ms_mean": 295.52
+      },
+      {
+        "key": "inference:context_bge_direct",
+        "n": 100,
+        "closure": 0.15,
+        "em": 0.09,
+        "f1": 0.18511965811965816,
+        "contains": 0.12,
+        "error_rate": 0,
+        "latency_ms_mean": 489.44
+      },
+      {
+        "key": "inference:context_bge_typeaware",
+        "n": 100,
+        "closure": 0.05,
+        "em": 0.01,
+        "f1": 0.05389743589743589,
+        "contains": 0.04,
+        "error_rate": 0,
+        "latency_ms_mean": 433.56
+      },
+      {
+        "key": "inference:context_oracle_typeaware",
+        "n": 100,
+        "closure": 0.03,
+        "em": 0.03,
+        "f1": 0.03428571428571429,
+        "contains": 0.03,
+        "error_rate": 0,
+        "latency_ms_mean": 336.9
+      },
+      {
+        "key": "inference:evidence_triples_direct",
+        "n": 100,
+        "closure": 0.74,
+        "em": 0.74,
+        "f1": 0.74,
+        "contains": 0.74,
+        "error_rate": 0,
+        "latency_ms_mean": 436.56
+      },
+      {
+        "key": "inference:evidence_triples_typeaware",
+        "n": 100,
+        "closure": 0.25,
+        "em": 0.25,
+        "f1": 0.25222222222222224,
+        "contains": 0.25,
+        "error_rate": 0,
+        "latency_ms_mean": 284.09
+      },
+      {
+        "key": "inference:no_support_typeaware",
+        "n": 100,
+        "closure": 0.01,
+        "em": 0,
+        "f1": 0.008333333333333333,
+        "contains": 0,
+        "error_rate": 0,
+        "latency_ms_mean": 293.4
+      },
+      {
+        "key": "inference:support_sentences_typeaware",
+        "n": 100,
+        "closure": 0.34,
+        "em": 0.23,
+        "f1": 0.3395823620823621,
+        "contains": 0.3,
+        "error_rate": 0,
+        "latency_ms_mean": 376.85
+      }
+    ],
+    "byAnswerClassVariant": [
+      {
+        "key": "long_answer:context_bge_direct",
+        "n": 96,
+        "closure": 0.3645833333333333,
+        "em": 0.3333333333333333,
+        "f1": 0.386193783068783,
+        "contains": 0.34375,
+        "error_rate": 0,
+        "latency_ms_mean": 502.5625
+      },
+      {
+        "key": "long_answer:context_bge_typeaware",
+        "n": 96,
+        "closure": 0.25,
+        "em": 0.25,
+        "f1": 0.2594246031746032,
+        "contains": 0.25,
+        "error_rate": 0,
+        "latency_ms_mean": 425.34375
+      },
+      {
+        "key": "long_answer:context_oracle_typeaware",
+        "n": 96,
+        "closure": 0.2708333333333333,
+        "em": 0.2708333333333333,
+        "f1": 0.28075396825396826,
+        "contains": 0.2708333333333333,
+        "error_rate": 0,
+        "latency_ms_mean": 355.7604166666667
+      },
+      {
+        "key": "long_answer:evidence_triples_direct",
+        "n": 96,
+        "closure": 0.8333333333333334,
+        "em": 0.8333333333333334,
+        "f1": 0.8333333333333334,
+        "contains": 0.8333333333333334,
+        "error_rate": 0,
+        "latency_ms_mean": 463.21875
+      },
+      {
+        "key": "long_answer:evidence_triples_typeaware",
+        "n": 96,
+        "closure": 0.4375,
+        "em": 0.4375,
+        "f1": 0.44345238095238093,
+        "contains": 0.4375,
+        "error_rate": 0,
+        "latency_ms_mean": 382.7395833333333
+      },
+      {
+        "key": "long_answer:no_support_typeaware",
+        "n": 96,
+        "closure": 0.07291666666666667,
+        "em": 0.052083333333333336,
+        "f1": 0.0735042735042735,
+        "contains": 0.07291666666666667,
+        "error_rate": 0,
+        "latency_ms_mean": 285.9166666666667
+      },
+      {
+        "key": "long_answer:support_sentences_typeaware",
+        "n": 96,
+        "closure": 0.5104166666666666,
+        "em": 0.46875,
+        "f1": 0.5271850256225256,
+        "contains": 0.4895833333333333,
+        "error_rate": 0,
+        "latency_ms_mean": 370.9166666666667
+      },
+      {
+        "key": "mixed_numeric_text:context_bge_direct",
+        "n": 30,
+        "closure": 0.3333333333333333,
+        "em": 0.3,
+        "f1": 0.3663247863247864,
+        "contains": 0.3,
+        "error_rate": 0,
+        "latency_ms_mean": 522.6666666666666
+      },
+      {
+        "key": "mixed_numeric_text:context_bge_typeaware",
+        "n": 30,
+        "closure": 0.3,
+        "em": 0.26666666666666666,
+        "f1": 0.3441025641025641,
+        "contains": 0.26666666666666666,
+        "error_rate": 0,
+        "latency_ms_mean": 481.6
+      },
+      {
+        "key": "mixed_numeric_text:context_oracle_typeaware",
+        "n": 30,
+        "closure": 0.13333333333333333,
+        "em": 0.13333333333333333,
+        "f1": 0.21095238095238097,
+        "contains": 0.13333333333333333,
+        "error_rate": 0,
+        "latency_ms_mean": 403.96666666666664
+      },
+      {
+        "key": "mixed_numeric_text:evidence_triples_direct",
+        "n": 30,
+        "closure": 0.8333333333333334,
+        "em": 0.8333333333333334,
+        "f1": 0.8333333333333334,
+        "contains": 0.8333333333333334,
+        "error_rate": 0,
+        "latency_ms_mean": 504.3333333333333
+      },
+      {
+        "key": "mixed_numeric_text:evidence_triples_typeaware",
+        "n": 30,
+        "closure": 0.5333333333333333,
+        "em": 0.5333333333333333,
+        "f1": 0.5416666666666666,
+        "contains": 0.5333333333333333,
+        "error_rate": 0,
+        "latency_ms_mean": 426.5
+      },
+      {
+        "key": "mixed_numeric_text:no_support_typeaware",
+        "n": 30,
+        "closure": 0.03333333333333333,
+        "em": 0,
+        "f1": 0.02777777777777778,
+        "contains": 0,
+        "error_rate": 0,
+        "latency_ms_mean": 318.6666666666667
+      },
+      {
+        "key": "mixed_numeric_text:support_sentences_typeaware",
+        "n": 30,
+        "closure": 0.6,
+        "em": 0.5333333333333333,
+        "f1": 0.626007326007326,
+        "contains": 0.5666666666666667,
+        "error_rate": 0,
+        "latency_ms_mean": 403.8333333333333
+      },
+      {
+        "key": "numeric_only:context_bge_direct",
+        "n": 3,
+        "closure": 0,
+        "em": 0,
+        "f1": 0,
+        "contains": 0,
+        "error_rate": 0,
+        "latency_ms_mean": 340
+      },
+      {
+        "key": "numeric_only:context_bge_typeaware",
+        "n": 3,
+        "closure": 0,
+        "em": 0,
+        "f1": 0,
+        "contains": 0,
+        "error_rate": 0,
+        "latency_ms_mean": 381.3333333333333
+      },
+      {
+        "key": "numeric_only:context_oracle_typeaware",
+        "n": 3,
+        "closure": 0.3333333333333333,
+        "em": 0,
+        "f1": 0.16666666666666666,
+        "contains": 0.3333333333333333,
+        "error_rate": 0,
+        "latency_ms_mean": 561.3333333333334
+      },
+      {
+        "key": "numeric_only:evidence_triples_direct",
+        "n": 3,
+        "closure": 0.3333333333333333,
+        "em": 0.3333333333333333,
+        "f1": 0.3333333333333333,
+        "contains": 0.3333333333333333,
+        "error_rate": 0,
+        "latency_ms_mean": 288
+      },
+      {
+        "key": "numeric_only:evidence_triples_typeaware",
+        "n": 3,
+        "closure": 0.6666666666666666,
+        "em": 0.6666666666666666,
+        "f1": 0.6666666666666666,
+        "contains": 0.6666666666666666,
+        "error_rate": 0,
+        "latency_ms_mean": 324
+      },
+      {
+        "key": "numeric_only:no_support_typeaware",
+        "n": 3,
+        "closure": 0,
+        "em": 0,
+        "f1": 0,
+        "contains": 0,
+        "error_rate": 0,
+        "latency_ms_mean": 341.3333333333333
+      },
+      {
+        "key": "numeric_only:support_sentences_typeaware",
+        "n": 3,
+        "closure": 0.3333333333333333,
+        "em": 0.3333333333333333,
+        "f1": 0.3333333333333333,
+        "contains": 0.3333333333333333,
+        "error_rate": 0,
+        "latency_ms_mean": 382.6666666666667
+      },
+      {
+        "key": "short_entity:context_bge_direct",
+        "n": 160,
+        "closure": 0.38125,
+        "em": 0.35,
+        "f1": 0.3839583333333333,
+        "contains": 0.38125,
+        "error_rate": 0,
+        "latency_ms_mean": 420.975
+      },
+      {
+        "key": "short_entity:context_bge_typeaware",
+        "n": 160,
+        "closure": 0.3625,
+        "em": 0.325,
+        "f1": 0.3670833333333333,
+        "contains": 0.3625,
+        "error_rate": 0,
+        "latency_ms_mean": 398.10625
+      },
+      {
+        "key": "short_entity:context_oracle_typeaware",
+        "n": 160,
+        "closure": 0.36875,
+        "em": 0.35625,
+        "f1": 0.3654166666666666,
+        "contains": 0.36875,
+        "error_rate": 0,
+        "latency_ms_mean": 333.8375
+      },
+      {
+        "key": "short_entity:evidence_triples_direct",
+        "n": 160,
+        "closure": 0.80625,
+        "em": 0.80625,
+        "f1": 0.809375,
+        "contains": 0.80625,
+        "error_rate": 0,
+        "latency_ms_mean": 315.65
+      },
+      {
+        "key": "short_entity:evidence_triples_typeaware",
+        "n": 160,
+        "closure": 0.625,
+        "em": 0.625,
+        "f1": 0.6295138888888889,
+        "contains": 0.625,
+        "error_rate": 0,
+        "latency_ms_mean": 369.0375
+      },
+      {
+        "key": "short_entity:no_support_typeaware",
+        "n": 160,
+        "closure": 0.05625,
+        "em": 0.05625,
+        "f1": 0.06607142857142857,
+        "contains": 0.05625,
+        "error_rate": 0,
+        "latency_ms_mean": 282.875
+      },
+      {
+        "key": "short_entity:support_sentences_typeaware",
+        "n": 160,
+        "closure": 0.575,
+        "em": 0.5125,
+        "f1": 0.560486111111111,
+        "contains": 0.56875,
+        "error_rate": 0,
+        "latency_ms_mean": 311.9375
+      },
+      {
+        "key": "single_token_entity:context_bge_direct",
+        "n": 66,
+        "closure": 0.3181818181818182,
+        "em": 0.12121212121212122,
+        "f1": 0.21645021645021645,
+        "contains": 0.3181818181818182,
+        "error_rate": 0,
+        "latency_ms_mean": 428.25757575757575
+      },
+      {
+        "key": "single_token_entity:context_bge_typeaware",
+        "n": 66,
+        "closure": 0.30303030303030304,
+        "em": 0.16666666666666666,
+        "f1": 0.23484848484848486,
+        "contains": 0.30303030303030304,
+        "error_rate": 0,
+        "latency_ms_mean": 388.09090909090907
+      },
+      {
+        "key": "single_token_entity:context_oracle_typeaware",
+        "n": 66,
+        "closure": 0.3787878787878788,
+        "em": 0.22727272727272727,
+        "f1": 0.303030303030303,
+        "contains": 0.3787878787878788,
+        "error_rate": 0,
+        "latency_ms_mean": 314.1212121212121
+      },
+      {
+        "key": "single_token_entity:evidence_triples_direct",
+        "n": 66,
+        "closure": 0.9393939393939394,
+        "em": 0.9090909090909091,
+        "f1": 0.9090909090909091,
+        "contains": 0.9393939393939394,
+        "error_rate": 0,
+        "latency_ms_mean": 259.74242424242425
+      },
+      {
+        "key": "single_token_entity:evidence_triples_typeaware",
+        "n": 66,
+        "closure": 0.8484848484848485,
+        "em": 0.8333333333333334,
+        "f1": 0.8333333333333334,
+        "contains": 0.8484848484848485,
+        "error_rate": 0,
+        "latency_ms_mean": 321.1666666666667
+      },
+      {
+        "key": "single_token_entity:no_support_typeaware",
+        "n": 66,
+        "closure": 0.030303030303030304,
+        "em": 0.030303030303030304,
+        "f1": 0.030303030303030304,
+        "contains": 0.030303030303030304,
+        "error_rate": 0,
+        "latency_ms_mean": 308.1212121212121
+      },
+      {
+        "key": "single_token_entity:support_sentences_typeaware",
+        "n": 66,
+        "closure": 0.48484848484848486,
+        "em": 0.30303030303030304,
+        "f1": 0.393939393939394,
+        "contains": 0.48484848484848486,
+        "error_rate": 0,
+        "latency_ms_mean": 251.27272727272728
+      },
+      {
+        "key": "yes_no:context_bge_direct",
+        "n": 45,
+        "closure": 0,
+        "em": 0,
+        "f1": 0,
+        "contains": 0,
+        "error_rate": 0,
+        "latency_ms_mean": 309.02222222222224
+      },
+      {
+        "key": "yes_no:context_bge_typeaware",
+        "n": 45,
+        "closure": 0.35555555555555557,
+        "em": 0.35555555555555557,
+        "f1": 0.35555555555555557,
+        "contains": 0.35555555555555557,
+        "error_rate": 0,
+        "latency_ms_mean": 309.73333333333335
+      },
+      {
+        "key": "yes_no:context_oracle_typeaware",
+        "n": 45,
+        "closure": 0.37777777777777777,
+        "em": 0.37777777777777777,
+        "f1": 0.37777777777777777,
+        "contains": 0.37777777777777777,
+        "error_rate": 0,
+        "latency_ms_mean": 264.55555555555554
+      },
+      {
+        "key": "yes_no:evidence_triples_direct",
+        "n": 45,
+        "closure": 0.1111111111111111,
+        "em": 0.1111111111111111,
+        "f1": 0.1111111111111111,
+        "contains": 0.1111111111111111,
+        "error_rate": 0,
+        "latency_ms_mean": 207.51111111111112
+      },
+      {
+        "key": "yes_no:evidence_triples_typeaware",
+        "n": 45,
+        "closure": 0.8,
+        "em": 0.8,
+        "f1": 0.8,
+        "contains": 0.8,
+        "error_rate": 0,
+        "latency_ms_mean": 270.02222222222224
+      },
+      {
+        "key": "yes_no:no_support_typeaware",
+        "n": 45,
+        "closure": 0.06666666666666667,
+        "em": 0.06666666666666667,
+        "f1": 0.06666666666666667,
+        "contains": 0.06666666666666667,
+        "error_rate": 0,
+        "latency_ms_mean": 366.4222222222222
+      },
+      {
+        "key": "yes_no:support_sentences_typeaware",
+        "n": 45,
+        "closure": 0.6222222222222222,
+        "em": 0.6222222222222222,
+        "f1": 0.6222222222222222,
+        "contains": 0.6222222222222222,
+        "error_rate": 0,
+        "latency_ms_mean": 222.33333333333334
+      }
+    ],
+    "pairwise": [
+      {
+        "a": "context_bge_direct",
+        "b": "context_bge_typeaware",
+        "n": 400,
+        "delta": 0,
+        "aOnly": 41,
+        "bOnly": 41,
+        "both": 86,
+        "neither": 232
+      },
+      {
+        "a": "context_bge_direct",
+        "b": "context_oracle_typeaware",
+        "n": 400,
+        "delta": -0.0125,
+        "aOnly": 49,
+        "bOnly": 54,
+        "both": 78,
+        "neither": 219
+      },
+      {
+        "a": "context_bge_direct",
+        "b": "evidence_triples_direct",
+        "n": 400,
+        "delta": -0.4375,
+        "aOnly": 8,
+        "bOnly": 183,
+        "both": 119,
+        "neither": 90
+      },
+      {
+        "a": "context_bge_direct",
+        "b": "evidence_triples_typeaware",
+        "n": 400,
+        "delta": -0.3125,
+        "aOnly": 36,
+        "bOnly": 161,
+        "both": 91,
+        "neither": 112
+      },
+      {
+        "a": "context_bge_direct",
+        "b": "no_support_typeaware",
+        "n": 400,
+        "delta": 0.2625,
+        "aOnly": 111,
+        "bOnly": 6,
+        "both": 16,
+        "neither": 267
+      },
+      {
+        "a": "context_bge_direct",
+        "b": "support_sentences_typeaware",
+        "n": 400,
+        "delta": -0.2325,
+        "aOnly": 30,
+        "bOnly": 123,
+        "both": 97,
+        "neither": 150
+      },
+      {
+        "a": "context_bge_typeaware",
+        "b": "context_oracle_typeaware",
+        "n": 400,
+        "delta": -0.0125,
+        "aOnly": 32,
+        "bOnly": 37,
+        "both": 95,
+        "neither": 236
+      },
+      {
+        "a": "context_bge_typeaware",
+        "b": "evidence_triples_direct",
+        "n": 400,
+        "delta": -0.4375,
+        "aOnly": 22,
+        "bOnly": 197,
+        "both": 105,
+        "neither": 76
+      },
+      {
+        "a": "context_bge_typeaware",
+        "b": "evidence_triples_typeaware",
+        "n": 400,
+        "delta": -0.3125,
+        "aOnly": 22,
+        "bOnly": 147,
+        "both": 105,
+        "neither": 126
+      },
+      {
+        "a": "context_bge_typeaware",
+        "b": "no_support_typeaware",
+        "n": 400,
+        "delta": 0.2625,
+        "aOnly": 107,
+        "bOnly": 2,
+        "both": 20,
+        "neither": 271
+      },
+      {
+        "a": "context_bge_typeaware",
+        "b": "support_sentences_typeaware",
+        "n": 400,
+        "delta": -0.2325,
+        "aOnly": 15,
+        "bOnly": 108,
+        "both": 112,
+        "neither": 165
+      },
+      {
+        "a": "context_oracle_typeaware",
+        "b": "evidence_triples_direct",
+        "n": 400,
+        "delta": -0.425,
+        "aOnly": 28,
+        "bOnly": 198,
+        "both": 104,
+        "neither": 70
+      },
+      {
+        "a": "context_oracle_typeaware",
+        "b": "evidence_triples_typeaware",
+        "n": 400,
+        "delta": -0.3,
+        "aOnly": 22,
+        "bOnly": 142,
+        "both": 110,
+        "neither": 126
+      },
+      {
+        "a": "context_oracle_typeaware",
+        "b": "no_support_typeaware",
+        "n": 400,
+        "delta": 0.275,
+        "aOnly": 114,
+        "bOnly": 4,
+        "both": 18,
+        "neither": 264
+      },
+      {
+        "a": "context_oracle_typeaware",
+        "b": "support_sentences_typeaware",
+        "n": 400,
+        "delta": -0.22,
+        "aOnly": 20,
+        "bOnly": 108,
+        "both": 112,
+        "neither": 160
+      },
+      {
+        "a": "evidence_triples_direct",
+        "b": "evidence_triples_typeaware",
+        "n": 400,
+        "delta": 0.125,
+        "aOnly": 92,
+        "bOnly": 42,
+        "both": 210,
+        "neither": 56
+      },
+      {
+        "a": "evidence_triples_direct",
+        "b": "no_support_typeaware",
+        "n": 400,
+        "delta": 0.7,
+        "aOnly": 284,
+        "bOnly": 4,
+        "both": 18,
+        "neither": 94
+      },
+      {
+        "a": "evidence_triples_direct",
+        "b": "support_sentences_typeaware",
+        "n": 400,
+        "delta": 0.205,
+        "aOnly": 123,
+        "bOnly": 41,
+        "both": 179,
+        "neither": 57
+      },
+      {
+        "a": "evidence_triples_typeaware",
+        "b": "no_support_typeaware",
+        "n": 400,
+        "delta": 0.575,
+        "aOnly": 232,
+        "bOnly": 2,
+        "both": 20,
+        "neither": 146
+      },
+      {
+        "a": "evidence_triples_typeaware",
+        "b": "support_sentences_typeaware",
+        "n": 400,
+        "delta": 0.08,
+        "aOnly": 82,
+        "bOnly": 50,
+        "both": 170,
+        "neither": 98
+      },
+      {
+        "a": "no_support_typeaware",
+        "b": "support_sentences_typeaware",
+        "n": 400,
+        "delta": -0.495,
+        "aOnly": 2,
+        "bOnly": 200,
+        "both": 20,
+        "neither": 178
+      }
+    ]
+  },
+  "interpretation_boundary": [
+    "2Wiki prompt/schema ablation",
+    "answer-side closure only",
+    "not internal evidence-use proof",
+    "no vLLM mutation, no EPKV hook"
+  ]
+}

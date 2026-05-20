@@ -114,11 +114,21 @@ R3H diagnostic:
 - BGE improves SF sentence rank mean **2.67 → 1.65**.
 - `natural_success_oracle_fail`: **302** cases.
 - By type: `comparison` shows BGE gain (**41.7% → 50.5%**), but `bridge_comparison` and `compositional` do not.
-- `yes_no` is near-zero closure under this prompt/eval setup.
+- `yes_no` is near-zero closure under the R3G prompt/eval setup.
 
-Interpretation: HotpotQA's rank/reranker story does not generalize cleanly to 2Wiki under the same prompt/harness. The broader claim should remain dataset-sensitive and type/prompt/schema-sensitive.
+R3I prompt/schema ablation on a stratified **400-question** 2Wiki sample:
 
-Public packages: [RealRAG 2Wiki R3G](bench-public/evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md), [RealRAG 2Wiki R3H](bench-public/evidence-utilization/REALRAG-2WIKI-R3H-DIAGNOSTIC.md)
+- `context_bge_direct`: **31.8%** closure.
+- `context_bge_typeaware`: **31.8%** — no global gain.
+- `context_oracle_typeaware`: **33.0%** — close to BGE paragraph baseline.
+- `support_sentences_typeaware`: **55.0%** — **+23.3 pp** over paragraph BGE, CI **+17.5 to +29.0 pp**.
+- `evidence_triples_direct`: **75.5%** — gold structured upper bound, **not** a retrieval claim.
+- `no_support_typeaware`: **5.5%**.
+- Yes/no: `context_bge_direct` **0.0%**, `context_bge_typeaware` **35.6%**, `support_sentences_typeaware` **62.2%**, `evidence_triples_typeaware` **80.0%**.
+
+Interpretation: HotpotQA's rank/reranker story does not generalize cleanly to 2Wiki under the same paragraph prompt/harness. The broader claim should remain dataset-sensitive and type/prompt/schema-sensitive. For 2Wiki, schema fit and evidence compression dominate paragraph rank once support is already present.
+
+Public packages: [RealRAG 2Wiki R3G](bench-public/evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md), [RealRAG 2Wiki R3H](bench-public/evidence-utilization/REALRAG-2WIKI-R3H-DIAGNOSTIC.md), [RealRAG 2Wiki R3I](bench-public/evidence-utilization/REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md)
 
 ## 1c. Synthetic fixtures isolate stronger rank/decoy effects
 

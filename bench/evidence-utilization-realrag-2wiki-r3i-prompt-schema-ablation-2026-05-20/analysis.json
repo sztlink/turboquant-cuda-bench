@@ -1,0 +1,599 @@
+{
+  "schema": "realrag.2wiki.r3i.analysis.v1",
+  "key_pairwise": [
+    {
+      "a": "context_bge_typeaware",
+      "b": "context_bge_direct",
+      "n": 400,
+      "delta": 0,
+      "ci": {
+        "lo": -0.045,
+        "hi": 0.045
+      },
+      "aOnly": 41,
+      "bOnly": 41,
+      "both": 86,
+      "neither": 232
+    },
+    {
+      "a": "context_oracle_typeaware",
+      "b": "context_bge_direct",
+      "n": 400,
+      "delta": 0.0125,
+      "ci": {
+        "lo": -0.0375,
+        "hi": 0.0625
+      },
+      "aOnly": 54,
+      "bOnly": 49,
+      "both": 78,
+      "neither": 219
+    },
+    {
+      "a": "support_sentences_typeaware",
+      "b": "context_bge_direct",
+      "n": 400,
+      "delta": 0.2325,
+      "ci": {
+        "lo": 0.175,
+        "hi": 0.29
+      },
+      "aOnly": 123,
+      "bOnly": 30,
+      "both": 97,
+      "neither": 150
+    },
+    {
+      "a": "evidence_triples_direct",
+      "b": "context_bge_direct",
+      "n": 400,
+      "delta": 0.4375,
+      "ci": {
+        "lo": 0.385,
+        "hi": 0.49
+      },
+      "aOnly": 183,
+      "bOnly": 8,
+      "both": 119,
+      "neither": 90
+    },
+    {
+      "a": "evidence_triples_typeaware",
+      "b": "context_bge_direct",
+      "n": 400,
+      "delta": 0.3125,
+      "ci": {
+        "lo": 0.2525,
+        "hi": 0.375
+      },
+      "aOnly": 161,
+      "bOnly": 36,
+      "both": 91,
+      "neither": 112
+    },
+    {
+      "a": "support_sentences_typeaware",
+      "b": "no_support_typeaware",
+      "n": 400,
+      "delta": 0.495,
+      "ci": {
+        "lo": 0.445,
+        "hi": 0.5425
+      },
+      "aOnly": 200,
+      "bOnly": 2,
+      "both": 20,
+      "neither": 178
+    },
+    {
+      "a": "evidence_triples_direct",
+      "b": "no_support_typeaware",
+      "n": 400,
+      "delta": 0.7,
+      "ci": {
+        "lo": 0.6525,
+        "hi": 0.7475
+      },
+      "aOnly": 284,
+      "bOnly": 4,
+      "both": 18,
+      "neither": 94
+    },
+    {
+      "a": "evidence_triples_direct",
+      "b": "support_sentences_typeaware",
+      "n": 400,
+      "delta": 0.205,
+      "ci": {
+        "lo": 0.1475,
+        "hi": 0.2625
+      },
+      "aOnly": 123,
+      "bOnly": 41,
+      "both": 179,
+      "neither": 57
+    },
+    {
+      "a": "evidence_triples_typeaware",
+      "b": "evidence_triples_direct",
+      "n": 400,
+      "delta": -0.125,
+      "ci": {
+        "lo": -0.1825,
+        "hi": -0.07
+      },
+      "aOnly": 42,
+      "bOnly": 92,
+      "both": 210,
+      "neither": 56
+    }
+  ],
+  "by_variant": {
+    "context_bge_direct": {
+      "n": 400,
+      "closure": 0.3175,
+      "em": 0.2625,
+      "f1": 0.309458485958486
+    },
+    "context_bge_typeaware": {
+      "n": 400,
+      "closure": 0.3175,
+      "em": 0.2775,
+      "f1": 0.31365293040293046
+    },
+    "context_oracle_typeaware": {
+      "n": 400,
+      "closure": 0.33,
+      "em": 0.2975,
+      "f1": 0.3231190476190477
+    },
+    "evidence_triples_direct": {
+      "n": 400,
+      "closure": 0.755,
+      "em": 0.75,
+      "f1": 0.75125
+    },
+    "evidence_triples_typeaware": {
+      "n": 400,
+      "closure": 0.63,
+      "em": 0.6275,
+      "f1": 0.631359126984127
+    },
+    "no_support_typeaware": {
+      "n": 400,
+      "closure": 0.055,
+      "em": 0.0475,
+      "f1": 0.0586529304029304
+    },
+    "support_sentences_typeaware": {
+      "n": 400,
+      "closure": 0.55,
+      "em": 0.48,
+      "f1": 0.5351694000444002
+    }
+  },
+  "by_type_variant": {
+    "bridge_comparison:context_bge_direct": {
+      "n": 100,
+      "closure": 0.26,
+      "em": 0.26,
+      "f1": 0.26285714285714284
+    },
+    "bridge_comparison:context_bge_typeaware": {
+      "n": 100,
+      "closure": 0.25,
+      "em": 0.25,
+      "f1": 0.2561904761904762
+    },
+    "bridge_comparison:context_oracle_typeaware": {
+      "n": 100,
+      "closure": 0.27,
+      "em": 0.27,
+      "f1": 0.27
+    },
+    "bridge_comparison:evidence_triples_direct": {
+      "n": 100,
+      "closure": 0.6,
+      "em": 0.6,
+      "f1": 0.605
+    },
+    "bridge_comparison:evidence_triples_typeaware": {
+      "n": 100,
+      "closure": 0.47,
+      "em": 0.47,
+      "f1": 0.48035714285714287
+    },
+    "bridge_comparison:no_support_typeaware": {
+      "n": 100,
+      "closure": 0.02,
+      "em": 0.02,
+      "f1": 0.02
+    },
+    "bridge_comparison:support_sentences_typeaware": {
+      "n": 100,
+      "closure": 0.48,
+      "em": 0.48,
+      "f1": 0.485
+    },
+    "comparison:context_bge_direct": {
+      "n": 100,
+      "closure": 0.51,
+      "em": 0.51,
+      "f1": 0.51
+    },
+    "comparison:context_bge_typeaware": {
+      "n": 100,
+      "closure": 0.67,
+      "em": 0.67,
+      "f1": 0.6845238095238095
+    },
+    "comparison:context_oracle_typeaware": {
+      "n": 100,
+      "closure": 0.68,
+      "em": 0.68,
+      "f1": 0.6895238095238095
+    },
+    "comparison:evidence_triples_direct": {
+      "n": 100,
+      "closure": 0.75,
+      "em": 0.75,
+      "f1": 0.75
+    },
+    "comparison:evidence_triples_typeaware": {
+      "n": 100,
+      "closure": 0.86,
+      "em": 0.86,
+      "f1": 0.8628571428571428
+    },
+    "comparison:no_support_typeaware": {
+      "n": 100,
+      "closure": 0.19,
+      "em": 0.17,
+      "f1": 0.2062783882783883
+    },
+    "comparison:support_sentences_typeaware": {
+      "n": 100,
+      "closure": 0.81,
+      "em": 0.81,
+      "f1": 0.8128571428571427
+    },
+    "compositional:context_bge_direct": {
+      "n": 100,
+      "closure": 0.35,
+      "em": 0.19,
+      "f1": 0.27985714285714286
+    },
+    "compositional:context_bge_typeaware": {
+      "n": 100,
+      "closure": 0.3,
+      "em": 0.18,
+      "f1": 0.25999999999999995
+    },
+    "compositional:context_oracle_typeaware": {
+      "n": 100,
+      "closure": 0.34,
+      "em": 0.21,
+      "f1": 0.2986666666666667
+    },
+    "compositional:evidence_triples_direct": {
+      "n": 100,
+      "closure": 0.93,
+      "em": 0.91,
+      "f1": 0.91
+    },
+    "compositional:evidence_triples_typeaware": {
+      "n": 100,
+      "closure": 0.94,
+      "em": 0.93,
+      "f1": 0.93
+    },
+    "compositional:no_support_typeaware": {
+      "n": 100,
+      "closure": 0,
+      "em": 0,
+      "f1": 0
+    },
+    "compositional:support_sentences_typeaware": {
+      "n": 100,
+      "closure": 0.57,
+      "em": 0.4,
+      "f1": 0.5032380952380952
+    },
+    "inference:context_bge_direct": {
+      "n": 100,
+      "closure": 0.15,
+      "em": 0.09,
+      "f1": 0.18511965811965816
+    },
+    "inference:context_bge_typeaware": {
+      "n": 100,
+      "closure": 0.05,
+      "em": 0.01,
+      "f1": 0.05389743589743589
+    },
+    "inference:context_oracle_typeaware": {
+      "n": 100,
+      "closure": 0.03,
+      "em": 0.03,
+      "f1": 0.03428571428571429
+    },
+    "inference:evidence_triples_direct": {
+      "n": 100,
+      "closure": 0.74,
+      "em": 0.74,
+      "f1": 0.74
+    },
+    "inference:evidence_triples_typeaware": {
+      "n": 100,
+      "closure": 0.25,
+      "em": 0.25,
+      "f1": 0.25222222222222224
+    },
+    "inference:no_support_typeaware": {
+      "n": 100,
+      "closure": 0.01,
+      "em": 0,
+      "f1": 0.008333333333333333
+    },
+    "inference:support_sentences_typeaware": {
+      "n": 100,
+      "closure": 0.34,
+      "em": 0.23,
+      "f1": 0.3395823620823621
+    }
+  },
+  "by_answer_class_variant": {
+    "long_answer:context_bge_direct": {
+      "n": 96,
+      "closure": 0.3645833333333333,
+      "em": 0.3333333333333333,
+      "f1": 0.386193783068783
+    },
+    "long_answer:context_bge_typeaware": {
+      "n": 96,
+      "closure": 0.25,
+      "em": 0.25,
+      "f1": 0.2594246031746032
+    },
+    "long_answer:context_oracle_typeaware": {
+      "n": 96,
+      "closure": 0.2708333333333333,
+      "em": 0.2708333333333333,
+      "f1": 0.28075396825396826
+    },
+    "long_answer:evidence_triples_direct": {
+      "n": 96,
+      "closure": 0.8333333333333334,
+      "em": 0.8333333333333334,
+      "f1": 0.8333333333333334
+    },
+    "long_answer:evidence_triples_typeaware": {
+      "n": 96,
+      "closure": 0.4375,
+      "em": 0.4375,
+      "f1": 0.44345238095238093
+    },
+    "long_answer:no_support_typeaware": {
+      "n": 96,
+      "closure": 0.07291666666666667,
+      "em": 0.052083333333333336,
+      "f1": 0.0735042735042735
+    },
+    "long_answer:support_sentences_typeaware": {
+      "n": 96,
+      "closure": 0.5104166666666666,
+      "em": 0.46875,
+      "f1": 0.5271850256225256
+    },
+    "mixed_numeric_text:context_bge_direct": {
+      "n": 30,
+      "closure": 0.3333333333333333,
+      "em": 0.3,
+      "f1": 0.3663247863247864
+    },
+    "mixed_numeric_text:context_bge_typeaware": {
+      "n": 30,
+      "closure": 0.3,
+      "em": 0.26666666666666666,
+      "f1": 0.3441025641025641
+    },
+    "mixed_numeric_text:context_oracle_typeaware": {
+      "n": 30,
+      "closure": 0.13333333333333333,
+      "em": 0.13333333333333333,
+      "f1": 0.21095238095238097
+    },
+    "mixed_numeric_text:evidence_triples_direct": {
+      "n": 30,
+      "closure": 0.8333333333333334,
+      "em": 0.8333333333333334,
+      "f1": 0.8333333333333334
+    },
+    "mixed_numeric_text:evidence_triples_typeaware": {
+      "n": 30,
+      "closure": 0.5333333333333333,
+      "em": 0.5333333333333333,
+      "f1": 0.5416666666666666
+    },
+    "mixed_numeric_text:no_support_typeaware": {
+      "n": 30,
+      "closure": 0.03333333333333333,
+      "em": 0,
+      "f1": 0.02777777777777778
+    },
+    "mixed_numeric_text:support_sentences_typeaware": {
+      "n": 30,
+      "closure": 0.6,
+      "em": 0.5333333333333333,
+      "f1": 0.626007326007326
+    },
+    "numeric_only:context_bge_direct": {
+      "n": 3,
+      "closure": 0,
+      "em": 0,
+      "f1": 0
+    },
+    "numeric_only:context_bge_typeaware": {
+      "n": 3,
+      "closure": 0,
+      "em": 0,
+      "f1": 0
+    },
+    "numeric_only:context_oracle_typeaware": {
+      "n": 3,
+      "closure": 0.3333333333333333,
+      "em": 0,
+      "f1": 0.16666666666666666
+    },
+    "numeric_only:evidence_triples_direct": {
+      "n": 3,
+      "closure": 0.3333333333333333,
+      "em": 0.3333333333333333,
+      "f1": 0.3333333333333333
+    },
+    "numeric_only:evidence_triples_typeaware": {
+      "n": 3,
+      "closure": 0.6666666666666666,
+      "em": 0.6666666666666666,
+      "f1": 0.6666666666666666
+    },
+    "numeric_only:no_support_typeaware": {
+      "n": 3,
+      "closure": 0,
+      "em": 0,
+      "f1": 0
+    },
+    "numeric_only:support_sentences_typeaware": {
+      "n": 3,
+      "closure": 0.3333333333333333,
+      "em": 0.3333333333333333,
+      "f1": 0.3333333333333333
+    },
+    "short_entity:context_bge_direct": {
+      "n": 160,
+      "closure": 0.38125,
+      "em": 0.35,
+      "f1": 0.3839583333333333
+    },
+    "short_entity:context_bge_typeaware": {
+      "n": 160,
+      "closure": 0.3625,
+      "em": 0.325,
+      "f1": 0.3670833333333333
+    },
+    "short_entity:context_oracle_typeaware": {
+      "n": 160,
+      "closure": 0.36875,
+      "em": 0.35625,
+      "f1": 0.3654166666666666
+    },
+    "short_entity:evidence_triples_direct": {
+      "n": 160,
+      "closure": 0.80625,
+      "em": 0.80625,
+      "f1": 0.809375
+    },
+    "short_entity:evidence_triples_typeaware": {
+      "n": 160,
+      "closure": 0.625,
+      "em": 0.625,
+      "f1": 0.6295138888888889
+    },
+    "short_entity:no_support_typeaware": {
+      "n": 160,
+      "closure": 0.05625,
+      "em": 0.05625,
+      "f1": 0.06607142857142857
+    },
+    "short_entity:support_sentences_typeaware": {
+      "n": 160,
+      "closure": 0.575,
+      "em": 0.5125,
+      "f1": 0.560486111111111
+    },
+    "single_token_entity:context_bge_direct": {
+      "n": 66,
+      "closure": 0.3181818181818182,
+      "em": 0.12121212121212122,
+      "f1": 0.21645021645021645
+    },
+    "single_token_entity:context_bge_typeaware": {
+      "n": 66,
+      "closure": 0.30303030303030304,
+      "em": 0.16666666666666666,
+      "f1": 0.23484848484848486
+    },
+    "single_token_entity:context_oracle_typeaware": {
+      "n": 66,
+      "closure": 0.3787878787878788,
+      "em": 0.22727272727272727,
+      "f1": 0.303030303030303
+    },
+    "single_token_entity:evidence_triples_direct": {
+      "n": 66,
+      "closure": 0.9393939393939394,
+      "em": 0.9090909090909091,
+      "f1": 0.9090909090909091
+    },
+    "single_token_entity:evidence_triples_typeaware": {
+      "n": 66,
+      "closure": 0.8484848484848485,
+      "em": 0.8333333333333334,
+      "f1": 0.8333333333333334
+    },
+    "single_token_entity:no_support_typeaware": {
+      "n": 66,
+      "closure": 0.030303030303030304,
+      "em": 0.030303030303030304,
+      "f1": 0.030303030303030304
+    },
+    "single_token_entity:support_sentences_typeaware": {
+      "n": 66,
+      "closure": 0.48484848484848486,
+      "em": 0.30303030303030304,
+      "f1": 0.393939393939394
+    },
+    "yes_no:context_bge_direct": {
+      "n": 45,
+      "closure": 0,
+      "em": 0,
+      "f1": 0
+    },
+    "yes_no:context_bge_typeaware": {
+      "n": 45,
+      "closure": 0.35555555555555557,
+      "em": 0.35555555555555557,
+      "f1": 0.35555555555555557
+    },
+    "yes_no:context_oracle_typeaware": {
+      "n": 45,
+      "closure": 0.37777777777777777,
+      "em": 0.37777777777777777,
+      "f1": 0.37777777777777777
+    },
+    "yes_no:evidence_triples_direct": {
+      "n": 45,
+      "closure": 0.1111111111111111,
+      "em": 0.1111111111111111,
+      "f1": 0.1111111111111111
+    },
+    "yes_no:evidence_triples_typeaware": {
+      "n": 45,
+      "closure": 0.8,
+      "em": 0.8,
+      "f1": 0.8
+    },
+    "yes_no:no_support_typeaware": {
+      "n": 45,
+      "closure": 0.06666666666666667,
+      "em": 0.06666666666666667,
+      "f1": 0.06666666666666667
+    },
+    "yes_no:support_sentences_typeaware": {
+      "n": 45,
+      "closure": 0.6222222222222222,
+      "em": 0.6222222222222222,
+      "f1": 0.6222222222222222
+    }
+  }
+}
