@@ -1,36 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="retrieved != used">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#17202f"/>
-      <stop offset="0.55" stop-color="#0d0f12"/>
-      <stop offset="1" stop-color="#090a0d"/>
-    </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity="0.32"/>
-    </filter>
+    <pattern id="papergrain" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#f3ead7"/>
+      <path d="M0 8h32M0 23h32M7 0v32M24 0v32" stroke="#d8c9aa" stroke-width="0.6" opacity="0.22"/>
+      <circle cx="6" cy="6" r="0.7" fill="#9b8d74" opacity="0.18"/>
+      <circle cx="22" cy="18" r="0.6" fill="#9b8d74" opacity="0.14"/>
+    </pattern>
     <style>
       .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
-      .title { font-size: 44px; font-weight: 800; letter-spacing: -1.8px; fill: #e8edf2; }
-      .sub { font-size: 18px; fill: #91a0ad; }
-      .axis { font-size: 13px; fill: #91a0ad; }
-      .label { font-size: 15px; fill: #e8edf2; }
-      .small { font-size: 12px; fill: #91a0ad; }
-      .big { font-size: 42px; font-weight: 800; fill: #e8edf2; letter-spacing: -1px; }
-      .kicker { font-size: 12px; fill: #7df9ff; letter-spacing: 2.5px; text-transform: uppercase; }
+      .tag { font-size: 13px; font-weight: 700; letter-spacing: 2.2px; fill: #a33a2b; text-transform: uppercase; }
+      .title { font-size: 44px; font-weight: 800; letter-spacing: -1.7px; fill: #171717; }
+      .sub { font-size: 18px; fill: #5f594f; }
+      .small { font-size: 13px; fill: #5f594f; }
+      .label { font-size: 16px; fill: #171717; }
+      .num { font-size: 42px; font-weight: 800; fill: #171717; letter-spacing: -1px; }
+      .micro { font-size: 11px; fill: #5f594f; letter-spacing: 1.1px; text-transform: uppercase; }
     </style>
   </defs>
-  <rect width="1200" height="630" fill="url(#g)"/>
-  <circle cx="130" cy="-80" r="260" fill="#24344f" opacity="0.35"/>
-  <circle cx="1120" cy="560" r="320" fill="#16303a" opacity="0.32"/>
-  <text x="56" y="64" class="mono kicker">turboquant-cuda-bench</text>
-  <text x="56" y="118" class="mono title">retrieved != used</text>
-  <text x="56" y="150" class="mono sub">Your model found the right chunk. Why did it still answer wrong?</text>
-  
-    <rect x="56" y="190" width="1088" height="340" rx="28" fill="#151922" stroke="#2a3240" filter="url(#shadow)"/>
-    <text x="96" y="270" class="mono big">11,376 runs</text>
-    <text x="96" y="304" class="mono sub">evidence-utilization phase - 69.5% answer closure, 0 errors</text>
-    <text x="96" y="382" class="mono big" fill="#7df9ff">5/5 @ 192K</text>
-    <text x="96" y="416" class="mono sub">needle retrieval passed, but decoy replay still closed only 5/8</text>
-    <text x="96" y="486" class="mono label">Qwen3 / Qwen2.5 - llama.cpp - vLLM - TurboQuant - CASK - KVFidelity</text>
+  <rect width="1200" height="630" fill="url(#papergrain)"/>
+  <rect x="28" y="28" width="1144" height="574" rx="28" fill="none" stroke="#24221e" stroke-width="1.5"/>
+  <rect x="62" y="78" width="10" height="474" fill="#24221e"/>
+  <text x="96" y="70" class="mono tag">turboquant-cuda-bench</text>
+  <text x="96" y="128" class="mono title">retrieved != used</text>
+  <text x="96" y="162" class="mono sub">Your model found the right chunk. Why did it still answer wrong?</text>
+
+    <rect x="92" y="210" width="1016" height="310" rx="24" fill="#fff7e8" stroke="#24221e"/>
+    <text x="126" y="266" class="mono micro">promoted evidence-utilization phase</text>
+    <text x="126" y="325" class="mono num">11,376 runs · 69.5% closure · 0 errors</text>
+    <text x="126" y="376" class="mono label">Needle retrieval can pass at 192K while decoy answer closure still fails.</text>
+    <text x="126" y="438" class="mono small">Qwen · llama.cpp · vLLM · TurboQuant · CASK · KVFidelity</text>
+    <text x="126" y="478" class="mono small">Boundary: receipts first, not serving speedup or evidence-use proof.</text>
 </svg>

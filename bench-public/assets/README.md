@@ -2,7 +2,7 @@
 
 Static SVG cards and charts for the public entry layer. These are generated from the numbers summarized in `README.md`, `KEY-FINDINGS.md`, and `bench-public/*`.
 
-Regenerate legacy metric cards from the repo root:
+Regenerate the light editorial metric cards from the repo root:
 
 ```bash
 node 07-scripts/generate-public-assets.mjs

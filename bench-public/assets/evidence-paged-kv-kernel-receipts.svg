@@ -1,50 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Evidence-Paged KV kernel receipts v1 to v7</title>
-  <desc id="desc">Visual summary: v4 is the public receipt, v5 is the current throughput path, v7 is the best architectural expression.</desc>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Evidence-Paged KV receipts">
   <defs>
+    <pattern id="papergrain" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#f3ead7"/>
+      <path d="M0 8h32M0 23h32M7 0v32M24 0v32" stroke="#d8c9aa" stroke-width="0.6" opacity="0.22"/>
+      <circle cx="6" cy="6" r="0.7" fill="#9b8d74" opacity="0.18"/>
+      <circle cx="22" cy="18" r="0.6" fill="#9b8d74" opacity="0.14"/>
+    </pattern>
     <style>
-      .bg{fill:#0b0d10}.panel{fill:#141820;stroke:#2a3442;stroke-width:1.2}.axis{stroke:#536175;stroke-width:1}.muted{fill:#9aa7b6}.text{fill:#eef3f8;font-family:Roboto Mono,ui-monospace,SFMono-Regular,Consolas,monospace}.small{font-size:15px}.tiny{font-size:12px}.label{font-size:18px;font-weight:700}.title{font-size:34px;font-weight:800}.green{fill:#7ee787}.cyan{fill:#79c0ff}.yellow{fill:#f2cc60}.red{fill:#ff7b72}.purple{fill:#d2a8ff}.bar1{fill:#303846}.bar2{fill:#79c0ff}.bar3{fill:#d2a8ff}.bar4{fill:#7ee787}.line{fill:none;stroke:#7ee787;stroke-width:3}.line2{fill:none;stroke:#d2a8ff;stroke-width:3;stroke-dasharray:7 6}.dot{fill:#7ee787}.dot2{fill:#d2a8ff}
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
+      .tag { font-size: 13px; font-weight: 700; letter-spacing: 2.2px; fill: #a33a2b; text-transform: uppercase; }
+      .title { font-size: 44px; font-weight: 800; letter-spacing: -1.7px; fill: #171717; }
+      .sub { font-size: 18px; fill: #5f594f; }
+      .small { font-size: 13px; fill: #5f594f; }
+      .label { font-size: 16px; fill: #171717; }
+      .num { font-size: 42px; font-weight: 800; fill: #171717; letter-spacing: -1px; }
+      .micro { font-size: 11px; fill: #5f594f; letter-spacing: 1.1px; text-transform: uppercase; }
     </style>
   </defs>
-  <rect class="bg" width="1200" height="760"/>
-  <text class="text title" x="56" y="64">Evidence-Paged KV kernel receipts</text>
-  <text class="text small muted" x="58" y="94">v1→v7: architecture becomes more faithful; performance winner is not always the purest form.</text>
+  <rect width="1200" height="630" fill="url(#papergrain)"/>
+  <rect x="28" y="28" width="1144" height="574" rx="28" fill="none" stroke="#24221e" stroke-width="1.5"/>
+  <rect x="62" y="78" width="10" height="474" fill="#24221e"/>
+  <text x="96" y="70" class="mono tag">turboquant-cuda-bench</text>
+  <text x="96" y="128" class="mono title">Evidence-Paged KV receipts</text>
+  <text x="96" y="162" class="mono sub">Kernel receipts and offline telemetry, not a production hook</text>
 
-  <rect class="panel" x="54" y="125" width="1092" height="178" rx="18"/>
-  <text class="text label cyan" x="80" y="162">Three honest takeaways</text>
-  <text class="text small" x="80" y="198">1. Public receipt now: <tspan class="yellow">v4</tspan> — score → top-k/softmax → value accumulation.</text>
-  <text class="text small" x="80" y="228">2. Best current throughput path: <tspan class="green">v5-style</tspan> materialized warp scores + custom top-k/value.</text>
-  <text class="text small" x="80" y="258">3. Best architectural expression: <tspan class="purple">v7</tspan> — page-local top-k without full [M,H] score materialization.</text>
-
-  <rect class="panel" x="54" y="330" width="1092" height="164" rx="18"/>
-  <text class="text label" x="80" y="365">Version arc</text>
-  <g transform="translate(80,392)">
-    <line class="axis" x1="0" y1="38" x2="1010" y2="38"/>
-    <g class="text tiny">
-      <circle class="dot" cx="0" cy="38" r="7"/><text x="-8" y="76">v1</text><text class="muted" x="-20" y="100">fused dot</text>
-      <circle class="dot" cx="168" cy="38" r="7"/><text x="160" y="76">v2</text><text class="muted" x="130" y="100">page × tile</text>
-      <circle class="dot" cx="336" cy="38" r="7"/><text x="328" y="76">v3</text><text class="muted" x="294" y="100">score tiles</text>
-      <circle class="dot" cx="504" cy="38" r="7"/><text class="yellow" x="496" y="76">v4</text><text class="muted" x="460" y="100">public receipt</text>
-      <circle class="dot" cx="672" cy="38" r="7"/><text class="green" x="664" y="76">v5</text><text class="muted" x="616" y="100">fast K=32 path</text>
-      <circle class="dot2" cx="840" cy="38" r="7"/><text x="832" y="76">v6</text><text class="muted" x="790" y="100">no full scores</text>
-      <circle class="dot2" cx="1010" cy="38" r="7"/><text class="purple" x="1002" y="76">v7</text><text class="muted" x="948" y="100">best architecture</text>
+    <g transform="translate(92 230)">
+      <g><rect x="0" y="0" width="185" height="92" rx="18" fill="#fff7e8" stroke="#24221e"/><text x="20" y="40" class="mono num" fill="#2f5f87">v4</text><text x="20" y="68" class="mono small">public receipt</text></g>
+      <line x1="195" y1="46" x2="255" y2="46" stroke="#24221e" stroke-width="2"/><path d="M255 46 l-9 -5 v10 z" fill="#24221e"/>
+      <g><rect x="270" y="0" width="185" height="92" rx="18" fill="#fff7e8" stroke="#24221e"/><text x="290" y="40" class="mono num" fill="#2f5f87">v5</text><text x="290" y="68" class="mono small">K=32 path</text></g>
+      <line x1="465" y1="46" x2="525" y2="46" stroke="#24221e" stroke-width="2"/><path d="M525 46 l-9 -5 v10 z" fill="#24221e"/>
+      <g><rect x="540" y="0" width="185" height="92" rx="18" fill="#fff7e8" stroke="#24221e"/><text x="560" y="40" class="mono num" fill="#a06f18">v7</text><text x="560" y="68" class="mono small">architecture</text></g>
+      <line x1="735" y1="46" x2="795" y2="46" stroke="#24221e" stroke-width="2"/><path d="M795 46 l-9 -5 v10 z" fill="#24221e"/>
+      <g><rect x="810" y="0" width="185" height="92" rx="18" fill="#fff7e8" stroke="#24221e"/><text x="830" y="40" class="mono num" fill="#2f7d4f">v1.9</text><text x="830" y="68" class="mono small">offline ledger</text></g>
     </g>
-  </g>
-
-  <rect class="panel" x="54" y="520" width="520" height="184" rx="18"/>
-  <text class="text label" x="80" y="555">M=131,072 · K=32</text>
-  <text class="text tiny muted" x="80" y="579">Lower is better. End-to-end-ish top-k/value microbench.</text>
-  <g transform="translate(80,600)">
-    <text class="text tiny" x="0" y="18">PyTorch</text><rect class="bar1" x="120" y="4" width="320" height="20" rx="4"/><text class="text tiny" x="450" y="19">2.93 ms</text>
-    <text class="text tiny" x="0" y="54">v5</text><rect class="bar4" x="120" y="40" width="78" height="20" rx="4"/><text class="text tiny" x="208" y="55">0.71 ms</text>
-    <text class="text tiny" x="0" y="90">v7</text><rect class="bar3" x="120" y="76" width="136" height="20" rx="4"/><text class="text tiny" x="266" y="91">1.24 ms</text>
-  </g>
-
-  <rect class="panel" x="626" y="520" width="520" height="184" rx="18"/>
-  <text class="text label" x="652" y="555">Claims / non-claims</text>
-  <text class="text tiny green" x="652" y="586">Supports: evidence pages as CUDA execution shape; score → select → value receipts.</text>
-  <text class="text tiny green" x="652" y="612">Supports: custom paths can beat materialized PyTorch in these synthetic microbenches.</text>
-  <text class="text tiny red" x="652" y="646">Does not claim: vLLM integration, serving speedup, quality gain, production kernel.</text>
-  <text class="text tiny red" x="652" y="672">Does not claim: better than PagedAttention/FlashAttention or universal custom top-k win.</text>
-  <text class="text tiny muted" x="652" y="696">Recommended next step: vLLM hook around v4/v5-style path, not v8-for-v8's-sake.</text>
+    <rect x="92" y="390" width="1016" height="94" rx="18" fill="#f4ded7" stroke="#a33a2b"/>
+    <text x="124" y="430" class="mono label" fill="#a33a2b">Boundary: not production attention, not serving readiness, not evidence-use proof.</text>
+    <text x="124" y="462" class="mono small">Live hook-on remains paused behind explicit runtime gates.</text>
 </svg>
