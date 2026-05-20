@@ -8,7 +8,7 @@ These are the stable public findings from promoted receipts. The phrase **retrie
 
 ## 1. Public HotpotQA: answer closure is position-sensitive
 
-The RealRAG R1/R2/R3A/R3B/R3C/R3D/R3E runs move the evidence-placement claim beyond synthetic fixtures onto public HotpotQA dev distractor.
+The RealRAG R1/R2/R3A/R3B/R3C/R3D/R3E/R3F runs move the evidence-placement claim beyond synthetic fixtures onto public HotpotQA dev distractor.
 
 R1 full evidence-placement gate:
 
@@ -70,16 +70,16 @@ R3D local semantic-judge triage over R3C samples:
 - Metric open / judge positive: **59**.
 - This is local Qwen judge triage, not ground truth; sample is stratified, not population-representative.
 
-R3E human/independent adjudication packet:
+R3E/R3F adjudication prep:
 
-- **144** unreviewed review items.
-- Includes high-value cases: metric-closed/judge-negative, metric-open/judge-positive, no-support prior/leakage, support-present wrong cases, and controls.
-- Provides blank `human_label`, `human_confidence`, and `human_notes` fields.
-- This is not additional benchmark evidence until reviewed.
+- R3E: **144** unreviewed review items with blank `human_label`, `human_confidence`, and `human_notes` fields.
+- R3F: AI-assisted draft over those 144 items.
+- R3F metric/AI: metric closed + AI positive **41**; metric open + AI negative **69**; metric open + AI positive **34**; metric closed + AI negative **0**.
+- R3F is not human ground truth; it is a prioritization layer.
 
-Interpretation: answer closure is sensitive to where gold supporting evidence sits in the context field. Beginning helps, middle burial hurts, and end placement partially recovers. Simple citation or reasoning prompts do not remove the controlled position effect. R3B changes the practical verdict: a strong reranker mitigates most of the natural BM25-to-oracle gap on this HotpotQA slice. R3C/R3D/R3E change the next question: remaining failures need independent/human semantic audit before being interpreted as evidence-use failures.
+Interpretation: answer closure is sensitive to where gold supporting evidence sits in the context field. Beginning helps, middle burial hurts, and end placement partially recovers. Simple citation or reasoning prompts do not remove the controlled position effect. R3B changes the practical verdict: a strong reranker mitigates most of the natural BM25-to-oracle gap on this HotpotQA slice. R3C/R3D/R3E/R3F change the next question: remaining failures need independent/human semantic audit before being interpreted as evidence-use failures.
 
-Boundaries: this is answer-side EM/contains/F1-derived closure. Citation-hit is title-string overlap, not proof of internal citation use. Supporting-fact sentence presence validates prompt inclusion, not internal use. Local judge labels are triage, not ground truth. R3E labels are blank/unreviewed. These results do not prove attention, internal evidence use, production RAG value, a dominant production-RAG bottleneck, or runtime readiness.
+Boundaries: this is answer-side EM/contains/F1-derived closure. Citation-hit is title-string overlap, not proof of internal citation use. Supporting-fact sentence presence validates prompt inclusion, not internal use. Local/AI judge labels are triage, not ground truth. R3E human labels are blank/unreviewed. These results do not prove attention, internal evidence use, production RAG value, a dominant production-RAG bottleneck, or runtime readiness.
 
 Public packages:
 
@@ -90,6 +90,7 @@ Public packages:
 - [RealRAG HotpotQA R3C metric audit](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md)
 - [RealRAG HotpotQA R3D local judge](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md)
 - [RealRAG HotpotQA R3E human adjudication pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md)
+- [RealRAG HotpotQA R3F AI adjudication draft](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md)
 - [RealRAG sample pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-SAMPLES-v1.md)
 - [RealRAG R3 plan](bench-public/evidence-utilization/REALRAG-R3-PLAN.md)
 
