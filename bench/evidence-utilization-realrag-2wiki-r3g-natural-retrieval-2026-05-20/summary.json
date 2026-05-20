@@ -1,0 +1,91 @@
+{
+  "schema": "realrag.hotpotqa.r3b.natural_retrieval.summary.v1",
+  "status": "done",
+  "started_at": "2026-05-20T19:14:31.680Z",
+  "finished_at": "2026-05-20T19:33:20.133Z",
+  "endpoint": "http://192.168.15.133:11435/v1/chat/completions",
+  "model": "local-vllm",
+  "dataset_path": "bench/_datasets/2wiki/data/dev.json",
+  "dataset_sha256": "48b9bdc69654dc580fda5f935a48b88cb89f11887587310af60d406c8d0111a6",
+  "limit": 2000,
+  "offset": 0,
+  "seed": 20260520,
+  "conditions": [
+    "bm25_top10",
+    "bge_rerank_top10",
+    "oracle_first",
+    "no_support"
+  ],
+  "candidate_k": 10,
+  "rerank_scores_path": "/home/aya/implante/research/turboquant-cuda-bench/bench/evidence-utilization-realrag-2wiki-r3g-natural-retrieval-2026-05-20/bge-rerank-scores.json",
+  "rerank_scores_schema": "realrag.hotpotqa.r3b.bge_rerank_scores.v1",
+  "selected_questions": 2000,
+  "expected_records": 8000,
+  "completed_records": 8000,
+  "aggregate": {
+    "byCondition": [
+      {
+        "condition": "bge_rerank_top10",
+        "n": 2000,
+        "em": 0.272,
+        "f1": 0.3201584846689258,
+        "contains": 0.3365,
+        "closure": 0.3375,
+        "supportPresent": 1,
+        "supportRecall": 1,
+        "bm25SupportRecallAtCandidateK": 1,
+        "errors": 0,
+        "supportRankMean": 1.007,
+        "supportRankMedian": 1
+      },
+      {
+        "condition": "bm25_top10",
+        "n": 2000,
+        "em": 0.2685,
+        "f1": 0.31826430694908964,
+        "contains": 0.3315,
+        "closure": 0.333,
+        "supportPresent": 1,
+        "supportRecall": 1,
+        "bm25SupportRecallAtCandidateK": 1,
+        "errors": 0,
+        "supportRankMean": 1.2465,
+        "supportRankMedian": 1
+      },
+      {
+        "condition": "no_support",
+        "n": 2000,
+        "em": 0.029,
+        "f1": 0.04367679560582786,
+        "contains": 0.038,
+        "closure": 0.039,
+        "supportPresent": 0,
+        "supportRecall": 0,
+        "bm25SupportRecallAtCandidateK": 1,
+        "errors": 0,
+        "supportRankMean": null,
+        "supportRankMedian": null
+      },
+      {
+        "condition": "oracle_first",
+        "n": 2000,
+        "em": 0.2635,
+        "f1": 0.3061334706034707,
+        "contains": 0.3175,
+        "closure": 0.3195,
+        "supportPresent": 1,
+        "supportRecall": 1,
+        "bm25SupportRecallAtCandidateK": 1,
+        "errors": 0,
+        "supportRankMean": 1,
+        "supportRankMedian": 1
+      }
+    ]
+  },
+  "interpretation_boundary": [
+    "natural retrieval / reranker diagnostic gate",
+    "answer-side closure, not proof of internal evidence use",
+    "oracle_first remains ceiling; no_support remains floor",
+    "no vLLM mutation, no EPKV hook, no production-RAG claim"
+  ]
+}

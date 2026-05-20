@@ -1,0 +1,176 @@
+{
+  "schema": "realrag.2wiki.r3g.analysis.v1",
+  "pairs": [
+    {
+      "a": "bge_rerank_top10",
+      "b": "bm25_top10",
+      "n": 2000,
+      "delta": 0.0045,
+      "aOnly": 190,
+      "bOnly": 181,
+      "both": 485,
+      "neither": 1144,
+      "ci": {
+        "lo": -0.014,
+        "hi": 0.023
+      }
+    },
+    {
+      "a": "oracle_first",
+      "b": "bge_rerank_top10",
+      "n": 2000,
+      "delta": -0.018,
+      "aOnly": 166,
+      "bOnly": 202,
+      "both": 473,
+      "neither": 1159,
+      "ci": {
+        "lo": -0.0365,
+        "hi": 0.0005
+      }
+    },
+    {
+      "a": "oracle_first",
+      "b": "bm25_top10",
+      "n": 2000,
+      "delta": -0.0135,
+      "aOnly": 174,
+      "bOnly": 201,
+      "both": 465,
+      "neither": 1160,
+      "ci": {
+        "lo": -0.033,
+        "hi": 0.005
+      }
+    },
+    {
+      "a": "bm25_top10",
+      "b": "no_support",
+      "n": 2000,
+      "delta": 0.294,
+      "aOnly": 609,
+      "bOnly": 21,
+      "both": 57,
+      "neither": 1313,
+      "ci": {
+        "lo": 0.2735,
+        "hi": 0.316
+      }
+    },
+    {
+      "a": "bge_rerank_top10",
+      "b": "no_support",
+      "n": 2000,
+      "delta": 0.2985,
+      "aOnly": 618,
+      "bOnly": 21,
+      "both": 57,
+      "neither": 1304,
+      "ci": {
+        "lo": 0.2775,
+        "hi": 0.319
+      }
+    },
+    {
+      "a": "oracle_first",
+      "b": "no_support",
+      "n": 2000,
+      "delta": 0.2805,
+      "aOnly": 584,
+      "bOnly": 23,
+      "both": 55,
+      "neither": 1338,
+      "ci": {
+        "lo": 0.26,
+        "hi": 0.301
+      }
+    }
+  ],
+  "rank_distribution": {
+    "bm25_top10": {
+      "1": 1697,
+      "2": 198,
+      "3": 62,
+      "4": 21,
+      "5": 13,
+      "6": 3,
+      "7": 3,
+      "8": 1,
+      "9": 2
+    },
+    "bge_rerank_top10": {
+      "1": 1987,
+      "2": 12,
+      "3": 1
+    },
+    "oracle_first": {
+      "1": 2000
+    }
+  },
+  "closure_by_support_rank": {
+    "bm25_top10": [
+      {
+        "rank": 1,
+        "n": 1697,
+        "closure": 0.3464938126104891
+      },
+      {
+        "rank": 2,
+        "n": 198,
+        "closure": 0.2676767676767677
+      },
+      {
+        "rank": 3,
+        "n": 62,
+        "closure": 0.22580645161290322
+      },
+      {
+        "rank": 4,
+        "n": 21,
+        "closure": 0.3333333333333333
+      },
+      {
+        "rank": 5,
+        "n": 13,
+        "closure": 0.23076923076923078
+      },
+      {
+        "rank": 6,
+        "n": 3,
+        "closure": 0.3333333333333333
+      },
+      {
+        "rank": 7,
+        "n": 3,
+        "closure": 0
+      },
+      {
+        "rank": 8,
+        "n": 1,
+        "closure": 0
+      },
+      {
+        "rank": 9,
+        "n": 2,
+        "closure": 0
+      }
+    ],
+    "bge_rerank_top10": [
+      {
+        "rank": 1,
+        "n": 1987,
+        "closure": 0.33870156014091596
+      },
+      {
+        "rank": 2,
+        "n": 12,
+        "closure": 0.16666666666666666
+      },
+      {
+        "rank": 3,
+        "n": 1,
+        "closure": 0
+      }
+    ]
+  }
+}

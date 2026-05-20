@@ -21,6 +21,7 @@ REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md
 REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md
 REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md
 REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md
+REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md
 REALRAG-HOTPOTQA-SAMPLES-v1.md
 REALRAG-R3-PLAN.md
 RESULTS.md
@@ -57,6 +58,7 @@ Public-dataset gates:
 - `REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md` — local Qwen semantic-judge triage over R3C samples; not ground-truth adjudication.
 - `REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md` — unreviewed packet for human/independent adjudication.
 - `REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md` — non-authoritative AI-assisted adjudication draft over R3E.
+- `REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md` — 2Wiki generalization check; support-present beats no-support, but BGE/oracle do not clearly improve closure over BM25.
 - `REALRAG-HOTPOTQA-SAMPLES-v1.md` / `.jsonl` — audit sample pack with questions, gold answers, predictions, metrics, and context titles.
 - `REALRAG-R3-PLAN.md` — remaining reranker, judging, more-dataset, and multi-model gates.
 
@@ -78,6 +80,7 @@ answer closure is sensitive to position/rank/recency under controlled evidence p
 simple citation/reasoning prompts did not remove the HotpotQA position effect in R3A
 BGE reranking mitigated most of the BM25-to-oracle gap in R3B natural retrieval
 R3C confirms supporting-fact sentence presence; R3D/R3F local AI triage and R3E review packet make independent/human adjudication the next gate
+2Wiki R3G shows the HotpotQA reranker ladder does not generalize cleanly under the same harness
 evidence depth != answer closure
 local evidence competition can dominate closure in synthetic probes
 ```

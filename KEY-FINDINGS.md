@@ -94,7 +94,25 @@ Public packages:
 - [RealRAG sample pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-SAMPLES-v1.md)
 - [RealRAG R3 plan](bench-public/evidence-utilization/REALRAG-R3-PLAN.md)
 
-## 1b. Synthetic fixtures isolate stronger rank/decoy effects
+## 1b. 2Wiki: generalization is dataset-sensitive
+
+R3G applies the natural-retrieval gate to 2WikiMultiHopQA dev.
+
+- **2,000** questions, **8,000** records, **0 errors**.
+- `bm25_top10`: **33.3%** closure, support rank mean **1.25**.
+- `bge_rerank_top10`: **33.8%** closure, support rank mean **1.01**.
+- `oracle_first`: **31.9%** closure, support rank mean **1.00**.
+- `no_support`: **3.9%** closure.
+- Paired `bge_rerank_top10 - bm25_top10`: **+0.4 pp**, 95% CI **-1.4 to +2.3 pp**.
+- Paired `oracle_first - bge_rerank_top10`: **-1.8 pp**, 95% CI **-3.6 to +0.1 pp**.
+
+R3G does not reproduce the HotpotQA R3B ladder. BGE improves support rank almost to oracle-first, but closure does not materially improve. Support-present conditions still beat no-support by about 28–30 pp.
+
+Interpretation: HotpotQA's rank/reranker story does not generalize cleanly to 2Wiki under the same prompt/harness. The broader claim should remain dataset-sensitive.
+
+Public package: [RealRAG 2Wiki R3G](bench-public/evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md)
+
+## 1c. Synthetic fixtures isolate stronger rank/decoy effects
 
 In the promoted synthetic evidence-utilization phase, the system ran **11,376** public-safe synthetic cases with **0 errors** and **7,902/11,376** answer closures (**69.5%**).
 
