@@ -1,0 +1,166 @@
+{
+  "schema": "realrag.hotpotqa.r2.summary.v1",
+  "status": "done",
+  "started_at": "2026-05-20T11:06:09.620Z",
+  "finished_at": "2026-05-20T12:55:18.163Z",
+  "endpoint": "http://192.168.15.133:11435/v1/chat/completions",
+  "model": "local-vllm",
+  "dataset_path": "bench/_datasets/hotpot_dev_distractor_v1.json",
+  "dataset_sha256": "4e9ecb5c8d3b719f624d66b60f8d56bf227f03914f5f0753d6fa1b359d7104ea",
+  "limit": 7405,
+  "offset": 0,
+  "seed": 20260520,
+  "conditions": [
+    "rank_1",
+    "rank_3",
+    "rank_5",
+    "rank_8",
+    "rank_last",
+    "no_support"
+  ],
+  "selected_questions": 7384,
+  "expected_records": 44304,
+  "completed_records": 44304,
+  "aggregate": {
+    "byCondition": {
+      "rank_1": {
+        "n": 7384,
+        "em": 0.4229414951245937,
+        "f1": 0.5397302909269998,
+        "contains": 0.4765709642470206,
+        "closure": 0.5138136511375948,
+        "supportPresent": 1,
+        "errors": 0
+      },
+      "rank_3": {
+        "n": 7384,
+        "em": 0.33125677139761645,
+        "f1": 0.42717508859994335,
+        "contains": 0.37554171180931745,
+        "closure": 0.40384615384615385,
+        "supportPresent": 1,
+        "errors": 0
+      },
+      "rank_8": {
+        "n": 7384,
+        "em": 0.32096424702058507,
+        "f1": 0.41414372323473103,
+        "contains": 0.3594257854821235,
+        "closure": 0.3870530877573131,
+        "supportPresent": 1,
+        "errors": 0
+      },
+      "rank_5": {
+        "n": 7384,
+        "em": 0.31690140845070425,
+        "f1": 0.4117387244512081,
+        "contains": 0.3587486457204767,
+        "closure": 0.3855633802816901,
+        "supportPresent": 1,
+        "errors": 0
+      },
+      "rank_last": {
+        "n": 7384,
+        "em": 0.34683098591549294,
+        "f1": 0.4496572837898582,
+        "contains": 0.3934182015167931,
+        "closure": 0.42375406283856987,
+        "supportPresent": 1,
+        "errors": 0
+      },
+      "no_support": {
+        "n": 7384,
+        "em": 0.05511917659804984,
+        "f1": 0.07899440669463433,
+        "contains": 0.06405742145178765,
+        "closure": 0.06879739978331528,
+        "supportPresent": 0,
+        "errors": 0
+      }
+    },
+    "byRankBucket": [
+      {
+        "condition": "no_support",
+        "bucket": "none",
+        "n": 7384,
+        "closure": 0.06879739978331528,
+        "f1": 0.07899440669463433
+      },
+      {
+        "condition": "rank_1",
+        "bucket": "1",
+        "n": 7384,
+        "closure": 0.5138136511375948,
+        "f1": 0.5397302909269998
+      },
+      {
+        "condition": "rank_3",
+        "bucket": "2-3",
+        "n": 7384,
+        "closure": 0.40384615384615385,
+        "f1": 0.42717508859994335
+      },
+      {
+        "condition": "rank_5",
+        "bucket": "2-3",
+        "n": 16,
+        "closure": 0.5,
+        "f1": 0.4618055555555555
+      },
+      {
+        "condition": "rank_5",
+        "bucket": "4-8",
+        "n": 7368,
+        "closure": 0.38531487513572205,
+        "f1": 0.4116300016909382
+      },
+      {
+        "condition": "rank_8",
+        "bucket": "2-3",
+        "n": 16,
+        "closure": 0.5,
+        "f1": 0.4618055555555555
+      },
+      {
+        "condition": "rank_8",
+        "bucket": "4-8",
+        "n": 7368,
+        "closure": 0.38680781758957655,
+        "f1": 0.41404022305596705
+      },
+      {
+        "condition": "rank_last",
+        "bucket": ">8",
+        "n": 7345,
+        "closure": 0.42314499659632404,
+        "f1": 0.4492281136304184
+      },
+      {
+        "condition": "rank_last",
+        "bucket": "2-3",
+        "n": 16,
+        "closure": 0.5,
+        "f1": 0.4618055555555555
+      },
+      {
+        "condition": "rank_last",
+        "bucket": "4-8",
+        "n": 23,
+        "closure": 0.5652173913043478,
+        "f1": 0.5782608695652174
+      }
+    ]
+  },
+  "deltas": {
+    "rank_1_minus_rank_3": 0.10996749729144095,
+    "rank_1_minus_rank_5": 0.12825027085590468,
+    "rank_1_minus_rank_8": 0.1267605633802817,
+    "rank_1_minus_rank_last": 0.09005958829902494,
+    "rank_1_minus_no_support": 0.4450162513542795
+  },
+  "interpretation_boundary": [
+    "public HotpotQA distractor evidence-placement benchmark",
+    "answer closure is EM/contains/F1 over gold answers, not proof of model evidence use",
+    "no runtime hook, no serving mutation, no attention claim"
+  ]
+}
