@@ -1,0 +1,104 @@
+{
+  "schema": "realrag.hotpotqa.r1.pairwise.v1",
+  "records": 7384,
+  "pairs": [
+    {
+      "a": "oracle_first",
+      "b": "oracle_last",
+      "n": 7384,
+      "delta": 0.08410075839653304,
+      "a_only": 1090,
+      "b_only": 469,
+      "both_correct": 2684,
+      "both_wrong": 3141,
+      "bootstrap95": {
+        "lo": 0.0735373781148429,
+        "hi": 0.09425785482123511
+      }
+    },
+    {
+      "a": "oracle_first",
+      "b": "bm25_retrieved",
+      "n": 7384,
+      "delta": 0.04888949079089924,
+      "a_only": 795,
+      "b_only": 434,
+      "both_correct": 2979,
+      "both_wrong": 3176,
+      "bootstrap95": {
+        "lo": 0.03968039003250271,
+        "hi": 0.05782773564463705
+      }
+    },
+    {
+      "a": "oracle_first",
+      "b": "distractor_first",
+      "n": 7384,
+      "delta": 0.12594799566630552,
+      "a_only": 1296,
+      "b_only": 366,
+      "both_correct": 2478,
+      "both_wrong": 3244,
+      "bootstrap95": {
+        "lo": 0.11592632719393282,
+        "hi": 0.13624052004333695
+      }
+    },
+    {
+      "a": "oracle_first",
+      "b": "no_support",
+      "n": 7384,
+      "delta": 0.44352654387865653,
+      "a_only": 3319,
+      "b_only": 44,
+      "both_correct": 455,
+      "both_wrong": 3566,
+      "bootstrap95": {
+        "lo": 0.4320151679306609,
+        "hi": 0.45490249187432286
+      }
+    },
+    {
+      "a": "bm25_retrieved",
+      "b": "distractor_first",
+      "n": 7384,
+      "delta": 0.07705850487540629,
+      "a_only": 1020,
+      "b_only": 451,
+      "both_correct": 2393,
+      "both_wrong": 3520,
+      "bootstrap95": {
+        "lo": 0.06703683640303358,
+        "hi": 0.08721560130010834
+      }
+    },
+    {
+      "a": "bm25_retrieved",
+      "b": "no_support",
+      "n": 7384,
+      "delta": 0.3946370530877573,
+      "a_only": 2961,
+      "b_only": 47,
+      "both_correct": 452,
+      "both_wrong": 3924,
+      "bootstrap95": {
+        "lo": 0.3833965330444204,
+        "hi": 0.406148429035753
+      }
+    },
+    {
+      "a": "oracle_last",
+      "b": "distractor_first",
+      "n": 7384,
+      "delta": 0.04184723726977248,
+      "a_only": 736,
+      "b_only": 427,
+      "both_correct": 2417,
+      "both_wrong": 3804,
+      "bootstrap95": {
+        "lo": 0.03277356446370531,
+        "hi": 0.05078548212351029
+      }
+    }
+  ]
+}
