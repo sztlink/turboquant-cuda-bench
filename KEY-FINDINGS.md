@@ -126,9 +126,20 @@ R3I prompt/schema ablation on a stratified **400-question** 2Wiki sample:
 - `no_support_typeaware`: **5.5%**.
 - Yes/no: `context_bge_direct` **0.0%**, `context_bge_typeaware` **35.6%**, `support_sentences_typeaware` **62.2%**, `evidence_triples_typeaware` **80.0%**.
 
-Interpretation: HotpotQA's rank/reranker story does not generalize cleanly to 2Wiki under the same paragraph prompt/harness. The broader claim should remain dataset-sensitive and type/prompt/schema-sensitive. For 2Wiki, schema fit and evidence compression dominate paragraph rank once support is already present.
+R3J non-gold sentence compression on the same 400-question sample:
 
-Public packages: [RealRAG 2Wiki R3G](bench-public/evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md), [RealRAG 2Wiki R3H](bench-public/evidence-utilization/REALRAG-2WIKI-R3H-DIAGNOSTIC.md), [RealRAG 2Wiki R3I](bench-public/evidence-utilization/REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md)
+- `context_bge_direct`: **31.0%**.
+- `sentence_bge_top6_direct`: **23.0%**, sentence recall **52.1%**.
+- `sentence_bge_top6_typeaware`: **18.3%**.
+- `sentence_bge_top10_typeaware`: **20.8%**, sentence recall **64.8%**.
+- `support_sentences_gold_typeaware`: **39.3%** under this prompt.
+- `evidence_triples_gold_direct`: **74.5%**.
+- `sentence_bge_top6_direct - context_bge_direct`: **-8.0 pp**, CI **-13.0 to -3.3 pp**.
+- `evidence_triples_gold_direct - context_bge_direct`: **+43.5 pp**, CI **+38.0 to +48.5 pp**.
+
+Interpretation: HotpotQA's rank/reranker story does not generalize cleanly to 2Wiki under the same paragraph prompt/harness. The broader claim should remain dataset-sensitive and type/prompt/schema-sensitive. For 2Wiki, schema fit and relation-aware evidence compression dominate paragraph rank once support is already present; naive lexical sentence compression can hurt.
+
+Public packages: [RealRAG 2Wiki R3G](bench-public/evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md), [RealRAG 2Wiki R3H](bench-public/evidence-utilization/REALRAG-2WIKI-R3H-DIAGNOSTIC.md), [RealRAG 2Wiki R3I](bench-public/evidence-utilization/REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md), [RealRAG 2Wiki R3J](bench-public/evidence-utilization/REALRAG-2WIKI-R3J-SENTENCE-COMPRESSION.md)
 
 ## 1c. Synthetic fixtures isolate stronger rank/decoy effects
 

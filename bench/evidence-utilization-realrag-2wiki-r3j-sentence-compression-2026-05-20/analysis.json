@@ -1,0 +1,648 @@
+{
+  "schema": "realrag.2wiki.r3j.analysis.v1",
+  "key_pairwise": [
+    {
+      "a": "sentence_bge_top6_direct",
+      "b": "context_bge_direct",
+      "n": 400,
+      "delta": -0.08,
+      "ci": {
+        "lo": -0.13,
+        "hi": -0.0325
+      },
+      "aOnly": 34,
+      "bOnly": 66,
+      "both": 58,
+      "neither": 242
+    },
+    {
+      "a": "sentence_bge_top6_typeaware",
+      "b": "context_bge_direct",
+      "n": 400,
+      "delta": -0.1275,
+      "ci": {
+        "lo": -0.18,
+        "hi": -0.075
+      },
+      "aOnly": 34,
+      "bOnly": 85,
+      "both": 39,
+      "neither": 242
+    },
+    {
+      "a": "sentence_bge_top10_typeaware",
+      "b": "context_bge_direct",
+      "n": 400,
+      "delta": -0.1025,
+      "ci": {
+        "lo": -0.155,
+        "hi": -0.0525
+      },
+      "aOnly": 39,
+      "bOnly": 80,
+      "both": 44,
+      "neither": 237
+    },
+    {
+      "a": "support_sentences_gold_typeaware",
+      "b": "context_bge_direct",
+      "n": 400,
+      "delta": 0.0825,
+      "ci": {
+        "lo": 0.03,
+        "hi": 0.135
+      },
+      "aOnly": 74,
+      "bOnly": 41,
+      "both": 83,
+      "neither": 202
+    },
+    {
+      "a": "evidence_triples_gold_direct",
+      "b": "context_bge_direct",
+      "n": 400,
+      "delta": 0.435,
+      "ci": {
+        "lo": 0.38,
+        "hi": 0.485
+      },
+      "aOnly": 183,
+      "bOnly": 9,
+      "both": 115,
+      "neither": 93
+    },
+    {
+      "a": "support_sentences_gold_typeaware",
+      "b": "sentence_bge_top6_typeaware",
+      "n": 400,
+      "delta": 0.21,
+      "ci": {
+        "lo": 0.165,
+        "hi": 0.255
+      },
+      "aOnly": 94,
+      "bOnly": 10,
+      "both": 63,
+      "neither": 233
+    },
+    {
+      "a": "evidence_triples_gold_direct",
+      "b": "support_sentences_gold_typeaware",
+      "n": 400,
+      "delta": 0.3525,
+      "ci": {
+        "lo": 0.2925,
+        "hi": 0.4075
+      },
+      "aOnly": 170,
+      "bOnly": 29,
+      "both": 128,
+      "neither": 73
+    }
+  ],
+  "by_variant": {
+    "context_bge_direct": {
+      "n": 400,
+      "closure": 0.31,
+      "em": 0.2525,
+      "f1": 0.299770985958486,
+      "sentence_recall": null
+    },
+    "evidence_triples_gold_direct": {
+      "n": 400,
+      "closure": 0.745,
+      "em": 0.74,
+      "f1": 0.74125,
+      "sentence_recall": null
+    },
+    "no_support_typeaware": {
+      "n": 400,
+      "closure": 0.0425,
+      "em": 0.0375,
+      "f1": 0.044069597069597066,
+      "sentence_recall": null
+    },
+    "sentence_bge_top10_typeaware": {
+      "n": 400,
+      "closure": 0.2075,
+      "em": 0.1875,
+      "f1": 0.20318826463391682,
+      "sentence_recall": 0.648125
+    },
+    "sentence_bge_top6_direct": {
+      "n": 400,
+      "closure": 0.23,
+      "em": 0.2,
+      "f1": 0.24371245421245427,
+      "sentence_recall": 0.520625
+    },
+    "sentence_bge_top6_typeaware": {
+      "n": 400,
+      "closure": 0.1825,
+      "em": 0.1775,
+      "f1": 0.18271428571428575,
+      "sentence_recall": 0.520625
+    },
+    "support_sentences_gold_typeaware": {
+      "n": 400,
+      "closure": 0.3925,
+      "em": 0.345,
+      "f1": 0.373670634920635,
+      "sentence_recall": 1
+    }
+  },
+  "by_type_variant": {
+    "bridge_comparison:context_bge_direct": {
+      "n": 100,
+      "closure": 0.22,
+      "em": 0.21,
+      "f1": 0.22160714285714284,
+      "sentence_recall": null
+    },
+    "bridge_comparison:evidence_triples_gold_direct": {
+      "n": 100,
+      "closure": 0.58,
+      "em": 0.58,
+      "f1": 0.585,
+      "sentence_recall": null
+    },
+    "bridge_comparison:no_support_typeaware": {
+      "n": 100,
+      "closure": 0,
+      "em": 0,
+      "f1": 0,
+      "sentence_recall": null
+    },
+    "bridge_comparison:sentence_bge_top10_typeaware": {
+      "n": 100,
+      "closure": 0.13,
+      "em": 0.13,
+      "f1": 0.13,
+      "sentence_recall": 0.5775
+    },
+    "bridge_comparison:sentence_bge_top6_direct": {
+      "n": 100,
+      "closure": 0.27,
+      "em": 0.27,
+      "f1": 0.27571428571428575,
+      "sentence_recall": 0.4325
+    },
+    "bridge_comparison:sentence_bge_top6_typeaware": {
+      "n": 100,
+      "closure": 0.08,
+      "em": 0.08,
+      "f1": 0.08,
+      "sentence_recall": 0.4325
+    },
+    "bridge_comparison:support_sentences_gold_typeaware": {
+      "n": 100,
+      "closure": 0.11,
+      "em": 0.11,
+      "f1": 0.11,
+      "sentence_recall": 1
+    },
+    "comparison:context_bge_direct": {
+      "n": 100,
+      "closure": 0.53,
+      "em": 0.53,
+      "f1": 0.53,
+      "sentence_recall": null
+    },
+    "comparison:evidence_triples_gold_direct": {
+      "n": 100,
+      "closure": 0.72,
+      "em": 0.72,
+      "f1": 0.72,
+      "sentence_recall": null
+    },
+    "comparison:no_support_typeaware": {
+      "n": 100,
+      "closure": 0.17,
+      "em": 0.15,
+      "f1": 0.17627838827838826,
+      "sentence_recall": null
+    },
+    "comparison:sentence_bge_top10_typeaware": {
+      "n": 100,
+      "closure": 0.62,
+      "em": 0.58,
+      "f1": 0.6170863918690005,
+      "sentence_recall": 0.925
+    },
+    "comparison:sentence_bge_top6_direct": {
+      "n": 100,
+      "closure": 0.52,
+      "em": 0.51,
+      "f1": 0.5281904761904762,
+      "sentence_recall": 0.81
+    },
+    "comparison:sentence_bge_top6_typeaware": {
+      "n": 100,
+      "closure": 0.62,
+      "em": 0.62,
+      "f1": 0.624,
+      "sentence_recall": 0.81
+    },
+    "comparison:support_sentences_gold_typeaware": {
+      "n": 100,
+      "closure": 0.8,
+      "em": 0.8,
+      "f1": 0.8,
+      "sentence_recall": 1
+    },
+    "compositional:context_bge_direct": {
+      "n": 100,
+      "closure": 0.35,
+      "em": 0.19,
+      "f1": 0.27985714285714286,
+      "sentence_recall": null
+    },
+    "compositional:evidence_triples_gold_direct": {
+      "n": 100,
+      "closure": 0.96,
+      "em": 0.94,
+      "f1": 0.94,
+      "sentence_recall": null
+    },
+    "compositional:no_support_typeaware": {
+      "n": 100,
+      "closure": 0,
+      "em": 0,
+      "f1": 0,
+      "sentence_recall": null
+    },
+    "compositional:sentence_bge_top10_typeaware": {
+      "n": 100,
+      "closure": 0.08,
+      "em": 0.04,
+      "f1": 0.06566666666666666,
+      "sentence_recall": 0.55
+    },
+    "compositional:sentence_bge_top6_direct": {
+      "n": 100,
+      "closure": 0.04,
+      "em": 0.01,
+      "f1": 0.03852380952380952,
+      "sentence_recall": 0.445
+    },
+    "compositional:sentence_bge_top6_typeaware": {
+      "n": 100,
+      "closure": 0.03,
+      "em": 0.01,
+      "f1": 0.026857142857142854,
+      "sentence_recall": 0.445
+    },
+    "compositional:support_sentences_gold_typeaware": {
+      "n": 100,
+      "closure": 0.63,
+      "em": 0.45,
+      "f1": 0.5602380952380951,
+      "sentence_recall": 1
+    },
+    "inference:context_bge_direct": {
+      "n": 100,
+      "closure": 0.14,
+      "em": 0.08,
+      "f1": 0.16761965811965812,
+      "sentence_recall": null
+    },
+    "inference:evidence_triples_gold_direct": {
+      "n": 100,
+      "closure": 0.72,
+      "em": 0.72,
+      "f1": 0.72,
+      "sentence_recall": null
+    },
+    "inference:no_support_typeaware": {
+      "n": 100,
+      "closure": 0,
+      "em": 0,
+      "f1": 0,
+      "sentence_recall": null
+    },
+    "inference:sentence_bge_top10_typeaware": {
+      "n": 100,
+      "closure": 0,
+      "em": 0,
+      "f1": 0,
+      "sentence_recall": 0.54
+    },
+    "inference:sentence_bge_top6_direct": {
+      "n": 100,
+      "closure": 0.09,
+      "em": 0.01,
+      "f1": 0.13242124542124542,
+      "sentence_recall": 0.395
+    },
+    "inference:sentence_bge_top6_typeaware": {
+      "n": 100,
+      "closure": 0,
+      "em": 0,
+      "f1": 0,
+      "sentence_recall": 0.395
+    },
+    "inference:support_sentences_gold_typeaware": {
+      "n": 100,
+      "closure": 0.03,
+      "em": 0.02,
+      "f1": 0.024444444444444446,
+      "sentence_recall": 1
+    }
+  },
+  "by_answer_class_variant": {
+    "long_answer:context_bge_direct": {
+      "n": 96,
+      "closure": 0.34375,
+      "em": 0.3020833333333333,
+      "f1": 0.3562458664021164,
+      "sentence_recall": null
+    },
+    "long_answer:evidence_triples_gold_direct": {
+      "n": 96,
+      "closure": 0.8020833333333334,
+      "em": 0.8020833333333334,
+      "f1": 0.8020833333333334,
+      "sentence_recall": null
+    },
+    "long_answer:no_support_typeaware": {
+      "n": 96,
+      "closure": 0.0625,
+      "em": 0.052083333333333336,
+      "f1": 0.06169871794871795,
+      "sentence_recall": null
+    },
+    "long_answer:sentence_bge_top10_typeaware": {
+      "n": 96,
+      "closure": 0.15625,
+      "em": 0.125,
+      "f1": 0.1511316581968756,
+      "sentence_recall": 0.6822916666666666
+    },
+    "long_answer:sentence_bge_top6_direct": {
+      "n": 96,
+      "closure": 0.28125,
+      "em": 0.21875,
+      "f1": 0.3192129629629629,
+      "sentence_recall": 0.5442708333333334
+    },
+    "long_answer:sentence_bge_top6_typeaware": {
+      "n": 96,
+      "closure": 0.15625,
+      "em": 0.15625,
+      "f1": 0.1592261904761905,
+      "sentence_recall": 0.5442708333333334
+    },
+    "long_answer:support_sentences_gold_typeaware": {
+      "n": 96,
+      "closure": 0.20833333333333334,
+      "em": 0.20833333333333334,
+      "f1": 0.20833333333333334,
+      "sentence_recall": 1
+    },
+    "mixed_numeric_text:context_bge_direct": {
+      "n": 30,
+      "closure": 0.3333333333333333,
+      "em": 0.3,
+      "f1": 0.3663247863247864,
+      "sentence_recall": null
+    },
+    "mixed_numeric_text:evidence_triples_gold_direct": {
+      "n": 30,
+      "closure": 0.8666666666666667,
+      "em": 0.8666666666666667,
+      "f1": 0.8666666666666667,
+      "sentence_recall": null
+    },
+    "mixed_numeric_text:no_support_typeaware": {
+      "n": 30,
+      "closure": 0,
+      "em": 0,
+      "f1": 0,
+      "sentence_recall": null
+    },
+    "mixed_numeric_text:sentence_bge_top10_typeaware": {
+      "n": 30,
+      "closure": 0.03333333333333333,
+      "em": 0.03333333333333333,
+      "f1": 0.06333333333333332,
+      "sentence_recall": 0.5833333333333334
+    },
+    "mixed_numeric_text:sentence_bge_top6_direct": {
+      "n": 30,
+      "closure": 0.16666666666666666,
+      "em": 0.13333333333333333,
+      "f1": 0.21632478632478633,
+      "sentence_recall": 0.4083333333333333
+    },
+    "mixed_numeric_text:sentence_bge_top6_typeaware": {
+      "n": 30,
+      "closure": 0.06666666666666667,
+      "em": 0.06666666666666667,
+      "f1": 0.09666666666666666,
+      "sentence_recall": 0.4083333333333333
+    },
+    "mixed_numeric_text:support_sentences_gold_typeaware": {
+      "n": 30,
+      "closure": 0.4666666666666667,
+      "em": 0.43333333333333335,
+      "f1": 0.4785714285714286,
+      "sentence_recall": 1
+    },
+    "numeric_only:context_bge_direct": {
+      "n": 3,
+      "closure": 0,
+      "em": 0,
+      "f1": 0,
+      "sentence_recall": null
+    },
+    "numeric_only:evidence_triples_gold_direct": {
+      "n": 3,
+      "closure": 1,
+      "em": 1,
+      "f1": 1,
+      "sentence_recall": null
+    },
+    "numeric_only:no_support_typeaware": {
+      "n": 3,
+      "closure": 0,
+      "em": 0,
+      "f1": 0,
+      "sentence_recall": null
+    },
+    "numeric_only:sentence_bge_top10_typeaware": {
+      "n": 3,
+      "closure": 0,
+      "em": 0,
+      "f1": 0,
+      "sentence_recall": 0.6666666666666666
+    },
+    "numeric_only:sentence_bge_top6_direct": {
+      "n": 3,
+      "closure": 0,
+      "em": 0,
+      "f1": 0,
+      "sentence_recall": 0.6666666666666666
+    },
+    "numeric_only:sentence_bge_top6_typeaware": {
+      "n": 3,
+      "closure": 0,
+      "em": 0,
+      "f1": 0,
+      "sentence_recall": 0.6666666666666666
+    },
+    "numeric_only:support_sentences_gold_typeaware": {
+      "n": 3,
+      "closure": 0.3333333333333333,
+      "em": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "sentence_recall": 1
+    },
+    "short_entity:context_bge_direct": {
+      "n": 160,
+      "closure": 0.375,
+      "em": 0.34375,
+      "f1": 0.37770833333333326,
+      "sentence_recall": null
+    },
+    "short_entity:evidence_triples_gold_direct": {
+      "n": 160,
+      "closure": 0.79375,
+      "em": 0.79375,
+      "f1": 0.796875,
+      "sentence_recall": null
+    },
+    "short_entity:no_support_typeaware": {
+      "n": 160,
+      "closure": 0.05,
+      "em": 0.04375,
+      "f1": 0.054404761904761914,
+      "sentence_recall": null
+    },
+    "short_entity:sentence_bge_top10_typeaware": {
+      "n": 160,
+      "closure": 0.2,
+      "em": 0.1875,
+      "f1": 0.19812500000000002,
+      "sentence_recall": 0.6484375
+    },
+    "short_entity:sentence_bge_top6_direct": {
+      "n": 160,
+      "closure": 0.325,
+      "em": 0.30625,
+      "f1": 0.33552579365079366,
+      "sentence_recall": 0.51875
+    },
+    "short_entity:sentence_bge_top6_typeaware": {
+      "n": 160,
+      "closure": 0.1875,
+      "em": 0.18125,
+      "f1": 0.18687499999999999,
+      "sentence_recall": 0.51875
+    },
+    "short_entity:support_sentences_gold_typeaware": {
+      "n": 160,
+      "closure": 0.4,
+      "em": 0.35625,
+      "f1": 0.3850694444444444,
+      "sentence_recall": 1
+    },
+    "single_token_entity:context_bge_direct": {
+      "n": 66,
+      "closure": 0.3181818181818182,
+      "em": 0.12121212121212122,
+      "f1": 0.21645021645021645,
+      "sentence_recall": null
+    },
+    "single_token_entity:evidence_triples_gold_direct": {
+      "n": 66,
+      "closure": 0.9545454545454546,
+      "em": 0.9242424242424242,
+      "f1": 0.9242424242424242,
+      "sentence_recall": null
+    },
+    "single_token_entity:no_support_typeaware": {
+      "n": 66,
+      "closure": 0.015151515151515152,
+      "em": 0.015151515151515152,
+      "f1": 0.015151515151515152,
+      "sentence_recall": null
+    },
+    "single_token_entity:sentence_bge_top10_typeaware": {
+      "n": 66,
+      "closure": 0.15151515151515152,
+      "em": 0.10606060606060606,
+      "f1": 0.12373737373737373,
+      "sentence_recall": 0.553030303030303
+    },
+    "single_token_entity:sentence_bge_top6_direct": {
+      "n": 66,
+      "closure": 0.10606060606060606,
+      "em": 0.07575757575757576,
+      "f1": 0.08585858585858586,
+      "sentence_recall": 0.4356060606060606
+    },
+    "single_token_entity:sentence_bge_top6_typeaware": {
+      "n": 66,
+      "closure": 0.09090909090909091,
+      "em": 0.07575757575757576,
+      "f1": 0.07575757575757576,
+      "sentence_recall": 0.4356060606060606
+    },
+    "single_token_entity:support_sentences_gold_typeaware": {
+      "n": 66,
+      "closure": 0.4696969696969697,
+      "em": 0.30303030303030304,
+      "f1": 0.38636363636363635,
+      "sentence_recall": 1
+    },
+    "yes_no:context_bge_direct": {
+      "n": 45,
+      "closure": 0,
+      "em": 0,
+      "f1": 0,
+      "sentence_recall": null
+    },
+    "yes_no:evidence_triples_gold_direct": {
+      "n": 45,
+      "closure": 0.044444444444444446,
+      "em": 0.044444444444444446,
+      "f1": 0.044444444444444446,
+      "sentence_recall": null
+    },
+    "yes_no:no_support_typeaware": {
+      "n": 45,
+      "closure": 0.044444444444444446,
+      "em": 0.044444444444444446,
+      "f1": 0.044444444444444446,
+      "sentence_recall": null
+    },
+    "yes_no:sentence_bge_top10_typeaware": {
+      "n": 45,
+      "closure": 0.5555555555555556,
+      "em": 0.5555555555555556,
+      "f1": 0.5555555555555556,
+      "sentence_recall": 0.7555555555555555
+    },
+    "yes_no:sentence_bge_top6_direct": {
+      "n": 45,
+      "closure": 0.022222222222222223,
+      "em": 0.022222222222222223,
+      "f1": 0.022222222222222223,
+      "sentence_recall": 0.6666666666666666
+    },
+    "yes_no:sentence_bge_top6_typeaware": {
+      "n": 45,
+      "closure": 0.4444444444444444,
+      "em": 0.4444444444444444,
+      "f1": 0.4444444444444444,
+      "sentence_recall": 0.6666666666666666
+    },
+    "yes_no:support_sentences_gold_typeaware": {
+      "n": 45,
+      "closure": 0.6,
+      "em": 0.6,
+      "f1": 0.6,
+      "sentence_recall": 1
+    }
+  }
+}
