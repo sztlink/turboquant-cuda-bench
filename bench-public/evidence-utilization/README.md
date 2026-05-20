@@ -22,6 +22,10 @@ Sealed offline milestone:
 OFFLINE-MILESTONE-v1.9.md
 ```
 
+<p>
+  <img src="../assets/evidence-path-ledger-v19.svg" alt="evidence path ledger v1.9" width="860">
+</p>
+
 Bridge docs:
 
 ```txt

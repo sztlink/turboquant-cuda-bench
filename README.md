@@ -19,6 +19,14 @@ Read it as three paths:
 
 Boundary: this repo is receipts-first systems research. It does not claim serving speedup, production attention, answer-quality improvement, or proof that selected positions are model evidence use.
 
+<p>
+  <img src="bench-public/assets/github-hero-evidence-path.svg" alt="retrieved != used evidence path hero" width="860">
+</p>
+
+<p>
+  <img src="bench-public/assets/milestone-seal-inline-v19.svg" alt="EPKV offline milestone v1.9 provenance pass" width="360">
+</p>
+
 ## TL;DR
 
 | Finding | Concrete receipt | Why it matters | Public entry |
@@ -46,7 +54,15 @@ Start here:
 ## Visual readout
 
 <p>
-  <img src="bench-public/assets/hero-retrieved-not-used.svg" alt="retrieved != used hero card" width="720">
+  <img src="bench-public/assets/evidence-path-ledger-v19.svg" alt="evidence path ledger v1.9 process diagram" width="900">
+</p>
+
+<p>
+  <img src="bench-public/assets/github-entry-map.svg" alt="three reading paths: evidence utilization, bridge methodology, Evidence-Paged KV" width="900">
+</p>
+
+<p>
+  <img src="bench-public/assets/claims-and-constraints-v19.svg" alt="claims and constraints for reading the repository" width="900">
 </p>
 
 | Evidence utilization | Cross-stack behavior |

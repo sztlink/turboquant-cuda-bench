@@ -3,6 +3,10 @@
 > Cristalização local do marco offline.  
 > **Cristaliza o marco, não a hipótese.**
 
+<p>
+  <img src="../assets/boundary-seal-v19.svg" alt="offline milestone v1.9 boundary seal" width="860">
+</p>
+
 ## Status
 
 ```txt

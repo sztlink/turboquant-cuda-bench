@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-label="evidence-path ledger v1.9">
+  <defs>
+    <pattern id="papergrain" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#f3ead7"/>
+      <path d="M0 8h32M0 23h32M7 0v32M24 0v32" stroke="#d8c9aa" stroke-width="0.6" opacity="0.22"/>
+      <circle cx="6" cy="6" r="0.7" fill="#9b8d74" opacity="0.18"/><circle cx="22" cy="18" r="0.6" fill="#9b8d74" opacity="0.14"/>
+    </pattern>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
+      .tag { font-size: 13px; font-weight: 700; letter-spacing: 2.2px; fill: #a33a2b; text-transform: uppercase; }
+      .title { font-size: 48px; font-weight: 800; letter-spacing: -2px; fill: #171717; }
+      .sub { font-size: 18px; fill: #5f594f; }
+      .small { font-size: 13px; fill: #5f594f; }
+      .label { font-size: 16px; fill: #171717; }
+      .num { font-size: 42px; font-weight: 800; fill: #171717; letter-spacing: -1px; }
+      .micro { font-size: 11px; fill: #5f594f; letter-spacing: 1.1px; text-transform: uppercase; }
+    </style>
+  </defs>
+  <rect width="1400" height="760" fill="url(#papergrain)"/>
+  <rect x="28" y="28" width="1344" height="704" rx="28" fill="none" stroke="#24221e" stroke-width="1.5"/>
+  <text x="58" y="68" class="mono tag">turboquant-cuda-bench</text>
+  <text x="58" y="126" class="mono title">evidence-path ledger v1.9</text>
+  <text x="58" y="160" class="mono sub">A validator-first process view for retrieved != used</text>
+  
+    <g transform="translate(70 250)">
+      <g><rect x="0" y="0" width="174" height="98" rx="18" fill="#fff7e8" stroke="#24221e" stroke-width="1.4"/><text x="20" y="42" class="mono num" fill="#171717">178</text><text x="20" y="70" class="mono small">aggregate groups</text></g>
+      <line x1="184" y1="49" x2="255" y2="49" stroke="#24221e" stroke-width="2.2"/><path d="M255 49 l-10 -6 v12 z" fill="#24221e"/>
+      <g><rect x="270" y="0" width="174" height="98" rx="18" fill="#fff7e8" stroke="#24221e" stroke-width="1.4"/><text x="290" y="42" class="mono num" fill="#171717">16</text><text x="290" y="70" class="mono small">selected targets</text></g>
+      <line x1="454" y1="49" x2="524" y2="20" stroke="#a06f18" stroke-width="2.2"/><path d="M524 20 l-10 -6 v12 z" fill="#a06f18"/>
+      <line x1="454" y1="49" x2="524" y2="106" stroke="#a06f18" stroke-width="2.2"/><path d="M524 106 l-10 -6 v12 z" fill="#a06f18"/>
+      <g><rect x="540" y="-44" width="190" height="86" rx="18" fill="#fff7e8" stroke="#24221e" stroke-width="1.4"/><text x="560" y="-2" class="mono num" fill="#171717">13</text><text x="560" y="26" class="mono small">bridge-ready</text></g>
+      <g><rect x="540" y="72" width="190" height="86" rx="18" fill="#fff7e8" stroke="#24221e" stroke-width="1.4"/><text x="560" y="114" class="mono num" fill="#171717">3</text><text x="560" y="142" class="mono small">refined targets</text></g>
+      <line x1="740" y1="0" x2="850" y2="49" stroke="#2f7d4f" stroke-width="2.2"/><path d="M850 49 l-10 -6 v12 z" fill="#2f7d4f"/>
+      <line x1="740" y1="116" x2="850" y2="70" stroke="#2f7d4f" stroke-width="2.2"/><path d="M850 70 l-10 -6 v12 z" fill="#2f7d4f"/>
+      <g><rect x="870" y="0" width="210" height="98" rx="18" fill="#fff7e8" stroke="#24221e" stroke-width="1.4"/><text x="890" y="42" class="mono num" fill="#171717">22</text><text x="890" y="70" class="mono small">replay records</text></g>
+      <line x1="1090" y1="49" x2="1160" y2="49" stroke="#2f7d4f" stroke-width="2.2"/><path d="M1160 49 l-10 -6 v12 z" fill="#2f7d4f"/>
+      <g><rect x="1175" y="0" width="150" height="98" rx="18" fill="#fff7e8" stroke="#24221e" stroke-width="1.4"/><text x="1195" y="42" class="mono num" fill="#171717">PASS</text><text x="1195" y="70" class="mono small">provenance</text></g>
+    </g>
+    <rect x="70" y="520" width="1260" height="120" rx="22" fill="#fff7e8" stroke="#24221e"/>
+    <text x="104" y="560" class="mono micro">invariants</text>
+    <text x="104" y="594" class="mono label">receipts present · primary artifacts present · non-serving boundaries · no attention claim · no evidence-use proof</text>
+    <text x="104" y="625" class="mono small">This diagram shows an offline audit path. It is not runtime behavior from a live request.</text>
+</svg>

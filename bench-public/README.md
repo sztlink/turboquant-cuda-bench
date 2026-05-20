@@ -6,6 +6,10 @@ It contains only public-safe summaries, aggregate tables, sanitized JSON, and co
 
 This is a public index of receipts, **not a roadmap**.
 
+<p>
+  <img src="assets/github-entry-map.svg" alt="three public reading paths" width="860">
+</p>
+
 ## Choose a question
 
 | If you want to know... | Start here |
@@ -31,7 +35,11 @@ This is a public index of receipts, **not a roadmap**.
 ## Visual assets
 
 <p>
-  <img src="assets/hero-retrieved-not-used.svg" alt="retrieved != used hero card" width="720">
+  <img src="assets/evidence-path-ledger-v19.svg" alt="evidence path ledger v1.9" width="860">
+</p>
+
+<p>
+  <img src="assets/provenance-card-v19.svg" alt="provenance closure pass for v1.9" width="860">
 </p>
 
 | Chart | File |
