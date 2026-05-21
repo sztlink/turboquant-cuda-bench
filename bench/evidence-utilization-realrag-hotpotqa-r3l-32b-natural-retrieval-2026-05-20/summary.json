@@ -1,0 +1,110 @@
+{
+  "schema": "realrag.hotpotqa.r3l.natural_retrieval_32b.summary.v1",
+  "status": "done",
+  "started_at": "2026-05-21T09:06:52.028Z",
+  "finished_at": "2026-05-21T10:14:38.000Z",
+  "model": "Qwen/Qwen2.5-32B-Instruct-AWQ",
+  "served_model_alias": "qwen2.5-32b-awq",
+  "generation_modes": {
+    "openai_server_records": 5511,
+    "offline_vllm_generate_records": 2453
+  },
+  "offline_completion": {
+    "script": "/home/aya/implante/tmp/r3l-offline-generate.py",
+    "max_model_len": 8192,
+    "max_num_seqs": 1,
+    "kv_cache_dtype": "turboquant_k8v4",
+    "quantization": "awq_marlin",
+    "gpu_memory_utilization": 0.88,
+    "elapsed_s": 1623.1
+  },
+  "dataset_path": "/home/aya/implante/research/turboquant-cuda-bench/bench/_datasets/hotpot_dev_distractor_v1.json",
+  "dataset_sha256": "4e9ecb5c8d3b719f624d66b60f8d56bf227f03914f5f0753d6fa1b359d7104ea",
+  "limit": 2000,
+  "offset": 0,
+  "seed": 20260520,
+  "conditions": [
+    "bm25_top10",
+    "bge_rerank_top10",
+    "oracle_first",
+    "no_support"
+  ],
+  "candidate_k": 10,
+  "rerank_scores_path": "bench/evidence-utilization-realrag-hotpotqa-r3b-natural-retrieval-2026-05-20/bge-rerank-scores.json",
+  "rerank_scores_schema": "realrag.hotpotqa.r3b.bge_rerank_scores.v1",
+  "selected_questions": 1991,
+  "expected_records": 7964,
+  "completed_records": 7964,
+  "errors": 0,
+  "aggregate": {
+    "byCondition": [
+      {
+        "condition": "bm25_top10",
+        "n": 1991,
+        "em": 0.5138121546961326,
+        "f1": 0.6441545824209368,
+        "contains": 0.5851330989452537,
+        "closure": 0.623807132094425,
+        "supportPresent": 1,
+        "supportRecall": 1,
+        "bm25SupportRecallAtCandidateK": 1,
+        "errors": 0,
+        "errorRate": 0,
+        "supportRankMean": 1.3415369161225514,
+        "supportRankMedian": 1
+      },
+      {
+        "condition": "bge_rerank_top10",
+        "n": 1991,
+        "em": 0.5364138623807132,
+        "f1": 0.6666918630064554,
+        "contains": 0.6077348066298343,
+        "closure": 0.6464088397790055,
+        "supportPresent": 1,
+        "supportRecall": 1,
+        "bm25SupportRecallAtCandidateK": 1,
+        "errors": 0,
+        "errorRate": 0,
+        "supportRankMean": 1.0502260170768458,
+        "supportRankMedian": 1
+      },
+      {
+        "condition": "oracle_first",
+        "n": 1991,
+        "em": 0.5519839276745354,
+        "f1": 0.68411211645132,
+        "contains": 0.6217980914113511,
+        "closure": 0.6624811652435962,
+        "supportPresent": 1,
+        "supportRecall": 1,
+        "bm25SupportRecallAtCandidateK": 1,
+        "errors": 0,
+        "errorRate": 0,
+        "supportRankMean": 1,
+        "supportRankMedian": 1
+      },
+      {
+        "condition": "no_support",
+        "n": 1991,
+        "em": 0.052737317930688095,
+        "f1": 0.06671077483852622,
+        "contains": 0.05826217980914113,
+        "closure": 0.06127574083375188,
+        "supportPresent": 0,
+        "supportRecall": 0,
+        "bm25SupportRecallAtCandidateK": 1,
+        "errors": 0,
+        "errorRate": 0,
+        "supportRankMean": null,
+        "supportRankMedian": null
+      }
+    ]
+  },
+  "analysis_path": "analysis.json",
+  "interpretation_boundary": [
+    "32B scale check over the same HotpotQA natural-retrieval gate as R3B",
+    "answer-side closure, not proof of internal evidence use",
+    "mixed generation transport: OpenAI-compatible server for first 5511 records, offline vLLM.generate for final 2453 after server instability",
+    "no EPKV hook, no production-RAG claim, no serving-speed claim"
+  ]
+}

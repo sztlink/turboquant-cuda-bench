@@ -17,6 +17,7 @@ REALRAG-HOTPOTQA-R1.md
 REALRAG-HOTPOTQA-R2-RANKCURVE.md
 REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md
 REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md
+REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md
 REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md
 REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md
 REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md
@@ -58,6 +59,7 @@ Public-dataset gates:
 - `REALRAG-HOTPOTQA-R2-RANKCURVE.md` — forced support-rank curve: beginning helps, middle burial hurts, end partially recovers.
 - `REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md` — direct/citation/reasoning prompt ablation; the position effect survives simple prompting changes.
 - `REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md` — BM25 vs BGE reranker vs oracle/no-support; strong reranking closes most of the natural BM25-to-oracle gap.
+- `REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md` — 32B scale check on the same HotpotQA natural-retrieval gate; scale raises closure but preserves the rank/placement ladder.
 - `REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md` — supporting-fact sentence audit and stratified sample pack for manual/judge review.
 - `REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md` — local Qwen semantic-judge triage over R3C samples; not ground-truth adjudication.
 - `REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md` — unreviewed packet for human/independent adjudication.
@@ -87,6 +89,7 @@ retrieved != used is shorthand for operational separation, not proof of internal
 answer closure is sensitive to position/rank/recency under controlled evidence placement
 simple citation/reasoning prompts did not remove the HotpotQA position effect in R3A
 BGE reranking mitigated most of the BM25-to-oracle gap in R3B natural retrieval
+R3L shows 32B scale raises HotpotQA closure sharply in support-present conditions but keeps BM25 < BGE < oracle_first >> no_support
 R3C confirms supporting-fact sentence presence; R3D/R3F local AI triage and R3E review packet make independent/human adjudication the next gate
 2Wiki R3G/R3H/R3I/R3J shows the HotpotQA reranker ladder does not generalize cleanly under the same harness; type/prompt/schema fit and relation-aware evidence compression matter
 evidence depth != answer closure

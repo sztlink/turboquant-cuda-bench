@@ -8,7 +8,7 @@ These are the stable public findings from promoted receipts. The phrase **retrie
 
 ## 1. Public HotpotQA: answer closure is position-sensitive
 
-The RealRAG R1/R2/R3A/R3B/R3C/R3D/R3E/R3F runs move the evidence-placement claim beyond synthetic fixtures onto public HotpotQA dev distractor.
+The RealRAG R1/R2/R3A/R3B/R3C/R3D/R3E/R3F/R3L runs move the evidence-placement claim beyond synthetic fixtures onto public HotpotQA dev distractor.
 
 R1 full evidence-placement gate:
 
@@ -54,6 +54,17 @@ R3B natural retrieval + BGE reranker gate:
 - Paired `bge_rerank_top10 - bm25_top10`: **+4.4 pp**, 95% CI **+2.7 to +6.1 pp**.
 - Paired `oracle_first - bge_rerank_top10`: **+1.1 pp**, 95% CI **-0.6 to +2.7 pp**.
 
+R3L 32B natural retrieval scale check:
+
+- **1,991** questions, **7,964** records, **0 errors** on Qwen2.5-32B-AWQ.
+- `bm25_top10`: **62.4%** closure, support rank mean **1.34**.
+- `bge_rerank_top10`: **64.6%** closure, support rank mean **1.05**.
+- `oracle_first`: **66.2%** closure.
+- `no_support`: **6.1%** closure.
+- Paired `bge_rerank_top10 - bm25_top10`: **+2.3 pp**, 95% CI **+0.9 to +3.7 pp**.
+- Paired `oracle_first - bge_rerank_top10`: **+1.6 pp**, 95% CI **+0.3 to +2.9 pp**.
+- Operational boundary: first **5,511** records used guarded vLLM server; final **2,453** used offline `vLLM.generate()` after server instability. This is a scale check, not a serving benchmark.
+
 R3C metric/supporting-facts audit:
 
 - R3B support-present conditions have **100%** supporting-fact sentence recall.
@@ -77,7 +88,7 @@ R3E/R3F adjudication prep:
 - R3F metric/AI: metric closed + AI positive **41**; metric open + AI negative **69**; metric open + AI positive **34**; metric closed + AI negative **0**.
 - R3F is not human ground truth; it is a prioritization layer.
 
-Interpretation: answer closure is sensitive to where gold supporting evidence sits in the context field. Beginning helps, middle burial hurts, and end placement partially recovers. Simple citation or reasoning prompts do not remove the controlled position effect. R3B changes the practical verdict: a strong reranker mitigates most of the natural BM25-to-oracle gap on this HotpotQA slice. R3C/R3D/R3E/R3F change the next question: remaining failures need independent/human semantic audit before being interpreted as evidence-use failures.
+Interpretation: answer closure is sensitive to where gold supporting evidence sits in the context field. Beginning helps, middle burial hurts, and end placement partially recovers. Simple citation or reasoning prompts do not remove the controlled position effect. R3B changes the practical verdict: a strong reranker mitigates most of the natural BM25-to-oracle gap on this HotpotQA slice. R3L adds that 32B scale raises support-present closure sharply but does not make rank/placement irrelevant. R3C/R3D/R3E/R3F change the next question: remaining failures need independent/human semantic audit before being interpreted as evidence-use failures.
 
 Boundaries: this is answer-side EM/contains/F1-derived closure. Citation-hit is title-string overlap, not proof of internal citation use. Supporting-fact sentence presence validates prompt inclusion, not internal use. Local/AI judge labels are triage, not ground truth. R3E human labels are blank/unreviewed. These results do not prove attention, internal evidence use, production RAG value, a dominant production-RAG bottleneck, or runtime readiness.
 
@@ -87,6 +98,7 @@ Public packages:
 - [RealRAG HotpotQA R2 rank curve](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md)
 - [RealRAG HotpotQA R3A prompt variants](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md)
 - [RealRAG HotpotQA R3B natural retrieval](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md)
+- [RealRAG HotpotQA R3L 32B natural retrieval](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md)
 - [RealRAG HotpotQA R3C metric audit](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md)
 - [RealRAG HotpotQA R3D local judge](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md)
 - [RealRAG HotpotQA R3E human adjudication pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md)
