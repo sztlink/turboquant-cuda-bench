@@ -1,0 +1,46 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 105,
+  "evidence_token_count": 22,
+  "evidence_pages": [
+    2,
+    3
+  ],
+  "evidence_pages_spec": "2-3",
+  "spans": [
+    {
+      "label": "E1",
+      "text": "The red key opens the north door.",
+      "char_start": 164,
+      "char_end": 201,
+      "token_start": 34,
+      "token_end_exclusive": 45,
+      "token_count": 11,
+      "pages": [
+        2
+      ]
+    },
+    {
+      "label": "E2",
+      "text": "The blue key opens the south door.",
+      "char_start": 202,
+      "char_end": 240,
+      "token_start": 45,
+      "token_end_exclusive": 56,
+      "token_count": 11,
+      "pages": [
+        2,
+        3
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: The red key opens the north door.\nE2: The blue key opens the south door.\nDistractors:\nD1: The green key is stored in the attic.\nD2: The yellow key is decorative and opens nothing.\nQuestion: Which key opens the north door? Answer with only the key color."
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: The red key opens the north door.\nE2: The blue key opens the south door.\nDistractors:\nD1: The green key is stored in the attic.\nD2: The yellow key is decorative and opens nothing.\nQuestion: Which key opens the north door? Answer with only the key color.<|im_end|>\n<|im_start|>assistant\n"
+}

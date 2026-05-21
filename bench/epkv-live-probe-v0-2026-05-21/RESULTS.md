@@ -100,9 +100,71 @@ live-summary.json
 
 The start script was restored to `VLLM_EPKV_RUNTIME_HOOK=0` and vLLM health was revalidated after restart.
 
+## Span → token → KV page bridge
+
+Added:
+
+```txt
+07-scripts/vllm-hook/epkv-span-to-page-map.py
+```
+
+For a chat-template prompt with two evidence lines, the mapper produced:
+
+```txt
+total tokens: 105
+evidence tokens: 22
+evidence pages: 2-3
+E1 token range: 34..44 → page 2
+E2 token range: 45..55 → pages 2,3
+```
+
+Artifact:
+
+```txt
+span-map.json
+```
+
+## Live 4090 span-page sweep
+
+The manual `0-2` mask was replaced by the computed evidence page mask `2-3` and two dry-run live passes were executed:
+
+```txt
+baseline: guard=0 boost=0.0
+boost4:   guard=1 boost=4.0
+```
+
+Both used the real vLLM endpoint and dry-run fallback to preserve original TurboQuant outputs.
+
+Summary:
+
+```txt
+baseline events: 8
+baseline evidence hit rate avg: 26.69%
+baseline min/max: 20.31% / 33.93%
+
+boost4 events: 8
+boost4 evidence hit rate avg: 73.24%
+boost4 min/max: 62.72% / 79.46%
+
+delta avg: +46.55 pp
+seq_len: 106
+K: 32
+evidence pages: 2,3
+```
+
+Artifacts:
+
+```txt
+live-span-baseline-events.jsonl
+live-span-boost4-events.jsonl
+live-span-sweep-summary.json
+```
+
+The start script was restored again to `VLLM_EPKV_RUNTIME_HOOK=0` and `/health` was revalidated.
+
 ## Next live step
 
-Map real HotpotQA/2Wiki evidence spans to tokenizer positions and then KV pages, replacing the manual `0-2` page mask. Then sweep small boosts in dry-run first:
+Run the same span→page bridge on real HotpotQA/2Wiki records, then sweep small boosts:
 
 ```txt
 VLLM_EPKV_EVIDENCE_BOOST=0.5,1,2,4
