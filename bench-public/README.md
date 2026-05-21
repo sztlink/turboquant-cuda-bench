@@ -15,7 +15,7 @@ This is a public index of receipts, **not a roadmap**.
 | If you want to know... | Start here |
 |---|---|
 | What Phase 0 concludes about evidence placement | [`evidence-utilization/REALRAG-PHASE0-CLOSURE.md`](evidence-utilization/REALRAG-PHASE0-CLOSURE.md) |
-| How Phase 1 starts without live intervention | [`evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md`](evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md) / [`v0.1`](evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md) |
+| How Phase 1 starts without live intervention | [`evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md`](evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md) / [`v0.1`](evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md) / [`v0.2`](evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md) |
 | Why retrieved evidence still fails to close an answer | [`evidence-utilization/`](evidence-utilization/) |
 | Whether the offline evidence-path layer is sealed and auditable | [`evidence-utilization/OFFLINE-MILESTONE-v1.9.md`](evidence-utilization/OFFLINE-MILESTONE-v1.9.md) |
 | How KV/cache changes can preserve action while losing target identity | [`cask-kvfidelity-bridge/`](cask-kvfidelity-bridge/) |

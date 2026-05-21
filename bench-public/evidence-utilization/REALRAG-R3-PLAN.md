@@ -165,11 +165,12 @@ The runtime line is named:
 Evidence-Path Runtime Telemetry
 ```
 
-It began with v0 replay telemetry and v0.1 runtime sidecar telemetry:
+It began with v0 replay telemetry, v0.1 runtime sidecar telemetry, and v0.2 security fixtures:
 
 ```txt
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md
+EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md
 ```
 
 Required envelope remains:
