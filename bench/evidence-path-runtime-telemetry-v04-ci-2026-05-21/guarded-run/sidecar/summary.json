@@ -1,0 +1,93 @@
+{
+  "schema": "evidence_path_runtime_telemetry_v01.summary",
+  "status": "built_pending_validation",
+  "created_at": "2026-05-21T13:07:16.810Z",
+  "boundary": [
+    "default-off sidecar runtime emitter",
+    "synthetic/local prompts only",
+    "no serving hook or vLLM mutation",
+    "no prompt text, raw token ids, completion text, or expected value stored",
+    "selected/page positions are estimated geometry, not attention"
+  ],
+  "endpoint_hash": "a4a9a2a91555fc10",
+  "requested_model_hash": "7f1eb66c060030a5",
+  "served_model_id_hashes": [
+    "7f1eb66c060030a5",
+    "0eeef9328b34c18d"
+  ],
+  "events": 8,
+  "mode_counts": {
+    "dry-run": 8
+  },
+  "reason_code_counts": {
+    "dry_run_telemetry_only": 8
+  },
+  "closure_count": 7,
+  "request_wall_ms_mean": 158.375,
+  "cases": [
+    {
+      "case_hash": "fd3f450bd7f0b682",
+      "condition": "canonical_first",
+      "response_hash": "953dd728f7273a40",
+      "response_chars": 8,
+      "closed_metric": 1,
+      "request_wall_ms": 428
+    },
+    {
+      "case_hash": "a2397deefb740793",
+      "condition": "canonical_middle",
+      "response_hash": "1ae4f34258ce2738",
+      "response_chars": 9,
+      "closed_metric": 1,
+      "request_wall_ms": 133
+    },
+    {
+      "case_hash": "f6384e73cfe02449",
+      "condition": "canonical_last",
+      "response_hash": "aca0d1589812a0c4",
+      "response_chars": 10,
+      "closed_metric": 1,
+      "request_wall_ms": 160
+    },
+    {
+      "case_hash": "5daa4b3518a78396",
+      "condition": "no_support",
+      "response_hash": "23759997b3c59884",
+      "response_chars": 7,
+      "closed_metric": 1,
+      "request_wall_ms": 70
+    },
+    {
+      "case_hash": "884c9966b03c7e6b",
+      "condition": "near_duplicate_decoy",
+      "response_hash": "2af3651ae39e69f5",
+      "response_chars": 10,
+      "closed_metric": 1,
+      "request_wall_ms": 159
+    },
+    {
+      "case_hash": "39c627f7453e9149",
+      "condition": "conflict_before_canonical",
+      "response_hash": "4c64dfc5cb9dc148",
+      "response_chars": 9,
+      "closed_metric": 1,
+      "request_wall_ms": 124
+    },
+    {
+      "case_hash": "8a5ce969d60f6bcc",
+      "condition": "stale_before_canonical",
+      "response_hash": "b329674cfe386938",
+      "response_chars": 9,
+      "closed_metric": 1,
+      "request_wall_ms": 131
+    },
+    {
+      "case_hash": "9de056797af684d5",
+      "condition": "canonical_after_long_noise",
+      "response_hash": "23759997b3c59884",
+      "response_chars": 7,
+      "closed_metric": 0,
+      "request_wall_ms": 62
+    }
+  ]
+}

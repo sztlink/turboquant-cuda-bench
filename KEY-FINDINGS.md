@@ -4,7 +4,7 @@ This file is the short public readout of the repo. Numbers are from local RTX 40
 
 ## Core findings
 
-Phase 0 is closed as a public-dataset answer-closure package. It includes HotpotQA placement/reranking/metric-audit/adjudication-prep/32B scale gates plus 2Wiki generalization and schema diagnostics. Phase 1 is open as default-off Evidence-Path Runtime Telemetry, starting with replay-derived schema-valid events, a synthetic runtime sidecar emitter, fail-closed/privacy regression tests, and a guarded sidecar run loop.
+Phase 0 is closed as a public-dataset answer-closure package. It includes HotpotQA placement/reranking/metric-audit/adjudication-prep/32B scale gates plus 2Wiki generalization and schema diagnostics. Phase 1 is open as default-off Evidence-Path Runtime Telemetry, starting with replay-derived schema-valid events, a synthetic runtime sidecar emitter, fail-closed/privacy regression tests, a guarded sidecar run loop, and a config-driven CI-style command.
 
 These are the stable public findings from promoted receipts. The phrase **retrieved ≠ used** is shorthand for an operational separation between evidence presence and answer closure. It is not a proof of internal evidence use or a claim that this is the dominant production RAG bottleneck.
 
@@ -101,6 +101,7 @@ Public packages:
 - [Evidence-Path Runtime Telemetry v0.1](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md)
 - [Evidence-Path Runtime Telemetry v0.2](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md)
 - [Evidence-Path Runtime Telemetry v0.3](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.3.md)
+- [Evidence-Path Runtime Telemetry v0.4](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.4.md)
 - [RealRAG HotpotQA R1](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R1.md)
 - [RealRAG HotpotQA R2 rank curve](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md)
 - [RealRAG HotpotQA R3A prompt variants](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md)

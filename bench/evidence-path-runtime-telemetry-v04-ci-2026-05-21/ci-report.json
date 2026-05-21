@@ -1,0 +1,100 @@
+{
+  "schema": "evidence_path_runtime_telemetry_v04.ci_report",
+  "status": "passed",
+  "created_at": "2026-05-21T13:07:14.293Z",
+  "config_path": "bench/evidence-path-runtime-telemetry-v04-ci-2026-05-21/config.json",
+  "out_dir": "bench/evidence-path-runtime-telemetry-v04-ci-2026-05-21",
+  "boundary": [
+    "CI-style orchestration around v0.3 guarded sidecar",
+    "no serving mutation",
+    "no vLLM patch",
+    "no EPKV hook-on",
+    "no output-changing path"
+  ],
+  "contract": {
+    "enable_sidecar_required": true,
+    "allow_output_changing_path_required": false,
+    "require_model_id": "local-vllm"
+  },
+  "checks": [
+    {
+      "name": "config.enableSidecar",
+      "ok": true,
+      "message": "ok"
+    },
+    {
+      "name": "config.allowOutputChangingPath",
+      "ok": true,
+      "message": "ok"
+    },
+    {
+      "name": "config.endpoint",
+      "ok": true,
+      "message": "ok"
+    },
+    {
+      "name": "config.model",
+      "ok": true,
+      "message": "ok"
+    },
+    {
+      "name": "config.requireModelId",
+      "ok": true,
+      "message": "ok"
+    },
+    {
+      "name": "v03.exit",
+      "ok": true,
+      "exit_code": 0
+    },
+    {
+      "name": "v03.guard_report",
+      "ok": true,
+      "status": "passed",
+      "gates": [
+        {
+          "name": "default_off",
+          "ok": true
+        },
+        {
+          "name": "preflight_security_v02",
+          "ok": true
+        },
+        {
+          "name": "served_model_guard",
+          "ok": true
+        },
+        {
+          "name": "sidecar_emit_v01",
+          "ok": true
+        },
+        {
+          "name": "postflight_schema_validation",
+          "ok": true
+        },
+        {
+          "name": "privacy_scan",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "name": "output_changing_path",
+      "ok": true,
+      "value": false
+    }
+  ],
+  "guarded_run": {
+    "path": "bench/evidence-path-runtime-telemetry-v04-ci-2026-05-21/guarded-run",
+    "guard_report": "bench/evidence-path-runtime-telemetry-v04-ci-2026-05-21/guarded-run/guard-report.json",
+    "events": 8,
+    "closure_count": 7,
+    "request_wall_ms_mean": 158.375,
+    "preflight": {
+      "status": "passed",
+      "valid_events": 5,
+      "invalid_events": 6,
+      "invalid_errors": 7
+    }
+  }
+}

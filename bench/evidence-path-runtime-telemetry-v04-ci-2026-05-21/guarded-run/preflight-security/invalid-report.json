@@ -1,0 +1,67 @@
+{
+  "valid": false,
+  "expected_valid": false,
+  "exit_code": 1,
+  "files": 1,
+  "events": 6,
+  "errors": 7,
+  "file_reports": [
+    {
+      "file": "bench/evidence-path-runtime-telemetry-v04-ci-2026-05-21/guarded-run/preflight-security/invalid-events.jsonl",
+      "events": 6,
+      "errors": 7,
+      "valid": false,
+      "invalid_lines": [
+        {
+          "line": 1,
+          "mode": "dry-run",
+          "reason_code": "dry_run_telemetry_only",
+          "errors": [
+            "privacy.forbidden_key"
+          ]
+        },
+        {
+          "line": 2,
+          "mode": "dry-run",
+          "reason_code": "dry_run_telemetry_only",
+          "errors": [
+            "privacy.forbidden_key"
+          ]
+        },
+        {
+          "line": 3,
+          "mode": "dry-run",
+          "reason_code": "dry_run_telemetry_only",
+          "errors": [
+            "privacy.forbidden_key"
+          ]
+        },
+        {
+          "line": 4,
+          "mode": "dry-run",
+          "reason_code": "cuda_error",
+          "errors": [
+            "fail_closed.violation"
+          ]
+        },
+        {
+          "line": 5,
+          "mode": "compact-fallback",
+          "reason_code": "privacy_guard",
+          "errors": [
+            "mode_reason.mismatch",
+            "fail_closed.violation"
+          ]
+        },
+        {
+          "line": 6,
+          "mode": "dry-run",
+          "reason_code": "dry_run_telemetry_only",
+          "errors": [
+            "privacy.prompt_text"
+          ]
+        }
+      ]
+    }
+  ]
+}
