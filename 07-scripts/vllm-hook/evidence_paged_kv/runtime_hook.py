@@ -59,6 +59,9 @@ _ENV_DRY_RUN = "VLLM_EPKV_RUNTIME_DRY_RUN"
 _ENV_TRACE_SELECTION = "VLLM_EPKV_RUNTIME_TRACE_SELECTION"
 _ENV_TRACE_TOP_N = "VLLM_EPKV_RUNTIME_TRACE_TOP_N"
 _ENV_SCHEMA_V1 = "VLLM_EPKV_RUNTIME_SCHEMA_V1"
+_ENV_EVIDENCE_PAGES = "VLLM_EPKV_EVIDENCE_PAGES"
+_ENV_EVIDENCE_BOOST = "VLLM_EPKV_EVIDENCE_BOOST"
+_ENV_EVIDENCE_GUARD = "VLLM_EPKV_EVIDENCE_GUARD"
 
 _seen = 0
 _warned = False
@@ -67,6 +70,13 @@ _warned = False
 def _int_env(name: str, default: int) -> int:
     try:
         return int(os.environ.get(name, str(default)))
+    except Exception:
+        return default
+
+
+def _float_env(name: str, default: float) -> float:
+    try:
+        return float(os.environ.get(name, str(default)))
     except Exception:
         return default
 
@@ -93,7 +103,44 @@ def _schema_v1_enabled() -> bool:
     return os.environ.get(_ENV_SCHEMA_V1, "0") == "1"
 
 
-def _selection_summary(pos: torch.Tensor, *, M: int, Hq: int, K: int) -> dict[str, Any]:
+def _parse_page_set(spec: str, *, max_pages: int | None = None) -> set[int]:
+    """Parse page ids like ``1,4-7`` into a bounded set."""
+    pages: set[int] = set()
+    for part in spec.split(","):
+        part = part.strip()
+        if not part:
+            continue
+        if "-" in part:
+            lo_s, hi_s = part.split("-", 1)
+            lo, hi = int(lo_s), int(hi_s)
+            for page in range(min(lo, hi), max(lo, hi) + 1):
+                if page >= 0 and (max_pages is None or page < max_pages):
+                    pages.add(page)
+        else:
+            page = int(part)
+            if page >= 0 and (max_pages is None or page < max_pages):
+                pages.add(page)
+    return pages
+
+
+def _evidence_page_mask(spec: str, *, num_pages: int, device: torch.device) -> torch.Tensor | None:
+    pages = _parse_page_set(spec, max_pages=num_pages)
+    if not pages:
+        return None
+    mask = torch.zeros((num_pages,), device=device, dtype=torch.int32)
+    mask[torch.tensor(sorted(pages), device=device, dtype=torch.long)] = 1
+    return mask
+
+
+def _selection_summary(
+    pos: torch.Tensor,
+    *,
+    M: int,
+    Hq: int,
+    K: int,
+    block_size: int | None = None,
+    evidence_page_mask: torch.Tensor | None = None,
+) -> dict[str, Any]:
     """Return compact selected-position telemetry without prompt/token text.
 
     ``pos`` has shape [K, Hq]. This intentionally records positions only,
@@ -111,7 +158,7 @@ def _selection_summary(pos: torch.Tensor, *, M: int, Hq: int, K: int) -> dict[st
         start = (int(value) // bin_size) * bin_size
         key = f"{start}-{start + bin_size - 1}"
         histogram[key] = histogram.get(key, 0) + 1
-    return {
+    summary = {
         "heads": Hq,
         "K": K,
         "trace_top_n": top_n,
@@ -122,6 +169,28 @@ def _selection_summary(pos: torch.Tensor, *, M: int, Hq: int, K: int) -> dict[st
         "max_position": max(flat) if flat else None,
         "seq_len": M,
     }
+    if block_size and evidence_page_mask is not None:
+        pages = (pos.detach() // int(block_size)).to(torch.long)
+        mask_cpu = evidence_page_mask.detach().to("cpu")
+        pages_cpu = pages.to("cpu")
+        hit = 0
+        per_head = []
+        for h in range(Hq):
+            head_pages = pages_cpu[:, h].tolist()
+            head_hit = sum(1 for p in head_pages if 0 <= int(p) < len(mask_cpu) and int(mask_cpu[int(p)].item()) == 1)
+            hit += head_hit
+            per_head.append({"head": h, "selected": len(head_pages), "evidence_hits": head_hit})
+        total = int(pos.numel())
+        summary["evidence_selection"] = {
+            "block_size": int(block_size),
+            "evidence_pages": [i for i, v in enumerate(mask_cpu.tolist()) if int(v) == 1],
+            "selected_total": total,
+            "evidence_hits": hit,
+            "evidence_misses": total - hit,
+            "evidence_hit_rate": (hit / total) if total else 0.0,
+            "per_head": per_head,
+        }
+    return summary
 
 
 def _schema_v1_event_from_legacy(
@@ -242,6 +311,24 @@ def _epkv_scores_kernel(
 
 
 @triton.jit
+def _epkv_evidence_boost_scores_kernel(
+    Scores_ptr,
+    Evidence_page_mask_ptr,
+    M: tl.constexpr,
+    Hq: tl.constexpr,
+    BLOCK_SIZE: tl.constexpr,
+    BOOST: tl.constexpr,
+):
+    row = tl.program_id(0)
+    hq = tl.program_id(1)
+    page_idx = row // BLOCK_SIZE
+    is_evidence = tl.load(Evidence_page_mask_ptr + page_idx).to(tl.int32)
+    score = tl.load(Scores_ptr + row * Hq + hq)
+    boosted = score + tl.where(is_evidence == 1, BOOST, 0.0)
+    tl.store(Scores_ptr + row * Hq + hq, boosted)
+
+
+@triton.jit
 def _epkv_value_kernel(
     KV_ptr,
     Block_table_ptr,
@@ -352,10 +439,46 @@ def _decode_phase2a(
         num_warps=4,
         num_stages=1,
     )
+    evidence_page_mask = None
+    evidence_intervention = None
+    evidence_spec = os.environ.get(_ENV_EVIDENCE_PAGES, "").strip()
+    if evidence_spec:
+        num_pages = (M + block_size - 1) // block_size
+        evidence_page_mask = _evidence_page_mask(evidence_spec, num_pages=num_pages, device=query.device)
+        if evidence_page_mask is not None:
+            boost = _float_env(_ENV_EVIDENCE_BOOST, 0.0)
+            guard_enabled = os.environ.get(_ENV_EVIDENCE_GUARD, "0") == "1"
+            if guard_enabled and boost != 0.0:
+                _epkv_evidence_boost_scores_kernel[(M, Hq)](
+                    scores,
+                    evidence_page_mask,
+                    M=M,
+                    Hq=Hq,
+                    BLOCK_SIZE=block_size,
+                    BOOST=float(boost),
+                    num_warps=4,
+                    num_stages=1,
+                )
+            evidence_intervention = {
+                "mode": "evidence_page_score_boost" if guard_enabled and boost != 0.0 else "evidence_page_probe_only",
+                "guard_enabled": guard_enabled,
+                "boost": boost,
+                "evidence_pages_spec": evidence_spec,
+                "num_pages": num_pages,
+            }
     vals, pos = torch.topk(scores, K, dim=0)
     weights = torch.softmax(vals, dim=0).contiguous()
     pos = pos.contiguous()
-    selection_summary = _selection_summary(pos, M=M, Hq=Hq, K=K) if _trace_selection_enabled() else None
+    selection_summary = _selection_summary(
+        pos,
+        M=M,
+        Hq=Hq,
+        K=K,
+        block_size=block_size,
+        evidence_page_mask=evidence_page_mask,
+    ) if (_trace_selection_enabled() or evidence_page_mask is not None) else None
+    if selection_summary is not None and evidence_intervention is not None:
+        selection_summary["evidence_intervention"] = evidence_intervention
     out = torch.empty((Hq, D), device=query.device, dtype=torch.float32)
     _epkv_value_kernel[(Hq,)](
         kv_cache,
