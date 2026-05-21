@@ -15,6 +15,7 @@ Start with:
 ```txt
 REALRAG-PHASE0-CLOSURE.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md
+EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md
 REALRAG-HOTPOTQA-R1.md
 REALRAG-HOTPOTQA-R2-RANKCURVE.md
 REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md
@@ -59,6 +60,7 @@ Public-dataset gates:
 
 - `REALRAG-PHASE0-CLOSURE.md` — closed Phase 0 readout across HotpotQA, 2Wiki, adjudication triage, and 32B scale.
 - `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md` — Phase 1 default-off replay bridge from RealRAG records into the runtime telemetry schema.
+- `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md` — default-off runtime sidecar emitter smoke on synthetic/local prompts.
 - `REALRAG-HOTPOTQA-R1.md` — HotpotQA evidence-placement result: oracle-first vs BM25 vs oracle-last vs distractor-first vs no-support.
 - `REALRAG-HOTPOTQA-R2-RANKCURVE.md` — forced support-rank curve: beginning helps, middle burial hurts, end partially recovers.
 - `REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md` — direct/citation/reasoning prompt ablation; the position effect survives simple prompting changes.
@@ -94,7 +96,7 @@ answer closure is sensitive to position/rank/recency under controlled evidence p
 simple citation/reasoning prompts did not remove the HotpotQA position effect in R3A
 BGE reranking mitigated most of the BM25-to-oracle gap in R3B natural retrieval
 Phase 0 is closed as a public-dataset answer-closure package
-Phase 1 is opened as default-off Evidence-Path Runtime Telemetry, starting with replay-derived schema-valid events
+Phase 1 is opened as default-off Evidence-Path Runtime Telemetry, starting with replay-derived schema-valid events and a synthetic runtime sidecar emitter
 R3L shows 32B scale raises HotpotQA closure sharply in support-present conditions but keeps BM25 < BGE < oracle_first >> no_support
 R3C confirms supporting-fact sentence presence; R3D/R3F local AI triage and R3E review packet make independent/human adjudication the next gate
 2Wiki R3G/R3H/R3I/R3J shows the HotpotQA reranker ladder does not generalize cleanly under the same harness; type/prompt/schema fit and relation-aware evidence compression matter
