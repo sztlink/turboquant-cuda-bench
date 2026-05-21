@@ -38,6 +38,8 @@ REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md
 REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md
 REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md
 REALRAG-R3K-ADJUDICATION-LIGHT.md
+REALRAG-R4A-LLM-JUDGE-PANEL.md
+REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md
 REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md
 REALRAG-2WIKI-R3H-DIAGNOSTIC.md
 REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md
@@ -95,6 +97,8 @@ Public-dataset gates:
 - `REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md` — unreviewed packet for human/independent adjudication.
 - `REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md` — non-authoritative AI-assisted adjudication draft over R3E.
 - `REALRAG-R3K-ADJUDICATION-LIGHT.md` — 200-item high-risk local-LLM triage pack across Hotpot/2Wiki buckets.
+- `REALRAG-R4A-LLM-JUDGE-PANEL.md` — local LLM-as-judge panel for triage, not ground truth.
+- `REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md` — 150-row blinded human calibration batch for Google Sheets.
 - `REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md` — 2Wiki generalization check; support-present beats no-support, but BGE/oracle do not clearly improve closure over BM25.
 - `REALRAG-2WIKI-R3H-DIAGNOSTIC.md` — diagnosis by question type, answer class, supporting-fact sentence rank, and disagreement buckets.
 - `REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md` — prompt/schema ablation showing support-sentence and gold-triple gains over paragraph context.
@@ -121,6 +125,7 @@ simple citation/reasoning prompts did not remove the HotpotQA position effect in
 BGE reranking mitigated most of the BM25-to-oracle gap in R3B natural retrieval
 Phase 0 is closed as a public-dataset answer-closure package
 Phase 1 telemetry membrane is established through v0.5 and frozen as telemetry-only / non-intervention
+R4A/R4B opened human calibration: local LLM panel selected a 150-row blinded Google Sheets batch for human review
 PROTECT membrane is established through EPL v0.3 and frozen as hook-off / non-kernel / non-intervention
 R3L shows 32B scale raises HotpotQA closure sharply in support-present conditions but keeps BM25 < BGE < oracle_first >> no_support
 R3C confirms supporting-fact sentence presence; R3D/R3F local AI triage and R3E review packet make independent/human adjudication the next gate

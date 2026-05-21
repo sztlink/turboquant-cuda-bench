@@ -75,6 +75,8 @@ Start here:
 - [RealRAG HotpotQA R3E human adjudication pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md) - unreviewed packet for human/independent labels.
 - [RealRAG HotpotQA R3F AI adjudication draft](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md) - non-authoritative AI triage over R3E.
 - [RealRAG R3K adjudication light](bench-public/evidence-utilization/REALRAG-R3K-ADJUDICATION-LIGHT.md) - 200-item high-risk local-LLM triage pack.
+- [RealRAG R4A LLM judge panel](bench-public/evidence-utilization/REALRAG-R4A-LLM-JUDGE-PANEL.md) - local LLM-as-judge triage panel for human calibration.
+- [RealRAG R4B human calibration batch](bench-public/evidence-utilization/REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md) - 150-row blinded Google Sheets batch.
 - [RealRAG 2Wiki R3G natural retrieval](bench-public/evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md) - second-dataset generalization check.
 - [RealRAG 2Wiki R3H diagnostic](bench-public/evidence-utilization/REALRAG-2WIKI-R3H-DIAGNOSTIC.md) - type/answer-style/support-sentence diagnosis.
 - [RealRAG 2Wiki R3I prompt/schema ablation](bench-public/evidence-utilization/REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md) - support-sentence and gold-triple schema probes.

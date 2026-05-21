@@ -120,6 +120,8 @@ Public packages:
 - [RealRAG HotpotQA R3D local judge](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md)
 - [RealRAG HotpotQA R3E human adjudication pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md)
 - [RealRAG HotpotQA R3F AI adjudication draft](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md)
+- [RealRAG R4A LLM judge panel](bench-public/evidence-utilization/REALRAG-R4A-LLM-JUDGE-PANEL.md)
+- [RealRAG R4B human calibration batch](bench-public/evidence-utilization/REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md)
 - [RealRAG sample pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-SAMPLES-v1.md)
 - [RealRAG R3 executed gate ledger](bench-public/evidence-utilization/REALRAG-R3-PLAN.md)
 
@@ -134,7 +136,14 @@ R3K adjudication-light adds a 200-item local-LLM triage sample over high-risk Ho
 
 Boundary: R3K is local triage, not independent human adjudication.
 
-Public package: [RealRAG R3K adjudication light](bench-public/evidence-utilization/REALRAG-R3K-ADJUDICATION-LIGHT.md)
+R4A/R4B turns that triage into a human calibration workflow:
+
+- R4A panel records: **200**.
+- Panel disagreement: **61**.
+- R4B selected review rows: **150**.
+- Google Sheets batch: created with instructions, dropdown labels, hidden metadata, and dashboard.
+
+Public packages: [RealRAG R3K adjudication light](bench-public/evidence-utilization/REALRAG-R3K-ADJUDICATION-LIGHT.md), [R4A LLM judge panel](bench-public/evidence-utilization/REALRAG-R4A-LLM-JUDGE-PANEL.md), [R4B human calibration batch](bench-public/evidence-utilization/REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md)
 
 R3G applies the natural-retrieval gate to 2WikiMultiHopQA dev.
 

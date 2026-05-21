@@ -1,0 +1,74 @@
+{
+  "schema": "realrag.r4a.llm_judge_panel.summary.v1",
+  "status": "done",
+  "created_at": "2026-05-21T14:46:31.971Z",
+  "input": "bench/evidence-utilization-realrag-r3k-adjudication-light-2026-05-20/adjudication-records.jsonl",
+  "input_sha256": "7767777b0ecf3458400128ff175f0ea2b8fbe6ec54d8264f17b36a09cef2c054",
+  "endpoint_hash": "a4a9a2a91555fc10",
+  "model": "local-vllm",
+  "served_model_id_hashes": [
+    "7f1eb66c060030a5",
+    "0eeef9328b34c18d"
+  ],
+  "boundary": [
+    "LLM-as-judge triage only",
+    "not human ground truth",
+    "not evidence-use proof"
+  ],
+  "records": 200,
+  "rubrics": [
+    "r3k_existing_local_judge",
+    "strict_equivalence",
+    "semantic_acceptability"
+  ],
+  "byMajority": {
+    "correct": 148,
+    "wrong": 44,
+    "partial": 8
+  },
+  "panel_disagreement": 61,
+  "byBucket": {
+    "2wiki_natural_success_oracle_fail": {
+      "n": 40,
+      "unanimous": 35,
+      "metric_false_positive": 0,
+      "metric_false_negative": 0
+    },
+    "2wiki_all_support_conditions_fail": {
+      "n": 40,
+      "unanimous": 23,
+      "metric_false_positive": 0,
+      "metric_false_negative": 2
+    },
+    "hotpot_metric_open_judge_positive": {
+      "n": 19,
+      "unanimous": 9,
+      "metric_false_positive": 0,
+      "metric_false_negative": 17
+    },
+    "2wiki_bm25_only_success": {
+      "n": 34,
+      "unanimous": 32,
+      "metric_false_positive": 0,
+      "metric_false_negative": 0
+    },
+    "2wiki_bge_only_success": {
+      "n": 34,
+      "unanimous": 28,
+      "metric_false_positive": 1,
+      "metric_false_negative": 0
+    },
+    "2wiki_no_support_success_leakage": {
+      "n": 29,
+      "unanimous": 12,
+      "metric_false_positive": 3,
+      "metric_false_negative": 0
+    },
+    "hotpot_metric_closed_judge_negative": {
+      "n": 4,
+      "unanimous": 0,
+      "metric_false_positive": 0,
+      "metric_false_negative": 0
+    }
+  }
+}

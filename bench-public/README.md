@@ -18,6 +18,7 @@ This is a public index of receipts, **not a roadmap**.
 | How Phase 1 starts without live intervention | [`observe/protect/intervene`](evidence-utilization/EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md) / [`telemetry index`](evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md) |
 | How PROTECT starts without kernel work | [`EPL index`](evidence-utilization/EVIDENCE-PROTECTION-LAYER-INDEX.md) / [`v0`](evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md) / [`v0.1`](evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md) / [`v0.2`](evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md) / [`v0.3`](evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.3-REPLAY-COMPATIBILITY.md) / [`v0.5`](evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.5-READONLY-CI.md) |
 | Why retrieved evidence still fails to close an answer | [`evidence-utilization/`](evidence-utilization/) |
+| How human calibration is being staged | [`R4A panel`](evidence-utilization/REALRAG-R4A-LLM-JUDGE-PANEL.md) / [`R4B human batch`](evidence-utilization/REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md) |
 | Whether the offline evidence-path layer is sealed and auditable | [`evidence-utilization/OFFLINE-MILESTONE-v1.9.md`](evidence-utilization/OFFLINE-MILESTONE-v1.9.md) |
 | How KV/cache changes can preserve action while losing target identity | [`cask-kvfidelity-bridge/`](cask-kvfidelity-bridge/) |
 | What the Evidence-Paged KV CUDA receipts do and do not claim | [`evidence-paged-kv/`](evidence-paged-kv/) |
