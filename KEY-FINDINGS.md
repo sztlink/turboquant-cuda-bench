@@ -104,6 +104,7 @@ Public packages:
 - [Evidence Protection Layer v0.1](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md)
 - [Evidence Protection Layer v0.2](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md)
 - [Evidence Protection Layer v0.3](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.3-REPLAY-COMPATIBILITY.md)
+- [Evidence Protection Layer v0.5](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.5-READONLY-CI.md)
 - [Evidence-Path Runtime Telemetry v0](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md)
 - [Evidence-Path Runtime Telemetry v0.1](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md)
 - [Evidence-Path Runtime Telemetry v0.2](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md)

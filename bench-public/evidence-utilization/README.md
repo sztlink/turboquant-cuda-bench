@@ -21,6 +21,7 @@ EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md
 EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md
 EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md
 EVIDENCE-PROTECTION-LAYER-v0.3-REPLAY-COMPATIBILITY.md
+EVIDENCE-PROTECTION-LAYER-v0.5-READONLY-CI.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md
@@ -77,6 +78,7 @@ Public-dataset gates:
 - `EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md` — structural packing transforms preserve paragraph multisets, support hashes, and no-support emptiness.
 - `EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md` — synthetic original-vs-protected rewrite equivalence with fail-closed blocking.
 - `EVIDENCE-PROTECTION-LAYER-v0.3-REPLAY-COMPATIBILITY.md` — real-record replay compatibility; stable packs allowed, reorders blocked pending equivalence/adjudication.
+- `EVIDENCE-PROTECTION-LAYER-v0.5-READONLY-CI.md` — no-endpoint verifier for committed PROTECT docs/reports/artifacts.
 - `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md` — Phase 1 default-off replay bridge from RealRAG records into the runtime telemetry schema.
 - `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md` — default-off runtime sidecar emitter smoke on synthetic/local prompts.
 - `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md` — fail-closed and privacy-regression fixtures for the sidecar telemetry contract.

@@ -58,6 +58,7 @@ Start here:
 - [Evidence Protection Layer v0.1](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md) - structural packing invariance gate.
 - [Evidence Protection Layer v0.2](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md) - synthetic equivalence/fail-closed gate.
 - [Evidence Protection Layer v0.3](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.3-REPLAY-COMPATIBILITY.md) - real-record replay compatibility gate.
+- [Evidence Protection Layer v0.5](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.5-READONLY-CI.md) - no-endpoint artifact verifier.
 - [Evidence-Path Runtime Telemetry v0](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md) - default-off replay bridge into the runtime telemetry schema.
 - [Evidence-Path Runtime Telemetry v0.1](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md) - default-off synthetic runtime sidecar emitter.
 - [Evidence-Path Runtime Telemetry v0.2](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md) - fail-closed and privacy-regression fixtures.

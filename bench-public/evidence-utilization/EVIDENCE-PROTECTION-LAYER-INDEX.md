@@ -29,6 +29,7 @@ The purpose of PROTECT is to test whether evidence spans can survive packing, se
 | EPL v0.1 | Structural packing invariance | 7,964 records, 0 failures across stable/support-first/support-last transforms | [v0.1](EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md) |
 | EPL v0.2 | Synthetic answer-equivalence | 5/6 equivalent, 1 blocked, 6/6 fail-closed | [v0.2](EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md) |
 | EPL v0.3 | Real-record replay compatibility | stable path allowed, reorders blocked pending equivalence/adjudication | [v0.3](EVIDENCE-PROTECTION-LAYER-v0.3-REPLAY-COMPATIBILITY.md) |
+| EPL v0.5 | Read-only verifier | docs/reports/JSONL verify without endpoint access | [v0.5](EVIDENCE-PROTECTION-LAYER-v0.5-READONLY-CI.md) |
 
 ## What is established
 
@@ -66,7 +67,6 @@ there is a falsifiable intervention target
 If staying in PROTECT:
 
 ```txt
-EPL v0.5: no-endpoint verifier over PROTECT artifacts
 EPL v0.6: public PROTECT card / docs polish
 ```
 
