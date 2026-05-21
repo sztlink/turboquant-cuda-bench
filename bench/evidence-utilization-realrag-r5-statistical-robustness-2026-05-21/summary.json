@@ -1,0 +1,245 @@
+{
+  "schema": "realrag.r5.statistical_robustness.summary.v1",
+  "status": "done",
+  "created_at": "2026-05-21T17:02:39.612Z",
+  "boundary": [
+    "offline statistical analysis only",
+    "no endpoint",
+    "no LLM judge",
+    "no human labels",
+    "not evidence-use proof"
+  ],
+  "bootstrap_samples": 5000,
+  "seed": 20260521,
+  "runs": [
+    {
+      "id": "hotpotqa_7b_r3b",
+      "label": "HotpotQA 7B R3B",
+      "records": 7964,
+      "paired_questions": 1991,
+      "records_sha256": "1430d05fb20ccee66560fae81be53fffe5c77369a90559a4061e9c5ba0282fb9",
+      "summary_sha256": "462b647a4c73a445e04891f72a13f93538e29217f6878ffa65eccccaa8b26eeb"
+    },
+    {
+      "id": "hotpotqa_32b_r3l",
+      "label": "HotpotQA 32B R3L",
+      "records": 7964,
+      "paired_questions": 1991,
+      "records_sha256": "b9a27a86979ecbefe9ccaf127ee35b274098284ceee95b54ec8b9ffbac124cc2",
+      "summary_sha256": "18e0a3dd0e1bf8566bf3c1ae32e0b887f754850b35b9a384289f6e0b11f13694"
+    },
+    {
+      "id": "2wiki_7b_r3g",
+      "label": "2Wiki 7B R3G",
+      "records": 8000,
+      "paired_questions": 2000,
+      "records_sha256": "8a5e1f44cf2f9fedfc755bb85ab62b7b7df506b5a45f0288feabe603e85a591e",
+      "summary_sha256": "2687aace9eab8056deec526d9cd446b7923e05c96c0d6823475990cfa07643b2"
+    }
+  ],
+  "metrics": [
+    "closure",
+    "em",
+    "contains",
+    "f1"
+  ],
+  "conditions": [
+    "bm25_top10",
+    "bge_rerank_top10",
+    "oracle_first",
+    "no_support"
+  ],
+  "headline": {
+    "hotpotqa_7b_r3b": {
+      "bge_minus_bm25": {
+        "schema": "realrag.r5.paired_delta.v1",
+        "run": "hotpotqa_7b_r3b",
+        "label": "HotpotQA 7B R3B",
+        "metric": "closure",
+        "n": 1991,
+        "a": "bge_rerank_top10",
+        "b": "bm25_top10",
+        "delta": 0.04369663485685585,
+        "ci95": [
+          0.026117528879959818,
+          0.06077348066298342
+        ],
+        "sign_positive": 1,
+        "sign_negative": 0,
+        "pish_two_sided_sign": 0,
+        "bootstrap_samples": 5000
+      },
+      "oracle_minus_bge": {
+        "schema": "realrag.r5.paired_delta.v1",
+        "run": "hotpotqa_7b_r3b",
+        "label": "HotpotQA 7B R3B",
+        "metric": "closure",
+        "n": 1991,
+        "a": "oracle_first",
+        "b": "bge_rerank_top10",
+        "delta": 0.01054746358613762,
+        "ci95": [
+          -0.0055248618784530384,
+          0.027122049221496736
+        ],
+        "sign_positive": 0.8908,
+        "sign_negative": 0.0994,
+        "pish_two_sided_sign": 0.1988,
+        "bootstrap_samples": 5000
+      }
+    },
+    "hotpotqa_32b_r3l": {
+      "bge_minus_bm25": {
+        "schema": "realrag.r5.paired_delta.v1",
+        "run": "hotpotqa_32b_r3l",
+        "label": "HotpotQA 32B R3L",
+        "metric": "closure",
+        "n": 1991,
+        "a": "bge_rerank_top10",
+        "b": "bm25_top10",
+        "delta": 0.022601707684580613,
+        "ci95": [
+          0.008538422903063787,
+          0.0371672526368659
+        ],
+        "sign_positive": 0.9984,
+        "sign_negative": 0.0016,
+        "pish_two_sided_sign": 0.0032,
+        "bootstrap_samples": 5000
+      },
+      "oracle_minus_bge": {
+        "schema": "realrag.r5.paired_delta.v1",
+        "run": "hotpotqa_32b_r3l",
+        "label": "HotpotQA 32B R3L",
+        "metric": "closure",
+        "n": 1991,
+        "a": "oracle_first",
+        "b": "bge_rerank_top10",
+        "delta": 0.01607232546459066,
+        "ci95": [
+          0.0025113008538422904,
+          0.029633350075339026
+        ],
+        "sign_positive": 0.9888,
+        "sign_negative": 0.009,
+        "pish_two_sided_sign": 0.018,
+        "bootstrap_samples": 5000
+      }
+    },
+    "wiki2_7b_r3g": {
+      "bge_minus_bm25": {
+        "schema": "realrag.r5.paired_delta.v1",
+        "run": "2wiki_7b_r3g",
+        "label": "2Wiki 7B R3G",
+        "metric": "closure",
+        "n": 2000,
+        "a": "bge_rerank_top10",
+        "b": "bm25_top10",
+        "delta": 0.0045,
+        "ci95": [
+          -0.015,
+          0.0235
+        ],
+        "sign_positive": 0.658,
+        "sign_negative": 0.3238,
+        "pish_two_sided_sign": 0.6476,
+        "bootstrap_samples": 5000
+      },
+      "oracle_minus_bge": {
+        "schema": "realrag.r5.paired_delta.v1",
+        "run": "2wiki_7b_r3g",
+        "label": "2Wiki 7B R3G",
+        "metric": "closure",
+        "n": 2000,
+        "a": "oracle_first",
+        "b": "bge_rerank_top10",
+        "delta": -0.018,
+        "ci95": [
+          -0.037,
+          0.001
+        ],
+        "sign_positive": 0.0304,
+        "sign_negative": 0.9662,
+        "pish_two_sided_sign": 0.0608,
+        "bootstrap_samples": 5000
+      }
+    },
+    "hotpotqa_32b_minus_7b": [
+      {
+        "schema": "realrag.r5.cross_model_delta.v1",
+        "metric": "closure",
+        "n": 1991,
+        "a": "hotpotqa_32b_r3l",
+        "b": "hotpotqa_7b_r3b",
+        "condition": "bm25_top10",
+        "delta": 0.1662481165243596,
+        "ci95": [
+          0.14465092918131592,
+          0.18884982420894023
+        ],
+        "sign_positive": 1,
+        "sign_negative": 0,
+        "pish_two_sided_sign": 0,
+        "bootstrap_samples": 5000
+      },
+      {
+        "schema": "realrag.r5.cross_model_delta.v1",
+        "metric": "closure",
+        "n": 1991,
+        "a": "hotpotqa_32b_r3l",
+        "b": "hotpotqa_7b_r3b",
+        "condition": "bge_rerank_top10",
+        "delta": 0.14515318935208438,
+        "ci95": [
+          0.12405826217980914,
+          0.1662481165243596
+        ],
+        "sign_positive": 1,
+        "sign_negative": 0,
+        "pish_two_sided_sign": 0,
+        "bootstrap_samples": 5000
+      },
+      {
+        "schema": "realrag.r5.cross_model_delta.v1",
+        "metric": "closure",
+        "n": 1991,
+        "a": "hotpotqa_32b_r3l",
+        "b": "hotpotqa_7b_r3b",
+        "condition": "oracle_first",
+        "delta": 0.15067805123053743,
+        "ci95": [
+          0.12908086388749374,
+          0.17177297840281266
+        ],
+        "sign_positive": 1,
+        "sign_negative": 0,
+        "pish_two_sided_sign": 0,
+        "bootstrap_samples": 5000
+      },
+      {
+        "schema": "realrag.r5.cross_model_delta.v1",
+        "metric": "closure",
+        "n": 1991,
+        "a": "hotpotqa_32b_r3l",
+        "b": "hotpotqa_7b_r3b",
+        "condition": "no_support",
+        "delta": -0.007031642390758413,
+        "ci95": [
+          -0.01808136614766449,
+          0.004018081366147665
+        ],
+        "sign_positive": 0.0978,
+        "sign_negative": 0.8844,
+        "pish_two_sided_sign": 0.1956,
+        "bootstrap_samples": 5000
+      }
+    ]
+  },
+  "files": [
+    "condition-cis.jsonl",
+    "paired-deltas.jsonl",
+    "cross-model-deltas.jsonl",
+    "summary.json",
+    "RESULTS.md"
+  ]
+}

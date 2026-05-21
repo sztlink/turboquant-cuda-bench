@@ -122,6 +122,7 @@ Public packages:
 - [RealRAG HotpotQA R3F AI adjudication draft](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md)
 - [RealRAG R4A LLM judge panel](bench-public/evidence-utilization/REALRAG-R4A-LLM-JUDGE-PANEL.md)
 - [RealRAG R4B human calibration batch](bench-public/evidence-utilization/REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md)
+- [RealRAG R5 statistical robustness](bench-public/evidence-utilization/REALRAG-R5-STATISTICAL-ROBUSTNESS.md)
 - [RealRAG sample pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-SAMPLES-v1.md)
 - [RealRAG R3 executed gate ledger](bench-public/evidence-utilization/REALRAG-R3-PLAN.md)
 
@@ -143,7 +144,14 @@ R4A/R4B turns that triage into a human calibration workflow:
 - R4B selected review rows: **150**.
 - Google Sheets batch: created with instructions, dropdown labels, hidden metadata, and dashboard.
 
-Public packages: [RealRAG R3K adjudication light](bench-public/evidence-utilization/REALRAG-R3K-ADJUDICATION-LIGHT.md), [R4A LLM judge panel](bench-public/evidence-utilization/REALRAG-R4A-LLM-JUDGE-PANEL.md), [R4B human calibration batch](bench-public/evidence-utilization/REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md)
+R5 adds offline statistical robustness without depending on human review:
+
+- HotpotQA 7B BGE - BM25 closure delta: **+4.4 pp**, 95% CI **[+2.6, +6.1]**.
+- HotpotQA 32B BGE - BM25 closure delta: **+2.3 pp**, 95% CI **[+0.9, +3.7]**.
+- 2Wiki BGE - BM25 closure delta: **+0.4 pp**, 95% CI **[-1.5, +2.4]**.
+- 32B - 7B HotpotQA support-present closure gain: roughly **+14.5 to +16.6 pp** by condition.
+
+Public packages: [RealRAG R3K adjudication light](bench-public/evidence-utilization/REALRAG-R3K-ADJUDICATION-LIGHT.md), [R4A LLM judge panel](bench-public/evidence-utilization/REALRAG-R4A-LLM-JUDGE-PANEL.md), [R4B human calibration batch](bench-public/evidence-utilization/REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md), [R5 statistical robustness](bench-public/evidence-utilization/REALRAG-R5-STATISTICAL-ROBUSTNESS.md)
 
 R3G applies the natural-retrieval gate to 2WikiMultiHopQA dev.
 
