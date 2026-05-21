@@ -4,6 +4,8 @@ This file is the short public readout of the repo. Numbers are from local RTX 40
 
 ## Core findings
 
+Phase 0 is closed as a public-dataset answer-closure package. It includes HotpotQA placement/reranking/metric-audit/adjudication-prep/32B scale gates plus 2Wiki generalization and schema diagnostics.
+
 These are the stable public findings from promoted receipts. The phrase **retrieved ≠ used** is shorthand for an operational separation between evidence presence and answer closure. It is not a proof of internal evidence use or a claim that this is the dominant production RAG bottleneck.
 
 ## 1. Public HotpotQA: answer closure is position-sensitive
@@ -94,6 +96,7 @@ Boundaries: this is answer-side EM/contains/F1-derived closure. Citation-hit is 
 
 Public packages:
 
+- [RealRAG Phase 0 closure](bench-public/evidence-utilization/REALRAG-PHASE0-CLOSURE.md)
 - [RealRAG HotpotQA R1](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R1.md)
 - [RealRAG HotpotQA R2 rank curve](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md)
 - [RealRAG HotpotQA R3A prompt variants](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md)
@@ -104,7 +107,7 @@ Public packages:
 - [RealRAG HotpotQA R3E human adjudication pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md)
 - [RealRAG HotpotQA R3F AI adjudication draft](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md)
 - [RealRAG sample pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-SAMPLES-v1.md)
-- [RealRAG R3 plan](bench-public/evidence-utilization/REALRAG-R3-PLAN.md)
+- [RealRAG R3 executed gate ledger](bench-public/evidence-utilization/REALRAG-R3-PLAN.md)
 
 ## 1b. 2Wiki: generalization is dataset-sensitive
 

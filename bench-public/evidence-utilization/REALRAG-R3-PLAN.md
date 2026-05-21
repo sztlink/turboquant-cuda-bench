@@ -1,236 +1,183 @@
-# RealRAG R3 plan — baselines, judging, and generalization
+# RealRAG R3 plan — executed gates and remaining validation
 
-Status: planned, not run  
-Motivation: address the remaining external-review objections after HotpotQA R1/R2.
+Status: executed / Phase 0 closed
+Updated: 2026-05-21
 
-## Why R3 exists
+This file began as the R3 plan for baselines, judging, and generalization. It is now the execution ledger for the completed Phase 0 gates.
 
-R1/R2 established a public-dataset effect:
+For the closed readout, start with:
 
 ```txt
-answer closure is sensitive to evidence placement in HotpotQA distractor
-rank_1 > rank_last > rank_3 > rank_8 ≈ rank_5 >> no_support
+REALRAG-PHASE0-CLOSURE.md
 ```
 
-The remaining question is not whether position matters under controlled placement. It is whether the effect survives stronger retrieval/answering pipelines, independent judging, more datasets, and more model families.
+## Original R3 research question
 
-## R3 research question
+> Does the evidence-placement / middle-burial effect persist after modern reranking, reasoning prompts, independent judging, more datasets, and more model scale?
 
-> Does the evidence-placement / middle-burial effect persist after modern reranking, reasoning prompts, independent judging, and dataset/model variation?
+## Answer after Phase 0
+
+Bounded answer:
+
+```txt
+HotpotQA: yes, support placement/rank remains measurable and actionable.
+Reranking: helps substantially and can approach oracle-first on 7B HotpotQA.
+32B scale: raises support-present closure sharply but does not erase the ladder.
+2Wiki: HotpotQA's reranker/oracle ladder does not generalize cleanly under paragraph prompts.
+Judging: deterministic metrics are useful but require independent/human adjudication for broad claims.
+```
 
 ## Non-claims preserved
 
-R3 still should not claim:
+R3 still does not claim:
 
 - proof of internal evidence use;
 - model attention attribution;
 - production RAG bottleneck dominance;
+- production answer-quality improvement;
 - Evidence-Paged KV quality improvement;
+- serving speedup;
 - runtime readiness.
 
-## Datasets
+## Executed gates
 
-Minimum:
+| Gate | Question | Result | Artifact |
+|---|---|---|---|
+| R3A | Do citation/reasoning prompts erase the HotpotQA position effect? | No. Rank-position gaps remain. | `REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md` |
+| R3B | Does BGE reranking mitigate BM25→oracle gap on HotpotQA? | Yes. BGE nearly reaches oracle-first on 7B. | `REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md` |
+| R3C | Are supporting-fact sentences actually present? | Yes for support-present R3B conditions. | `REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md` |
+| R3D | How do local semantic labels compare to metric closure? | Mostly aligned, with false-negative/positive buckets for review. | `REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md` |
+| R3E | Can we prepare human adjudication? | Yes. 144 unreviewed items prepared. | `REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md` |
+| R3F | Can AI triage prioritize R3E? | Yes, non-authoritative draft only. | `REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md` |
+| R3G | Does the HotpotQA natural retrieval ladder generalize to 2Wiki? | Not cleanly. Support-present beats no-support, but BM25/BGE/oracle are close. | `REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md` |
+| R3H | Why does 2Wiki differ? | Schema/type/answer-style effects dominate paragraph rank. | `REALRAG-2WIKI-R3H-DIAGNOSTIC.md` |
+| R3I | Do support sentences or triples help 2Wiki? | Yes. Gold support sentences/triples improve closure sharply. | `REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md` |
+| R3J | Does non-gold sentence compression help 2Wiki? | No globally. Naive lexical compression hurts. | `REALRAG-2WIKI-R3J-SENTENCE-COMPRESSION.md` |
+| R3K | Can we triage high-risk metric cases? | Yes. 200-item local-LLM triage, not ground truth. | `REALRAG-R3K-ADJUDICATION-LIGHT.md` |
+| R3L | Does 32B scale erase HotpotQA rank/placement sensitivity? | No. Closure rises, but BM25 < BGE < oracle-first remains. | `REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md` |
 
-| dataset | role |
-|---|---|
-| HotpotQA dev distractor | continuity with R1/R2 |
-| 2WikiMultihopQA | multi-hop public QA with different distribution |
-| MuSiQue | harder compositional multi-hop QA |
-
-Optional:
-
-| dataset | role |
-|---|---|
-| NaturalQuestions-open with retrieved passages | single-hop / open-domain contrast |
-| LongBench QA subsets | long-context benchmark bridge |
-| small agentic trace set | tool/action closure bridge, if privacy-safe |
-
-## Conditions
-
-Keep R2 placement controls:
-
-```txt
-rank_1
-rank_3
-rank_5
-rank_8
-rank_last
-no_support
-```
-
-Add retrieval/baseline conditions:
-
-```txt
-bm25_retrieved
-bm25_plus_reranker
-reranker_topk_oracle_support_present
-full_candidate_context_original_order
-support_only
-```
-
-## Answering variants
-
-At minimum:
-
-| variant | purpose |
-|---|---|
-| direct_short_answer | continuity with R1/R2 |
-| cite_then_answer | tests whether explicit citation requirement improves closure |
-| reason_then_answer | tests chain-of-thought style placement sensitivity |
-| evidence_table_then_answer | tests structured extraction before answer |
-
-Important: if CoT is logged, keep public artifact to final answers + citations/summaries only unless full chain is intentionally public-safe.
-
-## Retrieval/reranking baselines
-
-Local/free first:
-
-| method | notes |
-|---|---|
-| BM25 | R1/R2 continuity baseline |
-| bge-reranker-v2-m3 | already used in longctx-svc work; strong open reranker |
-| e5 / bge embedding retrieval | dense baseline if local infra is available |
-
-Optional paid/API:
-
-| method | notes |
-|---|---|
-| Cohere Rerank | strong external reranker baseline, paid/API |
-| frontier model rerank/extract | only with explicit cost/credential approval |
-
-## Models
-
-Minimum local:
-
-| model | reason |
-|---|---|
-| Qwen2.5-7B-Instruct | continuity with R1/R2 |
-| one non-Qwen local model | family-generalization check |
-
-If available/authorized:
-
-| model | reason |
-|---|---|
-| Qwen3 / Qwen2.5 larger local | scale check |
-| frontier API model | external upper-bound check; requires explicit cost approval |
-
-## Judging and labels
-
-Keep deterministic metrics:
-
-```txt
-normalized EM
-contains answer
-token F1
-closure = EM or contains or F1 >= threshold
-```
-
-Add independent judging:
-
-| judge | purpose |
-|---|---|
-| LLM-as-judge, blind to condition | semantic correctness beyond string match |
-| human audit subset | calibrate LLM judge and closure thresholds |
-| supporting-fact citation check | verify whether answer cites / points to gold support |
-
-Suggested human audit:
-
-```txt
-N = 200 questions × selected conditions
-stratified by: rank_1 only, middle fail, rank_last recovery, no_support leak, all fail
-```
-
-## Supporting-fact recall
-
-For each condition, compute:
-
-```txt
-gold support paragraph present: yes/no
-gold support min rank
-gold support all ranks
-answer string present in context: yes/no
-model cited support title: yes/no / not requested
-```
-
-This separates:
-
-```txt
-retrieval/support availability
-presentation/position
-answer closure
-citation/justification behavior
-```
-
-## Primary metrics
-
-| metric | interpretation |
-|---|---|
-| closure rate by condition | continuity with R1/R2 |
-| EM / F1 / contains | standard QA metrics |
-| paired closure deltas with bootstrap CI | same-question causal placement effect |
-| LLM-judge correctness | semantic robustness check |
-| human/LLM agreement | judge calibration |
-| citation-to-support rate | evidence-path surface behavior, not attention |
-| no_support closure | leakage/memorization baseline |
-
-## Decision gates
+## Gate outcomes
 
 ### Gate A — effect survives stronger prompting
 
-Pass if rank/position effect remains under `cite_then_answer` or `reason_then_answer`.
+Status: passed for HotpotQA.
 
-### Gate B — effect survives reranking comparison
-
-Pass if modern reranker improves closure but does not eliminate middle-burial / position sensitivity under controlled placement.
-
-### Gate C — effect generalizes beyond HotpotQA
-
-Pass if the position effect appears in at least one of 2WikiMultihopQA or MuSiQue.
-
-### Gate D — judge agreement acceptable
-
-Pass if deterministic closure and LLM/human judging agree enough to support the public readout, or if disagreement is characterized and reported.
-
-## Failure modes to report honestly
-
-- Reranker eliminates most of the gap: then R1/R2 are a placement pathology, not a persistent RAG issue.
-- CoT/citation prompt eliminates most of the gap: then answer protocol matters more than retrieval placement.
-- Frontier models eliminate most of the gap: then the effect is model-scale/calibration-specific.
-- 2Wiki/MuSiQue do not reproduce: then HotpotQA-specific structure matters.
-- no_support closure rises high: memorization/leakage contaminates the dataset.
-
-## Proposed artifact layout
+R3A showed direct/citation/reasoning variants keep large `rank_1 - rank_5` gaps:
 
 ```txt
-bench/evidence-utilization-realrag-r3-YYYY-MM-DD/
-  RESULTS.md
-  summary.json
-  records.jsonl
-  pairwise-closure-deltas.json
-  judge-audit.jsonl
-  human-audit-sample.jsonl
-  logs/
-
-bench-public/evidence-utilization/REALRAG-R3-RESULTS.md
-bench-public/evidence-utilization/REALRAG-R3-SAMPLES.md
+direct: +13.1 pp
+cite:   +10.8 pp
+reason: +13.1 pp
 ```
 
-## Operational envelope
+### Gate B — reranking comparison
 
-Allowed without additional publication/runtime approval:
+Status: mitigated, not erased.
 
-- local harness code;
-- dataset preparation;
-- local/open reranker baselines;
-- calls to existing local vLLM endpoint;
-- offline judging with local models if available;
-- result artifacts in repo.
+R3B HotpotQA 7B:
+
+```txt
+bm25_top10:        45.8%
+bge_rerank_top10: 50.1%
+oracle_first:      51.2%
+no_support:         6.8%
+```
+
+BGE closes most of the BM25-to-oracle gap on this slice.
+
+### Gate C — generalization beyond HotpotQA
+
+Status: dataset-sensitive.
+
+2Wiki support-present contexts beat no-support, but the HotpotQA ladder does not reproduce cleanly:
+
+```txt
+bm25_top10:        33.3%
+bge_rerank_top10: 33.8%
+oracle_first:      31.9%
+no_support:         3.9%
+```
+
+R3H/R3I/R3J show type/prompt/schema fit and relation-aware evidence construction matter.
+
+### Gate D — judge agreement
+
+Status: not closed by Phase 0.
+
+R3D/R3F/R3K are triage only. R3E prepared human-review items but human labels remain blank.
+
+Remaining requirement:
+
+```txt
+independent/human adjudication before broader evidence-use-failure claims
+```
+
+### Gate E — model scale
+
+Status: passed as scale check; not a serving benchmark.
+
+R3L 32B:
+
+```txt
+bm25_top10:        62.4%
+bge_rerank_top10: 64.6%
+oracle_first:      66.2%
+no_support:         6.1%
+```
+
+Scale improves closure but does not erase rank/placement sensitivity.
+
+## Remaining optional work
+
+These are not Phase 0 blockers:
+
+| Item | Why |
+|---|---|
+| Human/independent adjudication over R3E/R3K | Required before stronger semantic correctness claims. |
+| MuSiQue generalization | Additional harder compositional dataset. |
+| Non-Qwen local family check | Model-family generalization. |
+| Relation-aware 2Wiki evidence construction | Tests schema-aware mitigation beyond paragraph rank. |
+| Phase 1 telemetry bridge | Runtime observability, default-off/offline first. |
+
+## Operational envelope after Phase 0
+
+Allowed without new broad approval:
+
+- documentation updates;
+- offline analysis of existing records;
+- human-adjudication packet formatting;
+- local, offline/default-off telemetry schema tests;
+- public-safe GitHub docs derived from existing artifacts.
 
 Requires explicit confirmation:
 
 - paid/API frontier model runs;
-- public posting outside committed GitHub docs;
-- vLLM restart/kill/deploy/patch;
+- public posting outside committed GitHub docs/discussions;
+- vLLM restart/kill/deploy/patch for live services;
 - EPKV hook-on serving;
-- credentialed services beyond already configured read-only tools.
+- credentialed services beyond already configured tools.
+
+## Phase 1 handoff
+
+Next runtime line should be named:
+
+```txt
+Evidence-Path Runtime Telemetry
+```
+
+It should begin as:
+
+```txt
+default-off
+offline/replay-first
+schema-validation first
+no serving-speed or answer-quality claim
+```
+
+Intervention comes later, if justified:
+
+```txt
+Evidence Protection Layer
+```
+
+Do not jump directly to live attention bias or KV mutation.

@@ -29,6 +29,8 @@ Boundary: this repo is receipts-first systems research. It does not claim servin
 
 ## TL;DR
 
+Phase 0 is closed as a public-dataset answer-closure package: HotpotQA placement/reranking/32B scale, 2Wiki generalization, metric audit, and adjudication-light gates are complete. Remaining broad-claim blocker: independent/human adjudication.
+
 | Finding | Concrete receipt | Why it matters | Public entry |
 |---|---|---|---|
 | **Public HotpotQA answer closure is position-sensitive.** | R1 full: **7,384** HotpotQA dev distractor questions, **36,920** records, **0 errors**. `oracle_first` closure **51.1%**, `oracle_last` **42.7%**, `distractor_first` **38.5%**, `no_support` **6.8%**. | Public multi-hop QA shows closure changes when gold supporting evidence is present but ordered differently. | [R1](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R1.md) |
@@ -48,6 +50,7 @@ Boundary: this repo is receipts-first systems research. It does not claim servin
 Start here:
 
 - [KEY-FINDINGS.md](KEY-FINDINGS.md) - actionable public summary.
+- [RealRAG Phase 0 closure](bench-public/evidence-utilization/REALRAG-PHASE0-CLOSURE.md) - closed public-dataset evidence-placement readout.
 - [RealRAG HotpotQA R1](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R1.md) - public evidence-placement result.
 - [RealRAG HotpotQA R2 rank curve](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md) - position/rank/recency curve.
 - [RealRAG HotpotQA R3A prompt variants](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md) - citation/reasoning prompt ablation.
@@ -63,7 +66,7 @@ Start here:
 - [RealRAG 2Wiki R3I prompt/schema ablation](bench-public/evidence-utilization/REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md) - support-sentence and gold-triple schema probes.
 - [RealRAG 2Wiki R3J sentence compression](bench-public/evidence-utilization/REALRAG-2WIKI-R3J-SENTENCE-COMPRESSION.md) - non-gold lexical sentence compression gate.
 - [RealRAG sample pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-SAMPLES-v1.md) - auditable question/prediction examples.
-- [RealRAG R3 plan](bench-public/evidence-utilization/REALRAG-R3-PLAN.md) - remaining reranker/judging/dataset/model gates.
+- [RealRAG R3 plan](bench-public/evidence-utilization/REALRAG-R3-PLAN.md) - executed R3 gate ledger plus remaining optional validation.
 - [GLOSSARY.md](GLOSSARY.md) - terms and method names.
 - [bench-public/](bench-public/) - public-safe result packages.
 - [bench-public/dashboard.html](bench-public/dashboard.html) - static dashboard of the headline numbers.
