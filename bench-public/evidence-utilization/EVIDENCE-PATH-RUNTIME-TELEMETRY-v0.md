@@ -17,6 +17,7 @@ mode: offline replay-derived geometry
 serving mutation: no
 model inference: no
 real-prompt hook-on: no
+output-changing path: no
 prompt text: not included
 raw token ids: not included
 selected/page positions: estimated geometry, not attention

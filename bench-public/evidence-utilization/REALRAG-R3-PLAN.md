@@ -165,7 +165,7 @@ The runtime line is named:
 Evidence-Path Runtime Telemetry
 ```
 
-It began with v0 replay telemetry, v0.1 runtime sidecar telemetry, v0.2 security fixtures, v0.3 guarded sidecar run loop, and v0.4 CI-style command:
+It began with v0 replay telemetry, v0.1 runtime sidecar telemetry, v0.2 security fixtures, v0.3 guarded sidecar run loop, v0.4 CI-style command, and v0.5 read-only/no-endpoint verifier:
 
 ```txt
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md
@@ -173,6 +173,7 @@ EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.3.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.4.md
+EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.5.md
 ```
 
 Required envelope remains:

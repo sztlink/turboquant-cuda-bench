@@ -29,7 +29,7 @@ Boundary: this repo is receipts-first systems research. It does not claim servin
 
 ## TL;DR
 
-Phase 0 is closed as a public-dataset answer-closure package: HotpotQA placement/reranking/32B scale, 2Wiki generalization, metric audit, and adjudication-light gates are complete. Phase 1 is open as default-off Evidence-Path Runtime Telemetry with replay, synthetic sidecar, fail-closed/privacy-regression, guarded-run-loop, and CI-style command gates. Remaining broad-claim blocker: independent/human adjudication.
+Phase 0 is closed as a public-dataset answer-closure package: HotpotQA placement/reranking/32B scale, 2Wiki generalization, metric audit, and adjudication-light gates are complete. Phase 1 is open as default-off Evidence-Path Runtime Telemetry with replay, synthetic sidecar, fail-closed/privacy-regression, guarded-run-loop, CI-style command, and read-only verifier gates. Remaining broad-claim blocker: independent/human adjudication.
 
 | Finding | Concrete receipt | Why it matters | Public entry |
 |---|---|---|---|
@@ -56,6 +56,7 @@ Start here:
 - [Evidence-Path Runtime Telemetry v0.2](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md) - fail-closed and privacy-regression fixtures.
 - [Evidence-Path Runtime Telemetry v0.3](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.3.md) - guarded sidecar run loop.
 - [Evidence-Path Runtime Telemetry v0.4](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.4.md) - config-driven CI-style command.
+- [Evidence-Path Runtime Telemetry v0.5](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.5.md) - read-only/no-endpoint verifier.
 - [RealRAG HotpotQA R1](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R1.md) - public evidence-placement result.
 - [RealRAG HotpotQA R2 rank curve](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md) - position/rank/recency curve.
 - [RealRAG HotpotQA R3A prompt variants](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md) - citation/reasoning prompt ablation.

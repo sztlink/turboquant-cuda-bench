@@ -15,6 +15,7 @@ mode: security regression tests
 serving mutation: no
 model inference: no
 real-prompt hook-on: no
+output-changing path: no
 prompt text: not included
 raw token ids: not included
 completion text: not included
