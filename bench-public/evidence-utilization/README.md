@@ -19,6 +19,7 @@ EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md
 EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md
 EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md
 EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md
+EVIDENCE-PROTECTION-LAYER-v0.3-REPLAY-COMPATIBILITY.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md
@@ -73,6 +74,7 @@ Public-dataset gates:
 - `EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md` — first PROTECT gate; support spans survive deterministic packing as hashed provenance.
 - `EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md` — structural packing transforms preserve paragraph multisets, support hashes, and no-support emptiness.
 - `EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md` — synthetic original-vs-protected rewrite equivalence with fail-closed blocking.
+- `EVIDENCE-PROTECTION-LAYER-v0.3-REPLAY-COMPATIBILITY.md` — real-record replay compatibility; stable packs allowed, reorders blocked pending equivalence/adjudication.
 - `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md` — Phase 1 default-off replay bridge from RealRAG records into the runtime telemetry schema.
 - `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md` — default-off runtime sidecar emitter smoke on synthetic/local prompts.
 - `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md` — fail-closed and privacy-regression fixtures for the sidecar telemetry contract.
@@ -115,7 +117,7 @@ simple citation/reasoning prompts did not remove the HotpotQA position effect in
 BGE reranking mitigated most of the BM25-to-oracle gap in R3B natural retrieval
 Phase 0 is closed as a public-dataset answer-closure package
 Phase 1 telemetry membrane is established through v0.5 and frozen as telemetry-only / non-intervention
-PROTECT opened with EPL v0 span provenance, v0.1 structural packing invariance, and v0.2 synthetic equivalence/fail-closed blocking; kernel/intervention remains inactive
+PROTECT opened with EPL v0 span provenance, v0.1 structural packing invariance, v0.2 synthetic equivalence/fail-closed blocking, and v0.3 real-record replay compatibility; kernel/intervention remains inactive
 R3L shows 32B scale raises HotpotQA closure sharply in support-present conditions but keeps BM25 < BGE < oracle_first >> no_support
 R3C confirms supporting-fact sentence presence; R3D/R3F local AI triage and R3E review packet make independent/human adjudication the next gate
 2Wiki R3G/R3H/R3I/R3J shows the HotpotQA reranker ladder does not generalize cleanly under the same harness; type/prompt/schema fit and relation-aware evidence compression matter

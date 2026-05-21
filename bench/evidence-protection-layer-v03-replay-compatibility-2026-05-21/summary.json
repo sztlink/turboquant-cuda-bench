@@ -1,0 +1,66 @@
+{
+  "schema": "evidence_protection_layer.v03.replay_compatibility.summary",
+  "status": "passed",
+  "created_at": "2026-05-21T13:52:36.499Z",
+  "boundary": [
+    "protect regime, real-record replay compatibility",
+    "no model inference",
+    "no serving mutation",
+    "no runtime output-changing path",
+    "reordering transforms blocked until equivalence/adjudication exists",
+    "no text fields"
+  ],
+  "source": "bench/evidence-protection-layer-v01-packing-invariance-2026-05-21/packing-invariance.jsonl",
+  "records": 7964,
+  "allowed_decisions": 7964,
+  "blocked_decisions": 15928,
+  "policy": {
+    "stable": "allow if structural invariance passed",
+    "support_first_stable": "block pending equivalence/adjudication",
+    "support_last_stable": "block pending equivalence/adjudication"
+  },
+  "byCondition": {
+    "bm25_top10": {
+      "records": 1991,
+      "passed": 1991,
+      "allowed_decisions": 1991,
+      "blocked_decisions": 3982,
+      "support_present": 1991,
+      "pass_rate": 1,
+      "support_present_rate": 1
+    },
+    "bge_rerank_top10": {
+      "records": 1991,
+      "passed": 1991,
+      "allowed_decisions": 1991,
+      "blocked_decisions": 3982,
+      "support_present": 1991,
+      "pass_rate": 1,
+      "support_present_rate": 1
+    },
+    "oracle_first": {
+      "records": 1991,
+      "passed": 1991,
+      "allowed_decisions": 1991,
+      "blocked_decisions": 3982,
+      "support_present": 1991,
+      "pass_rate": 1,
+      "support_present_rate": 1
+    },
+    "no_support": {
+      "records": 1991,
+      "passed": 1991,
+      "allowed_decisions": 1991,
+      "blocked_decisions": 3982,
+      "support_present": 0,
+      "pass_rate": 1,
+      "support_present_rate": 0
+    }
+  },
+  "checks": {
+    "all_records_have_at_least_one_allowed_path": true,
+    "all_reorder_transforms_blocked": true,
+    "all_allowed_paths_structural_pass": true,
+    "no_text_fields": true
+  }
+}
