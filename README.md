@@ -29,7 +29,7 @@ Boundary: this repo is receipts-first systems research. It does not claim servin
 
 ## TL;DR
 
-Phase 0 is closed as a public-dataset answer-closure package: HotpotQA placement/reranking/32B scale, 2Wiki generalization, metric audit, and adjudication-light gates are complete. Phase 1 is open as default-off Evidence-Path Runtime Telemetry with replay, synthetic sidecar, and fail-closed/privacy-regression gates. Remaining broad-claim blocker: independent/human adjudication.
+Phase 0 is closed as a public-dataset answer-closure package: HotpotQA placement/reranking/32B scale, 2Wiki generalization, metric audit, and adjudication-light gates are complete. Phase 1 is open as default-off Evidence-Path Runtime Telemetry with replay, synthetic sidecar, fail-closed/privacy-regression, and guarded-run-loop gates. Remaining broad-claim blocker: independent/human adjudication.
 
 | Finding | Concrete receipt | Why it matters | Public entry |
 |---|---|---|---|
@@ -54,6 +54,7 @@ Start here:
 - [Evidence-Path Runtime Telemetry v0](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md) - default-off replay bridge into the runtime telemetry schema.
 - [Evidence-Path Runtime Telemetry v0.1](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md) - default-off synthetic runtime sidecar emitter.
 - [Evidence-Path Runtime Telemetry v0.2](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md) - fail-closed and privacy-regression fixtures.
+- [Evidence-Path Runtime Telemetry v0.3](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.3.md) - guarded sidecar run loop.
 - [RealRAG HotpotQA R1](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R1.md) - public evidence-placement result.
 - [RealRAG HotpotQA R2 rank curve](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md) - position/rank/recency curve.
 - [RealRAG HotpotQA R3A prompt variants](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md) - citation/reasoning prompt ablation.

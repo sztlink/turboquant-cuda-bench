@@ -1,0 +1,60 @@
+{
+  "schema": "evidence_path_runtime_telemetry_v03.summary",
+  "status": "passed",
+  "created_at": "2026-05-21T12:45:12.486Z",
+  "guard_report": "guard-report.json",
+  "preflight_security": "preflight-security/summary.json",
+  "sidecar_summary": "sidecar/summary.json",
+  "sidecar_events": "sidecar/events.jsonl",
+  "postflight_validation": "postflight-validation-report.json",
+  "privacy_scan": "privacy-scan-report.json",
+  "boundary": [
+    "guarded sidecar orchestration only",
+    "no serving mutation",
+    "no vLLM patch",
+    "no EPKV hook-on",
+    "no output-changing path"
+  ],
+  "gates": [
+    {
+      "name": "default_off",
+      "ok": true,
+      "message": "--enable-sidecar supplied"
+    },
+    {
+      "name": "preflight_security_v02",
+      "ok": true,
+      "exit_code": 0,
+      "status": "passed"
+    },
+    {
+      "name": "served_model_guard",
+      "ok": true,
+      "required": "local-vllm",
+      "served": [
+        "local-vllm",
+        "qwen2.5-7b-tq"
+      ],
+      "error": null
+    },
+    {
+      "name": "sidecar_emit_v01",
+      "ok": true,
+      "exit_code": 0,
+      "events": 8,
+      "status": "built_pending_validation"
+    },
+    {
+      "name": "postflight_schema_validation",
+      "ok": true,
+      "events": 8,
+      "errors": 0,
+      "exit_code": 0
+    },
+    {
+      "name": "privacy_scan",
+      "ok": true,
+      "findings": 0
+    }
+  ]
+}
