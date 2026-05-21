@@ -1,0 +1,31 @@
+{
+  "schema": "evidence_protection_layer.v02.answer_equivalence.summary",
+  "status": "passed",
+  "created_at": "2026-05-21T13:49:06.337Z",
+  "boundary": [
+    "protect regime synthetic answer-equivalence smoke",
+    "no serving mutation",
+    "no vLLM patch",
+    "no EPKV hook-on",
+    "no production output-changing path",
+    "no prompt or completion text stored"
+  ],
+  "endpoint_hash": "a4a9a2a91555fc10",
+  "requested_model_hash": "7f1eb66c060030a5",
+  "served_model_id_hashes": [
+    "7f1eb66c060030a5",
+    "0eeef9328b34c18d"
+  ],
+  "cases": 6,
+  "equivalent_outputs": 5,
+  "same_closure": 5,
+  "equivalence_violations": 1,
+  "protected_rewrite_allowed": 5,
+  "fail_closed": 6,
+  "privacy_findings": 0,
+  "checks": {
+    "all_fail_closed": true,
+    "no_privacy_findings": true,
+    "no_output_changing_path": true
+  }
+}

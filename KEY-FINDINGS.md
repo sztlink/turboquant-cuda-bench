@@ -4,7 +4,7 @@ This file is the short public readout of the repo. Numbers are from local RTX 40
 
 ## Core findings
 
-Phase 0 is closed as a public-dataset answer-closure package. It includes HotpotQA placement/reranking/metric-audit/adjudication-prep/32B scale gates plus 2Wiki generalization and schema diagnostics. Phase 1 telemetry is established and frozen as non-intervention. PROTECT is now open with hook-off span provenance and structural packing invariance; kernel/intervention remains inactive.
+Phase 0 is closed as a public-dataset answer-closure package. It includes HotpotQA placement/reranking/metric-audit/adjudication-prep/32B scale gates plus 2Wiki generalization and schema diagnostics. Phase 1 telemetry is established and frozen as non-intervention. PROTECT is now open with hook-off span provenance, structural packing invariance, and synthetic equivalence/fail-closed blocking; kernel/intervention remains inactive.
 
 These are the stable public findings from promoted receipts. The phrase **retrieved ≠ used** is shorthand for an operational separation between evidence presence and answer closure. It is not a proof of internal evidence use or a claim that this is the dominant production RAG bottleneck.
 
@@ -101,6 +101,7 @@ Public packages:
 - [Evidence-Path Runtime Telemetry index](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md)
 - [Evidence Protection Layer v0](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md)
 - [Evidence Protection Layer v0.1](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md)
+- [Evidence Protection Layer v0.2](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md)
 - [Evidence-Path Runtime Telemetry v0](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md)
 - [Evidence-Path Runtime Telemetry v0.1](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md)
 - [Evidence-Path Runtime Telemetry v0.2](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md)
