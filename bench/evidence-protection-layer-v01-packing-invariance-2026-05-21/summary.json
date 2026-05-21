@@ -1,0 +1,70 @@
+{
+  "schema": "evidence_protection_layer.v01.packing_invariance.summary",
+  "status": "passed",
+  "created_at": "2026-05-21T13:42:32.271Z",
+  "boundary": [
+    "protect regime, hook-off/offline",
+    "structural packing invariance only",
+    "no serving mutation",
+    "no model inference",
+    "no output-changing runtime path",
+    "no text fields"
+  ],
+  "source": "bench/evidence-protection-layer-v0-span-provenance-2026-05-21/span-provenance.jsonl",
+  "records": 7964,
+  "transforms": [
+    "stable",
+    "support_first_stable",
+    "support_last_stable"
+  ],
+  "failures": 0,
+  "byCondition": {
+    "bm25_top10": {
+      "records": 1991,
+      "passed": 1991,
+      "support_present": 1991,
+      "protected_spans": 3982,
+      "support_first_rank_mean": 1,
+      "support_last_rank_mean": 8.969362129583123,
+      "pass_rate": 1,
+      "support_present_rate": 1
+    },
+    "bge_rerank_top10": {
+      "records": 1991,
+      "passed": 1991,
+      "support_present": 1991,
+      "protected_spans": 3982,
+      "support_first_rank_mean": 1,
+      "support_last_rank_mean": 8.969362129583123,
+      "pass_rate": 1,
+      "support_present_rate": 1
+    },
+    "oracle_first": {
+      "records": 1991,
+      "passed": 1991,
+      "support_present": 1991,
+      "protected_spans": 3982,
+      "support_first_rank_mean": 1,
+      "support_last_rank_mean": 8.969362129583123,
+      "pass_rate": 1,
+      "support_present_rate": 1
+    },
+    "no_support": {
+      "records": 1991,
+      "passed": 1991,
+      "support_present": 0,
+      "protected_spans": 0,
+      "support_first_rank_mean": null,
+      "support_last_rank_mean": null,
+      "pass_rate": 1,
+      "support_present_rate": 0
+    }
+  },
+  "checks": {
+    "all_records_passed": true,
+    "paragraph_multiset_preserved": true,
+    "support_span_hashes_preserved": true,
+    "no_support_emptiness_preserved": true,
+    "no_text_fields": true
+  }
+}

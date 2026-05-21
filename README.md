@@ -29,7 +29,7 @@ Boundary: this repo is receipts-first systems research. It does not claim servin
 
 ## TL;DR
 
-Phase 0 is closed as a public-dataset answer-closure package: HotpotQA placement/reranking/32B scale, 2Wiki generalization, metric audit, and adjudication-light gates are complete. Phase 1 telemetry is established and frozen as non-intervention. PROTECT is now open with hook-off span provenance; kernel/intervention remains inactive. Remaining broad-claim blocker: independent/human adjudication.
+Phase 0 is closed as a public-dataset answer-closure package: HotpotQA placement/reranking/32B scale, 2Wiki generalization, metric audit, and adjudication-light gates are complete. Phase 1 telemetry is established and frozen as non-intervention. PROTECT is now open with hook-off span provenance and structural packing invariance; kernel/intervention remains inactive. Remaining broad-claim blocker: independent/human adjudication.
 
 | Finding | Concrete receipt | Why it matters | Public entry |
 |---|---|---|---|
@@ -54,6 +54,7 @@ Start here:
 - [Observe / Protect / Intervene map](bench-public/evidence-utilization/EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md) - operating map after Casey Reas review.
 - [Evidence-Path Runtime Telemetry index](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md) - consolidated Phase 1 telemetry membrane and non-intervention boundary.
 - [Evidence Protection Layer v0](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md) - hook-off span provenance gate.
+- [Evidence Protection Layer v0.1](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md) - structural packing invariance gate.
 - [Evidence-Path Runtime Telemetry v0](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md) - default-off replay bridge into the runtime telemetry schema.
 - [Evidence-Path Runtime Telemetry v0.1](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md) - default-off synthetic runtime sidecar emitter.
 - [Evidence-Path Runtime Telemetry v0.2](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md) - fail-closed and privacy-regression fixtures.
