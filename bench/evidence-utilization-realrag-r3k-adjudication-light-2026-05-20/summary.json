@@ -1,0 +1,146 @@
+{
+  "schema": "realrag.r3k.adjudication_light.summary.v1",
+  "status": "done",
+  "started_at": "2026-05-21T00:38:32.969Z",
+  "finished_at": "2026-05-21T00:39:32.386Z",
+  "endpoint": "http://192.168.15.133:11435/v1/chat/completions",
+  "model": "local-vllm",
+  "review_items": 200,
+  "completed_records": 200,
+  "aggregate": {
+    "byBucket": [
+      {
+        "bucket": "2wiki_all_support_conditions_fail",
+        "n": 40,
+        "closed": 0,
+        "judge_correct": 0,
+        "judge_partial": 5,
+        "judge_wrong": 35,
+        "false_positive": 0,
+        "false_negative": 35,
+        "prior_leak": 0,
+        "parse_error": 0
+      },
+      {
+        "bucket": "2wiki_bge_only_success",
+        "n": 34,
+        "closed": 34,
+        "judge_correct": 29,
+        "judge_partial": 4,
+        "judge_wrong": 0,
+        "false_positive": 2,
+        "false_negative": 2,
+        "prior_leak": 0,
+        "parse_error": 1
+      },
+      {
+        "bucket": "2wiki_bm25_only_success",
+        "n": 34,
+        "closed": 34,
+        "judge_correct": 31,
+        "judge_partial": 3,
+        "judge_wrong": 0,
+        "false_positive": 3,
+        "false_negative": 0,
+        "prior_leak": 0,
+        "parse_error": 0
+      },
+      {
+        "bucket": "2wiki_natural_success_oracle_fail",
+        "n": 40,
+        "closed": 40,
+        "judge_correct": 35,
+        "judge_partial": 2,
+        "judge_wrong": 1,
+        "false_positive": 0,
+        "false_negative": 3,
+        "prior_leak": 0,
+        "parse_error": 2
+      },
+      {
+        "bucket": "2wiki_no_support_success_leakage",
+        "n": 29,
+        "closed": 29,
+        "judge_correct": 12,
+        "judge_partial": 2,
+        "judge_wrong": 15,
+        "false_positive": 2,
+        "false_negative": 17,
+        "prior_leak": 0,
+        "parse_error": 0
+      },
+      {
+        "bucket": "hotpot_metric_closed_judge_negative",
+        "n": 4,
+        "closed": 4,
+        "judge_correct": 0,
+        "judge_partial": 1,
+        "judge_wrong": 3,
+        "false_positive": 0,
+        "false_negative": 4,
+        "prior_leak": 0,
+        "parse_error": 0
+      },
+      {
+        "bucket": "hotpot_metric_open_judge_positive",
+        "n": 19,
+        "closed": 0,
+        "judge_correct": 9,
+        "judge_partial": 8,
+        "judge_wrong": 2,
+        "false_positive": 0,
+        "false_negative": 10,
+        "prior_leak": 0,
+        "parse_error": 0
+      }
+    ],
+    "byMetricState": [
+      {
+        "metric_state": "metric_closed",
+        "n": 141,
+        "judge_correct": 107,
+        "judge_partial": 12,
+        "judge_wrong": 19,
+        "false_positive": 7,
+        "false_negative": 26
+      },
+      {
+        "metric_state": "metric_open",
+        "n": 59,
+        "judge_correct": 9,
+        "judge_partial": 13,
+        "judge_wrong": 37,
+        "false_positive": 0,
+        "false_negative": 45
+      }
+    ],
+    "labels": {
+      "correct": 116,
+      "partial": 25,
+      "wrong": 56,
+      "parse_error": 3
+    },
+    "metricErrors": {
+      "none": 119,
+      "false_negative": 71,
+      "false_positive": 7,
+      "unclear": 3
+    }
+  },
+  "source_paths": {
+    "hotpot_r3f": "bench/evidence-utilization-realrag-hotpotqa-r3f-ai-adjudication-2026-05-20/ai-adjudication-records.jsonl",
+    "two_wiki_records": "bench/evidence-utilization-realrag-2wiki-r3g-natural-retrieval-2026-05-20/records.jsonl",
+    "two_wiki_dataset": "bench/_datasets/2wiki/data/dev.json"
+  },
+  "source_sha256": {
+    "hotpot_r3f": "827c25365d0a3e599a65a3ca884068dda099c80798cdca19ae32d9f7b520019c",
+    "two_wiki_records": "8a5e1f44cf2f9fedfc755bb85ab62b7b7df506b5a45f0288feabe603e85a591e",
+    "two_wiki_dataset": "48b9bdc69654dc580fda5f935a48b88cb89f11887587310af60d406c8d0111a6"
+  },
+  "interpretation_boundary": [
+    "local LLM adjudication triage only",
+    "not independent human ground truth",
+    "samples stratified high-risk/diagnostic buckets, not representative benchmark distribution",
+    "used to identify metric false-positive/false-negative risks and bucket quality"
+  ]
+}

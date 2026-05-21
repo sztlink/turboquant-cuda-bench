@@ -21,6 +21,7 @@ REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md
 REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md
 REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md
 REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md
+REALRAG-R3K-ADJUDICATION-LIGHT.md
 REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md
 REALRAG-2WIKI-R3H-DIAGNOSTIC.md
 REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md
@@ -61,6 +62,7 @@ Public-dataset gates:
 - `REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md` — local Qwen semantic-judge triage over R3C samples; not ground-truth adjudication.
 - `REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md` — unreviewed packet for human/independent adjudication.
 - `REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md` — non-authoritative AI-assisted adjudication draft over R3E.
+- `REALRAG-R3K-ADJUDICATION-LIGHT.md` — 200-item high-risk local-LLM triage pack across Hotpot/2Wiki buckets.
 - `REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md` — 2Wiki generalization check; support-present beats no-support, but BGE/oracle do not clearly improve closure over BM25.
 - `REALRAG-2WIKI-R3H-DIAGNOSTIC.md` — diagnosis by question type, answer class, supporting-fact sentence rank, and disagreement buckets.
 - `REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md` — prompt/schema ablation showing support-sentence and gold-triple gains over paragraph context.

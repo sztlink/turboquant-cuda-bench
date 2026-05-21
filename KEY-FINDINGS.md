@@ -96,6 +96,17 @@ Public packages:
 
 ## 1b. 2Wiki: generalization is dataset-sensitive
 
+R3K adjudication-light adds a 200-item local-LLM triage sample over high-risk Hotpot/2Wiki buckets:
+
+- local labels: **116 correct**, **25 partial**, **56 wrong**, **3 parse_error**.
+- local metric-error flags: **71 false_negative**, **7 false_positive**, **119 none**, **3 unclear**.
+- `2wiki_no_support_success_leakage` remains mixed/high-risk: **12 correct**, **2 partial**, **15 wrong** among **29** sampled.
+- `hotpot_metric_open_judge_positive` contains many undercounted answers: **9 correct**, **8 partial**, **2 wrong** among **19** sampled.
+
+Boundary: R3K is local triage, not independent human adjudication.
+
+Public package: [RealRAG R3K adjudication light](bench-public/evidence-utilization/REALRAG-R3K-ADJUDICATION-LIGHT.md)
+
 R3G applies the natural-retrieval gate to 2WikiMultiHopQA dev.
 
 - **2,000** questions, **8,000** records, **0 errors**.
