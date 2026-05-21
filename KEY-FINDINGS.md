@@ -99,6 +99,7 @@ Public packages:
 - [RealRAG Phase 0 closure](bench-public/evidence-utilization/REALRAG-PHASE0-CLOSURE.md)
 - [Observe / Protect / Intervene map](bench-public/evidence-utilization/EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md)
 - [Evidence-Path Runtime Telemetry index](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md)
+- [Evidence Protection Layer index](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-INDEX.md)
 - [Evidence Protection Layer v0](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md)
 - [Evidence Protection Layer v0.1](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md)
 - [Evidence Protection Layer v0.2](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md)

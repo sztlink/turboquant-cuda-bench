@@ -53,6 +53,7 @@ Start here:
 - [RealRAG Phase 0 closure](bench-public/evidence-utilization/REALRAG-PHASE0-CLOSURE.md) - closed public-dataset evidence-placement readout.
 - [Observe / Protect / Intervene map](bench-public/evidence-utilization/EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md) - operating map after Casey Reas review.
 - [Evidence-Path Runtime Telemetry index](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md) - consolidated Phase 1 telemetry membrane and non-intervention boundary.
+- [Evidence Protection Layer index](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-INDEX.md) - consolidated PROTECT membrane and non-intervention boundary.
 - [Evidence Protection Layer v0](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md) - hook-off span provenance gate.
 - [Evidence Protection Layer v0.1](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md) - structural packing invariance gate.
 - [Evidence Protection Layer v0.2](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md) - synthetic equivalence/fail-closed gate.
