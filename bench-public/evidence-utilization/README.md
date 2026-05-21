@@ -14,7 +14,9 @@ Start with:
 
 ```txt
 REALRAG-PHASE0-CLOSURE.md
+EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md
+EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md
 EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md
@@ -64,7 +66,9 @@ OFFLINE-MILESTONE-v1.9.md
 Public-dataset gates:
 
 - `REALRAG-PHASE0-CLOSURE.md` — closed Phase 0 readout across HotpotQA, 2Wiki, adjudication triage, and 32B scale.
+- `EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md` — Casey-informed operating map separating observe, protect, and intervene regimes.
 - `EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md` — consolidated Phase 1 telemetry index and non-intervention boundary freeze.
+- `EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md` — first PROTECT gate; support spans survive deterministic packing as hashed provenance.
 - `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md` — Phase 1 default-off replay bridge from RealRAG records into the runtime telemetry schema.
 - `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md` — default-off runtime sidecar emitter smoke on synthetic/local prompts.
 - `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md` — fail-closed and privacy-regression fixtures for the sidecar telemetry contract.
@@ -107,6 +111,7 @@ simple citation/reasoning prompts did not remove the HotpotQA position effect in
 BGE reranking mitigated most of the BM25-to-oracle gap in R3B natural retrieval
 Phase 0 is closed as a public-dataset answer-closure package
 Phase 1 telemetry membrane is established through v0.5 and frozen as telemetry-only / non-intervention
+PROTECT opened with EPL v0 span provenance; kernel/intervention remains inactive
 R3L shows 32B scale raises HotpotQA closure sharply in support-present conditions but keeps BM25 < BGE < oracle_first >> no_support
 R3C confirms supporting-fact sentence presence; R3D/R3F local AI triage and R3E review packet make independent/human adjudication the next gate
 2Wiki R3G/R3H/R3I/R3J shows the HotpotQA reranker ladder does not generalize cleanly under the same harness; type/prompt/schema fit and relation-aware evidence compression matter

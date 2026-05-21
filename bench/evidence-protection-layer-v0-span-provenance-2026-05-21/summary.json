@@ -1,0 +1,65 @@
+{
+  "schema": "evidence_protection_layer.v0.span_provenance.summary",
+  "status": "passed",
+  "created_at": "2026-05-21T13:37:44.154Z",
+  "boundary": [
+    "protect regime, hook-off/offline",
+    "deterministic packing/provenance only",
+    "no serving mutation",
+    "no model inference",
+    "no output-changing runtime path",
+    "no prompt text, answers, completions, or raw token ids stored"
+  ],
+  "source_records": "bench/evidence-utilization-realrag-hotpotqa-r3l-32b-natural-retrieval-2026-05-20/records.jsonl",
+  "source_dataset": "bench/_datasets/hotpot_dev_distractor_v1.json",
+  "records": 7964,
+  "failures": 0,
+  "page_size_tokens_est": 16,
+  "byCondition": {
+    "bm25_top10": {
+      "records": 1991,
+      "support_present": 1991,
+      "protected_records": 1991,
+      "protected_spans": 3982,
+      "closure": 0.623807132094425,
+      "support_present_rate": 1,
+      "protected_record_rate": 1,
+      "seq_len_mean_est": 1570.2661978905073
+    },
+    "bge_rerank_top10": {
+      "records": 1991,
+      "support_present": 1991,
+      "protected_records": 1991,
+      "protected_spans": 3982,
+      "closure": 0.6464088397790055,
+      "support_present_rate": 1,
+      "protected_record_rate": 1,
+      "seq_len_mean_est": 1571.2661978905073
+    },
+    "oracle_first": {
+      "records": 1991,
+      "support_present": 1991,
+      "protected_records": 1991,
+      "protected_spans": 3982,
+      "closure": 0.6624811652435962,
+      "support_present_rate": 1,
+      "protected_record_rate": 1,
+      "seq_len_mean_est": 1570.2661978905073
+    },
+    "no_support": {
+      "records": 1991,
+      "support_present": 0,
+      "protected_records": 0,
+      "protected_spans": 0,
+      "closure": 0.06127574083375188,
+      "support_present_rate": 0,
+      "protected_record_rate": 0,
+      "seq_len_mean_est": 1314.0426921145154
+    }
+  },
+  "checks": {
+    "all_support_present_records_have_protected_span": true,
+    "all_no_support_records_have_zero_protected_spans": true,
+    "no_text_fields": true
+  }
+}

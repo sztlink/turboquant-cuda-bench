@@ -4,7 +4,7 @@ This file is the short public readout of the repo. Numbers are from local RTX 40
 
 ## Core findings
 
-Phase 0 is closed as a public-dataset answer-closure package. It includes HotpotQA placement/reranking/metric-audit/adjudication-prep/32B scale gates plus 2Wiki generalization and schema diagnostics. Phase 1 is open as default-off Evidence-Path Runtime Telemetry, starting with replay-derived schema-valid events, a synthetic runtime sidecar emitter, fail-closed/privacy regression tests, a guarded sidecar run loop, a config-driven CI-style command, and a read-only/no-endpoint verifier.
+Phase 0 is closed as a public-dataset answer-closure package. It includes HotpotQA placement/reranking/metric-audit/adjudication-prep/32B scale gates plus 2Wiki generalization and schema diagnostics. Phase 1 telemetry is established and frozen as non-intervention. PROTECT is now open with hook-off span provenance; kernel/intervention remains inactive.
 
 These are the stable public findings from promoted receipts. The phrase **retrieved ≠ used** is shorthand for an operational separation between evidence presence and answer closure. It is not a proof of internal evidence use or a claim that this is the dominant production RAG bottleneck.
 
@@ -97,7 +97,9 @@ Boundaries: this is answer-side EM/contains/F1-derived closure. Citation-hit is 
 Public packages:
 
 - [RealRAG Phase 0 closure](bench-public/evidence-utilization/REALRAG-PHASE0-CLOSURE.md)
+- [Observe / Protect / Intervene map](bench-public/evidence-utilization/EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md)
 - [Evidence-Path Runtime Telemetry index](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md)
+- [Evidence Protection Layer v0](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md)
 - [Evidence-Path Runtime Telemetry v0](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md)
 - [Evidence-Path Runtime Telemetry v0.1](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md)
 - [Evidence-Path Runtime Telemetry v0.2](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md)
