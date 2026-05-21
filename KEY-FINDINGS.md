@@ -97,6 +97,7 @@ Boundaries: this is answer-side EM/contains/F1-derived closure. Citation-hit is 
 Public packages:
 
 - [RealRAG Phase 0 closure](bench-public/evidence-utilization/REALRAG-PHASE0-CLOSURE.md)
+- [Evidence-Path Runtime Telemetry index](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md)
 - [Evidence-Path Runtime Telemetry v0](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md)
 - [Evidence-Path Runtime Telemetry v0.1](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md)
 - [Evidence-Path Runtime Telemetry v0.2](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md)

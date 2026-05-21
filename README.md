@@ -51,6 +51,7 @@ Start here:
 
 - [KEY-FINDINGS.md](KEY-FINDINGS.md) - actionable public summary.
 - [RealRAG Phase 0 closure](bench-public/evidence-utilization/REALRAG-PHASE0-CLOSURE.md) - closed public-dataset evidence-placement readout.
+- [Evidence-Path Runtime Telemetry index](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md) - consolidated Phase 1 telemetry membrane and non-intervention boundary.
 - [Evidence-Path Runtime Telemetry v0](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md) - default-off replay bridge into the runtime telemetry schema.
 - [Evidence-Path Runtime Telemetry v0.1](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md) - default-off synthetic runtime sidecar emitter.
 - [Evidence-Path Runtime Telemetry v0.2](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md) - fail-closed and privacy-regression fixtures.
