@@ -1,0 +1,71 @@
+{
+  "schema": "evidence_path_runtime_telemetry_v0.summary",
+  "status": "validated",
+  "created_at": "2026-05-21T12:16:40.166Z",
+  "boundary": [
+    "offline replay-derived geometry only",
+    "no serving hook",
+    "no model inference",
+    "no prompt text or raw token ids",
+    "selected/page positions are estimated geometry, not attention or evidence-use proof"
+  ],
+  "source_records": "bench/evidence-utilization-realrag-hotpotqa-r3l-32b-natural-retrieval-2026-05-20/records.jsonl",
+  "source_dataset": "bench/_datasets/hotpot_dev_distractor_v1.json",
+  "events": 7964,
+  "page_size_tokens_est": 16,
+  "mode_counts": {
+    "dry-run": 7964
+  },
+  "reason_code_counts": {
+    "dry_run_telemetry_only": 7964
+  },
+  "byCondition": {
+    "bm25_top10": {
+      "events": 1991,
+      "support_present": 1991,
+      "support_page_overlap": 1991,
+      "closure": 0.623807132094425,
+      "support_present_rate": 1,
+      "support_page_overlap_rate": 1,
+      "seq_len_mean_est": 1520.8081366147665,
+      "selected_pages_mean_est": 91.82571572074335
+    },
+    "bge_rerank_top10": {
+      "events": 1991,
+      "support_present": 1991,
+      "support_page_overlap": 1991,
+      "closure": 0.6464088397790055,
+      "support_present_rate": 1,
+      "support_page_overlap_rate": 1,
+      "seq_len_mean_est": 1520.8126569563033,
+      "selected_pages_mean_est": 91.82672024108489
+    },
+    "oracle_first": {
+      "events": 1991,
+      "support_present": 1991,
+      "support_page_overlap": 1991,
+      "closure": 0.6624811652435962,
+      "support_present_rate": 1,
+      "support_page_overlap_rate": 1,
+      "seq_len_mean_est": 1520.813661476645,
+      "selected_pages_mean_est": 91.82571572074335
+    },
+    "no_support": {
+      "events": 1991,
+      "support_present": 0,
+      "support_page_overlap": 0,
+      "closure": 0.06127574083375188,
+      "support_present_rate": 0,
+      "support_page_overlap_rate": 0,
+      "seq_len_mean_est": 1296.1933701657458,
+      "selected_pages_mean_est": 77.7930688096434
+    }
+  },
+  "validation": {
+    "validator": "07-scripts/vllm-hook/validate-epkv-runtime-telemetry.mjs",
+    "valid": true,
+    "events": 7964,
+    "errors": 0,
+    "report": "validation-report.json"
+  }
+}

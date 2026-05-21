@@ -159,13 +159,19 @@ Requires explicit confirmation:
 
 ## Phase 1 handoff
 
-Next runtime line should be named:
+The runtime line is named:
 
 ```txt
 Evidence-Path Runtime Telemetry
 ```
 
-It should begin as:
+It began with v0 replay telemetry:
+
+```txt
+EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md
+```
+
+Required envelope remains:
 
 ```txt
 default-off

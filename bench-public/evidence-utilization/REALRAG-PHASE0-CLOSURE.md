@@ -164,17 +164,23 @@ independent/human adjudication is still required before treating metric disagree
 
 ## Phase 1 handoff
 
-Phase 1 should not start as an intervention. It should start as telemetry:
+Phase 1 has started as telemetry, not intervention:
 
 ```txt
-Evidence-Path Runtime Telemetry
+Evidence-Path Runtime Telemetry v0
 ```
 
-Allowed first form:
+First artifact:
+
+```txt
+EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md
+```
+
+Allowed/current form:
 
 ```txt
 default-off
-offline or replay-first
+offline/replay-first
 schema validation before hook-on serving
 no production quality/speed claims
 ```

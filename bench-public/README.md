@@ -15,6 +15,7 @@ This is a public index of receipts, **not a roadmap**.
 | If you want to know... | Start here |
 |---|---|
 | What Phase 0 concludes about evidence placement | [`evidence-utilization/REALRAG-PHASE0-CLOSURE.md`](evidence-utilization/REALRAG-PHASE0-CLOSURE.md) |
+| How Phase 1 starts without live intervention | [`evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md`](evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md) |
 | Why retrieved evidence still fails to close an answer | [`evidence-utilization/`](evidence-utilization/) |
 | Whether the offline evidence-path layer is sealed and auditable | [`evidence-utilization/OFFLINE-MILESTONE-v1.9.md`](evidence-utilization/OFFLINE-MILESTONE-v1.9.md) |
 | How KV/cache changes can preserve action while losing target identity | [`cask-kvfidelity-bridge/`](cask-kvfidelity-bridge/) |
@@ -25,7 +26,7 @@ This is a public index of receipts, **not a roadmap**.
 
 | Package | What it shows | Start here |
 |---|---|---|
-| `evidence-utilization/` | Phase 0 public-dataset closure: rank, placement, reranking, dataset schema, adjudication triage, and model scale change answer closure. | [`REALRAG-PHASE0-CLOSURE.md`](evidence-utilization/REALRAG-PHASE0-CLOSURE.md) |
+| `evidence-utilization/` | Phase 0 public-dataset closure plus Phase 1 default-off telemetry replay bridge. | [`REALRAG-PHASE0-CLOSURE.md`](evidence-utilization/REALRAG-PHASE0-CLOSURE.md) |
 | `vllm-cross-stack/` | vLLM vs llama.cpp cross-stack replay: 192K needles pass, decoy failures replicate, policy splice recovers. | [`decoy-replay-results.md`](vllm-cross-stack/decoy-replay-results.md) |
 | `cask-kvfidelity-bridge/` | Action/target/source-rank split under FullKV, CASK, and TriAttention. | [`RESULTS.md`](cask-kvfidelity-bridge/RESULTS.md) |
 | `kvfidelity/` | Paired action-trace evaluation for KV/cache changes, including v2 comparator, hold-out, and order-sensitivity notes. | [`kvfidelity-2026-05-07-summary.md`](kvfidelity/kvfidelity-2026-05-07-summary.md) |

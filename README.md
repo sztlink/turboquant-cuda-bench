@@ -29,7 +29,7 @@ Boundary: this repo is receipts-first systems research. It does not claim servin
 
 ## TL;DR
 
-Phase 0 is closed as a public-dataset answer-closure package: HotpotQA placement/reranking/32B scale, 2Wiki generalization, metric audit, and adjudication-light gates are complete. Remaining broad-claim blocker: independent/human adjudication.
+Phase 0 is closed as a public-dataset answer-closure package: HotpotQA placement/reranking/32B scale, 2Wiki generalization, metric audit, and adjudication-light gates are complete. Phase 1 is open as default-off Evidence-Path Runtime Telemetry. Remaining broad-claim blocker: independent/human adjudication.
 
 | Finding | Concrete receipt | Why it matters | Public entry |
 |---|---|---|---|
@@ -51,6 +51,7 @@ Start here:
 
 - [KEY-FINDINGS.md](KEY-FINDINGS.md) - actionable public summary.
 - [RealRAG Phase 0 closure](bench-public/evidence-utilization/REALRAG-PHASE0-CLOSURE.md) - closed public-dataset evidence-placement readout.
+- [Evidence-Path Runtime Telemetry v0](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md) - default-off replay bridge into the runtime telemetry schema.
 - [RealRAG HotpotQA R1](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R1.md) - public evidence-placement result.
 - [RealRAG HotpotQA R2 rank curve](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md) - position/rank/recency curve.
 - [RealRAG HotpotQA R3A prompt variants](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md) - citation/reasoning prompt ablation.
