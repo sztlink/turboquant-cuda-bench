@@ -1,0 +1,179 @@
+{
+  "schema": "epkv.retrieved_relation_ecd.v0",
+  "elapsed_sec": 5.532069683074951,
+  "total": 5,
+  "macro": {
+    "bge_strong": {
+      "em": 0.0,
+      "contains": 0.0,
+      "f1": 0.12
+    },
+    "relation_extract": {
+      "em": 0.0,
+      "contains": 0.0,
+      "f1": 0.07380952380952381
+    },
+    "retrieved_relation_ecd": {
+      "em": 0.0,
+      "contains": 0.0,
+      "f1": 0.0
+    }
+  },
+  "rows": [
+    {
+      "idx": 0,
+      "qid": "8813f87c0bdd11eba7f7acde48001122",
+      "gold": "Małgorzata Braunek",
+      "question": "Who is the mother of the director of film Polish-Russian War (Film)?",
+      "bge_strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Dorota Masłowska",
+        "support_title_recall": 0.3333333333333333,
+        "answer_string_present_in_docs": false
+      },
+      "extract_status": "MISSING",
+      "candidate": "",
+      "extract_output": "{\"status\":\"MISSING\",\"final_answer\":\"UNKNOWN\",\"chain\":[],\"evidence_passages\":[],\"reason\":\"The retrieved passages do not provide information about the director of 'Polish-Russian War' or their mother.\"}",
+      "extract": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "ecd_output": "",
+      "ecd": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "ecd_error": "",
+      "extract_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/retrieved-relation-ecd-smoke/extract/0-8813f87c0bdd11eba7f7acde48001122.json",
+      "ecd_artifact": ""
+    },
+    {
+      "idx": 1,
+      "qid": "e2a3bf2a0bdd11eba7f7acde48001122",
+      "gold": "12 June 1516",
+      "question": "When did John V, Prince Of Anhalt-Zerbst's father die?",
+      "bge_strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passage does not provide the death year of John V's father, Ernest I, Prince of Anhalt-Dessau.",
+        "support_title_recall": 0.3333333333333333,
+        "answer_string_present_in_docs": false
+      },
+      "extract_status": "MISSING",
+      "candidate": "",
+      "extract_output": "{\"status\":\"MISSING\",\"final_answer\":\"UNKNOWN\",\"chain\":[],\"evidence_passages\":[],\"reason\":\"The passages do not provide information about when John V's father, Ernest I, died.\"}",
+      "extract": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "ecd_output": "",
+      "ecd": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "ecd_error": "",
+      "extract_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/retrieved-relation-ecd-smoke/extract/1-e2a3bf2a0bdd11eba7f7acde48001122.json",
+      "ecd_artifact": ""
+    },
+    {
+      "idx": 2,
+      "qid": "0cd3bdea0bde11eba7f7acde48001122",
+      "gold": "Myanmar Motion Picture Academy Awards",
+      "question": "What is the award that the director of film Wearing Velvet Slippers Under A Golden Umbrella won?",
+      "bge_strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Maung Wunna won the Golden Rooster Award for Best Directorial Debut with \"Wearing Velvet Slippers Under A Golden Umbrella\".",
+        "support_title_recall": 0.5,
+        "answer_string_present_in_docs": false
+      },
+      "extract_status": "MISSING",
+      "candidate": "",
+      "extract_output": "{\"status\":\"MISSING\",\"final_answer\":\"UNKNOWN\",\"chain\":[],\"evidence_passages\":[\"P1\"],\"reason\":\"The passage does not provide information about the awards won by the director of the film 'Wearing Velvet Slippers Under A Golden Umbrella'.\"}",
+      "extract": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.08333333333333333
+      },
+      "ecd_output": "",
+      "ecd": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "ecd_error": "",
+      "extract_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/retrieved-relation-ecd-smoke/extract/2-0cd3bdea0bde11eba7f7acde48001122.json",
+      "ecd_artifact": ""
+    },
+    {
+      "idx": 3,
+      "qid": "f9dcb4a60bda11eba7f7acde48001122",
+      "gold": "Missoula, Montana",
+      "question": "Where was the director of film Ronnie Rocket born?",
+      "bge_strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "David Lynch was the director of the film Ronnie Rocket, and the passage does not state his birthplace. Therefore, the question cannot be answered based on the given",
+        "support_title_recall": 0.5,
+        "answer_string_present_in_docs": false
+      },
+      "extract_status": "MISSING",
+      "candidate": "",
+      "extract_output": "{\"status\":\"MISSING\",\"final_answer\":\"UNKNOWN\",\"chain\":[\"A -- birthplace --> B\"],\"evidence_passages\":[\"P1\"],\"reason\":\"The passage mentions that Ronnie Rocket is an unfinished film project written by David Lynch, but does not provide any information about the birthplace of the director of this film.\"}",
+      "extract": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "ecd_output": "",
+      "ecd": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "ecd_error": "",
+      "extract_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/retrieved-relation-ecd-smoke/extract/3-f9dcb4a60bda11eba7f7acde48001122.json",
+      "ecd_artifact": ""
+    },
+    {
+      "idx": 4,
+      "qid": "8981e1ce0bb011ebab90acde48001122",
+      "gold": "Charles Armand René de La Trémoille",
+      "question": "Who is Charles Bretagne Marie De La Trémoille's paternal grandfather?",
+      "bge_strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.6,
+        "output": "Henry de La Trémoille",
+        "support_title_recall": 1.0,
+        "answer_string_present_in_docs": true
+      },
+      "extract_status": "MISSING",
+      "candidate": "",
+      "extract_output": "{\"status\":\"MISSING\",\"final_answer\":\"UNKNOWN\",\"chain\":[],\"evidence_passages\":[],\"reason\":\"The passages do not provide information about Charles Bretagne Marie de La Trémoille's paternal grandfather.\"}",
+      "extract": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575
+      },
+      "ecd_output": "",
+      "ecd": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "ecd_error": "",
+      "extract_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/retrieved-relation-ecd-smoke/extract/4-8981e1ce0bb011ebab90acde48001122.json",
+      "ecd_artifact": ""
+    }
+  ]
+}

@@ -76,6 +76,7 @@ def main() -> None:
     p.add_argument("--remote-event-log", default="/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy-events.jsonl")
     p.add_argument("--event-tail-lines", type=int, default=512)
     p.add_argument("--candidate-source", choices=["auto", "terminal-object", "answer", "gold"], default="auto")
+    p.add_argument("--candidate", default="", help="Explicit candidate answer string for policy construction")
     p.add_argument("--bias", type=float, default=3.0)
     p.add_argument("--suppress-scaffold", action="store_true")
     p.add_argument("--max-events", type=int, default=1000000)
@@ -102,6 +103,8 @@ def main() -> None:
             "--tag", f"internal-live-{span_map.get('qid', 'case')}",
             "--out", str(policy_path),
         ]
+        if args.candidate:
+            builder_cmd.extend(["--candidate", args.candidate])
         if args.suppress_scaffold:
             builder_cmd.append("--suppress-scaffold")
         sh(builder_cmd, timeout=180)
