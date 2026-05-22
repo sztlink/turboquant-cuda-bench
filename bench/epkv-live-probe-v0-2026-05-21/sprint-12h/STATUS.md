@@ -426,3 +426,53 @@ VLLM_EPKV_LOGIT_BIAS=0
 ## Current next target
 
 Quality gate cleared. Next valid move is either scale to 300 for robustness or kernelize the now-validated sampler policy path.
+
+## Quality proof 300
+
+300-case robustness run completed:
+
+```txt
+QUALITY-PROOF-300.md
+quality-proof-300/
+```
+
+Closure:
+
+```txt
+296/300 closed
+internal_sampler_policy: 235/239
+relation_path_then_decode: 61/61
+```
+
+Quality:
+
+```txt
+baseline:                         EM 0.327 | contains 0.720 | F1 0.428
+internal sampler + relation path: EM 0.907 | contains 0.987 | F1 0.934
+```
+
+Counts:
+
+```txt
+baseline EM: 98/300
+policy EM: 272/300
+wins: 176
+losses: 2
+```
+
+Service state verified:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+VLLM_EPKV_RUNTIME_HOOK=0
+VLLM_EPKV_LOGIT_BIAS=0
+/health OK
+```
+
+## Current next target
+
+Do retrieval/rerank/prompt reality check before Triton:
+
+```txt
+BM25 baseline vs strong prompt vs BGE rerank vs internal sampler policy vs rerank+policy vs oracle upper bound
+```

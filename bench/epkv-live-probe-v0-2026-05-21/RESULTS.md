@@ -835,3 +835,59 @@ VLLM_EPKV_RUNTIME_HOOK=0
 VLLM_EPKV_LOGIT_BIAS=0
 /health OK
 ```
+
+## Quality proof 300
+
+Robustness extension:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/QUALITY-PROOF-300.md
+```
+
+300-case 2Wiki compact evidence batch:
+
+```txt
+internal sampler + relation fallback closure: 296/300
+internal_sampler_policy: 235/239 closed
+relation_path_then_decode: 61/61 closed
+```
+
+EM / contains / token-F1:
+
+```txt
+baseline:                         EM 0.327 | contains 0.720 | F1 0.428
+internal sampler + relation path: EM 0.907 | contains 0.987 | F1 0.934
+```
+
+Delta:
+
+```txt
+EM +0.580
+contains +0.267
+F1 +0.507
+```
+
+Exact-match counts:
+
+```txt
+baseline EM: 98/300
+policy EM: 272/300
+wins over baseline: 176
+losses vs baseline: 2
+```
+
+Interpretation:
+
+```txt
+quality gate for kernelization: passed
+full RealRAG claim still needs retrieval/rerank/prompt reality check
+```
+
+Final post-run state:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+VLLM_EPKV_RUNTIME_HOOK=0
+VLLM_EPKV_LOGIT_BIAS=0
+/health OK
+```
