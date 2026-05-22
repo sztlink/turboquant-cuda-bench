@@ -178,6 +178,32 @@ VLLM_EPKV_RUNTIME_HOOK=0
 baseline -> Armando Bo
 ```
 
+## Dynamic internal policy file
+
+Added dynamic file-controlled sampler policy:
+
+```txt
+patch-vllm-v1-sampler-logit-policy-file.py
+VLLM_EPKV_LOGIT_POLICY_FILE=/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy.json
+```
+
+No restart needed between policy toggles:
+
+```txt
+policy disabled -> Armando Bo
+policy enabled  -> Víctor Bó
+policy disabled -> Armando Bo
+```
+
+Final restored state:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+VLLM_EPKV_RUNTIME_HOOK=0
+VLLM_EPKV_LOGIT_BIAS=0
+/health OK
+```
+
 ## Current next target
 
-Connect integrated runner outputs to the internal sampler hook env instead of API `logit_bias`, then scale batch.
+Make integrated runner write `logit-policy.json` for live internal sampler steering instead of API `logit_bias`, then scale batch.

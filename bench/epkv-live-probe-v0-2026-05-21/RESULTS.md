@@ -581,3 +581,35 @@ VLLM_EPKV_RUNTIME_HOOK=0
 /health OK
 baseline -> Armando Bo
 ```
+
+## Dynamic sampler policy file
+
+Env-only hook required a vLLM restart to change policy. Added dynamic policy file support:
+
+```txt
+07-scripts/vllm-hook/patch-vllm-v1-sampler-logit-policy-file.py
+VLLM_EPKV_LOGIT_POLICY_FILE=/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy.json
+```
+
+Policy on/off test without API `logit_bias` and without service restart between toggles:
+
+```txt
+policy disabled -> Armando Bo
+policy enabled  -> Víctor Bó
+policy disabled -> Armando Bo
+```
+
+Telemetry:
+
+```txt
+hook: epkv.v1.sample.sampler.logit_policy.v1.file
+policy_enabled: true
+```
+
+Final restored state:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+VLLM_EPKV_RUNTIME_HOOK=0
+/health OK
+```
