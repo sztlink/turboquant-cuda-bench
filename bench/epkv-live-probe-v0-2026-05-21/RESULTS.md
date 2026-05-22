@@ -444,10 +444,42 @@ Hard case remains:
 multi1 Johanna grandmother still fails; needs relation/path repair, not just decode-policy steering.
 ```
 
-## Next live step
+## Auto decode policy selector
 
-Automate the policy:
+Added:
 
 ```txt
-derive candidate from evidence -> inspect first-token logprobs -> choose direct bias vs scaffold suppression vs slot continuation
+07-scripts/vllm-hook/epkv-auto-decode-policy.py
+```
+
+It tries a small policy grid:
+
+```txt
+direct candidate bias
+entity-slot/prefill bias
+scaffold suppression + candidate bias
+```
+
+Auto-policy results:
+
+```txt
+adv2   -> direct bias +3 -> Víctor Bó
+multi2 -> prefill/entity-slot bias -> England...  (alias of English)
+multi3 -> prefill/entity-slot bias -> Víctor Bó...
+multi1 -> failed
+```
+
+This cleanly separates:
+
+```txt
+surface decode failures -> solved by state-aware decode policy
+relation/path failures  -> need relation-aware evidence construction before decode
+```
+
+## Next live step
+
+For `multi1`, build relation-path extraction before decode policy:
+
+```txt
+Johanna Magdalene -> father -> Johann Georg -> mother -> Johanna Magdalena
 ```

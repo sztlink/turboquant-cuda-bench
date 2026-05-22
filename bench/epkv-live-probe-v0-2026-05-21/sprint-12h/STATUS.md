@@ -106,12 +106,23 @@ verbose multi2: suppress scaffold + bias10 -> Margaret Tudor's country of origin
 
 Manual slot/prefix for multi1 still fails, selecting Fredericka Elisabeth instead of Johanna Magdalena. This is a relation/path failure.
 
-## Current next target
+## Auto policy selector
 
-Automatic policy selector:
+Implemented `epkv-auto-decode-policy.py`.
+
+Results:
 
 ```txt
-first-token logprobs show scaffold? -> suppress scaffold
-candidate already near top? -> direct bias
-relation/path confusion? -> build relation-aware candidate/path prompt or evidence rewrite
+adv2   -> direct bias +3 -> Víctor Bó
+multi2 -> prefill/entity-slot bias -> England... / alias of English
+multi3 -> prefill/entity-slot bias -> Víctor Bó...
+multi1 -> failed after 10 attempts
+```
+
+## Current next target
+
+Hard case `multi1` requires relation-path construction, not more decode surface steering:
+
+```txt
+Johanna Magdalene -> father -> Johann Georg -> mother -> Johanna Magdalena
 ```
