@@ -1,0 +1,76 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 231,
+  "evidence_token_count": 29,
+  "evidence_pages": [
+    2,
+    3
+  ],
+  "evidence_pages_spec": "2-3",
+  "terminal_evidence_pages": [
+    3
+  ],
+  "terminal_evidence_pages_spec": "3",
+  "terminal_evidence_token_range_spec": "48-62",
+  "all_evidence_token_range_spec": "34-62",
+  "answer_span": {
+    "text": "Brooklyn",
+    "char_start": 277,
+    "char_end": 285,
+    "token_start": 61,
+    "token_end_exclusive": 62,
+    "token_range_spec": "61-61",
+    "token_count": 1,
+    "pages": [
+      3
+    ],
+    "pages_spec": "3"
+  },
+  "answer_token_range_spec": "61-61",
+  "answer_pages_spec": "3",
+  "qid": "464cfa460bd911eba7f7acde48001122",
+  "gold_answer": "Brooklyn",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Thomas Jefferson: Thomas Jefferson -- director --> Ken Burns.",
+      "char_start": 164,
+      "char_end": 229,
+      "token_start": 34,
+      "token_end_exclusive": 48,
+      "token_range_spec": "34-47",
+      "token_count": 14,
+      "pages": [
+        2
+      ],
+      "pages_spec": "2"
+    },
+    {
+      "label": "E2",
+      "text": "Ken Burns: Ken Burns -- place of birth --> Brooklyn.",
+      "char_start": 230,
+      "char_end": 286,
+      "token_start": 48,
+      "token_end_exclusive": 63,
+      "token_range_spec": "48-62",
+      "token_count": 15,
+      "pages": [
+        3
+      ],
+      "pages_spec": "3"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Thomas Jefferson: Thomas Jefferson -- director --> Ken Burns.\nE2: Ken Burns: Ken Burns -- place of birth --> Brooklyn.\nDistractors:\nD1: Atiba Jefferson: Atiba Jefferson( born 1976) is an American photographer and skateboarder.\nD2: Richard H. Jefferson: Richard H. Jefferson( born January 20, 1931) is an American politician who served in the Minnesota House of Representatives from 1987 to 1999.\nD3: Derrick Jefferson: Derrick Lavon Jefferson( born March 10, 1968) is an American former professional boxer.\nD4: Jermar Jefferson: Jermar Jefferson( born April 15, 2000) is an American football running back for the Oregon State Beavers.\nQuestion: Where was the director of film Thomas Jefferson (Film) born?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Thomas Jefferson: Thomas Jefferson -- director --> Ken Burns.\nE2: Ken Burns: Ken Burns -- place of birth --> Brooklyn.\nDistractors:\nD1: Atiba Jefferson: Atiba Jefferson( born 1976) is an American photographer and skateboarder.\nD2: Richard H. Jefferson: Richard H. Jefferson( born January 20, 1931) is an American politician who served in the Minnesota House of Representatives from 1987 to 1999.\nD3: Derrick Jefferson: Derrick Lavon Jefferson( born March 10, 1968) is an American former professional boxer.\nD4: Jermar Jefferson: Jermar Jefferson( born April 15, 2000) is an American football running back for the Oregon State Beavers.\nQuestion: Where was the director of film Thomas Jefferson (Film) born?<|im_end|>\n<|im_start|>assistant\n"
+}

@@ -83,7 +83,7 @@ def main() -> None:
     p.add_argument("--bias", type=float, default=3.0)
     p.add_argument("--suppress-scaffold", action="store_true")
     p.add_argument("--scaffold-bias", type=float, default=-10.0)
-    p.add_argument("--max-events", type=int, default=16)
+    p.add_argument("--max-events", type=int, default=1000000)
     p.add_argument("--tag", default="")
     p.add_argument("--disabled", action="store_true")
     args = p.parse_args()

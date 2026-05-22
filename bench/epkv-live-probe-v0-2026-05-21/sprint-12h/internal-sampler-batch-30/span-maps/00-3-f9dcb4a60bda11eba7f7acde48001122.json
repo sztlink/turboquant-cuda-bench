@@ -1,0 +1,80 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 301,
+  "evidence_token_count": 33,
+  "evidence_pages": [
+    2,
+    3,
+    4
+  ],
+  "evidence_pages_spec": "2-4",
+  "terminal_evidence_pages": [
+    3,
+    4
+  ],
+  "terminal_evidence_pages_spec": "3-4",
+  "terminal_evidence_token_range_spec": "48-66",
+  "all_evidence_token_range_spec": "34-66",
+  "answer_span": {
+    "text": "Missoula, Montana",
+    "char_start": 277,
+    "char_end": 294,
+    "token_start": 61,
+    "token_end_exclusive": 66,
+    "token_range_spec": "61-65",
+    "token_count": 5,
+    "pages": [
+      3,
+      4
+    ],
+    "pages_spec": "3-4"
+  },
+  "answer_token_range_spec": "61-65",
+  "answer_pages_spec": "3-4",
+  "qid": "f9dcb4a60bda11eba7f7acde48001122",
+  "gold_answer": "Missoula, Montana",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Ronnie Rocket: Ronnie Rocket -- director --> David Lynch.",
+      "char_start": 164,
+      "char_end": 225,
+      "token_start": 34,
+      "token_end_exclusive": 48,
+      "token_range_spec": "34-47",
+      "token_count": 14,
+      "pages": [
+        2
+      ],
+      "pages_spec": "2"
+    },
+    {
+      "label": "E2",
+      "text": "David Lynch: David Lynch -- place of birth --> Missoula, Montana.",
+      "char_start": 226,
+      "char_end": 295,
+      "token_start": 48,
+      "token_end_exclusive": 67,
+      "token_range_spec": "48-66",
+      "token_count": 19,
+      "pages": [
+        3,
+        4
+      ],
+      "pages_spec": "3-4"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Ronnie Rocket: Ronnie Rocket -- director --> David Lynch.\nE2: David Lynch: David Lynch -- place of birth --> Missoula, Montana.\nDistractors:\nD1: Jason Moore (director): Jason Moore( born October 22, 1970) is an American director of film, theatre and television.\nD2: Jesse E. Hobson: Jesse Edward Hobson( May 2, 1911 – November 5, 1970) was the director of SRI International from 1947 to 1955. Prior to SRI, he was the director of the Armour Research Foundation.\nD3: Brian Kennedy (gallery director): Brian Patrick Kennedy( born 5 November 1961) is an Irish- born art museum director who has worked in Ireland and Australia, and now lives and works in the United States. He is currently the director of the Peabody Essex Museum.\nD4: Dana Blankstein: Dana Blankstein- Cohen( born March 3, 1981) is the director of the Israeli Academy of Film and Television. She is a film director, and an Israeli culture entrepreneur.\nQuestion: Where was the director of film Ronnie Rocket born?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Ronnie Rocket: Ronnie Rocket -- director --> David Lynch.\nE2: David Lynch: David Lynch -- place of birth --> Missoula, Montana.\nDistractors:\nD1: Jason Moore (director): Jason Moore( born October 22, 1970) is an American director of film, theatre and television.\nD2: Jesse E. Hobson: Jesse Edward Hobson( May 2, 1911 – November 5, 1970) was the director of SRI International from 1947 to 1955. Prior to SRI, he was the director of the Armour Research Foundation.\nD3: Brian Kennedy (gallery director): Brian Patrick Kennedy( born 5 November 1961) is an Irish- born art museum director who has worked in Ireland and Australia, and now lives and works in the United States. He is currently the director of the Peabody Essex Museum.\nD4: Dana Blankstein: Dana Blankstein- Cohen( born March 3, 1981) is the director of the Israeli Academy of Film and Television. She is a film director, and an Israeli culture entrepreneur.\nQuestion: Where was the director of film Ronnie Rocket born?<|im_end|>\n<|im_start|>assistant\n"
+}

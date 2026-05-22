@@ -1,0 +1,56 @@
+{
+  "schema": "epkv.internal_sampler_batch.relation_fallback.v0",
+  "qid": "464cfa460bd911eba7f7acde48001122",
+  "candidate": "Brooklyn",
+  "prompt": "Answer with only the final entity at the end of the relation chain.\nRelation chain:\nThomas Jefferson -- director --> Ken Burns.\nKen Burns -- place of birth --> Brooklyn.\nQuestion: Where was the director of film Thomas Jefferson (Film) born?",
+  "triples": [
+    [
+      "Thomas Jefferson",
+      "director",
+      "Ken Burns"
+    ],
+    [
+      "Ken Burns",
+      "place of birth",
+      "Brooklyn"
+    ]
+  ],
+  "output": "Brooklyn",
+  "closed": true,
+  "response": {
+    "id": "chatcmpl-af658cfb80210062",
+    "object": "chat.completion",
+    "created": 1779454531,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Brooklyn",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 78,
+      "total_tokens": 81,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

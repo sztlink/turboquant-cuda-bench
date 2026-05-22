@@ -1,0 +1,82 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 497,
+  "evidence_token_count": 52,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "evidence_pages_spec": "2-5",
+  "terminal_evidence_pages": [
+    4,
+    5
+  ],
+  "terminal_evidence_pages_spec": "4-5",
+  "terminal_evidence_token_range_spec": "75-85",
+  "all_evidence_token_range_spec": "34-85",
+  "answer_span": {
+    "text": "Rupert",
+    "char_start": 326,
+    "char_end": 332,
+    "token_start": 84,
+    "token_end_exclusive": 85,
+    "token_range_spec": "84-84",
+    "token_count": 1,
+    "pages": [
+      5
+    ],
+    "pages_spec": "5"
+  },
+  "answer_token_range_spec": "84-84",
+  "answer_pages_spec": "5",
+  "qid": "2002bf0c0bb011ebab90acde48001122",
+  "gold_answer": "Rupert",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Catherine of Pomerania, Countess Palatine of Neumarkt: Catherine of Pomerania, Countess Palatine of Neumarkt -- spouse --> John.",
+      "char_start": 164,
+      "char_end": 296,
+      "token_start": 34,
+      "token_end_exclusive": 75,
+      "token_range_spec": "34-74",
+      "token_count": 41,
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "pages_spec": "2-4"
+    },
+    {
+      "label": "E2",
+      "text": "John: John -- father --> Rupert.",
+      "char_start": 297,
+      "char_end": 333,
+      "token_start": 75,
+      "token_end_exclusive": 86,
+      "token_range_spec": "75-85",
+      "token_count": 11,
+      "pages": [
+        4,
+        5
+      ],
+      "pages_spec": "4-5"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Catherine of Pomerania, Countess Palatine of Neumarkt: Catherine of Pomerania, Countess Palatine of Neumarkt -- spouse --> John.\nE2: John: John -- father --> Rupert.\nDistractors:\nD1: Elisabeth of Hesse, Countess Palatine of Zweibrücken: Elisabeth of Hesse (4 March 1503 – 4 January 1563, Lauingen) was a Landgravine of Hesse by birth and by marriage Countess Palatine of Zweibrücken and later Countess Palatine of Simmern.\nD2: Countess Palatine Dorothea of Simmern: Countess Palatine Dorothea of Simmern (6 January 1581 – 18 September 1631) was a Countess Palatine of Simmern by birth and Princess of Anhalt-Dessau by marriage.\nD3: Countess Palatine Dorothea Catherine of Birkenfeld-Bischweiler: Countess Palatine Dorothea Catherine of Birkenfeld-Bischweiler (3 July 1634 – 7 December 1715) was a Countess Palatine of Zweibrücken-Birkenfeld-Bischweiler by birth and, by marriage, Countess of Nassau-Ottweiler.\nD4: Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler: Countess Palatine Anna Magdalena of Birkenfeld- Bischweiler( 14 February 1640, Strasbourg – 12 December 1693, Babenhausen) was a daughter of Christian I, Count Palatine of Birkenfeld- Bischweiler( 1598 – 1654) and his first wife, Countess Palatine Magdalene Catherine of Zweibrücken( 1606 – 1648).\nQuestion: Who is Catherine Of Pomerania, Countess Palatine Of Neumarkt's father-in-law?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Catherine of Pomerania, Countess Palatine of Neumarkt: Catherine of Pomerania, Countess Palatine of Neumarkt -- spouse --> John.\nE2: John: John -- father --> Rupert.\nDistractors:\nD1: Elisabeth of Hesse, Countess Palatine of Zweibrücken: Elisabeth of Hesse (4 March 1503 – 4 January 1563, Lauingen) was a Landgravine of Hesse by birth and by marriage Countess Palatine of Zweibrücken and later Countess Palatine of Simmern.\nD2: Countess Palatine Dorothea of Simmern: Countess Palatine Dorothea of Simmern (6 January 1581 – 18 September 1631) was a Countess Palatine of Simmern by birth and Princess of Anhalt-Dessau by marriage.\nD3: Countess Palatine Dorothea Catherine of Birkenfeld-Bischweiler: Countess Palatine Dorothea Catherine of Birkenfeld-Bischweiler (3 July 1634 – 7 December 1715) was a Countess Palatine of Zweibrücken-Birkenfeld-Bischweiler by birth and, by marriage, Countess of Nassau-Ottweiler.\nD4: Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler: Countess Palatine Anna Magdalena of Birkenfeld- Bischweiler( 14 February 1640, Strasbourg – 12 December 1693, Babenhausen) was a daughter of Christian I, Count Palatine of Birkenfeld- Bischweiler( 1598 – 1654) and his first wife, Countess Palatine Magdalene Catherine of Zweibrücken( 1606 – 1648).\nQuestion: Who is Catherine Of Pomerania, Countess Palatine Of Neumarkt's father-in-law?<|im_end|>\n<|im_start|>assistant\n"
+}

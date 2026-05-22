@@ -1,0 +1,80 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 236,
+  "evidence_token_count": 34,
+  "evidence_pages": [
+    2,
+    3,
+    4
+  ],
+  "evidence_pages_spec": "2-4",
+  "terminal_evidence_pages": [
+    3,
+    4
+  ],
+  "terminal_evidence_pages_spec": "3-4",
+  "terminal_evidence_token_range_spec": "52-67",
+  "all_evidence_token_range_spec": "34-67",
+  "answer_span": {
+    "text": "United States",
+    "char_start": 304,
+    "char_end": 317,
+    "token_start": 65,
+    "token_end_exclusive": 67,
+    "token_range_spec": "65-66",
+    "token_count": 2,
+    "pages": [
+      4
+    ],
+    "pages_spec": "4"
+  },
+  "answer_token_range_spec": "65-66",
+  "answer_pages_spec": "4",
+  "qid": "2207e9060bda11eba7f7acde48001122",
+  "gold_answer": "United States",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "World and Time Enough: World and Time Enough -- director --> Eric Mueller.",
+      "char_start": 164,
+      "char_end": 242,
+      "token_start": 34,
+      "token_end_exclusive": 52,
+      "token_range_spec": "34-51",
+      "token_count": 18,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Eric Mueller: Eric Mueller -- country of citizenship --> United States.",
+      "char_start": 243,
+      "char_end": 318,
+      "token_start": 52,
+      "token_end_exclusive": 68,
+      "token_range_spec": "52-67",
+      "token_count": 16,
+      "pages": [
+        3,
+        4
+      ],
+      "pages_spec": "3-4"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: World and Time Enough: World and Time Enough -- director --> Eric Mueller.\nE2: Eric Mueller: Eric Mueller -- country of citizenship --> United States.\nDistractors:\nD1: M. Venkataraju: M Venkataraju, was a music director/ composer of Kannada film world.\nD2: Michael Govan: Michael Govan( born 1963) is the director of the Los Angeles County Museum of Art since 2006. Prior to this, Govan worked as the director of the Dia Art Foundation in New York City.\nD3: Peter Levin: Peter Levin is an American director of film, television and theatre.\nD4: Olav Aaraas: Olav Aaraas( born 10 July 1950) is a Norwegian historian and museum director. He was born in Fredrikstad.\nQuestion: What nationality is the director of film World And Time Enough?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: World and Time Enough: World and Time Enough -- director --> Eric Mueller.\nE2: Eric Mueller: Eric Mueller -- country of citizenship --> United States.\nDistractors:\nD1: M. Venkataraju: M Venkataraju, was a music director/ composer of Kannada film world.\nD2: Michael Govan: Michael Govan( born 1963) is the director of the Los Angeles County Museum of Art since 2006. Prior to this, Govan worked as the director of the Dia Art Foundation in New York City.\nD3: Peter Levin: Peter Levin is an American director of film, television and theatre.\nD4: Olav Aaraas: Olav Aaraas( born 10 July 1950) is a Norwegian historian and museum director. He was born in Fredrikstad.\nQuestion: What nationality is the director of film World And Time Enough?<|im_end|>\n<|im_start|>assistant\n"
+}

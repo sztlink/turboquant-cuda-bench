@@ -1,0 +1,80 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 243,
+  "evidence_token_count": 38,
+  "evidence_pages": [
+    2,
+    3,
+    4
+  ],
+  "evidence_pages_spec": "2-4",
+  "terminal_evidence_pages": [
+    3,
+    4
+  ],
+  "terminal_evidence_pages_spec": "3-4",
+  "terminal_evidence_token_range_spec": "53-71",
+  "all_evidence_token_range_spec": "34-71",
+  "answer_span": {
+    "text": "Winnipeg, Manitoba",
+    "char_start": 277,
+    "char_end": 295,
+    "token_start": 68,
+    "token_end_exclusive": 71,
+    "token_range_spec": "68-70",
+    "token_count": 3,
+    "pages": [
+      4
+    ],
+    "pages_spec": "4"
+  },
+  "answer_token_range_spec": "68-70",
+  "answer_pages_spec": "4",
+  "qid": "258867240bdd11eba7f7acde48001122",
+  "gold_answer": "Winnipeg, Manitoba",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Douglas Leiterman: Douglas Leiterman -- spouse --> Beryl Fox.",
+      "char_start": 164,
+      "char_end": 229,
+      "token_start": 34,
+      "token_end_exclusive": 53,
+      "token_range_spec": "34-52",
+      "token_count": 19,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Beryl Fox: Beryl Fox -- place of birth --> Winnipeg, Manitoba.",
+      "char_start": 230,
+      "char_end": 296,
+      "token_start": 53,
+      "token_end_exclusive": 72,
+      "token_range_spec": "53-71",
+      "token_count": 19,
+      "pages": [
+        3,
+        4
+      ],
+      "pages_spec": "3-4"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Douglas Leiterman: Douglas Leiterman -- spouse --> Beryl Fox.\nE2: Beryl Fox: Beryl Fox -- place of birth --> Winnipeg, Manitoba.\nDistractors:\nD1: Artaynte: Artaynte( f. 478 BC), was the wife of the Crown Prince Darius.\nD2: Eunoë (wife of Bogudes): Eunoë was the wife of Bogudes, King of Mauretania.\nD3: Empress Shōken: , also known as, was the wife of Emperor Meiji of Japan.\nD4: Catherine Exley: Catherine Exley was the wife of a soldier and accompanied her husband when he served in Portugal, Spain and Ireland during the Napoleonic Wars. She is best known as the author of a diary that gives an account of military life in that era from the viewpoint of the wife of a common soldier.\nQuestion: Where was the wife of Douglas Leiterman born?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Douglas Leiterman: Douglas Leiterman -- spouse --> Beryl Fox.\nE2: Beryl Fox: Beryl Fox -- place of birth --> Winnipeg, Manitoba.\nDistractors:\nD1: Artaynte: Artaynte( f. 478 BC), was the wife of the Crown Prince Darius.\nD2: Eunoë (wife of Bogudes): Eunoë was the wife of Bogudes, King of Mauretania.\nD3: Empress Shōken: , also known as, was the wife of Emperor Meiji of Japan.\nD4: Catherine Exley: Catherine Exley was the wife of a soldier and accompanied her husband when he served in Portugal, Spain and Ireland during the Napoleonic Wars. She is best known as the author of a diary that gives an account of military life in that era from the viewpoint of the wife of a common soldier.\nQuestion: Where was the wife of Douglas Leiterman born?<|im_end|>\n<|im_start|>assistant\n"
+}

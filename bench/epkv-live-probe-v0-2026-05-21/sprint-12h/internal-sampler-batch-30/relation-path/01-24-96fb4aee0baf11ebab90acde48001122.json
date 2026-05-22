@@ -1,0 +1,56 @@
+{
+  "schema": "epkv.internal_sampler_batch.relation_fallback.v0",
+  "qid": "96fb4aee0baf11ebab90acde48001122",
+  "candidate": "Urraca of Castile",
+  "prompt": "Answer with only the final entity at the end of the relation chain.\nRelation chain:\nBlanche of Portugal -- father --> Afonso III of Portugal.\nAfonso III of Portugal -- mother --> Urraca of Castile.\nQuestion: Who is Blanche Of Portugal (1259–1321)'s paternal grandmother?",
+  "triples": [
+    [
+      "Blanche of Portugal",
+      "father",
+      "Afonso III of Portugal"
+    ],
+    [
+      "Afonso III of Portugal",
+      "mother",
+      "Urraca of Castile"
+    ]
+  ],
+  "output": "Urraca of Castile",
+  "closed": true,
+  "response": {
+    "id": "chatcmpl-b499f4557ac174ec",
+    "object": "chat.completion",
+    "created": 1779454453,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Urraca of Castile",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 98,
+      "total_tokens": 105,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

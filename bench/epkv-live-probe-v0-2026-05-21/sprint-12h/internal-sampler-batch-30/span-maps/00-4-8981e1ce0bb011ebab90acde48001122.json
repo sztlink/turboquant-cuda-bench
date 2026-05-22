@@ -1,0 +1,85 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 543,
+  "evidence_token_count": 77,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "evidence_pages_spec": "2-6",
+  "terminal_evidence_pages": [
+    4,
+    5,
+    6
+  ],
+  "terminal_evidence_pages_spec": "4-6",
+  "terminal_evidence_token_range_spec": "72-110",
+  "all_evidence_token_range_spec": "34-110",
+  "answer_span": {
+    "text": "Charles Armand René de La Trémoille",
+    "char_start": 395,
+    "char_end": 430,
+    "token_start": 99,
+    "token_end_exclusive": 110,
+    "token_range_spec": "99-109",
+    "token_count": 11,
+    "pages": [
+      6
+    ],
+    "pages_spec": "6"
+  },
+  "answer_token_range_spec": "99-109",
+  "answer_pages_spec": "6",
+  "qid": "8981e1ce0bb011ebab90acde48001122",
+  "gold_answer": "Charles Armand René de La Trémoille",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Charles Bretagne Marie de La Trémoille: Charles Bretagne Marie de La Trémoille -- father --> Jean Bretagne Charles de La Trémoille.",
+      "char_start": 164,
+      "char_end": 299,
+      "token_start": 34,
+      "token_end_exclusive": 72,
+      "token_range_spec": "34-71",
+      "token_count": 38,
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "pages_spec": "2-4"
+    },
+    {
+      "label": "E2",
+      "text": "Jean Bretagne Charles de La Trémoille: Jean Bretagne Charles de La Trémoille -- father --> Charles Armand René de La Trémoille.",
+      "char_start": 300,
+      "char_end": 431,
+      "token_start": 72,
+      "token_end_exclusive": 111,
+      "token_range_spec": "72-110",
+      "token_count": 39,
+      "pages": [
+        4,
+        5,
+        6
+      ],
+      "pages_spec": "4-6"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Charles Bretagne Marie de La Trémoille: Charles Bretagne Marie de La Trémoille -- father --> Jean Bretagne Charles de La Trémoille.\nE2: Jean Bretagne Charles de La Trémoille: Jean Bretagne Charles de La Trémoille -- father --> Charles Armand René de La Trémoille.\nDistractors:\nD1: Charles Armand René de La Trémoille: Charles Armand René de La Trémoille (14 January 1708, in Paris – 23 May 1741), 6th duc de Thouars, was the son of Charles Louis Bretagne de La Trémoille and his wife, Marie Madeleine Motier de la Fayette.\nD2: Henri Charles de La Trémoille: Henri Charles de La Trémoille( 17 December 1620 – 14 September 1672) was a French military commander. He the son of Henry de La Trémoille, duc of Thouars and of La Trémoille, and his wife, Marie de La Tour d'Auvergne.\nD3: Claude de La Trémoille: Claude de La Trémoille, 2nd Duke of Thouars (1566 – 25 October 1604) was a sixteenth-century French nobleman of the La Tremoille family. He was the son of Louis III de La Trémoille and his wife, Jeanne de Montmorency.\nD4: Charlotte de La Trémoille: \" Not to be confused with Charlotte Stanley, Countess of Derby.\" Princess Charlotte de La Trémoille( Charlotte Marie Clotilde de La Trémoille; 20 November 1892 – 27 October 1971), 12th Duchess of Thouars, 11th Duchess of La Trémoïlle, 14th Princess de Tarente, 18th princess de Talmond and 18th Countess of Laval was a French noblewoman and the daughter of Prince Louis Charles Marie de La Trémoille and his wife, Hélène Marie Léonie Pillet- Will.\nQuestion: Who is Charles Bretagne Marie De La Trémoille's paternal grandfather?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Charles Bretagne Marie de La Trémoille: Charles Bretagne Marie de La Trémoille -- father --> Jean Bretagne Charles de La Trémoille.\nE2: Jean Bretagne Charles de La Trémoille: Jean Bretagne Charles de La Trémoille -- father --> Charles Armand René de La Trémoille.\nDistractors:\nD1: Charles Armand René de La Trémoille: Charles Armand René de La Trémoille (14 January 1708, in Paris – 23 May 1741), 6th duc de Thouars, was the son of Charles Louis Bretagne de La Trémoille and his wife, Marie Madeleine Motier de la Fayette.\nD2: Henri Charles de La Trémoille: Henri Charles de La Trémoille( 17 December 1620 – 14 September 1672) was a French military commander. He the son of Henry de La Trémoille, duc of Thouars and of La Trémoille, and his wife, Marie de La Tour d'Auvergne.\nD3: Claude de La Trémoille: Claude de La Trémoille, 2nd Duke of Thouars (1566 – 25 October 1604) was a sixteenth-century French nobleman of the La Tremoille family. He was the son of Louis III de La Trémoille and his wife, Jeanne de Montmorency.\nD4: Charlotte de La Trémoille: \" Not to be confused with Charlotte Stanley, Countess of Derby.\" Princess Charlotte de La Trémoille( Charlotte Marie Clotilde de La Trémoille; 20 November 1892 – 27 October 1971), 12th Duchess of Thouars, 11th Duchess of La Trémoïlle, 14th Princess de Tarente, 18th princess de Talmond and 18th Countess of Laval was a French noblewoman and the daughter of Prince Louis Charles Marie de La Trémoille and his wife, Hélène Marie Léonie Pillet- Will.\nQuestion: Who is Charles Bretagne Marie De La Trémoille's paternal grandfather?<|im_end|>\n<|im_start|>assistant\n"
+}

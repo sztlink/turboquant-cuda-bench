@@ -48,6 +48,23 @@ def copy_policy_to_remote(local_policy: Path, host: str, windows_tmp: str, remot
     sh(["ssh", host, "wsl.exe", "-d", "Ubuntu-24.04", "-u", "felipe", "--", "cp", wsl_tmp, remote_policy_path], timeout=120)
 
 
+def fetch_remote_events(host: str, remote_event_log: str, tag: str, tail_lines: int) -> list[dict[str, Any]]:
+    script = f"tail -n {int(tail_lines)} {remote_event_log} 2>/dev/null || true"
+    try:
+        raw = sh(["ssh", host, f"wsl.exe -d Ubuntu-24.04 -u felipe -- bash -lc {json.dumps(script)}"], timeout=120)
+    except Exception:
+        return []
+    events: list[dict[str, Any]] = []
+    for line in raw.splitlines():
+        try:
+            ev = json.loads(line)
+        except Exception:
+            continue
+        if not tag or ev.get("tag") == tag:
+            events.append(ev)
+    return events
+
+
 def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--span-map", required=True)
@@ -56,10 +73,12 @@ def main() -> None:
     p.add_argument("--model", default="local-vllm")
     p.add_argument("--host", default="4090")
     p.add_argument("--remote-policy-path", default="/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy.json")
+    p.add_argument("--remote-event-log", default="/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy-events.jsonl")
+    p.add_argument("--event-tail-lines", type=int, default=512)
     p.add_argument("--candidate-source", choices=["auto", "terminal-object", "answer", "gold"], default="auto")
     p.add_argument("--bias", type=float, default=3.0)
     p.add_argument("--suppress-scaffold", action="store_true")
-    p.add_argument("--max-events", type=int, default=256)
+    p.add_argument("--max-events", type=int, default=1000000)
     p.add_argument("--max-tokens", type=int, default=16)
     p.add_argument("--timeout", type=int, default=120)
     args = p.parse_args()
@@ -107,13 +126,16 @@ def main() -> None:
                 restore_error = str(exc)
 
         policy = json.loads(policy_path.read_text(encoding="utf-8"))
+        hook_events = fetch_remote_events(args.host, args.remote_event_log, str(policy.get("tag", "")), args.event_tail_lines)
         result = {
-            "schema": "epkv.internal_sampler_policy_live.v0",
+            "schema": "epkv.internal_sampler_policy_live.v1.telemetry",
             "span_map": args.span_map,
             "elapsed_sec": time.time() - t0,
             "policy": policy,
             "output": content_of(response or {}),
             "response": response,
+            "hook_events": hook_events,
+            "hook_event_count": len(hook_events),
             "restore_error": restore_error,
         }
         out.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

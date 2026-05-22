@@ -1,0 +1,93 @@
+{
+  "schema": "epkv.internal_sampler_policy_live.v0",
+  "span_map": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/internal-sampler-batch-30/span-maps/00-5-019bed300bde11eba7f7acde48001122.json",
+  "elapsed_sec": 1.65388822555542,
+  "policy": {
+    "schema": "epkv.logit_policy_file.v0",
+    "enabled": true,
+    "tag": "internal-live-019bed300bde11eba7f7acde48001122",
+    "candidate": "Galați",
+    "candidate_source": "auto",
+    "candidate_ids": [
+      38,
+      75441
+    ],
+    "suppress_scaffold": true,
+    "scaffold_ids": [
+      28715,
+      20205,
+      785,
+      576,
+      11190,
+      10548,
+      3830,
+      5542,
+      22043,
+      16246,
+      16141,
+      21806
+    ],
+    "bias_map": {
+      "38": 3.0,
+      "75441": 3.0,
+      "28715": -10.0,
+      "20205": -10.0,
+      "785": -10.0,
+      "576": -10.0,
+      "11190": -10.0,
+      "10548": -10.0,
+      "3830": -10.0,
+      "5542": -10.0,
+      "22043": -10.0,
+      "16246": -10.0,
+      "16141": -10.0,
+      "21806": -10.0
+    },
+    "max_events": 256,
+    "provenance": {
+      "qid": "019bed300bde11eba7f7acde48001122",
+      "answer_pages_spec": "6",
+      "answer_token_range_spec": "100-101",
+      "evidence_pages_spec": "2-6",
+      "evidence_token_range_spec": null
+    }
+  },
+  "output": "We cannot determine where the father of Ștefan I. Neniț",
+  "response": {
+    "id": "chatcmpl-926117c6c6e500a6",
+    "object": "chat.completion",
+    "created": 1779454284,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "We cannot determine where the father of Ștefan I. Neniț",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 283,
+      "total_tokens": 299,
+      "completion_tokens": 16,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "restore_error": null
+}

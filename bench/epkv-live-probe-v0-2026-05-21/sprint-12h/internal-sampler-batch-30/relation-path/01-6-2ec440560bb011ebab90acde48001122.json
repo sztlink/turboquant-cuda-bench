@@ -1,0 +1,56 @@
+{
+  "schema": "epkv.internal_sampler_batch.relation_fallback.v0",
+  "qid": "2ec440560bb011ebab90acde48001122",
+  "candidate": "Ptolemy IX Lathyros",
+  "prompt": "Answer with only the final entity at the end of the relation chain.\nRelation chain:\nAntiochus X Eusebes -- mother --> Cleopatra IV.\nCleopatra IV -- father --> Ptolemy IX Lathyros.\nQuestion: Who is the maternal grandfather of Antiochus X Eusebes?",
+  "triples": [
+    [
+      "Antiochus X Eusebes",
+      "mother",
+      "Cleopatra IV"
+    ],
+    [
+      "Cleopatra IV",
+      "father",
+      "Ptolemy IX Lathyros"
+    ]
+  ],
+  "output": "Ptolemy IX Lathyros",
+  "closed": true,
+  "response": {
+    "id": "chatcmpl-bcb1b9cef37b7e53",
+    "object": "chat.completion",
+    "created": 1779454521,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Ptolemy IX Lathyros",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 96,
+      "total_tokens": 105,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 426,
+  "evidence_token_count": 77,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "evidence_pages_spec": "2-6",
+  "terminal_evidence_pages": [
+    4,
+    5,
+    6
+  ],
+  "terminal_evidence_pages_spec": "4-6",
+  "terminal_evidence_token_range_spec": "74-110",
+  "all_evidence_token_range_spec": "34-110",
+  "answer_span": {
+    "text": "Sir Arthur Gore, 2nd Baronet",
+    "char_start": 376,
+    "char_end": 404,
+    "token_start": 101,
+    "token_end_exclusive": 110,
+    "token_range_spec": "101-109",
+    "token_count": 9,
+    "pages": [
+      6
+    ],
+    "pages_spec": "6"
+  },
+  "answer_token_range_spec": "101-109",
+  "answer_pages_spec": "6",
+  "qid": "27e835ee0bb011ebab90acde48001122",
+  "gold_answer": "Sir Arthur Gore, 2nd Baronet",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Arthur Saunders Gore, 2nd Earl of Arran: Arthur Saunders Gore, 2nd Earl of Arran -- father --> Arthur Gore, 1st Earl of Arran.",
+      "char_start": 164,
+      "char_end": 294,
+      "token_start": 34,
+      "token_end_exclusive": 74,
+      "token_range_spec": "34-73",
+      "token_count": 40,
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "pages_spec": "2-4"
+    },
+    {
+      "label": "E2",
+      "text": "Arthur Gore, 1st Earl of Arran: Arthur Gore, 1st Earl of Arran -- father --> Sir Arthur Gore, 2nd Baronet.",
+      "char_start": 295,
+      "char_end": 405,
+      "token_start": 74,
+      "token_end_exclusive": 111,
+      "token_range_spec": "74-110",
+      "token_count": 37,
+      "pages": [
+        4,
+        5,
+        6
+      ],
+      "pages_spec": "4-6"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Arthur Saunders Gore, 2nd Earl of Arran: Arthur Saunders Gore, 2nd Earl of Arran -- father --> Arthur Gore, 1st Earl of Arran.\nE2: Arthur Gore, 1st Earl of Arran: Arthur Gore, 1st Earl of Arran -- father --> Sir Arthur Gore, 2nd Baronet.\nDistractors:\nD1: Sir Arthur Gore, 2nd Baronet: Sir Arthur Gore, 2nd Baronet( c. 1685 – 10 February 1742) was an Irish politician and baronet. He was the son of Paul Gore, himself son of Sir Arthur Gore, 1st Baronet, and his wife Anne Gore, daughter of Sir John Gore.\nD2: Thomas Bruce, 2nd Earl of Ailesbury: Thomas Bruce, 2nd Earl of Ailesbury( later styled Aylesbury) and 3rd Earl of Elgin( 1656 – 16 December 1741) was an English politician and memoirist. He was the son of Robert Bruce, 2nd Earl of Elgin, and Lady Diana Grey.\nD3: Ralph Neville, 3rd Earl of Westmorland: Ralph Neville, 3rd Earl of Westmorland( c. 1456 – 6 February 1499) was an English peer. He was the grandfather of Ralph Neville, 4th Earl of Westmorland.\nD4: James Hamilton, Duke of Châtellerault: James Hamilton, Duke of Châtellerault, 2nd Earl of Arran( – 22 January 1575) was a regent for Mary, Queen of Scots.\nQuestion: Who is Arthur Gore, 2Nd Earl Of Arran's paternal grandfather?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Arthur Saunders Gore, 2nd Earl of Arran: Arthur Saunders Gore, 2nd Earl of Arran -- father --> Arthur Gore, 1st Earl of Arran.\nE2: Arthur Gore, 1st Earl of Arran: Arthur Gore, 1st Earl of Arran -- father --> Sir Arthur Gore, 2nd Baronet.\nDistractors:\nD1: Sir Arthur Gore, 2nd Baronet: Sir Arthur Gore, 2nd Baronet( c. 1685 – 10 February 1742) was an Irish politician and baronet. He was the son of Paul Gore, himself son of Sir Arthur Gore, 1st Baronet, and his wife Anne Gore, daughter of Sir John Gore.\nD2: Thomas Bruce, 2nd Earl of Ailesbury: Thomas Bruce, 2nd Earl of Ailesbury( later styled Aylesbury) and 3rd Earl of Elgin( 1656 – 16 December 1741) was an English politician and memoirist. He was the son of Robert Bruce, 2nd Earl of Elgin, and Lady Diana Grey.\nD3: Ralph Neville, 3rd Earl of Westmorland: Ralph Neville, 3rd Earl of Westmorland( c. 1456 – 6 February 1499) was an English peer. He was the grandfather of Ralph Neville, 4th Earl of Westmorland.\nD4: James Hamilton, Duke of Châtellerault: James Hamilton, Duke of Châtellerault, 2nd Earl of Arran( – 22 January 1575) was a regent for Mary, Queen of Scots.\nQuestion: Who is Arthur Gore, 2Nd Earl Of Arran's paternal grandfather?<|im_end|>\n<|im_start|>assistant\n"
+}

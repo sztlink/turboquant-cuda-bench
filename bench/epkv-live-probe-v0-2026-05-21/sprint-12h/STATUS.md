@@ -338,6 +338,50 @@ policy file: {"enabled": false, "tag": "default-off"}
 /health OK
 ```
 
+## Steps 1–7 completion
+
+Completed requested autonomous steps through comparison.
+
+Artifacts:
+
+```txt
+STEPS-1-7-COMPLETE.md
+internal-sampler-batch-30/
+policy-stack-comparison/
+```
+
+Results:
+
+```txt
+internal sampler + relation fallback smoke: 3/3
+internal sampler batch 30: 30/30
+  internal_sampler_policy: 16
+  relation_path_then_decode: 14
+comparison original 3:
+  baseline: 0/3
+  KV-only artifact: 1/3
+  API logit_bias: 2/3
+  internal sampler policy: 2/3
+  relation path then decode: 3/3
+```
+
+New scripts:
+
+```txt
+epkv-summarize-policy-results.py
+epkv-compare-policy-stack.py
+patch-vllm-v1-sampler-epkv-policy.py
+```
+
+Final service state:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+VLLM_EPKV_RUNTIME_HOOK=0
+VLLM_EPKV_LOGIT_BIAS=0
+/health OK
+```
+
 ## Current next target
 
-Integrate relation-path fallback into the internal sampler batch, then scale.
+If continuing: scale internal sampler + relation fallback beyond 30 and replace global policy-file control with per-request policy plumbing.

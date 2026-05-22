@@ -1,0 +1,80 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 469,
+  "evidence_token_count": 41,
+  "evidence_pages": [
+    2,
+    3,
+    4
+  ],
+  "evidence_pages_spec": "2-4",
+  "terminal_evidence_pages": [
+    3,
+    4
+  ],
+  "terminal_evidence_pages_spec": "3-4",
+  "terminal_evidence_token_range_spec": "54-74",
+  "all_evidence_token_range_spec": "34-74",
+  "answer_span": {
+    "text": "Hilandar",
+    "char_start": 296,
+    "char_end": 304,
+    "token_start": 71,
+    "token_end_exclusive": 74,
+    "token_range_spec": "71-73",
+    "token_count": 3,
+    "pages": [
+      4
+    ],
+    "pages_spec": "4"
+  },
+  "answer_token_range_spec": "71-73",
+  "answer_pages_spec": "4",
+  "qid": "6ebe05740bde11eba7f7acde48001122",
+  "gold_answer": "Hilandar",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Anastasia of Serbia: Anastasia of Serbia -- spouse --> Stefan Nemanja.",
+      "char_start": 164,
+      "char_end": 238,
+      "token_start": 34,
+      "token_end_exclusive": 54,
+      "token_range_spec": "34-53",
+      "token_count": 20,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Stefan Nemanja: Stefan Nemanja -- place of death --> Hilandar.",
+      "char_start": 239,
+      "char_end": 305,
+      "token_start": 54,
+      "token_end_exclusive": 75,
+      "token_range_spec": "54-74",
+      "token_count": 21,
+      "pages": [
+        3,
+        4
+      ],
+      "pages_spec": "3-4"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Anastasia of Serbia: Anastasia of Serbia -- spouse --> Stefan Nemanja.\nE2: Stefan Nemanja: Stefan Nemanja -- place of death --> Hilandar.\nDistractors:\nD1: Slavica Đukić Dejanović: Slavica Đukić Dejanović( born 4 July 1951) is a Serbian politician, current Minister without portfolio in the Government of Serbia, and former Minister of Health in the Government of Serbia, acting Head of State of Serbia and President of the National Assembly of Serbia, and a long- time member of the Socialist Party of Serbia. Dejanović is the second woman at the head of the National Assembly of Serbia, after Nataša Mićić, who was President of Parliament 2001- 2004, and the first one in the independent Serbia.\nD2: Dimitrije Nešić: Dimitrije Nešić( 20 October 1836, in Belgrade, Principality of Serbia – 9 May 1904, in Belgrade, Kingdom of Serbia) was a Serbian mathematician, professor at the Lyceum of the Principality of Serbia and president of the Serbian Royal Academy.\nD3: Suzana Grubješić: Suzana Grubješić( born 1963) is a Serbian politician who served as the Deputy Prime Minister of Serbia from 2012 to 2014 under Ivica Dačić and also served on the National Assembly of the Republic of Serbia as both a G17 Plus member and United Regions of Serbia. She was involved in negotiations with the European Union and has actively sought integration of Serbia with the EU.\nD4: Marjana Maraš: Marjana Maraš is a politician in Serbia. She has served in the National Assembly of Serbia since 2014 as a member of the Socialist Party of Serbia.\nQuestion: Where was the place of death of Anastasia Of Serbia's husband?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Anastasia of Serbia: Anastasia of Serbia -- spouse --> Stefan Nemanja.\nE2: Stefan Nemanja: Stefan Nemanja -- place of death --> Hilandar.\nDistractors:\nD1: Slavica Đukić Dejanović: Slavica Đukić Dejanović( born 4 July 1951) is a Serbian politician, current Minister without portfolio in the Government of Serbia, and former Minister of Health in the Government of Serbia, acting Head of State of Serbia and President of the National Assembly of Serbia, and a long- time member of the Socialist Party of Serbia. Dejanović is the second woman at the head of the National Assembly of Serbia, after Nataša Mićić, who was President of Parliament 2001- 2004, and the first one in the independent Serbia.\nD2: Dimitrije Nešić: Dimitrije Nešić( 20 October 1836, in Belgrade, Principality of Serbia – 9 May 1904, in Belgrade, Kingdom of Serbia) was a Serbian mathematician, professor at the Lyceum of the Principality of Serbia and president of the Serbian Royal Academy.\nD3: Suzana Grubješić: Suzana Grubješić( born 1963) is a Serbian politician who served as the Deputy Prime Minister of Serbia from 2012 to 2014 under Ivica Dačić and also served on the National Assembly of the Republic of Serbia as both a G17 Plus member and United Regions of Serbia. She was involved in negotiations with the European Union and has actively sought integration of Serbia with the EU.\nD4: Marjana Maraš: Marjana Maraš is a politician in Serbia. She has served in the National Assembly of Serbia since 2014 as a member of the Socialist Party of Serbia.\nQuestion: Where was the place of death of Anastasia Of Serbia's husband?<|im_end|>\n<|im_start|>assistant\n"
+}

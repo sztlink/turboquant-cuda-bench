@@ -1,0 +1,82 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 322,
+  "evidence_token_count": 58,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "evidence_pages_spec": "2-5",
+  "terminal_evidence_pages": [
+    4,
+    5
+  ],
+  "terminal_evidence_pages_spec": "4-5",
+  "terminal_evidence_token_range_spec": "65-91",
+  "all_evidence_token_range_spec": "34-91",
+  "answer_span": {
+    "text": "Marie Leszczyńska",
+    "char_start": 330,
+    "char_end": 347,
+    "token_start": 86,
+    "token_end_exclusive": 91,
+    "token_range_spec": "86-90",
+    "token_count": 5,
+    "pages": [
+      5
+    ],
+    "pages_spec": "5"
+  },
+  "answer_token_range_spec": "86-90",
+  "answer_pages_spec": "5",
+  "qid": "c531e7560baf11ebab90acde48001122",
+  "gold_answer": "Marie Leszczyńska",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Marie Zéphyrine of France: Marie Zéphyrine of France -- father --> Louis, Dauphin of France.",
+      "char_start": 164,
+      "char_end": 260,
+      "token_start": 34,
+      "token_end_exclusive": 65,
+      "token_range_spec": "34-64",
+      "token_count": 31,
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "pages_spec": "2-4"
+    },
+    {
+      "label": "E2",
+      "text": "Louis, Dauphin of France: Louis, Dauphin of France -- mother --> Marie Leszczyńska.",
+      "char_start": 261,
+      "char_end": 348,
+      "token_start": 65,
+      "token_end_exclusive": 92,
+      "token_range_spec": "65-91",
+      "token_count": 27,
+      "pages": [
+        4,
+        5
+      ],
+      "pages_spec": "4-5"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Marie Zéphyrine of France: Marie Zéphyrine of France -- father --> Louis, Dauphin of France.\nE2: Louis, Dauphin of France: Louis, Dauphin of France -- mother --> Marie Leszczyńska.\nDistractors:\nD1: Gülbahar Hatun (wife of Mehmed II): Gülbahar Hatun( 1432 – 1492) was the consort of Sultan Mehmed II, and mother of Sultan Bayezid II of the Ottoman Empire and the grandmother of Selim I.\nD2: Tjuyu: Tjuyu( sometimes transliterated as Thuya or Thuyu) was an Egyptian noblewoman and the mother of queen Tiye, and the wife of Yuya. She is the grandmother of Akhenaten, and great grandmother of Tutankhamun.\nD3: Mona Hopton Bell: Mona Hopton Bell( 1867- 1940) was a British artist, best known for her portraits of civic figures. She was the grandmother of the painter Jean H. Bell.\nD4: Hannah Arnold: Hannah Arnold, also known as Hannah Waterman King, was the grandmother of Benedict Arnolds children.\nQuestion: Who is Marie Zéphyrine Of France's paternal grandmother?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Marie Zéphyrine of France: Marie Zéphyrine of France -- father --> Louis, Dauphin of France.\nE2: Louis, Dauphin of France: Louis, Dauphin of France -- mother --> Marie Leszczyńska.\nDistractors:\nD1: Gülbahar Hatun (wife of Mehmed II): Gülbahar Hatun( 1432 – 1492) was the consort of Sultan Mehmed II, and mother of Sultan Bayezid II of the Ottoman Empire and the grandmother of Selim I.\nD2: Tjuyu: Tjuyu( sometimes transliterated as Thuya or Thuyu) was an Egyptian noblewoman and the mother of queen Tiye, and the wife of Yuya. She is the grandmother of Akhenaten, and great grandmother of Tutankhamun.\nD3: Mona Hopton Bell: Mona Hopton Bell( 1867- 1940) was a British artist, best known for her portraits of civic figures. She was the grandmother of the painter Jean H. Bell.\nD4: Hannah Arnold: Hannah Arnold, also known as Hannah Waterman King, was the grandmother of Benedict Arnolds children.\nQuestion: Who is Marie Zéphyrine Of France's paternal grandmother?<|im_end|>\n<|im_start|>assistant\n"
+}

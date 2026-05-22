@@ -1,0 +1,80 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 281,
+  "evidence_token_count": 44,
+  "evidence_pages": [
+    2,
+    3,
+    4
+  ],
+  "evidence_pages_spec": "2-4",
+  "terminal_evidence_pages": [
+    3,
+    4
+  ],
+  "terminal_evidence_pages_spec": "3-4",
+  "terminal_evidence_token_range_spec": "53-77",
+  "all_evidence_token_range_spec": "34-77",
+  "answer_span": {
+    "text": "Nice",
+    "char_start": 290,
+    "char_end": 294,
+    "token_start": 76,
+    "token_end_exclusive": 77,
+    "token_range_spec": "76-76",
+    "token_count": 1,
+    "pages": [
+      4
+    ],
+    "pages_spec": "4"
+  },
+  "answer_token_range_spec": "76-76",
+  "answer_pages_spec": "4",
+  "qid": "2935f1640bda11eba7f7acde48001122",
+  "gold_answer": "Nice",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Beat Girl: Beat Girl -- director --> Edmond T. Gréville.",
+      "char_start": 164,
+      "char_end": 224,
+      "token_start": 34,
+      "token_end_exclusive": 53,
+      "token_range_spec": "34-52",
+      "token_count": 19,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Edmond T. Gréville: Edmond T. Gréville -- place of death --> Nice.",
+      "char_start": 225,
+      "char_end": 295,
+      "token_start": 53,
+      "token_end_exclusive": 78,
+      "token_range_spec": "53-77",
+      "token_count": 25,
+      "pages": [
+        3,
+        4
+      ],
+      "pages_spec": "3-4"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Beat Girl: Beat Girl -- director --> Edmond T. Gréville.\nE2: Edmond T. Gréville: Edmond T. Gréville -- place of death --> Nice.\nDistractors:\nD1: Olav Aaraas: Olav Aaraas( born 10 July 1950) is a Norwegian historian and museum director. He was born in Fredrikstad.\nD2: Peter Levin: Peter Levin is an American director of film, television and theatre.\nD3: Dana Blankstein: Dana Blankstein- Cohen( born March 3, 1981) is the director of the Israeli Academy of Film and Television. She is a film director, and an Israeli culture entrepreneur.\nD4: Jesse E. Hobson: Jesse Edward Hobson( May 2, 1911 – November 5, 1970) was the director of SRI International from 1947 to 1955. Prior to SRI, he was the director of the Armour Research Foundation.\nQuestion: Where was the place of death of the director of film Beat Girl?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Beat Girl: Beat Girl -- director --> Edmond T. Gréville.\nE2: Edmond T. Gréville: Edmond T. Gréville -- place of death --> Nice.\nDistractors:\nD1: Olav Aaraas: Olav Aaraas( born 10 July 1950) is a Norwegian historian and museum director. He was born in Fredrikstad.\nD2: Peter Levin: Peter Levin is an American director of film, television and theatre.\nD3: Dana Blankstein: Dana Blankstein- Cohen( born March 3, 1981) is the director of the Israeli Academy of Film and Television. She is a film director, and an Israeli culture entrepreneur.\nD4: Jesse E. Hobson: Jesse Edward Hobson( May 2, 1911 – November 5, 1970) was the director of SRI International from 1947 to 1955. Prior to SRI, he was the director of the Armour Research Foundation.\nQuestion: Where was the place of death of the director of film Beat Girl?<|im_end|>\n<|im_start|>assistant\n"
+}

@@ -755,3 +755,41 @@ This confirms the split:
 surface decode failures -> internal sampler policy works
 relation/path failures -> require relation-path fallback first
 ```
+
+## Steps 1–7 completion
+
+Consolidated in:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/STEPS-1-7-COMPLETE.md
+```
+
+Key results:
+
+```txt
+internal sampler + relation fallback smoke: 3/3
+internal sampler batch 30: 30/30
+  internal_sampler_policy: 16/16
+  relation_path_then_decode: 14/14
+policy stack comparison on original 3:
+  baseline: 0/3
+  KV-only artifact: 1/3
+  API logit_bias: 2/3
+  internal sampler policy: 2/3
+  relation path then decode: 3/3
+```
+
+Added canonical one-shot active sampler patch:
+
+```txt
+07-scripts/vllm-hook/patch-vllm-v1-sampler-epkv-policy.py
+```
+
+Final service state:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+VLLM_EPKV_RUNTIME_HOOK=0
+VLLM_EPKV_LOGIT_BIAS=0
+/health OK
+```

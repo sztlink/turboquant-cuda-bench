@@ -1,0 +1,83 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 260,
+  "evidence_token_count": 51,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "evidence_pages_spec": "2-5",
+  "terminal_evidence_pages": [
+    4,
+    5
+  ],
+  "terminal_evidence_pages_spec": "4-5",
+  "terminal_evidence_token_range_spec": "65-84",
+  "all_evidence_token_range_spec": "34-84",
+  "answer_span": {
+    "text": "Myanmar Motion Picture Academy Awards",
+    "char_start": 327,
+    "char_end": 364,
+    "token_start": 79,
+    "token_end_exclusive": 84,
+    "token_range_spec": "79-83",
+    "token_count": 5,
+    "pages": [
+      4,
+      5
+    ],
+    "pages_spec": "4-5"
+  },
+  "answer_token_range_spec": "79-83",
+  "answer_pages_spec": "4-5",
+  "qid": "0cd3bdea0bde11eba7f7acde48001122",
+  "gold_answer": "Myanmar Motion Picture Academy Awards",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Wearing Velvet Slippers under a Golden Umbrella: Wearing Velvet Slippers under a Golden Umbrella -- director --> Wunna.",
+      "char_start": 164,
+      "char_end": 287,
+      "token_start": 34,
+      "token_end_exclusive": 65,
+      "token_range_spec": "34-64",
+      "token_count": 31,
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "pages_spec": "2-4"
+    },
+    {
+      "label": "E2",
+      "text": "Wunna: Wunna -- award received --> Myanmar Motion Picture Academy Awards.",
+      "char_start": 288,
+      "char_end": 365,
+      "token_start": 65,
+      "token_end_exclusive": 85,
+      "token_range_spec": "65-84",
+      "token_count": 20,
+      "pages": [
+        4,
+        5
+      ],
+      "pages_spec": "4-5"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Wearing Velvet Slippers under a Golden Umbrella: Wearing Velvet Slippers under a Golden Umbrella -- director --> Wunna.\nE2: Wunna: Wunna -- award received --> Myanmar Motion Picture Academy Awards.\nDistractors:\nD1: Michael Govan: Michael Govan( born 1963) is the director of the Los Angeles County Museum of Art since 2006. Prior to this, Govan worked as the director of the Dia Art Foundation in New York City.\nD2: Peter Levin: Peter Levin is an American director of film, television and theatre.\nD3: John Donatich: John Donatich is the Director of Yale University Press.\nD4: Dana Blankstein: Dana Blankstein- Cohen( born March 3, 1981) is the director of the Israeli Academy of Film and Television. She is a film director, and an Israeli culture entrepreneur.\nQuestion: What is the award that the director of film Wearing Velvet Slippers Under A Golden Umbrella won?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Wearing Velvet Slippers under a Golden Umbrella: Wearing Velvet Slippers under a Golden Umbrella -- director --> Wunna.\nE2: Wunna: Wunna -- award received --> Myanmar Motion Picture Academy Awards.\nDistractors:\nD1: Michael Govan: Michael Govan( born 1963) is the director of the Los Angeles County Museum of Art since 2006. Prior to this, Govan worked as the director of the Dia Art Foundation in New York City.\nD2: Peter Levin: Peter Levin is an American director of film, television and theatre.\nD3: John Donatich: John Donatich is the Director of Yale University Press.\nD4: Dana Blankstein: Dana Blankstein- Cohen( born March 3, 1981) is the director of the Israeli Academy of Film and Television. She is a film director, and an Israeli culture entrepreneur.\nQuestion: What is the award that the director of film Wearing Velvet Slippers Under A Golden Umbrella won?<|im_end|>\n<|im_start|>assistant\n"
+}

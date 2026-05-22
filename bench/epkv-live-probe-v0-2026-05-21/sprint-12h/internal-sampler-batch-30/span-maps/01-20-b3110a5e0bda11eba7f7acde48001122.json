@@ -1,0 +1,82 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 476,
+  "evidence_token_count": 60,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "evidence_pages_spec": "2-5",
+  "terminal_evidence_pages": [
+    4,
+    5
+  ],
+  "terminal_evidence_pages_spec": "4-5",
+  "terminal_evidence_token_range_spec": "65-93",
+  "all_evidence_token_range_spec": "34-93",
+  "answer_span": {
+    "text": "German",
+    "char_start": 383,
+    "char_end": 389,
+    "token_start": 92,
+    "token_end_exclusive": 93,
+    "token_range_spec": "92-92",
+    "token_count": 1,
+    "pages": [
+      5
+    ],
+    "pages_spec": "5"
+  },
+  "answer_token_range_spec": "92-92",
+  "answer_pages_spec": "5",
+  "qid": "b3110a5e0bda11eba7f7acde48001122",
+  "gold_answer": "German",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Prince Nikolaus Wilhelm of Nassau: Prince Nikolaus Wilhelm of Nassau -- mother --> Princess Pauline of Württemberg.",
+      "char_start": 164,
+      "char_end": 283,
+      "token_start": 34,
+      "token_end_exclusive": 65,
+      "token_range_spec": "34-64",
+      "token_count": 31,
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "pages_spec": "2-4"
+    },
+    {
+      "label": "E2",
+      "text": "Princess Pauline of Württemberg: Princess Pauline of Württemberg -- country of citizenship --> German.",
+      "char_start": 284,
+      "char_end": 390,
+      "token_start": 65,
+      "token_end_exclusive": 94,
+      "token_range_spec": "65-93",
+      "token_count": 29,
+      "pages": [
+        4,
+        5
+      ],
+      "pages_spec": "4-5"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Prince Nikolaus Wilhelm of Nassau: Prince Nikolaus Wilhelm of Nassau -- mother --> Princess Pauline of Württemberg.\nE2: Princess Pauline of Württemberg: Princess Pauline of Württemberg -- country of citizenship --> German.\nDistractors:\nD1: Frederick William, Prince of Nassau-Weilburg: Frederick William, Prince of Nassau- Weilburg( 25 October 1768, The Hague – 9 January 1816, Weilburg) was a ruler of Nassau- Weilburg. In 1806 he was given the title of Prince of Nassau, while his cousin, Prince Frederick Augustus of Nassau- Usingen, became the Duke of Nassau.\nD2: Frederick Augustus, Duke of Nassau: Friedrich August, Duke of Nassau, Prince of Nassau- Usingen( 23 April 1738 in Usingen – 24 March 1816 in Wiesbaden) was the last Prince of Nassau- Usingen and, jointly with his cousin, Friedrich Wilhelm of Nassau- Weilburg, first Duke of Nassau. He died without surviving male issue and was succeeded by his cousin's son, Wilhelm.\nD3: Adolf of Nassau (1540–1568): Adolf of Nassau (Dillenburg, 11 July 1540 – Heiligerlee, 23 May 1568) was a count of Nassau, also known as Adolphus of Nassau. He was the fourth son and sixth child of William I, Count of Nassau-Dillenburg and Juliana of Stolberg.\nD4: Walram II, Count of Nassau: Walram II of Nassau,( – 24 January 1276), was Count of Nassau and is the ancestor of the Walramian branch of the House of Nassau.\nQuestion: Which country Prince Nikolaus Wilhelm Of Nassau's mother is from?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Prince Nikolaus Wilhelm of Nassau: Prince Nikolaus Wilhelm of Nassau -- mother --> Princess Pauline of Württemberg.\nE2: Princess Pauline of Württemberg: Princess Pauline of Württemberg -- country of citizenship --> German.\nDistractors:\nD1: Frederick William, Prince of Nassau-Weilburg: Frederick William, Prince of Nassau- Weilburg( 25 October 1768, The Hague – 9 January 1816, Weilburg) was a ruler of Nassau- Weilburg. In 1806 he was given the title of Prince of Nassau, while his cousin, Prince Frederick Augustus of Nassau- Usingen, became the Duke of Nassau.\nD2: Frederick Augustus, Duke of Nassau: Friedrich August, Duke of Nassau, Prince of Nassau- Usingen( 23 April 1738 in Usingen – 24 March 1816 in Wiesbaden) was the last Prince of Nassau- Usingen and, jointly with his cousin, Friedrich Wilhelm of Nassau- Weilburg, first Duke of Nassau. He died without surviving male issue and was succeeded by his cousin's son, Wilhelm.\nD3: Adolf of Nassau (1540–1568): Adolf of Nassau (Dillenburg, 11 July 1540 – Heiligerlee, 23 May 1568) was a count of Nassau, also known as Adolphus of Nassau. He was the fourth son and sixth child of William I, Count of Nassau-Dillenburg and Juliana of Stolberg.\nD4: Walram II, Count of Nassau: Walram II of Nassau,( – 24 January 1276), was Count of Nassau and is the ancestor of the Walramian branch of the House of Nassau.\nQuestion: Which country Prince Nikolaus Wilhelm Of Nassau's mother is from?<|im_end|>\n<|im_start|>assistant\n"
+}

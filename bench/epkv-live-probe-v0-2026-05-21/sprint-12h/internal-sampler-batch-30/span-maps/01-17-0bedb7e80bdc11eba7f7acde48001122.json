@@ -1,0 +1,80 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 322,
+  "evidence_token_count": 36,
+  "evidence_pages": [
+    2,
+    3,
+    4
+  ],
+  "evidence_pages_spec": "2-4",
+  "terminal_evidence_pages": [
+    3,
+    4
+  ],
+  "terminal_evidence_pages_spec": "3-4",
+  "terminal_evidence_token_range_spec": "53-69",
+  "all_evidence_token_range_spec": "34-69",
+  "answer_span": {
+    "text": "tuberculosis",
+    "char_start": 313,
+    "char_end": 325,
+    "token_start": 68,
+    "token_end_exclusive": 69,
+    "token_range_spec": "68-68",
+    "token_count": 1,
+    "pages": [
+      4
+    ],
+    "pages_spec": "4"
+  },
+  "answer_token_range_spec": "68-68",
+  "answer_pages_spec": "4",
+  "qid": "0bedb7e80bdc11eba7f7acde48001122",
+  "gold_answer": "tuberculosis",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "John Middleton Murry: John Middleton Murry -- spouse --> Katherine Mansfield.",
+      "char_start": 164,
+      "char_end": 245,
+      "token_start": 34,
+      "token_end_exclusive": 53,
+      "token_range_spec": "34-52",
+      "token_count": 19,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Katherine Mansfield: Katherine Mansfield -- cause of death --> tuberculosis.",
+      "char_start": 246,
+      "char_end": 326,
+      "token_start": 53,
+      "token_end_exclusive": 70,
+      "token_range_spec": "53-69",
+      "token_count": 17,
+      "pages": [
+        3,
+        4
+      ],
+      "pages_spec": "3-4"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: John Middleton Murry: John Middleton Murry -- spouse --> Katherine Mansfield.\nE2: Katherine Mansfield: Katherine Mansfield -- cause of death --> tuberculosis.\nDistractors:\nD1: John Middleton (footballer, born 1955): John Middleton( born 11 July 1955) is an English former footballer who played for Bradford City and Macclesfield Town. He was born in Rawmarsh, near Rotherham.\nD2: Philip Mairet: Philip Mairet( full name: Philippe Auguste Mairet; 1886–1975) was a designer, writer and journalist. He had a wide range of interest: crafts, Alfred Adler and psychiatry, and Social Credit.\nD3: Lamman Rucker: Lamman Rucker( born October 6, 1971) is an American actor. Rucker began his career on the daytime soap operas\" As the World Turns\" and\" All My Children\", before roles in Tyler Perry's films\nD4: John Middleton (architect): John Middleton( 1820–1885) was an English architect of the 19th century. He was born in York, in August 1820.\nQuestion: Why did John Middleton Murry's wife die?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: John Middleton Murry: John Middleton Murry -- spouse --> Katherine Mansfield.\nE2: Katherine Mansfield: Katherine Mansfield -- cause of death --> tuberculosis.\nDistractors:\nD1: John Middleton (footballer, born 1955): John Middleton( born 11 July 1955) is an English former footballer who played for Bradford City and Macclesfield Town. He was born in Rawmarsh, near Rotherham.\nD2: Philip Mairet: Philip Mairet( full name: Philippe Auguste Mairet; 1886–1975) was a designer, writer and journalist. He had a wide range of interest: crafts, Alfred Adler and psychiatry, and Social Credit.\nD3: Lamman Rucker: Lamman Rucker( born October 6, 1971) is an American actor. Rucker began his career on the daytime soap operas\" As the World Turns\" and\" All My Children\", before roles in Tyler Perry's films\nD4: John Middleton (architect): John Middleton( 1820–1885) was an English architect of the 19th century. He was born in York, in August 1820.\nQuestion: Why did John Middleton Murry's wife die?<|im_end|>\n<|im_start|>assistant\n"
+}

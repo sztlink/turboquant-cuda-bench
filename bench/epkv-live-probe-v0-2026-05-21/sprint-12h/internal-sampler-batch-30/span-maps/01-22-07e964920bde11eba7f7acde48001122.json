@@ -1,0 +1,80 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 252,
+  "evidence_token_count": 43,
+  "evidence_pages": [
+    2,
+    3,
+    4
+  ],
+  "evidence_pages_spec": "2-4",
+  "terminal_evidence_pages": [
+    3,
+    4
+  ],
+  "terminal_evidence_pages_spec": "3-4",
+  "terminal_evidence_token_range_spec": "55-76",
+  "all_evidence_token_range_spec": "34-76",
+  "answer_span": {
+    "text": "Pavia",
+    "char_start": 316,
+    "char_end": 321,
+    "token_start": 74,
+    "token_end_exclusive": 76,
+    "token_range_spec": "74-75",
+    "token_count": 2,
+    "pages": [
+      4
+    ],
+    "pages_spec": "4"
+  },
+  "answer_token_range_spec": "74-75",
+  "answer_pages_spec": "4",
+  "qid": "07e964920bde11eba7f7acde48001122",
+  "gold_answer": "Pavia",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Caterina Visconti: Caterina Visconti -- spouse --> Gian Galeazzo Visconti.",
+      "char_start": 164,
+      "char_end": 242,
+      "token_start": 34,
+      "token_end_exclusive": 55,
+      "token_range_spec": "34-54",
+      "token_count": 21,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Gian Galeazzo Visconti: Gian Galeazzo Visconti -- place of birth --> Pavia.",
+      "char_start": 243,
+      "char_end": 322,
+      "token_start": 55,
+      "token_end_exclusive": 77,
+      "token_range_spec": "55-76",
+      "token_count": 22,
+      "pages": [
+        3,
+        4
+      ],
+      "pages_spec": "3-4"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Caterina Visconti: Caterina Visconti -- spouse --> Gian Galeazzo Visconti.\nE2: Gian Galeazzo Visconti: Gian Galeazzo Visconti -- place of birth --> Pavia.\nDistractors:\nD1: Pietro Visconti: Pietro Visconti( born 24 May 1989) is an Italian football player who plays for Novara.\nD2: Alberto Visconti: Alberto Visconti( born 1901, date of death unknown) was an Italian bobsledder. He competed in the four- man event at the 1924 Winter Olympics.\nD3: Jon Leach: Jonathan Leach( born April 18, 1973) is a former professional tennis player from the United States. He is the husband of Lindsay Davenport.\nD4: Stan Marks: Stan Marks is an Australian writer and journalist. He is the husband of Holocaust survivor Eva Marks.\nQuestion: Where was the husband of Caterina Visconti born?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Caterina Visconti: Caterina Visconti -- spouse --> Gian Galeazzo Visconti.\nE2: Gian Galeazzo Visconti: Gian Galeazzo Visconti -- place of birth --> Pavia.\nDistractors:\nD1: Pietro Visconti: Pietro Visconti( born 24 May 1989) is an Italian football player who plays for Novara.\nD2: Alberto Visconti: Alberto Visconti( born 1901, date of death unknown) was an Italian bobsledder. He competed in the four- man event at the 1924 Winter Olympics.\nD3: Jon Leach: Jonathan Leach( born April 18, 1973) is a former professional tennis player from the United States. He is the husband of Lindsay Davenport.\nD4: Stan Marks: Stan Marks is an Australian writer and journalist. He is the husband of Holocaust survivor Eva Marks.\nQuestion: Where was the husband of Caterina Visconti born?<|im_end|>\n<|im_start|>assistant\n"
+}

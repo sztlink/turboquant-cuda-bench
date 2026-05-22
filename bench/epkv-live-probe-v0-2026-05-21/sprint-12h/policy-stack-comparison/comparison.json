@@ -1,0 +1,171 @@
+{
+  "schema": "epkv.policy_stack_comparison.v0",
+  "rows": [
+    {
+      "label": "multi1-johanna",
+      "qid": "1c7395fa0bb011ebab90acde48001122",
+      "candidate": "Johanna Magdalena of Saxe-Altenburg",
+      "baseline": {
+        "output": "Based on the provided evidence, we cannot determine Johanna Magdalene of S",
+        "closed": false
+      },
+      "kv_only": {
+        "artifact": "bench/epkv-live-probe-v0-2026-05-21/2wiki-multirecord/live/output-case1-boost4.json",
+        "output": "Based on the provided evidence, we cannot determine Johanna Magdalene of Saxe-Weissenfels's paternal",
+        "closed": false
+      },
+      "api_logit_bias": {
+        "output": "There is not enough evidence provided to determine Johanna Magdalene of Saxe",
+        "closed": false
+      },
+      "internal_sampler_policy": {
+        "artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/policy-stack-comparison/multi1-johanna-internal.json",
+        "output": "There is not enough evidence provided to determine Johanna Magdalene of Saxe",
+        "closed": false,
+        "hook_event_count": 48
+      },
+      "relation_path_then_decode": {
+        "output": "Johanna Magdalena of Saxe-Altenburg",
+        "closed": true
+      },
+      "policy": {
+        "candidate_ids": [
+          41,
+          26176
+        ],
+        "scaffold_ids": [
+          28715,
+          20205,
+          785,
+          576,
+          11190,
+          10548,
+          3830,
+          5542,
+          22043,
+          16246,
+          16141,
+          21806
+        ],
+        "provenance": {
+          "qid": "1c7395fa0bb011ebab90acde48001122",
+          "answer_pages_spec": "7",
+          "answer_token_range_spec": "113-123",
+          "evidence_pages_spec": "2-7",
+          "evidence_token_range_spec": null
+        }
+      }
+    },
+    {
+      "label": "multi2-english",
+      "qid": "008af56e0bdc11eba7f7acde48001122",
+      "candidate": "English",
+      "baseline": {
+        "output": "Based on the evidence provided, James, Duke of Rothesay (born ",
+        "closed": false
+      },
+      "kv_only": {
+        "artifact": "bench/epkv-live-probe-v0-2026-05-21/2wiki-multirecord/live/output-case2-boost4.json",
+        "output": "Based on the evidence provided, James, Duke of Rothesay (born 1507) was the eldest",
+        "closed": false
+      },
+      "api_logit_bias": {
+        "output": "Margaret Tudor's country of origin is England, as evidenced by E1",
+        "closed": true
+      },
+      "internal_sampler_policy": {
+        "artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/policy-stack-comparison/multi2-english-internal.json",
+        "output": "Margaret Tudor's country of origin is England, as evidenced by E1",
+        "closed": true,
+        "hook_event_count": 48
+      },
+      "relation_path_then_decode": {
+        "output": "English",
+        "closed": true
+      },
+      "policy": {
+        "candidate_ids": [
+          22574,
+          6364
+        ],
+        "scaffold_ids": [
+          28715,
+          20205,
+          785,
+          576,
+          11190,
+          10548,
+          3830,
+          5542,
+          22043,
+          16246,
+          16141,
+          21806
+        ],
+        "provenance": {
+          "qid": "008af56e0bdc11eba7f7acde48001122",
+          "answer_pages_spec": "5",
+          "answer_token_range_spec": "83-83",
+          "evidence_pages_spec": "2-6",
+          "evidence_token_range_spec": null
+        }
+      }
+    },
+    {
+      "label": "multi3-victor",
+      "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+      "candidate": "Víctor Bó",
+      "baseline": {
+        "output": "The child of the director of film La Leona (1964)",
+        "closed": false
+      },
+      "kv_only": {
+        "artifact": "bench/epkv-live-probe-v0-2026-05-21/2wiki-multirecord/live/output-case3-boost4.json",
+        "output": "The child of the director of film La Leona (Film) is Víctor Bó, who is Armando",
+        "closed": true
+      },
+      "api_logit_bias": {
+        "output": "Víctor Bó is the child of the director of film La Leona",
+        "closed": true
+      },
+      "internal_sampler_policy": {
+        "artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/policy-stack-comparison/multi3-victor-internal.json",
+        "output": "Víctor Bó is the child of the director of film La Leona",
+        "closed": true,
+        "hook_event_count": 103
+      },
+      "relation_path_then_decode": {
+        "output": "Víctor Bó",
+        "closed": true
+      },
+      "policy": {
+        "candidate_ids": [
+          53,
+          647,
+          36125
+        ],
+        "scaffold_ids": [
+          28715,
+          20205,
+          785,
+          576,
+          11190,
+          10548,
+          3830,
+          5542,
+          22043,
+          16246,
+          16141,
+          21806
+        ],
+        "provenance": {
+          "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+          "answer_pages_spec": "5",
+          "answer_token_range_spec": "82-86",
+          "evidence_pages_spec": "2-5",
+          "evidence_token_range_spec": null
+        }
+      }
+    }
+  ]
+}

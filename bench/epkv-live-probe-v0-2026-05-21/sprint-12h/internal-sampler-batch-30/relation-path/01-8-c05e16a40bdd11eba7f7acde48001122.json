@@ -1,0 +1,56 @@
+{
+  "schema": "epkv.internal_sampler_batch.relation_fallback.v0",
+  "qid": "c05e16a40bdd11eba7f7acde48001122",
+  "candidate": "stroke",
+  "prompt": "Answer with only the final entity at the end of the relation chain.\nRelation chain:\nGrand Duke Kirill Vladimirovich of Russia -- spouse --> Princess Victoria Melita of Saxe-Coburg and Gotha.\nPrincess Victoria Melita of Saxe-Coburg and Gotha -- cause of death --> stroke.\nQuestion: Why did Grand Duke Kirill Vladimirovich Of Russia's wife die?",
+  "triples": [
+    [
+      "Grand Duke Kirill Vladimirovich of Russia",
+      "spouse",
+      "Princess Victoria Melita of Saxe-Coburg and Gotha"
+    ],
+    [
+      "Princess Victoria Melita of Saxe-Coburg and Gotha",
+      "cause of death",
+      "stroke"
+    ]
+  ],
+  "output": "stroke",
+  "closed": true,
+  "response": {
+    "id": "chatcmpl-9f25d4df66baf8c7",
+    "object": "chat.completion",
+    "created": 1779454541,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "stroke",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 114,
+      "total_tokens": 116,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 242,
+  "evidence_token_count": 37,
+  "evidence_pages": [
+    2,
+    3,
+    4
+  ],
+  "evidence_pages_spec": "2-4",
+  "terminal_evidence_pages": [
+    3,
+    4
+  ],
+  "terminal_evidence_pages_spec": "3-4",
+  "terminal_evidence_token_range_spec": "53-70",
+  "all_evidence_token_range_spec": "34-70",
+  "answer_span": {
+    "text": "Xi'an",
+    "char_start": 291,
+    "char_end": 296,
+    "token_start": 68,
+    "token_end_exclusive": 70,
+    "token_range_spec": "68-69",
+    "token_count": 2,
+    "pages": [
+      4
+    ],
+    "pages_spec": "4"
+  },
+  "answer_token_range_spec": "68-69",
+  "answer_pages_spec": "4",
+  "qid": "c19b72520bdb11eba7f7acde48001122",
+  "gold_answer": "Xi'an",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "And the Spring Comes: And the Spring Comes -- director --> Gu Changwei.",
+      "char_start": 164,
+      "char_end": 239,
+      "token_start": 34,
+      "token_end_exclusive": 53,
+      "token_range_spec": "34-52",
+      "token_count": 19,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Gu Changwei: Gu Changwei -- place of birth --> Xi'an.",
+      "char_start": 240,
+      "char_end": 297,
+      "token_start": 53,
+      "token_end_exclusive": 71,
+      "token_range_spec": "53-70",
+      "token_count": 18,
+      "pages": [
+        3,
+        4
+      ],
+      "pages_spec": "3-4"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: And the Spring Comes: And the Spring Comes -- director --> Gu Changwei.\nE2: Gu Changwei: Gu Changwei -- place of birth --> Xi'an.\nDistractors:\nD1: Rachel Feldman: Rachel Feldman( born August 22, 1954) is an American director of film and television and screenwriter of television films.\nD2: Peter Holden: Peter Holden is an American actor and producer of film and television.\nD3: Brian Johnson (special effects artist): Brian Johnson( born 1939 or 1940) is a British designer and director of film and television special effects.\nD4: Dana Blankstein: Dana Blankstein- Cohen( born March 3, 1981) is the director of the Israeli Academy of Film and Television. She is a film director, and an Israeli culture entrepreneur.\nQuestion: What is the place of birth of the director of film And The Spring Comes?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: And the Spring Comes: And the Spring Comes -- director --> Gu Changwei.\nE2: Gu Changwei: Gu Changwei -- place of birth --> Xi'an.\nDistractors:\nD1: Rachel Feldman: Rachel Feldman( born August 22, 1954) is an American director of film and television and screenwriter of television films.\nD2: Peter Holden: Peter Holden is an American actor and producer of film and television.\nD3: Brian Johnson (special effects artist): Brian Johnson( born 1939 or 1940) is a British designer and director of film and television special effects.\nD4: Dana Blankstein: Dana Blankstein- Cohen( born March 3, 1981) is the director of the Israeli Academy of Film and Television. She is a film director, and an Israeli culture entrepreneur.\nQuestion: What is the place of birth of the director of film And The Spring Comes?<|im_end|>\n<|im_start|>assistant\n"
+}

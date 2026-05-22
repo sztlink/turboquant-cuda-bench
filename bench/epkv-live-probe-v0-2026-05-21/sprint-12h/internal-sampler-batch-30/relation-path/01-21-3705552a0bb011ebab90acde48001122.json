@@ -1,0 +1,56 @@
+{
+  "schema": "epkv.internal_sampler_batch.relation_fallback.v0",
+  "qid": "3705552a0bb011ebab90acde48001122",
+  "candidate": "Louis-Alexandre Berthier",
+  "prompt": "Answer with only the final entity at the end of the relation chain.\nRelation chain:\nAlexandre Berthier, 3rd Prince of Wagram -- father --> Napoléon Alexandre Berthier.\nNapoléon Alexandre Berthier -- father --> Louis-Alexandre Berthier.\nQuestion: Who is the paternal grandfather of Alexandre Berthier, 3Rd Prince Of Wagram?",
+  "triples": [
+    [
+      "Alexandre Berthier, 3rd Prince of Wagram",
+      "father",
+      "Napoléon Alexandre Berthier"
+    ],
+    [
+      "Napoléon Alexandre Berthier",
+      "father",
+      "Louis-Alexandre Berthier"
+    ]
+  ],
+  "output": "Louis-Alexandre Berthier",
+  "closed": true,
+  "response": {
+    "id": "chatcmpl-8ca55e1265ff3100",
+    "object": "chat.completion",
+    "created": 1779454419,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Louis-Alexandre Berthier",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 112,
+      "total_tokens": 120,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 473,
+  "evidence_token_count": 80,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "evidence_pages_spec": "2-7",
+  "terminal_evidence_pages": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "terminal_evidence_pages_spec": "4-7",
+  "terminal_evidence_token_range_spec": "77-113",
+  "all_evidence_token_range_spec": "34-113",
+  "answer_span": {
+    "text": "stroke",
+    "char_start": 445,
+    "char_end": 451,
+    "token_start": 112,
+    "token_end_exclusive": 113,
+    "token_range_spec": "112-112",
+    "token_count": 1,
+    "pages": [
+      7
+    ],
+    "pages_spec": "7"
+  },
+  "answer_token_range_spec": "112-112",
+  "answer_pages_spec": "7",
+  "qid": "c05e16a40bdd11eba7f7acde48001122",
+  "gold_answer": "stroke",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Grand Duke Kirill Vladimirovich of Russia: Grand Duke Kirill Vladimirovich of Russia -- spouse --> Princess Victoria Melita of Saxe-Coburg and Gotha.",
+      "char_start": 164,
+      "char_end": 317,
+      "token_start": 34,
+      "token_end_exclusive": 77,
+      "token_range_spec": "34-76",
+      "token_count": 43,
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "pages_spec": "2-4"
+    },
+    {
+      "label": "E2",
+      "text": "Princess Victoria Melita of Saxe-Coburg and Gotha: Princess Victoria Melita of Saxe-Coburg and Gotha -- cause of death --> stroke.",
+      "char_start": 318,
+      "char_end": 452,
+      "token_start": 77,
+      "token_end_exclusive": 114,
+      "token_range_spec": "77-113",
+      "token_count": 37,
+      "pages": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "pages_spec": "4-7"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Grand Duke Kirill Vladimirovich of Russia: Grand Duke Kirill Vladimirovich of Russia -- spouse --> Princess Victoria Melita of Saxe-Coburg and Gotha.\nE2: Princess Victoria Melita of Saxe-Coburg and Gotha: Princess Victoria Melita of Saxe-Coburg and Gotha -- cause of death --> stroke.\nDistractors:\nD1: Abdul-Vahed Niyazov: ' of Russia.\nD2: Louis II, Grand Duke of Baden: Louis II, Grand Duke of Baden( 15 August 1824 – 22 January 1858) was the son of Leopold I, Grand Duke of Baden and Sophie of Holstein- Gottorp, Princess of Sweden. Louis succeeded his father as Grand Duke of Baden on 24 April 1852.\nD3: Prince Karl of Leiningen: Prince Karl Vladimir Ernst Heinrich of Leiningen( 2 January 1928 – 28 September 1990) was the younger son of Karl, 6th Prince of Leiningen( 1898 – 1946) and Grand Duchess Maria Kirillovna of Russia. Maria was the daughter of Princess Victoria Melita of Edinburgh and Saxe- Coburg- Gotha and Cyril Vladimirovich, Grand Duke of Russia.\nD4: Grand Duke Andrei Vladimirovich of Russia: Grand Duke Andrei Vladimirovich of Russia ((14 May 1879 – 30 October 1956) was a son of Grand Duke Vladimir Alexandrovich of Russia, a grandson of Emperor Alexander II and a first cousin of Nicholas II, Russia’s last Tsar. In 1900, he began an affair with the famous ballerina Mathilde Kschessinska, becoming the third grand duke to fall for her.\nQuestion: Why did Grand Duke Kirill Vladimirovich Of Russia's wife die?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Grand Duke Kirill Vladimirovich of Russia: Grand Duke Kirill Vladimirovich of Russia -- spouse --> Princess Victoria Melita of Saxe-Coburg and Gotha.\nE2: Princess Victoria Melita of Saxe-Coburg and Gotha: Princess Victoria Melita of Saxe-Coburg and Gotha -- cause of death --> stroke.\nDistractors:\nD1: Abdul-Vahed Niyazov: ' of Russia.\nD2: Louis II, Grand Duke of Baden: Louis II, Grand Duke of Baden( 15 August 1824 – 22 January 1858) was the son of Leopold I, Grand Duke of Baden and Sophie of Holstein- Gottorp, Princess of Sweden. Louis succeeded his father as Grand Duke of Baden on 24 April 1852.\nD3: Prince Karl of Leiningen: Prince Karl Vladimir Ernst Heinrich of Leiningen( 2 January 1928 – 28 September 1990) was the younger son of Karl, 6th Prince of Leiningen( 1898 – 1946) and Grand Duchess Maria Kirillovna of Russia. Maria was the daughter of Princess Victoria Melita of Edinburgh and Saxe- Coburg- Gotha and Cyril Vladimirovich, Grand Duke of Russia.\nD4: Grand Duke Andrei Vladimirovich of Russia: Grand Duke Andrei Vladimirovich of Russia ((14 May 1879 – 30 October 1956) was a son of Grand Duke Vladimir Alexandrovich of Russia, a grandson of Emperor Alexander II and a first cousin of Nicholas II, Russia’s last Tsar. In 1900, he began an affair with the famous ballerina Mathilde Kschessinska, becoming the third grand duke to fall for her.\nQuestion: Why did Grand Duke Kirill Vladimirovich Of Russia's wife die?<|im_end|>\n<|im_start|>assistant\n"
+}

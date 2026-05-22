@@ -1,0 +1,95 @@
+{
+  "schema": "epkv.internal_sampler_policy_live.v0",
+  "span_map": "bench/epkv-live-probe-v0-2026-05-21/2wiki-multirecord/span-map-3.json",
+  "elapsed_sec": 1.5811240673065186,
+  "policy": {
+    "schema": "epkv.logit_policy_file.v0",
+    "enabled": true,
+    "tag": "internal-live-c3c94d0a0bdc11eba7f7acde48001122",
+    "candidate": "Víctor Bó",
+    "candidate_source": "auto",
+    "candidate_ids": [
+      53,
+      647,
+      36125
+    ],
+    "suppress_scaffold": true,
+    "scaffold_ids": [
+      28715,
+      20205,
+      785,
+      576,
+      11190,
+      10548,
+      3830,
+      5542,
+      22043,
+      16246,
+      16141,
+      21806
+    ],
+    "bias_map": {
+      "53": 3.0,
+      "647": 3.0,
+      "36125": 3.0,
+      "28715": -10.0,
+      "20205": -10.0,
+      "785": -10.0,
+      "576": -10.0,
+      "11190": -10.0,
+      "10548": -10.0,
+      "3830": -10.0,
+      "5542": -10.0,
+      "22043": -10.0,
+      "16246": -10.0,
+      "16141": -10.0,
+      "21806": -10.0
+    },
+    "max_events": 256,
+    "provenance": {
+      "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+      "answer_pages_spec": "5",
+      "answer_token_range_spec": "82-86",
+      "evidence_pages_spec": "2-5",
+      "evidence_token_range_spec": null
+    }
+  },
+  "output": "Víctor Bó is the child of the director of film La Leona",
+  "response": {
+    "id": "chatcmpl-916a608bbca19f3c",
+    "object": "chat.completion",
+    "created": 1779454195,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Víctor Bó is the child of the director of film La Leona",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 249,
+      "total_tokens": 265,
+      "completion_tokens": 16,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "restore_error": null
+}

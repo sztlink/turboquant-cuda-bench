@@ -1,0 +1,56 @@
+{
+  "schema": "epkv.internal_sampler_batch.relation_fallback.v0",
+  "qid": "8981e1ce0bb011ebab90acde48001122",
+  "candidate": "Charles Armand René de La Trémoille",
+  "prompt": "Answer with only the final entity at the end of the relation chain.\nRelation chain:\nCharles Bretagne Marie de La Trémoille -- father --> Jean Bretagne Charles de La Trémoille.\nJean Bretagne Charles de La Trémoille -- father --> Charles Armand René de La Trémoille.\nQuestion: Who is Charles Bretagne Marie De La Trémoille's paternal grandfather?",
+  "triples": [
+    [
+      "Charles Bretagne Marie de La Trémoille",
+      "father",
+      "Jean Bretagne Charles de La Trémoille"
+    ],
+    [
+      "Jean Bretagne Charles de La Trémoille",
+      "father",
+      "Charles Armand René de La Trémoille"
+    ]
+  ],
+  "output": "Charles Armand René de La Trémoille",
+  "closed": true,
+  "response": {
+    "id": "chatcmpl-9596b73759dffe9f",
+    "object": "chat.completion",
+    "created": 1779454275,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Charles Armand René de La Trémoille",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 113,
+      "total_tokens": 125,
+      "completion_tokens": 12,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

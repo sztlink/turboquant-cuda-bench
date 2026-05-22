@@ -1,0 +1,85 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 542,
+  "evidence_token_count": 71,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "evidence_pages_spec": "2-6",
+  "terminal_evidence_pages": [
+    4,
+    5,
+    6
+  ],
+  "terminal_evidence_pages_spec": "4-6",
+  "terminal_evidence_token_range_spec": "74-104",
+  "all_evidence_token_range_spec": "34-104",
+  "answer_span": {
+    "text": "Louis-Alexandre Berthier",
+    "char_start": 369,
+    "char_end": 393,
+    "token_start": 97,
+    "token_end_exclusive": 104,
+    "token_range_spec": "97-103",
+    "token_count": 7,
+    "pages": [
+      6
+    ],
+    "pages_spec": "6"
+  },
+  "answer_token_range_spec": "97-103",
+  "answer_pages_spec": "6",
+  "qid": "3705552a0bb011ebab90acde48001122",
+  "gold_answer": "Louis-Alexandre Berthier",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Alexandre Berthier, 3rd Prince of Wagram: Alexandre Berthier, 3rd Prince of Wagram -- father --> Napoléon Alexandre Berthier.",
+      "char_start": 164,
+      "char_end": 293,
+      "token_start": 34,
+      "token_end_exclusive": 74,
+      "token_range_spec": "34-73",
+      "token_count": 40,
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "pages_spec": "2-4"
+    },
+    {
+      "label": "E2",
+      "text": "Napoléon Alexandre Berthier: Napoléon Alexandre Berthier -- father --> Louis-Alexandre Berthier.",
+      "char_start": 294,
+      "char_end": 394,
+      "token_start": 74,
+      "token_end_exclusive": 105,
+      "token_range_spec": "74-104",
+      "token_count": 31,
+      "pages": [
+        4,
+        5,
+        6
+      ],
+      "pages_spec": "4-6"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Alexandre Berthier, 3rd Prince of Wagram: Alexandre Berthier, 3rd Prince of Wagram -- father --> Napoléon Alexandre Berthier.\nE2: Napoléon Alexandre Berthier: Napoléon Alexandre Berthier -- father --> Louis-Alexandre Berthier.\nDistractors:\nD1: Alexandre Louis Philippe Marie Berthier, 4th Prince of Wagram: Alexandre Louis Philippe Marie Berthier( July 20, 1883, Paris – May 30, 1918, Barenton- sur- Serre; 4th Prince de Wagram) was the son of Bertha Clara von Rothschild of the German branch of the prominent Rothschild family and Louis Philippe Marie Alexandre Berthier, 3rd Prince de Wagram( 1836 – 1911). The family resided in the ancestral home, the Château de Grosbois, a large estate in Boissy- Saint- Léger, southeast of Paris.\nD2: Prince Philippe, Count of Paris: Prince Philippe of Orléans, Count of Paris( Louis Philippe Albert; 24 August 1838 – 8 September 1894), was the grandson of Louis Philippe I, King of the French. He was the Count of Paris as Orléanist claimant to the French throne from 1848 until his death.\nD3: Duchess Maria Elisabeth in Bavaria: Duchess\" Maria Elisabeth\" Amalie Franziska in Bavaria( 5 May 1784 – 1 June 1849) was a Duchess in Bavaria as a member of the Palatine Birkenfeld- Gelnhausen line of the House of Wittelsbach and through her marriage to Louis- Alexandre Berthier became Princess of Wagram and Princess of Neuchâtel.\nD4: George Louis, Prince of Erbach-Schönberg: George Louis, Prince of Erbach- Schönberg( 1 January 190327 January 1971) was the 3rd Prince of Erbach- Schönberg, elder son of Alexander, 2nd Prince of Erbach- Schönberg.\nQuestion: Who is the paternal grandfather of Alexandre Berthier, 3Rd Prince Of Wagram?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Alexandre Berthier, 3rd Prince of Wagram: Alexandre Berthier, 3rd Prince of Wagram -- father --> Napoléon Alexandre Berthier.\nE2: Napoléon Alexandre Berthier: Napoléon Alexandre Berthier -- father --> Louis-Alexandre Berthier.\nDistractors:\nD1: Alexandre Louis Philippe Marie Berthier, 4th Prince of Wagram: Alexandre Louis Philippe Marie Berthier( July 20, 1883, Paris – May 30, 1918, Barenton- sur- Serre; 4th Prince de Wagram) was the son of Bertha Clara von Rothschild of the German branch of the prominent Rothschild family and Louis Philippe Marie Alexandre Berthier, 3rd Prince de Wagram( 1836 – 1911). The family resided in the ancestral home, the Château de Grosbois, a large estate in Boissy- Saint- Léger, southeast of Paris.\nD2: Prince Philippe, Count of Paris: Prince Philippe of Orléans, Count of Paris( Louis Philippe Albert; 24 August 1838 – 8 September 1894), was the grandson of Louis Philippe I, King of the French. He was the Count of Paris as Orléanist claimant to the French throne from 1848 until his death.\nD3: Duchess Maria Elisabeth in Bavaria: Duchess\" Maria Elisabeth\" Amalie Franziska in Bavaria( 5 May 1784 – 1 June 1849) was a Duchess in Bavaria as a member of the Palatine Birkenfeld- Gelnhausen line of the House of Wittelsbach and through her marriage to Louis- Alexandre Berthier became Princess of Wagram and Princess of Neuchâtel.\nD4: George Louis, Prince of Erbach-Schönberg: George Louis, Prince of Erbach- Schönberg( 1 January 190327 January 1971) was the 3rd Prince of Erbach- Schönberg, elder son of Alexander, 2nd Prince of Erbach- Schönberg.\nQuestion: Who is the paternal grandfather of Alexandre Berthier, 3Rd Prince Of Wagram?<|im_end|>\n<|im_start|>assistant\n"
+}

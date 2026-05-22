@@ -1,0 +1,77 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 325,
+  "evidence_token_count": 27,
+  "evidence_pages": [
+    2,
+    3
+  ],
+  "evidence_pages_spec": "2-3",
+  "terminal_evidence_pages": [
+    3
+  ],
+  "terminal_evidence_pages_spec": "3",
+  "terminal_evidence_token_range_spec": "49-60",
+  "all_evidence_token_range_spec": "34-60",
+  "answer_span": {
+    "text": "Pompey",
+    "char_start": 240,
+    "char_end": 246,
+    "token_start": 58,
+    "token_end_exclusive": 60,
+    "token_range_spec": "58-59",
+    "token_count": 2,
+    "pages": [
+      3
+    ],
+    "pages_spec": "3"
+  },
+  "answer_token_range_spec": "58-59",
+  "answer_pages_spec": "3",
+  "qid": "7a1d9d7c0bb011ebab90acde48001122",
+  "gold_answer": "Pompey",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": " Cornelia:  Cornelia -- child --> Julia.",
+      "char_start": 164,
+      "char_end": 208,
+      "token_start": 34,
+      "token_end_exclusive": 49,
+      "token_range_spec": "34-48",
+      "token_count": 15,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Julia: Julia -- spouse --> Pompey.",
+      "char_start": 209,
+      "char_end": 247,
+      "token_start": 49,
+      "token_end_exclusive": 61,
+      "token_range_spec": "49-60",
+      "token_count": 12,
+      "pages": [
+        3
+      ],
+      "pages_spec": "3"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1:  Cornelia:  Cornelia -- child --> Julia.\nE2: Julia: Julia -- spouse --> Pompey.\nDistractors:\nD1: Greg Penner: Gregory B. Penner( born December 18, 1969) is an American businessman and venture capitalist. Penner was named the chairman of Walmart on June 5, 2015.\nD2: Eusebius (consul 359): Flavius Eusebius( died after AD 371) was a Roman Senator, who was the brother- in- law of the emperor Constantius II.\nD3: Charles Francis Norton: Charles Francis Norton( 1807 – 1835) was a 19th- century Member of Parliament for Guildford. Norton was also a Captain of 52nd Light Infantry; son-in- law of Sir Colin Campbell; brother- in- law of writer Caroline Norton\nD4: Wyndham Goold: Wyndham Goold( 1812-1854) was a Member of Parliament( MP) for County Limerick from 1850 to 1854. Goold was educated at Westminster School and Trinity College, Dublin.\nQuestion: Who is Cornelia (Wife Of Caesar)'s child-in-law?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1:  Cornelia:  Cornelia -- child --> Julia.\nE2: Julia: Julia -- spouse --> Pompey.\nDistractors:\nD1: Greg Penner: Gregory B. Penner( born December 18, 1969) is an American businessman and venture capitalist. Penner was named the chairman of Walmart on June 5, 2015.\nD2: Eusebius (consul 359): Flavius Eusebius( died after AD 371) was a Roman Senator, who was the brother- in- law of the emperor Constantius II.\nD3: Charles Francis Norton: Charles Francis Norton( 1807 – 1835) was a 19th- century Member of Parliament for Guildford. Norton was also a Captain of 52nd Light Infantry; son-in- law of Sir Colin Campbell; brother- in- law of writer Caroline Norton\nD4: Wyndham Goold: Wyndham Goold( 1812-1854) was a Member of Parliament( MP) for County Limerick from 1850 to 1854. Goold was educated at Westminster School and Trinity College, Dublin.\nQuestion: Who is Cornelia (Wife Of Caesar)'s child-in-law?<|im_end|>\n<|im_start|>assistant\n"
+}

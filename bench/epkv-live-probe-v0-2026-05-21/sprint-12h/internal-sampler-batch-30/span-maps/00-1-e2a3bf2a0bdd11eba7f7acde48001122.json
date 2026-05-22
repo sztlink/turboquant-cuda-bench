@@ -1,0 +1,85 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 575,
+  "evidence_token_count": 73,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "evidence_pages_spec": "2-6",
+  "terminal_evidence_pages": [
+    4,
+    5,
+    6
+  ],
+  "terminal_evidence_pages_spec": "4-6",
+  "terminal_evidence_token_range_spec": "68-106",
+  "all_evidence_token_range_spec": "34-106",
+  "answer_span": {
+    "text": "12 June 1516",
+    "char_start": 360,
+    "char_end": 372,
+    "token_start": 98,
+    "token_end_exclusive": 106,
+    "token_range_spec": "98-105",
+    "token_count": 8,
+    "pages": [
+      6
+    ],
+    "pages_spec": "6"
+  },
+  "answer_token_range_spec": "98-105",
+  "answer_pages_spec": "6",
+  "qid": "e2a3bf2a0bdd11eba7f7acde48001122",
+  "gold_answer": "12 June 1516",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "John V of Anhalt-Zerbst: John V of Anhalt-Zerbst -- father --> Ernest I, Prince of Anhalt-Dessau.",
+      "char_start": 164,
+      "char_end": 265,
+      "token_start": 34,
+      "token_end_exclusive": 68,
+      "token_range_spec": "34-67",
+      "token_count": 34,
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "pages_spec": "2-4"
+    },
+    {
+      "label": "E2",
+      "text": "Ernest I, Prince of Anhalt-Dessau: Ernest I, Prince of Anhalt-Dessau -- date of death --> 12 June 1516.",
+      "char_start": 266,
+      "char_end": 373,
+      "token_start": 68,
+      "token_end_exclusive": 107,
+      "token_range_spec": "68-106",
+      "token_count": 39,
+      "pages": [
+        4,
+        5,
+        6
+      ],
+      "pages_spec": "4-6"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: John V of Anhalt-Zerbst: John V of Anhalt-Zerbst -- father --> Ernest I, Prince of Anhalt-Dessau.\nE2: Ernest I, Prince of Anhalt-Dessau: Ernest I, Prince of Anhalt-Dessau -- date of death --> 12 June 1516.\nDistractors:\nD1: Waldemar I, Prince of Anhalt-Zerbst: Waldemar I, Prince of Anhalt- Zerbst( died 7 January 1368) was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the youngest son of Albert I, Prince of Anhalt- Zerbst, by his second wife Agnes, daughter of Conrad, Margrave of Brandenburg- Stendal.\nD2: Bernhard VII, Prince of Anhalt-Zerbst: Bernhard VII of Anhalt- Zerbst( 17 March 1540 – 1 March 1570), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was born and died in Dessau, and was the third and youngest son of John V, Prince of Anhalt- Zerbst by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg.\nD3: Albert III, Prince of Anhalt-Zerbst: Albert III, Prince of Anhalt- Zerbst( died ca. 1 August 1359) was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the eldest son of Albert II, Prince of Anhalt- Zerbst, by his second wife Beatrix, daughter of Rudolf I, Elector of Saxony and Duke of Saxe- Wittemberg.\nD4: John VI, Prince of Anhalt-Zerbst: John VI of Anhalt-Zerbst (Zerbst, 24 March 1621 – Zerbst, 4 July 1667), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Zerbst. He was the only son of Rudolph, Prince of Anhalt-Zerbst, by his second wife Magdalene, daughter of John VII, Count of Oldenburg.\nQuestion: When did John V, Prince Of Anhalt-Zerbst's father die?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: John V of Anhalt-Zerbst: John V of Anhalt-Zerbst -- father --> Ernest I, Prince of Anhalt-Dessau.\nE2: Ernest I, Prince of Anhalt-Dessau: Ernest I, Prince of Anhalt-Dessau -- date of death --> 12 June 1516.\nDistractors:\nD1: Waldemar I, Prince of Anhalt-Zerbst: Waldemar I, Prince of Anhalt- Zerbst( died 7 January 1368) was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the youngest son of Albert I, Prince of Anhalt- Zerbst, by his second wife Agnes, daughter of Conrad, Margrave of Brandenburg- Stendal.\nD2: Bernhard VII, Prince of Anhalt-Zerbst: Bernhard VII of Anhalt- Zerbst( 17 March 1540 – 1 March 1570), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was born and died in Dessau, and was the third and youngest son of John V, Prince of Anhalt- Zerbst by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg.\nD3: Albert III, Prince of Anhalt-Zerbst: Albert III, Prince of Anhalt- Zerbst( died ca. 1 August 1359) was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the eldest son of Albert II, Prince of Anhalt- Zerbst, by his second wife Beatrix, daughter of Rudolf I, Elector of Saxony and Duke of Saxe- Wittemberg.\nD4: John VI, Prince of Anhalt-Zerbst: John VI of Anhalt-Zerbst (Zerbst, 24 March 1621 – Zerbst, 4 July 1667), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Zerbst. He was the only son of Rudolph, Prince of Anhalt-Zerbst, by his second wife Magdalene, daughter of John VII, Count of Oldenburg.\nQuestion: When did John V, Prince Of Anhalt-Zerbst's father die?<|im_end|>\n<|im_start|>assistant\n"
+}

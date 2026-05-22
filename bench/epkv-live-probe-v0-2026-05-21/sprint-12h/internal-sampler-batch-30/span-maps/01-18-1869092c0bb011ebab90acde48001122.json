@@ -1,0 +1,83 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 344,
+  "evidence_token_count": 54,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "evidence_pages_spec": "2-5",
+  "terminal_evidence_pages": [
+    3,
+    4,
+    5
+  ],
+  "terminal_evidence_pages_spec": "3-5",
+  "terminal_evidence_token_range_spec": "59-87",
+  "all_evidence_token_range_spec": "34-87",
+  "answer_span": {
+    "text": "Rukn al-Dawla",
+    "char_start": 274,
+    "char_end": 287,
+    "token_start": 80,
+    "token_end_exclusive": 87,
+    "token_range_spec": "80-86",
+    "token_count": 7,
+    "pages": [
+      5
+    ],
+    "pages_spec": "5"
+  },
+  "answer_token_range_spec": "80-86",
+  "answer_pages_spec": "5",
+  "qid": "1869092c0bb011ebab90acde48001122",
+  "gold_answer": "Rukn al-Dawla",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Taj al-Dawla: Taj al-Dawla -- father --> 'Adud al-Dawla.",
+      "char_start": 164,
+      "char_end": 224,
+      "token_start": 34,
+      "token_end_exclusive": 59,
+      "token_range_spec": "34-58",
+      "token_count": 25,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "'Adud al-Dawla: 'Adud al-Dawla -- father --> Rukn al-Dawla.",
+      "char_start": 225,
+      "char_end": 288,
+      "token_start": 59,
+      "token_end_exclusive": 88,
+      "token_range_spec": "59-87",
+      "token_count": 29,
+      "pages": [
+        3,
+        4,
+        5
+      ],
+      "pages_spec": "3-5"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Taj al-Dawla: Taj al-Dawla -- father --> 'Adud al-Dawla.\nE2: 'Adud al-Dawla: 'Adud al-Dawla -- father --> Rukn al-Dawla.\nDistractors:\nD1: Sama' al-Dawla: Sama' al- Dawla was the Buyid ruler of Hamadan( 1021- 1023 or 1024). He was the son of Shams al- Dawla.\nD2: Eskandar II: Eskandar II, was the ruler of the Paduspanid dynasty from 1333 to 1359. He was the son and successor of Taj al- Dawla Ziyar.\nD3: Ka'us III: Ka'us III, was the fourth ruler of the Paduspanid branch of Kojur. He was the son and successor of Ashraf ibn Taj al- Dawla.\nD4: Asfar ibn Kurduya: Asfar ibn Kurduya( also spelled Kurdawayh, Kardawayh and Kurdawaih), was a Daylamite officer who served the Buyid dynasty. Asfar is first mentioned during the reign of the Buyid ruler Adud al- Dawla, as one of the most prominent officers of the Empire.\nQuestion: Who is the paternal grandfather of Taj Al-Dawla?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Taj al-Dawla: Taj al-Dawla -- father --> 'Adud al-Dawla.\nE2: 'Adud al-Dawla: 'Adud al-Dawla -- father --> Rukn al-Dawla.\nDistractors:\nD1: Sama' al-Dawla: Sama' al- Dawla was the Buyid ruler of Hamadan( 1021- 1023 or 1024). He was the son of Shams al- Dawla.\nD2: Eskandar II: Eskandar II, was the ruler of the Paduspanid dynasty from 1333 to 1359. He was the son and successor of Taj al- Dawla Ziyar.\nD3: Ka'us III: Ka'us III, was the fourth ruler of the Paduspanid branch of Kojur. He was the son and successor of Ashraf ibn Taj al- Dawla.\nD4: Asfar ibn Kurduya: Asfar ibn Kurduya( also spelled Kurdawayh, Kardawayh and Kurdawaih), was a Daylamite officer who served the Buyid dynasty. Asfar is first mentioned during the reign of the Buyid ruler Adud al- Dawla, as one of the most prominent officers of the Empire.\nQuestion: Who is the paternal grandfather of Taj Al-Dawla?<|im_end|>\n<|im_start|>assistant\n"
+}

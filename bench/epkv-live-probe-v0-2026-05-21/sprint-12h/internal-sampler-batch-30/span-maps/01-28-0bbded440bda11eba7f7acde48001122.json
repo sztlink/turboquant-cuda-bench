@@ -1,0 +1,80 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 240,
+  "evidence_token_count": 39,
+  "evidence_pages": [
+    2,
+    3,
+    4
+  ],
+  "evidence_pages_spec": "2-4",
+  "terminal_evidence_pages": [
+    3,
+    4
+  ],
+  "terminal_evidence_pages_spec": "3-4",
+  "terminal_evidence_token_range_spec": "54-72",
+  "all_evidence_token_range_spec": "34-72",
+  "answer_span": {
+    "text": "Pakistan",
+    "char_start": 277,
+    "char_end": 285,
+    "token_start": 71,
+    "token_end_exclusive": 72,
+    "token_range_spec": "71-71",
+    "token_count": 1,
+    "pages": [
+      4
+    ],
+    "pages_spec": "4"
+  },
+  "answer_token_range_spec": "71-71",
+  "answer_pages_spec": "4",
+  "qid": "0bbded440bda11eba7f7acde48001122",
+  "gold_answer": "Pakistan",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Daadagiri: Daadagiri -- director --> Arshad Khan.",
+      "char_start": 164,
+      "char_end": 217,
+      "token_start": 34,
+      "token_end_exclusive": 54,
+      "token_range_spec": "34-53",
+      "token_count": 20,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Arshad Khan: Arshad Khan -- country of citizenship --> Pakistan.",
+      "char_start": 218,
+      "char_end": 286,
+      "token_start": 54,
+      "token_end_exclusive": 73,
+      "token_range_spec": "54-72",
+      "token_count": 19,
+      "pages": [
+        3,
+        4
+      ],
+      "pages_spec": "3-4"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Daadagiri: Daadagiri -- director --> Arshad Khan.\nE2: Arshad Khan: Arshad Khan -- country of citizenship --> Pakistan.\nDistractors:\nD1: Ian Barry (director): Ian Barry is an Australian director of film and TV.\nD2: John Donatich: John Donatich is the Director of Yale University Press.\nD3: Olav Aaraas: Olav Aaraas( born 10 July 1950) is a Norwegian historian and museum director. He was born in Fredrikstad.\nD4: Brian Kennedy (gallery director): Brian Patrick Kennedy( born 5 November 1961) is an Irish- born art museum director who has worked in Ireland and Australia, and now lives and works in the United States. He is currently the director of the Peabody Essex Museum.\nQuestion: Which country the director of film Daadagiri is from?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Daadagiri: Daadagiri -- director --> Arshad Khan.\nE2: Arshad Khan: Arshad Khan -- country of citizenship --> Pakistan.\nDistractors:\nD1: Ian Barry (director): Ian Barry is an Australian director of film and TV.\nD2: John Donatich: John Donatich is the Director of Yale University Press.\nD3: Olav Aaraas: Olav Aaraas( born 10 July 1950) is a Norwegian historian and museum director. He was born in Fredrikstad.\nD4: Brian Kennedy (gallery director): Brian Patrick Kennedy( born 5 November 1961) is an Irish- born art museum director who has worked in Ireland and Australia, and now lives and works in the United States. He is currently the director of the Peabody Essex Museum.\nQuestion: Which country the director of film Daadagiri is from?<|im_end|>\n<|im_start|>assistant\n"
+}

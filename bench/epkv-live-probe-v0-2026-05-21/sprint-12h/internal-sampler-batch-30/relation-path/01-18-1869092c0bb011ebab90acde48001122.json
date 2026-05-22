@@ -1,0 +1,56 @@
+{
+  "schema": "epkv.internal_sampler_batch.relation_fallback.v0",
+  "qid": "1869092c0bb011ebab90acde48001122",
+  "candidate": "Rukn al-Dawla",
+  "prompt": "Answer with only the final entity at the end of the relation chain.\nRelation chain:\nTaj al-Dawla -- father --> 'Adud al-Dawla.\n'Adud al-Dawla -- father --> Rukn al-Dawla.\nQuestion: Who is the paternal grandfather of Taj Al-Dawla?",
+  "triples": [
+    [
+      "Taj al-Dawla",
+      "father",
+      "'Adud al-Dawla"
+    ],
+    [
+      "'Adud al-Dawla",
+      "father",
+      "Rukn al-Dawla"
+    ]
+  ],
+  "output": "Rukn al-Dawla",
+  "closed": true,
+  "response": {
+    "id": "chatcmpl-b5eb0b532c3a8b9c",
+    "object": "chat.completion",
+    "created": 1779454386,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Rukn al-Dawla",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 95,
+      "total_tokens": 103,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

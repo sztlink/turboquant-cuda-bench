@@ -1,0 +1,56 @@
+{
+  "schema": "epkv.internal_sampler_batch.relation_fallback.v0",
+  "qid": "27e835ee0bb011ebab90acde48001122",
+  "candidate": "Sir Arthur Gore, 2nd Baronet",
+  "prompt": "Answer with only the final entity at the end of the relation chain.\nRelation chain:\nArthur Saunders Gore, 2nd Earl of Arran -- father --> Arthur Gore, 1st Earl of Arran.\nArthur Gore, 1st Earl of Arran -- father --> Sir Arthur Gore, 2nd Baronet.\nQuestion: Who is Arthur Gore, 2Nd Earl Of Arran's paternal grandfather?",
+  "triples": [
+    [
+      "Arthur Saunders Gore, 2nd Earl of Arran",
+      "father",
+      "Arthur Gore, 1st Earl of Arran"
+    ],
+    [
+      "Arthur Gore, 1st Earl of Arran",
+      "father",
+      "Sir Arthur Gore, 2nd Baronet"
+    ]
+  ],
+  "output": "Sir Arthur Gore, 2nd Baronet",
+  "closed": true,
+  "response": {
+    "id": "chatcmpl-9290f8e760c7c244",
+    "object": "chat.completion",
+    "created": 1779454477,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Sir Arthur Gore, 2nd Baronet",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 112,
+      "total_tokens": 122,
+      "completion_tokens": 10,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

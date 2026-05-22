@@ -1,0 +1,80 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 325,
+  "evidence_token_count": 45,
+  "evidence_pages": [
+    2,
+    3,
+    4
+  ],
+  "evidence_pages_spec": "2-4",
+  "terminal_evidence_pages": [
+    3,
+    4
+  ],
+  "terminal_evidence_pages_spec": "3-4",
+  "terminal_evidence_token_range_spec": "55-78",
+  "all_evidence_token_range_spec": "34-78",
+  "answer_span": {
+    "text": "Urraca of Castile",
+    "char_start": 312,
+    "char_end": 329,
+    "token_start": 72,
+    "token_end_exclusive": 78,
+    "token_range_spec": "72-77",
+    "token_count": 6,
+    "pages": [
+      4
+    ],
+    "pages_spec": "4"
+  },
+  "answer_token_range_spec": "72-77",
+  "answer_pages_spec": "4",
+  "qid": "96fb4aee0baf11ebab90acde48001122",
+  "gold_answer": "Urraca of Castile",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Blanche of Portugal: Blanche of Portugal -- father --> Afonso III of Portugal.",
+      "char_start": 164,
+      "char_end": 246,
+      "token_start": 34,
+      "token_end_exclusive": 55,
+      "token_range_spec": "34-54",
+      "token_count": 21,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Afonso III of Portugal: Afonso III of Portugal -- mother --> Urraca of Castile.",
+      "char_start": 247,
+      "char_end": 330,
+      "token_start": 55,
+      "token_end_exclusive": 79,
+      "token_range_spec": "55-78",
+      "token_count": 24,
+      "pages": [
+        3,
+        4
+      ],
+      "pages_spec": "3-4"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Blanche of Portugal: Blanche of Portugal -- father --> Afonso III of Portugal.\nE2: Afonso III of Portugal: Afonso III of Portugal -- mother --> Urraca of Castile.\nDistractors:\nD1: Mona Hopton Bell: Mona Hopton Bell( 1867- 1940) was a British artist, best known for her portraits of civic figures. She was the grandmother of the painter Jean H. Bell.\nD2: Hubba bint Hulail: Hubba bint Hulail was the grandmother of Hashim ibn' Abd Manaf, thus the great- great- great- grandmother of the Islamic\" Nabī\"( Prophet) Muhammad ibn Abdullah.\nD3: Kaoru Hatoyama: After the elections of 2009, she became more widely known as the grandmother of Prime Minister Yukio Hatoyama and his politician brother Kunio Hatoyama.\nD4: Tjuyu: Tjuyu( sometimes transliterated as Thuya or Thuyu) was an Egyptian noblewoman and the mother of queen Tiye, and the wife of Yuya. She is the grandmother of Akhenaten, and great grandmother of Tutankhamun.\nQuestion: Who is Blanche Of Portugal (1259–1321)'s paternal grandmother?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Blanche of Portugal: Blanche of Portugal -- father --> Afonso III of Portugal.\nE2: Afonso III of Portugal: Afonso III of Portugal -- mother --> Urraca of Castile.\nDistractors:\nD1: Mona Hopton Bell: Mona Hopton Bell( 1867- 1940) was a British artist, best known for her portraits of civic figures. She was the grandmother of the painter Jean H. Bell.\nD2: Hubba bint Hulail: Hubba bint Hulail was the grandmother of Hashim ibn' Abd Manaf, thus the great- great- great- grandmother of the Islamic\" Nabī\"( Prophet) Muhammad ibn Abdullah.\nD3: Kaoru Hatoyama: After the elections of 2009, she became more widely known as the grandmother of Prime Minister Yukio Hatoyama and his politician brother Kunio Hatoyama.\nD4: Tjuyu: Tjuyu( sometimes transliterated as Thuya or Thuyu) was an Egyptian noblewoman and the mother of queen Tiye, and the wife of Yuya. She is the grandmother of Akhenaten, and great grandmother of Tutankhamun.\nQuestion: Who is Blanche Of Portugal (1259–1321)'s paternal grandmother?<|im_end|>\n<|im_start|>assistant\n"
+}

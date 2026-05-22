@@ -1,0 +1,84 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 323,
+  "evidence_token_count": 49,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "evidence_pages_spec": "2-5",
+  "terminal_evidence_pages": [
+    3,
+    4,
+    5
+  ],
+  "terminal_evidence_pages_spec": "3-5",
+  "terminal_evidence_token_range_spec": "55-82",
+  "all_evidence_token_range_spec": "34-82",
+  "answer_span": {
+    "text": "Catherine Robbe-Grillet",
+    "char_start": 295,
+    "char_end": 318,
+    "token_start": 76,
+    "token_end_exclusive": 82,
+    "token_range_spec": "76-81",
+    "token_count": 6,
+    "pages": [
+      4,
+      5
+    ],
+    "pages_spec": "4-5"
+  },
+  "answer_token_range_spec": "76-81",
+  "answer_pages_spec": "4-5",
+  "qid": "a9cc5f240bdb11eba7f7acde48001122",
+  "gold_answer": "Catherine Robbe-Grillet",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Eden and After: Eden and After -- director --> Alain Robbe-Grillet.",
+      "char_start": 164,
+      "char_end": 235,
+      "token_start": 34,
+      "token_end_exclusive": 55,
+      "token_range_spec": "34-54",
+      "token_count": 21,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Alain Robbe-Grillet: Alain Robbe-Grillet -- spouse --> Catherine Robbe-Grillet.",
+      "char_start": 236,
+      "char_end": 319,
+      "token_start": 55,
+      "token_end_exclusive": 83,
+      "token_range_spec": "55-82",
+      "token_count": 28,
+      "pages": [
+        3,
+        4,
+        5
+      ],
+      "pages_spec": "3-5"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Eden and After: Eden and After -- director --> Alain Robbe-Grillet.\nE2: Alain Robbe-Grillet: Alain Robbe-Grillet -- spouse --> Catherine Robbe-Grillet.\nDistractors:\nD1: Maria Teresa, Grand Duchess of Luxembourg: Maria Teresa, Grand Duchess of Luxembourg( born María Teresa Mestre y Batista; on 22 March 1956), is the spouse of Grand Duke Henri.\nD2: Marie-Louise Coidavid: Marie Louise Coidavid( 1778 – March 11, 1851), was the Queen of the Kingdom of Haiti 1811 – 20 as the spouse of Henri I of Haiti.\nD3: Gertrude of Bavaria: Gertrude of Saxony and Bavaria( 1152/55–1197) was Duchess of Swabia as the spouse of Duke Frederick IV, and Queen of Denmark as the spouse of King Canute VI.\nD4: Sophia Magdalena of Denmark: Sophia Magdalena of Denmark (3 July 1746 – 21 August 1813) was Queen of Sweden as the spouse of King Gustav III.\nQuestion: Who is the spouse of the director of film Eden And After?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Eden and After: Eden and After -- director --> Alain Robbe-Grillet.\nE2: Alain Robbe-Grillet: Alain Robbe-Grillet -- spouse --> Catherine Robbe-Grillet.\nDistractors:\nD1: Maria Teresa, Grand Duchess of Luxembourg: Maria Teresa, Grand Duchess of Luxembourg( born María Teresa Mestre y Batista; on 22 March 1956), is the spouse of Grand Duke Henri.\nD2: Marie-Louise Coidavid: Marie Louise Coidavid( 1778 – March 11, 1851), was the Queen of the Kingdom of Haiti 1811 – 20 as the spouse of Henri I of Haiti.\nD3: Gertrude of Bavaria: Gertrude of Saxony and Bavaria( 1152/55–1197) was Duchess of Swabia as the spouse of Duke Frederick IV, and Queen of Denmark as the spouse of King Canute VI.\nD4: Sophia Magdalena of Denmark: Sophia Magdalena of Denmark (3 July 1746 – 21 August 1813) was Queen of Sweden as the spouse of King Gustav III.\nQuestion: Who is the spouse of the director of film Eden And After?<|im_end|>\n<|im_start|>assistant\n"
+}

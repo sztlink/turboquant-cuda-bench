@@ -1,0 +1,56 @@
+{
+  "schema": "epkv.internal_sampler_batch.relation_fallback.v0",
+  "qid": "019bed300bde11eba7f7acde48001122",
+  "candidate": "Galați",
+  "prompt": "Answer with only the final entity at the end of the relation chain.\nRelation chain:\nȘtefan I. Nenițescu -- father --> Ioan S. Nenițescu.\nIoan S. Nenițescu -- place of birth --> Galați.\nQuestion: Where was the father of Ștefan I. Nenițescu born?",
+  "triples": [
+    [
+      "Ștefan I. Nenițescu",
+      "father",
+      "Ioan S. Nenițescu"
+    ],
+    [
+      "Ioan S. Nenițescu",
+      "place of birth",
+      "Galați"
+    ]
+  ],
+  "output": "Galați",
+  "closed": true,
+  "response": {
+    "id": "chatcmpl-87048c6fcbdb6c9e",
+    "object": "chat.completion",
+    "created": 1779454285,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Galați",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 106,
+      "total_tokens": 110,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

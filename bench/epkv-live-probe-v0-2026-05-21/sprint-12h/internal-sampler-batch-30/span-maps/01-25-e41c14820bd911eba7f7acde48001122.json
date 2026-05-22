@@ -1,0 +1,80 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 274,
+  "evidence_token_count": 38,
+  "evidence_pages": [
+    2,
+    3,
+    4
+  ],
+  "evidence_pages_spec": "2-4",
+  "terminal_evidence_pages": [
+    3,
+    4
+  ],
+  "terminal_evidence_pages_spec": "3-4",
+  "terminal_evidence_token_range_spec": "52-71",
+  "all_evidence_token_range_spec": "34-71",
+  "answer_span": {
+    "text": "Cahiers du cinéma",
+    "char_start": 285,
+    "char_end": 302,
+    "token_start": 67,
+    "token_end_exclusive": 71,
+    "token_range_spec": "67-70",
+    "token_count": 4,
+    "pages": [
+      4
+    ],
+    "pages_spec": "4"
+  },
+  "answer_token_range_spec": "67-70",
+  "answer_pages_spec": "4",
+  "qid": "e41c14820bd911eba7f7acde48001122",
+  "gold_answer": "Cahiers du cinéma",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Man at Bath: Man at Bath -- director --> Christophe Honoré.",
+      "char_start": 164,
+      "char_end": 227,
+      "token_start": 34,
+      "token_end_exclusive": 52,
+      "token_range_spec": "34-51",
+      "token_count": 18,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Christophe Honoré: Christophe Honoré -- employer --> Cahiers du cinéma.",
+      "char_start": 228,
+      "char_end": 303,
+      "token_start": 52,
+      "token_end_exclusive": 72,
+      "token_range_spec": "52-71",
+      "token_count": 20,
+      "pages": [
+        3,
+        4
+      ],
+      "pages_spec": "3-4"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Man at Bath: Man at Bath -- director --> Christophe Honoré.\nE2: Christophe Honoré: Christophe Honoré -- employer --> Cahiers du cinéma.\nDistractors:\nD1: Jason Moore (director): Jason Moore( born October 22, 1970) is an American director of film, theatre and television.\nD2: Dana Blankstein: Dana Blankstein- Cohen( born March 3, 1981) is the director of the Israeli Academy of Film and Television. She is a film director, and an Israeli culture entrepreneur.\nD3: Paul Scheuring: Paul T. Scheuring( born November 20, 1968) is an American screenwriter and director of films and television shows. His work includes the 2003 film\" A Man Apart\" and the creation of the television drama\" Prison Break\", for which he was also credited as an executive producer and head writer.\nD4: Peter Levin: Peter Levin is an American director of film, television and theatre.\nQuestion: Where does the director of film Man At Bath work at?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Man at Bath: Man at Bath -- director --> Christophe Honoré.\nE2: Christophe Honoré: Christophe Honoré -- employer --> Cahiers du cinéma.\nDistractors:\nD1: Jason Moore (director): Jason Moore( born October 22, 1970) is an American director of film, theatre and television.\nD2: Dana Blankstein: Dana Blankstein- Cohen( born March 3, 1981) is the director of the Israeli Academy of Film and Television. She is a film director, and an Israeli culture entrepreneur.\nD3: Paul Scheuring: Paul T. Scheuring( born November 20, 1968) is an American screenwriter and director of films and television shows. His work includes the 2003 film\" A Man Apart\" and the creation of the television drama\" Prison Break\", for which he was also credited as an executive producer and head writer.\nD4: Peter Levin: Peter Levin is an American director of film, television and theatre.\nQuestion: Where does the director of film Man At Bath work at?<|im_end|>\n<|im_start|>assistant\n"
+}

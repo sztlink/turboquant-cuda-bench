@@ -1,0 +1,84 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 322,
+  "evidence_token_count": 52,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "evidence_pages_spec": "2-5",
+  "terminal_evidence_pages": [
+    3,
+    4,
+    5
+  ],
+  "terminal_evidence_pages_spec": "3-5",
+  "terminal_evidence_token_range_spec": "62-85",
+  "all_evidence_token_range_spec": "34-85",
+  "answer_span": {
+    "text": "Ptolemy IX Lathyros",
+    "char_start": 282,
+    "char_end": 301,
+    "token_start": 77,
+    "token_end_exclusive": 85,
+    "token_range_spec": "77-84",
+    "token_count": 8,
+    "pages": [
+      4,
+      5
+    ],
+    "pages_spec": "4-5"
+  },
+  "answer_token_range_spec": "77-84",
+  "answer_pages_spec": "4-5",
+  "qid": "2ec440560bb011ebab90acde48001122",
+  "gold_answer": "Ptolemy IX Lathyros",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Antiochus X Eusebes: Antiochus X Eusebes -- mother --> Cleopatra IV.",
+      "char_start": 164,
+      "char_end": 236,
+      "token_start": 34,
+      "token_end_exclusive": 62,
+      "token_range_spec": "34-61",
+      "token_count": 28,
+      "pages": [
+        2,
+        3
+      ],
+      "pages_spec": "2-3"
+    },
+    {
+      "label": "E2",
+      "text": "Cleopatra IV: Cleopatra IV -- father --> Ptolemy IX Lathyros.",
+      "char_start": 237,
+      "char_end": 302,
+      "token_start": 62,
+      "token_end_exclusive": 86,
+      "token_range_spec": "62-85",
+      "token_count": 24,
+      "pages": [
+        3,
+        4,
+        5
+      ],
+      "pages_spec": "3-5"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Antiochus X Eusebes: Antiochus X Eusebes -- mother --> Cleopatra IV.\nE2: Cleopatra IV: Cleopatra IV -- father --> Ptolemy IX Lathyros.\nDistractors:\nD1: Fujiwara no Nagara: , also known as Fujiwara no Nagayoshi, was a Japanese statesman, courtier and politician of the early Heian period. He was the grandfather of Emperor Yōzei.\nD2: Kaya Alp: Kaya Alp was, according to Ottoman tradition, the son of Kızıl Buğa and the father of Suleyman Shah, who was, in turn, the grandfather of Ertuğrul, and the great grandfather of the Ottoman Empire founder, Osman I.\nD3: Guillaume Wittouck: Guillaume Wittouck( 1749- 1829) was a Belgian lawyer and High Magistrate. He was the Grandfather of industrialist Paul Wittouck.\nD4: John Westley: Rev. John Westley( 1636 – 78) was an English nonconformist minister. He was the grandfather of John Wesley( founder of Methodism).\nQuestion: Who is the maternal grandfather of Antiochus X Eusebes?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Antiochus X Eusebes: Antiochus X Eusebes -- mother --> Cleopatra IV.\nE2: Cleopatra IV: Cleopatra IV -- father --> Ptolemy IX Lathyros.\nDistractors:\nD1: Fujiwara no Nagara: , also known as Fujiwara no Nagayoshi, was a Japanese statesman, courtier and politician of the early Heian period. He was the grandfather of Emperor Yōzei.\nD2: Kaya Alp: Kaya Alp was, according to Ottoman tradition, the son of Kızıl Buğa and the father of Suleyman Shah, who was, in turn, the grandfather of Ertuğrul, and the great grandfather of the Ottoman Empire founder, Osman I.\nD3: Guillaume Wittouck: Guillaume Wittouck( 1749- 1829) was a Belgian lawyer and High Magistrate. He was the Grandfather of industrialist Paul Wittouck.\nD4: John Westley: Rev. John Westley( 1636 – 78) was an English nonconformist minister. He was the grandfather of John Wesley( founder of Methodism).\nQuestion: Who is the maternal grandfather of Antiochus X Eusebes?<|im_end|>\n<|im_start|>assistant\n"
+}

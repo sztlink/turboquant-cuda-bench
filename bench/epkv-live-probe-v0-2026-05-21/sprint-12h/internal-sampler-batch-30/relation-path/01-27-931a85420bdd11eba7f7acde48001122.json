@@ -1,0 +1,56 @@
+{
+  "schema": "epkv.internal_sampler_batch.relation_fallback.v0",
+  "qid": "931a85420bdd11eba7f7acde48001122",
+  "candidate": "London",
+  "prompt": "Answer with only the final entity at the end of the relation chain.\nRelation chain:\nLord Patrick Crichton-Stuart -- father --> John Stuart.\nJohn Stuart -- place of birth --> London.\nQuestion: Where was the father of Lord Patrick Crichton-Stuart born?",
+  "triples": [
+    [
+      "Lord Patrick Crichton-Stuart",
+      "father",
+      "John Stuart"
+    ],
+    [
+      "John Stuart",
+      "place of birth",
+      "London"
+    ]
+  ],
+  "output": "London",
+  "closed": true,
+  "response": {
+    "id": "chatcmpl-9a605b96758a8ad9",
+    "object": "chat.completion",
+    "created": 1779454487,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "London",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 84,
+      "total_tokens": 86,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

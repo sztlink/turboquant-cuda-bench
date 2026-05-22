@@ -1,0 +1,80 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 296,
+  "evidence_token_count": 33,
+  "evidence_pages": [
+    2,
+    3,
+    4
+  ],
+  "evidence_pages_spec": "2-4",
+  "terminal_evidence_pages": [
+    3,
+    4
+  ],
+  "terminal_evidence_pages_spec": "3-4",
+  "terminal_evidence_token_range_spec": "48-66",
+  "all_evidence_token_range_spec": "34-66",
+  "answer_span": {
+    "text": "1983",
+    "char_start": 276,
+    "char_end": 280,
+    "token_start": 62,
+    "token_end_exclusive": 66,
+    "token_range_spec": "62-65",
+    "token_count": 4,
+    "pages": [
+      3,
+      4
+    ],
+    "pages_spec": "3-4"
+  },
+  "answer_token_range_spec": "62-65",
+  "answer_pages_spec": "3-4",
+  "qid": "dfe93efe0bdd11eba7f7acde48001122",
+  "gold_answer": "1983",
+  "layout": "evidence_first",
+  "instruction": [
+    "Use only the evidence lines to answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Jean Martin: Jean Martin -- spouse --> William Black.",
+      "char_start": 164,
+      "char_end": 221,
+      "token_start": 34,
+      "token_end_exclusive": 48,
+      "token_range_spec": "34-47",
+      "token_count": 14,
+      "pages": [
+        2
+      ],
+      "pages_spec": "2"
+    },
+    {
+      "label": "E2",
+      "text": "William Black: William Black -- date of death --> 1983.",
+      "char_start": 222,
+      "char_end": 281,
+      "token_start": 48,
+      "token_end_exclusive": 67,
+      "token_range_spec": "48-66",
+      "token_count": 19,
+      "pages": [
+        3,
+        4
+      ],
+      "pages_spec": "3-4"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Jean Martin: Jean Martin -- spouse --> William Black.\nE2: William Black: William Black -- date of death --> 1983.\nDistractors:\nD1: Theodred II (Bishop of Elmham): Theodred II was a medieval Bishop of Elmham. The date of Theodred's consecration unknown, but the date of his death was sometime between 995 and 997.\nD2: Thomas Scott (diver): Thomas Scott( 1907- date of death unknown) was an English diver.\nD3: Albert Thompson (footballer, born 1912): Albert Thompson( born 1912, date of death unknown) was a Welsh footballer.\nD4: Etan Boritzer: Etan Boritzer( born 1950) is an American writer of children ’s literature who is best known for his book\" What is God?\" first published in 1989. His best selling\" What is?\" illustrated children's book series on character education and difficult subjects for children is a popular teaching guide for parents, teachers and child- life professionals.\nQuestion: When did Jean Martin (Singer)'s husband die?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Jean Martin: Jean Martin -- spouse --> William Black.\nE2: William Black: William Black -- date of death --> 1983.\nDistractors:\nD1: Theodred II (Bishop of Elmham): Theodred II was a medieval Bishop of Elmham. The date of Theodred's consecration unknown, but the date of his death was sometime between 995 and 997.\nD2: Thomas Scott (diver): Thomas Scott( 1907- date of death unknown) was an English diver.\nD3: Albert Thompson (footballer, born 1912): Albert Thompson( born 1912, date of death unknown) was a Welsh footballer.\nD4: Etan Boritzer: Etan Boritzer( born 1950) is an American writer of children ’s literature who is best known for his book\" What is God?\" first published in 1989. His best selling\" What is?\" illustrated children's book series on character education and difficult subjects for children is a popular teaching guide for parents, teachers and child- life professionals.\nQuestion: When did Jean Martin (Singer)'s husband die?<|im_end|>\n<|im_start|>assistant\n"
+}
