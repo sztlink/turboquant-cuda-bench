@@ -290,6 +290,43 @@ non-dry-triton-guard/
 adversarial-layout/
 ```
 
+## Value-mix sprint
+
+The hook was pushed below selected positions into the value path:
+
+```txt
+VLLM_EPKV_EVIDENCE_VALUE_MIX=<float>
+VLLM_EPKV_EVIDENCE_VALUE_MODE=residual|lerp|replace
+VLLM_EPKV_EVIDENCE_SELECT_MODE=topscore|tail
+VLLM_EPKV_RUNTIME_START_CALL=<int>
+```
+
+Non-dry answer-token experiments on the `Víctor Bó` case:
+
+```txt
+answer token range: 125-129
+answer-value-residual-0.5 -> Armando Bo
+answer-value-residual-1.0 -> Armando Bo
+answer-value-residual-2.0 -> Armö Bo
+answer-value-lerp-1.0 -> Armando Bo
+answer-value-replace-1.0 -> Armando Bo
+start_call=16 + replace -> Arbmando Bo
+start_call=24 + replace -> Armando
+```
+
+Conclusion:
+
+```txt
+value path is live enough to deform output,
+but naive answer-token value mixing still cannot steer semantic closure to Víctor Bó.
+```
+
+Artifacts:
+
+```txt
+value-mix/
+```
+
 ## Next live step
 
-Change value aggregation policy, not just selected-position policy: terminal-span rows need different weight/order semantics than generic evidence rows.
+Move closer to decode policy / LM-head-facing control: capture generated token ids/logits around the first token and test evidence-aware hidden/logit residuals instead of only attention value mixing.

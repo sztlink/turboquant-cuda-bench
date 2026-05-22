@@ -53,6 +53,7 @@ _ENV_LOG = "VLLM_EPKV_RUNTIME_LOG"
 _ENV_K = "VLLM_EPKV_RUNTIME_K"
 _ENV_MAX_SEQ = "VLLM_EPKV_RUNTIME_MAX_SEQ"
 _ENV_MAX_EVENTS = "VLLM_EPKV_RUNTIME_MAX_EVENTS"
+_ENV_START_CALL = "VLLM_EPKV_RUNTIME_START_CALL"
 _ENV_SYNC_TIMING = "VLLM_EPKV_RUNTIME_SYNC_TIMING"
 _ENV_TAG = "VLLM_EPKV_RUNTIME_TAG"
 _ENV_DRY_RUN = "VLLM_EPKV_RUNTIME_DRY_RUN"
@@ -64,8 +65,12 @@ _ENV_EVIDENCE_BOOST = "VLLM_EPKV_EVIDENCE_BOOST"
 _ENV_EVIDENCE_GUARD = "VLLM_EPKV_EVIDENCE_GUARD"
 _ENV_EVIDENCE_MIN_K = "VLLM_EPKV_EVIDENCE_MIN_K"
 _ENV_EVIDENCE_TOKEN_RANGES = "VLLM_EPKV_EVIDENCE_TOKEN_RANGES"
+_ENV_EVIDENCE_VALUE_MIX = "VLLM_EPKV_EVIDENCE_VALUE_MIX"
+_ENV_EVIDENCE_VALUE_MODE = "VLLM_EPKV_EVIDENCE_VALUE_MODE"
+_ENV_EVIDENCE_SELECT_MODE = "VLLM_EPKV_EVIDENCE_SELECT_MODE"
 
 _seen = 0
+_calls = 0
 _warned = False
 
 
@@ -608,6 +613,9 @@ def _decode_phase2a(
             "evidence_token_ranges_spec": evidence_token_spec,
             "num_pages": num_pages,
         }
+    reserved_evidence_vals = None
+    reserved_evidence_pos = None
+    reserved_evidence_k = 0
     min_evidence_k = _int_env(_ENV_EVIDENCE_MIN_K, 0) if (evidence_page_mask is not None or evidence_row_mask is not None) else 0
     if min_evidence_k > 0 and (evidence_page_mask is not None or evidence_row_mask is not None):
         if evidence_row_mask is not None:
@@ -645,7 +653,17 @@ def _decode_phase2a(
                     num_warps=4,
                     num_stages=1,
                 )
-            evidence_vals, evidence_pos = _triton_topk_scores(evidence_scores, m, M=M, Hq=Hq)
+            evidence_select_mode = os.environ.get(_ENV_EVIDENCE_SELECT_MODE, "topscore").strip().lower()
+            if evidence_row_mask is not None and evidence_select_mode in {"tail", "latest"}:
+                row_ids = torch.nonzero(evidence_row_mask.to(torch.bool), as_tuple=False).flatten().to(torch.long)
+                selected_rows = row_ids[-m:].contiguous()
+                evidence_pos = selected_rows[:, None].expand(m, Hq).contiguous()
+                evidence_vals = torch.gather(scores, 0, evidence_pos)
+            else:
+                evidence_vals, evidence_pos = _triton_topk_scores(evidence_scores, m, M=M, Hq=Hq)
+            reserved_evidence_vals = evidence_vals
+            reserved_evidence_pos = evidence_pos
+            reserved_evidence_k = int(m)
             rest_k = K - m
             if rest_k > 0:
                 rest_vals, rest_pos = _triton_topk_scores(rest_scores, rest_k, M=M, Hq=Hq)
@@ -658,6 +676,7 @@ def _decode_phase2a(
                 evidence_intervention["applied_evidence_k"] = int(m)
                 evidence_intervention["mode"] = "evidence_guard_topk_reserved"
                 evidence_intervention["reservation_backend"] = "triton_row_or_page_split_triton_topk"
+                evidence_intervention["evidence_select_mode"] = os.environ.get(_ENV_EVIDENCE_SELECT_MODE, "topscore").strip().lower()
         else:
             vals, pos = _triton_topk_scores(scores, K, M=M, Hq=Hq)
     else:
@@ -696,6 +715,44 @@ def _decode_phase2a(
         num_warps=4,
         num_stages=1,
     )
+    value_mix = _float_env(_ENV_EVIDENCE_VALUE_MIX, 0.0)
+    if value_mix != 0.0 and reserved_evidence_pos is not None and reserved_evidence_vals is not None and reserved_evidence_k > 0:
+        evidence_weights = torch.softmax(reserved_evidence_vals, dim=0).contiguous()
+        evidence_value_out = torch.empty((Hq, D), device=query.device, dtype=torch.float32)
+        _epkv_value_kernel[(Hq,)](
+            kv_cache,
+            block_table_1,
+            reserved_evidence_pos.contiguous(),
+            evidence_weights,
+            evidence_value_out,
+            stride_cache_block=kv_cache.stride(0),
+            stride_cache_pos=kv_cache.stride(1),
+            stride_cache_head=kv_cache.stride(2),
+            Hq=Hq,
+            D=D,
+            KTOP=reserved_evidence_k,
+            KV_GROUP=kv_group,
+            BLOCK_SIZE=block_size,
+            BLOCK_D=block_d,
+            KPS=key_packed_size,
+            VAL_DATA_BYTES=val_data_bytes,
+            num_warps=4,
+            num_stages=1,
+        )
+        value_mode = os.environ.get(_ENV_EVIDENCE_VALUE_MODE, "residual").strip().lower()
+        alpha = float(value_mix)
+        if value_mode == "lerp":
+            out = (1.0 - alpha) * out + alpha * evidence_value_out
+        elif value_mode == "replace":
+            out = evidence_value_out
+        else:
+            out = out + alpha * evidence_value_out
+        if selection_summary is not None:
+            selection_summary["evidence_value_mix"] = {
+                "mode": value_mode,
+                "alpha": alpha,
+                "reserved_evidence_k": int(reserved_evidence_k),
+            }
     return out.unsqueeze(0).to(query.dtype), selection_summary
 
 
@@ -711,11 +768,16 @@ def maybe_decode(
 
     Never propagates exceptions into vLLM serving.
     """
-    global _seen, _warned
+    global _seen, _calls, _warned
     if not _enabled():
         return None
     max_events = _int_env(_ENV_MAX_EVENTS, 64)
+    start_call = max(0, _int_env(_ENV_START_CALL, 0))
     try:
+        call_index = _calls
+        _calls += 1
+        if call_index < start_call:
+            return None
         if _seen >= max_events:
             return None
         sync_timing = os.environ.get(_ENV_SYNC_TIMING, "0") == "1"
@@ -746,6 +808,7 @@ def maybe_decode(
             "ts": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
             "tag": os.environ.get(_ENV_TAG, ""),
             "event_index": _seen,
+            "call_index": call_index,
             "hook": "evidence_paged_kv.runtime.phase2a.v0",
             "mode": "guarded_runtime_selected_page_dry_run" if dry_run else "guarded_runtime_selected_page",
             "decision": "telemetry_only_fallback_to_original_tq" if dry_run else "returned_phase2a_output",
