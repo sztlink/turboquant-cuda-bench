@@ -314,6 +314,30 @@ policy file: {"enabled": false, "tag": "default-off"}
 /health OK
 ```
 
+## Internal sampler batch smoke
+
+Implemented:
+
+```txt
+epkv-internal-sampler-policy-batch.py
+```
+
+Smoke on original 3 2Wiki span maps, no API `logit_bias`:
+
+```txt
+closed: 2/3
+multi2 -> England / English alias
+multi3 -> Víctor Bó
+multi1 -> fails, as expected, because it needs relation-path fallback
+```
+
+Restored:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+/health OK
+```
+
 ## Current next target
 
-Run a batch on the internal sampler path using `epkv-internal-sampler-policy-live.py`.
+Integrate relation-path fallback into the internal sampler batch, then scale.

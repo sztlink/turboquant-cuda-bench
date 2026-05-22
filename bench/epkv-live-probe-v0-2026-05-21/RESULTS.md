@@ -731,3 +731,27 @@ Post-smoke:
 policy file: {"enabled": false, "tag": "default-off"}
 /health OK
 ```
+
+## Internal sampler batch smoke
+
+Added:
+
+```txt
+07-scripts/vllm-hook/epkv-internal-sampler-policy-batch.py
+```
+
+Smoke on original 3 2Wiki span maps, no API `logit_bias`:
+
+```txt
+closed: 2/3
+multi2 -> England / English alias
+multi3 -> Víctor Bó
+multi1 -> still fails as relation/path construction failure
+```
+
+This confirms the split:
+
+```txt
+surface decode failures -> internal sampler policy works
+relation/path failures -> require relation-path fallback first
+```
