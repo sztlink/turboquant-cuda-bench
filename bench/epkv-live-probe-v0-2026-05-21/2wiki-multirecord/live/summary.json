@@ -1,0 +1,143 @@
+{
+  "schema": "epkv.multirecord.2wiki.boost_vs_guard.v0",
+  "cases": [
+    {
+      "case": 1,
+      "qid": "1c7395fa0bb011ebab90acde48001122",
+      "type": "inference",
+      "question": "Who is Johanna Magdalene Of Saxe-Weissenfels's paternal grandmother?",
+      "gold": "Johanna Magdalena of Saxe-Altenburg"
+    },
+    {
+      "case": 2,
+      "qid": "008af56e0bdc11eba7f7acde48001122",
+      "type": "compositional",
+      "question": "Which country James, Duke Of Rothesay (Born 1507)'s mother is from?",
+      "gold": "English"
+    },
+    {
+      "case": 3,
+      "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+      "type": "compositional",
+      "question": "Who is the child of the director of film La Leona (Film)?",
+      "gold": "Víctor Bó"
+    }
+  ],
+  "rows": [
+    {
+      "case": 1,
+      "qid": "1c7395fa0bb011ebab90acde48001122",
+      "type": "inference",
+      "gold": "Johanna Magdalena of Saxe-Altenburg",
+      "mode": "boost4",
+      "pages": "2-7",
+      "events": 8,
+      "hit_avg": 0.6473214285714286,
+      "hit_min": 0.5569196428571429,
+      "hit_max": 0.703125,
+      "backend": [],
+      "applied_evidence_k": [],
+      "closure": false,
+      "output": "Based on the provided evidence, we cannot determine Johanna Magdalene of Saxe-Weissenfels's paternal"
+    },
+    {
+      "case": 1,
+      "qid": "1c7395fa0bb011ebab90acde48001122",
+      "type": "inference",
+      "gold": "Johanna Magdalena of Saxe-Altenburg",
+      "mode": "guardk8",
+      "pages": "2-7",
+      "events": 8,
+      "hit_avg": 0.25,
+      "hit_min": 0.25,
+      "hit_max": 0.25,
+      "backend": [
+        "triton_score_split_triton_topk"
+      ],
+      "applied_evidence_k": [
+        8
+      ],
+      "closure": false,
+      "output": "Based on the provided evidence, we cannot determine Johanna Magdalene of Saxe-Weissenfels's paternal"
+    },
+    {
+      "case": 2,
+      "qid": "008af56e0bdc11eba7f7acde48001122",
+      "type": "compositional",
+      "gold": "English",
+      "mode": "boost4",
+      "pages": "2-6",
+      "events": 8,
+      "hit_avg": 0.6597377232142856,
+      "hit_min": 0.5703125,
+      "hit_max": 0.7455357142857143,
+      "backend": [],
+      "applied_evidence_k": [],
+      "closure": false,
+      "output": "Based on the evidence provided, James, Duke of Rothesay (born 1507) was the eldest"
+    },
+    {
+      "case": 2,
+      "qid": "008af56e0bdc11eba7f7acde48001122",
+      "type": "compositional",
+      "gold": "English",
+      "mode": "guardk8",
+      "pages": "2-6",
+      "events": 8,
+      "hit_avg": 0.25,
+      "hit_min": 0.25,
+      "hit_max": 0.25,
+      "backend": [
+        "triton_score_split_triton_topk"
+      ],
+      "applied_evidence_k": [
+        8
+      ],
+      "closure": false,
+      "output": "Based on the evidence provided, James, Duke of Rothesay (born 1507) was the eldest"
+    },
+    {
+      "case": 3,
+      "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+      "type": "compositional",
+      "gold": "Víctor Bó",
+      "mode": "boost4",
+      "pages": "2-5",
+      "events": 8,
+      "hit_avg": 0.7165178571428572,
+      "hit_min": 0.6361607142857143,
+      "hit_max": 0.7879464285714286,
+      "backend": [],
+      "applied_evidence_k": [],
+      "closure": true,
+      "output": "The child of the director of film La Leona (Film) is Víctor Bó, who is Armando"
+    },
+    {
+      "case": 3,
+      "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+      "type": "compositional",
+      "gold": "Víctor Bó",
+      "mode": "guardk8",
+      "pages": "2-5",
+      "events": 8,
+      "hit_avg": 0.25,
+      "hit_min": 0.25,
+      "hit_max": 0.25,
+      "backend": [
+        "triton_score_split_triton_topk"
+      ],
+      "applied_evidence_k": [
+        8
+      ],
+      "closure": true,
+      "output": "The child of the director of film La Leona (Film) is Víctor Bó, who is Armando"
+    }
+  ],
+  "aggregate": {
+    "boost4_avg": 0.6745256696428571,
+    "guardk8_avg": 0.25,
+    "boost4_closure": 1,
+    "guardk8_closure": 1,
+    "total_cases": 3
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 249,
+  "evidence_token_count": 56,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "evidence_pages_spec": "2-5",
+  "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+  "gold_answer": "Víctor Bó",
+  "spans": [
+    {
+      "label": "E1",
+      "text": "La Leona (film): La Leona is a 1964 Argentine film directed by and starring Armando Bo with Isabel Sarli.",
+      "char_start": 164,
+      "char_end": 273,
+      "token_start": 34,
+      "token_end_exclusive": 67,
+      "token_count": 33,
+      "pages": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "label": "E2",
+      "text": "Armando Bó: Bó's son is the actor Víctor Bó and his grandson",
+      "char_start": 274,
+      "char_end": 338,
+      "token_start": 67,
+      "token_end_exclusive": 90,
+      "token_count": 23,
+      "pages": [
+        4,
+        5
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: La Leona (film): La Leona is a 1964 Argentine film directed by and starring Armando Bo with Isabel Sarli.\nE2: Armando Bó: Bó's son is the actor Víctor Bó and his grandson\nDistractors:\nD1: Marcel Brands: Marcel Brands( born 1962) is a Dutch former professional footballer who is the Director of Football at English club Everton.\nD2: Eric Chan: Eric Chan Kwok- ki, SBS, IDSM( born 1959) is a Hong Kong civil servant who is the Director of the Chief Executive's Office.\nD3: Dana Blankstein: Dana Blankstein- Cohen( born March 3, 1981) is the director of the Israeli Academy of Film and Television.\nD4: Ian Barry (director): Ian Barry is an Australian director of film and TV.\nQuestion: Who is the child of the director of film La Leona (Film)?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: La Leona (film): La Leona is a 1964 Argentine film directed by and starring Armando Bo with Isabel Sarli.\nE2: Armando Bó: Bó's son is the actor Víctor Bó and his grandson\nDistractors:\nD1: Marcel Brands: Marcel Brands( born 1962) is a Dutch former professional footballer who is the Director of Football at English club Everton.\nD2: Eric Chan: Eric Chan Kwok- ki, SBS, IDSM( born 1959) is a Hong Kong civil servant who is the Director of the Chief Executive's Office.\nD3: Dana Blankstein: Dana Blankstein- Cohen( born March 3, 1981) is the director of the Israeli Academy of Film and Television.\nD4: Ian Barry (director): Ian Barry is an Australian director of film and TV.\nQuestion: Who is the child of the director of film La Leona (Film)?<|im_end|>\n<|im_start|>assistant\n"
+}

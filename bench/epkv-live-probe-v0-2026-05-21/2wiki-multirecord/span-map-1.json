@@ -1,0 +1,55 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 408,
+  "evidence_token_count": 91,
+  "evidence_pages": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "evidence_pages_spec": "2-7",
+  "qid": "1c7395fa0bb011ebab90acde48001122",
+  "gold_answer": "Johanna Magdalena of Saxe-Altenburg",
+  "spans": [
+    {
+      "label": "E1",
+      "text": "Johanna Magdalene of Saxe-Weissenfels: She was the daughter of Johann Georg, Duke of Saxe-Weissenfels and Fredericka Elisabeth of Saxe-Eisenach.",
+      "char_start": 164,
+      "char_end": 312,
+      "token_start": 34,
+      "token_end_exclusive": 80,
+      "token_count": 46,
+      "pages": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "label": "E2",
+      "text": "Johann Georg, Duke of Saxe-Weissenfels: I, Duke of Saxe-Weissenfels, by his first wife, Johanna Magdalena of Saxe-Altenburg.",
+      "char_start": 313,
+      "char_end": 441,
+      "token_start": 80,
+      "token_end_exclusive": 125,
+      "token_count": 45,
+      "pages": [
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only the evidence lines to answer.\nEvidence:\nE1: Johanna Magdalene of Saxe-Weissenfels: She was the daughter of Johann Georg, Duke of Saxe-Weissenfels and Fredericka Elisabeth of Saxe-Eisenach.\nE2: Johann Georg, Duke of Saxe-Weissenfels: I, Duke of Saxe-Weissenfels, by his first wife, Johanna Magdalena of Saxe-Altenburg.\nDistractors:\nD1: August of Saxe-Weissenfels (1650–1674): August of Saxe-Weissenfels (3 December 1650 in Halle – 11 August 1674 in Halle), was a member of the Albertine branch of the House of Wettin.\nD2: Ferdinand Kettler: Ferdinand Kettler( November 1, 1655- May 4, 1737) was the Duke of Courland and Semigallia from 1730 to 1737.\nD3: Frederick, Duke of Saxe-Weissenfels-Dahme: Frederick of Saxe- Weissenfels(\" Frederick Erdmann\"; b. Halle, 20 November\nD4: Christian, Duke of Saxe-Weissenfels: Christian, Duke of Saxe- Weissenfels( 23 February 1682 in Weissenfels – 28 June 1736 in Sangerhausen), was a duke of Saxe- Weissenfels- Querfurt and member of the House of Wettin.\nQuestion: Who is Johanna Magdalene Of Saxe-Weissenfels's paternal grandmother?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only the evidence lines to answer.\nEvidence:\nE1: Johanna Magdalene of Saxe-Weissenfels: She was the daughter of Johann Georg, Duke of Saxe-Weissenfels and Fredericka Elisabeth of Saxe-Eisenach.\nE2: Johann Georg, Duke of Saxe-Weissenfels: I, Duke of Saxe-Weissenfels, by his first wife, Johanna Magdalena of Saxe-Altenburg.\nDistractors:\nD1: August of Saxe-Weissenfels (1650–1674): August of Saxe-Weissenfels (3 December 1650 in Halle – 11 August 1674 in Halle), was a member of the Albertine branch of the House of Wettin.\nD2: Ferdinand Kettler: Ferdinand Kettler( November 1, 1655- May 4, 1737) was the Duke of Courland and Semigallia from 1730 to 1737.\nD3: Frederick, Duke of Saxe-Weissenfels-Dahme: Frederick of Saxe- Weissenfels(\" Frederick Erdmann\"; b. Halle, 20 November\nD4: Christian, Duke of Saxe-Weissenfels: Christian, Duke of Saxe- Weissenfels( 23 February 1682 in Weissenfels – 28 June 1736 in Sangerhausen), was a duke of Saxe- Weissenfels- Querfurt and member of the House of Wettin.\nQuestion: Who is Johanna Magdalene Of Saxe-Weissenfels's paternal grandmother?<|im_end|>\n<|im_start|>assistant\n"
+}

@@ -215,6 +215,30 @@ Artifacts:
 2wiki-live-sweep/
 ```
 
+## Multi-record boost vs guard
+
+A 3-record 2Wiki batch compared soft boost against hard reservation:
+
+```txt
+boost4 evidence hit avg: 67.45%
+guardk8 evidence hit avg: 25.00%
+boost4 closure: 1/3
+guardk8 closure: 1/3
+```
+
+`guardk8` used the Triton split + Triton top-k backend:
+
+```txt
+reservation_backend: triton_score_split_triton_topk
+applied_evidence_k: 8
+```
+
+Artifacts:
+
+```txt
+2wiki-multirecord/
+```
+
 ## Next live step
 
-Run boost vs reserved-selection across multiple records, then fuse score/split/top-k into fewer kernels.
+Fuse score/split/top-k into fewer kernels and test non-dry guard intervention on records where baseline is close.
