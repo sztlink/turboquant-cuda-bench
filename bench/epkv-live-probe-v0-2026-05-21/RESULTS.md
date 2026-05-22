@@ -476,10 +476,32 @@ surface decode failures -> solved by state-aware decode policy
 relation/path failures  -> need relation-aware evidence construction before decode
 ```
 
-## Next live step
+## Relation-path repair
 
-For `multi1`, build relation-path extraction before decode policy:
+For failed `multi1`, decode policy was not enough. A compact relation-chain prompt from 2Wiki triples repaired it:
 
 ```txt
-Johanna Magdalene -> father -> Johann Georg -> mother -> Johanna Magdalena
+Johanna Magdalene of Saxe-Weissenfels -- father --> Johann Georg, Duke of Saxe-Weissenfels.
+Johann Georg, Duke of Saxe-Weissenfels -- mother --> Johanna Magdalena of Saxe-Altenburg.
+```
+
+Result:
+
+```txt
+relation path, no bias -> Johanna Magdalena of Saxe-Altenburg
+relation path + bias3  -> Johanna Magdalena of Saxe-Altenburg
+```
+
+Added:
+
+```txt
+07-scripts/vllm-hook/epkv-relation-path-prompt.py
+```
+
+Final architecture emerging:
+
+```txt
+1. relation/path construction from evidence
+2. evidence-derived candidate token nomination
+3. state-aware decode policy at sampler/LM-head
 ```

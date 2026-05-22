@@ -84,19 +84,25 @@ multi2: suppress scaffold + bias10 -> Margaret Tudor's country of origin is Engl
 
 `multi1` / Johanna grandmother still fails. It selects/confuses path with Fredericka Elisabeth / cannot-determine. This is not merely decode surface selection; it is relation/path construction failure.
 
-Next target:
-
-```txt
-relation-aware candidate/path extraction before decode policy
-```
-
-For this hard case, the system must represent:
+Relation-path repair was tested after this diagnosis:
 
 ```txt
 Johanna Magdalene -> father -> Johann Georg -> mother -> Johanna Magdalena
 ```
 
-not just bias an answer token after a confused path.
+A compact relation-chain prompt returns the correct answer without bias:
+
+```txt
+Johanna Magdalena of Saxe-Altenburg
+```
+
+So the emerging stack is:
+
+```txt
+1. relation/path construction from evidence
+2. candidate-token nomination
+3. state-aware decode policy
+```
 
 ## Service state
 
