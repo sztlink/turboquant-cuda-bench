@@ -327,6 +327,45 @@ Artifacts:
 value-mix/
 ```
 
+## 12h sprint — first decode-policy breakthrough
+
+The sprint moved to LM-head/sampler-facing diagnostics. vLLM API logprobs exposed the failure directly on the adversarial `Víctor Bó` case:
+
+```txt
+baseline first token: Ar    logprob -0.052
+candidate first token: V    logprob -3.052
+candidate variant: Vict     logprob -5.677
+```
+
+So the correct answer object is not absent; it is close but loses the first-token race.
+
+A diagnostic logit-bias sweep over candidate ids `[53, 647, 36125]` flipped the case:
+
+```txt
+bias 0 -> Armando Bo
+bias 1 -> Armando Bo
+bias 2 -> Armando Bo
+bias 3 -> Víctor Bó
+bias 4 -> Víctor Bó
+bias 6 -> Víctor Bó
+```
+
+This explains why KV/value-only edits failed: they deformed the surface but did not cross the LM-head decision boundary.
+
+Artifacts:
+
+```txt
+sprint-12h/
+07-scripts/vllm-hook/epkv-decode-policy-harness.py
+07-scripts/vllm-hook/patch-vllm-sampler-logit-policy.py
+```
+
 ## Next live step
 
-Move closer to decode policy / LM-head-facing control: capture generated token ids/logits around the first token and test evidence-aware hidden/logit residuals instead of only attention value mixing.
+Build evidence-derived decode policy:
+
+```txt
+support span / triple object -> candidate token ids -> small early decode bias
+```
+
+Then compare baseline vs KV-only vs logit-policy-only vs KV+logit-policy.

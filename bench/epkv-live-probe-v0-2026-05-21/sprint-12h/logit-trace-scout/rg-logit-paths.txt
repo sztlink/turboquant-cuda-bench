@@ -1,0 +1,240 @@
+vllm/v1/executor/multiproc_executor.py:318:    def sample_tokens(  # type: ignore[override]
+vllm/v1/executor/multiproc_executor.py:333:    def take_draft_token_ids(self) -> DraftTokenIds | None:
+vllm/v1/executor/multiproc_executor.py:336:            "take_draft_token_ids", unique_reply_rank=self.output_rank
+vllm/v1/executor/ray_utils.py:202:    vLLM can return numpy-backed logprobs in `ModelRunnerOutput.logprobs`. If
+vllm/v1/executor/ray_utils.py:210:    We intentionally do not touch `prompt_logprobs_dict`: those entries are
+vllm/v1/executor/ray_utils.py:214:    if output.logprobs is None:
+vllm/v1/executor/ray_utils.py:217:    token_ids, logprobs, ranks, cu_num_generated_tokens = output.logprobs
+vllm/v1/executor/ray_utils.py:226:    token_ids_c = _copy_if_readonly(token_ids)
+vllm/v1/executor/ray_utils.py:227:    logprobs_c = _copy_if_readonly(logprobs)
+vllm/v1/executor/ray_utils.py:229:    if token_ids_c is token_ids and logprobs_c is logprobs and ranks_c is ranks:
+vllm/v1/executor/ray_utils.py:232:    output.logprobs = type(output.logprobs)(
+vllm/v1/executor/ray_utils.py:233:        token_ids_c, logprobs_c, ranks_c, cu_num_generated_tokens
+vllm/v1/executor/uniproc_executor.py:117:    def sample_tokens(  # type: ignore[override]
+vllm/v1/executor/uniproc_executor.py:127:    def take_draft_token_ids(self) -> DraftTokenIds | None:
+vllm/v1/executor/uniproc_executor.py:128:        return self.collective_rpc("take_draft_token_ids", single_value=True)
+vllm/v1/executor/abstract.py:230:    def sample_tokens(
+vllm/v1/executor/abstract.py:236:    def sample_tokens(
+vllm/v1/executor/abstract.py:241:    def sample_tokens(
+vllm/v1/executor/abstract.py:252:    def take_draft_token_ids(self) -> DraftTokenIds | None:
+vllm/v1/executor/abstract.py:253:        output: list[DraftTokenIds] = self.collective_rpc("take_draft_token_ids")
+vllm/v1/executor/ray_executor.py:426:    def sample_tokens(  # type: ignore[override]
+vllm/v1/worker/worker_base.py:145:    def sample_tokens(
+vllm/v1/worker/gpu_worker.py:740:    def sample_tokens(
+vllm/v1/worker/gpu_worker.py:836:    def take_draft_token_ids(self) -> DraftTokenIds | None:
+vllm/v1/worker/gpu_worker.py:837:        return self.model_runner.take_draft_token_ids()
+vllm/v1/worker/cpu_model_runner.py:154:    def _copy_draft_token_ids_to_cpu(
+vllm/v1/worker/cpu_model_runner.py:160:            or self.input_batch.sampling_metadata.output_token_ids
+vllm/v1/worker/cpu_model_runner.py:165:        draft_token_ids: torch.Tensor = self._draft_token_ids
+vllm/v1/worker/cpu_model_runner.py:166:        if not torch.is_tensor(draft_token_ids):
+vllm/v1/worker/cpu_model_runner.py:169:        num_reqs = draft_token_ids.shape[0]
+vllm/v1/worker/cpu_model_runner.py:170:        if self.draft_token_ids_cpu is not None:
+vllm/v1/worker/cpu_model_runner.py:172:                self.draft_token_ids_cpu[:num_reqs].copy_(draft_token_ids)
+vllm/v1/worker/cpu_model_runner.py:174:                self.draft_token_ids_cpu[:num_reqs] = 0
+vllm/v1/worker/cpu_model_runner.py:176:    def _get_draft_token_ids_cpu(self) -> tuple[list[list[int]], list[str]]:
+vllm/v1/worker/cpu_model_runner.py:178:        if isinstance(self._draft_token_ids, list):
+vllm/v1/worker/cpu_model_runner.py:179:            return self._draft_token_ids, self.input_batch.req_ids
+vllm/v1/worker/cpu_model_runner.py:183:        if self.draft_token_ids_cpu is not None:
+vllm/v1/worker/cpu_model_runner.py:184:            return self.draft_token_ids_cpu[: len(req_ids)].tolist(), req_ids
+vllm/v1/worker/cpu_model_runner.py:188:        self, next_token_ids: torch.Tensor, valid_sampled_tokens_count: torch.Tensor
+vllm/v1/worker/cpu_model_runner.py:197:        self.input_batch.prev_sampled_token_ids = next_token_ids.unsqueeze(1)
+vllm/v1/worker/cpu_model_runner.py:201:        prev_sampled_token_ids = self.input_batch.prev_sampled_token_ids
+vllm/v1/worker/cpu_model_runner.py:202:        if prev_sampled_token_ids is None:
+vllm/v1/worker/cpu_model_runner.py:208:        return counts_cpu[: prev_sampled_token_ids.shape[0]].tolist()
+vllm/v1/worker/cpu_model_runner.py:210:    def _to_list(self, sampled_token_ids: torch.Tensor) -> list[list[int]]:
+vllm/v1/worker/cpu_model_runner.py:212:        return sampled_token_ids.tolist()
+vllm/v1/worker/gpu/mm/rope.py:66:        prefill_token_ids: list[int],
+vllm/v1/worker/gpu/mm/rope.py:72:                prefill_token_ids, mm_features
+vllm/v1/worker/gpu/mm/rope.py:78:                prefill_token_ids, mm_features
+vllm/v1/worker/gpu/async_utils.py:32:            self.sampled_token_ids = async_copy_to_np(sampler_output.sampled_token_ids)
+vllm/v1/worker/gpu/async_utils.py:33:            self.logprobs_tensors: LogprobsTensors | None = None
+vllm/v1/worker/gpu/async_utils.py:34:            if sampler_output.logprobs_tensors is not None:
+vllm/v1/worker/gpu/async_utils.py:35:                self.logprobs_tensors = (
+vllm/v1/worker/gpu/async_utils.py:36:                    sampler_output.logprobs_tensors.to_cpu_nonblocking()
+vllm/v1/worker/gpu/async_utils.py:42:            self.prompt_logprobs_dict = {
+vllm/v1/worker/gpu/async_utils.py:44:                for k, v in self.model_runner_output.prompt_logprobs_dict.items()
+vllm/v1/worker/gpu/async_utils.py:55:        sampled_token_ids: list[list[int]] = self.sampled_token_ids.tolist()
+vllm/v1/worker/gpu/async_utils.py:57:        for token_ids, num_tokens in zip(sampled_token_ids, num_sampled_tokens):
+vllm/v1/worker/gpu/async_utils.py:58:            del token_ids[num_tokens:]
+vllm/v1/worker/gpu/async_utils.py:59:        self.model_runner_output.sampled_token_ids = sampled_token_ids
+vllm/v1/worker/gpu/async_utils.py:66:        if self.logprobs_tensors is not None:
+vllm/v1/worker/gpu/async_utils.py:67:            self.model_runner_output.logprobs = self.logprobs_tensors.tolists()
+vllm/v1/worker/gpu/async_utils.py:68:        self.model_runner_output.prompt_logprobs_dict = self.prompt_logprobs_dict
+vllm/v1/worker/gpu/input_batch.py:160:    all_token_ids_ptr,
+vllm/v1/worker/gpu/input_batch.py:161:    all_token_ids_stride,
+vllm/v1/worker/gpu/input_batch.py:178:    request_ptr = all_token_ids_ptr + req_state_idx * all_token_ids_stride
+vllm/v1/worker/gpu/input_batch.py:196:    all_token_ids: torch.Tensor,
+vllm/v1/worker/gpu/input_batch.py:206:        all_token_ids,
+vllm/v1/worker/gpu/input_batch.py:207:        all_token_ids.stride(0),
+vllm/v1/worker/gpu/input_batch.py:428:    all_token_ids_ptr,
+vllm/v1/worker/gpu/input_batch.py:429:    all_token_ids_stride,
+vllm/v1/worker/gpu/input_batch.py:447:            all_token_ids_ptr + req_state_idx * all_token_ids_stride + total_len + i,
+vllm/v1/worker/gpu/input_batch.py:488:    all_token_ids: torch.Tensor,
+vllm/v1/worker/gpu/input_batch.py:504:        all_token_ids,
+vllm/v1/worker/gpu/input_batch.py:505:        all_token_ids.stride(0),
+vllm/v1/worker/gpu/pp_utils.py:11:    sampled_token_ids: torch.Tensor,
+vllm/v1/worker/gpu/pp_utils.py:18:    assert sampled_token_ids.dtype == torch.int64
+vllm/v1/worker/gpu/pp_utils.py:20:        sampled_token_ids.contiguous(), src=pp.last_rank, group=pp.device_group
+vllm/v1/worker/gpu/model_states/default.py:89:            assert new_req_data.prefill_token_ids is not None
+vllm/v1/worker/gpu/model_states/default.py:93:                new_req_data.prefill_token_ids,
+vllm/v1/worker/gpu/sample/sampler.py:15:from vllm.v1.worker.gpu.sample.logprob import compute_topk_logprobs
+vllm/v1/worker/gpu/sample/sampler.py:22:class Sampler:
+vllm/v1/worker/gpu/sample/sampler.py:29:        logprobs_mode: LogprobsMode = "raw_logprobs",
+vllm/v1/worker/gpu/sample/sampler.py:32:        if logprobs_mode not in ("processed_logprobs", "raw_logprobs"):
+vllm/v1/worker/gpu/sample/sampler.py:33:            raise NotImplementedError(f"Unsupported logprobs_mode: {logprobs_mode}")
+vllm/v1/worker/gpu/sample/sampler.py:34:        self.logprobs_mode = logprobs_mode
+vllm/v1/worker/gpu/sample/sampler.py:81:        max_num_logprobs = self.sampling_states.max_num_logprobs(idx_mapping_np)
+vllm/v1/worker/gpu/sample/sampler.py:82:        if max_num_logprobs != NO_LOGPROBS:
+vllm/v1/worker/gpu/sample/sampler.py:83:            if self.logprobs_mode == "processed_logprobs":
+vllm/v1/worker/gpu/sample/sampler.py:87:            logprobs_tensors = compute_topk_logprobs(
+vllm/v1/worker/gpu/sample/sampler.py:88:                logits, max_num_logprobs, sampled, cu_num_logits
+vllm/v1/worker/gpu/sample/sampler.py:91:            logprobs_tensors = None
+vllm/v1/worker/gpu/sample/sampler.py:98:            sampled_token_ids=sampled.view(-1, 1),
+vllm/v1/worker/gpu/sample/sampler.py:99:            logprobs_tensors=logprobs_tensors,
+vllm/v1/worker/gpu/sample/sampler.py:117:        # Apply logit bias (e.g., allowed_token_ids, min_tokens) in place.
+vllm/v1/worker/gpu/sample/sampler.py:154:    def sample(
+vllm/v1/worker/gpu/sample/prompt_logprob.py:12:from vllm.v1.worker.gpu.sample.logprob import compute_topk_logprobs
+vllm/v1/worker/gpu/sample/prompt_logprob.py:19:        self.uses_prompt_logprobs = np.zeros(self.max_num_reqs, dtype=bool)
+vllm/v1/worker/gpu/sample/prompt_logprob.py:20:        self.num_prompt_logprobs = np.zeros(self.max_num_reqs, dtype=np.int32)
+vllm/v1/worker/gpu/sample/prompt_logprob.py:22:        self.in_progress_prompt_logprobs: dict[str, list[LogprobsTensors]] = {}
+vllm/v1/worker/gpu/sample/prompt_logprob.py:25:        uses_prompt_logprobs = sampling_params.prompt_logprobs is not None
+vllm/v1/worker/gpu/sample/prompt_logprob.py:26:        self.uses_prompt_logprobs[req_idx] = uses_prompt_logprobs
+vllm/v1/worker/gpu/sample/prompt_logprob.py:27:        self.num_prompt_logprobs[req_idx] = sampling_params.prompt_logprobs or 0
+vllm/v1/worker/gpu/sample/prompt_logprob.py:28:        if uses_prompt_logprobs:
+vllm/v1/worker/gpu/sample/prompt_logprob.py:29:            self.in_progress_prompt_logprobs[req_id] = []
+vllm/v1/worker/gpu/sample/prompt_logprob.py:32:        self.in_progress_prompt_logprobs.pop(req_id, None)
+vllm/v1/worker/gpu/sample/prompt_logprob.py:34:    def compute_prompt_logprobs(
+vllm/v1/worker/gpu/sample/prompt_logprob.py:40:        all_token_ids: torch.Tensor,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:51:        needs_prompt_logprobs = self.uses_prompt_logprobs[idx_mapping_np]
+vllm/v1/worker/gpu/sample/prompt_logprob.py:52:        if not np.any(needs_prompt_logprobs):
+vllm/v1/worker/gpu/sample/prompt_logprob.py:53:            # Common case: No request asks for prompt logprobs.
+vllm/v1/worker/gpu/sample/prompt_logprob.py:56:        num_prompt_logprobs = self.num_prompt_logprobs[idx_mapping_np]
+vllm/v1/worker/gpu/sample/prompt_logprob.py:59:        # needed for prompt logprobs.
+vllm/v1/worker/gpu/sample/prompt_logprob.py:63:        # logprobs must have been computed before preemption. Skip.
+vllm/v1/worker/gpu/sample/prompt_logprob.py:65:        needs_prompt_logprobs &= includes_prompt & ~resumed_after_prompt
+vllm/v1/worker/gpu/sample/prompt_logprob.py:66:        if not np.any(needs_prompt_logprobs):
+vllm/v1/worker/gpu/sample/prompt_logprob.py:70:        requested_num_prompt_logprobs = num_prompt_logprobs[needs_prompt_logprobs]
+vllm/v1/worker/gpu/sample/prompt_logprob.py:71:        max_num_prompt_logprobs = (
+vllm/v1/worker/gpu/sample/prompt_logprob.py:73:            if np.any(requested_num_prompt_logprobs == -1)
+vllm/v1/worker/gpu/sample/prompt_logprob.py:74:            else int(requested_num_prompt_logprobs.max())
+vllm/v1/worker/gpu/sample/prompt_logprob.py:77:        # Get the prompt logprobs token_ids.
+vllm/v1/worker/gpu/sample/prompt_logprob.py:78:        prompt_logprobs_token_ids = get_prompt_logprobs_token_ids(
+vllm/v1/worker/gpu/sample/prompt_logprob.py:83:            all_token_ids,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:85:        prompt_token_ids, prompt_logprobs, prompt_ranks = (
+vllm/v1/worker/gpu/sample/prompt_logprob.py:86:            compute_prompt_logprobs_with_chunking(
+vllm/v1/worker/gpu/sample/prompt_logprob.py:87:                prompt_logprobs_token_ids,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:90:                max_num_prompt_logprobs,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:98:        prompt_logprobs_dict: dict[str, LogprobsTensors] = {}
+vllm/v1/worker/gpu/sample/prompt_logprob.py:100:            if not needs_prompt_logprobs[i]:
+vllm/v1/worker/gpu/sample/prompt_logprob.py:112:            # no logprobs if start_idx >= end_idx
+vllm/v1/worker/gpu/sample/prompt_logprob.py:113:            logprobs = (
+vllm/v1/worker/gpu/sample/prompt_logprob.py:117:                    logprob_token_ids=prompt_token_ids[start_idx:end_idx],
+vllm/v1/worker/gpu/sample/prompt_logprob.py:118:                    logprobs=prompt_logprobs[start_idx:end_idx],
+vllm/v1/worker/gpu/sample/prompt_logprob.py:123:            prompt_logprobs_list = self.in_progress_prompt_logprobs[req_id]
+vllm/v1/worker/gpu/sample/prompt_logprob.py:124:            if logprobs is not None and (req_is_prompt_chunked or prompt_logprobs_list):
+vllm/v1/worker/gpu/sample/prompt_logprob.py:125:                prompt_logprobs_list.append(logprobs)
+vllm/v1/worker/gpu/sample/prompt_logprob.py:127:                # Prompt is chunked. Do not return the logprobs yet.
+vllm/v1/worker/gpu/sample/prompt_logprob.py:130:            if prompt_logprobs_list:
+vllm/v1/worker/gpu/sample/prompt_logprob.py:131:                # Merge the in-progress logprobs.
+vllm/v1/worker/gpu/sample/prompt_logprob.py:132:                logprobs = LogprobsTensors(
+vllm/v1/worker/gpu/sample/prompt_logprob.py:133:                    logprob_token_ids=torch.cat(
+vllm/v1/worker/gpu/sample/prompt_logprob.py:134:                        [x.logprob_token_ids for x in prompt_logprobs_list]
+vllm/v1/worker/gpu/sample/prompt_logprob.py:136:                    logprobs=torch.cat([x.logprobs for x in prompt_logprobs_list]),
+vllm/v1/worker/gpu/sample/prompt_logprob.py:138:                        [x.selected_token_ranks for x in prompt_logprobs_list]
+vllm/v1/worker/gpu/sample/prompt_logprob.py:141:                prompt_logprobs_list.clear()
+vllm/v1/worker/gpu/sample/prompt_logprob.py:143:            if logprobs is None:
+vllm/v1/worker/gpu/sample/prompt_logprob.py:146:            prompt_logprobs_dict[req_id] = logprobs
+vllm/v1/worker/gpu/sample/prompt_logprob.py:147:        return prompt_logprobs_dict
+vllm/v1/worker/gpu/sample/prompt_logprob.py:151:def _prompt_logprobs_token_ids_kernel(
+vllm/v1/worker/gpu/sample/prompt_logprob.py:152:    prompt_logprobs_token_ids_ptr,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:156:    all_token_ids_ptr,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:157:    all_token_ids_stride,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:174:        token_ids = tl.load(
+vllm/v1/worker/gpu/sample/prompt_logprob.py:175:            all_token_ids_ptr + req_state_idx * all_token_ids_stride + target_pos,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:179:            prompt_logprobs_token_ids_ptr + query_start + block, token_ids, mask=mask
+vllm/v1/worker/gpu/sample/prompt_logprob.py:183:def get_prompt_logprobs_token_ids(
+vllm/v1/worker/gpu/sample/prompt_logprob.py:188:    all_token_ids: torch.Tensor,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:190:    token_ids = torch.empty(num_tokens, dtype=torch.int64, device=idx_mapping.device)
+vllm/v1/worker/gpu/sample/prompt_logprob.py:192:    _prompt_logprobs_token_ids_kernel[(num_reqs,)](
+vllm/v1/worker/gpu/sample/prompt_logprob.py:193:        token_ids,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:197:        all_token_ids,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:198:        all_token_ids.stride(0),
+vllm/v1/worker/gpu/sample/prompt_logprob.py:201:    return token_ids
+vllm/v1/worker/gpu/sample/prompt_logprob.py:204:def compute_prompt_logprobs_with_chunking(
+vllm/v1/worker/gpu/sample/prompt_logprob.py:205:    prompt_token_ids: torch.Tensor,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:208:    num_prompt_logprobs: int,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:213:    token_ids = []
+vllm/v1/worker/gpu/sample/prompt_logprob.py:214:    logprobs = []
+vllm/v1/worker/gpu/sample/prompt_logprob.py:216:    prompt_token_ids = prompt_token_ids.to(torch.int64)
+vllm/v1/worker/gpu/sample/prompt_logprob.py:217:    for start_idx in range(0, prompt_token_ids.shape[0], CHUNK_SIZE):
+vllm/v1/worker/gpu/sample/prompt_logprob.py:221:        requested_num_prompt_logprobs = (
+vllm/v1/worker/gpu/sample/prompt_logprob.py:223:            if num_prompt_logprobs == -1
+vllm/v1/worker/gpu/sample/prompt_logprob.py:224:            else num_prompt_logprobs
+vllm/v1/worker/gpu/sample/prompt_logprob.py:226:        prompt_logprobs = compute_topk_logprobs(
+vllm/v1/worker/gpu/sample/prompt_logprob.py:228:            requested_num_prompt_logprobs,
+vllm/v1/worker/gpu/sample/prompt_logprob.py:229:            prompt_token_ids[start_idx:end_idx],
+vllm/v1/worker/gpu/sample/prompt_logprob.py:231:        token_ids.append(prompt_logprobs.logprob_token_ids)
+vllm/v1/worker/gpu/sample/prompt_logprob.py:232:        logprobs.append(prompt_logprobs.logprobs)
+vllm/v1/worker/gpu/sample/prompt_logprob.py:233:        ranks.append(prompt_logprobs.selected_token_ranks)
+vllm/v1/worker/gpu/sample/prompt_logprob.py:235:    token_ids = torch.cat(token_ids, dim=0) if len(token_ids) > 1 else token_ids[0]
+vllm/v1/worker/gpu/sample/prompt_logprob.py:236:    logprobs = torch.cat(logprobs, dim=0) if len(logprobs) > 1 else logprobs[0]
+vllm/v1/worker/gpu/sample/prompt_logprob.py:238:    return token_ids, logprobs, ranks
+vllm/v1/worker/gpu/sample/bad_words.py:22:        self.bad_word_token_ids = StagedWriteTensor(
+vllm/v1/worker/gpu/sample/bad_words.py:37:        bad_words_token_ids = sampling_params.bad_words_token_ids
+vllm/v1/worker/gpu/sample/bad_words.py:38:        if not bad_words_token_ids:
+vllm/v1/worker/gpu/sample/bad_words.py:42:        num_bad_words = len(bad_words_token_ids)
+vllm/v1/worker/gpu/sample/bad_words.py:52:        for bad_word in bad_words_token_ids:
+vllm/v1/worker/gpu/sample/bad_words.py:63:        self.bad_word_token_ids.stage_write(req_idx, 0, flattened_tokens)
+vllm/v1/worker/gpu/sample/bad_words.py:69:        self.bad_word_token_ids.apply_write()
+vllm/v1/worker/gpu/sample/bad_words.py:88:            self.bad_word_token_ids.gpu,
+vllm/v1/worker/gpu/sample/bad_words.py:91:            self.req_states.all_token_ids.gpu,
+vllm/v1/worker/gpu/sample/bad_words.py:105:    bad_word_token_ids_ptr,
+vllm/v1/worker/gpu/sample/bad_words.py:106:    bad_word_token_ids_stride,
+vllm/v1/worker/gpu/sample/bad_words.py:110:    all_token_ids_ptr,
+vllm/v1/worker/gpu/sample/bad_words.py:111:    all_token_ids_stride,
+vllm/v1/worker/gpu/sample/bad_words.py:135:    bd_tokens_base = bad_word_token_ids_ptr + req_state_idx * bad_word_token_ids_stride
+vllm/v1/worker/gpu/sample/bad_words.py:136:    output_base = all_token_ids_ptr + req_state_idx * all_token_ids_stride + prompt_len
+vllm/v1/worker/gpu/sample/bad_words.py:168:    bad_word_token_ids: torch.Tensor,
+vllm/v1/worker/gpu/sample/bad_words.py:171:    all_token_ids: torch.Tensor,
+vllm/v1/worker/gpu/sample/bad_words.py:183:        bad_word_token_ids,
+vllm/v1/worker/gpu/sample/bad_words.py:184:        bad_word_token_ids.stride(0),
+vllm/v1/worker/gpu/sample/bad_words.py:188:        all_token_ids,
+vllm/v1/worker/gpu/sample/bad_words.py:189:        all_token_ids.stride(0),
+vllm/v1/worker/gpu/sample/logprob.py:57:    token_ids_ptr,
+vllm/v1/worker/gpu/sample/logprob.py:64:    token_id = tl.load(token_ids_ptr + req_idx)
+vllm/v1/worker/gpu/sample/logprob.py:75:def compute_token_logprobs(
+vllm/v1/worker/gpu/sample/logprob.py:76:    logits: torch.Tensor, token_ids: torch.Tensor
+vllm/v1/worker/gpu/sample/logprob.py:79:    token_ids = token_ids.to(torch.int64)
+vllm/v1/worker/gpu/sample/logprob.py:80:    num_logprobs = token_ids.shape[1]
+vllm/v1/worker/gpu/sample/logprob.py:81:    logprobs = logits.new_empty((batch_size, num_logprobs), dtype=torch.float32)
+vllm/v1/worker/gpu/sample/logprob.py:83:        logprobs,
+vllm/v1/worker/gpu/sample/logprob.py:86:        token_ids,
+vllm/v1/worker/gpu/sample/logprob.py:87:        num_logprobs,
+vllm/v1/worker/gpu/sample/logprob.py:90:        PADDED_TOPK=triton.next_power_of_2(num_logprobs),
+vllm/v1/worker/gpu/sample/logprob.py:92:    return logprobs
+vllm/v1/worker/gpu/sample/logprob.py:95:def compute_topk_logprobs(
+vllm/v1/worker/gpu/sample/logprob.py:97:    num_logprobs: int,
+vllm/v1/worker/gpu/sample/logprob.py:98:    sampled_token_ids: torch.Tensor,
+vllm/v1/worker/gpu/sample/logprob.py:101:    assert num_logprobs >= 0
+vllm/v1/worker/gpu/sample/logprob.py:103:    logprob_token_ids = sampled_token_ids.unsqueeze(-1)
+vllm/v1/worker/gpu/sample/logprob.py:104:    if num_logprobs > 0:
+vllm/v1/worker/gpu/sample/logprob.py:105:        topk_indices = torch.topk(logits, num_logprobs, dim=-1).indices
+vllm/v1/worker/gpu/sample/logprob.py:106:        logprob_token_ids = torch.cat((logprob_token_ids, topk_indices), dim=1)
+vllm/v1/worker/gpu/sample/logprob.py:109:    # logprobs tensor. Instead, we only compute and return the logprobs of
+vllm/v1/worker/gpu/sample/logprob.py:111:    logprobs = compute_token_logprobs(logits, logprob_token_ids)
+vllm/v1/worker/gpu/sample/logprob.py:117:        sampled_token_ids,
+vllm/v1/worker/gpu/sample/logprob.py:122:        logprob_token_ids=logprob_token_ids,
+vllm/v1/worker/gpu/sample/logprob.py:123:        logprobs=logprobs,
+vllm/v1/worker/gpu/sample/logit_bias.py:20:        self.num_allowed_token_ids = UvaBackedTensor(
+vllm/v1/worker/gpu/sample/logit_bias.py:23:        self.allowed_token_ids = StagedWriteTensor(
+vllm/v1/worker/gpu/sample/logit_bias.py:30:        self.logit_bias_token_ids = StagedWriteTensor(
+vllm/v1/worker/gpu/sample/logit_bias.py:42:        self.num_stop_token_ids = UvaBackedTensor(self.max_num_reqs, dtype=torch.int32)
+vllm/v1/worker/gpu/sample/logit_bias.py:43:        self.stop_token_ids = StagedWriteTensor(
+vllm/v1/worker/gpu/sample/logit_bias.py:59:        allowed_token_ids = sampling_params.allowed_token_ids
+vllm/v1/worker/gpu/sample/logit_bias.py:60:        if allowed_token_ids:
+vllm/v1/worker/gpu/sample/logit_bias.py:61:            num_allowed_token_ids = len(allowed_token_ids)
+vllm/v1/worker/gpu/sample/logit_bias.py:62:            if num_allowed_token_ids > MAX_NUM_ALLOWED_TOKEN_IDS:
+vllm/v1/worker/gpu/sample/logit_bias.py:64:                    f"Too many allowed token IDs: {num_allowed_token_ids}. "
+vllm/v1/worker/gpu/sample/logit_bias.py:67:            self.num_allowed_token_ids.np[req_idx] = num_allowed_token_ids
+vllm/v1/worker/gpu/sample/logit_bias.py:68:            self.allowed_token_ids.stage_write(req_idx, 0, allowed_token_ids)
+vllm/v1/worker/gpu/sample/logit_bias.py:71:            self.num_allowed_token_ids.np[req_idx] = 0
