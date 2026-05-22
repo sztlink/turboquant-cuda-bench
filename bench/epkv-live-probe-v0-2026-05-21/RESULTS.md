@@ -199,10 +199,10 @@ applied_evidence_k: 8
 evidence hit avg: 25.00%
 ```
 
-The guard path was then moved from torch-side mask splitting into a Triton score-partition primitive:
+The guard path was then moved from torch-side mask splitting into a Triton score-partition primitive, and then from `torch.topk` into a per-head Triton selected-position kernel:
 
 ```txt
-reservation_backend: triton_score_split
+reservation_backend: triton_score_split_triton_topk
 evidence hit avg: 25.00%
 applied_evidence_k: 8
 ```
@@ -217,4 +217,4 @@ Artifacts:
 
 ## Next live step
 
-Replace the remaining `torch.topk` selection calls with a fused/custom selected-position primitive, then run boost vs reserved-selection across multiple records.
+Run boost vs reserved-selection across multiple records, then fuse score/split/top-k into fewer kernels.

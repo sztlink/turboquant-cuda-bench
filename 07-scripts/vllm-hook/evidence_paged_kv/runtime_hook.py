@@ -350,6 +350,46 @@ def _epkv_evidence_split_scores_kernel(
 
 
 @triton.jit
+def _epkv_topk_scores_kernel(
+    Scores_ptr,
+    Vals_ptr,
+    Pos_ptr,
+    M: tl.constexpr,
+    Hq: tl.constexpr,
+    KTOP: tl.constexpr,
+    BLOCK_M: tl.constexpr,
+):
+    hq = tl.program_id(0)
+    offs = tl.arange(0, BLOCK_M)
+    mask = offs < M
+    vals = tl.load(Scores_ptr + offs * Hq + hq, mask=mask, other=-float("inf"))
+    for kk in tl.static_range(0, KTOP):
+        max_val = tl.max(vals, axis=0)
+        max_pos = tl.min(tl.where(vals == max_val, offs, BLOCK_M), axis=0)
+        tl.store(Vals_ptr + kk * Hq + hq, max_val)
+        tl.store(Pos_ptr + kk * Hq + hq, max_pos)
+        vals = tl.where(offs == max_pos, -float("inf"), vals)
+
+
+def _triton_topk_scores(scores: torch.Tensor, k: int, *, M: int, Hq: int) -> tuple[torch.Tensor, torch.Tensor]:
+    vals = torch.empty((k, Hq), device=scores.device, dtype=scores.dtype)
+    pos = torch.empty((k, Hq), device=scores.device, dtype=torch.long)
+    block_m = triton.next_power_of_2(M)
+    _epkv_topk_scores_kernel[(Hq,)](
+        scores,
+        vals,
+        pos,
+        M=M,
+        Hq=Hq,
+        KTOP=k,
+        BLOCK_M=block_m,
+        num_warps=8,
+        num_stages=1,
+    )
+    return vals, pos
+
+
+@triton.jit
 def _epkv_value_kernel(
     KV_ptr,
     Block_table_ptr,
@@ -509,10 +549,10 @@ def _decode_phase2a(
                 num_warps=4,
                 num_stages=1,
             )
-            evidence_vals, evidence_pos = torch.topk(evidence_scores, m, dim=0)
+            evidence_vals, evidence_pos = _triton_topk_scores(evidence_scores, m, M=M, Hq=Hq)
             rest_k = K - m
             if rest_k > 0:
-                rest_vals, rest_pos = torch.topk(rest_scores, rest_k, dim=0)
+                rest_vals, rest_pos = _triton_topk_scores(rest_scores, rest_k, M=M, Hq=Hq)
                 vals = torch.cat([evidence_vals, rest_vals], dim=0)
                 pos = torch.cat([evidence_pos, rest_pos], dim=0)
             else:
@@ -521,11 +561,11 @@ def _decode_phase2a(
                 evidence_intervention["min_evidence_k"] = int(min_evidence_k)
                 evidence_intervention["applied_evidence_k"] = int(m)
                 evidence_intervention["mode"] = "evidence_guard_topk_reserved"
-                evidence_intervention["reservation_backend"] = "triton_score_split"
+                evidence_intervention["reservation_backend"] = "triton_score_split_triton_topk"
         else:
-            vals, pos = torch.topk(scores, K, dim=0)
+            vals, pos = _triton_topk_scores(scores, K, M=M, Hq=Hq)
     else:
-        vals, pos = torch.topk(scores, K, dim=0)
+        vals, pos = _triton_topk_scores(scores, K, M=M, Hq=Hq)
     weights = torch.softmax(vals, dim=0).contiguous()
     pos = pos.contiguous()
     selection_summary = _selection_summary(
