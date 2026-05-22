@@ -330,6 +330,26 @@ def _epkv_evidence_boost_scores_kernel(
 
 
 @triton.jit
+def _epkv_evidence_split_scores_kernel(
+    Scores_ptr,
+    Evidence_page_mask_ptr,
+    Evidence_scores_ptr,
+    Rest_scores_ptr,
+    M: tl.constexpr,
+    Hq: tl.constexpr,
+    BLOCK_SIZE: tl.constexpr,
+):
+    row = tl.program_id(0)
+    hq = tl.program_id(1)
+    page_idx = row // BLOCK_SIZE
+    is_evidence = tl.load(Evidence_page_mask_ptr + page_idx).to(tl.int32)
+    score = tl.load(Scores_ptr + row * Hq + hq)
+    neg_inf = -float("inf")
+    tl.store(Evidence_scores_ptr + row * Hq + hq, tl.where(is_evidence == 1, score, neg_inf))
+    tl.store(Rest_scores_ptr + row * Hq + hq, tl.where(is_evidence == 1, neg_inf, score))
+
+
+@triton.jit
 def _epkv_value_kernel(
     KV_ptr,
     Block_table_ptr,
@@ -469,17 +489,29 @@ def _decode_phase2a(
             }
     min_evidence_k = _int_env(_ENV_EVIDENCE_MIN_K, 0) if evidence_page_mask is not None else 0
     if min_evidence_k > 0 and evidence_page_mask is not None:
-        row_pages = torch.arange(M, device=query.device, dtype=torch.long) // block_size
-        row_is_evidence = evidence_page_mask[row_pages].to(torch.bool)
-        available_evidence = int(row_is_evidence.sum().item())
+        evidence_pages_for_count = _parse_page_set(evidence_spec, max_pages=(M + block_size - 1) // block_size)
+        available_evidence = sum(
+            max(0, min(M, (int(page) + 1) * block_size) - int(page) * block_size)
+            for page in evidence_pages_for_count
+        )
         m = max(0, min(int(min_evidence_k), K, available_evidence))
         if m > 0:
-            neg_inf = torch.tensor(float("-inf"), device=query.device, dtype=scores.dtype)
-            evidence_scores = scores.masked_fill(~row_is_evidence[:, None], neg_inf)
+            evidence_scores = torch.empty_like(scores)
+            rest_scores = torch.empty_like(scores)
+            _epkv_evidence_split_scores_kernel[(M, Hq)](
+                scores,
+                evidence_page_mask,
+                evidence_scores,
+                rest_scores,
+                M=M,
+                Hq=Hq,
+                BLOCK_SIZE=block_size,
+                num_warps=4,
+                num_stages=1,
+            )
             evidence_vals, evidence_pos = torch.topk(evidence_scores, m, dim=0)
             rest_k = K - m
             if rest_k > 0:
-                rest_scores = scores.masked_fill(row_is_evidence[:, None], neg_inf)
                 rest_vals, rest_pos = torch.topk(rest_scores, rest_k, dim=0)
                 vals = torch.cat([evidence_vals, rest_vals], dim=0)
                 pos = torch.cat([evidence_pos, rest_pos], dim=0)
@@ -489,6 +521,7 @@ def _decode_phase2a(
                 evidence_intervention["min_evidence_k"] = int(min_evidence_k)
                 evidence_intervention["applied_evidence_k"] = int(m)
                 evidence_intervention["mode"] = "evidence_guard_topk_reserved"
+                evidence_intervention["reservation_backend"] = "triton_score_split"
         else:
             vals, pos = torch.topk(scores, K, dim=0)
     else:

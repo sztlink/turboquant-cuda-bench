@@ -199,6 +199,14 @@ applied_evidence_k: 8
 evidence hit avg: 25.00%
 ```
 
+The guard path was then moved from torch-side mask splitting into a Triton score-partition primitive:
+
+```txt
+reservation_backend: triton_score_split
+evidence hit avg: 25.00%
+applied_evidence_k: 8
+```
+
 Artifacts:
 
 ```txt
@@ -209,4 +217,4 @@ Artifacts:
 
 ## Next live step
 
-Move `evidence_guard_topk_reserved` from torch-side concat into a tighter CUDA/Triton selection primitive and run it across multiple records.
+Replace the remaining `torch.topk` selection calls with a fused/custom selected-position primitive, then run boost vs reserved-selection across multiple records.

@@ -41,6 +41,7 @@ All dry-run rows preserve original TurboQuant output while changing selected-pos
 | 2 | 1 | 8 | 40.30% | 36.27% | 47.10% | 0/2 |
 | 4 | 1 | 8 | 64.73% | 55.69% | 70.31% | 0/2 |
 | guard_topk8 | 1 | 8 | 25.00% | 25.00% | 25.00% | 0/2 |
+| triton_split_guard_topk8 | 1 | 8 | 25.00% | 25.00% | 25.00% | 0/2 |
 
 The boost sweep changed evidence-page selection geometry monotonically:
 
@@ -79,7 +80,8 @@ Interpretation:
 The intervention changed real decode output path and selected KV geometry.
 It did not repair this answer.
 The reserved guard path also executed: `evidence_guard_topk_reserved` with `applied_evidence_k=8` produced exactly 25% evidence selection, proving the top-k reservation path works.
-The next kernel step should compare boost vs reservation across multiple records, then move reservation into a tighter CUDA/Triton selection primitive instead of torch-side concat.
+The torch-side mask split was then replaced by a Triton score-partition primitive: `reservation_backend=triton_score_split`. The live dry-run again produced exactly 25% evidence selection, confirming the CUDA/Triton split path is active.
+The next kernel step should compare boost vs reservation across multiple records, then replace remaining `torch.topk` calls with a fused/custom selected-position primitive.
 ```
 
 ## Service restoration
