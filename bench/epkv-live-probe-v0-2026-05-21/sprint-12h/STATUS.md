@@ -73,10 +73,30 @@ KV trace should nominate evidence/candidate tokens.
 LM-head/sampler policy must do the early steering.
 ```
 
-## Current next target
+## Evidence-derived candidate sweep
 
-Promote from gold/answer-token diagnostic to evidence-derived candidate extraction:
+Night runner completed 5-case sweep using terminal support object extraction.
+
+Key results:
 
 ```txt
-terminal support triple object -> candidate string -> token ids -> early decode bias
+adv2 candidate from evidence: Víctor Bó
+bias >=3: Armando Bo -> Víctor Bó
+```
+
+For natural verbose prompts, first token remains scaffold:
+
+```txt
+Based / The
+```
+
+so answer-token bias must be step-aware, not first-token global.
+
+## Current next target
+
+Generated-token-state-aware bias:
+
+```txt
+answer-only prompt -> first-token candidate bias
+verbose prompt -> wait for entity slot or suppress scaffold first
 ```

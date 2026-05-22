@@ -380,10 +380,37 @@ Sampler/LM-head policy must do the early steering.
 
 The combined KV+decode-policy run was non-dry and restored cleanly.
 
-## Next live step
+## Evidence-derived candidate extraction
 
-Promote from gold-token diagnostic to evidence-derived candidate extraction:
+The decode-policy harness now supports:
 
 ```txt
-terminal support triple object -> candidate string -> token ids -> small early decode bias
+--candidate-source terminal-object
+```
+
+This extracts the object of the terminal support triple without using the gold label.
+
+Night sweep:
+
+```txt
+adv2 evidence-derived candidate: Víctor Bó
+bias >=3: Armando Bo -> Víctor Bó
+```
+
+Natural verbose prompts exposed the next boundary:
+
+```txt
+multi1/multi2 first token: Based
+multi3 first token: The
+```
+
+So first-token answer bias works for answer-only prompts but not for verbose prompts where the first token is discourse scaffolding.
+
+## Next live step
+
+Implement generated-token-state-aware bias:
+
+```txt
+answer-only prompt -> first-token candidate bias
+verbose prompt -> delay candidate bias until entity slot or suppress scaffold first
 ```

@@ -41,16 +41,40 @@ def request_json(url: str, payload: dict[str, Any], timeout: int) -> dict[str, A
         return {"error": {"type": "http_error", "status": e.code, "body": body}}
 
 
-def candidate_from_span_map(span_map: dict[str, Any]) -> str:
+def terminal_object_candidate(span_map: dict[str, Any]) -> str | None:
+    spans = span_map.get("spans") or []
+    if not spans:
+        return None
+    text = str(spans[-1].get("text") or "")
+    if "-->" in text:
+        return norm_text(text.rsplit("-->", 1)[1].rstrip("."))
+    m = re.search(r"(?:answer|object|target)\s*[:=]\s*([^.;\n]+)", text, re.I)
+    if m:
+        return norm_text(m.group(1))
+    return None
+
+
+def candidate_from_span_map(span_map: dict[str, Any], *, source: str) -> str:
+    if source == "terminal-object":
+        candidate = terminal_object_candidate(span_map)
+        if candidate:
+            return candidate
+        raise SystemExit("could not derive terminal-object candidate; pass --candidate")
+    if source == "answer":
+        if span_map.get("answer_span", {}).get("text"):
+            return str(span_map["answer_span"]["text"])
+        raise SystemExit("could not derive answer-span candidate; pass --candidate")
+    if source == "gold":
+        if span_map.get("gold_answer"):
+            return str(span_map["gold_answer"])
+        raise SystemExit("could not derive gold candidate; pass --candidate")
+    candidate = terminal_object_candidate(span_map)
+    if candidate:
+        return candidate
     if span_map.get("answer_span", {}).get("text"):
         return str(span_map["answer_span"]["text"])
     if span_map.get("gold_answer"):
         return str(span_map["gold_answer"])
-    spans = span_map.get("spans") or []
-    if spans:
-        text = str(spans[-1].get("text") or "")
-        if "-->" in text:
-            return norm_text(text.rsplit("-->", 1)[1].rstrip("."))
     raise SystemExit("could not derive candidate; pass --candidate")
 
 
@@ -94,6 +118,7 @@ def main() -> None:
     p.add_argument("--model", default="local-vllm")
     p.add_argument("--tokenizer", default="Qwen/Qwen2.5-7B-Instruct")
     p.add_argument("--candidate", default="")
+    p.add_argument("--candidate-source", choices=["auto", "terminal-object", "answer", "gold"], default="auto")
     p.add_argument("--bias", action="append", type=float, default=[0, 1, 2, 3, 4, 6])
     p.add_argument("--max-tokens", type=int, default=12)
     p.add_argument("--top-logprobs", type=int, default=10)
@@ -102,7 +127,7 @@ def main() -> None:
 
     span_map = json.loads(Path(args.span_map).read_text(encoding="utf-8"))
     prompt = span_map["messages"][0]["content"]
-    candidate = args.candidate or candidate_from_span_map(span_map)
+    candidate = args.candidate or candidate_from_span_map(span_map, source=args.candidate_source)
     tok = AutoTokenizer.from_pretrained(args.tokenizer, trust_remote_code=True)
     candidate_ids = first_token_bias_ids(tok, candidate)
     candidate_token_strings = {tok.decode([i]) for i in candidate_ids}
@@ -138,6 +163,7 @@ def main() -> None:
         "qid": span_map.get("qid"),
         "gold_answer": span_map.get("gold_answer"),
         "candidate": candidate,
+        "candidate_source": args.candidate_source,
         "candidate_ids": candidate_ids,
         "candidate_token_strings": sorted(candidate_token_strings),
         "endpoint": args.endpoint,

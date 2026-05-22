@@ -56,15 +56,41 @@ evidence-derived candidate tokens must influence the early decode policy.
 
 KV tracing still matters because it tells us which evidence span/candidate should be promoted. But the actual steering needs to occur closer to the sampler/LM head.
 
-## Next design
+## Evidence-derived policy follow-up
 
-Implement candidate extraction from evidence spans without gold labels:
+The night runner promoted candidate extraction from gold labels to terminal support triples:
 
 ```txt
-terminal support triple object -> candidate string -> token ids -> small first-token bias
+terminal support triple object -> candidate string -> token ids -> bias sweep
 ```
 
-Then make it conditional on evidence/KV trace rather than hardcoded gold answer.
+Result summary:
+
+| case | evidence-derived candidate | useful effect |
+|---|---|---|
+| adv1 | `English` | already correct |
+| adv2 | `Víctor Bó` | bias >=3 flips `Armando Bo` -> `Víctor Bó` |
+| multi1 | `Johanna Magdalena of Saxe-Altenburg` | first token remains scaffold `Based`; answer bias does not help answer-not-first prompt |
+| multi2 | `English` | first token remains scaffold `Based` |
+| multi3 | `Víctor Bó` | first token remains scaffold `The`, but answer object appears later |
+
+This separates two regimes:
+
+```txt
+answer-only prompts: evidence-derived first-token bias is effective.
+verbose/scaffold prompts: first decision is discourse style, so answer-token bias must be delayed or paired with scaffold suppression.
+```
+
+## Next design
+
+Implement step-aware policy:
+
+```txt
+if answer-only prompt -> first-token candidate bias
+if verbose prompt -> wait until after scaffold / apply candidate bias at entity slot
+```
+
+The next runtime target is generated-token-state-aware bias, not a blanket first-token bias.
 
 ## Service restoration
 

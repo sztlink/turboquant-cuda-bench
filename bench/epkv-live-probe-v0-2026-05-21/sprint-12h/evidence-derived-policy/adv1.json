@@ -1,0 +1,2322 @@
+{
+  "schema": "epkv.decode_policy_harness.v0",
+  "span_map": "bench/epkv-live-probe-v0-2026-05-21/adversarial-layout/span-map-1.json",
+  "qid": "008af56e0bdc11eba7f7acde48001122",
+  "gold_answer": "English",
+  "candidate": "English",
+  "candidate_source": "terminal-object",
+  "candidate_ids": [
+    22574,
+    6364
+  ],
+  "candidate_token_strings": [
+    " English",
+    "E",
+    "Engl",
+    "English"
+  ],
+  "endpoint": "http://192.168.15.133:11435/v1/chat/completions",
+  "rows": [
+    {
+      "bias": 0,
+      "candidate_ids": [
+        22574,
+        6364
+      ],
+      "logit_bias": null,
+      "elapsed_sec": 0.44077110290527344,
+      "summary": {
+        "content": "English",
+        "first_token": "English",
+        "first_logprob": -0.0013981815427541733,
+        "first_top_logprobs": [
+          {
+            "token": "English",
+            "logprob": -0.0013981815427541733
+          },
+          {
+            "token": "England",
+            "logprob": -6.626398086547852
+          },
+          {
+            "token": "E",
+            "logprob": -9.751398086547852
+          },
+          {
+            "token": " English",
+            "logprob": -11.251398086547852
+          },
+          {
+            "token": " England",
+            "logprob": -14.376398086547852
+          },
+          {
+            "token": "英语",
+            "logprob": -15.626398086547852
+          },
+          {
+            "token": "英",
+            "logprob": -16.00139808654785
+          },
+          {
+            "token": "Scotland",
+            "logprob": -16.00139808654785
+          },
+          {
+            "token": "english",
+            "logprob": -16.87639808654785
+          },
+          {
+            "token": "Marg",
+            "logprob": -16.87639808654785
+          }
+        ],
+        "candidate_seen_in_first_top_logprobs": [
+          {
+            "token": "English",
+            "logprob": -0.0013981815427541733
+          },
+          {
+            "token": "E",
+            "logprob": -9.751398086547852
+          },
+          {
+            "token": " English",
+            "logprob": -11.251398086547852
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-a3589e5a1bc14a7e",
+        "object": "chat.completion",
+        "created": 1779418114,
+        "model": "local-vllm",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "English",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": {
+              "content": [
+                {
+                  "token": "English",
+                  "logprob": -0.0013981815427541733,
+                  "bytes": [
+                    69,
+                    110,
+                    103,
+                    108,
+                    105,
+                    115,
+                    104
+                  ],
+                  "top_logprobs": [
+                    {
+                      "token": "English",
+                      "logprob": -0.0013981815427541733,
+                      "bytes": [
+                        69,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": "England",
+                      "logprob": -6.626398086547852,
+                      "bytes": [
+                        69,
+                        110,
+                        103,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "E",
+                      "logprob": -9.751398086547852,
+                      "bytes": [
+                        69
+                      ]
+                    },
+                    {
+                      "token": " English",
+                      "logprob": -11.251398086547852,
+                      "bytes": [
+                        32,
+                        69,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": " England",
+                      "logprob": -14.376398086547852,
+                      "bytes": [
+                        32,
+                        69,
+                        110,
+                        103,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "英语",
+                      "logprob": -15.626398086547852,
+                      "bytes": [
+                        232,
+                        139,
+                        177,
+                        232,
+                        175,
+                        173
+                      ]
+                    },
+                    {
+                      "token": "英",
+                      "logprob": -16.00139808654785,
+                      "bytes": [
+                        232,
+                        139,
+                        177
+                      ]
+                    },
+                    {
+                      "token": "Scotland",
+                      "logprob": -16.00139808654785,
+                      "bytes": [
+                        83,
+                        99,
+                        111,
+                        116,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "english",
+                      "logprob": -16.87639808654785,
+                      "bytes": [
+                        101,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": "Marg",
+                      "logprob": -16.87639808654785,
+                      "bytes": [
+                        77,
+                        97,
+                        114,
+                        103
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "token": "<|im_end|>",
+                  "logprob": -0.0015144795179367065,
+                  "bytes": [
+                    60,
+                    124,
+                    105,
+                    109,
+                    95,
+                    101,
+                    110,
+                    100,
+                    124,
+                    62
+                  ],
+                  "top_logprobs": [
+                    {
+                      "token": "<|im_end|>",
+                      "logprob": -0.0015144795179367065,
+                      "bytes": [
+                        60,
+                        124,
+                        105,
+                        109,
+                        95,
+                        101,
+                        110,
+                        100,
+                        124,
+                        62
+                      ]
+                    },
+                    {
+                      "token": ".",
+                      "logprob": -6.501514434814453,
+                      "bytes": [
+                        46
+                      ]
+                    },
+                    {
+                      "token": "。",
+                      "logprob": -13.626514434814453,
+                      "bytes": [
+                        227,
+                        128,
+                        130
+                      ]
+                    },
+                    {
+                      "token": "<|im_start|>",
+                      "logprob": -14.126514434814453,
+                      "bytes": [
+                        60,
+                        124,
+                        105,
+                        109,
+                        95,
+                        115,
+                        116,
+                        97,
+                        114,
+                        116,
+                        124,
+                        62
+                      ]
+                    },
+                    {
+                      "token": "<tool_call>",
+                      "logprob": -14.501514434814453,
+                      "bytes": [
+                        60,
+                        116,
+                        111,
+                        111,
+                        108,
+                        95,
+                        99,
+                        97,
+                        108,
+                        108,
+                        62
+                      ]
+                    },
+                    {
+                      "token": "．",
+                      "logprob": -15.314014434814453,
+                      "bytes": [
+                        239,
+                        188,
+                        142
+                      ]
+                    },
+                    {
+                      "token": "clusão",
+                      "logprob": -15.939014434814453,
+                      "bytes": [
+                        99,
+                        108,
+                        117,
+                        115,
+                        195,
+                        163,
+                        111
+                      ]
+                    },
+                    {
+                      "token": "eci",
+                      "logprob": -16.001514434814453,
+                      "bytes": [
+                        101,
+                        99,
+                        105
+                      ]
+                    },
+                    {
+                      "token": "ategor",
+                      "logprob": -16.564014434814453,
+                      "bytes": [
+                        97,
+                        116,
+                        101,
+                        103,
+                        111,
+                        114
+                      ]
+                    },
+                    {
+                      "token": "iska",
+                      "logprob": -16.626514434814453,
+                      "bytes": [
+                        105,
+                        115,
+                        107,
+                        97
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+        "usage": {
+          "prompt_tokens": 155,
+          "total_tokens": 157,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      }
+    },
+    {
+      "bias": 1,
+      "candidate_ids": [
+        22574,
+        6364
+      ],
+      "logit_bias": {
+        "22574": 1,
+        "6364": 1
+      },
+      "elapsed_sec": 0.05507707595825195,
+      "summary": {
+        "content": "English",
+        "first_token": "English",
+        "first_logprob": -0.0015351902693510056,
+        "first_top_logprobs": [
+          {
+            "token": "English",
+            "logprob": -0.0015351902693510056
+          },
+          {
+            "token": "England",
+            "logprob": -6.501535415649414
+          },
+          {
+            "token": "E",
+            "logprob": -11.001535415649414
+          },
+          {
+            "token": " English",
+            "logprob": -11.126535415649414
+          },
+          {
+            "token": " England",
+            "logprob": -14.001535415649414
+          },
+          {
+            "token": "Scotland",
+            "logprob": -15.376535415649414
+          },
+          {
+            "token": "英语",
+            "logprob": -15.751535415649414
+          },
+          {
+            "token": "英",
+            "logprob": -16.001535415649414
+          },
+          {
+            "token": "Marg",
+            "logprob": -16.626535415649414
+          },
+          {
+            "token": "english",
+            "logprob": -17.126535415649414
+          }
+        ],
+        "candidate_seen_in_first_top_logprobs": [
+          {
+            "token": "English",
+            "logprob": -0.0015351902693510056
+          },
+          {
+            "token": "E",
+            "logprob": -11.001535415649414
+          },
+          {
+            "token": " English",
+            "logprob": -11.126535415649414
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-ba4e381c32f41a6c",
+        "object": "chat.completion",
+        "created": 1779418115,
+        "model": "local-vllm",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "English",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": {
+              "content": [
+                {
+                  "token": "English",
+                  "logprob": -0.0015351902693510056,
+                  "bytes": [
+                    69,
+                    110,
+                    103,
+                    108,
+                    105,
+                    115,
+                    104
+                  ],
+                  "top_logprobs": [
+                    {
+                      "token": "English",
+                      "logprob": -0.0015351902693510056,
+                      "bytes": [
+                        69,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": "England",
+                      "logprob": -6.501535415649414,
+                      "bytes": [
+                        69,
+                        110,
+                        103,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "E",
+                      "logprob": -11.001535415649414,
+                      "bytes": [
+                        69
+                      ]
+                    },
+                    {
+                      "token": " English",
+                      "logprob": -11.126535415649414,
+                      "bytes": [
+                        32,
+                        69,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": " England",
+                      "logprob": -14.001535415649414,
+                      "bytes": [
+                        32,
+                        69,
+                        110,
+                        103,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "Scotland",
+                      "logprob": -15.376535415649414,
+                      "bytes": [
+                        83,
+                        99,
+                        111,
+                        116,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "英语",
+                      "logprob": -15.751535415649414,
+                      "bytes": [
+                        232,
+                        139,
+                        177,
+                        232,
+                        175,
+                        173
+                      ]
+                    },
+                    {
+                      "token": "英",
+                      "logprob": -16.001535415649414,
+                      "bytes": [
+                        232,
+                        139,
+                        177
+                      ]
+                    },
+                    {
+                      "token": "Marg",
+                      "logprob": -16.626535415649414,
+                      "bytes": [
+                        77,
+                        97,
+                        114,
+                        103
+                      ]
+                    },
+                    {
+                      "token": "english",
+                      "logprob": -17.126535415649414,
+                      "bytes": [
+                        101,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "token": "<|im_end|>",
+                  "logprob": -0.006731926463544369,
+                  "bytes": [
+                    60,
+                    124,
+                    105,
+                    109,
+                    95,
+                    101,
+                    110,
+                    100,
+                    124,
+                    62
+                  ],
+                  "top_logprobs": [
+                    {
+                      "token": "<|im_end|>",
+                      "logprob": -0.006731926463544369,
+                      "bytes": [
+                        60,
+                        124,
+                        105,
+                        109,
+                        95,
+                        101,
+                        110,
+                        100,
+                        124,
+                        62
+                      ]
+                    },
+                    {
+                      "token": ".",
+                      "logprob": -5.006731986999512,
+                      "bytes": [
+                        46
+                      ]
+                    },
+                    {
+                      "token": "。",
+                      "logprob": -12.819231986999512,
+                      "bytes": [
+                        227,
+                        128,
+                        130
+                      ]
+                    },
+                    {
+                      "token": "<|im_start|>",
+                      "logprob": -13.819231986999512,
+                      "bytes": [
+                        60,
+                        124,
+                        105,
+                        109,
+                        95,
+                        115,
+                        116,
+                        97,
+                        114,
+                        116,
+                        124,
+                        62
+                      ]
+                    },
+                    {
+                      "token": "<tool_call>",
+                      "logprob": -14.381731986999512,
+                      "bytes": [
+                        60,
+                        116,
+                        111,
+                        111,
+                        108,
+                        95,
+                        99,
+                        97,
+                        108,
+                        108,
+                        62
+                      ]
+                    },
+                    {
+                      "token": "．",
+                      "logprob": -14.506731986999512,
+                      "bytes": [
+                        239,
+                        188,
+                        142
+                      ]
+                    },
+                    {
+                      "token": "eci",
+                      "logprob": -15.694231986999512,
+                      "bytes": [
+                        101,
+                        99,
+                        105
+                      ]
+                    },
+                    {
+                      "token": "clusão",
+                      "logprob": -16.006731033325195,
+                      "bytes": [
+                        99,
+                        108,
+                        117,
+                        115,
+                        195,
+                        163,
+                        111
+                      ]
+                    },
+                    {
+                      "token": " pestic",
+                      "logprob": -16.069231033325195,
+                      "bytes": [
+                        32,
+                        112,
+                        101,
+                        115,
+                        116,
+                        105,
+                        99
+                      ]
+                    },
+                    {
+                      "token": "edm",
+                      "logprob": -16.256731033325195,
+                      "bytes": [
+                        101,
+                        100,
+                        109
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+        "usage": {
+          "prompt_tokens": 155,
+          "total_tokens": 157,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      }
+    },
+    {
+      "bias": 2,
+      "candidate_ids": [
+        22574,
+        6364
+      ],
+      "logit_bias": {
+        "22574": 2,
+        "6364": 2
+      },
+      "elapsed_sec": 0.056525468826293945,
+      "summary": {
+        "content": "English",
+        "first_token": "English",
+        "first_logprob": -0.0015351902693510056,
+        "first_top_logprobs": [
+          {
+            "token": "English",
+            "logprob": -0.0015351902693510056
+          },
+          {
+            "token": "England",
+            "logprob": -6.501535415649414
+          },
+          {
+            "token": "E",
+            "logprob": -11.001535415649414
+          },
+          {
+            "token": " English",
+            "logprob": -11.126535415649414
+          },
+          {
+            "token": " England",
+            "logprob": -14.001535415649414
+          },
+          {
+            "token": "Scotland",
+            "logprob": -15.376535415649414
+          },
+          {
+            "token": "英语",
+            "logprob": -15.751535415649414
+          },
+          {
+            "token": "英",
+            "logprob": -16.001535415649414
+          },
+          {
+            "token": "Marg",
+            "logprob": -16.626535415649414
+          },
+          {
+            "token": "english",
+            "logprob": -17.126535415649414
+          }
+        ],
+        "candidate_seen_in_first_top_logprobs": [
+          {
+            "token": "English",
+            "logprob": -0.0015351902693510056
+          },
+          {
+            "token": "E",
+            "logprob": -11.001535415649414
+          },
+          {
+            "token": " English",
+            "logprob": -11.126535415649414
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-a9568af82953df61",
+        "object": "chat.completion",
+        "created": 1779418115,
+        "model": "local-vllm",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "English",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": {
+              "content": [
+                {
+                  "token": "English",
+                  "logprob": -0.0015351902693510056,
+                  "bytes": [
+                    69,
+                    110,
+                    103,
+                    108,
+                    105,
+                    115,
+                    104
+                  ],
+                  "top_logprobs": [
+                    {
+                      "token": "English",
+                      "logprob": -0.0015351902693510056,
+                      "bytes": [
+                        69,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": "England",
+                      "logprob": -6.501535415649414,
+                      "bytes": [
+                        69,
+                        110,
+                        103,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "E",
+                      "logprob": -11.001535415649414,
+                      "bytes": [
+                        69
+                      ]
+                    },
+                    {
+                      "token": " English",
+                      "logprob": -11.126535415649414,
+                      "bytes": [
+                        32,
+                        69,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": " England",
+                      "logprob": -14.001535415649414,
+                      "bytes": [
+                        32,
+                        69,
+                        110,
+                        103,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "Scotland",
+                      "logprob": -15.376535415649414,
+                      "bytes": [
+                        83,
+                        99,
+                        111,
+                        116,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "英语",
+                      "logprob": -15.751535415649414,
+                      "bytes": [
+                        232,
+                        139,
+                        177,
+                        232,
+                        175,
+                        173
+                      ]
+                    },
+                    {
+                      "token": "英",
+                      "logprob": -16.001535415649414,
+                      "bytes": [
+                        232,
+                        139,
+                        177
+                      ]
+                    },
+                    {
+                      "token": "Marg",
+                      "logprob": -16.626535415649414,
+                      "bytes": [
+                        77,
+                        97,
+                        114,
+                        103
+                      ]
+                    },
+                    {
+                      "token": "english",
+                      "logprob": -17.126535415649414,
+                      "bytes": [
+                        101,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "token": "<|im_end|>",
+                  "logprob": -0.006731926463544369,
+                  "bytes": [
+                    60,
+                    124,
+                    105,
+                    109,
+                    95,
+                    101,
+                    110,
+                    100,
+                    124,
+                    62
+                  ],
+                  "top_logprobs": [
+                    {
+                      "token": "<|im_end|>",
+                      "logprob": -0.006731926463544369,
+                      "bytes": [
+                        60,
+                        124,
+                        105,
+                        109,
+                        95,
+                        101,
+                        110,
+                        100,
+                        124,
+                        62
+                      ]
+                    },
+                    {
+                      "token": ".",
+                      "logprob": -5.006731986999512,
+                      "bytes": [
+                        46
+                      ]
+                    },
+                    {
+                      "token": "。",
+                      "logprob": -12.819231986999512,
+                      "bytes": [
+                        227,
+                        128,
+                        130
+                      ]
+                    },
+                    {
+                      "token": "<|im_start|>",
+                      "logprob": -13.819231986999512,
+                      "bytes": [
+                        60,
+                        124,
+                        105,
+                        109,
+                        95,
+                        115,
+                        116,
+                        97,
+                        114,
+                        116,
+                        124,
+                        62
+                      ]
+                    },
+                    {
+                      "token": "<tool_call>",
+                      "logprob": -14.381731986999512,
+                      "bytes": [
+                        60,
+                        116,
+                        111,
+                        111,
+                        108,
+                        95,
+                        99,
+                        97,
+                        108,
+                        108,
+                        62
+                      ]
+                    },
+                    {
+                      "token": "．",
+                      "logprob": -14.506731986999512,
+                      "bytes": [
+                        239,
+                        188,
+                        142
+                      ]
+                    },
+                    {
+                      "token": "eci",
+                      "logprob": -15.694231986999512,
+                      "bytes": [
+                        101,
+                        99,
+                        105
+                      ]
+                    },
+                    {
+                      "token": "clusão",
+                      "logprob": -16.006731033325195,
+                      "bytes": [
+                        99,
+                        108,
+                        117,
+                        115,
+                        195,
+                        163,
+                        111
+                      ]
+                    },
+                    {
+                      "token": " pestic",
+                      "logprob": -16.069231033325195,
+                      "bytes": [
+                        32,
+                        112,
+                        101,
+                        115,
+                        116,
+                        105,
+                        99
+                      ]
+                    },
+                    {
+                      "token": "edm",
+                      "logprob": -16.256731033325195,
+                      "bytes": [
+                        101,
+                        100,
+                        109
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+        "usage": {
+          "prompt_tokens": 155,
+          "total_tokens": 157,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      }
+    },
+    {
+      "bias": 3,
+      "candidate_ids": [
+        22574,
+        6364
+      ],
+      "logit_bias": {
+        "22574": 3,
+        "6364": 3
+      },
+      "elapsed_sec": 0.05636239051818848,
+      "summary": {
+        "content": "English",
+        "first_token": "English",
+        "first_logprob": -0.0015351902693510056,
+        "first_top_logprobs": [
+          {
+            "token": "English",
+            "logprob": -0.0015351902693510056
+          },
+          {
+            "token": "England",
+            "logprob": -6.501535415649414
+          },
+          {
+            "token": "E",
+            "logprob": -11.001535415649414
+          },
+          {
+            "token": " English",
+            "logprob": -11.126535415649414
+          },
+          {
+            "token": " England",
+            "logprob": -14.001535415649414
+          },
+          {
+            "token": "Scotland",
+            "logprob": -15.376535415649414
+          },
+          {
+            "token": "英语",
+            "logprob": -15.751535415649414
+          },
+          {
+            "token": "英",
+            "logprob": -16.001535415649414
+          },
+          {
+            "token": "Marg",
+            "logprob": -16.626535415649414
+          },
+          {
+            "token": "english",
+            "logprob": -17.126535415649414
+          }
+        ],
+        "candidate_seen_in_first_top_logprobs": [
+          {
+            "token": "English",
+            "logprob": -0.0015351902693510056
+          },
+          {
+            "token": "E",
+            "logprob": -11.001535415649414
+          },
+          {
+            "token": " English",
+            "logprob": -11.126535415649414
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-8d50bc5639478b21",
+        "object": "chat.completion",
+        "created": 1779418115,
+        "model": "local-vllm",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "English",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": {
+              "content": [
+                {
+                  "token": "English",
+                  "logprob": -0.0015351902693510056,
+                  "bytes": [
+                    69,
+                    110,
+                    103,
+                    108,
+                    105,
+                    115,
+                    104
+                  ],
+                  "top_logprobs": [
+                    {
+                      "token": "English",
+                      "logprob": -0.0015351902693510056,
+                      "bytes": [
+                        69,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": "England",
+                      "logprob": -6.501535415649414,
+                      "bytes": [
+                        69,
+                        110,
+                        103,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "E",
+                      "logprob": -11.001535415649414,
+                      "bytes": [
+                        69
+                      ]
+                    },
+                    {
+                      "token": " English",
+                      "logprob": -11.126535415649414,
+                      "bytes": [
+                        32,
+                        69,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": " England",
+                      "logprob": -14.001535415649414,
+                      "bytes": [
+                        32,
+                        69,
+                        110,
+                        103,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "Scotland",
+                      "logprob": -15.376535415649414,
+                      "bytes": [
+                        83,
+                        99,
+                        111,
+                        116,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "英语",
+                      "logprob": -15.751535415649414,
+                      "bytes": [
+                        232,
+                        139,
+                        177,
+                        232,
+                        175,
+                        173
+                      ]
+                    },
+                    {
+                      "token": "英",
+                      "logprob": -16.001535415649414,
+                      "bytes": [
+                        232,
+                        139,
+                        177
+                      ]
+                    },
+                    {
+                      "token": "Marg",
+                      "logprob": -16.626535415649414,
+                      "bytes": [
+                        77,
+                        97,
+                        114,
+                        103
+                      ]
+                    },
+                    {
+                      "token": "english",
+                      "logprob": -17.126535415649414,
+                      "bytes": [
+                        101,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "token": "<|im_end|>",
+                  "logprob": -0.006731926463544369,
+                  "bytes": [
+                    60,
+                    124,
+                    105,
+                    109,
+                    95,
+                    101,
+                    110,
+                    100,
+                    124,
+                    62
+                  ],
+                  "top_logprobs": [
+                    {
+                      "token": "<|im_end|>",
+                      "logprob": -0.006731926463544369,
+                      "bytes": [
+                        60,
+                        124,
+                        105,
+                        109,
+                        95,
+                        101,
+                        110,
+                        100,
+                        124,
+                        62
+                      ]
+                    },
+                    {
+                      "token": ".",
+                      "logprob": -5.006731986999512,
+                      "bytes": [
+                        46
+                      ]
+                    },
+                    {
+                      "token": "。",
+                      "logprob": -12.819231986999512,
+                      "bytes": [
+                        227,
+                        128,
+                        130
+                      ]
+                    },
+                    {
+                      "token": "<|im_start|>",
+                      "logprob": -13.819231986999512,
+                      "bytes": [
+                        60,
+                        124,
+                        105,
+                        109,
+                        95,
+                        115,
+                        116,
+                        97,
+                        114,
+                        116,
+                        124,
+                        62
+                      ]
+                    },
+                    {
+                      "token": "<tool_call>",
+                      "logprob": -14.381731986999512,
+                      "bytes": [
+                        60,
+                        116,
+                        111,
+                        111,
+                        108,
+                        95,
+                        99,
+                        97,
+                        108,
+                        108,
+                        62
+                      ]
+                    },
+                    {
+                      "token": "．",
+                      "logprob": -14.506731986999512,
+                      "bytes": [
+                        239,
+                        188,
+                        142
+                      ]
+                    },
+                    {
+                      "token": "eci",
+                      "logprob": -15.694231986999512,
+                      "bytes": [
+                        101,
+                        99,
+                        105
+                      ]
+                    },
+                    {
+                      "token": "clusão",
+                      "logprob": -16.006731033325195,
+                      "bytes": [
+                        99,
+                        108,
+                        117,
+                        115,
+                        195,
+                        163,
+                        111
+                      ]
+                    },
+                    {
+                      "token": " pestic",
+                      "logprob": -16.069231033325195,
+                      "bytes": [
+                        32,
+                        112,
+                        101,
+                        115,
+                        116,
+                        105,
+                        99
+                      ]
+                    },
+                    {
+                      "token": "edm",
+                      "logprob": -16.256731033325195,
+                      "bytes": [
+                        101,
+                        100,
+                        109
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+        "usage": {
+          "prompt_tokens": 155,
+          "total_tokens": 157,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      }
+    },
+    {
+      "bias": 4,
+      "candidate_ids": [
+        22574,
+        6364
+      ],
+      "logit_bias": {
+        "22574": 4,
+        "6364": 4
+      },
+      "elapsed_sec": 0.05641746520996094,
+      "summary": {
+        "content": "English",
+        "first_token": "English",
+        "first_logprob": -0.0015351902693510056,
+        "first_top_logprobs": [
+          {
+            "token": "English",
+            "logprob": -0.0015351902693510056
+          },
+          {
+            "token": "England",
+            "logprob": -6.501535415649414
+          },
+          {
+            "token": "E",
+            "logprob": -11.001535415649414
+          },
+          {
+            "token": " English",
+            "logprob": -11.126535415649414
+          },
+          {
+            "token": " England",
+            "logprob": -14.001535415649414
+          },
+          {
+            "token": "Scotland",
+            "logprob": -15.376535415649414
+          },
+          {
+            "token": "英语",
+            "logprob": -15.751535415649414
+          },
+          {
+            "token": "英",
+            "logprob": -16.001535415649414
+          },
+          {
+            "token": "Marg",
+            "logprob": -16.626535415649414
+          },
+          {
+            "token": "english",
+            "logprob": -17.126535415649414
+          }
+        ],
+        "candidate_seen_in_first_top_logprobs": [
+          {
+            "token": "English",
+            "logprob": -0.0015351902693510056
+          },
+          {
+            "token": "E",
+            "logprob": -11.001535415649414
+          },
+          {
+            "token": " English",
+            "logprob": -11.126535415649414
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-879f52d37aa52029",
+        "object": "chat.completion",
+        "created": 1779418115,
+        "model": "local-vllm",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "English",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": {
+              "content": [
+                {
+                  "token": "English",
+                  "logprob": -0.0015351902693510056,
+                  "bytes": [
+                    69,
+                    110,
+                    103,
+                    108,
+                    105,
+                    115,
+                    104
+                  ],
+                  "top_logprobs": [
+                    {
+                      "token": "English",
+                      "logprob": -0.0015351902693510056,
+                      "bytes": [
+                        69,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": "England",
+                      "logprob": -6.501535415649414,
+                      "bytes": [
+                        69,
+                        110,
+                        103,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "E",
+                      "logprob": -11.001535415649414,
+                      "bytes": [
+                        69
+                      ]
+                    },
+                    {
+                      "token": " English",
+                      "logprob": -11.126535415649414,
+                      "bytes": [
+                        32,
+                        69,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": " England",
+                      "logprob": -14.001535415649414,
+                      "bytes": [
+                        32,
+                        69,
+                        110,
+                        103,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "Scotland",
+                      "logprob": -15.376535415649414,
+                      "bytes": [
+                        83,
+                        99,
+                        111,
+                        116,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "英语",
+                      "logprob": -15.751535415649414,
+                      "bytes": [
+                        232,
+                        139,
+                        177,
+                        232,
+                        175,
+                        173
+                      ]
+                    },
+                    {
+                      "token": "英",
+                      "logprob": -16.001535415649414,
+                      "bytes": [
+                        232,
+                        139,
+                        177
+                      ]
+                    },
+                    {
+                      "token": "Marg",
+                      "logprob": -16.626535415649414,
+                      "bytes": [
+                        77,
+                        97,
+                        114,
+                        103
+                      ]
+                    },
+                    {
+                      "token": "english",
+                      "logprob": -17.126535415649414,
+                      "bytes": [
+                        101,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "token": "<|im_end|>",
+                  "logprob": -0.006731926463544369,
+                  "bytes": [
+                    60,
+                    124,
+                    105,
+                    109,
+                    95,
+                    101,
+                    110,
+                    100,
+                    124,
+                    62
+                  ],
+                  "top_logprobs": [
+                    {
+                      "token": "<|im_end|>",
+                      "logprob": -0.006731926463544369,
+                      "bytes": [
+                        60,
+                        124,
+                        105,
+                        109,
+                        95,
+                        101,
+                        110,
+                        100,
+                        124,
+                        62
+                      ]
+                    },
+                    {
+                      "token": ".",
+                      "logprob": -5.006731986999512,
+                      "bytes": [
+                        46
+                      ]
+                    },
+                    {
+                      "token": "。",
+                      "logprob": -12.819231986999512,
+                      "bytes": [
+                        227,
+                        128,
+                        130
+                      ]
+                    },
+                    {
+                      "token": "<|im_start|>",
+                      "logprob": -13.819231986999512,
+                      "bytes": [
+                        60,
+                        124,
+                        105,
+                        109,
+                        95,
+                        115,
+                        116,
+                        97,
+                        114,
+                        116,
+                        124,
+                        62
+                      ]
+                    },
+                    {
+                      "token": "<tool_call>",
+                      "logprob": -14.381731986999512,
+                      "bytes": [
+                        60,
+                        116,
+                        111,
+                        111,
+                        108,
+                        95,
+                        99,
+                        97,
+                        108,
+                        108,
+                        62
+                      ]
+                    },
+                    {
+                      "token": "．",
+                      "logprob": -14.506731986999512,
+                      "bytes": [
+                        239,
+                        188,
+                        142
+                      ]
+                    },
+                    {
+                      "token": "eci",
+                      "logprob": -15.694231986999512,
+                      "bytes": [
+                        101,
+                        99,
+                        105
+                      ]
+                    },
+                    {
+                      "token": "clusão",
+                      "logprob": -16.006731033325195,
+                      "bytes": [
+                        99,
+                        108,
+                        117,
+                        115,
+                        195,
+                        163,
+                        111
+                      ]
+                    },
+                    {
+                      "token": " pestic",
+                      "logprob": -16.069231033325195,
+                      "bytes": [
+                        32,
+                        112,
+                        101,
+                        115,
+                        116,
+                        105,
+                        99
+                      ]
+                    },
+                    {
+                      "token": "edm",
+                      "logprob": -16.256731033325195,
+                      "bytes": [
+                        101,
+                        100,
+                        109
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+        "usage": {
+          "prompt_tokens": 155,
+          "total_tokens": 157,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      }
+    },
+    {
+      "bias": 6,
+      "candidate_ids": [
+        22574,
+        6364
+      ],
+      "logit_bias": {
+        "22574": 6,
+        "6364": 6
+      },
+      "elapsed_sec": 0.056884050369262695,
+      "summary": {
+        "content": "English",
+        "first_token": "English",
+        "first_logprob": -0.0015351902693510056,
+        "first_top_logprobs": [
+          {
+            "token": "English",
+            "logprob": -0.0015351902693510056
+          },
+          {
+            "token": "England",
+            "logprob": -6.501535415649414
+          },
+          {
+            "token": "E",
+            "logprob": -11.001535415649414
+          },
+          {
+            "token": " English",
+            "logprob": -11.126535415649414
+          },
+          {
+            "token": " England",
+            "logprob": -14.001535415649414
+          },
+          {
+            "token": "Scotland",
+            "logprob": -15.376535415649414
+          },
+          {
+            "token": "英语",
+            "logprob": -15.751535415649414
+          },
+          {
+            "token": "英",
+            "logprob": -16.001535415649414
+          },
+          {
+            "token": "Marg",
+            "logprob": -16.626535415649414
+          },
+          {
+            "token": "english",
+            "logprob": -17.126535415649414
+          }
+        ],
+        "candidate_seen_in_first_top_logprobs": [
+          {
+            "token": "English",
+            "logprob": -0.0015351902693510056
+          },
+          {
+            "token": "E",
+            "logprob": -11.001535415649414
+          },
+          {
+            "token": " English",
+            "logprob": -11.126535415649414
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-9590e2b4fe0c195a",
+        "object": "chat.completion",
+        "created": 1779418115,
+        "model": "local-vllm",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "English",
+              "refusal": null,
+              "annotations": null,
+              "audio": null,
+              "function_call": null,
+              "tool_calls": [],
+              "reasoning": null
+            },
+            "logprobs": {
+              "content": [
+                {
+                  "token": "English",
+                  "logprob": -0.0015351902693510056,
+                  "bytes": [
+                    69,
+                    110,
+                    103,
+                    108,
+                    105,
+                    115,
+                    104
+                  ],
+                  "top_logprobs": [
+                    {
+                      "token": "English",
+                      "logprob": -0.0015351902693510056,
+                      "bytes": [
+                        69,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": "England",
+                      "logprob": -6.501535415649414,
+                      "bytes": [
+                        69,
+                        110,
+                        103,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "E",
+                      "logprob": -11.001535415649414,
+                      "bytes": [
+                        69
+                      ]
+                    },
+                    {
+                      "token": " English",
+                      "logprob": -11.126535415649414,
+                      "bytes": [
+                        32,
+                        69,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    },
+                    {
+                      "token": " England",
+                      "logprob": -14.001535415649414,
+                      "bytes": [
+                        32,
+                        69,
+                        110,
+                        103,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "Scotland",
+                      "logprob": -15.376535415649414,
+                      "bytes": [
+                        83,
+                        99,
+                        111,
+                        116,
+                        108,
+                        97,
+                        110,
+                        100
+                      ]
+                    },
+                    {
+                      "token": "英语",
+                      "logprob": -15.751535415649414,
+                      "bytes": [
+                        232,
+                        139,
+                        177,
+                        232,
+                        175,
+                        173
+                      ]
+                    },
+                    {
+                      "token": "英",
+                      "logprob": -16.001535415649414,
+                      "bytes": [
+                        232,
+                        139,
+                        177
+                      ]
+                    },
+                    {
+                      "token": "Marg",
+                      "logprob": -16.626535415649414,
+                      "bytes": [
+                        77,
+                        97,
+                        114,
+                        103
+                      ]
+                    },
+                    {
+                      "token": "english",
+                      "logprob": -17.126535415649414,
+                      "bytes": [
+                        101,
+                        110,
+                        103,
+                        108,
+                        105,
+                        115,
+                        104
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "token": "<|im_end|>",
+                  "logprob": -0.006731926463544369,
+                  "bytes": [
+                    60,
+                    124,
+                    105,
+                    109,
+                    95,
+                    101,
+                    110,
+                    100,
+                    124,
+                    62
+                  ],
+                  "top_logprobs": [
+                    {
+                      "token": "<|im_end|>",
+                      "logprob": -0.006731926463544369,
+                      "bytes": [
+                        60,
+                        124,
+                        105,
+                        109,
+                        95,
+                        101,
+                        110,
+                        100,
+                        124,
+                        62
+                      ]
+                    },
+                    {
+                      "token": ".",
+                      "logprob": -5.006731986999512,
+                      "bytes": [
+                        46
+                      ]
+                    },
+                    {
+                      "token": "。",
+                      "logprob": -12.819231986999512,
+                      "bytes": [
+                        227,
+                        128,
+                        130
+                      ]
+                    },
+                    {
+                      "token": "<|im_start|>",
+                      "logprob": -13.819231986999512,
+                      "bytes": [
+                        60,
+                        124,
+                        105,
+                        109,
+                        95,
+                        115,
+                        116,
+                        97,
+                        114,
+                        116,
+                        124,
+                        62
+                      ]
+                    },
+                    {
+                      "token": "<tool_call>",
+                      "logprob": -14.381731986999512,
+                      "bytes": [
+                        60,
+                        116,
+                        111,
+                        111,
+                        108,
+                        95,
+                        99,
+                        97,
+                        108,
+                        108,
+                        62
+                      ]
+                    },
+                    {
+                      "token": "．",
+                      "logprob": -14.506731986999512,
+                      "bytes": [
+                        239,
+                        188,
+                        142
+                      ]
+                    },
+                    {
+                      "token": "eci",
+                      "logprob": -15.694231986999512,
+                      "bytes": [
+                        101,
+                        99,
+                        105
+                      ]
+                    },
+                    {
+                      "token": "clusão",
+                      "logprob": -16.006731033325195,
+                      "bytes": [
+                        99,
+                        108,
+                        117,
+                        115,
+                        195,
+                        163,
+                        111
+                      ]
+                    },
+                    {
+                      "token": " pestic",
+                      "logprob": -16.069231033325195,
+                      "bytes": [
+                        32,
+                        112,
+                        101,
+                        115,
+                        116,
+                        105,
+                        99
+                      ]
+                    },
+                    {
+                      "token": "edm",
+                      "logprob": -16.256731033325195,
+                      "bytes": [
+                        101,
+                        100,
+                        109
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "finish_reason": "stop",
+            "stop_reason": null,
+            "token_ids": null
+          }
+        ],
+        "service_tier": null,
+        "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+        "usage": {
+          "prompt_tokens": 155,
+          "total_tokens": 157,
+          "completion_tokens": 2,
+          "prompt_tokens_details": null
+        },
+        "prompt_logprobs": null,
+        "prompt_token_ids": null,
+        "kv_transfer_params": null
+      }
+    }
+  ]
+}
