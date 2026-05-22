@@ -639,3 +639,31 @@ policy file: {"enabled": false, "tag": "default-off"}
 VLLM_EPKV_RUNTIME_HOOK=0
 /health OK
 ```
+
+## Automatic policy builder
+
+Added:
+
+```txt
+07-scripts/vllm-hook/epkv-build-logit-policy-file.py
+```
+
+It builds dynamic internal sampler policies from span maps:
+
+```txt
+span map -> evidence-derived candidate -> candidate token ids -> scaffold ids -> bias_map JSON
+```
+
+Live internal sampler test, no API `logit_bias`:
+
+```txt
+span-map-3 candidate: Víctor Bó
+output: Víctor Bó is the child of the director of film La Leona
+```
+
+Restored:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+/health OK
+```

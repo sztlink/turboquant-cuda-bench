@@ -229,6 +229,37 @@ VLLM_EPKV_LOGIT_BIAS=0
 /health OK
 ```
 
+## Automatic policy builder
+
+Implemented:
+
+```txt
+epkv-build-logit-policy-file.py
+```
+
+It builds dynamic sampler `bias_map` JSON from span maps:
+
+```txt
+candidate ids + positive bias
+optional scaffold ids + negative bias
+EPKV provenance carried in policy JSON
+```
+
+Live internal sampler test, no API `logit_bias`:
+
+```txt
+span-map-3 -> auto candidate Víctor Bó
+policy builder -> bias_map JSON
+output -> Víctor Bó is the child of the director of film La Leona
+```
+
+Restored:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+/health OK
+```
+
 ## Current next target
 
-Generate bias-map policies automatically from integrated runner candidate ids + scaffold ids, then scale batch on the internal sampler path.
+Scale batch on the internal sampler path using generated policy files.
