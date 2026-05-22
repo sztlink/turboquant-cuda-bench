@@ -260,6 +260,36 @@ policy file: {"enabled": false, "tag": "default-off"}
 /health OK
 ```
 
+## Integrated batch 24 offset6
+
+Watcher completed:
+
+```txt
+closed: 24/24
+elapsed: 699.33 sec
+state_aware_decode_policy: 23/23
+relation_path_then_decode: 1/1
+```
+
+Cumulative integrated batches:
+
+```txt
+30/30 automatic closure
+27 state-aware decode
+3 relation-path fallback
+```
+
+Caveat: automatic string/alias closure, not human factual adjudication.
+
+Post-batch service state:
+
+```txt
+policy file: {"enabled":false,"tag":"default-off"}
+VLLM_EPKV_RUNTIME_HOOK=0
+VLLM_EPKV_LOGIT_BIAS=0
+/health OK
+```
+
 ## Current next target
 
 Scale batch on the internal sampler path using generated policy files.

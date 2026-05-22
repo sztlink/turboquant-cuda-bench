@@ -667,3 +667,39 @@ Restored:
 policy file: {"enabled": false, "tag": "default-off"}
 /health OK
 ```
+
+## Integrated batch 24 offset6
+
+Background watcher completed successfully:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/integrated-batch-24-offset6/
+closed: 24/24
+elapsed: 699.33 sec
+```
+
+Layer split:
+
+```txt
+state_aware_decode_policy: 23/23
+relation_path_then_decode: 1/1
+```
+
+Cumulative with previous 6-case sanity batch:
+
+```txt
+closed: 30/30
+state_aware_decode_policy: 27/27
+relation_path_then_decode: 3/3
+```
+
+Caveat: `closed` is automatic string/alias closure, not human factual adjudication.
+
+Service/default-off verified after batch:
+
+```txt
+policy file: {"enabled":false,"tag":"default-off"}
+VLLM_EPKV_RUNTIME_HOOK=0
+VLLM_EPKV_LOGIT_BIAS=0
+/health OK
+```
