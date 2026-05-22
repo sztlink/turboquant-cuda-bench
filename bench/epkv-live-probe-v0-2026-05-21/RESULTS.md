@@ -931,3 +931,47 @@ retrieval -> relation-path construction -> ECD policy
 ```
 
 rather than Triton-first.
+
+## Retrieved relation-path ECD 100
+
+Bridge test:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/RETRIEVED-RELATION-ECD-100.md
+```
+
+Pipeline:
+
+```txt
+BGE top-10 retrieved docs -> JSON relation extractor -> candidate -> internal sampler ECD
+```
+
+Results:
+
+```txt
+BGE rerank strong prompt:    EM 0.090 | contains 0.160 | F1 0.185
+relation extraction:         EM 0.070 | contains 0.080 | F1 0.120
+retrieved relation ECD:      EM 0.070 | contains 0.080 | F1 0.105
+```
+
+Extraction status:
+
+```txt
+FOUND: 43
+MISSING: 56
+parse/empty: 1
+```
+
+Conclusion:
+
+```txt
+naive retrieved-doc relation extraction does not bridge the gap.
+It is worse than BGE strong prompt.
+```
+
+Updated implication:
+
+```txt
+RealRAG needs better retrieval/path construction first:
+entity-aware retrieval -> multi-hop expansion -> graph/path search -> ECD only after chain confidence.
+```

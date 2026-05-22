@@ -518,3 +518,43 @@ retrieved docs -> relation/path extraction -> ECD policy
 ```
 
 Then retest against BM25/BGE prompt baselines.
+
+## Retrieved relation-path ECD 100
+
+Completed bridge test:
+
+```txt
+RETRIEVED-RELATION-ECD-100.md
+retrieved-relation-ecd-100/
+```
+
+Results:
+
+```txt
+BGE rerank strong:      EM 0.090 | contains 0.160 | F1 0.185
+relation extraction:    EM 0.070 | contains 0.080 | F1 0.120
+retrieved relation ECD: EM 0.070 | contains 0.080 | F1 0.105
+```
+
+Status split:
+
+```txt
+FOUND: 43
+MISSING: 56
+parse/empty: 1
+```
+
+Conclusion:
+
+```txt
+naive retrieved-doc relation extraction does not bridge the gap.
+It is worse than BGE strong prompt.
+```
+
+## Current next target
+
+RealRAG bridge needs retrieval/path construction, not sampler or Triton:
+
+```txt
+entity-aware retrieval -> multi-hop expansion -> graph/path search -> ECD after high-confidence chain
+```
