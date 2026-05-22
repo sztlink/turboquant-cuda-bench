@@ -162,10 +162,46 @@ live-span-sweep-summary.json
 
 The start script was restored again to `VLLM_EPKV_RUNTIME_HOOK=0` and `/health` was revalidated.
 
-## Next live step
+## Real 2Wiki record sweep
 
-Run the same span→page bridge on real HotpotQA/2Wiki records, then sweep small boosts:
+A real 2Wiki case was mapped and run:
 
 ```txt
-VLLM_EPKV_EVIDENCE_BOOST=0.5,1,2,4
+qid: 1c7395fa0bb011ebab90acde48001122
+question: Who is Johanna Magdalene Of Saxe-Weissenfels's paternal grandmother?
+gold: Johanna Magdalena of Saxe-Altenburg
+evidence pages: 2-7
+```
+
+Dry-run sweep:
+
+```txt
+boost 0: 15.81% evidence hit avg
+boost 1: 27.26%
+boost 2: 40.30%
+boost 4: 64.73%
+```
+
+A non-dry live intervention was also run at boost 4:
+
+```txt
+decision: returned_phase2a_output
+evidence hit avg: 62.36%
+output: failed to close answer
+```
+
+Artifacts:
+
+```txt
+2wiki-case-inference-grandmother.json
+2wiki-span-map.json
+2wiki-live-sweep/
+```
+
+## Next live step
+
+Implement a less blunt kernel intervention than additive score boost:
+
+```txt
+evidence_guard_topk: reserve or enforce N evidence positions per head before value gather
 ```

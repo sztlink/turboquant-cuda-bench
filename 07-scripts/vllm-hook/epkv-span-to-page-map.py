@@ -51,27 +51,35 @@ def main() -> None:
     p.add_argument('--model', default='Qwen/Qwen2.5-7B-Instruct')
     p.add_argument('--block-size', type=int, default=16)
     p.add_argument('--out', required=True)
+    p.add_argument('--case-json', default='', help='JSON file with question, evidence[], distractor[], optional answer/qid')
     p.add_argument('--question', default='Which key opens the north door? Answer with only the key color.')
-    p.add_argument('--evidence', action='append', default=[
-        'The red key opens the north door.',
-        'The blue key opens the south door.',
-    ])
-    p.add_argument('--distractor', action='append', default=[
-        'The green key is stored in the attic.',
-        'The yellow key is decorative and opens nothing.',
-    ])
+    p.add_argument('--evidence', action='append', default=None)
+    p.add_argument('--distractor', action='append', default=None)
     args = p.parse_args()
 
+    case = {}
+    if args.case_json:
+        case = json.loads(Path(args.case_json).read_text(encoding='utf-8'))
+    question = case.get('question') or args.question
+    evidence = case.get('evidence') or args.evidence or [
+        'The red key opens the north door.',
+        'The blue key opens the south door.',
+    ]
+    distractor = case.get('distractor') or args.distractor or [
+        'The green key is stored in the attic.',
+        'The yellow key is decorative and opens nothing.',
+    ]
+
     tok = AutoTokenizer.from_pretrained(args.model, trust_remote_code=True)
-    evidence_lines = [f'E{i+1}: {text}' for i, text in enumerate(args.evidence)]
-    distractor_lines = [f'D{i+1}: {text}' for i, text in enumerate(args.distractor)]
+    evidence_lines = [f'E{i+1}: {text}' for i, text in enumerate(evidence)]
+    distractor_lines = [f'D{i+1}: {text}' for i, text in enumerate(distractor)]
     user = '\n'.join([
         'Use only the evidence lines to answer.',
         'Evidence:',
         *evidence_lines,
         'Distractors:',
         *distractor_lines,
-        f'Question: {args.question}',
+        f'Question: {question}',
     ])
     messages = [{'role': 'user', 'content': user}]
     chat = tok.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
@@ -82,7 +90,7 @@ def main() -> None:
     spans = []
     all_token_indices = []
     all_pages = []
-    for label, text in [(f'E{i+1}', e) for i, e in enumerate(args.evidence)]:
+    for label, text in [(f'E{i+1}', e) for i, e in enumerate(evidence)]:
         needle = f'{label}: {text}'
         start = chat.find(needle)
         if start < 0:
@@ -111,6 +119,8 @@ def main() -> None:
         'evidence_token_count': len(set(all_token_indices)),
         'evidence_pages': sorted(set(all_pages)),
         'evidence_pages_spec': ranges_to_spec(all_pages),
+        'qid': case.get('qid'),
+        'gold_answer': case.get('answer'),
         'spans': spans,
         'messages': messages,
         'chat_template_text': chat,
