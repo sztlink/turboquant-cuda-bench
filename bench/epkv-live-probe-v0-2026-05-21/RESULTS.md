@@ -613,3 +613,29 @@ policy file: {"enabled": false, "tag": "default-off"}
 VLLM_EPKV_RUNTIME_HOOK=0
 /health OK
 ```
+
+## Internal sampler bias-map policy
+
+Extended dynamic policy file with per-token `bias_map`:
+
+```txt
+07-scripts/vllm-hook/patch-vllm-v1-sampler-logit-policy-bias-map.py
+```
+
+This enables positive candidate bias plus negative scaffold suppression inside the live sampler.
+
+Live multi3 verbose test without API `logit_bias`:
+
+```txt
+bias_map: Víctor token ids +3, scaffold ids -10
+output: Víctor Bó is the child of the director of film La Leona
+hook: epkv.v1.sample.sampler.logit_policy.v2.bias_map
+```
+
+Restored:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+VLLM_EPKV_RUNTIME_HOOK=0
+/health OK
+```

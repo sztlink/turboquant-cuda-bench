@@ -204,6 +204,31 @@ VLLM_EPKV_LOGIT_BIAS=0
 /health OK
 ```
 
+## Internal sampler bias-map
+
+Extended dynamic policy file to support per-token `bias_map`:
+
+```txt
+patch-vllm-v1-sampler-logit-policy-bias-map.py
+```
+
+Live multi3 verbose, no API `logit_bias`:
+
+```txt
+candidate ids +3; scaffold ids -10
+output -> Víctor Bó is the child of the director of film La Leona
+hook -> epkv.v1.sample.sampler.logit_policy.v2.bias_map
+```
+
+Final restored state:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+VLLM_EPKV_RUNTIME_HOOK=0
+VLLM_EPKV_LOGIT_BIAS=0
+/health OK
+```
+
 ## Current next target
 
-Make integrated runner write `logit-policy.json` for live internal sampler steering instead of API `logit_bias`, then scale batch.
+Generate bias-map policies automatically from integrated runner candidate ids + scaffold ids, then scale batch on the internal sampler path.
