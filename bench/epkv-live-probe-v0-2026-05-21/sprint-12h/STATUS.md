@@ -382,6 +382,47 @@ VLLM_EPKV_LOGIT_BIAS=0
 /health OK
 ```
 
+## Quality proof 100
+
+Completed pragmatic quality gate before Triton:
+
+```txt
+QUALITY-PROOF-100.md
+quality-proof-100/
+```
+
+Results:
+
+```txt
+baseline:                         EM 0.300 | contains 0.700 | F1 0.395
+internal sampler + relation path: EM 0.910 | contains 0.980 | F1 0.931
+```
+
+Delta:
+
+```txt
+EM +0.610
+contains +0.280
+F1 +0.536
+```
+
+Closure split:
+
+```txt
+98/100 closed
+internal_sampler_policy: 78/80
+relation_path_then_decode: 20/20
+```
+
+Post-run state:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+VLLM_EPKV_RUNTIME_HOOK=0
+VLLM_EPKV_LOGIT_BIAS=0
+/health OK
+```
+
 ## Current next target
 
-If continuing: scale internal sampler + relation fallback beyond 30 and replace global policy-file control with per-request policy plumbing.
+Quality gate cleared. Next valid move is either scale to 300 for robustness or kernelize the now-validated sampler policy path.

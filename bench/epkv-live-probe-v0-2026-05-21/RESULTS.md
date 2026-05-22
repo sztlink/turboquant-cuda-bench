@@ -793,3 +793,45 @@ VLLM_EPKV_RUNTIME_HOOK=0
 VLLM_EPKV_LOGIT_BIAS=0
 /health OK
 ```
+
+## Quality proof 100
+
+Pragmatic quality gate before Triton kernelization:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/QUALITY-PROOF-100.md
+```
+
+100-case 2Wiki compact evidence batch:
+
+```txt
+internal sampler + relation fallback closure: 98/100
+internal_sampler_policy: 78/80 closed
+relation_path_then_decode: 20/20 closed
+```
+
+EM / contains / token-F1:
+
+```txt
+baseline:                         EM 0.300 | contains 0.700 | F1 0.395
+internal sampler + relation path: EM 0.910 | contains 0.980 | F1 0.931
+```
+
+Delta:
+
+```txt
+EM +0.610
+contains +0.280
+F1 +0.536
+```
+
+This clears the quality gate: the current Python/dynamic-policy internal sampler path has strong quality lift before any Triton kernelization.
+
+Final post-run state:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+VLLM_EPKV_RUNTIME_HOOK=0
+VLLM_EPKV_LOGIT_BIAS=0
+/health OK
+```

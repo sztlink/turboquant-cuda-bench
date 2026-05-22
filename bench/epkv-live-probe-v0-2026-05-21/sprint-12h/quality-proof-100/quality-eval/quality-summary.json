@@ -1,0 +1,2138 @@
+{
+  "schema": "epkv.quality_eval.v0",
+  "elapsed_sec": 37.7752206325531,
+  "total": 100,
+  "policy_summary": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/summary.json",
+  "macro": {
+    "baseline": {
+      "em": 0.3,
+      "contains": 0.7,
+      "f1": 0.39495510268959594
+    },
+    "policy": {
+      "em": 0.91,
+      "contains": 0.98,
+      "f1": 0.9313737373737374
+    }
+  },
+  "by_layer": {
+    "internal_sampler_policy": {
+      "total": 80,
+      "policy": {
+        "em": 0.8875,
+        "contains": 0.975,
+        "f1": 0.9142171717171717
+      }
+    },
+    "relation_path_then_decode": {
+      "total": 20,
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      }
+    }
+  },
+  "rows": [
+    {
+      "qid": "8813f87c0bdd11eba7f7acde48001122",
+      "gold": "Małgorzata Braunek",
+      "type": "8813f87c0bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "The mother of the director of the film \"Polish-Russian War\" is Małgorzata Braunek.",
+      "policy_output": "Małgorzata Braunek is the mother of the director of the film",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.33333333333333337
+      },
+      "policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.4
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/0-8813f87c0bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "e2a3bf2a0bdd11eba7f7acde48001122",
+      "gold": "12 June 1516",
+      "type": "e2a3bf2a0bdd11eba7f7acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the given evidence, the information provided does not directly state when John V, Prince of Anhalt-Zerbst's father died. The evidence line E",
+      "policy_output": "12 June 1516",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/1-e2a3bf2a0bdd11eba7f7acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/1-e2a3bf2a0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "qid": "dfe93efe0bdd11eba7f7acde48001122",
+      "gold": "1983",
+      "type": "dfe93efe0bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to the evidence, Jean Martin's husband, William Black, died in 1983.",
+      "policy_output": "William Black died in 1983.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.16666666666666669
+      },
+      "policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.33333333333333337
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/10-dfe93efe0bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "2207e9060bda11eba7f7acde48001122",
+      "gold": "United States",
+      "type": "2207e9060bda11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "The nationality of the director of the film \"World and Time Enough\" is United States, as evidenced by E1 and E2 which state that Eric Mueller directed",
+      "policy_output": "United States",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.15384615384615385
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/11-2207e9060bda11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "2002bf0c0bb011ebab90acde48001122",
+      "gold": "Rupert",
+      "type": "2002bf0c0bb011ebab90acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, Catherine of Pomerania, Countess Palatine of Neumarkt's husband is John, and John's father is",
+      "policy_output": "Rupert.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/12-2002bf0c0bb011ebab90acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "c531e7560baf11ebab90acde48001122",
+      "gold": "Marie Leszczyńska",
+      "type": "c531e7560baf11ebab90acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, Marie Zéphyrine of France's paternal grandmother is Louis, Dauphin of France's mother, which is Marie Les",
+      "policy_output": "Marie Leszczyńska",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.09090909090909091
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/13-c531e7560baf11ebab90acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/13-c531e7560baf11ebab90acde48001122.json"
+    },
+    {
+      "qid": "a9cc5f240bdb11eba7f7acde48001122",
+      "gold": "Catherine Robbe-Grillet",
+      "type": "a9cc5f240bdb11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "The spouse of the director of film Eden and After is Catherine Robbe-Grillet.",
+      "policy_output": "Catherine Robbe-Grillet.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.3076923076923077
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/14-a9cc5f240bdb11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "6ebe05740bde11eba7f7acde48001122",
+      "gold": "Hilandar",
+      "type": "6ebe05740bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Hilandar.",
+      "policy_output": "Hilandar.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/15-6ebe05740bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "7a1d9d7c0bb011ebab90acde48001122",
+      "gold": "Pompey",
+      "type": "7a1d9d7c0bb011ebab90acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, Cornelia's child is Julia, and Julia's spouse is Pompey. Therefore, Pompey is Cornelia's child-in-law",
+      "policy_output": "Pompey is Cornelia's child, and Julia is Cornelia's",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.10526315789473684
+      },
+      "policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.2222222222222222
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/16-7a1d9d7c0bb011ebab90acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "0bedb7e80bdc11eba7f7acde48001122",
+      "gold": "tuberculosis",
+      "type": "0bedb7e80bdc11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "John Middleton Murry's wife, Katherine Mansfield, died from tuberculosis.",
+      "policy_output": "John Middleton Murry's wife, Katherine Mansfield, died from tuberculosis.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.19999999999999998
+      },
+      "policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.19999999999999998
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/17-0bedb7e80bdc11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "1869092c0bb011ebab90acde48001122",
+      "gold": "Rukn al-Dawla",
+      "type": "1869092c0bb011ebab90acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, Taj al-Dawla's paternal grandfather is Rukn al-Dawla. The evidence line E1 states that Taj al",
+      "policy_output": "Rukn al-Dawla",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.19999999999999998
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/18-1869092c0bb011ebab90acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/18-1869092c0bb011ebab90acde48001122.json"
+    },
+    {
+      "qid": "c19b72520bdb11eba7f7acde48001122",
+      "gold": "Xi'an",
+      "type": "c19b72520bdb11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Xi'an",
+      "policy_output": "Xi'an",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/19-c19b72520bdb11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "0cd3bdea0bde11eba7f7acde48001122",
+      "gold": "Myanmar Motion Picture Academy Awards",
+      "type": "0cd3bdea0bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "The director of the film \"Wearing Velvet Slippers Under A Golden Umbrella\" won the Myanmar Motion Picture Academy Awards.",
+      "policy_output": "Myanmar Motion Picture Academy Awards.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.5
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/2-0cd3bdea0bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "b3110a5e0bda11eba7f7acde48001122",
+      "gold": "German",
+      "type": "b3110a5e0bda11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "German.",
+      "policy_output": "German.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/20-b3110a5e0bda11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "3705552a0bb011ebab90acde48001122",
+      "gold": "Louis-Alexandre Berthier",
+      "type": "3705552a0bb011ebab90acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, Alexandre Berthier, 3rd Prince of Wagram's paternal grandfather is Louis-Alexandre Berthier. This can",
+      "policy_output": "Louis-Alexandre Berthier.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.21052631578947367
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/21-3705552a0bb011ebab90acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "07e964920bde11eba7f7acde48001122",
+      "gold": "Pavia",
+      "type": "07e964920bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Pavia.",
+      "policy_output": "Pavia.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/22-07e964920bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+      "gold": "Víctor Bó",
+      "type": "c3c94d0a0bdc11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, Víctor Bó is the child of the director of the film La Leona, who is Armando Bo.",
+      "policy_output": "Víctor Bó is the child of the director of the film La Le",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.19999999999999998
+      },
+      "policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.33333333333333337
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/23-c3c94d0a0bdc11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "96fb4aee0baf11ebab90acde48001122",
+      "gold": "Urraca of Castile",
+      "type": "96fb4aee0baf11ebab90acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, we cannot determine Blanche of Portugal's paternal grandmother. The evidence only states that Afonso III of Portugal is Blanche of Portugal",
+      "policy_output": "Urraca of Castile",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.07407407407407407
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/24-96fb4aee0baf11ebab90acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/24-96fb4aee0baf11ebab90acde48001122.json"
+    },
+    {
+      "qid": "e41c14820bd911eba7f7acde48001122",
+      "gold": "Cahiers du cinéma",
+      "type": "e41c14820bd911eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Cahiers du cinéma.",
+      "policy_output": "Cahiers du cinéma.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/25-e41c14820bd911eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "27e835ee0bb011ebab90acde48001122",
+      "gold": "Sir Arthur Gore, 2nd Baronet",
+      "type": "27e835ee0bb011ebab90acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, we cannot directly determine who Arthur Gore, 2nd Earl of Arran's paternal grandfather is. The evidence only provides information about",
+      "policy_output": "Sir Arthur Gore, 2nd Baronet.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.21428571428571427
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/26-27e835ee0bb011ebab90acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "931a85420bdd11eba7f7acde48001122",
+      "gold": "London",
+      "type": "931a85420bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, Lord Patrick Crichton-Stuart's father, John Stuart, was born in London.",
+      "policy_output": "London.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.13333333333333333
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/27-931a85420bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "0bbded440bda11eba7f7acde48001122",
+      "gold": "Pakistan",
+      "type": "0bbded440bda11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Pakistan.",
+      "policy_output": "Pakistan.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/28-0bbded440bda11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "258867240bdd11eba7f7acde48001122",
+      "gold": "Winnipeg, Manitoba",
+      "type": "258867240bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Winnipeg, Manitoba.",
+      "policy_output": "Winnipeg, Manitoba.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/29-258867240bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "f9dcb4a60bda11eba7f7acde48001122",
+      "gold": "Missoula, Montana",
+      "type": "f9dcb4a60bda11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, the director of film Ronnie Rocket, David Lynch, was born in Missoula, Montana.",
+      "policy_output": "Missoula, Montana.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.2222222222222222
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/3-f9dcb4a60bda11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "3cbd107e0bde11eba7f7acde48001122",
+      "gold": "Fukuoka",
+      "type": "3cbd107e0bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Fukuoka.",
+      "policy_output": "Fukuoka.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/30-3cbd107e0bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "5e8240ea0bdd11eba7f7acde48001122",
+      "gold": "Roma",
+      "type": "5e8240ea0bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Roma.",
+      "policy_output": "Roma.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/31-5e8240ea0bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "6638110e0bdb11eba7f7acde48001122",
+      "gold": "Moscow, USSR",
+      "type": "6638110e0bdb11eba7f7acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, we cannot directly determine the place of birth of Alexandre Gaydamak's father from the given lines. However, we know that Alexandre",
+      "policy_output": "Moscow, USSR.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/32-6638110e0bdb11eba7f7acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/32-6638110e0bdb11eba7f7acde48001122.json"
+    },
+    {
+      "qid": "3972d2b60baf11ebab90acde48001122",
+      "gold": "Jeanne d'Albret",
+      "type": "3972d2b60baf11ebab90acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, we cannot determine Gaston, Duke of Orléans's paternal grandmother. The evidence only tells us that King Henry IV of",
+      "policy_output": "Jeanne d'Albret",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/33-3972d2b60baf11ebab90acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/33-3972d2b60baf11ebab90acde48001122.json"
+    },
+    {
+      "qid": "a8cbc4c40bdc11eba7f7acde48001122",
+      "gold": "New York",
+      "type": "a8cbc4c40bdc11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "New York.",
+      "policy_output": "New York.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/34-a8cbc4c40bdc11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "32e50df00bb011ebab90acde48001122",
+      "gold": "Louis II",
+      "type": "32e50df00bb011ebab90acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, Hermann I is the father-in-law of Sophia of Wittelsbach.",
+      "policy_output": "Louis II.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/35-32e50df00bb011ebab90acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "deb907f80bdd11eba7f7acde48001122",
+      "gold": "Bohemia",
+      "type": "deb907f80bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "The place of death of Lambert I of Louvain's father, Reginar III, was Bohemia.",
+      "policy_output": "Bohemia.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.14285714285714288
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/36-deb907f80bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "b81fbe620bdc11eba7f7acde48001122",
+      "gold": "Gura Humorului",
+      "type": "b81fbe620bdc11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Gura Humorului.",
+      "policy_output": "Gura Humorului.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/37-b81fbe620bdc11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "3717c0600bde11eba7f7acde48001122",
+      "gold": "Meran",
+      "type": "3717c0600bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Meran.",
+      "policy_output": "Meran.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/38-3717c0600bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "0f1ac1a00bdb11eba7f7acde48001122",
+      "gold": "Grammy",
+      "type": "0f1ac1a00bdb11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "The performer of song Sunday Papers, Joe Jackson, earned a Grammy award.",
+      "policy_output": "Grammy.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.18181818181818182
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/39-0f1ac1a00bdb11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "8981e1ce0bb011ebab90acde48001122",
+      "gold": "Charles Armand René de La Trémoille",
+      "type": "8981e1ce0bb011ebab90acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, Charles Bretagne Marie de La Trémoille's paternal grandfather is Jean Bretagne Charles de La Trémoille, as",
+      "policy_output": "Charles Armand René de La Trémoille",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.30769230769230765
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/4-8981e1ce0bb011ebab90acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/4-8981e1ce0bb011ebab90acde48001122.json"
+    },
+    {
+      "qid": "07388c7c0bb011ebab90acde48001122",
+      "gold": "Peter I",
+      "type": "07388c7c0bb011ebab90acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to evidence line E1, Amadeus VII, Count of Savoy's mother is Bonne of Bourbon. Evidence line E2 states that Bonne",
+      "policy_output": "Peter I.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/40-07388c7c0bb011ebab90acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "6b55ac320bdb11eba7f7acde48001122",
+      "gold": "24 March 1927",
+      "type": "6b55ac320bdb11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to the evidence provided, Princess Elisabeth of Saxe-Altenburg, who was the mother of Prince Ioann Konstantinovich of Russia, died",
+      "policy_output": "24 March 1927.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/41-6b55ac320bdb11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "424d56700bde11eba7f7acde48001122",
+      "gold": "Ostrogothic Kingdom",
+      "type": "424d56700bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, Audofleda's husband is Theodoric the Great, and the evidence states that he was a citizen of the Ostro",
+      "policy_output": "Ostrogothic Kingdom.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/42-424d56700bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "5c0c69f80bdd11eba7f7acde48001122",
+      "gold": "Kurdish",
+      "type": "5c0c69f80bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Kurdish.",
+      "policy_output": "Kurdish.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/43-5c0c69f80bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "29427eea0bdd11eba7f7acde48001122",
+      "gold": "Liverpool",
+      "type": "29427eea0bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to the evidence line E1, the performer of the song \"God\" (performed by John Lennon) is John Lennon. Evidence line E2 states",
+      "policy_output": "Liverpool.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/44-29427eea0bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "bc633e2c0baf11ebab90acde48001122",
+      "gold": "Louis, Grand Dauphin",
+      "type": "bc633e2c0baf11ebab90acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, Maria Luisa of Savoy's father-in-law is Louis, Grand Dauphin, as Philip V of Spain is her spouse",
+      "policy_output": "Louis, Grand Dauphin.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.25
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/45-bc633e2c0baf11ebab90acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "2b4bd5020baf11ebab90acde48001122",
+      "gold": "Kujō Michiie",
+      "type": "2b4bd5020baf11ebab90acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, Kujō Yoritsune is the paternal grandfather of Kujō Yoritsugu.",
+      "policy_output": "To answer the question \"Who is the paternal grandfather of Kujō Yor",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.14285714285714285
+      },
+      "policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.16666666666666669
+      },
+      "policy_closed": false,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/46-2b4bd5020baf11ebab90acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/46-2b4bd5020baf11ebab90acde48001122.json"
+    },
+    {
+      "qid": "3647118c0bdd11eba7f7acde48001122",
+      "gold": "Madrid",
+      "type": "3647118c0bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, the place of birth of the director of the film Marianela (1940) is Madrid. This can be deduced",
+      "policy_output": "Madrid.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.1
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/47-3647118c0bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "ea1fc06c0bda11eba7f7acde48001122",
+      "gold": "United Nations",
+      "type": "ea1fc06c0bda11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to the evidence lines, Karin Stoltenberg's husband, Thorvald Stoltenberg, works at the United Nations.",
+      "policy_output": "United Nations.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.2666666666666667
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/48-ea1fc06c0bda11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "00c75ffc0bde11eba7f7acde48001122",
+      "gold": "Paris",
+      "type": "00c75ffc0bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to the evidence line E1, the director of film Lettre Ouverte is Alex Joffé. Evidence line E2 states that Alex Joffé",
+      "policy_output": "Paris.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/49-00c75ffc0bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "019bed300bde11eba7f7acde48001122",
+      "gold": "Galați",
+      "type": "019bed300bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, the father of Ștefan I. Nenițescu, Ioan S. Nenițescu, was",
+      "policy_output": "Galați.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/5-019bed300bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "94198d580bb011ebab90acde48001122",
+      "gold": "Mathilde of Bourbon",
+      "type": "94198d580bb011ebab90acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, William II, Count of Flanders's paternal grandmother cannot be determined directly. The evidence only traces his father (William II of D",
+      "policy_output": "Mathilde of Bourbon",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.07407407407407407
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/50-94198d580bb011ebab90acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/50-94198d580bb011ebab90acde48001122.json"
+    },
+    {
+      "qid": "71d8e20e0bdb11eba7f7acde48001122",
+      "gold": "London",
+      "type": "71d8e20e0bdb11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "London.",
+      "policy_output": "London.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/51-71d8e20e0bdb11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "e701105e0bdd11eba7f7acde48001122",
+      "gold": "Königsberg",
+      "type": "e701105e0bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "The place of burial of Albert Frederick, Duke of Prussia's mother, Anna Marie of Brunswick-Lüneburg, was Königsberg.",
+      "policy_output": "Königsberg.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.11764705882352941
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/52-e701105e0bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "b5e9ef2c0bdd11eba7f7acde48001122",
+      "gold": "Homs",
+      "type": "b5e9ef2c0bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "The place of death of Juan Carlos Gumucio's wife, Marie Colvin, was Homs.",
+      "policy_output": "Homs.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.15384615384615385
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/53-b5e9ef2c0bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "48c8f7f80bdd11eba7f7acde48001122",
+      "gold": "Alain Poiré",
+      "type": "48c8f7f80bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "The father of the director of the film \"Gramps Is In The Resistance\" is Alain Poiré.",
+      "policy_output": "Alain Poiré.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.2857142857142857
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/54-48c8f7f80bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "aa0370860bdb11eba7f7acde48001122",
+      "gold": "Naha, Okinawa",
+      "type": "aa0370860bdb11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Naha, Okinawa.",
+      "policy_output": "Naha, Okinawa.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/55-aa0370860bdb11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "a5bed06e0bdc11eba7f7acde48001122",
+      "gold": "Byzantine",
+      "type": "a5bed06e0bdc11eba7f7acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, Philip of Ibelin's mother, Maria Komnene, has a country of citizenship of Byzantine.",
+      "policy_output": "Byzantine",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.11764705882352941
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/56-a5bed06e0bdc11eba7f7acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/56-a5bed06e0bdc11eba7f7acde48001122.json"
+    },
+    {
+      "qid": "2294ccfc0bdc11eba7f7acde48001122",
+      "gold": "August 8, 1975",
+      "type": "2294ccfc0bdc11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "August 8, 1975.",
+      "policy_output": "August 8, 1975.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/57-2294ccfc0bdc11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "e8d8f7200bdd11eba7f7acde48001122",
+      "gold": "Chuck Schumer",
+      "type": "e8d8f7200bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Huma Abedin's husband, Anthony Weiner, works for Chuck Schumer.",
+      "policy_output": "Chuck Schumer.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.3636363636363636
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/58-e8d8f7200bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "844fe30c0bda11eba7f7acde48001122",
+      "gold": "Florence",
+      "type": "844fe30c0bda11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to the evidence line E1, Giacomo Feo's wife was Caterina Sforza. Evidence line E2 states that Caterina Sfor",
+      "policy_output": "Florence.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/59-844fe30c0bda11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "2ec440560bb011ebab90acde48001122",
+      "gold": "Ptolemy IX Lathyros",
+      "type": "2ec440560bb011ebab90acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, Cleopatra IV is the mother of Antiochus X Eusebes. Therefore, Ptolemy IX Lathy",
+      "policy_output": "Ptolemy IX Lathyros",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.21052631578947367
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/6-2ec440560bb011ebab90acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/6-2ec440560bb011ebab90acde48001122.json"
+    },
+    {
+      "qid": "c32ac4ca0bda11eba7f7acde48001122",
+      "gold": "Helsingfors",
+      "type": "c32ac4ca0bda11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Helsingfors",
+      "policy_output": "Helsingfors.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/60-c32ac4ca0bda11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "6021e2d80bde11eba7f7acde48001122",
+      "gold": "Dutch",
+      "type": "6021e2d80bde11eba7f7acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, Jan Baptist van Rensselaer's father, Kiliaen van Rensselaer, has a country of citizenship",
+      "policy_output": "Dutch",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/61-6021e2d80bde11eba7f7acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/61-6021e2d80bde11eba7f7acde48001122.json"
+    },
+    {
+      "qid": "b5b63b160bdb11eba7f7acde48001122",
+      "gold": "Tisch",
+      "type": "b5b63b160bdb11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Tisch.",
+      "policy_output": "Tisch.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/62-b5b63b160bdb11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "4b1b91720bde11eba7f7acde48001122",
+      "gold": "India",
+      "type": "4b1b91720bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence lines provided, Geodeung of Gaya's mother is Heo Hwang-ok, and she has a country of citizenship as India.",
+      "policy_output": "India. This can be inferred from the fact that Heo Hwang-ok,",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.09523809523809523
+      },
+      "policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.18181818181818182
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/63-4b1b91720bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "0458640a0bdd11eba7f7acde48001122",
+      "gold": "leukemia",
+      "type": "0458640a0bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Leukemia.",
+      "policy_output": "Leukemia.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/64-0458640a0bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "94dd39d80bdd11eba7f7acde48001122",
+      "gold": "Herstal",
+      "type": "94dd39d80bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Herstal.",
+      "policy_output": "Herstal.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/65-94dd39d80bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "abc68a180bd911eba7f7acde48001122",
+      "gold": "22 January 1794",
+      "type": "abc68a180bd911eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, Lord Patrick Crichton-Stuart's father, John Stuart, died on 22 January 1794.",
+      "policy_output": "22 January 1794.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.33333333333333337
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/66-abc68a180bd911eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "97ce0ec00baf11ebab90acde48001122",
+      "gold": "Stanisław Leszczyński",
+      "type": "97ce0ec00baf11ebab90acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, Anne \"Henriette\" of France is the mother of Marie Leszczyńska. Therefore, Marie Leszczyńska's",
+      "policy_output": "Stanisław Leszczyński",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/67-97ce0ec00baf11ebab90acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/67-97ce0ec00baf11ebab90acde48001122.json"
+    },
+    {
+      "qid": "04a544a40bde11eba7f7acde48001122",
+      "gold": "3 August 979",
+      "type": "04a544a40bde11eba7f7acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, the date of death of Gero II, Margrave of the Saxon Ostmark's father, Thietmar, is",
+      "policy_output": "3 August 979",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/68-04a544a40bde11eba7f7acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/68-04a544a40bde11eba7f7acde48001122.json"
+    },
+    {
+      "qid": "a08505d20bdc11eba7f7acde48001122",
+      "gold": "Aldo Parisot",
+      "type": "a08505d20bdc11eba7f7acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, the father of the director of film \"Red 2\" is Aldo Parisot.",
+      "policy_output": "Aldo Parisot",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.25
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/69-a08505d20bdc11eba7f7acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/69-a08505d20bdc11eba7f7acde48001122.json"
+    },
+    {
+      "qid": "464cfa460bd911eba7f7acde48001122",
+      "gold": "Brooklyn",
+      "type": "464cfa460bd911eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to the evidence lines, the director of film Thomas Jefferson (Film) is Ken Burns, who was born in Brooklyn.",
+      "policy_output": "Brooklyn.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.10526315789473684
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/7-464cfa460bd911eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "982f8e440bdb11eba7f7acde48001122",
+      "gold": "1886",
+      "type": "982f8e440bdb11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to evidence line E2, Sigma Xi, the company that published American Scientist, was founded in 1886.",
+      "policy_output": "1886.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.11764705882352941
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/70-982f8e440bdb11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "5142f59e0bda11eba7f7acde48001122",
+      "gold": "Nevele",
+      "type": "5142f59e0bda11eba7f7acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, we cannot determine the place of birth of Jo Planckaert's father. The evidence only tells us that Jo Planckaert's",
+      "policy_output": "Nevele",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/71-5142f59e0bda11eba7f7acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/71-5142f59e0bda11eba7f7acde48001122.json"
+    },
+    {
+      "qid": "041581680bdc11eba7f7acde48001122",
+      "gold": "Manchester",
+      "type": "041581680bdc11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, the place of birth of Gwilym Lloyd George's father, David Lloyd George, is Manchester.",
+      "policy_output": "Manchester.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.1111111111111111
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/72-041581680bdc11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "ad43c9300bdb11eba7f7acde48001122",
+      "gold": "Tantallon Castle",
+      "type": "ad43c9300bdb11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Tantallon Castle.",
+      "policy_output": "Tantallon Castle.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/73-ad43c9300bdb11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "5839dbac0bde11eba7f7acde48001122",
+      "gold": "American",
+      "type": "5839dbac0bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "The nationality of the director of the film \"They Call It Love\" is American, as evidenced by E1 and E2.",
+      "policy_output": "American",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.1111111111111111
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/74-5839dbac0bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "22d296de0bde11eba7f7acde48001122",
+      "gold": "Sochi",
+      "type": "22d296de0bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Sochi.",
+      "policy_output": "Sochi.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/75-22d296de0bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "9c3ff1040bdb11eba7f7acde48001122",
+      "gold": "French",
+      "type": "9c3ff1040bdb11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "French.",
+      "policy_output": "French.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/76-9c3ff1040bdb11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "81ca57e60bdc11eba7f7acde48001122",
+      "gold": "Winnipeg, Manitoba",
+      "type": "81ca57e60bdc11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Winnipeg, Manitoba.",
+      "policy_output": "Winnipeg, Manitoba.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/77-81ca57e60bdc11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "30ee74680bde11eba7f7acde48001122",
+      "gold": "Villafranca del Bierzo",
+      "type": "30ee74680bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, the father of Eleonora di Garzia di Toledo, García Álvarez de Toledo, 4th Marquis of Villa",
+      "policy_output": "Villafranca del Bierzo.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/78-30ee74680bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "f491b33e0bda11eba7f7acde48001122",
+      "gold": "Jean Hersholt Humanitarian Award",
+      "type": "f491b33e0bda11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "The director of the film \"The Last Night of the Barbary Coast\" got the Jean Hersholt Humanitarian Award. This can be inferred from the evidence",
+      "policy_output": "Jean Hersholt Humanitarian Award.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.34782608695652173
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/79-f491b33e0bda11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "c05e16a40bdd11eba7f7acde48001122",
+      "gold": "stroke",
+      "type": "c05e16a40bdd11eba7f7acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Princess Victoria Melita of Saxe-Coburg and Gotha, the wife of Grand Duke Kirill Vladimirovich of Russia, died from",
+      "policy_output": "stroke",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/8-c05e16a40bdd11eba7f7acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/8-c05e16a40bdd11eba7f7acde48001122.json"
+    },
+    {
+      "qid": "5b637e060bb011ebab90acde48001122",
+      "gold": "Princess Madeleine, Duchess of Hälsingland and Gästrikland",
+      "type": "5b637e060bb011ebab90acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the provided evidence, we cannot determine Prince Nicolas of Sweden, Duke of Ångermanland's mother. The evidence only provides information about his father and",
+      "policy_output": "There is no evidence provided about Prince Nicolas of Sweden, Duke of Ångerman",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.13333333333333333
+      },
+      "policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.1
+      },
+      "policy_closed": false,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/80-5b637e060bb011ebab90acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/80-5b637e060bb011ebab90acde48001122.json"
+    },
+    {
+      "qid": "1a2188840bb011ebab90acde48001122",
+      "gold": "Princess Augusta of Schwarzburg-Sondershausen",
+      "type": "1a2188840bb011ebab90acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, Princess Augusta of Waldeck-Pyrmont's father is George II, and George II's mother is Princess Augusta of Schwarzburg",
+      "policy_output": "Princess Augusta of Schwarzburg-Sondershausen",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.24
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/81-1a2188840bb011ebab90acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/81-1a2188840bb011ebab90acde48001122.json"
+    },
+    {
+      "qid": "d1fd9cbe0bdc11eba7f7acde48001122",
+      "gold": "Cahiers du cinéma",
+      "type": "d1fd9cbe0bdc11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Cahiers du cinéma.",
+      "policy_output": "Cahiers du cinéma.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/82-d1fd9cbe0bdc11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "f6e2b9280bdd11eba7f7acde48001122",
+      "gold": "China",
+      "type": "f6e2b9280bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, Mohammed Al-Modiahki's wife, Zhu Chen, is from China.",
+      "policy_output": "China.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.15384615384615385
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/83-f6e2b9280bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "e6688a7e0baf11ebab90acde48001122",
+      "gold": "Charles I of Naples",
+      "type": "e6688a7e0baf11ebab90acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "The evidence provided does not include information about Philip of Sicily's father. It only states that Philip of Sicily's mother is Beatrice of Provence.",
+      "policy_output": "Charles I of Naples",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.07407407407407408
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/84-e6688a7e0baf11ebab90acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/84-e6688a7e0baf11ebab90acde48001122.json"
+    },
+    {
+      "qid": "49ec1ade0bdd11eba7f7acde48001122",
+      "gold": "Argentina",
+      "type": "49ec1ade0bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to the evidence lines, the director of the film \"My Heidelberg, I Can Not Forget You\" is James Bauer, and his place of death is",
+      "policy_output": "Argentina.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/85-49ec1ade0bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "e4e02a240bda11eba7f7acde48001122",
+      "gold": "Jacques Cousteau",
+      "type": "e4e02a240bda11eba7f7acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Jean-Michel Cousteau is the director of Wonders of the Sea 3D, and his father is Jacques Cousteau. Therefore, Jacques Cou",
+      "policy_output": "Jacques Cousteau",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.19999999999999998
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/86-e4e02a240bda11eba7f7acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/86-e4e02a240bda11eba7f7acde48001122.json"
+    },
+    {
+      "qid": "c9b515020bda11eba7f7acde48001122",
+      "gold": "Thessaloniki",
+      "type": "c9b515020bda11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, the place of death of Prince Christopher of Greece and Denmark's father, George I of Greece, was Thessaloniki.",
+      "policy_output": "Thessaloniki.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.0909090909090909
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/87-c9b515020bda11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "652d7dac0bdc11eba7f7acde48001122",
+      "gold": "New York",
+      "type": "652d7dac0bdc11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "New York.",
+      "policy_output": "New York",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/88-652d7dac0bdc11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "2b7db0200bde11eba7f7acde48001122",
+      "gold": "University of Paris",
+      "type": "2b7db0200bde11eba7f7acde48001122.json",
+      "layer": "relation_path_then_decode",
+      "baseline_output": "Based on the evidence provided, Charles Stewart, 3rd Duke of Richmond's father graduated from the University of Paris, as George Stewart (his father) was",
+      "policy_output": "University of Paris",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.24000000000000002
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/89-2b7db0200bde11eba7f7acde48001122.json",
+      "relation_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/relation-path/89-2b7db0200bde11eba7f7acde48001122.json"
+    },
+    {
+      "qid": "2935f1640bda11eba7f7acde48001122",
+      "gold": "Nice",
+      "type": "2935f1640bda11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Nice.",
+      "policy_output": "Nice.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/9-2935f1640bda11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "437f3b9a0bdd11eba7f7acde48001122",
+      "gold": "Hackney",
+      "type": "437f3b9a0bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Hackney.",
+      "policy_output": "Hackney.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/90-437f3b9a0bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "37c6703a0bdc11eba7f7acde48001122",
+      "gold": "1969",
+      "type": "37c6703a0bdc11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "1969",
+      "policy_output": "1969",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/91-37c6703a0bdc11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "68cb7bc00bdd11eba7f7acde48001122",
+      "gold": "Huahine",
+      "type": "68cb7bc00bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to the evidence lines, the place of death of Tamatoa VI's father, Ari'imate, was Huahine.",
+      "policy_output": "Huahine.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.13333333333333333
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/92-68cb7bc00bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "74207b920bdd11eba7f7acde48001122",
+      "gold": "Brighton",
+      "type": "74207b920bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to the evidence, the director of the film \"Old Man Drinking a Glass of Beer\" is George Albert Smith, who died in Brighton.",
+      "policy_output": "Brighton.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.09523809523809523
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/93-74207b920bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "00c727580bde11eba7f7acde48001122",
+      "gold": "10 May 1912",
+      "type": "00c727580bde11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "The date of death of Henry St John, 18th Baron St John of Bletso's father, Beauchamp St John, 17",
+      "policy_output": "10 May 1912.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/94-00c727580bde11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "77f41ab20bb011ebab90acde48001122",
+      "gold": "John de Vere, 15th Earl of Oxford",
+      "type": "77f41ab20bb011ebab90acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, Edward de Vere, 17th Earl of Oxford's paternal grandfather is John de Vere, 15th Earl of Oxford",
+      "policy_output": "John de Vere, 15th Earl of Oxford.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.5
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/95-77f41ab20bb011ebab90acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "b1b78c480bdd11eba7f7acde48001122",
+      "gold": "Kreuzlingen",
+      "type": "b1b78c480bdd11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, the place of death of Alexander Carl Otto Westphal's father, Carl Friedrich Otto Westphal, was Kreuzlingen.",
+      "policy_output": "Kreuzlingen. However, the evidence provided does not directly state the place",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.1
+      },
+      "policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.19999999999999998
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/96-b1b78c480bdd11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "3c68e44c0bdc11eba7f7acde48001122",
+      "gold": "Florence",
+      "type": "3c68e44c0bdc11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "According to the evidence lines, the place of death of Alessandro Vitelli's father, Paolo Vitelli, is Florence.",
+      "policy_output": "Florence.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.125
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/97-3c68e44c0bdc11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "027970120bdc11eba7f7acde48001122",
+      "gold": "Århus",
+      "type": "027970120bdc11eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Århus.",
+      "policy_output": "Århus.",
+      "baseline": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/98-027970120bdc11eba7f7acde48001122.json",
+      "relation_artifact": null
+    },
+    {
+      "qid": "94873b220bd911eba7f7acde48001122",
+      "gold": "Florence",
+      "type": "94873b220bd911eba7f7acde48001122.json",
+      "layer": "internal_sampler_policy",
+      "baseline_output": "Based on the evidence provided, the mother of Francis II of France, Catherine de' Medici, was born in Florence.",
+      "policy_output": "Florence.",
+      "baseline": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.1111111111111111
+      },
+      "policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0
+      },
+      "policy_closed": true,
+      "policy_artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/quality-proof-100/internal-sampler-batch/runs/99-94873b220bd911eba7f7acde48001122.json",
+      "relation_artifact": null
+    }
+  ]
+}
