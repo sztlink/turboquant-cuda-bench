@@ -1,0 +1,1099 @@
+{
+  "schema": "epkv.rag_reality_check.v0",
+  "elapsed_sec": 461.9220938682556,
+  "total": 5,
+  "corpus_docs": 56687,
+  "top_k": 10,
+  "bm25_pool": 30,
+  "macro": {
+    "bge_rerank_strong": {
+      "n": 5,
+      "em": 0.0,
+      "contains": 0.0,
+      "f1": 0.12,
+      "support_title_recall": 0.5333333333333333,
+      "answer_string_present_rate": 0.2,
+      "latency_sec": 0.5523209571838379
+    },
+    "bm25_basic": {
+      "n": 5,
+      "em": 0.0,
+      "contains": 0.0,
+      "f1": 0.07407407407407407,
+      "support_title_recall": 0.5333333333333333,
+      "answer_string_present_rate": 0.2,
+      "latency_sec": 0.9643461227416992
+    },
+    "bm25_strong": {
+      "n": 5,
+      "em": 0.0,
+      "contains": 0.0,
+      "f1": 0.13333333333333333,
+      "support_title_recall": 0.5333333333333333,
+      "answer_string_present_rate": 0.2,
+      "latency_sec": 0.5398968696594239
+    }
+  },
+  "rows": [
+    {
+      "idx": 0,
+      "qid": "8813f87c0bdd11eba7f7acde48001122",
+      "type": "compositional",
+      "question": "Who is the mother of the director of film Polish-Russian War (Film)?",
+      "gold": "Małgorzata Braunek",
+      "support_titles": [
+        "Polish-Russian War",
+        "Polish-Russian War (film)",
+        "Xawery Żuławski"
+      ],
+      "bm25_top_titles": [
+        "Polish-Russian War (film)",
+        "Aleksander Ford",
+        "Aleksander Ford",
+        "Demons of War",
+        "5 Days of War",
+        "Ashes and Diamonds (film)",
+        "Battle of Kletsk (1706)",
+        "The House of the Sun (film)",
+        "The Last Day of Summer",
+        "Viktor Yeliseyev"
+      ],
+      "bge_top_titles": [
+        "Polish-Russian War (film)",
+        "Aleksander Ford",
+        "Aleksander Ford",
+        "Arise, Russian people!",
+        "Crime and Punishment (2002 Russian film)",
+        "Ashes and Diamonds (film)",
+        "The Tango of Our Childhood",
+        "The Loves of Casanova",
+        "Nikolai Lebedev (film director)",
+        "Krzysztof Kopczyński"
+      ],
+      "bge_scores": [
+        0.9979566335678101,
+        0.005147485062479973,
+        0.0036456577945500612,
+        0.0013346633641049266,
+        0.0005986930336803198,
+        0.0003635736065916717,
+        0.0003052831452805549,
+        0.0002735797315835953,
+        0.0002532128419261426,
+        0.00023277581203728914
+      ],
+      "conditions": {
+        "bm25_basic": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "The passage provided does not contain any information about the director of the film \"Polish-Russian War\" (Film)'s mother. The relevant information is found in",
+          "latency_sec": 1.0665171146392822,
+          "support_titles_present": [
+            "Polish-Russian War (film)"
+          ],
+          "support_title_recall": 0.3333333333333333,
+          "answer_string_present_in_docs": false,
+          "docs": [
+            {
+              "title": "Polish-Russian War (film)",
+              "text": "Polish-Russian War (film): Polish-Russian War (Wojna polsko-ruska) is a 2009 Polish film directed by Xawery Żuławski based on the novel Polish-Russian War under the white-red flag by Dorota Masłowska."
+            },
+            {
+              "title": "Aleksander Ford",
+              "text": "Aleksander Ford: Aleksander Ford (born Mosze Lifszyc; 24 November 1908 in Kiev, Russian Empire – 4 April 1980 in Naples, Florida, United States) was a Polish film director; and head of the Polish People's Army Film Crew in the Soviet Union during World War II. Following the war he was appointed director of the Film Polski company. In 1948 he was appointed as a professor of the National Film School in Łódź (Państwowa Wyższa Szkoła Filmowa). Roman Polanski was among his students. Another of Ford's"
+            },
+            {
+              "title": "Aleksander Ford",
+              "text": "Aleksander Ford: Aleksander Ford( born Mosze Lifszyc; 24 November 1908 in Kiev, Russian Empire – 4 April 1980 in Naples, Florida, United States) was a Polish film director; and head of the Polish People's Army Film Crew in the Soviet Union during World War II. Following the war he was appointed director of the Film Polski company. In 1948 he was appointed as a professor of the National Film School in Łódź( Państwowa Wyższa Szkoła Filmowa). Roman Polanski was among his students. Another of Ford's"
+            },
+            {
+              "title": "Demons of War",
+              "text": "Demons of War: Demons of War( Polish:\" Demony wojny według Goi\") is a 1998 Polish war film by Władysław Pasikowski set during the Bosnian War."
+            },
+            {
+              "title": "5 Days of War",
+              "text": "5 Days of War: 5 Days of War is a 2011 action film directed by Renny Harlin. The story is about the Russo- Georgian War over the Russian- backed breakaway autonomous republic of South Ossetia in Georgia, including the events leading up to the conflict. The film was released in Georgia as 5 Days of August, and in other countries as 5 Days of War and also City on Fire."
+            },
+            {
+              "title": "Ashes and Diamonds (film)",
+              "text": "Ashes and Diamonds (film): Ashes and Diamonds( Polish: Popiół i diament) is a 1958 Polish drama film directed by Andrzej Wajda, based on the 1948 novel by Polish writer Jerzy Andrzejewski. Starring Zbigniew Cybulski and Ewa Krzyżewska, it completed Wajda's war films trilogy, following\" A Generation\"( 1954) and\" Kanal\"( 1956). The action of\" Ashes and Diamonds\" takes place in 1945, shortly after World War II. The main protagonist of the film, former Home Army soldier Maciek Chełmicki, is acting i"
+            },
+            {
+              "title": "Battle of Kletsk (1706)",
+              "text": "Battle of Kletsk (1706): The Battle of Kletsk took place on 30 April 1706( Gregorian calendar), in- and outside the city of Kletsk, Belarus during Charles XII's Polish campaign of 1701 – 1706, in the Great Northern War. The Swedish forces were led by Carl Gustaf Creutz who defeated a larger Russian – Cossack force under the command of Semjon Nepljujev and Danylo Apostol. Many of the Russian and Cossack regiments participating in the battle were wiped out and ceased to exist as fighting units."
+            },
+            {
+              "title": "The House of the Sun (film)",
+              "text": "The House of the Sun (film): The House of the Sun is a 2010 Russian movie about hippies in the Soviet Union. The director is rock musician Garik Sukachov."
+            },
+            {
+              "title": "The Last Day of Summer",
+              "text": "The Last Day of Summer: The Last Day of Summer is a 1958 romantic drama film directed by the Polish film director Tadeusz Konwicki."
+            },
+            {
+              "title": "Viktor Yeliseyev",
+              "text": "Viktor Yeliseyev: Viktor Petrovich Yeliseyev( born June 9, 1950) is a Russian general, orchestra conductor and music teacher. He is the director of the Ministry of the Interior Ensemble, one of the two Russian Red Army Choirs."
+            }
+          ]
+        },
+        "bm25_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "Dorota Masłowska",
+          "latency_sec": 0.2888028621673584,
+          "support_titles_present": [
+            "Polish-Russian War (film)"
+          ],
+          "support_title_recall": 0.3333333333333333,
+          "answer_string_present_in_docs": false,
+          "docs": [
+            {
+              "title": "Polish-Russian War (film)",
+              "text": "Polish-Russian War (film): Polish-Russian War (Wojna polsko-ruska) is a 2009 Polish film directed by Xawery Żuławski based on the novel Polish-Russian War under the white-red flag by Dorota Masłowska."
+            },
+            {
+              "title": "Aleksander Ford",
+              "text": "Aleksander Ford: Aleksander Ford (born Mosze Lifszyc; 24 November 1908 in Kiev, Russian Empire – 4 April 1980 in Naples, Florida, United States) was a Polish film director; and head of the Polish People's Army Film Crew in the Soviet Union during World War II. Following the war he was appointed director of the Film Polski company. In 1948 he was appointed as a professor of the National Film School in Łódź (Państwowa Wyższa Szkoła Filmowa). Roman Polanski was among his students. Another of Ford's"
+            },
+            {
+              "title": "Aleksander Ford",
+              "text": "Aleksander Ford: Aleksander Ford( born Mosze Lifszyc; 24 November 1908 in Kiev, Russian Empire – 4 April 1980 in Naples, Florida, United States) was a Polish film director; and head of the Polish People's Army Film Crew in the Soviet Union during World War II. Following the war he was appointed director of the Film Polski company. In 1948 he was appointed as a professor of the National Film School in Łódź( Państwowa Wyższa Szkoła Filmowa). Roman Polanski was among his students. Another of Ford's"
+            },
+            {
+              "title": "Demons of War",
+              "text": "Demons of War: Demons of War( Polish:\" Demony wojny według Goi\") is a 1998 Polish war film by Władysław Pasikowski set during the Bosnian War."
+            },
+            {
+              "title": "5 Days of War",
+              "text": "5 Days of War: 5 Days of War is a 2011 action film directed by Renny Harlin. The story is about the Russo- Georgian War over the Russian- backed breakaway autonomous republic of South Ossetia in Georgia, including the events leading up to the conflict. The film was released in Georgia as 5 Days of August, and in other countries as 5 Days of War and also City on Fire."
+            },
+            {
+              "title": "Ashes and Diamonds (film)",
+              "text": "Ashes and Diamonds (film): Ashes and Diamonds( Polish: Popiół i diament) is a 1958 Polish drama film directed by Andrzej Wajda, based on the 1948 novel by Polish writer Jerzy Andrzejewski. Starring Zbigniew Cybulski and Ewa Krzyżewska, it completed Wajda's war films trilogy, following\" A Generation\"( 1954) and\" Kanal\"( 1956). The action of\" Ashes and Diamonds\" takes place in 1945, shortly after World War II. The main protagonist of the film, former Home Army soldier Maciek Chełmicki, is acting i"
+            },
+            {
+              "title": "Battle of Kletsk (1706)",
+              "text": "Battle of Kletsk (1706): The Battle of Kletsk took place on 30 April 1706( Gregorian calendar), in- and outside the city of Kletsk, Belarus during Charles XII's Polish campaign of 1701 – 1706, in the Great Northern War. The Swedish forces were led by Carl Gustaf Creutz who defeated a larger Russian – Cossack force under the command of Semjon Nepljujev and Danylo Apostol. Many of the Russian and Cossack regiments participating in the battle were wiped out and ceased to exist as fighting units."
+            },
+            {
+              "title": "The House of the Sun (film)",
+              "text": "The House of the Sun (film): The House of the Sun is a 2010 Russian movie about hippies in the Soviet Union. The director is rock musician Garik Sukachov."
+            },
+            {
+              "title": "The Last Day of Summer",
+              "text": "The Last Day of Summer: The Last Day of Summer is a 1958 romantic drama film directed by the Polish film director Tadeusz Konwicki."
+            },
+            {
+              "title": "Viktor Yeliseyev",
+              "text": "Viktor Yeliseyev: Viktor Petrovich Yeliseyev( born June 9, 1950) is a Russian general, orchestra conductor and music teacher. He is the director of the Ministry of the Interior Ensemble, one of the two Russian Red Army Choirs."
+            }
+          ]
+        },
+        "bge_rerank_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "Dorota Masłowska",
+          "latency_sec": 0.3460984230041504,
+          "support_titles_present": [
+            "Polish-Russian War (film)"
+          ],
+          "support_title_recall": 0.3333333333333333,
+          "answer_string_present_in_docs": false,
+          "docs": [
+            {
+              "title": "Polish-Russian War (film)",
+              "text": "Polish-Russian War (film): Polish-Russian War (Wojna polsko-ruska) is a 2009 Polish film directed by Xawery Żuławski based on the novel Polish-Russian War under the white-red flag by Dorota Masłowska."
+            },
+            {
+              "title": "Aleksander Ford",
+              "text": "Aleksander Ford: Aleksander Ford( born Mosze Lifszyc; 24 November 1908 in Kiev, Russian Empire – 4 April 1980 in Naples, Florida, United States) was a Polish film director; and head of the Polish People's Army Film Crew in the Soviet Union during World War II. Following the war he was appointed director of the Film Polski company. In 1948 he was appointed as a professor of the National Film School in Łódź( Państwowa Wyższa Szkoła Filmowa). Roman Polanski was among his students. Another of Ford's"
+            },
+            {
+              "title": "Aleksander Ford",
+              "text": "Aleksander Ford: Aleksander Ford (born Mosze Lifszyc; 24 November 1908 in Kiev, Russian Empire – 4 April 1980 in Naples, Florida, United States) was a Polish film director; and head of the Polish People's Army Film Crew in the Soviet Union during World War II. Following the war he was appointed director of the Film Polski company. In 1948 he was appointed as a professor of the National Film School in Łódź (Państwowa Wyższa Szkoła Filmowa). Roman Polanski was among his students. Another of Ford's"
+            },
+            {
+              "title": "Arise, Russian people!",
+              "text": "Arise, Russian people!: \"Arise, Russian People!\" Is a patriotic song from the Soviet film \"Alexander Nevsky\" (1938) directed by Sergei Eisenstein. The music is composed by Sergei Prokofiev, with lyricist Vladimir Lugovskoy. \"Arise, Russian people!\" is also the fourth movement of the Prokofiev cantata \"Alexander Nevsky\" (adapted from the film score in 1939), which has seven parts: \"Russia under the Mongolian Yoke,Song about Alexander Nevsky,Crusaders in Pskov,Arise, Russian People!Battle of the I"
+            },
+            {
+              "title": "Crime and Punishment (2002 Russian film)",
+              "text": "Crime and Punishment (2002 Russian film): Crime and Punishment is a 2002 American-Russian-Polish drama film written and directed by Menahem Golan and starring Crispin Glover and Vanessa Redgrave. It is an adaptation of Fyodor Dostoyevsky's novel of the same name."
+            },
+            {
+              "title": "Ashes and Diamonds (film)",
+              "text": "Ashes and Diamonds (film): Ashes and Diamonds( Polish: Popiół i diament) is a 1958 Polish drama film directed by Andrzej Wajda, based on the 1948 novel by Polish writer Jerzy Andrzejewski. Starring Zbigniew Cybulski and Ewa Krzyżewska, it completed Wajda's war films trilogy, following\" A Generation\"( 1954) and\" Kanal\"( 1956). The action of\" Ashes and Diamonds\" takes place in 1945, shortly after World War II. The main protagonist of the film, former Home Army soldier Maciek Chełmicki, is acting i"
+            },
+            {
+              "title": "The Tango of Our Childhood",
+              "text": "The Tango of Our Childhood: The Tango of Our Childhood is a 1985 Soviet- Armenian tragicomedy film written and directed by Albert Mkrtchyan and starring Mher Mkrtchyan( his brother) and Galya Novents. Novents' performance as a mother who struggles to raise her children during post -World War II Armenia was awarded Special Mention at the Venice Film Festival. Mkrtchyan dedicated the autobiographical story to his hometown of Gyumri. The filming locations highlighted the historic buildings of Gyumr"
+            },
+            {
+              "title": "The Loves of Casanova",
+              "text": "The Loves of Casanova: The Loves of Casanova or Casanova is a 1927 French historical drama film directed by Alexandre Volkoff and starring Ivan Mozzhukhin, Suzanne Bianchetti and Diana Karenne. The film portrays the life and adventures of Giacomo Casanova( 1725- 1798). Many of those involved with the film were Russian emigres who had come to France following the Russian Revolution."
+            },
+            {
+              "title": "Nikolai Lebedev (film director)",
+              "text": "Nikolai Lebedev (film director): Nikolai Igorevich Lebedev (born 16 November 1966) is a Russian film director, screenwriter and film producer. Born in Kishinev (now Chișinău), Soviet Union (now Moldova). He is best known as the director, writer, and producer of Wolfhound (2007) and Legend № 17 (2013), both of which are became well grossing films in Russian cinema. Other films include the critically lauded drama \"The Star\" (1994), the drama film \"Soundtrack of Passion\" (2009), and the disaster fi"
+            },
+            {
+              "title": "Krzysztof Kopczyński",
+              "text": "Krzysztof Kopczyński: Krzysztof Kopczyński, Ph.D is a Polish film-maker and author. He was born in 1959 in Warsaw. He is also a doctor of humanities, lecturer at the University of Warsaw, and an expert of the Polish Film Institute. He has written and produced a number of films including Stone Silence, a multiple award-winning documentary. He has also authored three books and several dozen articles about nineteenth-century and contemporary Polish culture and media. He is an associate professor at"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "idx": 1,
+      "qid": "e2a3bf2a0bdd11eba7f7acde48001122",
+      "type": "compositional",
+      "question": "When did John V, Prince Of Anhalt-Zerbst's father die?",
+      "gold": "12 June 1516",
+      "support_titles": [
+        "Ernest I, Prince of Anhalt-Dessau",
+        "John V of Anhalt-Zerbst",
+        "John V, Prince of Anhalt-Zerbst"
+      ],
+      "bm25_top_titles": [
+        "John V, Prince of Anhalt-Zerbst",
+        "John V, Prince of Anhalt-Zerbst",
+        "Karl I, Prince of Anhalt-Zerbst",
+        "Bernhard VII, Prince of Anhalt-Zerbst",
+        "Bernhard VII, Prince of Anhalt-Zerbst",
+        "John VI, Prince of Anhalt-Zerbst",
+        "John Augustus, Prince of Anhalt-Zerbst",
+        "Waldemar III, Prince of Anhalt-Zerbst",
+        "John Louis II, Prince of Anhalt-Zerbst",
+        "John Louis II, Prince of Anhalt-Zerbst"
+      ],
+      "bge_top_titles": [
+        "John V, Prince of Anhalt-Zerbst",
+        "John V, Prince of Anhalt-Zerbst",
+        "John VI, Prince of Anhalt-Zerbst",
+        "Karl I, Prince of Anhalt-Zerbst",
+        "Bernhard VII, Prince of Anhalt-Zerbst",
+        "Bernhard VII, Prince of Anhalt-Zerbst",
+        "John Louis I, Prince of Anhalt-Dornburg",
+        "John Louis I, Prince of Anhalt-Dornburg",
+        "John Augustus, Prince of Anhalt-Zerbst",
+        "John Louis II, Prince of Anhalt-Zerbst"
+      ],
+      "bge_scores": [
+        0.9998192191123962,
+        0.9997525811195374,
+        0.9361609816551208,
+        0.9250257611274719,
+        0.7933933138847351,
+        0.7861482501029968,
+        0.7215017676353455,
+        0.712277352809906,
+        0.5607598423957825,
+        0.5326953530311584
+      ],
+      "conditions": {
+        "bm25_basic": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "The passage does not provide any information about when John V, Prince of Anhalt-Zerbst's father, Ernest I, Prince of Anhalt-Dessau",
+          "latency_sec": 0.8792219161987305,
+          "support_titles_present": [
+            "John V, Prince of Anhalt-Zerbst"
+          ],
+          "support_title_recall": 0.3333333333333333,
+          "answer_string_present_in_docs": false,
+          "docs": [
+            {
+              "title": "John V, Prince of Anhalt-Zerbst",
+              "text": "John V, Prince of Anhalt-Zerbst: John V of Anhalt-Zerbst (Dessau, 4 September 1504 – Zerbst, 4 February 1551), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Dessau. From 1544, he assumed rule of the re-created principality of Anhalt-Zerbst. John was the second (but eldest surviving) son of Ernest I, Prince of Anhalt-Dessau, by his wife Margarete, daughter of Henry I, Duke of Münsterberg-Oels, and granddaughter of George of Poděbrady, King of Bohemia."
+            },
+            {
+              "title": "John V, Prince of Anhalt-Zerbst",
+              "text": "John V, Prince of Anhalt-Zerbst: John V of Anhalt- Zerbst( Dessau, 4 September 1504 – Zerbst, 4 February 1551), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Dessau. From 1544, he assumed rule of the re-created principality of Anhalt- Zerbst. John was the second( but eldest surviving) son of Ernest I, Prince of Anhalt- Dessau, by his wife Margarete, daughter of Henry I, Duke of Münsterberg- Oels, and granddaughter of George of Poděbrady, King of Bohemia."
+            },
+            {
+              "title": "Karl I, Prince of Anhalt-Zerbst",
+              "text": "Karl I, Prince of Anhalt-Zerbst: Karl I of Anhalt- Zerbst( 17 November 1534 in Dessau – 4 May 1561 in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the eldest son of John V, Prince of Anhalt- Zerbst, by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg."
+            },
+            {
+              "title": "Bernhard VII, Prince of Anhalt-Zerbst",
+              "text": "Bernhard VII, Prince of Anhalt-Zerbst: Bernhard VII of Anhalt- Zerbst( 17 March 1540 – 1 March 1570), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was born and died in Dessau, and was the third and youngest son of John V, Prince of Anhalt- Zerbst by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg."
+            },
+            {
+              "title": "Bernhard VII, Prince of Anhalt-Zerbst",
+              "text": "Bernhard VII, Prince of Anhalt-Zerbst: Bernhard VII of Anhalt-Zerbst (17 March 1540 – 1 March 1570), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Zerbst. He was born and died in Dessau, and was the third and youngest son of John V, Prince of Anhalt-Zerbst by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg."
+            },
+            {
+              "title": "John VI, Prince of Anhalt-Zerbst",
+              "text": "John VI, Prince of Anhalt-Zerbst: John VI of Anhalt-Zerbst (Zerbst, 24 March 1621 – Zerbst, 4 July 1667), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Zerbst. He was the only son of Rudolph, Prince of Anhalt-Zerbst, by his second wife Magdalene, daughter of John VII, Count of Oldenburg."
+            },
+            {
+              "title": "John Augustus, Prince of Anhalt-Zerbst",
+              "text": "John Augustus, Prince of Anhalt-Zerbst: John Augustus, Prince of Anhalt- Zerbst( 29 July 1677 in Zerbst – 7 November 1742 in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the eldest son of Karl William, Prince of Anhalt- Zerbst, by his wife Sophie, daughter of August, Duke of Saxe- Weissenfels."
+            },
+            {
+              "title": "Waldemar III, Prince of Anhalt-Zerbst",
+              "text": "Waldemar III, Prince of Anhalt-Zerbst: Waldemar III, Prince of Anhalt- Zerbst( died 1391) was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the youngest son of John II, Prince of Anhalt- Zerbst, by his wife Elisabeth, daughter of John I, Count of Henneberg- Schleusingen."
+            },
+            {
+              "title": "John Louis II, Prince of Anhalt-Zerbst",
+              "text": "John Louis II, Prince of Anhalt-Zerbst: John Louis II, Prince of Anhalt-Zerbst (23 June 1688, in Dornburg – 5 November 1746, in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Dornburg. After 1742 he became ruler over the principality of Anhalt-Zerbst . He was the eldest son of John Louis I, Prince of Anhalt-Dornburg, by his wife Christine Eleonore of Zeutsch."
+            },
+            {
+              "title": "John Louis II, Prince of Anhalt-Zerbst",
+              "text": "John Louis II, Prince of Anhalt-Zerbst: John Louis II, Prince of Anhalt- Zerbst( 23 June 1688, in Dornburg – 5 November 1746, in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Dornburg. After 1742 he became ruler over the principality of Anhalt- Zerbst. He was the eldest son of John Louis I, Prince of Anhalt- Dornburg, by his wife Christine Eleonore of Zeutsch."
+            }
+          ]
+        },
+        "bm25_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "The passage does not provide the death year of John V's father, Ernest I, Prince of Anhalt-Dessau.",
+          "latency_sec": 0.550349235534668,
+          "support_titles_present": [
+            "John V, Prince of Anhalt-Zerbst"
+          ],
+          "support_title_recall": 0.3333333333333333,
+          "answer_string_present_in_docs": false,
+          "docs": [
+            {
+              "title": "John V, Prince of Anhalt-Zerbst",
+              "text": "John V, Prince of Anhalt-Zerbst: John V of Anhalt-Zerbst (Dessau, 4 September 1504 – Zerbst, 4 February 1551), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Dessau. From 1544, he assumed rule of the re-created principality of Anhalt-Zerbst. John was the second (but eldest surviving) son of Ernest I, Prince of Anhalt-Dessau, by his wife Margarete, daughter of Henry I, Duke of Münsterberg-Oels, and granddaughter of George of Poděbrady, King of Bohemia."
+            },
+            {
+              "title": "John V, Prince of Anhalt-Zerbst",
+              "text": "John V, Prince of Anhalt-Zerbst: John V of Anhalt- Zerbst( Dessau, 4 September 1504 – Zerbst, 4 February 1551), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Dessau. From 1544, he assumed rule of the re-created principality of Anhalt- Zerbst. John was the second( but eldest surviving) son of Ernest I, Prince of Anhalt- Dessau, by his wife Margarete, daughter of Henry I, Duke of Münsterberg- Oels, and granddaughter of George of Poděbrady, King of Bohemia."
+            },
+            {
+              "title": "Karl I, Prince of Anhalt-Zerbst",
+              "text": "Karl I, Prince of Anhalt-Zerbst: Karl I of Anhalt- Zerbst( 17 November 1534 in Dessau – 4 May 1561 in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the eldest son of John V, Prince of Anhalt- Zerbst, by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg."
+            },
+            {
+              "title": "Bernhard VII, Prince of Anhalt-Zerbst",
+              "text": "Bernhard VII, Prince of Anhalt-Zerbst: Bernhard VII of Anhalt- Zerbst( 17 March 1540 – 1 March 1570), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was born and died in Dessau, and was the third and youngest son of John V, Prince of Anhalt- Zerbst by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg."
+            },
+            {
+              "title": "Bernhard VII, Prince of Anhalt-Zerbst",
+              "text": "Bernhard VII, Prince of Anhalt-Zerbst: Bernhard VII of Anhalt-Zerbst (17 March 1540 – 1 March 1570), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Zerbst. He was born and died in Dessau, and was the third and youngest son of John V, Prince of Anhalt-Zerbst by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg."
+            },
+            {
+              "title": "John VI, Prince of Anhalt-Zerbst",
+              "text": "John VI, Prince of Anhalt-Zerbst: John VI of Anhalt-Zerbst (Zerbst, 24 March 1621 – Zerbst, 4 July 1667), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Zerbst. He was the only son of Rudolph, Prince of Anhalt-Zerbst, by his second wife Magdalene, daughter of John VII, Count of Oldenburg."
+            },
+            {
+              "title": "John Augustus, Prince of Anhalt-Zerbst",
+              "text": "John Augustus, Prince of Anhalt-Zerbst: John Augustus, Prince of Anhalt- Zerbst( 29 July 1677 in Zerbst – 7 November 1742 in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the eldest son of Karl William, Prince of Anhalt- Zerbst, by his wife Sophie, daughter of August, Duke of Saxe- Weissenfels."
+            },
+            {
+              "title": "Waldemar III, Prince of Anhalt-Zerbst",
+              "text": "Waldemar III, Prince of Anhalt-Zerbst: Waldemar III, Prince of Anhalt- Zerbst( died 1391) was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the youngest son of John II, Prince of Anhalt- Zerbst, by his wife Elisabeth, daughter of John I, Count of Henneberg- Schleusingen."
+            },
+            {
+              "title": "John Louis II, Prince of Anhalt-Zerbst",
+              "text": "John Louis II, Prince of Anhalt-Zerbst: John Louis II, Prince of Anhalt-Zerbst (23 June 1688, in Dornburg – 5 November 1746, in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Dornburg. After 1742 he became ruler over the principality of Anhalt-Zerbst . He was the eldest son of John Louis I, Prince of Anhalt-Dornburg, by his wife Christine Eleonore of Zeutsch."
+            },
+            {
+              "title": "John Louis II, Prince of Anhalt-Zerbst",
+              "text": "John Louis II, Prince of Anhalt-Zerbst: John Louis II, Prince of Anhalt- Zerbst( 23 June 1688, in Dornburg – 5 November 1746, in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Dornburg. After 1742 he became ruler over the principality of Anhalt- Zerbst. He was the eldest son of John Louis I, Prince of Anhalt- Dornburg, by his wife Christine Eleonore of Zeutsch."
+            }
+          ]
+        },
+        "bge_rerank_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "The passage does not provide the death year of John V's father, Ernest I, Prince of Anhalt-Dessau.",
+          "latency_sec": 0.5502216815948486,
+          "support_titles_present": [
+            "John V, Prince of Anhalt-Zerbst"
+          ],
+          "support_title_recall": 0.3333333333333333,
+          "answer_string_present_in_docs": false,
+          "docs": [
+            {
+              "title": "John V, Prince of Anhalt-Zerbst",
+              "text": "John V, Prince of Anhalt-Zerbst: John V of Anhalt-Zerbst (Dessau, 4 September 1504 – Zerbst, 4 February 1551), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Dessau. From 1544, he assumed rule of the re-created principality of Anhalt-Zerbst. John was the second (but eldest surviving) son of Ernest I, Prince of Anhalt-Dessau, by his wife Margarete, daughter of Henry I, Duke of Münsterberg-Oels, and granddaughter of George of Poděbrady, King of Bohemia."
+            },
+            {
+              "title": "John V, Prince of Anhalt-Zerbst",
+              "text": "John V, Prince of Anhalt-Zerbst: John V of Anhalt- Zerbst( Dessau, 4 September 1504 – Zerbst, 4 February 1551), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Dessau. From 1544, he assumed rule of the re-created principality of Anhalt- Zerbst. John was the second( but eldest surviving) son of Ernest I, Prince of Anhalt- Dessau, by his wife Margarete, daughter of Henry I, Duke of Münsterberg- Oels, and granddaughter of George of Poděbrady, King of Bohemia."
+            },
+            {
+              "title": "John VI, Prince of Anhalt-Zerbst",
+              "text": "John VI, Prince of Anhalt-Zerbst: John VI of Anhalt-Zerbst (Zerbst, 24 March 1621 – Zerbst, 4 July 1667), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Zerbst. He was the only son of Rudolph, Prince of Anhalt-Zerbst, by his second wife Magdalene, daughter of John VII, Count of Oldenburg."
+            },
+            {
+              "title": "Karl I, Prince of Anhalt-Zerbst",
+              "text": "Karl I, Prince of Anhalt-Zerbst: Karl I of Anhalt- Zerbst( 17 November 1534 in Dessau – 4 May 1561 in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the eldest son of John V, Prince of Anhalt- Zerbst, by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg."
+            },
+            {
+              "title": "Bernhard VII, Prince of Anhalt-Zerbst",
+              "text": "Bernhard VII, Prince of Anhalt-Zerbst: Bernhard VII of Anhalt- Zerbst( 17 March 1540 – 1 March 1570), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was born and died in Dessau, and was the third and youngest son of John V, Prince of Anhalt- Zerbst by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg."
+            },
+            {
+              "title": "Bernhard VII, Prince of Anhalt-Zerbst",
+              "text": "Bernhard VII, Prince of Anhalt-Zerbst: Bernhard VII of Anhalt-Zerbst (17 March 1540 – 1 March 1570), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Zerbst. He was born and died in Dessau, and was the third and youngest son of John V, Prince of Anhalt-Zerbst by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg."
+            },
+            {
+              "title": "John Louis I, Prince of Anhalt-Dornburg",
+              "text": "John Louis I, Prince of Anhalt-Dornburg: John Louis I, Prince of Anhalt-Dornburg (4 May 1656, in Zerbst – 1 November 1704, in Dornburg), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Dornburg. He was the sixth (but fourth surviving) son of John VI, Prince of Anhalt-Zerbst, by his wife Sophie Auguste, daughter of Frederick III, Duke of Schleswig-Holstein-Gottorp."
+            },
+            {
+              "title": "John Louis I, Prince of Anhalt-Dornburg",
+              "text": "John Louis I, Prince of Anhalt-Dornburg: John Louis I, Prince of Anhalt- Dornburg( 4 May 1656, in Zerbst – 1 November 1704, in Dornburg), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Dornburg. He was the sixth( but fourth surviving) son of John VI, Prince of Anhalt- Zerbst, by his wife Sophie Auguste, daughter of Frederick III, Duke of Schleswig- Holstein- Gottorp."
+            },
+            {
+              "title": "John Augustus, Prince of Anhalt-Zerbst",
+              "text": "John Augustus, Prince of Anhalt-Zerbst: John Augustus, Prince of Anhalt- Zerbst( 29 July 1677 in Zerbst – 7 November 1742 in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the eldest son of Karl William, Prince of Anhalt- Zerbst, by his wife Sophie, daughter of August, Duke of Saxe- Weissenfels."
+            },
+            {
+              "title": "John Louis II, Prince of Anhalt-Zerbst",
+              "text": "John Louis II, Prince of Anhalt-Zerbst: John Louis II, Prince of Anhalt-Zerbst (23 June 1688, in Dornburg – 5 November 1746, in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Dornburg. After 1742 he became ruler over the principality of Anhalt-Zerbst . He was the eldest son of John Louis I, Prince of Anhalt-Dornburg, by his wife Christine Eleonore of Zeutsch."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "idx": 2,
+      "qid": "0cd3bdea0bde11eba7f7acde48001122",
+      "type": "compositional",
+      "question": "What is the award that the director of film Wearing Velvet Slippers Under A Golden Umbrella won?",
+      "gold": "Myanmar Motion Picture Academy Awards",
+      "support_titles": [
+        "Wearing Velvet Slippers under a Golden Umbrella",
+        "Wunna"
+      ],
+      "bm25_top_titles": [
+        "Wearing Velvet Slippers under a Golden Umbrella",
+        "Heaven & Hell: A Tribute to the Velvet Underground",
+        "Danny Boyle",
+        "The Umbrella Coup",
+        "Bygones (film)",
+        "László Nemes",
+        "Jacques Audiard",
+        "Barbra Streisand",
+        "Barbra Streisand",
+        "László Benedek"
+      ],
+      "bge_top_titles": [
+        "Wearing Velvet Slippers under a Golden Umbrella",
+        "Peter Fonda",
+        "Danny Boyle",
+        "Lou Diamond Phillips",
+        "Jacques Audiard",
+        "Barbra Streisand",
+        "Barbra Streisand",
+        "Lav Diaz",
+        "László Benedek",
+        "Li Dawei (director)"
+      ],
+      "bge_scores": [
+        0.9998501539230347,
+        0.26744264364242554,
+        0.2058374136686325,
+        0.15427365899085999,
+        0.05392109230160713,
+        0.052332356572151184,
+        0.052332356572151184,
+        0.03414304554462433,
+        0.034058909863233566,
+        0.021548107266426086
+      ],
+      "conditions": {
+        "bm25_basic": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "Based on the information provided in Passage P1, the film \"Wearing Velvet Slippers Under a Golden Umbrella\" was directed by Maung Wunna",
+          "latency_sec": 1.017772912979126,
+          "support_titles_present": [
+            "Wearing Velvet Slippers under a Golden Umbrella"
+          ],
+          "support_title_recall": 0.5,
+          "answer_string_present_in_docs": false,
+          "docs": [
+            {
+              "title": "Wearing Velvet Slippers under a Golden Umbrella",
+              "text": "Wearing Velvet Slippers under a Golden Umbrella: Wearing Velvet Slippers under a Golden Umbrella (Pronounced as Katipa phanat see shwe htee hsaung) is a 1970 Burmese film directed by Maung Wunna starring Myat Mon, Myat Lay and Thet Naung. The film was Maung Wunna's first feature as director and he also wrote the screenplay, based on the novel of the same name by Maung Thara."
+            },
+            {
+              "title": "Heaven & Hell: A Tribute to the Velvet Underground",
+              "text": "Heaven & Hell: A Tribute to the Velvet Underground: Heaven& Hell – A Tribute to The Velvet Underground is a series of tribute albums released by Imaginary Records in the UK dedicated to the Velvet Underground. While not technically part of the series, Imaginary Records also released another tribute album to the Velvet Underground, called which is in fact merely a compilation of fourteen tracks from the three Heaven& Hell albums. In 2009 Ozit- Morpheus Records re-released this compilation under t"
+            },
+            {
+              "title": "Danny Boyle",
+              "text": "Danny Boyle: Daniel Francis Boyle (born 20 October 1956) is an English director of film and stage, producer, and screenwriter. He is known for his work on films including \"Shallow GraveTrainspotting\" and its sequel \"T2 TrainspottingThe Beach28 Days LaterSunshineSlumdog Millionaire127 HoursSteve Jobs \"and \"Yesterday\". His debut film \"Shallow Grave\" won the BAFTA Award for Best British Film. The British Film Institute ranked \"Trainspotting\" the 10th greatest British film of the 20th century. Boyle"
+            },
+            {
+              "title": "The Umbrella Coup",
+              "text": "The Umbrella Coup: The Umbrella Coup is a 1980 French comedy film directed by Gérard Oury, starring Pierre Richard, Gordon Mitchell and Gert Fröbe. The creation of the film was inspired by several assassinations of Bulgarian dissidents where the so- called Bulgarian umbrella was used as a weapon. The working title of the film was\" Le Coup du Parapluie Bulgare\"."
+            },
+            {
+              "title": "Bygones (film)",
+              "text": "Bygones (film): Bygones is a 1987 Dutch drama film directed by Ine Schenkkan. It is based on the book of the same name of Inez Dullemen. The film won the Golden Calf for Best Feature Film award at the 1987 Netherlands Film Festival. Jasperina de Jong also won the Golden Calf for Best Actress for her role in the film."
+            },
+            {
+              "title": "László Nemes",
+              "text": "László Nemes: László Nemes( born Nemes Jeles László;; 18 February 1977) is a Hungarian film director and screenwriter. His 2015 debut feature film,\" Son of Saul,\" was screened in the main competition at the 2015 Cannes Film Festival, where it won the Grand Prix. He is the first Hungarian director whose film has won a Golden Globe for Best Foreign Language Film. \" Son of Saul\" is the second Hungarian film to win the Academy Award for Best Foreign Language Film. In 2016, Nemes was a member of the "
+            },
+            {
+              "title": "Jacques Audiard",
+              "text": "Jacques Audiard: Jacques Audiard( born 30 April 1952) is a French film director and screenwriter. He is the son of Michel Audiard, also a film director and screenwriter. He has won both the César Award for Best Film and the BAFTA Award for Best Film Not in the English Language twice, in 2005 for\" The Beat That My Heart Skipped\" and in 2010 for\" A Prophet\", as well as winning the Grand Prix at the Cannes Film Festival. His 2012 film\" Rust and Bone\", competed for the Palme d' Or at the 2012 Cannes"
+            },
+            {
+              "title": "Barbra Streisand",
+              "text": "Barbra Streisand: Barbara Joan \"Barbra\" Streisand (born April 24, 1942) is an American singer, actress, and filmmaker. In a career spanning six decades, she has achieved success in multiple fields of entertainment and has been recognized with two Academy Awards, ten Grammy Awards including the Grammy Lifetime Achievement Award and the Grammy Legend Award, five Emmy Awards including one Daytime Emmy, a Special Tony Award, an American Film Institute award, a Kennedy Center Honors prize, four Peabo"
+            },
+            {
+              "title": "Barbra Streisand",
+              "text": "Barbra Streisand: Barbara Joan \"Barbra\" Streisand (born April 24, 1942) is an American singer, actress, and filmmaker. In a career spanning six decades, she has achieved success in multiple fields of entertainment and has been recognized with two Academy Awards, ten Grammy Awards including the Grammy Lifetime Achievement Award and the Grammy Legend Award, five Emmy Awards including one Daytime Emmy, a Special Tony Award, an American Film Institute award, a Kennedy Center Honors prize, four Peabo"
+            },
+            {
+              "title": "László Benedek",
+              "text": "László Benedek: László Benedek( March 5, 1905 – March 11, 1992; sometimes\" Laslo Benedek\") was a Hungarian- born film director and cinematographer, most notable for directing\" The Wild One\"( 1953). He gained recognition for his direction of the film version of\" Death of a Salesman\"( 1951), for which he won the Golden Globe Award for Best Director and a Best Director nomination from the Directors Guild of America. However, it was for his directorial efforts on his next project that Benedek is bes"
+            }
+          ]
+        },
+        "bm25_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "Maung Wunna won the BAFTA Award for Best British Film for his directorial debut \"Wearing Velvet Slippers Under A Golden Umbrella\".",
+          "latency_sec": 0.8131868839263916,
+          "support_titles_present": [
+            "Wearing Velvet Slippers under a Golden Umbrella"
+          ],
+          "support_title_recall": 0.5,
+          "answer_string_present_in_docs": false,
+          "docs": [
+            {
+              "title": "Wearing Velvet Slippers under a Golden Umbrella",
+              "text": "Wearing Velvet Slippers under a Golden Umbrella: Wearing Velvet Slippers under a Golden Umbrella (Pronounced as Katipa phanat see shwe htee hsaung) is a 1970 Burmese film directed by Maung Wunna starring Myat Mon, Myat Lay and Thet Naung. The film was Maung Wunna's first feature as director and he also wrote the screenplay, based on the novel of the same name by Maung Thara."
+            },
+            {
+              "title": "Heaven & Hell: A Tribute to the Velvet Underground",
+              "text": "Heaven & Hell: A Tribute to the Velvet Underground: Heaven& Hell – A Tribute to The Velvet Underground is a series of tribute albums released by Imaginary Records in the UK dedicated to the Velvet Underground. While not technically part of the series, Imaginary Records also released another tribute album to the Velvet Underground, called which is in fact merely a compilation of fourteen tracks from the three Heaven& Hell albums. In 2009 Ozit- Morpheus Records re-released this compilation under t"
+            },
+            {
+              "title": "Danny Boyle",
+              "text": "Danny Boyle: Daniel Francis Boyle (born 20 October 1956) is an English director of film and stage, producer, and screenwriter. He is known for his work on films including \"Shallow GraveTrainspotting\" and its sequel \"T2 TrainspottingThe Beach28 Days LaterSunshineSlumdog Millionaire127 HoursSteve Jobs \"and \"Yesterday\". His debut film \"Shallow Grave\" won the BAFTA Award for Best British Film. The British Film Institute ranked \"Trainspotting\" the 10th greatest British film of the 20th century. Boyle"
+            },
+            {
+              "title": "The Umbrella Coup",
+              "text": "The Umbrella Coup: The Umbrella Coup is a 1980 French comedy film directed by Gérard Oury, starring Pierre Richard, Gordon Mitchell and Gert Fröbe. The creation of the film was inspired by several assassinations of Bulgarian dissidents where the so- called Bulgarian umbrella was used as a weapon. The working title of the film was\" Le Coup du Parapluie Bulgare\"."
+            },
+            {
+              "title": "Bygones (film)",
+              "text": "Bygones (film): Bygones is a 1987 Dutch drama film directed by Ine Schenkkan. It is based on the book of the same name of Inez Dullemen. The film won the Golden Calf for Best Feature Film award at the 1987 Netherlands Film Festival. Jasperina de Jong also won the Golden Calf for Best Actress for her role in the film."
+            },
+            {
+              "title": "László Nemes",
+              "text": "László Nemes: László Nemes( born Nemes Jeles László;; 18 February 1977) is a Hungarian film director and screenwriter. His 2015 debut feature film,\" Son of Saul,\" was screened in the main competition at the 2015 Cannes Film Festival, where it won the Grand Prix. He is the first Hungarian director whose film has won a Golden Globe for Best Foreign Language Film. \" Son of Saul\" is the second Hungarian film to win the Academy Award for Best Foreign Language Film. In 2016, Nemes was a member of the "
+            },
+            {
+              "title": "Jacques Audiard",
+              "text": "Jacques Audiard: Jacques Audiard( born 30 April 1952) is a French film director and screenwriter. He is the son of Michel Audiard, also a film director and screenwriter. He has won both the César Award for Best Film and the BAFTA Award for Best Film Not in the English Language twice, in 2005 for\" The Beat That My Heart Skipped\" and in 2010 for\" A Prophet\", as well as winning the Grand Prix at the Cannes Film Festival. His 2012 film\" Rust and Bone\", competed for the Palme d' Or at the 2012 Cannes"
+            },
+            {
+              "title": "Barbra Streisand",
+              "text": "Barbra Streisand: Barbara Joan \"Barbra\" Streisand (born April 24, 1942) is an American singer, actress, and filmmaker. In a career spanning six decades, she has achieved success in multiple fields of entertainment and has been recognized with two Academy Awards, ten Grammy Awards including the Grammy Lifetime Achievement Award and the Grammy Legend Award, five Emmy Awards including one Daytime Emmy, a Special Tony Award, an American Film Institute award, a Kennedy Center Honors prize, four Peabo"
+            },
+            {
+              "title": "Barbra Streisand",
+              "text": "Barbra Streisand: Barbara Joan \"Barbra\" Streisand (born April 24, 1942) is an American singer, actress, and filmmaker. In a career spanning six decades, she has achieved success in multiple fields of entertainment and has been recognized with two Academy Awards, ten Grammy Awards including the Grammy Lifetime Achievement Award and the Grammy Legend Award, five Emmy Awards including one Daytime Emmy, a Special Tony Award, an American Film Institute award, a Kennedy Center Honors prize, four Peabo"
+            },
+            {
+              "title": "László Benedek",
+              "text": "László Benedek: László Benedek( March 5, 1905 – March 11, 1992; sometimes\" Laslo Benedek\") was a Hungarian- born film director and cinematographer, most notable for directing\" The Wild One\"( 1953). He gained recognition for his direction of the film version of\" Death of a Salesman\"( 1951), for which he won the Golden Globe Award for Best Director and a Best Director nomination from the Directors Guild of America. However, it was for his directorial efforts on his next project that Benedek is bes"
+            }
+          ]
+        },
+        "bge_rerank_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "Maung Wunna won the Golden Globe Award for Best Director with his film \"Slumdog Millionaire\". However, since the director of \"Wearing",
+          "latency_sec": 0.8316121101379395,
+          "support_titles_present": [
+            "Wearing Velvet Slippers under a Golden Umbrella"
+          ],
+          "support_title_recall": 0.5,
+          "answer_string_present_in_docs": false,
+          "docs": [
+            {
+              "title": "Wearing Velvet Slippers under a Golden Umbrella",
+              "text": "Wearing Velvet Slippers under a Golden Umbrella: Wearing Velvet Slippers under a Golden Umbrella (Pronounced as Katipa phanat see shwe htee hsaung) is a 1970 Burmese film directed by Maung Wunna starring Myat Mon, Myat Lay and Thet Naung. The film was Maung Wunna's first feature as director and he also wrote the screenplay, based on the novel of the same name by Maung Thara."
+            },
+            {
+              "title": "Peter Fonda",
+              "text": "Peter Fonda: Peter Henry Fonda( February 23, 1940 – August 16, 2019) was an American actor, director, and screenwriter. He was the son of Henry Fonda, younger brother of Jane Fonda, and father of Bridget Fonda. He was a part of the counterculture of the 1960s. Fonda was nominated for the Academy Award for Best Original Screenplay for\" Easy Rider\"( 1969), and the Academy Award for Best Actor for\" Ulee's Gold\"( 1997). For the latter, he won the Golden Globe Award for Best Actor – Motion Picture Dr"
+            },
+            {
+              "title": "Danny Boyle",
+              "text": "Danny Boyle: Daniel Francis Boyle (born 20 October 1956) is an English director of film and stage, producer, and screenwriter. He is known for his work on films including \"Shallow GraveTrainspotting\" and its sequel \"T2 TrainspottingThe Beach28 Days LaterSunshineSlumdog Millionaire127 HoursSteve Jobs \"and \"Yesterday\". His debut film \"Shallow Grave\" won the BAFTA Award for Best British Film. The British Film Institute ranked \"Trainspotting\" the 10th greatest British film of the 20th century. Boyle"
+            },
+            {
+              "title": "Lou Diamond Phillips",
+              "text": "Lou Diamond Phillips: Louis Diamond Phillips( né Upchurch; born February 17, 1962) is a Filipino American actor and director. His breakthrough came when he starred as Ritchie Valens in the biographical drama film\" La Bamba\"( 1987). For the Academy Award- nominated\" Stand and Deliver\"( 1988), Phillips was nominated for a Golden Globe Award and won an Independent Spirit Award. He made his Broadway debut with the 1996 revival of\" The King and I\", earning a Tony Award nomination for his portrayal of"
+            },
+            {
+              "title": "Jacques Audiard",
+              "text": "Jacques Audiard: Jacques Audiard( born 30 April 1952) is a French film director and screenwriter. He is the son of Michel Audiard, also a film director and screenwriter. He has won both the César Award for Best Film and the BAFTA Award for Best Film Not in the English Language twice, in 2005 for\" The Beat That My Heart Skipped\" and in 2010 for\" A Prophet\", as well as winning the Grand Prix at the Cannes Film Festival. His 2012 film\" Rust and Bone\", competed for the Palme d' Or at the 2012 Cannes"
+            },
+            {
+              "title": "Barbra Streisand",
+              "text": "Barbra Streisand: Barbara Joan \"Barbra\" Streisand (born April 24, 1942) is an American singer, actress, and filmmaker. In a career spanning six decades, she has achieved success in multiple fields of entertainment and has been recognized with two Academy Awards, ten Grammy Awards including the Grammy Lifetime Achievement Award and the Grammy Legend Award, five Emmy Awards including one Daytime Emmy, a Special Tony Award, an American Film Institute award, a Kennedy Center Honors prize, four Peabo"
+            },
+            {
+              "title": "Barbra Streisand",
+              "text": "Barbra Streisand: Barbara Joan \"Barbra\" Streisand (born April 24, 1942) is an American singer, actress, and filmmaker. In a career spanning six decades, she has achieved success in multiple fields of entertainment and has been recognized with two Academy Awards, ten Grammy Awards including the Grammy Lifetime Achievement Award and the Grammy Legend Award, five Emmy Awards including one Daytime Emmy, a Special Tony Award, an American Film Institute award, a Kennedy Center Honors prize, four Peabo"
+            },
+            {
+              "title": "Lav Diaz",
+              "text": "Lav Diaz: Lavrente Indico Diaz( born December 30, 1958) is a Filipino filmmaker. He is known as one of the key members of the slow cinema movement, having made several of the longest narrative films on record. Although he had been making films since the late 1990s, Diaz did n't attract much public attention outside of the Philippines and the festival circuit until the release of his 2013 film\" Norte, the End of History\", which was entered into the Un Certain Regard section of the 2013 Cannes Fil"
+            },
+            {
+              "title": "László Benedek",
+              "text": "László Benedek: László Benedek( March 5, 1905 – March 11, 1992; sometimes\" Laslo Benedek\") was a Hungarian- born film director and cinematographer, most notable for directing\" The Wild One\"( 1953). He gained recognition for his direction of the film version of\" Death of a Salesman\"( 1951), for which he won the Golden Globe Award for Best Director and a Best Director nomination from the Directors Guild of America. However, it was for his directorial efforts on his next project that Benedek is bes"
+            },
+            {
+              "title": "Li Dawei (director)",
+              "text": "Li Dawei (director): Li Dawei( 1970 – 10 April 2018) was a Chinese film and television director best known for his 2003 television series\" The Story of a Noble Family\" and the 2009 film\" A Tale of Two Donkeys\"( 走着瞧). He won the China Television\" Top 10 Director\" award in 2003 and the Golden Rooster Award for Best Directorial Debut in 2009."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "idx": 3,
+      "qid": "f9dcb4a60bda11eba7f7acde48001122",
+      "type": "compositional",
+      "question": "Where was the director of film Ronnie Rocket born?",
+      "gold": "Missoula, Montana",
+      "support_titles": [
+        "David Lynch",
+        "Ronnie Rocket"
+      ],
+      "bm25_top_titles": [
+        "Ronnie Rocket",
+        "The Rocket (2005 film)",
+        "Woman in the Moon",
+        "Fritz von Opel",
+        "OTRAG",
+        "Rocket Attack U.S.A.",
+        "Allen Collins",
+        "William Leitch (scientist)",
+        "Ronnie Browne",
+        "Ronnie Eldridge"
+      ],
+      "bge_top_titles": [
+        "Ronnie Rocket",
+        "Max Fleischer",
+        "William Leitch (scientist)",
+        "Giorgio Pressburger",
+        "Marc Sorkin",
+        "Nat Ross",
+        "Bonanno Pisano",
+        "Ronnie Browne",
+        "László Nemes",
+        "Olav Aaraas"
+      ],
+      "bge_scores": [
+        0.9467660188674927,
+        0.23156499862670898,
+        0.0412774495780468,
+        0.03936493769288063,
+        0.02567836456000805,
+        0.016042126342654228,
+        0.015514210797846317,
+        0.011373037472367287,
+        0.010560065507888794,
+        0.010190587490797043
+      ],
+      "conditions": {
+        "bm25_basic": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "The passage does not provide information about the birthplace of the director of the film \"Ronnie Rocket.\" David Lynch, who wrote and intended to direct the film",
+          "latency_sec": 0.9476680755615234,
+          "support_titles_present": [
+            "Ronnie Rocket"
+          ],
+          "support_title_recall": 0.5,
+          "answer_string_present_in_docs": false,
+          "docs": [
+            {
+              "title": "Ronnie Rocket",
+              "text": "Ronnie Rocket: Ronnie Rocket is an unfinished film project written by David Lynch, who also intended to direct it. Begun after the success of Lynch's 1977 film \"EraserheadRonnie Rocket\" was shelved after Lynch felt he would be unable to find financial backing for the project. He instead sought out an existing script on which to base his next film, settling on what would become 1980's \"The Elephant Man\". \"Ronnie Rocket\" was to feature many of the elements which have since come to be seen as Lynch"
+            },
+            {
+              "title": "The Rocket (2005 film)",
+              "text": "The Rocket (2005 film): The Rocket( Canadian, also known as The Rocket: The Legend of Rocket Richard and The Rocket: The Maurice Richard Story) is a French- Canadian biopic about the ice hockey player Maurice\" The Rocket\" Richard. It stars Roy Dupuis and was directed by Charles Binamé. It features appearances by National Hockey League players Mike Ricci, Sean Avery, Vincent Lecavalier, Philippe Sauvé, Stéphane Quintal, Ian Laperrière and Pascal Dupuis."
+            },
+            {
+              "title": "Woman in the Moon",
+              "text": "Woman in the Moon: Woman in the Moon( German Frau im Mond) is a science fiction silent film that premiered 15 October 1929 at the UFA- Palast am Zoo cinema in Berlin to an audience of 2,000. It is often considered to be one of the first\" serious\" science fiction films. It was written and directed by Fritz Lang, based on the novel\" The Rocket to the Moon\" by his collaborator Thea von Harbou, his wife at the time. It was released in the US as\" By Rocket to the Moon\" and in the UK as\" Woman in the "
+            },
+            {
+              "title": "Fritz von Opel",
+              "text": "Fritz von Opel: Fritz Adam Hermann von Opel (4 May 1899 – 8 April 1971), known as Fritz Adam Hermann Opel until his father was ennobled in 1917, was the only son of Wilhelm von Opel and a grandson of Adam Opel, founder of the Opel company. He is remembered mostly for his spectacular demonstrations of rocket propulsion that earned him the nickname \"Rocket Fritz\"."
+            },
+            {
+              "title": "OTRAG",
+              "text": "OTRAG: OTRAG( or), was a German company based in Stuttgart, which planned in the late 1970s and early 1980s to develop an alternative propulsion system for rockets. OTRAG was the first commercial developer and producer of space launch vehicles. The OTRAG Rocket claimed to present an inexpensive alternative to existing launch systems through mass- production of\" Common Rocket Propulsion Units\"( CRPU)."
+            },
+            {
+              "title": "Rocket Attack U.S.A.",
+              "text": "Rocket Attack U.S.A.: Rocket Attack U.S.A., also known as Five Minutes to Zero, is a 1958 propaganda espionage/science fiction film produced, directed and edited by Barry Mahon who intended to exploit the launching of Sputnik. It was featured on a 1990 episode of \"Mystery Science Theater 3000\", as well a 1986 episode of \"The Canned Film Festival\"."
+            },
+            {
+              "title": "Allen Collins",
+              "text": "Allen Collins: Larkin Allen Collins Jr.( July 19, 1952 – January 23, 1990) was one of the founding members and guitarists of Southern rock band Lynyrd Skynyrd, and co-wrote many of the band's songs with late frontman Ronnie Van Zant. He was born in Jacksonville, Florida."
+            },
+            {
+              "title": "William Leitch (scientist)",
+              "text": "William Leitch (scientist): William Leitch( 20 May 1814 – 9 May 1864) was a Scottish astronomer, naturalist and mathematician, and a minister of the Church of Scotland. Leitch studied mathematics and science at the University of Glasgow, and moved to Canada in 1860 to take the post of principal at Queen's University. Space historian Robert Godwin published in October 2015 his discovery that Leitch gave the first modern scientific explanation of the potential for space exploration using rockets( "
+            },
+            {
+              "title": "Ronnie Browne",
+              "text": "Ronnie Browne: Ronnie Browne(\" The Voice\")( born Ronald Grant Browne, 20 August 1937 in Edinburgh, Lothian, Scotland), is a Scottish folk musician and songwriter, who is a founding member of The Corries."
+            },
+            {
+              "title": "Ronnie Eldridge",
+              "text": "Ronnie Eldridge: Ronnie Eldridge(\" née\" Myers) is an American activist, businesswoman, politician, and television host. She is the current host of\" Eldridge& Co.\", a weekly television talk show on CUNY TV, the television station of the City University of New York."
+            }
+          ]
+        },
+        "bm25_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "The question is based on a fictional or unfinished film project called \"Ronnie Rocket\" by David Lynch, and no specific director for this film is mentioned in the",
+          "latency_sec": 0.6781773567199707,
+          "support_titles_present": [
+            "Ronnie Rocket"
+          ],
+          "support_title_recall": 0.5,
+          "answer_string_present_in_docs": false,
+          "docs": [
+            {
+              "title": "Ronnie Rocket",
+              "text": "Ronnie Rocket: Ronnie Rocket is an unfinished film project written by David Lynch, who also intended to direct it. Begun after the success of Lynch's 1977 film \"EraserheadRonnie Rocket\" was shelved after Lynch felt he would be unable to find financial backing for the project. He instead sought out an existing script on which to base his next film, settling on what would become 1980's \"The Elephant Man\". \"Ronnie Rocket\" was to feature many of the elements which have since come to be seen as Lynch"
+            },
+            {
+              "title": "The Rocket (2005 film)",
+              "text": "The Rocket (2005 film): The Rocket( Canadian, also known as The Rocket: The Legend of Rocket Richard and The Rocket: The Maurice Richard Story) is a French- Canadian biopic about the ice hockey player Maurice\" The Rocket\" Richard. It stars Roy Dupuis and was directed by Charles Binamé. It features appearances by National Hockey League players Mike Ricci, Sean Avery, Vincent Lecavalier, Philippe Sauvé, Stéphane Quintal, Ian Laperrière and Pascal Dupuis."
+            },
+            {
+              "title": "Woman in the Moon",
+              "text": "Woman in the Moon: Woman in the Moon( German Frau im Mond) is a science fiction silent film that premiered 15 October 1929 at the UFA- Palast am Zoo cinema in Berlin to an audience of 2,000. It is often considered to be one of the first\" serious\" science fiction films. It was written and directed by Fritz Lang, based on the novel\" The Rocket to the Moon\" by his collaborator Thea von Harbou, his wife at the time. It was released in the US as\" By Rocket to the Moon\" and in the UK as\" Woman in the "
+            },
+            {
+              "title": "Fritz von Opel",
+              "text": "Fritz von Opel: Fritz Adam Hermann von Opel (4 May 1899 – 8 April 1971), known as Fritz Adam Hermann Opel until his father was ennobled in 1917, was the only son of Wilhelm von Opel and a grandson of Adam Opel, founder of the Opel company. He is remembered mostly for his spectacular demonstrations of rocket propulsion that earned him the nickname \"Rocket Fritz\"."
+            },
+            {
+              "title": "OTRAG",
+              "text": "OTRAG: OTRAG( or), was a German company based in Stuttgart, which planned in the late 1970s and early 1980s to develop an alternative propulsion system for rockets. OTRAG was the first commercial developer and producer of space launch vehicles. The OTRAG Rocket claimed to present an inexpensive alternative to existing launch systems through mass- production of\" Common Rocket Propulsion Units\"( CRPU)."
+            },
+            {
+              "title": "Rocket Attack U.S.A.",
+              "text": "Rocket Attack U.S.A.: Rocket Attack U.S.A., also known as Five Minutes to Zero, is a 1958 propaganda espionage/science fiction film produced, directed and edited by Barry Mahon who intended to exploit the launching of Sputnik. It was featured on a 1990 episode of \"Mystery Science Theater 3000\", as well a 1986 episode of \"The Canned Film Festival\"."
+            },
+            {
+              "title": "Allen Collins",
+              "text": "Allen Collins: Larkin Allen Collins Jr.( July 19, 1952 – January 23, 1990) was one of the founding members and guitarists of Southern rock band Lynyrd Skynyrd, and co-wrote many of the band's songs with late frontman Ronnie Van Zant. He was born in Jacksonville, Florida."
+            },
+            {
+              "title": "William Leitch (scientist)",
+              "text": "William Leitch (scientist): William Leitch( 20 May 1814 – 9 May 1864) was a Scottish astronomer, naturalist and mathematician, and a minister of the Church of Scotland. Leitch studied mathematics and science at the University of Glasgow, and moved to Canada in 1860 to take the post of principal at Queen's University. Space historian Robert Godwin published in October 2015 his discovery that Leitch gave the first modern scientific explanation of the potential for space exploration using rockets( "
+            },
+            {
+              "title": "Ronnie Browne",
+              "text": "Ronnie Browne: Ronnie Browne(\" The Voice\")( born Ronald Grant Browne, 20 August 1937 in Edinburgh, Lothian, Scotland), is a Scottish folk musician and songwriter, who is a founding member of The Corries."
+            },
+            {
+              "title": "Ronnie Eldridge",
+              "text": "Ronnie Eldridge: Ronnie Eldridge(\" née\" Myers) is an American activist, businesswoman, politician, and television host. She is the current host of\" Eldridge& Co.\", a weekly television talk show on CUNY TV, the television station of the City University of New York."
+            }
+          ]
+        },
+        "bge_rerank_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "David Lynch was the director of the film project Ronnie Rocket, and the passage states that he was born in Detroit, Michigan, USA, but this information is not",
+          "latency_sec": 0.6915695667266846,
+          "support_titles_present": [
+            "Ronnie Rocket"
+          ],
+          "support_title_recall": 0.5,
+          "answer_string_present_in_docs": false,
+          "docs": [
+            {
+              "title": "Ronnie Rocket",
+              "text": "Ronnie Rocket: Ronnie Rocket is an unfinished film project written by David Lynch, who also intended to direct it. Begun after the success of Lynch's 1977 film \"EraserheadRonnie Rocket\" was shelved after Lynch felt he would be unable to find financial backing for the project. He instead sought out an existing script on which to base his next film, settling on what would become 1980's \"The Elephant Man\". \"Ronnie Rocket\" was to feature many of the elements which have since come to be seen as Lynch"
+            },
+            {
+              "title": "Max Fleischer",
+              "text": "Max Fleischer: Max Fleischer (born Majer Fleischer ; July 19, 1883 – September 25, 1972) was an American animator, inventor, film director and producer and studio founder and owner. Born in Kraków, Fleischer emigrated to the US where he became a pioneer in the development of the animated cartoon and served as the head of Fleischer Studios, which he co-founded with his younger brother Dave. He brought such animated characters as Koko the Clown, Betty Boop, Popeye, and Superman to the movie screen"
+            },
+            {
+              "title": "William Leitch (scientist)",
+              "text": "William Leitch (scientist): William Leitch( 20 May 1814 – 9 May 1864) was a Scottish astronomer, naturalist and mathematician, and a minister of the Church of Scotland. Leitch studied mathematics and science at the University of Glasgow, and moved to Canada in 1860 to take the post of principal at Queen's University. Space historian Robert Godwin published in October 2015 his discovery that Leitch gave the first modern scientific explanation of the potential for space exploration using rockets( "
+            },
+            {
+              "title": "Giorgio Pressburger",
+              "text": "Giorgio Pressburger: Giorgio Pressburger( April 21, 1937 – October 5, 2017) was an Italian writer of novels and short stories. Born in Budapest, Pressburger settled in Italy in 1956, where he worked as a film and theatre director. He later became the Director of the Institute of Italian Culture in Hungary. His book\" The Law of White Spaces\" was shortlisted for the Independent Foreign Fiction Award in 1992. His other works include the novel\" Teeth and Spies\" and the short story collection\" Snow a"
+            },
+            {
+              "title": "Marc Sorkin",
+              "text": "Marc Sorkin: Marc Sorkin or Mark Sorkin( 1902–1986) was a Russian- born film editor and director. He worked with Georg Wilhelm Pabst on a number of films as editor or assistant director. He was born in the Lithuanian capital Vilnius which was then part of the Russian Empire. He began working in the German film industry in Berlin in the 1920s. Following the Nazi Party's takeover of power in 1933, the Jewish Sorkin left for France where he worked in that country's cinema industry. After the Invasi"
+            },
+            {
+              "title": "Nat Ross",
+              "text": "Nat Ross: Nat Ross( June 13, 1902 – February 24, 1941) was an American film director and producer of the silent era. He directed 61 films between 1922 and 1931. He was born in San Francisco, California. He was shot dead in Los Angeles in 1941 by a disgruntled employee whom Ross had fired from the plant where Ross was working as foreman. He was the nephew of producer Carl Laemmle."
+            },
+            {
+              "title": "Bonanno Pisano",
+              "text": "Bonanno Pisano: Bonanno Pisano( Pisa), active in the 1170s and 1180s, was an Italian sculptor, mixing Byzantine and classical elements. Giorgio Vasari attributed the realization of the Leaning Tower of Pisa to him in his\" Vite\". Pisano was born in Pisa and worked there most of his life. In the 1180s, he departed for Monreale, in Sicily, where he completed the doors to the cathedral before returning to Pisa, where he died. Pisano was buried at the foot of the leaning tower, where his sarcophagus "
+            },
+            {
+              "title": "Ronnie Browne",
+              "text": "Ronnie Browne: Ronnie Browne(\" The Voice\")( born Ronald Grant Browne, 20 August 1937 in Edinburgh, Lothian, Scotland), is a Scottish folk musician and songwriter, who is a founding member of The Corries."
+            },
+            {
+              "title": "László Nemes",
+              "text": "László Nemes: László Nemes( born Nemes Jeles László;; 18 February 1977) is a Hungarian film director and screenwriter. His 2015 debut feature film,\" Son of Saul,\" was screened in the main competition at the 2015 Cannes Film Festival, where it won the Grand Prix. He is the first Hungarian director whose film has won a Golden Globe for Best Foreign Language Film. \" Son of Saul\" is the second Hungarian film to win the Academy Award for Best Foreign Language Film. In 2016, Nemes was a member of the "
+            },
+            {
+              "title": "Olav Aaraas",
+              "text": "Olav Aaraas: Olav Aaraas( born 10 July 1950) is a Norwegian historian and museum director. He was born in Fredrikstad. From 1982 to 1993 he was the director of Sogn Folk Museum, from 1993 to 2010 he was the director of Maihaugen and from 2001 he has been the director of the Norwegian Museum of Cultural History. In 2010 he was decorated with the Royal Norwegian Order of St. Olav."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "idx": 4,
+      "qid": "8981e1ce0bb011ebab90acde48001122",
+      "type": "inference",
+      "question": "Who is Charles Bretagne Marie De La Trémoille's paternal grandfather?",
+      "gold": "Charles Armand René de La Trémoille",
+      "support_titles": [
+        "Charles Bretagne Marie de La Trémoille",
+        "Jean Bretagne Charles de La Trémoille"
+      ],
+      "bm25_top_titles": [
+        "Charles Bretagne Marie de La Trémoille",
+        "Jean Bretagne Charles de La Trémoille",
+        "Jean Bretagne Charles de La Trémoille",
+        "Charles Armand René de La Trémoille",
+        "Louis Charles de La Trémoille",
+        "Louis Charles de La Trémoille",
+        "Charles Louis Bretagne de La Trémoille",
+        "Louis Charles Marie de La Trémoille",
+        "Charlotte de La Trémoille",
+        "Marie Charlotte de La Trémoille"
+      ],
+      "bge_top_titles": [
+        "Charles Bretagne Marie de La Trémoille",
+        "Charles Louis Bretagne de La Trémoille",
+        "Henri Charles de La Trémoille",
+        "Charles Armand René de La Trémoille",
+        "Jean Bretagne Charles de La Trémoille",
+        "Louis Charles de La Trémoille",
+        "Jean Bretagne Charles de La Trémoille",
+        "Louis Charles Marie de La Trémoille",
+        "Louis Charles de La Trémoille",
+        "Charlotte de La Trémoille"
+      ],
+      "bge_scores": [
+        0.9893261194229126,
+        0.9431300759315491,
+        0.7982913255691528,
+        0.7833888530731201,
+        0.7224628925323486,
+        0.6055176258087158,
+        0.5874481201171875,
+        0.5707094669342041,
+        0.5471459627151489,
+        0.5056796669960022
+      ],
+      "conditions": {
+        "bm25_basic": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.37037037037037035,
+          "output": "Based on the information provided in the passages, Charles Bretagne Marie de La Trémoille's paternal grandfather is Charles Armand René de La Tré",
+          "latency_sec": 0.910550594329834,
+          "support_titles_present": [
+            "Charles Bretagne Marie de La Trémoille",
+            "Jean Bretagne Charles de La Trémoille"
+          ],
+          "support_title_recall": 1.0,
+          "answer_string_present_in_docs": true,
+          "docs": [
+            {
+              "title": "Charles Bretagne Marie de La Trémoille",
+              "text": "Charles Bretagne Marie de La Trémoille: Prince Charles Bretagne Marie de La Trémoille (24 March 1764 – 10 November 1839), 8th Duke of Thouars, 7th Duke of La Trémoïlle, 10th prince de Tarente, 14th prince de Talmond and 14th Count of Laval, was a French aristocrat and soldier; he was the son of Jean Bretagne Charles de La Trémoille and his wife Princess Marie-Maximilienne of Salm-Kyrburg."
+            },
+            {
+              "title": "Jean Bretagne Charles de La Trémoille",
+              "text": "Jean Bretagne Charles de La Trémoille: Prince Jean-Bretagne-Charles de La Trémoille (5 February 1737 – 19 May 1792), 7th Duke of Thouars, was a French soldier and the son of Charles Armand René de La Trémoille and his wife, Marie Hortense de La Tour d'Auvergne of Bouillon."
+            },
+            {
+              "title": "Jean Bretagne Charles de La Trémoille",
+              "text": "Jean Bretagne Charles de La Trémoille: Prince Jean- Bretagne- Charles de La Trémoille( 5 February 1737 – 19 May 1792), 7th Duke of Thouars, was a French soldier and the son of Charles Armand René de La Trémoille and his wife, Marie Hortense de La Tour d'Auvergne of Bouillon."
+            },
+            {
+              "title": "Charles Armand René de La Trémoille",
+              "text": "Charles Armand René de La Trémoille: Charles Armand René de La Trémoille (14 January 1708, in Paris – 23 May 1741), 6th duc de Thouars, was the son of Charles Louis Bretagne de La Trémoille and his wife, Marie Madeleine Motier de la Fayette. La Trémoille was a French soldier and president of the States of Brittany. He joined the military at a young age and became a colonel of the Champagne regiment at the age of eighteen. Later, he became governor of Île-de-France. He distinguished himself in th"
+            },
+            {
+              "title": "Louis Charles de La Trémoille",
+              "text": "Louis Charles de La Trémoille: Prince Louis Charles de La Trémoille( 26 October 1838 – 4 July 1911), 9th Duke of Thouars, 8th Duke of La Trémoïlle, 11th prince de Tarente, 15th prince de Talmond and 15th Count of Laval was a French aristocrat and the son of Charles Bretagne Marie de La Trémoille and his third wife, Valentine Eugénie Joséphine Walsh de Serrant. Louis Charles was also an archivist, bibliophile and also collector."
+            },
+            {
+              "title": "Louis Charles de La Trémoille",
+              "text": "Louis Charles de La Trémoille: Prince Louis Charles de La Trémoille (26 October 1838 – 4 July 1911), 9th Duke of Thouars, 8th Duke of La Trémoïlle, 11th prince de Tarente, 15th prince de Talmond and 15th Count of Laval was a French aristocrat and the son of Charles Bretagne Marie de La Trémoille and his third wife, Valentine Eugénie Joséphine Walsh de Serrant. Louis Charles was also an archivist, bibliophile and also collector."
+            },
+            {
+              "title": "Charles Louis Bretagne de La Trémoille",
+              "text": "Charles Louis Bretagne de La Trémoille: Charles Louis Bretagne de La Trémoille (15 March 1683 – 9 October 1719), 6th duke of Thouars, was the son of Charles Belgique Hollande de La Trémoille and Madeleine de Créquy, daughter and heiress of Charles III de Créquy. He became duke of Thouars upon his father's death in 1709. He was also count of Laval and Montfort and inherited the ancient French claim to the Kingdom of Naples. The Neapolitan claim gave the family the rank of \"princes étrangers\" at t"
+            },
+            {
+              "title": "Louis Charles Marie de La Trémoille",
+              "text": "Louis Charles Marie de La Trémoille: Louis Charles Marie de La Trémoille( 28 March 1863 –17 June 1921), 10th Duke of Thouars, 16th Count of Laval was a French nobleman and the son of Louis Charles de La Trémoille and his wife Marguerite Églé Jeanne Caroline Duchâtel( daughter of Count Charles Marie Tanneguy Duchâtel, Count Duchâtel and his wife Rosalie(\" Eglé\") Paulée) La Trémoille was a deputy for Gironde from 1906 to 1919, and mayor of Margaux from 1904 to 1919. He was a member of the democrat"
+            },
+            {
+              "title": "Charlotte de La Trémoille",
+              "text": "Charlotte de La Trémoille: \" Not to be confused with Charlotte Stanley, Countess of Derby.\" Princess Charlotte de La Trémoille( Charlotte Marie Clotilde de La Trémoille; 20 November 1892 – 27 October 1971), 12th Duchess of Thouars, 11th Duchess of La Trémoïlle, 14th Princess de Tarente, 18th princess de Talmond and 18th Countess of Laval was a French noblewoman and the daughter of Prince Louis Charles Marie de La Trémoille and his wife, Hélène Marie Léonie Pillet- Will."
+            },
+            {
+              "title": "Marie Charlotte de La Trémoille",
+              "text": "Marie Charlotte de La Trémoille: Marie Charlotte de La Trémoille( 26 January 1632 – 24 August 1682). was a French noblewoman member of the House of La Trémoille and by marriage Duchess of Saxe- Jena. Born in Thouars, she was the fifth of six children born from the marriage of Henri III de La Trémoille, 3rd Duke of Thouars, 2nd Duke of La Tremoille, Prince of Talmond and Taranto, and Marie de La Tour d'Auvergne."
+            }
+          ]
+        },
+        "bm25_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.6666666666666666,
+          "output": "Charles Belgique Hollande de La Trémoille",
+          "latency_sec": 0.36896800994873047,
+          "support_titles_present": [
+            "Charles Bretagne Marie de La Trémoille",
+            "Jean Bretagne Charles de La Trémoille"
+          ],
+          "support_title_recall": 1.0,
+          "answer_string_present_in_docs": true,
+          "docs": [
+            {
+              "title": "Charles Bretagne Marie de La Trémoille",
+              "text": "Charles Bretagne Marie de La Trémoille: Prince Charles Bretagne Marie de La Trémoille (24 March 1764 – 10 November 1839), 8th Duke of Thouars, 7th Duke of La Trémoïlle, 10th prince de Tarente, 14th prince de Talmond and 14th Count of Laval, was a French aristocrat and soldier; he was the son of Jean Bretagne Charles de La Trémoille and his wife Princess Marie-Maximilienne of Salm-Kyrburg."
+            },
+            {
+              "title": "Jean Bretagne Charles de La Trémoille",
+              "text": "Jean Bretagne Charles de La Trémoille: Prince Jean-Bretagne-Charles de La Trémoille (5 February 1737 – 19 May 1792), 7th Duke of Thouars, was a French soldier and the son of Charles Armand René de La Trémoille and his wife, Marie Hortense de La Tour d'Auvergne of Bouillon."
+            },
+            {
+              "title": "Jean Bretagne Charles de La Trémoille",
+              "text": "Jean Bretagne Charles de La Trémoille: Prince Jean- Bretagne- Charles de La Trémoille( 5 February 1737 – 19 May 1792), 7th Duke of Thouars, was a French soldier and the son of Charles Armand René de La Trémoille and his wife, Marie Hortense de La Tour d'Auvergne of Bouillon."
+            },
+            {
+              "title": "Charles Armand René de La Trémoille",
+              "text": "Charles Armand René de La Trémoille: Charles Armand René de La Trémoille (14 January 1708, in Paris – 23 May 1741), 6th duc de Thouars, was the son of Charles Louis Bretagne de La Trémoille and his wife, Marie Madeleine Motier de la Fayette. La Trémoille was a French soldier and president of the States of Brittany. He joined the military at a young age and became a colonel of the Champagne regiment at the age of eighteen. Later, he became governor of Île-de-France. He distinguished himself in th"
+            },
+            {
+              "title": "Louis Charles de La Trémoille",
+              "text": "Louis Charles de La Trémoille: Prince Louis Charles de La Trémoille( 26 October 1838 – 4 July 1911), 9th Duke of Thouars, 8th Duke of La Trémoïlle, 11th prince de Tarente, 15th prince de Talmond and 15th Count of Laval was a French aristocrat and the son of Charles Bretagne Marie de La Trémoille and his third wife, Valentine Eugénie Joséphine Walsh de Serrant. Louis Charles was also an archivist, bibliophile and also collector."
+            },
+            {
+              "title": "Louis Charles de La Trémoille",
+              "text": "Louis Charles de La Trémoille: Prince Louis Charles de La Trémoille (26 October 1838 – 4 July 1911), 9th Duke of Thouars, 8th Duke of La Trémoïlle, 11th prince de Tarente, 15th prince de Talmond and 15th Count of Laval was a French aristocrat and the son of Charles Bretagne Marie de La Trémoille and his third wife, Valentine Eugénie Joséphine Walsh de Serrant. Louis Charles was also an archivist, bibliophile and also collector."
+            },
+            {
+              "title": "Charles Louis Bretagne de La Trémoille",
+              "text": "Charles Louis Bretagne de La Trémoille: Charles Louis Bretagne de La Trémoille (15 March 1683 – 9 October 1719), 6th duke of Thouars, was the son of Charles Belgique Hollande de La Trémoille and Madeleine de Créquy, daughter and heiress of Charles III de Créquy. He became duke of Thouars upon his father's death in 1709. He was also count of Laval and Montfort and inherited the ancient French claim to the Kingdom of Naples. The Neapolitan claim gave the family the rank of \"princes étrangers\" at t"
+            },
+            {
+              "title": "Louis Charles Marie de La Trémoille",
+              "text": "Louis Charles Marie de La Trémoille: Louis Charles Marie de La Trémoille( 28 March 1863 –17 June 1921), 10th Duke of Thouars, 16th Count of Laval was a French nobleman and the son of Louis Charles de La Trémoille and his wife Marguerite Églé Jeanne Caroline Duchâtel( daughter of Count Charles Marie Tanneguy Duchâtel, Count Duchâtel and his wife Rosalie(\" Eglé\") Paulée) La Trémoille was a deputy for Gironde from 1906 to 1919, and mayor of Margaux from 1904 to 1919. He was a member of the democrat"
+            },
+            {
+              "title": "Charlotte de La Trémoille",
+              "text": "Charlotte de La Trémoille: \" Not to be confused with Charlotte Stanley, Countess of Derby.\" Princess Charlotte de La Trémoille( Charlotte Marie Clotilde de La Trémoille; 20 November 1892 – 27 October 1971), 12th Duchess of Thouars, 11th Duchess of La Trémoïlle, 14th Princess de Tarente, 18th princess de Talmond and 18th Countess of Laval was a French noblewoman and the daughter of Prince Louis Charles Marie de La Trémoille and his wife, Hélène Marie Léonie Pillet- Will."
+            },
+            {
+              "title": "Marie Charlotte de La Trémoille",
+              "text": "Marie Charlotte de La Trémoille: Marie Charlotte de La Trémoille( 26 January 1632 – 24 August 1682). was a French noblewoman member of the House of La Trémoille and by marriage Duchess of Saxe- Jena. Born in Thouars, she was the fifth of six children born from the marriage of Henri III de La Trémoille, 3rd Duke of Thouars, 2nd Duke of La Tremoille, Prince of Talmond and Taranto, and Marie de La Tour d'Auvergne."
+            }
+          ]
+        },
+        "bge_rerank_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.6,
+          "output": "Henry de La Trémoille",
+          "latency_sec": 0.3421030044555664,
+          "support_titles_present": [
+            "Charles Bretagne Marie de La Trémoille",
+            "Jean Bretagne Charles de La Trémoille"
+          ],
+          "support_title_recall": 1.0,
+          "answer_string_present_in_docs": true,
+          "docs": [
+            {
+              "title": "Charles Bretagne Marie de La Trémoille",
+              "text": "Charles Bretagne Marie de La Trémoille: Prince Charles Bretagne Marie de La Trémoille (24 March 1764 – 10 November 1839), 8th Duke of Thouars, 7th Duke of La Trémoïlle, 10th prince de Tarente, 14th prince de Talmond and 14th Count of Laval, was a French aristocrat and soldier; he was the son of Jean Bretagne Charles de La Trémoille and his wife Princess Marie-Maximilienne of Salm-Kyrburg."
+            },
+            {
+              "title": "Charles Louis Bretagne de La Trémoille",
+              "text": "Charles Louis Bretagne de La Trémoille: Charles Louis Bretagne de La Trémoille (15 March 1683 – 9 October 1719), 6th duke of Thouars, was the son of Charles Belgique Hollande de La Trémoille and Madeleine de Créquy, daughter and heiress of Charles III de Créquy. He became duke of Thouars upon his father's death in 1709. He was also count of Laval and Montfort and inherited the ancient French claim to the Kingdom of Naples. The Neapolitan claim gave the family the rank of \"princes étrangers\" at t"
+            },
+            {
+              "title": "Henri Charles de La Trémoille",
+              "text": "Henri Charles de La Trémoille: Henri Charles de La Trémoille( 17 December 1620 – 14 September 1672) was a French military commander. He the son of Henry de La Trémoille, duc of Thouars and of La Trémoille, and his wife, Marie de La Tour d'Auvergne. In 1628, La Trémoille's father, Henri III of Trémoïlle, converted himself and his children to Catholicism, but La Trémoille's mother convinced him to reconvert to Protestantism when he reached the age of majority. In 1638, he joined the army of his un"
+            },
+            {
+              "title": "Charles Armand René de La Trémoille",
+              "text": "Charles Armand René de La Trémoille: Charles Armand René de La Trémoille (14 January 1708, in Paris – 23 May 1741), 6th duc de Thouars, was the son of Charles Louis Bretagne de La Trémoille and his wife, Marie Madeleine Motier de la Fayette. La Trémoille was a French soldier and president of the States of Brittany. He joined the military at a young age and became a colonel of the Champagne regiment at the age of eighteen. Later, he became governor of Île-de-France. He distinguished himself in th"
+            },
+            {
+              "title": "Jean Bretagne Charles de La Trémoille",
+              "text": "Jean Bretagne Charles de La Trémoille: Prince Jean- Bretagne- Charles de La Trémoille( 5 February 1737 – 19 May 1792), 7th Duke of Thouars, was a French soldier and the son of Charles Armand René de La Trémoille and his wife, Marie Hortense de La Tour d'Auvergne of Bouillon."
+            },
+            {
+              "title": "Louis Charles de La Trémoille",
+              "text": "Louis Charles de La Trémoille: Prince Louis Charles de La Trémoille( 26 October 1838 – 4 July 1911), 9th Duke of Thouars, 8th Duke of La Trémoïlle, 11th prince de Tarente, 15th prince de Talmond and 15th Count of Laval was a French aristocrat and the son of Charles Bretagne Marie de La Trémoille and his third wife, Valentine Eugénie Joséphine Walsh de Serrant. Louis Charles was also an archivist, bibliophile and also collector."
+            },
+            {
+              "title": "Jean Bretagne Charles de La Trémoille",
+              "text": "Jean Bretagne Charles de La Trémoille: Prince Jean-Bretagne-Charles de La Trémoille (5 February 1737 – 19 May 1792), 7th Duke of Thouars, was a French soldier and the son of Charles Armand René de La Trémoille and his wife, Marie Hortense de La Tour d'Auvergne of Bouillon."
+            },
+            {
+              "title": "Louis Charles Marie de La Trémoille",
+              "text": "Louis Charles Marie de La Trémoille: Louis Charles Marie de La Trémoille( 28 March 1863 –17 June 1921), 10th Duke of Thouars, 16th Count of Laval was a French nobleman and the son of Louis Charles de La Trémoille and his wife Marguerite Églé Jeanne Caroline Duchâtel( daughter of Count Charles Marie Tanneguy Duchâtel, Count Duchâtel and his wife Rosalie(\" Eglé\") Paulée) La Trémoille was a deputy for Gironde from 1906 to 1919, and mayor of Margaux from 1904 to 1919. He was a member of the democrat"
+            },
+            {
+              "title": "Louis Charles de La Trémoille",
+              "text": "Louis Charles de La Trémoille: Prince Louis Charles de La Trémoille (26 October 1838 – 4 July 1911), 9th Duke of Thouars, 8th Duke of La Trémoïlle, 11th prince de Tarente, 15th prince de Talmond and 15th Count of Laval was a French aristocrat and the son of Charles Bretagne Marie de La Trémoille and his third wife, Valentine Eugénie Joséphine Walsh de Serrant. Louis Charles was also an archivist, bibliophile and also collector."
+            },
+            {
+              "title": "Charlotte de La Trémoille",
+              "text": "Charlotte de La Trémoille: \" Not to be confused with Charlotte Stanley, Countess of Derby.\" Princess Charlotte de La Trémoille( Charlotte Marie Clotilde de La Trémoille; 20 November 1892 – 27 October 1971), 12th Duchess of Thouars, 11th Duchess of La Trémoïlle, 14th Princess de Tarente, 18th princess de Talmond and 18th Countess of Laval was a French noblewoman and the daughter of Prince Louis Charles Marie de La Trémoille and his wife, Hélène Marie Léonie Pillet- Will."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

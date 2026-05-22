@@ -469,10 +469,52 @@ VLLM_EPKV_LOGIT_BIAS=0
 /health OK
 ```
 
-## Current next target
+## RAG reality check 100
 
-Do retrieval/rerank/prompt reality check before Triton:
+Completed retrieval/rerank/prompt reality check:
 
 ```txt
-BM25 baseline vs strong prompt vs BGE rerank vs internal sampler policy vs rerank+policy vs oracle upper bound
+RAG-REALITY-CHECK-100.md
+rag-reality-check-100/
 ```
+
+Natural retrieval over 56,687 2Wiki context docs:
+
+```txt
+BM25 basic:              EM 0.000 | contains 0.040 | F1 0.031
+BM25 strong prompt:      EM 0.070 | contains 0.130 | F1 0.150
+BM25→BGE rerank strong:  EM 0.090 | contains 0.160 | F1 0.185
+```
+
+Retrieval stats:
+
+```txt
+BM25 support recall: 0.493
+BGE support recall:  0.512
+BGE answer present:  0.400
+BGE full support:    14/100
+```
+
+Compared to oracle evidence ECD:
+
+```txt
+quality-proof-100 ECD: EM 0.910 | F1 0.931
+quality-proof-300 ECD: EM 0.907 | F1 0.934
+```
+
+Conclusion:
+
+```txt
+retrieval is the dominant full-RAG bottleneck here.
+ECD is validated as oracle-evidence/control-plane, not full retrieval proof yet.
+```
+
+## Current next target
+
+Build the missing bridge:
+
+```txt
+retrieved docs -> relation/path extraction -> ECD policy
+```
+
+Then retest against BM25/BGE prompt baselines.

@@ -891,3 +891,43 @@ VLLM_EPKV_RUNTIME_HOOK=0
 VLLM_EPKV_LOGIT_BIAS=0
 /health OK
 ```
+
+## RAG reality check 100
+
+Tested whether retrieval/rerank/prompt can explain the gap:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/RAG-REALITY-CHECK-100.md
+```
+
+Natural retrieval over 56,687 2Wiki context docs:
+
+```txt
+BM25 basic:              EM 0.000 | contains 0.040 | F1 0.031
+BM25 strong prompt:      EM 0.070 | contains 0.130 | F1 0.150
+BM25→BGE rerank strong:  EM 0.090 | contains 0.160 | F1 0.185
+```
+
+Retrieval stats:
+
+```txt
+BM25 support-title recall: 0.493
+BGE support-title recall:  0.512
+BGE answer string present: 0.400
+BGE full support top-10:   14/100
+```
+
+Conclusion:
+
+```txt
+The external critique is correct for full RealRAG: retrieval is currently the dominant bottleneck.
+The ECD result remains strong, but it is an oracle-evidence/control-plane proof, not yet an end-to-end retrieval proof.
+```
+
+Strategic next step:
+
+```txt
+retrieval -> relation-path construction -> ECD policy
+```
+
+rather than Triton-first.
