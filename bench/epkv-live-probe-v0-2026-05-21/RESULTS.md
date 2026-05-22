@@ -190,6 +190,15 @@ evidence hit avg: 62.36%
 output: failed to close answer
 ```
 
+Then `evidence_guard_topk_reserved` was added to the hook and run in dry-run:
+
+```txt
+VLLM_EPKV_EVIDENCE_MIN_K=8
+mode: evidence_guard_topk_reserved
+applied_evidence_k: 8
+evidence hit avg: 25.00%
+```
+
 Artifacts:
 
 ```txt
@@ -200,8 +209,4 @@ Artifacts:
 
 ## Next live step
 
-Implement a less blunt kernel intervention than additive score boost:
-
-```txt
-evidence_guard_topk: reserve or enforce N evidence positions per head before value gather
-```
+Move `evidence_guard_topk_reserved` from torch-side concat into a tighter CUDA/Triton selection primitive and run it across multiple records.

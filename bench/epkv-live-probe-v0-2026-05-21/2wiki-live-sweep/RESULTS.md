@@ -40,6 +40,7 @@ All dry-run rows preserve original TurboQuant output while changing selected-pos
 | 1 | 1 | 8 | 27.26% | 23.21% | 30.92% | 0/2 |
 | 2 | 1 | 8 | 40.30% | 36.27% | 47.10% | 0/2 |
 | 4 | 1 | 8 | 64.73% | 55.69% | 70.31% | 0/2 |
+| guard_topk8 | 1 | 8 | 25.00% | 25.00% | 25.00% | 0/2 |
 
 The boost sweep changed evidence-page selection geometry monotonically:
 
@@ -77,7 +78,8 @@ Interpretation:
 ```txt
 The intervention changed real decode output path and selected KV geometry.
 It did not repair this answer.
-The next kernel step should not be bigger boost; it should enforce or reserve evidence rows more precisely per head/layer, and fix prompt/evidence formulation for the target relation.
+The reserved guard path also executed: `evidence_guard_topk_reserved` with `applied_evidence_k=8` produced exactly 25% evidence selection, proving the top-k reservation path works.
+The next kernel step should compare boost vs reservation across multiple records, then move reservation into a tighter CUDA/Triton selection primitive instead of torch-side concat.
 ```
 
 ## Service restoration

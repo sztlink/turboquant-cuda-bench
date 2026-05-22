@@ -62,6 +62,7 @@ _ENV_SCHEMA_V1 = "VLLM_EPKV_RUNTIME_SCHEMA_V1"
 _ENV_EVIDENCE_PAGES = "VLLM_EPKV_EVIDENCE_PAGES"
 _ENV_EVIDENCE_BOOST = "VLLM_EPKV_EVIDENCE_BOOST"
 _ENV_EVIDENCE_GUARD = "VLLM_EPKV_EVIDENCE_GUARD"
+_ENV_EVIDENCE_MIN_K = "VLLM_EPKV_EVIDENCE_MIN_K"
 
 _seen = 0
 _warned = False
@@ -466,7 +467,32 @@ def _decode_phase2a(
                 "evidence_pages_spec": evidence_spec,
                 "num_pages": num_pages,
             }
-    vals, pos = torch.topk(scores, K, dim=0)
+    min_evidence_k = _int_env(_ENV_EVIDENCE_MIN_K, 0) if evidence_page_mask is not None else 0
+    if min_evidence_k > 0 and evidence_page_mask is not None:
+        row_pages = torch.arange(M, device=query.device, dtype=torch.long) // block_size
+        row_is_evidence = evidence_page_mask[row_pages].to(torch.bool)
+        available_evidence = int(row_is_evidence.sum().item())
+        m = max(0, min(int(min_evidence_k), K, available_evidence))
+        if m > 0:
+            neg_inf = torch.tensor(float("-inf"), device=query.device, dtype=scores.dtype)
+            evidence_scores = scores.masked_fill(~row_is_evidence[:, None], neg_inf)
+            evidence_vals, evidence_pos = torch.topk(evidence_scores, m, dim=0)
+            rest_k = K - m
+            if rest_k > 0:
+                rest_scores = scores.masked_fill(row_is_evidence[:, None], neg_inf)
+                rest_vals, rest_pos = torch.topk(rest_scores, rest_k, dim=0)
+                vals = torch.cat([evidence_vals, rest_vals], dim=0)
+                pos = torch.cat([evidence_pos, rest_pos], dim=0)
+            else:
+                vals, pos = evidence_vals, evidence_pos
+            if evidence_intervention is not None:
+                evidence_intervention["min_evidence_k"] = int(min_evidence_k)
+                evidence_intervention["applied_evidence_k"] = int(m)
+                evidence_intervention["mode"] = "evidence_guard_topk_reserved"
+        else:
+            vals, pos = torch.topk(scores, K, dim=0)
+    else:
+        vals, pos = torch.topk(scores, K, dim=0)
     weights = torch.softmax(vals, dim=0).contiguous()
     pos = pos.contiguous()
     selection_summary = _selection_summary(

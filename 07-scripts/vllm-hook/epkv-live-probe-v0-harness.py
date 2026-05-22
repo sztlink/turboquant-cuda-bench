@@ -114,7 +114,25 @@ def run(args: argparse.Namespace) -> dict:
         else:
             row_pages = torch.arange(args.seq_len, device=device) // args.block_size
             boosted_scores += (evidence_mask[row_pages].to(torch.float32) * float(args.boost)).unsqueeze(1)
-    boost_vals, boost_pos = torch.topk(boosted_scores, min(args.k, args.seq_len), dim=0)
+    k = min(args.k, args.seq_len)
+    if args.min_evidence_k > 0:
+        row_pages = torch.arange(args.seq_len, device=device) // args.block_size
+        row_is_evidence = evidence_mask[row_pages].to(torch.bool)
+        m = max(0, min(args.min_evidence_k, k, int(row_is_evidence.sum().item())))
+        if m > 0:
+            evidence_scores = boosted_scores.masked_fill(~row_is_evidence[:, None], float('-inf'))
+            ev_vals, ev_pos = torch.topk(evidence_scores, m, dim=0)
+            rest_k = k - m
+            if rest_k > 0:
+                rest_scores = boosted_scores.masked_fill(row_is_evidence[:, None], float('-inf'))
+                rest_vals, rest_pos = torch.topk(rest_scores, rest_k, dim=0)
+                boost_pos = torch.cat([ev_pos, rest_pos], dim=0)
+            else:
+                boost_pos = ev_pos
+        else:
+            boost_vals, boost_pos = torch.topk(boosted_scores, k, dim=0)
+    else:
+        boost_vals, boost_pos = torch.topk(boosted_scores, k, dim=0)
     boosted = summarize(boost_pos, evidence_mask, args.block_size)
     return {
         'schema': 'epkv.live_probe.v0.harness',
@@ -127,6 +145,7 @@ def run(args: argparse.Namespace) -> dict:
         'num_pages': num_pages,
         'evidence_pages_spec': args.evidence_pages,
         'boost': args.boost,
+        'min_evidence_k': args.min_evidence_k,
         'baseline': base,
         'boosted': boosted,
         'delta_hit_rate': boosted['evidence_hit_rate'] - base['evidence_hit_rate'],
@@ -145,6 +164,7 @@ def main() -> None:
     p.add_argument('--block-size', type=int, default=16)
     p.add_argument('--evidence-pages', default='2,5-6')
     p.add_argument('--boost', type=float, default=4.0)
+    p.add_argument('--min-evidence-k', type=int, default=0)
     p.add_argument('--ramp', type=float, default=1.5)
     p.add_argument('--seed', type=int, default=20260521)
     p.add_argument('--cuda', action='store_true')
