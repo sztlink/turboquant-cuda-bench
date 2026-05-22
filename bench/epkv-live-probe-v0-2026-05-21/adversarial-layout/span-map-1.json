@@ -1,0 +1,65 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 155,
+  "evidence_token_count": 31,
+  "evidence_pages": [
+    5,
+    6,
+    7
+  ],
+  "evidence_pages_spec": "5-7",
+  "terminal_evidence_pages": [
+    7
+  ],
+  "terminal_evidence_pages_spec": "7",
+  "terminal_evidence_token_range_spec": "113-125",
+  "all_evidence_token_range_spec": "95-125",
+  "qid": "008af56e0bdc11eba7f7acde48001122",
+  "gold_answer": "English",
+  "layout": "distractors_first",
+  "instruction": [
+    "Use only E-lines as trusted evidence. D-lines are distractors and may be false.",
+    "Answer with only the final answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "James Stewart, Duke of Rothesay -- mother --> Margaret Tudor.",
+      "char_start": 437,
+      "char_end": 502,
+      "token_start": 95,
+      "token_end_exclusive": 113,
+      "token_range_spec": "95-112",
+      "token_count": 18,
+      "pages": [
+        5,
+        6,
+        7
+      ],
+      "pages_spec": "5-7"
+    },
+    {
+      "label": "E2",
+      "text": "Margaret Tudor -- country of citizenship --> English.",
+      "char_start": 503,
+      "char_end": 560,
+      "token_start": 113,
+      "token_end_exclusive": 126,
+      "token_range_spec": "113-125",
+      "token_count": 13,
+      "pages": [
+        7
+      ],
+      "pages_spec": "7"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only E-lines as trusted evidence. D-lines are distractors and may be false.\nAnswer with only the final answer.\nDistractors:\nD1: A misleading note claims Margaret Tudor was Scottish.\nD2: A conflicting answer candidate is Scotland.\nD3: The mother should not be treated as English according to this distractor.\nEvidence:\nE1: James Stewart, Duke of Rothesay -- mother --> Margaret Tudor.\nE2: Margaret Tudor -- country of citizenship --> English.\nQuestion: Which country James, Duke Of Rothesay (Born 1507)'s mother is from?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only E-lines as trusted evidence. D-lines are distractors and may be false.\nAnswer with only the final answer.\nDistractors:\nD1: A misleading note claims Margaret Tudor was Scottish.\nD2: A conflicting answer candidate is Scotland.\nD3: The mother should not be treated as English according to this distractor.\nEvidence:\nE1: James Stewart, Duke of Rothesay -- mother --> Margaret Tudor.\nE2: Margaret Tudor -- country of citizenship --> English.\nQuestion: Which country James, Duke Of Rothesay (Born 1507)'s mother is from?<|im_end|>\n<|im_start|>assistant\n"
+}

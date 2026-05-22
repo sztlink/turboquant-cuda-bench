@@ -1,0 +1,66 @@
+{
+  "schema": "epkv.span_to_page_map.v0",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "block_size": 16,
+  "token_count_total": 153,
+  "evidence_token_count": 29,
+  "evidence_pages": [
+    6,
+    7,
+    8
+  ],
+  "evidence_pages_spec": "6-8",
+  "terminal_evidence_pages": [
+    7,
+    8
+  ],
+  "terminal_evidence_pages_spec": "7-8",
+  "terminal_evidence_token_range_spec": "115-130",
+  "all_evidence_token_range_spec": "102-130",
+  "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+  "gold_answer": "Víctor Bó",
+  "layout": "distractors_first",
+  "instruction": [
+    "Use only E-lines as trusted evidence. D-lines are distractors and may be false.",
+    "Answer with only the final answer."
+  ],
+  "spans": [
+    {
+      "label": "E1",
+      "text": "La Leona -- director --> Armando Bo.",
+      "char_start": 444,
+      "char_end": 484,
+      "token_start": 102,
+      "token_end_exclusive": 115,
+      "token_range_spec": "102-114",
+      "token_count": 13,
+      "pages": [
+        6,
+        7
+      ],
+      "pages_spec": "6-7"
+    },
+    {
+      "label": "E2",
+      "text": "Armando Bó -- child --> Víctor Bó.",
+      "char_start": 485,
+      "char_end": 523,
+      "token_start": 115,
+      "token_end_exclusive": 131,
+      "token_range_spec": "115-130",
+      "token_count": 16,
+      "pages": [
+        7,
+        8
+      ],
+      "pages_spec": "7-8"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Use only E-lines as trusted evidence. D-lines are distractors and may be false.\nAnswer with only the final answer.\nDistractors:\nD1: A misleading note claims the child is Nicolás Bó.\nD2: A conflicting answer candidate is Fernando Ayala.\nD3: The director-child relation is falsely stated as Fernando Ayala -> Nicolás Bó.\nEvidence:\nE1: La Leona -- director --> Armando Bo.\nE2: Armando Bó -- child --> Víctor Bó.\nQuestion: Who is the child of the director of film La Leona (Film)?"
+    }
+  ],
+  "chat_template_text": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nUse only E-lines as trusted evidence. D-lines are distractors and may be false.\nAnswer with only the final answer.\nDistractors:\nD1: A misleading note claims the child is Nicolás Bó.\nD2: A conflicting answer candidate is Fernando Ayala.\nD3: The director-child relation is falsely stated as Fernando Ayala -> Nicolás Bó.\nEvidence:\nE1: La Leona -- director --> Armando Bo.\nE2: Armando Bó -- child --> Víctor Bó.\nQuestion: Who is the child of the director of film La Leona (Film)?<|im_end|>\n<|im_start|>assistant\n"
+}

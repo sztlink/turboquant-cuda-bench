@@ -239,6 +239,50 @@ Artifacts:
 2wiki-multirecord/
 ```
 
+## Non-dry + token-range targeting
+
+Non-dry runs showed that Phase2a output really changes the endpoint response, but page-level reservation can degrade answer extraction:
+
+```txt
+case 2 baseline: Armando Bo -> Víctor Bó
+page/guard/boost interventions: Armando Bo
+```
+
+The hook was extended beyond page masks:
+
+```txt
+VLLM_EPKV_EVIDENCE_TOKEN_RANGES=START-END
+evidence_source=token_ranges
+```
+
+The span mapper now emits:
+
+```txt
+terminal_evidence_pages_spec
+terminal_evidence_token_range_spec
+```
+
+Adversarial-layout case 2 token targeting activated correctly:
+
+```txt
+terminal token range: 115-130
+token-boost4 token hit avg: 35.38%
+token-guardk8 token hit avg: 25.00%
+```
+
+But output still collapsed to first-hop `Armando Bo`, meaning:
+
+```txt
+more evidence selection != better terminal relation preservation
+```
+
+Artifacts:
+
+```txt
+non-dry-triton-guard/
+adversarial-layout/
+```
+
 ## Next live step
 
-Fuse score/split/top-k into fewer kernels and test non-dry guard intervention on records where baseline is close.
+Change value aggregation policy, not just selected-position policy: terminal-span rows need different weight/order semantics than generic evidence rows.

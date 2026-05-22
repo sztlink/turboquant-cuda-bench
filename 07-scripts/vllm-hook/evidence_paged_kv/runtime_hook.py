@@ -63,6 +63,7 @@ _ENV_EVIDENCE_PAGES = "VLLM_EPKV_EVIDENCE_PAGES"
 _ENV_EVIDENCE_BOOST = "VLLM_EPKV_EVIDENCE_BOOST"
 _ENV_EVIDENCE_GUARD = "VLLM_EPKV_EVIDENCE_GUARD"
 _ENV_EVIDENCE_MIN_K = "VLLM_EPKV_EVIDENCE_MIN_K"
+_ENV_EVIDENCE_TOKEN_RANGES = "VLLM_EPKV_EVIDENCE_TOKEN_RANGES"
 
 _seen = 0
 _warned = False
@@ -133,6 +134,15 @@ def _evidence_page_mask(spec: str, *, num_pages: int, device: torch.device) -> t
     return mask
 
 
+def _evidence_row_mask(spec: str, *, M: int, device: torch.device) -> torch.Tensor | None:
+    rows = _parse_page_set(spec, max_pages=M)
+    if not rows:
+        return None
+    mask = torch.zeros((M,), device=device, dtype=torch.int32)
+    mask[torch.tensor(sorted(rows), device=device, dtype=torch.long)] = 1
+    return mask
+
+
 def _selection_summary(
     pos: torch.Tensor,
     *,
@@ -141,6 +151,7 @@ def _selection_summary(
     K: int,
     block_size: int | None = None,
     evidence_page_mask: torch.Tensor | None = None,
+    evidence_row_mask: torch.Tensor | None = None,
 ) -> dict[str, Any]:
     """Return compact selected-position telemetry without prompt/token text.
 
@@ -170,6 +181,24 @@ def _selection_summary(
         "max_position": max(flat) if flat else None,
         "seq_len": M,
     }
+    if evidence_row_mask is not None:
+        row_mask_cpu = evidence_row_mask.detach().to("cpu")
+        pos_cpu = pos.detach().to("cpu")
+        hit = 0
+        per_head = []
+        for h in range(Hq):
+            head_rows = pos_cpu[:, h].tolist()
+            head_hit = sum(1 for r in head_rows if 0 <= int(r) < len(row_mask_cpu) and int(row_mask_cpu[int(r)].item()) == 1)
+            hit += head_hit
+            per_head.append({"head": h, "selected": len(head_rows), "evidence_hits": head_hit})
+        total = int(pos.numel())
+        summary["evidence_token_selection"] = {
+            "selected_total": total,
+            "evidence_hits": hit,
+            "evidence_misses": total - hit,
+            "evidence_hit_rate": (hit / total) if total else 0.0,
+            "per_head": per_head,
+        }
     if block_size and evidence_page_mask is not None:
         pages = (pos.detach() // int(block_size)).to(torch.long)
         mask_cpu = evidence_page_mask.detach().to("cpu")
@@ -330,6 +359,22 @@ def _epkv_evidence_boost_scores_kernel(
 
 
 @triton.jit
+def _epkv_evidence_boost_rows_kernel(
+    Scores_ptr,
+    Evidence_row_mask_ptr,
+    M: tl.constexpr,
+    Hq: tl.constexpr,
+    BOOST: tl.constexpr,
+):
+    row = tl.program_id(0)
+    hq = tl.program_id(1)
+    is_evidence = tl.load(Evidence_row_mask_ptr + row).to(tl.int32)
+    score = tl.load(Scores_ptr + row * Hq + hq)
+    boosted = score + tl.where(is_evidence == 1, BOOST, 0.0)
+    tl.store(Scores_ptr + row * Hq + hq, boosted)
+
+
+@triton.jit
 def _epkv_evidence_split_scores_kernel(
     Scores_ptr,
     Evidence_page_mask_ptr,
@@ -343,6 +388,24 @@ def _epkv_evidence_split_scores_kernel(
     hq = tl.program_id(1)
     page_idx = row // BLOCK_SIZE
     is_evidence = tl.load(Evidence_page_mask_ptr + page_idx).to(tl.int32)
+    score = tl.load(Scores_ptr + row * Hq + hq)
+    neg_inf = -float("inf")
+    tl.store(Evidence_scores_ptr + row * Hq + hq, tl.where(is_evidence == 1, score, neg_inf))
+    tl.store(Rest_scores_ptr + row * Hq + hq, tl.where(is_evidence == 1, neg_inf, score))
+
+
+@triton.jit
+def _epkv_evidence_split_rows_kernel(
+    Scores_ptr,
+    Evidence_row_mask_ptr,
+    Evidence_scores_ptr,
+    Rest_scores_ptr,
+    M: tl.constexpr,
+    Hq: tl.constexpr,
+):
+    row = tl.program_id(0)
+    hq = tl.program_id(1)
+    is_evidence = tl.load(Evidence_row_mask_ptr + row).to(tl.int32)
     score = tl.load(Scores_ptr + row * Hq + hq)
     neg_inf = -float("inf")
     tl.store(Evidence_scores_ptr + row * Hq + hq, tl.where(is_evidence == 1, score, neg_inf))
@@ -501,15 +564,31 @@ def _decode_phase2a(
         num_stages=1,
     )
     evidence_page_mask = None
+    evidence_row_mask = None
     evidence_intervention = None
     evidence_spec = os.environ.get(_ENV_EVIDENCE_PAGES, "").strip()
+    evidence_token_spec = os.environ.get(_ENV_EVIDENCE_TOKEN_RANGES, "").strip()
+    num_pages = (M + block_size - 1) // block_size
     if evidence_spec:
-        num_pages = (M + block_size - 1) // block_size
         evidence_page_mask = _evidence_page_mask(evidence_spec, num_pages=num_pages, device=query.device)
-        if evidence_page_mask is not None:
-            boost = _float_env(_ENV_EVIDENCE_BOOST, 0.0)
-            guard_enabled = os.environ.get(_ENV_EVIDENCE_GUARD, "0") == "1"
-            if guard_enabled and boost != 0.0:
+    if evidence_token_spec:
+        evidence_row_mask = _evidence_row_mask(evidence_token_spec, M=M, device=query.device)
+    if evidence_page_mask is not None or evidence_row_mask is not None:
+        boost = _float_env(_ENV_EVIDENCE_BOOST, 0.0)
+        guard_enabled = os.environ.get(_ENV_EVIDENCE_GUARD, "0") == "1"
+        evidence_source = "token_ranges" if evidence_row_mask is not None else "pages"
+        if guard_enabled and boost != 0.0:
+            if evidence_row_mask is not None:
+                _epkv_evidence_boost_rows_kernel[(M, Hq)](
+                    scores,
+                    evidence_row_mask,
+                    M=M,
+                    Hq=Hq,
+                    BOOST=float(boost),
+                    num_warps=4,
+                    num_stages=1,
+                )
+            elif evidence_page_mask is not None:
                 _epkv_evidence_boost_scores_kernel[(M, Hq)](
                     scores,
                     evidence_page_mask,
@@ -520,35 +599,52 @@ def _decode_phase2a(
                     num_warps=4,
                     num_stages=1,
                 )
-            evidence_intervention = {
-                "mode": "evidence_page_score_boost" if guard_enabled and boost != 0.0 else "evidence_page_probe_only",
-                "guard_enabled": guard_enabled,
-                "boost": boost,
-                "evidence_pages_spec": evidence_spec,
-                "num_pages": num_pages,
-            }
-    min_evidence_k = _int_env(_ENV_EVIDENCE_MIN_K, 0) if evidence_page_mask is not None else 0
-    if min_evidence_k > 0 and evidence_page_mask is not None:
-        evidence_pages_for_count = _parse_page_set(evidence_spec, max_pages=(M + block_size - 1) // block_size)
-        available_evidence = sum(
-            max(0, min(M, (int(page) + 1) * block_size) - int(page) * block_size)
-            for page in evidence_pages_for_count
-        )
+        evidence_intervention = {
+            "mode": "evidence_score_boost" if guard_enabled and boost != 0.0 else "evidence_probe_only",
+            "evidence_source": evidence_source,
+            "guard_enabled": guard_enabled,
+            "boost": boost,
+            "evidence_pages_spec": evidence_spec,
+            "evidence_token_ranges_spec": evidence_token_spec,
+            "num_pages": num_pages,
+        }
+    min_evidence_k = _int_env(_ENV_EVIDENCE_MIN_K, 0) if (evidence_page_mask is not None or evidence_row_mask is not None) else 0
+    if min_evidence_k > 0 and (evidence_page_mask is not None or evidence_row_mask is not None):
+        if evidence_row_mask is not None:
+            available_evidence = int(evidence_row_mask.sum().item())
+        else:
+            evidence_pages_for_count = _parse_page_set(evidence_spec, max_pages=(M + block_size - 1) // block_size)
+            available_evidence = sum(
+                max(0, min(M, (int(page) + 1) * block_size) - int(page) * block_size)
+                for page in evidence_pages_for_count
+            )
         m = max(0, min(int(min_evidence_k), K, available_evidence))
         if m > 0:
             evidence_scores = torch.empty_like(scores)
             rest_scores = torch.empty_like(scores)
-            _epkv_evidence_split_scores_kernel[(M, Hq)](
-                scores,
-                evidence_page_mask,
-                evidence_scores,
-                rest_scores,
-                M=M,
-                Hq=Hq,
-                BLOCK_SIZE=block_size,
-                num_warps=4,
-                num_stages=1,
-            )
+            if evidence_row_mask is not None:
+                _epkv_evidence_split_rows_kernel[(M, Hq)](
+                    scores,
+                    evidence_row_mask,
+                    evidence_scores,
+                    rest_scores,
+                    M=M,
+                    Hq=Hq,
+                    num_warps=4,
+                    num_stages=1,
+                )
+            else:
+                _epkv_evidence_split_scores_kernel[(M, Hq)](
+                    scores,
+                    evidence_page_mask,
+                    evidence_scores,
+                    rest_scores,
+                    M=M,
+                    Hq=Hq,
+                    BLOCK_SIZE=block_size,
+                    num_warps=4,
+                    num_stages=1,
+                )
             evidence_vals, evidence_pos = _triton_topk_scores(evidence_scores, m, M=M, Hq=Hq)
             rest_k = K - m
             if rest_k > 0:
@@ -561,7 +657,7 @@ def _decode_phase2a(
                 evidence_intervention["min_evidence_k"] = int(min_evidence_k)
                 evidence_intervention["applied_evidence_k"] = int(m)
                 evidence_intervention["mode"] = "evidence_guard_topk_reserved"
-                evidence_intervention["reservation_backend"] = "triton_score_split_triton_topk"
+                evidence_intervention["reservation_backend"] = "triton_row_or_page_split_triton_topk"
         else:
             vals, pos = _triton_topk_scores(scores, K, M=M, Hq=Hq)
     else:
@@ -575,7 +671,8 @@ def _decode_phase2a(
         K=K,
         block_size=block_size,
         evidence_page_mask=evidence_page_mask,
-    ) if (_trace_selection_enabled() or evidence_page_mask is not None) else None
+        evidence_row_mask=evidence_row_mask,
+    ) if (_trace_selection_enabled() or evidence_page_mask is not None or evidence_row_mask is not None) else None
     if selection_summary is not None and evidence_intervention is not None:
         selection_summary["evidence_intervention"] = evidence_intervention
     out = torch.empty((Hq, D), device=query.device, dtype=torch.float32)

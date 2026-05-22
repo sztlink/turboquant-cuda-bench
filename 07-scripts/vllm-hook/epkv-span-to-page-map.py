@@ -73,14 +73,31 @@ def main() -> None:
     tok = AutoTokenizer.from_pretrained(args.model, trust_remote_code=True)
     evidence_lines = [f'E{i+1}: {text}' for i, text in enumerate(evidence)]
     distractor_lines = [f'D{i+1}: {text}' for i, text in enumerate(distractor)]
-    user = '\n'.join([
-        'Use only the evidence lines to answer.',
-        'Evidence:',
-        *evidence_lines,
-        'Distractors:',
-        *distractor_lines,
-        f'Question: {question}',
-    ])
+    instruction = case.get('instruction') or 'Use only the evidence lines to answer.'
+    if isinstance(instruction, str):
+        instruction_lines = [instruction]
+    else:
+        instruction_lines = [str(x) for x in instruction]
+    layout = case.get('layout') or 'evidence_first'
+    if layout == 'distractors_first':
+        body = [
+            *instruction_lines,
+            'Distractors:',
+            *distractor_lines,
+            'Evidence:',
+            *evidence_lines,
+            f'Question: {question}',
+        ]
+    else:
+        body = [
+            *instruction_lines,
+            'Evidence:',
+            *evidence_lines,
+            'Distractors:',
+            *distractor_lines,
+            f'Question: {question}',
+        ]
+    user = '\n'.join(body)
     messages = [{'role': 'user', 'content': user}]
     chat = tok.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
     encoded = tok(chat, return_offsets_mapping=True, add_special_tokens=False)
@@ -98,15 +115,20 @@ def main() -> None:
         end = start + len(needle)
         token_indices = token_indices_for_span(offsets, start, end)
         pages = sorted(set(i // args.block_size for i in token_indices))
+        token_start = min(token_indices) if token_indices else None
+        token_end_exclusive = (max(token_indices) + 1) if token_indices else None
+        token_range_spec = '' if token_start is None or token_end_exclusive is None else f'{token_start}-{token_end_exclusive - 1}'
         spans.append({
             'label': label,
             'text': text,
             'char_start': start,
             'char_end': end,
-            'token_start': min(token_indices) if token_indices else None,
-            'token_end_exclusive': (max(token_indices) + 1) if token_indices else None,
+            'token_start': token_start,
+            'token_end_exclusive': token_end_exclusive,
+            'token_range_spec': token_range_spec,
             'token_count': len(token_indices),
             'pages': pages,
+            'pages_spec': ranges_to_spec(pages),
         })
         all_token_indices.extend(token_indices)
         all_pages.extend(pages)
@@ -119,8 +141,14 @@ def main() -> None:
         'evidence_token_count': len(set(all_token_indices)),
         'evidence_pages': sorted(set(all_pages)),
         'evidence_pages_spec': ranges_to_spec(all_pages),
+        'terminal_evidence_pages': spans[-1]['pages'] if spans else [],
+        'terminal_evidence_pages_spec': spans[-1]['pages_spec'] if spans else '',
+        'terminal_evidence_token_range_spec': spans[-1]['token_range_spec'] if spans else '',
+        'all_evidence_token_range_spec': ranges_to_spec(sorted(set(all_token_indices))),
         'qid': case.get('qid'),
         'gold_answer': case.get('answer'),
+        'layout': layout,
+        'instruction': instruction_lines,
         'spans': spans,
         'messages': messages,
         'chat_template_text': chat,
