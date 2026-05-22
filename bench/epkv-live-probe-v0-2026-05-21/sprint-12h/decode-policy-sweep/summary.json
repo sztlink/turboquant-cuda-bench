@@ -1,0 +1,28 @@
+{
+  "schema": "epkv.decode_policy_sweep.v0",
+  "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+  "gold": "Víctor Bó",
+  "rows": [
+    {
+      "condition": "baseline",
+      "output": "Armando Bo",
+      "source": "api-logprobs baseline"
+    },
+    {
+      "condition": "kv_answer_value_replace",
+      "output": "Armando Bo",
+      "source": "previous non-dry EPKV answer-token value/guard"
+    },
+    {
+      "condition": "api_logit_bias3",
+      "output": "Víctor Bó",
+      "source": "OpenAI API logit_bias"
+    },
+    {
+      "condition": "kv_answer_replace_plus_api_logit_bias3",
+      "output": "Víctor Bó",
+      "source": "EPKV non-dry + API logit_bias",
+      "epkv_token_hit_avg": 0.15625
+    }
+  ]
+}

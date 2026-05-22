@@ -360,12 +360,30 @@ sprint-12h/
 07-scripts/vllm-hook/patch-vllm-sampler-logit-policy.py
 ```
 
-## Next live step
+## Decode policy sweep result
 
-Build evidence-derived decode policy:
+A controlled sweep compared the actual intervention layers:
 
 ```txt
-support span / triple object -> candidate token ids -> small early decode bias
+baseline                          -> Armando Bo
+KV answer-token value/guard        -> Armando Bo
+API logit_bias +3                  -> Víctor Bó
+KV answer-token replace + bias +3  -> Víctor Bó
 ```
 
-Then compare baseline vs KV-only vs logit-policy-only vs KV+logit-policy.
+This is the clearest architecture result:
+
+```txt
+KV trace/selection should nominate evidence-derived candidate tokens.
+Sampler/LM-head policy must do the early steering.
+```
+
+The combined KV+decode-policy run was non-dry and restored cleanly.
+
+## Next live step
+
+Promote from gold-token diagnostic to evidence-derived candidate extraction:
+
+```txt
+terminal support triple object -> candidate string -> token ids -> small early decode bias
+```

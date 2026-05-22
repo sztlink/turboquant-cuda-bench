@@ -53,19 +53,30 @@ Authored internal sampler patch:
 
 Remote test did not activate, likely alternate sampler path/import. Service was restored.
 
-## Current next target
+## Decode policy sweep
 
-Build evidence-derived policy harness:
+Completed comparison on adversarial `Víctor Bó` case:
 
 ```txt
-terminal support span / triple object -> candidate token ids -> early decode bias
+baseline                          -> Armando Bo
+KV answer-token value/guard        -> Armando Bo
+API logit_bias +3                  -> Víctor Bó
+KV answer-token replace + bias +3  -> Víctor Bó
 ```
 
-Compare:
+EPKV token hit in combined run: `15.625%`.
+
+Conclusion:
 
 ```txt
-baseline
-KV-only
-logit-policy-only
-KV + logit-policy
+KV trace should nominate evidence/candidate tokens.
+LM-head/sampler policy must do the early steering.
+```
+
+## Current next target
+
+Promote from gold/answer-token diagnostic to evidence-derived candidate extraction:
+
+```txt
+terminal support triple object -> candidate string -> token ids -> early decode bias
 ```
