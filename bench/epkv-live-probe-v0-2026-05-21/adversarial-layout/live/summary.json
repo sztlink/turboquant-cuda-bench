@@ -1,5 +1,5 @@
 {
-  "schema": "epkv.adversarial_layout.nondry.v1.token_ranges",
+  "schema": "epkv.adversarial_layout.nondry.v2.answer_token_ranges",
   "rows": [
     {
       "case": 1,
@@ -354,6 +354,77 @@
       ],
       "applied_evidence_k": [
         8
+      ],
+      "closure": false,
+      "output": "Armando Bo"
+    },
+    {
+      "case": 2,
+      "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+      "gold": "Víctor Bó",
+      "mode": "answer-token-boost4",
+      "pages": "7-8",
+      "token_range": "125-129",
+      "events": 8,
+      "page_hit_avg": 0.40973772321428575,
+      "token_hit_avg": 0.11941964285714285,
+      "decision": [
+        "returned_phase2a_output"
+      ],
+      "source": [
+        "token_ranges"
+      ],
+      "backend": [],
+      "applied_evidence_k": [],
+      "closure": false,
+      "output": "Armando Bo"
+    },
+    {
+      "case": 2,
+      "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+      "gold": "Víctor Bó",
+      "mode": "answer-token-guard",
+      "pages": "7-8",
+      "token_range": "125-129",
+      "events": 8,
+      "page_hit_avg": 0.44461495535714285,
+      "token_hit_avg": 0.15625,
+      "decision": [
+        "returned_phase2a_output"
+      ],
+      "source": [
+        "token_ranges"
+      ],
+      "backend": [
+        "triton_row_or_page_split_triton_topk"
+      ],
+      "applied_evidence_k": [
+        5
+      ],
+      "closure": false,
+      "output": "Armando Bo"
+    },
+    {
+      "case": 2,
+      "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+      "gold": "Víctor Bó",
+      "mode": "answer-token-guardboost4",
+      "pages": "7-8",
+      "token_range": "125-129",
+      "events": 8,
+      "page_hit_avg": 0.4370814732142857,
+      "token_hit_avg": 0.15625,
+      "decision": [
+        "returned_phase2a_output"
+      ],
+      "source": [
+        "token_ranges"
+      ],
+      "backend": [
+        "triton_row_or_page_split_triton_topk"
+      ],
+      "applied_evidence_k": [
+        5
       ],
       "closure": false,
       "output": "Armando Bo"

@@ -133,6 +133,41 @@ def main() -> None:
         all_token_indices.extend(token_indices)
         all_pages.extend(pages)
 
+    answer_text = case.get('answer')
+    answer_span = None
+    if answer_text:
+        candidate = str(answer_text)
+        answer_start = -1
+        answer_end = -1
+        # Prefer the answer occurrence inside an evidence span, not in the question or elsewhere.
+        for span in spans:
+            local = chat.find(candidate, int(span['char_start']), int(span['char_end']))
+            if local >= 0:
+                answer_start = local
+                answer_end = local + len(candidate)
+                break
+        if answer_start < 0:
+            local = chat.find(candidate)
+            if local >= 0:
+                answer_start = local
+                answer_end = local + len(candidate)
+        if answer_start >= 0:
+            answer_token_indices = token_indices_for_span(offsets, answer_start, answer_end)
+            answer_pages = sorted(set(i // args.block_size for i in answer_token_indices))
+            answer_token_start = min(answer_token_indices) if answer_token_indices else None
+            answer_token_end_exclusive = (max(answer_token_indices) + 1) if answer_token_indices else None
+            answer_span = {
+                'text': candidate,
+                'char_start': answer_start,
+                'char_end': answer_end,
+                'token_start': answer_token_start,
+                'token_end_exclusive': answer_token_end_exclusive,
+                'token_range_spec': '' if answer_token_start is None or answer_token_end_exclusive is None else f'{answer_token_start}-{answer_token_end_exclusive - 1}',
+                'token_count': len(answer_token_indices),
+                'pages': answer_pages,
+                'pages_spec': ranges_to_spec(answer_pages),
+            }
+
     result = {
         'schema': 'epkv.span_to_page_map.v0',
         'model': args.model,
@@ -145,6 +180,9 @@ def main() -> None:
         'terminal_evidence_pages_spec': spans[-1]['pages_spec'] if spans else '',
         'terminal_evidence_token_range_spec': spans[-1]['token_range_spec'] if spans else '',
         'all_evidence_token_range_spec': ranges_to_spec(sorted(set(all_token_indices))),
+        'answer_span': answer_span,
+        'answer_token_range_spec': answer_span['token_range_spec'] if answer_span else '',
+        'answer_pages_spec': answer_span['pages_spec'] if answer_span else '',
         'qid': case.get('qid'),
         'gold_answer': case.get('answer'),
         'layout': layout,

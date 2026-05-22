@@ -21,10 +21,10 @@ When token ranges are present, they override page masks for boost/split/reservat
 
 ## Cases
 
-| case | qid | gold | evidence pages | terminal pages | terminal token range |
-|---:|---|---|---|---|---|
-| 1 | `008af56e0bdc11eba7f7acde48001122` | English | 5-7 | 7 | 113-125 |
-| 2 | `c3c94d0a0bdc11eba7f7acde48001122` | Víctor Bó | 6-8 | 7-8 | 115-130 |
+| case | qid | gold | evidence pages | terminal pages | terminal token range | answer token range |
+|---:|---|---|---|---|---|---|
+| 1 | `008af56e0bdc11eba7f7acde48001122` | English | 5-7 | 7 | 113-125 | 124-124 |
+| 2 | `c3c94d0a0bdc11eba7f7acde48001122` | Víctor Bó | 6-8 | 7-8 | 115-130 | 125-129 |
 
 ## Non-dry results
 
@@ -43,6 +43,9 @@ When token ranges are present, they override page masks for boost/split/reservat
 | 2 | token-boost4 | rows 115-130 | 51.60% page | 35.38% | no | `Armando Bo` |
 | 2 | token-guardk8 | rows 115-130 | 47.39% page | 25.00% | no | `Armando Bo` |
 | 2 | token-guardk8boost4 | rows 115-130 | 44.67% page | 25.00% | no | `Armando Bo` |
+| 2 | answer-token-boost4 | rows 125-129 | 40.97% page | 11.94% | no | `Armando Bo` |
+| 2 | answer-token-guard | rows 125-129 | 44.46% page | 15.63% | no | `Armando Bo` |
+| 2 | answer-token-guardboost4 | rows 125-129 | 43.71% page | 15.63% | no | `Armando Bo` |
 
 ## Interpretation
 
@@ -52,7 +55,9 @@ The useful discovery is negative and material:
 Increasing evidence selection is not equivalent to preserving the answer-bearing relation.
 ```
 
-For case 2, baseline returns the full relation `Armando Bo -> Víctor Bó`; every non-dry intervention collapses to first-hop `Armando Bo`. Token-range masks successfully activate (`evidence_source=token_ranges`) and trace token-level hit rates, but the value path still over-amplifies the wrong part of the relation.
+For case 2, baseline returns the full relation `Armando Bo -> Víctor Bó`; every non-dry intervention collapses to first-hop `Armando Bo`. Token-range masks successfully activate (`evidence_source=token_ranges`) and trace token-level hit rates. Even direct answer-token targeting (`125-129`, exactly `Víctor Bó`) fails to preserve the final object in the generated output.
+
+That means the problem is now below selection granularity: selected rows alone are not sufficient. The value aggregation/output state is being pulled toward the subject token path.
 
 Next runtime step:
 

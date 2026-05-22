@@ -270,6 +270,13 @@ token-boost4 token hit avg: 35.38%
 token-guardk8 token hit avg: 25.00%
 ```
 
+The span mapper was then extended to locate the exact gold answer occurrence inside the evidence:
+
+```txt
+answer_token_range_spec: 125-129  # Víctor Bó
+answer-token-guard token hit avg: 15.63%
+```
+
 But output still collapsed to first-hop `Armando Bo`, meaning:
 
 ```txt
