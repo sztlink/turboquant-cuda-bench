@@ -145,6 +145,39 @@ first 6 2Wiki compact evidence cases -> 6/6 closed
 2 via relation-path fallback
 ```
 
+## Internal sampler hook
+
+Patched active vLLM sampler path:
+
+```txt
+vllm/v1/sample/sampler.py
+```
+
+Local patch script:
+
+```txt
+07-scripts/vllm-hook/patch-vllm-v1-sampler-logit-policy.py
+```
+
+Live test without API `logit_bias`:
+
+```txt
+VLLM_EPKV_LOGIT_BIAS_TOKEN_IDS=53,647,36125
+VLLM_EPKV_LOGIT_BIAS=3
+adv2 output -> Víctor Bó
+telemetry hook -> epkv.v1.sample.sampler.logit_policy.v0
+```
+
+Restored:
+
+```txt
+VLLM_EPKV_LOGIT_BIAS_TOKEN_IDS=
+VLLM_EPKV_LOGIT_BIAS=0
+VLLM_EPKV_RUNTIME_HOOK=0
+/health OK
+baseline -> Armando Bo
+```
+
 ## Current next target
 
-Scale batch beyond sanity run and/or move state-aware policy into an internal vLLM sampler hook instead of API logit_bias.
+Connect integrated runner outputs to the internal sampler hook env instead of API `logit_bias`, then scale batch.

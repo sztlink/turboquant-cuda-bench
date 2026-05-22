@@ -541,3 +541,43 @@ closed: 6/6
 state_aware_decode_policy: 4
 relation_path_then_decode: 2
 ```
+
+## Internal vLLM sampler hook
+
+The earlier internal patch targeted a non-active worker sampler path. The live serving path is:
+
+```txt
+vllm/v1/sample/sampler.py
+```
+
+Added:
+
+```txt
+07-scripts/vllm-hook/patch-vllm-v1-sampler-logit-policy.py
+```
+
+Hook point:
+
+```txt
+after apply_logits_processors(...)
+before self.sample(...)
+```
+
+Live test without API `logit_bias`:
+
+```txt
+VLLM_EPKV_LOGIT_BIAS_TOKEN_IDS=53,647,36125
+VLLM_EPKV_LOGIT_BIAS=3
+output -> Víctor Bó
+telemetry -> epkv.v1.sample.sampler.logit_policy.v0
+```
+
+Restored default-off:
+
+```txt
+VLLM_EPKV_LOGIT_BIAS_TOKEN_IDS=
+VLLM_EPKV_LOGIT_BIAS=0
+VLLM_EPKV_RUNTIME_HOOK=0
+/health OK
+baseline -> Armando Bo
+```
