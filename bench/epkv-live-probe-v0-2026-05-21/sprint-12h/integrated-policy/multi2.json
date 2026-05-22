@@ -1,0 +1,84 @@
+{
+  "schema": "epkv.integrated_evidence_policy_runner.v0",
+  "span_map": "bench/epkv-live-probe-v0-2026-05-21/2wiki-multirecord/span-map-2.json",
+  "elapsed_sec": 11.307865381240845,
+  "provenance": {
+    "qid": "008af56e0bdc11eba7f7acde48001122",
+    "gold_answer": "English",
+    "terminal_span": {
+      "label": "E2",
+      "text": "Margaret Tudor: then, after her husband died fighting the English, she became regent for their son James V of Scotland from 1513 until 1515.",
+      "token_range_spec": "68-108",
+      "pages_spec": "4-6"
+    },
+    "answer_span": {
+      "text": "English",
+      "char_start": 339,
+      "char_end": 346,
+      "token_start": 83,
+      "token_end_exclusive": 84,
+      "token_range_spec": "83-83",
+      "token_count": 1,
+      "pages": [
+        5
+      ],
+      "pages_spec": "5"
+    },
+    "answer_pages_spec": "5",
+    "answer_token_range_spec": "83-83",
+    "evidence_pages_spec": "2-6",
+    "evidence_token_range_spec": null
+  },
+  "auto_policy": {
+    "schema": "epkv.auto_decode_policy.v0",
+    "span_map": "bench/epkv-live-probe-v0-2026-05-21/2wiki-multirecord/span-map-2.json",
+    "chosen": {
+      "suppress_scaffold": false,
+      "bias": 1.0,
+      "candidate": "English",
+      "candidate_ids": [
+        22574,
+        6364
+      ],
+      "mode": "prefill_bias",
+      "output": "England, as evidenced by the fact that she became regent for their son James",
+      "closed": true,
+      "artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/integrated-policy/multi2/auto-policy/policy-direct-bias1p0.json"
+    },
+    "rows": [
+      {
+        "suppress_scaffold": false,
+        "bias": 1.0,
+        "candidate": "English",
+        "candidate_ids": [
+          22574,
+          6364
+        ],
+        "mode": "prefill_bias",
+        "output": "England, as evidenced by the fact that she became regent for their son James",
+        "closed": true,
+        "artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/integrated-policy/multi2/auto-policy/policy-direct-bias1p0.json"
+      }
+    ]
+  },
+  "relation_path": null,
+  "final": {
+    "layer": "state_aware_decode_policy",
+    "closed": true,
+    "output": "England, as evidenced by the fact that she became regent for their son James",
+    "candidate": "English",
+    "policy": {
+      "suppress_scaffold": false,
+      "bias": 1.0,
+      "candidate": "English",
+      "candidate_ids": [
+        22574,
+        6364
+      ],
+      "mode": "prefill_bias",
+      "output": "England, as evidenced by the fact that she became regent for their son James",
+      "closed": true,
+      "artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/integrated-policy/multi2/auto-policy/policy-direct-bias1p0.json"
+    }
+  }
+}

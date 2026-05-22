@@ -505,3 +505,39 @@ Final architecture emerging:
 2. evidence-derived candidate token nomination
 3. state-aware decode policy at sampler/LM-head
 ```
+
+## Integrated runner
+
+Added:
+
+```txt
+07-scripts/vllm-hook/epkv-integrated-evidence-policy-runner.py
+07-scripts/vllm-hook/epkv-integrated-batch.py
+```
+
+The integrated runner now carries EPKV provenance forward:
+
+```txt
+answer/evidence pages
+answer/evidence token ranges
+terminal evidence span
+selected policy layer
+final output
+```
+
+4-case integrated result:
+
+```txt
+adv2   -> state_aware_decode_policy -> Víctor Bó
+multi1 -> relation_path_then_decode  -> Johanna Magdalena of Saxe-Altenburg
+multi2 -> state_aware_decode_policy -> England... / English alias
+multi3 -> state_aware_decode_policy -> Víctor Bó...
+```
+
+Batch sanity run on first 6 2Wiki cases using compact evidence triples:
+
+```txt
+closed: 6/6
+state_aware_decode_policy: 4
+relation_path_then_decode: 2
+```

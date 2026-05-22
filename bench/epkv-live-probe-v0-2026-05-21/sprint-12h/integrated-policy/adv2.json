@@ -1,0 +1,116 @@
+{
+  "schema": "epkv.integrated_evidence_policy_runner.v0",
+  "span_map": "bench/epkv-live-probe-v0-2026-05-21/adversarial-layout/span-map-2.json",
+  "elapsed_sec": 29.849950790405273,
+  "provenance": {
+    "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+    "gold_answer": "Víctor Bó",
+    "terminal_span": {
+      "label": "E2",
+      "text": "Armando Bó -- child --> Víctor Bó.",
+      "token_range_spec": "115-130",
+      "pages_spec": "7-8"
+    },
+    "answer_span": {
+      "text": "Víctor Bó",
+      "char_start": 513,
+      "char_end": 522,
+      "token_start": 125,
+      "token_end_exclusive": 130,
+      "token_range_spec": "125-129",
+      "token_count": 5,
+      "pages": [
+        7,
+        8
+      ],
+      "pages_spec": "7-8"
+    },
+    "answer_pages_spec": "7-8",
+    "answer_token_range_spec": "125-129",
+    "evidence_pages_spec": "6-8",
+    "evidence_token_range_spec": null
+  },
+  "auto_policy": {
+    "schema": "epkv.auto_decode_policy.v0",
+    "span_map": "bench/epkv-live-probe-v0-2026-05-21/adversarial-layout/span-map-2.json",
+    "chosen": {
+      "suppress_scaffold": false,
+      "bias": 3.0,
+      "candidate": "Víctor Bó",
+      "candidate_ids": [
+        53,
+        647,
+        36125
+      ],
+      "mode": "direct_bias",
+      "output": "Víctor Bó",
+      "closed": true,
+      "artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/integrated-policy/adv2/auto-policy/policy-direct-bias3p0.json"
+    },
+    "rows": [
+      {
+        "suppress_scaffold": false,
+        "bias": 1.0,
+        "candidate": "Víctor Bó",
+        "candidate_ids": [
+          53,
+          647,
+          36125
+        ],
+        "mode": "direct_bias",
+        "output": "Armando Bo",
+        "closed": false,
+        "artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/integrated-policy/adv2/auto-policy/policy-direct-bias1p0.json"
+      },
+      {
+        "suppress_scaffold": false,
+        "bias": 2.0,
+        "candidate": "Víctor Bó",
+        "candidate_ids": [
+          53,
+          647,
+          36125
+        ],
+        "mode": "direct_bias",
+        "output": "Armando Bo",
+        "closed": false,
+        "artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/integrated-policy/adv2/auto-policy/policy-direct-bias2p0.json"
+      },
+      {
+        "suppress_scaffold": false,
+        "bias": 3.0,
+        "candidate": "Víctor Bó",
+        "candidate_ids": [
+          53,
+          647,
+          36125
+        ],
+        "mode": "direct_bias",
+        "output": "Víctor Bó",
+        "closed": true,
+        "artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/integrated-policy/adv2/auto-policy/policy-direct-bias3p0.json"
+      }
+    ]
+  },
+  "relation_path": null,
+  "final": {
+    "layer": "state_aware_decode_policy",
+    "closed": true,
+    "output": "Víctor Bó",
+    "candidate": "Víctor Bó",
+    "policy": {
+      "suppress_scaffold": false,
+      "bias": 3.0,
+      "candidate": "Víctor Bó",
+      "candidate_ids": [
+        53,
+        647,
+        36125
+      ],
+      "mode": "direct_bias",
+      "output": "Víctor Bó",
+      "closed": true,
+      "artifact": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/integrated-policy/adv2/auto-policy/policy-direct-bias3p0.json"
+    }
+  }
+}

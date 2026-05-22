@@ -119,10 +119,32 @@ multi3 -> prefill/entity-slot bias -> Víctor Bó...
 multi1 -> failed after 10 attempts
 ```
 
-## Current next target
+## Integrated runner
 
-Hard case `multi1` requires relation-path construction, not more decode surface steering:
+Implemented:
 
 ```txt
-Johanna Magdalene -> father -> Johann Georg -> mother -> Johanna Magdalena
+epkv-integrated-evidence-policy-runner.py
+epkv-integrated-batch.py
 ```
+
+4-case integrated result:
+
+```txt
+adv2   -> state_aware_decode_policy -> Víctor Bó
+multi1 -> relation_path_then_decode  -> Johanna Magdalena of Saxe-Altenburg
+multi2 -> state_aware_decode_policy -> England... / English alias
+multi3 -> state_aware_decode_policy -> Víctor Bó...
+```
+
+Batch sanity run:
+
+```txt
+first 6 2Wiki compact evidence cases -> 6/6 closed
+4 via state-aware decode policy
+2 via relation-path fallback
+```
+
+## Current next target
+
+Scale batch beyond sanity run and/or move state-aware policy into an internal vLLM sampler hook instead of API logit_bias.
