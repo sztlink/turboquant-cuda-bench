@@ -1,0 +1,92 @@
+# Boring Receipt — structured template
+# Fill every field you can. Leave unknowns as null, never guess.
+# Thesis: send branch + command shape, get boring receipts back.
+
+receipt:
+  id: null                      # e.g. 2026-05-22-3090-llama31-8b-q4km-baseline
+  date: null                    # ISO date of the run
+  node: null                    # which validation node (e.g. AYA-3090, AYA-4090)
+  status: null                  # pass | fail | inconclusive
+  requested_by: null            # who asked for this validation (handle / PR / issue)
+
+target:                         # what is being validated
+  engine: null                  # llama.cpp | vllm | sglang | tensorrt-llm | ...
+  regime: null                  # single-stream | serving (concurrency)
+  project: null                 # mainline | turboquant | TriAttention | MTP | ...
+  repo: null                    # git remote
+  branch: null
+  commit: null                  # exact sha
+  build_id: null                # release tag or build string (e.g. b9286 / vllm 0.x)
+  build_flags: null             # cmake/make flags, or "official prebuilt release"
+
+environment:
+  os: null                      # Windows 11 | Ubuntu 22.04 | WSL2 ...
+  driver: null                  # GPU driver version
+  cuda: null                    # CUDA runtime / toolkit version
+  gpu: null                     # model name
+  vram_total_mib: null
+  cpu: null                     # optional
+  ram_gb: null                  # optional
+
+model:
+  name: null                    # e.g. Meta-Llama-3.1-8B-Instruct
+  quant: null                   # weight quant: Q4_K_M | Q8_0 | fp8 ...
+  size_gib: null
+  params_b: null
+  source: null                  # HF repo / URL the weights came from
+
+# --- runtime load axes (see AXES.md). What this receipt VARIES. ---
+load:
+  context: null                 # n_ctx / prefill depth (4K..1M)
+  output_len: null              # generated tokens (-n)
+  kv_dtype_k: null              # K cache: f16|q8_0|q4_0|turbo3/4|k8v4 (K is quant-sensitive)
+  kv_dtype_v: null              # V cache dtype
+  flash_attn: null              # off|on (prereq for KV quant)
+  batch: null                   # -b logical
+  ubatch: null                  # -ub physical
+  concurrency: null             # 1 = single-stream; N = serving
+  request_rate: null            # req/s + burstiness, for serving
+  parallelism: null             # -ngl / -ts / TP / PP
+  scheduler: null               # chunked-prefill|prefix-cache|spec-decode|continuous-batching (on/off)
+  kv_budget: null               # compression budget (256..2048), if applicable
+  yarn_factor: null             # RoPE/YaRN extension factor, if past native ctx
+
+command: null                   # the EXACT command line that produced the numbers
+
+# --- performance measurement axes (see AXES.md). Report prefill & decode SEPARATELY. ---
+results:
+  # single-stream (llama.cpp)
+  pp_tok_s: null                # prefill (compute-bound), ± stddev
+  tg_tok_s: null                # decode (memory-bound), ± stddev
+  # serving (vllm/sglang/trt-llm)
+  output_tok_s_total: null      # aggregate output throughput
+  requests_s: null              # completed requests per second
+  goodput: null                 # throughput meeting declared SLO (e.g. ttft:2000,tpot:200)
+  # latency — report p50 AND p99, not just mean
+  ttft_ms: null                 # time to first token (p50/p99)
+  tpot_ms: null                 # time per output token (p50/p99)
+  itl_ms: null                  # inter-token latency (p50/p99)
+  e2el_ms: null                 # end-to-end latency (p99)
+  # footprint
+  vram_peak_mib: null
+  kv_buffer_mib: null
+  power_avg_w: null
+  power_peak_w: null
+  temp_peak_c: null
+  reps: null                    # repetitions / benchmark duration
+
+# --- quality gate: an INVARIANT, not an axis (see AXES.md). ---
+# A diff here is an ALARM, not a variation. Keep this legible (clause 1) and
+# name the gate version (clause 2) so the bar is contestable.
+quality_gate:
+  gate_version: null            # which gate definition this receipt was held to
+  signal: null                  # smoke | ppl-delta | needle-hit | kvfidelity
+  criterion: null               # the explicit bar (e.g. "PPL delta < 1%", "needle 5/5")
+  passed: null                  # true | false | n/a (n/a only for pure-throughput rungs)
+
+evidence:                       # raw artifacts backing the numbers
+  stdout_excerpt: null
+  log_path: null                # path in this repo to full logs
+
+caveats: null                   # honest limits: thermal throttle, shared box, etc.
+next_step: null                 # what would sharpen this receipt
