@@ -406,11 +406,48 @@ multi3 first token: The
 
 So first-token answer bias works for answer-only prompts but not for verbose prompts where the first token is discourse scaffolding.
 
-## Next live step
+## State-aware decode policy
 
-Implement generated-token-state-aware bias:
+A new harness implements generated-token-state-aware diagnostics:
 
 ```txt
-answer-only prompt -> first-token candidate bias
-verbose prompt -> delay candidate bias until entity slot or suppress scaffold first
+07-scripts/vllm-hook/epkv-state-aware-decode-policy.py
+```
+
+It supports:
+
+```txt
+assistant prefill/entity-slot continuation
+--suppress-scaffold
+--scaffold-bias -10
+```
+
+Results:
+
+```txt
+adv2 answer-only:
+  candidate Víctor Bó
+  direct bias +3 -> Víctor Bó
+
+multi3 verbose La Leona:
+  baseline starts with The...
+  suppress scaffold + candidate bias -> Víctor Bó is the child...
+
+multi2 verbose Margaret Tudor:
+  baseline starts with Based...
+  suppress scaffold + candidate bias10 -> Margaret Tudor's country of origin is English...
+```
+
+Hard case remains:
+
+```txt
+multi1 Johanna grandmother still fails; needs relation/path repair, not just decode-policy steering.
+```
+
+## Next live step
+
+Automate the policy:
+
+```txt
+derive candidate from evidence -> inspect first-token logprobs -> choose direct bias vs scaffold suppression vs slot continuation
 ```

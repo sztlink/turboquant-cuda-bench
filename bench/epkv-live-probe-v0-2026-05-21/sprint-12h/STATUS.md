@@ -92,11 +92,26 @@ Based / The
 
 so answer-token bias must be step-aware, not first-token global.
 
-## Current next target
+## State-aware policy phase
 
-Generated-token-state-aware bias:
+Implemented `epkv-state-aware-decode-policy.py`.
+
+Confirmed:
 
 ```txt
-answer-only prompt -> first-token candidate bias
-verbose prompt -> wait for entity slot or suppress scaffold first
+answer-only adv2: direct candidate bias +3 -> Víctor Bó
+verbose multi3: suppress scaffold + bias3 -> Víctor Bó is the child...
+verbose multi2: suppress scaffold + bias10 -> Margaret Tudor's country of origin is English...
+```
+
+Manual slot/prefix for multi1 still fails, selecting Fredericka Elisabeth instead of Johanna Magdalena. This is a relation/path failure.
+
+## Current next target
+
+Automatic policy selector:
+
+```txt
+first-token logprobs show scaffold? -> suppress scaffold
+candidate already near top? -> direct bias
+relation/path confusion? -> build relation-aware candidate/path prompt or evidence rewrite
 ```
