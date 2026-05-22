@@ -290,6 +290,30 @@ VLLM_EPKV_LOGIT_BIAS=0
 /health OK
 ```
 
+## Internal sampler live runner
+
+Implemented:
+
+```txt
+epkv-internal-sampler-policy-live.py
+```
+
+This runner writes generated policy JSON to the 4090 dynamic policy file, sends a normal request without API `logit_bias`, then restores policy off.
+
+Smoke:
+
+```txt
+adv2   -> Víctor Bó
+multi3 -> Víctor Bó is the child of the director of film La Leona
+```
+
+Restored after each smoke:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+/health OK
+```
+
 ## Current next target
 
-Scale batch on the internal sampler path using generated policy files.
+Run a batch on the internal sampler path using `epkv-internal-sampler-policy-live.py`.

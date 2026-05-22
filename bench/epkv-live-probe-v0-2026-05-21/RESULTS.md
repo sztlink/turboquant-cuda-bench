@@ -703,3 +703,31 @@ VLLM_EPKV_RUNTIME_HOOK=0
 VLLM_EPKV_LOGIT_BIAS=0
 /health OK
 ```
+
+## Internal sampler live runner
+
+Added:
+
+```txt
+07-scripts/vllm-hook/epkv-internal-sampler-policy-live.py
+```
+
+End-to-end path:
+
+```txt
+span map -> dynamic policy JSON -> 4090 policy file -> normal API request without logit_bias -> restore off
+```
+
+Smoke results:
+
+```txt
+adv2   -> Víctor Bó
+multi3 -> Víctor Bó is the child of the director of film La Leona
+```
+
+Post-smoke:
+
+```txt
+policy file: {"enabled": false, "tag": "default-off"}
+/health OK
+```

@@ -1,0 +1,70 @@
+{
+  "schema": "epkv.internal_sampler_policy_live.v0",
+  "span_map": "bench/epkv-live-probe-v0-2026-05-21/adversarial-layout/span-map-2.json",
+  "elapsed_sec": 1.52943754196167,
+  "policy": {
+    "schema": "epkv.logit_policy_file.v0",
+    "enabled": true,
+    "tag": "internal-live-c3c94d0a0bdc11eba7f7acde48001122",
+    "candidate": "Víctor Bó",
+    "candidate_source": "terminal-object",
+    "candidate_ids": [
+      53,
+      647,
+      36125
+    ],
+    "suppress_scaffold": false,
+    "scaffold_ids": [],
+    "bias_map": {
+      "53": 3.0,
+      "647": 3.0,
+      "36125": 3.0
+    },
+    "max_events": 256,
+    "provenance": {
+      "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+      "answer_pages_spec": "7-8",
+      "answer_token_range_spec": "125-129",
+      "evidence_pages_spec": "6-8",
+      "evidence_token_range_spec": null
+    }
+  },
+  "output": "Víctor Bó",
+  "response": {
+    "id": "chatcmpl-abcf76cab9065207",
+    "object": "chat.completion",
+    "created": 1779452153,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Víctor Bó",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 153,
+      "total_tokens": 159,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "restore_error": null
+}
