@@ -1,0 +1,965 @@
+{
+  "schema": "epkv.entity_hop_retrieval.v0",
+  "elapsed_sec": 10.615657329559326,
+  "total": 10,
+  "corpus_docs": 56687,
+  "macro": {
+    "bge_ref": {
+      "em": 0.0,
+      "contains": 0.1,
+      "f1": 0.10444444444444442
+    },
+    "entity_hop_path_prompt": {
+      "em": 0.5,
+      "contains": 0.6,
+      "f1": 0.5769230769230769
+    },
+    "entity_hop_strong": {
+      "em": 0.3,
+      "contains": 0.4,
+      "f1": 0.4254545454545455
+    }
+  },
+  "retrieval": {
+    "support_title_recall": 0.8166666666666667,
+    "full_support_recall": 0.6,
+    "answer_string_present_rate": 0.8
+  },
+  "rows": [
+    {
+      "idx": 0,
+      "qid": "8813f87c0bdd11eba7f7acde48001122",
+      "question": "Who is the mother of the director of film Polish-Russian War (Film)?",
+      "gold": "Małgorzata Braunek",
+      "support_titles": [
+        "Polish-Russian War",
+        "Polish-Russian War (film)",
+        "Xawery Żuławski"
+      ],
+      "seeds": [
+        "Polish-Russian War (film)",
+        "Polish-Russian War"
+      ],
+      "edges": [
+        [
+          "Polish-Russian War (film)",
+          "Xawery Żuławski"
+        ],
+        [
+          "Aleksander Ford",
+          "Roman Polanski"
+        ],
+        [
+          "Aleksander Ford",
+          "Roman Polanski"
+        ],
+        [
+          "Demons of War",
+          "Władysław Pasikowski"
+        ],
+        [
+          "5 Days of War",
+          "Renny Harlin"
+        ],
+        [
+          "5 Days of War",
+          "Story"
+        ],
+        [
+          "Ashes and Diamonds (film)",
+          "@Home"
+        ],
+        [
+          "Battle of Kletsk (1706)",
+          "Carl Gustaf Creutz"
+        ],
+        [
+          "The House of the Sun (film)",
+          "The Rock"
+        ]
+      ],
+      "pool_size": 17,
+      "selected_titles": [
+        "Polish-Russian War (film)",
+        "The Rock",
+        "Roman Polanski",
+        "Roman Polanski",
+        "Xawery Żuławski",
+        "Władysław Pasikowski",
+        "Renny Harlin",
+        "Carl Gustaf Creutz",
+        "Story",
+        "@Home"
+      ],
+      "selected_scores": [],
+      "support_title_recall": 0.6666666666666666,
+      "full_support_recall": 0.0,
+      "answer_string_present_in_docs": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Dorota Masłowska"
+      },
+      "conditions": {
+        "entity_hop_strong": {
+          "em": 1.0,
+          "contains": 1.0,
+          "f1": 1.0,
+          "output": "Małgorzata Braunek",
+          "latency_sec": 0.5885248184204102
+        },
+        "entity_hop_path_prompt": {
+          "em": 1.0,
+          "contains": 1.0,
+          "f1": 1.0,
+          "output": "Małgorzata Braunek",
+          "latency_sec": 0.2377912998199463
+        }
+      }
+    },
+    {
+      "idx": 1,
+      "qid": "e2a3bf2a0bdd11eba7f7acde48001122",
+      "question": "When did John V, Prince Of Anhalt-Zerbst's father die?",
+      "gold": "12 June 1516",
+      "support_titles": [
+        "Ernest I, Prince of Anhalt-Dessau",
+        "John V of Anhalt-Zerbst",
+        "John V, Prince of Anhalt-Zerbst"
+      ],
+      "seeds": [
+        "John",
+        "Prince Of Anhalt-Zerbst's"
+      ],
+      "edges": [
+        [
+          "John V, Prince of Anhalt-Zerbst",
+          "Ernest I, Prince of Anhalt-Dessau"
+        ],
+        [
+          "Bernhard VII, Prince of Anhalt-Zerbst",
+          "John V, Prince of Anhalt-Zerbst"
+        ],
+        [
+          "John VI, Prince of Anhalt-Zerbst",
+          "John VII, Count of Oldenburg"
+        ]
+      ],
+      "pool_size": 11,
+      "selected_titles": [
+        "Ernest I, Prince of Anhalt-Dessau",
+        "Ernest I, Prince of Anhalt-Dessau",
+        "John VII, Count of Oldenburg",
+        "John V, Prince of Anhalt-Zerbst",
+        "John V, Prince of Anhalt-Zerbst",
+        "John VI, Prince of Anhalt-Zerbst",
+        "John Augustus, Prince of Anhalt-Zerbst",
+        "Karl I, Prince of Anhalt-Zerbst",
+        "Bernhard VII, Prince of Anhalt-Zerbst",
+        "Bernhard VII, Prince of Anhalt-Zerbst"
+      ],
+      "selected_scores": [],
+      "support_title_recall": 0.6666666666666666,
+      "full_support_recall": 0.0,
+      "answer_string_present_in_docs": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passage does not provide the death year of John V's father, Ernest I, Prince of Anhalt-Dessau."
+      },
+      "conditions": {
+        "entity_hop_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "1561",
+          "latency_sec": 0.2189481258392334
+        },
+        "entity_hop_path_prompt": {
+          "em": 1.0,
+          "contains": 1.0,
+          "f1": 1.0,
+          "output": "12 June 1516",
+          "latency_sec": 0.2787048816680908
+        }
+      }
+    },
+    {
+      "idx": 2,
+      "qid": "0cd3bdea0bde11eba7f7acde48001122",
+      "question": "What is the award that the director of film Wearing Velvet Slippers Under A Golden Umbrella won?",
+      "gold": "Myanmar Motion Picture Academy Awards",
+      "support_titles": [
+        "Wearing Velvet Slippers under a Golden Umbrella",
+        "Wunna"
+      ],
+      "seeds": [
+        "Wearing Velvet Slippers under a Golden Umbrella",
+        "Wearing Velvet Slippers Under A Golden Umbrella"
+      ],
+      "edges": [
+        [
+          "Wearing Velvet Slippers under a Golden Umbrella",
+          "The Feature"
+        ],
+        [
+          "Wearing Velvet Slippers under a Golden Umbrella",
+          "Wunna"
+        ],
+        [
+          "Heaven & Hell: A Tribute to the Velvet Underground",
+          "Lou Reed"
+        ],
+        [
+          "Heaven & Hell: A Tribute to the Velvet Underground",
+          "Part"
+        ],
+        [
+          "Danny Boyle",
+          "@Home"
+        ],
+        [
+          "Danny Boyle",
+          "Part"
+        ],
+        [
+          "The Umbrella Coup",
+          "Gérard Oury"
+        ],
+        [
+          "The Umbrella Coup",
+          "Comedy!"
+        ],
+        [
+          "Bygones (film)",
+          "The Feature"
+        ],
+        [
+          "László Nemes",
+          "The Feature"
+        ],
+        [
+          "László Nemes",
+          "The Jury"
+        ],
+        [
+          "Jacques Audiard",
+          "Michel Audiard"
+        ],
+        [
+          "Jacques Audiard",
+          "Rust and Bone"
+        ],
+        [
+          "Barbra Streisand",
+          "The Way We Were"
+        ]
+      ],
+      "pool_size": 19,
+      "selected_titles": [
+        "Wearing Velvet Slippers under a Golden Umbrella",
+        "The Feature",
+        "The Way We Were",
+        "The Jury",
+        "Rust and Bone",
+        "Lou Reed",
+        "Comedy!",
+        "Michel Audiard",
+        "Wunna",
+        "Gérard Oury"
+      ],
+      "selected_scores": [],
+      "support_title_recall": 1.0,
+      "full_support_recall": 1.0,
+      "answer_string_present_in_docs": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Maung Wunna won the Golden Rooster Award for Best Directorial Debut with \"Wearing Velvet Slippers Under A Golden Umbrella\"."
+      },
+      "conditions": {
+        "entity_hop_strong": {
+          "em": 0.0,
+          "contains": 1.0,
+          "f1": 0.45454545454545453,
+          "output": "Maung Wunna won two-time Myanmar Motion Picture Academy Awards as a director and writer for his film \"Wearing",
+          "latency_sec": 0.4943366050720215
+        },
+        "entity_hop_path_prompt": {
+          "em": 0.0,
+          "contains": 1.0,
+          "f1": 0.7692307692307693,
+          "output": "Myat Wunna won the Myanmar Motion Picture Academy Awards.",
+          "latency_sec": 0.33121490478515625
+        }
+      }
+    },
+    {
+      "idx": 3,
+      "qid": "f9dcb4a60bda11eba7f7acde48001122",
+      "question": "Where was the director of film Ronnie Rocket born?",
+      "gold": "Missoula, Montana",
+      "support_titles": [
+        "David Lynch",
+        "Ronnie Rocket"
+      ],
+      "seeds": [
+        "Ronnie Rocket"
+      ],
+      "edges": [
+        [
+          "Ronnie Rocket",
+          "The Intended"
+        ],
+        [
+          "Ronnie Rocket",
+          "Find"
+        ],
+        [
+          "The Rocket (2005 film)",
+          "Story"
+        ],
+        [
+          "Woman in the Moon",
+          "Rocket to the Moon"
+        ],
+        [
+          "Woman in the Moon",
+          "Fritz Lang"
+        ],
+        [
+          "Fritz von Opel",
+          "Wilhelm von Opel"
+        ],
+        [
+          "OTRAG",
+          "Launch"
+        ],
+        [
+          "Rocket Attack U.S.A.",
+          "Barry Mahon"
+        ],
+        [
+          "Rocket Attack U.S.A.",
+          "The Intended"
+        ],
+        [
+          "Allen Collins",
+          "The Rock"
+        ],
+        [
+          "William Leitch (scientist)",
+          "Orson Desaix Munn"
+        ]
+      ],
+      "pool_size": 18,
+      "selected_titles": [
+        "Ronnie Rocket",
+        "Rocket to the Moon",
+        "The Intended",
+        "The Rock",
+        "Fritz Lang",
+        "Barry Mahon",
+        "Wilhelm von Opel",
+        "Orson Desaix Munn",
+        "Find",
+        "Story"
+      ],
+      "selected_scores": [],
+      "support_title_recall": 0.5,
+      "full_support_recall": 0.0,
+      "answer_string_present_in_docs": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "David Lynch was the director of the film Ronnie Rocket, and the passage does not state his birthplace. Therefore, the question cannot be answered based on the given"
+      },
+      "conditions": {
+        "entity_hop_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "The question is based on a fictional or unfinished film project \"Ronnie Rocket\" by David Lynch and does not provide information",
+          "latency_sec": 0.4684607982635498
+        },
+        "entity_hop_path_prompt": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "Austria",
+          "latency_sec": 0.13429641723632812
+        }
+      }
+    },
+    {
+      "idx": 4,
+      "qid": "8981e1ce0bb011ebab90acde48001122",
+      "question": "Who is Charles Bretagne Marie De La Trémoille's paternal grandfather?",
+      "gold": "Charles Armand René de La Trémoille",
+      "support_titles": [
+        "Charles Bretagne Marie de La Trémoille",
+        "Jean Bretagne Charles de La Trémoille"
+      ],
+      "seeds": [
+        "Charles Bretagne Marie De La Trémoille's"
+      ],
+      "edges": [
+        [
+          "Charles Bretagne Marie de La Trémoille",
+          "Jean Bretagne Charles de La Trémoille"
+        ],
+        [
+          "Jean Bretagne Charles de La Trémoille",
+          "Charles Armand René de La Trémoille"
+        ],
+        [
+          "Jean Bretagne Charles de La Trémoille",
+          "Charles Armand René de La Trémoille"
+        ],
+        [
+          "Charles Armand René de La Trémoille",
+          "Charles Belgique Hollande de La Trémoille"
+        ],
+        [
+          "Charles Armand René de La Trémoille",
+          "Jean Bretagne Charles de La Trémoille"
+        ],
+        [
+          "Louis Charles de La Trémoille",
+          "Charles Bretagne Marie de La Trémoille"
+        ],
+        [
+          "Louis Charles de La Trémoille",
+          "Charles Bretagne Marie de La Trémoille"
+        ],
+        [
+          "Charles Louis Bretagne de La Trémoille",
+          "Charles Belgique Hollande de La Trémoille"
+        ],
+        [
+          "Charles Louis Bretagne de La Trémoille",
+          "Charles Armand René de La Trémoille"
+        ],
+        [
+          "Louis Charles Marie de La Trémoille",
+          "Louis Charles de La Trémoille"
+        ]
+      ],
+      "pool_size": 9,
+      "selected_titles": [
+        "Charles Belgique Hollande de La Trémoille",
+        "Charles Bretagne Marie de La Trémoille",
+        "Charles Louis Bretagne de La Trémoille",
+        "Jean Bretagne Charles de La Trémoille",
+        "Jean Bretagne Charles de La Trémoille",
+        "Louis Charles Marie de La Trémoille",
+        "Charles Armand René de La Trémoille",
+        "Louis Charles de La Trémoille",
+        "Louis Charles de La Trémoille"
+      ],
+      "selected_scores": [],
+      "support_title_recall": 1.0,
+      "full_support_recall": 1.0,
+      "answer_string_present_in_docs": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.6,
+        "output": "Henry de La Trémoille"
+      },
+      "conditions": {
+        "entity_hop_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.4,
+          "output": "Prince Henri de La Trémoille, 3rd Duke of Thouars",
+          "latency_sec": 0.412217378616333
+        },
+        "entity_hop_path_prompt": {
+          "em": 1.0,
+          "contains": 1.0,
+          "f1": 1.0,
+          "output": "Charles Armand René de La Trémoille",
+          "latency_sec": 0.33490490913391113
+        }
+      }
+    },
+    {
+      "idx": 5,
+      "qid": "019bed300bde11eba7f7acde48001122",
+      "question": "Where was the father of Ștefan I. Nenițescu born?",
+      "gold": "Galați",
+      "support_titles": [
+        "Ioan S. Nenițescu",
+        "Ștefan I. Nenițescu"
+      ],
+      "seeds": [
+        "Ștefan I. Nenițescu",
+        "I. Nenițescu"
+      ],
+      "edges": [
+        [
+          "Ștefan I. Nenițescu",
+          "Ioan S. Nenițescu"
+        ],
+        [
+          "Ștefan I. Nenițescu",
+          "William Shakespeare"
+        ],
+        [
+          "Ioan S. Nenițescu",
+          "The Only One"
+        ],
+        [
+          "Eberhard I, Count of the Mark",
+          "Engelbert I, Count of the Mark"
+        ],
+        [
+          "Eberhard I, Count of the Mark",
+          "Revenge!"
+        ],
+        [
+          "Where I Was From",
+          "Part"
+        ]
+      ],
+      "pool_size": 13,
+      "selected_titles": [
+        "Ștefan I. Nenițescu",
+        "Engelbert I, Count of the Mark",
+        "The Only One",
+        "William Shakespeare",
+        "Revenge!",
+        "Part",
+        "Eberhard I, Count of the Mark",
+        "Where I Was From",
+        "Ioan S. Nenițescu",
+        "The Question (Emery album)"
+      ],
+      "selected_scores": [],
+      "support_title_recall": 1.0,
+      "full_support_recall": 1.0,
+      "answer_string_present_in_docs": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Bucharest"
+      },
+      "conditions": {
+        "entity_hop_strong": {
+          "em": 1.0,
+          "contains": 1.0,
+          "f1": 1.0,
+          "output": "Galați",
+          "latency_sec": 0.17025971412658691
+        },
+        "entity_hop_path_prompt": {
+          "em": 1.0,
+          "contains": 1.0,
+          "f1": 1.0,
+          "output": "Galați",
+          "latency_sec": 0.18563008308410645
+        }
+      }
+    },
+    {
+      "idx": 6,
+      "qid": "2ec440560bb011ebab90acde48001122",
+      "question": "Who is the maternal grandfather of Antiochus X Eusebes?",
+      "gold": "Ptolemy IX Lathyros",
+      "support_titles": [
+        "Antiochus X Eusebes",
+        "Cleopatra IV",
+        "Cleopatra IV of Egypt"
+      ],
+      "seeds": [
+        "Antiochus X Eusebes",
+        "Antiochus X"
+      ],
+      "edges": [
+        [
+          "Laodice of the Sameans",
+          "Antiochus X Eusebes"
+        ],
+        [
+          "Antiochus IX Cyzicenus",
+          "Antiochus VII Sidetes"
+        ],
+        [
+          "Antiochus IX Cyzicenus",
+          "Afterwards"
+        ],
+        [
+          "Antiochus III of Commagene",
+          "Part"
+        ]
+      ],
+      "pool_size": 11,
+      "selected_titles": [
+        "Antiochus X Eusebes",
+        "Antiochus X Eusebes",
+        "Antiochus VII Sidetes",
+        "Afterwards",
+        "Part",
+        "Laodice of the Sameans",
+        "Antiochus III of Commagene",
+        "Antiochus IX Cyzicenus",
+        "Antiochus XI Epiphanes",
+        "Philip I Philadelphus"
+      ],
+      "selected_scores": [],
+      "support_title_recall": 0.3333333333333333,
+      "full_support_recall": 0.0,
+      "answer_string_present_in_docs": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Antiochus IX Cyzicenus"
+      },
+      "conditions": {
+        "entity_hop_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.4,
+          "output": "Antiochus IX",
+          "latency_sec": 0.2317826747894287
+        },
+        "entity_hop_path_prompt": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "Antiochus VII Sidetes",
+          "latency_sec": 0.2688438892364502
+        }
+      }
+    },
+    {
+      "idx": 7,
+      "qid": "464cfa460bd911eba7f7acde48001122",
+      "question": "Where was the director of film Thomas Jefferson (Film) born?",
+      "gold": "Brooklyn",
+      "support_titles": [
+        "Ken Burns",
+        "Thomas Jefferson",
+        "Thomas Jefferson (film)"
+      ],
+      "seeds": [
+        "Thomas Jefferson (film)",
+        "Thomas Jefferson"
+      ],
+      "edges": [
+        [
+          "Thomas Jefferson (film)",
+          "Thomas Jefferson"
+        ],
+        [
+          "Thomas Jefferson (film)",
+          "Ken Burns"
+        ],
+        [
+          "Thomas Jefferson",
+          "Sally Hemings"
+        ],
+        [
+          "Thomas Jefferson",
+          "@Home"
+        ],
+        [
+          "Sally Hemings",
+          "The Room"
+        ],
+        [
+          "Thomas Jefferson Kaye",
+          "Thomas Jefferson"
+        ],
+        [
+          "Thomas Jefferson Kaye",
+          "The Singer"
+        ],
+        [
+          "James Parton",
+          "Andrew Jackson"
+        ],
+        [
+          "James Parton",
+          "Born American"
+        ],
+        [
+          "James Parton",
+          "Thomas Jefferson"
+        ],
+        [
+          "Harriet Orcutt Duleep",
+          "Alice Nakamura"
+        ],
+        [
+          "Harriet Orcutt Duleep",
+          "Thomas Jefferson"
+        ],
+        [
+          "Samuel Dexter",
+          "Thomas Jefferson"
+        ],
+        [
+          "Samuel Dexter",
+          "John Adams"
+        ]
+      ],
+      "pool_size": 16,
+      "selected_titles": [
+        "Thomas Jefferson (film)",
+        "Thomas Jefferson",
+        "Born American",
+        "The Room",
+        "The Singer",
+        "Alice Nakamura",
+        "John Adams",
+        "Ken Burns",
+        "Andrew Jackson",
+        "@Home"
+      ],
+      "selected_scores": [],
+      "support_title_recall": 1.0,
+      "full_support_recall": 1.0,
+      "answer_string_present_in_docs": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The director of the film \"Thomas Jefferson\" (1997) is Ken Burns, and the passage does not provide information about his birthplace."
+      },
+      "conditions": {
+        "entity_hop_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "Ken Burns was born in the United States.",
+          "latency_sec": 0.2696187496185303
+        },
+        "entity_hop_path_prompt": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "Kenneth Lauren Burns",
+          "latency_sec": 0.19805574417114258
+        }
+      }
+    },
+    {
+      "idx": 8,
+      "qid": "c05e16a40bdd11eba7f7acde48001122",
+      "question": "Why did Grand Duke Kirill Vladimirovich Of Russia's wife die?",
+      "gold": "stroke",
+      "support_titles": [
+        "Grand Duke Kirill Vladimirovich of Russia",
+        "Princess Victoria Melita of Saxe-Coburg and Gotha"
+      ],
+      "seeds": [
+        "Why",
+        "Grand Duke Kirill Vladimirovich Of Russia's"
+      ],
+      "edges": [
+        [
+          "Grand Duchess Kira Kirillovna of Russia",
+          "Princess Victoria Melita of Saxe-Coburg and Gotha"
+        ],
+        [
+          "Grand Duchess Kira Kirillovna of Russia",
+          "Grand Duke Kirill Vladimirovich of Russia"
+        ],
+        [
+          "Grand Duke Kirill Vladimirovich of Russia",
+          "Princess Victoria Melita of Saxe-Coburg and Gotha"
+        ],
+        [
+          "Grand Duke Kirill Vladimirovich of Russia",
+          "Grand Duke Vladimir Alexandrovich of Russia"
+        ],
+        [
+          "Andreas, Prince of Leiningen",
+          "Prince Karl Emich of Leiningen"
+        ],
+        [
+          "Andreas, Prince of Leiningen",
+          "Queen Victoria"
+        ],
+        [
+          "Princess Victoria Melita of Saxe-Coburg and Gotha",
+          "Grand Duchess Maria Alexandrovna of Russia"
+        ],
+        [
+          "Princess Victoria Melita of Saxe-Coburg and Gotha",
+          "Grand Duke Kirill Vladimirovich of Russia"
+        ],
+        [
+          "Prince Karl of Leiningen",
+          "Queen Victoria"
+        ],
+        [
+          "Prince Karl of Leiningen",
+          "Queen Victoria"
+        ]
+      ],
+      "pool_size": 11,
+      "selected_titles": [
+        "Grand Duke Vladimir Alexandrovich of Russia",
+        "Grand Duchess Maria Alexandrovna of Russia",
+        "Queen Victoria",
+        "Grand Duke Kirill Vladimirovich of Russia",
+        "Grand Duke Vyacheslav Konstantinovich of Russia",
+        "Grand Duchess Kira Kirillovna of Russia",
+        "Princess Victoria Melita of Saxe-Coburg and Gotha",
+        "Prince Karl Emich of Leiningen",
+        "Andreas, Prince of Leiningen",
+        "Prince Karl of Leiningen"
+      ],
+      "selected_scores": [],
+      "support_title_recall": 1.0,
+      "full_support_recall": 1.0,
+      "answer_string_present_in_docs": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.1111111111111111,
+        "output": "Victoria Melita of Saxe-Coburg and Gotha died after suffering a stroke while visiting her daughter Maria in Amorbach."
+      },
+      "conditions": {
+        "entity_hop_strong": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "Grand Duchess Kira Kirillovna of Russia, his wife, died on 8 September 1967",
+          "latency_sec": 0.5443732738494873
+        },
+        "entity_hop_path_prompt": {
+          "em": 0.0,
+          "contains": 0.0,
+          "f1": 0.0,
+          "output": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936",
+          "latency_sec": 0.554553747177124
+        }
+      }
+    },
+    {
+      "idx": 9,
+      "qid": "2935f1640bda11eba7f7acde48001122",
+      "question": "Where was the place of death of the director of film Beat Girl?",
+      "gold": "Nice",
+      "support_titles": [
+        "Beat Girl",
+        "Edmond T. Gréville"
+      ],
+      "seeds": [
+        "Beat Girl",
+        "Beat"
+      ],
+      "edges": [
+        [
+          "Beat Girl",
+          "Edmond T. Gréville"
+        ],
+        [
+          "Beat Girl",
+          "Gillian Hills"
+        ],
+        [
+          "Beat Girl",
+          "Edmond T. Gréville"
+        ],
+        [
+          "Beat Girl",
+          "Gillian Hills"
+        ],
+        [
+          "A Girl with Guitar",
+          "Carnival Night"
+        ],
+        [
+          "A Girl with Guitar",
+          "Comedy!"
+        ],
+        [
+          "Jehovah-jireh",
+          "Abraham"
+        ],
+        [
+          "Jehovah-jireh",
+          "Offer"
+        ],
+        [
+          "The Girl of the Golden West (1915 film)",
+          "Cecil B. DeMille"
+        ],
+        [
+          "Dance, Girl, Dance",
+          "Dorothy Arzner"
+        ],
+        [
+          "Dance, Girl, Dance",
+          "Robert Wise"
+        ],
+        [
+          "Place of birth",
+          "Place of origin"
+        ],
+        [
+          "Place of birth",
+          "The Will"
+        ],
+        [
+          "Ram Baksh Singh",
+          "Guilty?"
+        ],
+        [
+          "Ram Baksh Singh",
+          "Part"
+        ]
+      ],
+      "pool_size": 22,
+      "selected_titles": [
+        "Beat Girl",
+        "Beat Girl",
+        "Place of origin",
+        "The Will",
+        "Gillian Hills",
+        "Cecil B. DeMille",
+        "Dorothy Arzner",
+        "Robert Wise",
+        "Edmond T. Gréville",
+        "Edmond T. Gréville"
+      ],
+      "selected_scores": [],
+      "support_title_recall": 1.0,
+      "full_support_recall": 1.0,
+      "answer_string_present_in_docs": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Westport, Connecticut"
+      },
+      "conditions": {
+        "entity_hop_strong": {
+          "em": 1.0,
+          "contains": 1.0,
+          "f1": 1.0,
+          "output": "Nice",
+          "latency_sec": 0.1719801425933838
+        },
+        "entity_hop_path_prompt": {
+          "em": 1.0,
+          "contains": 1.0,
+          "f1": 1.0,
+          "output": "Nice",
+          "latency_sec": 0.1777968406677246
+        }
+      }
+    }
+  ]
+}

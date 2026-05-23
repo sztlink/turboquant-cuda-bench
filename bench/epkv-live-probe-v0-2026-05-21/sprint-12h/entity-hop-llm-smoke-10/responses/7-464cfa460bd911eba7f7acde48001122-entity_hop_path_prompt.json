@@ -1,0 +1,48 @@
+{
+  "qid": "464cfa460bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Brooklyn",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Thomas Jefferson (film) -> Thomas Jefferson\n- Thomas Jefferson (film) -> Ken Burns\n- Thomas Jefferson -> Sally Hemings\n- Thomas Jefferson -> @Home\n- Sally Hemings -> The Room\n- Thomas Jefferson Kaye -> Thomas Jefferson\n- Thomas Jefferson Kaye -> The Singer\n- James Parton -> Andrew Jackson\n- James Parton -> Born American\n- James Parton -> Thomas Jefferson\n- Harriet Orcutt Duleep -> Alice Nakamura\n- Harriet Orcutt Duleep -> Thomas Jefferson\n- Samuel Dexter -> Thomas Jefferson\n- Samuel Dexter -> John Adams\nPassages:\nP1: Thomas Jefferson (film): Thomas Jefferson is a 1997 two-part American documentary film directed and produced by Ken Burns. It covers the life and times of Thomas Jefferson, the 3rd President of the United States. In the film Jefferson is portrayed as renaissance man. Not only was he a dedicated public servant, but was also a writer, an inventor, and a noted architect. Burns captures both the public and private person.\nP2: Thomas Jefferson: Thomas Jefferson( April 13, 1743 – July 4, 1826) was an American statesman, diplomat, lawyer, architect, philosopher, and Founding Father who served as the third president of the United States from 1801 to 1809. He previously served as the second vice president of the United States from 1797 to 1801. The principal author of the Declaration of Independence, Jefferson was a proponent of democracy, republicanism, and individual rights, motivating American colonists to break from ...\nP3: Born American: Born American( Finnish: Jäätävä polte; also known as Arctic Heat) is a 1986 Finnish film directed by Renny Harlin. It was originally supposed to star Chuck Norris but he backed out when filming was delayed by funding problems and his son, Mike Norris, landed the lead instead. A Finnish production, this was at that time the most expensive film ever to have been made in Finland. The Finnish Board of Film Classification first banned the movie, because of excessive violence and ...\nP4: The Room: The Room may refer to:\nP5: The Singer: The Singer may refer to:\nP6: Alice Nakamura: Alice Orcutt Nakamura( born 1945) is a fellow of the Canadian Economics Association, which is the highest honour of the association. She is currently a professor of finance and management science at the University of Alberta where she has taught since 1972. Alice Nakamura was also the first female president of the Canadian Economics Association in 1994- 1995. She was also the president of the International Association for Research on Income and Wealth from 2014- 2016. She is ...\nP7: John Adams: John Adams (October 30, 1735 – July 4, 1826) was an American statesman, attorney, diplomat, writer, and Founding Father who served as the second president of the United States, from 1797 to 1801. Before his presidency, he was a leader of the American Revolution that achieved independence from Great Britain and served as the first vice president of the United States. Adams was a dedicated diarist and regularly corresponded with many important figures in early American history, ...\nP8: Ken Burns: Kenneth Lauren Burns (born 1953) is an American filmmaker, known for his style of using archival footage and photographs in documentary films. His widely known documentary series include \"The Civil War\" (1990), \"Baseball\" (1994), \"Jazz\" (2001), \"The War\" (2007),  (2009), \"Prohibition\" (2011), \"The Roosevelts\" (2014), \"The Vietnam War\" (2017), and \"Country Music\" (2019). He was also executive producer of both \"The West\" (1996, directed by Stephen Ives), and \"Cancer: The Emperor of All ...\nP9: Andrew Jackson: Andrew Jackson (March 15, 1767 – June 8, 1845) was an American soldier and statesman who served as the seventh president of the United States from 1829 to 1837. Before being elected to the presidency, Jackson gained fame as a general in the United States Army and served in both houses of the U.S. Congress. As president, Jackson sought to advance the rights of the \"common man\" against a \"corrupt aristocracy\" and to preserve the Union. Born in the colonial Carolinas to a ...\nP10: @Home: @Home or @home may refer to:\nQuestion: Where was the director of film Thomas Jefferson (Film) born?\nFinal answer:",
+  "output": "Kenneth Lauren Burns",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-906287494747847e",
+    "object": "chat.completion",
+    "created": 1779504589,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Kenneth Lauren Burns",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1133,
+      "total_tokens": 1138,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}
