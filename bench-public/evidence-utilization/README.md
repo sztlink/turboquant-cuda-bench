@@ -1,138 +1,109 @@
 # Evidence-placement / answer-closure diagnostics
 
-Public HotpotQA gates plus synthetic long-context probes for the retrieval-utilization front.
+Public answer-closure diagnostics for HotpotQA, 2Wiki, synthetic long-context probes, and default-off evidence-path telemetry/protection artifacts.
 
-The central behavior:
+**Read first:** [`../../STATE.md`](../../STATE.md).
+
+Current post-N=500 stance:
 
 ```txt
-FOUND      retrieved evidence is present
-PRESENTED  rank/decoys/context decide what competes locally
-USED       answer closure may still fail
+Evidence placement, retrieval, and path construction affect answer closure.
+Gated verifier/rerank control did not beat direct entity-hop path prompting at N=500.
+EPKV/sampler/runtime work is lab/observability, not natural RealRAG quality proof.
 ```
 
-Start with:
+N=500 machine-only check:
 
 ```txt
-REALRAG-PHASE0-CLOSURE.md
-EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md
-EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md
-EVIDENCE-PROTECTION-LAYER-INDEX.md
-EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md
-EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md
-EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md
-EVIDENCE-PROTECTION-LAYER-v0.3-REPLAY-COMPATIBILITY.md
-EVIDENCE-PROTECTION-LAYER-v0.5-READONLY-CI.md
-EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md
-EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md
-EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md
-EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.3.md
-EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.4.md
-EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.5.md
-REALRAG-HOTPOTQA-R1.md
-REALRAG-HOTPOTQA-R2-RANKCURVE.md
-REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md
-REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md
-REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md
-REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md
-REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md
-REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md
-REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md
-REALRAG-R3K-ADJUDICATION-LIGHT.md
-REALRAG-R4A-LLM-JUDGE-PANEL.md
-REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md
-REALRAG-R5-STATISTICAL-ROBUSTNESS.md
-REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md
-REALRAG-2WIKI-R3H-DIAGNOSTIC.md
-REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md
-REALRAG-2WIKI-R3J-SENTENCE-COMPRESSION.md
-REALRAG-HOTPOTQA-SAMPLES-v1.md
-REALRAG-R3-PLAN.md
-RESULTS.md
+path_prompt EM 0.216 / F1 0.324
+gated_v1   EM 0.216 / F1 0.323
+wins/losses/ties = 2 / 2 / 496
 ```
 
-Sealed offline milestone:
+Canonical artifact:
 
 ```txt
+../../bench/epkv-live-probe-v0-2026-05-21/sprint-12h/MACHINE-ONLY-REALITY-500.md
+```
+
+## Current interpretation
+
+Safe wording:
+
+```txt
+answer closure is sensitive to evidence placement, rank, and path construction
+HotpotQA and 2Wiki differ materially
+oracle/compact evidence control is an upper bound
+manual verifier gates did not scale as a quality improvement
+```
+
+Avoid as thesis wording:
+
+```txt
+retrieved ≠ used as a dominant production RAG bottleneck
+internal model evidence use
+EPKV fixes RealRAG
+human adjudication as the next critical-path gate
+```
+
+`retrieved ≠ used` is historical shorthand only: evidence presence and answer closure are operationally separable.
+
+## Start here
+
+| question | artifact |
+|---|---|
+| Current repo truth / non-claims | [`../../STATE.md`](../../STATE.md) |
+| Bench status map | [`../../bench/MANIFEST.md`](../../bench/MANIFEST.md) |
+| Phase 0 public-dataset closure | [`REALRAG-PHASE0-CLOSURE.md`](REALRAG-PHASE0-CLOSURE.md) |
+| HotpotQA placement | [`REALRAG-HOTPOTQA-R1.md`](REALRAG-HOTPOTQA-R1.md) |
+| HotpotQA rank curve | [`REALRAG-HOTPOTQA-R2-RANKCURVE.md`](REALRAG-HOTPOTQA-R2-RANKCURVE.md) |
+| HotpotQA BGE rerank | [`REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md`](REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md) |
+| HotpotQA 32B scale check | [`REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md`](REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md) |
+| 2Wiki natural retrieval | [`REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md`](REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md) |
+| 2Wiki schema ablation | [`REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md`](REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md) |
+| 2Wiki sentence compression falsification | [`REALRAG-2WIKI-R3J-SENTENCE-COMPRESSION.md`](REALRAG-2WIKI-R3J-SENTENCE-COMPRESSION.md) |
+| Statistical robustness | [`REALRAG-R5-STATISTICAL-ROBUSTNESS.md`](REALRAG-R5-STATISTICAL-ROBUSTNESS.md) |
+| Observe/protect/intervene map | [`EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md`](EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md) |
+| Runtime telemetry index | [`EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md`](EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md) |
+| Protection layer index | [`EVIDENCE-PROTECTION-LAYER-INDEX.md`](EVIDENCE-PROTECTION-LAYER-INDEX.md) |
+
+## Promoted public-dataset gates
+
+### HotpotQA
+
+```txt
+R1   evidence placement
+R2   forced support-rank curve
+R3A  prompt variants
+R3B  natural retrieval + BGE reranker
+R3L  32B scale check
+R3C/R3D/R3F/R3K  metric/judge triage, not ground truth
+R5   statistical robustness
+```
+
+### 2Wiki
+
+```txt
+R3G  natural retrieval generalization check
+R3H  diagnostics
+R3I  prompt/schema ablation
+R3J  non-gold sentence compression falsification
+```
+
+Note: local R6/R7/R8 artifacts existed in the lab history, but they are not part of the current public entry path unless promoted and indexed in `bench/MANIFEST.md`.
+
+## Telemetry / protection artifacts
+
+These are default-off / hook-off / non-intervention membranes:
+
+```txt
+EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md ... v0.5.md
+EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md ... v0.5.md
 OFFLINE-MILESTONE-v1.9.md
 ```
 
-<p>
-  <img src="../assets/evidence-path-ledger-v19.svg" alt="evidence path ledger v1.9" width="860">
-</p>
+They do not claim runtime quality improvement.
 
-Bridge docs:
+## Boundary
 
-```txt
-EPKV-BRIDGE-SPEC.md
-EPKV-BRIDGE-READOUT.md
-EPKV-BEHAVIOR-MAP.md
-EVIDENCE-PATH-LEDGER.md
-EVIDENCE-PATH-LEDGER-VIEW.html
-OFFLINE-MILESTONE-v1.9.md
-```
-
-Public-dataset gates:
-
-- `REALRAG-PHASE0-CLOSURE.md` — closed Phase 0 readout across HotpotQA, 2Wiki, adjudication triage, and 32B scale.
-- `EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md` — Casey-informed operating map separating observe, protect, and intervene regimes.
-- `EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md` — consolidated Phase 1 telemetry index and non-intervention boundary freeze.
-- `EVIDENCE-PROTECTION-LAYER-INDEX.md` — consolidated PROTECT index and non-intervention boundary freeze.
-- `EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md` — first PROTECT gate; support spans survive deterministic packing as hashed provenance.
-- `EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md` — structural packing transforms preserve paragraph multisets, support hashes, and no-support emptiness.
-- `EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md` — synthetic original-vs-protected rewrite equivalence with fail-closed blocking.
-- `EVIDENCE-PROTECTION-LAYER-v0.3-REPLAY-COMPATIBILITY.md` — real-record replay compatibility; stable packs allowed, reorders blocked pending equivalence/adjudication.
-- `EVIDENCE-PROTECTION-LAYER-v0.5-READONLY-CI.md` — no-endpoint verifier for committed PROTECT docs/reports/artifacts.
-- `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md` — Phase 1 default-off replay bridge from RealRAG records into the runtime telemetry schema.
-- `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md` — default-off runtime sidecar emitter smoke on synthetic/local prompts.
-- `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md` — fail-closed and privacy-regression fixtures for the sidecar telemetry contract.
-- `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.3.md` — guarded sidecar run loop with default-off, preflight, served-model guard, postflight validation, and privacy scan.
-- `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.4.md` — config-driven CI-style command for the guarded sidecar.
-- `EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.5.md` — read-only/no-endpoint CI verifier for committed telemetry artifacts.
-- `REALRAG-HOTPOTQA-R1.md` — HotpotQA evidence-placement result: oracle-first vs BM25 vs oracle-last vs distractor-first vs no-support.
-- `REALRAG-HOTPOTQA-R2-RANKCURVE.md` — forced support-rank curve: beginning helps, middle burial hurts, end partially recovers.
-- `REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md` — direct/citation/reasoning prompt ablation; the position effect survives simple prompting changes.
-- `REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md` — BM25 vs BGE reranker vs oracle/no-support; strong reranking closes most of the natural BM25-to-oracle gap.
-- `REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md` — 32B scale check on the same HotpotQA natural-retrieval gate; scale raises closure but preserves the rank/placement ladder.
-- `REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md` — supporting-fact sentence audit and stratified sample pack for manual/judge review.
-- `REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md` — local Qwen semantic-judge triage over R3C samples; not ground-truth adjudication.
-- `REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md` — unreviewed packet for human/independent adjudication.
-- `REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md` — non-authoritative AI-assisted adjudication draft over R3E.
-- `REALRAG-R3K-ADJUDICATION-LIGHT.md` — 200-item high-risk local-LLM triage pack across Hotpot/2Wiki buckets.
-- `REALRAG-R4A-LLM-JUDGE-PANEL.md` — local LLM-as-judge panel for triage, not ground truth.
-- `REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md` — 150-row blinded human calibration batch for Google Sheets.
-- `REALRAG-R5-STATISTICAL-ROBUSTNESS.md` — offline bootstrap CIs and paired deltas for HotpotQA/2Wiki closure gates.
-- `REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md` — 2Wiki generalization check; support-present beats no-support, but BGE/oracle do not clearly improve closure over BM25.
-- `REALRAG-2WIKI-R3H-DIAGNOSTIC.md` — diagnosis by question type, answer class, supporting-fact sentence rank, and disagreement buckets.
-- `REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md` — prompt/schema ablation showing support-sentence and gold-triple gains over paragraph context.
-- `REALRAG-2WIKI-R3J-SENTENCE-COMPRESSION.md` — non-gold lexical sentence compression gate; naive compression hurts globally.
-- `REALRAG-HOTPOTQA-SAMPLES-v1.md` / `.jsonl` — audit sample pack with questions, gold answers, predictions, metrics, and context titles.
-- `REALRAG-R3-PLAN.md` — executed R3 gate ledger plus remaining optional validation.
-
-Synthetic sweeps:
-
-- `phase/` — evidence zone, canonical rank, and decoys-before phase diagram.
-- `depth/` — 20k / 80k / 160k context-depth sweep.
-- `prompt-scaffold/` — baseline vs negative / positive / structured prompt variants.
-- `distractor-taxonomy/` — unrelated noise vs explicit decoy / stale record / conflicting correction / near duplicate.
-- `controller/` — overnight sequence wrapper log and done marker.
-
-Not included: raw per-request `summary.jsonl` / raw answers. Those remain local staging artifacts.
-
-Core thesis, qualified:
-
-```txt
-retrieved != used is shorthand for operational separation, not proof of internal evidence use or a dominant production-RAG bottleneck
-answer closure is sensitive to position/rank/recency under controlled evidence placement
-simple citation/reasoning prompts did not remove the HotpotQA position effect in R3A
-BGE reranking mitigated most of the BM25-to-oracle gap in R3B natural retrieval
-Phase 0 is closed as a public-dataset answer-closure package
-Phase 1 telemetry membrane is established through v0.5 and frozen as telemetry-only / non-intervention
-R5 statistical robustness adds offline bootstrap CIs: HotpotQA BGE > BM25 is stable, 32B improves support-present closure, 2Wiki natural-retrieval deltas remain small/schema-sensitive
-R4A/R4B opened human calibration: local LLM panel selected a 150-row blinded Google Sheets batch for human review
-PROTECT membrane is established through EPL v0.3 and frozen as hook-off / non-kernel / non-intervention
-R3L shows 32B scale raises HotpotQA closure sharply in support-present conditions but keeps BM25 < BGE < oracle_first >> no_support
-R3C confirms supporting-fact sentence presence; R3D/R3F local AI triage and R3E review packet make independent/human adjudication the next gate
-2Wiki R3G/R3H/R3I/R3J shows the HotpotQA reranker ladder does not generalize cleanly under the same harness; type/prompt/schema fit and relation-aware evidence compression matter
-evidence depth != answer closure
-local evidence competition can dominate closure in synthetic probes
-```
+This folder measures answer-side closure and artifact integrity. It does not prove attention, internal evidence use, production RAG value, serving speedup, or runtime readiness.

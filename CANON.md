@@ -1,132 +1,108 @@
-# TurboQuant / KVFidelity / CASK — Canon
+# Canon — turboquant-cuda-bench
 
-This repository is the **material canonical archive** for the TurboQuant / KVFidelity research front.
+This repository is the material research archive for the TurboQuant / KVFidelity / RealRAG / EPKV front.
 
-`memory-md` remains the cognitive/operational memory of the implante: decisions, work logs, and concise synthesis. This repository preserves the material evidence: protocols, scripts, raw logs, processed traces, analysis notes, and publicable artifacts.
+The current canonical state is **[STATE.md](STATE.md)**. If this file and `STATE.md` disagree, `STATE.md` wins.
 
-## Current canonical entry point
+## Current canonical stance
 
-```txt
-00-context/START-HERE.md
-00-context/CURRENT.md
-```
-
-## Current CASK/KVFidelity package
-
-The latest consolidated package is:
+After the N=500 machine-only RealRAG check:
 
 ```txt
-03-lab/experiments/2026-05-13-cask-aime24-n30-trace-atlas/
-05-analysis/kvfidelity/2026-05-15-trace-atlas-lab-note-v2.md
-06-publicable/kvfidelity/2026-05-trace-atlas-v4/
+Evidence placement, retrieval, and path construction affect answer closure.
+Direct entity-hop path prompting is the strongest non-oracle natural RealRAG baseline so far.
+Hand-written verifier/rerank gates did not beat direct path prompting at N=500.
+Oracle/compact evidence control is an upper bound, not natural retrieval proof.
+Runtime EPKV/sampler work is lab/observability, not production proof.
 ```
 
-## Current TurboQuant / Tecnofagia package
-
-The latest sanitized long-context decoy package is:
+N=500 summary:
 
 ```txt
-bench/tecnofagia-discord-2026-05-14/README.md
-bench/tecnofagia-discord-2026-05-14/RESULTS.md
-bench/tecnofagia-discord-2026-05-14/sanitized-results-auto-20260515-015428.json
-bench/tecnofagia-discord-2026-05-14/sanitized-results-turboquant_k8v4-20260515-090744.json
-bench/longctx-utilization-overnight-2026-05-16/RESULTS.md
-bench/longctx-utilization-expanded-2026-05-16/RESULTS.md
-bench/evidence-utilization-phase-2026-05-17/RESULTS.md
-05-analysis/longctx/2026-05-15-retrieval-is-not-utilization.md
+path_prompt EM 0.216 / F1 0.324
+gated_v1   EM 0.216 / F1 0.323
+wins/losses/ties = 2 / 2 / 496
 ```
 
-Current result:
+Canonical artifact:
 
 ```txt
-vLLM auto / Qwen2.5-7B-Instruct / Discord decoys: 5/5 hits
-TurboQuant K8V4 / Qwen2.5-7B-Instruct / Discord decoys: 5/5 hits after fresh vLLM rebuild
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/MACHINE-ONLY-REALITY-500.md
 ```
 
-This belongs to the longctx/retrieval-utilization front, not to the CASK/AIME/KVFidelity benchmark slice.
+## Current non-claims
 
-Current longctx thesis:
+Do not claim:
 
 ```txt
-Retrieval success is not utilization success.
-A retrieved chunk is not a used chunk.
-Raw context depth was not the main bottleneck in the latest synthetic phase package.
-Answer closure was dominated by local evidence competition: canonical rank, decoys-before, and distractor type.
-Prompting harder did not reliably fix the observed failure mode.
+- “retrieved ≠ used” is a dominant production RAG bottleneck.
+- EPKV/sampler/verifier control improves natural RealRAG quality.
+- selected-position telemetry proves internal model evidence use.
+- any EPKV runtime hook is production-ready.
+- small-slice verifier gains generalize.
+- human adjudication is the next critical-path blocker.
 ```
 
-Expanded synthetic staging confirmation, 2026-05-16:
+`retrieved ≠ used` may remain only as historical shorthand for operational separation between evidence presence and answer closure.
+
+## Repository role
+
+This repo preserves material evidence:
 
 ```txt
-n=24
-retrieval: 19/24
-baseline_proxy closure: 9/24
-anti_decoy_proxy closure: 9/24
-filtered_splice closure: 19/24
+protocols
+scripts
+raw logs where necessary
+processed traces
+analysis notes
+publicable artifacts
+negative results
 ```
 
-Evidence-utilization phase package, 2026-05-17:
+`memory-md` preserves cognitive/operational synthesis. `boring-receipts` preserves standalone public reproducibility receipts.
+
+## Current entry points
 
 ```txt
-bench/evidence-utilization-phase-2026-05-17/RESULTS.md
-phase diagram:        743/1200 closure, errors 0
-depth sweep:          3022/3840 closure, errors 0
-prompt scaffold:      2532/3456 closure, errors 0
-distractor taxonomy:  1605/2880 closure, errors 0
+README.md                         short public entry
+STATE.md                          current truth and non-claims
+KEY-FINDINGS.md                   public findings readout, caveated by STATE
+bench/MANIFEST.md                 status map for major bench dirs
+REPO-AUDIT-2026-05-23.md          hostile repo audit
+docs/REPO-GOVERNANCE.md           retention and promotion policy
+bench-public/                     public-safe packages
 ```
 
-Operational correction attached to this package: the 4090 server path now requires preflight before disabling the watchdog because Windows Device Guard blocked prior `llama-server.exe` builds. Current runnable production binary: `C:\turbo-build\buun\build-may1\bin\llama-server.exe`.
+## Status vocabulary
 
-Rerank structural status:
+Bench artifacts should be labeled as:
 
 ```txt
-bench/longctx-rerank-timeout-smoke-2026-05-16/RESULTS.md
-07-scripts/patches/longctx-svc-rerank-timeout-2026-05-16.patch
+CANONICAL
+SUPPORTING
+NEGATIVE
+SUPERSEDED
+ARCHIVE_ONLY
+SCRATCH
 ```
 
-The local patch makes slow CPU cross-encoder rerank bounded: with `LONGCTX_RERANK_TIMEOUT_SECONDS > 0`, scoring runs in a killable subprocess and falls back to cosine/BM25 with `used_rerank=false` on timeout. This is a service-safety fix, not a rerank-quality result.
+See `bench/MANIFEST.md`.
 
-## Canonical thesis
+## Active freeze
 
-A correct answer is not a score. It is a temporal event: it emerges, persists, drifts, closes, or disappears.
-
-In this CASK/AIME24 slice, CASK is not a performance claim. It is the experiment under analysis. KVFidelity is proposed as the diagnostic lens.
-
-## Current empirical stance
-
-Do not claim CASK wins.
-Do not claim CASK loses globally.
-Do not publish this as a benchmark result.
-
-The current value is methodological: final-answer accuracy hides trajectory phenomena. The trace atlas separates discovery, retention, closure, answer drift, candidate churn, and extraction contamination.
-
-## Boundary of evidence
-
-This package covers:
+As of 2026-05-23:
 
 ```txt
-Dataset: AIME24 first 30 problems
-Model: Qwen3-8B
-Runs: FullKV, TriAttention, CASK
-max_new_tokens: 2048 / 4096
-compressed budgets: 256 / 384 / 512
+- hand-written verifier gates are frozen
+- sampler/Triton/kernel intervention waits for a real quality delta
+- no new raw per-case dumps by default
+- human adjudication is not the active plan
 ```
-
-Mandatory caveats:
-
-1. n=30 only.
-2. single model.
-3. single order / single run.
-4. labels are regex/extractor-derived, not human-validated.
-5. AIME numeric answers can create incidental matches.
-6. TriAttention used packaged stats fallback `for_aime25_experiment/qwen3_8b.pt`, possibly suboptimal for AIME24.
-7. compressed budgets tested only 256/384/512.
-8. low absolute scores amplify relative noise.
 
 ## Structure
 
 ```txt
-00-context/       current state and front-level framing
+00-context/       front-level framing and historical context
 02-raw/           raw logs and irreducible evidence
 03-lab/           experiment cells with metadata and pointers
 04-processed/     normalized traces, matrices, metrics, audits
@@ -134,10 +110,16 @@ Mandatory caveats:
 06-publicable/    decks, figures, public-facing packages
 07-scripts/       scripts used to transform data into analysis/figures
 08-archive/       superseded pointers and deprecated material
+bench/            research archive and experiment outputs
+bench-public/     public-safe summaries and receipt packages
+docs/             governance and long-form repo documentation
 ```
 
 ## Rule
 
+```txt
 If it sustains a decision, it belongs in this repository.
-If it explains a decision, it belongs in `memory-md`.
-If it can disappear without epistemic loss, it may remain in `/tmp`.
+If it explains a decision, it belongs in memory-md.
+If it can disappear without epistemic loss, keep it out of git or in /tmp.
+If it is public-facing, it must name its non-claims.
+```

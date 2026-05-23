@@ -51,9 +51,6 @@ Status vocabulary:
 | `bench/evidence-utilization-realrag-2wiki-r3h-diagnostic-2026-05-20/` | 2Wiki | SUPPORTING | yes | Type/schema diagnostic | — |
 | `bench/evidence-utilization-realrag-2wiki-r3i-prompt-schema-ablation-2026-05-20/` | 2Wiki | SUPPORTING | yes | Support-sentence/gold-triple upper bounds | — |
 | `bench/evidence-utilization-realrag-2wiki-r3j-sentence-compression-2026-05-20/` | 2Wiki | NEGATIVE | yes | Naive sentence compression hurts | — |
-| `bench/evidence-utilization-realrag-2wiki-r6-relation-aware-construction-2026-05-21/` | 2Wiki | SUPPORTING | yes | Relation-aware construction attempt | later entity-hop/N=500 runs |
-| `bench/evidence-utilization-realrag-2wiki-r7-generated-triples-2026-05-21/` | 2Wiki | NEGATIVE | yes | Naive generated triples falsified | later entity-hop/N=500 runs |
-| `bench/evidence-utilization-realrag-2wiki-r8-slot-filling-2026-05-21/` | 2Wiki | SUPPORTING | yes | Structured slot filling improved sample result | later entity-hop/N=500 runs |
 | `bench/evidence-utilization-realrag-r5-statistical-robustness-2026-05-21/` | stats | SUPPORTING | yes | Offline bootstrap/paired deltas for earlier phase | N=500 report for current path line |
 
 ## KV/cache and long-context methodology archive

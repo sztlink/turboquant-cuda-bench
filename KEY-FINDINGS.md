@@ -1,305 +1,225 @@
 # Key findings
 
-This file is the short public readout of the repo. Numbers are from local RTX 4090 / RTX 3090 receipts unless stated otherwise.
+Read this with [STATE.md](STATE.md). This file is the short public readout; `STATE.md` is the canonical current stance.
 
-## Core findings
+## Current top-line result
 
-Phase 0 is closed as a public-dataset answer-closure package. It includes HotpotQA placement/reranking/metric-audit/adjudication-prep/32B scale gates plus 2Wiki generalization and schema diagnostics. Phase 1 telemetry is established and frozen as non-intervention. PROTECT is now open with hook-off span provenance, structural packing invariance, synthetic equivalence/fail-closed blocking, and real-record replay compatibility; kernel/intervention remains inactive.
+The latest large machine-only RealRAG check found **no quality delta** for gated verifier/rerank control over direct entity-hop path prompting.
 
-These are the stable public findings from promoted receipts. The phrase **retrieved ≠ used** is shorthand for an operational separation between evidence presence and answer closure. It is not a proof of internal evidence use or a claim that this is the dominant production RAG bottleneck.
+Artifact:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/MACHINE-ONLY-REALITY-500.md
+```
+
+N=500 result:
+
+| condition | EM | contains | F1 |
+|---|---:|---:|---:|
+| BM25→BGE ref | 0.018 | 0.032 | 0.037 |
+| entity-hop strong | 0.172 | 0.288 | 0.285 |
+| entity-hop path prompt | **0.216** | **0.306** | **0.324** |
+| raw answer rerank | 0.212 | 0.308 | 0.322 |
+| gated rerank v1 | 0.216 | 0.304 | 0.323 |
+
+Paired gated v1 vs path prompt:
+
+```txt
+wins/losses/ties: 2 / 2 / 496
+EM delta:          0.000, 95% CI [-0.008, 0.008]
+F1 delta:         -0.000, 95% CI [-0.007, 0.007]
+p-value:           1.0
+```
+
+Interpretation:
+
+```txt
+Entity-hop/path prompting remains the best non-oracle natural RealRAG baseline in this line.
+Hand-written verifier gates are frozen.
+```
+
+## What the repo currently supports
+
+```txt
+1. Evidence placement, rank, and path construction affect answer closure.
+2. HotpotQA and 2Wiki behave differently; the HotpotQA reranker ladder does not generalize cleanly.
+3. Strong retrieval/reranking can help on HotpotQA, but 2Wiki is more schema/path sensitive.
+4. Oracle/compact evidence control is a useful upper bound, not natural retrieval proof.
+5. KV/cache and vLLM runtime interventions are technically feasible as lab instrumentation.
+6. N=500 falsified the scaled positive claim for gated answer control.
+```
+
+## What the repo does **not** support
+
+```txt
+- EPKV/sampler/verifier control improves natural RealRAG quality.
+- “retrieved ≠ used” is a dominant production RAG bottleneck.
+- Selected-position telemetry proves internal model evidence use.
+- Runtime EPKV hooks are production-ready.
+- LLM verifier confidence is calibrated.
+- Small-slice gains generalize.
+```
+
+`retrieved ≠ used` is historical shorthand only: operational separation between evidence presence and answer closure. It is not a strong thesis claim.
 
 ## 1. Public HotpotQA: answer closure is position-sensitive
 
-The RealRAG R1/R2/R3A/R3B/R3C/R3D/R3E/R3F/R3L runs move the evidence-placement claim beyond synthetic fixtures onto public HotpotQA dev distractor.
+Promoted HotpotQA runs showed a stable position/rank effect.
 
 R1 full evidence-placement gate:
 
-- **7,384** HotpotQA questions, **36,920** records, **0 errors**.
-- `oracle_first`: **51.1%** closure.
-- `bm25_retrieved`: **46.2%** closure.
-- `oracle_last`: **42.7%** closure.
-- `distractor_first`: **38.5%** closure.
-- `no_support`: **6.8%** closure.
+```txt
+7,384 questions / 36,920 records / 0 errors
+oracle_first:     51.1%
+bm25_retrieved:   46.2%
+oracle_last:      42.7%
+distractor_first: 38.5%
+no_support:        6.8%
+```
 
 R2 forced support-rank curve:
 
-- **7,384** questions, **44,304** records, **0 errors**.
-- `rank_1`: **51.4%** closure.
-- `rank_last`: **42.4%** closure.
-- `rank_3`: **40.4%** closure.
-- `rank_8`: **38.7%** closure.
-- `rank_5`: **38.6%** closure.
-- `no_support`: **6.9%** closure.
-
-Observed position curve:
-
 ```txt
-rank_1 > rank_last > rank_3 > rank_8 ≈ rank_5 >> no_support
+rank_1:     51.4%
+rank_last:  42.4%
+rank_3:     40.4%
+rank_8:     38.7%
+rank_5:     38.6%
+no_support:  6.9%
 ```
 
-R3A prompt/citation ablation:
+R3B natural retrieval + BGE reranker:
 
-- **1,991** questions, **23,892** records, **0 errors**.
-- `direct_short_answer`: `rank_1` **51.5%**, `rank_5` **38.4%**, `rank_last` **42.7%**, `no_support` **6.5%**.
-- `cite_then_answer`: `rank_1` **48.0%**, `rank_5` **37.2%**, `rank_last` **37.0%**, `no_support` **6.7%**.
-- `reason_then_answer`: `rank_1` **52.3%**, `rank_5` **39.3%**, `rank_last` **43.8%**, `no_support` **8.6%**.
-- Paired `rank_1 - rank_5` deltas remained large: direct **+13.1 pp**, cite **+10.8 pp**, reason **+13.1 pp**.
-- Citation-hit in `cite_then_answer` fell as evidence moved away from the start: `rank_1` **43.9%**, `rank_5` **32.9%**, `rank_last` **28.2%**.
+```txt
+bm25_top10:       45.8%
+bge_rerank_top10: 50.1%
+oracle_first:     51.2%
+no_support:        6.8%
+BGE - BM25:       +4.4 pp, 95% CI [+2.7, +6.1]
+```
 
-R3B natural retrieval + BGE reranker gate:
+R3L 32B scale check:
 
-- **1,991** questions, **7,964** records, **0 errors**.
-- `bm25_top10`: **45.8%** closure, support rank mean **1.34**.
-- `bge_rerank_top10`: **50.1%** closure, support rank mean **1.05**.
-- `oracle_first`: **51.2%** closure.
-- `no_support`: **6.8%** closure.
-- Paired `bge_rerank_top10 - bm25_top10`: **+4.4 pp**, 95% CI **+2.7 to +6.1 pp**.
-- Paired `oracle_first - bge_rerank_top10`: **+1.1 pp**, 95% CI **-0.6 to +2.7 pp**.
+```txt
+bm25_top10:       62.4%
+bge_rerank_top10: 64.6%
+oracle_first:     66.2%
+no_support:        6.1%
+```
 
-R3L 32B natural retrieval scale check:
-
-- **1,991** questions, **7,964** records, **0 errors** on Qwen2.5-32B-AWQ.
-- `bm25_top10`: **62.4%** closure, support rank mean **1.34**.
-- `bge_rerank_top10`: **64.6%** closure, support rank mean **1.05**.
-- `oracle_first`: **66.2%** closure.
-- `no_support`: **6.1%** closure.
-- Paired `bge_rerank_top10 - bm25_top10`: **+2.3 pp**, 95% CI **+0.9 to +3.7 pp**.
-- Paired `oracle_first - bge_rerank_top10`: **+1.6 pp**, 95% CI **+0.3 to +2.9 pp**.
-- Operational boundary: first **5,511** records used guarded vLLM server; final **2,453** used offline `vLLM.generate()` after server instability. This is a scale check, not a serving benchmark.
-
-R3C metric/supporting-facts audit:
-
-- R3B support-present conditions have **100%** supporting-fact sentence recall.
-- Supporting-fact sentence rank mean improves from BM25 **3.17** to BGE **1.77**; oracle is **1.54**.
-- Stratified audit buckets: BM25 fail → BGE success **198** cases; BM25 success → BGE fail **111**; BM25/BGE fail → oracle success **86**; all support-present conditions fail **796**; no-support closure/leakage **136**.
-- The audit pack is not adjudicated yet: `audit_label` is `unreviewed`.
-
-R3D local semantic-judge triage over R3C samples:
-
-- **210** stratified R3C sample rows; **684** unique condition predictions judged.
-- Metric closed / judge positive: **267**.
-- Metric closed / judge negative: **4**.
-- Metric open / judge negative: **354**.
-- Metric open / judge positive: **59**.
-- This is local Qwen judge triage, not ground truth; sample is stratified, not population-representative.
-
-R3E/R3F adjudication prep:
-
-- R3E: **144** unreviewed review items with blank `human_label`, `human_confidence`, and `human_notes` fields.
-- R3F: AI-assisted draft over those 144 items.
-- R3F metric/AI: metric closed + AI positive **41**; metric open + AI negative **69**; metric open + AI positive **34**; metric closed + AI negative **0**.
-- R3F is not human ground truth; it is a prioritization layer.
-
-Interpretation: answer closure is sensitive to where gold supporting evidence sits in the context field. Beginning helps, middle burial hurts, and end placement partially recovers. Simple citation or reasoning prompts do not remove the controlled position effect. R3B changes the practical verdict: a strong reranker mitigates most of the natural BM25-to-oracle gap on this HotpotQA slice. R3L adds that 32B scale raises support-present closure sharply but does not make rank/placement irrelevant. R3C/R3D/R3E/R3F change the next question: remaining failures need independent/human semantic audit before being interpreted as evidence-use failures.
-
-Boundaries: this is answer-side EM/contains/F1-derived closure. Citation-hit is title-string overlap, not proof of internal citation use. Supporting-fact sentence presence validates prompt inclusion, not internal use. Local/AI judge labels are triage, not ground truth. R3E human labels are blank/unreviewed. These results do not prove attention, internal evidence use, production RAG value, a dominant production-RAG bottleneck, or runtime readiness.
+Boundary: these are answer-side closure metrics, not proof of internal evidence use.
 
 Public packages:
 
-- [RealRAG Phase 0 closure](bench-public/evidence-utilization/REALRAG-PHASE0-CLOSURE.md)
-- [Observe / Protect / Intervene map](bench-public/evidence-utilization/EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md)
-- [Evidence-Path Runtime Telemetry index](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md)
-- [Evidence Protection Layer index](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-INDEX.md)
-- [Evidence Protection Layer v0](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md)
-- [Evidence Protection Layer v0.1](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md)
-- [Evidence Protection Layer v0.2](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md)
-- [Evidence Protection Layer v0.3](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.3-REPLAY-COMPATIBILITY.md)
-- [Evidence Protection Layer v0.5](bench-public/evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.5-READONLY-CI.md)
-- [Evidence-Path Runtime Telemetry v0](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.md)
-- [Evidence-Path Runtime Telemetry v0.1](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.1.md)
-- [Evidence-Path Runtime Telemetry v0.2](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.2.md)
-- [Evidence-Path Runtime Telemetry v0.3](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.3.md)
-- [Evidence-Path Runtime Telemetry v0.4](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.4.md)
-- [Evidence-Path Runtime Telemetry v0.5](bench-public/evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-v0.5.md)
-- [RealRAG HotpotQA R1](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R1.md)
-- [RealRAG HotpotQA R2 rank curve](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md)
-- [RealRAG HotpotQA R3A prompt variants](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3A-PROMPTVARIANTS.md)
-- [RealRAG HotpotQA R3B natural retrieval](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md)
-- [RealRAG HotpotQA R3L 32B natural retrieval](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md)
-- [RealRAG HotpotQA R3C metric audit](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3C-METRIC-AUDIT.md)
-- [RealRAG HotpotQA R3D local judge](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3D-LOCAL-JUDGE.md)
-- [RealRAG HotpotQA R3E human adjudication pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3E-HUMAN-ADJUDICATION-PACK.md)
-- [RealRAG HotpotQA R3F AI adjudication draft](bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3F-AI-ADJUDICATION.md)
-- [RealRAG R4A LLM judge panel](bench-public/evidence-utilization/REALRAG-R4A-LLM-JUDGE-PANEL.md)
-- [RealRAG R4B human calibration batch](bench-public/evidence-utilization/REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md)
-- [RealRAG R5 statistical robustness](bench-public/evidence-utilization/REALRAG-R5-STATISTICAL-ROBUSTNESS.md)
-- [RealRAG sample pack](bench-public/evidence-utilization/REALRAG-HOTPOTQA-SAMPLES-v1.md)
-- [RealRAG R3 executed gate ledger](bench-public/evidence-utilization/REALRAG-R3-PLAN.md)
+```txt
+bench-public/evidence-utilization/REALRAG-HOTPOTQA-R1.md
+bench-public/evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md
+bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md
+bench-public/evidence-utilization/REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md
+```
 
-## 1b. 2Wiki: generalization is dataset-sensitive
+## 2. 2Wiki: schema/path sensitivity dominates paragraph rank
 
-R3K adjudication-light adds a 200-item local-LLM triage sample over high-risk Hotpot/2Wiki buckets:
+The same natural-retrieval story did not transfer cleanly to 2Wiki.
 
-- local labels: **116 correct**, **25 partial**, **56 wrong**, **3 parse_error**.
-- local metric-error flags: **71 false_negative**, **7 false_positive**, **119 none**, **3 unclear**.
-- `2wiki_no_support_success_leakage` remains mixed/high-risk: **12 correct**, **2 partial**, **15 wrong** among **29** sampled.
-- `hotpot_metric_open_judge_positive` contains many undercounted answers: **9 correct**, **8 partial**, **2 wrong** among **19** sampled.
+R3G natural retrieval:
 
-Boundary: R3K is local triage, not independent human adjudication.
+```txt
+2,000 questions / 8,000 records / 0 errors
+bm25_top10:        33.3%
+bge_rerank_top10: 33.8%
+oracle_first:     31.9%
+no_support:        3.9%
+BGE - BM25:       +0.4 pp, 95% CI [-1.4, +2.3]
+```
 
-R4A/R4B turns that triage into a human calibration workflow:
+R3I prompt/schema ablation on 400-question sample:
 
-- R4A panel records: **200**.
-- Panel disagreement: **61**.
-- R4B selected review rows: **150**.
-- Google Sheets batch: created with instructions, dropdown labels, hidden metadata, and dashboard.
+```txt
+context_bge_direct:          31.8%
+support_sentences_typeaware: 55.0%
+evidence_triples_direct:     75.5%   # gold structured upper bound
+no_support_typeaware:         5.5%
+```
 
-R5 adds offline statistical robustness without depending on human review:
+R3J sentence compression:
 
-- HotpotQA 7B BGE - BM25 closure delta: **+4.4 pp**, 95% CI **[+2.6, +6.1]**.
-- HotpotQA 32B BGE - BM25 closure delta: **+2.3 pp**, 95% CI **[+0.9, +3.7]**.
-- 2Wiki BGE - BM25 closure delta: **+0.4 pp**, 95% CI **[-1.5, +2.4]**.
-- 32B - 7B HotpotQA support-present closure gain: roughly **+14.5 to +16.6 pp** by condition.
+```txt
+context_bge_direct:        31.0%
+sentence_bge_top6_direct:  23.0%
+evidence_triples_gold:     74.5%
+```
 
-Public packages: [RealRAG R3K adjudication light](bench-public/evidence-utilization/REALRAG-R3K-ADJUDICATION-LIGHT.md), [R4A LLM judge panel](bench-public/evidence-utilization/REALRAG-R4A-LLM-JUDGE-PANEL.md), [R4B human calibration batch](bench-public/evidence-utilization/REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md), [R5 statistical robustness](bench-public/evidence-utilization/REALRAG-R5-STATISTICAL-ROBUSTNESS.md)
+Interpretation:
 
-R3G applies the natural-retrieval gate to 2WikiMultiHopQA dev.
+```txt
+For 2Wiki, relation/path/schema construction matters more than paragraph rerank alone.
+Naive sentence compression and naive generated triples can hurt.
+```
 
-- **2,000** questions, **8,000** records, **0 errors**.
-- `bm25_top10`: **33.3%** closure, support rank mean **1.25**.
-- `bge_rerank_top10`: **33.8%** closure, support rank mean **1.01**.
-- `oracle_first`: **31.9%** closure, support rank mean **1.00**.
-- `no_support`: **3.9%** closure.
-- Paired `bge_rerank_top10 - bm25_top10`: **+0.4 pp**, 95% CI **-1.4 to +2.3 pp**.
-- Paired `oracle_first - bge_rerank_top10`: **-1.8 pp**, 95% CI **-3.6 to +0.1 pp**.
+Public packages:
 
-R3G does not reproduce the HotpotQA R3B ladder. BGE improves support rank almost to oracle-first, but closure does not materially improve. Support-present conditions still beat no-support by about 28–30 pp.
+```txt
+bench-public/evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md
+bench-public/evidence-utilization/REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md
+bench-public/evidence-utilization/REALRAG-2WIKI-R3J-SENTENCE-COMPRESSION.md
+```
 
-R3H diagnostic:
+## 3. Oracle/compact evidence control is an upper bound
 
-- BM25/BGE/oracle all have **100%** supporting-fact sentence recall.
-- BGE improves SF sentence rank mean **2.67 → 1.65**.
-- `natural_success_oracle_fail`: **302** cases.
-- By type: `comparison` shows BGE gain (**41.7% → 50.5%**), but `bridge_comparison` and `compositional` do not.
-- `yes_no` is near-zero closure under the R3G prompt/eval setup.
+Compact/oracle ECD quality proofs showed a large gain when evidence is already clean and targetable:
 
-R3I prompt/schema ablation on a stratified **400-question** 2Wiki sample:
+```txt
+quality-proof-100 policy: EM ≈ 0.910 | F1 ≈ 0.931
+quality-proof-300 policy: EM ≈ 0.907 | F1 ≈ 0.934
+```
 
-- `context_bge_direct`: **31.8%** closure.
-- `context_bge_typeaware`: **31.8%** — no global gain.
-- `context_oracle_typeaware`: **33.0%** — close to BGE paragraph baseline.
-- `support_sentences_typeaware`: **55.0%** — **+23.3 pp** over paragraph BGE, CI **+17.5 to +29.0 pp**.
-- `evidence_triples_direct`: **75.5%** — gold structured upper bound, **not** a retrieval claim.
-- `no_support_typeaware`: **5.5%**.
-- Yes/no: `context_bge_direct` **0.0%**, `context_bge_typeaware` **35.6%**, `support_sentences_typeaware` **62.2%**, `evidence_triples_typeaware` **80.0%**.
+Boundary:
 
-R3J non-gold sentence compression on the same 400-question sample:
+```txt
+This is not natural RealRAG proof. It is an upper bound / control condition.
+```
 
-- `context_bge_direct`: **31.0%**.
-- `sentence_bge_top6_direct`: **23.0%**, sentence recall **52.1%**.
-- `sentence_bge_top6_typeaware`: **18.3%**.
-- `sentence_bge_top10_typeaware`: **20.8%**, sentence recall **64.8%**.
-- `support_sentences_gold_typeaware`: **39.3%** under this prompt.
-- `evidence_triples_gold_direct`: **74.5%**.
-- `sentence_bge_top6_direct - context_bge_direct`: **-8.0 pp**, CI **-13.0 to -3.3 pp**.
-- `evidence_triples_gold_direct - context_bge_direct`: **+43.5 pp**, CI **+38.0 to +48.5 pp**.
+## 4. Runtime/vLLM interventions are lab instrumentation
 
-Interpretation: HotpotQA's rank/reranker story does not generalize cleanly to 2Wiki under the same paragraph prompt/harness. The broader claim should remain dataset-sensitive and type/prompt/schema-sensitive. For 2Wiki, schema fit and relation-aware evidence compression dominate paragraph rank once support is already present; naive lexical sentence compression can hurt.
+The repo demonstrates that live vLLM intervention is technically feasible:
 
-Public packages: [RealRAG 2Wiki R3G](bench-public/evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md), [RealRAG 2Wiki R3H](bench-public/evidence-utilization/REALRAG-2WIKI-R3H-DIAGNOSTIC.md), [RealRAG 2Wiki R3I](bench-public/evidence-utilization/REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md), [RealRAG 2Wiki R3J](bench-public/evidence-utilization/REALRAG-2WIKI-R3J-SENTENCE-COMPRESSION.md)
+```txt
+KV/page/token provenance
+sampler policy hooks
+dynamic policy file
+logit policy experiments
+runtime restore / health checks
+```
 
-## 1c. Synthetic fixtures isolate stronger rank/decoy effects
+But the natural RealRAG quality checks did not show a scaled positive quality delta for these controls.
 
-In the promoted synthetic evidence-utilization phase, the system ran **11,376** public-safe synthetic cases with **0 errors** and **7,902/11,376** answer closures (**69.5%**).
+## 5. KV/cache methodology remains useful
 
-The main failure mode was not raw context depth. It was local evidence competition:
+KVFidelity and CASK bridge probes show that final pass/fail can hide trace-level changes:
 
-- phase diagram: canonical rank 1 closed **93.8%**, rank 16 closed **38.8%**.
-- distractor taxonomy: rank 1 closed **98.9%**, rank 16 closed **23.2%**.
-- stale records were much harder than unrelated noise: **36.1%** vs **84.2%** closure.
-- prompt scaffolding did not reliably fix the problem: baseline **86.3%**, structured **67.6%**.
+```txt
+action can survive while target identity fails
+rank/source fidelity can split from payload identity
+same-config controls can be stable while cross-KV traces drift
+```
 
-Synthetic probes are useful because they isolate rank, decoys-before, and distractor type. They should not be read as production RAG evidence by themselves.
+This is methodology, not a global method ranking.
 
-Public package: [`bench-public/evidence-utilization/`](bench-public/evidence-utilization/)
+## Current operating decision
 
-## 2. Long context can retrieve cleanly up to 192K, but decoys still win
+```txt
+Freeze hand-written verifier gates.
+Do not kernelize or expand sampler control until a natural quality delta exists.
+Improve repo auditability and path construction before more interventions.
+Track compact summaries; avoid raw per-case dumps by default.
+```
 
-Needle retrieval passed on the vLLM TurboQuant path:
+See also:
 
-- Qwen 2.5-7B + vLLM + `turboquant_k8v4` + YaRN: **5/5** at 128K, **5/5** at 160K after factor adjustment, **5/5** at 192K.
-- llama.cpp Qwen 27B q8/turbo4 also passed **5/5** at 128K/160K/192K on the same prompt family.
-
-But in the decoy/ranking replay, exact retrieved chunks still produced wrong answers:
-
-- llama.cpp Qwen 27B: **5/8**.
-- vLLM Qwen 2.5-7B, V3 off: **5/8**.
-- vLLM Qwen 2.5-7B, V3 on: **5/8**.
-- the `brass-river-index` wrong answer was byte-identical across stacks: `DECOY-0616-1`.
-
-Public package: [`bench-public/vllm-cross-stack/`](bench-public/vllm-cross-stack/)
-
-## 3. Policy splice is the robust fix in this fixture
-
-For the four hard decoy cases, injecting the canonical evidence first in the user message recovered:
-
-- `policy_splice_orig`: **4/4** on llama.cpp Qwen 27B, vLLM Qwen 7B, vLLM Qwen 32B-AWQ, Mistral 7B.
-- `policy_splice_rewrite`: **4/4** across the same tested stack/family cells.
-
-Reranking alone was more model/family/corpus-format dependent: Qwen 2.5-7B was weaker on `glass-orchid-vector` under strict format instructions, while Mistral 7B and Qwen 14B/32B recovered.
-
-## Method bridge
-
-These findings separate the evaluation layers: answer closure, action trace, target identity, and source rank.
-
-## 4. KVFidelity detects trace drift hidden by pass/fail
-
-The early KVFidelity N=28 stateful/tool-use sweep found stable same-config controls but paired trace drift under KV/cache changes:
-
-- same-config duplicate controls: **100% stable** across q8/q8, q8/turbo3, and turbo3/turbo3.
-- q8/q8 vs q8/turbo3: action-class equality **82.1%**, semantic equality **53.6%**, full-signature equality **50.0%**, while aggregate tool-eval score stayed near-equivalent.
-- q8/q8 vs turbo3/turbo3: action-class equality **67.9%**, semantic equality **46.4%**, status equality **92.9%**.
-
-After parser fixes and hold-out review, the claim narrowed substantially:
-
-- hold-out controls: **20/20 equivalent** for each same-config duplicate.
-- q8/turbo3 hold-out: **20/20 equivalent**.
-- q8/turbo2 retained one moderate high-confidence regression.
-
-The usable claim is not “KV compression breaks agents.” It is: pass/fail can miss trace-level behavior changes.
-
-Public package: [`bench-public/kvfidelity/`](bench-public/kvfidelity/)
-
-## 5. Compression method and task shape are separate variables
-
-The CASK × KVFidelity bridge v2 separates `action`, `target`, and `source_rank` fidelity on 120 synthetic action-router cases:
-
-| run | exact | action | target | rank |
-|---|---:|---:|---:|---:|
-| FullKV | 119/120 | 119/120 | 119/120 | 120/120 |
-| CASK b512 | 1/120 | 117/120 | 2/120 | 108/120 |
-| CASK b1024 | 109/120 | 119/120 | 109/120 | 120/120 |
-| CASK b2048 | 119/120 | 119/120 | 119/120 | 120/120 |
-| TriAttention b2048 | 119/120 | 119/120 | 119/120 | 120/120 |
-
-Action and source-rank can survive after exact target identity fails. This is a methodology probe, not a global leaderboard.
-
-Public package: [`bench-public/cask-kvfidelity-bridge/`](bench-public/cask-kvfidelity-bridge/)
-
-## 6. TurboQuant K8V4 preserved BF16 behavior on the decoy dtype sweep
-
-On the vLLM decoy k=16 workload with Qwen 2.5-7B:
-
-- BF16/auto: **5/8**.
-- TurboQuant `turboquant_k8v4`: **5/8**, byte-identical failure pattern to BF16.
-- naive FP8 KV: **0/8**.
-- FP8 with on-the-fly random-token scaling: **0/8**.
-- calibrated W8A8-KV8 FP8: structure recovered, exact precision did not, **0/8** exact.
-
-This does not refute FP8 claims at 70B+ reasoning scale. It shows that for this 7B exact-match adversarial retrieval workload, TurboQuant K8V4 was the safer drop-in.
-
-## Exploratory runtime observability
-
-This section is architecture and instrumentation direction, not a production claim.
-
-## 7. Evidence-Paged KV has kernel receipts, not a production hook
-
-The 2026-05-18 Evidence-Paged KV CUDA series explores evidence-aware KV page access as a kernel shape:
-
-- **v4** is the best public receipt: score tiles → top-k/softmax → value accumulation. It is hybrid: Torch CUDA still handles top-k/softmax.
-- **v5** is the best current custom `K=32` path: staged custom top-k/value wins over materialized PyTorch in the tested shapes, but loses for naive `K=128`.
-- **v7** is the best architectural expression: page-local warp-scored top-k without full `[M,H]` score materialization, but it still loses to v5 at larger M.
-
-Do not read this as vLLM integration, serving speedup, production attention, evidence-use proof, or model-quality improvement. The live hook-on path remains paused behind an explicit runtime gate; the current durable milestone is the offline v1.9 evidence-path ledger and validator-first view.
-
-Public package: [`bench-public/evidence-paged-kv/`](bench-public/evidence-paged-kv/)
+```txt
+STATE.md
+bench/MANIFEST.md
+REPO-AUDIT-2026-05-23.md
+docs/REPO-GOVERNANCE.md
+```

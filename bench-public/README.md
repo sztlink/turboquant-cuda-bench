@@ -1,26 +1,42 @@
 # Public benchmark packages
 
-This directory is the public entry layer for `turboquant-cuda-bench`.
+This directory is the public-safe receipt layer inside `turboquant-cuda-bench`.
 
-It contains only public-safe summaries, aggregate tables, sanitized JSON, and copied notes. Raw logs, private traces, operational scripts, and lab materials remain in their original folders.
+**Read first:** [`../STATE.md`](../STATE.md). The current post-N=500 stance narrows the public claim:
 
-This is a public index of receipts, **not a roadmap**.
+```txt
+Evidence placement, retrieval, and path construction affect answer closure.
+Gated verifier/rerank control did not beat direct entity-hop path prompting at N=500.
+EPKV/sampler/runtime work is lab/observability, not natural RealRAG quality proof.
+```
 
-<p>
-  <img src="assets/github-entry-map.svg" alt="three public reading paths" width="860">
-</p>
+This directory is an index of promoted summaries, **not a roadmap** and not a production benchmark leaderboard.
+
+## Current falsification above the fold
+
+N=500 machine-only RealRAG check:
+
+```txt
+path_prompt EM 0.216 / F1 0.324
+gated_v1   EM 0.216 / F1 0.323
+wins/losses/ties = 2 / 2 / 496
+```
+
+Canonical artifact:
+
+```txt
+../bench/epkv-live-probe-v0-2026-05-21/sprint-12h/MACHINE-ONLY-REALITY-500.md
+```
 
 ## Choose a question
 
 | If you want to know... | Start here |
 |---|---|
-| What Phase 0 concludes about evidence placement | [`evidence-utilization/REALRAG-PHASE0-CLOSURE.md`](evidence-utilization/REALRAG-PHASE0-CLOSURE.md) |
-| How Phase 1 starts without live intervention | [`observe/protect/intervene`](evidence-utilization/EVIDENCE-PATH-OBSERVE-PROTECT-INTERVENE.md) / [`telemetry index`](evidence-utilization/EVIDENCE-PATH-RUNTIME-TELEMETRY-INDEX.md) |
-| How PROTECT starts without kernel work | [`EPL index`](evidence-utilization/EVIDENCE-PROTECTION-LAYER-INDEX.md) / [`v0`](evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0-SPAN-PROVENANCE.md) / [`v0.1`](evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.1-PACKING-INVARIANCE.md) / [`v0.2`](evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.2-ANSWER-EQUIVALENCE.md) / [`v0.3`](evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.3-REPLAY-COMPATIBILITY.md) / [`v0.5`](evidence-utilization/EVIDENCE-PROTECTION-LAYER-v0.5-READONLY-CI.md) |
-| Why retrieved evidence still fails to close an answer | [`evidence-utilization/`](evidence-utilization/) |
-| How human calibration is being staged | [`R4A panel`](evidence-utilization/REALRAG-R4A-LLM-JUDGE-PANEL.md) / [`R4B human batch`](evidence-utilization/REALRAG-R4B-HUMAN-CALIBRATION-BATCH.md) |
-| Whether the closure deltas are statistically stable | [`R5 statistical robustness`](evidence-utilization/REALRAG-R5-STATISTICAL-ROBUSTNESS.md) |
-| Whether the offline evidence-path layer is sealed and auditable | [`evidence-utilization/OFFLINE-MILESTONE-v1.9.md`](evidence-utilization/OFFLINE-MILESTONE-v1.9.md) |
+| What the repo currently claims and does not claim | [`../STATE.md`](../STATE.md) |
+| Which bench dirs are canonical/superseded/negative | [`../bench/MANIFEST.md`](../bench/MANIFEST.md) |
+| What HotpotQA shows about answer closure and rank | [`evidence-utilization/REALRAG-HOTPOTQA-R1.md`](evidence-utilization/REALRAG-HOTPOTQA-R1.md), [`R2`](evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md), [`R3B`](evidence-utilization/REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md), [`R3L`](evidence-utilization/REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md) |
+| What 2Wiki shows about schema/path sensitivity | [`evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md`](evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md), [`R3I`](evidence-utilization/REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md), [`R3J`](evidence-utilization/REALRAG-2WIKI-R3J-SENTENCE-COMPRESSION.md) |
+| Whether earlier deltas were statistically stable | [`evidence-utilization/REALRAG-R5-STATISTICAL-ROBUSTNESS.md`](evidence-utilization/REALRAG-R5-STATISTICAL-ROBUSTNESS.md) |
 | How KV/cache changes can preserve action while losing target identity | [`cask-kvfidelity-bridge/`](cask-kvfidelity-bridge/) |
 | What the Evidence-Paged KV CUDA receipts do and do not claim | [`evidence-paged-kv/`](evidence-paged-kv/) |
 | Whether the same decoy failures reproduce across stacks | [`vllm-cross-stack/`](vllm-cross-stack/) |
@@ -29,36 +45,13 @@ This is a public index of receipts, **not a roadmap**.
 
 | Package | What it shows | Start here |
 |---|---|---|
-| `evidence-utilization/` | Phase 0 public-dataset closure plus Phase 1 default-off telemetry replay bridge. | [`REALRAG-PHASE0-CLOSURE.md`](evidence-utilization/REALRAG-PHASE0-CLOSURE.md) |
+| `evidence-utilization/` | Public-dataset answer-closure diagnostics and default-off telemetry/protection archive. | [`README.md`](evidence-utilization/README.md) |
 | `vllm-cross-stack/` | vLLM vs llama.cpp cross-stack replay: 192K needles pass, decoy failures replicate, policy splice recovers. | [`decoy-replay-results.md`](vllm-cross-stack/decoy-replay-results.md) |
 | `cask-kvfidelity-bridge/` | Action/target/source-rank split under FullKV, CASK, and TriAttention. | [`RESULTS.md`](cask-kvfidelity-bridge/RESULTS.md) |
 | `kvfidelity/` | Paired action-trace evaluation for KV/cache changes, including v2 comparator, hold-out, and order-sensitivity notes. | [`kvfidelity-2026-05-07-summary.md`](kvfidelity/kvfidelity-2026-05-07-summary.md) |
-| `evidence-paged-kv/` | CUDA kernel receipts v1→v7 for evidence-aware KV page access. v4 is the public receipt; v7 is the architecture direction. | [`RESULTS.md`](evidence-paged-kv/RESULTS.md) |
-| `dashboard.html` | Static visual dashboard for the main numbers. | [`dashboard.html`](dashboard.html) |
-| `assets/` | SVG cards/charts that GitHub can render directly in the README. | [`assets/`](assets/) |
-
-## Visual assets
-
-<p>
-  <img src="assets/evidence-path-ledger-v19.svg" alt="evidence path ledger v1.9" width="860">
-</p>
-
-<p>
-  <img src="assets/provenance-card-v19.svg" alt="provenance closure pass for v1.9" width="860">
-</p>
-
-| Chart | File |
-|---|---|
-| Rank closure | [`assets/evidence-rank-closure.svg`](assets/evidence-rank-closure.svg) |
-| Distractor taxonomy | [`assets/distractor-taxonomy.svg`](assets/distractor-taxonomy.svg) |
-| Needle 192K vs decoys | [`assets/needle-192k-vs-decoys.svg`](assets/needle-192k-vs-decoys.svg) |
-| Decoy vs policy splice | [`assets/decoy-vs-policy-splice.svg`](assets/decoy-vs-policy-splice.svg) |
-| CASK bridge fidelity | [`assets/cask-bridge-fidelity.svg`](assets/cask-bridge-fidelity.svg) |
-| KVFidelity trace drift | [`assets/kvfidelity-trace-drift.svg`](assets/kvfidelity-trace-drift.svg) |
-| Evidence-Paged KV kernel receipts | [`assets/evidence-paged-kv-kernel-receipts.svg`](assets/evidence-paged-kv-kernel-receipts.svg) |
+| `evidence-paged-kv/` | CUDA kernel receipts v1→v7 for evidence-aware KV page access. Not a natural RealRAG quality proof. | [`RESULTS.md`](evidence-paged-kv/RESULTS.md) |
+| `dashboard.html` | Static visual dashboard; legacy/compact public overview. | [`dashboard.html`](dashboard.html) |
 
 ## Boundary
 
-This directory is not a leaderboard. It is a public index of receipts.
-
-Use these files to understand the result shape, then follow links back to the full repo for protocols, scripts, caveats, and raw/lab provenance where appropriate.
+This directory is not a leaderboard and not proof of internal evidence use. Use these files to understand result shape, then follow `STATE.md` and `bench/MANIFEST.md` for current status and caveats.

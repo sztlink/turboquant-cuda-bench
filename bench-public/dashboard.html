@@ -28,18 +28,18 @@
 </head>
 <body>
 <header>
-  <div class="kicker">retrieved ≠ used</div>
+  <div class="kicker">answer closure / path construction / runtime observability</div>
   <h1>turboquant-cuda-bench</h1>
-  <p>Public dashboard for local 4090/3090 receipts around KV-cache compression, vLLM, llama.cpp, long-context decoys, and action-trace fidelity.</p>
+  <p>Public dashboard for local 4090/3090 research receipts. Current state after N=500: gated verifier/rerank control did not beat direct entity-hop path prompting.</p>
 </header>
 
 <section class="grid">
   <article class="card">
-    <div class="kicker">Evidence utilization</div>
-    <div class="big">11,376</div>
-    <div class="small">synthetic public-safe runs, 0 errors</div>
-    <div class="bar"><div class="fill" style="width:69.5%"></div></div>
-    <p><b>69.5%</b> answer closure overall. Rank and distractor type dominated more than raw depth.</p>
+    <div class="kicker">N=500 reality check</div>
+    <div class="big">0.216 = 0.216</div>
+    <div class="small">path prompt EM = gated verifier EM</div>
+    <div class="bar"><div class="fill" style="width:50%"></div></div>
+    <p>No quality delta: wins/losses/ties = <b>2 / 2 / 496</b>. The scaled claim is path construction, not verifier control.</p>
   </article>
   <article class="card">
     <div class="kicker">Rank effect</div>
@@ -78,7 +78,9 @@
     <h2>Public packages</h2>
     <table>
       <tr><th>Package</th><th>Public result</th><th>Link</th></tr>
-      <tr><td><span class="tag">evidence</span></td><td>11,376 runs; depth stable; rank/decoys dominate closure.</td><td><a href="evidence-utilization/RESULTS.md">RESULTS.md</a></td></tr>
+      <tr><td><span class="tag">state</span></td><td>Current post-N=500 truth and non-claims.</td><td><a href="../STATE.md">STATE.md</a></td></tr>
+      <tr><td><span class="tag">manifest</span></td><td>Status map: canonical/supporting/negative/superseded/archive-only.</td><td><a href="../bench/MANIFEST.md">bench manifest</a></td></tr>
+      <tr><td><span class="tag">evidence</span></td><td>Answer-closure diagnostics: HotpotQA rank effects, 2Wiki schema sensitivity, telemetry/protection archive.</td><td><a href="evidence-utilization/README.md">README.md</a></td></tr>
       <tr><td><span class="tag">vLLM</span></td><td>192K needles pass; decoy 5/8 repeats across stacks; policy splice recovers.</td><td><a href="vllm-cross-stack/decoy-replay-results.md">decoy replay</a></td></tr>
       <tr><td><span class="tag">CASK × KVFidelity</span></td><td>Action/rank can survive while exact target identity fails under tight budgets.</td><td><a href="cask-kvfidelity-bridge/RESULTS.md">RESULTS.md</a></td></tr>
       <tr><td><span class="tag">KVFidelity</span></td><td>Trace-level comparison for same-model KV/cache config changes.</td><td><a href="kvfidelity/kvfidelity-2026-05-07-summary.md">summary</a></td></tr>
@@ -87,7 +89,7 @@
 </section>
 
 <footer>
-  This dashboard is static and intentionally small. It points to public-safe summaries, not raw lab material.
+  This dashboard is static and intentionally small. It points to public-safe summaries, not raw lab material. Read STATE.md before interpreting legacy cards.
 </footer>
 </body>
 </html>
