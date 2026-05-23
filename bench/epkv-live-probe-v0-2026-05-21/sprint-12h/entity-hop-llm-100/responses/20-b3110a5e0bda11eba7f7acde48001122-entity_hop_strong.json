@@ -1,0 +1,48 @@
+{
+  "qid": "b3110a5e0bda11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "German",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Adolphe, Grand Duke of Luxembourg: Adolphe (Adolf Wilhelm August Karl Friedrich; 24 July 1817 – 17 November 1905) was the last sovereign Duke of Nassau, reigning from 20 August 1839 until the duchy's annexation to Kingdom of Prussia in 1866. In 1890, he became Grand Duke of Luxembourg following the death of King William III of the Netherlands, ending the personal union between the Netherlands and Luxembourg, until his own death in 1905. He was the first monarch of Luxembourg from the House of ...\nP2: The General: The General or The Generals may refer to:\nP3: Master: Master or masters may refer to:\nP4: Prince Nikolaus Wilhelm of Nassau: Prince Nikolaus Wilhelm of Nassau (20 September 1832 – 17 September 1905), was the only son of William, Duke of Nassau by his second wife Princess Pauline of Württemberg.\nP5: Prince Nikolaus of Liechtenstein: Prince Nikolaus Ferdinand Maria Josef Raphael of Liechtenstein( born 24 October 1947) is the non-resident Ambassador of Liechtenstein to the Holy See and a younger brother of the reigning Prince of Liechtenstein, Hans- Adam II.\nP6: William, Duke of Nassau: Wilhelm (Given names: \" Georg Wilhelm August Heinrich Belgicus\"; 14 June 1792, Kirchheimbolanden – 20/30 August 1839, Bad Kissingen) was joint sovereign Duke of Nassau, along with his cousin Frederick Augustus, reigning from 1816 until 1839. He was also sovereign Prince of Nassau-Weilburg from 1816 until its incorporation into the duchy of Nassau. Frederick Augustus died on 24 March 1816 and Wilhelm inherited the Usingen territories and became sole sovereign of the ...\nP7: Frederick Augustus, Duke of Nassau: Friedrich August, Duke of Nassau, Prince of Nassau- Usingen( 23 April 1738 in Usingen – 24 March 1816 in Wiesbaden) was the last Prince of Nassau- Usingen and, jointly with his cousin, Friedrich Wilhelm of Nassau- Weilburg, first Duke of Nassau. He died without surviving male issue and was succeeded by his cousin's son, Wilhelm.\nP8: Prince Albert of Prussia (1837–1906): Prince Friedrich of Prussia (Friedrich Wilhelm Nikolaus Albrecht; 8 May 1837 – 13 September 1906) was a Prussian general field marshal, \"Herrenmeister\" (Grand Master) of the Order of Saint John from 1883 until his death, and regent of the Duchy of Brunswick from 1885.\nP9: Princess Caroline of Nassau-Usingen: Princess Caroline of Nassau- Usingen( 4 April 176217 August 1823) was the elder daughter of Karl Wilhelm, Prince of Nassau- Usingen, and wife of Landgrave Frederick of Hesse- Kassel.\nP10: Sophie of Merenberg: Countess Sophie Nikolaievna of Merenberg, Countess de Torby( 1 June 1868 – 14 September 1927), also known as\" Countess Torbay\", was the elder daughter of Prince Nikolaus Wilhelm of Nassau and his morganatic wife, Natalia Alexandrovna Pushkina( who had been granted the title of Countess of Merenberg).\nQuestion: Which country Prince Nikolaus Wilhelm Of Nassau's mother is from?\nFinal answer:",
+  "output": "Netherlands",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-95cc2f7f8eb971bb",
+    "object": "chat.completion",
+    "created": 1779504643,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Netherlands",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 904,
+      "total_tokens": 907,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

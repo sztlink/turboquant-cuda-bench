@@ -1,0 +1,48 @@
+{
+  "qid": "1a2188840bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Princess Augusta of Schwarzburg-Sondershausen",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Princess Augusta of Waldeck-Pyrmont -> George II, Prince of Waldeck and Pyrmont\n- George II, Prince of Waldeck and Pyrmont -> George I, Prince of Waldeck and Pyrmont\n- George II, Prince of Waldeck and Pyrmont -> George I, Prince of Waldeck and Pyrmont\n- Princess Guda of Waldeck and Pyrmont -> Guda\n- Princess Helena of Waldeck and Pyrmont (1899–1948) -> Nikolaus, Hereditary Grand Duke of Oldenburg\n- Princess Helena of Waldeck and Pyrmont (1899–1948) -> Princess Helena of Waldeck and Pyrmont\n- Princess Helena of Waldeck and Pyrmont (1899–1948) -> Nikolaus, Hereditary Grand Duke of Oldenburg\n- Princess Helena of Waldeck and Pyrmont (1899–1948) -> Princess Helena of Waldeck and Pyrmont\nPassages:\nP1: Princess Augusta of Waldeck-Pyrmont: Princess Augusta of Waldeck-Pyrmont (21 July 1824 – 4 September 1893) was a German noblewoman. She was the eldest daughter of George II, Prince of Waldeck and Pyrmont and his wife, Princess Emma of Anhalt-Bernburg-Schaumburg-Hoym. She was an aunt of the Dutch queen regent Emma of Waldeck and Pyrmont. She married on 15 June 1848 to Count Alfred of Stolberg-Stolberg. They had seven children:\nP2: Princess Helena of Waldeck and Pyrmont: Princess Helena of Waldeck and Pyrmont( Helene Friederike Auguste; later Duchess of Albany; 17 February 1861 – 1 September 1922), who became a member of the British royal family by marriage, was the fifth daughter and child of George Victor, Prince of Waldeck and Pyrmont and his first wife, Princess Helena of Nassau.\nP3: George I, Prince of Waldeck and Pyrmont: George I, Prince of Waldeck and Pyrmont( 6 May 17479 September 1813) was Prince of Waldeck and Pyrmont from 1812 to 1813. He was the son of Karl August, Prince of Waldeck and Pyrmont and Countess Palatine Christiane Henriette of Zweibrücken- Birkenfeld.\nP4: George I, Prince of Waldeck and Pyrmont: George I, Prince of Waldeck and Pyrmont (6 May 17479 September 1813) was Prince of Waldeck and Pyrmont from 1812 to 1813. He was the son of Karl August, Prince of Waldeck and Pyrmont and Countess Palatine Christiane Henriette of Zweibrücken-Birkenfeld.\nP5: Nikolaus, Hereditary Grand Duke of Oldenburg: Nikolaus, Hereditary Grand Duke of Oldenburg( 10 August 18973 April 1970) was the eldest son of Frederick Augustus II, Grand Duke of Oldenburg, who was the last ruling Grand Duke of Oldenburg. In 1931, Nikolaus succeeded to his father's titles and assumed the role of pretender to the Grand Duchy, until his death in 1970.\nP6: Nikolaus, Hereditary Grand Duke of Oldenburg: Nikolaus, Hereditary Grand Duke of Oldenburg (10 August 18973 April 1970) was the eldest son of Frederick Augustus II, Grand Duke of Oldenburg, who was the last ruling Grand Duke of Oldenburg. In 1931, Nikolaus succeeded to his father's titles and assumed the role of pretender to the Grand Duchy, until his death in 1970.\nP7: Guda: Guda was a 12 th- century nun and illuminator.\nP8: Princess Guda of Waldeck and Pyrmont: Princess Guda of Waldeck and Pyrmont( born 22 August 1939) is the youngest daughter of Josias, Hereditary Prince of Waldeck and Pyrmont, head of the House of Waldeck and Pyrmont from 1946 to 1967 and first wife of Frederick William, Prince of Wied.\nP9: Princess Mathilde of Waldeck and Pyrmont: Princess\" Mathilde\" of Waldeck and Pyrmont( 10 April 1801 – 13 April 1825) was a member of the House of Waldeck and Pyrmont and a Princess of Waldeck and Pyrmont and a member of the House of Württemberg and a Duchess of Württemberg through her marriage to Duke Eugen of Württemberg\nP10: Princess Ida of Waldeck and Pyrmont: Princess\" Ida\" Caroline of Waldeck and Pyrmont( 26 September 1796 – 12 April 1869) was a member of the House of Waldeck and Pyrmont and a Princess of Waldeck and Pyrmont. Through her marriage to George William, Prince of Schaumburg- Lippe, Ida was also a member of the House of Lippe and Princess consort of Schaumburg- Lippe.\nQuestion: Who is the paternal grandmother of Princess Augusta Of Waldeck-Pyrmont?\nFinal answer:",
+  "output": "Princess Emma of Anhalt-Bernburg-Schaumburg-Hoym",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.5
+  },
+  "response": {
+    "id": "chatcmpl-838afdb3af511c23",
+    "object": "chat.completion",
+    "created": 1779504700,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Princess Emma of Anhalt-Bernburg-Schaumburg-Hoym",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1289,
+      "total_tokens": 1306,
+      "completion_tokens": 17,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

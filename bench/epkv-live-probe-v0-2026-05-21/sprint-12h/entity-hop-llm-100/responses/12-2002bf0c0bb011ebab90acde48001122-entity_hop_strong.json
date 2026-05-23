@@ -1,0 +1,48 @@
+{
+  "qid": "2002bf0c0bb011ebab90acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Rupert",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Elisabeth of Nuremberg: Elisabeth of Nuremberg( 1358 – 26 July 1411) was the daughter of Frederick V, Burgrave of Nuremberg and Elisabeth of Meissen. She was a member of the House of Hohenzollern, and the wife of Rupert of Germany. In 1398, she became the Electress of the Palatinate of the Rhine, and in 1400 she became Queen of the Romans.\nP2: Elisabeth of Nuremberg: Elisabeth of Nuremberg (1358 – 26 July 1411) was the daughter of Frederick V, Burgrave of Nuremberg and Elisabeth of Meissen. She was a member of the House of Hohenzollern, and the wife of Rupert of Germany. In 1398, she became the Electress of the Palatinate of the Rhine, and in 1400 she became Queen of the Romans.\nP3: Part: Part, parts or PART may refer to:\nP4: Catherine of Pomerania, Countess Palatine of Neumarkt: Catherine of Pomerania (German: \" Katharina von Pommern\"; c. 1390 - 4 March 1426), was a Pomeranian princess and Countess Palatine of Neumarkt. She was the wife of John, Count Palatine of Neumarkt and the mother of Christopher of Bavaria, who would rule over Denmark, Sweden, and Norway as king of the Kalmar Union.\nP5: Catherine of Pomerania, Countess Palatine of Neumarkt: Catherine of Pomerania( German:\" Katharina von Pommern\"; c. 1390- 4 March 1426), was a Pomeranian princess and Countess Palatine of Neumarkt. She was the wife of John, Count Palatine of Neumarkt and the mother of Christopher of Bavaria, who would rule over Denmark, Sweden, and Norway as king of the Kalmar Union.\nP6: Countess Palatine Magdalene Catherine of Zweibrücken: Magdalena Catherine, Countess Palatine of Zweibrücken( 26 April 1607, Zweibrücken – 20 January 1648, Strasbourg) was a Countess Palatine of Zweibrücken by birth and by marriage Duchess and Countess Palatine of Birkenfeld.\nP7: Countess Palatine Dorothea Catherine of Birkenfeld-Bischweiler: Countess Palatine Dorothea Catherine of Birkenfeld-Bischweiler (3 July 1634 – 7 December 1715) was a Countess Palatine of Zweibrücken-Birkenfeld-Bischweiler by birth and, by marriage, Countess of Nassau-Ottweiler.\nP8: John, Count Palatine of Neumarkt: John (Johann von Pfalz-Neumarkt; 1383 – 14 March 1443) was the Count Palatine of Neumarkt from 1410 to his death. The son of Rupert III of the Palatinate, he married Catherine of Pomerania in 1407. He is mainly known for his crushing victory against the Hussites at the Battle of Hiltersried in 1433.\nP9: Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler: Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler (14 February 1640, Strasbourg – 12 December 1693, Babenhausen) was a daughter of Christian I, Count Palatine of Birkenfeld-Bischweiler (1598–1654) and his first wife, Countess Palatine Magdalene Catherine of Zweibrücken (1606–1648).\nP10: Stephen, Count Palatine of Simmern-Zweibrücken: Stephen of Simmern- Zweibrücken( 23 June 1385 – 14 February 1459, Simmern) was Count Palatine of Simmern and Zweibrücken from 1410 until his death in 1459. He was the son of King Rupert of Germany and his wife Elisabeth of Nuremberg. After the death of Rupert the Palatinate was divided between four of his surviving sons. Louis III received the main part, John received Palatinate- Neumarkt, Stephen received Palatinate- Simmern and Otto received ...\nQuestion: Who is Catherine Of Pomerania, Countess Palatine Of Neumarkt's father-in-law?\nFinal answer:",
+  "output": "Rupert III of the Palatinate",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.4
+  },
+  "response": {
+    "id": "chatcmpl-a98a64e9360d83e7",
+    "object": "chat.completion",
+    "created": 1779504636,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Rupert III of the Palatinate",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1143,
+      "total_tokens": 1152,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

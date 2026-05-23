@@ -1,0 +1,48 @@
+{
+  "qid": "b81fbe620bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Gura Humorului",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Highway Dragnet -> Nathan Juran\n- Highway Dragnet -> Roger Corman\n- Monster from the Ocean Floor -> Highway Dragnet\n- Monster from the Ocean Floor -> Roger Corman\n- No Highway in the Sky -> Nevil Shute\n- No Highway in the Sky -> Henry Koster\n- Mary Sweeney -> Martha De Laurentiis\n- Nathan Scott (composer) -> Wake of the Red Witch\nPassages:\nP1: Highway Dragnet: Highway Dragnet is a 1954 film noir B film crime film directed by Nathan Juran from a story by U.S. Anderson and Roger Corman. The film stars Richard Conte, Joan Bennett and Wanda Hendrix.\nP2: Wake of the Red Witch: Wake of the Red Witch is a 1948 American adventure film directed by Edward Ludwig and starring John Wayne, Gail Russell, Gig Young, Adele Mara, and Luther Adler. Produced by Edmund Grainger, it is based upon the 1946 novel of the same name by Garland Roark. The film was distributed by Republic Pictures. Rare for a film produced by Republic Pictures,\" Wake of the Red Witch\" is an A movie that had a relatively high budget for its production, later becoming one of Republic ...\nP3: Roger Corman: Roger William Corman( born April 5, 1926) is an American director, producer, and actor. He has been called\" The Pope of Pop Cinema\" and is known as a trailblazer in the world of independent film. Much of Corman's work has an established critical reputation, such as his cycle of low- budget cult films adapted from the tales of Edgar Allan Poe. Admired by members of the French New Wave and\" Cahiers du cinéma\", in 1964 Corman was the youngest filmmaker to have a retrospective at the ...\nP4: Henry Koster: Henry Koster( born Hermann Kosterlitz, May 1, 1905 – September 21, 1988) was a German- born film director. He was the husband of actress Peggy Moran.\nP5: Nathan Juran: Naftuli \"Nathan\" Hertz Juran (Gura Humorului – , Palos Verdes Estates, California, USA) was an American film art director, and later film and television director. As an art director, he won the Oscar for Best Art Direction in 1942 for \"How Green Was My Valley\", along with Richard Day and Thomas Little. His work on \"The Razor's Edge\" in 1946 also received an Academy nomination. In the 1950s, he began to direct, and was known for science fiction and fantasy films such as \"Attack of ...\nP6: Nathan Juran: Naftuli\" Nathan\" Hertz Juran( Gura Humorului –, Palos Verdes Estates, California, USA) was an American film art director, and later film and television director. As an art director, he won the Oscar for Best Art Direction in 1942 for\" How Green Was My Valley\", along with Richard Day and Thomas Little. His work on\" The Razor's Edge\" in 1946 also received an Academy nomination. In the 1950s, he began to direct, and was known for science fiction and fantasy films such as\" Attack of ...\nP7: Martha De Laurentiis: Martha De Laurentiis( born 10 July 1954 as\" Martha Schumacher\") is an American film producer. She was credited as Martha Schumacher until 1995. She is known for producing films such as\" Breakdown Hannibal\" and\" Red Dragon\" with her late husband Dino De Laurentiis, and TV series\" Hannibal\". In 1980, she and Dino De Laurentiis founded the production company the Dino De Laurentiis Company, and she is currently the company's chairman. With her husband Dino, whom she married in ...\nP8: Nevil Shute: Nevil Shute Norway( 17 January 189912 January 1960) was an English novelist and aeronautical engineer who spent his later years in Australia. He used his full name in his engineering career and Nevil Shute as his pen name to protect his engineering career from inferences by his employers( Vickers) or fellow engineers that he was\" not a serious person\" or from potential negative publicity in connection with his novels, which included\" On the Beach\" and\" A Town Like Alice\".\nP9: Highway of Tears (film): Highway of Tears is a 2015 Canadian documentary film directed by Matthew Smiley and narrated by Nathan Fillion. The film concerns the notorious Highway of Tears murders on British Columbia Highway 16 from 1969 to the present.\nP10: No Highway in the Sky: No Highway in the Sky( a.k.a. No Highway) is a 1951 British black- and- white aviation film from 20th Century Fox, produced by Louis D. Lighton, directed by Henry Koster, that stars James Stewart, Marlene Dietrich, Glynis Johns, Niall MacGinnis, Janette Scott, and Jack Hawkins. The screenplay was written by Oscar Millard, with additional material provided by Alec Coppel. The film is based on the novel\" No Highway\" by Nevil Shute and was one of the first films that ...\nQuestion: Where was the director of film Highway Dragnet born?\nFinal answer:",
+  "output": "Palos Verdes Estates, California, USA",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8ad53c8f543a5098",
+    "object": "chat.completion",
+    "created": 1779504661,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Palos Verdes Estates, California, USA",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1262,
+      "total_tokens": 1272,
+      "completion_tokens": 10,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

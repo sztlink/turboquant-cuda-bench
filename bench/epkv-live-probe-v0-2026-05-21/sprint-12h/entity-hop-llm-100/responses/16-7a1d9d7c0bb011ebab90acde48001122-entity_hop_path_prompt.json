@@ -1,0 +1,48 @@
+{
+  "qid": "7a1d9d7c0bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Pompey",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Julia (daughter of Caesar) -> Julius Caesar\n- Julia (daughter of Caesar) -> The Child\n- Cornelia (mother of the Gracchi) -> Scipio Africanus\n- Cornelia (mother of the Gracchi) -> The Hero\n- Scribonia (wife of Crassus) -> Pompeia Magna\n- Scribonia (wife of Crassus) -> The Child\n- Gaius Cassius Longinus -> Julius Caesar\n- Tender years doctrine -> The Tender Years\n- Tender years doctrine -> The Child\n- Julia Cornelia Paula -> Elagabalus\n- Julia Cornelia Paula -> Paula\nPassages:\nP1: Julius Caesar: Gaius Julius Caesar (12 July 100 BC – 15 March 44 BC), known by his nomen and cognomen Julius Caesar, was a populist Roman dictator, politician, and military general who played a critical role in the events that led to the demise of the Roman Republic and the rise of the Roman Empire. He was also a historian and wrote Latin prose. In 60 BC, Caesar, Crassus and Pompey formed the First Triumvirate, a political alliance that dominated Roman politics for several years. Their attempts ...\nP2: The Child: The Child may refer to:\nP3: Scipio Africanus: Publius Cornelius Scipio Africanus (236–183 BC), also known as Scipio Africanus Major, Scipio Africanus the Elder, and Scipio the Great, was a Roman general and later consul who is often regarded as one of the greatest military commanders and strategists of all time. His main achievements were during the Second Punic War. He is best known for defeating Hannibal at the final Battle of Zama (near modern Zama, Tunisia) in 202 BC. The victory was one of the feats that earned him ...\nP4: Elagabalus: Elagabalus , also known as Heliogabalus (204 – 11 March 222), was Roman emperor from 218 to 222. A member of the Severan dynasty, he was Syrian, the second son of Julia Soaemias and Sextus Varius Marcellus. In his early youth he served the god Elagabalus as a priest in Emesa, the hometown of his mother's family. As a private citizen, he was probably named Sextus Varius Avitus Bassianus. Upon becoming emperor he took the name Marcus Aurelius Antoninus Augustus. He was called ...\nP5: Pompeia Magna: Pompeia Magna( born 80/75 BC- before 35 BC) was the only daughter and second child born to Roman triumvir Pompey the Great( Gnaeus Pompeius Magnus) from his third marriage, to Mucia Tertia. Her elder brother was Gnaeus Pompeius and her younger brother was Sextus Pompey.\nP6: The Tender Years: The Tender Years is a 1948 American drama film directed by Harold D. Schuster, written by Arnold Belgard, Abem Finkel and Jack Jungmeyer, and starring Joe E. Brown, Richard Lyon, Noreen Nash, Charles Drake, Josephine Hutchinson and James Millican. It was released on January 3, 1948, by 20th Century Fox.\nP7: The Hero: The Hero may refer to:\nP8: Paula: Paula or PAULA may refer to:\nP9: Cornelia (wife of Caesar): Cornelia (c. 97 – c. 69 BC) was the first or second wife of Caesar, and the mother of his only daughter, Julia. A daughter of Lucius Cornelius Cinna, Cornelia was related by birth or marriage to many of the most influential figures of the late Republic.\nP10: Calpurnia (wife of Caesar): Calpurnia was the either the third or fourth wife of Caesar, and the one to whom he was married at the time of his assassination. According to contemporary sources, she was a good and faithful wife, in spite of her husband's infidelity; and, forewarned of the attempt on his life, she endeavoured in vain to prevent his murder.\nQuestion: Who is Cornelia (Wife Of Caesar)'s child-in-law?\nFinal answer:",
+  "output": "Scribonia (wife of Crassus)",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b062a8b2d8e7d02e",
+    "object": "chat.completion",
+    "created": 1779504640,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Scribonia (wife of Crassus)",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1011,
+      "total_tokens": 1023,
+      "completion_tokens": 12,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

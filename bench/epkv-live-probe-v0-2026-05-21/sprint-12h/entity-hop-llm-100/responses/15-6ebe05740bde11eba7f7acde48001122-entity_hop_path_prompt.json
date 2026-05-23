@@ -1,0 +1,48 @@
+{
+  "qid": "6ebe05740bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Hilandar",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Anastasia of Serbia -> Stefan Nemanja\n- Anastasia (sister of Constantine I) -> Flavia Maximiana Theodora\n- Anastasia (sister of Constantine I) -> Constantius Chlorus\n- Ino Anastasia -> Tiberius\n- Anastasia de Montfort -> Simon de Montfort, 6th Earl of Leicester\n- Anastasia de Montfort -> Guy de Montfort, Count of Nola\nPassages:\nP1: Simon de Montfort, 6th Earl of Leicester: Simon de Montfort, 6th Earl of Leicester (– 4 August 1265), sometimes referred to as Simon V de Montfort to distinguish him from his namesake relatives, was a nobleman of French origin and a member of the English peerage, who led the baronial opposition to the rule of King Henry III of England, culminating in the Second Barons' War. Following his initial victories over royal forces, he became \"de facto\" ruler of the country, and played a major role in ...\nP2: Guy de Montfort, Count of Nola: Guy de Montfort, Count of Nola( 1244 – 1291) was the son of Simon de Montfort, 6th Earl of Leicester and Eleanor of England.\nP3: Guy de Montfort, Count of Nola: Guy de Montfort, Count of Nola (1244–1291) was the son of Simon de Montfort, 6th Earl of Leicester and Eleanor of England.\nP4: Stefan Nemanja: Stefan Nemanja (Serbian Cyrillic: Стефан Немања, ; 1113 – 13 February 1199) was the Grand Prince (Veliki Župan) of the Serbian Grand Principality (also known as Raška, lat. \" Rascia\") from 1166 to 1196. A member of the Vukanović dynasty, Nemanja founded the Nemanjić dynasty, and is remembered for his contributions to Serbian culture and history, founding what would evolve into the Serbian Empire, as well as the national church. According to the Serbian Academy of Sciences and ...\nP5: Flavia Maximiana Theodora: Flavia Maximiana Theodora, also known as Theodora, was a Roman Empress, wife of Constantius Chlorus. She is often referred to as a stepdaughter of Emperor Maximian by ancient sources, leading to claims by historians Otto Seeck and Ernest Stein that she was born from an earlier marriage between Eutropia, wife of Maximian, and Afranius Hannibalianus. This man was consul in 292 and praetorian prefect under Diocletian. Timothy Barnes challenges this view stating that all ...\nP6: Constantius Chlorus: Constantius I (31 March 25 July 306), commonly known as Constantius Chlorus (\"Kōnstantios Khlōrós\", literally \"Constantius the Pale\"), was a Caesar from 293 to 305 and a Roman Emperor from 305 to 306. He was the father of Constantine the Great and founder of the Constantinian dynasty. As \"Caesar\", a junior emperor, he defeated the usurper Allectus in Britain and campaigned extensively along the Rhine frontier, defeating the Alamanni and Franks. Upon becoming \"Augustus\" in ...\nP7: Tiberius: Tiberius (16 November 42 BC – 16 March 37 AD) was the second Roman emperor, reigning from 14 AD to 37 AD, succeeding Augustus. Born to Tiberius Claudius Nero and Livia Drusilla in a Claudian family, he was given the personal name Tiberius Claudius Nero. His mother divorced Nero and married Octavian—later to ascend to Emperor as Augustus—who officially became his stepfather. Tiberius would later marry Augustus' daughter (from his marriage to Scribonia), Julia the Elder, and even later ...\nP8: Anastasia of Serbia: Ana ; 1196–d. June 22, 1200) was the princess consort of the Serbian Principality as the wife of Stefan Nemanja (r. 1166–1196). She was of noble descent. Ana took monastic vows in 1196 and was baptized \"Anastasia\", after Anastasia of Sirmium. She is venerated by the Serbian Orthodox Church as Saint Anastasija (Света Анастасија) with her feast day on June 22 (Julian calendar).\nP9: Princess Helen of Serbia: Princess Helen of Serbia and Yugoslavia (23 October (4 November New Style) 1884 – 16 October 1962) was the daughter of King Peter I of Yugoslavia and his wife Princess Zorka of Montenegro. She was the elder sister of George, Crown Prince of Serbia and King Alexander I of Yugoslavia. Helen was also a niece of Anastasia of Montenegro (or \"Stana\"), wife of Grand Duke Nicholas Nikolaevich of Russia, and of Milica of Montenegro, wife of Grand Duke Peter Nicolaievich of ...\nP10: Anastasia (sister of Constantine I): Anastasia was the daughter of Roman Emperor Constantius Chlorus and Flavia Maximiana Theodora, and half sister of Emperor Constantine I. Anastasia was associated with a plot to assassinate Constantine. Her husband, Bassianus, was found to be plotting against Constantine.\nQuestion: Where was the place of death of Anastasia Of Serbia's husband?\nFinal answer:",
+  "output": "Serbia",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b5e00c9fae1973c0",
+    "object": "chat.completion",
+    "created": 1779504639,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Serbia",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1303,
+      "total_tokens": 1306,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

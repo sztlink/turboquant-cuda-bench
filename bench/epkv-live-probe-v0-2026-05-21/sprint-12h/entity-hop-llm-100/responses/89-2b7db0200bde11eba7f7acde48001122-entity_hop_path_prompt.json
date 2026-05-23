@@ -1,0 +1,48 @@
+{
+  "qid": "2b7db0200bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "University of Paris",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Esmé Stewart, 2nd Duke of Richmond -> James Stewart, 1st Duke of Richmond\n- Esmé Stewart, 2nd Duke of Richmond -> Charles I of England\n- Charles Stewart, 3rd Duke of Richmond -> Theophilus Howard, 2nd Earl of Suffolk\n- Charles Stewart, 3rd Duke of Richmond -> George Stewart, 9th Seigneur d'Aubigny\n- Charles Stewart, 3rd Duke of Richmond -> Esmé Stewart, 3rd Duke of Lennox\n- Charles Stewart, 3rd Duke of Richmond -> Theophilus Howard, 2nd Earl of Suffolk\n- Charles Stewart, 3rd Duke of Richmond -> George Stewart, 9th Seigneur d'Aubigny\n- Charles Stewart, 3rd Duke of Richmond -> Esmé Stewart, 3rd Duke of Lennox\n- Ludovic Stewart, 2nd Duke of Lennox -> Esmé Stewart, 1st Duke of Lennox\n- Charles Lennox, 2nd Duke of Richmond -> Charles Lennox, 1st Duke of Richmond\n- James Stewart, 1st Duke of Richmond -> Katherine Clifton, 2nd Baroness Clifton\n- James Stewart, 1st Duke of Richmond -> Esmé Stewart, 3rd Duke of Lennox\n- James Stewart, 1st Duke of Richmond -> Katherine Clifton, 2nd Baroness Clifton\n- James Stewart, 1st Duke of Richmond -> Esmé Stewart, 3rd Duke of Lennox\nPassages:\nP1: Esmé Stewart, 3rd Duke of Lennox: Esmé Stewart, 3rd Duke of Lennox KG (157930 July 1624) was the son of Esmé Stewart, 1st Duke of Lennox and Catherine de Balsac. He was a patron of the playwright Ben Jonson, who lived in his household for five years. At the death of his brother the 2nd Duke of Lennox, he was already Earl of March and Lord Clifton of Leighton Bromswold in the peerage of England (1619) as well as 7th Seigneur d'Aubigny. On 9 February 1608 he performed in the masque \"The Hue and ...\nP2: Charles Lennox, 1st Duke of Richmond: Charles Lennox, 1st Duke of Richmond, 1st Duke of Lennox, 1st Duke of Aubigny( 29 July 167227 May 1723), of Goodwood House near Chichester in Sussex, was an illegitimate son of King Charles II by his mistress Louise de Kérouaille, Duchess of Portsmouth.\nP3: Esmé Stewart, 1st Duke of Lennox: Esmé Stewart, 1st Duke of Lennox, 1st Earl of Lennox( 154226 May 1583) was the son of John Stewart, 5th Lord of Aubigny, who was the younger brother of Matthew Stewart, 4th Earl of Lennox, and his wife Anne de la Queuille. Sir James Melville described him as\" of nature, upright, just, and gentle\".\nP4: Esmé Stewart, 1st Duke of Lennox: Esmé Stewart, 1st Duke of Lennox, 1st Earl of Lennox (154226 May 1583) was the son of John Stewart, 5th Lord of Aubigny, who was the younger brother of Matthew Stewart, 4th Earl of Lennox, and his wife Anne de la Queuille. Sir James Melville described him as \"of nature, upright, just, and gentle\".\nP5: Charles I of England: Charles I (19 November 1600 – 30 January 1649) was King of England, King of Scotland, and King of Ireland from 27 March 1625 until his execution in 1649. Charles was born into the House of Stuart as the second son of King James VI of Scotland, but after his father inherited the English throne in 1603 (as James I), he moved to England, where he spent much of the rest of his life. He became heir apparent to the three kingdoms of England, Scotland and Ireland in 1612 on the ...\nP6: George Stewart, 9th Seigneur d'Aubigny: George Stewart (or Stuart), 9th Seigneur d'Aubigny (17 July 1618 – 23 October 1642) was a Scottish nobleman and Royalist commander in the English Civil War. He was the son of Esmé Stewart, 3rd Duke of Lennox, and his wife Katherine Clifton, 2nd Baroness Clifton, and the brother of James Stewart, 1st Duke of Richmond and 4th Duke of Lennox, and of the Royalist commander Lord Bernard Stewart. Stewart, his older brother Henry, and younger brother Ludovic ...\nP7: Theophilus Howard, 2nd Earl of Suffolk: Theophilus Howard, 2nd Earl of Suffolk, (13 August 15843 June 1640) was an English nobleman and politician. Born at the family estate of Saffron Walden, he was the son of Thomas Howard, 1st Earl of Suffolk, by his second wife, Catherine Knyvet of Charlton, and succeeded his father as 2nd Earl of Suffolk and 2nd Baron Howard de Walden in 1626, along with some other of his father's offices, including the lord-lieutenancy of the counties of Suffolk, ...\nP8: Katherine Clifton, 2nd Baroness Clifton: Katherine Clifton, 2nd Baroness Clifton (c. 1592 – buried 17 September 1637), was an English-born Scottish peer (later known as the Countess of March, then Duchess of Lennox and then Countess of Abercorn).\nP9: Charles Stewart, 3rd Duke of Richmond: Charles Stewart, 3rd Duke of Richmond, 6th Duke of Lennox KG (7 March 1639December 1672) was the only son of George Stewart, 9th Seigneur d'Aubigny and Katherine Howard, daughter of Theophilus Howard, 2nd Earl of Suffolk. He was the grandson of Esmé Stewart, 3rd Duke of Lennox. On 10 December 1645 he was created Baron Stuart of Newbury, Berkshire, and Earl of Lichfield, titles conferred on him \"to perpetuate the titles which were intended to have been ...\nP10: Charles Stewart, 3rd Duke of Richmond: Charles Stewart, 3rd Duke of Richmond, 6th Duke of Lennox KG( 7 March 1639 December 1672) was the only son of George Stewart, 9th Seigneur d'Aubigny and Katherine Howard, daughter of Theophilus Howard, 2nd Earl of Suffolk. He was the grandson of Esmé Stewart, 3rd Duke of Lennox. On 10 December 1645 he was created Baron Stuart of Newbury, Berkshire, and Earl of Lichfield, titles conferred on him\" to perpetuate the titles which were intended to have been ...\nQuestion: Where did Charles Stewart, 3Rd Duke Of Richmond's father graduate from?\nFinal answer:",
+  "output": "N/A",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8d67a5d3658d958c",
+    "object": "chat.completion",
+    "created": 1779504708,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "N/A",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1716,
+      "total_tokens": 1719,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

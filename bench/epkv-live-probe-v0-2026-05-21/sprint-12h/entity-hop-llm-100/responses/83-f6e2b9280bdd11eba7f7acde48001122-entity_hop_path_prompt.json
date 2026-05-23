@@ -1,0 +1,48 @@
+{
+  "qid": "f6e2b9280bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "China",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Mohammed Al-Modiahki -> Zhu Chen\nPassages:\nP1: Zhu Chen: Zhu Chen (born March 16, 1976) is a Qatari chess Grandmaster. In 2001, she became China's second women's world chess champion after Xie Jun, and China's 13th Grandmaster. In 2006, she obtained Qatari citizenship and since then plays for Qatar.\nP2: Mohammed Al-Modiahki: Mohammed Ahmed Al-Modiahki (born June 1, 1974) is a chess Grandmaster. He was the first player in Qatar to earn the title of grandmaster, and is the country's highest ranked player. He was awarded the trophy of the \"Player of the Century within the Arab Countries\". Al-Modiahki has participated in nine Chess Olympiads in 1988, 1990, 1992, 1994, 1996, 1998, 2000, 2002 and 2006 with an overall record of (+60,=28,-21). At the 32nd Chess Olympiad in 1996 and he won the gold ...\nP3: Mohammed bin Jassim Al Thani: Sheikh Mohammed bin Jassim bin Mohammed Al Thani (17 January 1881 – 8 April 1971) (\"Mohammed bin Jassim bin Mohammed Al Thani\"), is the son of Sheikh Jassim bin Mohammed Al Thani. Sheikh Mohammed had a total of 18 siblings, with him being the seventh of his father's sons.\nP4: Mohammed bin Jassim Al Thani: Sheikh Mohammed bin Jassim bin Mohammed Al Thani( 17 January 1881 – 8 April 1971)(\" Mohammed bin Jassim bin Mohammed Al Thani\"), is the son of Sheikh Jassim bin Mohammed Al Thani. Sheikh Mohammed had a total of 18 siblings, with him being the seventh of his father's sons.\nP5: Mohammed Al-Harthi: Mohammed Al- Harthi is a Saudi football player. He currently plays for Al- Jabalain.\nP6: Mohammed Al-Qarni (footballer, born 1981): Mohammed Al- Qarni is a Saudi Arabian football player.\nP7: Mohammed Al-Safri: Mohammed Al- Safri is a Saudi football player who last plays for Jeddah.\nP8: Mohammed Al-Motawaa: Mohammed Al- Motawaa( born 6 October 1994) is a football player for Ohod.\nP9: Mohammed Al-Jahani: Mohammed Al- Jahani( born 28 September 1974) is a retired Saudi Arabian footballer.\nQuestion: Which country Mohammed Al-Modiahki's wife is from?\nFinal answer:",
+  "output": "Qatar",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a47e0121c9261259",
+    "object": "chat.completion",
+    "created": 1779504702,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Qatar",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 714,
+      "total_tokens": 717,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

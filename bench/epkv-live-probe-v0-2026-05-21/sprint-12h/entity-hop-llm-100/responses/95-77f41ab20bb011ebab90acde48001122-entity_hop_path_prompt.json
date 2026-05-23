@@ -1,0 +1,48 @@
+{
+  "qid": "77f41ab20bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "John de Vere, 15th Earl of Oxford",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Elizabeth Trentham, Countess of Oxford -> Edward de Vere, 17th Earl of Oxford\n- Margery Golding -> Edward de Vere, 17th Earl of Oxford\n- Margery Golding -> John de Vere, 16th Earl of Oxford\n- Bridget de Vere, Countess of Berkshire -> Edward de Vere, 17th Earl of Oxford\n- John de Vere, 16th Earl of Oxford -> John de Vere, 15th Earl of Oxford\n- Susan de Vere, Countess of Montgomery -> Edward de Vere, 17th Earl of Oxford\n- Susan de Vere, Countess of Montgomery -> Edward de Vere, 17th Earl of Oxford\n- Bernard Mordaunt Ward -> Edward de Vere, 17th Earl of Oxford\nPassages:\nP1: Edward de Vere, 17th Earl of Oxford: Edward de Vere, 17th Earl of Oxford (12 April 155024 June 1604) was an English peer and courtier of the Elizabethan era. Oxford was heir to the second oldest earldom in the kingdom, a court favourite for a time, a sought-after patron of the arts, and noted by his contemporaries as a lyric poet and court playwright, but his volatile temperament precluded him from attaining any courtly or governmental responsibility and contributed to the dissipation of his ...\nP2: Edward de Vere, 17th Earl of Oxford: Edward de Vere, 17th Earl of Oxford( 12 April 155024 June 1604) was an English peer and courtier of the Elizabethan era. Oxford was heir to the second oldest earldom in the kingdom, a court favourite for a time, a sought- after patron of the arts, and noted by his contemporaries as a lyric poet and court playwright, but his volatile temperament precluded him from attaining any courtly or governmental responsibility and contributed to the dissipation of his ...\nP3: John de Vere, 15th Earl of Oxford: John de Vere, 15th Earl of Oxford, Lord Great Chamberlain (c. 1482 – 21 March 1540) was an English peer and courtier.\nP4: John de Vere, 16th Earl of Oxford: John de Vere, 16th Earl of Oxford (1516 – 3 August 1562) was born to John de Vere, 15th Earl of Oxford and Elizabeth Trussell, daughter of Edward Trussell. He was styled Lord Bolebec 1526 to 1540 before he succeeded to his father's title.\nP5: Robert de Vere, 5th Earl of Oxford: Robert de Vere, 5th Earl of Oxford( c. 1220 – 1296) was the son and heir of Hugh de Vere, 4th Earl of Oxford, and chamberlain to Queen Eleanor.\nP6: Bridget de Vere, Countess of Berkshire: Bridget de Vere, Countess of Berkshire (6 April 1584 – December 1630/March 1631) was an English noblewoman, the daughter of Edward de Vere, 17th Earl of Oxford. Bridget was brought up by her maternal grandfather, the powerful statesman William Cecil, 1st Baron Burghley. She was also styled Lady Norris of Rycote and Viscountess Thame. She married Francis Norris, 1st Earl of Berkshire; however, the marriage was not a success, and they separated in 1606.\nP7: Susan de Vere, Countess of Montgomery: Susan de Vere, Countess of Montgomery (26 May 1587 – 1628/29), was an English court office holder. She served as lady-in-waiting to the queen consort of England, Anne of Denmark. She was the youngest daughter of Elizabethan courtier, poet, and playwright Edward de Vere, 17th Earl of Oxford.\nP8: Susan de Vere, Countess of Montgomery: Susan de Vere, Countess of Montgomery( 26 May 1587 – 1628/29), was an English court office holder. She served as lady- in- waiting to the queen consort of England, Anne of Denmark. She was the youngest daughter of Elizabethan courtier, poet, and playwright Edward de Vere, 17th Earl of Oxford.\nP9: Elizabeth Trentham, Countess of Oxford: Elizabeth de Vere, Countess of Oxford, formerly Elizabeth Trentham( d. c. December 1612), was the second wife of the Elizabethan courtier and poet Edward de Vere, 17th Earl of Oxford.\nP10: Margery Golding: Margery Golding, Countess of Oxford( c. 1526 – 2 December 1568) was the second wife of John de Vere, 16th Earl of Oxford, the mother of Edward de Vere, 17th Earl of Oxford, and the half- sister of Arthur Golding, the English translator.\nQuestion: Who is Edward De Vere, 17Th Earl Of Oxford's paternal grandfather?\nFinal answer:",
+  "output": "John de Vere, 15th Earl of Oxford",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-90a53a28da75e715",
+    "object": "chat.completion",
+    "created": 1779504713,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "John de Vere, 15th Earl of Oxford",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1215,
+      "total_tokens": 1227,
+      "completion_tokens": 12,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

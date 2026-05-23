@@ -1,0 +1,48 @@
+{
+  "qid": "931a85420bdd11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "London",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Lord Patrick Crichton-Stuart: Born Patrick Stuart , he was the second son of John Stuart, Lord Mount Stuart, eldest son of John Stuart, 1st Marquess of Bute, son of Prime Minister John Stuart, 3rd Earl of Bute. His mother was Lady Elizabeth Penelope, daughter and heiress of Patrick McDouall-Crichton, 6th Earl of Dumfries, while John Crichton-Stuart, 2nd Marquess of Bute, was his elder brother. His father was killed in a riding accident six months before he was born and his mother died when he ...\nP2: Lord Patrick Crichton-Stuart: Born Patrick Stuart, he was the second son of John Stuart, Lord Mount Stuart, eldest son of John Stuart, 1st Marquess of Bute, son of Prime Minister John Stuart, 3rd Earl of Bute. His mother was Lady Elizabeth Penelope, daughter and heiress of Patrick McDouall- Crichton, 6th Earl of Dumfries, while John Crichton- Stuart, 2nd Marquess of Bute, was his elder brother. His father was killed in a riding accident six months before he was born and his mother died when he ...\nP3: John Crichton-Stuart, 2nd Marquess of Bute: John Crichton-Stuart, 2nd Marquess of Bute, KT, FRS (10 August 1793 – 18 March 1848), styled Lord Mount Stuart between 1794 and 1814, was a wealthy aristocrat and industrialist in Georgian and early Victorian Britain. He developed the coal and iron industries across South Wales and built the Cardiff Docks. Bute's father, John, Lord Mount Stuart, died a few months after he was born and as a young child he was brought up first by his mother, the former ...\nP4: Patrick Lyon, 1st Lord Glamis: Patrick Lyon, 1st Lord Glamis (1402 – 21 March 1459) P.C. was a Scottish nobleman, created Lord Glamis on 28 June 1445. He was the son of Sir John Lyon of Glamis (c.1377–c.1435) and Elizabeth Graham, daughter of Sir Patrick Graham of Dundaff and Kincardine and Euphemia Stewart, Countess of Strathearn. Sir John was the son of Sir John Lyon (d. 1382) and Princess Joanna Stewart, daughter of Robert II of Scotland. Patrick Lyon was hostage in England for King James I ...\nP5: Patrick Lyon, 1st Lord Glamis: Patrick Lyon, 1st Lord Glamis( 1402 – 21 March 1459) P.C. was a Scottish nobleman, created Lord Glamis on 28 June 1445. He was the son of Sir John Lyon of Glamis( c.1377–c.1435) and Elizabeth Graham, daughter of Sir Patrick Graham of Dundaff and Kincardine and Euphemia Stewart, Countess of Strathearn. Sir John was the son of Sir John Lyon( d. 1382) and Princess Joanna Stewart, daughter of Robert II of Scotland. Patrick Lyon was hostage in England for King James I ...\nP6: John Crichton-Stuart, 6th Marquess of Bute: John Crichton- Stuart, 6th Marquess of Bute, KBE FRSE FRIAS( Hon) FRSA LLD( 27 February 1933 – 21 July 1993) was a Scottish peer, benefactor and patron of the arts. He was largely known either as Lord Bute or simply John Bute.\nP7: John Crichton-Stuart, 5th Marquess of Bute: John Crichton- Stuart, 5th Marquess of Bute( 4 August 1907 – 14 August 1956) was the son of John Crichton- Stuart, 4th Marquess of Bute and Augusta Bellingham.\nP8: Sophia Crichton-Stuart, Marchioness of Bute: Sophia Crichton- Stuart, Marchioness of Bute( 1 February 1809 – 28 December 1859), formerly Sophia Frederica Christina Rawdon- Hastings, was a Scottish noblewoman. She was the second wife of John Crichton- Stuart, 2nd Marquess of Bute, and the mother of the 3rd Marquess. Cardiff's Sophia Gardens are named after her.\nP9: John Stuart, Lord Mount Stuart: John Stuart, Lord Mount Stuart (25 September 1767 – 22 January 1794), was an England-born Scottish Tory politician. Mount Stuart was the son of the John Stuart, 1st Marquess of Bute and the grandson of Prime Minister John Stuart, 3rd Earl of Bute. His mother was the Hon. Charlotte Jane, daughter and heiress of Herbert Windsor, 2nd Viscount Windsor. He was born at Grosvenor Square, London in 1767 and educated at Eton and St John's College, Cambridge. In 1790, he ...\nP10: Alexander Lyon, 2nd Lord Glamis: Alexander Lyon, 2nd Lord of Glamis (c. 1430–1486), was a Scottish nobleman. The son of Patrick Lyon, 1st Lord Glamis (d. 1459), he was Keeper of Kildrummy Castle and Kindrochit Castle from his father's death until 1462. He later sat on the King's Council. He married Agnes Crichton, daughter of William Crichton, 1st Lord Crichton, Chancellor of Scotland, but had no surviving children. His title was inherited by his younger brother John Lyon.\nQuestion: Where was the father of Lord Patrick Crichton-Stuart born?\nFinal answer:",
+  "output": "London",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-85645dbc3eba38a9",
+    "object": "chat.completion",
+    "created": 1779504649,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "London",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1403,
+      "total_tokens": 1405,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

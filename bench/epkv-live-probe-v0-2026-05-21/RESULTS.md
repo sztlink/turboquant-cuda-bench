@@ -975,3 +975,47 @@ Updated implication:
 RealRAG needs better retrieval/path construction first:
 entity-aware retrieval -> multi-hop expansion -> graph/path search -> ECD only after chain confidence.
 ```
+
+## Entity-hop retrieval + path prompt 100
+
+Positive bridge test:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/ENTITY-HOP-LLM-100.md
+```
+
+Fast retrieval grid best vs BGE baseline:
+
+```txt
+BGE support recall:       0.512
+BGE full support:         0.140
+BGE answer present:       0.400
+
+Entity-hop support:       0.708
+Entity-hop full support:  0.460
+Entity-hop answer present:0.780
+```
+
+100-case answer quality:
+
+```txt
+BGE rerank strong:        EM 0.090 | contains 0.160 | F1 0.185
+Entity-hop strong:        EM 0.190 | contains 0.310 | F1 0.290
+Entity-hop path prompt:   EM 0.250 | contains 0.340 | F1 0.330
+```
+
+Win/loss vs BGE:
+
+```txt
+BGE EM:          9/100
+path prompt EM: 25/100
+path wins:      19
+path losses:    3
+```
+
+Updated implication:
+
+```txt
+retrieval/path construction is the first real RealRAG bridge.
+Next: entity-hop docs -> path extractor candidate -> internal sampler ECD.
+```

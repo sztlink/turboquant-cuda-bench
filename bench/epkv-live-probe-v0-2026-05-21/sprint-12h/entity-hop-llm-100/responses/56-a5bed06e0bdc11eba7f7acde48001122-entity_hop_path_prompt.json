@@ -1,0 +1,48 @@
+{
+  "qid": "a5bed06e0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Byzantine",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Philip of Ibelin (1180–1227) -> Balian of Ibelin\n- Philip of Ibelin (1180–1227) -> Balian of Ibelin\n- Walter III of Caesarea -> Part\n- John of Ibelin (jurist) -> John of Ibelin, the Old Lord of Beirut\n- John of Ibelin (jurist) -> John of Ibelin, the Old Lord of Beirut\nPassages:\nP1: John of Ibelin, the Old Lord of Beirut: John of Ibelin (c. 1179 – 1236), called the Old Lord of Beirut, was a powerful crusader noble in the 13th century, one of the best known representatives of the influential Ibelin family. The son of Balian of Ibelin and Maria Comnena, Queen consort of Jerusalem, he had close ties with the nobility of both Cyprus and Jerusalem, since he was the half-brother of Queen Isabella I of Jerusalem. Before he was 20, he was appointed constable of Jerusalem, and a ...\nP2: Balian of Ibelin: Balian of Ibelin( 1143 – 1193), also known as Barisan the Younger, was a crusader noble of the Kingdom of Jerusalem in the 12th century.\nP3: Balian of Ibelin: Balian of Ibelin (1143 – 1193), also known as Barisan the Younger, was a crusader noble of the Kingdom of Jerusalem in the 12th century.\nP4: Part: Part, parts or PART may refer to:\nP5: Philip of Ibelin (1180–1227): Philip of Ibelin (1180-1227) was a leading nobleman of the Kingdom of Cyprus. As a younger son of Balian of Ibelin and the dowager queen Maria Komnene, he came from the high Crusader nobility of the Kingdom of Jerusalem.\nP6: Philip of Ibelin (1180–1227): Philip of Ibelin( 1180- 1227) was a leading nobleman of the Kingdom of Cyprus. As a younger son of Balian of Ibelin and the dowager queen Maria Komnene, he came from the high Crusader nobility of the Kingdom of Jerusalem.\nP7: Philip of Ibelin (died 1318): Philip of Ibelin( born c. 1255; died 25 November 1318, Nicosia) was Seneschal of the Kingdom of Cyprus. As one of the sons of Philippa Barlais and her husband Guy of Ibelin, he was a member of the house of Ibelin. He married to: 1. c. 1280 Maria, daughter of Vahran of Hamousse by Mary of Ibelin, without issue; 2. c. 1295 Maria Embriaco of Gibelletto( d. 1331)\nP8: Philip of Ibelin (died 1304): Philip of Ibelin( died 1304) was constable of Cyprus. He was son of Baldwin of Ibelin, Seneschal of Cyprus and Alix, daughter of Walter III of Bethsan and Theodora Comnena- Lathoumnena. He married c. 1253 to Simone de Montbéliard, granddaughter of Walter of Montbéliard and had issue:\nP9: John of Ibelin (jurist): John of Ibelin( 1215 – December 1266), count of Jaffa and Ascalon, was a noted jurist and the author of the longest legal treatise from the Kingdom of Jerusalem. He was the son of Philip of Ibelin, bailli of the Kingdom of Cyprus, and Alice of Montbéliard, and was the nephew of John of Ibelin, the\" Old Lord of Beirut\". To distinguish him from his uncle and other members of the Ibelin family named John, he is sometimes called John of Jaffa.\nP10: John of Ibelin (jurist): John of Ibelin (1215 – December 1266), count of Jaffa and Ascalon, was a noted jurist and the author of the longest legal treatise from the Kingdom of Jerusalem. He was the son of Philip of Ibelin, bailli of the Kingdom of Cyprus, and Alice of Montbéliard, and was the nephew of John of Ibelin, the \"Old Lord of Beirut\". To distinguish him from his uncle and other members of the Ibelin family named John, he is sometimes called John of Jaffa.\nQuestion: What nationality is Philip Of Ibelin (1180–1227)'s mother?\nFinal answer:",
+  "output": "Greek",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9bd129ac929bb658",
+    "object": "chat.completion",
+    "created": 1779504677,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Greek",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1169,
+      "total_tokens": 1171,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "37c6703a0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "1969",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Jinpa -> Pema Tseden\n- Jinpa -> Slayer\n- Mickey Moore -> The Child\n- Interview (1971 film) -> Mrinal Sen\n- George Nicholls Jr. -> The Accident\n- Ralph Rugoff -> The Will\n- The Dream (1987 film) -> Part\nPassages:\nP1: Jinpa: Jinpa (Tibetan: ལག་དམར་, \"Butcher\" or \"Murderer\") is a 2018 Chinese Tibetan-language film written and directed by Pema Tseden. The screenplay is based on the novels \"The Slayer\" by Tsering Norbu and \"I Ran Over a Sheep\" by Pema. It made its world premiere and won Best Screenplay in the Horizons section at the 75th edition of the Venice Film Festival.\nP2: The Child: The Child may refer to:\nP3: The Accident: The Accident may refer to:\nP4: The Will: The Will may refer to:\nP5: Pema Tseden: Pema Tseden , also called Wanma Tsaidan (born December 1969), is a Tibetan film director and screenwriter of Chinese citizenship. He is a member of the China Film Directors' Guild, China Film Association and Chinese Film Literature Association.\nP6: Mrinal Sen: Mrinal Sen( also spelled\" Mrinal Shen\"; 14 May 1923 – 30 December 2018) was an Indian filmmaker and a nominated Member of the Indian parliament. Sen directed films primarily in Bengali and Hindi. Along with his contemporaries Satyajit Ray and Ritwik Ghatak, he pioneered the New Wave cinema in India. Sen was an ardent Marxist. His earlier films are characterized by their left- leaning, often Marxist approaches to Indian society. Sen won the National Film Awards 18 times, next only to ...\nP7: Mrinal Sen: Mrinal Sen (also spelled \"Mrinal Shen\"; 14 May 1923 – 30 December 2018) was an Indian filmmaker and a nominated Member of the Indian parliament. Sen directed films primarily in Bengali and Hindi. Along with his contemporaries Satyajit Ray and Ritwik Ghatak, he pioneered the New Wave cinema in India. Sen was an ardent Marxist. His earlier films are characterized by their left-leaning, often Marxist approaches to Indian society. Sen won the National Film Awards 18 times, next only to ...\nP8: Slayer: Slayer was an American thrash metal band from Huntington Park, California. The band was formed in 1981 by guitarists Kerry King and Jeff Hanneman, drummer Dave Lombardo, and bassist and vocalist Tom Araya. Slayer's fast and aggressive musical style made them one of the founding \"big four\" bands of thrash metal, alongside Metallica, Megadeth and Anthrax. Slayer's final lineup comprised King, Araya, drummer Paul Bostaph and guitarist Gary Holt. Drummer Jon Dette was also a member of the ...\nP9: Part: Part, parts or PART may refer to:\nP10: The Dream (1987 film): The Dream or Al- Manam is a 1987 Syrian documentary film by the director Mohammad Malas. The film is composed of a collection of interviews with Palestinian refugees in Lebanon during the civil war. The refugees were interviewed by Malas about what dreams they saw when they went to sleep. The film was shot between 1980 – 81 before the infamous massacre in Sabra and Shatila, where part of the film was set. It was only released in 1987.\nQuestion: When was the director of film Jinpa born?\nFinal answer:",
+  "output": "1969",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-bf8776c782daf57a",
+    "object": "chat.completion",
+    "created": 1779504709,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "1969",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 877,
+      "total_tokens": 882,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

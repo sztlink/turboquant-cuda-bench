@@ -1,0 +1,48 @@
+{
+  "qid": "81ca57e60bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Winnipeg, Manitoba",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Age-Old Friends -> Allan Kroeker\n- Age-Old Friends -> Hume Cronyn\n- O, Brazen Age -> Alexander Carson\n- O, Brazen Age -> Atom Egoyan\n- The Good Old Days: The Love of AA -> The Good Old Days\n- Open Tee Bioscope -> Anindya Chatterjee\n- Open Tee Bioscope -> Comedy!\n- John of Ibelin, the Old Lord of Beirut -> Frederick II, Holy Roman Emperor\n- John of Ibelin, the Old Lord of Beirut -> Isabella I of Jerusalem\n- Our Friends, the Hayseeds -> Beaumont Smith\n- Our Friends, the Hayseeds -> Comedy!\n- Bernie Bonvoisin -> The Singer\nPassages:\nP1: Age-Old Friends: Age-Old Friends is a 1989 television drama film directed by Allan Kroeker and starring Hume Cronyn and Vincent Gardenia, who won Primetime Emmy Awards for their performances. It was written by Bob Larbey, based on his play \"A Month of Sundays\".\nP2: The Good Old Days: The good old days is a term used when referring to better times in the past. The Good Old Days or Good Old Days may also refer to:\nP3: Isabella I of Jerusalem: Isabella I( 1172 – 5 April 1205) was Queen regnant of Jerusalem from 1190 to her death. She was the daughter of Amalric I of Jerusalem and his second wife Maria Comnena. Her half- brother, Baldwin IV of Jerusalem, engaged her to Humphrey IV of Toron. Her mother's second husband, Balian of Ibelin, and his stepfather, Raynald of Châtillon, were influential members of the two baronial parties. The marriage of Isabella and Humphrey was celebrated in Kerak Castle in autumn ...\nP4: The Singer: The Singer may refer to:\nP5: Atom Egoyan: Atom Egoyan,( born July 19, 1960) is a Canadian stage and film director, writer, and producer. Egoyan made his career breakthrough with\" Exotica\"( 1994), a film set primarily in and around the fictional Exotica strip club. Egoyan's most critically acclaimed film is the drama\" The Sweet Hereafter\"( 1997), for which he received two Academy Award nominations, and his biggest commercial success is the erotic thriller\" Chloe\"( 2009). His work often explores themes of alienation and ...\nP6: Beaumont Smith: Frank Beaumont\" Beau\" Smith( 15 August 1885 – 2 January 1950), was an Australian film director, producer and exhibitor, best known for making low- budget comedies. Smith made his first film in 1917,\" Our Friends, the Hayseeds\". He went on to become one of the most prolific and popular Australian filmmakers of the silent era. Among his films were adaptations of the works of Banjo Paterson and Henry Lawson. His 1933 comedy\" The Hayseeds\" featured the first screen appearance of ...\nP7: Allan Kroeker: Allan Kroeker (born February 29, 1960 in Winnipeg, Manitoba) is a Canadian film and television director, cinematographer, screenwriter, film editor and film producer. He has the distinction of directing the series finales for ,  and . He has also directed several \"Chuck\" episodes from 2007 to 2009.\nP8: Anindya Chatterjee: Anindya Chatterjee is a popular Bengali Singer- Lyricist and film director based in Kolkata, West Bengal, India. He is the singer- lyricist of Bengali band Chandrabindoo.\nP9: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP10: Frederick II, Holy Roman Emperor: Frederick II (26 December 1194 – 13 December 1250) was King of Sicily from 1198, King of Germany from 1212, King of Italy and Holy Roman Emperor from 1220 and King of Jerusalem from 1225. He was the son of emperor Henry VI of the Hohenstaufen dynasty and of Constance, heiress to the Norman kings of Sicily. His political and cultural ambitions were enormous as he ruled a vast area, beginning with Sicily and stretching through Italy all the way north to Germany. ...\nQuestion: Where was the director of film Age-Old Friends born?\nFinal answer:",
+  "output": "Winnipeg, Manitoba",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-a537f4550cf96403",
+    "object": "chat.completion",
+    "created": 1779504697,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Winnipeg, Manitoba",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1093,
+      "total_tokens": 1099,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

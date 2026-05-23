@@ -551,10 +551,49 @@ naive retrieved-doc relation extraction does not bridge the gap.
 It is worse than BGE strong prompt.
 ```
 
-## Current next target
+## Entity-hop retrieval + path prompt 100
 
-RealRAG bridge needs retrieval/path construction, not sampler or Triton:
+Completed positive bridge test:
 
 ```txt
-entity-aware retrieval -> multi-hop expansion -> graph/path search -> ECD after high-confidence chain
+ENTITY-HOP-LLM-100.md
+entity-hop-grid-100/
+entity-hop-llm-100/
+```
+
+Retrieval grid best vs BGE baseline:
+
+```txt
+BGE support recall:       0.512
+BGE full support:         0.140
+BGE answer present:       0.400
+
+Entity-hop support:       0.708
+Entity-hop full support:  0.460
+Entity-hop answer present:0.780
+```
+
+100-case answer quality:
+
+```txt
+BGE rerank strong:        EM 0.090 | contains 0.160 | F1 0.185
+Entity-hop strong:        EM 0.190 | contains 0.310 | F1 0.290
+Entity-hop path prompt:   EM 0.250 | contains 0.340 | F1 0.330
+```
+
+Win/loss vs BGE:
+
+```txt
+BGE EM:          9/100
+path prompt EM: 25/100
+path wins:      19
+path losses:    3
+```
+
+## Current next target
+
+Now apply ECD only after the better evidence distribution exists:
+
+```txt
+entity-hop docs -> strict path extractor candidate -> internal sampler ECD -> compare against entity-hop path prompt EM 0.25 / F1 0.33
 ```

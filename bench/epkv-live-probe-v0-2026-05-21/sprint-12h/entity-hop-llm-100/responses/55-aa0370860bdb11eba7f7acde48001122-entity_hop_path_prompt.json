@@ -1,0 +1,48 @@
+{
+  "qid": "aa0370860bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Naha, Okinawa",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Heaven (Namie Amuro song) -> Namie Amuro\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- Namie Amuro -> The Singer\n- Hide and Seek (Namie Amuro song) -> Namie Amuro\n- Hide and Seek (Namie Amuro song) -> The Dance\n- Fast Car (Namie Amuro song) -> Namie Amuro\n- Tarkus (song) -> Keith Emerson\n- Tarkus (song) -> Karn Evil 9\n- Tarkus (song) -> The Mess\nPassages:\nP1: Heaven (Namie Amuro song): \"Heaven\" is a song by Japanese recording artist Namie Amuro from her eleventh studio album and second bilingual album \"Feel\" (2013). The song was released as the album's lead promotional single on July 10, 2013, the same release date as \"FeelHeaven\" was written by Emyli and produced by German-Russian DJ Zedd. Composed by Zedd, Emyli and Tommy Clint, \"Heaven\" is a house song. The song received positive reviews from music critics, who commended the song's composition ...\nP2: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP3: Namie Amuro: Born in Naha, Okinawa, Japan, Amuro debuted as the lead singer of the idol group Super Monkey's when she was 14 years old. Despite early sales disappointments, she ventured into modeling and acting, attracting domestic attention with the group's best-selling single \"Try Me (Watashi o Shinjite)\". She signed to Avex Trax in 1995 and debuted as a solo artist with the single \"Body Feels Exit\". Her 1996 studio album, \"Sweet 19 Blues,\" sold over 3 million copies, setting the record at ...\nP4: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP5: The Mess: The Mess was a French girl group who took part in season 5 of French reality television series \"Popstars\" in 2013 on French channel D8 winning the final on 2 July 2013 against eventual runner-up, the electro pop-rock duo Oslo made up of Eugénie and Vincent. The 3-member jury made up of La Fouine, Alexia Laroche-Joubert and Philippe Gandilhon opted for The Mess made up of Megan, Léa, Chéraze and Kendy. Prior to their third single \"Je t'attendrai encore\", Kendy left the band. Originally ...\nP6: The Will: The Will may refer to:\nP7: The Singer: The Singer may refer to:\nP8: The Dance: The Dance may refer to:\nP9: Karn Evil 9: \" Karn Evil 9\" is an extended work by progressive rock group Emerson, Lake& Palmer, appearing on the album\" Brain Salad Surgery\". A futuristic fusion of rock and classical themes, it is regarded by some to be their best work together with the song\" Tarkus\". At nearly half an hour long, it is also their longest studio recording.\nP10: Keith Emerson: Keith Noel Emerson (2 November 1944 – 11 March 2016) was an English keyboardist, songwriter, and film composer. He played keyboards in a number of bands before finding his first commercial success with the Nice in the late 1960s. He became internationally famous for his work with the Nice, which included writing rock arrangements of classical music. After leaving the Nice in 1970, he was a founding member of Emerson, Lake & Palmer (ELP), one of the early progressive rock ...\nQuestion: What is the place of birth of the performer of song Heaven (Namie Amuro Song)?\nFinal answer:",
+  "output": "Naha, Okinawa, Japan",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.8
+  },
+  "response": {
+    "id": "chatcmpl-b69267ec8962f815",
+    "object": "chat.completion",
+    "created": 1779504676,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Naha, Okinawa, Japan",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1046,
+      "total_tokens": 1055,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}
