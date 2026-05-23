@@ -1,0 +1,48 @@
+{
+  "qid": "2c0d754e0bb011ebab90acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Conrad II",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Beatrice I, Abbess of Quedlinburg: Beatrice I, also known as Beatrice of Franconia (1037 – 13 July 1061), was Abbess of Gandersheim Abbey from 1043 and Princess-Abbess of Quedlinburg Abbey from 1044 until her death. Beatrix was born in Italy towards the end of 1037 as the only child of the Holy Roman Emperor Henry III and his first wife, Gunhilda of Denmark, who died about six months after Beatrice's birth.\nP2: Władysław I Herman: Władysław I Herman (1044 – 4 June 1102) was a Duke of Poland from 1079 until his death. He was the second son of Casimir I the Restorer by his wife Maria Dobroniega, daughter of Vladimir the Great, Grand Duke of Kiev.\nP3: Władysław I Herman: Władysław I Herman( 1044 – 4 June 1102) was a Duke of Poland from 1079 until his death. He was the second son of Casimir I the Restorer by his wife Maria Dobroniega, daughter of Vladimir the Great, Grand Duke of Kiev.\nP4: Agnes of Meissen: Agnes of Meissen( born before 1264 – died after September 1332) was a noblewoman, the daughter of Albert II, Margrave of Meissen and his wife Margaret of Sicily. Agnes was married with Henry I\" the Marvelous\" of Brunswick- Grubenhagen, in 1282. They had 16 children:\nP5: Agnes of Meissen: Agnes of Meissen (born before 1264 – died after September 1332) was a noblewoman, the daughter of Albert II, Margrave of Meissen and his wife Margaret of Sicily. Agnes was married with Henry I \"the Marvelous\" of Brunswick-Grubenhagen, in 1282. They had 16 children:\nP6: Adelaide of Italy: Adelaide of Italy (93116 December 999 AD) , also called Adelaide of Burgundy, was a Holy Roman Empress by marriage to Holy Roman Emperor Otto the Great; she was crowned as the Holy Roman Empress with him by Pope John XII in Rome on 2 February 962. She was regent of the Holy Roman Empire as the guardian of her grandson in 991-995.\nP7: Sophie of Württemberg: Sophie of Württemberg ( Sophia Frederika Mathilde; 17 June 1818 – 3 June 1877) was Queen of the Netherlands as the first wife of King William III.\nP8: The Child: The Child may refer to:\nP9: Henry III, Holy Roman Emperor: Henry III (28 October 1017 – 5 October 1056), called the Black or the Pious, was Holy Roman Emperor from 1046 until his death in 1056. A member of the Salian Dynasty, he was the eldest son of Emperor Conrad II of Germany and Gisela of Swabia. His father made him Duke of Bavaria in 1026 after the death of Duke Henry V at the age of 9. At the age of 11 in 1028, on Easter Day after his father had been crowned Holy Roman Emperor, Henry was elected King of Germany in ...\nP10: Henry III, Holy Roman Emperor: Henry III( 28 October 1017 – 5 October 1056), called the Black or the Pious, was Holy Roman Emperor from 1046 until his death in 1056. A member of the Salian Dynasty, he was the eldest son of Emperor Conrad II of Germany and Gisela of Swabia. His father made him Duke of Bavaria in 1026 after the death of Duke Henry V at the age of 9. At the age of 11 in 1028, on Easter Day after his father had been crowned Holy Roman Emperor, Henry was elected King of Germany in ...\nQuestion: Who is the paternal grandfather of Beatrice I, Abbess Of Quedlinburg?\nFinal answer:",
+  "output": "Conrad II of Germany",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.6666666666666666
+  },
+  "response": {
+    "id": "chatcmpl-beec9e59677bb26d",
+    "object": "chat.completion",
+    "created": 1779532853,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Conrad II of Germany",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1030,
+      "total_tokens": 1036,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

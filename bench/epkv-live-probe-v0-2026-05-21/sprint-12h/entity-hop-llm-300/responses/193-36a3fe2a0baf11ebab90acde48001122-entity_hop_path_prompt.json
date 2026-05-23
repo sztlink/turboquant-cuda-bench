@@ -1,0 +1,48 @@
+{
+  "qid": "36a3fe2a0baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Richard Burke, 2nd Earl of Clanricarde",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- William Burke, 7th Earl of Clanricarde -> Ulick Burke, 3rd Earl of Clanricarde\n- Richard Burke, 6th Earl of Clanricarde -> Walter Butler, 11th Earl of Ormond\n- Ulick Burke, 3rd Earl of Clanricarde -> The Supporter\n- Ulick Burke, 3rd Earl of Clanricarde -> Rebel\n- Richard Burke, 4th Earl of Clanricarde -> Ulick Burke, 3rd Earl of Clanricarde\n- Edward Bermingham, 13th Baron Athenry -> Richard Burke, 6th Earl of Clanricarde\n- Edward Bermingham, 13th Baron Athenry -> The Supporter\nPassages:\nP1: Walter Butler, 11th Earl of Ormond: Walter Butler, 11th Earl of Ormond and 4th Earl of Ossory (155924 February 1632/3), was an Irish peer. He was the son of John Butler of Kilcash (who was the son of the 9th Earl) and Katherine, the daughter of Cormac na Haoine MacCarthy Reagh. He inherited the earldom in 1614 because his uncle Thomas (\"Black Tom\" or \"Thomás Dubh\") had died without legitimate male issue. Following the failure of the senior line, Walter's Kilcash branch would supply five earls ...\nP2: The Supporter: El Acompañamiento( English language: The Supporter) is a 1991 Argentine musical drama film directed and written by Carlos Orgambide. The musical was based on a play by Carlos Gorostiza.\nP3: Rebel: A rebel is a participant in a rebellion. Rebel or rebels may also refer to:\nP4: Richard Burke, 4th Earl of Clanricarde: Richard Burke, 4th Earl of Clanricarde (also Richard de Burgh) (1572 – 12 November 1635) was an Irish nobleman and politician. He was the son of Ulick Burke, 3rd Earl of Clanricarde and Honora Burke. Knighted in 1602 for his exploits as leader of the English cavalry during the Battle of Kinsale, he would later serve as Governor of Connaught from 1604 to 1616, and as a member of the Privy Council of Ireland. Having established himself as the largest and ...\nP5: Richard Burke, 6th Earl of Clanricarde: Richard Burke, 6th Earl of Clanricarde, Irish peer, died August 1666. Richard was the eldest son of Sir William Burke and Joan O'Shaughnessy. He was a first cousin to the previous Earl and had served under him in the royalist forces during the Irish Confederate Wars. When restored, the Clanricarde estates were heavily in debt and a great deal of litigation was ongoing between the interested parties. Richard married Elizabeth Butler, one of the many ...\nP6: Ulick Burke, 3rd Earl of Clanricarde: Ulick Burke, 3rd Earl of Clanricarde, Irish peer, died 1601. He was the son of Richard Burke, 2nd Earl of Clanricarde and Margaret O'Brien. He married Honora Burke, daughter of John Burke, on 25 November 1564 at Athenry, County Galway, Ireland. He had long been a rebel against the English Crown, and since the 1560s had instigated the \"Mac an Iarla\" wars in Connaught and Thomond, devastating much of the area, against his father, who was a staunch supporter ...\nP7: William Burke, 7th Earl of Clanricarde: William Burke, 7th Earl of Clanricarde( died 1687), Irish peer, was the son of Sir William Burke, younger son of Ulick Burke, 3rd Earl of Clanricarde, and Joan O'Shaughnessy. Burke had served with his brother Richard, the 6th Earl under their cousin, Ulick Burke, 5th Earl of Clanricarde, during the Irish Confederate Wars and they each succeeded to his title. He became Lord Lieutenant of County Galway in 1680 and its Chief Governor in 1687. His first wife ...\nP8: Ulick Burke, 1st Marquess of Clanricarde: Ulick MacRichard Burke, 1st Marquess of Clanricarde, 5th Earl of Clanricarde, 2nd Earl of St Albans( 1604, London – July 1657, Kent), was an Irish nobleman who was involved in the Wars of the Three Kingdoms. Lord Clanricarde was a Catholic Royalist, who had overall command of the Irish forces during the later stages of the Cromwellian conquest of Ireland. He was created Marquess of Clanricarde in 1646.\nP9: Frances Walsingham, Countess of Essex: Frances Walsingham, Dowager Countess of Essex and Countess of Clanricarde (1567 – 17 February 1633) was an English noblewoman. The daughter of Sir Francis Walsingham, Elizabeth I's Secretary of State, she became the wife of Sir Philip Sidney at age 16. Her second husband was Queen Elizabeth's favourite, Robert Devereaux Earl of Essex, with whom she had five children. Two years after his execution in 1601, she married Richard Burke, Earl of Clanricarde, and ...\nP10: Frances Walsingham, Countess of Essex: Frances Walsingham, Dowager Countess of Essex and Countess of Clanricarde( 1567 – 17 February 1633) was an English noblewoman. The daughter of Sir Francis Walsingham, Elizabeth I's Secretary of State, she became the wife of Sir Philip Sidney at age 16. Her second husband was Queen Elizabeth's favourite, Robert Devereaux Earl of Essex, with whom she had five children. Two years after his execution in 1601, she married Richard Burke, Earl of Clanricarde, and ...\nQuestion: Who is Richard Burke, 4Th Earl Of Clanricarde's paternal grandfather?\nFinal answer:",
+  "output": "William Burke, 7th Earl of Clanricarde",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.6666666666666666
+  },
+  "response": {
+    "id": "chatcmpl-9ce9bac6688493cc",
+    "object": "chat.completion",
+    "created": 1779532878,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "William Burke, 7th Earl of Clanricarde",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1434,
+      "total_tokens": 1446,
+      "completion_tokens": 12,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

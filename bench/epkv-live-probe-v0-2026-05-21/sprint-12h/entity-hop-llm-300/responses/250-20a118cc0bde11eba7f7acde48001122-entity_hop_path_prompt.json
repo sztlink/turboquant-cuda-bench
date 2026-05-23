@@ -1,0 +1,48 @@
+{
+  "qid": "20a118cc0bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Johannesburg, South Africa",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- High (film) -> Fritz Lang\n- John Stewart of Bonkyll -> Alexander Stewart, 4th High Steward of Scotland\n- John Stewart of Bonkyll -> Alexander Stewart, 4th High Steward of Scotland\n- László Nemes -> The Feature\n- Fame (2009 film) -> Kevin Tancharoen\n- Fame (2009 film) -> The Street\n- High Treason (1951 film) -> Seven Days to Noon\n- High Treason (1951 film) -> Seven Days\nPassages:\nP1: High (film): High is a film released in 1967, directed by Larry Kent and starring Lanny Beckman, Astri Thorvik, Peter Mathews, Joyce Cay, and Denis Payne. Filmed in Montreal, it is likely most-remembered for being banned by the censors of Quebec (immediately before its premiere at the Montreal Film Festival) for its use of drugs, nudity, and explicit sex scenes. In defense, celebrities such as Jean Renoir, Fritz Lang, and even Warren Beatty came to \"High\" 's defense as a film of art, rather ...\nP2: Alexander Stewart, 4th High Steward of Scotland: Alexander Stewart (died 1283), also known as Alexander of Dundonald, was 4th hereditary High Steward of Scotland from his father's death in 1246. A son of Walter Stewart, 3rd High Steward of Scotland by his wife Bethóc, daughter of Gille Críst, Earl of Angus , Alexander is said to have accompanied Louis IX of France on the Seventh Crusade (1248–1254). In 1255 he was one of the councillors of King Alexander III, though under age. He was the ...\nP3: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP4: The Street: The Street may refer to:\nP5: Kevin Tancharoen: Kevin Harwick Tancharoen( born April 23, 1984) is an American film director, producer, screenwriter, dancer, and choreographer. On September 29, 2011, New Line Cinema/ Warner Bros. announced that Tancharoen would be helming a big- screen adaptation of\" Mortal Kombat\" after he created the successful web series, although he dropped out of the project in 2013.\nP6: Fritz Lang: Friedrich Christian Anton\" Fritz\" Lang( December 5, 1890 – August 2, 1976) was an Austrian- German- American filmmaker, screenwriter, and occasional film producer and actor. One of the best- known\" émigrés\" from Germany's school of Expressionism, he was dubbed the\" Master of Darkness\" by the British Film Institute. Lang's most famous films include the groundbreaking futuristic\" Metropolis\"( 1927) and the also influential\" M\"( 1931), a film noir precursor that he made before he moved ...\nP7: Seven Days to Noon: Seven Days to Noon is a 1950 British drama/ thriller film directed by John and Roy Boulting. Based on the book,\" Un Nazi en Manhattan\", written by Fernando Josseau, Paul Dehn and James Bernard won the Academy Award for Best Story for this film.\nP8: Seven Days: Seven Days or 7 Days may refer to:\nP9: High Treason (1951 film): High Treason is a 1951 British espionage thriller. It is a sequel to the film\" Seven Days to Noon\"( 1950) from the same team. Director Roy Boulting, co-director( with his brother John) and co-writer of the first film also directed and co-wrote this one. Frank Harvey, Boulting's co-writer, was also a co-writer of the earlier film. André Morell reprises his role as Detective Superintendent Folland of Scotland Yard's Special Branch from the first film, though in\" High ...\nP10: Fame (2009 film): Fame is a 2009 American musical drama film and a loose remake of the 1980 film of the same name. It was directed by Kevin Tancharoen and written by Allison Burnett. It was released on September 25, 2009 in the US, Canada, Ireland, and the UK. The film follows talented high school students attending The High School of Performing Arts in New York City( known today as Fiorello H. LaGuardia High School), where students get specialized training that often leads to success in the ...\nQuestion: Where was the director of film High (Film) born?\nFinal answer:",
+  "output": "Montreal",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a063cba8b9d8b2d7",
+    "object": "chat.completion",
+    "created": 1779532933,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Montreal",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1190,
+      "total_tokens": 1193,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

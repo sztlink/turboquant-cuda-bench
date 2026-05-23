@@ -1,0 +1,48 @@
+{
+  "qid": "5e418da00bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "London",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- I See You (Theme from Avatar) -> Leona Lewis\n- I See You (Theme from Avatar) -> Story\n- Lovely to See You -> Launch\n- Fading Lights -> Phil Collins\n- Fading Lights -> PAST\n- See Me, Feel Me -> We're Not Gonna Take It\n- See Me, Feel Me -> Captured!\n- Where Are You? (1937 song) -> Where Are You\n- I Think of You (1970 song) -> Francis Lai\n- I Can't See Myself Leaving You -> Aretha Franklin\n- I Can't See Myself Leaving You -> Leaving You\nPassages:\nP1: I See You (Theme from Avatar): \"I See You (Theme from \"Avatar (also referred to as \"I See You\") is the official theme song recorded by British singer Leona Lewis for the 2009 film \"Avatar\", directed by James Cameron, and (2009). It was written by James Horner and Kuk Harrell, with production done by Simon Franglen. A pop inspired ballad, the lyrics, which reflect the story line of the film, are about love, emotion and power. The song received multiple comparisons to Celine Dion's \"My Heart Will ...\nP2: Where Are You: Where Are You may refer to:\nP3: Leaving You: Leaving You may refer to:\nP4: Leona Lewis: Leona Louise Lewis (born 3 April 1985) is a British singer, songwriter, actress, model and activist. She was born and raised in the London Borough of Islington in London, where she attended the BRIT School for Performing Arts and Technology. Lewis achieved national recognition when she won the third series of \"The X Factor\" in 2006, winning a £1 million recording contract with Simon Cowell's record label, Syco Music. Her winner's single, a cover of Kelly Clarkson's \"A Moment Like ...\nP5: Aretha Franklin: Aretha Louise Franklin (March 25, 1942August 16, 2018) was an American singer, songwriter, pianist, and civil rights activist. Franklin began her career as a child singing gospel at New Bethel Baptist Church in Detroit, Michigan, where her father C. L. Franklin was minister. At the age of 18, she embarked on a secular musical career as a recording artist for Columbia Records. While Franklin's career did not immediately flourish, she found acclaim and commercial success after ...\nP6: Phil Collins: Philip David Charles Collins (born 30 January 1951) is an English drummer, singer, songwriter, multi-instrumentalist, record producer, and actor. He was the drummer and later became singer of the rock band Genesis, and is also a solo artist. Between 1982 and 1989, Collins scored three UK and seven US number-one singles in his solo career. When his work with Genesis, his work with other artists, as well as his solo career is totalled, he had more US Top 40 singles than any other ...\nP7: Francis Lai: Francis Albert Lai( 26 April 19327 November 2018) was a French composer, noted for his film scores. He won the 1970 Oscar for Best Music, Original Score and the Golden Globe Award for Best Original Score for the film\" Love Story\". The soundtrack album went to No. 2 in the\" Billboard\" album charts and the film's theme,\" Where Do I Begin\", was a hit single for Andy Williams.\nP8: Captured!: Captured!( aka Fellow Prisoners) is a 1933 American pre-Code film about World War I prisoners of war in a German camp. The film was directed by Roy Del Ruth and stars Leslie Howard and Douglas Fairbanks Jr..\" Captured!\" was based on the short story\" Fellow Prisoners\"( 1930) by Sir Philip Gibbs.\nP9: Story: Story or stories, may refer to:\nP10: Launch: Launch or launched may refer to:\nQuestion: Where was the performer of song I See You (Theme From Avatar) born?\nFinal answer:",
+  "output": "London",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-b9855ff2dcd45252",
+    "object": "chat.completion",
+    "created": 1779532943,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "London",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 973,
+      "total_tokens": 975,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

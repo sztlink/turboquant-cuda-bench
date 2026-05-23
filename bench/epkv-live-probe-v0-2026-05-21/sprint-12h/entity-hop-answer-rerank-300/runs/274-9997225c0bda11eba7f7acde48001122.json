@@ -1,0 +1,66 @@
+{
+  "idx": 274,
+  "qid": "9997225c0bda11eba7f7acde48001122",
+  "gold": "Forest Lawn Memorial Park",
+  "candidates": [
+    "Worms",
+    "The Last Company",
+    "Place of origin",
+    "The Mystic",
+    "The Will",
+    "The Street",
+    "The Singer",
+    "Curtis Bernhardt",
+    "Abraham",
+    "Part",
+    "Book of Burial",
+    "Jehovah-jireh"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Worms\nC2: The Last Company\nC3: Place of origin\nC4: The Mystic\nC5: The Will\nC6: The Street\nC7: The Singer\nC8: Curtis Bernhardt\nC9: Abraham\nC10: Part\nC11: Book of Burial\nC12: Jehovah-jireh\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- The Last Company -> Curtis Bernhardt\n- The Last Company -> Part\n- The Last Company -> Curtis Bernhardt\n- The Last Company -> Part\n- Book of Burial -> The Mystic\n- Jehovah-jireh -> Abraham\n- Jehovah-jireh -> Offer\n- William Rockhill Nelson -> @Home\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- Old Jewish cemetery, Cieszyn -> The Street\n- Old Jewish cemetery, Cieszyn -> The Singer\nPassages:\nP1: The Last Company: The Last Company  is a 1930 German war film directed by Curtis Bernhardt and starring Conrad Veidt, Karin Evans and Erwin Kalser. It was part of the popular cycle of Prussian films which portrayed patriotic scenes from Prussian history. The film's art direction was overseen by Andrej Andrejew. It was shot on location around Havelland in Brandenburg. It is also known by the alternative title Thirteen Men and a Girl. It was later remade in 1967 as \"A Handful of Heroes\".\nP2: The Last Company: The Last Company is a 1930 German war film directed by Curtis Bernhardt and starring Conrad Veidt, Karin Evans and Erwin Kalser. It was part of the popular cycle of Prussian films which portrayed patriotic scenes from Prussian history. The film's art direction was overseen by Andrej Andrejew. It was shot on location around Havelland in Brandenburg. It is also known by the alternative title Thirteen Men and a Girl. It was later remade in 1967 as\" A Handful of Heroes\".\nP3: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP4: The Mystic: The Mystic is a 1925 American MGM silent drama film directed by Tod Browning, who later directed MGM's\" Freaks\"( 1932). It was co-written by Browning and Waldemar Young, writing a similar storyline to their earlier 1925 hit film\" The Unholy Three\". Browning was unable however to hire his favorite star Lon Chaney this time around, and\" The Mystic\" wound up a little- known film with a cast of now- forgotten names. Aileen Pringle's gowns in the film were by already famous Romain de ...\nP5: The Will: The Will may refer to:\nP6: The Street: The Street may refer to:\nP7: The Singer: The Singer may refer to:\nP8: Curtis Bernhardt: Curtis Bernhardt( 15 April 1899 – 22 February 1981) was a German film director born in Worms, Germany, under the name Kurt Bernhardt. He trained as an actor in Germany, and performed on the stage, before starting as a film director in 1924, with\" Nameless Heroes\". Other films include\" A Stolen Life\"( 1946) and\" Sirocco\"( 1951). Bernhardt made films in Germany from 1925 until 1933, when he was forced to flee the Nazi regime — who briefly had him arrested — because he was ...\nP9: Curtis Bernhardt: Curtis Bernhardt (15 April 1899 – 22 February 1981) was a German film director born in Worms, Germany, under the name Kurt Bernhardt. He trained as an actor in Germany, and performed on the stage, before starting as a film director in 1924, with \"Nameless Heroes\". Other films include \"A Stolen Life\" (1946) and \"Sirocco\" (1951). Bernhardt made films in Germany from 1925 until 1933, when he was forced to flee the Nazi regime — who briefly had him arrested — because he was ...\nP10: Abraham: Abraham (né Abram) is the common patriarch of Christianity, Islam, Judaism, and other religions. In Judaism, he is the founding father of the covenant of the pieces, the special relationship between the Hebrews and God; in Christianity, he is the prototype of all believers, Jewish or Gentile; and in Islam he is seen as a link in the chain of prophets that begins with Adam and culminates in Muhammad. The narrative in the Book of Genesis revolves around the themes of posterity and land. ...\nQuestion: Where was the place of burial of the director of film The Last Company?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Worms\",\"selected\":\"C1|C2|C8\",\"confidence\":\"high\",\"reason\":\"The evidence in P8 and P9 directly states that Curtis Bernhardt, who directed The Last Company, was born in Worms, Germany. While this does not directly state the place of burial, it is the most relevant information provided in the passages and the director's place of birth is a strong indicator of his place of origin, which could be related to the place of burial.\"}",
+  "verifier": {
+    "final_answer": "Worms",
+    "selected": "C1|C2|C8",
+    "confidence": "high",
+    "reason": "The evidence in P8 and P9 directly states that Curtis Bernhardt, who directed The Last Company, was born in Worms, Germany. While this does not directly state the place of burial, it is the most relevant information provided in the passages and the director's place of birth is a strong indicator of his place of origin, which could be related to the place of burial."
+  },
+  "final": "Worms",
+  "selected": "C1|C2|C8",
+  "response": {
+    "id": "chatcmpl-8c69f1341c02da9f",
+    "object": "chat.completion",
+    "created": 1779533145,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Worms\",\"selected\":\"C1|C2|C8\",\"confidence\":\"high\",\"reason\":\"The evidence in P8 and P9 directly states that Curtis Bernhardt, who directed The Last Company, was born in Worms, Germany. While this does not directly state the place of burial, it is the most relevant information provided in the passages and the director's place of birth is a strong indicator of his place of origin, which could be related to the place of burial.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1276,
+      "total_tokens": 1380,
+      "completion_tokens": 104,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.8178505897521973
+}

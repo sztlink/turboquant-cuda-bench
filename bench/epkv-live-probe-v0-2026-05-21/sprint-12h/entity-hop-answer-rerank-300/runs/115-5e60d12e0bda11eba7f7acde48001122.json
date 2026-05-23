@@ -1,0 +1,66 @@
+{
+  "idx": 115,
+  "qid": "5e60d12e0bda11eba7f7acde48001122",
+  "gold": "Jerez de la Frontera",
+  "candidates": [
+    "Spain",
+    "Antonio Flores",
+    "Lola Flores",
+    "United Nations",
+    "Villa",
+    "A Division",
+    "Antonio Flores (footballer, born 1972)",
+    "Antonio Flores (footballer)",
+    "Cruz Antonio Flores",
+    "Antonio Flores de Lemus",
+    "Mary Elizabeth Flores",
+    "Darío Flores"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Spain\nC2: Antonio Flores\nC3: Lola Flores\nC4: United Nations\nC5: Villa\nC6: A Division\nC7: Antonio Flores (footballer, born 1972)\nC8: Antonio Flores (footballer)\nC9: Cruz Antonio Flores\nC10: Antonio Flores de Lemus\nC11: Mary Elizabeth Flores\nC12: Darío Flores\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Antonio Flores -> Lola Flores\n- Antonio Flores -> Villa!!\n- Antonio Flores (footballer) -> Antonio Flores\n- Mary Elizabeth Flores -> United Nations\n- Antonio Flores de Lemus -> Antonio Flores\n- Cruz Antonio Flores -> Antonio Flores\n- Cruz Antonio Flores -> Division\n- Antonio Flores (footballer, born 1972) -> Antonio Flores (footballer)\n- Antonio Flores (footballer, born 1972) -> Antonio Flores\n- Darío Flores -> Antonio Flores\nPassages:\nP1: Antonio Flores: Antonio González Flores (14 November 1961 – 30 May 1995) was a Spanish singer-songwriter and actor. He was romani on his father's side. He was the only son of singers and actors Antonio González (musician) 'El_Pescaílla' and Lola Flores. He was the brother of singer/actresses Lolita Flores and Rosario Flores. He was divorced from Ana Villa with whom he had a daughter, Alba.\nP2: Lola Flores: María Dolores Flores Ruiz (21 January 1923 – 16 May 1995) was a Spanish singer, actress, dancer and businesswoman. Referred to as \"La Faraona\" since the 1950s, Lola is known for her overwhelming personality onstage. As a \"bailaora\", she enraged several generations of continents, although she distanced herself from flamenco canons. Lola performed more than 35 films, pigeonholed, in many of them, in Andalusian folklore, although she also interpreted rumbas and rancheras. Born and ...\nP3: United Nations: The United Nations (UN), is an intergovernmental organization responsible for maintaining international peace and security, developing friendly relations among nations, achieving international cooperation, and being a center for harmonizing the actions of nations. It is the largest, most familiar, most internationally represented and most powerful intergovernmental organization in the world. The UN is headquartered on international territory in New York City; other main offices ...\nP4: Villa!!: Villa !! is a 1958 American Western film directed by James B. Clark, written by Louis Vittes, and starring Brian Keith, Cesar Romero, Margia Dean, Rodolfo Hoyos Jr., Carlos Múzquiz and Mario Navarro. The film was released in October 1958, by 20th Century Fox.\nP5: A Division: A Division or A-Division or Division A or variant has the following meanings:\nP6: Division: Division or divider may refer to:\nP7: Antonio Flores (footballer, born 1972): Antonio Flores Jesus( born 7 March 1972 in Bendorf, Germany), known as Antonio Flores, is a Spanish- German football manager who serves as a coach at CD Dofer Dalias it currently plays in Primera Andaluza – Group 2, Flores is a cousin to former Watford manager Quique Sanchez Flores\nP8: Antonio Flores (footballer): Antonio Flores Rodríguez( 13 July 1923 — 16 May 2001) was a Mexican football midfielder who played for Mexico in the 1950 FIFA World Cup.\nP9: Cruz Antonio Flores: Cruz Antonio Flores( born November 8, 1990 in Tepehuanes Municipality, Durango, Mexico) is an undefeated Mexican professional boxer in the Light Middleweight division.\nP10: Antonio Flores de Lemus: Antonio Flores de Lemus( 1876 – 1941) was a Spanish politician and economist.\nQuestion: Where was the mother of Antonio Flores born?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Spain\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"The evidence in P1 states that Antonio Flores was the son of singers and actors Antonio González (musician) 'El_Pescaílla' and Lola Flores. 'El_Pescaílla' indicates Spanish origin, and Lola Flores is directly linked to Spain in the entity graph.\"}",
+  "verifier": {
+    "final_answer": "Spain",
+    "selected": "C1",
+    "confidence": "high",
+    "reason": "The evidence in P1 states that Antonio Flores was the son of singers and actors Antonio González (musician) 'El_Pescaílla' and Lola Flores. 'El_Pescaílla' indicates Spanish origin, and Lola Flores is directly linked to Spain in the entity graph."
+  },
+  "final": "Spain",
+  "selected": "C1",
+  "response": {
+    "id": "chatcmpl-98ffb944c9337d9b",
+    "object": "chat.completion",
+    "created": 1779533054,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Spain\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"The evidence in P1 states that Antonio Flores was the son of singers and actors Antonio González (musician) 'El_Pescaílla' and Lola Flores. 'El_Pescaílla' indicates Spanish origin, and Lola Flores is directly linked to Spain in the entity graph.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1062,
+      "total_tokens": 1141,
+      "completion_tokens": 79,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.403716802597046
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "3705552a0bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Louis-Alexandre Berthier",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Napoléon Alexandre Berthier, 2nd Prince of Wagram -> Duchess Maria Elisabeth in Bavaria\n- Napoléon Alexandre Berthier, 2nd Prince of Wagram -> Duchess Maria Elisabeth in Bavaria\n- Napoléon Alexandre Berthier, 2nd Prince of Wagram -> Louis-Alexandre Berthier\n- Alexandre Louis Philippe Marie Berthier, 4th Prince of Wagram -> Louise\nPassages:\nP1: Alexandre Berthier, 3rd Prince of Wagram: Louis Philippe Marie \"Alexandre\" Berthier, 3rd Prince of Wagram (24 March 1836, Paris – 15 July 1911, Château de Grosbois) was a French nobleman and prince of Wagram. He was the son of Napoléon Alexandre Berthier and Zénaïde Françoise Clary and grandson of Louis Alexandre Berthier.\nP2: Louise: Louise or Luise may refer to:\nP3: Alexandre Louis Philippe Marie Berthier, 4th Prince of Wagram: Alexandre Louis Philippe Marie Berthier( July 20, 1883, Paris – May 30, 1918, Barenton- sur- Serre; 4th Prince de Wagram) was the son of Bertha Clara von Rothschild of the German branch of the prominent Rothschild family and Louis Philippe Marie Alexandre Berthier, 3rd Prince de Wagram( 1836 – 1911). The family resided in the ancestral home, the Château de Grosbois, a large estate in Boissy- Saint- Léger, southeast of Paris. ...\nP4: Napoléon Alexandre Berthier, 2nd Prince of Wagram: Napoléon Alexandre Louis Joseph Berthier, 2nd Prince of Wagram( 11 September 1810, Paris10 February 1887, Paris) was a French politician and nobleman. Son of Louis- Alexandre Berthier, 1st Prince of Wagram, and Duchess Maria Elisabeth in Bavaria( and by his mother, grandnephew of King Maximilian I of Bavaria).\nP5: Napoléon Alexandre Berthier, 2nd Prince of Wagram: Napoléon Alexandre Louis Joseph Berthier, 2nd Prince of Wagram (11 September 1810, Paris10 February 1887, Paris) was a French politician and nobleman. Son of Louis-Alexandre Berthier, 1st Prince of Wagram, and Duchess Maria Elisabeth in Bavaria (and by his mother, grandnephew of King Maximilian I of Bavaria).\nP6: Louis-Alexandre Berthier: Louis- Alexandre Berthier( 20 November 1753 – 1 June 1815), 1st Prince of Wagram, Sovereign Prince of Neuchâtel, was a French Marshal and Vice- Constable of the Empire, and Chief of Staff under Napoleon.\nP7: William Montagu Douglas Scott, 6th Duke of Buccleuch: William Henry Walter Montagu Douglas Scott, 6th Duke of Buccleuch and 8th Duke of Queensberry( 9 September 1831 – 5 November 1914) was a Scottish Member of Parliament and peer. He was the paternal grandfather of Princess Alice, Duchess of Gloucester, and the maternal great- grandfather of Prince William of Gloucester and Prince Richard, Duke of Gloucester. He was a paternal great- great- grandfather to Sarah, Duchess of York.\nP8: William Montagu Douglas Scott, 6th Duke of Buccleuch: William Henry Walter Montagu Douglas Scott, 6th Duke of Buccleuch and 8th Duke of Queensberry (9 September 1831 – 5 November 1914) was a Scottish Member of Parliament and peer. He was the paternal grandfather of Princess Alice, Duchess of Gloucester, and the maternal great-grandfather of Prince William of Gloucester and Prince Richard, Duke of Gloucester. He was a paternal great-great-grandfather to Sarah, Duchess of York.\nP9: Duchess Maria Elisabeth in Bavaria: Duchess\" Maria Elisabeth\" Amalie Franziska in Bavaria( 5 May 1784 – 1 June 1849) was a Duchess in Bavaria as a member of the Palatine Birkenfeld- Gelnhausen line of the House of Wittelsbach and through her marriage to Louis- Alexandre Berthier became Princess of Wagram and Princess of Neuchâtel.\nQuestion: Who is the paternal grandfather of Alexandre Berthier, 3Rd Prince Of Wagram?\nFinal answer:",
+  "output": "William Montagu Douglas Scott, 6th Duke of Buccleuch",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b6e930cfa0e941a5",
+    "object": "chat.completion",
+    "created": 1779532723,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "William Montagu Douglas Scott, 6th Duke of Buccleuch",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1116,
+      "total_tokens": 1131,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

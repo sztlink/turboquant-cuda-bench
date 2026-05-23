@@ -1,0 +1,66 @@
+{
+  "idx": 252,
+  "qid": "7e73e6560bdd11eba7f7acde48001122",
+  "gold": "Prostějov",
+  "candidates": [
+    "Place of birth",
+    "Prague",
+    "Tři chlapi v chalupě",
+    "Philip V of Spain",
+    "Night of the Living Dead",
+    "What Women Want",
+    "The Will",
+    "The First Day",
+    "Josef Mach",
+    "George A. Romero",
+    "Rajiv Gandhi",
+    "Place of origin"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of birth\nC2: Prague\nC3: Tři chlapi v chalupě\nC4: Philip V of Spain\nC5: Night of the Living Dead\nC6: What Women Want\nC7: The Will\nC8: The First Day\nC9: Josef Mach\nC10: George A. Romero\nC11: Rajiv Gandhi\nC12: Place of origin\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Tři chlapi v chalupě -> Josef Mach\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- Motherland (disambiguation) -> Place of origin\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Ratnam V. Raja Kumar -> Rajiv Gandhi\n- What Women Want (2011 film) -> What Women Want\n- What Women Want (2011 film) -> The First Day\n- The Princess of the Ursines -> Philip V of Spain\n- The Princess of the Ursines -> Ana Mariscal\n- Birth of the Living Dead -> Night of the Living Dead\n- Birth of the Living Dead -> George A. Romero\nPassages:\nP1: Tři chlapi v chalupě: Tři chlapi v chalupě is a 1963 Czechoslovak film directed by Josef Mach. The film starred Josef Kemr.\nP2: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP3: Philip V of Spain: Philip V (19 December 1683 – 9 July 1746) was King of Spain from 1 November 1700 to his abdication in favour of his son Louis on 14 January 1724, and from his reaccession of the throne upon his son's death, 6 September 1724 to his own death on 9 July 1746. Before his reign, Philip occupied an exalted place in the royal family of France as a grandson of King Louis XIV. His father, Louis, Grand Dauphin, had the strongest genealogical claim to the throne of Spain when it became ...\nP4: Night of the Living Dead: Night of the Living Dead is a 1968 American independent horror film written, directed, photographed and edited by George A. Romero, co-written by John Russo, and starring Duane Jones and Judith O' Dea. The story follows seven people who are trapped in a rural farmhouse in western Pennsylvania, which is under assault by an enlargening group of cannibalistic, undead corpses. The film was completed on a budget and shot outside Pittsburgh, where it had its theatrical ...\nP5: What Women Want: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt. The film earned mixed reviews from critics, but was a box office success, with a North American domestic gross of $182 million and a worldwide gross of $374 million against a budget of $70 million. A loose remake, \"What Men Want\" starring Taraji P. Henson and Aldis Hodge came out in early 2019.\nP6: The Will: The Will may refer to:\nP7: The First Day: The First Day may refer to:\nP8: Josef Mach: Josef Mach (25 February 1909 in Prostějov – 7 July 1987 in Prague) was a Czech actor, screenwriter and film director. Josef Mach worked as a journalist and stage performer at the beginning of his career, then in 1938 was appointed assistant director of short films at Grafo Film Studio working with director Václav Kubásek. From 1946 Mach directed many feature films for Barrandov Studios in Prague. He is best known for \"The Sons of Great Bear\", a 1966 Red Western film that he directed ...\nP9: George A. Romero: George Andrew Romero( February 4, 1940 – July 16, 2017) was an American filmmaker, writer, and editor. He is best known for his series of gruesome and satirical horror films about an imagined zombie apocalypse, beginning with\" Night of the Living Dead\"( 1968). This film is often considered a progenitor of the fictional zombie of modern culture. Other films in the series include\" Dawn of the Dead\"( 1978) and\" Day of the Dead\"( 1985). Aside from this series, his works include\" ...\nP10: Rajiv Gandhi: Rajiv Gandhi (20 August 1944 – 21 May 1991) was an Indian politician who served as the 6th Prime Minister of India from 1984 to 1989. He took office after the 1984 assassination of his mother, Prime Minister Indira Gandhi, to become the youngest Indian Prime Minister at the age of 40. Gandhi was a scion of the politically powerful Nehru–Gandhi family, which had been associated with the Indian National Congress party. For much of his childhood, his maternal grandfather Jawaharlal ...\nQuestion: What is the place of birth of the director of film Tři Chlapi V Chalupě?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Prague\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"C8 Josef Mach was a Czech actor, screenwriter and film director who worked in Prague. C10 mentions that Josef Mach directed many feature films for Barrandov Studios in Prague, which is evidence that he was born in Prague.\"}",
+  "verifier": {
+    "final_answer": "Prague",
+    "selected": "C2",
+    "confidence": "high",
+    "reason": "C8 Josef Mach was a Czech actor, screenwriter and film director who worked in Prague. C10 mentions that Josef Mach directed many feature films for Barrandov Studios in Prague, which is evidence that he was born in Prague."
+  },
+  "final": "Prague",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-b837f6500f5999a9",
+    "object": "chat.completion",
+    "created": 1779533132,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Prague\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"C8 Josef Mach was a Czech actor, screenwriter and film director who worked in Prague. C10 mentions that Josef Mach directed many feature films for Barrandov Studios in Prague, which is evidence that he was born in Prague.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1436,
+      "total_tokens": 1504,
+      "completion_tokens": 68,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.250478744506836
+}

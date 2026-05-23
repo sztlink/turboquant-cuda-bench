@@ -1,0 +1,66 @@
+{
+  "idx": 25,
+  "qid": "e41c14820bd911eba7f7acde48001122",
+  "gold": "Cahiers du cinéma",
+  "candidates": [
+    "House of Lords",
+    "Les Cahiers du Cinéma",
+    "Bath Academy of Media Makeup",
+    "Man at Bath",
+    "The General",
+    "The Jury",
+    "Christophe Honoré",
+    "Sergei Eisenstein",
+    "Mikhail Romm",
+    "Hürriyet Daily News",
+    "Story",
+    "Hardcore"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: House of Lords\nC2: Les Cahiers du Cinéma\nC3: Bath Academy of Media Makeup\nC4: Man at Bath\nC5: The General\nC6: The Jury\nC7: Christophe Honoré\nC8: Sergei Eisenstein\nC9: Mikhail Romm\nC10: Hürriyet Daily News\nC11: Story\nC12: Hardcore\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Man at Bath -> Christophe Honoré\n- Man at Bath -> The General\n- The Hourglass Sanatorium -> Story\n- The Hourglass Sanatorium -> The Jury\n- Majority (film) -> Hürriyet Daily News\n- Majority (film) -> Hardcore\n- Majority (film) -> Story\n- Don Foster, Baron Foster of Bath -> House of Lords\n- Mikhail Schweitzer -> Sergei Eisenstein\n- Mikhail Schweitzer -> Mikhail Romm\n- Mikhail Schweitzer -> Sergei Eisenstein\n- Mikhail Schweitzer -> Mikhail Romm\nPassages:\nP1: Man at Bath: Man at Bath  is a 2010 French film by Christophe Honoré starring François Sagat and Chiara Mastroianni. The film premiered in competition at Locarno International Film Festival in Switzerland in 2010 and was released in cinemas on 22 September 2010. This is gay pornographic actor François Sagat's second major role in general release non-pornographic film as Emmanuel after his role in \"L.A. Zombie\". Director Christopher Honoré told French gay website Yagg.com that he was interested ...\nP2: House of Lords: The House of Lords, also known as the House of Peers and domestically usually referred to simply as the Lords, is the upper house of the Parliament of the United Kingdom. Membership is granted by appointment or else by heredity or official function. Like the House of Commons, it meets in the Palace of Westminster. Officially, the full name of the house is the Right Honourable the Lords Spiritual and Temporal of the United Kingdom of Great Britain and Northern Ireland in ...\nP3: The General: The General or The Generals may refer to:\nP4: The Jury: The Jury may refer to:\nP5: Christophe Honoré: Christophe Honoré (born 10 April 1970) is a French writer and film director. Honoré was born in Carhaix, Finistère. After moving to Paris in 1995, he wrote articles in \"Les Cahiers du Cinéma\". He started writing soon after. His 1996 book \"Tout contre LéoClose to Leo\") talks about HIV and is aimed at young adults; he made it into a film in 2002. He wrote other books for young adults throughout the late 1990s. His first play, \"Les Débutantes\", was performed at Avignon's Off ...\nP6: Sergei Eisenstein: Sergei Mikhailovich Eisenstein (tr. ; 11 February 1948) was a Soviet film director and film theorist, a pioneer in the theory and practice of montage. He is noted in particular for his silent films \"Strike\" (1925), \"Battleship Potemkin\" (1925) and  (1928), as well as the historical epics \"Alexander Nevsky\" (1938) and \"Ivan the Terrible\" (1944, 1958). In its 2019 decennial poll, the magazine \"Sight & Sound\" named his \"Battleship Potemkin\" the 11th greatest movie of all time.\nP7: Mikhail Romm: Mikhail Ilych Romm( – 1 November 1971) was a Soviet film director.\nP8: Hürriyet Daily News: The Hürriyet Daily News, formerly Hürriyet Daily News and Economic Review and Turkish Daily News, is the oldest current English-language daily in Turkey, founded in 1961. The paper was bought by the Doğan Media Group in 2001 and has been under the media group's flagship \"Hürriyet\" from 2006; both papers were sold to Demirören Holdings in 2018.\nP9: Story: Story or stories, may refer to:\nP10: Hardcore: Hardcore, hard core or hard- core may refer to:\nQuestion: Where does the director of film Man At Bath work at?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Les Cahiers du Cinéma\",\"selected\":\"C2\",\"confidence\":\"medium\",\"reason\":\"Christophe Honoré, the director of Man at Bath, wrote articles in Les Cahiers du Cinéma according to the passages.\"}",
+  "verifier": {
+    "final_answer": "Les Cahiers du Cinéma",
+    "selected": "C2",
+    "confidence": "medium",
+    "reason": "Christophe Honoré, the director of Man at Bath, wrote articles in Les Cahiers du Cinéma according to the passages."
+  },
+  "final": "Les Cahiers du Cinéma",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-aa2824be37eb90b7",
+    "object": "chat.completion",
+    "created": 1779532989,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Les Cahiers du Cinéma\",\"selected\":\"C2\",\"confidence\":\"medium\",\"reason\":\"Christophe Honoré, the director of Man at Bath, wrote articles in Les Cahiers du Cinéma according to the passages.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1136,
+      "total_tokens": 1188,
+      "completion_tokens": 52,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.9680323600769043
+}

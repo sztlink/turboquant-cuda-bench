@@ -1,0 +1,66 @@
+{
+  "idx": 117,
+  "qid": "5eff3f9a0bd911eba7f7acde48001122",
+  "gold": "Nanjing",
+  "candidates": [
+    "Beiping",
+    "Beiping (modern Beijing)",
+    "Place of birth",
+    "Place of origin",
+    "The Only One",
+    "The Will",
+    "Yongle Emperor",
+    "Tianqi Emperor",
+    "Wanli Emperor",
+    "Empress Xu (Ming dynasty)",
+    "Empress Dowager Ma (Southern Ming)",
+    "Empress Dowager Wang (Southern Ming)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Beiping\nC2: Beiping (modern Beijing)\nC3: Place of birth\nC4: Place of origin\nC5: The Only One\nC6: The Will\nC7: Yongle Emperor\nC8: Tianqi Emperor\nC9: Wanli Emperor\nC10: Empress Xu (Ming dynasty)\nC11: Empress Dowager Ma (Southern Ming)\nC12: Empress Dowager Wang (Southern Ming)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- Empress Xu (Ming dynasty) -> Yongle Emperor\n- Empress Xiao'aizhe -> Tianqi Emperor\n- Wang Xijie -> Wanli Emperor\n- Hongzhi Emperor -> The Only One\n- Motherland (disambiguation) -> Place of origin\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP3: The Only One: The Only One( s) or Only One may refer to:\nP4: The Will: The Will may refer to:\nP5: Yongle Emperor: The Yongle Emperor (pronounced , ; 2 May 1360 – 12 August 1424) — personal name Zhu Di (WG: Chu Ti) — was the third Emperor of the Ming dynasty, reigned from 1402 to 1424. Zhu Di was the fourth son of the Hongwu Emperor, the founder of the Ming dynasty. He was originally enfeoffed as the Prince of Yan  in May 1370, with the capital of his princedom at Beiping (modern Beijing). Amid the continuing struggle against the Mongols of the Northern Yuan dynasty, Zhu Di consolidated his ...\nP6: Tianqi Emperor: The Tianqi Emperor (23 December 1605 – 30 September 1627), personal name Zhu Youjiao, was the 16th Emperor of the Ming dynasty, reigned from 1620 to 1627. He was the eldest son of the Taichang Emperor and a elder brother of the Chongzhen Emperor, who succeeded him. \" Tianqi\", the era name of his reign, means \"heavenly opening\".\nP7: Wanli Emperor: The Wanli Emperor (4 September 1563 – 18 August 1620), personal name Zhu Yijun , was the 14th Emperor of the Ming dynasty, reigned from 1572 to 1620. \"Wanli\", the era name of his reign, literally means \"ten thousand calendars\". He was the third son of the Longqing Emperor. His reign of 48 years (1572–1620) was the longest among all the Ming dynasty emperors and it witnessed several successes in his early and middle reign, followed by the decline of the dynasty as the Emperor ...\nP8: Empress Xu (Ming dynasty): Empress Xu (徐皇后) (1362 – July 1407), formally Empress Renxiaowen (仁孝文皇后), was the empress consort to the Yongle Emperor and the third empress of China's Ming dynasty. She was well educated, compiling bibliographies of virtuous women, an activity connected with court politics.\nP9: Empress Dowager Ma (Southern Ming): Empress Dowager Ma( 1578 – 1669), personal name unknown, formally known as Empress Dowager Zhaosheng( 昭聖太后), was an empress dowager of the Southern Ming Dynasty. She was the birth mother of the Yongli Emperor. She converted to Roman Catholicism and adopted the name Maria.\nP10: Empress Dowager Wang (Southern Ming): Empress Dowager Wang( c. 1594? – 1651), personal name unknown, formally known as Empress Dowager Xiaozheng( 孝正太后), was an empress dowager of the Southern Ming Dynasty. She was the main consort of Zhu Changying, Prince of Gui, the father of the Yongli Emperor. She converted to Roman Catholicism and adopted the name Helena.\nQuestion: What is the place of birth of Empress Xu (Ming Dynasty)'s husband?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Beiping (modern Beijing)\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"Zhu Di, the husband of Empress Xu, was originally enfeoffed as the Prince of Yan with the capital of his princedom at Beiping (modern Beijing) as mentioned in P5.\"}",
+  "verifier": {
+    "final_answer": "Beiping (modern Beijing)",
+    "selected": "C2",
+    "confidence": "high",
+    "reason": "Zhu Di, the husband of Empress Xu, was originally enfeoffed as the Prince of Yan with the capital of his princedom at Beiping (modern Beijing) as mentioned in P5."
+  },
+  "final": "Beiping (modern Beijing)",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-9e7be9926f0a487d",
+    "object": "chat.completion",
+    "created": 1779533055,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Beiping (modern Beijing)\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"Zhu Di, the husband of Empress Xu, was originally enfeoffed as the Prince of Yan with the capital of his princedom at Beiping (modern Beijing) as mentioned in P5.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1261,
+      "total_tokens": 1327,
+      "completion_tokens": 66,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.1976542472839355
+}

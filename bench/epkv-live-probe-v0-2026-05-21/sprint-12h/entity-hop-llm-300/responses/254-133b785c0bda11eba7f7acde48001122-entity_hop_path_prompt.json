@@ -1,0 +1,48 @@
+{
+  "qid": "133b785c0bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Rome",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Scugnizzi -> Nanni Loy\n- Scugnizzi -> The Street\n- Jehovah-jireh -> Abraham\n- Jehovah-jireh -> Offer\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- Ram Baksh Singh -> Guilty?\n- The Brides of Fu Manchu -> The Vengeance of Fu Manchu\n- The Brides of Fu Manchu -> The Castle of Fu Manchu\n- Robert Stevens (director) -> Alfred Hitchcock\n- Robert Stevens (director) -> Amazing Stories\n- Place of origin -> Place of birth\n- Place of origin -> @Home\nPassages:\nP1: Scugnizzi: Scugnizzi is a 1989 Italian musical drama, directed by Nanni Loy. The film is also called \"Street Kids\" in the American market.\nP2: The Vengeance of Fu Manchu: The Vengeance of Fu Manchu is a 1967 British film directed by Jeremy Summers and starring Christopher Lee, Horst Frank, Douglas Wilmer and Tsai Chin. It was the third British/ West German Constantin Film co-production of the Dr. Fu Manchu series and the first to be filmed in Hong Kong. It was generally released in the U.K. through Warner- Pathé( as a support feature to the Lindsay Shonteff film\" The Million Eyes of Sumuru\") on 3 December 1967.\nP3: The Castle of Fu Manchu: The Castle of Fu Manchu( also known as The Torture Chamber of Dr. Fu Manchu and also known by its German title Die Folterkammer des Dr. Fu Man Chu) is a 1969 film and the fifth and final Dr. Fu Manchu film with Christopher Lee portraying the title character.\nP4: The Street: The Street may refer to:\nP5: The Will: The Will may refer to:\nP6: Nanni Loy: Nanni Loy( born Giovanni Loi; 23 October 1925 – 21 August 1995) was an Italian film, theatre and TV director. Specifically, Nanni Loy was Sardinian, and one of several notable Sardinian film makers, including Franco Solinas. Loy was born in Cagliari, Sardinia: his father was Guglielmo Loy- Donà, a lawyer issue from a distinguished Sardinian- Venetian family, and his mother was the noblewoman Donna Anna Sanjust of the Marquesses of Neoneli. Rosetta Loy, an Italian novelist, is his ...\nP7: Nanni Loy: Nanni Loy (born Giovanni Loi; 23 October 1925 – 21 August 1995) was an Italian film, theatre and TV director. Specifically, Nanni Loy was Sardinian, and one of several notable Sardinian film makers, including Franco Solinas. Loy was born in Cagliari, Sardinia: his father was Guglielmo Loy-Donà, a lawyer issue from a distinguished Sardinian-Venetian family, and his mother was the noblewoman Donna Anna Sanjust of the Marquesses of Neoneli. Rosetta Loy, an Italian novelist, is his ...\nP8: Alfred Hitchcock: Sir Alfred Joseph Hitchcock,( 13 August 1899 – 29 April 1980) was an English film director and producer, widely regarded as one of the most influential and extensively studied filmmakers in the history of cinema. Known as\" the Master of Suspense\", he directed over 50 feature films in a career spanning six decades, becoming as well known as any of his actors thanks to his many interviews, his cameo roles in most of his films, and his hosting and producing of the television ...\nP9: Abraham: Abraham (né Abram) is the common patriarch of Christianity, Islam, Judaism, and other religions. In Judaism, he is the founding father of the covenant of the pieces, the special relationship between the Hebrews and God; in Christianity, he is the prototype of all believers, Jewish or Gentile; and in Islam he is seen as a link in the chain of prophets that begins with Adam and culminates in Muhammad. The narrative in the Book of Genesis revolves around the themes of posterity and land. ...\nP10: Amazing Stories: Amazing Stories is an American science fiction magazine launched in April 1926 by Hugo Gernsback's Experimenter Publishing. It was the first magazine devoted solely to science fiction. Science fiction stories had made regular appearances in other magazines, including some published by Gernsback, but \"Amazing\" helped define and launch a new genre of pulp fiction. As of 2018, \"Amazing\" has been published, with some interruptions, for ninety-two years, going through a half-dozen ...\nQuestion: Where was the place of death of the director of film Scugnizzi?\nFinal answer:",
+  "output": "Cagliari, Sardinia",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-bb65891c18932b60",
+    "object": "chat.completion",
+    "created": 1779532936,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Cagliari, Sardinia",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1129,
+      "total_tokens": 1137,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

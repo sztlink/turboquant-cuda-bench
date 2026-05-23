@@ -1,0 +1,61 @@
+{
+  "idx": 215,
+  "qid": "eeb017fa0bdd11eba7f7acde48001122",
+  "gold": "Edinburgh",
+  "candidates": [
+    "Berwickshire",
+    "James Dalrymple, 3rd Earl of Stair",
+    "The Street",
+    "The Mills",
+    "Them",
+    "Francis I",
+    "James Adam (architect)",
+    "William Adam (architect)",
+    "Wenceslaus III Adam, Duke of Cieszyn",
+    "Adam Wenceslaus, Duke of Cieszyn",
+    "Adam Baal Shem",
+    "William Dalrymple-Crichton, 5th Earl of Dumfries, 4th Earl of Stair"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Berwickshire\nC2: James Dalrymple, 3rd Earl of Stair\nC3: The Street\nC4: The Mills\nC5: Them\nC6: Francis I\nC7: James Adam (architect)\nC8: William Adam (architect)\nC9: Wenceslaus III Adam, Duke of Cieszyn\nC10: Adam Wenceslaus, Duke of Cieszyn\nC11: Adam Baal Shem\nC12: William Dalrymple-Crichton, 5th Earl of Dumfries, 4th Earl of Stair\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- James Adam (architect) -> The Street\n- William Adam (architect) -> The Mills\n- Adam Baal Shem -> Them!\n- William Dalrymple-Crichton, 5th Earl of Dumfries, 4th Earl of Stair -> James Dalrymple, 3rd Earl of Stair\n- Adam Wenceslaus, Duke of Cieszyn -> Wenceslaus III Adam, Duke of Cieszyn\n- Adam Wenceslaus, Duke of Cieszyn -> Francis I\n- Adam Wenceslaus, Duke of Cieszyn -> Wenceslaus III Adam, Duke of Cieszyn\n- Adam Wenceslaus, Duke of Cieszyn -> Francis I\nPassages:\nP1: James Dalrymple, 3rd Earl of Stair: James Dalrymple, 3rd Earl of Stair( died 13 November 1760), was the son of Colonel Hon. William Dalrymple of Glenmure and Penelope Crichton, Countess of Dumfries. He succeeded his uncle John Dalrymple, 2nd Earl of Stair, but was required to bring a legal action to establish his right to the title, as his uncle had attempted to settle the title on another nephew. He died without issue. His siblings were William Dalrymple- Crichton, 5th Earl of Dumfries( b. ...\nP2: The Street: The Street may refer to:\nP3: The Mills: The Mills may refer to:\nP4: Them!: Them! is a 1954 American black- and- white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \" Them!\" is one of the first of the 1950s\" nuclear monster\" films, and the first\" big bug\" feature. A nest ...\nP5: Them!: Them! is a 1954 American black-and-white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \"Them!\" is one of the first of the 1950s \"nuclear monster\" films, and the first \"big bug\" feature. A nest of ...\nP6: Francis I: Francis I or Francis the First may refer to:\nP7: James Adam (architect): James Adam (21 July 1732 – 20 October 1794) was a Scottish architect and furniture designer, but was often overshadowed by his older brother and business partner, Robert Adam. They were sons of architect William Adam. In 1755 James worked on Gunsgreen House in the Berwickshire town of Eyemouth. In 1758, Robert, James, and their younger brother William Adam started their business in London (living in Lower Grosvenor Street), focusing on designing complete schemes for the ...\nP8: William Adam (architect): William Adam (1689 – 24 June 1748) was a Scottish architect, mason, and entrepreneur. He was the foremost architect of his time in Scotland, designing and building numerous country houses and public buildings, and often acting as contractor as well as architect. Among his best known works are Hopetoun House near Edinburgh, and Duff House in Banff. His individual, exuberant style built on the Palladian style, but with Baroque details inspired by Vanbrugh and Continental ...\nP9: Wenceslaus III Adam, Duke of Cieszyn: Wenceslaus III Adam of Cieszyn (December 1524 – 4 November 1579) was a Duke of Cieszyn from 1528 until his death. He was the second but only surviving son of Wenceslaus II, co-Duke of Cieszyn, by his wife Anna, daughter of Frederick I, Margrave of Brandenburg-Ansbach. He was born one month after his father's death, on 17 November 1524.\nP10: Adam Wenceslaus, Duke of Cieszyn: Adam Wenceslaus of Cieszyn (12 December 1574 – 13 July 1617), was a Duke of Cieszyn from 1579 until his death. He was the second but only surviving son of Wenceslaus III Adam, Duke of Cieszyn, by his second wife Sidonia Katharina, daughter of Francis I, Duke of Saxe-Lauenburg. His older half-brother, Frederick Casimir, only son of Wenceslaus III Adam's first marriage, died a few years before he was born, in 1571.\nQuestion: Where was the place of death of James Adam (Architect)'s father?\nFinal answer:",
+  "verifier_text": "UNKNOWN",
+  "verifier": {},
+  "final": "The graph does not provide information about the place of death of James Adam (architect)'s father. There is no",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-ab5fdae6fc4df36b",
+    "object": "chat.completion",
+    "created": 1779533118,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "UNKNOWN",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1435,
+      "total_tokens": 1437,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.18638348579406738
+}

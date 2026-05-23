@@ -1,0 +1,48 @@
+{
+  "qid": "253e36700bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Rabat",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Prince Charles Louis, Duke of Chartres -> Prince Jacques, Duke of Orléans\n- Prince Robert, Duke of Chartres -> Ferdinand Philippe, Duke of Orléans\n- Prince Robert, Duke of Chartres -> Exiled\n- Prince Jean, Duke of Guise -> Prince Robert, Duke of Chartres\n- Prince Jean, Duke of Guise -> Louis Philippe I\n- Prince Jean, Duke of Guise -> Prince Robert, Duke of Chartres\n- Prince Jean, Duke of Guise -> Louis Philippe I\n- Philippe II, Duke of Orléans -> Françoise Marie de Bourbon\n- Philippe II, Duke of Orléans -> Philippe I, Duke of Orléans\n- Charles d'Orléans, Duke of Penthièvre -> Louis Philippe I\n- Charles d'Orléans, Duke of Penthièvre -> The Child\nPassages:\nP1: Prince Charles Louis, Duke of Chartres: Prince Charles Louis of Orléans, Duke of Chartres (Charles Louis Henri Foulques Benoît Elzéar Jean Marie; born 28 July 1972) is the elder son of Prince Jacques, Duke of Orléans and Gersende de Sabran-Pontevès.\nP2: Prince Jacques, Duke of Orléans: Prince Jacques of Orléans, Duke of Orléans,\" fils de France\"( Jacques Jean Jaroslaw Marie; born 25 June 1941 in Rabat, Morocco), is the son of Henri, Count of Paris( the Orléanist claimant to the French throne from 1940 until his death) and his wife, Princess Isabelle of Orléans- Braganza.\nP3: Prince Jacques, Duke of Orléans: Prince Jacques of Orléans, Duke of Orléans, \"fils de France\" (Jacques Jean Jaroslaw Marie; born 25 June 1941 in Rabat, Morocco), is the son of Henri, Count of Paris (the Orléanist claimant to the French throne from 1940 until his death) and his wife, Princess Isabelle of Orléans-Braganza.\nP4: Ferdinand Philippe, Duke of Orléans: Prince Ferdinand Philippe of Orléans (3 September 1810 – 13 July 1842) was the eldest son of Louis Philippe d'Orléans, Duke of Orléans (the future King Louis Philippe I) and Maria Amalia of Naples and Sicily. Born in exile in his mother's native Sicily, he was heir to the House of Orléans from birth. Following his father's succession as King of the French in 1830, he became the \"Prince Royal\" and subsequently Duke of Orléans (French: \"Duc d'Orléans\"), the ...\nP5: Philippe I, Duke of Orléans: Philippe, Duke of Orléans( 21 September 1640 – 9 June 1701) was the younger son of Louis XIII of France and his wife, Anne of Austria. His older brother was the famous\" Sun King\", Louis XIV. Styled Duke of Anjou from birth, Philippe became Duke of Orléans upon the death of his uncle Gaston in 1660. In 1661, Philippe also received the dukedoms of Valois and Chartres. Following Philippe's victory in battle in 1671, Louis XIV added the dukedom of Nemours, the ...\nP6: Louis Philippe I: Louis Philippe I( 6 October 1773 – 26 August 1850) was King of the French from 1830 to 1848. As Duke of Chartres he distinguished himself commanding troops during the Revolutionary Wars but broke with the Republic over its decision to execute King Louis XVI. He fled to Switzerland in 1793 after being connected with a plot to restore France's monarchy. His father Louis Philippe II, Duke of Orléans( Philippe Égalité) fell under suspicion and was executed, and Louis Philippe ...\nP7: Louis Philippe I: Louis Philippe I (6 October 1773 – 26 August 1850) was King of the French from 1830 to 1848. As Duke of Chartres he distinguished himself commanding troops during the Revolutionary Wars but broke with the Republic over its decision to execute King Louis XVI. He fled to Switzerland in 1793 after being connected with a plot to restore France's monarchy. His father Louis Philippe II, Duke of Orléans (Philippe Égalité) fell under suspicion and was executed, and Louis Philippe ...\nP8: The Child: The Child may refer to:\nP9: Françoise Marie de Bourbon: Françoise Marie de Bourbon, \"légitimée de France\" (4 May 1677 – 1 February 1749) was the youngest illegitimate daughter of Louis XIV of France and his \"maîtresse-en-titre\", Françoise-Athénaïs, Marquise de Montespan. At the age of 14, she was wed to her first cousin Philippe d'Orléans, future Regent of France during the minority of Louis XV. Through four of the eight children she bore him in an unhappy marriage she became the ancestress of several of Europe's Roman ...\nP10: Exiled: Exiled  is a 2006 Hong Kong action drama film produced and directed by Johnnie To, and starring Anthony Wong, Francis Ng, Nick Cheung, Josie Ho, Roy Cheung and Lam Suet, with special appearances by Richie Jen and Simon Yam. The action takes place in contemporary Macau. The film made its premiere at the 63rd Venice International Film Festival, and was in competition for the Golden Lion.\nQuestion: Where was the father of Prince Charles Louis, Duke Of Chartres born?\nFinal answer:",
+  "output": "Rabat, Morocco",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.6666666666666666
+  },
+  "response": {
+    "id": "chatcmpl-9eb977669869b9fc",
+    "object": "chat.completion",
+    "created": 1779532866,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Rabat, Morocco",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1381,
+      "total_tokens": 1387,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

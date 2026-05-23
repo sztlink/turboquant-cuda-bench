@@ -1,0 +1,48 @@
+{
+  "qid": "49eb87280bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Westerland",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Don Juan (1922 film) -> Albert Heine\n- Don Juan (1922 film) -> Robert Land\n- Bells of San Juan -> Buck Jones\n- Juan de Santo Domingo de Mendoza Tlacaeleltzin -> Hernán Cortés\n- Juan de Santo Domingo de Mendoza Tlacaeleltzin -> Tlilpotoncatzin\n- Don Juan Manuel -> Manuel of Castile\n- Don Juan Manuel -> Beatrice of Savoy\n- Don Juan DeMarco -> Lord Byron\n- Don Juan DeMarco -> The Sessions\n- Don Giovanni (1979 film) -> Joseph Losey\n- Don Giovanni (1979 film) -> Joseph Losey\nPassages:\nP1: Don Juan (1922 film): Don Juan is a 1922 German silent film directed by Albert Heine and Robert Land and starring Hans Adalbert Schlettow, Margarete Lanner and Margit Barnay.\nP2: Manuel of Castile: Manuel of Castile (1234 – 25 December 1283, The first Lord of Villena and Peñafiel, Cuéllar, and Escalona, was an \"Infante\", son of Ferdinand III of Castile and his wife Elisabeth of Hohenstaufen.\nP3: Beatrice of Savoy: Beatrice of Savoy( c. 1198 – c. 1267) was the daughter of Thomas I of Savoy and Margaret of Geneva. She was Countess consort of Provence by her marriage to Ramon Berenguer IV, Count of Provence.\nP4: Beatrice of Savoy: Beatrice of Savoy (c. 1198 – c. 1267) was the daughter of Thomas I of Savoy and Margaret of Geneva. She was Countess consort of Provence by her marriage to Ramon Berenguer IV, Count of Provence.\nP5: The Sessions: The Sessions may refer to:\nP6: Hernán Cortés: \"Don\" Hernán Cortés de Monroy y Pizarro Altamirano, Marquis of the Valley of Oaxaca (1485 – December 2, 1547) was a Spanish \"Conquistador\" who led an expedition that caused the fall of the Aztec Empire and brought large portions of what is now mainland Mexico under the rule of the King of Castile in the early 16th century. Cortés was part of the generation of Spanish colonizers who began the first phase of the Spanish colonization of the Americas. Born in Medellín, Spain, to a ...\nP7: Lord Byron: George Gordon Byron, 6th Baron Byron (22 January 1788 – 19 April 1824), known simply as Lord Byron, was an English poet, peer, and politician who became a revolutionary in the Greek War of Independence, and is considered one of the historical leading figures of the Romantic movement of his era. He is regarded as one of the greatest English poets and remains widely read and influential. Among his best-known works are the lengthy narrative poems \"Don Juan\" and \"Childe Harold's ...\nP8: Joseph Losey: Joseph Walton Losey III( January 14, 1909 June 22, 1984) was an American theatre and film director. Born in Wisconsin, he studied in Germany with Bertolt Brecht and then returned to the United States. Blacklisted by Hollywood in the 1950s, he moved to Europe where he made the remainder of his films, mostly in the United Kingdom. Among the most critically and commercially successful were three films with screenplays by Harold Pinter,\" The Servant\"( 1963),\" Accident\"( 1967) and\" The ...\nP9: Albert Heine: Albert Heine (16 November 1867, in Braunschweig – 13 April 1949, in Westerland) was a German-Jewish stage and film actor. He also directed two silent films. He was the director of the Burgtheater in Vienna between 1918 and 1921.\nP10: Buck Jones: Buck Jones (December 12, 1891 – November 30, 1942) was an American motion picture star of the 1920s, 1930s, and 1940s, known for his work starring in many popular western movies. In his early film appearances, he was billed as Charles Jones.\nQuestion: Where did the director of film Don Juan (1922 Film) die?\nFinal answer:",
+  "output": "Westerland",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-868237c6ea5723fb",
+    "object": "chat.completion",
+    "created": 1779532942,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Westerland",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1089,
+      "total_tokens": 1093,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

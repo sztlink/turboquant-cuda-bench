@@ -1,0 +1,48 @@
+{
+  "qid": "1187c9080bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "October 27, 1893",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Woman's Century -> National Council of Women of Canada\n- Woman's Century -> National Council of Women of Canada\n- The Century Magazine -> Scribner's Monthly\n- Hyperwerks -> The Comic\n- Scribner's Monthly -> The Century Magazine\n- Eastern Color Printing -> The Comic\nPassages:\nP1: Woman's Century: Woman's Century was the official organ of the National Council of Women of Canada (NCWC), published in Toronto between 1913 and 1921. The magazine was relatively conservative, and supported World War I, but stood up for women's rights and universal suffrage.\nP2: Woman's Century: Woman's Century was the official organ of the National Council of Women of Canada( NCWC), published in Toronto between 1913 and 1921. The magazine was relatively conservative, and supported World War I, but stood up for women's rights and universal suffrage.\nP3: The Comic: The Comic is a 1969 Pathécolor comedy film co-written, co-produced, and directed by Carl Reiner. It stars Dick Van Dyke as Billy Bright( which was the original title of the film), Michele Lee as Bright's love interest, and Reiner himself and Mickey Rooney as Bright's friends and work colleagues. Reiner wrote the screenplay with Aaron Ruben; it was inspired by the end of silent film era, and, in part, by the life of silent film superstar Buster Keaton.\nP4: National Council of Women of Canada: The National Council of Women of Canada (NCWC, , (CNFC)) is a Canadian advocacy organization based in Ottawa, Ontario aimed at improving conditions for women, families, and communities. A federation of nationally-organized societies of men and women and local and provincial councils of women, it is the Canadian member of the International Council of Women (ICW). The Council has concerned itself in areas including women's suffrage, immigration, health care, ...\nP5: The Century Magazine: The Century Magazine was first published in the United States in 1881 by The Century Company of New York City, which had been bought in that year by Roswell Smith and renamed by him after the Century Association. It was the successor of\" Scribner's Monthly Magazine\" and ceased publication in 1930.\nP6: Scribner's Monthly: Scribner's Monthly: An Illustrated Magazine for the People was an illustrated American literary periodical published from 1870 until 1881. Following sale of the company which produced it in 1881, the magazine was relaunched as\" The Century Magazine.\"\nP7: Metagaming Concepts: Metagaming Concepts, later known simply as Metagaming, was a company that published board games from 1974 to 1983. It was founded and owned by Howard Thompson, who designed the company's first game,\" Stellar Conquest\". The company also invented Microgames and published Steve Jackson's first designs, including\" OgreG.E.V.\" and\" The Fantasy Trip\".\nP8: Hyperwerks: Hyperwerks Entertainment was an American company that published comic books. It was founded by Karl Altstaetter and Jamie Douraghy in 1997. The two most notable Hyperwerks projects are the \"Deity\" and \"Rostam\" series.\nP9: Eastern Color Printing: The Eastern Color Printing Company was a company that published comic books, beginning in 1933. At first it was only newspaper comic strip reprints, but later on original material was published. Eastern Color Printing was incorporated in 1928, and soon became successful by printing color newspaper sections for several New England and New York papers. Eastern is most notable for its production of\" Funnies on Parade\" and\" Famous Funnies\", two publications that gave birth ...\nP10: Arena Publishing Co.: Arena Publishing Company was an American book and magazine publishing firm of the late 19th century, founded by author and editor B. O. Flower.\nQuestion: When was the company that published Woman'S Century founded?\nFinal answer:",
+  "output": "1913",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a7671b030b6ca7ed",
+    "object": "chat.completion",
+    "created": 1779532829,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "1913",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 946,
+      "total_tokens": 951,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

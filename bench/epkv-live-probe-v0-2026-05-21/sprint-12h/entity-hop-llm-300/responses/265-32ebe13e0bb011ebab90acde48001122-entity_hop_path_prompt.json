@@ -1,0 +1,48 @@
+{
+  "qid": "32ebe13e0bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Albert II, Prince of Anhalt-Zerbst",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Albert VI, Prince of Anhalt-Köthen -> Albert IV, Prince of Anhalt-Köthen\n- Albert VI, Prince of Anhalt-Köthen -> The Child\n- Albert VI, Prince of Anhalt-Köthen -> The Child\n- Albert IV, Prince of Anhalt-Köthen -> John II, Prince of Anhalt-Zerbst\n- Waldemar V, Prince of Anhalt-Köthen -> Albert IV, Prince of Anhalt-Köthen\n- Adolph I, Prince of Anhalt-Köthen -> Albert IV, Prince of Anhalt-Köthen\nPassages:\nP1: John II, Prince of Anhalt-Zerbst: John II, Prince of Anhalt- Zerbst( died 11 April 1382) was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the youngest son of Albert II, Prince of Anhalt- Zerbst, by his second wife Beatrix, daughter of Rudolf I, Elector of Saxony and Duke of Saxe- Wittemberg.\nP2: John II, Prince of Anhalt-Zerbst: John II, Prince of Anhalt-Zerbst (died 11 April 1382) was a German prince of the House of Ascania and ruler of the principality of Anhalt-Zerbst. He was the youngest son of Albert II, Prince of Anhalt-Zerbst, by his second wife Beatrix, daughter of Rudolf I, Elector of Saxony and Duke of Saxe-Wittemberg.\nP3: The Child: The Child may refer to:\nP4: Albert IV, Prince of Anhalt-Köthen: Albert IV, Prince of Anhalt- Köthen( d. Coswig, 24 November 1423), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst until 1396, when he became the first ruler of the principality of Anhalt- Köthen. He was the second son of John II, Prince of Anhalt- Zerbst, by his wife Elisabeth, daughter of John I, Count of Henneberg- Schleusingen.\nP5: Albert IV, Prince of Anhalt-Köthen: Albert IV, Prince of Anhalt-Köthen (d. Coswig, 24 November 1423), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Zerbst until 1396, when he became the first ruler of the principality of Anhalt-Köthen. He was the second son of John II, Prince of Anhalt-Zerbst, by his wife Elisabeth, daughter of John I, Count of Henneberg-Schleusingen.\nP6: Albert VI, Prince of Anhalt-Köthen: Albert VI, Prince of Anhalt-Köthen (died 9 January 1475) was a German prince of the House of Ascania and ruler of the principality of Anhalt-Köthen. He was the youngest son of Albert IV, Prince of Anhalt-Köthen, but the eldest child of his second wife Elisabeth, daughter of Gebhard XI, Count of Querfurt.\nP7: Albert VI, Prince of Anhalt-Köthen: Albert VI, Prince of Anhalt- Köthen( died 9 January 1475) was a German prince of the House of Ascania and ruler of the principality of Anhalt- Köthen. He was the youngest son of Albert IV, Prince of Anhalt- Köthen, but the eldest child of his second wife Elisabeth, daughter of Gebhard XI, Count of Querfurt.\nP8: Waldemar V, Prince of Anhalt-Köthen: Waldemar V, Prince of Anhalt- Köthen( died 1436) was a German prince of the House of Ascania and ruler of the principality of Anhalt- Köthen. He was the second son of Albert IV, Prince of Anhalt- Köthen, by his first wife Elisabeth, daughter of Gebhard III, Count of Mansfeld.\nP9: Waldemar V, Prince of Anhalt-Köthen: Waldemar V, Prince of Anhalt-Köthen (died 1436) was a German prince of the House of Ascania and ruler of the principality of Anhalt-Köthen. He was the second son of Albert IV, Prince of Anhalt-Köthen, by his first wife Elisabeth, daughter of Gebhard III, Count of Mansfeld.\nP10: Adolph I, Prince of Anhalt-Köthen: Adolph I, Prince of Anhalt- Köthen( died Zerbst, 28 August 1473), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Köthen. He was the eldest son of Albert IV, Prince of Anhalt- Köthen, by his first wife Elisabeth, daughter of Gebhard III, Count of Mansfeld.\nQuestion: Who is Albert Iv, Prince Of Anhalt-Köthen's paternal grandfather?\nFinal answer:",
+  "output": "Albert VI, Prince of Anhalt-Köthen",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.6
+  },
+  "response": {
+    "id": "chatcmpl-842719ba0b608a0f",
+    "object": "chat.completion",
+    "created": 1779532945,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Albert VI, Prince of Anhalt-Köthen",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1201,
+      "total_tokens": 1212,
+      "completion_tokens": 11,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

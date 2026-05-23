@@ -1,0 +1,48 @@
+{
+  "qid": "29427eea0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Liverpool",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- God (John Lennon song) -> John Lennon\n- John Lennon -> Paul McCartney\n- John Lennon -> The Rock\n- John Lennon -> Paul McCartney\n- John Lennon -> The Rock\n- Girl (Beatles song) -> John Lennon\n- Girl (Beatles song) -> The Rock\n- Love (John Lennon song) -> John Lennon\n- How Do You Sleep? (John Lennon song) -> Paul McCartney\n- How Do You Sleep? (John Lennon song) -> Do You Sleep?\n- Don't Let Me Down (Beatles song) -> John Lennon\n- Don't Let Me Down (Beatles song) -> The Sessions\n- Tell Me Why (Beatles song) -> John Lennon\n- Tell Me Why (Beatles song) -> The Rock\nPassages:\nP1: God (John Lennon song): \"God\" is a song from John Lennon's first post-Beatles solo album, \"John Lennon/Plastic Ono Band\". The album was released on 11 December 1970 in the United States and the United Kingdom.\nP2: John Lennon: John Winston Ono Lennon (born John Winston Lennon, 9 October 19408 December 1980) was an English singer, songwriter and peace activist who gained worldwide fame as the founder, co-lead vocalist, and rhythm guitarist of the Beatles. His songwriting partnership with Paul McCartney remains the most successful in history. In 1969, he started the Plastic Ono Band with his second wife, Yoko Ono. After the Beatles disbanded in 1970, Lennon continued as a solo artist. Born in Liverpool, ...\nP3: John Lennon: John Winston Ono Lennon( born John Winston Lennon, 9 October 19408 December 1980) was an English singer, songwriter and peace activist who gained worldwide fame as the founder, co-lead vocalist, and rhythm guitarist of the Beatles. His songwriting partnership with Paul McCartney remains the most successful in history. In 1969, he started the Plastic Ono Band with his second wife, Yoko Ono. After the Beatles disbanded in 1970, Lennon continued as a solo artist. Born in Liverpool, ...\nP4: The Rock: The Rock or The Rocks may refer to:\nP5: The Sessions: The Sessions may refer to:\nP6: Paul McCartney: Sir James Paul McCartney( born 18 June 1942) is an English singer, songwriter, musician, composer, and record and film producer who gained worldwide fame as co-lead vocalist and bassist for the Beatles. His songwriting partnership with John Lennon remains the most successful in history. After the group disbanded in 1970, he pursued a successful solo career and formed the band Wings with his first wife, Linda, and Denny Laine. A self- taught musician, McCartney is proficient on ...\nP7: Do You Sleep?: \" Do You Sleep?\" is a song by Lisa Loeb& Nine Stories. It was released in September 1995 as the third single from their debut album,\" Tails\". It reached number 18 on the US\" Billboard\" Hot 100 and number eight on Canada's\" RPM\" Top Singles chart, becoming their last top- twenty hit in both countries, although Loeb would earn another top- twenty single as a solo artist with\" I Do\" two years later. Outside North America,\" Do You Sleep?\" reached the top 50 in Australia, Iceland and ...\nP8: Love (John Lennon song): \"Love\" is a song written and performed by John Lennon, originally released on his debut solo album \"John Lennon/Plastic Ono Band\" (1970). The song's theme is more upbeat than most of the songs on \"Plastic Ono Band\".\nP9: How Do You Sleep? (John Lennon song): \"How Do You Sleep?\" is a song by English rock musician John Lennon from his 1971 album \"Imagine\". The song makes angry and scathing remarks aimed at his former Beatles bandmate and songwriting partner, Paul McCartney. Lennon wrote the song in response to what he perceived as personal slights by McCartney on the latter's \"Ram\" album. The track includes a slide guitar solo played by George Harrison and was co-produced by Lennon, Phil Spector and Yoko Ono.\nP10: Well Well Well (John Lennon song): \"Well Well Well\" is a song by English musician John Lennon from his 1970 album \"John Lennon/Plastic Ono Band\". The eighth and longest track on the album, \" Well Well Well\" features a blistering guitar part, screaming vocals and a brutal, pounding backing track.\nQuestion: Where was the performer of song God (John Lennon Song) born?\nFinal answer:",
+  "output": "Liverpool",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-9aa4840038ccf62e",
+    "object": "chat.completion",
+    "created": 1779532743,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Liverpool",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1093,
+      "total_tokens": 1095,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

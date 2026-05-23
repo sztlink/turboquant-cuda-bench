@@ -1,0 +1,48 @@
+{
+  "qid": "8cd3fe6c0baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Fíngen mac Áedo Duib",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Colgú mac Faílbe Flaind -> Faílbe Flann mac Áedo Duib\n- Tnúthgal mac Donngaile -> Colgú mac Faílbe Flaind\n- Tnúthgal mac Donngaile -> Kings\n- Finguine mac Cathail -> Colgú mac Faílbe Flaind\n- Domnall mac Caustantín -> Conall mac Áedáin\n- Domnall mac Caustantín -> Conall mac Taidg\n- Eochaid mac Áeda Find -> Find\nPassages:\nP1: Conall mac Áedáin: Conall mac Áedáin was a king in Scotland in the years around 800. It is thought that he was a king, or sub- king, in Dál Riata. He is mentioned once in the Annals of Ulster, for 807, when he defeated and killed Conall mac Taidg in Kintyre. Conall is thought to be mentioned in the Duan Albanach:\" The two years of Conall of glorious career, And the four of another Conall.\" The first is presumed to be Conall mac Taidg, the second Conall mac Áedáin. His reign is therefore ...\nP2: Conall mac Taidg: Conall mac Taidg( died c. 807)( Conall son of Tadc) was a king of the Picts from 785 until 789. Very little is recorded of Conall. He is mentioned twice by the Irish annals, the most reliable source for the history of northern Britain in the years around 800. He also appears in later king lists.\nP3: Kings: Kings or King's may refer to:\nP4: Find: Find or FIND or Finding may refer to:\nP5: Colgú mac Faílbe Flaind: Colgú mac Faílbe Flaind (died 678) was a King of Munster from the Eóganacht Chaisil branch of the Eoganachta. He was the son of Faílbe Flann mac Áedo Duib (d.639), a previous king. He succeeded Cathal Cú-cen-máthair mac Cathail as king in 665. The annals mention no details of his reign. His known son was named Nad Froích. He is also a prominent character in the \"Sister Fidelma\" mystery series written by Peter Tremayne.\nP6: Faílbe Flann mac Áedo Duib: Faílbe Flann mac Áedo Duib (died 639) was a King of Munster from the Eóganacht Chaisil branch of the Eoganachta. He succeeded Cathal mac Áedo Flaind Chathrach of the Glendamnach branch in 628. He was the younger brother of a previous king Fíngen mac Áedo Duib (d. 618). His sobriquet Flann meant \"blood-red\".\nP7: Faílbe Flann mac Áedo Duib: Faílbe Flann mac Áedo Duib( died 639) was a King of Munster from the Eóganacht Chaisil branch of the Eoganachta. He succeeded Cathal mac Áedo Flaind Chathrach of the Glendamnach branch in 628. He was the younger brother of a previous king Fíngen mac Áedo Duib( d. 618). His sobriquet Flann meant\" blood- red\".\nP8: Finguine mac Cathail: Finguine mac Cathail Con-cen- máthair( died 696) was a King of Munster from the Glendamnach branch of the Eoganachta. He was the son of Cathal Cú- cen- máthair mac Cathaíl( d. 665). He succeeded Colgú mac Faílbe Flaind in 678. During his reign the law text\" Cáin Fuithirbe\" was enacted at Mag Fuithirbe on the borders of Cork and Kerry in 683. Representatives of the major tribes of Munster are mentioned in the tract. Finguine's known son was Cathal mac Finguine( d. 742) a ...\nP9: Tnúthgal mac Donngaile: Tnúthgal mac Donngaile( or Tnúthgal mac Donngusa)( died 820) was a supposed King of Munster from the Eóganacht Chaisil branch of the Eoganachta. He was a fifth generation descendant of Colgú mac Faílbe Flaind( died 678), a previous king. Tnúthgal appears in some king lists but this is suspect. He is not mentioned in the Irish annals and his death date of 820 is based on the accession of Feidlimid mac Cremthanin( died 847) in that year. A confusion between him and ...\nP10: Domnall mac Caustantín: Domnall mac Caustantín is thought to have been king of Dál Riata in the early ninth century. Domnall's existence is uncertain, and is based on attempts to reconcile eleventh century works such as the poem Duan Albanach and the Synchronisms of Flann Mainistrech with the evidence of the Irish annals. The Duan says that Domnall reigned for twenty- four years and places him between\" Aodh\", Áed Find, and the two Conalls, Conall mac Taidg and Conall mac Áedáin. Flann gives ...\nQuestion: Who is Colgú Mac Faílbe Flaind's uncle?\nFinal answer:",
+  "output": "Faíngen mac Áedo Duib",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.75
+  },
+  "response": {
+    "id": "chatcmpl-82ff81525b1abd51",
+    "object": "chat.completion",
+    "created": 1779532949,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Faíngen mac Áedo Duib",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1357,
+      "total_tokens": 1366,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

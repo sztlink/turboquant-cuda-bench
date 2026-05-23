@@ -1131,8 +1131,41 @@ losses: 0
 overrides: 3
 ```
 
-Updated best non-oracle RealRAG result:
+Updated best non-oracle RealRAG result on 100-case slice:
 
 ```txt
 confidence-gated answer rerank: EM 0.270 | F1 0.345
+```
+
+## Entity-hop confidence-gated answer rerank 300
+
+Scale-up:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/ENTITY-HOP-ANSWER-RERANK-300.md
+```
+
+Results:
+
+```txt
+BM25→BGE ref:                 EM 0.030 | contains 0.053 | F1 0.062
+Entity-hop strong:            EM 0.177 | contains 0.310 | F1 0.311
+Entity-hop path prompt:       EM 0.220 | contains 0.317 | F1 0.333
+Raw answer rerank:            EM 0.223 | contains 0.327 | F1 0.338
+Confidence-gated rerank:      EM 0.223 | contains 0.320 | F1 0.333
+```
+
+Win/loss vs path:
+
+```txt
+raw rerank:   wins 8 | losses 7
+gated rerank: wins 3 | losses 2
+```
+
+Conclusion:
+
+```txt
+100-case positive signal does not robustly scale.
+The current 300-case best remains entity-hop path prompt / raw rerank within noise.
+Do not treat verifier confidence string as calibrated.
 ```

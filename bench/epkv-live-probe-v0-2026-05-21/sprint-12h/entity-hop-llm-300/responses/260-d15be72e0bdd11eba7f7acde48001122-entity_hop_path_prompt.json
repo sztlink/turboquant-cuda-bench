@@ -1,0 +1,48 @@
+{
+  "qid": "d15be72e0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Lewes",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- William de Warenne, 2nd Earl of Surrey -> William de Warenne, 1st Earl of Surrey\n- William de Warenne, 2nd Earl of Surrey -> William de Warenne, 1st Earl of Surrey\n- Isabel de Warenne, Countess of Surrey -> William de Warenne, 3rd Earl of Surrey\n- Ada de Warenne -> William de Warenne, 2nd Earl of Surrey\n- Ada de Warenne -> Henry I of France\n- Ada de Warenne -> William de Warenne, 2nd Earl of Surrey\n- Ada de Warenne -> Henry I of France\nPassages:\nP1: William de Warenne, 1st Earl of Surrey: William de Warenne, 1st Earl of Surrey, Lord of Lewes, Seigneur de Varennes (died 1088), was a Norman nobleman created Earl of Surrey under William II Rufus. He is among the few who are documented as having fought for William the Conqueror at the Battle of Hastings in 1066. At the time of the Domesday Survey, he held extensive lands in 13 counties, including the Rape of Lewes in Sussex, which is now divided between the ceremonial counties of East Sussex ...\nP2: Henry I of France: Henry I (4 May 1008 – 4 August 1060) was King of the Franks from 1031 to 1060. The royal demesne of France reached its smallest size during his reign, and for this reason he is often seen as emblematic of the weakness of the early Capetians. This is not entirely agreed upon, however, as other historians regard him as a strong but realistic king, who was forced to conduct a policy mindful of the limitations of the French monarchy.\nP3: William de Warenne, 2nd Earl of Surrey: William de Warenne, 2nd Earl of Surrey (died 11 May 1138) was the son of William de Warenne, 1st Earl of Surrey and his first wife Gundred. He was more often referred to as \"Earl Warenne\" or \"Earl of Warenne\" than as Earl of Surrey.\nP4: William de Warenne, 2nd Earl of Surrey: William de Warenne, 2nd Earl of Surrey( died 11 May 1138) was the son of William de Warenne, 1st Earl of Surrey and his first wife Gundred. He was more often referred to as\" Earl Warenne\" or\" Earl of Warenne\" than as Earl of Surrey.\nP5: William de Warenne, 3rd Earl of Surrey: William de Warenne, 3rd Earl of Surrey( 11196 January 1148) was an Anglo- Norman nobleman who fought in England during the Anarchy and generally remained loyal to King Stephen. He participated in the Second Crusade.\nP6: John de Warenne, 7th Earl of Surrey: John de Warenne( 30 June 1286 June 1347), 7th Earl of Surrey or Warenne, was the last Warenne earl of Surrey.\nP7: Isabel de Warenne, Countess of Surrey: Isabel de Warenne, 4th Countess of Surrey( c. 1137 c. 1203) was an English peer. She was the only surviving heir of William de Warenne, 3rd Earl of Surrey and his wife, Adela, the daughter of William III of Ponthieu.\nP8: William de Warenne (1256-1286): William de Warenne (9 February 1256 – 15 December 1286) was the only son of John de Warenne, 6th Earl of Surrey and his wife Alice de Lusignan.\nP9: Ada de Warenne: Ada de Warenne (or Adeline de Varenne) (1120 – 1178) was a Scottish princess, the Anglo-Norman wife of Henry of Scotland, Earl of Northumbria and Earl of Huntingdon. She was the daughter of William de Warenne, 2nd Earl of Surrey by Elizabeth of Vermandois, and a great-granddaughter of Henry I of France. She became mother to two Kings of Scots, Malcolm the Maiden and William the Lion.\nP10: Ada de Warenne: Ada de Warenne( or Adeline de Varenne)( 1120 – 1178) was a Scottish princess, the Anglo- Norman wife of Henry of Scotland, Earl of Northumbria and Earl of Huntingdon. She was the daughter of William de Warenne, 2nd Earl of Surrey by Elizabeth of Vermandois, and a great- granddaughter of Henry I of France. She became mother to two Kings of Scots, Malcolm the Maiden and William the Lion.\nQuestion: Where was the place of death of William De Warenne, 2Nd Earl Of Surrey's father?\nFinal answer:",
+  "output": "Lewes",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-a1a76ebaedbd18d2",
+    "object": "chat.completion",
+    "created": 1779532941,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Lewes",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1205,
+      "total_tokens": 1209,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "077b294e0bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Tehran",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Miss Seventeen -> Atoosa Rubenstein\n- Miss Seventeen -> Model\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- Motherland (disambiguation) -> Place of origin\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Bill Lawrence (TV producer) -> Middle name\n- Mike Baron -> The Comic\n- Loren Bouchard -> @Home\n- Jolly Blackburn -> The Comic\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Miss Seventeen: Miss Seventeen is a reality television show on MTV that aired from October 17, 2005 to December 19, 2005. The show consisted of 17 young women competing for an internship at and a college scholarship. Atoosa Rubenstein was the main judge, she was the youngest editor-in-chief ever to run \"Seventeen magazine\". They picked 17 girls from around the United States who were not only photogenic but also had been at the top of their class, to provide a role model for young women. The ...\nP3: The Comic: The Comic is a 1969 Pathécolor comedy film co-written, co-produced, and directed by Carl Reiner. It stars Dick Van Dyke as Billy Bright( which was the original title of the film), Michele Lee as Bright's love interest, and Reiner himself and Mickey Rooney as Bright's friends and work colleagues. Reiner wrote the screenplay with Aaron Ruben; it was inspired by the end of silent film era, and, in part, by the life of silent film superstar Buster Keaton.\nP4: The Will: The Will may refer to:\nP5: Atoosa Rubenstein: Atoosa Rubenstein (born Atoosa Behnegar in Tehran, Iran in 1972) is an Iranian-American former magazine editor. She was the editor-in-chief of \"Seventeen\" magazine and the founding editor of \"CosmoGirl\". She went on to found Big Momma Productions, Inc. and \"Atoosa.com\" before becoming a stay at home mother.\nP6: Middle name: In several cultures, a middle name is a portion of a personal name that is written between the person's given name and their surname. A person may be given a middle name regardless of whether it's necessary to distinguish them from other people with the same given name and surname. In cultures where a given name is expected to precede the surname, additional names are likely to be placed after the given name and before the surname, and thus called middle names. In English- speaking ...\nP7: Model: Model or modeling may refer to:\nP8: @Home: @Home or @home may refer to:\nP9: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP10: Tarkus (song): \"Tarkus\" is the title track of Emerson, Lake & Palmer's second album. The progressive rock epic lasts 20:35. It was the longest studio song by the band until the three impressions of \"Karn Evil 9\". The name \"Tarkus\" refers to the armadillo-tank from the William Neal paintings on the album cover. The artist has explained that the name is an amalgamation between 'Tartarus' (a place of punishment mentioned in 2 Peter 2:4) and 'carcass' (hence the name being written in bones on the ...\nQuestion: What is the place of birth of the creator of Miss Seventeen?\nFinal answer:",
+  "output": "Tehran, Iran",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.6666666666666666
+  },
+  "response": {
+    "id": "chatcmpl-a09d9b5cca192fea",
+    "object": "chat.completion",
+    "created": 1779532911,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Tehran, Iran",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 985,
+      "total_tokens": 991,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "idx": 191,
+  "qid": "747175620bdb11eba7f7acde48001122",
+  "gold": "Helsingfors",
+  "candidates": [
+    "Place of birth",
+    "A Woman's Face (1938 film)",
+    "A Woman's Face",
+    "What Women Want",
+    "The Will",
+    "The First Day",
+    "Gustaf Molander",
+    "Oscar Wilde",
+    "Donald Ogden Stewart",
+    "Place of origin",
+    "Melvyn Douglas",
+    "Motherland (disambiguation)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of birth\nC2: A Woman's Face (1938 film)\nC3: A Woman's Face\nC4: What Women Want\nC5: The Will\nC6: The First Day\nC7: Gustaf Molander\nC8: Oscar Wilde\nC9: Donald Ogden Stewart\nC10: Place of origin\nC11: Melvyn Douglas\nC12: Motherland (disambiguation)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- A Woman's Face (1938 film) -> Gustaf Molander\n- A Woman's Face (1938 film) -> A Woman's Face\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- A Woman's Face -> Donald Ogden Stewart\n- A Woman's Face -> Melvyn Douglas\n- Motherland (disambiguation) -> Place of origin\n- A Woman of No Importance (1937 film) -> Oscar Wilde\n- A Woman of No Importance (1937 film) -> Story\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- What Women Want (2011 film) -> What Women Want\n- What Women Want (2011 film) -> The First Day\nPassages:\nP1: A Woman's Face (1938 film): A Woman's Face  is a 1938 Swedish drama film directed by Gustaf Molander, based on the play \"Il etait une fois\" by Francis de Croisset. The cast includes Ingrid Bergman in the lead as a woman criminal with a disfigured face. The film was awarded a Special Recommendation at the 1938 Venice Film Festival for its \"overall artistic contribution. \" It was remade in 1941 by Metro-Goldwyn-Mayer with the same title, starring Joan Crawford.\nP2: A Woman's Face: A Woman's Face is a 1941 American film noir directed by George Cukor and starring Joan Crawford, Melvyn Douglas and Conrad Veidt. It tells the story of Anna Holm, a facially disfigured blackmailer, who because of her appearance, despises everyone she encounters. When a plastic surgeon corrects this disfigurement, Anna becomes torn between the hope of starting a new life and a return to her dark past. Most of the film is told in flashbacks as witnesses in a courtroom give their ...\nP3: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP4: What Women Want: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt. The film earned mixed reviews from critics, but was a box office success, with a North American domestic gross of $182 million and a worldwide gross of $374 million against a budget of $70 million. A loose remake, \"What Men Want\" starring Taraji P. Henson and Aldis Hodge came out in early 2019.\nP5: The Will: The Will may refer to:\nP6: The First Day: The First Day may refer to:\nP7: Gustaf Molander: Gustaf Harald August Molander (18 November 1888 – 19 June 1973) was a Swedish actor and film director. His parents were director Harald Molander, Sr. (1858–1900) and singer and actress Lydia Molander, \"née\" Wessler, and his brother was director Olof Molander (1892–1966). He was the father of director and producer Harald Molander from his first marriage to actress Karin Molander and father to actor Jan Molander from his second marriage to Elsa Fahlberg (1892-1977). Gustaf ...\nP8: Gustaf Molander: Gustaf Harald August Molander( 18 November 1888 – 19 June 1973) was a Swedish actor and film director. His parents were director Harald Molander, Sr.( 1858–1900) and singer and actress Lydia Molander,\" née\" Wessler, and his brother was director Olof Molander( 1892 – 1966). He was the father of director and producer Harald Molander from his first marriage to actress Karin Molander and father to actor Jan Molander from his second marriage to Elsa Fahlberg( 1892- 1977). Gustaf ...\nP9: Oscar Wilde: Oscar Fingal O'Flahertie Wills Wilde (16 October 185430 November 1900) was an Irish poet and playwright. After writing in different forms throughout the 1880s, the early 1890s saw him become one of the most popular playwrights in London. He is best remembered for his epigrams and plays, his novel \"The Picture of Dorian Gray\", and the circumstances of his criminal conviction for \"gross indecency\", imprisonment, and early death at age 46. Wilde's parents were successful Anglo-Irish ...\nP10: Donald Ogden Stewart: Donald Ogden Stewart( November 30, 1894- August 2, 1980) was an American author and screenwriter, best known for his sophisticated golden era comedies and melodramas, such as\" The Philadelphia Story\"( based on the play by Philip Barry),\" Tarnished Lady\" and\" Love Affair\". Stewart worked with a number of the great directors of his time, including George Cukor( a frequent collaborator), Michael Curtiz and Ernst Lubitsch. Stewart was also a member of the Algonquin Round ...\nQuestion: What is the place of birth of the director of film A Woman'S Face (1938 Film)?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide specific information about the place of birth of Gustaf Molander, the director of the 1938 film A Woman's Face. The passages provide information about his life and career but do not mention his place of birth.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence does not provide specific information about the place of birth of Gustaf Molander, the director of the 1938 film A Woman's Face. The passages provide information about his life and career but do not mention his place of birth."
+  },
+  "final": "Place of birth",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-90e43876b6ab795c",
+    "object": "chat.completion",
+    "created": 1779533094,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide specific information about the place of birth of Gustaf Molander, the director of the 1938 film A Woman's Face. The passages provide information about his life and career but do not mention his place of birth.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1553,
+      "total_tokens": 1622,
+      "completion_tokens": 69,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.292834997177124
+}

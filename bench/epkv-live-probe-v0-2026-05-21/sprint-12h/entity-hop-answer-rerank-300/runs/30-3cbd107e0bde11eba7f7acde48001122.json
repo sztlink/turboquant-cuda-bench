@@ -1,0 +1,66 @@
+{
+  "idx": 30,
+  "qid": "3cbd107e0bde11eba7f7acde48001122",
+  "gold": "Fukuoka",
+  "candidates": [
+    "Place of birth",
+    "What Women Want",
+    "The Will",
+    "The Accident",
+    "The First Day",
+    "Woody Guthrie",
+    "Karn Evil 9",
+    "Bruce Dickinson",
+    "Keith Emerson",
+    "Sophie Tucker",
+    "Place of origin",
+    "Motherland (disambiguation)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of birth\nC2: What Women Want\nC3: The Will\nC4: The Accident\nC5: The First Day\nC6: Woody Guthrie\nC7: Karn Evil 9\nC8: Bruce Dickinson\nC9: Keith Emerson\nC10: Sophie Tucker\nC11: Place of origin\nC12: Motherland (disambiguation)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- Motherland (disambiguation) -> Place of origin\n- Tarkus (song) -> Keith Emerson\n- Tarkus (song) -> Karn Evil 9\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Man of Sorrows (Bruce Dickinson song) -> Bruce Dickinson\n- Man of Sorrows (Bruce Dickinson song) -> The Accident\n- The Sinking of the Reuben James -> Woody Guthrie\n- Some of These Days -> Sophie Tucker\n- What Women Want (2011 film) -> What Women Want\n- What Women Want (2011 film) -> The First Day\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: What Women Want: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt. The film earned mixed reviews from critics, but was a box office success, with a North American domestic gross of $182 million and a worldwide gross of $374 million against a budget of $70 million. A loose remake, \"What Men Want\" starring Taraji P. Henson and Aldis Hodge came out in early 2019.\nP3: The Will: The Will may refer to:\nP4: The Accident: The Accident may refer to:\nP5: The First Day: The First Day may refer to:\nP6: Woody Guthrie: Woodrow Wilson Guthrie (July 14, 1912 – October 3, 1967) was an American singer-songwriter, one of the most significant figures in American western folk music; his music, including songs, such as \" This Land Is Your Land\", has inspired several generations both politically and musically. He wrote hundreds of country, folk, and children's songs, along with ballads and improvised works. His album of songs about the Dust Bowl period, \"Dust Bowl Ballads\", is included on \"Mojo\" ...\nP7: Karn Evil 9: \" Karn Evil 9\" is an extended work by progressive rock group Emerson, Lake& Palmer, appearing on the album\" Brain Salad Surgery\". A futuristic fusion of rock and classical themes, it is regarded by some to be their best work together with the song\" Tarkus\". At nearly half an hour long, it is also their longest studio recording.\nP8: Bruce Dickinson: Paul Bruce Dickinson (born 7 August 1958) is an English singer, songwriter, musician, airline pilot, entrepreneur, author, and broadcaster. He is known for his work as the lead singer of the heavy metal band Iron Maiden and is renowned for his wide-ranging operatic vocal style and energetic stage presence. Born in Worksop, Nottinghamshire, Dickinson began his career in music fronting small pub bands in the 1970s while attending school in Sheffield and university in London. In ...\nP9: Keith Emerson: Keith Noel Emerson (2 November 1944 – 11 March 2016) was an English keyboardist, songwriter, and film composer. He played keyboards in a number of bands before finding his first commercial success with the Nice in the late 1960s. He became internationally famous for his work with the Nice, which included writing rock arrangements of classical music. After leaving the Nice in 1970, he was a founding member of Emerson, Lake & Palmer (ELP), one of the early progressive rock ...\nP10: Sophie Tucker: Sophie Tucker (January 13, 1886 – February 9, 1966) was a Ukrainian-born American singer, comedian, actress, and radio personality. Known for her powerful delivery of comical and risqué songs, she was one of the most popular entertainers in America during the first half of the 20th century. She was widely known by the superlative nickname \"The Last of the Red Hot Mamas\".\nQuestion: What is the place of birth of the performer of song Who...?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The question asks for the place of birth of the performer of a song 'Who...?', but there is no information provided about this specific performer or song in the passages or candidate entity graph.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The question asks for the place of birth of the performer of a song 'Who...?', but there is no information provided about this specific performer or song in the passages or candidate entity graph."
+  },
+  "final": "Place of birth",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-b78c0e6d73f9a39f",
+    "object": "chat.completion",
+    "created": 1779532990,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The question asks for the place of birth of the performer of a song 'Who...?', but there is no information provided about this specific performer or song in the passages or candidate entity graph.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1249,
+      "total_tokens": 1305,
+      "completion_tokens": 56,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.0498566627502441
+}

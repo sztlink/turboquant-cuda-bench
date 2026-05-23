@@ -1,0 +1,48 @@
+{
+  "qid": "6b3de52e0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Kirchheim unter Teck",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Duchess Maria Dorothea of Württemberg -> Duke Louis of Württemberg\n- Duchess Maria Dorothea of Württemberg -> Duke Louis of Württemberg\n- Dorothea Maria of Anhalt -> Joachim Ernest, Prince of Anhalt\n- Dorothea Maria of Anhalt -> Christoph, Duke of Württemberg\n- Marie Henriette of Austria -> Archduke Joseph, Palatine of Hungary\n- Marie Henriette of Austria -> Duchess Maria Dorothea of Württemberg\n- Duchess Maria Isabella of Württemberg -> Prince Johann Georg of Saxony\nPassages:\nP1: Duke Louis of Württemberg: Duke Louis of Württemberg (\"Ludwig Friedrich Alexander\") (Treptow an der Rega, 30 August 1756 – Kirchheim unter Teck, 20 September 1817) was the second son of Frederick II Eugene, Duke of Württemberg (1732–1797) and Margravine Sophia Dorothea of Brandenburg-Schwedt (1736–1798). His elder brother was Frederick I, the first King of Württemberg, his sister was the Russian Empress consort, Maria Feodorovna. Louis retained the pre-royal title of Duke.\nP2: Christoph, Duke of Württemberg: Christoph of Württemberg, Duke of Württemberg (12 May 1515 – 28 December 1568) ruled as Duke of Württemberg from 1550 until his death in 1568.\nP3: Prince Johann Georg of Saxony: Prince Johann Georg Pius Karl Leopold Maria Januarius Anacletus of Saxony, Duke of Saxony (10 July 1869 – 24 November 1938) was the sixth child and second-eldest son of George of Saxony and his wife Maria Anna of Portugal and a younger brother of the Kingdom of Saxony's last king, Frederick Augustus III of Saxony. Johann Georg was a well-known arts expert and an avid art collector.\nP4: Archduke Joseph, Palatine of Hungary: Joseph Anton Johann, Archduke of Austria( 9 March 1776, Florence – 13 January 1847, Buda), was the Palatine of Hungary from 1796 to 1847. He was the seventh son of Leopold II, Holy Roman Emperor and Maria Luisa of Spain.\nP5: Joachim Ernest, Prince of Anhalt: Joachim Ernest of Anhalt (21 October 1536 – 6 December 1586), was a German prince of the House of Ascania, ruler of the principality of Anhalt-Zerbst from 1551, and from 1570 sole ruler of all the Anhalt lands.\nP6: Duchess Maria Dorothea of Württemberg: Duchess Maria Dorothea of Württemberg( Maria Dorothea Luise Wilhelmine Caroline; 1 November 1797 in Carlsruhe( now Pokój), Silesia – 30 March 1855 in Pest, Hungary) was the daughter of Duke Louis of Württemberg( 1756 – 1817) and Princess Henriette of Nassau- Weilburg( 1780 – 1857).\nP7: Duchess Maria Dorothea of Württemberg: Duchess Maria Dorothea of Württemberg (Maria Dorothea Luise Wilhelmine Caroline; 1 November 1797 in Carlsruhe (now Pokój), Silesia – 30 March 1855 in Pest, Hungary) was the daughter of Duke Louis of Württemberg (1756–1817) and Princess Henriette of Nassau-Weilburg (1780–1857).\nP8: Duchess Maria Isabella of Württemberg: Duchess \"Maria Isabella\" Philippine Theresia Mathilde Josephine of Württemberg  (30 August 1871 – 24 May 1904) was a member of the House of Württemberg and a Duchess of Württemberg by birth and a member of the House of Wettin and a Princess of Saxony through her marriage to Prince Johann Georg of Saxony.\nP9: Dorothea Maria of Anhalt: Dorothea Maria of Anhalt (Dessau, 2 July 1574 – Weimar, 18 July 1617), was by birth a member of the House of Ascania and princess of Anhalt. After her marriage, she became Duchess of Saxe-Weimar. Dorothea Maria was the sixth daughter of Joachim Ernest, Prince of Anhalt, but second-born daughter by his second wife Eleonore, daughter of Christoph, Duke of Württemberg.\nP10: Grand Duchess Maria Pavlovna of Russia (1786–1859): Grand Duchess Maria Pavlovna of Russia (16 February 1786 [OS 5 February] – 23 June 1859) was the third daughter of Paul I of Russia and Sophie Dorothea of Württemberg. She was the \"Grand Duchess of Saxe-Weimar-Eisenach\" by her marriage to Charles Frederick, Grand Duke of Saxe-Weimar-Eisenach.\nQuestion: Where was the place of death of Duchess Maria Dorothea Of Württemberg's father?\nFinal answer:",
+  "output": "Kirchheim unter Teck",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-bbd665de7875a2b3",
+    "object": "chat.completion",
+    "created": 1779532914,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Kirchheim unter Teck",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1359,
+      "total_tokens": 1366,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

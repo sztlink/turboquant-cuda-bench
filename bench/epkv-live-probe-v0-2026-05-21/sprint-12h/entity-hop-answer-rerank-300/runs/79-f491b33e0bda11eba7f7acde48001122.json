@@ -1,0 +1,66 @@
+{
+  "idx": 79,
+  "qid": "f491b33e0bda11eba7f7acde48001122",
+  "gold": "Jean Hersholt Humanitarian Award",
+  "candidates": [
+    "Academy Award",
+    "Sol Lesser received the Jean Hersholt Humanitarian Award in 1961",
+    "The Last Night of the Barbary Coast",
+    "Last Night",
+    "The Dance",
+    "Domenico Paolella",
+    "Sol Lesser",
+    "Lew Landers",
+    "Law of the Barbary Coast",
+    "Camille of the Barbary Coast",
+    "The Last Night of Scheherazade",
+    "Pirates of the Coast"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Academy Award\nC2: Sol Lesser received the Jean Hersholt Humanitarian Award in 1961\nC3: The Last Night of the Barbary Coast\nC4: Last Night\nC5: The Dance\nC6: Domenico Paolella\nC7: Sol Lesser\nC8: Lew Landers\nC9: Law of the Barbary Coast\nC10: Camille of the Barbary Coast\nC11: The Last Night of Scheherazade\nC12: Pirates of the Coast\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- The Last Night of the Barbary Coast -> Sol Lesser\n- The Last Night of the Barbary Coast -> Last Night\n- The Last Night of the Barbary Coast -> Sol Lesser\n- The Last Night of the Barbary Coast -> Last Night\n- Law of the Barbary Coast -> Lew Landers\n- Pirates of the Coast -> Domenico Paolella\n- Barbary Coast, San Francisco -> The Dance\nPassages:\nP1: The Last Night of the Barbary Coast: The Last Night of the Barbary Coast( 1913) was an early example of the exploitation film, showing what was purported to be the last night of the Barbary Coast red-light section of San Francisco. In reality, the Barbary Coast was n't shut down until 1917. The film, directed by Hal Mohr and Sol Lesser, is now considered a lost film. Mohr, later an Academy Award winner, did the cinematography, and Lesser went on to become a Hollywood producer.\nP2: The Last Night of the Barbary Coast: The Last Night of the Barbary Coast (1913) was an early example of the exploitation film, showing what was purported to be the last night of the Barbary Coast red-light section of San Francisco. In reality, the Barbary Coast wasn't shut down until 1917. The film, directed by Hal Mohr and Sol Lesser, is now considered a lost film. Mohr, later an Academy Award winner, did the cinematography, and Lesser went on to become a Hollywood producer.\nP3: Last Night: Last Night, The Last Night or Last Nite may refer to:\nP4: The Dance: The Dance may refer to:\nP5: Domenico Paolella: Domenico Paolella( 18 October 1915- 7 October 2002) was an Italian director, screenwriter and journalist. Born in Foggia, between 1933 and 1935 Paolella won several contests for amateur directors; in the same years he started working as a journalist for several newspapers and magazines. In 1937 he entered the film industry as assistant of Carmine Gallone for\" Scipio the African\", and the following year made his debut as a director of short films. During the war he was ...\nP6: Sol Lesser: Sol Lesser (February 17, 1890 – September 19, 1980) was an American film producer. He received a star on the Hollywood Walk of Fame in 1960 and was awarded the Jean Hersholt Humanitarian Award in 1961.\nP7: Lew Landers: Lew Landers( born Louis Friedlander, January 2, 1901 – December 16, 1962) was an American independent film and television director.\nP8: Law of the Barbary Coast: Law of the Barbary Coast is a 1949 American historical crime film directed by Lew Landers and starring Gloria Henry, Stephen Dunne and Adele Jergens. The film's sets were designed by the art director Harold H. MacArthur.\nP9: Camille of the Barbary Coast: Camille of the Barbary Coast is a 1925 American silent drama film directed by Hugh Dierker and starring Mae Busch, Owen Moore and Fritzi Brunette.\nP10: The Last Night of Scheherazade: The Last Night of Scheherazade is a 1987 Soviet- Syrian children's fantasy film directed by Takhir Sabirov based on\" One Thousand and One Nights\". It is the last film of the trilogy, started with the films\" New Tales of Scheherazade\" and\" And another night of Scheherazade\". The heroes of the film are the shoemaker Maruf and the daughter of the Caliph, Esmagül, who despite falling in love with a young man, nevertheless forces him to fight for his own happiness.\nQuestion: What is the award that the director of film The Last Night Of The Barbary Coast got?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Academy Award\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The passages do not mention any director of the film 'The Last Night of the Barbary Coast' receiving an Academy Award. The Jean Hersholt Humanitarian Award is mentioned for Sol Lesser, but not in relation to being a director of this film.\"}",
+  "verifier": {
+    "final_answer": "Academy Award",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The passages do not mention any director of the film 'The Last Night of the Barbary Coast' receiving an Academy Award. The Jean Hersholt Humanitarian Award is mentioned for Sol Lesser, but not in relation to being a director of this film."
+  },
+  "final": "Academy Award",
+  "selected": "UNKNOWN",
+  "response": {
+    "id": "chatcmpl-8b9ed31cb8048a48",
+    "object": "chat.completion",
+    "created": 1779533025,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Academy Award\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The passages do not mention any director of the film 'The Last Night of the Barbary Coast' receiving an Academy Award. The Jean Hersholt Humanitarian Award is mentioned for Sol Lesser, but not in relation to being a director of this film.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1171,
+      "total_tokens": 1243,
+      "completion_tokens": 72,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.2851183414459229
+}

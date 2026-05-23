@@ -1,0 +1,48 @@
+{
+  "qid": "6c7f03240bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Évreux",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Jeanne Raunay -> André Beaunier\n- Jeanne Raunay -> Jules Richomme\n- Jeanne Raunay -> André Beaunier\n- Jeanne Raunay -> Jules Richomme\n- Jules Richomme -> Théodore Richomme\n- Jules Richomme -> André Beaunier\n- Jeanne-Marie Leprince de Beaumont -> Beast\n- Jeanne d'Évreux -> Margaret of Artois\n- Jeanne d'Évreux -> The Hours\n- Jeanne-Marie Grandon -> André Grétry\nPassages:\nP1: Jeanne Raunay: Jeanne Richomme Raunay (25 November 1868 – 1942) was a French mezzo-soprano opera singer. She was also the daughter of painter Jules Richomme, and the wife of French writer André Beaunier.\nP2: Jeanne Raunay: Jeanne Richomme Raunay( 25 November 1868 – 1942) was a French mezzo- soprano opera singer. She was also the daughter of painter Jules Richomme, and the wife of French writer André Beaunier.\nP3: Margaret of Artois: Margaret of Artois( 1285–1311) was the eldest child of Philip of Artois and his wife, Blanche of Brittany. She was a member of the House of Artois. She was married to Louis d'Évreux. By her marriage, Margaret was Countess consort of Évreux.\nP4: Margaret of Artois: Margaret of Artois (1285–1311) was the eldest child of Philip of Artois and his wife, Blanche of Brittany. She was a member of the House of Artois. She was married to Louis d'Évreux. By her marriage, Margaret was Countess consort of Évreux.\nP5: The Beast: The Beast may refer to:\nP6: The Hours: The Hours can refer to:\nP7: Théodore Richomme: Théodore Richomme (28 May 1785, Paris - 22 September 1849, Paris) was a French engraver. A street in the 18th arrondissement of Paris is named after him.\nP8: André Grétry: André Ernest Modeste Grétry (baptised 11 February 1741; died 24 September 1813) was a\ncomposer from the Prince-Bishopric of Liège (present-day Belgium), who worked from 1767 onwards in France and took French nationality. He is most famous for his \"opéras comiques\".\nP9: André Beaunier: André Beaunier (22 September 1869, Évreux – 9 December 1925, Paris) was a French novelist and literary critic.\nP10: Beast: Beast or Beasts may refer to:\nQuestion: Where was the husband of Jeanne Raunay born?\nFinal answer:",
+  "output": "Évreux",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-8f573598db71a06b",
+    "object": "chat.completion",
+    "created": 1779532905,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Évreux",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 764,
+      "total_tokens": 768,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

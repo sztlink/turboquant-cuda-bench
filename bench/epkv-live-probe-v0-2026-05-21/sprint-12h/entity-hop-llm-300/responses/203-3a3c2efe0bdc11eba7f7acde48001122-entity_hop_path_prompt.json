@@ -1,0 +1,48 @@
+{
+  "qid": "3a3c2efe0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Germany",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Joan I, Countess of Burgundy -> Margaret, Countess of Blois\n- Joan I, Countess of Burgundy -> Otto I, Count of Burgundy\n- Joan I, Countess of Burgundy -> Margaret, Countess of Blois\n- Joan I, Countess of Burgundy -> Otto I, Count of Burgundy\n- Beatrice of Navarre, Duchess of Burgundy -> Hugh IV, Duke of Burgundy\n- Beatrice of Navarre, Duchess of Burgundy -> Theobald II of Navarre\n- Otto I, Count of Burgundy -> Frederick I, Holy Roman Emperor\n- Otto I, Count of Burgundy -> Beatrice I, Countess of Burgundy\n- Otto I, Count of Burgundy -> Frederick I, Holy Roman Emperor\n- Otto I, Count of Burgundy -> Beatrice I, Countess of Burgundy\n- Beatrice of Burgundy, Lady of Bourbon -> Hugh IV, Duke of Burgundy\n- Beatrice of Burgundy, Lady of Bourbon -> Agnes of Dampierre\n- Frederick V, Duke of Swabia -> Beatrice I, Countess of Burgundy\nPassages:\nP1: Margaret, Countess of Blois: Margaret of Blois( French:\" Marguerite\"; died 1230) was\" suo jure\" Countess of Blois from 1218 to 1230, in what is now France.\nP2: Hugh IV, Duke of Burgundy: Hugh IV of Burgundy( 9 March 1213 – 27 or 30 October 1272) was Duke of Burgundy between 1218 and 1272. Hugh was the son of Odo III, Duke of Burgundy and Alice de Vergy.\nP3: Hugh IV, Duke of Burgundy: Hugh IV of Burgundy (9 March 1213 – 27 or 30 October 1272) was Duke of Burgundy between 1218 and 1272. Hugh was the son of Odo III, Duke of Burgundy and Alice de Vergy.\nP4: Frederick I, Holy Roman Emperor: Frederick Barbarossa (1122 – 10 June 1190), also known as Frederick I, was the Holy Roman Emperor from 2 January 1155 until his death. He was elected King of Germany at Frankfurt on 4 March 1152 and crowned in Aachen on 9 March 1152. He was crowned King of Italy on 24 April 1155 in Pavia and emperor by Pope Adrian IV on 18 June 1155 in Rome. Two years later, the term ' (\"holy\") first appeared in a document in connection with his empire. He was later formally ...\nP5: Agnes of Dampierre: Agnes of Dampierre( 1237 – 7 September 1288) was Lady of Bourbon and heiress of all Bourbon estates. She was the daughter of Archambaud IX de Dampierre and Yolande I, Countess of Nevers. She married John of Burgundy, the son of Hugh IV, Duke of Burgundy. Her daughter, Beatrix of Bourbon, married Robert, Count of Clermont in 1272 and their eldest son Louis I,\" le Boiteux\" became the first Duke of Bourbon.\nP6: Theobald II of Navarre: Theobald II (6/7 December 1239 – 4/5 December 1270) was King of Navarre and also, as Theobald V, Count of Champagne and Brie, from 1253 until his death. He was the son and successor of Theobald I and the second Navarrese monarch of the House of Blois. After he died childless, the throne of Navarre passed to his younger brother, Henry I.\nP7: Beatrice I, Countess of Burgundy: Beatrice I (1143 – 15 November 1184) was Countess of Burgundy from 1148 until her death, and was also Holy Roman Empress by marriage to Frederick Barbarossa. She was crowned empress by Antipope Paschal III in Rome on 1 August 1167, and as Queen of Burgundy at Vienne in August 1178.\nP8: Joan I, Countess of Burgundy: Joan I (1191–1205), also called Joanna of Hohenstaufen, was ruling Countess of Burgundy 1200-1205, daughter of Otto I, Count of Burgundy, and Margaret, Countess of Blois. Born in 1191, Joan was countess from the time of her father's assassination at Besançon in 1200 until her own death in 1205, whereupon her sister, Beatrice II, succeeded her.\nP9: Joan I, Countess of Burgundy: Joan I( 1191 – 1205), also called Joanna of Hohenstaufen, was ruling Countess of Burgundy 1200- 1205, daughter of Otto I, Count of Burgundy, and Margaret, Countess of Blois. Born in 1191, Joan was countess from the time of her father's assassination at Besançon in 1200 until her own death in 1205, whereupon her sister, Beatrice II, succeeded her.\nP10: Beatrice of Navarre, Duchess of Burgundy: Beatrice of Navarre( 1242? – 1295), was Duchess of Burgundy, by marriage to Hugh IV, Duke of Burgundy. She was a daughter of Theobald I of Navarre and his third wife Margaret of Bourbon. Her siblings included Theobald II of Navarre and Henry I of Navarre. She is also known as Beatrix of Champagne.\nQuestion: What nationality is Beatrice I, Countess Of Burgundy's husband?\nFinal answer:",
+  "output": "French",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8d7bd0f178caedf1",
+    "object": "chat.completion",
+    "created": 1779532887,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "French",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1407,
+      "total_tokens": 1409,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

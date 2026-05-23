@@ -1,0 +1,48 @@
+{
+  "qid": "3c68e44c0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Florence",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Alessandro Vitelli -> Angela de' Rossi\n- Paolo II Vitelli -> Alessandro Vitelli\n- Paolo II Vitelli -> Angela de' Rossi\n- Alessandro Torlonia, 5th Prince of Civitella-Cesi -> Mary Elsie Moore\n- Alessandro Torlonia, 5th Prince of Civitella-Cesi -> Mary Elsie Moore\n- Angela de' Rossi -> Alessandro Vitelli\n- Angela de' Rossi -> Bianca Riario\nPassages:\nP1: Angela de' Rossi: Angela Paola de' Rossi (1506 - 11 November 1573) was an Italian noblewoman. She was born to Troilo I de' Rossi and Bianca Riario in San Secondo Parmense. Her first husband was Vitello Vitelli and her second was Alessandro Vitelli, both from the Vitelli family. She died in Città di Castello.\nP2: Bianca Riario: Bianca Riario (March 1478 – 1522) was an Italian noble and regent, Marchioness of San Secondo by marriage to Troilo I de' Rossi, and regent of the marquisate and county of San Secondo for her son Pier Maria during his minority between 1521 and 1522. She was the eldest child and only daughter of Caterina Sforza by the latter's first husband, Girolamo Riario, a nephew of Pope Sixtus IV. Bianca married twice; her first husband was Astorre III Manfredi, Lord of Faenza, and her second ...\nP3: Mary Elsie Moore: Mary Elsie Moore, Princess Civitella- Cesi( October 22, 1889 – December 21, 1941), was an American heiress who married and divorced Italian Prince Don Marino Torlonia, 4th Prince of Civitella- Cesi.\nP4: Mary Elsie Moore: Mary Elsie Moore, Princess Civitella-Cesi (October 22, 1889 – December 21, 1941), was an American heiress who married and divorced Italian Prince Don Marino Torlonia, 4th Prince of Civitella-Cesi.\nP5: Alessandro Torlonia, 5th Prince of Civitella-Cesi: Don Alessandro Torlonia (7 December 1911 – 1 May/12 May 1986) was the 5th Prince di Civitella-Cesi. Born in Rome, Torlonia was the son of Marino Torlonia, 4th Prince di Civitella-Cesi and his American wife, Mary Elsie Moore. On the death of his father in 1933, he inherited large estates as well as his father's princely and other titles. He died in the Palazzo Torlonia, Rome, in 1986.\nP6: Alessandro Torlonia, 5th Prince of Civitella-Cesi: Don Alessandro Torlonia ( 7 December 1911 – 1 May/ 12 May 1986) was the 5th Prince di Civitella- Cesi. Born in Rome, Torlonia was the son of Marino Torlonia, 4th Prince di Civitella- Cesi and his American wife, Mary Elsie Moore. On the death of his father in 1933, he inherited large estates as well as his father's princely and other titles. He died in the Palazzo Torlonia, Rome, in 1986.\nP7: Alessandro Vitelli: Alessandro Vitelli (1500 - 1554) was an Italian condottiero in the service of the Holy Roman Empire, the Papal States and the Grand Duchy of Tuscany. He was an illegitimate son of Paolo Vitelli and the second husband of Angela de' Rossi. He also became count of Montone, count of Citerna and lord of Amatrice. He was born in Città di Castello and died in Citerna.\nP8: Alessandro Naselli: Alessandro Naselli was an Italian painter, active in his native Ferrara in the mid to late 17th century. He was active in a late Mannerist style during the Baroque period. In addition to his tutelage of his father, the Ferrarese painter, Francesco Naselli, he was a pupil of Costanzo Cattani Some of his works can be seen in the Church of Theatines, Ferrara. There is controversy about whether he is Francesco's son, since the Oxford Index states Alessandro's birth year as 1660, ...\nP9: Paolo II Vitelli: Paolo II Vitelli was an Italian condottiero and cavalryman. A member of the Vitelli family, he was born in Città di Castello and died in Parma. He was the son of Angela de' Rossi and her second husband Alessandro Vitelli.\nP10: Paolo Vitelli (condottiero): Paolo Vitelli (1461 – 1 October 1499) was an Italian knight and condottiero as well as lord of Montone. He was born in Città di Castello. He was the brother of Vitellozzo Vitelli, another condottiero. He worked as a mercenary for the republic of Florence, which he was suspected of treachery and executed.\nQuestion: Where was the place of death of Alessandro Vitelli's father?\nFinal answer:",
+  "output": "Città di Castello",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b5bdd50f63372265",
+    "object": "chat.completion",
+    "created": 1779532791,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Città di Castello",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1273,
+      "total_tokens": 1280,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

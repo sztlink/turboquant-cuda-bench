@@ -1,0 +1,66 @@
+{
+  "idx": 162,
+  "qid": "b0b7f3700bdb11eba7f7acde48001122",
+  "gold": "Cross Plains",
+  "candidates": [
+    "Albania",
+    "Conan the Adventurer (1992 TV series)",
+    "Conan the Adventurer",
+    "The Adventurer",
+    "Conan the Barbarian",
+    "Bertha of Blois",
+    "The Child",
+    "Middle name",
+    "Empress Matilda",
+    "List of Conan the Adventurer episodes",
+    "Conan III, Duke of Brittany",
+    "Bill Lawrence (TV producer)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Albania\nC2: Conan the Adventurer (1992 TV series)\nC3: Conan the Adventurer\nC4: The Adventurer\nC5: Conan the Barbarian\nC6: Bertha of Blois\nC7: The Child\nC8: Middle name\nC9: Empress Matilda\nC10: List of Conan the Adventurer episodes\nC11: Conan III, Duke of Brittany\nC12: Bill Lawrence (TV producer)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Conan the Adventurer (1992 TV series) -> Conan the Adventurer\n- Conan the Adventurer (1992 TV series) -> Conan the Barbarian\n- Conan the Adventurer -> The Adventurer\n- List of Conan the Adventurer episodes -> Conan the Adventurer\n- List of Conan the Adventurer episodes -> The Adventurer\n- Bill Lawrence (TV producer) -> Middle name\n- Conan III, Duke of Brittany -> Empress Matilda\n- Conan II, Duke of Brittany -> Bertha of Blois\n- Conan II, Duke of Brittany -> The Child\nPassages:\nP1: Conan the Adventurer (1992 TV series): Conan the Adventurer is an American-French-Canadian animated television series adaptation of Conan the Barbarian, the literary character created by Robert E. Howard in the 1930s. Produced by Jetlag Productions and Sunbow Productions, the series debuted on September 13, 1992, ran for 65 episodes and concluded on November 22, 1993. The series was developed by Christy Marx who served as the sole story editor. The series was produced in association with Graz ...\nP2: Conan the Adventurer: Conan the Adventurer may refer to:\nP3: The Adventurer: The Adventurer may refer to:\nP4: Conan the Barbarian: Conan the Barbarian( also known as Conan the Cimmerian) is a fictional sword and sorcery hero who originated in pulp magazines and has since been adapted to books, comics, several films( including\" Conan the Barbarian\" and\" Conan the Destroyer\"), television programs( animated and live- action), video games, role- playing games, and other media. The character was created by writer Robert E. Howard in 1932 for a series of fantasy stories published in\" Weird Tales\" magazine.\nP5: Bertha of Blois: Bertha of Blois (French: \"Berthe de Blois\"; c. 1005 — c. 1080), was a Duchess consort of Brittany and a countess consort of Maine, married in 1018 to Alain III, Duke of Brittany, and in 1046 to Hugh IV, Count of Maine. She was the daughter of Odo II, Count of Blois and Ermengarde of Auvergne.\nP6: The Child: The Child may refer to:\nP7: Middle name: In several cultures, a middle name is a portion of a personal name that is written between the person's given name and their surname. A person may be given a middle name regardless of whether it's necessary to distinguish them from other people with the same given name and surname. In cultures where a given name is expected to precede the surname, additional names are likely to be placed after the given name and before the surname, and thus called middle names. In English- speaking ...\nP8: Empress Matilda: Empress Matilda (c. 7 February 110210 September 1167), also known as the Empress Maude, was one of the claimants to the English throne during the civil war known as the Anarchy. The daughter of King Henry I of England, she moved to Germany as a child when she married the future Holy Roman Emperor Henry V. She travelled with her husband into Italy in 1116, was controversially crowned in St. Peter's Basilica, and acted as the imperial regent in Italy. Matilda and Henry V had no ...\nP9: List of Conan the Adventurer episodes: The following is a list of episodes for the 1992 animated television show\" Conan the Adventurer\".\nP10: Conan III, Duke of Brittany: Conan III, also known as Conan of Cornouaille and Conan the Fat (c. 1093–1096 – September 17, 1148) was duke of Brittany, from 1112 to his death. He was the son of Duke Alan IV and Ermengarde of Anjou. Conan III allied himself with Stephen of England in Stephen's war against the dispossessed Empress Matilda.\nQuestion: Where was the place of death of the creator of Conan The Adventurer (1992 Tv Series)?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages and evidence do not contain information about the place of death of the creator of Conan the Adventurer (1992 TV series). The passages only provide information about the TV series and its production, but not about the creator's personal details.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The provided passages and evidence do not contain information about the place of death of the creator of Conan the Adventurer (1992 TV series). The passages only provide information about the TV series and its production, but not about the creator's personal details."
+  },
+  "final": "Albania",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-a9acea2ff689aa56",
+    "object": "chat.completion",
+    "created": 1779533076,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages and evidence do not contain information about the place of death of the creator of Conan the Adventurer (1992 TV series). The passages only provide information about the TV series and its production, but not about the creator's personal details.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1196,
+      "total_tokens": 1266,
+      "completion_tokens": 70,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.2511744499206543
+}

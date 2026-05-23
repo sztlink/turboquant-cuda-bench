@@ -1,0 +1,48 @@
+{
+  "qid": "eb7ece320bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Stony Brook University",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Claudio Silva (computer scientist) -> Juliana Freire\nPassages:\nP1: Claudio Silva (computer scientist): Claudio Silva is a Brazilian American computer scientist and data scientist. He is a professor of computer science and engineering at the New York University Tandon School of Engineering, the head of disciplines at the NYU Center for Urban Science and Progress (CUSP) and affiliate faculty member at NYU's Courant Institute of Mathematical Sciences. He co-developed the open-source data-exploration system VisTrails with his wife Juliana Freire and many other ...\nP2: Claudio Silva da Fonseca: Claudio Silva da Fonseca( Carioca)( born November 3, 1979 in Rio de Janeiro, Brazil) is a Brazilian footballer currently playing for Unión La Calera of the Primera División in Chile.\nP3: Juliana Freire: Juliana Freire de Lima e Silva is a Brazilian computer scientist who works as a professor of computer science and engineering at the New York University Polytechnic School of Engineering. She is known for her research in information visualization, data provenance, and computerized assistance for scientific reproducibility. Freire did her undergraduate studies at the Federal University of Ceará in Brazil, and earned her doctorate from Stony Brook University. Prior to joining ...\nP4: Irene Greif: Irene Greif is an American computer scientist and a founder of the field of computer- supported cooperative work( CSCW). She was the first woman to earn a Ph.D. in computer science from the Massachusetts Institute of Technology.\nP5: Phyllis Fox: Phyllis Ann Fox is an American mathematician and computer scientist.\nP6: Andrea Danyluk: Andrea Pohoreckyj Danyluk is an American computer scientist and computer science educator. She is Mary A. and William Wirt Warren Professor of Computer Science at Williams College, and co- chair of the Committee on Widening Participation in Computing Research of the Computing Research Association.\nP7: Rudolf Kruse: Rudolf Kruse( born 12 September 1952 in Rotenburg/ Wümme) is a German computer scientist and mathematician.\nP8: Charles Zegar: Charlie Zegar( born 1948) is an American billionaire and computer scientist known for being one of the four co-founders of Bloomberg L.P.\nQuestion: Where did Claudio Silva (Computer Scientist)'s wife graduate from?\nFinal answer:",
+  "output": "Stony Brook University",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-b91098b7e55f0d05",
+    "object": "chat.completion",
+    "created": 1779532876,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Stony Brook University",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 601,
+      "total_tokens": 606,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

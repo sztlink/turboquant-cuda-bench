@@ -1,0 +1,48 @@
+{
+  "qid": "bac99ab40bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Great Pyramid of Giza",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Meritites II -> Meritites I\n- Meritites II -> Khufu\n- Meritites I -> Khafra\n- Meritites I -> Khufu\n- Book of Burial -> The Mystic\n- William Rockhill Nelson -> @Home\nPassages:\nP1: The Mystic: The Mystic is a 1925 American MGM silent drama film directed by Tod Browning, who later directed MGM's\" Freaks\"( 1932). It was co-written by Browning and Waldemar Young, writing a similar storyline to their earlier 1925 hit film\" The Unholy Three\". Browning was unable however to hire his favorite star Lon Chaney this time around, and\" The Mystic\" wound up a little- known film with a cast of now- forgotten names. Aileen Pringle's gowns in the film were by already famous Romain de ...\nP2: Khufu: Khufu (full name Khnum Khufu , known to the ancient Greeks as Cheops, was an ancient Egyptian monarch who was the second pharaoh of the Fourth Dynasty, in the first half of the Old Kingdom period (26th century BC). Khufu succeeded his father Sneferu as king. He is generally accepted as having commissioned the Great Pyramid of Giza, one of the Seven Wonders of the Ancient World, but many other aspects of his reign are poorly documented. The only completely preserved portrait of the king ...\nP3: Khafra: Khafra (also read as Khafre, Khefren and Chephren) was an ancient Egyptian king (pharaoh) of the 4th Dynasty during the Old Kingdom. He was the son of Khufu and the throne successor of Djedefre. According to the ancient historian Manetho, Khafra was followed by king Bikheris, but according to archaeological evidence he was instead followed by king Menkaure. Khafra was the builder of the second largest pyramid of Giza. The view held by modern Egyptology at large continues to be that the ...\nP4: @Home: @Home or @home may refer to:\nP5: Where I Was From: Where I Was From is a 2003 collection of essays by Joan Didion. It concerns the history and culture of California, where Didion was born and spent much of her life. \" Where I Was From\" combines aspects of historical writing, journalism, and memoir to present a history of California as well as Didion's own experiences in that state. The book attempts to understand the differences between California's factual history and its perceived reputation. According to Didion,\" This book ...\nP6: Meritites I: Meritites I was an ancient Egyptian queen of the 4th dynasty. Her name means \"Beloved of her Father\". Several of her titles are known from a stela found at Giza. She was buried in the middle Queen’s Pyramid in Giza (\"Pyramid G 1b\"). Meritites was a daughter of King Sneferu and his consort of unknown name. Meritites married her (half?)brother, King Khufu. With Khufu, she was the mother of the Crown Prince Kawab, and possibly Djedefre. Both Queen Hetepheres II and Pharaoh Khafra have ...\nP7: Book of Burial: The Book of Burial( Chinese:,,\" Zàngshū\") was an AD 4th- or 5 th- century work by the Taoist mystic Guo Pu. The work was a commentary on the now- lost\" Classic of Burial\"; as it survived and transmitted the classic's teachings, the\" Book of Burial\"'s principles relating the flow of\" qi\" to the appropriateness of a tomb's location were influential on the development of\" fengshui\".\nP8: Monobaz I: Monobaz I( also known as Bazeus or Monobazus) was king of the neo Assyrian Parthian client state of Adiabene in the 20s and 30s of the 1st century CE. He was the husband( and brother) of Queen Helena of Adiabene. With Helena he fathered Izates bar Monobaz and Monobaz II. Monobaz II, the son of Monobaz I, is quoted in the Talmud in an account where in he was being criticized for not amassing as much wealth as his forefathers had. His response was this:\" My father s stored up below and ...\nP9: Meritites II: Meritites II( Merytiotes, Meritetes) or Meritites A(\" beloved of her father\") was a 4th dynasty Princess of Ancient Egypt, and probably a daughter of King Khufu. She may have been a daughter of Meritites I based on the fact that this queen is mentioned in mastaba G 7650. She married the Director of the Palace Akhethotep( a non-royal court official) and she had several children with her husband. Meritites and her husband shared a mastaba( G 7650) in Giza.\nP10: Allerton Cemetery: Allerton Cemetery is a cemetery in Allerton, Liverpool, England. The cemetery, of, is one of the main burial sites for the Metropolitan Borough of Liverpool and is Grade II listed. Springwood Crematorium is situated opposite the cemetery on Springwood Avenue. Purchase of the land for the cemetery was completed in October 1906, the Church of England section was consecrated by the Bishop of Liverpool on 24 September 1909, and the first burial in the cemetery took place on 29 ...\nQuestion: Where was the place of burial of Meritites I's husband?\nFinal answer:",
+  "output": "Giza",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.4
+  },
+  "response": {
+    "id": "chatcmpl-82316d8d4bbc1095",
+    "object": "chat.completion",
+    "created": 1779532912,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Giza",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1313,
+      "total_tokens": 1316,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

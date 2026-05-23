@@ -1,0 +1,66 @@
+{
+  "idx": 207,
+  "qid": "c8c9313a0baf11ebab90acde48001122",
+  "gold": "Jerome, 4th Count de Salis-Soglio",
+  "candidates": [
+    "Jerome, 2nd Count de Salis-Soglio",
+    "Leopold Fane De Salis",
+    "George De Salis",
+    "Princess Claude of Orléans",
+    "Henry IV of France",
+    "Francis I",
+    "Jerome, 2nd Count de Salis",
+    "Rodolph Fane De Salis",
+    "Leopold William Jerome Fane De Salis",
+    "Henry Jerome de Salis",
+    "Prince Robert, Count of La Marche",
+    "Charles, Duke of Vendôme"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Jerome, 2nd Count de Salis-Soglio\nC2: Leopold Fane De Salis\nC3: George De Salis\nC4: Princess Claude of Orléans\nC5: Henry IV of France\nC6: Francis I\nC7: Jerome, 2nd Count de Salis\nC8: Rodolph Fane De Salis\nC9: Leopold William Jerome Fane De Salis\nC10: Henry Jerome de Salis\nC11: Prince Robert, Count of La Marche\nC12: Charles, Duke of Vendôme\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- George De Salis -> Leopold Fane De Salis\n- Leopold William Jerome Fane De Salis -> Leopold Fane De Salis\n- Leopold William Jerome Fane De Salis -> George De Salis\n- Prince Robert, Count of La Marche -> Princess Claude of Orléans\n- Charles, Duke of Vendôme -> Henry IV of France\n- Charles, Duke of Vendôme -> Francis I\nPassages:\nP1: George De Salis: George Fane De Salis (1851 – 30 December 1931) was an Australian politician. He was born on Darbalara Station near Gundagai to pastoralist Leopold Fane De Salis and Charlotte Macdonald. He received a private education and then farmed at Tharwa and Michelago. On 28 February 1878 he married Mary Galliard-Smith, with whom he had eight children. He was elected to the New South Wales Legislative Assembly for Queanbeyan in 1882, but did not re-contest in 1885. De Salis died at ...\nP2: Leopold Fane De Salis: Leopold Fabius Dietegen Fane de Salis, (26 April 1816 – 20 November 1898) was a Tuscan-born Australian pastoralist and politician. Born in Florence to Jerome, 4th Count de Salis-Soglio and Henrietta Foster, he attended Eton College and studied sheep farming at Jedburgh in Scotland. In 1840 he migrated to Sydney, where he formed a partnership to run a station at Junee. In the same decade, in 1842, 1844 and 1848, his highly capable next elder brother William also sailed to ...\nP3: Princess Claude of Orléans: Princess Claude of Orléans (Claude Marie Agnès Catherine; born 11 December 1943) is a French princess of the House of Orléans. She is the former wife of Prince Amedeo, Duke of Aosta, a disputed head of the House of Savoy.\nP4: Princess Claude of Orléans: Princess Claude of Orléans( Claude Marie Agnès Catherine; born 11 December 1943) is a French princess of the House of Orléans. She is the former wife of Prince Amedeo, Duke of Aosta, a disputed head of the House of Savoy.\nP5: Henry IV of France: Henry IV (read as ; 13 December 1553 – 14 May 1610), also known by the epithet Good King Henry or Henry the Great, was King of Navarre (as Henry III) from 1572 and King of France from 1589 to 1610. He was the first monarch of France from the House of Bourbon, a cadet branch of the Capetian dynasty. He was assassinated in 1610 by François Ravaillac, a fanatical Catholic, and was succeeded by his son Louis XIII. The son of Antoine de Bourbon, Duke of Vendôme and Jeanne ...\nP6: Francis I: Francis I or Francis the First may refer to:\nP7: Jerome, 2nd Count de Salis: Jérôme de Salis, 2nd Count de Salis- Soglio( 8 July 17098 August 1794) was a Fellow of the Royal Society and sometime British Resident in the Grisons. He was also known as\" Hieronimus, Gerolamo, Geronimo, Harry, Jerome the grandfather\" and\" Monsieur le Comte de Salis\".\nP8: Rodolph Fane De Salis: Rodolph Fane De Salis,( Fringford, 10.12.1854- 26.11.1931( buried Virginia Water), FGS, AMICE, civil engineer who was a director and then chairman of the Singer Motor Company of Coventry; President of the Canal Association; the last chairman of the Grand Junction Canal Co.; and director of the North Staffordshire Railway, the Great Central Railway, and of the Coventry Canal. A nephew of William Fane de Salis and the eldest son of Rev. Henry- Jerome Fane De Salis, of ...\nP9: Leopold William Jerome Fane De Salis: Leopold William Jerome Fane De Salis( 12 June 1845 – 3 August 1930) was an Australian politician. He was the son of Leopold Fane De Salis and Charlotte Macdonald; his brother George De Salis would also enter politics. He was elected to the New South Wales Legislative Assembly for Queanbeyan in 1872, but did not re-contest in 1874. He managed the family estates in Queensland until 1892, when they were lost in the economic crash. In 1895 he married Jeanette ...\nP10: Henry Jerome de Salis: Henry Jerome de Salis, DD, FRS, FSA,( 20 August 1740 – 2 May 1810) was an English churchman. He was Rector of St. Antholin in the City of London and Vicar of Wing in Buckinghamshire. He was also known as:\" Revd Henry Jerome de Salis, MA\"; the Hon.& Rev. Henry Jerome De Salis, Count of the Holy Roman Empire;\" Dr. de SalisRev. Dr. Henry Jerome de Salis\", and, from 1809,\" Rev. Count Henry Jerome de Salis\".\nQuestion: Who is the paternal grandfather of George De Salis?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Jerome, 2nd Count de Salis-Soglio\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"C1: Jerome, 2nd Count de Salis-Soglio is the paternal grandfather of George De Salis as evidenced by the relationship between Jerome, 2nd Count de Salis-Soglio and Leopold Fane De Salis in the candidate entity graph, and the passage P2 which states that Leopold Fane De Salis was born to Jerome, 4th Count de Salis-Soglio and Henrietta Foster.\"}",
+  "verifier": {
+    "final_answer": "Jerome, 2nd Count de Salis-Soglio",
+    "selected": "C1",
+    "confidence": "high",
+    "reason": "C1: Jerome, 2nd Count de Salis-Soglio is the paternal grandfather of George De Salis as evidenced by the relationship between Jerome, 2nd Count de Salis-Soglio and Leopold Fane De Salis in the candidate entity graph, and the passage P2 which states that Leopold Fane De Salis was born to Jerome, 4th Count de Salis-Soglio and Henrietta Foster."
+  },
+  "final": "Jerome, 2nd Count de Salis-Soglio",
+  "selected": "C1",
+  "response": {
+    "id": "chatcmpl-ba075e9931da22fb",
+    "object": "chat.completion",
+    "created": 1779533114,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Jerome, 2nd Count de Salis-Soglio\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"C1: Jerome, 2nd Count de Salis-Soglio is the paternal grandfather of George De Salis as evidenced by the relationship between Jerome, 2nd Count de Salis-Soglio and Leopold Fane De Salis in the candidate entity graph, and the passage P2 which states that Leopold Fane De Salis was born to Jerome, 4th Count de Salis-Soglio and Henrietta Foster.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1567,
+      "total_tokens": 1691,
+      "completion_tokens": 124,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 2.193229913711548
+}

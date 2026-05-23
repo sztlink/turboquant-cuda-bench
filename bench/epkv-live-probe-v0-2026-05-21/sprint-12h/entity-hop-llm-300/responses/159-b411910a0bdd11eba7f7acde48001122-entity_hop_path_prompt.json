@@ -1,0 +1,48 @@
+{
+  "qid": "b411910a0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Bowdoin College",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Henry Stewart, 1st Lord Methven -> Elizabeth of York\n- Henry Stewart, 1st Lord Methven -> Margaret Tudor\n- Cadfan ap Cadwaladr -> Cadwaladr ap Gruffydd\n- Cadfan ap Cadwaladr -> The Only One\n- Margaretha van Mechelen -> Amalia of Solms-Braunfels\n- Henry Seymour, Lord Beauchamp -> William Seymour, 2nd Duke of Somerset\nPassages:\nP1: Elizabeth of York: Elizabeth of York (11 February 1466 – 11 February 1503) was the first queen consort of England of the Tudor dynasty from 18 January 1486 until her death, as the wife of Henry VII. She married Henry in 1485 after his victory at the Battle of Bosworth Field, which marked the end of the Wars of the Roses. Together, Elizabeth and Henry had seven, possibly eight, children. After the death of her father, King Edward IV, Elizabeth's brothers the \"Princes in the Tower\" disappeared, ...\nP2: Margaret Tudor: Margaret Tudor (28 November 1489 – 18 October 1541) was Queen of Scots from 1503 until 1513 by marriage to James IV of Scotland and then, after her husband died fighting the English, she became regent for their son James V of Scotland from 1513 until 1515. She was born at Westminster Palace as the eldest daughter of King Henry VII of England and Elizabeth of York, and granddaughter of Margaret Beaufort, Edward IV of England and Queen Elizabeth Woodville. Margaret Tudor had ...\nP3: Amalia of Solms-Braunfels: Amalia of Solms- Braunfels( 31 August 1602, Braunfels – 8 September 1675, The Hague), was Princess consort of Orange by marriage to Frederick Henry, Prince of Orange. She acted as the political adviser of her spouse during his reign, and acted as his de facto deputy and regent during his infirmity from 1640 – 47. She also served as chair of the regency council during the minority of her grandson William III, Prince of Orange from 1650 until 1672. She was the daughter ...\nP4: Amalia of Solms-Braunfels: Amalia of Solms-Braunfels (31 August 1602, Braunfels – 8 September 1675, The Hague), was Princess consort of Orange by marriage to Frederick Henry, Prince of Orange. She acted as the political adviser of her spouse during his reign, and acted as his de facto deputy and regent during his infirmity from 1640–47. She also served as chair of the regency council during the minority of her grandson William III, Prince of Orange from 1650 until 1672. She was the daughter of ...\nP5: Cadwaladr ap Gruffydd: Cadwaladr ap Gruffydd (c. 1100 – 1172) was the third son of Gruffudd ap Cynan, King of Gwynedd, and brother of Owain Gwynedd.\nP6: The Only One: The Only One( s) or Only One may refer to:\nP7: William Seymour, 2nd Duke of Somerset: William Seymour, 2nd Duke of Somerset,( 158824 October 1660) was an English nobleman and Royalist commander in the English Civil War.\nP8: Henry II, Lord of Ligny: Henry II of Luxembourg( died 1303) was Lord of Ligny from 1288 to his death in 1303. He inherited the Lordship of Ligny from his father in 1288 following his death in the Battle of Worringen. Following Henry's death, his brother Waleran II succeeded him.\nP9: Henry Seymour, Lord Beauchamp: Henry Seymour, Lord Beauchamp ( c. 1626 – 14 March 1654) was an English nobleman, third son of William Seymour, 2nd Duke of Somerset. He had two elder brothers, but they both died unmarried in their twenties, so that in 1646, when he was about twenty, Henry became heir to his father and took his courtesy title of Lord Beauchamp. On 28 June 1648, he married Mary Capell at Hadham Parva in Hertfordshire; they had one son and one daughter. Like his father, he was a ...\nP10: Henry Stewart, 1st Lord Methven: Henry Stewart, 1st Lord Methven( c. 1495 – 1552) was Master of the Scottish Artillery and last husband of Margaret Tudor, eldest daughter of Henry VII of England and Elizabeth of York.\nQuestion: Where did Henry C. Lord's father graduate from?\nFinal answer:",
+  "output": "N/A",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-bc0e20eb78ca1d91",
+    "object": "chat.completion",
+    "created": 1779532847,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "N/A",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1180,
+      "total_tokens": 1183,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

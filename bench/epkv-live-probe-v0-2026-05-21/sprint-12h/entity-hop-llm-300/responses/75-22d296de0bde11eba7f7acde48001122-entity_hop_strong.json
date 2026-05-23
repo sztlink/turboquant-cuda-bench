@@ -1,0 +1,48 @@
+{
+  "qid": "22d296de0bde11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Sochi",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: What Women Want: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt. The film earned mixed reviews from critics, but was a box office success, with a North American domestic gross of $182 million and a worldwide gross of $374 million against a budget of $70 million. A loose remake, \"What Men Want\" starring Taraji P. Henson and Aldis Hodge came out in early 2019.\nP3: Alexandra, Countess of Frederiksborg: Alexandra, Countess of Frederiksborg, (\"née\" Alexandra Christina Manley; born 30 June 1964) is the first wife of Prince Joachim of Denmark, the younger son of Margrethe II of Denmark. She was born in Hong Kong and is of mixed Chinese-European ancestry. She was introduced to Prince Joachim in 1994. They married in 1995 and had two sons together, until the marriage was dissolved in 2005.\nP4: The Will: The Will may refer to:\nP5: The First Day: The First Day may refer to:\nP6: The Spender: The Spender may refer to:\nP7: Boris Nemtsov: Boris Yefimovich Nemtsov (9 October 195927 February 2015) was a Russian physicist and liberal politician. Nemtsov was one of the most important figures in the introduction of capitalism into the Russian post-Soviet economy. He had a successful political career in the 1990s under President Boris Yeltsin. From 2000 until his death, he was an outspoken critic of Vladimir Putin. Nemtsov was assassinated on 27 February 2015, beside his Ukrainian partner Anna Duritskaya, on a bridge ...\nP8: Keith Emerson: Keith Noel Emerson (2 November 1944 – 11 March 2016) was an English keyboardist, songwriter, and film composer. He played keyboards in a number of bands before finding his first commercial success with the Nice in the late 1960s. He became internationally famous for his work with the Nice, which included writing rock arrangements of classical music. After leaving the Nice in 1970, he was a founding member of Emerson, Lake & Palmer (ELP), one of the early progressive rock ...\nP9: Karn Evil 9: \" Karn Evil 9\" is an extended work by progressive rock group Emerson, Lake& Palmer, appearing on the album\" Brain Salad Surgery\". A futuristic fusion of rock and classical themes, it is regarded by some to be their best work together with the song\" Tarkus\". At nearly half an hour long, it is also their longest studio recording.\nP10: Stephen Spender: Sir Stephen Harold Spender (28 February 1909 – 16 July 1995) was an English poet, novelist and essayist who concentrated on themes of social injustice and the class struggle in his work. He was appointed Poet Laureate Consultant in Poetry to the United States Library of Congress in 1965.\nQuestion: What is the place of birth of Zhanna Nemtsova's father?\nFinal answer:",
+  "output": "Boris Nemtsov was born in Hong Kong.",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b7927763f20be9a4",
+    "object": "chat.completion",
+    "created": 1779532768,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Boris Nemtsov was born in Hong Kong.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 903,
+      "total_tokens": 915,
+      "completion_tokens": 12,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "9e68cdc20bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Gloria Loring",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Feel Good (Robin Thicke song) -> Robin Thicke\n- Robin Thicke -> Nicki Minaj\n- Feel Good Hit of the Summer -> The Rock\n- For the Rest of My Life -> Rest of My Life\n- For the Rest of My Life -> Robin Thicke\n- Feel Good (It's Alright) -> Make Me\n- Dreamworld (Robin Thicke song) -> Robin Thicke\n- Dreamworld (Robin Thicke song) -> The Singer\n- We're Not Gonna Take It (The Who song) -> We're Not Gonna Take It\n- We're Not Gonna Take It (The Who song) -> Pete Townshend\n- See Me, Feel Me -> We're Not Gonna Take It\n- See Me, Feel Me -> Captured!\nPassages:\nP1: Feel Good (Robin Thicke song): \"Feel Good\" is a song by American recording artist Robin Thicke, from his sixth studio album \"Blurred Lines\" (2013). The song was released to the Top 40 radio on November 12, 2013 as the album's fourth and final single. The track was produced by will.i.am.\nP2: Robin Thicke: Robin Alan Thicke (born March 10, 1977) is an American singer, songwriter and record producer. He has collaborated with numerous artists, such as Christina Aguilera, 3T, T.I., Nicki Minaj, K. Michelle, Pharrell Williams, Usher, Jennifer Hudson, Flo Rida, Brandy, Kid Cudi and Mary J. Blige. Thicke worked on albums such as Usher's \"Confessions\" and Lil Wayne's \"Tha Carter III\", while releasing his own R&B singles in the U.S. including \"Lost Without UMagic\", and \"Sex Therapy\". He ...\nP3: The Rest of My Life: \" The Rest of My Life\" is a song by Canadian rock band Sloan. The song was released as the first single from their seventh studio album,\" Action Pact\". The song's lyrics deal with the fear of not growing up fast enough. The song received notable radio airplay, being the# 1 most added single at radio by the Canadian Music Network.\nP4: Rest of My Life: Rest of My Life or The Rest of My Life may refer to:\nP5: The Rock: The Rock or The Rocks may refer to:\nP6: The Singer: The Singer may refer to:\nP7: Pete Townshend: Peter Dennis Blandford Townshend (born 19 May 1945) is an English multi-instrumentalist, singer and songwriter best known as the guitarist, backing and secondary lead vocalist, principal songwriter, co-founder and leader of the rock band The Who. His career with the Who spans over 50 years, during which time the band grew to be one of the most important and influential rock bands of the 20th century. Pete Townshend is the main songwriter for the Who, having written well over 100 ...\nP8: Nicki Minaj: Onika Tanya Maraj-Petty (born December 8, 1982), known professionally as Nicki Minaj , is a Trinidad and Tobago-born rapper, singer, songwriter, actress, and model. Born in Saint James, Port of Spain, and raised in Queens, New York City, she gained public recognition after releasing the mixtapes \"Playtime Is Over\" (2007), \"Sucka Free\" (2008), and \"Beam Me Up Scotty\" (2009). After signing with Young Money Entertainment in 2009, Minaj released her first studio album, \"Pink Friday\" ...\nP9: Captured!: Captured!( aka Fellow Prisoners) is a 1933 American pre-Code film about World War I prisoners of war in a German camp. The film was directed by Roy Del Ruth and stars Leslie Howard and Douglas Fairbanks Jr..\" Captured!\" was based on the short story\" Fellow Prisoners\"( 1930) by Sir Philip Gibbs.\nP10: Make Me: Make Me may refer to:\nQuestion: Who is the mother of the performer of song Feel Good (Robin Thicke Song)?\nFinal answer:",
+  "output": "Nicki Minaj",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a384a5a773be9cda",
+    "object": "chat.completion",
+    "created": 1779532898,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Nicki Minaj",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 999,
+      "total_tokens": 1004,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "e6688a7e0baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Charles I of Naples",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Philip I, Latin Emperor -> Beatrice of Provence\n- Philip I, Latin Emperor -> Marie of Brienne\n- Philip of Sicily -> Beatrice of Provence\n- Beatrice of Sicily, Latin Empress -> Beatrice of Provence\n- Infante Philip, Duke of Calabria -> Ferdinand I of the Two Sicilies\n- Philip III of France -> Peter III of Aragon\n- Ferdinand Philippe, Duke of Orléans -> Maria Amalia of Naples and Sicily\n- Ferdinand Philippe, Duke of Orléans -> Louis Philippe I\n- Philip III of Spain -> Philip II of Spain\nPassages:\nP1: Philip II of Spain: Philip II of Spain (21 May 1527 – 13 September 1598) was King of Spain (1556–98), King of Portugal (1581–98, as Philip I), King of Naples and Sicily (both from 1554), and \"jure uxoris\" King of England and Ireland (during his marriage to Queen Mary I from 1554 to 1558). He was also Duke of Milan, and from 1555, lord of the Seventeen Provinces of the Netherlands. The son of Holy Roman Emperor and King of the Spanish kingdoms Charles V and Isabella of Portugal, Philip was ...\nP2: Maria Amalia of Naples and Sicily: Maria Amalia of Naples and Sicily (Maria Amalia Teresa; 26 April 1782 – 24 March 1866) was a French queen by marriage to Louis Philippe I, King of the French.\nP3: Ferdinand I of the Two Sicilies: Ferdinand I (12 January 1751 – 4 January 1825), was the King of the Two Sicilies from 1816, after his restoration following victory in the Napoleonic Wars. Before that he had been, since 1759, Ferdinand IV of the Kingdom of Naples and Ferdinand III of the Kingdom of Sicily. He was also King of Gozo. He was deposed twice from the throne of Naples: once by the revolutionary Parthenopean Republic for six months in 1799 and again by Napoleon Bonaparte in 1805. ...\nP4: Beatrice of Provence: Beatrice of Provence (c. 122923 September 1267), was ruling Countess of Provence and Forcalquier from 1245 until her death, as well as Countess of Anjou and Maine, Queen of Sicily and Naples by marriage to Charles I of Naples. She was the fourth and youngest daughter of Ramon Berenguer IV, Count of Provence and Forcalquier by his wife Beatrice, in turn daughter of Count Thomas I of Savoy and Margaret of Geneva.\nP5: Beatrice of Provence: Beatrice of Provence( c. 122923 September 1267), was ruling Countess of Provence and Forcalquier from 1245 until her death, as well as Countess of Anjou and Maine, Queen of Sicily and Naples by marriage to Charles I of Naples. She was the fourth and youngest daughter of Ramon Berenguer IV, Count of Provence and Forcalquier by his wife Beatrice, in turn daughter of Count Thomas I of Savoy and Margaret of Geneva.\nP6: Peter III of Aragon: Peter III of Aragon( November 1285) was King of Aragon, King of Valencia( as Peter I), and Count of Barcelona( as) from 1276 to his death. At the invitation of some rebels, he conquered the Kingdom of Sicily and became King of Sicily in 1282, pressing the claim of his wife, Constance II of Sicily, uniting the kingdom to the crown.\nP7: Marie of Brienne: Marie of Brienne( c. 1224–1275) was Latin Empress as the wife of Baldwin II of Courtenay. She served as regent during the absence of Baldwin II twice: in 1237 – 1239, and in 1243 – 1257.\nP8: Louis Philippe I: Louis Philippe I( 6 October 1773 – 26 August 1850) was King of the French from 1830 to 1848. As Duke of Chartres he distinguished himself commanding troops during the Revolutionary Wars but broke with the Republic over its decision to execute King Louis XVI. He fled to Switzerland in 1793 after being connected with a plot to restore France's monarchy. His father Louis Philippe II, Duke of Orléans( Philippe Égalité) fell under suspicion and was executed, and Louis Philippe ...\nP9: Louis Philippe I: Louis Philippe I (6 October 1773 – 26 August 1850) was King of the French from 1830 to 1848. As Duke of Chartres he distinguished himself commanding troops during the Revolutionary Wars but broke with the Republic over its decision to execute King Louis XVI. He fled to Switzerland in 1793 after being connected with a plot to restore France's monarchy. His father Louis Philippe II, Duke of Orléans (Philippe Égalité) fell under suspicion and was executed, and Louis Philippe ...\nP10: Philip of Sicily: Philip (born 1255/56, died 1277), of the Capetian House of Anjou, was the second son of King Charles I of Sicily and Countess Beatrice of Provence. He was at various times set up to become King of Sardinia, Prince of Achaea or King of Thessalonica, but ultimately ascended no throne.\nQuestion: Who is Philip Of Sicily's father?\nFinal answer:",
+  "output": "King Charles I of Sicily",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.6666666666666665
+  },
+  "response": {
+    "id": "chatcmpl-88c0a074a3a0fe0d",
+    "object": "chat.completion",
+    "created": 1779532777,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "King Charles I of Sicily",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1362,
+      "total_tokens": 1369,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "4b1b91720bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "India",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Mapum of Geumgwan Gaya -> Queen Mojong\n- Mapum of Geumgwan Gaya -> Queen Hogu\n- Geodeung of Geumgwan Gaya -> Queen Mojong\n- Geodeung of Geumgwan Gaya -> Heo Hwang-ok\n- Queen Mojong -> Geodeung of Geumgwan Gaya\n- Queen Mojong -> Mapum of Geumgwan Gaya\n- Sin Po -> Geodeung of Geumgwan Gaya\n- Sin Po -> Queen Mojong\n- Sin Po -> Kings\n- Chwihui of Geumgwan Gaya -> The General\n- Gyeomji of Geumgwan Gaya -> The General\n- Geojilmi of Geumgwan Gaya -> Queen Hogu\nPassages:\nP1: Heo Hwang-ok: Heo Hwang-ok is a legendary queen mentioned in \"Samguk Yusa\", a 13th-century Korean chronicle. According to \"Samguk Yusa\" she became the wife of King Suro of Geumgwan Gaya at the age of 16, after having arrived by boat from a distant kingdom, making her the first queen of Geumgwan Gaya. According to some Korean historians there are more than six million present day Koreans, of which the majority are from Gimhae Kim clan with surnames Heo and 이 (Lee/Yi) that trace their lineage to ...\nP2: Queen Hogu: Queen Hogu was the third wife of Mapum of Geumgwan Gaya. She bore the fourth ruler of the Gaya confederacy, Geojilmi of Geumgwan Gaya. She was the granddaughter of Cho Kuang, who was an attendant of Heo Hwang- ok for her marriage from India.\nP3: Kings: Kings or King's may refer to:\nP4: The General: The General or The Generals may refer to:\nP5: Geodeung of Geumgwan Gaya: Geodeung of Gaya, also called Geodeung Wang, was the king of Gaya, a confederacy of chiefdoms that existed in the Nakdong River valley of Korea during the Three Kingdoms era, from 199 to 259. Legend holds that he was the son of King Suro of Gaya and Suro's queen, Heo Hwang-ok. Legend says also they had in total ten sons. Geodeung Wang was married with Queen Mojong, who was the daughter of Sin Po Ch'onpukyong and Mojong. Sin Po was a courtier in Heo Hwang-ok's ...\nP6: Mapum of Geumgwan Gaya: Mapum of Geumgwan Gaya( died 291, r. 259–291) was king of Geumgwan Gaya, a member state of the Gaya confederacy. He was preceded by his father, King Geodeung and succeeded by his son King Geojilmi. Like the other members of the Geumgwan royal line, his surname was Kim. His mother was Queen Mojong. Mapum married Queen Hogu, who was the granddaughter of the high official Jo Gwang.\nP7: Gyeomji of Geumgwan Gaya: Gyeomji of Geumgwan Gaya( r. 492–521) was the ninth ruler of Geumgwan Gaya, a Gaya state of ancient Korea. He was the son of King Jilji and Queen Bangwon. He married Queen Suk, who was the daughter of the general(\" gakgan\") Chulchung. She gave birth to Guhyeong, who would be the kingdom's final ruler.\nP8: Chwihui of Geumgwan Gaya: Chwihui of Geumgwan Gaya( died 451)( r. 421–451) was the seventh ruler of Geumgwan Gaya, a Gaya state of ancient Korea. He was the son of King Jwaji and Queen Boksu. He married Indeok, daughter of the general(\" gakgan\") Jinsa.\nP9: Isipum of Geumgwan Gaya: Ipum of Geumgwan Gaya( died 407)( r. 346–407) was the fifth ruler of Geumgwan Gaya, a Gaya state of ancient Korea. He was the son of King Geojilmi and Queen Aji. He married Queen Jeongsin, and she gave birth to his heir, Jwaji.\nP10: Geojilmi of Geumgwan Gaya: Geojilmi of Geumgwan Gaya( died 346, r. 291–346) was the fourth ruler of Geumgwan Gaya, a Gaya state of ancient Korea. He was the son of King Mapum and Queen Hogu. King Geojilmi married Queen Aji, who was the granddaughter of a high official(\" agan\") named Agung. She gave birth to his heir, Ipum.\nQuestion: What nationality is Geodeung Of Geumgwan Gaya's mother?\nFinal answer:",
+  "output": "Korean",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8a6f301654f4a5ad",
+    "object": "chat.completion",
+    "created": 1779532760,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Korean",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1214,
+      "total_tokens": 1217,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

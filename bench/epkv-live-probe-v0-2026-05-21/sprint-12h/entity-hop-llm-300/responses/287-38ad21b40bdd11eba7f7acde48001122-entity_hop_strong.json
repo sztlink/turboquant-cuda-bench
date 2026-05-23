@@ -1,0 +1,48 @@
+{
+  "qid": "38ad21b40bdd11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Königstein im Taunus",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: The Stone Rider: The Stone Rider  is a 1923 German silent drama film directed by Fritz Wendhausen and starring Rudolf Klein-Rogge, Lucie Mannheim and Gustav von Wangenheim.\nP2: Rider: Rider or Riders may refer to:\nP3: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP4: The Vengeance of Fu Manchu: The Vengeance of Fu Manchu is a 1967 British film directed by Jeremy Summers and starring Christopher Lee, Horst Frank, Douglas Wilmer and Tsai Chin. It was the third British/ West German Constantin Film co-production of the Dr. Fu Manchu series and the first to be filmed in Hong Kong. It was generally released in the U.K. through Warner- Pathé( as a support feature to the Lindsay Shonteff film\" The Million Eyes of Sumuru\") on 3 December 1967.\nP5: The Castle of Fu Manchu: The Castle of Fu Manchu( also known as The Torture Chamber of Dr. Fu Manchu and also known by its German title Die Folterkammer des Dr. Fu Man Chu) is a 1969 film and the fifth and final Dr. Fu Manchu film with Christopher Lee portraying the title character.\nP6: The Will: The Will may refer to:\nP7: Abraham: Abraham (né Abram) is the common patriarch of Christianity, Islam, Judaism, and other religions. In Judaism, he is the founding father of the covenant of the pieces, the special relationship between the Hebrews and God; in Christianity, he is the prototype of all believers, Jewish or Gentile; and in Islam he is seen as a link in the chain of prophets that begins with Adam and culminates in Muhammad. The narrative in the Book of Genesis revolves around the themes of posterity and land. ...\nP8: Fritz Wendhausen: Fritz Wendhausen(7 August 1890, Wendhausen – 5 January 1962 , Königstein im Taunus) was a German actor, screenwriter and film director. He is also credited as Frederick Wendhausen and F.R. Wendhausen. In 1938 he emigrated to Britain from Nazi Germany.\nP9: Guilty?: Guilty? is a 1930 American pre-Code drama film directed by George B. Seitz.\nP10: Offer: Offer or offers may refer to:\nQuestion: Where was the place of death of the director of film The Stone Rider?\nFinal answer:",
+  "output": "Königstein im Taunus",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-ab234ec5c547f08c",
+    "object": "chat.completion",
+    "created": 1779532964,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Königstein im Taunus",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 660,
+      "total_tokens": 669,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

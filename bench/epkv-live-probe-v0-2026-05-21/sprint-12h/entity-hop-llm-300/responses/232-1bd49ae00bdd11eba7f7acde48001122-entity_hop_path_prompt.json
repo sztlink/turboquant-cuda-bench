@@ -1,0 +1,48 @@
+{
+  "qid": "1bd49ae00bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Colorado",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- The Pride of Jennico (film) -> J. Searle Dawley\n- The Pride of Jennico (film) -> Swashbuckler (film)\n- The Pride of New York -> Raoul Walsh\n- The Pride of the Force -> Norman Lee\n- The Pride of the Force -> Comedy!\n- The Autumn of Pride -> David Hawthorne\n- Pride of the Marines (1936 film) -> D. Ross Lederman\n- Pride of the Marines (1936 film) -> Comedy!\n- The Pride of the Force (1925 film) -> The Pride of the Force\n- The Pride of the Force (1925 film) -> Silent Action\nPassages:\nP1: The Pride of Jennico (film): The Pride of Jennico is a lost 1914 silent swashbuckler film directed by J. Searle Dawley. It was produced by Adolph Zukor and released on a State Rights basis. On the Broadway stage, the play starred James K. Hackett, Bertha Galland and Arthur Hoops.\nP2: Swashbuckler (film): Swashbuckler is a romantic adventure film produced in the U.S. by Universal Studios and released in 1976. The film is based on the story “ The Scarlet Buccaneer ”, written by Paul Wheeler and adapted for the screen by Jeffrey Bloom. It was directed by James Goldstone and was rated PG. The film was released in the UK as The Scarlet Buccaneer.\nP3: J. Searle Dawley: James Searle Dawley (May 13, 1877 – March 30, 1949) was an American producer, director and screenwriter. He directed 149 silent films between 1907 and 1926. He was born in Del Norte, Colorado, and died in Hollywood, California. Searley is best remembered for directing the Thomas Edison version of \"Frankenstein\" in 1910. He reportedly referred to himself as \"the first motion picture director\", which was not accurate. He worked for a while at Edison's studio, then started his ...\nP4: J. Searle Dawley: James Searle Dawley( May 13, 1877 – March 30, 1949) was an American producer, director and screenwriter. He directed 149 silent films between 1907 and 1926. He was born in Del Norte, Colorado, and died in Hollywood, California. Searley is best remembered for directing the Thomas Edison version of\" Frankenstein\" in 1910. He reportedly referred to himself as\" the first motion picture director\", which was not accurate. He worked for a while at Edison's studio, then started his ...\nP5: Raoul Walsh: Raoul A. Walsh( March 11, 1887 December 31, 1980) was an American film director, actor, founding member of the Academy of Motion Picture Arts and Sciences( AMPAS) and the brother of the silent screen actor George Walsh. He was known for portraying John Wilkes Booth in the silent classic\" The Birth of a Nation\"( 1915) and for directing such films as\" The Big Trail\"( 1930), starring John Wayne,\" High Sierra\"( 1941), starring Ida Lupino and Humphrey Bogart; and\" White Heat\"( 1949), ...\nP6: Raoul Walsh: Raoul A. Walsh (March 11, 1887December 31, 1980) was an American film director, actor, founding member of the Academy of Motion Picture Arts and Sciences (AMPAS) and the brother of the silent screen actor George Walsh. He was known for portraying John Wilkes Booth in the silent classic \"The Birth of a Nation\" (1915) and for directing such films as \"The Big Trail\" (1930), starring John Wayne, \"High Sierra\" (1941), starring Ida Lupino and Humphrey Bogart; and \"White Heat\" (1949), ...\nP7: D. Ross Lederman: David Ross Lederman (December 12, 1894 – August 24, 1972) was an American film director noted for his Western/action/adventure films of the 1930s and 1940s. Starting out as an extra in Mack Sennett's Keystone Cops series, Lederman worked his way through the ranks of film production, and first made his mark as a second-unit director. He directed several B-Western serials in the early 1930s, such as \"Two-Fisted Law\" and \"Texas Cyclone\" both 1932, in which he worked with Tim ...\nP8: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP9: Norman Lee: Norman Lee( 10 October 1898 – 2 June 1964) was a British screenwriter and film director.\nP10: David Hawthorne: David Hawthorne( born May 14, 1985) is a former American football linebacker. He was signed by the Seattle Seahawks as an undrafted free agent in 2008. He played college football at TCU.\nQuestion: Where was the director of film The Pride Of Jennico (Film) born?\nFinal answer:",
+  "output": "Del Norte, Colorado",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.5
+  },
+  "response": {
+    "id": "chatcmpl-98d16bdef567ae65",
+    "object": "chat.completion",
+    "created": 1779532915,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Del Norte, Colorado",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1296,
+      "total_tokens": 1301,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

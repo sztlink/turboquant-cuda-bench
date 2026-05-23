@@ -1,0 +1,48 @@
+{
+  "qid": "3d03e0260bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Christ's College, Cambridge",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- George Lane-Fox (MP) -> Sackville Lane-Fox, 12th Baron Conyers\n- George Lane-Fox (MP) -> Sackville Lane-Fox\n- James Fox-Lane -> George Fox-Lane, 1st Baron Bingley\n- James Fox-Lane -> House of Lords\n- Felicity Lane-Fox, Baroness Lane-Fox -> Martha Lane Fox\n- Felicity Lane-Fox, Baroness Lane-Fox -> House of Lords\n- Sackville Lane-Fox, 12th Baron Conyers -> Sackville Lane-Fox\n- Martha Lane Fox -> House of Lords\n- Martha Lane Fox -> PAST\n- Marjorie Lane -> Broadway Melody of 1936\n- Marjorie Lane -> The Broadway Melody\nPassages:\nP1: The Broadway Melody: The Broadway Melody, also known as The Broadway Melody of 1929, is a 1929 American pre-Code musical film and the first sound film to win an Academy Award for Best Picture. It was one of the first musicals to feature a Technicolor sequence, which sparked the trend of color being used in a flurry of musicals that would hit the screens in 1929 – 1930. Today the Technicolor sequence is lost; only a black and white copy survives in available versions. The film was the first ...\nP2: House of Lords: The House of Lords, also known as the House of Peers and domestically usually referred to simply as the Lords, is the upper house of the Parliament of the United Kingdom. Membership is granted by appointment or else by heredity or official function. Like the House of Commons, it meets in the Palace of Westminster. Officially, the full name of the house is the Right Honourable the Lords Spiritual and Temporal of the United Kingdom of Great Britain and Northern Ireland in ...\nP3: PAST: PAST or Past may refer to:\nP4: Broadway Melody of 1936: Broadway Melody of 1936 is a musical film released by Metro- Goldwyn- Mayer in 1935. In New York, the film opened at the Capitol Theatre, the site of many prestigious MGM premieres. It was a follow- up of sorts to the successful\" The Broadway Melody\", which had been released in 1929, although, there is no story connection with the earlier film beyond the title and some music. The film was written by Harry W. Conn, Moss Hart, Jack McGowan and Sid Silvers. It was directed ...\nP5: George Lane-Fox (MP): George Lane-Fox (4 May 1793 – 15 November 1848), of Bramham Park, Yorkshire, was a British landowner and Tory politician. Lane-Fox was the son of James Fox-Lane, of Bramham Park, Yorkshire, by the Honourable Mary Lucy, daughter of George Pitt, 1st Baron Rivers. He was the brother of Sackville Lane-Fox and the uncle of Sackville Lane-Fox, 12th Baron Conyers, and Augustus Pitt Rivers. He inherited Bramham Park, near Wetherby but moved to Bowcliffe Hall after Bramham Hall was ...\nP6: George Fox-Lane, 1st Baron Bingley: George Fox- Lane, 1st Baron Bingley( circa 1697 – 22 February 1773) was a British peer and Tory politician. Born George Fox, he was the first son and heir of Henry Fox and his second wife, Hon. Frances\" née\" Lane, the daughter of George Lane, 1st Viscount Lanesborough and his third wife Lady Frances Sackville. From 1734 to 1741, he was Member of Parliament for Hindon and then for the City of York from 1742 to 1761. In 1750, he took the additional name of Lane ...\nP7: James Fox-Lane: James Fox-Lane (August 1756 – 7 April 1821), known as James Fox until 1773, was an English landed gentleman, who represented Horsham in Parliament for six years. He was the oldest son of Sackville Fox of East Horsley, Surrey, and his wife Ann Holloway. His father died in 1760 and left him his estate in Surrey, worth about £1,300 per year. Educated at Marylebone School, he was admitted to Christ's College, Cambridge in 1771 and studied there until 1774. On 22 February 1773, he ...\nP8: Felicity Lane-Fox, Baroness Lane-Fox: Felicity Lane- Fox, Baroness Lane- Fox, OBE( 22 June 1918 – 17 April 1988) was a Conservative member of the House of Lords and champion of disability issues. She was born in Tadcaster, Yorkshire, the daughter of Edward Lane- Fox, who was brother of George Lane- Fox, 1st Baron Bingley. At the age of 12 she was paralysed by an attack of poliomyelitis. In 1963 she became a member of the executive of the National Union of Conservative and Unionist Associations. ...\nP9: Sackville Lane-Fox, 12th Baron Conyers: Sackville George Lane-Fox, 12th Baron Conyers and \"de jure\" 15th Baron Darcy de Knayth (14 September 1827 – 24 August 1888) was a British peer and soldier.\nP10: Martha Lane Fox: Martha Lane Fox, Baroness Lane- Fox of Soho, CBE( born 10 February 1973) is a British businesswoman, philanthropist and public servant. She co-founded Last Minute during the dotcom boom of the early 2000s and has subsequently served on public service digital projects. She sits on the boards of Twitter, Donmar Warehouse and Chanel, as well as being a trustee of The Queens Commonwealth Trust. She previously served on the board of Channel 4. She entered the House of Lords as a ...\nQuestion: Where did George Lane-Fox (Mp)'s father study?\nFinal answer:",
+  "output": "Not mentioned in the passages.",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8cee41875da6cac2",
+    "object": "chat.completion",
+    "created": 1779532888,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Not mentioned in the passages.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1457,
+      "total_tokens": 1464,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

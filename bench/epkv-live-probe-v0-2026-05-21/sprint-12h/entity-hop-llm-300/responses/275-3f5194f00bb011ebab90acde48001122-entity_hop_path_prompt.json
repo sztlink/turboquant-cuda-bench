@@ -1,0 +1,48 @@
+{
+  "qid": "3f5194f00bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Prince Harald of Denmark",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Prince Harald of Schaumburg-Lippe -> Princess Feodora of Denmark\n- Prince Harald of Schaumburg-Lippe -> Princess Feodora of Denmark\n- Heinrich Donatus, Hereditary Prince of Schaumburg-Lippe -> Louise\n- Prince Waldemar of Schaumburg-Lippe -> Princess Feodora of Denmark\n- Prince Waldemar of Schaumburg-Lippe -> Princess Feodora of Denmark\n- Princess Feodora of Denmark -> Prince Harald of Denmark\n- Princess Feodora of Denmark -> Louise\nPassages:\nP1: Prince Harald of Denmark: Prince Harald of Denmark (\"Harald Christian Frederik\"; 8 October 1876 – 30 March 1949) was a member of the Danish Royal Family. He was the third son and fourth child of Frederick VIII of Denmark and his wife, Lovisa of Sweden, and thus brother to Christian X of Denmark. The prince served in the Royal Danish Army for most of his life, and reached the rank of Lieutenant General.\nP2: Princess Feodora of Denmark: Princess Feodora of Denmark ( Feodora Louise Caroline-Mathilde Viktoria Alexandra Frederikke Johanne) (3 July 1910 – 17 March 1975) was a Danish princess as a daughter of Prince Harald of Denmark and granddaughter of Frederick VIII of Denmark. As the wife of Prince Christian of Schaumburg-Lippe she became a Princess of Schaumburg-Lippe by marriage.\nP3: Louise: Louise or Luise may refer to:\nP4: Prince Harald of Schaumburg-Lippe: Prince Harald of Schaumburg- Lippe( Harald Christian Leopold Gustav; b. 27 March 1948, in Schloss Hagenburg, Niedersachsen) is the third son of Prince Christian of Schaumburg- Lippe and Princess Feodora of Denmark and the great- grandson of Frederick VIII of Denmark, a member of the Danish Royal Family. He married Petra Wera Kirstein on 22 July 1976; they divorced in 1980. He married Gabrielle Hagermann on 23 September 1988. He is in the line of succession to ...\nP5: Prince Harald of Schaumburg-Lippe: Prince Harald of Schaumburg-Lippe (Harald Christian Leopold Gustav; b. 27 March 1948, in Schloss Hagenburg, Niedersachsen) is the third son of Prince Christian of Schaumburg-Lippe and Princess Feodora of Denmark and the great-grandson of Frederick VIII of Denmark, a member of the Danish Royal Family. He married Petra Wera Kirstein on 22 July 1976; they divorced in 1980. He married Gabrielle Hagermann on 23 September 1988. He is in the line of succession to the ...\nP6: Prince Wilhelm of Schaumburg-Lippe (b. 1939): Prince Wilhelm of Schaumburg- Lippe( Wilhelm Friedrich Harald Christian Ernst August Karl Gustav zu Schaumburg- Lippe, born 19 August 1939) is the head of the Nachod branch of the princely house of Schaumburg- Lippe. Wilhelm is the son of Prince Christian Nicholas of Schaumburg- Lippe, and the great- grandson of Frederick VIII of Denmark.\nP7: Heinrich Donatus, Hereditary Prince of Schaumburg-Lippe: Heinrich Donatus, Hereditary Prince of Schaumburg- Lippe( Ernst- August Alexander Wilhelm Bernhard Krafft Heinrich Donatus; born 13 May 1994) is the son of Alexander, Prince of Schaumburg- Lippe and thus heir to the German Princely house of Schaumburg- Lippe. Prince Heinrich Donatus of Schaumburg- Lippe was born in Hanover to Alexander, Hereditary Prince of Schaumburg- Lippe( born 1958), and Princess Marie- Louise(\" Lilly\") of Sayn- ...\nP8: Prince Waldemar of Schaumburg-Lippe: Prince Waldemar Stephen of Schaumburg- Lippe(\" Waldemar Stephan Ferdinand Wolrad Friedrich Karl\", b. 19 December 1940 in Glienicke) is a son of Prince Christian of Schaumburg- Lippe and Princess Feodora of Denmark, and the great- grandson of King Frederick VIII of Denmark.\nP9: Prince Waldemar of Schaumburg-Lippe: Prince Waldemar Stephen of Schaumburg-Lippe (\"Waldemar Stephan Ferdinand Wolrad Friedrich Karl\", b. 19 December 1940 in Glienicke) is a son of Prince Christian of Schaumburg-Lippe and Princess Feodora of Denmark, and the great-grandson of King Frederick VIII of Denmark.\nP10: Prince William of Schaumburg-Lippe: Prince William of Schaumburg-Lippe (12 December 18344 April 1906) was son of George William, Prince of Schaumburg-Lippe and member of the House of Lippe.\nQuestion: Who is Prince Harald Of Schaumburg-Lippe's maternal grandfather?\nFinal answer:",
+  "output": "Frederick VIII of Denmark",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.5
+  },
+  "response": {
+    "id": "chatcmpl-a55801588d2a1093",
+    "object": "chat.completion",
+    "created": 1779532952,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Frederick VIII of Denmark",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1238,
+      "total_tokens": 1245,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

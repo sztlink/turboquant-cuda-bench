@@ -1,0 +1,66 @@
+{
+  "idx": 146,
+  "qid": "122b64480baf11ebab90acde48001122",
+  "gold": "Gerberge of Lorraine",
+  "candidates": [
+    "Gerberge of Lorraine",
+    "Ida of Saxony",
+    "Louis, Count of Verdun",
+    "Otto I, Count of Chiny",
+    "Otto II, Count of Chiny",
+    "Count of Castres",
+    "The Only One",
+    "Queen Victoria",
+    "(Otto)",
+    "Part",
+    "Louise",
+    "Frederick, Count of Verdun"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Gerberge of Lorraine\nC2: Ida of Saxony\nC3: Louis, Count of Verdun\nC4: Otto I, Count of Chiny\nC5: Otto II, Count of Chiny\nC6: Count of Castres\nC7: The Only One\nC8: Queen Victoria\nC9: (Otto)\nC10: Part\nC11: Louise\nC12: Frederick, Count of Verdun\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Louis, Count of Verdun -> Otto I, Count of Chiny\n- Frederick, Count of Verdun -> Count of Castres\n- Herman, Count of Verdun -> Otto I, Count of Chiny\n- Herman, Count of Verdun -> The Only One\n- Rudolfe II, Count of Ivois -> (Otto)\n- Albert, Count of Chiny -> Otto II, Count of Chiny\n- Albert, Count of Chiny -> Part\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Queen Victoria\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Louise\nPassages:\nP1: Louis, Count of Verdun: Louis I (murdered September 29, 1025), Count of Chiny (987-1025) and Count of Verdun (as Louis) (1024-1025), son of Otto I, Count of Chiny, and an unknown mother.\nUpon Otto’s death, Louis became the second Count of Chiny. Virtually nothing is known about his rule in Chiny. In 1024, Reginbert, the Bishop of Verdun, appointed Louis as Count of Verdun when Count Herman of Ename, son of Godfrey the Prisoner, retired to a monastery. Herman's nephew, Godfrey the Bearded, ...\nP2: Otto I, Count of Chiny: Otto I (Eudes) (d. 987), Count of Chiny, perhaps son of Adalbert I the Pious, Count of Vermandois, and Gerberge of Lorraine. Although he probably did not use the title, Otto is regarded as the first Count of Chiny. Historically, an Otto of Vermandois is mentioned in a charter of 958 alongside his father, the Count of Vermandois. His name and that of his brother Ludolfe show a Germanic ancestry of the kings of the family of Saxony, which is indeed the case, as his mother ...\nP3: Otto II, Count of Chiny: Otto II( 1065- after 1131), Count of Chiny, son of Arnold I, Count of Chiny, and Adélaïs. He succeeded his father in 1106 and completed the construction of the Abbey of Orval that his father had started in 1070, installing the canons in 1124. The installation of a Cistercian community in Orval in 1131 marked his last appearance in any proceedings. He married Adelaide( Alix)( 1068- 1124), daughter of Albert III, Count of Namur and Ida of Saxony( widow of Frederick of ...\nP4: Count of Castres: The Count of Castres was a title in the French nobility. It was held by:\nP5: The Only One: The Only One( s) or Only One may refer to:\nP6: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nP7: (Otto): (Otto) is a 2015 Dutch animated short film directed by Job Roggeveen, Joris Oprins and Marieke Blaauw, from the Dutch animation studio Job, Joris & Marieke. The film had its international premiere at the Toronto International Film Festival. (Otto) was chosen to be the official Dutch entry for the Academy Award Best Animated Short Film 2016. Job, Joris & Marieke's previous film A Single Life was nominated Academy Award for Best Animated Short Film at the 87th Academy Awards.\nP8: Part: Part, parts or PART may refer to:\nP9: Louise: Louise or Luise may refer to:\nP10: Frederick, Count of Verdun: Frederick( Frédéric)( ca. 970- 6 January 1022), Count of Verdun( 988-1022), Count of Castres( 1000- 1022), and Provost of Saint- Vaast, was part of the Ardennes- Verdun dynasty. He was the eldest son of Godfrey I the Prisoner, Count of Verdun, and Matilda, daughter of Herman, Duke of Saxony, of the Billung family, a widow of Baldwin III of Flanders. Frederick was among those captured along with his father in 985 when Lothair of France attacked Verdun in 985. He was ...\nQuestion: Who is the paternal grandmother of Louis, Count Of Verdun?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Gerberge of Lorraine\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"P1 mentions that Louis I, Count of Verdun, is the son of Otto I, Count of Chiny. P2 provides information about Otto I, Count of Chiny, stating that his mother is Gerberge of Lorraine. This implies that Gerberge of Lorraine is the paternal grandmother of Louis, Count of Verdun.\"}",
+  "verifier": {
+    "final_answer": "Gerberge of Lorraine",
+    "selected": "C1",
+    "confidence": "high",
+    "reason": "P1 mentions that Louis I, Count of Verdun, is the son of Otto I, Count of Chiny. P2 provides information about Otto I, Count of Chiny, stating that his mother is Gerberge of Lorraine. This implies that Gerberge of Lorraine is the paternal grandmother of Louis, Count of Verdun."
+  },
+  "final": "Gerberge of Lorraine",
+  "selected": "C1",
+  "response": {
+    "id": "chatcmpl-95c755d8a8d69bf8",
+    "object": "chat.completion",
+    "created": 1779533071,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Gerberge of Lorraine\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"P1 mentions that Louis I, Count of Verdun, is the son of Otto I, Count of Chiny. P2 provides information about Otto I, Count of Chiny, stating that his mother is Gerberge of Lorraine. This implies that Gerberge of Lorraine is the paternal grandmother of Louis, Count of Verdun.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1401,
+      "total_tokens": 1495,
+      "completion_tokens": 94,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.6727819442749023
+}

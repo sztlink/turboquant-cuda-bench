@@ -1,0 +1,61 @@
+{
+  "idx": 222,
+  "qid": "dea2ea800bd911eba7f7acde48001122",
+  "gold": "Munich",
+  "candidates": [
+    "Dresden",
+    "Dresden, then in the Kingdom of Saxony",
+    "Place of birth",
+    "Place of origin",
+    "Princess Elisabeth Helene of Thurn and Taxis",
+    "Princess Joséphine Charlotte of Belgium",
+    "Friedrich Christian, Margrave of Meissen",
+    "Amalie Auguste of Bavaria",
+    "The Will",
+    "The Child",
+    "Princess Margaretha of Saxony",
+    "Princess Margaretha of Liechtenstein"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Dresden\nC2: Dresden, then in the Kingdom of Saxony\nC3: Place of birth\nC4: Place of origin\nC5: Princess Elisabeth Helene of Thurn and Taxis\nC6: Princess Joséphine Charlotte of Belgium\nC7: Friedrich Christian, Margrave of Meissen\nC8: Amalie Auguste of Bavaria\nC9: The Will\nC10: The Child\nC11: Princess Margaretha of Saxony\nC12: Princess Margaretha of Liechtenstein\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- Princess Margaretha of Saxony -> Amalie Auguste of Bavaria\n- Princess Margaretha of Saxony -> The Child\n- Princess Margaretha of Saxony -> Amalie Auguste of Bavaria\n- Princess Margaretha of Saxony -> The Child\n- Princess Margaretha of Liechtenstein -> Princess Joséphine Charlotte of Belgium\n- Princess Margaretha of Liechtenstein -> The Child\n- Princess Maria Josepha of Saxony (1867–1944) -> The Child\n- Princess Anna of Saxony (1929–2012) -> Princess Elisabeth Helene of Thurn and Taxis\n- Princess Anna of Saxony (1929–2012) -> Friedrich Christian, Margrave of Meissen\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP3: Princess Elisabeth Helene of Thurn and Taxis: Princess Elisabeth Helene of Thurn and Taxis  (15 December 1903, Regensburg, Kingdom of Bavaria – 22 October 1976, Munich, Bavaria, Germany) was a Princess of Thurn and Taxis by birth and a Princess and Duchess of Saxony, Margravine of Meissen, and titular Queen consort of Saxony through her marriage to Friedrich Christian, Margrave of Meissen. Elisabeth was the sixth child of Albert, 8th Prince of Thurn and Taxis and his wife Archduchess Margarethe ...\nP4: Princess Joséphine Charlotte of Belgium: Princess Joséphine Charlotte of Belgium( Joséphine Charlotte Stéphanie Ingeborg Elisabeth Marie- José Marguerite Astrid; 11 October 1927 – 10 January 2005) was Grand Duchess consort of Luxembourg as the wife of Grand Duke Jean. She was a first cousin of Harald V of Norway. She was the first child of King Leopold III of Belgium, and sister of the late King Baudouin I and former King Albert II and aunt of King Philippe I.\nP5: Friedrich Christian, Margrave of Meissen: Albert Leopold Friedrich Christian Sylvester Anno Macarius, Prince of Saxony, Duke of Saxony, Margrave of Meissen (31 December 1893 – 9 August 1968) was the second son of Frederick Augustus III, the last reigning king of Saxony before the abolition of the monarchy in 1918. Upon his father's death in 1932, he became the head of the Royal House of Saxony. He was Captain à la suite in the Royal Bulgarian Infantry, and Grand Master of the Order of the Rue ...\nP6: Amalie Auguste of Bavaria: Amalie Auguste (Munich, 13 November 1801 – Dresden, 8 November 1877) was a Princess of Bavaria and Queen of Saxony.\nP7: The Will: The Will may refer to:\nP8: The Child: The Child may refer to:\nP9: Princess Margaretha of Saxony: Princess Margaretha of Saxony, Duchess of Saxony  (24 May 1840 – 15 September 1858) was the eighth child and fifth eldest daughter of John of Saxony and his wife Amalie Auguste of Bavaria and a younger sister of Albert of Saxony and George of Saxony. She was born in Dresden, then in the Kingdom of Saxony. Through her marriage to Archduke Charles Louis of Austria, Margaretha was a member of the House of Habsburg-Lorraine and an Archduchess and Princess of Austria ...\nP10: Princess Margaretha of Saxony: Princess Margaretha of Saxony, Duchess of Saxony( 24 May 1840 – 15 September 1858) was the eighth child and fifth eldest daughter of John of Saxony and his wife Amalie Auguste of Bavaria and a younger sister of Albert of Saxony and George of Saxony. She was born in Dresden, then in the Kingdom of Saxony. Through her marriage to Archduke Charles Louis of Austria, Margaretha was a member of the House of Habsburg- Lorraine and an Archduchess and Princess of Austria ...\nQuestion: What is the place of birth of Princess Margaretha Of Saxony's mother?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Dresden, then in the Kingdom of Saxony\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"C9 states that Princess Anna of Saxony is the mother of Princess Margaretha of Liechtenstein, and C10 indicates that Princess Anna of Saxony is a first cousin of Princess Elisabeth Helene of Thurn and Taxis. Although there is no direct mention of Princess Margaretha's mother's place of birth in the passages, the evidence suggests that the place of origin for Princess Margaretha of Saxony's mother, Princess Margaretha of Liechtenstein, is Dresden,",
+  "verifier": {},
+  "final": "Dresden",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-a7ae287aaa06e03c",
+    "object": "chat.completion",
+    "created": 1779533121,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Dresden, then in the Kingdom of Saxony\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"C9 states that Princess Anna of Saxony is the mother of Princess Margaretha of Liechtenstein, and C10 indicates that Princess Anna of Saxony is a first cousin of Princess Elisabeth Helene of Thurn and Taxis. Although there is no direct mention of Princess Margaretha's mother's place of birth in the passages, the evidence suggests that the place of origin for Princess Margaretha of Saxony's mother, Princess Margaretha of Liechtenstein, is Dresden,",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1433,
+      "total_tokens": 1561,
+      "completion_tokens": 128,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 2.2270851135253906
+}

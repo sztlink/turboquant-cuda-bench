@@ -1,0 +1,48 @@
+{
+  "qid": "850c2ecc0bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Theni",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- En Aasai Rasave -> Sivaji Ganesan\n- En Aasai Rasave -> Kasthuri Raja\n- En Aasai Unnoduthan -> K. Narayanan\n- Allá en el trapiche -> Allá en el Rancho Grande\n- Allá en el trapiche -> The Sound (film)\n- Edmé Régnier L'Aîné -> Saint Thomas\n- Armando Robles Godoy -> The Jury\nPassages:\nP1: En Aasai Rasave: En Aasai Rasave is a 1998 Tamil drama film directed by Kasthuri Raja. The film features Sivaji Ganesan and Murali in the lead roles while Raadhika, Roja and Suvalakshmi all play other supporting roles. The film, which focussed on the lives of street dancers, released in August 1998.\nP2: The Sound (film): The Sound (formerly titled \"Lower Bay\") is an independent Canadian psychological thriller film written by Jenna Mattison. The film is purportedly based on true events. The film stars Rose McGowan, Michael Eklund, Christopher Lloyd, and Richard Gunn. Filming began in Toronto in May 2015. Direction of the film has been reported differently in sources to have been by Jenna Mattison, being her directorial debut, and by Nina Ljeti. The eponymous \"sound\" in the film refers to ...\nP3: Allá en el Rancho Grande: Allá en el Rancho Grande is a 1936 Mexican romantic drama film directed by Fernando de Fuentes and starring Tito Guízar and Esther Fernández. The film is considered to be the one that started the Golden Age of Mexican cinema.\nP4: The Jury: The Jury may refer to:\nP5: Sivaji Ganesan: Villupuram Chinnaiya Manrayar Ganesamoorthy, better known by his stage name Sivaji Ganesan, (1 October 1928 – 21 July 2001) was an Indian actor, and producer. He was active in Tamil cinema during the latter half of the 20th century. He was known for his versatility and variety of roles depicted on screen, which gave him also the Tamil nickname \"Nadigar Thilagam\" . In a career that spanned close to five decades, he had acted 288 films in Tamil, Telugu, Kannada, Malayalam and ...\nP6: Kasthuri Raja: Kasthuri Raja is an Indian film director based in Chennai, India, and his native place is Mallingapuram near Pannaipuram, Theni District, Tamil Nadu. He is the father of actor Dhanush and director Selvaraghavan. He worked as an assistant director with Director K.S.G. Most of the films he directed were either village based or infatuation of youngsters. He also worked with Director Visu on more than 16 films. He began his life, running away from home to Chennai and working in a ...\nP7: K. Narayanan: K. Narayanan is an Indian film director, editor, and art director who has worked predominantly in Malayalam cinema. Since his debut in 1953, he has edited more than 200 films across Malayalam and Tamil.\nP8: Saint Thomas: Saint Thomas or St Thomas may refer to:\nP9: En Aasai Unnoduthan: En Aasai Unnoduthan is a 1983 Indian Tamil- language romance film edited and directed by K. Narayanan. The film stars Prem Menon and Poornima Bhagyaraj.\nP10: Anne de Montafié, Countess of Clermont-en-Beauvaisis: Anne de Montafié, Countess of Clermont- en- Beauvaisis( 21 July 1577 – 17 June 1644), was a French heiress and the wife of Charles de Bourbon, Count of Soissons, a Prince of the Blood, and military commander during the French Wars of Religion. Following her marriage in 1601, she was styled Countess of Soissons. She was the Countess of Clermont- en- Beauvaisis, Countess of Montafié, Lady of Lucé and Bonnétable in her own right.\nQuestion: Where was the director of film En Aasai Rasave born?\nFinal answer:",
+  "output": "Mallingapuram near Pannaipuram, Theni District, Tamil Nadu",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.25
+  },
+  "response": {
+    "id": "chatcmpl-ab6a1e5b0ab569b1",
+    "object": "chat.completion",
+    "created": 1779532932,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Mallingapuram near Pannaipuram, Theni District, Tamil Nadu",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1042,
+      "total_tokens": 1059,
+      "completion_tokens": 17,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

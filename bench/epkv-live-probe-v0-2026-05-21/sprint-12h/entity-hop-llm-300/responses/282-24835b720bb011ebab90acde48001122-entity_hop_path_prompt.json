@@ -1,0 +1,48 @@
+{
+  "qid": "24835b720bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Meresankh II",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Iynefer II -> Nefertkau III\n- Iynefer II -> Khufu\n- Nefertkau III -> Khufu\n- Priscilla Pointer -> Steven Spielberg\n- Zenonis -> Basiliscus\n- Lalla Latifa -> Royal Children\n- Lalla Latifa -> Royal Children\nPassages:\nP1: Khufu: Khufu (full name Khnum Khufu , known to the ancient Greeks as Cheops, was an ancient Egyptian monarch who was the second pharaoh of the Fourth Dynasty, in the first half of the Old Kingdom period (26th century BC). Khufu succeeded his father Sneferu as king. He is generally accepted as having commissioned the Great Pyramid of Giza, one of the Seven Wonders of the Ancient World, but many other aspects of his reign are poorly documented. The only completely preserved portrait of the king ...\nP2: Steven Spielberg: Steven Allan Spielberg( born December 18, 1946) is an American filmmaker. He is considered one of the founding pioneers of the New Hollywood era and one of the most popular directors and producers in film history. Spielberg started in Hollywood directing television and several minor theatrical releases. He became a household name as the director of\" Jaws\"( 1975), which was critically and commercially successful and is considered the first summer blockbuster. His subsequent ...\nP3: Basiliscus: Basiliscus (d. 476/477) was Eastern Roman Emperor from 475 to 476. A member of the House of Leo, he came to power when Emperor Zeno was forced out of Constantinople by a revolt. Basiliscus was the brother of Empress Aelia Verina, who was the wife of Emperor Leo I (457–474). His relationship with the Emperor allowed him to pursue a military career that, after minor initial successes, ended in 468, when he led the disastrous Roman invasion of Vandal Africa, in one of the largest ...\nP4: Royal Children: Royal Children is a 1950 West German comedy film directed by Helmut Käutner and starring Jenny Jugo, Peter van Eyck and Hedwig Wangel. It was shot at the Bavaria Studios in Munich and on location in Bad Wimpfen and at Hornberg Castle. The film's sets were designed by the art director Bruno Monden and Hermann Warm. It was a major commercial failure on release.\nP5: Iynefer II: Iynefer II (\"the beautiful one has come\" ; the name is also spelled as Iy-nefer) was an ancient Egyptian prince, likely a son of Pharaoh Khufu. He was named after his uncle Iynefer I. Iynefer II ’s wife was Nefertkau III; she was likely his niece, and they had one son (or two sons) and one daughter, Nefertkau. Both Iynefer and his wife are buried in the mastaba G 7820 at Giza. A large, open eye is characteristic of the decoration of Iynefer II’s mastaba.\nP6: Doria Ragland: Doria L. Ragland( born September 2, 1956) is the mother of Meghan, Duchess of Sussex, the mother- in- law of Prince Harry, and the maternal grandmother of Archie Mountbatten- Windsor, who is seventh in line to the British throne. She is a former makeup artist, business owner, yoga instructor, and former social worker who worked in the mental health sector from 2015 to 2018.\nP7: Zenonis: Aelia Zenonis (died 476/477) was the Empress consort of Basiliscus of the Byzantine Empire, brother of Verina. Her sister-in-law was Empress consort to Leo I and mother to Ariadne. Her niece Ariadne was Empress consort to Zeno and mother of Leo II. Her ancestry is unknown.\nP8: Chitra Shenoy: Chitra Shenoy is a well known Indian actress in South Indian movies. She has acted in more than 600 films in Kannada, Malayalam, Tamil, Telugu, Tulu, and Hindi. She is known as the' young mother' in the Kannada film industry having portrayed the role of a mother to almost all top stars in Kannada. In Malayalam she rose to fame with her role as Mammootty's mother in Rajamanikyam. She became a house- hold name in Kerala with the mother- in- law character in the Malayalam serial ...\nP9: Lalla Latifa: Princess Lalla Latifa Amahzoune( – born in 1946 in Khenifra) is the widow of King Hassan II and the mother of Princess Lalla Meryem, King Mohammed VI, Princess Lalla Asma, Princess Lalla Hasna and Prince Moulay Rachid. She is referred to using terms such as\" mother of the royal children\". The privacy accorded to her in Morocco is so great that attempts to publish photos of her in the Moroccan newspaper\" Al Ayam\" were found to violate Moroccan law( in accord with a 1956 decree ...\nP10: Lalla Latifa: Princess Lalla Latifa Amahzoune (– born in 1946 in Khenifra) is the widow of King Hassan II and the mother of Princess Lalla Meryem, King Mohammed VI, Princess Lalla Asma, Princess Lalla Hasna and Prince Moulay Rachid. She is referred to using terms such as \"mother of the royal children\". The privacy accorded to her in Morocco is so great that attempts to publish photos of her in the Moroccan newspaper \"Al Ayam\" were found to violate Moroccan law (in accord with a 1956 decree ...\nQuestion: Who is Iynefer Ii's mother-in-law?\nFinal answer:",
+  "output": "Nefertkau III",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-babca3a1f7d0bb95",
+    "object": "chat.completion",
+    "created": 1779532957,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Nefertkau III",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1345,
+      "total_tokens": 1352,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

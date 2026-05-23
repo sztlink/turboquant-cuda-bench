@@ -1,0 +1,66 @@
+{
+  "idx": 119,
+  "qid": "a6d861000bdb11eba7f7acde48001122",
+  "gold": "Maurya dynasty",
+  "candidates": [
+    "India",
+    "Ashoka",
+    "Whoopi Goldberg",
+    "Funny Face",
+    "1919 (film)",
+    "The Child",
+    "Irvin Willat",
+    "Sidney Olcott",
+    "Man from God's Country",
+    "God's Country and the Law",
+    "Back to God's Country (1927 film)",
+    "Tivala"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: India\nC2: Ashoka\nC3: Whoopi Goldberg\nC4: Funny Face\nC5: 1919 (film)\nC6: The Child\nC7: Irvin Willat\nC8: Sidney Olcott\nC9: Man from God's Country\nC10: God's Country and the Law\nC11: Back to God's Country (1927 film)\nC12: Tivala\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Tivala -> Ashoka\n- Tivala -> The Child\n- Back to God's Country (1927 film) -> Irvin Willat\n- Back to God's Country (1927 film) -> 1919 (film)\n- God's Country and the Law -> Sidney Olcott\n- Donna Fargo -> Funny Face\n- Darrell Roodt -> Whoopi Goldberg\nPassages:\nP1: Ashoka: Ashoka (Brāhmi: 𑀅𑀲𑁄𑀓, \"Asoka\", IAST: Aśoka) sometimes Ashoka the Great, was an Indian emperor of the Maurya Dynasty, who ruled almost all of the Indian subcontinent from to 232 BCE. The grandson of the founder of the Maurya Dynasty, Chandragupta Maurya, Ashoka promoted the spread of Buddhism across ancient Asia. Considered by many to be one of India's greatest emperors, Ashoka expanded Chandragupta's empire to reign over a realm stretching from present-day Afghanistan in the west to ...\nP2: Whoopi Goldberg: Caryn Elaine Johnson( born November 13, 1955), known professionally as Whoopi Goldberg, is an American actress, comedian, author, and television personality. She has been nominated for 13 Emmy Awards and is one of the few entertainers to have won an Emmy Award, a Grammy Award, an Academy Award, and a Tony Award( EGOT). She is also the second black woman to win an Academy Award for acting. Goldberg's breakthrough came in 1985 for her role as Celie, a mistreated woman in the Deep ...\nP3: Funny Face: Funny Face is a 1957 American musical romantic comedy film directed by Stanley Donen and written by Leonard Gershe, containing assorted songs by George and Ira Gershwin. Although having the same title as the 1927 Broadway musical\" Funny Face\" by the Gershwin brothers, and featuring the same male star( Fred Astaire), the plot is totally different and only four of the songs from the stage musical are included. Alongside Astaire, the film stars Audrey Hepburn and Kay Thompson.\nP4: 1919 (film): 1919 is a 1985 British drama film directed by Hugh Brody and written by Michael Ignatieff together with Brody. It stars Paul Scofield. It was entered into the 35th Berlin International Film Festival.\nP5: The Child: The Child may refer to:\nP6: Irvin Willat: Irvin V. Willat (November 18, 1890 – April 17, 1976) was an American film director of the silent film era. He directed 39 films between 1917 and 1937. Early in his career Willat worked as a cinematographer on several films. His older brother Edwin Willat (1882–1950) was cinematographer on several silent films.\nP7: Sidney Olcott: Sidney Olcott( September 20, 1872 – December 16, 1949) was a Canadian- born film producer, director, actor and screenwriter.\nP8: Man from God's Country: Man from God's Country is a 1958 American Western film directed by Paul Landres and starring George Montgomery and Randy Stuart.\nP9: God's Country and the Law: God's Country and the Law is a 1921 American silent drama film produced by Pine Tree Pictures and distributed by Arrow Films. It was directed by Sidney Olcott with Fred C. Jones and Gladys Leslie in the leading roles. It was adapted from the 1915 novel\" God ’s Country and the Woman\" by James Oliver Curwood, which had been previously filmed under that title in 1916.\nP10: Back to God's Country (1927 film): Back to God's Country is a 1927 silent film Northwoods adventure based on James Oliver Curwood's story\" Wapi, the Walrus\". The film was directed by Irvin Willat and stars Renée Adorée, usually an MGM actress. The film is a remake of the 1919 film\" Back to God's Country\" which starred Nell Shipman. The film survives today.\nQuestion: Which country Tivala's father is from?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide any information about Tivala's father or his country of origin.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence passages do not provide any information about Tivala's father or his country of origin."
+  },
+  "final": "India",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-87cb06ed0a6045d3",
+    "object": "chat.completion",
+    "created": 1779533056,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide any information about Tivala's father or his country of origin.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1233,
+      "total_tokens": 1271,
+      "completion_tokens": 38,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.7365157604217529
+}

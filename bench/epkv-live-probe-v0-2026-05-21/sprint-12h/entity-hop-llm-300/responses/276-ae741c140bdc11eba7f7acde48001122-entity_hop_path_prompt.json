@@ -1,0 +1,48 @@
+{
+  "qid": "ae741c140bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Lezhë",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Jerina Branković (wife of Gjon Kastrioti II) -> Gjon Kastrioti II\n- Jerina Branković (wife of Gjon Kastrioti II) -> Lazar Branković\n- Kastrioti (kephale) -> Skanderbeg\n- Gjon Kastrioti II -> Donika Kastrioti\n- Gjon Kastrioti II -> Skanderbeg\n- Gjon Kastrioti II -> Donika Kastrioti\n- Gjon Kastrioti II -> Skanderbeg\n- Milica Branković -> Gjon Kastrioti II\n- Milica Branković -> Lazar Branković\n- Voisava -> Skanderbeg\n- Voisava -> The Hero\n- Dhimitër Jonima -> Helena Thopia\n- Dhimitër Jonima -> Captured!\nPassages:\nP1: Donika Kastrioti: Donika Kastrioti (née Andronika Arianiti-Muzaka) was an Albanian noblewoman and the spouse of George Kastrioti Skanderbeg. She was the daughter of Gjergj Arianiti, one of the greatest leaders in the Albanian war against the Ottoman Empire for more than two decades.\nP2: The Hero: The Hero may refer to:\nP3: Skanderbeg: Gjergj Kastrioti (6 May 1405 – 17 January 1468), known as Skanderbeg (or \"Skënderbeu\" from), was an Albanian nobleman and military commander who led a rebellion against the Ottoman Empire in what is today Albania, North Macedonia, Kosovo, Montenegro and Serbia. A member of the noble Kastrioti family, he was sent to the Ottoman court as hostage, where he was educated and entered the service of the Ottoman sultan for the next twenty years. He rose through the ranks, culminating in the ...\nP4: Lazar Branković: Lazar Branković (c. 1421 – 20 February 1458) was a Serbian despot, prince of Rascia from 1456 to 1458. He was the third son of Đurađ Branković and his wife Eirene Kantakouzene. He was succeeded by his elder brother, despot Stefan III Branković.\nP5: Helena Thopia: Helena Thopia (1388–1403) was an Albanian princess of the Thopia family who held the Krujë region as sovereign lady for two terms; 1388-1392 and 1394-1403.\nP6: Captured!: Captured!( aka Fellow Prisoners) is a 1933 American pre-Code film about World War I prisoners of war in a German camp. The film was directed by Roy Del Ruth and stars Leslie Howard and Douglas Fairbanks Jr..\" Captured!\" was based on the short story\" Fellow Prisoners\"( 1930) by Sir Philip Gibbs.\nP7: Jerina Branković (wife of Gjon Kastrioti II): Jerina Branković , or Irina (Ирина), was the wife of Gjon Kastrioti II. She was the third daughter of Lazar Branković and Helena Palaiologina. She had two sisters, Helen (Mary), wife of King Stephen Tomašević of Bosnia, and Milica, wife of Leonardo III Tocco of Epirus. Gjon Kastrioti II was the \"conte di Spoleto\" in 1485, and \"duca di San Pietro\" in Galatina in 1495. They had the following issue:\nP8: Gjon Kastrioti II: John Castriot II( 1456 – 1502), was the son of Skanderbeg, the Albanian national hero, and of Donika Kastrioti, daughter of Gjergj Arianiti. He was for a short time Lord of Kruja after his father death, Duke of San Pietro in Galatina( 1485), Count of Soleto, Signore of Monte Sant'Angelo and San Giovanni Rotondo. In 1495 Ferdinand I of Naples gave the title of the Signore of Gagliano del Capo and Oria. While in his teens he was forced to leave the country after the death of ...\nP9: Gjon Kastrioti II: John Castriot II (1456–1502), was the son of Skanderbeg, the Albanian national hero, and of Donika Kastrioti, daughter of Gjergj Arianiti. He was for a short time Lord of Kruja after his father death, Duke of San Pietro in Galatina (1485), Count of Soleto, Signore of Monte Sant'Angelo and San Giovanni Rotondo. In 1495 Ferdinand I of Naples gave the title of the Signore of Gagliano del Capo and Oria. While in his teens he was forced to leave the country after the death of his ...\nP10: Kastrioti (kephale): Kastrioti or Castriot of Kanina was a kephale of Kanina in 1368. He was probably the first member of the Kastrioti family mentioned in historical documents. If so, he was the father of Pal Kastrioti, grandfather of Gjon Kastrioti and great- grandfather of Skanderbeg. Some scholars believe that his first name was Branilo, while other scholars suggest that this belief is the result of misreading a historical document.\nQuestion: Where was the place of burial of Gjon Kastrioti Ii's father?\nFinal answer:",
+  "output": "Krujë",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9a6765be68283d25",
+    "object": "chat.completion",
+    "created": 1779532954,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Krujë",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1348,
+      "total_tokens": 1353,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

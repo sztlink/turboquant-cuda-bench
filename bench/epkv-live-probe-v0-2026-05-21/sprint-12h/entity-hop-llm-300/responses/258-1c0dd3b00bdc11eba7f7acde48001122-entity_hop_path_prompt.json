@@ -1,0 +1,48 @@
+{
+  "qid": "1c0dd3b00bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Polish-Lithuanian Commonwealth",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Aleksander Koniecpolski (1620–1659) -> Stanisław Koniecpolski\n- Aleksander Koniecpolski (1620–1659) -> Part\n- Aleksander Koniecpolski (1555–1609) -> Sigismund III Vasa\n- Aleksander Koniecpolski (1555–1609) -> The Supporter\n- Stanisław Koniecpolski -> Captured!\n- Wincenty Korwin Gosiewski -> The General\n- Five Boys from Barska Street -> Aleksander Ford\n- Five Boys from Barska Street -> The Street\nPassages:\nP1: Aleksander Ford: Aleksander Ford (born Mosze Lifszyc; 24 November 1908 in Kiev, Russian Empire – 4 April 1980 in Naples, Florida, United States) was a Polish film director; and head of the Polish People's Army Film Crew in the Soviet Union during World War II. Following the war he was appointed director of the Film Polski company. In 1948 he was appointed as a professor of the National Film School in Łódź (Państwowa Wyższa Szkoła Filmowa). Roman Polanski was among his students. Another of ...\nP2: Aleksander Ford: Aleksander Ford( born Mosze Lifszyc; 24 November 1908 in Kiev, Russian Empire – 4 April 1980 in Naples, Florida, United States) was a Polish film director; and head of the Polish People's Army Film Crew in the Soviet Union during World War II. Following the war he was appointed director of the Film Polski company. In 1948 he was appointed as a professor of the National Film School in Łódź( Państwowa Wyższa Szkoła Filmowa). Roman Polanski was among his students. Another of ...\nP3: Sigismund III Vasa: Sigismund III Vasa (20 June 1566 – 30 April 1632\n), also known as Sigismund III of Poland, was King of Poland, Grand Duke of Lithuania and monarch of the united Polish–Lithuanian Commonwealth from 1587 to 1632 as well as King of Sweden and Grand Duke of Finland from 1592 until his deposition in 1599. Sigismund was the son of John III of Sweden and his first wife, Catherine Jagiellon of Poland. Elected to the throne of the Polish–Lithuanian Commonwealth, he sought to create a ...\nP4: The Supporter: El Acompañamiento( English language: The Supporter) is a 1991 Argentine musical drama film directed and written by Carlos Orgambide. The musical was based on a play by Carlos Gorostiza.\nP5: Captured!: Captured!( aka Fellow Prisoners) is a 1933 American pre-Code film about World War I prisoners of war in a German camp. The film was directed by Roy Del Ruth and stars Leslie Howard and Douglas Fairbanks Jr..\" Captured!\" was based on the short story\" Fellow Prisoners\"( 1930) by Sir Philip Gibbs.\nP6: Part: Part, parts or PART may refer to:\nP7: The General: The General or The Generals may refer to:\nP8: The Street: The Street may refer to:\nP9: Aleksander Koniecpolski (1620–1659): Prince Aleksander Koniecpolski (1620–1659) was a Polish nobleman. He became the Grand Standard-Bearer of the Crown in 1641, the Palatine of Sandomierz Voivodeship in 1656, and the Starost of Perejasław, Korsun, Płoskirow and Dolina. He was the son of the famous hetman Stanisław Koniecpolski. During the Chmielnicki Uprising, he was elected as one of the regimentarz of Pospolite ruszenie and took part in the losing battle of Pyliavtsi in 1648.\nP10: Aleksander Koniecpolski (1555–1609): Aleksander Koniecpolski( 1555–1609) was a voivode( palatine) of Sieradz, a staunch supporter of king Sigismund III Vasa of the House of Vasa. He was the son of Stanisław Przedbór Koniecpolski and Elżbieta Ligzianka( relative of hetman Jan Tarnowski). His wife was Anna Sroczycka, daughter of Stanisław Sroczycki, voivode of Kamieniec. This marriage brought into the Koniecpolscy family large estates at Podolia. He had six children:\nQuestion: Which country Aleksander Koniecpolski (1620–1659)'s father is from?\nFinal answer:",
+  "output": "Poland",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b6390a8dab0897b1",
+    "object": "chat.completion",
+    "created": 1779532939,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Poland",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1193,
+      "total_tokens": 1196,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "086e57720bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "British",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Julia Parker (astrologer) -> Derek Parker\n- Julia Parker (actress) -> Model\nPassages:\nP1: Model: Model or modeling may refer to:\nP2: Julia Parker (astrologer): Julia Parker (née Lethbridge) (b. 1932 in Plymouth, Devon) is an astrologer and author who, often in partnership with her husband Derek Parker, has written many popular and introductory books on astrology.\nP3: Julia Parker (actress): Julia Parker( born February 27, 1970) is an American actress, model, and TV host. She is most frequently seen as host of an infomercial promoting the Kymaro Body Shaper.\nP4: Grace Julia Parker Drummond: Grace Julia Parker Drummond( December 17, 1860 — June 10, 1942) was a Canadian clubwoman and philanthropist, decorated for her work during World War I.\nP5: Derek Parker: Derek Parker (born 1932) is a British writer and broadcaster. He is the author of numerous works on literature, ballet, and opera, and with his wife Julia of several books about astrology.\nP6: Iraqi nationality law: Iraqi nationality is transmitted by one's parents.\nP7: Japanese nationality law: Japanese nationality is a legal designation and set of rights granted to those people who have met the criteria for citizenship by parentage or by naturalization. Nationality is in the jurisdiction of the Minister of Justice and is generally governed by the Nationality Law of 1950.\nP8: List of Victoria Cross recipients of uncertain nationality: The following is a list of Victoria Cross recipients whose nationality is uncertain.\nP9: Apollinarius (astrologer): Apollinarius was a first or second century AD astrologer who wrote in Greek. He is a source for Vettius Valens and Galen.\nQuestion: What nationality is Julia Parker (Astrologer)'s husband?\nFinal answer:",
+  "output": "British",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-9bfdb531b51981df",
+    "object": "chat.completion",
+    "created": 1779532969,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "British",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 506,
+      "total_tokens": 508,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

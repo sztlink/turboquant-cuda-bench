@@ -1,0 +1,48 @@
+{
+  "qid": "096e14a20bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Weston Park",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- George Bridgeman, 2nd Earl of Bradford -> Charles Orlando Bridgeman\n- George Bridgeman, 2nd Earl of Bradford -> Master\n- Charles Bridgeman (cricketer) -> George Thomas Orlando Bridgeman\n- George Thomas Orlando Bridgeman -> George Bridgeman, 2nd Earl of Bradford\n- George Thomas Orlando Bridgeman -> Queen Victoria\n- Thomas FitzGerald, 5th Earl of Desmond -> James FitzGerald, 6th Earl of Desmond\n- Thomas FitzGerald, 5th Earl of Desmond -> John FitzGerald, 4th Earl of Desmond\nPassages:\nP1: John FitzGerald, 4th Earl of Desmond: John FitzGerald, 4th Earl of Desmond (died 1399) was the son of Gerald FitzGerald, 3rd Earl of Desmond. He married and had one son, Thomas, who succeeded him as Earl of Desmond. According to Burke, John FitzGerald married Joan Roche, the daughter of Lord Fermoy. In March 1399 FitzGerald drowned at Ardfinnan on the River Suir, and was buried at Youghal. He was succeeded by his son Thomas FitzJohn FitzGerald, 5th Earl of Desmond.\nP2: John FitzGerald, 4th Earl of Desmond: John FitzGerald, 4th Earl of Desmond( died 1399) was the son of Gerald FitzGerald, 3rd Earl of Desmond. He married and had one son, Thomas, who succeeded him as Earl of Desmond. According to Burke, John FitzGerald married Joan Roche, the daughter of Lord Fermoy. In March 1399 FitzGerald drowned at Ardfinnan on the River Suir, and was buried at Youghal. He was succeeded by his son Thomas FitzJohn FitzGerald, 5th Earl of Desmond.\nP3: James FitzGerald, 6th Earl of Desmond: James FitzGerald, 6th Earl of Desmond( d. 1462), called' the Usurper', was the youngest son of Gerald FitzGerald, 3rd Earl of Desmond, and Lady Eleanor, daughter of James Butler, 2nd Earl of Ormond.\nP4: James FitzGerald, 6th Earl of Desmond: James FitzGerald, 6th Earl of Desmond (d. 1462), called 'the Usurper', was the youngest son of Gerald FitzGerald, 3rd Earl of Desmond, and Lady Eleanor, daughter of James Butler, 2nd Earl of Ormond.\nP5: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nP6: Master: Master or masters may refer to:\nP7: George Thomas Orlando Bridgeman: George Thomas Orlando Bridgeman JP (21 August 1823 – 25 November 1895) was a Church of England clergyman and antiquary, the second son of George Bridgeman, 2nd Earl of Bradford. He was educated at Harrow School and Trinity College, Cambridge, where he was a member of the University Pitt Club and graduated as MA in 1845. After being ordained priest in 1850, he became successively parish Rector of Willey, Shropshire 1850-53; Blymhill, Staffordshire in 1853-64 ...\nP8: George Bridgeman, 2nd Earl of Bradford: George Augustus Frederick Henry Bridgeman, 2nd Earl of Bradford (23 October 1789 – 22 March 1865) was a British peer. The oldest son of Orlando Bridgeman, 1st Earl of Bradford and Lucy Elizabeth Byng, Bridgeman was educated at Harrow School, London, and Trinity College, Cambridge, where he graduated with a Master of Arts in 1810. He succeeded to his father's titles and the family seat at Weston Park, Staffordshire on 7 September 1825. His siblings were: ...\nP9: Sir Orlando Bridgeman, 1st Baronet, of Ridley: Sir Orlando Bridgeman, 1st Baronet, FRS( 9 December 1649 – 20 April 1701) was an English baronet and politician.\nP10: Thomas FitzGerald, 5th Earl of Desmond: Thomas FitzGerald, 5th Earl of Desmond( c. 1386 – 1420), was the only son of John FitzGerald, 4th Earl of Desmond. Upon John's death in 1399, Thomas succeeded to the earldom of Desmond, which lay in Munster, in the southwest of Ireland. In 1418, Thomas was dispossessed of his lands and deprived of his earldom by his paternal uncle, James FitzGerald, 6th Earl of Desmond, after Thomas had concluded a marriage far below his station to Catherine MacCormac of ...\nQuestion: Where was the place of death of George Thomas Orlando Bridgeman's father?\nFinal answer:",
+  "output": "Youghal",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9c6391ad27e6ca38",
+    "object": "chat.completion",
+    "created": 1779532858,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Youghal",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1308,
+      "total_tokens": 1312,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

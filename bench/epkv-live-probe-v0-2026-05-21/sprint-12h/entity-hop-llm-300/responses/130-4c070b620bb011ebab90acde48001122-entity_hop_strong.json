@@ -1,0 +1,48 @@
+{
+  "qid": "4c070b620bb011ebab90acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Queen Sofía of Spain",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Felipe de Marichalar y Borbón: \"Don\" Felipe Juan Froilán de Todos los Santos de Marichalar y Borbón (born 17 July 1998 in Madrid) is the elder child and only son of the Duchess of Lugo, Infanta Elena of Spain, and \"Don\" Jaime de Marichalar. Felipe is fourth in the line of succession to the Spanish Throne, after his mother.\nP2: Felipe de Marichalar y Borbón: \" Don\" Felipe Juan Froilán de Todos los Santos de Marichalar y Borbón( born 17 July 1998 in Madrid) is the elder child and only son of the Duchess of Lugo, Infanta Elena of Spain, and\" Don\" Jaime de Marichalar. Felipe is fourth in the line of succession to the Spanish Throne, after his mother.\nP3: Juan Carlos I of Spain: Juan Carlos I( Juan Carlos Alfonso Víctor María de Borbón y Borbón- Dos Sicilias, born 5 January 1938) is a member of the Spanish royal family who reigned as King of Spain from November 1975 until his abdication in June 2014. Juan Carlos is the grandson of Alfonso XIII, the last king of Spain before the abolition of the monarchy in 1931 and the subsequent declaration of the Second Spanish Republic. Juan Carlos was born in Rome, Italy, during his family's exile. \" ...\nP4: Juan Carlos I of Spain: Juan Carlos I (Juan Carlos Alfonso Víctor María de Borbón y Borbón-Dos Sicilias, born 5 January 1938) is a member of the Spanish royal family who reigned as King of Spain from November 1975 until his abdication in June 2014. Juan Carlos is the grandson of Alfonso XIII, the last king of Spain before the abolition of the monarchy in 1931 and the subsequent declaration of the Second Spanish Republic. Juan Carlos was born in Rome, Italy, during his family's exile. \" ...\nP5: Queen Sofía of Spain: Sophia of Greece and Denmark (born 2 November 1938) is a member of the Spanish royal family who served as Queen of Spain during the reign of her husband, King Juan Carlos I, from 1975 to 2014. Queen Sofía is the first child of King Paul of Greece and Frederica of Hanover. As her family was forced into exile during the Second World War, she spent part of her childhood in South Africa, returning to Greece in 1946. She completed her secondary education in a boarding school in ...\nP6: The Child: The Child may refer to:\nP7: Victoria de Marichalar y Borbón: \" Doña\" Victoria Federica de Todos los Santos de Marichalar y Borbón( born 9 September 2000) is the younger child and only daughter of the Spanish Infanta Elena, Duchess of Lugo, and\" Don\" Jaime de Marichalar. \" Doña\" Victoria Federica is fifth in the line of succession to the Spanish Throne, after her brother Felipe.\nP8: Victoria de Marichalar y Borbón: \"Doña\" Victoria Federica de Todos los Santos de Marichalar y Borbón (born 9 September 2000) is the younger child and only daughter of the Spanish Infanta Elena, Duchess of Lugo, and \"Don\" Jaime de Marichalar. \" Doña\" Victoria Federica is fifth in the line of succession to the Spanish Throne, after her brother Felipe.\nP9: Jaime de Marichalar: \"Don\" Jaime de Marichalar y Sáenz de Tejada, Lord of the Manor of Tejada (born 7 April 1963) is the former husband of the Infanta Elena, Duchess of Lugo, the eldest daughter of King Juan Carlos and Queen Sofia of Spain.\nP10: Infanta Cristina of Spain: Infanta Cristina of Spain (\"Cristina Federica Victoria Antonia de la Santísima Trinidad de Borbón y de Grecia\", born 13 June 1965) is the younger daughter of King Juan Carlos I and Queen Sofía. she is sixth in the line of succession to the Spanish throne, after her brother King Felipe VI's children, her sister Elena, and Elena's children. From 2013 she was investigated and later tried for fraud relating to accusations of corruption involving a company owned by ...\nQuestion: Who is the maternal grandmother of Felipe De Marichalar Y Borbón?\nFinal answer:",
+  "output": "Queen Sofia of Spain",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.75
+  },
+  "response": {
+    "id": "chatcmpl-9b75a0e578eac91e",
+    "object": "chat.completion",
+    "created": 1779532822,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Queen Sofia of Spain",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1077,
+      "total_tokens": 1082,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

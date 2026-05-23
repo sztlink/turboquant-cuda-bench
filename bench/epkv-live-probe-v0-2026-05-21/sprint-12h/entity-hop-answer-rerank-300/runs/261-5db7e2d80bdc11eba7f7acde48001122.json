@@ -1,0 +1,66 @@
+{
+  "idx": 261,
+  "qid": "5db7e2d80bdc11eba7f7acde48001122",
+  "gold": "Bratislava",
+  "candidates": [
+    "Maceió, Alagoas",
+    "Pob",
+    "Place of birth",
+    "I Know What You Did Last Summer",
+    "Place of origin",
+    "The Will",
+    "The Last Summer",
+    "Joel Lamangan",
+    "Carlos Diegues",
+    "Phil Harris",
+    "I Still Know What You Did Last Summer",
+    "I'll Always Know What You Did Last Summer"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Maceió, Alagoas\nC2: Pob\nC3: Place of birth\nC4: I Know What You Did Last Summer\nC5: Place of origin\nC6: The Will\nC7: The Last Summer\nC8: Joel Lamangan\nC9: Carlos Diegues\nC10: Phil Harris\nC11: I Still Know What You Did Last Summer\nC12: I'll Always Know What You Did Last Summer\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- I Still Know What You Did Last Summer -> I'll Always Know What You Did Last Summer\n- I Still Know What You Did Last Summer -> I Know What You Did Last Summer\n- I'll Always Know What You Did Last Summer -> I Know What You Did Last Summer\n- I'll Always Know What You Did Last Summer -> The Last Summer\n- The Greatest Love of All (film) -> Carlos Diegues\n- Aishite Imasu 1941: Mahal Kita -> Joel Lamangan\n- Aishite Imasu 1941: Mahal Kita -> Story\n- That's What I Like About the South -> Phil Harris\n- That's What I Like About the South -> Part\n- Patty Ryan -> My Heart\n- Patty Ryan -> Missing\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: I Know What You Did Last Summer: I Know What You Did Last Summer is a 1997 American slasher film directed by Jim Gillespie, written by Kevin Williamson, and starring Jennifer Love Hewitt, Sarah Michelle Gellar, Ryan Phillippe, and Freddie Prinze Jr.. Loosely based on the 1973 novel of the same name by Lois Duncan and is the first installment in\" I Know What You Did Last Summer\" trilogy. The film centers on four young friends who are stalked by a hook- wielding killer one year after covering up ...\nP3: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP4: The Will: The Will may refer to:\nP5: The Last Summer: Last Summer or The Last Summer can refer to:\nP6: Joel Lamangan: Joel Lamangan( born September 21, 1952) is a Filipino film director, television director and actor. His award- winning films includes\" The Flor Contemplacion StorySidhiDeathrowHubogAishte Imasu 1941 Blue Moon\" and\" Mano Po\". On August 19, 2008, Lamangan directed his first indie movie\" Walang Kawala\" produced by DMV Entertainment. It stars Polo Ravales and Joseph Bitangcol, with the special participation of Jean Garcia. Joel also directs\" Obra\" and will soon start shooting ...\nP7: Carlos Diegues: Carlos Diegues, also known as Cacá Diegues (born May 19, 1940), is a Brazilian film director. He was born in Maceió, Alagoas, and is best known as a member of the Cinema Novo movement. He is popularly known for his unconventional, yet intriguing film techniques among other film producers of the Cinema Novo movement. Diegues is also widely known for his dynamic use visuals, ideas, plots, themes, and other cinematic techniques. He incorporated many musical acts in his film as he ...\nP8: Carlos Diegues: Carlos Diegues, also known as Cacá Diegues( born May 19, 1940), is a Brazilian film director. He was born in Maceió, Alagoas, and is best known as a member of the Cinema Novo movement. He is popularly known for his unconventional, yet intriguing film techniques among other film producers of the Cinema Novo movement. Diegues is also widely known for his dynamic use visuals, ideas, plots, themes, and other cinematic techniques. He incorporated many musical acts in his film as he ...\nP9: Phil Harris: Wonga Philip Harris (June 24, 1904 – August 11, 1995) was an American comedian, actor, singer, and jazz musician. He was an orchestra leader and a pioneer in radio situation comedy, first with Jack Benny, then in a series in which he co-starred with his wife, singer-actress Alice Faye, for eight years. Harris is also noted for his voice acting in animated films. He played Baloo in \"The Jungle Book\" (1967), Thomas O'Malley in \"The Aristocats\" (1970), and Little John in \"Robin Hood\" ...\nP10: Missing: Missing or The Missing may refer to:\nQuestion: What is the place of birth of the director of film I Love, You Love?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The question refers to a director of the film 'I Love, You Love', but neither the passages nor the candidate entity graph provide information about this specific film or its director.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The question refers to a director of the film 'I Love, You Love', but neither the passages nor the candidate entity graph provide information about this specific film or its director."
+  },
+  "final": "Maceió, Alagoas",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-85a7557d879bf1fb",
+    "object": "chat.completion",
+    "created": 1779533140,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The question refers to a director of the film 'I Love, You Love', but neither the passages nor the candidate entity graph provide information about this specific film or its director.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1360,
+      "total_tokens": 1413,
+      "completion_tokens": 53,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.9977304935455322
+}

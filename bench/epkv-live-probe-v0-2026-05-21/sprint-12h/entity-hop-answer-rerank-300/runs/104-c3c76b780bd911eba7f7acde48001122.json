@@ -1,0 +1,66 @@
+{
+  "idx": 104,
+  "qid": "c3c76b780bd911eba7f7acde48001122",
+  "gold": "30 June 1963",
+  "candidates": [
+    "June 30, 1963",
+    "Óskar Jónasson was born on 30 June 1963",
+    "Reykjavík-Rotterdam",
+    "Baltasar Kormákur",
+    "Kristján Eldjárn",
+    "Friðrik Þór Friðriksson",
+    "Giovanni Ribisi",
+    "Contraband (2012 film)",
+    "Óskar Jónasson",
+    "Ágúst Guðmundsson",
+    "Nomina Sunt Odiosa",
+    "Halldóra Eldjárn"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: June 30, 1963\nC2: Óskar Jónasson was born on 30 June 1963\nC3: Reykjavík-Rotterdam\nC4: Baltasar Kormákur\nC5: Kristján Eldjárn\nC6: Friðrik Þór Friðriksson\nC7: Giovanni Ribisi\nC8: Contraband (2012 film)\nC9: Óskar Jónasson\nC10: Ágúst Guðmundsson\nC11: Nomina Sunt Odiosa\nC12: Halldóra Eldjárn\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Reykjavík-Rotterdam -> Baltasar Kormákur\n- Reykjavík-Rotterdam -> Óskar Jónasson\n- Óskar Jónasson -> Reykjavík-Rotterdam\n- Nomina Sunt Odiosa -> Friðrik Þór Friðriksson\n- Contraband (2012 film) -> Baltasar Kormákur\n- Contraband (2012 film) -> Giovanni Ribisi\n- Halldóra Eldjárn -> Kristján Eldjárn\n- Halldóra Eldjárn -> Kristján Eldjárn\nPassages:\nP1: Reykjavík-Rotterdam: Reykjavík-Rotterdam is an Icelandic film from 2008 directed by Óskar Jónasson and starring Baltasar Kormákur. A Hollywood remake titled \"Contraband\" starring Mark Wahlberg was released in 2012.\nP2: Baltasar Kormákur: Baltasar Kormákur Samper( born 27 February 1966) is an Icelandic actor, theater and film director, and film producer. He is best known for directing the films\" 101 Reykjavík The SeaA Little Trip to Heaven\"( starring Julia Stiles and Forest Whitaker), a film based on the book Jar City by Arnaldur Indriðason,\" Contraband2 Guns\"( starring Mark Wahlberg and Denzel Washington) and\" Everest\".\nP3: Kristján Eldjárn: Kristján Eldjárn (6 December 1916 – 13 September 1982) was the third President of Iceland, from 1968 to 1980. His parents were Þórarinn Kr. Eldjárn, a teacher in Tjörn, and Sigrún Sigurhjartardóttir. He graduated in archaeology from the University of Copenhagen and taught at the University of Iceland. In 1957 he was awarded a doctorate for his research into pagan burials in Iceland. He was a teacher at the Akureyri Grammar School and the College of Navigation in Reykjavík, ...\nP4: Friðrik Þór Friðriksson: Friðrik Þór Friðriksson (born 12 May 1954; pronounced), sometimes credited as Fridrik Thor Fridriksson, is an Icelandic film director and producer.\nP5: Friðrik Þór Friðriksson: Friðrik Þór Friðriksson( born 12 May 1954; pronounced), sometimes credited as Fridrik Thor Fridriksson, is an Icelandic film director and producer.\nP6: Giovanni Ribisi: Antonino Giovanni Ribisi( born December 17, 1974) is an American film and television actor known for his roles in the TV series\" Sneaky Pete\", and the films\" Saving Private RyanAvatarA Million Ways to Die in the West\" and\" Ted\". He also had recurring roles in\" My Name Is Earl\" and\" Friends\".\nP7: Contraband (2012 film): Contraband is a 2012 action- thriller film directed by Baltasar Kormákur, starring Mark Wahlberg, Kate Beckinsale, Ben Foster, Caleb Landry Jones, Giovanni Ribisi, Lukas Haas, Diego Luna and J. K. Simmons. The film is a remake of the 2008 Icelandic film\" Reykjavík- Rotterdam\" which Baltasar Kormákur starred in. It was released on January 13, 2012 in the United States by Universal Pictures.\nP8: Óskar Jónasson: Óskar Jónasson (born 30 June 1963) is an Icelandic film director and screenwriter. His film \"Remote Control\" was screened in the Un Certain Regard section at the 1993 Cannes Film Festival. His most recent film \"Reykjavík-Rotterdam\" won four Edda Awards including Director of the Year and Best Screenplay.\nP9: Ágúst Guðmundsson: Ágúst Guðmundsson( born 29 June 1947) is an Icelandic film director and screenwriter. He studied French, Icelandic in Reykjavík and filmmaking at the National Film School in London. He has made many popular Icelandic films that have also been translated into other languages. His 1998 film\" The Dance\" was entered into the 21st Moscow International Film Festival where he won the Silver St. George for Best Director. He is currently director of BÍL, The Federation of Icelandic ...\nP10: Ágúst Guðmundsson: Ágúst Guðmundsson (born 29 June 1947) is an Icelandic film director and screenwriter. He studied French, Icelandic in Reykjavík and filmmaking at the National Film School in London. He has made many popular Icelandic films that have also been translated into other languages. His 1998 film \" The Dance\" was entered into the 21st Moscow International Film Festival where he won the Silver St. George for Best Director. He is currently director of BÍL, The Federation of Icelandic ...\nQuestion: When was the director of film Reykjavík-Rotterdam born?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"June 30, 1963\",\"selected\":\"C1|C2\",\"confidence\":\"high\",\"reason\":\"C2 directly states the birth date of Óskar Jónasson, and C1 rephrases the same information. Both passages support the answer.\"}",
+  "verifier": {
+    "final_answer": "June 30, 1963",
+    "selected": "C1|C2",
+    "confidence": "high",
+    "reason": "C2 directly states the birth date of Óskar Jónasson, and C1 rephrases the same information. Both passages support the answer."
+  },
+  "final": "June 30, 1963",
+  "selected": "C1|C2",
+  "response": {
+    "id": "chatcmpl-8e6de03a5bd0a984",
+    "object": "chat.completion",
+    "created": 1779533044,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"June 30, 1963\",\"selected\":\"C1|C2\",\"confidence\":\"high\",\"reason\":\"C2 directly states the birth date of Óskar Jónasson, and C1 rephrases the same information. Both passages support the answer.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1518,
+      "total_tokens": 1582,
+      "completion_tokens": 64,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.1854934692382812
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "62ce8c8e0bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Chinese",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- Motherland (disambiguation) -> Place of origin\n- Consort Liang -> Emperor Zhang of Han\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Aisha Sultan Begum -> Babur\n- Felicia of Roucy -> Isabella of Urgell\n- Felicia of Roucy -> Sancho Ramírez\n- Felicia of Roucy -> Isabella of Urgell\n- Felicia of Roucy -> Sancho Ramírez\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Emperor Zhang of Han: Emperor Zhang of Han (57 – 9 April 88) was an emperor of the Chinese Han dynasty from 75 to 88. He was the third emperor of the Eastern Han. Emperor Zhang was a hardworking and diligent emperor. He reduced taxes and paid close attention to all affairs of state. Zhang also reduced government spending as well as promoted Confucianism. As a result, Han society prospered and its culture flourished during this period. Along with his father Emperor Ming, Emperor Zhang's reign ...\nP3: Isabella of Urgell: Isabella of Urgel (Aragonese: \"Isabel d'Urchel\"; died 1071) was Queen of Aragon; the only daughter of Ermengol III, Count of Urgell by his first wife Adelaide of Besalú. Isabella is mentioned in her brother Ermengol IV's testament. Isabella married in 1065 King Sancho Ramírez; by this marriage, Isabella was Queen of Aragon. The couple had one son, Peter I, Sancho's successor who left no surviving children. The couple divorced in 1070, and both remarried. Isabella may have ...\nP4: Isabella of Urgell: Isabella of Urgel( Aragonese:\" Isabel d' Urchel\"; died 1071) was Queen of Aragon; the only daughter of Ermengol III, Count of Urgell by his first wife Adelaide of Besalú. Isabella is mentioned in her brother Ermengol IV's testament. Isabella married in 1065 King Sancho Ramírez; by this marriage, Isabella was Queen of Aragon. The couple had one son, Peter I, Sancho's successor who left no surviving children. The couple divorced in 1070, and both remarried. Isabella may have ...\nP5: The Will: The Will may refer to:\nP6: Babur: Babur (14 February 148326 December 1530), born Zahīr ud-Dīn Muhammad, was the founder and first Emperor of the Mughal dynasty in South Asia. He was a direct descendant of Emperor Timur (Tamerlane) from what is now Uzbekistan. Babur was born in Andijan, in the Fergana Valley, in modern Uzbekistan. He was the eldest son of Umar Sheikh Mirza, governor of Fergana and great-great grandson of Timur. Babur ascended the throne of Fergana in its capital Akhsikent in 1494 at the age of twelve and ...\nP7: Sancho Ramírez: Sancho Ramírez (1042 – 4 June, 1094) was King of Aragon from 1063 until 1094 and King of Pamplona from 1076 under the name of Sancho V . He was the eldest son of Ramiro I and Ermesinda of Bigorre. His father was the first king of Aragon and an illegitimate son of Sancho III of Pamplona. He inherited the Aragonese crown from his father in 1063. Sancho Ramírez was chosen king of Pamplona by Navarrese noblemen after Sancho IV was murdered by his siblings.\nP8: Sancho Ramírez: Sancho Ramírez( 1042 – 4 June, 1094) was King of Aragon from 1063 until 1094 and King of Pamplona from 1076 under the name of Sancho V. He was the eldest son of Ramiro I and Ermesinda of Bigorre. His father was the first king of Aragon and an illegitimate son of Sancho III of Pamplona. He inherited the Aragonese crown from his father in 1063. Sancho Ramírez was chosen king of Pamplona by Navarrese noblemen after Sancho IV was murdered by his siblings.\nP9: @Home: @Home or @home may refer to:\nP10: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nQuestion: What is the place of birth of Consort Liang's husband?\nFinal answer:",
+  "output": "Emperor Zhang of Han was born in China, specifically during the Eastern Han dynasty in the territory that is now part of",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b83cc9e19e229c26",
+    "object": "chat.completion",
+    "created": 1779532862,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Emperor Zhang of Han was born in China, specifically during the Eastern Han dynasty in the territory that is now part of",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1290,
+      "total_tokens": 1314,
+      "completion_tokens": 24,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

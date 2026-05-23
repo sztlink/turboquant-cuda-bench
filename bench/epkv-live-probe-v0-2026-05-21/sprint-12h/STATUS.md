@@ -698,8 +698,44 @@ losses: 0
 overrides: 3
 ```
 
+## Entity-hop confidence-gated answer rerank 300
+
+Completed scale-up:
+
+```txt
+ENTITY-HOP-ANSWER-RERANK-300.md
+entity-hop-llm-300/
+entity-hop-answer-rerank-300/
+entity-hop-answer-rerank-gated-300/
+```
+
+Results:
+
+```txt
+BM25→BGE ref:                 EM 0.030 | contains 0.053 | F1 0.062
+Entity-hop strong:            EM 0.177 | contains 0.310 | F1 0.311
+Entity-hop path prompt:       EM 0.220 | contains 0.317 | F1 0.333
+Raw answer rerank:            EM 0.223 | contains 0.327 | F1 0.338
+Confidence-gated rerank:      EM 0.223 | contains 0.320 | F1 0.333
+```
+
+Win/loss vs path:
+
+```txt
+raw rerank:   wins 8 | losses 7
+gated rerank: wins 3 | losses 2
+```
+
+Conclusion:
+
+```txt
+100-case gated gain did not robustly scale.
+Verifier confidence is not calibrated enough.
+```
+
 Current next target:
 
 ```txt
-scale gated rerank to 300 cases and add stricter exact-span preference / abstention rules.
+learn/select override policy with exact-answer preservation, answer-type checks, and abstention;
+do not trust verifier confidence string alone.
 ```

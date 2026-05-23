@@ -1,0 +1,48 @@
+{
+  "qid": "424d56700bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Ostrogothic Kingdom",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Audofleda -> Kings\n- Back to God's Country (1927 film) -> Irvin Willat\n- Back to God's Country (1927 film) -> 1919 (film)\n- God's Country and the Law -> Sidney Olcott\n- What I Deserve -> Six Years\n- Donna Fargo -> Funny Face\nPassages:\nP1: Funny Face: Funny Face is a 1957 American musical romantic comedy film directed by Stanley Donen and written by Leonard Gershe, containing assorted songs by George and Ira Gershwin. Although having the same title as the 1927 Broadway musical\" Funny Face\" by the Gershwin brothers, and featuring the same male star( Fred Astaire), the plot is totally different and only four of the songs from the stage musical are included. Alongside Astaire, the film stars Audrey Hepburn and Kay Thompson.\nP2: Kings: Kings or King's may refer to:\nP3: 1919 (film): 1919 is a 1985 British drama film directed by Hugh Brody and written by Michael Ignatieff together with Brody. It stars Paul Scofield. It was entered into the 35th Berlin International Film Festival.\nP4: Irvin Willat: Irvin V. Willat (November 18, 1890 – April 17, 1976) was an American film director of the silent film era. He directed 39 films between 1917 and 1937. Early in his career Willat worked as a cinematographer on several films. His older brother Edwin Willat (1882–1950) was cinematographer on several silent films.\nP5: Sidney Olcott: Sidney Olcott( September 20, 1872 – December 16, 1949) was a Canadian- born film producer, director, actor and screenwriter.\nP6: Six Years: 6 Years or Six Years may refer to:\nP7: Man from God's Country: Man from God's Country is a 1958 American Western film directed by Paul Landres and starring George Montgomery and Randy Stuart.\nP8: God's Country and the Law: God's Country and the Law is a 1921 American silent drama film produced by Pine Tree Pictures and distributed by Arrow Films. It was directed by Sidney Olcott with Fred C. Jones and Gladys Leslie in the leading roles. It was adapted from the 1915 novel\" God ’s Country and the Woman\" by James Oliver Curwood, which had been previously filmed under that title in 1916.\nP9: Back to God's Country (1927 film): Back to God's Country is a 1927 silent film Northwoods adventure based on James Oliver Curwood's story\" Wapi, the Walrus\". The film was directed by Irvin Willat and stars Renée Adorée, usually an MGM actress. The film is a remake of the 1919 film\" Back to God's Country\" which starred Nell Shipman. The film survives today.\nP10: Audofleda: Audofleda was a Gothic queen. She was the sister of Clovis I, King of the Franks. She married Theoderic the Great, King of the Ostrogoths (471–526), around 493 AD (exact date unknown). Theoderic sent an embassy to Clovis to request the marriage. This political move allied Theoderic with the Franks, and by marrying his daughters off to the kings of the Burgundians, the Vandals, and the Visigoths, he allied himself with every major 'Barbarian' kingdom in the West. Audofleda was a pagan ...\nQuestion: Which country Audofleda's husband is from?\nFinal answer:",
+  "output": "Ostrogoths",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8d830f3c9f7c9da6",
+    "object": "chat.completion",
+    "created": 1779532741,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Ostrogoths",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 919,
+      "total_tokens": 924,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

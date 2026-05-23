@@ -1,0 +1,61 @@
+{
+  "idx": 201,
+  "qid": "a5b095c00bdd11eba7f7acde48001122",
+  "gold": "California",
+  "candidates": [
+    "Terror in the Aisles",
+    "Island of Terror",
+    "The Feature",
+    "The Girls",
+    "George W. Bush",
+    "Terence Fisher",
+    "Comedy",
+    "United Nations",
+    "Carl Boese",
+    "An Event",
+    "Jaws",
+    "Doug Timm"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Terror in the Aisles\nC2: Island of Terror\nC3: The Feature\nC4: The Girls\nC5: George W. Bush\nC6: Terence Fisher\nC7: Comedy\nC8: United Nations\nC9: Carl Boese\nC10: An Event\nC11: Jaws\nC12: Doug Timm\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Terror in the Aisles -> Jaws\n- Doug Timm -> Terror in the Aisles\n- Doug Timm -> An Event\n- Corridors of Blood -> The Feature\n- Corridors of Blood -> The Girls\n- A Study in Terror -> Story\n- Terror of the Garrison -> Carl Boese\n- Terror of the Garrison -> Comedy!\n- Night of the Big Heat (film) -> Island of Terror\n- Night of the Big Heat (film) -> Terence Fisher\n- War on Terror (film) -> United Nations\n- War on Terror (film) -> George W. Bush\nPassages:\nP1: Terror in the Aisles: Terror in the Aisles is a 1984 American documentary film about horror films featuring clips from \"Friday the 13th \" I and II, \"The Texas Chain Saw MassacreHalloween\" I and II, \"Jaws\" 1 and 2, \"AlienJohn Carpenter's The ThingThe Shining\" and Alfred Hitchcock's \"Psycho\" and \"The Birds\". The film is directed by Andrew J. Kuehn, and hosted by Donald Pleasence and Nancy Allen. The original music score is composed by John Beal.\nP2: Island of Terror: Island of Terror is a 1966 British horror film released by Planet Film Productions. The film was released in the US by Universal Studios on a double bill with\" The Projected Man\"( 1967). The idea for the film came when Richard Gordon read the Gerry Fernback screenplay\" The Night the Silicates Came\". He partnered with Tom Blakey of Planet Films to produce this movie. It was shot in rural England using naturalistic colours. This film is one of the last significant examples of a ...\nP3: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP4: The Girls: The Girls may be:\nP5: George W. Bush: George Walker Bush (born July 6, 1946) is an American politician and businessman who served as the 43rd president of the United States from 2001 to 2009. He had previously served as the 46th governor of Texas from 1995 to 2000. Bush is frequently referred to as George W. Bush, Bush Junior, or Bush 43 to distinguish him from his father, George H. W. Bush, who served as the 41st president from 1989 to 1993. Bush is the eldest son of Barbara and George H. W. Bush, the 41st ...\nP6: Terence Fisher: Terence Fisher( 23 February 1904 – 18 June 1980) was a British film director best known for his work for Hammer Films. He was the first to bring gothic horror alive in full colour, and the sexual overtones and explicit horror in his films, while mild by modern standards, were unprecedented in his day. His first major gothic horror film was\" The Curse of Frankenstein\"( 1957), which launched Hammer's association with the genre and made British actors Peter Cushing and Christopher ...\nP7: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP8: United Nations: The United Nations (UN), is an intergovernmental organization responsible for maintaining international peace and security, developing friendly relations among nations, achieving international cooperation, and being a center for harmonizing the actions of nations. It is the largest, most familiar, most internationally represented and most powerful intergovernmental organization in the world. The UN is headquartered on international territory in New York City; other main offices ...\nP9: Carl Boese: Carl Boese( 26 August 1887 – 6 July 1958) was a German film director, screenwriter and producer. He directed 158 films between 1917 and 1957.\nP10: An Event: An Event  is a 1969 Yugoslav feature film directed by Vatroslav Mimica, based on a short story by Anton Chekhov.\nQuestion: Where was the composer of film Terror In The Aisles born?\nFinal answer:",
+  "verifier_text": "UNKNOWN",
+  "verifier": {},
+  "final": "The information provided does not mention the birthplace of John Beal, the composer of the film \"Terror in the",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-944fa1a01fcc0c3e",
+    "object": "chat.completion",
+    "created": 1779533106,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "UNKNOWN",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1289,
+      "total_tokens": 1291,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.17250490188598633
+}

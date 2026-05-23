@@ -1,0 +1,48 @@
+{
+  "qid": "43eb7b380bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Belfast",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Peter's Friends -> Kenneth Branagh\n- Peter's Friends -> Comedy!\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- Motherland (disambiguation) -> Place of origin\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Tarkus (song) -> Keith Emerson\n- Tarkus (song) -> Karn Evil 9\n- What Women Want (2011 film) -> What Women Want\n- What Women Want (2011 film) -> The First Day\n- Birth of the Living Dead -> Night of the Living Dead\n- Birth of the Living Dead -> George A. Romero\nPassages:\nP1: Peter's Friends: Peter's Friends is a 1992 British comedy film written by Rita Rudner and Martin Bergman, and directed and produced by Kenneth Branagh. The film follows six friends, members of an acting troupe who graduated from Cambridge University in 1982 and went their separate ways. Ten years later, Peter (Stephen Fry) inherits a large estate from his father, and invites the rest of the gang to spend New Year's holiday with him. Many changes have taken place in all of their lives, but Peter ...\nP2: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP3: Night of the Living Dead: Night of the Living Dead is a 1968 American independent horror film written, directed, photographed and edited by George A. Romero, co-written by John Russo, and starring Duane Jones and Judith O' Dea. The story follows seven people who are trapped in a rural farmhouse in western Pennsylvania, which is under assault by an enlargening group of cannibalistic, undead corpses. The film was completed on a budget and shot outside Pittsburgh, where it had its theatrical ...\nP4: What Women Want: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt. The film earned mixed reviews from critics, but was a box office success, with a North American domestic gross of $182 million and a worldwide gross of $374 million against a budget of $70 million. A loose remake, \"What Men Want\" starring Taraji P. Henson and Aldis Hodge came out in early 2019.\nP5: The Will: The Will may refer to:\nP6: The First Day: The First Day may refer to:\nP7: Kenneth Branagh: Sir Kenneth Charles Branagh (born 10 December 1960) is a Northern Irish actor, director, film producer and screenwriter. Branagh trained at the Royal Academy of Dramatic Art in London; in 2015 he succeeded Richard Attenborough as its president. He has both directed and starred in several film adaptations of William Shakespeare's plays, including \"Henry V\" (1989) (for which he was nominated for the Academy Awards for Best Actor and Best Director), \"Much Ado About Nothing\" ...\nP8: Kenneth Branagh: Sir Kenneth Charles Branagh( born 10 December 1960) is a Northern Irish actor, director, film producer and screenwriter. Branagh trained at the Royal Academy of Dramatic Art in London; in 2015 he succeeded Richard Attenborough as its president. He has both directed and starred in several film adaptations of William Shakespeare's plays, including\" Henry V\"( 1989)( for which he was nominated for the Academy Awards for Best Actor and Best Director),\" Much Ado About Nothing\"( ...\nP9: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP10: Keith Emerson: Keith Noel Emerson (2 November 1944 – 11 March 2016) was an English keyboardist, songwriter, and film composer. He played keyboards in a number of bands before finding his first commercial success with the Nice in the late 1960s. He became internationally famous for his work with the Nice, which included writing rock arrangements of classical music. After leaving the Nice in 1970, he was a founding member of Emerson, Lake & Palmer (ELP), one of the early progressive rock ...\nQuestion: What is the place of birth of the director of film Peter'S Friends?\nFinal answer:",
+  "output": "Northern Ireland",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-ac60052c27ad8d2b",
+    "object": "chat.completion",
+    "created": 1779532804,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Northern Ireland",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1135,
+      "total_tokens": 1138,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

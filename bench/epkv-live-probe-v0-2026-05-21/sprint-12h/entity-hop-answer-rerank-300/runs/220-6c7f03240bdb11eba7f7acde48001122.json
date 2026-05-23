@@ -1,0 +1,66 @@
+{
+  "idx": 220,
+  "qid": "6c7f03240bdb11eba7f7acde48001122",
+  "gold": "Évreux",
+  "candidates": [
+    "Évreux",
+    "Belgium",
+    "Jeanne Raunay",
+    "Margaret of Artois",
+    "The Beast",
+    "The Hours",
+    "Théodore Richomme",
+    "André Grétry",
+    "André Beaunier",
+    "Jules Richomme",
+    "Jeanne-Marie Leprince de Beaumont",
+    "Jeanne d'Évreux"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Évreux\nC2: Belgium\nC3: Jeanne Raunay\nC4: Margaret of Artois\nC5: The Beast\nC6: The Hours\nC7: Théodore Richomme\nC8: André Grétry\nC9: André Beaunier\nC10: Jules Richomme\nC11: Jeanne-Marie Leprince de Beaumont\nC12: Jeanne d'Évreux\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Jeanne Raunay -> André Beaunier\n- Jeanne Raunay -> Jules Richomme\n- Jeanne Raunay -> André Beaunier\n- Jeanne Raunay -> Jules Richomme\n- Jules Richomme -> Théodore Richomme\n- Jules Richomme -> André Beaunier\n- Jeanne-Marie Leprince de Beaumont -> Beast\n- Jeanne d'Évreux -> Margaret of Artois\n- Jeanne d'Évreux -> The Hours\n- Jeanne-Marie Grandon -> André Grétry\nPassages:\nP1: Jeanne Raunay: Jeanne Richomme Raunay (25 November 1868 – 1942) was a French mezzo-soprano opera singer. She was also the daughter of painter Jules Richomme, and the wife of French writer André Beaunier.\nP2: Jeanne Raunay: Jeanne Richomme Raunay( 25 November 1868 – 1942) was a French mezzo- soprano opera singer. She was also the daughter of painter Jules Richomme, and the wife of French writer André Beaunier.\nP3: Margaret of Artois: Margaret of Artois( 1285–1311) was the eldest child of Philip of Artois and his wife, Blanche of Brittany. She was a member of the House of Artois. She was married to Louis d'Évreux. By her marriage, Margaret was Countess consort of Évreux.\nP4: Margaret of Artois: Margaret of Artois (1285–1311) was the eldest child of Philip of Artois and his wife, Blanche of Brittany. She was a member of the House of Artois. She was married to Louis d'Évreux. By her marriage, Margaret was Countess consort of Évreux.\nP5: The Beast: The Beast may refer to:\nP6: The Hours: The Hours can refer to:\nP7: Théodore Richomme: Théodore Richomme (28 May 1785, Paris - 22 September 1849, Paris) was a French engraver. A street in the 18th arrondissement of Paris is named after him.\nP8: André Grétry: André Ernest Modeste Grétry (baptised 11 February 1741; died 24 September 1813) was a\ncomposer from the Prince-Bishopric of Liège (present-day Belgium), who worked from 1767 onwards in France and took French nationality. He is most famous for his \"opéras comiques\".\nP9: André Beaunier: André Beaunier (22 September 1869, Évreux – 9 December 1925, Paris) was a French novelist and literary critic.\nP10: Beast: Beast or Beasts may refer to:\nQuestion: Where was the husband of Jeanne Raunay born?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages and evidence do not contain information about the birthplace of Jeanne Raunay's husband.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The provided passages and evidence do not contain information about the birthplace of Jeanne Raunay's husband."
+  },
+  "final": "Évreux",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-ba09f3beddf64422",
+    "object": "chat.completion",
+    "created": 1779533120,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages and evidence do not contain information about the birthplace of Jeanne Raunay's husband.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 965,
+      "total_tokens": 1005,
+      "completion_tokens": 40,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.7470121383666992
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "a022d8580bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Ridley Scott",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Plunkett & Macleane -> Comedy!\n- Plunkett & Macleane -> Story\n- For Them That Trespass -> Alberto Cavalcanti\n- For Them That Trespass -> Patricia Plunkett\n- Patricia Plunkett -> For Them That Trespass\n- Peju Ogunmola -> The Comic\n- Father of the Bride Part II -> Comedy!\n- Father of the Bride Part II -> Part\nPassages:\nP1: Plunkett & Macleane: Plunkett & Macleane is a 1999 British historical action comedy film directed by Jake Scott, and starring Robert Carlyle, Jonny Lee Miller and Liv Tyler. Gary Oldman was executive producer. The story was co-written by Neal Purvis and Robert Wade. It follows the story of Captain James Macleane (Miller) and Will Plunkett (Carlyle), two men in eighteenth century Britain who are both struggling to survive. The characters are loosely based on two genuine highwaymen of the ...\nP2: The Comic: The Comic is a 1969 Pathécolor comedy film co-written, co-produced, and directed by Carl Reiner. It stars Dick Van Dyke as Billy Bright( which was the original title of the film), Michele Lee as Bright's love interest, and Reiner himself and Mickey Rooney as Bright's friends and work colleagues. Reiner wrote the screenplay with Aaron Ruben; it was inspired by the end of silent film era, and, in part, by the life of silent film superstar Buster Keaton.\nP3: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP4: Alberto Cavalcanti: Alberto de Almeida Cavalcanti (February 6, 1897 – August 23, 1982) was a Brazilian-born film director and producer.\nP5: Story: Story or stories, may refer to:\nP6: Part: Part, parts or PART may refer to:\nP7: Father of the Bride Part II: Father of the Bride Part II is a 1995 American comedy film starring Steve Martin, Diane Keaton and Martin Short. It is a sequel to\" Father of the Bride\" and a remake of the 1951 film\" Father's Little Dividend\", the sequel to the original\" Father of the Bride\" film released in 1950.\nP8: The Life of Na Woon-gyu: The Life of Na Woon-gyu( 나운규 일생\" Na Woon- Gyui ilsaeng\") is 1967 South Korean film is about life and death of Na Woon- gyu who was film actor and director who struggled for rise of Korean cinema during Japanese rule of Korea. Na was played by the film's actor and director Choi Moo-ryong who was father of Choi Min- soo\nP9: Oliver Plunkett: Oliver Plunkett( or Oliver Plunket),( 1 November 1625 – 1 July 1681) was the Catholic Archbishop of Armagh and Primate of All Ireland who was the last victim of the Popish Plot. He was beatified in 1920 and canonised in 1975, thus becoming the first new Irish saint for almost seven hundred years.\nP10: Patricia Plunkett: Patricia Ruth Plunkett( 17 December 1926 – 13 October 1974) was an English actress, born to an Australian WW1 soldier, Captain Gunning Francis Plunkett, and Alice Park. Born in Streatham, London, she trained at RADA and had an early stage hit in\" Pick- Up Girl\"( 1946) by the American dramatist Elsa Shelley. Plunkett appeared in 12 films. She was usually in supporting roles, but she was the female lead( with above- the- title billing) in both her 1949 films:\" Landfall\" and\" ...\nQuestion: Who is the father of the director of film Plunkett & Macleane?\nFinal answer:",
+  "output": "Captain Gunning Francis Plunkett",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-aedb44b1a601190e",
+    "object": "chat.completion",
+    "created": 1779532946,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Captain Gunning Francis Plunkett",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 977,
+      "total_tokens": 985,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

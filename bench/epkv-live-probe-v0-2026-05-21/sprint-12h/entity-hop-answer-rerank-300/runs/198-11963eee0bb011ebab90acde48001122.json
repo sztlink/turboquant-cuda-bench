@@ -1,0 +1,66 @@
+{
+  "idx": 198,
+  "qid": "11963eee0bb011ebab90acde48001122",
+  "gold": "Henry Styleman",
+  "candidates": [
+    "William the Conqueror",
+    "Henry L'Estrange Styleman Le Strange",
+    "Guy Le Strange",
+    "The Descendants",
+    "The Child",
+    "The Rock",
+    "Gunnor",
+    "Gary Le Strange",
+    "Guy I of Dampierre",
+    "Guy le Baube",
+    "Richard II, Duke of Normandy",
+    "Guy I of Montlhéry"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: William the Conqueror\nC2: Henry L'Estrange Styleman Le Strange\nC3: Guy Le Strange\nC4: The Descendants\nC5: The Child\nC6: The Rock\nC7: Gunnor\nC8: Gary Le Strange\nC9: Guy I of Dampierre\nC10: Guy le Baube\nC11: Richard II, Duke of Normandy\nC12: Guy I of Montlhéry\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Guy Le Strange -> Henry L'Estrange Styleman Le Strange\n- Guy Le Strange -> The Child\n- Gary Le Strange -> The Rock\n- Richard II, Duke of Normandy -> William the Conqueror\n- Richard II, Duke of Normandy -> Gunnor\n- Guy I of Montlhéry -> The Descendants\nPassages:\nP1: Guy Le Strange: Guy Le Strange (24 July 1854 – 24 December 1933) was a British Orientalist noted especially for his work in the field of the historical geography of the pre-modern Middle Eastern and Eastern Islamic lands, and his editing of Persian geographical texts. He was a scholar of the Persian, Arabic, and Spanish languages. He was born in Brussels, Belgium, the youngest child of Henry L'Estrange Styleman Le Strange of Hunstanton, Norfolk, and died in Cambridge.\nP2: The Descendants: The Descendants is a 2011 American comedy- drama film directed by Alexander Payne. The screenplay by Payne, Nat Faxon and Jim Rash is based on the 2007 novel of the same name by Kaui Hart Hemmings. The film stars George Clooney, Shailene Woodley, Amara Miller, Beau Bridges, Judy Greer, Matthew Lillard, and Robert Forster, and was released by Fox Searchlight Pictures in the United States on November 18, 2011 after being screened at the 2011 Toronto International Film Festival. ...\nP3: William the Conqueror: William I (c. 1028 – 9 September 1087), usually known as William the Conqueror and sometimes William the Bastard, was the first Norman King of England, reigning from 1066 until his death in 1087. He was a descendant of Rollo and was Duke of Normandy from 1035 onward. His hold was secure on Normandy by 1060, following a long struggle to establish his throne, and he launched the Norman conquest of England six years later. The rest of his life was marked by struggles to ...\nP4: The Child: The Child may refer to:\nP5: The Rock: The Rock or The Rocks may refer to:\nP6: Gunnor: Gunnor or Gunnora( circa 936 – 5 Jan 1031) was a Duchess of Normandy by marriage to Richard I of Normandy.\nP7: Gary Le Strange: Gary Le Strange is a character created by comedian Waen Shepherd. Le Strange is played as an eccentric English cult- rock composer, songwriter and performer, who believes his surreal and abstract performances to be groundbreaking. Le Strange's eclectic style of songs are bombastic, upbeat and quirky, in the new romantic style, and on stage he uses avant- garde performance art between songs. Le Strange appeared at the 2003 Edinburgh Festival Fringe with his debut show Polaroid ...\nP8: Guy I of Dampierre: Guy I of Dampierre( died 1151), son of Thibaut of Dampierre- sur- l’ Aube and Elizabeth of Montlhéry, daughter of Milo I of Montlhéry, Viscount of Troyes. Seigneur of Dampierre, Saint- Dizier, and Moëlain. Guy travelled with Hugh I of Troyes on his pilgrimage to the Holy Land in 1125. It is not known whether Guy became a Knight Templar, although his son William approved the donation of property to the Templars at Provins. Guy was associated with Barisan the Old, who ...\nP9: Henry L'Estrange Styleman Le Strange: Henry L'Estrange Styleman Le Strange (1815–1862), in early life Henry Styleman, was an English decorative painter. He is now remembered as the developer of the town of Hunstanton, Norfolk, as a coastal resort.\nP10: Guy le Baube: Guy Le Baube is a Franco- American fashion and art photographer. Born in France and moved from Paris to New York in 1976. His work has appeared in magazines such as\" VogueHarper's BazaarElle\", and\" Marie Claire\". Guy Le Baube is the son of the French painter Claude Le Baube.\nQuestion: Who is the paternal grandfather of Guy Le Strange?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide a clear paternal grandfather for Guy Le Strange. The graph and passages mention Henry L'Estrange Styleman Le Strange as Guy Le Strange's father, but do not provide information about his father or paternal grandfather.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence does not provide a clear paternal grandfather for Guy Le Strange. The graph and passages mention Henry L'Estrange Styleman Le Strange as Guy Le Strange's father, but do not provide information about his father or paternal grandfather."
+  },
+  "final": "William the Conqueror",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-a79df4828317b6ac",
+    "object": "chat.completion",
+    "created": 1779533105,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide a clear paternal grandfather for Guy Le Strange. The graph and passages mention Henry L'Estrange Styleman Le Strange as Guy Le Strange's father, but do not provide information about his father or paternal grandfather.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1216,
+      "total_tokens": 1281,
+      "completion_tokens": 65,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.194298267364502
+}

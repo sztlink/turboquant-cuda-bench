@@ -1,0 +1,65 @@
+{
+  "idx": 8,
+  "qid": "c05e16a40bdd11eba7f7acde48001122",
+  "gold": "stroke",
+  "candidates": [
+    "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936",
+    "Grand Duke Vladimir Alexandrovich of Russia",
+    "Grand Duchess Maria Alexandrovna of Russia",
+    "Queen Victoria",
+    "Grand Duke Kirill Vladimirovich of Russia",
+    "Grand Duke Vyacheslav Konstantinovich of Russia",
+    "Grand Duchess Kira Kirillovna of Russia",
+    "Princess Victoria Melita of Saxe-Coburg and Gotha",
+    "Prince Karl Emich of Leiningen",
+    "Andreas, Prince of Leiningen",
+    "Prince Karl of Leiningen"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936\nC2: Grand Duke Vladimir Alexandrovich of Russia\nC3: Grand Duchess Maria Alexandrovna of Russia\nC4: Queen Victoria\nC5: Grand Duke Kirill Vladimirovich of Russia\nC6: Grand Duke Vyacheslav Konstantinovich of Russia\nC7: Grand Duchess Kira Kirillovna of Russia\nC8: Princess Victoria Melita of Saxe-Coburg and Gotha\nC9: Prince Karl Emich of Leiningen\nC10: Andreas, Prince of Leiningen\nC11: Prince Karl of Leiningen\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Grand Duchess Kira Kirillovna of Russia -> Princess Victoria Melita of Saxe-Coburg and Gotha\n- Grand Duchess Kira Kirillovna of Russia -> Grand Duke Kirill Vladimirovich of Russia\n- Grand Duke Kirill Vladimirovich of Russia -> Princess Victoria Melita of Saxe-Coburg and Gotha\n- Grand Duke Kirill Vladimirovich of Russia -> Grand Duke Vladimir Alexandrovich of Russia\n- Andreas, Prince of Leiningen -> Prince Karl Emich of Leiningen\n- Andreas, Prince of Leiningen -> Queen Victoria\n- Princess Victoria Melita of Saxe-Coburg and Gotha -> Grand Duchess Maria Alexandrovna of Russia\n- Princess Victoria Melita of Saxe-Coburg and Gotha -> Grand Duke Kirill Vladimirovich of Russia\n- Prince Karl of Leiningen -> Queen Victoria\n- Prince Karl of Leiningen -> Queen Victoria\nPassages:\nP1: Grand Duke Vladimir Alexandrovich of Russia: Grand Duke Vladimir Alexandrovich of Russia (22 April 1847 – 17 February 1909) was a son of Emperor Alexander II of Russia, a brother of Emperor Alexander III of Russia and the senior Grand Duke of the House of Romanov during the reign of his nephew, Emperor Nicholas II. Grand Duke Vladimir followed a military career and occupied important military positions during the reigns of the last three Russian Emperors. Interested in artistic and intellectual ...\nP2: Grand Duchess Maria Alexandrovna of Russia: Grand Duchess Maria Alexandrovna of Russia (later Duchess of Edinburgh and Duchess of Saxe-Coburg and Gotha; ; – 24 October 1920) was the fifth child and only surviving daughter of Emperor Alexander II of Russia and his first wife, Princess Marie of Hesse and by Rhine. She was the younger sister of Alexander III of Russia and the paternal aunt of Russia's last emperor, Nicholas II. In 1874 Grand Duchess Maria Alexandrovna married Prince Alfred, Duke ...\nP3: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nP4: Grand Duke Kirill Vladimirovich of Russia: Grand Duke Kirill Vladimirovich of Russia, (\"Kirill Vladimirovich Romanov\"; – 12 October 1938) was a son of Grand Duke Vladimir Alexandrovich of Russia, a grandson of Emperor Alexander II and a first cousin of Nicholas II, Russia’s last Tsar. Grand Duke Kirill followed a career in the Russian navy serving during twenty years in the Naval Guards. He took part in the Russo-Japanese War, barely surviving the sinking of the battleship at Port Arthur in ...\nP5: Grand Duke Vyacheslav Konstantinovich of Russia: Grand Duke Vyacheslav Konstantinovich of Russia,( 13 July 1862 – 27 February 1879), was a Romanov grand duke and the youngest son of Grand Duke Konstantin Nikolayevich of Russia and his wife Princess Alexandra of Saxe- Altenburg. The English form of his first name is Wenceslas.\nP6: Grand Duchess Kira Kirillovna of Russia: Grand Duchess Kira Kirillovna of Russia (9 May 1909 – 8 September 1967) was the second daughter of Grand Duke Kirill Vladimirovich of Russia and Princess Victoria Melita of Saxe-Coburg and Gotha. She married the head of the German Imperial House, Prince Louis Ferdinand of Prussia.\nP7: Princess Victoria Melita of Saxe-Coburg and Gotha: Princess Victoria Melita of Saxe-Coburg and Gotha , later Grand Duchess Victoria Feodorovna of Russia (25 November 1876 – 2 March 1936) was the third child and second daughter of Alfred, Duke of Saxe-Coburg and Gotha, and Grand Duchess Maria Alexandrovna of Russia. She was a granddaughter of Queen Victoria of the United Kingdom and Emperor Alexander II of Russia. Born a British princess, Victoria spent her early life in England and lived in ...\nP8: Prince Karl Emich of Leiningen: Prince Karl Emich of Leiningen( born 12 June 1952), also known by his Orthodox Russian name Nikolai Kirillovich Romanov( Никола́й Кири́ллович Рома́нов) and his pretended regnal name Emperor Nicholas III, is the eldest son of Emich, 7th Prince of Leiningen and his wife, Duchess Eilika of Oldenburg, and is an elder brother of Andreas, 8th Prince of Leiningen. He is a claimant to the defunct throne of the Russian Empire, held until 1917 by the Imperial House of ...\nP9: Andreas, Prince of Leiningen: Andreas, Prince of Leiningen (\"Andreas Fürst zu Leiningen\"; born 27 November 1955) is the current head of the Princely House of Leiningen. He is the son of Emich Kyrill, Prince of Leiningen, and Duchess Eilika of Oldenburg. His older brother Prince Karl Emich of Leiningen lost his rights to succeed as head of the house as a result of his unequal second marriage. His paternal grandmother, Grand Duchess Maria Kirillovna of Russia, was the eldest daughter of Kirill ...\nP10: Prince Karl of Leiningen: Prince Karl Vladimir Ernst Heinrich of Leiningen (2 January 1928 – 28 September 1990) was the younger son of Karl, 6th Prince of Leiningen (1898–1946) and Grand Duchess Maria Kirillovna of Russia. Maria was the daughter of Princess Victoria Melita of Edinburgh and Saxe-Coburg-Gotha and Cyril Vladimirovich, Grand Duke of Russia. As such, Karl was a great-great-grandson of both Queen Victoria of Great Britain and Emperor Alexander II of Russia (as Victoria Melita and ...\nQuestion: Why did Grand Duke Kirill Vladimirovich Of Russia's wife die?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936\",\"selected\":\"C7|C8\",\"confidence\":\"high\",\"reason\":\"C7 and C8 are directly supported by evidence passage P6, which states that Grand Duchess Kira Kirillovna of Russia was the wife of Grand Duke Kirill Vladimirovich of Russia and that she died on 8 September 1967.\"}",
+  "verifier": {
+    "final_answer": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936",
+    "selected": "C7|C8",
+    "confidence": "high",
+    "reason": "C7 and C8 are directly supported by evidence passage P6, which states that Grand Duchess Kira Kirillovna of Russia was the wife of Grand Duke Kirill Vladimirovich of Russia and that she died on 8 September 1967."
+  },
+  "final": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936",
+  "selected": "C7|C8",
+  "response": {
+    "id": "chatcmpl-a295124c5513a860",
+    "object": "chat.completion",
+    "created": 1779532980,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936\",\"selected\":\"C7|C8\",\"confidence\":\"high\",\"reason\":\"C7 and C8 are directly supported by evidence passage P6, which states that Grand Duchess Kira Kirillovna of Russia was the wife of Grand Duke Kirill Vladimirovich of Russia and that she died on 8 September 1967.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1775,
+      "total_tokens": 1876,
+      "completion_tokens": 101,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.8362460136413574
+}

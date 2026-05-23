@@ -1,0 +1,48 @@
+{
+  "qid": "b65877e20bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Alena Mihulová",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Noc nevěsty -> Karel Kachyňa\n- Levon Julfalakyan -> Master\nPassages:\nP1: Noc nevěsty: Noc nevěsty (translated as Night of the Bride; also known as The Nun's Night) is a 1967 Czechoslovak film directed by Karel Kachyňa adapted from a novel by Jan Procházka. Set in a Moravian village in the early 1950s, a time of collectivisation as well as mass closures of monasteries and convents by the Stalinist regime, the film is an evocative critique of religious fanaticism and political ideology.\nP2: Karel Kachyňa: Karel Kachyňa (1 May 1924 – 12 March 2004) was a Czech film director. His career spanned over five decades. Kachyňa was part of the Czech wave of liberal filmmakers in the 1960s which included Miloš Forman and Jiří Menzel. He was married to Alena Mihulová. They had one daughter, Karolína, together. He was born in Vyškov, Czechoslovakia and died in Prague, Czech Republic. His 1961 film \"Pouta\" was entered into the 2nd Moscow International Film Festival. His 1986 film \"Forbidden ...\nP3: Karel Kachyňa: Karel Kachyňa( 1 May 1924 – 12 March 2004) was a Czech film director. His career spanned over five decades. Kachyňa was part of the Czech wave of liberal filmmakers in the 1960s which included Miloš Forman and Jiří Menzel. He was married to Alena Mihulová. They had one daughter, Karolína, together. He was born in Vyškov, Czechoslovakia and died in Prague, Czech Republic. His 1961 film\" Pouta\" was entered into the 2nd Moscow International Film Festival. His 1986 film\" Forbidden ...\nP4: Master: Master or masters may refer to:\nP5: Spouse of the President of the People's Republic of China: The Spouse of the President of the People's Republic of China, is the spouse of the President of the People's Republic of China. To date there have been 7 women who have been married to the Chinese president while in office.\nP6: Spouse of the Prime Minister of Cambodia: The Spouse of the Prime Minister of Cambodia refers to the wife of the head of government of the Kingdom of Cambodia, the Prime Minister. Since 1993, 3 women have been the spouse of the Prime Minister of Cambodia. The title\" First Lady\" is also commonly used. The spouse of the current Prime Minister is Dr. Bun Rany.\nP7: Spouse of the Prime Minister of Singapore: The Spouse of the Prime Minister of Singapore refers to the spouse of the head of government of Singapore, the Prime Minister. Since, Singapore became an internally self-governing state within the Commonwealth, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. To date, three women have held the title of the spouse of the Prime Minister of Singapore. Ho Ching is the spouse of the incumbent Prime ...\nP8: Spouse of the Prime Minister of Malaysia: The Spouse of the Prime Minister of Malaysia refers to the spouse of the head of government of Malaysia, the Prime Minister. Since independence in 1957, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. Some commentators have tried to style prime ministers' wives as\" First Lady of Malaysia\", similar to the style of First Lady used in republics, but this is not a recognised title. To date, seven women ...\nP9: List of spouses of Prime Ministers of Thailand: The spouse of the Prime Minister of Thailand is the wife or husband of the Prime Minister of Thailand. The spouse of the current Prime Minister is Associate Professor Naraporn Chan- o-cha.\nP10: Mehdi Abrishamchi: Mehdi Abrishamchi is an Iranian People's Mujahedin of Iran( MEK) politician who has been described as\" the right hand man of Massoud Rajavi\". He is the former spouse of the group's current leader, Maryam Rajavi, whom he divorced so that she could become the spouse of Massoud Rajavi.\nQuestion: Who is the spouse of the director of film Noc Nevěsty?\nFinal answer:",
+  "output": "Alena Mihulová",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-96c02c7f3d636ee9",
+    "object": "chat.completion",
+    "created": 1779532923,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Alena Mihulová",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1084,
+      "total_tokens": 1092,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

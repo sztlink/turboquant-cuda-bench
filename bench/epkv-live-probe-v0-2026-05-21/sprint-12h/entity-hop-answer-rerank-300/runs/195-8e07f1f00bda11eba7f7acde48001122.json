@@ -1,0 +1,65 @@
+{
+  "idx": 195,
+  "qid": "8e07f1f00bda11eba7f7acde48001122",
+  "gold": "Mapy Cortés",
+  "candidates": [
+    "Mapy Cortés",
+    "María del Pilar Cordero",
+    "My Three Merry Widows",
+    "The Merry Wives",
+    "Catherine Corsini",
+    "Fernando Cortés",
+    "Comedy",
+    "Hans Billian",
+    "The Merry Wives of Windsor (1918 film)",
+    "The Merry Wives of Tyrol",
+    "The Very Merry Widows"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Mapy Cortés\nC2: María del Pilar Cordero\nC3: My Three Merry Widows\nC4: The Merry Wives\nC5: Catherine Corsini\nC6: Fernando Cortés\nC7: Comedy\nC8: Hans Billian\nC9: The Merry Wives of Windsor (1918 film)\nC10: The Merry Wives of Tyrol\nC11: The Very Merry Widows\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- My Three Merry Widows -> Fernando Cortés\n- My Three Merry Widows -> Comedy!\n- The Very Merry Widows -> Catherine Corsini\n- The Merry Wives of Windsor (1918 film) -> The Merry Wives\n- The Merry Wives of Windsor (1918 film) -> Comedy!\n- The Merry Wives of Tyrol -> Hans Billian\n- The Merry Wives of Tyrol -> The Merry Wives\nPassages:\nP1: My Three Merry Widows: My Three Merry Widows (in Spanish Mis tres viudas alegres) is a Mexican comedy film directed by Fernando Cortés. It was filmed in 1953 and starring Amalia Aguilar, Lilia del Valle and Silvia Pinal.\nP2: The Merry Wives: The Merry Wives  is a 1938 Czechoslovak historical comedy film directed by Otakar Vávra.\nP3: Catherine Corsini: Catherine Corsini( born 18 May 1956) is a French film director, screenwriter and actress. Her film\" Replay\" was entered into the 2001 Cannes Film Festival. Her 2012 film\" Three Worlds\" competed in the Un Certain Regard section at the 2012 Cannes Film Festival. In April 2016, she was announced as the President of the Jury for the Caméra d' Or prize at the 2016 Cannes Film Festival.\nP4: Fernando Cortés: Fernando \"Papi\" Cortés (October 4, 1909 – 1979) was a Puerto Rican film actor, writer and director. He was born in San Juan, Puerto Rico, but he spent most of his adult life in Mexico City, where he died. On 1932, while in New York City, Fernando Cortés married Puerto Rican childhood friend María del Pilar Cordero, who adopted the stage name of Mapy Cortés. The couple soon traveled to Spain with a Cuban theatrical troupe. They worked on the Spanish stage, radio and film until ...\nP5: Fernando Cortés: Fernando\" Papi\" Cortés( October 4, 1909 – 1979) was a Puerto Rican film actor, writer and director. He was born in San Juan, Puerto Rico, but he spent most of his adult life in Mexico City, where he died. On 1932, while in New York City, Fernando Cortés married Puerto Rican childhood friend María del Pilar Cordero, who adopted the stage name of Mapy Cortés. The couple soon traveled to Spain with a Cuban theatrical troupe. They worked on the Spanish stage, radio and film until ...\nP6: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP7: Hans Billian: Hans Billian (born Hans Joachim Hubert Backe, April 15, 1918 in Breslau (today, Wrocław, Poland) - December 18, 2007 in Gräfelfing, Bavaria) was a German film director, screenwriter, and actor noted for the \"sex comedies\" he directed in the 1970s. He was also credited as \"Hans BillanPhillip Halliday\", and \"Christian Kessler\".\nP8: The Merry Wives of Windsor (1918 film): The Merry Wives of Windsor( German: Die lustigen Weiber von Windsor) is a 1918 German silent comedy film directed by William Wauer. It is an adaptation of William Shakespeare's\" The Merry Wives of Windsor\".\nP9: The Merry Wives of Tyrol: The Merry Wives of Tyrol is a 1964 West German musical comedy film directed by Hans Billian and starring Hannelore Auer, Gus Backus and Rudolf Prack. The film's sets were designed by the art director Sepp Rothauer.\nP10: The Very Merry Widows: The Very Merry Widows is a 2003 Franco- Belgian film directed and co-written by Catherine Corsini.\nQuestion: Who is the spouse of the director of film My Three Merry Widows?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Mapy Cortés\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"Fernando Cortés is the director of My Three Merry Widows, and his wife, who adopted the stage name Mapy Cortés, is María del Pilar Cordero.\"}",
+  "verifier": {
+    "final_answer": "Mapy Cortés",
+    "selected": "C1",
+    "confidence": "high",
+    "reason": "Fernando Cortés is the director of My Three Merry Widows, and his wife, who adopted the stage name Mapy Cortés, is María del Pilar Cordero."
+  },
+  "final": "Mapy Cortés",
+  "selected": "C1",
+  "response": {
+    "id": "chatcmpl-b21a1db88e4ceeeb",
+    "object": "chat.completion",
+    "created": 1779533098,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Mapy Cortés\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"Fernando Cortés is the director of My Three Merry Widows, and his wife, who adopted the stage name Mapy Cortés, is María del Pilar Cordero.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1204,
+      "total_tokens": 1264,
+      "completion_tokens": 60,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.1146948337554932
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "ab18549a0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Billy Ray Cyrus",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- I Miss You (Miley Cyrus song) -> Miley Cyrus\n- I Miss You (Miley Cyrus song) -> The Rock\n- Miley Cyrus -> The Feature\n- Lighter (Miley Cyrus song) -> Miley Cyrus\n- Lighter (Miley Cyrus song) -> The Singer\n- If I Can't Have You (Kelly Clarkson song) -> Miley Cyrus\n- If I Can't Have You (Kelly Clarkson song) -> The Wanted\n- Miss You (Yuna Ito song) -> The Cell\n- Slide Away (Miley Cyrus song) -> Miley Cyrus\n- Slide Away (Miley Cyrus song) -> The Singer\n- Pumpin' Up the Party -> Miley Cyrus\n- I'm Not Gonna Miss You -> September 30\nPassages:\nP1: I Miss You (Miley Cyrus song): \"I Miss You\" is a song by American recording artist, Miley Cyrus. It was co-written by Cyrus (credited under her birth name Destiny Hope Cyrus), Brian Green, Wendy Foy Green, and produced by Brian Green. \"I Miss You\" is an homage to Cyrus' late grandfather, Ron Cyrus, who died on February 28, 2006. He was diagnosed with mesothelioma, and, seeing her grandfather nearing death, Cyrus wanted to write him a song prior to his death. It was released to Radio Disney ...\nP2: Miley Cyrus: Miley Ray Hemsworth (née Cyrus, born Destiny Hope Cyrus; November 23, 1992) is an American singer, songwriter, actress, and philanthropist. Her music has spanned a range of styles, including pop, country pop, and hip hop. Cyrus' personal life, public image, and performances have often sparked controversy and received widespread media coverage. She is widely considered to be one of the most successful entertainers in adulthood that originated as a child star. Among numerous awards ...\nP3: The Wanted: The Wanted are a British- Irish boy band consisting of members Max George, Siva Kaneswaran, Jay McGuiness, Tom Parker and Nathan Sykes. They formed in 2009 and were signed worldwide to Universal Music subsidiaries Island Records and Mercury Records, and managed by Scooter Braun. The band's debut album,\" The Wanted\", was released on 25 October 2010 and peaked at number four on the UK Albums Chart. The album spawned three UK top 20 singles: their debut single,\" All Time Low\", which ...\nP4: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP5: The Cell: The Cell is a 2000 science fiction horror film directed by Tarsem Singh in his directorial debut, and starring Jennifer Lopez, Vince Vaughn, and Vincent D'Onofrio. It received mixed reviews upon its release, with critics praising its visuals, direction, make- up, costumes and D'Onofrio's performance, while criticizing its\" Silence of the Lambs\"- inspired plot, an emphasis on style rather than substance, and masochistic imagery.\nP6: The Rock: The Rock or The Rocks may refer to:\nP7: The Singer: The Singer may refer to:\nP8: September 30: It is the last day of the third quarter, midway point of the second half of the year.\nP9: If I Can't Have You (Kelly Clarkson song): \" If I Ca n't Have You\" is a song performed by American singer and songwriter Kelly Clarkson, derived from her fourth studio album\" All I Ever Wanted\"( 2009). The song was composed by Clarkson and American songwriter and producer Ryan Tedder, who was at helm for the song's production. \" If I Ca n't Have You\" is an electro song. The song has garnered comparisons to Miley Cyrus'\" Fly on the Wall\". \" If I Ca n't Have You\" garnered mixed to positive ...\nP10: I'm Not Gonna Miss You: \" I'm Not Gonna Miss You\" is a song recorded by American country music artist Glen Campbell and The Wrecking Crew. Co-written by Campbell and producer Julian Raymond, the song was released on September 30, 2014 for the soundtrack to the documentary, which focuses on the singer's diagnosis of Alzheimer's disease and his final tour. \" I'm Not Gonna Miss You\" is the last song to be recorded by Campbell. The song was nominated for Best Original Song at the 87th Academy ...\nQuestion: Who is the father of the composer of song I Miss You (Miley Cyrus Song)?\nFinal answer:",
+  "output": "Ron Cyrus",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.4
+  },
+  "response": {
+    "id": "chatcmpl-ad8a50a01f7fdac0",
+    "object": "chat.completion",
+    "created": 1779532895,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Ron Cyrus",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1144,
+      "total_tokens": 1147,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "411de60c0bde11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Oslo",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Emilie Hegh Arntzen: Emilie Hegh Arntzen (born 1 January 1994) is a Norwegian handball player for Vipers Kristiansand and the Norwegian national team. She previously played for Herkules, Gulset and Gjerpen IF. She made her debut on the national team in 2014. She also represented Norway in the 2013 Women's Junior European Handball Championship, placing 4th, and in the 2014 Women's Junior World Handball Championship, placing 9th. She is the daughter of former international handballer Hanne Hegh ...\nP2: Lebrecht, Prince of Anhalt-Köthen: Lebrecht of Anhalt- Köthen( Plötzkau, 8 April 1622 – Köthen, 7 November 1669), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Plötzkau. From 1665, he was ruler of the principality of Anhalt- Köthen. He was the second son of Augustus, Prince of Anhalt- Plötzkau, by his wife Sibylle, daughter of John George I, Count of Solms- Laubach.\nP3: Hanne Hegh: Hanne Hegh (born 27 April 1960 in Oslo) is a Norwegian team handball player and Olympic medalist.\nP4: The General: The General or The Generals may refer to:\nP5: Emory Johnson: Alfred Emory Johnson( March 16, 1894 – April 18, 1960) was an American actor, director, producer, and writer. He started acting in silent films as a teenager. Early in his career, Carl Laemmle choose Emory to become a Universal studio leading man. He also became part of one of the early Hollywood celebrity marriages when he wed Universal Ingénue – Ella Hall. In 1922, Emory acted and directed his first feature film –\" In the Name of The Law\". He would continue to direct more ...\nP6: Emilie of Promnitz-Pless: Christine Johanna Emilie, Princess of Anhalt- Köthen( née Countess Christine Johanna Emilie of Promnitz- Pless; 15 September 1708 – 20 February 1732) was the second wife and consort of Augustus Louis, Prince of Anhalt- Köthen.\nP7: The Spirit of the USA: __NOEDITSECTION __ The Spirit of the USA is a 1924 American silent drama film directed by Emory Johnson and written by Emilie Johnson. The film stars Johnnie Walker and Mary Carr. The film was released on May 18, 1924 by FBO.\nP8: Ole Arntzen: Ole Arntzen (4 February 1910 – 7 August 1973) was a Norwegian businessman and resistance member during World War II. He was a brother of Sven Arntzen. He was a member of the Central Committee of Milorg, where he served as General Inspector (\"Stor I\") from April 1944 to May 1945. His cover name was \"Ørnulf\". In his World War II memoirs, Gunnar Sønsteby devotes one chapter to the arrest of Milorg leaders Jens Christian Hauge and Arntzen by the State police on 10 April 1945, but their ...\nP9: Ole Arntzen Lützow: Ole Arntzen Lützow( 14 November 1801 – 2 November 1871) was a Norwegian politician. He was elected to the Parliament of Norway in 1839, 1842 and 1845, representing the rural constituency of\" Hedemarkens Amt\". He worked as a farmer.\nP10: Emilie Benes Brzezinski: Emilie Beneš Brzezinski (born Emilie Anna Beneš; 1932) is an American sculptor and the widow of Zbigniew Brzezinski.\nQuestion: Where was the mother of Emilie Hegh Arntzen born?\nFinal answer:",
+  "output": "Oslo",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-a4cb434d24320756",
+    "object": "chat.completion",
+    "created": 1779532956,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Oslo",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1004,
+      "total_tokens": 1007,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "e701105e0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Königsberg",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: William, Duke of Jülich-Cleves-Berg: William of Jülich- Cleves- Berge( William I of Cleves, William V of Jülich- Berg)( 28 July 1516 – 5 January 1592) was a Duke of Jülich- Cleves- Berg( 1539 – 1592). William was born in and died in Düsseldorf. He was the only son of John III, Duke of Jülich- Cleves- Berg, and Maria, Duchess of Jülich- Berg. William took over rule of his father's estates( the Duchy of Cleves and the County of Mark) upon his death in 1539. Despite his mother having lived until ...\nP2: William, Duke of Jülich-Cleves-Berg: William of Jülich-Cleves-Berge (William I of Cleves, William V of Jülich-Berg) (28 July 1516 – 5 January 1592) was a Duke of Jülich-Cleves-Berg (1539–1592). William was born in and died in Düsseldorf. He was the only son of John III, Duke of Jülich-Cleves-Berg, and Maria, Duchess of Jülich-Berg. William took over rule of his father's estates (the Duchy of Cleves and the County of Mark) upon his death in 1539. Despite his mother having lived until 1543, ...\nP3: Frederick I of Denmark: Frederick I (7 October 1471 – 10 April 1533) was the King of Denmark and Norway. His name is also spelled \"Frederik\" in Danish and Norwegian,\n\"Friedrich\" in German and \"Fredrik\" in Swedish. He was the last Roman Catholic monarch to reign over Denmark, when subsequent monarchs embraced Lutheranism after the Protestant Reformation. As King of Norway, Frederick is most remarkable in never having visited the country and was never crowned King of Norway. Therefore, he was ...\nP4: Princess Marianne of the Netherlands: Princess Marianne of the Netherlands, Princess of Orange- Nassau(\" Wilhelmina Frederika Louise Charlotte Marianne\"; 9 May 1810 – 29 May 1883), was a member of the House of Orange- Nassau.\nP5: Anna Marie of Brunswick-Lüneburg: Anna Marie of Brunswick-Lüneburg (also: \"Anna Maria of Brunswick-Göttingen-Calenberg\"; ; born: 23 April 1532 in Hann. Münden; died: 20 March 1568 in Gurievsk  near Königsberg) was a Duchess of Brunswick-Lüneberg by birth and by marriage Duchess of Prussia.\nP6: The Child: The Child may refer to:\nP7: The General: The General or The Generals may refer to:\nP8: Louise: Louise or Luise may refer to:\nP9: Master: Master or masters may refer to:\nP10: Albert Frederick, Duke of Prussia: Albert Frederick (7 May 1553 – 28 August 1618) was the Duke of Prussia, from 1568 until his death. He was a son of Albert of Prussia and Anna Marie of Brunswick-Lüneburg. He was the second and last Prussian duke of the Ansbach branch of the Hohenzollern family.\nQuestion: Where was the place of burial of Albert Frederick, Duke Of Prussia's mother?\nFinal answer:",
+  "output": "Gurievsk near Königsberg",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.5
+  },
+  "response": {
+    "id": "chatcmpl-8556015c46e561b8",
+    "object": "chat.completion",
+    "created": 1779532748,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Gurievsk near Königsberg",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 855,
+      "total_tokens": 864,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "0365ca8e0baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Farwah bint al-Qasim",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Isma'il ibn Ja'far -> Ja'far al-Sadiq\n- Abdullah al-Aftah -> Isma'il ibn Ja'far\n- Al-Husayn ibn Ali (Ibn al-Walid) -> Muhammad ibn Ja'far\n- Al-Husayn ibn Ali (Ibn al-Walid) -> Ali ibn Muhammad\n- Muhammad ibn Ja'far -> Muhammad\n- Ja'far ibn Muhammad al-Hasani -> Hasan ibn Ali\n- Ja'far ibn Muhammad al-Hasani -> In the Name Of\n- Muhammad ibn Isma'il -> Isma'il ibn Ja'far\n- Muhammad ibn Isma'il -> The Descendants\nPassages:\nP1: Ja'far al-Sadiq: Jaʿfar ibn Muḥammad aṣ-Ṣādiq (700 or 702–765 CE), commonly known as Ja'far al-Ṣādiq or simply as-Sadiq (The Truthful), was an 8th-century Muslim scholar and scientist. He is considered as an Imam and founder of the Ja'fari school of jurisprudence by Twelver and Isma'ili Shi’as, and a major figure in the Hanafi and Maliki schools of Sunni jurisprudence. He was a descendant of the Caliph Ali and Fatimah bint Muhammad on the side of his father, Muhammad al-Baqir, and of Muhammad ...\nP2: Hasan ibn Ali: Al-Hasan ibn Ali ibn Abi Talib (624–670 CE), sometimes spelled Hasan or Hassan, was the eldest son of Ali and Muhammad's daughter Fatimah, and was the older brother of Husayn. Muslims respect him as a grandson of the Islamic Prophet Muhammad. Among Shia Muslims, Hasan is revered as the second Imam. Hasan was elected for the caliphate after his father's death, but abdicated after six or seven months to Muawiyah I, the founder of the Umayyad dynasty to end the First Fitna. Al-Hasan ...\nP3: Ali ibn Muhammad: Ali ibn Muhammad ibn Idris was the fourth Idrisid sultan of Morocco. He was the son of Muhammad ibn Idris whom he succeeded in 836. He died in 848 CE( Rajab 234 AH) and was succeeded by his brother Yahya I.\nP4: Muhammad: Muhammad (c. 570 CE – 8 June 632 CE) was an Arab religious, social and political leader and the founder of Islam. According to Islamic doctrine, he was a prophet, sent to present and confirm the monotheistic teachings preached previously by Adam, Abraham, Moses, Jesus, and other prophets. He is viewed as the final prophet of God in all the main branches of Islam, though some modern denominations diverge from this belief. Muhammad united Arabia into a single Muslim polity, with the ...\nP5: The Descendants: The Descendants is a 2011 American comedy- drama film directed by Alexander Payne. The screenplay by Payne, Nat Faxon and Jim Rash is based on the 2007 novel of the same name by Kaui Hart Hemmings. The film stars George Clooney, Shailene Woodley, Amara Miller, Beau Bridges, Judy Greer, Matthew Lillard, and Robert Forster, and was released by Fox Searchlight Pictures in the United States on November 18, 2011 after being screened at the 2011 Toronto International Film Festival. ...\nP6: In the Name Of: In the Name Of may refer to:\nP7: Isma'il ibn Ja'far: Ismāʿīl ibn Jaʿfar al-Mubārak (c. born: 719 AD, Medina - died circa 762 AD, Medina) was the eldest son of Imam Ja'far al-Sadiq. He is also known as Isma'il Al-Ãraj ibn Ja'far (اسماعيل الاعرج ابن جعفر الصادق). Following Ja'far's death, the Shia community split between those who believed the Imamate was passed to Musa ibn Ja'far, who would become the Twelver Shia, and those who believed that the Imamate passed to Isma'il ibn Ja'far, who would become the Isma'ili branch named ...\nP8: Isma'il ibn Ja'far: Ismāʿīl ibn Jaʿfar al- Mubārak( c. born: 719 AD, Medina- died circa 762 AD, Medina) was the eldest son of Imam Ja'far al- Sadiq. He is also known as Isma'il Al- Ãraj ibn Ja'far( اسماعيل الاعرج ابن جعفر الصادق). Following Ja'far's death, the Shia community split between those who believed the Imamate was passed to Musa ibn Ja'far, who would become the Twelver Shia, and those who believed that the Imamate passed to Isma'il ibn Ja'far, who would become the Isma'ili branch named ...\nP9: Ja'far ibn Aqeel: Ja'far ibn Aqeel was the son of Aqeel ibn Abi Talib, and his mother was Umm- Thaqr as the daughter of Amer — Hesam ibn Ameri—who was from Bani Kilab. Meanwhile, he was the son -in- law of Ali ibn Abi Talib. Ja'far is considered as one of Hussain's companions; he entered the battlefield after Abdullah ibn Moslem, and he killed 2( or 15) fighters of the army of Omar Saad. He was killed by Boshr ibn Hoot Hamdani or Khalid bin Asad al Johani in( the battle of) Karbala on the day ...\nP10: Muhammad ibn Ja'far: Muhammad ibn Ja'far( Arabic: محمد بن جعفر) was a companion and relative of the Islamic prophet Muhammad. He was the son of Muhammad's cousin, Ja'far ibn Abu Talib, and of Asma bint Umais. His uncle Ali particularly wished that his daughters should marry Ja'far's sons. In due course, Muhammad ibn Ja'far did marry Ali's daughter Umm Kulthum, who was the widow of his brother Awn. They had no children.\nQuestion: Who is Isma'Il Ibn Ja'Far's paternal grandmother?\nFinal answer:",
+  "output": "Fatimah bint Muhammad",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.3333333333333333
+  },
+  "response": {
+    "id": "chatcmpl-bb9cc9206ae6501c",
+    "object": "chat.completion",
+    "created": 1779532958,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Fatimah bint Muhammad",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1503,
+      "total_tokens": 1510,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

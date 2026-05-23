@@ -1,0 +1,66 @@
+{
+  "idx": 48,
+  "qid": "ea1fc06c0bda11eba7f7acde48001122",
+  "gold": "United Nations",
+  "candidates": [
+    "United Nations",
+    "United Nations High Commissioner for Refugees",
+    "Norwegian Red Cross",
+    "Peter Sellers",
+    "Rod Amateau",
+    "Comedy",
+    "The General",
+    "Hans Deppe",
+    "Where Does It Hurt",
+    "Karin Stoltenberg",
+    "Thorvald Stoltenberg",
+    "Camilla Stoltenberg"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: United Nations\nC2: United Nations High Commissioner for Refugees\nC3: Norwegian Red Cross\nC4: Peter Sellers\nC5: Rod Amateau\nC6: Comedy\nC7: The General\nC8: Hans Deppe\nC9: Where Does It Hurt\nC10: Karin Stoltenberg\nC11: Thorvald Stoltenberg\nC12: Camilla Stoltenberg\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Karin Stoltenberg -> Thorvald Stoltenberg\n- Camilla Stoltenberg -> The General\n- Where Does It Hurt? -> Peter Sellers\n- Where Does It Hurt? -> Rod Amateau\n- Thorvald Stoltenberg -> United Nations\n- That's No Way to Land a Man -> Hans Deppe\n- That's No Way to Land a Man -> Comedy!\nPassages:\nP1: Peter Sellers: Peter Sellers, CBE (born Richard Henry Sellers; 8 September 1925 – 24 July 1980) was an English film actor, comedian, and singer. He performed in the BBC Radio comedy series \"The Goon Show\", featured on a number of hit comic songs, and became known to a worldwide audience through his many film roles, among them Chief Inspector Clouseau in \"The Pink Panther\" series of films. Born in Portsmouth to a theatrical family, Sellers made his stage debut at the Kings Theatre, Southsea, ...\nP2: United Nations: The United Nations (UN), is an intergovernmental organization responsible for maintaining international peace and security, developing friendly relations among nations, achieving international cooperation, and being a center for harmonizing the actions of nations. It is the largest, most familiar, most internationally represented and most powerful intergovernmental organization in the world. The UN is headquartered on international territory in New York City; other main offices ...\nP3: Rod Amateau: Rodney\" Rod\" Amateau( December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were\" The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's Island The Bob Cummings Show\" and\" The New Phil Silvers Show\". He produced\" My Mother the Car\" and\" Supertrain\", and wrote the story for the 1988 film\" Sunset\". Amateau also directed a few episodes of\" The Dukes of Hazzard\", and appeared in a ...\nP4: Rod Amateau: Rodney \"Rod\" Amateau (December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were \"The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's IslandThe Bob Cummings Show\" and \"The New Phil Silvers Show\". He produced \"My Mother the Car\" and \"Supertrain\", and wrote the story for the 1988 film \"Sunset\". Amateau also directed a few episodes of \"The Dukes of Hazzard\", and appeared in a ...\nP5: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP6: The General: The General or The Generals may refer to:\nP7: Hans Deppe: Hans Deppe( 12 November 1897 – 23 September 1969) was a German actor and film director.\nP8: Where Does It Hurt?: Where Does it Hurt? is a 1972 American comedy film written and directed by Rod Amateau and starring Peter Sellers, Jo Ann Pflug, Rick Lenz, Pat Morita, and Harold Gould. The film is a darkly satirical look at capitalism in a hospital environment.\nP9: Karin Stoltenberg: Karin Stoltenberg, née Heiberg (23 November 1931 – 17 October 2012), was a Norwegian geneticist, politician and public official noted for her efforts to develop a coherent family policy in Norway, feminist activities, and for being the mother of prime minister Jens Stoltenberg, and wife of foreign minister Thorvald Stoltenberg.\nP10: Thorvald Stoltenberg: Thorvald Stoltenberg (8 July 1931 – 13 July 2018) was a Norwegian politician. His ancestors stemmed from Tønsberg. He served as Minister of Defence (1979–81) and Minister of Foreign Affairs (1987–1989 and 1990–1993) in two Labour governments. From 1989 to 1990 served as Norwegian Ambassador to the UN. In 1990 he became the United Nations High Commissioner for Refugees, but served only one year before rejoining the Norwegian government. In 1992, Stoltenberg, together with ...\nQuestion: Where does Karin Stoltenberg's husband work at?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"United Nations High Commissioner for Refugees\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"Thorvald Stoltenberg is Karin Stoltenberg's husband, and the evidence shows that he served as the United Nations High Commissioner for Refugees.\"}",
+  "verifier": {
+    "final_answer": "United Nations High Commissioner for Refugees",
+    "selected": "C2",
+    "confidence": "high",
+    "reason": "Thorvald Stoltenberg is Karin Stoltenberg's husband, and the evidence shows that he served as the United Nations High Commissioner for Refugees."
+  },
+  "final": "United Nations High Commissioner for Refugees",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-85bc4640e3d766a7",
+    "object": "chat.completion",
+    "created": 1779533006,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"United Nations High Commissioner for Refugees\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"Thorvald Stoltenberg is Karin Stoltenberg's husband, and the evidence shows that he served as the United Nations High Commissioner for Refugees.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1301,
+      "total_tokens": 1360,
+      "completion_tokens": 59,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.084369421005249
+}

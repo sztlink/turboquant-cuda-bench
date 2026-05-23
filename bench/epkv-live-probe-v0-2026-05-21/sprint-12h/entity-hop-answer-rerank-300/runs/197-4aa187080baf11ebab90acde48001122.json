@@ -1,0 +1,61 @@
+{
+  "idx": 197,
+  "qid": "4aa187080baf11ebab90acde48001122",
+  "gold": "Isabella of Angoulême",
+  "candidates": [
+    "Eleanor of Castile",
+    "Juliana",
+    "Edward I of England",
+    "Beatrix of the Netherlands",
+    "Hugh Despenser the younger",
+    "The Godfather",
+    "Agrippina the Younger",
+    "Anne of Gloucester",
+    "Queen Victoria",
+    "Claudia Antonia",
+    "Princess Louise of Saxe-Gotha-Altenburg (1800–1831)",
+    "Louise"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Eleanor of Castile\nC2: Juliana\nC3: Edward I of England\nC4: Beatrix of the Netherlands\nC5: Hugh Despenser the younger\nC6: The Godfather\nC7: Agrippina the Younger\nC8: Anne of Gloucester\nC9: Queen Victoria\nC10: Claudia Antonia\nC11: Princess Louise of Saxe-Gotha-Altenburg (1800–1831)\nC12: Louise\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Queen Victoria\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Louise\n- Baroness Gösta von dem Bussche-Haddenhausen -> Beatrix of the Netherlands\n- Isabel le Despenser, Countess of Arundel -> Hugh Despenser the younger\n- Isabel le Despenser, Countess of Arundel -> Edward I of England\n- Antonia Minor -> Agrippina the Younger\n- Antonia Minor -> Claudia Antonia\n- Dorothy Stafford -> Anne of Gloucester\n- Dorothy Stafford -> The Godfather\n- Henry, son of Edward I -> Edward I of England\n- Henry, son of Edward I -> Eleanor of Castile\n- Henry, son of Edward I -> Edward I of England\n- Henry, son of Edward I -> Eleanor of Castile\nPassages:\nP1: Edward I of England: Edward I (17/18 June 1239 – 7 July 1307), also known as Edward Longshanks and the Hammer of the Scots , was King of England from 1272 to 1307. Before his accession to the throne, he was commonly referred to as The Lord Edward. The first son of Henry III, Edward was involved from an early age in the political intrigues of his father's reign, which included an outright rebellion by the English barons. In 1259, he briefly sided with a baronial reform movement, supporting the ...\nP2: Beatrix of the Netherlands: Beatrix (Beatrix Wilhelmina Armgard, ; born 31 January 1938) is a princess of the Dutch royal house who reigned as Queen of the Netherlands from 30 April 1980 until her abdication on 30 April 2013. Beatrix is the eldest daughter of Queen Juliana and her husband, Prince Bernhard of Lippe-Biesterfeld. Upon her mother's accession in 1948, she became heir presumptive. Beatrix attended a public primary school in Canada during World War II, and then finished her primary ...\nP3: Hugh Despenser the younger: Hugh le Despenser, 1st Lord Despenser (c. 1286 – 24 November 1326), also referred to as \"the younger Despenser\", was the son and heir of Hugh le Despenser, Earl of Winchester (the elder Despenser) by his wife Isabella de Beauchamp, daughter of William de Beauchamp, 9th Earl of Warwick. He rose to national prominence as royal chamberlain and a favourite of Edward II of England. Despenser made many enemies across the nobility of England which, after the overthrow of ...\nP4: Hugh Despenser the younger: Hugh le Despenser, 1st Lord Despenser( c. 1286 – 24 November 1326), also referred to as\" the younger Despenser\", was the son and heir of Hugh le Despenser, Earl of Winchester( the elder Despenser) by his wife Isabella de Beauchamp, daughter of William de Beauchamp, 9th Earl of Warwick. He rose to national prominence as royal chamberlain and a favourite of Edward II of England. Despenser made many enemies across the nobility of England which, after the overthrow of ...\nP5: Eleanor of Castile: Eleanor of Castile (1241 – 28 November 1290) was an English queen consort, the first wife of Edward I, whom she married as part of a political deal to affirm English sovereignty over Gascony. The marriage was known to be particularly close, and Eleanor travelled extensively with her husband. She was with him on the Ninth Crusade, when he was wounded at Acre, but the popular story of her saving his life by sucking out the poison has long been discredited. When she died, at ...\nP6: The Godfather: The Godfather is a 1972 American crime film directed by Francis Ford Coppola and produced by Albert S. Ruddy, based on Mario Puzo's best- selling novel of the same name. It stars Marlon Brando and Al Pacino as the father and son of a fictional New York crime family. The story, spanning 1945 to 1955, chronicles the family under the patriarch Vito Corleone( Brando), focusing on the transformation of the son Michael Corleone( Pacino), raised to have a life outside of crime, from ...\nP7: Agrippina the Younger: Agrippina the Younger (Latin: \"Julia Agrippina\"; 6 November AD 15 – 23 March AD 59), also referred to as Agrippina Minor (\"smaller\", often used to mean \"younger\") was a Roman empress and one of the more prominent women in the Julio-Claudian dynasty. Her father was Germanicus, a popular general and one-time heir apparent to the Roman Empire under Tiberius; and her mother was Agrippina the Elder, a granddaughter of the first Roman emperor Augustus. She was also the younger ...\nP8: Anne of Gloucester: Anne of Gloucester, Countess of Stafford (30 April 1383 – 16 October 1438) was the eldest daughter of Thomas of Woodstock, Duke of Gloucester, and Eleanor de Bohun.\nP9: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nP10: Claudia Antonia: Claudia Antonia (Classical Latin:) (c. AD 30–AD 66) was the daughter and oldest surviving child of the Roman Emperor Claudius and the only child of his second wife Aelia Paetina. Antonia was a great great-niece of the Emperor Augustus, great-niece of the Emperor Tiberius, first cousin of the Emperor Caligula, half-sister to Claudia Octavia and Britannicus (her father's children by his third marriage to Valeria Messalina), and cousin, stepsister and sister-in-law of the Emperor ...\nQuestion: Who is the paternal grandmother of Edward I Of England?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Eleanor of Castile\",\"selected\":\"C3|C10\",\"confidence\":\"high\",\"reason\":\"Hugh Despenser the younger is the son of Edward I of England, and Isabel le Despenser, Countess of Arundel, is his mother. From passage P8, we know that Anne of Gloucester, Countess of Stafford, is the mother of Isabel le Despenser. Therefore, Anne of Gloucester is the paternal grandmother of Edward I of England. However, Eleanor of Castile is also mentioned as the wife of Edward I and his queen consort, and given the context, she",
+  "verifier": {},
+  "final": "Eleanor of Castile",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-afddcab5dfb572e4",
+    "object": "chat.completion",
+    "created": 1779533100,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Eleanor of Castile\",\"selected\":\"C3|C10\",\"confidence\":\"high\",\"reason\":\"Hugh Despenser the younger is the son of Edward I of England, and Isabel le Despenser, Countess of Arundel, is his mother. From passage P8, we know that Anne of Gloucester, Countess of Stafford, is the mother of Isabel le Despenser. Therefore, Anne of Gloucester is the paternal grandmother of Edward I of England. However, Eleanor of Castile is also mentioned as the wife of Edward I and his queen consort, and given the context, she",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1763,
+      "total_tokens": 1891,
+      "completion_tokens": 128,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 2.283001661300659
+}

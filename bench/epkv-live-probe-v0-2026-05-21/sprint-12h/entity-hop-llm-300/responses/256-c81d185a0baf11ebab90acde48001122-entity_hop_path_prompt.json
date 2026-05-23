@@ -1,0 +1,48 @@
+{
+  "qid": "c81d185a0baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Henrietta Susanna Tracy",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Sudeley Hanbury-Tracy, 3rd Baron Sudeley -> Thomas Hanbury-Tracy, 2nd Baron Sudeley\n- Merlin Hanbury-Tracy, 7th Baron Sudeley -> House of Lords\n- Thomas Hanbury-Tracy, 2nd Baron Sudeley -> Charles Hanbury-Tracy, 1st Baron Sudeley\n- Henry Hanbury-Tracy -> The General\n- Henry Hanbury-Tracy -> The Child\nPassages:\nP1: Sudeley Hanbury-Tracy, 3rd Baron Sudeley: Sudeley Charles George Hanbury-Tracy, 3rd Baron Sudeley (9 April 1837 – 28 April 1877), styled The Honourable Sudeley Hanbury-Tracy between 1858 and 1863, was a British colliery owner. Hanbury-Tracy was the son of Thomas Hanbury-Tracy, 2nd Baron Sudeley, and Emma Elizabeth Alicia Pennant, daughter of George Hay Dawkins-Pennant. He succeeded his father in the barony in February 1863, aged 25. He also succeeded his father as Lord-Lieutenant of ...\nP2: Sudeley Hanbury-Tracy, 3rd Baron Sudeley: Sudeley Charles George Hanbury- Tracy, 3rd Baron Sudeley( 9 April 1837 – 28 April 1877), styled The Honourable Sudeley Hanbury- Tracy between 1858 and 1863, was a British colliery owner. Hanbury- Tracy was the son of Thomas Hanbury- Tracy, 2nd Baron Sudeley, and Emma Elizabeth Alicia Pennant, daughter of George Hay Dawkins- Pennant. He succeeded his father in the barony in February 1863, aged 25. He also succeeded his father as Lord- Lieutenant of ...\nP3: House of Lords: The House of Lords, also known as the House of Peers and domestically usually referred to simply as the Lords, is the upper house of the Parliament of the United Kingdom. Membership is granted by appointment or else by heredity or official function. Like the House of Commons, it meets in the Palace of Westminster. Officially, the full name of the house is the Right Honourable the Lords Spiritual and Temporal of the United Kingdom of Great Britain and Northern Ireland in ...\nP4: The General: The General or The Generals may refer to:\nP5: The Child: The Child may refer to:\nP6: Merlin Hanbury-Tracy, 7th Baron Sudeley: Merlin Charles Sainthill Hanbury- Tracy, 7th Baron Sudeley( born 17 June 1939) is a British peer, author and veteran right- wing activist. In 1941, at the age of two, he succeeded his first cousin once removed, Richard Hanbury- Tracy, 6th Baron Sudeley, to the Barony of Sudeley and until the House of Lords Act 1999 sat as a hereditary peer. A member of the Conservative Party all his adult life, he was sometime President and also Chairman of the ...\nP7: Charles Hanbury-Tracy, 4th Baron Sudeley: Charles Douglas Richard Hanbury- Tracy, 4th Baron Sudeley PC FRS( 3 July 1840 – 9 December 1922), styled The Honourable Charles Hanbury- Tracy from 1858 to 1877, was a British Liberal politician. He served as Captain of the Honourable Corps of Gentlemen- at- Arms under William Ewart Gladstone in 1886.\nP8: Thomas Hanbury-Tracy, 2nd Baron Sudeley: Thomas Charles Hanbury-Tracy, 2nd Baron Sudeley (5 February 1801 – 19 February 1863), known as Thomas Leigh between 1806 and 1838 and styled The Honourable Thomas Leigh between 1838 and 1839 and The Honourable Thomas Hanbury-Tracy between 1839 and 1858, was a British colliery owner and politician. Hanbury-Tracy was the son of Charles Hanbury-Tracy, 1st Baron Sudeley, and the Honourable Henrietta Susanna Tracy, daughter of Henry Tracy, 8th Viscount Tracy. ...\nP9: Charles Hanbury-Tracy, 1st Baron Sudeley: Charles Hanbury-Tracy, 1st Baron Sudeley (28 December 1778 – 10 February 1858), known as Charles Hanbury until 1798 and as Charles Hanbury Tracy from 1798 to 1838, was a British Whig politician.\nP10: Charles Hanbury-Tracy, 1st Baron Sudeley: Charles Hanbury- Tracy, 1st Baron Sudeley( 28 December 1778 – 10 February 1858), known as Charles Hanbury until 1798 and as Charles Hanbury Tracy from 1798 to 1838, was a British Whig politician.\nQuestion: Who is the paternal grandmother of Sudeley Hanbury-Tracy, 3Rd Baron Sudeley?\nFinal answer:",
+  "output": "Henrietta Susanna Tracy",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-941a8bc70c5bd254",
+    "object": "chat.completion",
+    "created": 1779532938,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Henrietta Susanna Tracy",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1251,
+      "total_tokens": 1258,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

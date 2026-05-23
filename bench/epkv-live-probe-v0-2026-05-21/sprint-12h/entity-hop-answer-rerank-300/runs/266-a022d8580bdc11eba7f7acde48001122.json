@@ -1,0 +1,66 @@
+{
+  "idx": 266,
+  "qid": "a022d8580bdc11eba7f7acde48001122",
+  "gold": "Ridley Scott",
+  "candidates": [
+    "Captain Gunning Francis Plunkett",
+    "Robert Carlyle",
+    "Plunkett & Macleane",
+    "The Comic",
+    "Comedy",
+    "Alberto Cavalcanti",
+    "Story",
+    "Part",
+    "Father of the Bride Part II",
+    "The Life of Na Woon-gyu",
+    "Oliver Plunkett",
+    "Patricia Plunkett"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Captain Gunning Francis Plunkett\nC2: Robert Carlyle\nC3: Plunkett & Macleane\nC4: The Comic\nC5: Comedy\nC6: Alberto Cavalcanti\nC7: Story\nC8: Part\nC9: Father of the Bride Part II\nC10: The Life of Na Woon-gyu\nC11: Oliver Plunkett\nC12: Patricia Plunkett\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Plunkett & Macleane -> Comedy!\n- Plunkett & Macleane -> Story\n- For Them That Trespass -> Alberto Cavalcanti\n- For Them That Trespass -> Patricia Plunkett\n- Patricia Plunkett -> For Them That Trespass\n- Peju Ogunmola -> The Comic\n- Father of the Bride Part II -> Comedy!\n- Father of the Bride Part II -> Part\nPassages:\nP1: Plunkett & Macleane: Plunkett & Macleane is a 1999 British historical action comedy film directed by Jake Scott, and starring Robert Carlyle, Jonny Lee Miller and Liv Tyler. Gary Oldman was executive producer. The story was co-written by Neal Purvis and Robert Wade. It follows the story of Captain James Macleane (Miller) and Will Plunkett (Carlyle), two men in eighteenth century Britain who are both struggling to survive. The characters are loosely based on two genuine highwaymen of the ...\nP2: The Comic: The Comic is a 1969 Pathécolor comedy film co-written, co-produced, and directed by Carl Reiner. It stars Dick Van Dyke as Billy Bright( which was the original title of the film), Michele Lee as Bright's love interest, and Reiner himself and Mickey Rooney as Bright's friends and work colleagues. Reiner wrote the screenplay with Aaron Ruben; it was inspired by the end of silent film era, and, in part, by the life of silent film superstar Buster Keaton.\nP3: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP4: Alberto Cavalcanti: Alberto de Almeida Cavalcanti (February 6, 1897 – August 23, 1982) was a Brazilian-born film director and producer.\nP5: Story: Story or stories, may refer to:\nP6: Part: Part, parts or PART may refer to:\nP7: Father of the Bride Part II: Father of the Bride Part II is a 1995 American comedy film starring Steve Martin, Diane Keaton and Martin Short. It is a sequel to\" Father of the Bride\" and a remake of the 1951 film\" Father's Little Dividend\", the sequel to the original\" Father of the Bride\" film released in 1950.\nP8: The Life of Na Woon-gyu: The Life of Na Woon-gyu( 나운규 일생\" Na Woon- Gyui ilsaeng\") is 1967 South Korean film is about life and death of Na Woon- gyu who was film actor and director who struggled for rise of Korean cinema during Japanese rule of Korea. Na was played by the film's actor and director Choi Moo-ryong who was father of Choi Min- soo\nP9: Oliver Plunkett: Oliver Plunkett( or Oliver Plunket),( 1 November 1625 – 1 July 1681) was the Catholic Archbishop of Armagh and Primate of All Ireland who was the last victim of the Popish Plot. He was beatified in 1920 and canonised in 1975, thus becoming the first new Irish saint for almost seven hundred years.\nP10: Patricia Plunkett: Patricia Ruth Plunkett( 17 December 1926 – 13 October 1974) was an English actress, born to an Australian WW1 soldier, Captain Gunning Francis Plunkett, and Alice Park. Born in Streatham, London, she trained at RADA and had an early stage hit in\" Pick- Up Girl\"( 1946) by the American dramatist Elsa Shelley. Plunkett appeared in 12 films. She was usually in supporting roles, but she was the female lead( with above- the- title billing) in both her 1949 films:\" Landfall\" and\" ...\nQuestion: Who is the father of the director of film Plunkett & Macleane?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Captain Gunning Francis Plunkett\",\"selected\":\"C1|UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not directly link any director of the film Plunkett & Macleane to a father. The film is described as a historical action comedy, but no information about its director's parentage is provided.\"}",
+  "verifier": {
+    "final_answer": "Captain Gunning Francis Plunkett",
+    "selected": "C1|UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence does not directly link any director of the film Plunkett & Macleane to a father. The film is described as a historical action comedy, but no information about its director's parentage is provided."
+  },
+  "final": "Captain Gunning Francis Plunkett",
+  "selected": "C1|UNKNOWN",
+  "response": {
+    "id": "chatcmpl-b1c95d90105e8464",
+    "object": "chat.completion",
+    "created": 1779533142,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Captain Gunning Francis Plunkett\",\"selected\":\"C1|UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not directly link any director of the film Plunkett & Macleane to a father. The film is described as a historical action comedy, but no information about its director's parentage is provided.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1172,
+      "total_tokens": 1243,
+      "completion_tokens": 71,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.2749462127685547
+}

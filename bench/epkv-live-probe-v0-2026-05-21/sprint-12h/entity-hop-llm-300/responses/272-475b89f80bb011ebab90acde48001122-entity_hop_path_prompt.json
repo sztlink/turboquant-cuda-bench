@@ -1,0 +1,48 @@
+{
+  "qid": "475b89f80bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Thyra",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Gyrid of Sweden -> Harald Bluetooth\n- Gyrid of Sweden -> Harald Bluetooth\n- Baroness Gösta von dem Bussche-Haddenhausen -> Beatrix of the Netherlands\n- Ingegerd Olofsdotter of Sweden -> Estrid of the Obotrites\n- Ingegerd Olofsdotter of Sweden -> Olof Skötkonung\n- Priscilla Pointer -> Steven Spielberg\n- Donna Harun -> Model\n- Cornelia (mother of the Gracchi) -> Scipio Africanus\n- Cornelia (mother of the Gracchi) -> The Hero\nPassages:\nP1: Gyrid of Sweden: Gyrid Olafsdottir of Sweden (also Gyrithe Olafsdottir or Gunnhild) was a 10th-century Swedish princess and a Danish queen consort as the spouse of King Harald Bluetooth of Denmark.\nP2: Gyrid of Sweden: Gyrid Olafsdottir of Sweden( also Gyrithe Olafsdottir or Gunnhild) was a 10th- century Swedish princess and a Danish queen consort as the spouse of King Harald Bluetooth of Denmark.\nP3: Beatrix of the Netherlands: Beatrix (Beatrix Wilhelmina Armgard, ; born 31 January 1938) is a princess of the Dutch royal house who reigned as Queen of the Netherlands from 30 April 1980 until her abdication on 30 April 2013. Beatrix is the eldest daughter of Queen Juliana and her husband, Prince Bernhard of Lippe-Biesterfeld. Upon her mother's accession in 1948, she became heir presumptive. Beatrix attended a public primary school in Canada during World War II, and then finished her primary ...\nP4: Estrid of the Obotrites: Estrid (or Astrid) of the Obotrites (c. 979 – 1035) was a Viking age Swedish queen and West Slavic princess, married to Olof Skötkonung, the King of Sweden, c. 1000–1022, mother of King Anund Jacob of Sweden and the Kievan Rus' saint and grand princess Ingegerd Olofsdotter.\nP5: The Hero: The Hero may refer to:\nP6: Olof Skötkonung: Olof Skötkonung (c. 980–1022) was King of Sweden, son of Eric the Victorious and, according to Icelandic sources, Sigrid the Haughty. He succeeded his father in c. 995. He stands at the threshold of recorded history, since he is the first Swedish ruler about whom there is substantial knowledge. He is regarded as the first king known to have ruled both the Swedes and the Geats.\nP7: Scipio Africanus: Publius Cornelius Scipio Africanus (236–183 BC), also known as Scipio Africanus Major, Scipio Africanus the Elder, and Scipio the Great, was a Roman general and later consul who is often regarded as one of the greatest military commanders and strategists of all time. His main achievements were during the Second Punic War. He is best known for defeating Hannibal at the final Battle of Zama (near modern Zama, Tunisia) in 202 BC. The victory was one of the feats that earned him ...\nP8: Steven Spielberg: Steven Allan Spielberg( born December 18, 1946) is an American filmmaker. He is considered one of the founding pioneers of the New Hollywood era and one of the most popular directors and producers in film history. Spielberg started in Hollywood directing television and several minor theatrical releases. He became a household name as the director of\" Jaws\"( 1975), which was critically and commercially successful and is considered the first summer blockbuster. His subsequent ...\nP9: Harald Bluetooth: Harald \"Bluetooth\" Gormsson (died c. 985/86) was a king of Denmark and Norway. He was the son of King Gorm the Old and of Thyra Dannebod. Harald ruled as king of Denmark from c. 958 – c. 986. Harald introduced Christianity to Denmark and consolidated his rule over most of Jutland and Zealand. Harald's rule as king of Norway following the assassination of King Harald Greycloak of Norway was more tenuous, most likely lasting for no more than a few years in the 970s. Some sources ...\nP10: Model: Model or modeling may refer to:\nQuestion: Who is the mother-in-law of Gyrid Of Sweden?\nFinal answer:",
+  "output": "Harald Bluetooth",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8d3c7cc1919ac4e3",
+    "object": "chat.completion",
+    "created": 1779532950,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Harald Bluetooth",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1103,
+      "total_tokens": 1107,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}
