@@ -733,9 +733,40 @@ Conclusion:
 Verifier confidence is not calibrated enough.
 ```
 
+## Entity-hop confidence-gated answer rerank v1
+
+Completed deterministic v1 postprocess over existing 100/300 rerank outputs:
+
+```txt
+ENTITY-HOP-ANSWER-RERANK-GATED-V1.md
+entity-hop-answer-rerank-gated-v1-100/
+entity-hop-answer-rerank-gated-v1-300/
+```
+
+v1 adds:
+
+```txt
+UNKNOWN-over-concrete-path guard
+relation-owner rationale guard
+```
+
+300-case result:
+
+```txt
+Entity-hop path prompt:       EM 0.220 | contains 0.317 | F1 0.333
+Gated rerank v0:              EM 0.223 | contains 0.320 | F1 0.333 | wins 3 | losses 2
+Gated rerank v1:              EM 0.230 | contains 0.327 | F1 0.340 | wins 3 | losses 0
+```
+
+100-case compatibility:
+
+```txt
+Gated rerank v1:              EM 0.270 | contains 0.360 | F1 0.345 | wins 2 | losses 0
+```
+
 Current next target:
 
 ```txt
-learn/select override policy with exact-answer preservation, answer-type checks, and abstention;
-do not trust verifier confidence string alone.
+learn/select override policy from features rather than hand-write more rules;
+validate on held-out slices before any stronger public receipt.
 ```

@@ -1165,7 +1165,42 @@ gated rerank: wins 3 | losses 2
 Conclusion:
 
 ```txt
-100-case positive signal does not robustly scale.
-The current 300-case best remains entity-hop path prompt / raw rerank within noise.
+100-case positive signal does not robustly scale under v0.
 Do not treat verifier confidence string as calibrated.
+```
+
+## Entity-hop confidence-gated answer rerank v1
+
+Deterministic postprocess over the existing 100/300 rerank outputs:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/ENTITY-HOP-ANSWER-RERANK-GATED-V1.md
+```
+
+v1 adds two abstention guards:
+
+```txt
+1. UNKNOWN-over-concrete-path guard
+2. relation-owner rationale guard, e.g. "Nero's mother..." when asking for mother-in-law
+```
+
+300-case results:
+
+```txt
+Entity-hop path prompt:       EM 0.220 | contains 0.317 | F1 0.333
+Gated rerank v0:              EM 0.223 | contains 0.320 | F1 0.333 | wins 3 | losses 2
+Gated rerank v1:              EM 0.230 | contains 0.327 | F1 0.340 | wins 3 | losses 0
+```
+
+100-case compatibility:
+
+```txt
+Gated rerank v1:              EM 0.270 | contains 0.360 | F1 0.345 | wins 2 | losses 0
+```
+
+Conclusion:
+
+```txt
+Small but clean 300-case gain. The next real step is learned/selected override policy,
+not more hand-written verifier-confidence rules.
 ```
