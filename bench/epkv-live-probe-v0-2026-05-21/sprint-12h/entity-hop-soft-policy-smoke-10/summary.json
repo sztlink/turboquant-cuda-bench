@@ -1,0 +1,415 @@
+{
+  "schema": "epkv.entity_hop_soft_policy.v0",
+  "elapsed_sec": 14.015382766723633,
+  "total": 10,
+  "source_summary": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-llm-100/summary.json",
+  "macro": {
+    "bge_ref": {
+      "em": 0.0,
+      "contains": 0.1,
+      "f1": 0.10444444444444442
+    },
+    "path_prompt": {
+      "em": 0.6,
+      "contains": 0.6,
+      "f1": 0.6333333333333333
+    },
+    "soft_policy": {
+      "em": 0.5,
+      "contains": 0.6,
+      "f1": 0.6133333333333334
+    }
+  },
+  "wins_losses": {
+    "soft_wins_vs_path": 0,
+    "soft_losses_vs_path": 1,
+    "soft_wins_vs_bge": 5,
+    "soft_losses_vs_bge": 0
+  },
+  "rows": [
+    {
+      "idx": 0,
+      "qid": "8813f87c0bdd11eba7f7acde48001122",
+      "gold": "Małgorzata Braunek",
+      "candidates": [
+        "Małgorzata Braunek",
+        "Polish-Russian War (film)",
+        "The Rock",
+        "Roman Polanski",
+        "Xawery Żuławski",
+        "Władysław Pasikowski",
+        "Renny Harlin",
+        "Carl Gustaf Creutz",
+        "Story",
+        "The House of the Sun (film)",
+        "Aleksander Ford",
+        "Demons of War"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Małgorzata Braunek"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Dorota Masłowska"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Małgorzata Braunek"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-smoke-10/policies/0-8813f87c0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 1,
+      "qid": "e2a3bf2a0bdd11eba7f7acde48001122",
+      "gold": "12 June 1516",
+      "candidates": [
+        "12 June 1516",
+        "Ernest I, Prince of Anhalt-Dessau",
+        "John VII, Count of Oldenburg",
+        "John V, Prince of Anhalt-Zerbst",
+        "John VI, Prince of Anhalt-Zerbst",
+        "John Augustus, Prince of Anhalt-Zerbst",
+        "Karl I, Prince of Anhalt-Zerbst",
+        "Bernhard VII, Prince of Anhalt-Zerbst",
+        "John",
+        "Prince Of Anhalt-Zerbst's"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "12 June 1516"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passage does not provide the death year of John V's father, Ernest I, Prince of Anhalt-Dessau."
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "12 June 1516"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-smoke-10/policies/1-e2a3bf2a0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 2,
+      "qid": "0cd3bdea0bde11eba7f7acde48001122",
+      "gold": "Myanmar Motion Picture Academy Awards",
+      "candidates": [
+        "Myanmar Motion Picture Academy Awards",
+        "Wearing Velvet Slippers under a Golden Umbrella",
+        "The Feature",
+        "The Way We Were",
+        "The Jury",
+        "The Singer",
+        "Rust and Bone",
+        "Lou Reed",
+        "Comedy",
+        "Michel Audiard",
+        "Wunna",
+        "Part"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Myanmar Motion Picture Academy Awards"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Maung Wunna won the Golden Rooster Award for Best Directorial Debut with \"Wearing Velvet Slippers Under A Golden Umbrella\"."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8000000000000002,
+        "output": "Myanmar Motion Picture Academy Awards-winning"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-smoke-10/policies/2-0cd3bdea0bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 3,
+      "qid": "f9dcb4a60bda11eba7f7acde48001122",
+      "gold": "Missoula, Montana",
+      "candidates": [
+        "Ronnie Rocket",
+        "Rocket to the Moon",
+        "The Feature",
+        "The Intended",
+        "The Rock",
+        "Barry Mahon",
+        "Wilhelm von Opel",
+        "Orson Desaix Munn",
+        "First Time",
+        "Story",
+        "The Rocket (2005 film)",
+        "Woman in the Moon"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question is about the director of the film \"Ronnie Rocket,\" but the passages do not provide information about the birth"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "David Lynch was the director of the film Ronnie Rocket, and the passage does not state his birthplace. Therefore, the question cannot be answered based on the given"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question cannot be answered based on the given passages and candidate entity graph."
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-smoke-10/policies/3-f9dcb4a60bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 4,
+      "qid": "8981e1ce0bb011ebab90acde48001122",
+      "gold": "Charles Armand René de La Trémoille",
+      "candidates": [
+        "Charles Armand René de La Trémoille",
+        "Charles Belgique Hollande de La Trémoille",
+        "Charles Bretagne Marie de La Trémoille",
+        "Charles Louis Bretagne de La Trémoille",
+        "Jean Bretagne Charles de La Trémoille",
+        "Louis Charles Marie de La Trémoille",
+        "Louis Charles de La Trémoille",
+        "Charles Bretagne Marie De La Trémoille's"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Charles Armand René de La Trémoille"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.6,
+        "output": "Henry de La Trémoille"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Charles Armand René de La Trémoille"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-smoke-10/policies/4-8981e1ce0bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 5,
+      "qid": "019bed300bde11eba7f7acde48001122",
+      "gold": "Galați",
+      "candidates": [
+        "Galați",
+        "Ștefan I. Nenițescu",
+        "Engelbert I, Count of the Mark",
+        "The Child",
+        "Them",
+        "Revenge",
+        "Eberhard I, Count of the Mark",
+        "Where I Was From",
+        "Ioan S. Nenițescu",
+        "The Question (Emery album)",
+        "Petru Rareș",
+        "I. Nenițescu"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Galați"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Bucharest"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Galați"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-smoke-10/policies/5-019bed300bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 6,
+      "qid": "2ec440560bb011ebab90acde48001122",
+      "gold": "Ptolemy IX Lathyros",
+      "candidates": [
+        "Antiochus IX Cyzicenus",
+        "Antiochus X Eusebes",
+        "Antiochus VII Sidetes",
+        "The Wanted",
+        "Afterwards",
+        "Revenge",
+        "Cleopatra",
+        "Kings",
+        "Laodice of the Sameans",
+        "Antiochus III of Commagene",
+        "Philip I Philadelphus",
+        "Seleucus VI Epiphanes"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Antiochus IX Cyzicenus"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Antiochus IX Cyzicenus"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Antiochus IX Cyzicenus"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-smoke-10/policies/6-2ec440560bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 7,
+      "qid": "464cfa460bd911eba7f7acde48001122",
+      "gold": "Brooklyn",
+      "candidates": [
+        "Kenneth Lauren Burns was born in 1953",
+        "Thomas Jefferson (film)",
+        "Thomas Jefferson",
+        "Born American",
+        "The Singer",
+        "Alice Nakamura",
+        "John Adams",
+        "Ken Burns",
+        "Andrew Jackson",
+        "Quarters",
+        "Guy Orcutt",
+        "Sally Hemings"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Kenneth Lauren Burns was born in 1953."
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The director of the film \"Thomas Jefferson\" (1997) is Ken Burns, and the passage does not provide information about his birthplace."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Ken Burns was born in 1953."
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-smoke-10/policies/7-464cfa460bd911eba7f7acde48001122.json"
+    },
+    {
+      "idx": 8,
+      "qid": "c05e16a40bdd11eba7f7acde48001122",
+      "gold": "stroke",
+      "candidates": [
+        "Grand Duke Vladimir Alexandrovich of Russia",
+        "Grand Duchess Maria Alexandrovna of Russia",
+        "Queen Victoria",
+        "PAST",
+        "Grand Duke Kirill Vladimirovich of Russia",
+        "Grand Duke Vyacheslav Konstantinovich of Russia",
+        "Grand Duchess Kira Kirillovna of Russia",
+        "Princess Victoria Melita of Saxe-Coburg and Gotha",
+        "Prince Karl Emich of Leiningen",
+        "Andreas, Prince of Leiningen",
+        "Prince Karl of Leiningen",
+        "Why"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.1111111111111111,
+        "output": "Victoria Melita of Saxe-Coburg and Gotha died after suffering a stroke while visiting her daughter Maria in Amorbach."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-smoke-10/policies/8-c05e16a40bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 9,
+      "qid": "2935f1640bda11eba7f7acde48001122",
+      "gold": "Nice",
+      "candidates": [
+        "Nice",
+        "Beat Girl",
+        "Place of origin",
+        "The Feature",
+        "The Will",
+        "Gillian Hills",
+        "Cecil B. DeMille",
+        "Dorothy Arzner",
+        "Robert Wise",
+        "Edmond T. Gréville",
+        "A Girl with Guitar",
+        "Carnival Night"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Nice"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Westport, Connecticut"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Nice"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-smoke-10/policies/9-2935f1640bda11eba7f7acde48001122.json"
+    }
+  ]
+}

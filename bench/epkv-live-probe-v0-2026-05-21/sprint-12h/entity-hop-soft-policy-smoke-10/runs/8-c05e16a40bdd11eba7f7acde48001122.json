@@ -1,0 +1,75 @@
+{
+  "idx": 8,
+  "qid": "c05e16a40bdd11eba7f7acde48001122",
+  "gold": "stroke",
+  "candidates": [
+    "Grand Duke Vladimir Alexandrovich of Russia",
+    "Grand Duchess Maria Alexandrovna of Russia",
+    "Queen Victoria",
+    "PAST",
+    "Grand Duke Kirill Vladimirovich of Russia",
+    "Grand Duke Vyacheslav Konstantinovich of Russia",
+    "Grand Duchess Kira Kirillovna of Russia",
+    "Princess Victoria Melita of Saxe-Coburg and Gotha",
+    "Prince Karl Emich of Leiningen",
+    "Andreas, Prince of Leiningen",
+    "Prince Karl of Leiningen",
+    "Why"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.1111111111111111,
+    "output": "Victoria Melita of Saxe-Coburg and Gotha died after suffering a stroke while visiting her daughter Maria in Amorbach."
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-smoke-10/policies/8-c05e16a40bdd11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-8e928349717007b9",
+    "object": "chat.completion",
+    "created": 1779508445,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1413,
+      "total_tokens": 1437,
+      "completion_tokens": 24,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}
