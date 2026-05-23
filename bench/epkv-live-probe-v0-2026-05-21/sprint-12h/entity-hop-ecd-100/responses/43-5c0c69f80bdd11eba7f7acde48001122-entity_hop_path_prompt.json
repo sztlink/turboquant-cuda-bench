@@ -1,0 +1,48 @@
+{
+  "qid": "5c0c69f80bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Kurdish",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Place of birth -> The Child\n- Letter to the King -> Hisham Zaman\n- Letter to the King -> Hisham Zaman\n- Motherland (disambiguation) -> Place of origin\n- The Scorpion King -> The Mummy Returns\n- The Scorpion King -> Story\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Clovis I -> (Otto)\n- What Women Want (2011 film) -> What Women Want\n- What Women Want (2011 film) -> The First Day\nPassages:\nP1: Letter to the King: Letter to the King  is a 2014 Norwegian drama film directed by Hisham Zaman.\nP2: Letter to the King: Letter to the King is a 2014 Norwegian drama film directed by Hisham Zaman.\nP3: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP4: The Mummy Returns: The Mummy Returns is a 2001 American action- adventure fantasy horror film written and directed by Stephen Sommers, starring Brendan Fraser, Rachel Weisz, John Hannah, Arnold Vosloo, Oded Fehr, Patricia Velásquez, and Dwayne\" The Rock\" Johnson. The film is a sequel to the 1999 film\" The Mummy\". It was distributed by Universal Pictures. \" The Mummy Returns\" inspired the 2002 prequel film\" The Scorpion King\", a spin- off which is set 5,000 years prior and whose eponymous ...\nP5: What Women Want: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt. The film earned mixed reviews from critics, but was a box office success, with a North American domestic gross of $182 million and a worldwide gross of $374 million against a budget of $70 million. A loose remake, \"What Men Want\" starring Taraji P. Henson and Aldis Hodge came out in early 2019.\nP6: The Child: The Child may refer to:\nP7: The First Day: The First Day may refer to:\nP8: (Otto): (Otto) is a 2015 Dutch animated short film directed by Job Roggeveen, Joris Oprins and Marieke Blaauw, from the Dutch animation studio Job, Joris & Marieke. The film had its international premiere at the Toronto International Film Festival. (Otto) was chosen to be the official Dutch entry for the Academy Award Best Animated Short Film 2016. Job, Joris & Marieke's previous film A Single Life was nominated Academy Award for Best Animated Short Film at the 87th Academy Awards.\nP9: Hisham Zaman: Hisham Zaman (born 1975), is a contemporary Kurdish-Norwegian filmmaker. He graduated from the Norwegian Film School at Lillehammer in 2004. He has made several award-winning short films, most notably \"Bawke\" which has received more than 20 national and international awards.\nP10: Story: Story or stories, may refer to:\nQuestion: What is the place of birth of the director of film Letter To The King?\nFinal answer:",
+  "output": "Place of origin",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9d06ec31ca8221f7",
+    "object": "chat.completion",
+    "created": 1779505393,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Place of origin",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 911,
+      "total_tokens": 915,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

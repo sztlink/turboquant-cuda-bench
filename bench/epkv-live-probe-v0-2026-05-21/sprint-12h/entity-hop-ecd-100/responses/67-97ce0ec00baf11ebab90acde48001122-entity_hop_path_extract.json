@@ -1,0 +1,68 @@
+{
+  "qid": "97ce0ec00baf11ebab90acde48001122",
+  "gold": "Stanisław Leszczyński",
+  "prompt": "You are a strict graph/path extractor for multi-hop QA.\nUse ONLY the passages. The candidate graph is heuristic and may contain distractors.\nFind the minimal supported chain. If not enough information, status MISSING.\nReturn ONLY valid JSON, no markdown.\n{\"status\":\"FOUND|MISSING\",\"final_answer\":\"answer string or UNKNOWN\",\"chain\":[\"A -- relation --> B\"],\"evidence_passages\":[\"P1\"],\"reason\":\"short\"}\nCandidate graph:\n- Henriette of France (1727–1752) -> Louise Élisabeth of France\n- Henriette of France (1727–1752) -> Marie Leszczyńska\n- Henriette of France (1727–1752) -> Louise Élisabeth of France\n- Henriette of France (1727–1752) -> Marie Leszczyńska\n- Louise Henriette de Bourbon -> The Descendants\n- Louise Henriette de Bourbon -> Louise\n- Louise Élisabeth of France -> Philip V of Spain\n- Louise Élisabeth of France -> Louise\n- John Pointz -> James Butler, 1st Duke of Ormond\n- Louis François, Prince of Conti -> Louise Élisabeth de Bourbon\n- Louis François, Prince of Conti -> Louise Henriette de Bourbon\n- Lucius Vibullius Hipparchus (grandson of Herodes Atticus) -> Aspasia Annia Regilla\n- Lucius Vibullius Hipparchus (grandson of Herodes Atticus) -> Herodes Atticus\nPassages:\nP1: Philip V of Spain: Philip V (19 December 1683 – 9 July 1746) was King of Spain from 1 November 1700 to his abdication in favour of his son Louis on 14 January 1724, and from his reaccession of the throne upon his son's death, 6 September 1724 to his own death on 9 July 1746. Before his reign, Philip occupied an exalted place in the royal family of France as a grandson of King Louis XIV. His father, Louis, Grand Dauphin, had the strongest genealogical claim to the throne of Spain when it became ...\nP2: James Butler, 1st Duke of Ormond: Lieutenant- General James FitzThomas Butler, 1st Duke of Ormond, 1st Marquess of Ormond, 12th Earl of Ormond, 5th Earl of Ossory, 4th Viscount Thurles, 1st Baron Butler of Llanthony, 1st Earl of Brecknock, KG, PC( 1610 – 1688) was an Irish statesman and soldier, known as Earl of Ormond from 1634 to 1642 and Marquess of Ormond from 1642 to 1661. Following the failure of the senior line of the Butler family, he was the second of the Kilcash branch to inherit the ...\nP3: The Descendants: The Descendants is a 2011 American comedy- drama film directed by Alexander Payne. The screenplay by Payne, Nat Faxon and Jim Rash is based on the 2007 novel of the same name by Kaui Hart Hemmings. The film stars George Clooney, Shailene Woodley, Amara Miller, Beau Bridges, Judy Greer, Matthew Lillard, and Robert Forster, and was released by Fox Searchlight Pictures in the United States on November 18, 2011 after being screened at the 2011 Toronto International Film Festival. ...\nP4: Louise Élisabeth de Bourbon: Louise Élisabeth de Bourbon( Louise Élisabeth; 22 November 1693 – 27 May 1775) was a daughter of Louis III de Bourbon, Prince of Condé, and his wife, Louise Françoise de Bourbon,\" légitimée de France\", a legitimised daughter of King Louis XIV of France and his famous mistress, Madame de Montespan. She was the wife of Louis Armand II de Bourbon,\" Prince of Conti\". It was Louise Élisabeth who presented Madame de Pompadour to the court of King Louis XV of France; she ...\nP5: Marie Leszczyńska: Maria Karolina Zofia Felicja Leszczyńska (23 June 1703 – 24 June 1768), also known as Marie Leczinska , was a Polish princess and French queen consort. The daughter of King Stanisław Leszczyński—Stanislaus I of Poland (later Duke of Lorraine)–and Catherine Opalińska, she married King Louis XV of France and became queen consort of France. She served in that role for 42 years from 1725 until her death in 1768, the longest service of any queen of France, and was popular due to ...\nP6: Aspasia Annia Regilla: Aspasia Annia Regilla, full name Appia Annia Regilla Atilia Caucidia Tertulla (Greek:, 125-160), was a wealthy, aristocratic and influential Roman woman, who was a distant relative of several Roman emperors and empresses. She was the wife of the prominent Greek Herodes Atticus.\nP7: Herodes Atticus: Herodes Atticus (\"Hērōidēs ho Attikos\"; 177), or Atticus Herodes, was a Greco-Roman politician and sophist who served as a Roman senator. Appointed consul at Rome in 143 , he was the first Greek to hold the rank of \"consul ordinarius\", as opposed to \"consul suffectus\". In Latin, his full name was given as Lucius Vibullius Hipparchus Tiberius Claudius Atticus Herodes . According to Philostratus, Herodes Atticus was a notable proponent of the Second Sophistic. M.I. Finley ...\nP8: Louise: Louise or Luise may refer to:\nP9: Henriette of France (1727–1752): Anne\" Henriette\" of France( 14 August 1727 – 10 February 1752) was a French princess, the twin of Louise Élisabeth of France, and the second child of King Louis XV of France and queen consort Marie Leszczyńska.\nP10: Henriette of France (1727–1752): Anne \"Henriette\" of France(14 August 1727 – 10 February 1752) was a French princess, the twin of Louise Élisabeth of France, and the second child of King Louis XV of France and queen consort Marie Leszczyńska.\nQuestion: Who is Henriette Of France (1727–1752)'s maternal grandfather?",
+  "output": "{\"status\":\"FOUND\",\"final_answer\":\"King Louis XIV of France\",\"chain\":[\"Henriette of France (1727–1752) -- parent --> Louise Élisabeth of France\",\"Louise Élisabeth of France -- parent --> Marie Leszczyńska\",\"Marie Leszczyńska -- spouse --> King Louis XV of France\",\"Marie Leszczyńska -- parent --> King Louis XIV of France\"],\"evidence_passages\":[\"P9\",\"P10\",\"P5\",\"P9\",\"P10\"]}",
+  "extract": {
+    "status": "FOUND",
+    "final_answer": "King Louis XIV of France",
+    "chain": [
+      "Henriette of France (1727–1752) -- parent --> Louise Élisabeth of France",
+      "Louise Élisabeth of France -- parent --> Marie Leszczyńska",
+      "Marie Leszczyńska -- spouse --> King Louis XV of France",
+      "Marie Leszczyńska -- parent --> King Louis XIV of France"
+    ],
+    "evidence_passages": [
+      "P9",
+      "P10",
+      "P5",
+      "P9",
+      "P10"
+    ]
+  },
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "King Louis XIV of France",
+    "latency_sec": 1.9633536338806152,
+    "status": "FOUND",
+    "candidate": "King Louis XIV of France"
+  },
+  "response": {
+    "id": "chatcmpl-ae66c6f69b5f265b",
+    "object": "chat.completion",
+    "created": 1779505586,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"status\":\"FOUND\",\"final_answer\":\"King Louis XIV of France\",\"chain\":[\"Henriette of France (1727–1752) -- parent --> Louise Élisabeth of France\",\"Louise Élisabeth of France -- parent --> Marie Leszczyńska\",\"Marie Leszczyńska -- spouse --> King Louis XV of France\",\"Marie Leszczyńska -- parent --> King Louis XIV of France\"],\"evidence_passages\":[\"P9\",\"P10\",\"P5\",\"P9\",\"P10\"]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1526,
+      "total_tokens": 1637,
+      "completion_tokens": 111,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

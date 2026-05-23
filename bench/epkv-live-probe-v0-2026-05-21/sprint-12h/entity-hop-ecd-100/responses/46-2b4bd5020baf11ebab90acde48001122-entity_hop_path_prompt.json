@@ -1,0 +1,48 @@
+{
+  "qid": "2b4bd5020baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Kujō Michiie",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Kujō Yoritsugu -> Kujō Yoritsune\n- Kujō Michiie -> Kujō Yoritsune\n- Lucius Vibullius Hipparchus (grandson of Herodes Atticus) -> Aspasia Annia Regilla\n- Lucius Vibullius Hipparchus (grandson of Herodes Atticus) -> Herodes Atticus\n- Charles, Duke of Vendôme -> Henry IV of France\n- Charles, Duke of Vendôme -> Francis I\n- Tiberius Claudius Nero (praetor 42 BC) -> Nero Claudius Drusus\n- Tiberius Claudius Nero (praetor 42 BC) -> Drusus Julius Caesar\n- Prince Robert, Count of La Marche -> Princess Claude of Orléans\nPassages:\nP1: Kujō Yoritsugu: , also known as Fujiwara no Yoritsugu, was the fifth \"shōgun\" of the Kamakura shogunate of Japan. His father was the 4th Kamakura \"shōgun\", Kujō Yoritsune. Yoritsugu was a member of the great Fujiwara clan. The Kujō family was one of the five branches of the historically powerful Fujiwara clan of courtiers.\nP2: Kujō Yoritsune: , also known as Fujiwara no Yoritsune, was the fourth \"shōgun\" of the Kamakura shogunate of Japan. His father was \"kanpaku\" Kujō Michiie and his grandmother was a niece of Minamoto no Yoritomo. His wife was a granddaughter of Minamoto no Yoritomo and daughter of Minamoto no Yoriie. He was born in the year (according to Chinese astrology) of the Tiger, in the month, on the day, and so his given name at birth was Mitora (三寅, \"Triple Tiger\"). Yoritsune was a member of the great ...\nP3: Princess Claude of Orléans: Princess Claude of Orléans (Claude Marie Agnès Catherine; born 11 December 1943) is a French princess of the House of Orléans. She is the former wife of Prince Amedeo, Duke of Aosta, a disputed head of the House of Savoy.\nP4: Princess Claude of Orléans: Princess Claude of Orléans( Claude Marie Agnès Catherine; born 11 December 1943) is a French princess of the House of Orléans. She is the former wife of Prince Amedeo, Duke of Aosta, a disputed head of the House of Savoy.\nP5: Henry IV of France: Henry IV (read as ; 13 December 1553 – 14 May 1610), also known by the epithet Good King Henry or Henry the Great, was King of Navarre (as Henry III) from 1572 and King of France from 1589 to 1610. He was the first monarch of France from the House of Bourbon, a cadet branch of the Capetian dynasty. He was assassinated in 1610 by François Ravaillac, a fanatical Catholic, and was succeeded by his son Louis XIII. The son of Antoine de Bourbon, Duke of Vendôme and Jeanne ...\nP6: Nero Claudius Drusus: Nero Claudius Drusus Germanicus (January 14, 38 BC – summer of 9 BC), born Decimus Claudius Drusus, also called Drusus Claudius Nero, Drusus, Drusus I, Nero Drusus, or Drusus the Elder was a Roman politician and military commander. He was a patrician Claudian on his birth father's side but his maternal grandmother was from a plebeian family. He was the son of Livia Drusilla and the legal stepson of her second husband, the Emperor Augustus. He was also brother of the ...\nP7: Aspasia Annia Regilla: Aspasia Annia Regilla, full name Appia Annia Regilla Atilia Caucidia Tertulla (Greek:, 125-160), was a wealthy, aristocratic and influential Roman woman, who was a distant relative of several Roman emperors and empresses. She was the wife of the prominent Greek Herodes Atticus.\nP8: Herodes Atticus: Herodes Atticus (\"Hērōidēs ho Attikos\"; 177), or Atticus Herodes, was a Greco-Roman politician and sophist who served as a Roman senator. Appointed consul at Rome in 143 , he was the first Greek to hold the rank of \"consul ordinarius\", as opposed to \"consul suffectus\". In Latin, his full name was given as Lucius Vibullius Hipparchus Tiberius Claudius Atticus Herodes . According to Philostratus, Herodes Atticus was a notable proponent of the Second Sophistic. M.I. Finley ...\nP9: Drusus Julius Caesar: Drusus Julius Caesar (14 BC – 14 September AD 23), was the son of Emperor Tiberius, and heir to the Roman Empire following the death of his adoptive brother Germanicus in AD 19. He was born at Rome to a prominent branch of the \"gens Claudia\", the son of Tiberius and his first wife, Vipsania Agrippina. His name at birth was Nero Claudius Drusus after his paternal uncle, Drusus the Elder. In AD 4, he assumed the name \"Julius Caesar\" following his father's adoption into the ...\nP10: Francis I: Francis I or Francis the First may refer to:\nQuestion: Who is the paternal grandfather of Kujō Yoritsugu?\nFinal answer:",
+  "output": "Kujō Michiie",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-bcae4bd09bb36027",
+    "object": "chat.completion",
+    "created": 1779505422,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Kujō Michiie",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1357,
+      "total_tokens": 1364,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

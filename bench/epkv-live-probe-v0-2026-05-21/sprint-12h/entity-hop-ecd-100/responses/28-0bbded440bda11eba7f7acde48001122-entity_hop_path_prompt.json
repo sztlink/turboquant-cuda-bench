@@ -1,0 +1,48 @@
+{
+  "qid": "0bbded440bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Pakistan",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Donna Fargo -> Funny Face\n- Donna Fargo -> The Singer\n- The Secret of the Storm Country -> A Secret\n- Back to God's Country (1927 film) -> Irvin Willat\n- Back to God's Country (1927 film) -> 1919 (film)\n- Ruut Veenhoven -> United Nations\nPassages:\nP1: Daadagiri: Daadagiri is a 1997 Bollywood film directed by Arshad Khan starring Mithun Chakraborty, Ayub Khan, Simran, Rituparna Sengupta in lead roles and Puneet Issar, Nishigandha Wad, Shakti Kapoor and Kader Khan.\nP2: 1919 (film): 1919 is a 1985 British drama film directed by Hugh Brody and written by Michael Ignatieff together with Brody. It stars Paul Scofield. It was entered into the 35th Berlin International Film Festival.\nP3: The Singer: The Singer may refer to:\nP4: Funny Face: Funny Face is a 1957 American musical romantic comedy film directed by Stanley Donen and written by Leonard Gershe, containing assorted songs by George and Ira Gershwin. Although having the same title as the 1927 Broadway musical\" Funny Face\" by the Gershwin brothers, and featuring the same male star( Fred Astaire), the plot is totally different and only four of the songs from the stage musical are included. Alongside Astaire, the film stars Audrey Hepburn and Kay Thompson.\nP5: United Nations: The United Nations (UN), is an intergovernmental organization responsible for maintaining international peace and security, developing friendly relations among nations, achieving international cooperation, and being a center for harmonizing the actions of nations. It is the largest, most familiar, most internationally represented and most powerful intergovernmental organization in the world. The UN is headquartered on international territory in New York City; other main offices ...\nP6: Irvin Willat: Irvin V. Willat (November 18, 1890 – April 17, 1976) was an American film director of the silent film era. He directed 39 films between 1917 and 1937. Early in his career Willat worked as a cinematographer on several films. His older brother Edwin Willat (1882–1950) was cinematographer on several silent films.\nP7: A Secret: A Secret is a 2007 French film directed and written by Claude Miller. The screenplay was based on the novel by Philippe Grimbert.\nP8: The Secret of the Storm Country: The Secret of the Storm Country was a 1917 American silent drama film directed by Charles Miller and starring Norma Talmadge( whose company also produced the film). The film is described as not a direct sequel but a\" continuation\" of the 1914 film\" Tess of the Storm Country\", starring Mary Pickford. The film is now considered lost.\nP9: In the Country of Juliets: In the Country of Juliets is a 1992 French drama film directed by Mehdi Charef. It was entered into the 1992 Cannes Film Festival.\nP10: Back to God's Country (1927 film): Back to God's Country is a 1927 silent film Northwoods adventure based on James Oliver Curwood's story\" Wapi, the Walrus\". The film was directed by Irvin Willat and stars Renée Adorée, usually an MGM actress. The film is a remake of the 1919 film\" Back to God's Country\" which starred Nell Shipman. The film survives today.\nQuestion: Which country the director of film Daadagiri is from?\nFinal answer:",
+  "output": "India",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-96fc319dc3d08554",
+    "object": "chat.completion",
+    "created": 1779505330,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "India",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 911,
+      "total_tokens": 913,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

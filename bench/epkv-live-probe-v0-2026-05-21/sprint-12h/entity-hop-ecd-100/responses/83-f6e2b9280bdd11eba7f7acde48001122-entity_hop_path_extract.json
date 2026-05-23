@@ -1,0 +1,58 @@
+{
+  "qid": "f6e2b9280bdd11eba7f7acde48001122",
+  "gold": "China",
+  "prompt": "You are a strict graph/path extractor for multi-hop QA.\nUse ONLY the passages. The candidate graph is heuristic and may contain distractors.\nFind the minimal supported chain. If not enough information, status MISSING.\nReturn ONLY valid JSON, no markdown.\n{\"status\":\"FOUND|MISSING\",\"final_answer\":\"answer string or UNKNOWN\",\"chain\":[\"A -- relation --> B\"],\"evidence_passages\":[\"P1\"],\"reason\":\"short\"}\nCandidate graph:\n- none\nPassages:\nP1: Mohammed Al-Modiahki: Mohammed Ahmed Al-Modiahki (born June 1, 1974) is a chess Grandmaster. He was the first player in Qatar to earn the title of grandmaster, and is the country's highest ranked player. He was awarded the trophy of the \"Player of the Century within the Arab Countries\". Al-Modiahki has participated in nine Chess Olympiads in 1988, 1990, 1992, 1994, 1996, 1998, 2000, 2002 and 2006 with an overall record of (+60,=28,-21). At the 32nd Chess Olympiad in 1996 and he won the gold ...\nP2: Mohammed bin Jassim Al Thani: Sheikh Mohammed bin Jassim bin Mohammed Al Thani (17 January 1881 – 8 April 1971) (\"Mohammed bin Jassim bin Mohammed Al Thani\"), is the son of Sheikh Jassim bin Mohammed Al Thani. Sheikh Mohammed had a total of 18 siblings, with him being the seventh of his father's sons.\nP3: Mohammed bin Jassim Al Thani: Sheikh Mohammed bin Jassim bin Mohammed Al Thani( 17 January 1881 – 8 April 1971)(\" Mohammed bin Jassim bin Mohammed Al Thani\"), is the son of Sheikh Jassim bin Mohammed Al Thani. Sheikh Mohammed had a total of 18 siblings, with him being the seventh of his father's sons.\nP4: Mohammed Al-Harthi: Mohammed Al- Harthi is a Saudi football player. He currently plays for Al- Jabalain.\nP5: Mohammed Al-Qarni (footballer, born 1981): Mohammed Al- Qarni is a Saudi Arabian football player.\nP6: Mohammed Al-Safri: Mohammed Al- Safri is a Saudi football player who last plays for Jeddah.\nP7: Mohammed Al-Motawaa: Mohammed Al- Motawaa( born 6 October 1994) is a football player for Ohod.\nP8: Mohammed Al-Jahani: Mohammed Al- Jahani( born 28 September 1974) is a retired Saudi Arabian footballer.\nQuestion: Which country Mohammed Al-Modiahki's wife is from?",
+  "output": "{\"status\":\"MISSING\",\"final_answer\":\"UNKNOWN\",\"chain\":[],\"evidence_passages\":[],\"reason\":\"The passages do not provide any information about Mohammed Al-Modiahki's wife or her country of origin.\"}",
+  "extract": {
+    "status": "MISSING",
+    "final_answer": "UNKNOWN",
+    "chain": [],
+    "evidence_passages": [],
+    "reason": "The passages do not provide any information about Mohammed Al-Modiahki's wife or her country of origin."
+  },
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "{\"status\":\"MISSING\",\"final_answer\":\"UNKNOWN\",\"chain\":[],\"evidence_passages\":[],\"reason\":\"The passages do not provide any information about Mohammed Al-Modiahki's wife or her country of origin.\"}",
+    "latency_sec": 0.8240618705749512,
+    "status": "MISSING",
+    "candidate": ""
+  },
+  "response": {
+    "id": "chatcmpl-8b5f0352f814fe31",
+    "object": "chat.completion",
+    "created": 1779505683,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"status\":\"MISSING\",\"final_answer\":\"UNKNOWN\",\"chain\":[],\"evidence_passages\":[],\"reason\":\"The passages do not provide any information about Mohammed Al-Modiahki's wife or her country of origin.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 659,
+      "total_tokens": 705,
+      "completion_tokens": 46,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

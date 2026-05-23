@@ -1,0 +1,48 @@
+{
+  "qid": "5142f59e0bda11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Nevele",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: The Child: The Child may refer to:\nP3: @Home: @Home or @home may refer to:\nP4: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP5: Jo Planckaert: Jo Planckaert (born 16 December 1970 in Deinze) is a former Belgian professional road bicycle racer. He is the son of former professional road bicycle racer Willy Planckaert, brother of famous road bicycle racers Eddy and Walter Planckaert.\nP6: Eddy Planckaert: Eddy Planckaert (born 22 September 1958 in Nevele) is a former professional road racing cyclist from Belgium. In 1988, Planckaert enjoyed perhaps his best year by capturing the green jersey (points competition) at the 1988 Tour de France and winning the Tour of Flanders. In 1990, he won Paris–Roubaix, his second \"monumental classic\", with the closest finish in the race's history beating Canadian Steve Bauer by less than a cm. More than 10 years after his cycling career, the ...\nP7: Walter Planckaert: Walter Planckaert( born 8 April 1948 in Nevele) is a Belgian former professional road racing cyclist. He is the younger brother of Willy Planckaert, the older brother of Eddy Planckaert, and the uncle of Jo Planckaert. He had 74 victories in his professional career. After retiring from riding, he commenced a long career in team management, working for the Panasonic, Novemail- Histor, Palmans, Lotto- Adecco and Chocolade Jacques teams.\nP8: Jo Ann Smith: Jo Ann Smith( born May 9, 1939) was inducted into the National Cowgirl Museum and Hall of Fame in 2015. She is the first woman to become the president of the National Cattlemen's Beef Association.\nP9: Willy Planckaert: Willy Planckaert (born 5 April 1944 in Nevele) is a Belgian former road bicycle racer. His brothers, Eddy and Walter Planckaert, are also famous road bicycle racers . His son, Jo, was also a road cyclist.\nP10: Motherland (disambiguation): Motherland is the place of one's birth, the place of one's ancestors, or the place of origin of an ethnic group. Motherland may also refer to:\nQuestion: What is the place of birth of Jo Planckaert's father?\nFinal answer:",
+  "output": "Nevele",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-896710ca88962b65",
+    "object": "chat.completion",
+    "created": 1779505606,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Nevele",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 789,
+      "total_tokens": 793,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

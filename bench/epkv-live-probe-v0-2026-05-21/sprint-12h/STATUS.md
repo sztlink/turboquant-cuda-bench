@@ -590,10 +590,43 @@ path wins:      19
 path losses:    3
 ```
 
-## Current next target
+## Entity-hop extractor + ECD 100
 
-Now apply ECD only after the better evidence distribution exists:
+Completed follow-up:
 
 ```txt
-entity-hop docs -> strict path extractor candidate -> internal sampler ECD -> compare against entity-hop path prompt EM 0.25 / F1 0.33
+ENTITY-HOP-ECD-100.md
+entity-hop-ecd-100/
+```
+
+Results:
+
+```txt
+BGE rerank strong:              EM 0.090 | contains 0.160 | F1 0.185
+Entity-hop strong:              EM 0.180 | contains 0.300 | F1 0.275
+Entity-hop path prompt:         EM 0.260 | contains 0.340 | F1 0.320
+Entity-hop path extractor:      EM 0.110 | contains 0.200 | F1 0.158
+Entity-hop extractor + ECD:     EM 0.130 | contains 0.200 | F1 0.172
+```
+
+Extractor status:
+
+```txt
+FOUND: 44
+MISSING: 56
+```
+
+Conclusion:
+
+```txt
+single-candidate extractor+ECD underperforms direct entity-hop path prompt.
+ECD is not the problem; brittle candidate extraction is.
+```
+
+## Current next target
+
+Do not force single-candidate ECD. Use soft/multi-candidate evidence control:
+
+```txt
+entity-hop docs -> N answer/path candidates -> multi-candidate sampler bias -> fallback to direct path prompt when extractor is missing
 ```

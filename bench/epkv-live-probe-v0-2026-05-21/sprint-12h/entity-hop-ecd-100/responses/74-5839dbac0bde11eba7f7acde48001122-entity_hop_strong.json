@@ -1,0 +1,48 @@
+{
+  "qid": "5839dbac0bde11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "American",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: They Call It Love: They Call It Love is a 1953 West German comedy film directed by John Reinhardt and starring Winnie Markus, Curd Jürgens and Richard Häussler.\nP2: Love Story: Love Story or A Love Story may refer to:\nP3: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP4: Richard Häussler: Richard Häussler (26 October 1908 – 28 September 1964) was a German actor and film director. He appeared in 61 films between 1936 and 1964. He also directed seven films between 1951 and 1957. He was born in Munich, Germany and died in Grünwald, Germany.\nP5: Richard Häussler: Richard Häussler( 26 October 1908 – 28 September 1964) was a German actor and film director. He appeared in 61 films between 1936 and 1964. He also directed seven films between 1951 and 1957. He was born in Munich, Germany and died in Grünwald, Germany.\nP6: Giuliano Carnimeo: Giuliano Carnimeo (4 July 1932 – 10 September 2016) was an Italian director and screenwriter, sometimes credited as Anthony Ascott.\nP7: Story: Story or stories, may refer to:\nP8: Rosa: Rosa or De Rosa may refer to:\nP9: Why Do They Call It Love When They Mean Sex?: Why Do They Call It Love When They Mean Sex? is a 1993 Spanish film directed by Manuel Gómez Pereira. Rosa Maria Sardà won the 1994 Goya Award for Best Supporting Actress for her performance as\" Sole\".\nP10: The Call of Love: The Call of Love is a 1945 Soviet comedy film directed by Konstantin Yudin.\nQuestion: What nationality is the director of film They Call It Love?\nFinal answer:",
+  "output": "German",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-ae8301783748dd30",
+    "object": "chat.completion",
+    "created": 1779505620,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "German",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 558,
+      "total_tokens": 560,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

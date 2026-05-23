@@ -1,0 +1,63 @@
+{
+  "qid": "ea1fc06c0bda11eba7f7acde48001122",
+  "gold": "United Nations",
+  "prompt": "You are a strict graph/path extractor for multi-hop QA.\nUse ONLY the passages. The candidate graph is heuristic and may contain distractors.\nFind the minimal supported chain. If not enough information, status MISSING.\nReturn ONLY valid JSON, no markdown.\n{\"status\":\"FOUND|MISSING\",\"final_answer\":\"answer string or UNKNOWN\",\"chain\":[\"A -- relation --> B\"],\"evidence_passages\":[\"P1\"],\"reason\":\"short\"}\nCandidate graph:\n- Karin Stoltenberg -> Thorvald Stoltenberg\n- Camilla Stoltenberg -> The General\n- Where Does It Hurt? -> Peter Sellers\n- Where Does It Hurt? -> Rod Amateau\n- Thorvald Stoltenberg -> United Nations\n- Thorvald Stoltenberg -> The Only One\n- That's No Way to Land a Man -> Hans Deppe\n- That's No Way to Land a Man -> Comedy!\nPassages:\nP1: Peter Sellers: Peter Sellers, CBE (born Richard Henry Sellers; 8 September 1925 – 24 July 1980) was an English film actor, comedian, and singer. He performed in the BBC Radio comedy series \"The Goon Show\", featured on a number of hit comic songs, and became known to a worldwide audience through his many film roles, among them Chief Inspector Clouseau in \"The Pink Panther\" series of films. Born in Portsmouth to a theatrical family, Sellers made his stage debut at the Kings Theatre, Southsea, ...\nP2: United Nations: The United Nations (UN), is an intergovernmental organization responsible for maintaining international peace and security, developing friendly relations among nations, achieving international cooperation, and being a center for harmonizing the actions of nations. It is the largest, most familiar, most internationally represented and most powerful intergovernmental organization in the world. The UN is headquartered on international territory in New York City; other main offices ...\nP3: Rod Amateau: Rodney\" Rod\" Amateau( December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were\" The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's Island The Bob Cummings Show\" and\" The New Phil Silvers Show\". He produced\" My Mother the Car\" and\" Supertrain\", and wrote the story for the 1988 film\" Sunset\". Amateau also directed a few episodes of\" The Dukes of Hazzard\", and appeared in a ...\nP4: Rod Amateau: Rodney \"Rod\" Amateau (December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were \"The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's IslandThe Bob Cummings Show\" and \"The New Phil Silvers Show\". He produced \"My Mother the Car\" and \"Supertrain\", and wrote the story for the 1988 film \"Sunset\". Amateau also directed a few episodes of \"The Dukes of Hazzard\", and appeared in a ...\nP5: The Only One: The Only One( s) or Only One may refer to:\nP6: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP7: The General: The General or The Generals may refer to:\nP8: Hans Deppe: Hans Deppe( 12 November 1897 – 23 September 1969) was a German actor and film director.\nP9: Where Does It Hurt?: Where Does it Hurt? is a 1972 American comedy film written and directed by Rod Amateau and starring Peter Sellers, Jo Ann Pflug, Rick Lenz, Pat Morita, and Harold Gould. The film is a darkly satirical look at capitalism in a hospital environment.\nP10: Karin Stoltenberg: Karin Stoltenberg, née Heiberg (23 November 1931 – 17 October 2012), was a Norwegian geneticist, politician and public official noted for her efforts to develop a coherent family policy in Norway, feminist activities, and for being the mother of prime minister Jens Stoltenberg, and wife of foreign minister Thorvald Stoltenberg.\nQuestion: Where does Karin Stoltenberg's husband work at?",
+  "output": "{\"status\":\"FOUND\",\"final_answer\":\"United Nations\",\"chain\":[\"Karin Stoltenberg -- wife of --> Thorvald Stoltenberg\",\"Thorvald Stoltenberg -- foreign minister of Norway --> The United Nations\"],\"evidence_passages\":[\"P10\",\"P2\"]}",
+  "extract": {
+    "status": "FOUND",
+    "final_answer": "United Nations",
+    "chain": [
+      "Karin Stoltenberg -- wife of --> Thorvald Stoltenberg",
+      "Thorvald Stoltenberg -- foreign minister of Norway --> The United Nations"
+    ],
+    "evidence_passages": [
+      "P10",
+      "P2"
+    ]
+  },
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "United Nations",
+    "latency_sec": 1.096745252609253,
+    "status": "FOUND",
+    "candidate": "United Nations"
+  },
+  "response": {
+    "id": "chatcmpl-87adc20b93d7f7bc",
+    "object": "chat.completion",
+    "created": 1779505425,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"status\":\"FOUND\",\"final_answer\":\"United Nations\",\"chain\":[\"Karin Stoltenberg -- wife of --> Thorvald Stoltenberg\",\"Thorvald Stoltenberg -- foreign minister of Norway --> The United Nations\"],\"evidence_passages\":[\"P10\",\"P2\"]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1014,
+      "total_tokens": 1075,
+      "completion_tokens": 61,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

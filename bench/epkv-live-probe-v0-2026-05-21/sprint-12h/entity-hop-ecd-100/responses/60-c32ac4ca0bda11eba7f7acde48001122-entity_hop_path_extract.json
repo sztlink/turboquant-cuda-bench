@@ -1,0 +1,64 @@
+{
+  "qid": "c32ac4ca0bda11eba7f7acde48001122",
+  "gold": "Helsingfors",
+  "prompt": "You are a strict graph/path extractor for multi-hop QA.\nUse ONLY the passages. The candidate graph is heuristic and may contain distractors.\nFind the minimal supported chain. If not enough information, status MISSING.\nReturn ONLY valid JSON, no markdown.\n{\"status\":\"FOUND|MISSING\",\"final_answer\":\"answer string or UNKNOWN\",\"chain\":[\"A -- relation --> B\"],\"evidence_passages\":[\"P1\"],\"reason\":\"short\"}\nCandidate graph:\n- Place of birth -> Place of origin\n- Place of birth -> The Child\n- Swedenhielms -> Gustaf Molander\n- Swedenhielms -> Karin Swanström\n- Swedenhielms -> Gustaf Molander\n- Swedenhielms -> Karin Swanström\n- Motherland (disambiguation) -> Place of origin\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- What Women Want (2011 film) -> What Women Want\n- What Women Want (2011 film) -> The First Day\n- Birth of the Living Dead -> Night of the Living Dead\n- Birth of the Living Dead -> The Dead\n- The Fall of a Nation -> D. W. Griffith\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Swedenhielms: Swedenhielms is a 1935 Swedish comedy-drama film directed by Gustaf Molander. The film is based on the play by Hjalmar Bergman from 1923 and starrs Gösta Ekman, Karin Swanström, and Tutta Rolf.\nP3: Swedenhielms: Swedenhielms is a 1935 Swedish comedy- drama film directed by Gustaf Molander. The film is based on the play by Hjalmar Bergman from 1923 and starrs Gösta Ekman, Karin Swanström, and Tutta Rolf.\nP4: Night of the Living Dead: Night of the Living Dead is a 1968 American independent horror film written, directed, photographed and edited by George A. Romero, co-written by John Russo, and starring Duane Jones and Judith O' Dea. The story follows seven people who are trapped in a rural farmhouse in western Pennsylvania, which is under assault by an enlargening group of cannibalistic, undead corpses. The film was completed on a budget and shot outside Pittsburgh, where it had its theatrical ...\nP5: What Women Want: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt. The film earned mixed reviews from critics, but was a box office success, with a North American domestic gross of $182 million and a worldwide gross of $374 million against a budget of $70 million. A loose remake, \"What Men Want\" starring Taraji P. Henson and Aldis Hodge came out in early 2019.\nP6: The Child: The Child may refer to:\nP7: The First Day: The First Day may refer to:\nP8: The Dead: The Dead may refer to:\nP9: D. W. Griffith: David Wark Griffith( January 22, 1875 – July 23, 1948) was an American film director. Widely considered as the most important filmmaker of his generation, he pioneered the feature- length movie and many enduring cinematic techniques, such as the close- up. His film\" The Birth of a Nation\"( 1915) broke box- office records but also attracted much controversy, as it depicted African Americans in a negative light and glorified the Ku Klux Klan. \" Intolerance\"( 1916) was made as an ...\nP10: Gustaf Molander: Gustaf Harald August Molander (18 November 1888 – 19 June 1973) was a Swedish actor and film director. His parents were director Harald Molander, Sr. (1858–1900) and singer and actress Lydia Molander, \"née\" Wessler, and his brother was director Olof Molander (1892–1966). He was the father of director and producer Harald Molander from his first marriage to actress Karin Molander and father to actor Jan Molander from his second marriage to Elsa Fahlberg (1892-1977). Gustaf ...\nQuestion: What is the place of birth of the director of film Swedenhielms?",
+  "output": "{\"status\":\"FOUND\",\"final_answer\":\"The place of birth of Gustaf Molander is the place of birth of the director of film Swedenhielms.\",\"chain\":[\"Swedenhielms -- directed by --> Gustaf Molander\",\"Gustaf Molander -- father of --> Harald Molander\",\"Harald Molander -- Place of birth --> Swedenhielms\"],\"evidence_passages\":[\"P2\",\"P10\"]}",
+  "extract": {
+    "status": "FOUND",
+    "final_answer": "The place of birth of Gustaf Molander is the place of birth of the director of film Swedenhielms.",
+    "chain": [
+      "Swedenhielms -- directed by --> Gustaf Molander",
+      "Gustaf Molander -- father of --> Harald Molander",
+      "Harald Molander -- Place of birth --> Swedenhielms"
+    ],
+    "evidence_passages": [
+      "P2",
+      "P10"
+    ]
+  },
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "The place of birth of Gustaf Molander is the place of birth of the director of film Swedenhielms.",
+    "latency_sec": 1.5535857677459717,
+    "status": "FOUND",
+    "candidate": "The place of birth of Gustaf Molander is the place of birth of the director of film Swedenhielms."
+  },
+  "response": {
+    "id": "chatcmpl-ae662d1f8ff94394",
+    "object": "chat.completion",
+    "created": 1779505528,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"status\":\"FOUND\",\"final_answer\":\"The place of birth of Gustaf Molander is the place of birth of the director of film Swedenhielms.\",\"chain\":[\"Swedenhielms -- directed by --> Gustaf Molander\",\"Gustaf Molander -- father of --> Harald Molander\",\"Harald Molander -- Place of birth --> Swedenhielms\"],\"evidence_passages\":[\"P2\",\"P10\"]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1108,
+      "total_tokens": 1197,
+      "completion_tokens": 89,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

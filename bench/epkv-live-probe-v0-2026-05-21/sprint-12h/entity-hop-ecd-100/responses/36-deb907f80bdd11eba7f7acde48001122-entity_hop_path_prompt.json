@@ -1,0 +1,48 @@
+{
+  "qid": "deb907f80bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Bohemia",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Lambert I, Count of Louvain -> Godfrey II, Duke of Lower Lorraine\n- Lambert I, Count of Louvain -> Gerberga of Lower Lorraine\n- Lambert I, Count of Louvain -> Reginar III, Count of Hainaut\n- Lambert I, Count of Louvain -> Godfrey II, Duke of Lower Lorraine\n- Lambert I, Count of Louvain -> Gerberga of Lower Lorraine\n- Lambert I, Count of Louvain -> Reginar III, Count of Hainaut\n- Lambert II, Count of Lens -> Henry III, Holy Roman Emperor\n- Lambert II, Count of Lens -> Baldwin V, Count of Flanders\n- Otto I, Margrave of Meissen -> (Otto)\n- Werner, Count of Valenciennes -> Lambert I, Count of Louvain\n- Werner, Count of Valenciennes -> Reginar IV, Count of Mons\n- Reginar IV, Count of Mons -> Reginar III, Count of Hainaut\nPassages:\nP1: Reginar III, Count of Hainaut: Reginar III (c. 920 – 973) was a Count of Hainaut from approximately 940 until his exile in 958. He was the son of Reginar II, Count of Hainaut. He took part in the rebellion of his uncle Gilbert, Duke of Lorraine. When Gilbert was killed in 939, Regnier had to pledge fealty to King Otto the Great. He then allied himself with King Louis IV of France, but King Otto sent duke Hermann of Swabia to quell the rebels in 944. Otto appointed Conrad the Red as duke of ...\nP2: Reginar IV, Count of Mons: Reginar IV, Count of Mons (c. 950–1013) was the son of Reginar III, Count of Hainaut. Lambert I of Leuven was his brother.\nP3: Baldwin V, Count of Flanders: Baldwin V of Flanders( c. 1012 – 1 September 1067) was Count of Flanders from 1035 until his death. He was the son of Baldwin IV, Count of Flanders, who died in 1035.\nP4: Godfrey II, Duke of Lower Lorraine: Godfrey II (965–1023), called the Childless, son of Godfrey I, Count of Verdun, was the duke of Lower Lorraine after the death in 1012 of the Carolingian Otto, who left no sons. He was appointed duke by Henry II, Holy Roman Emperor, on the advice of Gerard of Florennes, bishop of Cambrai. His selection was based on the need for a strong military hand to pacify the duchy and stabilise the French border. It also benefitted that Godfrey was from Upper Lorraine ...\nP5: Gerberga of Lower Lorraine: Gerberga of Lower Lorraine, Countess of Louvain, was the daughter of Charles, Duke of Lower Lorraine, himself the son of Louis IV of France and Gerberga of Saxony.\nP6: Henry III, Holy Roman Emperor: Henry III (28 October 1017 – 5 October 1056), called the Black or the Pious, was Holy Roman Emperor from 1046 until his death in 1056. A member of the Salian Dynasty, he was the eldest son of Emperor Conrad II of Germany and Gisela of Swabia. His father made him Duke of Bavaria in 1026 after the death of Duke Henry V at the age of 9. At the age of 11 in 1028, on Easter Day after his father had been crowned Holy Roman Emperor, Henry was elected King of Germany in ...\nP7: Henry III, Holy Roman Emperor: Henry III( 28 October 1017 – 5 October 1056), called the Black or the Pious, was Holy Roman Emperor from 1046 until his death in 1056. A member of the Salian Dynasty, he was the eldest son of Emperor Conrad II of Germany and Gisela of Swabia. His father made him Duke of Bavaria in 1026 after the death of Duke Henry V at the age of 9. At the age of 11 in 1028, on Easter Day after his father had been crowned Holy Roman Emperor, Henry was elected King of Germany in ...\nP8: (Otto): (Otto) is a 2015 Dutch animated short film directed by Job Roggeveen, Joris Oprins and Marieke Blaauw, from the Dutch animation studio Job, Joris & Marieke. The film had its international premiere at the Toronto International Film Festival. (Otto) was chosen to be the official Dutch entry for the Academy Award Best Animated Short Film 2016. Job, Joris & Marieke's previous film A Single Life was nominated Academy Award for Best Animated Short Film at the 87th Academy Awards.\nP9: Lambert I, Count of Louvain: Lambert I of Louvain nicknamed\" The Bearded\"( born in Louvain, Duchy of Lotharingia, East Francia c. 950, died in Florennes, County of Namur, Duchy of Lower Lorraine, Holy Roman Empire on 12 September 1015) was the first Count of Louvain in 1003. He was killed by Godfrey II, Duke of Lower Lorraine in battle for Godfrey's claim of Count of Verdun. He was the son of Reginar III, Count of Hainaut and Adela d' Eguisheim, daughter of Hugh V, Count of Eguisheim. His ...\nP10: Lambert I, Count of Louvain: Lambert I of Louvain nicknamed \"The Bearded\" (born in Louvain, Duchy of Lotharingia, East Francia c. 950, died in Florennes, County of Namur, Duchy of Lower Lorraine, Holy Roman Empire on 12 September 1015) was the first Count of Louvain in 1003. He was killed by Godfrey II, Duke of Lower Lorraine in battle for Godfrey's claim of Count of Verdun. He was the son of Reginar III, Count of Hainaut and Adela d' Eguisheim, daughter of Hugh V, Count of Eguisheim. His ...\nQuestion: Where was the place of death of Lambert I, Count Of Louvain's father?\nFinal answer:",
+  "output": "Duchy of Hainaut",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a236f3518c85978a",
+    "object": "chat.completion",
+    "created": 1779505368,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Duchy of Hainaut",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1544,
+      "total_tokens": 1552,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

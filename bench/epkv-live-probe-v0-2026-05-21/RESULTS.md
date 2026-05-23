@@ -1019,3 +1019,41 @@ Updated implication:
 retrieval/path construction is the first real RealRAG bridge.
 Next: entity-hop docs -> path extractor candidate -> internal sampler ECD.
 ```
+
+## Entity-hop extractor + ECD 100
+
+Follow-up test:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/ENTITY-HOP-ECD-100.md
+```
+
+Results:
+
+```txt
+BGE rerank strong:              EM 0.090 | contains 0.160 | F1 0.185
+Entity-hop strong:              EM 0.180 | contains 0.300 | F1 0.275
+Entity-hop path prompt:         EM 0.260 | contains 0.340 | F1 0.320
+Entity-hop path extractor:      EM 0.110 | contains 0.200 | F1 0.158
+Entity-hop extractor + ECD:     EM 0.130 | contains 0.200 | F1 0.172
+```
+
+Extractor status:
+
+```txt
+FOUND: 44
+MISSING: 56
+```
+
+Conclusion:
+
+```txt
+single-candidate extractor+ECD is worse than direct entity-hop path prompt.
+The current extractor is too brittle; ECD amplifies the candidate it receives, including missing/wrong candidates.
+```
+
+Updated next step:
+
+```txt
+soft/multi-candidate ECD: bias N candidate entities/paths from entity-hop graph + path prompt output, not one strict extractor candidate.
+```

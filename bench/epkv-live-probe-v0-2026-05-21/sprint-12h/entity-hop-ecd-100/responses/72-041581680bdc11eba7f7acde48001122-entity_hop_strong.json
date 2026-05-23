@@ -1,0 +1,48 @@
+{
+  "qid": "041581680bdc11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Manchester",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: David Lloyd George: David Lloyd George, 1st Earl Lloyd-George of Dwyfor, (17 January 1863 – 26 March 1945) was a British statesman who served as Prime Minister of the United Kingdom between 1916 and 1922. He was the final Liberal to hold the post. Lloyd George was born in Manchester to Welsh parents. His father—a schoolmaster—died in 1864 and he was raised in Wales by his mother and her shoemaker brother, whose Liberal politics and Baptist faith strongly influenced Lloyd George; the same uncle ...\nP3: House of Lords: The House of Lords, also known as the House of Peers and domestically usually referred to simply as the Lords, is the upper house of the Parliament of the United Kingdom. Membership is granted by appointment or else by heredity or official function. Like the House of Commons, it meets in the Palace of Westminster. Officially, the full name of the house is the Right Honourable the Lords Spiritual and Temporal of the United Kingdom of Great Britain and Northern Ireland in ...\nP4: The Child: The Child may refer to:\nP5: Them!: Them! is a 1954 American black- and- white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \" Them!\" is one of the first of the 1950s\" nuclear monster\" films, and the first\" big bug\" feature. A nest ...\nP6: Them!: Them! is a 1954 American black-and-white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \"Them!\" is one of the first of the 1950s \"nuclear monster\" films, and the first \"big bug\" feature. A nest of ...\nP7: Sir Robert McAlpine, 1st Baronet: Sir Robert McAlpine, 1st Baronet( 13 February 1847 – 3 November 1934), was a Scottish businessman who founded the British construction firm which is now known as Sir Robert McAlpine.\nP8: @Home: @Home or @home may refer to:\nP9: Louise: Louise or Luise may refer to:\nP10: Richard Lloyd George, 2nd Earl Lloyd-George of Dwyfor: Richard Lloyd George, 2nd Earl Lloyd-George of Dwyfor (15 February 1889 – 1 May 1968) was a British soldier and peer in the peerage of the United Kingdom, a member of the House of Lords from 1945 until his death. The son of the Liberal prime minister David Lloyd George by his first wife, Margaret Owen, Lloyd George was educated at Portmadoc School and Christ's College, Cambridge, graduating BA in 1910. During the First World War he was ...\nQuestion: What is the place of birth of Gwilym Lloyd George's father?\nFinal answer:",
+  "output": "Manchester",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-b8c353e54688f05b",
+    "object": "chat.completion",
+    "created": 1779505618,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Manchester",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 934,
+      "total_tokens": 936,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

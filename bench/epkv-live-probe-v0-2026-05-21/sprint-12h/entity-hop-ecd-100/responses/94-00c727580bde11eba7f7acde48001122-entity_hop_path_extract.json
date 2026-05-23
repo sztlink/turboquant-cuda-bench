@@ -1,0 +1,63 @@
+{
+  "qid": "00c727580bde11eba7f7acde48001122",
+  "gold": "10 May 1912",
+  "prompt": "You are a strict graph/path extractor for multi-hop QA.\nUse ONLY the passages. The candidate graph is heuristic and may contain distractors.\nFind the minimal supported chain. If not enough information, status MISSING.\nReturn ONLY valid JSON, no markdown.\n{\"status\":\"FOUND|MISSING\",\"final_answer\":\"answer string or UNKNOWN\",\"chain\":[\"A -- relation --> B\"],\"evidence_passages\":[\"P1\"],\"reason\":\"short\"}\nCandidate graph:\n- Henry St John, 18th Baron St John of Bletso -> Beauchamp St John, 17th Baron St John of Bletso\n- John St John, 20th Baron St John of Bletso -> Moubray St John, 19th Baron St John of Bletso\n- John St John, 20th Baron St John of Bletso -> Moubray St John, 19th Baron St John of Bletso\n- John St John, 12th Baron St John of Bletso -> John St John, 11th Baron St John of Bletso\n- John St John, 12th Baron St John of Bletso -> Louise\n- Henry St John, 13th Baron St John of Bletso -> John St John, 12th Baron St John of Bletso\n- Beauchamp St John, 17th Baron St John of Bletso -> St Andrew St John, 15th Baron St John of Bletso\n- Oliver St John, 1st Baron St John of Bletso -> Margaret Beauchamp of Bletso\nPassages:\nP1: Moubray St John, 19th Baron St John of Bletso: Moubray St Andrew Thornton St John, 19th Baron St John of Bletso DL JP (5 November 1877 – 28 October 1934) was an English peer.\nP2: Moubray St John, 19th Baron St John of Bletso: Moubray St Andrew Thornton St John, 19th Baron St John of Bletso DL JP( 5 November 1877 – 28 October 1934) was an English peer.\nP3: St Andrew St John, 15th Baron St John of Bletso: St Andrew St John, 15th Baron St John of Bletso( 8 November 1811 — 27 January 1874) was an English peer.\nP4: Margaret Beauchamp of Bletso: Margaret Beauchamp( c. 1410 – before 3 June 1482) was the oldest daughter of Sir John Beauchamp,\" de jure\" 3rd Baron Beauchamp of Bletsoe, and his second wife, Edith Stourton. She was the maternal grandmother of Henry VII.\nP5: Louise: Louise or Luise may refer to:\nP6: Henry St John, 18th Baron St John of Bletso: Henry Beauchamp Oliver St John, 18th Baron St John of Bletso DL (24 June 1876 – 17 October 1920) was an English peer. He was the eldest son of Beauchamp St John, 17th Baron St John of Bletso, and his wife Helen Thornton. He was educated at Wellington College and Magdalene College, Cambridge. On 26 July 1901, he was made a Deputy Lieutenant of Bedfordshire. Henry became the 17th Lord St John on the death of his father in 1912, and inherited ...\nP7: Henry St John, 13th Baron St John of Bletso: Henry Beauchamp St John, 13th Baron St John of Bletso ( 2 August 1758- 18 December 1805) was a British peer. St John was born at Woodford, Northamptonshire, the eldest son of John St John, 12th Baron St John of Bletso, and his wife Susanna Simond, daughter of Peter Simond, merchant of London. He succeeded his father as 13th Baron in 1767. He was at a private school at Easton, near Stamford, and was admitted at St John's College, Cambridge, on 15 ...\nP8: John St John, 12th Baron St John of Bletso: John St John of Northwood, 12th Baron St John of Bletso( 15 November 1725 – 20 April 1767) was a British peer. St John was the eldest son of John St John, 11th Baron St John of Bletso and his wife Elizabeth Crowley, daughter of Sir Ambrose Crowley of Greenwich. He was educated at Winchester College and at New College, Oxford. He inherited the title of Baron St John of Bletso on the death of his father in 1757. St John died at the age of 41 at Nice but ...\nP9: John St John, 20th Baron St John of Bletso: John Moubray Russell St John, 20th Baron St John of Bletso TD( 3 August 1917 – 13 April 1976) was an English peer. The only son of Moubray St John, 19th Baron St John of Bletso and his wife Evelyn, John St John became the 20th Baron Lord St John of Bletso on the death of his father in 1934. He was living at a hotel in Dublin and died unmarried in 1976, aged 58, and the title passed to a distant cousin.\nP10: John St John, 20th Baron St John of Bletso: John Moubray Russell St John, 20th Baron St John of Bletso TD(3 August 1917 – 13 April 1976) was an English peer. The only son of Moubray St John, 19th Baron St John of Bletso and his wife Evelyn, John St John became the 20th Baron Lord St John of Bletso on the death of his father in 1934. He was living at a hotel in Dublin and died unmarried in 1976, aged 58, and the title passed to a distant cousin.\nQuestion: What is the date of death of Henry St John, 18Th Baron St John Of Bletso's father?",
+  "output": "{\"status\":\"FOUND\",\"final_answer\":\"18 December 1805\",\"chain\":[\"Henry St John, 18th Baron St John of Bletso -> Beauchamp St John, 17th Baron St John of Bletso\",\"Beauchamp St John, 17th Baron St John of Bletso -> 18 December 1805\"],\"evidence_passages\":[\"P6\",\"P9\"]}",
+  "extract": {
+    "status": "FOUND",
+    "final_answer": "18 December 1805",
+    "chain": [
+      "Henry St John, 18th Baron St John of Bletso -> Beauchamp St John, 17th Baron St John of Bletso",
+      "Beauchamp St John, 17th Baron St John of Bletso -> 18 December 1805"
+    ],
+    "evidence_passages": [
+      "P6",
+      "P9"
+    ]
+  },
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "18 December 1805",
+    "latency_sec": 1.6776964664459229,
+    "status": "FOUND",
+    "candidate": "18 December 1805"
+  },
+  "response": {
+    "id": "chatcmpl-b1d74d4d7e361f27",
+    "object": "chat.completion",
+    "created": 1779505760,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"status\":\"FOUND\",\"final_answer\":\"18 December 1805\",\"chain\":[\"Henry St John, 18th Baron St John of Bletso -> Beauchamp St John, 17th Baron St John of Bletso\",\"Beauchamp St John, 17th Baron St John of Bletso -> 18 December 1805\"],\"evidence_passages\":[\"P6\",\"P9\"]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1460,
+      "total_tokens": 1554,
+      "completion_tokens": 94,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

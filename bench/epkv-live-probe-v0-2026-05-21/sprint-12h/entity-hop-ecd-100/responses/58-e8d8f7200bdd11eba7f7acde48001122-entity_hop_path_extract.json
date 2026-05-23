@@ -1,0 +1,57 @@
+{
+  "qid": "e8d8f7200bdd11eba7f7acde48001122",
+  "gold": "Chuck Schumer",
+  "prompt": "You are a strict graph/path extractor for multi-hop QA.\nUse ONLY the passages. The candidate graph is heuristic and may contain distractors.\nFind the minimal supported chain. If not enough information, status MISSING.\nReturn ONLY valid JSON, no markdown.\n{\"status\":\"FOUND|MISSING\",\"final_answer\":\"answer string or UNKNOWN\",\"chain\":[\"A -- relation --> B\"],\"evidence_passages\":[\"P1\"],\"reason\":\"short\"}\nCandidate graph:\n- Huma Abedin -> Anthony Weiner\n- Where Does It Hurt? -> Peter Sellers\n- Where Does It Hurt? -> Rod Amateau\n- Robert White Johnson -> My Heart\n- An Ideal Husband (1935 film) -> Sybille Schmitz\n- An Ideal Husband (1935 film) -> Herbert Selpin\nPassages:\nP1: Peter Sellers: Peter Sellers, CBE (born Richard Henry Sellers; 8 September 1925 – 24 July 1980) was an English film actor, comedian, and singer. He performed in the BBC Radio comedy series \"The Goon Show\", featured on a number of hit comic songs, and became known to a worldwide audience through his many film roles, among them Chief Inspector Clouseau in \"The Pink Panther\" series of films. Born in Portsmouth to a theatrical family, Sellers made his stage debut at the Kings Theatre, Southsea, ...\nP2: Anthony Weiner: Anthony David Weiner (born September 4, 1964) is an American former Democratic congressman, convicted felon who represented from January 1999 until June 2011. He won seven terms as a Democrat, never receiving less than 60% of the vote. Weiner resigned from Congress in June 2011 after an incident in which a sexually suggestive photo that he sent to a woman via Twitter was captured and publicized. On May 19, 2017, Weiner pleaded guilty to another, unrelated sexting charge of ...\nP3: Rod Amateau: Rodney\" Rod\" Amateau( December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were\" The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's Island The Bob Cummings Show\" and\" The New Phil Silvers Show\". He produced\" My Mother the Car\" and\" Supertrain\", and wrote the story for the 1988 film\" Sunset\". Amateau also directed a few episodes of\" The Dukes of Hazzard\", and appeared in a ...\nP4: Rod Amateau: Rodney \"Rod\" Amateau (December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were \"The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's IslandThe Bob Cummings Show\" and \"The New Phil Silvers Show\". He produced \"My Mother the Car\" and \"Supertrain\", and wrote the story for the 1988 film \"Sunset\". Amateau also directed a few episodes of \"The Dukes of Hazzard\", and appeared in a ...\nP5: My Heart: My Heart may refer to:\nP6: Sybille Schmitz: Sybille Maria Christina Schmitz (2 December 1909 – 13 April 1955) was a German actress.\nP7: Herbert Selpin: Herbert Selpin( 29 May 1904 – 1 August 1942) was a German film director and screenwriter of light entertainment during the 1930s and 1940s. He is best known for his final film, the partly suppressed\" Titanic\", during the production of which he was arrested by Propaganda Minister Joseph Goebbels. He was later found dead in his prison cell.\nP8: Huma Abedin: Huma Mahmood Abedin (born July 28, 1976) is an American political staffer who was vice chair of Hillary Clinton's 2016 campaign for President of the United States. Prior to that, Abedin was deputy chief of staff to Clinton, who was U.S. Secretary of State from 2009 to 2013. She was also the traveling chief of staff and former assistant for Clinton during Clinton's campaign for the Democratic nomination in the 2008 presidential election. During Hillary Clinton's tenure at the State ...\nP9: Where Does It Hurt?: Where Does it Hurt? is a 1972 American comedy film written and directed by Rod Amateau and starring Peter Sellers, Jo Ann Pflug, Rick Lenz, Pat Morita, and Harold Gould. The film is a darkly satirical look at capitalism in a hospital environment.\nP10: An Ideal Husband (1935 film): An Ideal Husband is a 1935 German comedy film directed by Herbert Selpin and starring Brigitte Helm, Sybille Schmitz and Karl Ludwig Diehl. It is based on the 1895 play\" An Ideal Husband\" by Oscar Wilde a sensitive and romantic comedy representing the 19th century. The adaptation is very faithful to the original work. The film's sets were designed by the art directors Artur Günther and Benno von Arent. Interiors were shot at Terra Film's Marienfelde Studios, while ...\nQuestion: Where does Huma Abedin's husband work at?",
+  "output": "{\"status\":\"MISSING\",\"final_answer\":\"UNKNOWN\",\"chain\":[],\"evidence_passages\":[]}",
+  "extract": {
+    "status": "MISSING",
+    "final_answer": "UNKNOWN",
+    "chain": [],
+    "evidence_passages": []
+  },
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "{\"status\":\"MISSING\",\"final_answer\":\"UNKNOWN\",\"chain\":[],\"evidence_passages\":[]}",
+    "latency_sec": 0.46323347091674805,
+    "status": "MISSING",
+    "candidate": ""
+  },
+  "response": {
+    "id": "chatcmpl-8e2d82318ded37e6",
+    "object": "chat.completion",
+    "created": 1779505525,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"status\":\"MISSING\",\"final_answer\":\"UNKNOWN\",\"chain\":[],\"evidence_passages\":[]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1224,
+      "total_tokens": 1245,
+      "completion_tokens": 21,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

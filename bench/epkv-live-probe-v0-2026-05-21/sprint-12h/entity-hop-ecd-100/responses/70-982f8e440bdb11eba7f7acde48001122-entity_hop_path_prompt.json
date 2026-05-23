@@ -1,0 +1,48 @@
+{
+  "qid": "982f8e440bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "1886",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- American Scientist -> Sigma Xi\n- American Scientist -> The Feature\n- Hyperwerks -> The Comic\n- Eastern Color Printing -> The Comic\n- Alfred De Courcy -> Part\n- The Vanity Pool -> Ida May Park\n- The Vanity Pool -> The Company (film)\nPassages:\nP1: American Scientist: American Scientist (informally abbreviated AmSci) is an American bimonthly science and technology magazine published since 1913 by Sigma Xi, The Scientific Research Society. Each issue includes feature articles written by prominent scientists and engineers who review research in fields from molecular biology to computer engineering. Each issue also includes the work of cartoonists, including those of Sidney Harris, Benita Epstein, and Mark Heath. Also included is the ...\nP2: The Company (film): The Company is a 2003 American drama film directed by Robert Altman and starring Neve Campbell, who co-wrote and co-produced the film. The film also stars Malcolm McDowell and James Franco, and is set in the company of the Joffrey Ballet.\nP3: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP4: The Comic: The Comic is a 1969 Pathécolor comedy film co-written, co-produced, and directed by Carl Reiner. It stars Dick Van Dyke as Billy Bright( which was the original title of the film), Michele Lee as Bright's love interest, and Reiner himself and Mickey Rooney as Bright's friends and work colleagues. Reiner wrote the screenplay with Aaron Ruben; it was inspired by the end of silent film era, and, in part, by the life of silent film superstar Buster Keaton.\nP5: Sigma Xi: Sigma Xi: The Scientific Research Honor Society (ΣΞ) is a non-profit honor society for scientists and engineers which was founded in 1886 at Cornell University by a junior faculty member and a handful of graduate students. Members elect others on the basis of their research achievements or potential.\nP6: Ida May Park: Ida May Park (December 28, 1879 – June 13, 1954) was an American screenwriter and film director of the silent era, in the early 20th century. She wrote for more than 50 films between 1914 and 1930, and directed 14 films between 1917 and 1920. She was born and died in Los Angeles, California. She was married to film director and producer Joseph De Grasse, with whom she was regularly teamed at Universal.\nP7: Part: Part, parts or PART may refer to:\nP8: The Vanity Pool: The Vanity Pool is a lost 1918 American silent film drama directed by Ida May Park and starring Mary MacLaren, Anna Q. Nilsson, and Thomas Holding. The script was based off a short story by Nalbro Bartley that was originally published in \"Young's Magazine\". The film was produced and distributed by Universal Film Manufacturing Company. The film centered around a female lobbyist who becomes involved in political intrigue when she begins lobbying for the election of her friend's ...\nP9: Hyperwerks: Hyperwerks Entertainment was an American company that published comic books. It was founded by Karl Altstaetter and Jamie Douraghy in 1997. The two most notable Hyperwerks projects are the \"Deity\" and \"Rostam\" series.\nP10: Eastern Color Printing: The Eastern Color Printing Company was a company that published comic books, beginning in 1933. At first it was only newspaper comic strip reprints, but later on original material was published. Eastern Color Printing was incorporated in 1928, and soon became successful by printing color newspaper sections for several New England and New York papers. Eastern is most notable for its production of\" Funnies on Parade\" and\" Famous Funnies\", two publications that gave birth ...\nQuestion: When was the company that published American Scientist founded?\nFinal answer:",
+  "output": "1886",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-8ec8dad04641998a",
+    "object": "chat.completion",
+    "created": 1779505605,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "1886",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1025,
+      "total_tokens": 1030,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

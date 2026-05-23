@@ -1,0 +1,48 @@
+{
+  "qid": "e4e02a240bda11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Jacques Cousteau",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Wonders of the Sea 3D: Wonders of the Sea 3D is a 2017 American documentary film co-directed by Jean-Michel Cousteau and narrated by Arnold Schwarzenegger.\nP2: Night of the Living Dead: Night of the Living Dead is a 1968 American independent horror film written, directed, photographed and edited by George A. Romero, co-written by John Russo, and starring Duane Jones and Judith O' Dea. The story follows seven people who are trapped in a rural farmhouse in western Pennsylvania, which is under assault by an enlargening group of cannibalistic, undead corpses. The film was completed on a budget and shot outside Pittsburgh, where it had its theatrical ...\nP3: Across the Sea: Across the Sea may refer to:\nP4: Father Damien: Father Damien or Saint Damien of Molokai, SS.CC. or Saint Damien De Veuster( or'; 3 January 1840 – 15 April 1889), born Jozef De Veuster, was a Roman Catholic priest from Belgium and member of the Congregation of the Sacred Hearts of Jesus and Mary, a missionary religious institute. He won recognition for his ministry, which he lead from 1873 until his death in 1889, in the Kingdom of Hawaiʻi for people with leprosy( also known as Hansen's disease), who were required to live ...\nP5: In Search of...: In Search Of ... may refer to:\nP6: The Dead: The Dead may refer to:\nP7: Into the Black: Into the Black may refer to;\nP8: Jean-Michel Cousteau: Jean-Michel Cousteau (born 6 May 1938) is a French oceanographic explorer, environmentalist, educator, and film producer. The first son of ocean explorer Jacques Cousteau, he is the father of Fabien Cousteau and Céline Cousteau.\nP9: United Nations: The United Nations (UN), is an intergovernmental organization responsible for maintaining international peace and security, developing friendly relations among nations, achieving international cooperation, and being a center for harmonizing the actions of nations. It is the largest, most familiar, most internationally represented and most powerful intergovernmental organization in the world. The UN is headquartered on international territory in New York City; other main offices ...\nP10: A Division: A Division or A-Division or Division A or variant has the following meanings:\nQuestion: Who is the father of the director of film Wonders Of The Sea 3D?\nFinal answer:",
+  "output": "Jean-Michel Cousteau",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.5
+  },
+  "response": {
+    "id": "chatcmpl-9fb1f2931a55d16c",
+    "object": "chat.completion",
+    "created": 1779505701,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Jean-Michel Cousteau",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 624,
+      "total_tokens": 631,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

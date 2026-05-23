@@ -1,0 +1,48 @@
+{
+  "qid": "94873b220bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Florence",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Francis II of France -> Catherine de' Medici\n- Francis II of France -> The Cause\n- Philip, Duke of Nemours -> Claudine de Brosse\n- Philip, Duke of Nemours -> Louise\n- Charles II de Valois, Duke of Orléans -> Claude of France\n- Charles II de Valois, Duke of Orléans -> Francis I\n- Marguerite de Navarre -> Henry IV of France\n- Marguerite de Navarre -> Kings\n- Jean IV de Brosse -> René de Brosse\n- Matilda of Carinthia -> Theobald II, Count of Champagne\n- Matilda of Carinthia -> Philip II of France\n- Matilda of Carinthia -> Theobald II, Count of Champagne\n- Matilda of Carinthia -> Philip II of France\n- Isabella of France (disambiguation) -> Edward III of England\n- Isabella of France (disambiguation) -> Joan I of Navarre\nPassages:\nP1: Francis II of France: Francis II (19 January 1544 – 5 December 1560) was King of France from 1559 to 1560. He was also King consort of Scotland as a result of his marriage to Mary, Queen of Scots, from 1558 until his death in 1560. He ascended the throne of France at the age of fifteen after the accidental death of his father, Henry II, in 1559. His short reign was dominated by the first stirrings of the French Wars of Religion. Although the royal age of majority had been set at fourteen, his ...\nP2: Philip II of France: Philip II (21 August 1165 – 14 July 1223), known as Philip Augustus , was King of France from 1180 to 1223. His predecessors had been known as kings of the Franks, but from 1190 onward, Philip became the first French monarch to style himself \"King of France\". The son of King Louis VII and his third wife, Adela of Champagne, he was originally nicknamed \"Dieudonné\" (God-given) because he was a first son and born late in his father's life. Philip was given the epithet ...\nP3: Theobald II, Count of Champagne: Theobald the Great (French: Thibaut de Blois) (1090–1152) was Count of Blois and of Chartres as Theobald IV from 1102 and was Count of Champagne and of Brie as Theobald II from 1125. He held Auxerre, Maligny, Ervy, Troyes, and Châteauvillain as fiefs from Odo II, Duke of Burgundy. He was the son of Stephen II, Count of Blois, and Adela of Normandy, and the elder brother of King Stephen of England. Although he was the second son, Theobald was appointed above his ...\nP4: Claude of France: Claude of France( 13 October 1499 – 20 July 1524) was a queen consort of France by marriage to Francis I. She was also ruling Duchess of Brittany from 1514. She was a daughter of the French king Louis XII of France and Anne of Brittany.\nP5: Claude of France: Claude of France (13 October 1499 – 20 July 1524) was a queen consort of France by marriage to Francis I. She was also ruling Duchess of Brittany from 1514. She was a daughter of the French king Louis XII of France and Anne of Brittany.\nP6: Henry IV of France: Henry IV (read as ; 13 December 1553 – 14 May 1610), also known by the epithet Good King Henry or Henry the Great, was King of Navarre (as Henry III) from 1572 and King of France from 1589 to 1610. He was the first monarch of France from the House of Bourbon, a cadet branch of the Capetian dynasty. He was assassinated in 1610 by François Ravaillac, a fanatical Catholic, and was succeeded by his son Louis XIII. The son of Antoine de Bourbon, Duke of Vendôme and Jeanne ...\nP7: Edward III of England: Edward III (13 November 1312 – 21 June 1377) was king of England and Lord of Ireland from January 1327 until his death; he is noted for his military success and for restoring royal authority after the disastrous and unorthodox reign of his father, Edward II. Edward III transformed the Kingdom of England into one of the most formidable military powers in Europe. His long reign of 50 years was the second-longest in medieval England (after that of his great-grandfather Henry ...\nP8: Joan I of Navarre: Joan I (14 January 1273 – 31 March/2 April 1305)  was queen regnant of Navarre and countess of Champagne from 1274 until 1305; she was also queen consort of France by marriage to Philip IV of France. She was the daughter of king Henry I of Navarre and Blanche of Artois.\nP9: Francis I: Francis I or Francis the First may refer to:\nP10: The Cause: The Cause may refer to:\nQuestion: Where was the mother of Francis Ii Of France born?\nFinal answer:",
+  "output": "Catherine de' Medici",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8a1f1dd260c07cf8",
+    "object": "chat.completion",
+    "created": 1779505819,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Catherine de' Medici",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1301,
+      "total_tokens": 1308,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "5b637e060bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Princess Madeleine, Duchess of Hälsingland and Gästrikland",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Prince Nicolas, Duke of Ångermanland -> Christopher O'Neill\n- Prince Nicolas, Duke of Ångermanland -> The Child\n- Nicolas, Duke of Mercœur -> Mercœur\n- Dorothy Clement -> Prince William Henry, Duke of Gloucester and Edinburgh\n- Maximilian, Margrave of Baden -> Princess Theodora of Greece and Denmark\n- Maximilian, Margrave of Baden -> Charles, Prince of Wales\n- Prince Alexander, Duke of Södermanland -> The Child\n- Baroness Gösta von dem Bussche-Haddenhausen -> Beatrix of the Netherlands\n- Prince Edward, Duke of Kent -> Master\n- Prince Edward, Duke of Kent -> Crash\nPassages:\nP1: Prince William Henry, Duke of Gloucester and Edinburgh: Prince William, Duke of Gloucester and Edinburgh,( William Henry; 25 November 1743 – 25 August 1805), was a grandson of King George II and a younger brother of King George III of the United Kingdom.\nP2: Charles, Prince of Wales: Charles, Prince of Wales (Charles Philip Arthur George; born 14 November 1948) is the heir apparent to the British throne as the eldest son of Elizabeth II. He has been Duke of Cornwall and Duke of Rothesay since 1952, and he is the oldest and longest-serving heir apparent in British history. He is also the longest-serving Prince of Wales, having held that title since 1958. Charles was born at Buckingham Palace as the first grandchild of King George VI and Queen ...\nP3: Beatrix of the Netherlands: Beatrix (Beatrix Wilhelmina Armgard, ; born 31 January 1938) is a princess of the Dutch royal house who reigned as Queen of the Netherlands from 30 April 1980 until her abdication on 30 April 2013. Beatrix is the eldest daughter of Queen Juliana and her husband, Prince Bernhard of Lippe-Biesterfeld. Upon her mother's accession in 1948, she became heir presumptive. Beatrix attended a public primary school in Canada during World War II, and then finished her primary ...\nP4: Princess Theodora of Greece and Denmark: Princess Theodora of Greece and Denmark( born 9 June 1983 in St Mary's Hospital, London), also known under her stage name Theodora Greece, is a British actress and member of the Greek royal family and Danish Royal Family. She is currently ninth in the line of succession to the defunct Greek throne.\nP5: Christopher O'Neill: Christopher Paul O'Neill, KNO (born 27 June 1974) is a British-American financier and husband of Princess Madeleine, Duchess of Hälsingland and Gästrikland, a daughter of King Carl XVI Gustaf of Sweden.\nP6: Christopher O'Neill: Christopher Paul O'Neill, KNO( born 27 June 1974) is a British- American financier and husband of Princess Madeleine, Duchess of Hälsingland and Gästrikland, a daughter of King Carl XVI Gustaf of Sweden.\nP7: The Child: The Child may refer to:\nP8: Mercœur: Mercœur may refer to the following places in France: Or to the\nP9: Master: Master or masters may refer to:\nP10: Crash: Crash or CRASH may refer to:\nQuestion: Who is Prince Nicolas, Duke Of Ångermanland's mother?\nFinal answer:",
+  "output": "Dorothy Clement",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8121dc0bc4b1bed5",
+    "object": "chat.completion",
+    "created": 1779505668,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Dorothy Clement",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 836,
+      "total_tokens": 841,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "8813f87c0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Małgorzata Braunek",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Polish-Russian War (film) -> Xawery Żuławski\n- Aleksander Ford -> Roman Polanski\n- Aleksander Ford -> Roman Polanski\n- Demons of War -> Władysław Pasikowski\n- 5 Days of War -> Renny Harlin\n- 5 Days of War -> Story\n- Battle of Kletsk (1706) -> Carl Gustaf Creutz\n- The House of the Sun (film) -> The Rock\nPassages:\nP1: Polish-Russian War (film): Polish-Russian War (Wojna polsko-ruska) is a 2009 Polish film directed by Xawery Żuławski based on the novel Polish-Russian War under the white-red flag by Dorota Masłowska.\nP2: The Rock: The Rock or The Rocks may refer to:\nP3: Roman Polanski: Roman Polański( born 18 August 1933 in Paris; original name Raymond Thierry Liebling) is a French- Polish film director, producer, writer, and actor. Since 1978, Polanski has been a fugitive from the U.S. criminal justice system; he fled the country while awaiting sentencing in his sexual abuse case, in which he pleaded guilty to statutory rape. His Polish- Jewish parents moved the family back from Paris to Kraków in 1937. Two years later, Poland was invaded by Nazi Germany ...\nP4: Roman Polanski: Roman Polański (born 18 August 1933 in Paris; original name Raymond Thierry Liebling) is a French-Polish film director, producer, writer, and actor. Since 1978, Polanski has been a fugitive from the U.S. criminal justice system; he fled the country while awaiting sentencing in his sexual abuse case, in which he pleaded guilty to statutory rape. His Polish-Jewish parents moved the family back from Paris to Kraków in 1937. Two years later, Poland was invaded by Nazi Germany ...\nP5: Xawery Żuławski: Xawery Żuławski (born 22 December 1971 in Warsaw) is a Polish film director. In 1995 he graduated National Film School in Łódź. He is the son of actress Małgorzata Braunek and director Andrzej Żuławski. His second feature \"Wojna polsko-ruska\" (2009), adapted from the controversial best-selling novel by Dorota Masłowska, won First Prize in the New Polish Films competition at the 9th Era New Horizons Film Festival in Wrocław. In 2013, he stated he intends to direct a Polish novel ...\nP6: Władysław Pasikowski: Władysław Pasikowski( born 14 June 1959 in Łódź, Poland) is a Polish film director and screenwriter. He made his debut film, Kroll, in 1991, which was honored with the Polish Film Festival prize for his debut and the Special Jury Prize. Pasikowski is also the author of the science fiction novel\" I, GelerthJa, Gelerth\"( Zebra)) which in 1993 was nominated for the Janusz A. Zajdel Award.\nP7: Renny Harlin: Renny Harlin( born Lauri Mauritz Harjola; 15 March 1959) is a Finnish film director, producer and screenwriter. His films include,\" Die Hard 2 Cliffhanger The Long Kiss Goodnight, Deep Blue Sea\" and\" Devil's Pass. Harlin's movies have earned$ 525,410,873 in the United States and$ 1,160,546,146 in the worldwide aggregate box office as of October 2016, making him the 115th highest- grossing director in the global film market. His film\" Cutthroat Island\" held the Guinness world ...\nP8: Carl Gustaf Creutz: Carl Gustaf Creutz (1660−1728) was a Swedish general. Carl Gustaf Creutz was the youngest son of Lorentz Creutz Sr. and Elsa Jacob Daughter Duwall. He served as a page of Charles XI and experienced the Scanian War. By 1691 he was a captain in the Household Cavalry Regiment under Charles XII. The Great Northern War began in 1700 and Creutz landing in Zealand. He distinguished himself at the battles of Petschora and Kletsh (in present-day Poland). Promotions to major and ...\nP9: Story: Story or stories, may refer to:\nP10: The House of the Sun (film): The House of the Sun is a 2010 Russian movie about hippies in the Soviet Union. The director is rock musician Garik Sukachov.\nQuestion: Who is the mother of the director of film Polish-Russian War (Film)?\nFinal answer:",
+  "output": "Małgorzata Braunek",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-b2f41fb7b3f32747",
+    "object": "chat.completion",
+    "created": 1779505143,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Małgorzata Braunek",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1160,
+      "total_tokens": 1168,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

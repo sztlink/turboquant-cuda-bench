@@ -1,0 +1,48 @@
+{
+  "qid": "a9cc5f240bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Catherine Robbe-Grillet",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Eden and After -> Alain Robbe-Grillet\n- Eden (CDP), New York -> Part\n- Mary Sweeney -> Martha De Laurentiis\n- Mary Sweeney -> 20 Years\n- Caroline Eden -> Charles Calvert, 5th Baron Baltimore\nPassages:\nP1: Eden and After: Eden and After  is a 1970 French-Czechoslovak drama art film directed by Alain Robbe-Grillet. It was entered into the 20th Berlin International Film Festival.\nP2: Martha De Laurentiis: Martha De Laurentiis( born 10 July 1954 as\" Martha Schumacher\") is an American film producer. She was credited as Martha Schumacher until 1995. She is known for producing films such as\" Breakdown Hannibal\" and\" Red Dragon\" with her late husband Dino De Laurentiis, and TV series\" Hannibal\". In 1980, she and Dino De Laurentiis founded the production company the Dino De Laurentiis Company, and she is currently the company's chairman. With her husband Dino, whom she married in ...\nP3: Alain Robbe-Grillet: Alain Robbe-Grillet (18 August 1922 – 18 February 2008) was a French writer and filmmaker. He was one of the figures most associated with the \"Nouveau Roman\" (new novel) trend of the 1960s, along with Nathalie Sarraute, Michel Butor and Claude Simon. Alain Robbe-Grillet was elected a member of the Académie française on 25 March 2004, succeeding Maurice Rheims at seat No. 32. He was married to Catherine Robbe-Grillet (née Rstakian).\nP4: Charles Calvert, 5th Baron Baltimore: Charles Calvert, 5th Baron Baltimore, (29 September 1699 – 24 April 1751) was a British nobleman and Proprietary Governor of the Province of Maryland. He inherited the title to Maryland aged just fifteen, on the death of his father and grandfather, when the colony was restored by the British Monarchy to the Calvert family's control, following its seizure in 1688. In 1721 Charles came of age and assumed personal control of Maryland, travelling there briefly ...\nP5: Part: Part, parts or PART may refer to:\nP6: 20 Years: 20 Years or Twenty Years may refer to:\nP7: Spouse of the President of the People's Republic of China: The Spouse of the President of the People's Republic of China, is the spouse of the President of the People's Republic of China. To date there have been 7 women who have been married to the Chinese president while in office.\nP8: Spouse of the Prime Minister of Cambodia: The Spouse of the Prime Minister of Cambodia refers to the wife of the head of government of the Kingdom of Cambodia, the Prime Minister. Since 1993, 3 women have been the spouse of the Prime Minister of Cambodia. The title\" First Lady\" is also commonly used. The spouse of the current Prime Minister is Dr. Bun Rany.\nP9: Spouse of the Prime Minister of Singapore: The Spouse of the Prime Minister of Singapore refers to the spouse of the head of government of Singapore, the Prime Minister. Since, Singapore became an internally self-governing state within the Commonwealth, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. To date, three women have held the title of the spouse of the Prime Minister of Singapore. Ho Ching is the spouse of the incumbent Prime ...\nP10: Spouse of the Prime Minister of Malaysia: The Spouse of the Prime Minister of Malaysia refers to the spouse of the head of government of Malaysia, the Prime Minister. Since independence in 1957, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. Some commentators have tried to style prime ministers' wives as\" First Lady of Malaysia\", similar to the style of First Lady used in republics, but this is not a recognised title. To date, seven women ...\nQuestion: Who is the spouse of the director of film Eden And After?\nFinal answer:",
+  "output": "Martha De Laurentiis",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8eccd85390afa8c3",
+    "object": "chat.completion",
+    "created": 1779505256,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Martha De Laurentiis",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1019,
+      "total_tokens": 1026,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

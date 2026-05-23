@@ -1,0 +1,1144 @@
+{
+  "schema": "epkv.internal_sampler_policy_live.v1.telemetry",
+  "span_map": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-ecd-100/ecd/35-32e50df00bb011ebab90acde48001122.span-map.json",
+  "elapsed_sec": 1.7316632270812988,
+  "policy": {
+    "schema": "epkv.logit_policy_file.v0",
+    "enabled": true,
+    "tag": "internal-live-32e50df00bb011ebab90acde48001122",
+    "candidate": "Otto I Wittelsbach",
+    "candidate_source": "auto",
+    "candidate_ids": [
+      84795,
+      65891
+    ],
+    "suppress_scaffold": true,
+    "scaffold_ids": [
+      28715,
+      20205,
+      785,
+      576,
+      11190,
+      10548,
+      3830,
+      5542,
+      22043,
+      16246,
+      16141,
+      21806
+    ],
+    "bias_map": {
+      "84795": 3.0,
+      "65891": 3.0,
+      "28715": -10.0,
+      "20205": -10.0,
+      "785": -10.0,
+      "576": -10.0,
+      "11190": -10.0,
+      "10548": -10.0,
+      "3830": -10.0,
+      "5542": -10.0,
+      "22043": -10.0,
+      "16246": -10.0,
+      "16141": -10.0,
+      "21806": -10.0
+    },
+    "max_events": 1000000,
+    "provenance": {
+      "qid": "32e50df00bb011ebab90acde48001122",
+      "answer_pages_spec": null,
+      "answer_token_range_spec": null,
+      "evidence_pages_spec": null,
+      "evidence_token_range_spec": null
+    }
+  },
+  "output": "Otto I Wittelsbach",
+  "response": {
+    "id": "chatcmpl-94810be02a6b504f",
+    "object": "chat.completion",
+    "created": 1779505366,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Otto I Wittelsbach",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1116,
+      "total_tokens": 1123,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "hook_events": [
+    {
+      "after_top": [
+        {
+          "logit": 30.75,
+          "token_id": 84795
+        },
+        {
+          "logit": 30.125,
+          "token_id": 66622
+        },
+        {
+          "logit": 23.625,
+          "token_id": 65891
+        },
+        {
+          "logit": 22.5,
+          "token_id": 2101
+        },
+        {
+          "logit": 22.125,
+          "token_id": 36731
+        },
+        {
+          "logit": 19.875,
+          "token_id": 22493
+        },
+        {
+          "logit": 19.875,
+          "token_id": 17513
+        },
+        {
+          "logit": 19.375,
+          "token_id": 35626
+        },
+        {
+          "logit": 19.25,
+          "token_id": 44237
+        },
+        {
+          "logit": 18.875,
+          "token_id": 1793
+        }
+      ],
+      "before_top": [
+        {
+          "logit": 30.125,
+          "token_id": 66622
+        },
+        {
+          "logit": 27.75,
+          "token_id": 84795
+        },
+        {
+          "logit": 22.5,
+          "token_id": 2101
+        },
+        {
+          "logit": 22.125,
+          "token_id": 36731
+        },
+        {
+          "logit": 20.625,
+          "token_id": 65891
+        },
+        {
+          "logit": 19.875,
+          "token_id": 22493
+        },
+        {
+          "logit": 19.875,
+          "token_id": 17513
+        },
+        {
+          "logit": 19.375,
+          "token_id": 35626
+        },
+        {
+          "logit": 19.25,
+          "token_id": 44237
+        },
+        {
+          "logit": 18.875,
+          "token_id": 1793
+        }
+      ],
+      "bias_map": {
+        "10548": -10.0,
+        "11190": -10.0,
+        "16141": -10.0,
+        "16246": -10.0,
+        "20205": -10.0,
+        "21806": -10.0,
+        "22043": -10.0,
+        "28715": -10.0,
+        "3830": -10.0,
+        "5542": -10.0,
+        "576": -10.0,
+        "65891": 3.0,
+        "785": -10.0,
+        "84795": 3.0
+      },
+      "event_index": 4368,
+      "hook": "epkv.v1.sample.sampler.logit_policy.v2.bias_map",
+      "logits_shape": [
+        1,
+        152064
+      ],
+      "policy_enabled": true,
+      "policy_file": "/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy.json",
+      "sampled_token_ids": [
+        84795
+      ],
+      "tag": "internal-live-32e50df00bb011ebab90acde48001122",
+      "token_ids": [
+        84795,
+        65891,
+        28715,
+        20205,
+        785,
+        576,
+        11190,
+        10548,
+        3830,
+        5542,
+        22043,
+        16246,
+        16141,
+        21806
+      ],
+      "ts": "2026-05-23T00:02:47-0300"
+    },
+    {
+      "after_top": [
+        {
+          "logit": 32.0,
+          "token_id": 983
+        },
+        {
+          "logit": 18.375,
+          "token_id": 24634
+        },
+        {
+          "logit": 18.0,
+          "token_id": 777
+        },
+        {
+          "logit": 17.0,
+          "token_id": 5207
+        },
+        {
+          "logit": 16.5,
+          "token_id": 2565
+        },
+        {
+          "logit": 15.75,
+          "token_id": 99829
+        },
+        {
+          "logit": 14.375,
+          "token_id": 1646
+        },
+        {
+          "logit": 14.3125,
+          "token_id": 376
+        },
+        {
+          "logit": 14.25,
+          "token_id": 465
+        },
+        {
+          "logit": 14.125,
+          "token_id": 65891
+        }
+      ],
+      "before_top": [
+        {
+          "logit": 32.0,
+          "token_id": 983
+        },
+        {
+          "logit": 18.375,
+          "token_id": 24634
+        },
+        {
+          "logit": 18.0,
+          "token_id": 777
+        },
+        {
+          "logit": 17.0,
+          "token_id": 5207
+        },
+        {
+          "logit": 16.5,
+          "token_id": 2565
+        },
+        {
+          "logit": 15.75,
+          "token_id": 99829
+        },
+        {
+          "logit": 14.375,
+          "token_id": 1646
+        },
+        {
+          "logit": 14.3125,
+          "token_id": 376
+        },
+        {
+          "logit": 14.25,
+          "token_id": 465
+        },
+        {
+          "logit": 13.9375,
+          "token_id": 3481
+        }
+      ],
+      "bias_map": {
+        "10548": -10.0,
+        "11190": -10.0,
+        "16141": -10.0,
+        "16246": -10.0,
+        "20205": -10.0,
+        "21806": -10.0,
+        "22043": -10.0,
+        "28715": -10.0,
+        "3830": -10.0,
+        "5542": -10.0,
+        "576": -10.0,
+        "65891": 3.0,
+        "785": -10.0,
+        "84795": 3.0
+      },
+      "event_index": 4369,
+      "hook": "epkv.v1.sample.sampler.logit_policy.v2.bias_map",
+      "logits_shape": [
+        1,
+        152064
+      ],
+      "policy_enabled": true,
+      "policy_file": "/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy.json",
+      "sampled_token_ids": [
+        983
+      ],
+      "tag": "internal-live-32e50df00bb011ebab90acde48001122",
+      "token_ids": [
+        84795,
+        65891,
+        28715,
+        20205,
+        785,
+        576,
+        11190,
+        10548,
+        3830,
+        5542,
+        22043,
+        16246,
+        16141,
+        21806
+      ],
+      "ts": "2026-05-23T00:02:47-0300"
+    },
+    {
+      "after_top": [
+        {
+          "logit": 23.125,
+          "token_id": 358
+        },
+        {
+          "logit": 22.375,
+          "token_id": 151645
+        },
+        {
+          "logit": 19.0,
+          "token_id": 16824
+        },
+        {
+          "logit": 14.0,
+          "token_id": 14429
+        },
+        {
+          "logit": 13.5625,
+          "token_id": 7946
+        },
+        {
+          "logit": 13.25,
+          "token_id": 145035
+        },
+        {
+          "logit": 12.6875,
+          "token_id": 315
+        },
+        {
+          "logit": 12.4375,
+          "token_id": 68700
+        },
+        {
+          "logit": 11.9375,
+          "token_id": 33483
+        },
+        {
+          "logit": 11.5,
+          "token_id": 7959
+        }
+      ],
+      "before_top": [
+        {
+          "logit": 23.125,
+          "token_id": 358
+        },
+        {
+          "logit": 22.375,
+          "token_id": 151645
+        },
+        {
+          "logit": 19.0,
+          "token_id": 16824
+        },
+        {
+          "logit": 14.0,
+          "token_id": 14429
+        },
+        {
+          "logit": 13.5625,
+          "token_id": 7946
+        },
+        {
+          "logit": 13.25,
+          "token_id": 145035
+        },
+        {
+          "logit": 12.6875,
+          "token_id": 315
+        },
+        {
+          "logit": 12.4375,
+          "token_id": 68700
+        },
+        {
+          "logit": 11.9375,
+          "token_id": 33483
+        },
+        {
+          "logit": 11.5,
+          "token_id": 7959
+        }
+      ],
+      "bias_map": {
+        "10548": -10.0,
+        "11190": -10.0,
+        "16141": -10.0,
+        "16246": -10.0,
+        "20205": -10.0,
+        "21806": -10.0,
+        "22043": -10.0,
+        "28715": -10.0,
+        "3830": -10.0,
+        "5542": -10.0,
+        "576": -10.0,
+        "65891": 3.0,
+        "785": -10.0,
+        "84795": 3.0
+      },
+      "event_index": 4370,
+      "hook": "epkv.v1.sample.sampler.logit_policy.v2.bias_map",
+      "logits_shape": [
+        1,
+        152064
+      ],
+      "policy_enabled": true,
+      "policy_file": "/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy.json",
+      "sampled_token_ids": [
+        358
+      ],
+      "tag": "internal-live-32e50df00bb011ebab90acde48001122",
+      "token_ids": [
+        84795,
+        65891,
+        28715,
+        20205,
+        785,
+        576,
+        11190,
+        10548,
+        3830,
+        5542,
+        22043,
+        16246,
+        16141,
+        21806
+      ],
+      "ts": "2026-05-23T00:02:47-0300"
+    },
+    {
+      "after_top": [
+        {
+          "logit": 26.25,
+          "token_id": 82176
+        },
+        {
+          "logit": 19.125,
+          "token_id": 151645
+        },
+        {
+          "logit": 16.375,
+          "token_id": 11
+        },
+        {
+          "logit": 15.625,
+          "token_id": 26356
+        },
+        {
+          "logit": 14.0625,
+          "token_id": 71859
+        },
+        {
+          "logit": 13.75,
+          "token_id": 315
+        },
+        {
+          "logit": 13.0625,
+          "token_id": 74519
+        },
+        {
+          "logit": 12.4375,
+          "token_id": 20600
+        },
+        {
+          "logit": 11.8125,
+          "token_id": 95551
+        },
+        {
+          "logit": 11.75,
+          "token_id": 36922
+        }
+      ],
+      "before_top": [
+        {
+          "logit": 26.25,
+          "token_id": 82176
+        },
+        {
+          "logit": 19.125,
+          "token_id": 151645
+        },
+        {
+          "logit": 16.375,
+          "token_id": 11
+        },
+        {
+          "logit": 15.625,
+          "token_id": 26356
+        },
+        {
+          "logit": 14.0625,
+          "token_id": 71859
+        },
+        {
+          "logit": 13.75,
+          "token_id": 315
+        },
+        {
+          "logit": 13.0625,
+          "token_id": 74519
+        },
+        {
+          "logit": 12.4375,
+          "token_id": 20600
+        },
+        {
+          "logit": 11.8125,
+          "token_id": 95551
+        },
+        {
+          "logit": 11.75,
+          "token_id": 36922
+        }
+      ],
+      "bias_map": {
+        "10548": -10.0,
+        "11190": -10.0,
+        "16141": -10.0,
+        "16246": -10.0,
+        "20205": -10.0,
+        "21806": -10.0,
+        "22043": -10.0,
+        "28715": -10.0,
+        "3830": -10.0,
+        "5542": -10.0,
+        "576": -10.0,
+        "65891": 3.0,
+        "785": -10.0,
+        "84795": 3.0
+      },
+      "event_index": 4371,
+      "hook": "epkv.v1.sample.sampler.logit_policy.v2.bias_map",
+      "logits_shape": [
+        1,
+        152064
+      ],
+      "policy_enabled": true,
+      "policy_file": "/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy.json",
+      "sampled_token_ids": [
+        82176
+      ],
+      "tag": "internal-live-32e50df00bb011ebab90acde48001122",
+      "token_ids": [
+        84795,
+        65891,
+        28715,
+        20205,
+        785,
+        576,
+        11190,
+        10548,
+        3830,
+        5542,
+        22043,
+        16246,
+        16141,
+        21806
+      ],
+      "ts": "2026-05-23T00:02:47-0300"
+    },
+    {
+      "after_top": [
+        {
+          "logit": 34.5,
+          "token_id": 2010
+        },
+        {
+          "logit": 22.625,
+          "token_id": 642
+        },
+        {
+          "logit": 20.375,
+          "token_id": 783
+        },
+        {
+          "logit": 19.625,
+          "token_id": 97852
+        },
+        {
+          "logit": 19.0,
+          "token_id": 20712
+        },
+        {
+          "logit": 18.0,
+          "token_id": 17454
+        },
+        {
+          "logit": 17.75,
+          "token_id": 1503
+        },
+        {
+          "logit": 17.25,
+          "token_id": 301
+        },
+        {
+          "logit": 17.25,
+          "token_id": 3818
+        },
+        {
+          "logit": 16.875,
+          "token_id": 490
+        }
+      ],
+      "before_top": [
+        {
+          "logit": 34.5,
+          "token_id": 2010
+        },
+        {
+          "logit": 22.625,
+          "token_id": 642
+        },
+        {
+          "logit": 20.375,
+          "token_id": 783
+        },
+        {
+          "logit": 19.625,
+          "token_id": 97852
+        },
+        {
+          "logit": 19.0,
+          "token_id": 20712
+        },
+        {
+          "logit": 18.0,
+          "token_id": 17454
+        },
+        {
+          "logit": 17.75,
+          "token_id": 1503
+        },
+        {
+          "logit": 17.25,
+          "token_id": 301
+        },
+        {
+          "logit": 17.25,
+          "token_id": 3818
+        },
+        {
+          "logit": 16.875,
+          "token_id": 490
+        }
+      ],
+      "bias_map": {
+        "10548": -10.0,
+        "11190": -10.0,
+        "16141": -10.0,
+        "16246": -10.0,
+        "20205": -10.0,
+        "21806": -10.0,
+        "22043": -10.0,
+        "28715": -10.0,
+        "3830": -10.0,
+        "5542": -10.0,
+        "576": -10.0,
+        "65891": 3.0,
+        "785": -10.0,
+        "84795": 3.0
+      },
+      "event_index": 4372,
+      "hook": "epkv.v1.sample.sampler.logit_policy.v2.bias_map",
+      "logits_shape": [
+        1,
+        152064
+      ],
+      "policy_enabled": true,
+      "policy_file": "/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy.json",
+      "sampled_token_ids": [
+        2010
+      ],
+      "tag": "internal-live-32e50df00bb011ebab90acde48001122",
+      "token_ids": [
+        84795,
+        65891,
+        28715,
+        20205,
+        785,
+        576,
+        11190,
+        10548,
+        3830,
+        5542,
+        22043,
+        16246,
+        16141,
+        21806
+      ],
+      "ts": "2026-05-23T00:02:47-0300"
+    },
+    {
+      "after_top": [
+        {
+          "logit": 29.625,
+          "token_id": 34538
+        },
+        {
+          "logit": 19.625,
+          "token_id": 1419
+        },
+        {
+          "logit": 18.75,
+          "token_id": 46216
+        },
+        {
+          "logit": 18.0,
+          "token_id": 55877
+        },
+        {
+          "logit": 16.875,
+          "token_id": 20652
+        },
+        {
+          "logit": 16.5,
+          "token_id": 14049
+        },
+        {
+          "logit": 16.5,
+          "token_id": 47019
+        },
+        {
+          "logit": 14.9375,
+          "token_id": 65919
+        },
+        {
+          "logit": 14.6875,
+          "token_id": 65
+        },
+        {
+          "logit": 14.625,
+          "token_id": 41158
+        }
+      ],
+      "before_top": [
+        {
+          "logit": 29.625,
+          "token_id": 34538
+        },
+        {
+          "logit": 19.625,
+          "token_id": 1419
+        },
+        {
+          "logit": 18.75,
+          "token_id": 46216
+        },
+        {
+          "logit": 18.0,
+          "token_id": 55877
+        },
+        {
+          "logit": 16.875,
+          "token_id": 20652
+        },
+        {
+          "logit": 16.5,
+          "token_id": 14049
+        },
+        {
+          "logit": 16.5,
+          "token_id": 47019
+        },
+        {
+          "logit": 14.9375,
+          "token_id": 65919
+        },
+        {
+          "logit": 14.6875,
+          "token_id": 65
+        },
+        {
+          "logit": 14.625,
+          "token_id": 41158
+        }
+      ],
+      "bias_map": {
+        "10548": -10.0,
+        "11190": -10.0,
+        "16141": -10.0,
+        "16246": -10.0,
+        "20205": -10.0,
+        "21806": -10.0,
+        "22043": -10.0,
+        "28715": -10.0,
+        "3830": -10.0,
+        "5542": -10.0,
+        "576": -10.0,
+        "65891": 3.0,
+        "785": -10.0,
+        "84795": 3.0
+      },
+      "event_index": 4373,
+      "hook": "epkv.v1.sample.sampler.logit_policy.v2.bias_map",
+      "logits_shape": [
+        1,
+        152064
+      ],
+      "policy_enabled": true,
+      "policy_file": "/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy.json",
+      "sampled_token_ids": [
+        34538
+      ],
+      "tag": "internal-live-32e50df00bb011ebab90acde48001122",
+      "token_ids": [
+        84795,
+        65891,
+        28715,
+        20205,
+        785,
+        576,
+        11190,
+        10548,
+        3830,
+        5542,
+        22043,
+        16246,
+        16141,
+        21806
+      ],
+      "ts": "2026-05-23T00:02:47-0300"
+    },
+    {
+      "after_top": [
+        {
+          "logit": 27.125,
+          "token_id": 151645
+        },
+        {
+          "logit": 12.25,
+          "token_id": 151657
+        },
+        {
+          "logit": 11.5625,
+          "token_id": 151644
+        },
+        {
+          "logit": 10.375,
+          "token_id": 476
+        },
+        {
+          "logit": 8.875,
+          "token_id": 113132
+        },
+        {
+          "logit": 8.8125,
+          "token_id": 57191
+        },
+        {
+          "logit": 8.5,
+          "token_id": 51663
+        },
+        {
+          "logit": 8.5,
+          "token_id": 14827
+        },
+        {
+          "logit": 8.5,
+          "token_id": 127860
+        },
+        {
+          "logit": 8.4375,
+          "token_id": 52313
+        }
+      ],
+      "before_top": [
+        {
+          "logit": 27.125,
+          "token_id": 151645
+        },
+        {
+          "logit": 12.25,
+          "token_id": 151657
+        },
+        {
+          "logit": 11.5625,
+          "token_id": 151644
+        },
+        {
+          "logit": 10.375,
+          "token_id": 476
+        },
+        {
+          "logit": 8.875,
+          "token_id": 113132
+        },
+        {
+          "logit": 8.8125,
+          "token_id": 57191
+        },
+        {
+          "logit": 8.5,
+          "token_id": 51663
+        },
+        {
+          "logit": 8.5,
+          "token_id": 14827
+        },
+        {
+          "logit": 8.5,
+          "token_id": 127860
+        },
+        {
+          "logit": 8.4375,
+          "token_id": 52313
+        }
+      ],
+      "bias_map": {
+        "10548": -10.0,
+        "11190": -10.0,
+        "16141": -10.0,
+        "16246": -10.0,
+        "20205": -10.0,
+        "21806": -10.0,
+        "22043": -10.0,
+        "28715": -10.0,
+        "3830": -10.0,
+        "5542": -10.0,
+        "576": -10.0,
+        "65891": 3.0,
+        "785": -10.0,
+        "84795": 3.0
+      },
+      "event_index": 4374,
+      "hook": "epkv.v1.sample.sampler.logit_policy.v2.bias_map",
+      "logits_shape": [
+        1,
+        152064
+      ],
+      "policy_enabled": true,
+      "policy_file": "/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy.json",
+      "sampled_token_ids": [
+        151645
+      ],
+      "tag": "internal-live-32e50df00bb011ebab90acde48001122",
+      "token_ids": [
+        84795,
+        65891,
+        28715,
+        20205,
+        785,
+        576,
+        11190,
+        10548,
+        3830,
+        5542,
+        22043,
+        16246,
+        16141,
+        21806
+      ],
+      "ts": "2026-05-23T00:02:47-0300"
+    },
+    {
+      "after_top": [
+        {
+          "logit": 32.75,
+          "token_id": 198
+        },
+        {
+          "logit": 20.875,
+          "token_id": 151643
+        },
+        {
+          "logit": 20.0,
+          "token_id": 319
+        },
+        {
+          "logit": 18.75,
+          "token_id": 715
+        },
+        {
+          "logit": 13.9375,
+          "token_id": 1699
+        },
+        {
+          "logit": 13.25,
+          "token_id": 3989
+        },
+        {
+          "logit": 12.5625,
+          "token_id": 2303
+        },
+        {
+          "logit": 12.375,
+          "token_id": 1248
+        },
+        {
+          "logit": 11.875,
+          "token_id": 13744
+        },
+        {
+          "logit": 11.75,
+          "token_id": 93108
+        }
+      ],
+      "before_top": [
+        {
+          "logit": 32.75,
+          "token_id": 198
+        },
+        {
+          "logit": 20.875,
+          "token_id": 151643
+        },
+        {
+          "logit": 20.0,
+          "token_id": 319
+        },
+        {
+          "logit": 18.75,
+          "token_id": 715
+        },
+        {
+          "logit": 13.9375,
+          "token_id": 1699
+        },
+        {
+          "logit": 13.25,
+          "token_id": 3989
+        },
+        {
+          "logit": 12.5625,
+          "token_id": 2303
+        },
+        {
+          "logit": 12.375,
+          "token_id": 1248
+        },
+        {
+          "logit": 11.875,
+          "token_id": 13744
+        },
+        {
+          "logit": 11.75,
+          "token_id": 93108
+        }
+      ],
+      "bias_map": {
+        "10548": -10.0,
+        "11190": -10.0,
+        "16141": -10.0,
+        "16246": -10.0,
+        "20205": -10.0,
+        "21806": -10.0,
+        "22043": -10.0,
+        "28715": -10.0,
+        "3830": -10.0,
+        "5542": -10.0,
+        "576": -10.0,
+        "65891": 3.0,
+        "785": -10.0,
+        "84795": 3.0
+      },
+      "event_index": 4375,
+      "hook": "epkv.v1.sample.sampler.logit_policy.v2.bias_map",
+      "logits_shape": [
+        1,
+        152064
+      ],
+      "policy_enabled": true,
+      "policy_file": "/home/felipe/vllm-lab/evidence-paged-kv-runtime/logit-policy.json",
+      "sampled_token_ids": [
+        198
+      ],
+      "tag": "internal-live-32e50df00bb011ebab90acde48001122",
+      "token_ids": [
+        84795,
+        65891,
+        28715,
+        20205,
+        785,
+        576,
+        11190,
+        10548,
+        3830,
+        5542,
+        22043,
+        16246,
+        16141,
+        21806
+      ],
+      "ts": "2026-05-23T00:02:47-0300"
+    }
+  ],
+  "hook_event_count": 8,
+  "restore_error": null
+}

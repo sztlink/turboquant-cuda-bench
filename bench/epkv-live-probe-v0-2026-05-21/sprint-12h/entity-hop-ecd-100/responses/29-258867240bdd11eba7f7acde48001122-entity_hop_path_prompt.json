@@ -1,0 +1,48 @@
+{
+  "qid": "258867240bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Winnipeg, Manitoba",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Douglas Leiterman -> United Nations\n- Douglas Leiterman -> Seven Days\n- Hugh Douglas, Earl of Ormonde -> James Douglas, 9th Earl of Douglas\n- John Stewart of Bonkyll -> Alexander Stewart, 4th High Steward of Scotland\n- John Stewart of Bonkyll -> Alexander Stewart, 4th High Steward of Scotland\n- Margaret Douglas, Fair Maid of Galloway -> John Stewart, 1st Earl of Atholl\n- Margaret Douglas, Fair Maid of Galloway -> Margaret Douglas\n- James Douglas, 1st Lord Dalkeith -> Archibald I, Lord of Douglas\nPassages:\nP1: Douglas Leiterman: Douglas Leiterman (1927 – 19 December 2012) was a Canadian television producer. He was born in 1927 in South Porcupine, Ontario. During the early 1950s, he attended the University of British Columbia for a Bachelor of Arts degree, while also working as a \"Vancouver Province\" reporter. He had a brother, cinematographer Richard Leiterman, and a sister, Elaine Campbell, who was married to producer Norman Campbell. His sister Phyllis, a teacher and poet, was married to acclaimed ...\nP2: James Douglas, 9th Earl of Douglas: James Douglas, 9th Earl of Douglas, 3rd Earl of Avondale KG( 1426–1488) was a Scottish nobleman, last of the' Black' earls of Douglas.\nP3: Archibald I, Lord of Douglas: Archibald of Douglas( before 1198 – d.c. 1238) was a Scottish Nobleman. He was the son of William of Douglas.\nP4: Margaret Douglas: Margaret Douglas, Countess of Lennox( 7 October 1515 – 7 March 1578), was the daughter of the Scottish queen dowager Margaret Tudor and her second husband Archibald Douglas, 6th Earl of Angus. In her youth she was high in the favour of her uncle, Henry VIII of England, but twice incurred the King's anger, first for her unauthorised engagement to Lord Thomas Howard, who died in the Tower of London in 1537 because of his misalliance with her, and again in 1540 for an affair with ...\nP5: Alexander Stewart, 4th High Steward of Scotland: Alexander Stewart (died 1283), also known as Alexander of Dundonald, was 4th hereditary High Steward of Scotland from his father's death in 1246. A son of Walter Stewart, 3rd High Steward of Scotland by his wife Bethóc, daughter of Gille Críst, Earl of Angus , Alexander is said to have accompanied Louis IX of France on the Seventh Crusade (1248–1254). In 1255 he was one of the councillors of King Alexander III, though under age. He was the ...\nP6: John Stewart, 1st Earl of Atholl: John Stewart, 1st Earl of Atholl( c. 144015 September 1512), also known as Sir John Stewart of Balveny, was a Scottish nobleman and ambassador.\nP7: United Nations: The United Nations (UN), is an intergovernmental organization responsible for maintaining international peace and security, developing friendly relations among nations, achieving international cooperation, and being a center for harmonizing the actions of nations. It is the largest, most familiar, most internationally represented and most powerful intergovernmental organization in the world. The UN is headquartered on international territory in New York City; other main offices ...\nP8: Seven Days: Seven Days or 7 Days may refer to:\nP9: James Douglas, Earl of Angus: James Douglas, Earl of Angus (1671 – 3 August 1692) was a Scottish nobleman and soldier. He was born at Douglas Castle, Douglas, South Lanarkshire. The son of James Douglas, 2nd Marquess of Douglas and his first wife Lady Barbara Erskine, eldest daughter of John Erskine, 20th Earl of Mar.\nP10: Hugh Douglas, Earl of Ormonde: Hugh Douglas, Earl of Ormonde( died 1455) was a Scottish Soldier and nobleman, a member of the powerful Black Douglases. He was the fourth son of James the Gross, 7th Earl of Douglas and his wife Beatrice, daughter of Henry II Sinclair, Earl of Orkney. He was a younger brother of William Douglas, 8th Earl of Douglas, James Douglas, 9th Earl of Douglas, Archibald Douglas, Earl of Moray and older to John Douglas, Lord of Balvenie.\nQuestion: Where was the wife of Douglas Leiterman born?\nFinal answer:",
+  "output": "South Porcupine, Ontario",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a55707cb9b5590dc",
+    "object": "chat.completion",
+    "created": 1779505347,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "South Porcupine, Ontario",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1130,
+      "total_tokens": 1137,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

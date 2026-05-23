@@ -1,0 +1,59 @@
+{
+  "qid": "e41c14820bd911eba7f7acde48001122",
+  "gold": "Cahiers du cinéma",
+  "prompt": "You are a strict graph/path extractor for multi-hop QA.\nUse ONLY the passages. The candidate graph is heuristic and may contain distractors.\nFind the minimal supported chain. If not enough information, status MISSING.\nReturn ONLY valid JSON, no markdown.\n{\"status\":\"FOUND|MISSING\",\"final_answer\":\"answer string or UNKNOWN\",\"chain\":[\"A -- relation --> B\"],\"evidence_passages\":[\"P1\"],\"reason\":\"short\"}\nCandidate graph:\n- Man at Bath -> Christophe Honoré\n- Man at Bath -> L.A. Zombie\n- The Hourglass Sanatorium -> Story\n- The Hourglass Sanatorium -> The Jury\n- Majority (film) -> Hürriyet Daily News\n- Majority (film) -> Hürriyet\n- Don Foster, Baron Foster of Bath -> House of Lords\n- Mikhail Schweitzer -> Sergei Eisenstein\n- Mikhail Schweitzer -> Mikhail Romm\n- Mikhail Schweitzer -> Sergei Eisenstein\n- Mikhail Schweitzer -> Mikhail Romm\nPassages:\nP1: Man at Bath: Man at Bath  is a 2010 French film by Christophe Honoré starring François Sagat and Chiara Mastroianni. The film premiered in competition at Locarno International Film Festival in Switzerland in 2010 and was released in cinemas on 22 September 2010. This is gay pornographic actor François Sagat's second major role in general release non-pornographic film as Emmanuel after his role in \"L.A. Zombie\". Director Christopher Honoré told French gay website Yagg.com that he was interested ...\nP2: House of Lords: The House of Lords, also known as the House of Peers and domestically usually referred to simply as the Lords, is the upper house of the Parliament of the United Kingdom. Membership is granted by appointment or else by heredity or official function. Like the House of Commons, it meets in the Palace of Westminster. Officially, the full name of the house is the Right Honourable the Lords Spiritual and Temporal of the United Kingdom of Great Britain and Northern Ireland in ...\nP3: The Jury: The Jury may refer to:\nP4: Christophe Honoré: Christophe Honoré (born 10 April 1970) is a French writer and film director. Honoré was born in Carhaix, Finistère. After moving to Paris in 1995, he wrote articles in \"Les Cahiers du Cinéma\". He started writing soon after. His 1996 book \"Tout contre LéoClose to Leo\") talks about HIV and is aimed at young adults; he made it into a film in 2002. He wrote other books for young adults throughout the late 1990s. His first play, \"Les Débutantes\", was performed at Avignon's Off ...\nP5: Sergei Eisenstein: Sergei Mikhailovich Eisenstein (tr. ; 11 February 1948) was a Soviet film director and film theorist, a pioneer in the theory and practice of montage. He is noted in particular for his silent films \"Strike\" (1925), \"Battleship Potemkin\" (1925) and  (1928), as well as the historical epics \"Alexander Nevsky\" (1938) and \"Ivan the Terrible\" (1944, 1958). In its 2019 decennial poll, the magazine \"Sight & Sound\" named his \"Battleship Potemkin\" the 11th greatest movie of all time.\nP6: L.A. Zombie: L.A. Zombie is a 2010 gay pornographic zombie horror film written and directed by Bruce LaBruce. It premiered in competition at Locarno International Film Festival in Switzerland in 2010. The film exists in two versions, a 63- minute cut version showcased at various festivals and theatres and a 103- minute directors cut DVD release containing hardcore gay pornography not seen in the cut version.\nP7: Hürriyet: Hürriyet (\"Liberty\") is one of the major Turkish newspapers, founded in 1948. , it had the highest circulation of any newspaper in Turkey at around 319,000. \" Hürriyet\" has a mainstream, liberal and conservative outlook. \" Hürriyet\"s editorial line may be considered middle-market, combining entertainment value with comprehensive news coverage and a strong cadre of columnists. \"Hürriyet\" has regional offices in Istanbul, Ankara, Izmir, Adana, Antalya and Trabzon, as well as a news ...\nP8: Mikhail Romm: Mikhail Ilych Romm( – 1 November 1971) was a Soviet film director.\nP9: Hürriyet Daily News: The Hürriyet Daily News, formerly Hürriyet Daily News and Economic Review and Turkish Daily News, is the oldest current English-language daily in Turkey, founded in 1961. The paper was bought by the Doğan Media Group in 2001 and has been under the media group's flagship \"Hürriyet\" from 2006; both papers were sold to Demirören Holdings in 2018.\nP10: Story: Story or stories, may refer to:\nQuestion: Where does the director of film Man At Bath work at?",
+  "output": "{\"status\":\"FOUND\",\"final_answer\":\"Yagg.com\",\"chain\":[\"Man at Bath -- directed_by --> Christophe Honoré\",\"Christophe Honoré -- told_website --> Yagg.com\"]}",
+  "extract": {
+    "status": "FOUND",
+    "final_answer": "Yagg.com",
+    "chain": [
+      "Man at Bath -- directed_by --> Christophe Honoré",
+      "Christophe Honoré -- told_website --> Yagg.com"
+    ]
+  },
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Yagg.com",
+    "latency_sec": 0.7706677913665771,
+    "status": "FOUND",
+    "candidate": "Yagg.com"
+  },
+  "response": {
+    "id": "chatcmpl-91a91c2fc4ecca11",
+    "object": "chat.completion",
+    "created": 1779505314,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"status\":\"FOUND\",\"final_answer\":\"Yagg.com\",\"chain\":[\"Man at Bath -- directed_by --> Christophe Honoré\",\"Christophe Honoré -- told_website --> Yagg.com\"]}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1178,
+      "total_tokens": 1217,
+      "completion_tokens": 39,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}
