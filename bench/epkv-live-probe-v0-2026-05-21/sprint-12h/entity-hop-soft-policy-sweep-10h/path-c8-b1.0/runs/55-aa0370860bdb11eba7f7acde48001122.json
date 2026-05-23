@@ -1,0 +1,71 @@
+{
+  "idx": 55,
+  "qid": "aa0370860bdb11eba7f7acde48001122",
+  "gold": "Naha, Okinawa",
+  "candidates": [
+    "Naha, Okinawa, Japan",
+    "Heaven (Namie Amuro song)",
+    "Place of birth",
+    "Namie Amuro",
+    "Place of origin",
+    "The Mess",
+    "The Will",
+    "The Singer"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.8,
+    "output": "Naha, Okinawa, Japan"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Namie Amuro"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.8,
+    "output": "Naha, Okinawa, Japan"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c8-b1.0/policies/55-aa0370860bdb11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-9b9611e4baada6d3",
+    "object": "chat.completion",
+    "created": 1779508745,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Naha, Okinawa, Japan",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1046,
+      "total_tokens": 1055,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

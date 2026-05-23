@@ -1,0 +1,71 @@
+{
+  "idx": 3,
+  "qid": "f9dcb4a60bda11eba7f7acde48001122",
+  "gold": "Missoula, Montana",
+  "candidates": [
+    "Ronnie Rocket",
+    "Rocket to the Moon",
+    "The Feature",
+    "The Intended",
+    "The Rock",
+    "Barry Mahon",
+    "Wilhelm von Opel",
+    "Orson Desaix Munn"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "The question is about the director of the film \"Ronnie Rocket,\" but the passages do not provide information about the birth"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "David Lynch was the director of the film Ronnie Rocket, and the passage does not state his birthplace. Therefore, the question cannot be answered based on the given"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "The question cannot be answered with the given passages and candidate entity graph. There is no information provided about the birthplace of"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c8-b2.0/policies/3-f9dcb4a60bda11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-99b79563fb0e1fb4",
+    "object": "chat.completion",
+    "created": 1779510437,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "The question cannot be answered with the given passages and candidate entity graph. There is no information provided about the birthplace of",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 833,
+      "total_tokens": 857,
+      "completion_tokens": 24,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

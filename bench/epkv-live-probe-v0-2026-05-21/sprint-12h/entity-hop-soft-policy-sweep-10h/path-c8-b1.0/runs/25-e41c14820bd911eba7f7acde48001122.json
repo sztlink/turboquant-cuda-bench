@@ -1,0 +1,71 @@
+{
+  "idx": 25,
+  "qid": "e41c14820bd911eba7f7acde48001122",
+  "gold": "Cahiers du cinéma",
+  "candidates": [
+    "House of Lords",
+    "Man at Bath",
+    "The Feature",
+    "The Jury",
+    "Christophe Honoré",
+    "Sergei Eisenstein",
+    "L.A. Zombie",
+    "Hürriyet"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "House of Lords"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Bath Academy of Media Makeup"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Palace of Westminster"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c8-b1.0/policies/25-e41c14820bd911eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-add8f3889844154e",
+    "object": "chat.completion",
+    "created": 1779508709,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Palace of Westminster",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1259,
+      "total_tokens": 1264,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

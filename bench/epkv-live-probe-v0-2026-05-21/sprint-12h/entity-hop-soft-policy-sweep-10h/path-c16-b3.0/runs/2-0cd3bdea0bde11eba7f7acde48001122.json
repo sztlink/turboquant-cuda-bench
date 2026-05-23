@@ -1,0 +1,79 @@
+{
+  "idx": 2,
+  "qid": "0cd3bdea0bde11eba7f7acde48001122",
+  "gold": "Myanmar Motion Picture Academy Awards",
+  "candidates": [
+    "Myanmar Motion Picture Academy Awards",
+    "Wearing Velvet Slippers under a Golden Umbrella",
+    "The Feature",
+    "The Way We Were",
+    "The Jury",
+    "The Singer",
+    "Rust and Bone",
+    "Lou Reed",
+    "Comedy",
+    "Michel Audiard",
+    "Wunna",
+    "Part",
+    "Danny Boyle",
+    "Launch",
+    "The Umbrella Coup",
+    "Gérard Oury"
+  ],
+  "path_prompt": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "Myanmar Motion Picture Academy Awards"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Maung Wunna won the Golden Rooster Award for Best Directorial Debut with \"Wearing Velvet Slippers Under A Golden Umbrella\"."
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.8000000000000002,
+    "output": "Myanmar Motion Picture Academy Awards-winning"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c16-b3.0/policies/2-0cd3bdea0bde11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-9630f09ef3440f07",
+    "object": "chat.completion",
+    "created": 1779510133,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Myanmar Motion Picture Academy Awards-winning",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1086,
+      "total_tokens": 1094,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

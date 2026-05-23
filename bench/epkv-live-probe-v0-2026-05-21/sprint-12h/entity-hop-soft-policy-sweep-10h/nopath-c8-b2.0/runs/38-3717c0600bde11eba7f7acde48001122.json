@@ -1,0 +1,71 @@
+{
+  "idx": 38,
+  "qid": "3717c0600bde11eba7f7acde48001122",
+  "gold": "Meran",
+  "candidates": [
+    "Prince Gustav of Thurn and Taxis",
+    "Prince Max Emanuel of Thurn and Taxis",
+    "Princess Mathilde Sophie of Oettingen-Oettingen and Oettingen-Spielberg",
+    "Archduchess Margarethe Klementine of Austria",
+    "The General",
+    "Prince Gustav of Thurn and Taxis (1848–1914)",
+    "Prince Victor of Thurn and Taxis",
+    "Prince Gabriel of Thurn and Taxis"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.2857142857142857,
+    "output": "Obermais, Meran, County of Tyrol, Austria–Hungary"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Princess Mathilde Sophie of Oettingen-Oettingen and Oettingen-Spielberg"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.2857142857142857,
+    "output": "Obermais, Meran, County of Tyrol, Austria–Hungary"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c8-b2.0/policies/38-3717c0600bde11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-96d6ddf679fd5606",
+    "object": "chat.completion",
+    "created": 1779510479,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Obermais, Meran, County of Tyrol, Austria–Hungary",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1404,
+      "total_tokens": 1422,
+      "completion_tokens": 18,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

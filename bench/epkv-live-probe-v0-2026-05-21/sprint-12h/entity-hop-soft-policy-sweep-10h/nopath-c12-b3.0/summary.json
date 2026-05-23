@@ -1,0 +1,3864 @@
+{
+  "schema": "epkv.entity_hop_soft_policy.v0",
+  "elapsed_sec": 132.32819843292236,
+  "total": 100,
+  "source_summary": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-llm-100/summary.json",
+  "macro": {
+    "bge_ref": {
+      "em": 0.09,
+      "contains": 0.16,
+      "f1": 0.18503174603174602
+    },
+    "path_prompt": {
+      "em": 0.25,
+      "contains": 0.34,
+      "f1": 0.3295238095238095
+    },
+    "soft_policy": {
+      "em": 0.18,
+      "contains": 0.27,
+      "f1": 0.27260317460317457
+    }
+  },
+  "wins_losses": {
+    "soft_wins_vs_path": 2,
+    "soft_losses_vs_path": 9,
+    "soft_wins_vs_bge": 13,
+    "soft_losses_vs_bge": 4
+  },
+  "rows": [
+    {
+      "idx": 0,
+      "qid": "8813f87c0bdd11eba7f7acde48001122",
+      "gold": "Małgorzata Braunek",
+      "candidates": [
+        "Polish-Russian War (film)",
+        "The Rock",
+        "Roman Polanski",
+        "Xawery Żuławski",
+        "Władysław Pasikowski",
+        "Renny Harlin",
+        "Carl Gustaf Creutz",
+        "Story",
+        "The House of the Sun (film)",
+        "Aleksander Ford",
+        "Demons of War",
+        "5 Days of War"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Małgorzata Braunek"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Dorota Masłowska"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Małgorzata Braunek"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/0-8813f87c0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 1,
+      "qid": "e2a3bf2a0bdd11eba7f7acde48001122",
+      "gold": "12 June 1516",
+      "candidates": [
+        "Ernest I, Prince of Anhalt-Dessau",
+        "John VII, Count of Oldenburg",
+        "John V, Prince of Anhalt-Zerbst",
+        "John VI, Prince of Anhalt-Zerbst",
+        "John Augustus, Prince of Anhalt-Zerbst",
+        "Karl I, Prince of Anhalt-Zerbst",
+        "Bernhard VII, Prince of Anhalt-Zerbst",
+        "John",
+        "Prince Of Anhalt-Zerbst's"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "12 June 1516"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passage does not provide the death year of John V's father, Ernest I, Prince of Anhalt-Dessau."
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "12 June 1516"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/1-e2a3bf2a0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 2,
+      "qid": "0cd3bdea0bde11eba7f7acde48001122",
+      "gold": "Myanmar Motion Picture Academy Awards",
+      "candidates": [
+        "Wearing Velvet Slippers under a Golden Umbrella",
+        "The Feature",
+        "The Way We Were",
+        "The Jury",
+        "The Singer",
+        "Rust and Bone",
+        "Lou Reed",
+        "Comedy",
+        "Michel Audiard",
+        "Wunna",
+        "Part",
+        "Danny Boyle"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Myanmar Motion Picture Academy Awards"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Maung Wunna won the Golden Rooster Award for Best Directorial Debut with \"Wearing Velvet Slippers Under A Golden Umbrella\"."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8000000000000002,
+        "output": "Myanmar Motion Picture Academy Awards-winning"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/2-0cd3bdea0bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 3,
+      "qid": "f9dcb4a60bda11eba7f7acde48001122",
+      "gold": "Missoula, Montana",
+      "candidates": [
+        "Ronnie Rocket",
+        "Rocket to the Moon",
+        "The Feature",
+        "The Intended",
+        "The Rock",
+        "Barry Mahon",
+        "Wilhelm von Opel",
+        "Orson Desaix Munn",
+        "First Time",
+        "Story",
+        "The Rocket (2005 film)",
+        "Woman in the Moon"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question is about the director of the film \"Ronnie Rocket,\" but the passages do not provide information about the birth"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "David Lynch was the director of the film Ronnie Rocket, and the passage does not state his birthplace. Therefore, the question cannot be answered based on the given"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question cannot be answered with the given passages and candidate entity graph. There is no information provided about the birthplace of"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/3-f9dcb4a60bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 4,
+      "qid": "8981e1ce0bb011ebab90acde48001122",
+      "gold": "Charles Armand René de La Trémoille",
+      "candidates": [
+        "Charles Belgique Hollande de La Trémoille",
+        "Charles Bretagne Marie de La Trémoille",
+        "Charles Louis Bretagne de La Trémoille",
+        "Jean Bretagne Charles de La Trémoille",
+        "Louis Charles Marie de La Trémoille",
+        "Charles Armand René de La Trémoille",
+        "Louis Charles de La Trémoille",
+        "Charles Bretagne Marie De La Trémoille's"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Charles Armand René de La Trémoille"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.6,
+        "output": "Henry de La Trémoille"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.6666666666666666,
+        "output": "Charles Louis Bretagne de La Trémoille"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/4-8981e1ce0bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 5,
+      "qid": "019bed300bde11eba7f7acde48001122",
+      "gold": "Galați",
+      "candidates": [
+        "Ștefan I. Nenițescu",
+        "Engelbert I, Count of the Mark",
+        "The Child",
+        "Them",
+        "Revenge",
+        "Eberhard I, Count of the Mark",
+        "Where I Was From",
+        "Ioan S. Nenițescu",
+        "The Question (Emery album)",
+        "Petru Rareș",
+        "I. Nenițescu"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Galați"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Bucharest"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Bucharest"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/5-019bed300bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 6,
+      "qid": "2ec440560bb011ebab90acde48001122",
+      "gold": "Ptolemy IX Lathyros",
+      "candidates": [
+        "Antiochus X Eusebes",
+        "Antiochus VII Sidetes",
+        "The Wanted",
+        "Afterwards",
+        "Revenge",
+        "Cleopatra",
+        "Kings",
+        "Laodice of the Sameans",
+        "Antiochus III of Commagene",
+        "Antiochus IX Cyzicenus",
+        "Philip I Philadelphus",
+        "Seleucus VI Epiphanes"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Antiochus IX Cyzicenus"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Antiochus IX Cyzicenus"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Antiochus IX Cyzicenus"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/6-2ec440560bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 7,
+      "qid": "464cfa460bd911eba7f7acde48001122",
+      "gold": "Brooklyn",
+      "candidates": [
+        "Thomas Jefferson (film)",
+        "Thomas Jefferson",
+        "Born American",
+        "The Singer",
+        "Alice Nakamura",
+        "John Adams",
+        "Ken Burns",
+        "Andrew Jackson",
+        "Quarters",
+        "Guy Orcutt",
+        "Sally Hemings",
+        "Thomas Jefferson Kaye"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Kenneth Lauren Burns was born in 1953."
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The director of the film \"Thomas Jefferson\" (1997) is Ken Burns, and the passage does not provide information about his birthplace."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Ken Burns was born in 1953."
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/7-464cfa460bd911eba7f7acde48001122.json"
+    },
+    {
+      "idx": 8,
+      "qid": "c05e16a40bdd11eba7f7acde48001122",
+      "gold": "stroke",
+      "candidates": [
+        "Grand Duke Vladimir Alexandrovich of Russia",
+        "Grand Duchess Maria Alexandrovna of Russia",
+        "Queen Victoria",
+        "PAST",
+        "Grand Duke Kirill Vladimirovich of Russia",
+        "Grand Duke Vyacheslav Konstantinovich of Russia",
+        "Grand Duchess Kira Kirillovna of Russia",
+        "Princess Victoria Melita of Saxe-Coburg and Gotha",
+        "Prince Karl Emich of Leiningen",
+        "Andreas, Prince of Leiningen",
+        "Prince Karl of Leiningen",
+        "Why"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.1111111111111111,
+        "output": "Victoria Melita of Saxe-Coburg and Gotha died after suffering a stroke while visiting her daughter Maria in Amorbach."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/8-c05e16a40bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 9,
+      "qid": "2935f1640bda11eba7f7acde48001122",
+      "gold": "Nice",
+      "candidates": [
+        "Beat Girl",
+        "Place of origin",
+        "The Feature",
+        "The Will",
+        "Gillian Hills",
+        "Cecil B. DeMille",
+        "Dorothy Arzner",
+        "Robert Wise",
+        "Edmond T. Gréville",
+        "A Girl with Guitar",
+        "Carnival Night",
+        "Jehovah-jireh"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Nice"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Westport, Connecticut"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Nice"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/9-2935f1640bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 10,
+      "qid": "dfe93efe0bdd11eba7f7acde48001122",
+      "gold": "1983",
+      "candidates": [
+        "The Singer",
+        "Fadil Hadžić",
+        "The Good Man",
+        "Franco Prosperi",
+        "The General",
+        "Finbar Furey",
+        "Jean Martin (singer)",
+        "Jean Martin (disambiguation)",
+        "Did a Good Man Die",
+        "Jean-Martin Petit",
+        "Meet Him and Die",
+        "Áine Furey"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "2004"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1987"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "2004"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/10-dfe93efe0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 11,
+      "qid": "2207e9060bda11eba7f7acde48001122",
+      "gold": "United States",
+      "candidates": [
+        "World and Time Enough",
+        "Champion of the World",
+        "Ghosts of Abu Ghraib",
+        "The Feature",
+        "Place of origin",
+        "The Dancer",
+        "The Will",
+        "Eric Mueller",
+        "Bobby Fischer",
+        "Atom Egoyan",
+        "Ekaterina Vaganova",
+        "Liz Garbus"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "American"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "American"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "American"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/11-2207e9060bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 12,
+      "qid": "2002bf0c0bb011ebab90acde48001122",
+      "gold": "Rupert",
+      "candidates": [
+        "Elisabeth of Nuremberg",
+        "Part",
+        "Catherine of Pomerania, Countess Palatine of Neumarkt",
+        "Countess Palatine Magdalene Catherine of Zweibrücken",
+        "Countess Palatine Dorothea Catherine of Birkenfeld-Bischweiler",
+        "John, Count Palatine of Neumarkt",
+        "Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler",
+        "Stephen, Count Palatine of Simmern-Zweibrücken",
+        "Catherine Of",
+        "Countess Palatine Of Neumarkt's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.5,
+        "output": "Rupert of Germany"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "John, Count Palatine of Neumarkt"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.5,
+        "output": "Rupert of Germany"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/12-2002bf0c0bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 13,
+      "qid": "c531e7560baf11ebab90acde48001122",
+      "gold": "Marie Leszczyńska",
+      "candidates": [
+        "Henry IV of France",
+        "Duchess Marie Elisabeth of Saxony",
+        "Joan II of Navarre",
+        "Philip III of Navarre",
+        "Princess Claude of Orléans",
+        "Margaret of Artois",
+        "Frederick VII, Margrave of Baden-Durlach",
+        "Queen Victoria",
+        "Marie of Évreux",
+        "Marie of Armagnac",
+        "Prince Robert, Count of La Marche",
+        "Princess Louise of Saxe-Gotha-Altenburg (1800–1831)"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Margaret of Artois"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Maria Josepha of Saxony"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Margaret of Artois"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/13-c531e7560baf11ebab90acde48001122.json"
+    },
+    {
+      "idx": 14,
+      "qid": "a9cc5f240bdb11eba7f7acde48001122",
+      "gold": "Catherine Robbe-Grillet",
+      "candidates": [
+        "Eden and After",
+        "Martha De Laurentiis",
+        "Alain Robbe-Grillet",
+        "Charles Calvert, 5th Baron Baltimore",
+        "Part",
+        "Spouse of the Prime Minister of Cambodia",
+        "Spouse of the Prime Minister of Singapore",
+        "Spouse of the Prime Minister of Malaysia",
+        "Eden (CDP), New York",
+        "Mary Sweeney",
+        "Caroline Eden",
+        "Eden And"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Martha De Laurentiis"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The information about the spouse of the director of film Eden And After is not provided in the given passages."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Martha De Laurentiis"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/14-a9cc5f240bdb11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 15,
+      "qid": "6ebe05740bde11eba7f7acde48001122",
+      "gold": "Hilandar",
+      "candidates": [
+        "Simon de Montfort, 6th Earl of Leicester",
+        "Guy de Montfort, Count of Nola",
+        "Stefan Nemanja",
+        "Flavia Maximiana Theodora",
+        "Constantius Chlorus",
+        "Tiberius",
+        "Anastasia of Serbia",
+        "Princess Helen of Serbia",
+        "Anastasia (sister of Constantine I)",
+        "Ino Anastasia",
+        "Anastasia de Montfort",
+        "Anastasia Of Serbia's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Serbia"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Sirmium"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Serbia"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/15-6ebe05740bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 16,
+      "qid": "7a1d9d7c0bb011ebab90acde48001122",
+      "gold": "Pompey",
+      "candidates": [
+        "Julius Caesar",
+        "The Child",
+        "Scipio Africanus",
+        "Elagabalus",
+        "Pompeia Magna",
+        "The Tender Years",
+        "The Hero",
+        "Paula",
+        "Cornelia (wife of Caesar)",
+        "Calpurnia (wife of Caesar)",
+        "Julia (daughter of Caesar)",
+        "Cornelia (mother of the Gracchi)"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Scribonia (wife of Crassus)"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.4,
+        "output": "Pompeius Magnus (\"Pompey the Great\")"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Paula"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/16-7a1d9d7c0bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 17,
+      "qid": "0bedb7e80bdc11eba7f7acde48001122",
+      "gold": "tuberculosis",
+      "candidates": [
+        "Katherine Mansfield",
+        "The General",
+        "The Rock",
+        "John Middleton Murry",
+        "John Middleton Murry Jr",
+        "John Middleton (architect)",
+        "John Middleton (footballer, born 1955)",
+        "Why Did It Have to Be Me",
+        "J. W. N. Sullivan",
+        "Anne Estelle Rice",
+        "Philip Mairet",
+        "Why"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.2857142857142857,
+        "output": "Katherine Mansfield died of extrapulmonary tuberculosis."
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passage does not provide information about John Middleton Murry's wife's death."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.2222222222222222,
+        "output": "Katherine Mansfield died of extrapulmonary tuberculosis in 1923."
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/17-0bedb7e80bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 18,
+      "qid": "1869092c0bb011ebab90acde48001122",
+      "gold": "Rukn al-Dawla",
+      "candidates": [
+        "Taj al-Dawla",
+        "Adud al-Dawla",
+        "Abu Kalijar",
+        "Them",
+        "An Event",
+        "First Time",
+        "Safiyy al-Dawla",
+        "Asfar ibn Kurduya",
+        "Ziyar ibn Shahrakuya",
+        "Diya al-Dawla",
+        "Taj"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "'Adud al-Dawla"
+      },
+      "bge_ref": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Rukn al-Dawla"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "Adud al-Dawla"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/18-1869092c0bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 19,
+      "qid": "c19b72520bdb11eba7f7acde48001122",
+      "gold": "Xi'an",
+      "candidates": [
+        "And the Spring Comes",
+        "Place of birth",
+        "Place of origin",
+        "Night of the Living Dead",
+        "The Feature",
+        "The Will",
+        "Gu Changwei",
+        "George A. Romero",
+        "Benny Brunner",
+        "Red Main",
+        "South Fork Spring River",
+        "Part"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "Xi'an, Shaanxi"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question does not provide enough information to determine the director's place of birth. The passage about Hugh Hamilton Wilson Jr. mentions he is a director but does not"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Xi'an"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/19-c19b72520bdb11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 20,
+      "qid": "b3110a5e0bda11eba7f7acde48001122",
+      "gold": "German",
+      "candidates": [
+        "Adolphe, Grand Duke of Luxembourg",
+        "The General",
+        "Master",
+        "Prince Nikolaus Wilhelm of Nassau",
+        "Prince Nikolaus of Liechtenstein",
+        "William, Duke of Nassau",
+        "Frederick Augustus, Duke of Nassau",
+        "Prince Albert of Prussia (1837–1906)",
+        "Princess Caroline of Nassau-Usingen",
+        "Sophie of Merenberg",
+        "Prince Nikolaus Wilhelm Of Nassau's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Russia"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Württemberg"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The information provided does not specify Prince Nikolaus Wilhelm of Nassau's mother's country of origin. Prince Nikolaus Wilhelm"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/20-b3110a5e0bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 21,
+      "qid": "3705552a0bb011ebab90acde48001122",
+      "gold": "Louis-Alexandre Berthier",
+      "candidates": [
+        "Alexandre Berthier, 3rd Prince of Wagram",
+        "The Descendants",
+        "Napoléon Alexandre Berthier, 2nd Prince of Wagram",
+        "Louis-Alexandre Berthier",
+        "William Montagu Douglas Scott, 6th Duke of Buccleuch",
+        "Duchess Maria Elisabeth in Bavaria",
+        "Alexandre",
+        "Rd Prince Of"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "William Montagu Douglas Scott, 6th Duke of Buccleuch"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.5,
+        "output": "Louis-Alexandre Berthier, 1st Prince of Wagram"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "William Montagu Douglas Scott, 6th Duke of Buccleuch"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/21-3705552a0bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 22,
+      "qid": "07e964920bde11eba7f7acde48001122",
+      "gold": "Pavia",
+      "candidates": [
+        "Caterina Visconti",
+        "Caterina Sforza",
+        "Gian Galeazzo Visconti",
+        "Alberto I della Scala",
+        "Girolamo Riario",
+        "Gian Maria Visconti",
+        "John III, Count of Armagnac",
+        "Giacomo Feo",
+        "Alboino I della Scala",
+        "Bianca Riario"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Forlì"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Wolfratshausen"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Forlì"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/22-07e964920bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 23,
+      "qid": "c3c94d0a0bdc11eba7f7acde48001122",
+      "gold": "Víctor Bó",
+      "candidates": [
+        "La Leona (film)",
+        "The Child",
+        "The Week Of",
+        "The Apartment",
+        "The Feature",
+        "The Jury",
+        "Jean Rollin",
+        "Éric Rohmer",
+        "Rosa",
+        "Child of the Night (1950 film)",
+        "Halfaouine Child of the Terraces",
+        "The Cannibal Man"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Isabel Sarli"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question is about a film \"La Leona\" but there is no passage mentioning this film. The closest related passage is P3 which talks about a film"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Rosa"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/23-c3c94d0a0bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 24,
+      "qid": "96fb4aee0baf11ebab90acde48001122",
+      "gold": "Urraca of Castile",
+      "candidates": [
+        "Blanche of Lancaster",
+        "Afonso III of Portugal",
+        "Manuel II of Portugal",
+        "Juan Carlos I of Spain",
+        "Beatrix of the Netherlands",
+        "Eleanor of Lancaster",
+        "Archduke Karl Ludwig of Austria",
+        "Franz Joseph II, Prince of Liechtenstein",
+        "Blanche of Portugal (1259–1321)",
+        "The Child",
+        "Blanche of Lancaster, Baroness Wake of Liddell",
+        "Maud Chaworth"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Eleanor of Viseu"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.6666666666666666,
+        "output": "Blanche of Castile"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Eleanor of Viseu"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/24-96fb4aee0baf11ebab90acde48001122.json"
+    },
+    {
+      "idx": 25,
+      "qid": "e41c14820bd911eba7f7acde48001122",
+      "gold": "Cahiers du cinéma",
+      "candidates": [
+        "Man at Bath",
+        "The Feature",
+        "House of Lords",
+        "The Jury",
+        "Christophe Honoré",
+        "Sergei Eisenstein",
+        "L.A. Zombie",
+        "Hürriyet",
+        "Mikhail Romm",
+        "Hürriyet Daily News",
+        "The Hourglass Sanatorium",
+        "Story"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "House of Lords"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Bath Academy of Media Makeup"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "House of Lords"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/25-e41c14820bd911eba7f7acde48001122.json"
+    },
+    {
+      "idx": 26,
+      "qid": "27e835ee0bb011ebab90acde48001122",
+      "gold": "Sir Arthur Gore, 2nd Baronet",
+      "candidates": [
+        "Sir Arthur Gore, 1st Baronet",
+        "John Browne, 1st Earl of Altamont",
+        "House of Lords",
+        "Arthur Gore, 2nd Earl of Arran",
+        "Arthur Gore, 1st Earl of Arran",
+        "Philip Gore, 4th Earl of Arran",
+        "Sir Arthur Gore, 2nd Baronet",
+        "Paul Annesley Gore",
+        "Arthur",
+        "Nd Earl Of Arran's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.8000000000000002,
+        "output": "Sir Arthur Gore, 1st Baronet"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.8000000000000002,
+        "output": "Sir Arthur Gore, 1st Baronet"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.8000000000000002,
+        "output": "Sir Arthur Gore, 1st Baronet"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/26-27e835ee0bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 27,
+      "qid": "931a85420bdd11eba7f7acde48001122",
+      "gold": "London",
+      "candidates": [
+        "Lord Patrick Crichton-Stuart",
+        "John Crichton-Stuart, 2nd Marquess of Bute",
+        "Patrick Lyon, 1st Lord Glamis",
+        "John Crichton-Stuart, 6th Marquess of Bute",
+        "John Crichton-Stuart, 5th Marquess of Bute",
+        "Sophia Crichton-Stuart, Marchioness of Bute",
+        "John Stuart, Lord Mount Stuart",
+        "Alexander Lyon, 2nd Lord Glamis"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.5,
+        "output": "Grosvenor Square, London"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.5,
+        "output": "Grosvenor Square, London"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "London"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/27-931a85420bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 28,
+      "qid": "0bbded440bda11eba7f7acde48001122",
+      "gold": "Pakistan",
+      "candidates": [
+        "Daadagiri",
+        "The Godfather",
+        "1919 (film)",
+        "The Singer",
+        "Funny Face",
+        "United Nations",
+        "Irvin Willat",
+        "A Secret",
+        "The Secret of the Storm Country",
+        "In the Country of Juliets",
+        "Donna Fargo",
+        "Back to God's Country (1927 film)"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "India"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "India"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "India"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/28-0bbded440bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 29,
+      "qid": "258867240bdd11eba7f7acde48001122",
+      "gold": "Winnipeg, Manitoba",
+      "candidates": [
+        "Douglas Leiterman",
+        "James Douglas, 9th Earl of Douglas",
+        "Archibald I, Lord of Douglas",
+        "Margaret Douglas",
+        "Alexander Stewart, 4th High Steward of Scotland",
+        "John Stewart, 1st Earl of Atholl",
+        "United Nations",
+        "Seven Days",
+        "James Douglas, Earl of Angus",
+        "Hugh Douglas, Earl of Ormonde",
+        "John Stewart of Bonkyll",
+        "Margaret Douglas, Fair Maid of Galloway"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "South Porcupine, Ontario"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passages do not provide information about the birthplace of Douglas Leiterman's wife, Beryl Fox. Therefore, the final answer cannot be determined from the"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "South Porcupine, Ontario"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/29-258867240bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 30,
+      "qid": "3cbd107e0bde11eba7f7acde48001122",
+      "gold": "Fukuoka",
+      "candidates": [
+        "Place of birth",
+        "The Mess",
+        "What Women Want",
+        "The Will",
+        "The First Day",
+        "Woody Guthrie",
+        "Karn Evil 9",
+        "Bruce Dickinson",
+        "Them",
+        "Place of origin",
+        "Motherland (disambiguation)",
+        "Tarkus (song)"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Worksop, Nottinghamshire"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The information provided does not specify the place of birth of the performer of the song \"Who...?\" or any song with that title. Therefore, there is no"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Worksop, Nottinghamshire"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/30-3cbd107e0bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 31,
+      "qid": "5e8240ea0bdd11eba7f7acde48001122",
+      "gold": "Roma",
+      "candidates": [
+        "Mole Men Against the Son of Hercules",
+        "Antonio Leonviola",
+        "Mario Caiano",
+        "Siro Marcellini",
+        "Gordon Scott",
+        "Antonio Margheriti",
+        "Osvaldo Civirani",
+        "Marcello Baldi",
+        "FIRE",
+        "Fire Monsters Against the Son of Hercules",
+        "Venus Against the Son of Hercules",
+        "Ulysses Against the Son of Hercules"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Antonio Leonviola"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Tecklenburg"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Antonio Leonviola died in Italy."
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/31-5e8240ea0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 32,
+      "qid": "6638110e0bdb11eba7f7acde48001122",
+      "gold": "Moscow, USSR",
+      "candidates": [
+        "Alexandre Gaydamak",
+        "Paid in Full",
+        "Louis Alexandre, Prince of Lamballe",
+        "Alexandre Berthier, 3rd Prince of Wagram",
+        "Arcadi Gaydamak",
+        "César Alexandre Debelle",
+        "Alexandre Volkoff",
+        "Louis Alexandre Henri Joseph Piré"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Moscow, USSR"
+      },
+      "bge_ref": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Moscow, USSR"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Moscow, USSR"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/32-6638110e0bdb11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 33,
+      "qid": "3972d2b60baf11ebab90acde48001122",
+      "gold": "Jeanne d'Albret",
+      "candidates": [
+        "Prince Jacques, Duke of Orléans",
+        "Louis XIV of France",
+        "John of Foix, Viscount of Narbonne",
+        "Eleanor of Navarre",
+        "Queen Victoria",
+        "The Descendants",
+        "Louise",
+        "Gaston, Duke of Orléans",
+        "Gaston of Foix, Duke of Nemours",
+        "Prince Foulques, Duke of Aumale",
+        "Princess Louise of Saxe-Gotha-Altenburg (1800–1831)",
+        "Élisabeth Marguerite d'Orléans"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Eleanor of Navarre"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Marie of Cleves"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Eleanor of Navarre"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/33-3972d2b60baf11ebab90acde48001122.json"
+    },
+    {
+      "idx": 34,
+      "qid": "a8cbc4c40bdc11eba7f7acde48001122",
+      "gold": "New York",
+      "candidates": [
+        "The Half-Way Girl",
+        "Get That Girl",
+        "Ingmar Bergman",
+        "Arthur Lubin",
+        "Cecil B. DeMille",
+        "Gillian Hills",
+        "Edmond T. Gréville",
+        "Comedy",
+        "Where Did You Get That Girl",
+        "The Girl of the Golden West (1915 film)",
+        "Beat Girl",
+        "Alf Sjöberg"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The information provided does not specify the birthplace of the director of the film \"The Half-Way Girl.\" The graph"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Helsingfors (now Helsinki)"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passage does not provide the birthplace of the director of The Half-Way Girl. The director mentioned in the passages"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/34-a8cbc4c40bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 35,
+      "qid": "32e50df00bb011ebab90acde48001122",
+      "gold": "Louis II",
+      "candidates": [
+        "Sophia of Wittelsbach",
+        "Frederick V of the Palatinate",
+        "Sophia of Bavaria",
+        "Albert IV, Duke of Austria",
+        "The Will",
+        "(Otto)",
+        "Joanna Sophia of Bavaria",
+        "Sophia of Hanover",
+        "Law of noncontradiction",
+        "Law Kar Po",
+        "Agnieszka (courtier)",
+        "Sophia Of"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Albert I, Duke of Bavaria"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Frederick V of the Palatinate"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Albert I, Duke of Bavaria"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/35-32e50df00bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 36,
+      "qid": "deb907f80bdd11eba7f7acde48001122",
+      "gold": "Bohemia",
+      "candidates": [
+        "Reginar III, Count of Hainaut",
+        "Reginar IV, Count of Mons",
+        "Baldwin V, Count of Flanders",
+        "Godfrey II, Duke of Lower Lorraine",
+        "Gerberga of Lower Lorraine",
+        "Henry III, Holy Roman Emperor",
+        "(Otto)",
+        "Lambert I, Count of Louvain",
+        "Lambert II, Count of Lens",
+        "Otto I, Margrave of Meissen",
+        "Werner, Count of Valenciennes",
+        "Lambert"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Duchy of Hainaut"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Duchy of Lotharingia"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Duchy of Hainaut"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/36-deb907f80bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 37,
+      "qid": "b81fbe620bdc11eba7f7acde48001122",
+      "gold": "Gura Humorului",
+      "candidates": [
+        "Highway Dragnet",
+        "Wake of the Red Witch",
+        "Roger Corman",
+        "Henry Koster",
+        "Nathan Juran",
+        "Martha De Laurentiis",
+        "Nevil Shute",
+        "Highway of Tears (film)",
+        "No Highway in the Sky",
+        "Monster from the Ocean Floor",
+        "Mary Sweeney",
+        "Nathan Scott (composer)"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Palos Verdes Estates, California, USA"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Helsingfors (now Helsinki) in the Grand Duchy of Finland (in the Russian Empire)"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "April 5, 1926"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/37-b81fbe620bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 38,
+      "qid": "3717c0600bde11eba7f7acde48001122",
+      "gold": "Meran",
+      "candidates": [
+        "Prince Gustav of Thurn and Taxis",
+        "Prince Max Emanuel of Thurn and Taxis",
+        "Princess Mathilde Sophie of Oettingen-Oettingen and Oettingen-Spielberg",
+        "Archduchess Margarethe Klementine of Austria",
+        "The General",
+        "Prince Gustav of Thurn and Taxis (1848–1914)",
+        "Prince Victor of Thurn and Taxis",
+        "Prince Gabriel of Thurn and Taxis",
+        "Maximilian Karl, 6th Prince of Thurn and Taxis",
+        "Prince Nikolaus of Thurn and Taxis (1885–1919)",
+        "Prince Raphael Rainer of Thurn and Taxis",
+        "Anselm Franz, 2nd Prince of Thurn and Taxis"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.2857142857142857,
+        "output": "Obermais, Meran, County of Tyrol, Austria–Hungary"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Princess Mathilde Sophie of Oettingen-Oettingen and Oettingen-Spielberg"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.2857142857142857,
+        "output": "Obermais, Meran, County of Tyrol, Austria–Hungary"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/38-3717c0600bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 39,
+      "qid": "0f1ac1a00bdb11eba7f7acde48001122",
+      "gold": "Grammy",
+      "candidates": [
+        "Sunday Papers",
+        "The Will",
+        "The Singer",
+        "Fanny and Alexander",
+        "Ae Dil Hai Mushkil",
+        "Ingmar Bergman",
+        "Dan Bigras",
+        "Morning",
+        "Nico",
+        "Joe Jackson",
+        "Shabir",
+        "Part"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "No award mentioned for Joe Jackson in the passages related to \"Sunday Papers\"."
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "No award earned for the performer of song \"Sunday Papers\"."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "N/A"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/39-0f1ac1a00bdb11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 40,
+      "qid": "07388c7c0bb011ebab90acde48001122",
+      "gold": "Peter I",
+      "candidates": [
+        "Amadeus VII, Count of Savoy",
+        "William I, Count of Burgundy",
+        "Bonne of Bourbon",
+        "James of Piedmont",
+        "Bonne of Berry",
+        "Chronicon",
+        "Amadeus VIII, Duke of Savoy",
+        "Joan of Geneva",
+        "Humbert II, Count of Savoy",
+        "Louis of Piedmont",
+        "Amadeus",
+        "Count Of"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Louis of Piedmont"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575,
+        "output": "Victor Amadeus I of Savoy"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Louis of Piedmont"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/40-07388c7c0bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 41,
+      "qid": "6b55ac320bdb11eba7f7acde48001122",
+      "gold": "24 March 1927",
+      "candidates": [
+        "Grand Duchess Maria Alexandrovna of Russia",
+        "Marie of Romania",
+        "The Child",
+        "Prince John Konstantinovich of Russia",
+        "Prince Constantine Constantinovich of Russia",
+        "Prince Gabriel Constantinovich of Russia",
+        "Grand Duke Vyacheslav Konstantinovich of Russia",
+        "Grand Duke Nicholas Konstantinovich of Russia",
+        "Princess Vera Constantinovna of Russia",
+        "Princess Tatiana Constantinovna of Russia",
+        "Prince John Konstantinovich Of Russia's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "18 July 1918"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "1927"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "18 July 1918"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/41-6b55ac320bdb11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 42,
+      "qid": "424d56700bde11eba7f7acde48001122",
+      "gold": "Ostrogothic Kingdom",
+      "candidates": [
+        "Funny Face",
+        "1919 (film)",
+        "Irvin Willat",
+        "Sidney Olcott",
+        "Six Years",
+        "The Singer",
+        "Man from God's Country",
+        "God's Country and the Law",
+        "Back to God's Country (1927 film)",
+        "Audofleda",
+        "What I Deserve",
+        "Donna Fargo"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Ostrogoths"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Ostrogoths"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Ostrogoths"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/42-424d56700bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 43,
+      "qid": "5c0c69f80bdd11eba7f7acde48001122",
+      "gold": "Kurdish",
+      "candidates": [
+        "Letter to the King",
+        "Place of birth",
+        "The Mummy Returns",
+        "What Women Want",
+        "The Will",
+        "The Hero",
+        "The First Day",
+        "(Otto)",
+        "Hisham Zaman",
+        "Place of origin",
+        "Motherland (disambiguation)",
+        "The Scorpion King"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question cannot be answered with the given passages. None of the passages mention a director of a film named \"Letter to the King\"."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/43-5c0c69f80bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 44,
+      "qid": "29427eea0bdd11eba7f7acde48001122",
+      "gold": "Liverpool",
+      "candidates": [
+        "God (John Lennon song)",
+        "John Lennon",
+        "The Singer",
+        "The Rock",
+        "The Sessions",
+        "Paul McCartney",
+        "Do You Sleep",
+        "Love (John Lennon song)",
+        "How Do You Sleep? (John Lennon song)",
+        "Girl (Beatles song)",
+        "Don't Let Me Down (Beatles song)",
+        "Tell Me Why (Beatles song)"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Liverpool"
+      },
+      "bge_ref": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Liverpool"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Liverpool"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/44-29427eea0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 45,
+      "qid": "bc633e2c0baf11ebab90acde48001122",
+      "gold": "Louis, Grand Dauphin",
+      "candidates": [
+        "Princess Maria Beatrice of Savoy",
+        "Maria Luisa of Parma",
+        "Maria Beatrice of Savoy",
+        "Margherita of Savoy",
+        "Victor Amadeus I, Duke of Savoy",
+        "Philip V of Spain",
+        "Charles II of England",
+        "The Child",
+        "Maria Luisa of Savoy",
+        "Princess Maria Luisa of Savoy (1729–1767)",
+        "Princess Luisa Maria of Belgium, Archduchess of Austria-Este",
+        "Princess Maria Vittoria Margherita of Savoy"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Philip V of Spain"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Philip V of Spain"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Philip V of Spain"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/45-bc633e2c0baf11ebab90acde48001122.json"
+    },
+    {
+      "idx": 46,
+      "qid": "2b4bd5020baf11ebab90acde48001122",
+      "gold": "Kujō Michiie",
+      "candidates": [
+        "Kujō Yoritsugu",
+        "Kujō Yoritsune",
+        "Princess Claude of Orléans",
+        "Henry IV of France",
+        "Nero Claudius Drusus",
+        "Aspasia Annia Regilla",
+        "Herodes Atticus",
+        "Drusus Julius Caesar",
+        "Francis I",
+        "Kujō Michiie",
+        "Lucius Vibullius Hipparchus (grandson of Herodes Atticus)",
+        "Charles, Duke of Vendôme"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Kujō Michiie"
+      },
+      "bge_ref": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Kujō Michiie"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Kujō Michiie"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/46-2b4bd5020baf11ebab90acde48001122.json"
+    },
+    {
+      "idx": 47,
+      "qid": "3647118c0bdd11eba7f7acde48001122",
+      "gold": "Madrid",
+      "candidates": [
+        "Marianela (1940 film)",
+        "Place of birth",
+        "Night of the Living Dead",
+        "What Women Want",
+        "The Will",
+        "The First Day",
+        "George A. Romero",
+        "D. W. Griffith",
+        "Benito Perojo",
+        "@Home",
+        "Place of origin",
+        "Motherland (disambiguation)"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Madrid"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "P1: Marianela (1940 film): Marianela is a 1940 Spanish drama film directed by Benito Perojo."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of birth"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/47-3647118c0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 48,
+      "qid": "ea1fc06c0bda11eba7f7acde48001122",
+      "gold": "United Nations",
+      "candidates": [
+        "Peter Sellers",
+        "United Nations",
+        "Rod Amateau",
+        "Comedy",
+        "The General",
+        "Hans Deppe",
+        "Where Does It Hurt",
+        "Karin Stoltenberg",
+        "Thorvald Stoltenberg",
+        "Camilla Stoltenberg",
+        "That's No Way to Land a Man",
+        "Karin Stoltenberg's"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "United Nations"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Norwegian Red Cross"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "United Nations"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/48-ea1fc06c0bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 49,
+      "qid": "00c75ffc0bde11eba7f7acde48001122",
+      "gold": "Paris",
+      "candidates": [
+        "Lettre ouverte",
+        "The Feature",
+        "The Jury",
+        "Alex Joffé",
+        "Part",
+        "Pierre Caron (director)",
+        "Marc Sorkin",
+        "László Nemes",
+        "Giorgio Pressburger",
+        "Ahmed Baba Miské"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Alexandria, Egypt"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Alex Joffé, the director of Lettre Ouverte, was born in France. However, the provided passages do not contain this information. The closest information"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Alexandria, Egypt"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/49-00c75ffc0bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 50,
+      "qid": "94198d580bb011ebab90acde48001122",
+      "gold": "Mathilde of Bourbon",
+      "candidates": [
+        "William II of Dampierre",
+        "Baldwin II, Count of Hainaut",
+        "Baldwin VI, Count of Flanders",
+        "Henry Raspe, Landgrave of Thuringia",
+        "Queen Victoria",
+        "Captured",
+        "Louise",
+        "William II, Count of Flanders",
+        "William II of Baux",
+        "Beatrice of Brabant",
+        "Floris de Voogd",
+        "Princess Louise of Saxe-Gotha-Altenburg (1800–1831)"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Tiburge de Sarenom"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Tiburge de Sarenom"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Tiburge de Sarenom"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/50-94198d580bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 51,
+      "qid": "71d8e20e0bdb11eba7f7acde48001122",
+      "gold": "London",
+      "candidates": [
+        "Place of birth",
+        "Vincent Novello",
+        "The Mess",
+        "Gilbert, Count of Montpensier",
+        "The Will",
+        "Keith Emerson",
+        "Karn Evil 9",
+        "A. Vincent",
+        "@Home",
+        "Place of origin",
+        "Motherland (disambiguation)",
+        "Clara Novello"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "London"
+      },
+      "bge_ref": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "London"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/51-71d8e20e0bdb11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 52,
+      "qid": "e701105e0bdd11eba7f7acde48001122",
+      "gold": "Königsberg",
+      "candidates": [
+        "William, Duke of Jülich-Cleves-Berg",
+        "Frederick I of Denmark",
+        "Princess Marianne of the Netherlands",
+        "Anna Marie of Brunswick-Lüneburg",
+        "The Child",
+        "Louise",
+        "Master",
+        "Albert Frederick, Duke of Prussia",
+        "Prince Albert of Prussia (1809–1872)",
+        "Dorothea of Denmark, Duchess of Prussia",
+        "Marie Eleonore of Cleves",
+        "Duchess Anna of Prussia"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.5,
+        "output": "Gurievsk near Königsberg"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Lüneburg"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.5,
+        "output": "Gurievsk near Königsberg"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/52-e701105e0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 53,
+      "qid": "b5e9ef2c0bdd11eba7f7acde48001122",
+      "gold": "Homs",
+      "candidates": [
+        "Louise of Orléans",
+        "The Child",
+        "The Singer",
+        "Marie Colvin",
+        "Part",
+        "Three Days",
+        "Juan Carlos I of Spain",
+        "Juan Carlos Gumucio",
+        "Queen Sofía of Spain",
+        "Juan Carlos Salazar",
+        "Princess María de la Esperanza of Bourbon-Two Sicilies",
+        "Juan Carlos Gumucio's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Stony Brook University"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Villamanrique de la Condesa, Spain"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Louise of Orléans"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/53-b5e9ef2c0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 54,
+      "qid": "48c8f7f80bdd11eba7f7acde48001122",
+      "gold": "Alain Poiré",
+      "candidates": [
+        "Gramps Is in the Resistance",
+        "The General",
+        "The Hero",
+        "The Street",
+        "Robert Bresson",
+        "Jean-Marie Poiré",
+        "Steven Mnuchin",
+        "Comedy",
+        "George Tryon",
+        "A Man Escaped",
+        "Part",
+        "The Last Ottoman"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Alain Poiré"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "Jean-Marie Poiré"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "Jean-Marie Poiré"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/54-48c8f7f80bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 55,
+      "qid": "aa0370860bdb11eba7f7acde48001122",
+      "gold": "Naha, Okinawa",
+      "candidates": [
+        "Heaven (Namie Amuro song)",
+        "Place of birth",
+        "Namie Amuro",
+        "Place of origin",
+        "The Mess",
+        "The Will",
+        "The Singer",
+        "The Dance",
+        "Karn Evil 9",
+        "Keith Emerson",
+        "Hide and Seek (Namie Amuro song)",
+        "Fast Car (Namie Amuro song)"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8,
+        "output": "Naha, Okinawa, Japan"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Namie Amuro"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8,
+        "output": "Naha, Okinawa, Japan"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/55-aa0370860bdb11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 56,
+      "qid": "a5bed06e0bdc11eba7f7acde48001122",
+      "gold": "Byzantine",
+      "candidates": [
+        "John of Ibelin, the Old Lord of Beirut",
+        "Balian of Ibelin",
+        "Part",
+        "Philip of Ibelin (1180–1227)",
+        "Philip of Ibelin (died 1318)",
+        "Philip of Ibelin (died 1304)",
+        "John of Ibelin (jurist)",
+        "Walter III of Caesarea",
+        "Philip Of Ibelin"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Greek"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "dowager queen Maria Komnene"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Greek"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/56-a5bed06e0bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 57,
+      "qid": "2294ccfc0bdc11eba7f7acde48001122",
+      "gold": "August 8, 1975",
+      "candidates": [
+        "The Singer",
+        "The Rock",
+        "Part",
+        "List of The Dillinger Escape Plan band members",
+        "The Black Queen (band)",
+        "The End (Canadian band)",
+        "Ben Weinman",
+        "Jeff Tuttle",
+        "Liam Wilson",
+        "Chris Pennie",
+        "Dimitri Minakakis",
+        "List Of The Dillinger Escape Plan Band Members's"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "August 8, 1975"
+      },
+      "bge_ref": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "August 8, 1975"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "August 8, 1975"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/57-2294ccfc0bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 58,
+      "qid": "e8d8f7200bdd11eba7f7acde48001122",
+      "gold": "Chuck Schumer",
+      "candidates": [
+        "Peter Sellers",
+        "Anthony Weiner",
+        "Rod Amateau",
+        "Disgraced",
+        "My Heart",
+        "Sybille Schmitz",
+        "Herbert Selpin",
+        "Huma Abedin",
+        "Where Does It Hurt",
+        "Robert White Johnson",
+        "An Ideal Husband (1935 film)",
+        "Huma Abedin's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Anthony Weiner worked as a Democratic congressman."
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "disgraced former congressman"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Anthony Weiner worked as a Democratic congressman."
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/58-e8d8f7200bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 59,
+      "qid": "844fe30c0bda11eba7f7acde48001122",
+      "gold": "Florence",
+      "candidates": [
+        "Caterina Sforza",
+        "Francesco I Crispo",
+        "John II Crispo",
+        "Fadil Hadžić",
+        "The Good Man",
+        "The Dead",
+        "Giacomo Feo",
+        "Did a Good Man Die",
+        "Where the Dead Go to Die",
+        "Giacomo I Crispo",
+        "Giacomo Feo's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Forlì"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Forlì"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Forlì"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/59-844fe30c0bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 60,
+      "qid": "c32ac4ca0bda11eba7f7acde48001122",
+      "gold": "Helsingfors",
+      "candidates": [
+        "Place of birth",
+        "Swedenhielms",
+        "Night of the Living Dead",
+        "What Women Want",
+        "The Will",
+        "The First Day",
+        "D. W. Griffith",
+        "Gustaf Molander",
+        "Place of origin",
+        "Karin Swanström",
+        "Motherland (disambiguation)",
+        "@Home"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question does not provide enough information to determine the place of birth of the director of film Swedenhielms. There is no passage mentioning this director or the"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/60-c32ac4ca0bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 61,
+      "qid": "6021e2d80bde11eba7f7acde48001122",
+      "gold": "Dutch",
+      "candidates": [
+        "Jan Baptist van Rensselaer",
+        "Jan Baptist van Helmont",
+        "Jan Baptist van Deynum",
+        "Jan Baptist van Heil",
+        "Jan Baptist van Fornenburgh",
+        "Jeremias Van Rensselaer (sixth patroon)",
+        "Mariana Griswold Van Rensselaer",
+        "Franciscus Mercurius van Helmont",
+        "Jan Baptist Van Rensselaer's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Netherlands"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Netherlands"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Netherlands"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/61-6021e2d80bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 62,
+      "qid": "b5b63b160bdb11eba7f7acde48001122",
+      "gold": "Tisch",
+      "candidates": [
+        "The Feature",
+        "Andrew Bowler",
+        "Febbre da cavallo",
+        "Sancho VI of Navarre",
+        "Comedy",
+        "Carlo Vanzina",
+        "Get That Girl",
+        "Arthur Lubin",
+        "Where Did You Get That Girl",
+        "Where Did the Night Fall",
+        "Gigi Causey",
+        "Kristofor Brown"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.2222222222222222,
+        "output": "Tisch School of the Arts of New York University"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Yale Drama School"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.2222222222222222,
+        "output": "Tisch School of the Arts of New York University"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/62-b5b63b160bdb11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 63,
+      "qid": "4b1b91720bde11eba7f7acde48001122",
+      "gold": "India",
+      "candidates": [
+        "Heo Hwang-ok",
+        "Queen Hogu",
+        "Kings",
+        "The General",
+        "Geodeung of Geumgwan Gaya",
+        "Mapum of Geumgwan Gaya",
+        "Gyeomji of Geumgwan Gaya",
+        "Chwihui of Geumgwan Gaya",
+        "Isipum of Geumgwan Gaya",
+        "Geojilmi of Geumgwan Gaya",
+        "Queen Mojong",
+        "Sin Po"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Korean"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.0,
+        "output": "Indian"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Korean"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/63-4b1b91720bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 64,
+      "qid": "0458640a0bdd11eba7f7acde48001122",
+      "gold": "leukemia",
+      "candidates": [
+        "The Cause",
+        "At Play in the Fields of the Lord",
+        "For the Cause",
+        "The Supporter",
+        "The Rock",
+        "Joanikije I",
+        "Ashraf Hotak",
+        "Luis Buñuel",
+        "Georges Méliès",
+        "For the Cause of Suffrage",
+        "Alex Matthiessen",
+        "Peter Matthiessen"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "No information available about Alex Matthiessen's father's cause of death."
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "acute leukemia"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The information about Alex Matthiessen's father's cause of death is not provided in the given passages. The passages only"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/64-0458640a0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 65,
+      "qid": "94dd39d80bdd11eba7f7acde48001122",
+      "gold": "Herstal",
+      "candidates": [
+        "Place of birth",
+        "Louis the Pious",
+        "Alexandra, Countess of Frederiksborg",
+        "The Will",
+        "Charles Martel",
+        "@Home",
+        "William Alexander",
+        "Remigius of Rouen",
+        "Place of origin",
+        "Nicasius of Rouen",
+        "Motherland (disambiguation)",
+        "Hieronymus, son of Charles Martel"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Rouen"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/65-94dd39d80bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 66,
+      "qid": "abc68a180bd911eba7f7acde48001122",
+      "gold": "22 January 1794",
+      "candidates": [
+        "John Crichton-Stuart, 2nd Marquess of Bute",
+        "Patrick Lyon, 1st Lord Glamis",
+        "Lord Patrick Crichton-Stuart",
+        "John Stuart, Lord Mount Stuart",
+        "John Crichton-Stuart, 6th Marquess of Bute",
+        "Sophia Crichton-Stuart, Marchioness of Bute",
+        "John Crichton-Stuart, 5th Marquess of Bute",
+        "Alexander Lyon, 2nd Lord Glamis",
+        "Lord Patrick Crichton-Stuart's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "six months before Lord Patrick Crichton-Stuart was born"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "six months before Lord Patrick Crichton-Stuart was born"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "six months before Lord Patrick Crichton-Stuart was born"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/66-abc68a180bd911eba7f7acde48001122.json"
+    },
+    {
+      "idx": 67,
+      "qid": "97ce0ec00baf11ebab90acde48001122",
+      "gold": "Stanisław Leszczyński",
+      "candidates": [
+        "Philip V of Spain",
+        "James Butler, 1st Duke of Ormond",
+        "Louise Élisabeth de Bourbon",
+        "Marie Leszczyńska",
+        "Aspasia Annia Regilla",
+        "Herodes Atticus",
+        "Louise",
+        "Henriette of France (1727–1752)",
+        "Louise Élisabeth of France",
+        "Louise Henriette de Bourbon",
+        "John Pointz",
+        "Louis François, Prince of Conti"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "King Louis XIV of France"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "King Louis XV of France"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Philip V of Spain"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/67-97ce0ec00baf11ebab90acde48001122.json"
+    },
+    {
+      "idx": 68,
+      "qid": "04a544a40bde11eba7f7acde48001122",
+      "gold": "3 August 979",
+      "candidates": [
+        "Lothair Udo III, Margrave of the Nordmark",
+        "Thietmar, Margrave of Meissen",
+        "Wiprecht of Groitzsch",
+        "William (archbishop of Mainz)",
+        "The Inheritance",
+        "(Otto)",
+        "Gero II, Margrave of the Saxon Ostmark",
+        "Odo I, Margrave of the Saxon Ostmark",
+        "Dedi I, Margrave of the Saxon Ostmark",
+        "Henry II, Margrave of Meissen",
+        "Otto I, Margrave of Meissen",
+        "Henry of Groitzsch"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1015"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1015"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "13 March 993"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/68-04a544a40bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 69,
+      "qid": "a08505d20bdc11eba7f7acde48001122",
+      "gold": "Aldo Parisot",
+      "candidates": [
+        "Red Main",
+        "The Feature",
+        "The Centre",
+        "The General",
+        "The Street",
+        "The Light",
+        "The Swordsman",
+        "Kill Me Three Times",
+        "Plague",
+        "Edge",
+        "Flag of Crimea",
+        "Remorse, a Story of the Red Plague"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Kriv Stenders"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Warren Ellis"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question is not directly answerable from the given passages and candidate entity graph. The graph mentions Kill Me Three Times as"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/69-a08505d20bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 70,
+      "qid": "982f8e440bdb11eba7f7acde48001122",
+      "gold": "1886",
+      "candidates": [
+        "American Scientist",
+        "The Company (film)",
+        "The Feature",
+        "The Comic",
+        "Sigma Xi",
+        "Ida May Park",
+        "Part",
+        "The Vanity Pool",
+        "Hyperwerks",
+        "Eastern Color Printing",
+        "Alfred De Courcy"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "1886"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1913"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "1886"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/70-982f8e440bdb11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 71,
+      "qid": "5142f59e0bda11eba7f7acde48001122",
+      "gold": "Nevele",
+      "candidates": [
+        "Place of birth",
+        "The Will",
+        "@Home",
+        "Place of origin",
+        "Jo Planckaert",
+        "Eddy Planckaert",
+        "Walter Planckaert",
+        "Jo Ann Smith",
+        "Willy Planckaert",
+        "Motherland (disambiguation)",
+        "Jo Planckaert's"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Nevele"
+      },
+      "bge_ref": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Nevele"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Nevele"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/71-5142f59e0bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 72,
+      "qid": "041581680bdc11eba7f7acde48001122",
+      "gold": "Manchester",
+      "candidates": [
+        "Place of birth",
+        "David Lloyd George",
+        "The Wanted",
+        "House of Lords",
+        "The Will",
+        "Them",
+        "Sir Robert McAlpine, 1st Baronet",
+        "@Home",
+        "PAST",
+        "Place of origin",
+        "Gwilym Lloyd George",
+        "Frances Stevenson"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Manchester"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "4 December 1894 – 14 February 1967"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Manchester"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/72-041581680bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 73,
+      "qid": "ad43c9300bdb11eba7f7acde48001122",
+      "gold": "Tantallon Castle",
+      "candidates": [
+        "Place of birth",
+        "James Douglas, 3rd Earl of Morton",
+        "Thomas Stewart, 2nd Earl of Angus",
+        "Place of origin",
+        "James IV of Scotland",
+        "Mother of George",
+        "The Will",
+        "Master",
+        "James Douglas, 3rd Earl of Angus",
+        "James Douglas, Earl of Angus",
+        "George Douglas, 4th Earl of Angus",
+        "William Douglas, 2nd Earl of Angus"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575,
+        "output": "Douglas Castle, Douglas, South Lanarkshire"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.5714285714285715,
+        "output": "Tantallon Castle in East Lothian"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/73-ad43c9300bdb11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 74,
+      "qid": "5839dbac0bde11eba7f7acde48001122",
+      "gold": "American",
+      "candidates": [
+        "They Call It Love",
+        "Love Story",
+        "Comedy",
+        "Richard Häussler",
+        "Giuliano Carnimeo",
+        "Story",
+        "Rosa",
+        "The Call of Love",
+        "Call of the Toad",
+        "Return of Halleluja",
+        "They Call It"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "German"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "West German"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "German"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/74-5839dbac0bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 75,
+      "qid": "22d296de0bde11eba7f7acde48001122",
+      "gold": "Sochi",
+      "candidates": [
+        "Place of birth",
+        "What Women Want",
+        "The Mess",
+        "Alexandra, Countess of Frederiksborg",
+        "The Will",
+        "The First Day",
+        "The Spender",
+        "Boris Nemtsov",
+        "Keith Emerson",
+        "Karn Evil 9",
+        "Place of origin",
+        "Zhanna Nemtsova"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The place of birth of Zhanna Nemtsova's father, Boris Nemtsov, is not provided in the given passages."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/75-22d296de0bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 76,
+      "qid": "9c3ff1040bdb11eba7f7acde48001122",
+      "gold": "French",
+      "candidates": [
+        "Continental, a Film Without Guns",
+        "Continental (film)",
+        "The Mercy",
+        "Two Guns, Arizona",
+        "Two Guns",
+        "Kevin Smith",
+        "Edward Everett",
+        "Anthony Asquith",
+        "Edward Everett Hale",
+        "Stéphane Lafleur",
+        "List of historic properties in Two Guns, Arizona",
+        "Réal Bossé"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Canada"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Canada"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Canada"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/76-9c3ff1040bdb11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 77,
+      "qid": "81ca57e60bdc11eba7f7acde48001122",
+      "gold": "Winnipeg, Manitoba",
+      "candidates": [
+        "Age-Old Friends",
+        "The Good Old Days",
+        "Isabella I of Jerusalem",
+        "The Singer",
+        "Atom Egoyan",
+        "Beaumont Smith",
+        "Allan Kroeker",
+        "Anindya Chatterjee",
+        "Comedy",
+        "Frederick II, Holy Roman Emperor",
+        "Hume Cronyn",
+        "O, Brazen Age"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Winnipeg, Manitoba"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Paris, France"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "February 29, 1960"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/77-81ca57e60bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 78,
+      "qid": "30ee74680bde11eba7f7acde48001122",
+      "gold": "Villafranca del Bierzo",
+      "candidates": [
+        "Eleonora di Garzia di Toledo",
+        "Anne of Brittany",
+        "Renée of France",
+        "The Window",
+        "Them",
+        "Eleanor of Toledo",
+        "Andrea di Bonaiuto da Firenze",
+        "Eleonora d'Este (1537–1581)",
+        "Andrea di Niccolò",
+        "Isabella de' Medici",
+        "Pietro de' Medici"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Florence"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passages do not provide information about the birthplace of Eleonora Di Garzia Di Toledo's father, García Álvarez de Toledo, 4th"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Florence"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/78-30ee74680bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 79,
+      "qid": "f491b33e0bda11eba7f7acde48001122",
+      "gold": "Jean Hersholt Humanitarian Award",
+      "candidates": [
+        "The Last Night of the Barbary Coast",
+        "Last Night",
+        "Domenico Paolella",
+        "Sol Lesser",
+        "Lew Landers",
+        "Find",
+        "Law of the Barbary Coast",
+        "Camille of the Barbary Coast",
+        "The Last Night of Scheherazade",
+        "Pirates of the Coast",
+        "Barbary Coast, San Francisco"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Jean Hersholt Humanitarian Award"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question is actually about the director of a different film, \"The Last Night of the Barbary Coast,\" not \"The Last Night of the Barbary Coast"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Jean Hersholt Humanitarian Award"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/79-f491b33e0bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 80,
+      "qid": "5b637e060bb011ebab90acde48001122",
+      "gold": "Princess Madeleine, Duchess of Hälsingland and Gästrikland",
+      "candidates": [
+        "Prince William Henry, Duke of Gloucester and Edinburgh",
+        "Charles, Prince of Wales",
+        "Beatrix of the Netherlands",
+        "Princess Theodora of Greece and Denmark",
+        "Christopher O'Neill",
+        "The Child",
+        "Mercœur",
+        "Prince Nicolas, Duke of Ångermanland",
+        "Prince Edward, Duke of Kent",
+        "Nicolas, Duke of Mercœur",
+        "Dorothy Clement",
+        "Maximilian, Margrave of Baden"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4444444444444445,
+        "output": "Princess Madeleine"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4444444444444445,
+        "output": "Princess Madeleine"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4444444444444445,
+        "output": "Princess Madeleine"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/80-5b637e060bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 81,
+      "qid": "1a2188840bb011ebab90acde48001122",
+      "gold": "Princess Augusta of Schwarzburg-Sondershausen",
+      "candidates": [
+        "Princess Augusta of Waldeck-Pyrmont",
+        "Princess Helena of Waldeck and Pyrmont",
+        "George I, Prince of Waldeck and Pyrmont",
+        "Nikolaus, Hereditary Grand Duke of Oldenburg",
+        "Guda",
+        "Princess Guda of Waldeck and Pyrmont",
+        "Princess Mathilde of Waldeck and Pyrmont",
+        "Princess Ida of Waldeck and Pyrmont",
+        "George II, Prince of Waldeck and Pyrmont",
+        "Princess Helena of Waldeck and Pyrmont (1899–1948)",
+        "Princess Augusta Of"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "Princess Emma of Anhalt-Bernburg-Schaumburg-Hoym"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "Princess Emma of Anhalt-Bernburg-Schaumburg-Hoym"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "Princess Emma of Anhalt-Bernburg-Schaumburg-Hoym"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/81-1a2188840bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 82,
+      "qid": "d1fd9cbe0bdc11eba7f7acde48001122",
+      "gold": "Cahiers du cinéma",
+      "candidates": [
+        "The Marquise of O (film)",
+        "The Marquise of O",
+        "The Seduction",
+        "Marcel Varnel",
+        "Éric Rohmer",
+        "Atom Egoyan",
+        "Alexander Carson",
+        "Hard Times",
+        "The Seed of Discord",
+        "O, Brazen Age",
+        "O-Kay for Sound"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Cahiers du cinéma"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Éric Rohmer worked on the film The Marquise of O (Film), but the passage does not provide information about where he worked. The question cannot"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Éric Rohmer"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/82-d1fd9cbe0bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 83,
+      "qid": "f6e2b9280bdd11eba7f7acde48001122",
+      "gold": "China",
+      "candidates": [
+        "Zhu Chen",
+        "Mohammed Al-Modiahki",
+        "Mohammed bin Jassim Al Thani",
+        "Mohammed Al-Harthi",
+        "Mohammed Al-Qarni (footballer, born 1981)",
+        "Mohammed Al-Safri",
+        "Mohammed Al-Motawaa",
+        "Mohammed Al-Jahani",
+        "Mohammed Al-Modiahki's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Qatar"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Qatar"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Qatar"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/83-f6e2b9280bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 84,
+      "qid": "e6688a7e0baf11ebab90acde48001122",
+      "gold": "Charles I of Naples",
+      "candidates": [
+        "Philip II of Spain",
+        "Maria Amalia of Naples and Sicily",
+        "Charles III of Spain",
+        "Ferdinand I of the Two Sicilies",
+        "Beatrice of Provence",
+        "Peter III of Aragon",
+        "Marie of Brienne",
+        "Louis Philippe I",
+        "Philip I, Latin Emperor",
+        "Philip of Sicily",
+        "Beatrice of Sicily, Latin Empress",
+        "Infante Philip, Duke of Calabria"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.09523809523809523,
+        "output": "Philip of Sicily's father is not directly mentioned in the passages provided. However, based on the information given, we"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.6666666666666665,
+        "output": "King Charles I of Sicily"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575,
+        "output": "Beatrice of Provence"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/84-e6688a7e0baf11ebab90acde48001122.json"
+    },
+    {
+      "idx": 85,
+      "qid": "49ec1ade0bdd11eba7f7acde48001122",
+      "gold": "Argentina",
+      "candidates": [
+        "My Heidelberg, I Can Not Forget You",
+        "I Know What You Did Last Summer",
+        "The Last Summer",
+        "In My Heart",
+        "My Heart",
+        "James Bauer",
+        "Seven Days",
+        "I'll Always Know What You Did Last Summer",
+        "Can't Forget You (Sonia song)",
+        "Can't Forget You",
+        "I Can Not Forget You"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Argentina"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Berlin"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Argentina"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/85-49ec1ade0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 86,
+      "qid": "e4e02a240bda11eba7f7acde48001122",
+      "gold": "Jacques Cousteau",
+      "candidates": [
+        "Wonders of the Sea 3D",
+        "Night of the Living Dead",
+        "Across the Sea",
+        "Father Damien",
+        "In Search of",
+        "The Dead",
+        "Into the Black",
+        "Jean-Michel Cousteau",
+        "United Nations",
+        "A Division",
+        "Across the Sea of Time",
+        "Saint Augustine by the Sea Catholic Church"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "Jean-Michel Cousteau"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "Jean-Michel Cousteau"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "Jean-Michel Cousteau"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/86-e4e02a240bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 87,
+      "qid": "c9b515020bda11eba7f7acde48001122",
+      "gold": "Thessaloniki",
+      "candidates": [
+        "Prince Andrew of Greece and Denmark",
+        "Princess Theodora of Greece and Denmark",
+        "George I of Greece",
+        "Princess Alice of Battenberg",
+        "Olga Constantinovna of Russia",
+        "The Child",
+        "Prince Christopher of Greece and Denmark",
+        "Princess Anastasia of Greece and Denmark",
+        "Princess Margarita of Greece and Denmark",
+        "Princess Theodora of Greece and Denmark (1906–1969)",
+        "Princess Sophie of Greece and Denmark",
+        "Prince Christopher Of Greece And Denmark's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Assassination in 1913"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Monte Carlo"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Assassination in 1913"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/87-c9b515020bda11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 88,
+      "qid": "652d7dac0bdc11eba7f7acde48001122",
+      "gold": "New York",
+      "candidates": [
+        "Guilty of Treason",
+        "Place of birth",
+        "Guilty",
+        "Night of the Living Dead",
+        "The Tortured",
+        "The Will",
+        "George B. Seitz",
+        "George A. Romero",
+        "Seven Days to Noon",
+        "Felix E. Feist",
+        "Place of origin",
+        "Motherland (disambiguation)"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of birth"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The place of birth of the director of film Guilty Of Treason is not provided in the given passages."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of birth"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/88-652d7dac0bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 89,
+      "qid": "2b7db0200bde11eba7f7acde48001122",
+      "gold": "University of Paris",
+      "candidates": [
+        "Esmé Stewart, 3rd Duke of Lennox",
+        "Charles Lennox, 1st Duke of Richmond",
+        "Esmé Stewart, 1st Duke of Lennox",
+        "Charles I of England",
+        "George Stewart, 9th Seigneur d'Aubigny",
+        "Theophilus Howard, 2nd Earl of Suffolk",
+        "Katherine Clifton, 2nd Baroness Clifton",
+        "Charles Stewart, 3rd Duke of Richmond",
+        "Esmé Stewart, 2nd Duke of Richmond",
+        "James Stewart, 1st Duke of Richmond",
+        "Ludovic Stewart, 2nd Duke of Lennox",
+        "Charles Lennox, 2nd Duke of Richmond"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "N/A"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.1,
+        "output": "Final answer: The passages do not provide information about Charles Stewart, 3rd Duke of Richmond's father's educational background."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "N/A"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/89-2b7db0200bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 90,
+      "qid": "437f3b9a0bdd11eba7f7acde48001122",
+      "gold": "Hackney",
+      "candidates": [
+        "I Wish (Gabrielle song)",
+        "Place of birth",
+        "Place of origin",
+        "The Rest of My Life",
+        "The Mess",
+        "The Singer",
+        "The Will",
+        "Going Nowhere",
+        "Because of You (Gabrielle song)",
+        "Find",
+        "Tarkus (song)",
+        "Keith Emerson"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of birth"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The place of birth of the performer of the song \"I Wish\" (Gabrielle Song) is not provided in the given passages."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of birth"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/90-437f3b9a0bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 91,
+      "qid": "37c6703a0bdc11eba7f7acde48001122",
+      "gold": "1969",
+      "candidates": [
+        "Jinpa",
+        "The Child",
+        "The Accident",
+        "The Will",
+        "Pema Tseden",
+        "Mrinal Sen",
+        "Slayer",
+        "Part",
+        "The Dream (1987 film)",
+        "Mickey Moore",
+        "Interview (1971 film)",
+        "George Nicholls Jr"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "1969"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passage does not provide the birth year of the director of film Jinpa. Therefore, there is no answer to the question based on the given information."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "December 1969"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/91-37c6703a0bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 92,
+      "qid": "68cb7bc00bdd11eba7f7acde48001122",
+      "gold": "Huahine",
+      "candidates": [
+        "John VI of Werle",
+        "Hugh X of Lusignan",
+        "Isabella of Angoulême",
+        "Mathilde of Angoulême",
+        "Nicholas IV of Werle",
+        "Ari'imate",
+        "William VI of Angoulême",
+        "Tamatoa VI",
+        "Nicholas V of Werle",
+        "Philip of France (1116–1131)",
+        "Tamatoa Vi's"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Huahine"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Pape'ete"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Huahine"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/92-68cb7bc00bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 93,
+      "qid": "74207b920bdd11eba7f7acde48001122",
+      "gold": "Brighton",
+      "candidates": [
+        "Old Man Drinking a Glass of Beer",
+        "A Glass of Beer",
+        "The Glass Wall",
+        "The Window",
+        "Stefano Incerti",
+        "Comedy",
+        "George Thorogood",
+        "Amos Milburn",
+        "The Man of Glass",
+        "Departure of a Grand Old Man",
+        "One Bourbon, One Scotch, One Beer",
+        "Death of Garry Hoy"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Death not mentioned"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Berlin"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Death information not provided for George Albert Smith."
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/93-74207b920bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 94,
+      "qid": "00c727580bde11eba7f7acde48001122",
+      "gold": "10 May 1912",
+      "candidates": [
+        "Margaret Beauchamp of Bletso",
+        "Louise",
+        "Henry St",
+        "Th Baron St John Of Bletso's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "20 April 1805"
+      },
+      "bge_ref": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "10 May 1912"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "20 April 1805"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/94-00c727580bde11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 95,
+      "qid": "77f41ab20bb011ebab90acde48001122",
+      "gold": "John de Vere, 15th Earl of Oxford",
+      "candidates": [
+        "Edward de Vere, 17th Earl of Oxford",
+        "John de Vere, 15th Earl of Oxford",
+        "John de Vere, 16th Earl of Oxford",
+        "Robert de Vere, 5th Earl of Oxford",
+        "Bridget de Vere, Countess of Berkshire",
+        "Susan de Vere, Countess of Montgomery",
+        "Elizabeth Trentham, Countess of Oxford",
+        "Margery Golding",
+        "Bernard Mordaunt Ward",
+        "Edward De",
+        "Th Earl Of Oxford's"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "John de Vere, 15th Earl of Oxford"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.8571428571428571,
+        "output": "John de Vere, 7th Earl of Oxford"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "John de Vere, 15th Earl of Oxford"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/95-77f41ab20bb011ebab90acde48001122.json"
+    },
+    {
+      "idx": 96,
+      "qid": "b1b78c480bdd11eba7f7acde48001122",
+      "gold": "Kreuzlingen",
+      "candidates": [
+        "(Otto)",
+        "Hermann Otto II of Limburg Stirum",
+        "Job Roggeveen",
+        "Alexander Carl Otto Westphal",
+        "Carl Friedrich Otto Westphal",
+        "Otto Carl Friedrich Westphal",
+        "Duke Carl Alexander of Württemberg",
+        "Otto Leopold of Limburg Stirum",
+        "Alexander II of Macedon",
+        "Alexander Carl Otto Westphal's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Berlin"
+      },
+      "bge_ref": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Kreuzlingen"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Berlin"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/96-b1b78c480bdd11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 97,
+      "qid": "3c68e44c0bdc11eba7f7acde48001122",
+      "gold": "Florence",
+      "candidates": [
+        "Angela de' Rossi",
+        "Bianca Riario",
+        "Mary Elsie Moore",
+        "Alessandro Torlonia, 5th Prince of Civitella-Cesi",
+        "Alessandro Vitelli",
+        "Alessandro Naselli",
+        "Paolo II Vitelli",
+        "Paolo Vitelli (condottiero)",
+        "Alessandro Vitelli's"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Città di Castello"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Parma"
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Città di Castello"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/97-3c68e44c0bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 98,
+      "qid": "027970120bdc11eba7f7acde48001122",
+      "gold": "Århus",
+      "candidates": [
+        "Bag Skyerne",
+        "The Magic of Belle Isle",
+        "The Singer",
+        "The Will",
+        "Where Are You",
+        "Felix Powell",
+        "Anne Gadegaard",
+        "Occidentali's Karma",
+        "Belle Isle",
+        "Side by side",
+        "Bag-in-box",
+        "Where Are You? (1937 song)"
+      ],
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.4,
+        "output": "Århus, Region Midtjylland, Denmark"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The performer of song Bag Skyerne, Anne Gadegaard, was born in Denmark. However, her birthplace is not specified in the given passages."
+      },
+      "soft_policy": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.4,
+        "output": "Århus, Region Midtjylland, Denmark"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/98-027970120bdc11eba7f7acde48001122.json"
+    },
+    {
+      "idx": 99,
+      "qid": "94873b220bd911eba7f7acde48001122",
+      "gold": "Florence",
+      "candidates": [
+        "Francis II of France",
+        "Philip II of France",
+        "Theobald II, Count of Champagne",
+        "Claude of France",
+        "Edward III of England",
+        "Joan I of Navarre",
+        "Francis I",
+        "The Cause",
+        "Catherine de' Medici",
+        "Philip, Duke of Nemours",
+        "Claudine de Brosse",
+        "Charles II de Valois, Duke of Orléans"
+      ],
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Florence"
+      },
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Denmark"
+      },
+      "soft_policy": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Florence"
+      },
+      "restore_error": "",
+      "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c12-b3.0/policies/99-94873b220bd911eba7f7acde48001122.json"
+    }
+  ]
+}

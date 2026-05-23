@@ -1,0 +1,71 @@
+{
+  "idx": 84,
+  "qid": "e6688a7e0baf11ebab90acde48001122",
+  "gold": "Charles I of Naples",
+  "candidates": [
+    "Philip II of Spain",
+    "Maria Amalia of Naples and Sicily",
+    "Charles III of Spain",
+    "Ferdinand I of the Two Sicilies",
+    "Beatrice of Provence",
+    "Peter III of Aragon",
+    "Marie of Brienne",
+    "Louis Philippe I"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.09523809523809523,
+    "output": "Philip of Sicily's father is not directly mentioned in the passages provided. However, based on the information given, we"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.6666666666666665,
+    "output": "King Charles I of Sicily"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.28571428571428575,
+    "output": "Beatrice of Provence"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c8-b2.0/policies/84-e6688a7e0baf11ebab90acde48001122.json",
+  "response": {
+    "id": "chatcmpl-bc35b21dec1ec496",
+    "object": "chat.completion",
+    "created": 1779510537,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Beatrice of Provence",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1444,
+      "total_tokens": 1450,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "idx": 1,
+  "qid": "e2a3bf2a0bdd11eba7f7acde48001122",
+  "gold": "12 June 1516",
+  "candidates": [
+    "12 June 1516",
+    "Ernest I, Prince of Anhalt-Dessau",
+    "John VII, Count of Oldenburg",
+    "John V, Prince of Anhalt-Zerbst",
+    "John VI, Prince of Anhalt-Zerbst",
+    "John Augustus, Prince of Anhalt-Zerbst",
+    "Karl I, Prince of Anhalt-Zerbst",
+    "Bernhard VII, Prince of Anhalt-Zerbst",
+    "John",
+    "Prince Of Anhalt-Zerbst's"
+  ],
+  "path_prompt": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "12 June 1516"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "The passage does not provide the death year of John V's father, Ernest I, Prince of Anhalt-Dessau."
+  },
+  "soft_policy": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "12 June 1516"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c16-b3.0/policies/1-e2a3bf2a0bdd11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-bd995f219259ea5a",
+    "object": "chat.completion",
+    "created": 1779510132,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "12 June 1516",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1364,
+      "total_tokens": 1373,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

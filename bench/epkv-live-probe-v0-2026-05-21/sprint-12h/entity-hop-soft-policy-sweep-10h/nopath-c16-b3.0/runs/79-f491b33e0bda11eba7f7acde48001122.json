@@ -1,0 +1,74 @@
+{
+  "idx": 79,
+  "qid": "f491b33e0bda11eba7f7acde48001122",
+  "gold": "Jean Hersholt Humanitarian Award",
+  "candidates": [
+    "The Last Night of the Barbary Coast",
+    "Last Night",
+    "Domenico Paolella",
+    "Sol Lesser",
+    "Lew Landers",
+    "Find",
+    "Law of the Barbary Coast",
+    "Camille of the Barbary Coast",
+    "The Last Night of Scheherazade",
+    "Pirates of the Coast",
+    "Barbary Coast, San Francisco"
+  ],
+  "path_prompt": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "Jean Hersholt Humanitarian Award"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "The question is actually about the director of a different film, \"The Last Night of the Barbary Coast,\" not \"The Last Night of the Barbary Coast"
+  },
+  "soft_policy": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "Jean Hersholt Humanitarian Award"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c16-b3.0/policies/79-f491b33e0bda11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-bc1ada52efba774d",
+    "object": "chat.completion",
+    "created": 1779511534,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Jean Hersholt Humanitarian Award",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 958,
+      "total_tokens": 966,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

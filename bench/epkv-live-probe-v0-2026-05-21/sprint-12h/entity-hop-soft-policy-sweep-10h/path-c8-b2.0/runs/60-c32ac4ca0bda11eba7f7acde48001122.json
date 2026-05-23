@@ -1,0 +1,71 @@
+{
+  "idx": 60,
+  "qid": "c32ac4ca0bda11eba7f7acde48001122",
+  "gold": "Helsingfors",
+  "candidates": [
+    "Place of origin",
+    "Place of birth",
+    "Swedenhielms",
+    "Night of the Living Dead",
+    "What Women Want",
+    "The Will",
+    "The First Day",
+    "D. W. Griffith"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Place of origin"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "The question does not provide enough information to determine the place of birth of the director of film Swedenhielms. There is no passage mentioning this director or the"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Place of origin"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c8-b2.0/policies/60-c32ac4ca0bda11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-bc01f27116c147cb",
+    "object": "chat.completion",
+    "created": 1779508900,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Place of origin",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1220,
+      "total_tokens": 1224,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

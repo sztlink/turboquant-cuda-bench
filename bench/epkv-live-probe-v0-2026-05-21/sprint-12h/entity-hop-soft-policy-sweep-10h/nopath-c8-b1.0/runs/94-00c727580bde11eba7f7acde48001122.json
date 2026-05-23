@@ -1,0 +1,67 @@
+{
+  "idx": 94,
+  "qid": "00c727580bde11eba7f7acde48001122",
+  "gold": "10 May 1912",
+  "candidates": [
+    "Margaret Beauchamp of Bletso",
+    "Louise",
+    "Henry St",
+    "Th Baron St John Of Bletso's"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "20 April 1805"
+  },
+  "bge_ref": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "10 May 1912"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "20 April 1805"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c8-b1.0/policies/94-00c727580bde11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-8c7a3cb98638c70e",
+    "object": "chat.completion",
+    "created": 1779510411,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "20 April 1805",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1425,
+      "total_tokens": 1434,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

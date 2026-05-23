@@ -1,0 +1,71 @@
+{
+  "idx": 52,
+  "qid": "e701105e0bdd11eba7f7acde48001122",
+  "gold": "Königsberg",
+  "candidates": [
+    "Gurievsk near Königsberg",
+    "William, Duke of Jülich-Cleves-Berg",
+    "Frederick I of Denmark",
+    "Princess Marianne of the Netherlands",
+    "Anna Marie of Brunswick-Lüneburg",
+    "The Child",
+    "Louise",
+    "Master"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.5,
+    "output": "Gurievsk near Königsberg"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Lüneburg"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.5,
+    "output": "Gurievsk near Königsberg"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c8-b1.0/policies/52-e701105e0bdd11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-b1bcf6db648d7567",
+    "object": "chat.completion",
+    "created": 1779508738,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Gurievsk near Königsberg",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1205,
+      "total_tokens": 1214,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

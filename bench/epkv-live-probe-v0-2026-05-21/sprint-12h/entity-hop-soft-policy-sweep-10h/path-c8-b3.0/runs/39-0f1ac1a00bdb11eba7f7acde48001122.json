@@ -1,0 +1,71 @@
+{
+  "idx": 39,
+  "qid": "0f1ac1a00bdb11eba7f7acde48001122",
+  "gold": "Grammy",
+  "candidates": [
+    "Sunday Papers",
+    "The Will",
+    "The Singer",
+    "Fanny and Alexander",
+    "Ae Dil Hai Mushkil",
+    "Ingmar Bergman",
+    "Dan Bigras",
+    "Morning"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "No award mentioned for Joe Jackson in the passages related to \"Sunday Papers\"."
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "No award earned for the performer of song \"Sunday Papers\"."
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "No award mentioned for Joe Jackson related to the song \"Sunday Papers\"."
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c8-b3.0/policies/39-0f1ac1a00bdb11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-9f9a62e7fadb8d20",
+    "object": "chat.completion",
+    "created": 1779509016,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "No award mentioned for Joe Jackson related to the song \"Sunday Papers\".",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1299,
+      "total_tokens": 1314,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

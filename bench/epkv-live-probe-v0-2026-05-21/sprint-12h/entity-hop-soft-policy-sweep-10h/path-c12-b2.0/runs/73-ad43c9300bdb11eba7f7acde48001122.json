@@ -1,0 +1,75 @@
+{
+  "idx": 73,
+  "qid": "ad43c9300bdb11eba7f7acde48001122",
+  "gold": "Tantallon Castle",
+  "candidates": [
+    "Douglas Castle, Douglas, South Lanarkshire",
+    "Place of birth",
+    "James Douglas, 3rd Earl of Morton",
+    "Thomas Stewart, 2nd Earl of Angus",
+    "Place of origin",
+    "James IV of Scotland",
+    "Mother of George",
+    "The Will",
+    "Master",
+    "James Douglas, 3rd Earl of Angus",
+    "James Douglas, Earl of Angus",
+    "George Douglas, 4th Earl of Angus"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.28571428571428575,
+    "output": "Douglas Castle, Douglas, South Lanarkshire"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.5714285714285715,
+    "output": "Tantallon Castle in East Lothian"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.28571428571428575,
+    "output": "Douglas Castle, Douglas, South Lanarkshire"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c12-b2.0/policies/73-ad43c9300bdb11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-82d86d2a97aa9cc6",
+    "object": "chat.completion",
+    "created": 1779509501,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Douglas Castle, Douglas, South Lanarkshire",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1248,
+      "total_tokens": 1259,
+      "completion_tokens": 11,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

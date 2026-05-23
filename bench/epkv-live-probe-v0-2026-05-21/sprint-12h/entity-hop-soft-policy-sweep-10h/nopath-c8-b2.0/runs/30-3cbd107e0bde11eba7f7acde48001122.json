@@ -1,0 +1,71 @@
+{
+  "idx": 30,
+  "qid": "3cbd107e0bde11eba7f7acde48001122",
+  "gold": "Fukuoka",
+  "candidates": [
+    "Place of birth",
+    "The Mess",
+    "What Women Want",
+    "The Will",
+    "The First Day",
+    "Woody Guthrie",
+    "Karn Evil 9",
+    "Bruce Dickinson"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Worksop, Nottinghamshire"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "The information provided does not specify the place of birth of the performer of the song \"Who...?\" or any song with that title. Therefore, there is no"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Worksop, Nottinghamshire"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c8-b2.0/policies/30-3cbd107e0bde11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-858e2ce781930f6c",
+    "object": "chat.completion",
+    "created": 1779510471,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Worksop, Nottinghamshire",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1235,
+      "total_tokens": 1241,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

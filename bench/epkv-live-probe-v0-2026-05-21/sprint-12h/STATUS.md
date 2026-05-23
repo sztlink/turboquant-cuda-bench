@@ -638,3 +638,35 @@ The current RealRAG bridge is now mirrored as a Boring Receipts Lab research sib
 ```txt
 https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md
 ```
+
+## Entity-hop soft multi-candidate sweep
+
+Completed autonomous sweep:
+
+```txt
+ENTITY-HOP-SOFT-POLICY-SWEEP-10H.md
+entity-hop-soft-policy-sweep-10h/
+```
+
+Best result:
+
+```txt
+path-c12-b1.0
+soft EM 0.230 | F1 0.324
+path EM 0.250 | F1 0.330
+wins vs path: 1
+losses vs path: 3
+```
+
+Conclusion:
+
+```txt
+soft/multi-candidate policy improves over strict extractor+ECD but still does not beat direct path prompt.
+```
+
+Current next target:
+
+```txt
+confidence-gated fallback / answer rerank on top of entity-hop path prompt,
+not more unconditional first-token bias sweeps.
+```

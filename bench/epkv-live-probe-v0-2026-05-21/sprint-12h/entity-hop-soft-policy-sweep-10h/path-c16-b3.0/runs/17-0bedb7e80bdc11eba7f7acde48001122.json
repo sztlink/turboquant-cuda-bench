@@ -1,0 +1,77 @@
+{
+  "idx": 17,
+  "qid": "0bedb7e80bdc11eba7f7acde48001122",
+  "gold": "tuberculosis",
+  "candidates": [
+    "Katherine Mansfield died of extrapulmonary tuberculosis",
+    "Katherine Mansfield",
+    "The General",
+    "The Rock",
+    "John Middleton Murry",
+    "John Middleton Murry Jr",
+    "John Middleton (architect)",
+    "John Middleton (footballer, born 1955)",
+    "Why Did It Have to Be Me",
+    "J. W. N. Sullivan",
+    "Anne Estelle Rice",
+    "Philip Mairet",
+    "Why",
+    "John Middleton Murry's"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.2857142857142857,
+    "output": "Katherine Mansfield died of extrapulmonary tuberculosis."
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "The passage does not provide information about John Middleton Murry's wife's death."
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.2222222222222222,
+    "output": "Katherine Mansfield died of extrapulmonary tuberculosis in 1923."
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c16-b3.0/policies/17-0bedb7e80bdc11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-9ba0eb42211fa029",
+    "object": "chat.completion",
+    "created": 1779510164,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Katherine Mansfield died of extrapulmonary tuberculosis in 1923.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 945,
+      "total_tokens": 964,
+      "completion_tokens": 19,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

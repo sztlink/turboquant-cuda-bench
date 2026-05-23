@@ -1,0 +1,71 @@
+{
+  "idx": 62,
+  "qid": "b5b63b160bdb11eba7f7acde48001122",
+  "gold": "Tisch",
+  "candidates": [
+    "The Feature",
+    "Andrew Bowler",
+    "Febbre da cavallo",
+    "Sancho VI of Navarre",
+    "Comedy",
+    "Carlo Vanzina",
+    "Get That Girl",
+    "Arthur Lubin"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.2222222222222222,
+    "output": "Tisch School of the Arts of New York University"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Yale Drama School"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.2222222222222222,
+    "output": "Tisch School of the Arts of New York University"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c8-b1.0/policies/62-b5b63b160bdb11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-b39954a5ee07b16d",
+    "object": "chat.completion",
+    "created": 1779508759,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Tisch School of the Arts of New York University",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1072,
+      "total_tokens": 1083,
+      "completion_tokens": 11,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

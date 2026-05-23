@@ -1,0 +1,71 @@
+{
+  "idx": 63,
+  "qid": "4b1b91720bde11eba7f7acde48001122",
+  "gold": "India",
+  "candidates": [
+    "Korean",
+    "Heo Hwang-ok",
+    "Queen Hogu",
+    "Kings",
+    "The General",
+    "Geodeung of Geumgwan Gaya",
+    "Mapum of Geumgwan Gaya",
+    "Gyeomji of Geumgwan Gaya"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Korean"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.0,
+    "output": "Indian"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Korean"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c8-b1.0/policies/63-4b1b91720bde11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-aee9bb4274101c45",
+    "object": "chat.completion",
+    "created": 1779508760,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Korean",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1214,
+      "total_tokens": 1217,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "idx": 72,
+  "qid": "041581680bdc11eba7f7acde48001122",
+  "gold": "Manchester",
+  "candidates": [
+    "Manchester",
+    "Place of birth",
+    "David Lloyd George",
+    "The Wanted",
+    "House of Lords",
+    "The Will",
+    "Them",
+    "Sir Robert McAlpine, 1st Baronet"
+  ],
+  "path_prompt": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "Manchester"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "4 December 1894 – 14 February 1967"
+  },
+  "soft_policy": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "Manchester"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c8-b2.0/policies/72-041581680bdc11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-ac9d96d5278a1414",
+    "object": "chat.completion",
+    "created": 1779508913,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Manchester",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1093,
+      "total_tokens": 1095,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

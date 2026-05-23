@@ -1067,3 +1067,34 @@ https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vl
 ```
 
 It preserves the boundary: the probe/RAG program stays here; Boring Receipts gets the public, boring, reproducible card.
+
+## Entity-hop soft multi-candidate policy sweep
+
+Long autonomous sweep:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/ENTITY-HOP-SOFT-POLICY-SWEEP-10H.md
+```
+
+Best variant:
+
+```txt
+path-c12-b1.0
+soft EM 0.230 | F1 0.324
+path EM 0.250 | F1 0.330
+wins vs path: 1
+losses vs path: 3
+```
+
+Conclusion:
+
+```txt
+soft/multi-candidate policy is better than strict extractor+ECD, but still does not beat direct entity-hop graph/path prompt.
+```
+
+Updated direction:
+
+```txt
+stop sweeping first-token bias blindly.
+Next: confidence-gated fallback / answer rerank on top of entity-hop path prompt.
+```

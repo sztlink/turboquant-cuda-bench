@@ -1,0 +1,71 @@
+{
+  "idx": 49,
+  "qid": "00c75ffc0bde11eba7f7acde48001122",
+  "gold": "Paris",
+  "candidates": [
+    "Lettre ouverte",
+    "The Feature",
+    "The Jury",
+    "Alex Joffé",
+    "Part",
+    "Pierre Caron (director)",
+    "Marc Sorkin",
+    "László Nemes"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Alexandria, Egypt"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Alex Joffé, the director of Lettre Ouverte, was born in France. However, the provided passages do not contain this information. The closest information"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Alexandria, Egypt"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c8-b3.0/policies/49-00c75ffc0bde11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-8ddb5f85795ca788",
+    "object": "chat.completion",
+    "created": 1779510637,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Alexandria, Egypt",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1113,
+      "total_tokens": 1119,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

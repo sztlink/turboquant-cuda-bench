@@ -1,0 +1,74 @@
+{
+  "idx": 82,
+  "qid": "d1fd9cbe0bdc11eba7f7acde48001122",
+  "gold": "Cahiers du cinéma",
+  "candidates": [
+    "The Marquise of O (film)",
+    "The Marquise of O",
+    "The Seduction",
+    "Marcel Varnel",
+    "Éric Rohmer",
+    "Atom Egoyan",
+    "Alexander Carson",
+    "Hard Times",
+    "The Seed of Discord",
+    "O, Brazen Age",
+    "O-Kay for Sound"
+  ],
+  "path_prompt": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "Cahiers du cinéma"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Éric Rohmer worked on the film The Marquise of O (Film), but the passage does not provide information about where he worked. The question cannot"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Éric Rohmer"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c16-b2.0/policies/82-d1fd9cbe0bdc11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-bce15906a813de58",
+    "object": "chat.completion",
+    "created": 1779511403,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Éric Rohmer",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1166,
+      "total_tokens": 1171,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

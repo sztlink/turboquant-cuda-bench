@@ -1,0 +1,75 @@
+{
+  "idx": 70,
+  "qid": "982f8e440bdb11eba7f7acde48001122",
+  "gold": "1886",
+  "candidates": [
+    "1886",
+    "American Scientist",
+    "The Company (film)",
+    "The Feature",
+    "The Comic",
+    "Sigma Xi",
+    "Ida May Park",
+    "Part",
+    "The Vanity Pool",
+    "Hyperwerks",
+    "Eastern Color Printing",
+    "Alfred De Courcy"
+  ],
+  "path_prompt": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "1886"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "1913"
+  },
+  "soft_policy": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "1886"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c12-b1.0/policies/70-982f8e440bdb11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-9f728f6a8da24c1e",
+    "object": "chat.completion",
+    "created": 1779509358,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "1886",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1025,
+      "total_tokens": 1030,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

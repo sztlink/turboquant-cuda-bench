@@ -1,0 +1,71 @@
+{
+  "idx": 21,
+  "qid": "3705552a0bb011ebab90acde48001122",
+  "gold": "Louis-Alexandre Berthier",
+  "candidates": [
+    "William Montagu Douglas Scott, 6th Duke of Buccleuch",
+    "Alexandre Berthier, 3rd Prince of Wagram",
+    "The Descendants",
+    "Napoléon Alexandre Berthier, 2nd Prince of Wagram",
+    "Louis-Alexandre Berthier",
+    "Duchess Maria Elisabeth in Bavaria",
+    "Alexandre",
+    "Rd Prince Of"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "William Montagu Douglas Scott, 6th Duke of Buccleuch"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.5,
+    "output": "Louis-Alexandre Berthier, 1st Prince of Wagram"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "William Montagu Douglas Scott, 6th Duke of Buccleuch"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c16-b2.0/policies/21-3705552a0bb011ebab90acde48001122.json",
+  "response": {
+    "id": "chatcmpl-808d48e9df97d5eb",
+    "object": "chat.completion",
+    "created": 1779510020,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "William Montagu Douglas Scott, 6th Duke of Buccleuch",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1237,
+      "total_tokens": 1252,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

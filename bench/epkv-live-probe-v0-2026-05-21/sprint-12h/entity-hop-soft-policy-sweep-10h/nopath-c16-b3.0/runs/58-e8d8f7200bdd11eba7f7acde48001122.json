@@ -1,0 +1,75 @@
+{
+  "idx": 58,
+  "qid": "e8d8f7200bdd11eba7f7acde48001122",
+  "gold": "Chuck Schumer",
+  "candidates": [
+    "Peter Sellers",
+    "Anthony Weiner",
+    "Rod Amateau",
+    "Disgraced",
+    "My Heart",
+    "Sybille Schmitz",
+    "Herbert Selpin",
+    "Huma Abedin",
+    "Where Does It Hurt",
+    "Robert White Johnson",
+    "An Ideal Husband (1935 film)",
+    "Huma Abedin's"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Anthony Weiner worked as a Democratic congressman."
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "disgraced former congressman"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Anthony Weiner worked as a Democratic congressman."
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c16-b3.0/policies/58-e8d8f7200bdd11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-a2baa653ea52aded",
+    "object": "chat.completion",
+    "created": 1779511511,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Anthony Weiner worked as a Democratic congressman.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1169,
+      "total_tokens": 1178,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

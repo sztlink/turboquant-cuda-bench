@@ -1,0 +1,71 @@
+{
+  "idx": 27,
+  "qid": "931a85420bdd11eba7f7acde48001122",
+  "gold": "London",
+  "candidates": [
+    "Grosvenor Square, London",
+    "Lord Patrick Crichton-Stuart",
+    "John Crichton-Stuart, 2nd Marquess of Bute",
+    "Patrick Lyon, 1st Lord Glamis",
+    "John Crichton-Stuart, 6th Marquess of Bute",
+    "John Crichton-Stuart, 5th Marquess of Bute",
+    "Sophia Crichton-Stuart, Marchioness of Bute",
+    "John Stuart, Lord Mount Stuart"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.5,
+    "output": "Grosvenor Square, London"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.5,
+    "output": "Grosvenor Square, London"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.5,
+    "output": "Grosvenor Square, London"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c8-b1.0/policies/27-931a85420bdd11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-b7238c1442b0afcd",
+    "object": "chat.completion",
+    "created": 1779508711,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Grosvenor Square, London",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1494,
+      "total_tokens": 1502,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

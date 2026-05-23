@@ -1,0 +1,71 @@
+{
+  "idx": 51,
+  "qid": "71d8e20e0bdb11eba7f7acde48001122",
+  "gold": "London",
+  "candidates": [
+    "Place of birth",
+    "Vincent Novello",
+    "The Mess",
+    "Gilbert, Count of Montpensier",
+    "The Will",
+    "Keith Emerson",
+    "Karn Evil 9",
+    "A. Vincent"
+  ],
+  "path_prompt": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "London"
+  },
+  "bge_ref": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "London"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Place of origin"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c8-b2.0/policies/51-71d8e20e0bdb11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-a2f50851ba452ca9",
+    "object": "chat.completion",
+    "created": 1779510494,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Place of origin",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1076,
+      "total_tokens": 1080,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

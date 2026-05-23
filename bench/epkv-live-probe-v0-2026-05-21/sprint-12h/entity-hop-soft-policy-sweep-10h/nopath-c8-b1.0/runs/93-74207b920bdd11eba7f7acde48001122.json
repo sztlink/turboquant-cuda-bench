@@ -1,0 +1,71 @@
+{
+  "idx": 93,
+  "qid": "74207b920bdd11eba7f7acde48001122",
+  "gold": "Brighton",
+  "candidates": [
+    "Old Man Drinking a Glass of Beer",
+    "A Glass of Beer",
+    "The Glass Wall",
+    "The Window",
+    "Stefano Incerti",
+    "Comedy",
+    "George Thorogood",
+    "Amos Milburn"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Death not mentioned"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Berlin"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "The information provided does not contain the death place of the director of the film \"Old Man Drinking a Glass of Beer.\""
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c8-b1.0/policies/93-74207b920bdd11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-9285c7050e8e4475",
+    "object": "chat.completion",
+    "created": 1779510409,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "The information provided does not contain the death place of the director of the film \"Old Man Drinking a Glass of Beer.\"",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1051,
+      "total_tokens": 1075,
+      "completion_tokens": 24,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

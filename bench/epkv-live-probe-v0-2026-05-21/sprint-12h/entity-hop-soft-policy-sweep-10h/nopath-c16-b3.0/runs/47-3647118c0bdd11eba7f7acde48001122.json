@@ -1,0 +1,79 @@
+{
+  "idx": 47,
+  "qid": "3647118c0bdd11eba7f7acde48001122",
+  "gold": "Madrid",
+  "candidates": [
+    "Marianela (1940 film)",
+    "Place of birth",
+    "Night of the Living Dead",
+    "What Women Want",
+    "The Will",
+    "The First Day",
+    "George A. Romero",
+    "D. W. Griffith",
+    "Benito Perojo",
+    "@Home",
+    "Place of origin",
+    "Motherland (disambiguation)",
+    "What Women Want (2011 film)",
+    "Birth of the Living Dead",
+    "The Fall of a Nation",
+    "Marianela"
+  ],
+  "path_prompt": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "Madrid"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "P1: Marianela (1940 film): Marianela is a 1940 Spanish drama film directed by Benito Perojo."
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Place of birth"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c16-b3.0/policies/47-3647118c0bdd11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-b2abae7eaaa90779",
+    "object": "chat.completion",
+    "created": 1779511491,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Place of birth",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1051,
+      "total_tokens": 1055,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

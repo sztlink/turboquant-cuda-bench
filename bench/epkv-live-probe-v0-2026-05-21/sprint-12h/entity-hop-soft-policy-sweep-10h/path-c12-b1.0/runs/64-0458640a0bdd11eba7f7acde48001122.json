@@ -1,0 +1,75 @@
+{
+  "idx": 64,
+  "qid": "0458640a0bdd11eba7f7acde48001122",
+  "gold": "leukemia",
+  "candidates": [
+    "The Cause",
+    "At Play in the Fields of the Lord",
+    "For the Cause",
+    "The Supporter",
+    "The Rock",
+    "Joanikije I",
+    "Ashraf Hotak",
+    "Luis Buñuel",
+    "Georges Méliès",
+    "For the Cause of Suffrage",
+    "Alex Matthiessen",
+    "Peter Matthiessen"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "No information available about Alex Matthiessen's father's cause of death."
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.6666666666666666,
+    "output": "acute leukemia"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "No information provided in the passages about Alex Matthiessen's father's cause of death."
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c12-b1.0/policies/64-0458640a0bdd11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-9133dd43af757577",
+    "object": "chat.completion",
+    "created": 1779509347,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "No information provided in the passages about Alex Matthiessen's father's cause of death.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1037,
+      "total_tokens": 1056,
+      "completion_tokens": 19,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

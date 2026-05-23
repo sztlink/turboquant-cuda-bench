@@ -1,0 +1,71 @@
+{
+  "idx": 91,
+  "qid": "37c6703a0bdc11eba7f7acde48001122",
+  "gold": "1969",
+  "candidates": [
+    "Jinpa",
+    "The Child",
+    "The Accident",
+    "The Will",
+    "Pema Tseden",
+    "Mrinal Sen",
+    "Slayer",
+    "Part"
+  ],
+  "path_prompt": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "1969"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "The passage does not provide the birth year of the director of film Jinpa. Therefore, there is no answer to the question based on the given information."
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.6666666666666666,
+    "output": "December 1969"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c8-b1.0/policies/91-37c6703a0bdc11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-9e430aa77ee5bc47",
+    "object": "chat.completion",
+    "created": 1779510407,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "December 1969",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 877,
+      "total_tokens": 884,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

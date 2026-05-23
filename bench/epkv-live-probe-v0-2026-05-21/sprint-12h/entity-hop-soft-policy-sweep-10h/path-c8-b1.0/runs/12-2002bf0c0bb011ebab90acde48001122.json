@@ -1,0 +1,71 @@
+{
+  "idx": 12,
+  "qid": "2002bf0c0bb011ebab90acde48001122",
+  "gold": "Rupert",
+  "candidates": [
+    "Rupert of Germany",
+    "Elisabeth of Nuremberg",
+    "Part",
+    "Catherine of Pomerania, Countess Palatine of Neumarkt",
+    "Countess Palatine Magdalene Catherine of Zweibrücken",
+    "Countess Palatine Dorothea Catherine of Birkenfeld-Bischweiler",
+    "John, Count Palatine of Neumarkt",
+    "Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.5,
+    "output": "Rupert of Germany"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "John, Count Palatine of Neumarkt"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.5,
+    "output": "Rupert of Germany"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c8-b1.0/policies/12-2002bf0c0bb011ebab90acde48001122.json",
+  "response": {
+    "id": "chatcmpl-9a3cb5b9134d4aa5",
+    "object": "chat.completion",
+    "created": 1779508691,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Rupert of Germany",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1332,
+      "total_tokens": 1337,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

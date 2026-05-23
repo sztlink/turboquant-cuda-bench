@@ -1,0 +1,75 @@
+{
+  "idx": 98,
+  "qid": "027970120bdc11eba7f7acde48001122",
+  "gold": "Århus",
+  "candidates": [
+    "Århus, Region Midtjylland, Denmark",
+    "Bag Skyerne",
+    "The Magic of Belle Isle",
+    "The Singer",
+    "The Will",
+    "Where Are You",
+    "Felix Powell",
+    "Anne Gadegaard",
+    "Occidentali's Karma",
+    "Belle Isle",
+    "Side by side",
+    "Bag-in-box"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.4,
+    "output": "Århus, Region Midtjylland, Denmark"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "The performer of song Bag Skyerne, Anne Gadegaard, was born in Denmark. However, her birthplace is not specified in the given passages."
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.4,
+    "output": "Århus, Region Midtjylland, Denmark"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c12-b2.0/policies/98-027970120bdc11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-a43269f1ce212263",
+    "object": "chat.completion",
+    "created": 1779509528,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Århus, Region Midtjylland, Denmark",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 788,
+      "total_tokens": 799,
+      "completion_tokens": 11,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "idx": 32,
+  "qid": "6638110e0bdb11eba7f7acde48001122",
+  "gold": "Moscow, USSR",
+  "candidates": [
+    "Alexandre Gaydamak",
+    "Paid in Full",
+    "Louis Alexandre, Prince of Lamballe",
+    "Alexandre Berthier, 3rd Prince of Wagram",
+    "Arcadi Gaydamak",
+    "César Alexandre Debelle",
+    "Alexandre Volkoff",
+    "Louis Alexandre Henri Joseph Piré"
+  ],
+  "path_prompt": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "Moscow, USSR"
+  },
+  "bge_ref": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "Moscow, USSR"
+  },
+  "soft_policy": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "Moscow, USSR"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c16-b2.0/policies/32-6638110e0bdb11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-bff347601c6cd45c",
+    "object": "chat.completion",
+    "created": 1779511338,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Moscow, USSR",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 990,
+      "total_tokens": 995,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

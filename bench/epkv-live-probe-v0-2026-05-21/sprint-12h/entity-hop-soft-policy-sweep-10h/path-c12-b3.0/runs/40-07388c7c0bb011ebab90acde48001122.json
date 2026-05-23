@@ -1,0 +1,75 @@
+{
+  "idx": 40,
+  "qid": "07388c7c0bb011ebab90acde48001122",
+  "gold": "Peter I",
+  "candidates": [
+    "Louis of Piedmont",
+    "Amadeus VII, Count of Savoy",
+    "William I, Count of Burgundy",
+    "Bonne of Bourbon",
+    "James of Piedmont",
+    "Bonne of Berry",
+    "Chronicon",
+    "Amadeus VIII, Duke of Savoy",
+    "Joan of Geneva",
+    "Humbert II, Count of Savoy",
+    "Amadeus",
+    "Count Of"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Louis of Piedmont"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.28571428571428575,
+    "output": "Victor Amadeus I of Savoy"
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Louis of Piedmont"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c12-b3.0/policies/40-07388c7c0bb011ebab90acde48001122.json",
+  "response": {
+    "id": "chatcmpl-b78ed0f242502af7",
+    "object": "chat.completion",
+    "created": 1779509598,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Louis of Piedmont",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1346,
+      "total_tokens": 1351,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

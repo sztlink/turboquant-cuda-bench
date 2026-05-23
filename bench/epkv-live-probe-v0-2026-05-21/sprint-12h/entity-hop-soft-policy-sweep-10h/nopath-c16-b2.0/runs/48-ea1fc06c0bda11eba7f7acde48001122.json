@@ -1,0 +1,75 @@
+{
+  "idx": 48,
+  "qid": "ea1fc06c0bda11eba7f7acde48001122",
+  "gold": "United Nations",
+  "candidates": [
+    "Peter Sellers",
+    "United Nations",
+    "Rod Amateau",
+    "Comedy",
+    "The General",
+    "Hans Deppe",
+    "Where Does It Hurt",
+    "Karin Stoltenberg",
+    "Thorvald Stoltenberg",
+    "Camilla Stoltenberg",
+    "That's No Way to Land a Man",
+    "Karin Stoltenberg's"
+  ],
+  "path_prompt": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "United Nations"
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Norwegian Red Cross"
+  },
+  "soft_policy": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0,
+    "output": "United Nations"
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/nopath-c16-b2.0/policies/48-ea1fc06c0bda11eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-bd1b6bb1bcd5bf9e",
+    "object": "chat.completion",
+    "created": 1779511355,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "United Nations",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1108,
+      "total_tokens": 1111,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "idx": 7,
+  "qid": "464cfa460bd911eba7f7acde48001122",
+  "gold": "Brooklyn",
+  "candidates": [
+    "Kenneth Lauren Burns was born in 1953",
+    "Thomas Jefferson (film)",
+    "Thomas Jefferson",
+    "Born American",
+    "The Singer",
+    "Alice Nakamura",
+    "John Adams",
+    "Ken Burns",
+    "Andrew Jackson",
+    "Quarters",
+    "Guy Orcutt",
+    "Sally Hemings"
+  ],
+  "path_prompt": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Kenneth Lauren Burns was born in 1953."
+  },
+  "bge_ref": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "The director of the film \"Thomas Jefferson\" (1997) is Ken Burns, and the passage does not provide information about his birthplace."
+  },
+  "soft_policy": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0,
+    "output": "Ken Burns was born in 1953."
+  },
+  "restore_error": "",
+  "policy_path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-soft-policy-sweep-10h/path-c12-b0.5/policies/7-464cfa460bd911eba7f7acde48001122.json",
+  "response": {
+    "id": "chatcmpl-847a3a2c708cccc8",
+    "object": "chat.completion",
+    "created": 1779509122,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Ken Burns was born in 1953.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1288,
+      "total_tokens": 1300,
+      "completion_tokens": 12,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}
