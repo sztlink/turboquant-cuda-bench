@@ -1,0 +1,48 @@
+{
+  "qid": "87154f1e0bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Polish–Lithuanian Commonwealth",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Aleksandra Marianna Wiesiołowska -> Jadwiga Snopkowska\n- Aleksandra Marianna Wiesiołowska -> Marek Sobieski\n- Aleksandra Marianna Wiesiołowska -> Jadwiga Snopkowska\n- Aleksandra Marianna Wiesiołowska -> Marek Sobieski\n- Aleksandra Piątkowska -> Maria Piątkowska\n- We from the Urals -> Lev Kuleshov\n- Back to God's Country (1927 film) -> Irvin Willat\n- Back to God's Country (1927 film) -> 1919 (film)\n- The Red Colored Grey Truck -> Comedy!\nPassages:\nP1: Lev Kuleshov: Lev Vladimirovich Kuleshov( – 29 March 1970) was a Russian and Soviet filmmaker and film theorist, one of the founders of the world's first film school, the Moscow Film School. He was given the title People's Artist of the RSFSR in 1969. He was intimately involved in development of the style of film making known as Soviet montage, especially its psychological underpinning, including the use of editing and the cut to emotionally influence the audience, a principle known as the ...\nP2: Maria Piątkowska: Maria Piątkowska (née Ilwicka, later Chojnacka; born 24 February 1931) is a former Polish sprinter, hurdler, and long jumper. She was a three-time olympian (Helsinki 1952, Rome 1960 and Tokyo 1964) and participated in three different European Championships (1954 Bern, 1958 Stockholm and 1962 Belgrade). She was a member of a world record-setting 4x100 metre relay team on 13 September 1964 in Łódź, Poland, with the time of 44.2 s. She won three medals at two different European ...\nP3: Marek Sobieski: Marek Sobieski ( 1549/1550 – 1605) was a Polish–Lithuanian noble (szlachcic). He was a courtier from 1577, a Royal Court Chorąży (chorąży nadworny królewski) from 1581, a castellan of Lublin from 1597, and a voivode of Lublin Voivodeship from c. 1597/98. He was the grandfather of Jan III Sobieski, the elected King of the Polish–Lithuanian Commonwealth.\nP4: Marek Sobieski: Marek Sobieski( 1549/1550 – 1605) was a Polish – Lithuanian noble( szlachcic). He was a courtier from 1577, a Royal Court Chorąży( chorąży nadworny królewski) from 1581, a castellan of Lublin from 1597, and a voivode of Lublin Voivodeship from c. 1597/ 98. He was the grandfather of Jan III Sobieski, the elected King of the Polish – Lithuanian Commonwealth.\nP5: 1919 (film): 1919 is a 1985 British drama film directed by Hugh Brody and written by Michael Ignatieff together with Brody. It stars Paul Scofield. It was entered into the 35th Berlin International Film Festival.\nP6: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP7: Jadwiga Snopkowska: Jadwiga Snopkowska( c. 1558–1606) was the first wife of Marek Sobieski, the mother of Jakub Sobieski and the grandmother of King John III Sobieski of Poland.\nP8: Jadwiga Snopkowska: Jadwiga Snopkowska (c. 1558–1606) was the first wife of Marek Sobieski, the mother of Jakub Sobieski and the grandmother of King John III Sobieski of Poland.\nP9: Irvin Willat: Irvin V. Willat (November 18, 1890 – April 17, 1976) was an American film director of the silent film era. He directed 39 films between 1917 and 1937. Early in his career Willat worked as a cinematographer on several films. His older brother Edwin Willat (1882–1950) was cinematographer on several silent films.\nP10: Aleksandra Marianna Wiesiołowska: Aleksandra Marianna Wiesiołowska (died on 14 August 1645) was the daughter of magnate Marek Sobieski and Jadwiga Snopkowska. She was married to Court Marshal of Lithuania Krzysztof Wiesiołowski.\nQuestion: Which country Aleksandra Marianna Wiesiołowska's father is from?\nFinal answer:",
+  "output": "Poland",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8b67bf0ce457b50d",
+    "object": "chat.completion",
+    "created": 1779535581,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Poland",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1273,
+      "total_tokens": 1276,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

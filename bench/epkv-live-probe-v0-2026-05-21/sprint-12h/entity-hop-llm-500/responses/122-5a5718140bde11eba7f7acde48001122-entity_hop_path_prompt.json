@@ -1,0 +1,48 @@
+{
+  "qid": "5a5718140bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Bombay",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Jehovah-jireh -> Abraham\n- Jehovah-jireh -> Offer\n- The Brides of Fu Manchu -> The Vengeance of Fu Manchu\n- The Brides of Fu Manchu -> The Castle of Fu Manchu\n- Place of birth -> Place of origin\n- Ram Baksh Singh -> Guilty?\n- Ram Baksh Singh -> Part\n- Kurt Hoffmann -> Haunted\nPassages:\nP1: Kathputli (1971 film): Kathputli  is a 1971 Hindi-language romance film, produced and directed by Brij under the Dynamo International banner. It stars Jeetendra, Mumtaz in the lead roles and music composed by Kalyanji Anandji.\nP2: The Vengeance of Fu Manchu: The Vengeance of Fu Manchu is a 1967 British film directed by Jeremy Summers and starring Christopher Lee, Horst Frank, Douglas Wilmer and Tsai Chin. It was the third British/ West German Constantin Film co-production of the Dr. Fu Manchu series and the first to be filmed in Hong Kong. It was generally released in the U.K. through Warner- Pathé( as a support feature to the Lindsay Shonteff film\" The Million Eyes of Sumuru\") on 3 December 1967.\nP3: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP4: The Castle of Fu Manchu: The Castle of Fu Manchu( also known as The Torture Chamber of Dr. Fu Manchu and also known by its German title Die Folterkammer des Dr. Fu Man Chu) is a 1969 film and the fifth and final Dr. Fu Manchu film with Christopher Lee portraying the title character.\nP5: Abraham: Abraham (né Abram) is the common patriarch of Christianity, Islam, Judaism, and other religions. In Judaism, he is the founding father of the covenant of the pieces, the special relationship between the Hebrews and God; in Christianity, he is the prototype of all believers, Jewish or Gentile; and in Islam he is seen as a link in the chain of prophets that begins with Adam and culminates in Muhammad. The narrative in the Book of Genesis revolves around the themes of posterity and land. ...\nP6: Guilty?: Guilty? is a 1930 American pre-Code drama film directed by George B. Seitz.\nP7: Haunted: Haunted or The Haunted may refer to:\nP8: Offer: Offer or offers may refer to:\nP9: Part: Part, parts or PART may refer to:\nP10: The Brides of Fu Manchu: The Brides of Fu Manchu is a 1966 British/ West German Constantin Film co-production adventure crime film based on the fictional Chinese villain Dr. Fu Manchu, created by Sax Rohmer. It was the second film in a series, and was preceded by\" The Face of Fu ManchuThe Vengeance of Fu Manchu\" followed in 1967,\" The Blood of Fu Manchu\" in 1968, and\" The Castle of Fu Manchu\" in 1969. It was produced by Harry Alan Towers for Hallam Productions. Like the first film, it was ...\nQuestion: Where was the place of death of the director of film Kathputli (1971 Film)?\nFinal answer:",
+  "output": "Place of origin",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8ea5b20fd858d464",
+    "object": "chat.completion",
+    "created": 1779535584,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Place of origin",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 847,
+      "total_tokens": 851,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

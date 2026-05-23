@@ -1,0 +1,48 @@
+{
+  "qid": "0b1244de0bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Coral Gables, Florida",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Gwen Graham -> Bob Graham\n- Gwen Graham -> Graham\n- Alan R. Graham -> Graham\n- Andrew Gillum -> Gwen Graham\n- Andrew Gillum -> Graham\nPassages:\nP1: Gwen Graham: Gwendolyn Graham (born January 31, 1963) is an American lawyer and politician who served as the U.S. Representative for from 2015 to 2017. She is the daughter of Bob Graham, the former United States Senator and Governor of Florida. A Democrat, she was a candidate in the Florida 2018 gubernatorial election.\nP2: Graham: Graham and Graeme may refer to:\nP3: Bob Graham: Daniel Robert Graham (born November 9, 1936) is an American politician and author who served as the 38th governor of Florida from 1979 to 1987 and a United States senator from Florida from 1987 to 2005. He is a member of the Democratic Party. Born in Coral Gables, Florida, Graham won election to the Florida Legislature after graduating from Harvard Law School. After serving in both houses of the Florida Legislature, Graham won the 1978 Florida gubernatorial election, and was ...\nP4: Christopher Graham: Christopher Sidney Matthew Graham( born 21 September 1950) took over the role of UK Information Commissioner from Richard Thomas on 29 June 2009 and concluded his tenure on 28 June 2016. Prior to this appointment, Graham was Director General of the United Kingdom's Advertising Standards Authority. Christopher Graham's father, David Maurice Graham( 1911 – 99), served as a broadcaster with the BBC External Services from 1939 to 1971. He reported on the liberation of the Nazi ...\nP5: Alan R. Graham: Alan Robert Graham( born June 20, 1942) is a Canadian retired politician in the Province of New Brunswick and he is the father of Shawn Graham, who was Premier of New Brunswick from 2006 to 2010.\nP6: Graham J. Zellick: Graham J. Zellick( born 12 August 1948) was Vice- Chancellor of the University of London from 1997 – 2003 and previously Principal of Queen Mary and Westfield College of the University of London from 1991 – 98.\nP7: Adele Khoury Graham: Adele Khoury Graham (born April 4, 1938) is an American educator and the former First Lady of Florida from 1979 to 1987. She is the wife of the 38th Governor of Florida and former United States Senator Bob Graham. Adele Graham was the First Lady of the state of Florida from 1979 to 1987. She spent her career as public school teacher in Massachusetts and Miami, Florida. In all, the Grahams have four children and 11 grandchildren.\nP8: Will Graham (evangelist): William Franklin Graham IV( born January 30, 1975) is an American Christian evangelist. He is the executive director of the Billy Graham Training Center at The Cove and associate evangelist of the Billy Graham Evangelistic Association. Graham is the third generation of Grahams to preach under the banner of the Billy Graham Evangelistic Association( BGEA). He is the grandson of Billy Graham and the oldest son of Franklin Graham.\nP9: Andrew Gillum: Andrew Gillum( born July 26, 1979) is an American politician who served as the 126th Mayor of Tallahassee from 2014 to 2018. A member of the Democratic Party, he was its nominee for Governor of Florida in the 2018 election. He previously was a Tallahassee City Commissioner from 2003 until 2014, first elected at the age of 23. In 2018, Gillum became the nominee of the Florida Democratic Party for Governor of Florida when he won the Democratic primary election over a field of five ...\nP10: Dorelia McNeill: Dorothy (Dorelia) McNeill (19 December 1881 – 23 July 1969) was best known as a model for the Welsh artists Gwen John and Augustus John, was the common-law wife of the latter, and has been credited for inspiring \"his first unequivocally personal work\". In her time she was regarded by some as an exemplar of bohemian fashion. Dorothy McNeill was born in Camberwell, the daughter of a clerk and the fourth of seven children. While attending the Westminster School of Art in 1903 she ...\nQuestion: Where was the father of Gwen Graham born?\nFinal answer:",
+  "output": "Coral Gables",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.8
+  },
+  "response": {
+    "id": "chatcmpl-8590e5f28efa7dc0",
+    "object": "chat.completion",
+    "created": 1779535864,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Coral Gables",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1134,
+      "total_tokens": 1139,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

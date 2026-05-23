@@ -1,0 +1,64 @@
+{
+  "idx": 6,
+  "qid": "2ec440560bb011ebab90acde48001122",
+  "gold": "Ptolemy IX Lathyros",
+  "candidates": [
+    "Antiochus VII Sidetes",
+    "Antiochus IX",
+    "Antiochus IX Cyzicenus",
+    "Antiochus X Eusebes",
+    "Afterwards",
+    "Part",
+    "Laodice of the Sameans",
+    "Antiochus III of Commagene",
+    "Antiochus XI Epiphanes",
+    "Philip I Philadelphus"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Antiochus VII Sidetes\nC2: Antiochus IX\nC3: Antiochus IX Cyzicenus\nC4: Antiochus X Eusebes\nC5: Afterwards\nC6: Part\nC7: Laodice of the Sameans\nC8: Antiochus III of Commagene\nC9: Antiochus XI Epiphanes\nC10: Philip I Philadelphus\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Laodice of the Sameans -> Antiochus X Eusebes\n- Antiochus IX Cyzicenus -> Antiochus VII Sidetes\n- Antiochus IX Cyzicenus -> Afterwards\n- Antiochus III of Commagene -> Part\nPassages:\nP1: Antiochus X Eusebes: Antiochus X Eusebes Philopator (–92 or 88 BC) was a Hellenistic Seleucid monarch who reigned as the King of Syria between 95 BC and 92 BC or 89/88 BC (224 SE (Seleucid year)). He was the son of Antiochus IX and perhaps his Egyptian wife Cleopatra IV. He lived in a period during which there was a general disintegration of Seleucid Syria characterized by civil wars, foreign interference by Ptolemaic Egypt and incursions by the Parthians. Antiochus IX was killed in 95BC at the ...\nP2: Antiochus X Eusebes: Antiochus X Eusebes Philopator( –92 or 88 BC) was a Hellenistic Seleucid monarch who reigned as the King of Syria between 95 BC and 92 BC or 89/88 BC( 224 SE( Seleucid year)). He was the son of Antiochus IX and perhaps his Egyptian wife Cleopatra IV. He lived in a period during which there was a general disintegration of Seleucid Syria characterized by civil wars, foreign interference by Ptolemaic Egypt and incursions by the Parthians. Antiochus IX was killed in 95 BC at ...\nP3: Antiochus VII Sidetes: Antiochus VII Euergetes (c.164/160 BC - 129 BC) , nicknamed Sidetes  (from Side, a city in Asia Minor), also known as Antiochus the Pious, was ruler of the Hellenistic Seleucid Empire who reigned from July/August 138 to 129 BC. He was the last Seleucid king of any stature. After Antiochus was killed in battle, the Seleucid realm was restricted to Syria.\nP4: Afterwards: Afterwards is a 2008 English- language psychological thriller film directed by Gilles Bourdos and starring Romain Duris, John Malkovich and Evangeline Lilly. Based on Guillaume Musso's novel\" Et après ...\", the story tells of a workaholic lawyer who is told by a self- proclaimed visionary that he must try to prevent his imminent death. The film was shot in New York City, Montreal and various New Mexico locations over June to July 2007, and had a French release in January 2009.\nP5: Part: Part, parts or PART may refer to:\nP6: Laodice of the Sameans: Laodice was a Queen of an unknown Kingdom in Asia. She lived at the time of the Seleucid king of Syria Antiochus X Eusebes who reigned 95 BC- 92 or 88 BC.\nP7: Antiochus III of Commagene: Antiochus III Epiphanes (flourished 1st century BC and 1st century AD) was the ruler of the Kingdom of Commagene from 12 BC to 17 AD. He was the son and successor of King Mithridates III of Commagene and Iotapa, and of mixed Armenian, Greek and Median descent--the last through his mother. His parents were first cousins. When Antiochus died in 17 AD, his death created major issues for the kingdom, which was in political turmoil at the time. The reasons for this ...\nP8: Antiochus IX Cyzicenus: Antiochus IX Eusebes Cyzicenus (\"Antiochus the Pious, the Cyzicene\") was a ruler of the Hellenistic Seleucid kingdom. He was the son of Antiochus VII Sidetes and Cleopatra Thea. He left the kingdom in 129 BC and went to the city of Cyzicus, but he returned in 116 BC to challenge his half-brother Antiochus VIII for power. The siblings fought a twenty-year civil war. In 112 BC, Antiochus IX's wife, Cleopatra IV, was killed by her sister Tryphaena, the wife of Antiochus ...\nP9: Antiochus XI Epiphanes: Antiochus XI Epiphanes Philadelphus( unknown – 93 BC) was a Hellenistic Seleucid monarch who reigned as the King of Syria between 94 and 93 BC. He was the son of Antiochus VIII and his wife Tryphaena. Antiochus XI's early life was a time of constant civil war between his father and his uncle Antiochus IX. The conflict ended with the assassination of Antiochus VIII, followed by the establishment of Antiochus IX in Antioch, the capital of Syria. Antiochus VIII's eldest son ...\nP10: Philip I Philadelphus: Philip I Epiphanes Philadelphus (between 124 and 109 BC – 83 or 75 BC) was a Hellenistic Seleucid monarch who reigned as the King of Syria from 94 to either 83 or 75 BC. The son of Antiochus VIII and his wife Tryphaena, he spent his early life in a period of civil war between his father and his uncle Antiochus IX. The conflict ended with the assassination of Antiochus VIII and a quick succession in the Syrian capital Antioch of Antiochus IX then Antiochus VIII's eldest ...\nQuestion: Who is the maternal grandfather of Antiochus X Eusebes?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Antiochus VII Sidetes\",\"selected\":\"C3\",\"confidence\":\"medium\",\"reason\":\"The evidence shows that Antiochus X Eusebes was the son of Antiochus IX and perhaps his Egyptian wife Cleopatra IV. It also indicates that Antiochus IX was the son of Antiochus VII Sidetes and Cleopatra Thea, making Antiochus VII Sidetes the maternal grandfather of Antiochus X Eusebes.\"}",
+  "verifier": {
+    "final_answer": "Antiochus VII Sidetes",
+    "selected": "C3",
+    "confidence": "medium",
+    "reason": "The evidence shows that Antiochus X Eusebes was the son of Antiochus IX and perhaps his Egyptian wife Cleopatra IV. It also indicates that Antiochus IX was the son of Antiochus VII Sidetes and Cleopatra Thea, making Antiochus VII Sidetes the maternal grandfather of Antiochus X Eusebes."
+  },
+  "final": "Antiochus VII Sidetes",
+  "selected": "C3",
+  "response": {
+    "id": "chatcmpl-b2247e7a9231d4ad",
+    "object": "chat.completion",
+    "created": 1779535924,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Antiochus VII Sidetes\",\"selected\":\"C3\",\"confidence\":\"medium\",\"reason\":\"The evidence shows that Antiochus X Eusebes was the son of Antiochus IX and perhaps his Egyptian wife Cleopatra IV. It also indicates that Antiochus IX was the son of Antiochus VII Sidetes and Cleopatra Thea, making Antiochus VII Sidetes the maternal grandfather of Antiochus X Eusebes.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1581,
+      "total_tokens": 1685,
+      "completion_tokens": 104,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.8457608222961426
+}

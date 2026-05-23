@@ -1,0 +1,48 @@
+{
+  "qid": "6ce7c6c00bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "1323",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Guglielma Pallavicini -> Bartolomeo Zaccaria\n- Guglielma Pallavicini -> Maria dalle Carceri\n- Guglielma Pallavicini -> Bartolomeo Zaccaria\n- Guglielma Pallavicini -> Maria dalle Carceri\n- When the Mother and the Daughter -> Carl Boese\n- When the Mother and the Daughter -> Die Mutter\n- Bartolomeo Zaccaria -> Guglielma Pallavicini\n- Bartolomeo Zaccaria -> Maria dalle Carceri\n- Maria dalle Carceri -> The Inheritance\n- Did a Good Man Die? -> Fadil Hadžić\n- Did a Good Man Die? -> The Good Man\n- Nicholas III Zorzi -> Guglielma Pallavicini\n- Nicholas III Zorzi -> Murad II\n- Francis Zorzi -> Guglielma Pallavicini\nPassages:\nP1: Die Mutter: Die Mutter is an East German film. It was released in 1958. It is an adaptation of a play by Bertolt Brecht, which in itself is based on a novel by Maxim Gorky.\nP2: Murad II: Murad II's reign was marked by the long war he fought against the Christian feudal lords of the Balkans and the Turkish beyliks in Anatolia, a conflict that lasted 25 years. He was brought up in Amasya, and ascended the throne on the death of his father Mehmed I. His mother was Valide Sultan Emine Hatun (daughter of Suleyman Bey, ruler of Dulkadirids), his father's third consort. Their marriage served as an alliance between the Ottomans and this buffer state.\nP3: Carl Boese: Carl Boese( 26 August 1887 – 6 July 1958) was a German film director, screenwriter and producer. He directed 158 films between 1917 and 1957.\nP4: The Inheritance: The Inheritance may refer to:\nP5: Fadil Hadžić: Fadil Hadžić( 23 April 1922 – 3 January 2011) was a Croatian film director, screenwriter, playwright and journalist, mainly known for his comedy films and plays. He was of Bosnian origin, but mainly lived and worked in Croatia, and was well known throughout Yugoslavia.\nP6: The Good Man: The Good Man is a 2012 film by Phil Harrison starring Aidan Gillen.\nP7: Guglielma Pallavicini: Guglielma Pallavicini( rarely\" Wilhelmina\"; died 1358), the Lady of Thermopylae, was the last Pallavicino heir to rule in Bodonitsa. She was but an infant when she succeeded her father Albert in 1311. She shared the margraviate with her mother Maria dalle Carceri and later with her stepfather Andrea Cornaro and her own husband Bartolomeo Zaccaria.\nP8: Guglielma Pallavicini: Guglielma Pallavicini (rarely \"Wilhelmina\"; died 1358), the Lady of Thermopylae, was the last Pallavicino heir to rule in Bodonitsa. She was but an infant when she succeeded her father Albert in 1311. She shared the margraviate with her mother Maria dalle Carceri and later with her stepfather Andrea Cornaro and her own husband Bartolomeo Zaccaria.\nP9: When the Mother and the Daughter: When the Mother and the Daughter( German: Wenn die Mutter und die Tochter ...) is a 1928 German silent film directed by Carl Boese and starring Fritz Spira, Trude Hesterberg and Vera Schmiterlöw.\nP10: Did a Good Man Die?: Did a Good Man Die? (\" Da li je umro dobar čovjek?\") is a Croatian film directed by Fadil Hadžić and starring Boris Dvornik. It was released in 1962.\nQuestion: When did Guglielma Pallavicini's mother die?\nFinal answer:",
+  "output": "1311",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b432a3a85ba181bc",
+    "object": "chat.completion",
+    "created": 1779535751,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "1311",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1009,
+      "total_tokens": 1014,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

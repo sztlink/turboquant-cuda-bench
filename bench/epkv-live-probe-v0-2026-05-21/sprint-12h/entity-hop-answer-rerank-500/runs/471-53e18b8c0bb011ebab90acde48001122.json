@@ -1,0 +1,63 @@
+{
+  "idx": 471,
+  "qid": "53e18b8c0bb011ebab90acde48001122",
+  "gold": "William Henry Fellowes",
+  "candidates": [
+    "William Henry Fellowes",
+    "William Fellowes",
+    "Ailwyn Fellowes, 1st Baron Ailwyn",
+    "Carol Fellowes, 4th Baron Ailwyn",
+    "Ronald Fellowes, 2nd Baron Ailwyn",
+    "Eric Fellowes, 3rd Baron Ailwyn",
+    "Edward Fellowes, 1st Baron de Ramsey",
+    "William Fellowes, 2nd Baron de Ramsey",
+    "John Fellowes, 4th Baron de Ramsey"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: William Henry Fellowes\nC2: William Fellowes\nC3: Ailwyn Fellowes, 1st Baron Ailwyn\nC4: Carol Fellowes, 4th Baron Ailwyn\nC5: Ronald Fellowes, 2nd Baron Ailwyn\nC6: Eric Fellowes, 3rd Baron Ailwyn\nC7: Edward Fellowes, 1st Baron de Ramsey\nC8: William Fellowes, 2nd Baron de Ramsey\nC9: John Fellowes, 4th Baron de Ramsey\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- William Henry Fellowes -> William Fellowes, 2nd Baron de Ramsey\n- William Henry Fellowes -> Ailwyn Fellowes, 1st Baron Ailwyn\n- Edward Fellowes, 1st Baron de Ramsey -> William Henry Fellowes\n- William Fellowes, 2nd Baron de Ramsey -> Edward Fellowes, 1st Baron de Ramsey\n- William Fellowes, 2nd Baron de Ramsey -> Ailwyn Fellowes, 1st Baron Ailwyn\nPassages:\nP1: Ailwyn Fellowes, 1st Baron Ailwyn: Ailwyn Edward Fellowes, 1st Baron Ailwyn (10 November 1855 – 23 September 1924), was a British businessman, farmer and Conservative politician. He was a member of Arthur Balfour's cabinet as President of the Board of Agriculture between March and December 1905.\nP2: Carol Fellowes, 4th Baron Ailwyn: Carol Arthur Fellowes, 4th Baron Ailwyn, TD( 23 November 1896 – 27 September 1988) was a British peer, the son of Ailwyn Edward Fellowes, 1st Baron Ailwyn. He was known as the Honourable Carol Fellowes from 1921, when his father was raised to the peerage, until he succeeded to the barony on 23 March 1976.\nP3: Ronald Fellowes, 2nd Baron Ailwyn: Lt.- Col. Ronald Townshend Fellowes, 2nd Baron Ailwyn ( 7 December 1886 – 30 August 1936) was a British peer, the son of Ailwyn Edward Fellowes, 1st Baron Ailwyn. He succeeded to the Barony on 23 September 1924. He lived at Honingham Hall in Norfolk until he sold it in 1935. He married Mildred King on 21 August 1916. He died, without issue, on 30 August 1936 at age 49, from wounds received in the First World War.\nP4: Eric Fellowes, 3rd Baron Ailwyn: Captain Eric William Edward Fellowes, 3rd Baron Ailwyn( 24 November 1887 – 23 March 1976) was a British peer, the son of Ailwyn Edward Fellowes, 1st Baron Ailwyn. He succeeded to the Barony on 30 August 1936. Fellows was educated at Stubbington House School and at HMS\" Britannia\". He married Cecil Lorna Barclay( d.1976), on 5 June 1935. In 1942 he was a member of British Parliamentary Mission to China, and from 1943 to 1948 he was President of the China ...\nP5: Edward Fellowes, 1st Baron de Ramsey: Edward Fellowes, 1st Baron de Ramsey DL (14 May 1809 – 9 August 1887) was a British Conservative Member of Parliament. De Ramsey was the son of William Henry Fellowes, of Ramsey Abbey in Huntingdonshire, and Emma Benyon. He was elected to the House of Commons for Huntingdonshire in 1837, a seat he held for 43 years, until 1880. In July 1887, only a month before his death, he was raised to the peerage as Baron de Ramsey, of Ramsey Abbey in the County of ...\nP6: William Fellowes, 2nd Baron de Ramsey: William Henry Fellowes, 2nd Baron de Ramsey( 16 May 1848 – 8 May 1925), was a British Conservative politician. De Ramsey was the eldest son of Edward Fellowes, 1st Baron de Ramsey, and Hon. Mary Julia Milles. Ailwyn Fellowes, 1st Baron Ailwyn, was his younger brother. He purchased a commission as a cornet in the Life Guards on 16 March 1867; he retired as a captain on 21 July 1877. He succeeded his father as Member of Parliament for Huntingdonshire in ...\nP7: John Fellowes, 4th Baron de Ramsey: John Ailwyn Fellowes, 4th Baron de Ramsey( born 27 February 1942) is a British landowner, agriculturalist, and the first chairman of the Environment Agency.\nP8: William Henry Fellowes: William Henry Fellowes( 15 July 1769 – 23 August 1837), of Ramsey Abbey in Huntingdonshire and Haverland Hall in Norfolk, was a British Member of Parliament. Fellowes was the son of William Fellowes and Lavinia Smyth. He was elected to the House of Commons for Huntingdon in 1796, a seat he held until 1807, and then represented Huntingdonshire from 1807 to 1830. Fellowes married Emma Benyon, daughter of Richard Benyon MP. Their eldest surviving son Edward Fellowes was ...\nQuestion: Who is Ailwyn Fellowes, 1St Baron Ailwyn's paternal grandfather?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"William Henry Fellowes\",\"selected\":\"C1|C2\",\"confidence\":\"high\",\"reason\":\"C6 is not a paternal grandfather, and C7 is not related to Ailwyn Fellowes, 1st Baron Ailwyn based on the provided graph and passages.\"}",
+  "verifier": {
+    "final_answer": "William Henry Fellowes",
+    "selected": "C1|C2",
+    "confidence": "high",
+    "reason": "C6 is not a paternal grandfather, and C7 is not related to Ailwyn Fellowes, 1st Baron Ailwyn based on the provided graph and passages."
+  },
+  "final": "William Henry Fellowes",
+  "selected": "C1|C2",
+  "response": {
+    "id": "chatcmpl-b548c2a8c980b1d9",
+    "object": "chat.completion",
+    "created": 1779536244,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"William Henry Fellowes\",\"selected\":\"C1|C2\",\"confidence\":\"high\",\"reason\":\"C6 is not a paternal grandfather, and C7 is not related to Ailwyn Fellowes, 1st Baron Ailwyn based on the provided graph and passages.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1455,
+      "total_tokens": 1516,
+      "completion_tokens": 61,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.135098934173584
+}

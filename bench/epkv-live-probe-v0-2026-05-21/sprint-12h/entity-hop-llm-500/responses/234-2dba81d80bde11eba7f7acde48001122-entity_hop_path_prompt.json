@@ -1,0 +1,48 @@
+{
+  "qid": "2dba81d80bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "hanged, drawn and quartered",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Eleanor de Clare -> Hugh Despenser the younger\n- Eleanor de Clare -> Edward I of England\n- Eleanor de Clare -> Elizabeth de Clare\n- Eleanor de Clare -> Hugh Despenser the younger\n- Eleanor de Clare -> Edward I of England\n- Eleanor de Clare -> Elizabeth de Clare\n- Isabel le Despenser, Countess of Arundel -> Hugh Despenser the younger\n- Isabel le Despenser, Countess of Arundel -> Edward I of England\n- Joan of Acre -> Gilbert de Clare, 7th Earl of Gloucester\n- Joan of Acre -> Edward I of England\n- Joan of Acre -> Eleanor of Castile\n- Elizabeth de Clare -> Joan of Acre\n- Elizabeth de Clare -> Joan of Acre\n- Isabella of Gloucester and Hertford -> Isabel Marshal\nPassages:\nP1: The Cause: The Cause may refer to:\nP2: Gilbert de Clare, 7th Earl of Gloucester: Gilbert de Clare, 6th Earl of Hertford, 7th Earl of Gloucester, 3rd Lord of Glamorgan, 9th Lord of Clare( 2 September 1243 – 7 December 1295) was a powerful English noble. He was also known as\" Red\" Gilbert de Clare or\" The Red Earl\", probably because of his hair colour or fiery temper in battle. He held the Lordship of Glamorgan which was one of the most powerful and wealthy of the Welsh Marcher Lordships as well as over 200 English manors( 172 in the ...\nP3: Eleanor of Castile: Eleanor of Castile (1241 – 28 November 1290) was an English queen consort, the first wife of Edward I, whom she married as part of a political deal to affirm English sovereignty over Gascony. The marriage was known to be particularly close, and Eleanor travelled extensively with her husband. She was with him on the Ninth Crusade, when he was wounded at Acre, but the popular story of her saving his life by sucking out the poison has long been discredited. When she died, at ...\nP4: Edward I of England: Edward I (17/18 June 1239 – 7 July 1307), also known as Edward Longshanks and the Hammer of the Scots , was King of England from 1272 to 1307. Before his accession to the throne, he was commonly referred to as The Lord Edward. The first son of Henry III, Edward was involved from an early age in the political intrigues of his father's reign, which included an outright rebellion by the English barons. In 1259, he briefly sided with a baronial reform movement, supporting the ...\nP5: Hugh Despenser the younger: Hugh le Despenser, 1st Lord Despenser (c. 1286 – 24 November 1326), also referred to as \"the younger Despenser\", was the son and heir of Hugh le Despenser, Earl of Winchester (the elder Despenser) by his wife Isabella de Beauchamp, daughter of William de Beauchamp, 9th Earl of Warwick. He rose to national prominence as royal chamberlain and a favourite of Edward II of England. Despenser made many enemies across the nobility of England which, after the overthrow of ...\nP6: Hugh Despenser the younger: Hugh le Despenser, 1st Lord Despenser( c. 1286 – 24 November 1326), also referred to as\" the younger Despenser\", was the son and heir of Hugh le Despenser, Earl of Winchester( the elder Despenser) by his wife Isabella de Beauchamp, daughter of William de Beauchamp, 9th Earl of Warwick. He rose to national prominence as royal chamberlain and a favourite of Edward II of England. Despenser made many enemies across the nobility of England which, after the overthrow of ...\nP7: Isabel Marshal: Isabel Marshal (9 October 1200 – 17 January 1240) was a medieval English countess. She was the wife of both Gilbert de Clare, 4th Earl of Hertford and 5th Earl of Gloucester and Richard, 1st Earl of Cornwall (son of King John of England). With the former, she was a great grandmother of King Robert the Bruce of Scotland.\nP8: Richard de Clare, Steward of Forest of Essex: Richard de Clare (after 1281 – 10 May 1318) 1st Lord Clare was the son of Thomas de Clare, Lord of Thomond and Juliana FitzGerald. A descendant of Strongbow, he succeeded his older brother, Gilbert, in 1308 as Lord of Thomond. In 1309, and then again between 1312 and 1316, he was sheriff of Cork. Forced to put down a number of rebellions, he was eventually killed while commanding his forces at the Battle of Dysert O'Dea near what is now Ennis, ...\nP9: Eleanor de Clare: Eleanor de Clare, suo jure 6th Lady of Glamorgan( 3 October 1292- 30 June 1337) was a powerful English noblewoman who married Hugh Despenser the Younger and was a granddaughter of Edward I of England. With her sisters, Elizabeth de Clare and Margaret de Clare, she inherited her father's estates after the death of her brother, Gilbert de Clare, 8th Earl of Gloucester, 7th Earl of Hereford at the Battle of Bannockburn in 1314. She was born in 1292 at Caerphilly Castle in ...\nP10: Eleanor de Clare: Eleanor de Clare, suo jure 6th Lady of Glamorgan (3 October 1292-30 June 1337) was a powerful English noblewoman who married Hugh Despenser the Younger and was a granddaughter of Edward I of England. With her sisters, Elizabeth de Clare and Margaret de Clare, she inherited her father's estates after the death of her brother, Gilbert de Clare, 8th Earl of Gloucester, 7th Earl of Hereford at the Battle of Bannockburn in 1314. She was born in 1292 at Caerphilly Castle in ...\nQuestion: What is the cause of death of Eleanor De Clare's husband?\nFinal answer:",
+  "output": "Hugh Despenser the Younger died on 24 November 1326.",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9ad6109cac3f09c3",
+    "object": "chat.completion",
+    "created": 1779535686,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Hugh Despenser the Younger died on 24 November 1326.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1493,
+      "total_tokens": 1513,
+      "completion_tokens": 20,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

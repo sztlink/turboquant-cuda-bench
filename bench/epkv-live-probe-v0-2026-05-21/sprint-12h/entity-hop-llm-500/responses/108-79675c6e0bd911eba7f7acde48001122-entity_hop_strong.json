@@ -1,0 +1,48 @@
+{
+  "qid": "79675c6e0bd911eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "German",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Ulzhan: Ulzhan is a 2007 international co-production directed by Volker Schlöndorff, starring Philippe Torreton, Ayanat Xenbay (formerly credited as Ayana Yesmagambetova) and David Bennent.\nP2: The Godfather: The Godfather is a 1972 American crime film directed by Francis Ford Coppola and produced by Albert S. Ruddy, based on Mario Puzo's best- selling novel of the same name. It stars Marlon Brando and Al Pacino as the father and son of a fictional New York crime family. The story, spanning 1945 to 1955, chronicles the family under the patriarch Vito Corleone( Brando), focusing on the transformation of the son Michael Corleone( Pacino), raised to have a life outside of crime, from ...\nP3: 1919 (film): 1919 is a 1985 British drama film directed by Hugh Brody and written by Michael Ignatieff together with Brody. It stars Paul Scofield. It was entered into the 35th Berlin International Film Festival.\nP4: The Singer: The Singer may refer to:\nP5: The General: The General or The Generals may refer to:\nP6: Volker Schlöndorff: Volker Schlöndorff( born 31 March 1939) is a German filmmaker who has worked in Germany, France and the United States. He was a prominent member of the New German Cinema of the late 1960s and early 1970s, which also included Werner Herzog, Wim Wenders, Margarethe von Trotta and Rainer Werner Fassbinder. He won an Oscar as well as the Palme d'or at the 1979 Cannes Film Festival for\" The Tin Drum\"( 1979), the film version of the novel by Nobel Prize- winning author Günter ...\nP7: Volker Schlöndorff: Volker Schlöndorff (born 31 March 1939) is a German filmmaker who has worked in Germany, France and the United States. He was a prominent member of the New German Cinema of the late 1960s and early 1970s, which also included Werner Herzog, Wim Wenders, Margarethe von Trotta and Rainer Werner Fassbinder. He won an Oscar as well as the Palme d'or at the 1979 Cannes Film Festival for \"The Tin Drum\" (1979), the film version of the novel by Nobel Prize-winning author Günter Grass.\nP8: Funny Face: Funny Face is a 1957 American musical romantic comedy film directed by Stanley Donen and written by Leonard Gershe, containing assorted songs by George and Ira Gershwin. Although having the same title as the 1927 Broadway musical\" Funny Face\" by the Gershwin brothers, and featuring the same male star( Fred Astaire), the plot is totally different and only four of the songs from the stage musical are included. Alongside Astaire, the film stars Audrey Hepburn and Kay Thompson.\nP9: United Nations: The United Nations (UN), is an intergovernmental organization responsible for maintaining international peace and security, developing friendly relations among nations, achieving international cooperation, and being a center for harmonizing the actions of nations. It is the largest, most familiar, most internationally represented and most powerful intergovernmental organization in the world. The UN is headquartered on international territory in New York City; other main offices ...\nP10: Irvin Willat: Irvin V. Willat (November 18, 1890 – April 17, 1976) was an American film director of the silent film era. He directed 39 films between 1917 and 1937. Early in his career Willat worked as a cinematographer on several films. His older brother Edwin Willat (1882–1950) was cinematographer on several silent films.\nQuestion: Which country the director of film Ulzhan is from?\nFinal answer:",
+  "output": "Germany",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a85d0467ed2ff975",
+    "object": "chat.completion",
+    "created": 1779535572,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Germany",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 981,
+      "total_tokens": 983,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

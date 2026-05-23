@@ -1,0 +1,48 @@
+{
+  "qid": "21f924140baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Honoré IV, Prince of Monaco",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Marie Thérèse de Choiseul -> Prince Joseph of Monaco\n- Marie-Thérèse de Chateauvieux -> The General\n- Marie Thérèse of France -> Louis Antoine, Duke of Angoulême\n- Marie Thérèse of France -> Marie Antoinette\nPassages:\nP1: Marie Thérèse de Choiseul: Marie Thérèse \"Françoise\" de Choiseul (1767–27 July 1794) was a French noblewoman and a Monegasque princess, married to Prince Joseph of Monaco in 1782.\nP2: Marie Antoinette: Marie Antoinette (born Maria Antonia Josepha Johanna; 2 November 1755 – 16 October 1793) was the last Queen of France before the French Revolution. She was born an Archduchess of Austria and was the penultimate child and youngest daughter of Empress Maria Theresa and Francis I, Holy Roman Emperor. She became Dauphine of France in May 1770 at age 14 upon her marriage to Louis-Auguste, heir apparent to the French throne. On 10 May 1774, her husband ascended the throne as Louis ...\nP3: Louis Antoine, Duke of Angoulême: Louis Antoine of France, Duke of Angoulême( 6 August 1775 – 3 June 1844) was the elder son of Charles X of France and the last Dauphin of France from 1824 to 1830. He was technically King of France and Navarre for less than 20 minutes before he himself abdicated, due to his father's abdication during the July Revolution in 1830. He never reigned over the country, but after his father's death in 1836, he was the legitimist pretender as Louis XIX. He was a\" ...\nP4: Prince Joseph of Monaco: Prince Joseph of Monaco (Joseph Marie Jerôme Honoré; 10 September 1763 – 28 June 1816) was a Monagasque prince and brother of Honoré IV, Prince of Monaco. Her served as regent of Monaco on behalf of his brother in 1814-1815.\nP5: Prince Joseph of Monaco: Prince Joseph of Monaco( Joseph Marie Jerôme Honoré; 10 September 1763 – 28 June 1816) was a Monagasque prince and brother of Honoré IV, Prince of Monaco. Her served as regent of Monaco on behalf of his brother in 1814- 1815.\nP6: The General: The General or The Generals may refer to:\nP7: Marie Thérèse of France: Marie-Thérèse Charlotte of France (19 December 1778 – 19 October 1851), \"Madame Royale\", was the eldest child of Louis XVI and Marie Antoinette, and the only one to reach adulthood (her siblings all dying before the age of 11). She was married to Louis Antoine, Duke of Angoulême, who was the eldest son of the future Charles X, her father's younger brother; thus the bride and groom were also first cousins. After her marriage, she was known as the Duchess of Angoulême. ...\nP8: Marie-Thérèse de Chateauvieux: Marie- Thérèse de Chateauvieux( born Marie- Thérèse d' Armand de Chateauvieux, born on April 20, 1915 in Saint- Denis in Réunion, died on April 12, 2017 in Paris) was a French politician and General Councilor of the French overseas territory of Réunion.\nP9: Duchess Marie-Thérèse of Württemberg: Duchess Marie Thérèse of Württemberg (born 12 November 1934) known as Duchess of Montpensier, is a German-born aristocrat. A daughter of the claimant to the royal throne of Württemberg, abolished in 1918, she was the first wife of Prince Henri, Count of Clermont. Duchess Marie Thérèse is the mother of Prince Jean, Duke of Vendôme, head of the House of Orléans and Orléanist claimant to the French throne.\nP10: Marie Thérèse de Bourbon: Marie Thérèse de Bourbon (1 February 1666 – 22 February 1732) was the titular Queen consort of Poland in 1697. She was the daughter of the Prince of Condé. As a member of France's reigning House of Bourbon, she was a \"princesse du sang\".\nQuestion: Who is the sibling-in-law of Marie Thérèse De Choiseul?\nFinal answer:",
+  "output": "Prince Joseph of Monaco",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.6666666666666665
+  },
+  "response": {
+    "id": "chatcmpl-a5018335960946f5",
+    "object": "chat.completion",
+    "created": 1779535905,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Prince Joseph of Monaco",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1153,
+      "total_tokens": 1158,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

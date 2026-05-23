@@ -1,0 +1,48 @@
+{
+  "qid": "22457b2c0bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Saffron Walden",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- George Howard, 4th Earl of Suffolk -> Theophilus Howard, 2nd Earl of Suffolk\n- George Howard, 4th Earl of Suffolk -> James Howard, 3rd Earl of Suffolk\n- Michael Howard, 21st Earl of Suffolk -> Michael Howard\n- Henry Howard, 13th Earl of Suffolk -> Thomas Howard, 14th Earl of Suffolk\n- Edward Howard, 8th Earl of Suffolk -> Charles Howard, 7th Earl of Suffolk\n- Henry Howard, 11th Earl of Suffolk -> Henry Howard, 6th Earl of Suffolk\n- Henry Howard, 11th Earl of Suffolk -> James Grahme\n- James Howard, 3rd Earl of Suffolk -> Thomas Howard, 1st Earl of Suffolk\n- Henry Howard, 4th Earl of Effingham -> Gordon Howard, 5th Earl of Effingham\n- Henry Howard, 4th Earl of Effingham -> House of Lords\nPassages:\nP1: George Howard, 4th Earl of Suffolk: George Howard, 4th Earl of Suffolk (c. 17 July 162521 April 1691) was an English peer. He was a son of Theophilus Howard, 2nd Earl of Suffolk, and was styled Hon. George Howard from 1640 to 1688/9. He was commissioned a captain in the Dutch States Army in 1646. In 1647, he became Master of the Horse to the Duke of York, and a Gentleman of the Bedchamber to the Duke in 1648. In January 1688/9 he succeeded his brother, James Howard, 3rd Earl of Suffolk as Earl ...\nP2: Theophilus Howard, 2nd Earl of Suffolk: Theophilus Howard, 2nd Earl of Suffolk, (13 August 15843 June 1640) was an English nobleman and politician. Born at the family estate of Saffron Walden, he was the son of Thomas Howard, 1st Earl of Suffolk, by his second wife, Catherine Knyvet of Charlton, and succeeded his father as 2nd Earl of Suffolk and 2nd Baron Howard de Walden in 1626, along with some other of his father's offices, including the lord-lieutenancy of the counties of Suffolk, ...\nP3: Henry Howard, 6th Earl of Suffolk: Henry Howard, 6th Earl of Suffolk, 1st Earl of Bindon PC (1670 – 19 September 1718) was an English nobleman, styled Lord Walden from 1691 to 1706. Lord Howard was born in London, the son of Henry Howard, 5th Earl of Suffolk. He was admitted to Magdalene College, Cambridge, in 1685. He was returned as Member of Parliament for Arundel in January 1694, but was unseated on petition by John Cooke in February. He was again returned for Arundel in 1695, holding the ...\nP4: Thomas Howard, 14th Earl of Suffolk: Thomas Howard, 14th Earl of Suffolk, 7th Earl of Berkshire( 11 June 1721 – 23 February 1783) was a British peer, styled Hon. Thomas Howard until 1779.\nP5: Charles Howard, 7th Earl of Suffolk: Charles William Howard, 7th Earl of Suffolk, 2nd Earl of Bindon (9 May 1693 – 8 February 1722) was a British peer, styled Lord Chesterford from 1706 to 1709 and Lord Walden from 1709 to 1718. He was educated at Magdalene College, Cambridge. He succeeded Henry Howard, 6th Earl of Suffolk in 1718. His manservant was Scipio Africanus, a former slave whose elaborate grave can still be seen in Henbury in Bristol.\nP6: Gordon Howard, 5th Earl of Effingham: Gordon Frederick Henry Charles Howard, 5th Earl of Effingham( 18 May 1873 – 7 July 1946) was an English peer and member of the House of Lords. The son of Hon. Frederick Charles Howard and grandson of Henry Howard, 2nd Earl of Effingham, he inherited the earldom in 1927 from his cousin, Henry Howard, 4th Earl of Effingham.\nP7: Michael Howard: Michael Howard, Baron Howard of Lympne, (born 7 July 1941), is a British politician who served as Leader of the Conservative Party and Leader of the Opposition from November 2003 to December 2005. He previously held cabinet positions in the governments of Margaret Thatcher and John Major, including Secretary of State for Employment, Secretary of State for the Environment and Home Secretary. Howard was born in Swansea. He studied at Peterhouse, Cambridge, following which he ...\nP8: House of Lords: The House of Lords, also known as the House of Peers and domestically usually referred to simply as the Lords, is the upper house of the Parliament of the United Kingdom. Membership is granted by appointment or else by heredity or official function. Like the House of Commons, it meets in the Palace of Westminster. Officially, the full name of the house is the Right Honourable the Lords Spiritual and Temporal of the United Kingdom of Great Britain and Northern Ireland in ...\nP9: James Grahme: James Grahme( his own spelling) or Graham( 1649 – 1730) was an English army officer, courtier, politician who sat in the English and British House of Commons between 1685 and 1727. After the Glorious Revolution he was involved for ten years in Jacobite schemes and plots.\nP10: Michael Howard, 21st Earl of Suffolk: Michael John James George Robert Howard, 21st Earl of Suffolk( born 27 March 1935), styled Viscount Andover until 1941, is an English peer. He succeeded his father, Charles Howard, 20th Earl of Suffolk, in 1941, when the latter was killed by a bomb he was attempting to defuse. Howard attended Winchester College but left after a year.\nQuestion: Where was the father of George Howard, 4Th Earl Of Suffolk born?\nFinal answer:",
+  "output": "Swansea",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b4bc8ce92fc60c09",
+    "object": "chat.completion",
+    "created": 1779535770,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Swansea",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1496,
+      "total_tokens": 1500,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

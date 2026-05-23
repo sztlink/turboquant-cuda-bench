@@ -1,0 +1,48 @@
+{
+  "qid": "fc2f7e460bda11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Rēzekne",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Katka's Reinette Apples: Katka's Reinette Apples  is a 1926 Soviet silent drama film directed by Fridrikh Ermler and Eduard Ioganson. The film's art direction was by Yevgeni Yenej.\nP2: Katka's Reinette Apples: Katka's Reinette Apples is a 1926 Soviet silent drama film directed by Fridrikh Ermler and Eduard Ioganson. The film's art direction was by Yevgeni Yenej.\nP3: Fridrikh Ermler: Fridrikh Markovich Ermler (born Vladimir Markovich Breslav; 13 May 1898 in Rēzekne – 12 July 1967 in Leningrad) was a Soviet film director, actor, and screenwriter. He was a four-time recipient of the Stalin Prize (in 1941, twice in 1946, and in 1951). After studying pharmacology, he joined the Czarist army in 1917 and soon took part in the October revolution on the side of the Bolshevists. Captured and tortured by the White army, he only became a full party member at the end ...\nP4: Éric Rohmer: Jean Marie Maurice Schérer or Maurice Henri Joseph Schérer, known as Éric Rohmer (21 March 192011 January 2010), was a French film director, film critic, journalist, novelist, screenwriter, and teacher. Rohmer was the last of the post-World War II French New Wave directors to become established. He edited the influential film journal, \"Cahiers du cinéma\", from 1957 to 1963, while most of his colleagues—among them Jean-Luc Godard and François Truffaut—were making the transition from ...\nP5: Damon Dash: Damon Anthony Dash( born May 3, 1971) is an American entrepreneur, record executive, film producer, director, and actor. Dash is best known as co-founder of Roc- A- Fella along with Shawn\" Jay- Z\" Carter and Kareem\" Biggs\" Burke.\nP6: Ethan Higbee: Ethan Higbee( also known as nahte) is an American filmmaker, music producer and gallerist living in Ojai, California. He is most known for his films Red Apples Falling and The Upsetter, a documentary about Lee Scratch Perry. In 2010 he opened Dem Passwords art gallery in West Hollywood, California. The gallery owns and represents the painting collection of Lee Scratch Perry and hosted his first solo art exhibition called' Secret Education' in 2010.\nP7: Ricardo Trogi: Ricardo Trogi( born March 25, 1970) is a Canadian filmmaker, director and actor.\nP8: Six Years: 6 Years or Six Years may refer to:\nP9: Four Adventures of Reinette and Mirabelle: Four Adventures of Reinette and Mirabelle  is a 1987 French film directed by Éric Rohmer, starring Joëlle Miquel, Jessica Forde and Philippe Laudenbach.\nP10: 1987 (film): 1987 is a movie autobiography of the director Ricardo Trogi, it is the sequel of the movie\" 1981\", that came out in 2009. The movie puts emphasis on Trogi's teen years, where he was experiencing with romance life, sexual identity, and family problems. It also shows how life can be as the son of an immigrant. It was said that the movie was a comedy, but with dramatic parts, like the one's with his family. A third film in the series,\" 1991\", was released in 2018.\nQuestion: Where was the director of film Katka'S Reinette Apples born?\nFinal answer:",
+  "output": "Rēzekne",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-902064ed404ba254",
+    "object": "chat.completion",
+    "created": 1779535849,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Rēzekne",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 921,
+      "total_tokens": 926,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

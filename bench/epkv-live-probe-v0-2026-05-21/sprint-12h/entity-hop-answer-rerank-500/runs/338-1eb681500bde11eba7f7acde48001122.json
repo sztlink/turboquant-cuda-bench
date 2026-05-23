@@ -1,0 +1,65 @@
+{
+  "idx": 338,
+  "qid": "1eb681500bde11eba7f7acde48001122",
+  "gold": "Rohan Marley",
+  "candidates": [
+    "Lauryn Hill",
+    "Lauryn Hill's spouse is not mentioned in the given passages",
+    "Neurotic Society (Compulsory Mix)",
+    "The Light",
+    "Spouse of the President of the People's Republic of China",
+    "Spouse of the Prime Minister of Cambodia",
+    "Spouse of the Prime Minister of Singapore",
+    "Spouse of the Prime Minister of Malaysia",
+    "Song of China",
+    "List of spouses of Prime Ministers of Thailand",
+    "St. Stanislaus Kostka College, Málaga"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Lauryn Hill\nC2: Lauryn Hill's spouse is not mentioned in the given passages\nC3: Neurotic Society (Compulsory Mix)\nC4: The Light\nC5: Spouse of the President of the People's Republic of China\nC6: Spouse of the Prime Minister of Cambodia\nC7: Spouse of the Prime Minister of Singapore\nC8: Spouse of the Prime Minister of Malaysia\nC9: Song of China\nC10: List of spouses of Prime Ministers of Thailand\nC11: St. Stanislaus Kostka College, Málaga\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Neurotic Society (Compulsory Mix) -> Lauryn Hill\n- Neurotic Society (Compulsory Mix) -> The Light\nPassages:\nP1: Neurotic Society (Compulsory Mix): \"Neurotic Society (Compulsory Mix)\" is a single from American hip hop artist Lauryn Hill. The song was released on May 3, 2013 on iTunes. On the singer's official Tumblr account Hill revealed that she was required to release the single early in light of her recent legal troubles, which is why the song is called a compulsory mix.\nP2: The Light: The Light may refer to:\nP3: Lauryn Hill: Lauryn Noelle Hill (born May 26, 1975) is an American singer, songwriter and rapper, known for being a member of Fugees, and for her solo album \" The Miseducation of Lauryn Hill\", which won many awards and broke several sales records. Raised mostly in South Orange, New Jersey, Hill began singing with her music-oriented family during her childhood. In high school, Hill was approached by Pras Michel for a band he started, which his friend, Wyclef Jean, soon joined. They renamed ...\nP4: Spouse of the President of the People's Republic of China: The Spouse of the President of the People's Republic of China, is the spouse of the President of the People's Republic of China. To date there have been 7 women who have been married to the Chinese president while in office.\nP5: Spouse of the Prime Minister of Cambodia: The Spouse of the Prime Minister of Cambodia refers to the wife of the head of government of the Kingdom of Cambodia, the Prime Minister. Since 1993, 3 women have been the spouse of the Prime Minister of Cambodia. The title\" First Lady\" is also commonly used. The spouse of the current Prime Minister is Dr. Bun Rany.\nP6: Spouse of the Prime Minister of Singapore: The Spouse of the Prime Minister of Singapore refers to the spouse of the head of government of Singapore, the Prime Minister. Since, Singapore became an internally self-governing state within the Commonwealth, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. To date, three women have held the title of the spouse of the Prime Minister of Singapore. Ho Ching is the spouse of the incumbent Prime ...\nP7: Spouse of the Prime Minister of Malaysia: The Spouse of the Prime Minister of Malaysia refers to the spouse of the head of government of Malaysia, the Prime Minister. Since independence in 1957, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. Some commentators have tried to style prime ministers' wives as\" First Lady of Malaysia\", similar to the style of First Lady used in republics, but this is not a recognised title. To date, seven women ...\nP8: Song of China: Song of China also known as Filial Piety is a 1935 Chinese film directed by Fei Mu and Luo Mingyou for the Lianhua Film Company. Unlike earlier Lianhua films that railed against traditional society,\" Song of China\" is representative of the New Life Movement of Chiang Kai- shek, which celebrates traditional Confucian values. \" Song of China\" is one of the few Chinese films made in the 1930s to be screened in the United States.\nP9: List of spouses of Prime Ministers of Thailand: The spouse of the Prime Minister of Thailand is the wife or husband of the Prime Minister of Thailand. The spouse of the current Prime Minister is Associate Professor Naraporn Chan- o-cha.\nP10: St. Stanislaus Kostka College, Málaga: St. Stanislaus Kostka College, Málaga, is an educational center belonging to the Society of Jesus, located in the neighborhood of El Palo in the East District of the Spanish city of Málaga. It covers primary education, compulsory secondary, and baccalaureate, along with basic vocational training.\nQuestion: Who is the spouse of the performer of song Neurotic Society (Compulsory Mix)?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the spouse of Lauryn Hill, the performer of the song Neurotic Society (Compulsory Mix).\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence passages do not provide information about the spouse of Lauryn Hill, the performer of the song Neurotic Society (Compulsory Mix)."
+  },
+  "final": "Lauryn Hill",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-bb10db498c4c2aa9",
+    "object": "chat.completion",
+    "created": 1779536141,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the spouse of Lauryn Hill, the performer of the song Neurotic Society (Compulsory Mix).\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1196,
+      "total_tokens": 1243,
+      "completion_tokens": 47,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.8815808296203613
+}

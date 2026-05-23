@@ -1,0 +1,66 @@
+{
+  "idx": 98,
+  "qid": "027970120bdc11eba7f7acde48001122",
+  "gold": "Århus",
+  "candidates": [
+    "Denmark",
+    "Århus, Region Midtjylland, Denmark",
+    "Bag Skyerne",
+    "The Magic of Belle Isle",
+    "The Singer",
+    "Where Are You",
+    "Felix Powell",
+    "Anne Gadegaard",
+    "Occidentali's Karma",
+    "Belle Isle",
+    "Bag of the Collector",
+    "Where Are You? (1937 song)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Denmark\nC2: Århus, Region Midtjylland, Denmark\nC3: Bag Skyerne\nC4: The Magic of Belle Isle\nC5: The Singer\nC6: Where Are You\nC7: Felix Powell\nC8: Anne Gadegaard\nC9: Occidentali's Karma\nC10: Belle Isle\nC11: Bag of the Collector\nC12: Where Are You? (1937 song)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Bag Skyerne -> Anne Gadegaard\n- Bag Skyerne -> The Singer\n- Where Are You? (1937 song) -> Where Are You\n- Nicolette Pierini -> The Magic of Belle Isle\n- Nicolette Pierini -> Belle Isle\n- Pack Up Your Troubles in Your Old Kit-Bag -> Felix Powell\n- Pack Up Your Troubles in Your Old Kit-Bag -> George Henry Powell\n- George Henry Powell -> Felix Powell\n- Italy in the Eurovision Song Contest 2017 -> Occidentali's Karma\nPassages:\nP1: Bag Skyerne: \"Bag Skyerne\" is a song by Danish singer and songwriter Anne Gadegaard. It was released as a digital download in Denmark on 6 May 2013 through Awake Music. The song peaked to number 10 on the Danish Singles Chart\nP2: The Magic of Belle Isle: The Magic of Belle Isle is a 2012 drama film directed by Rob Reiner and written by Guy Thomas. The film stars Morgan Freeman, Virginia Madsen, Emma Fuhrmann, Madeline Carroll, Kenan Thompson, Nicolette Pierini, Kevin Pollak and Fred Willard. The film was released on July 6, 2012, by Magnolia Pictures. It s title in the UK is\" Once More\".\nP3: The Singer: The Singer may refer to:\nP4: Where Are You: Where Are You may refer to:\nP5: Felix Powell: Felix Lloyd Powell (23 May 1878 – 10 February 1942) was a Welsh British Army Staff Sergeant most famous for writing the music for marching song \"Pack Up Your Troubles in Your Old Kit Bag and Smile, Smile, Smile\", in 1915, during World War I. The words were written by his brother George Henry Powell (under the pseudonym George Asaf), and the song was entered into a competition for \"best morale-building song\". It won first prize and was noted as \"perhaps the most optimistic song ...\nP6: Anne Gadegaard: Anne Mondrup Gadegaard Jensen (born 7 November 1991 in Århus, Region Midtjylland, Denmark), better known as Anne Gadegaard, is a Danish singer and songwriter. She is best known for finishing 5th at the \"Junior Eurovision Song Contest 2003\" while representing Denmark.\nP7: Occidentali's Karma: \" Occidentali's Karma\" is a song performed by Italian singer Francesco Gabbani. The song was released as a digital download on 10 February 2017 through BMG Rights Management as the lead single from his third studio album\" Magellano\"( 2017). The song was written by Gabbani, Filippo Gabbani, Fabio Ilacqua, and Luca Chiaravalli. It won the Sanremo Music Festival 2017 and represented Italy in the Eurovision Song Contest 2017.\nP8: Belle Isle: Belle Isle may refer to:\nP9: Bag of the Collector: Bag of the Collector is a 1979 Soviet crime drama directed by Augusto Baltrušaitis.\nP10: Where Are You? (1937 song): \" Where Are You?\" is a popular song composed by Jimmy McHugh, with lyrics by Harold Adamson. The song was written for the 1937 film\" Top of the Town\" and was originally performed by Gertrude Niesen. Niesen also made a commercial recording of the song for Brunswick Records and this was popular. \" Where Are You?\" has been recorded by many performers.\nQuestion: Where was the performer of song Bag Skyerne born?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Århus, Region Midtjylland, Denmark\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"The evidence in P1 indicates that Bag Skyerne is a song by Anne Gadegaard, and P6 provides her birthplace as Århus, Region Midtjylland, Denmark.\"}",
+  "verifier": {
+    "final_answer": "Århus, Region Midtjylland, Denmark",
+    "selected": "C2",
+    "confidence": "high",
+    "reason": "The evidence in P1 indicates that Bag Skyerne is a song by Anne Gadegaard, and P6 provides her birthplace as Århus, Region Midtjylland, Denmark."
+  },
+  "final": "Århus, Region Midtjylland, Denmark",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-94392cc93cd5d73c",
+    "object": "chat.completion",
+    "created": 1779535986,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Århus, Region Midtjylland, Denmark\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"The evidence in P1 indicates that Bag Skyerne is a song by Anne Gadegaard, and P6 provides her birthplace as Århus, Region Midtjylland, Denmark.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1073,
+      "total_tokens": 1139,
+      "completion_tokens": 66,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.1959433555603027
+}

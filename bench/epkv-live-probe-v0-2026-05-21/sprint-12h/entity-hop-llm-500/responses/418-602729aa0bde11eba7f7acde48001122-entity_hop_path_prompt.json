@@ -1,0 +1,48 @@
+{
+  "qid": "602729aa0bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Bakersfield, California",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Rocket Attack U.S.A. -> Barry Mahon\n- Rocket Attack U.S.A. -> The Intended\n- The Rocket (2005 film) -> A. Vincent\n- The Rocket (2005 film) -> Story\n- Werner Hartenstein -> An Event\n- Woman in the Moon -> Rocket to the Moon\n- Woman in the Moon -> Fritz Lang\n- William Leitch (scientist) -> Orson Desaix Munn\n- Fritz von Opel -> Wilhelm von Opel\n- Ronnie Rocket -> David Lynch\n- Ronnie Rocket -> The Feature\n- Richard Wallace (director) -> Mack Sennett\n- Richard Wallace (director) -> Stan Laurel\nPassages:\nP1: Rocket Attack U.S.A.: Rocket Attack U.S.A., also known as Five Minutes to Zero, is a 1958 propaganda espionage/science fiction film produced, directed and edited by Barry Mahon who intended to exploit the launching of Sputnik. It was featured on a 1990 episode of \"Mystery Science Theater 3000\", as well a 1986 episode of \"The Canned Film Festival\".\nP2: Rocket to the Moon: Rocket to the Moon may refer to:\nP3: A. Vincent: Aloysius Vincent( 14 June 1928 – 25 February 2015) was an Indian cinematographer and director known for his works in Malayalam, Tamil, Telugu and Hindi language films. From the mid-1960s on, he directed some 30 movies including the landmark Malayalam films\" Bhargavi Nilayam\", and\" Murappennu\". He received the Filmfare Best Cinematographer Award for\" Prem Nagar\"( 1974) starring Rajesh Khanna. In 2003, the Indian Society of Cinematographers( ISC) awarded him an Honorary Membership, ...\nP4: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP5: The Intended: The Intended is 2002 English- language period drama film directed by Kristian Levring and starring Janet McTeer( who also co-wrote the screenplay), JJ Feild, Olympia Dukakis, Tony Maudsley and Brenda Fricker. It centres on a surveyor and his fiancée who arrive in a remote Malaysian trading post and encounter a close- fisted ivory trader and her ill- meaning family.\nP6: David Lynch: David Keith Lynch (born January 20, 1946) is an American filmmaker, painter, musician, actor, and photographer. He is best known for films such as \"Eraserhead\" (1977), \"Blue Velvet\" (1986) and \"Mulholland Drive\" (2001), often regarded by critics as among the best films of their respective decades, and for his successful 1990–91 television series \"Twin Peaks\", which led to him being labeled \"the first popular Surrealist\" by noted film critic Pauline Kael. A recipient of an Academy ...\nP7: Stan Laurel: Stan Laurel (born Arthur Stanley Jefferson; 16 June 1890 – 23 February 1965) was an English comic actor, writer, and film director who was part of the comedy duo Laurel and Hardy. He appeared with his comedy partner Oliver Hardy in 107 short films, feature films, and cameo roles. Laurel began his career in music hall where he developed a number of his standard comic devices, including the bowler hat, the deep comic gravity, and the nonsensical understatement. His performances ...\nP8: Mack Sennett: Mack Sennett( born Michael Sinnott; January 17, 1880 – November 5, 1960) was a Canadian- American film actor, director, and producer, and studio head, known as the King of Comedy. Born in Melbourne, Quebec, in 1880, he started in films in the Biograph company of New York, and later opened Keystone Studios in Edendale, California in 1912. It was the first fully enclosed film stage, and Sennett became famous as the originator of slapstick routines such as pie-throwing and ...\nP9: Fritz Lang: Friedrich Christian Anton\" Fritz\" Lang( December 5, 1890 – August 2, 1976) was an Austrian- German- American filmmaker, screenwriter, and occasional film producer and actor. One of the best- known\" émigrés\" from Germany's school of Expressionism, he was dubbed the\" Master of Darkness\" by the British Film Institute. Lang's most famous films include the groundbreaking futuristic\" Metropolis\"( 1927) and the also influential\" M\"( 1931), a film noir precursor that he made before he moved ...\nP10: Wilhelm von Opel: Wilhelm von Opel( 15 May 1871 – 2 May 1948), known as Wilhelm Opel before being ennobled in 1917, was one of the founders of the German automobile manufacturer Opel. He introduced the assembly line to the German automobile industry. His father, Adam Opel, had founded the family firm as a manufacturer of sewing machines, and later diversified into bicycle manufacturing. Wilhelm studied engineering at Technische Hochschule Darmstadt and received his doctorate in 1912 from the ...\nQuestion: Where was the director of film Rocket Attack U.S.A. born?\nFinal answer:",
+  "output": "Barry Mahon was born in Ireland.",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-ba7d3b09f58f00ad",
+    "object": "chat.completion",
+    "created": 1779535843,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Barry Mahon was born in Ireland.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1367,
+      "total_tokens": 1377,
+      "completion_tokens": 10,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

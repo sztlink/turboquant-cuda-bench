@@ -1,0 +1,48 @@
+{
+  "qid": "215df1140bb011ebab90acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "John Lyon, 3rd Lord Glamis",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: George Lyon, 5th Lord Glamis: George Lyon, 5th Lord Glamis( died 1505) was a Scottish nobleman. He was the eldest son of John Lyon, 4th Lord Glamis, who he succeeded in 1500. He died young in February 1505 and was succeeded by his brother John Lyon, 6th Lord Glamis.\nP2: George Lyon, 5th Lord Glamis: George Lyon, 5th Lord Glamis (died 1505) was a Scottish nobleman. He was the eldest son of John Lyon, 4th Lord Glamis, who he succeeded in 1500. He died young in February 1505 and was succeeded by his brother John Lyon, 6th Lord Glamis.\nP3: John Lyon, 6th Lord Glamis: John Lyon, 6th Lord Glamis( died 1528) was a Scottish nobleman. He was the second son of John Lyon, 4th Lord Glamis, and succeeded his brother as Lord Glamis in 1505. He married Janet Douglas( died 17 July 1537) Janet was falsely charged with witchcraft by King James V, and burned at the stake on Castle Hill, Edinburgh, Scotland. She was a daughter of George Douglas, Master of Angus, and sister to Archibald Douglas, 6th Earl of Angus. His son John Lyon, 7th Lord ...\nP4: Patrick Lyon, 1st Lord Glamis: Patrick Lyon, 1st Lord Glamis (1402 – 21 March 1459) P.C. was a Scottish nobleman, created Lord Glamis on 28 June 1445. He was the son of Sir John Lyon of Glamis (c.1377–c.1435) and Elizabeth Graham, daughter of Sir Patrick Graham of Dundaff and Kincardine and Euphemia Stewart, Countess of Strathearn. Sir John was the son of Sir John Lyon (d. 1382) and Princess Joanna Stewart, daughter of Robert II of Scotland. Patrick Lyon was hostage in England for King James I ...\nP5: Patrick Lyon, 1st Lord Glamis: Patrick Lyon, 1st Lord Glamis( 1402 – 21 March 1459) P.C. was a Scottish nobleman, created Lord Glamis on 28 June 1445. He was the son of Sir John Lyon of Glamis( c.1377–c.1435) and Elizabeth Graham, daughter of Sir Patrick Graham of Dundaff and Kincardine and Euphemia Stewart, Countess of Strathearn. Sir John was the son of Sir John Lyon( d. 1382) and Princess Joanna Stewart, daughter of Robert II of Scotland. Patrick Lyon was hostage in England for King James I ...\nP6: Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne: Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne (3 May 1773 – 27 August 1846) was a Scottish nobleman and peer. He was the third son of John Bowes, 9th Earl of Strathmore and Kinghorne, and Mary Bowes, Countess of Strathmore and Kinghorne. His mother was the author of the verse drama, \"The Siege of Jerusalem\" (1769). He is the great-great-grandfather of Queen Elizabeth The Queen Mother. The eldest brother was John Bowes, 10th ...\nP7: Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne: Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne( 3 May 1773 – 27 August 1846) was a Scottish nobleman and peer. He was the third son of John Bowes, 9th Earl of Strathmore and Kinghorne, and Mary Bowes, Countess of Strathmore and Kinghorne. His mother was the author of the verse drama,\" The Siege of Jerusalem\"( 1769). He is the great- great- grandfather of Queen Elizabeth The Queen Mother. The eldest brother was John Bowes, 10th ...\nP8: Archibald Douglas, 6th Earl of Angus: Archibald Douglas, 6th Earl of Angus( c. 148922 January 1557) was a Scottish nobleman active during the reigns of James V and Mary, Queen of Scots. He was the son of George, Master of Angus, who was killed at the Battle of Flodden, and succeeded as Earl of Angus on the death of his grandfather, Archibald.\nP9: Thomas Lyon-Bowes, Lord Glamis: Thomas George Lyon-Bowes, Lord Glamis (6 February 1801 – 27 January 1834) was an heir to the Earldom of Strathmore and Kinghorne. He was the only son of Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne and Mary Elizabeth Louisa Rodney Carpenter. He is the great grandfather of Queen Elizabeth, the Queen Mother. On 21 December 1820, he married Charlotte Grimstead, daughter of Joseph Valentine Grimstead, of Ewood Park and Merry Hall, and Charlotte Jane Sarah ...\nP10: John Lyon, 3rd Lord Glamis: John Lyon, 3rd Lord of Glamis (1431– 1 April 1497) was a Scottish nobleman. Born in Angus, he was the second son of Patrick Lyon, 1st Lord Glamis, and inherited the title on his brother's death in 1486. He attended university, possibly in Paris. He was active in royal service during the early reign of James IV of Scotland, and was appointed justiciar north of Forth. Before 1479 he married Elizabeth Scrymgeour, supposedly the daughter of John Scrymgeour of Dudhope, ...\nQuestion: Who is the paternal grandfather of George Lyon, 5Th Lord Glamis?\nFinal answer:",
+  "output": "John Lyon, 4th Lord Glamis",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.8000000000000002
+  },
+  "response": {
+    "id": "chatcmpl-bfd56193776a5666",
+    "object": "chat.completion",
+    "created": 1779535739,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "John Lyon, 4th Lord Glamis",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1440,
+      "total_tokens": 1450,
+      "completion_tokens": 10,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

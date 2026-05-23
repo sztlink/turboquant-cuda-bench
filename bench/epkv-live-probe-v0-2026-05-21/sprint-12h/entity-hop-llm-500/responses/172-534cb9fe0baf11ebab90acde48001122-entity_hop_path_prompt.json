@@ -1,0 +1,48 @@
+{
+  "qid": "534cb9fe0baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Louis Philippe II, Duke of Orléans",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Charles d'Orléans, Duke of Penthièvre -> Louis Philippe I\n- Charles d'Orléans, Duke of Penthièvre -> The Child\n- Prince Foulques, Duke of Aumale -> Prince Jacques, Duke of Orléans\n- Prince Foulques, Duke of Aumale -> Prince Jacques, Duke of Orléans\n- Louise Marie Adélaïde de Bourbon, Duchess of Orléans -> Louis Jean Marie de Bourbon, Duke of Penthièvre\n- Louise Marie Adélaïde de Bourbon, Duchess of Orléans -> Philippe II, Duke of Orléans\n- Louise Marie Adélaïde de Bourbon, Duchess of Orléans -> Louis Jean Marie de Bourbon, Duke of Penthièvre\n- Louise Marie Adélaïde de Bourbon, Duchess of Orléans -> Philippe II, Duke of Orléans\n- Marie Louise Élisabeth d'Orléans -> Louise Élisabeth d'Orléans\n- Marie Louise Élisabeth d'Orléans -> Louise\n- Prince Ferdinand, Duke of Alençon -> Princess Victoria of Saxe-Coburg and Gotha\n- Prince Ferdinand, Duke of Alençon -> Queen Victoria\n- Prince Ferdinand, Duke of Alençon -> Queen Victoria\nPassages:\nP1: Philippe II, Duke of Orléans: Philippe II, Duke of Orléans (Philippe Charles; 2 August 1674 – 2 December 1723), was a member of the royal family of France and served as Regent of the Kingdom from 1715 to 1723. Born at his father's palace at Saint-Cloud, he was known from birth under the title of Duke of Chartres. His father was Louis XIV's younger brother Philippe I, Duke of Orléans, his mother was Elizabeth Charlotte of the Palatinate. In 1692, Philippe married his first cousin, Françoise ...\nP2: Prince Jacques, Duke of Orléans: Prince Jacques of Orléans, Duke of Orléans,\" fils de France\"( Jacques Jean Jaroslaw Marie; born 25 June 1941 in Rabat, Morocco), is the son of Henri, Count of Paris( the Orléanist claimant to the French throne from 1940 until his death) and his wife, Princess Isabelle of Orléans- Braganza.\nP3: Prince Jacques, Duke of Orléans: Prince Jacques of Orléans, Duke of Orléans, \"fils de France\" (Jacques Jean Jaroslaw Marie; born 25 June 1941 in Rabat, Morocco), is the son of Henri, Count of Paris (the Orléanist claimant to the French throne from 1940 until his death) and his wife, Princess Isabelle of Orléans-Braganza.\nP4: Louis Jean Marie de Bourbon, Duke of Penthièvre: Louis Jean Marie de Bourbon (16 November 1725 – 4 March 1793) was the son of Louis Alexandre de Bourbon and his wife Marie Victoire de Noailles. He was also a grandson of Louis XIV of France and his mistress, Madame de Montespan. From birth he was known as the Duke of Penthièvre. He also possessed the following titles: Prince of Lamballe (given later as a courtesy title to the duke's only surviving son); Prince of Carignano; Duke of Rambouillet; ...\nP5: Louise Élisabeth d'Orléans: Louise Élisabeth d'Orléans (9 December 1709 – 16 June 1742) was Queen of Spain from January to August 1724 as the wife of King Louis I.\nP6: Princess Victoria of Saxe-Coburg and Gotha: Princess Victoria of Saxe- Coburg and Gotha( Victoria Franziska Antonia Juliane Luise; 14 February 1822 – 10 November 1857) was the daughter of Prince Ferdinand of Saxe- Coburg and Gotha and Princess Maria Antonia Koháry. Her father was the second son of Francis, Duke of Saxe- Coburg- Saalfeld and Countess Augusta Reuss of Ebersdorf.\nP7: Princess Victoria of Saxe-Coburg and Gotha: Princess Victoria of Saxe-Coburg and Gotha (Victoria Franziska Antonia Juliane Luise; 14 February 1822 – 10 November 1857) was the daughter of Prince Ferdinand of Saxe-Coburg and Gotha and Princess Maria Antonia Koháry. Her father was the second son of Francis, Duke of Saxe-Coburg-Saalfeld and Countess Augusta Reuss of Ebersdorf.\nP8: Louis Philippe I: Louis Philippe I( 6 October 1773 – 26 August 1850) was King of the French from 1830 to 1848. As Duke of Chartres he distinguished himself commanding troops during the Revolutionary Wars but broke with the Republic over its decision to execute King Louis XVI. He fled to Switzerland in 1793 after being connected with a plot to restore France's monarchy. His father Louis Philippe II, Duke of Orléans( Philippe Égalité) fell under suspicion and was executed, and Louis Philippe ...\nP9: Louis Philippe I: Louis Philippe I (6 October 1773 – 26 August 1850) was King of the French from 1830 to 1848. As Duke of Chartres he distinguished himself commanding troops during the Revolutionary Wars but broke with the Republic over its decision to execute King Louis XVI. He fled to Switzerland in 1793 after being connected with a plot to restore France's monarchy. His father Louis Philippe II, Duke of Orléans (Philippe Égalité) fell under suspicion and was executed, and Louis Philippe ...\nP10: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nQuestion: Who is Charles D'Orléans, Duke Of Penthièvre's paternal grandfather?\nFinal answer:",
+  "output": "Louis XIV of France",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.4
+  },
+  "response": {
+    "id": "chatcmpl-b214aa8d243e4a7b",
+    "object": "chat.completion",
+    "created": 1779535628,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Louis XIV of France",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1553,
+      "total_tokens": 1558,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

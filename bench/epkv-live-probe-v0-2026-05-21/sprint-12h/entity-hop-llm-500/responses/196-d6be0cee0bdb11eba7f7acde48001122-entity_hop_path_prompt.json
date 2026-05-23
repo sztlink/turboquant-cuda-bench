@@ -1,0 +1,48 @@
+{
+  "qid": "d6be0cee0bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Akhetaten",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Meritaten Tasherit -> Smenkhkare\n- Meritaten Tasherit -> Akhenaten\n- Meritaten Tasherit -> Smenkhkare\n- Meritaten Tasherit -> Akhenaten\n- Meritaten -> Smenkhkare\n- Meritaten -> Akhenaten\n- Did a Good Man Die? -> Fadil Hadžić\n- Did a Good Man Die? -> The Good Man\n- Where the Dead Go to Die -> The Dead\n- The Woman Who Did (1925 film) -> Benjamin Christensen\nPassages:\nP1: Akhenaten: Akhenaten (also spelled Echnaton, Akhenaton, Ikhnaton, and Khuenaten; meaning \"Effective for Aten\"), known before the fifth year of his reign as Amenhotep IV (sometimes given its Greek form, \"Amenophis IV\", and meaning \"Amun Is Satisfied\"), was an ancient Egyptian pharaoh of the 18th Dynasty, who ruled for 17 years and died perhaps in 1336 BC or 1334 BC. He is noted for abandoning traditional Egyptian polytheism and introducing worship centered on the Aten (notably instead of Amun ...\nP2: Smenkhkare: Ankhkheperure Smenkhkare Djeser Kheperu (sometimes spelled \"SmenkhareSmenkare\" or \"Smenkhkara\") was a short-lived pharaoh in the late 18th dynasty. The names of this pharaoh translate as 'Living are the Forms of Re' and 'Vigorous is the Soul of Re – Holy of Forms'. His or her reign, for it is uncertain whether Smenkhkare was male or female, was during the Amarna Period, a time when Akhenaten sought to impose new religious views. He or she is sometimes distinguished from the ...\nP3: Benjamin Christensen: Benjamin Christensen( 28 September 1879 – 2 April 1959) was a Danish film director, screenwriter and an actor both in film and on the stage. As a director he is most well known for the 1922 film\" Häxan\" and as an actor, he is best known for his performance in the film\" Michael\"( 1924), in which he plays Claude Zoret, the jilted lover of the film's title character.\nP4: Fadil Hadžić: Fadil Hadžić( 23 April 1922 – 3 January 2011) was a Croatian film director, screenwriter, playwright and journalist, mainly known for his comedy films and plays. He was of Bosnian origin, but mainly lived and worked in Croatia, and was well known throughout Yugoslavia.\nP5: The Good Man: The Good Man is a 2012 film by Phil Harrison starring Aidan Gillen.\nP6: The Dead: The Dead may refer to:\nP7: Did a Good Man Die?: Did a Good Man Die? (\" Da li je umro dobar čovjek?\") is a Croatian film directed by Fadil Hadžić and starring Boris Dvornik. It was released in 1962.\nP8: Where the Dead Go to Die: Where the Dead Go to Die is a 2012 American adult animated anthology horror film written, directed, composed, edited, and animated by James\" Jimmy ScreamerClauz\" Creamer.\nP9: Where Did We Go Wrong: Where Did We Go Wrong may refer to:\nP10: Where Did the Night Fall: Where Did the Night Fall is the fourth regular studio album from British electronic music act Unkle, released on.\nQuestion: Where did Meritaten's father die?\nFinal answer:",
+  "output": "Akhenaten",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a0928d4573c6abef",
+    "object": "chat.completion",
+    "created": 1779535651,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Akhenaten",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 900,
+      "total_tokens": 904,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "f86dd5180bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Davao",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Aurora (2018 film) -> Yam Laranas\n- Place of birth -> Place of origin\n- Motherland (disambiguation) -> Place of origin\n- Aurora Apartment Hotel -> The Apartment\n- Place of origin -> Place of birth\n- Place of origin -> @Home\nPassages:\nP1: Aurora (2018 film): Aurora is a 2018 Filipino horror thriller film written and directed by Yam Laranas and starring Anne Curtis. It serves as an official entry to the 2018 Metro Manila Film Festival and marks Curtis' third and last film of 2018, following her box-office hits  and \"BuyBust\". The film is inspired by the 1987 tragedy of MV Doña Paz.\nP2: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP3: The Apartment: The Apartment is a 1960 American romantic comedy film produced and directed by Billy Wilder from a screenplay he co-wrote with I. A. L. Diamond, starring Jack Lemmon and Shirley MacLaine, alongside Fred MacMurray, Ray Walston, Jack Kruschen, David Lewis, Willard Waterman, David White, Hope Holiday and Edie Adams. The story follows C. C. “ Bud ” Baxter( Lemmon), an insurance clerk who, in the hope of climbing the corporate ladder, lets more-senior coworkers use his Upper West Side ...\nP4: Yam Laranas: William Laranas (born 12 December 1978 in Davao City) is a Filipino director and cinematographer.\nP5: @Home: @Home or @home may refer to:\nP6: The Salvos of the Aurora Cruiser: The Salvos of the Aurora Cruiser is a 1965 Soviet drama film directed by.\nP7: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP8: Aurora Australis (disambiguation): The aurora australis is the southern counterpart of the\" aurora borealis\". Aurora Australis may also refer to:\nP9: Aurora Apartment Hotel: The Aurora Apartment Hotel( or simply the Aurora Hotel) is a historic, high- rise building located in the Tobin Hill neighborhood in San Antonio, Texas. The building is twelve stories high and the exterior is in the Neo- Gothic architectural style. On August 24, 1930, the Aurora opened its doors as one of San Antonio's grandest hotels of the time. The Aurora catered to the well- known and the well- to- do of the day, including Hollywood elite and former First Lady Mamie ...\nP10: Rommel T. Angara: Rommel Rico T. Angara( born December 19, 1978), simply known as Rommel T. Angara is a Filipino politician. He is the incumbent representative of the lone district of Aurora elected in May 2019. He was the acting governor of the province of Aurora from mid-2018 to early 2019. He was the vice governor of the same province from 2013 to 2019. As a former vice governor, he acted as the presiding officer of the Sangguniang Panlalawigan, or the provincial board or legislature, of ...\nQuestion: What is the place of birth of the director of film Aurora (2018 Film)?\nFinal answer:",
+  "output": "Davao City",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.6666666666666666
+  },
+  "response": {
+    "id": "chatcmpl-89c964acc21adcf8",
+    "object": "chat.completion",
+    "created": 1779535587,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Davao City",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 953,
+      "total_tokens": 958,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "idx": 297,
+  "qid": "bead88300bdd11eba7f7acde48001122",
+  "gold": "Celle",
+  "candidates": [
+    "Great Britain",
+    "Denmark",
+    "Louise",
+    "Louise of Great Britain",
+    "Louise of Sweden",
+    "Frederick V of Denmark",
+    "Caroline Matilda of Great Britain",
+    "Prince René of Bourbon-Parma",
+    "Johann Friedrich Struensee",
+    "Queen Victoria",
+    "Princess Louise Auguste of Denmark",
+    "Princess Louise of Denmark (1750–1831)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Great Britain\nC2: Denmark\nC3: Louise\nC4: Louise of Great Britain\nC5: Louise of Sweden\nC6: Frederick V of Denmark\nC7: Caroline Matilda of Great Britain\nC8: Prince René of Bourbon-Parma\nC9: Johann Friedrich Struensee\nC10: Queen Victoria\nC11: Princess Louise Auguste of Denmark\nC12: Princess Louise of Denmark (1750–1831)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Princess Louise Auguste of Denmark -> Caroline Matilda of Great Britain\n- Princess Louise Auguste of Denmark -> Johann Friedrich Struensee\n- Princess Louise of Denmark (1750–1831) -> Louise of Great Britain\n- Princess Louise of Denmark (1750–1831) -> Frederick V of Denmark\n- Princess Louise of Denmark (1750–1831) -> Louise of Great Britain\n- Princess Louise of Denmark (1750–1831) -> Frederick V of Denmark\n- Princess Margaret of Denmark -> Prince René of Bourbon-Parma\n- Princess Margaret of Denmark -> Louise\n- Princess Margaret of Denmark -> Louise\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Queen Victoria\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Louise\n- Princess Louise of Denmark (1875–1906) -> Louise of Sweden\n- Princess Louise of Denmark (1875–1906) -> Louise\nPassages:\nP1: Louise: Louise or Luise may refer to:\nP2: Louise of Great Britain: Louise of Great Britain (originally Louisa; 18 December 1724 – 19 December 1751) was Queen of Denmark and Norway from 1746 until her death, as the first wife of King Frederick V. She was the youngest surviving daughter of King George II of Great Britain and Caroline of Ansbach.\nP3: Louise of Sweden: Louise of Sweden (Louise Josephine Eugenie ; 31 October 1851 – 20 March 1926), was Queen of Denmark as the spouse of King Frederick VIII. She was the only surviving child of Charles XV of Sweden and his consort, Louise of the Netherlands. She was the mother of both King Christian X of Denmark and King Haakon VII of Norway.\nP4: Frederick V of Denmark: Frederick V( Danish and Norwegian:\" Frederik\"; 31 March 172314 January 1766) was king of Denmark – Norway and Duke of Schleswig- Holstein from 1746 until his death. He was the son of Christian VI of Denmark and Sophie Magdalene of Brandenburg- Kulmbach.\nP5: Caroline Matilda of Great Britain: Caroline Matilda of Great Britain (22 July 1751 – 10 May 1775) was by birth a Princess of Great Britain and member of the House of Hanover and by marriage Queen consort of Denmark and Norway from 1766 to 1772. The youngest and posthumous daughter of Frederick, Prince of Wales, by Princess Augusta of Saxe-Gotha , Caroline Matilda was raised in a secluded family atmosphere away from the royal court. At the age of fifteen, she was married to her first cousin, ...\nP6: Prince René of Bourbon-Parma: Prince René of Bourbon-Parma (17 October 1894 – 30 July 1962) was the seventh surviving son of Robert I, Duke of Parma, and his second wife, Infanta Maria Antonia of Portugal. In 1921, he married Princess Margaret of Denmark. They had four children including Queen Anne of Romania, the wife of Michael I, former King of Romania.\nP7: Johann Friedrich Struensee: Johann Friedrich, Greve Struensee (5 August 1737 – 28 April 1772) was a German doctor. He became royal physician to the mentally ill King Christian VII of Denmark and a minister in the Danish government. He rose in power to a position of de facto regent of the country, where he tried to carry out widespread reforms. His affair with Queen Caroline Matilda (\"Caroline Mathilde\") caused a scandal, especially after the birth of a daughter, Princess Louise Auguste, and was ...\nP8: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nP9: Princess Louise Auguste of Denmark: Princess Louise Auguste of Denmark and Norway (7 July 1771 – 13 January 1843) was the daughter of the Queen of Denmark, Caroline Matilda of Great Britain. Though officially regarded as the daughter of King Christian VII, it is widely accepted that her biological father was Johann Friedrich Struensee, the king’s royal physician and \"de facto\" regent of the country at the time of her birth. She was referred to sometimes as \"la petite Struensee\"; this did not, ...\nP10: Princess Louise of Denmark (1750–1831): Princess Louise of Denmark and Norway  (20 January 1750 – 12 January 1831) was born to Frederick V of Denmark and Louise of Great Britain. Her eldest daughter, Marie of Hesse-Kassel, was the wife of Frederick VI of Denmark.\nQuestion: Where was the place of death of Princess Louise Auguste Of Denmark's mother?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Great Britain\",\"selected\":\"C4\",\"confidence\":\"medium\",\"reason\":\"The evidence does not directly state the place of death of Princess Louise Auguste of Denmark's mother. However, it is implied that her mother is Caroline Matilda of Great Britain, and she was a Princess of Great Britain, which suggests she was likely born and died in Great Britain. This is a medium confidence answer due to the indirect nature of the evidence.\"}",
+  "verifier": {
+    "final_answer": "Great Britain",
+    "selected": "C4",
+    "confidence": "medium",
+    "reason": "The evidence does not directly state the place of death of Princess Louise Auguste of Denmark's mother. However, it is implied that her mother is Caroline Matilda of Great Britain, and she was a Princess of Great Britain, which suggests she was likely born and died in Great Britain. This is a medium confidence answer due to the indirect nature of the evidence."
+  },
+  "final": "Great Britain",
+  "selected": "C4",
+  "response": {
+    "id": "chatcmpl-9ea22db28e9236d4",
+    "object": "chat.completion",
+    "created": 1779536107,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Great Britain\",\"selected\":\"C4\",\"confidence\":\"medium\",\"reason\":\"The evidence does not directly state the place of death of Princess Louise Auguste of Denmark's mother. However, it is implied that her mother is Caroline Matilda of Great Britain, and she was a Princess of Great Britain, which suggests she was likely born and died in Great Britain. This is a medium confidence answer due to the indirect nature of the evidence.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1505,
+      "total_tokens": 1597,
+      "completion_tokens": 92,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.6605710983276367
+}

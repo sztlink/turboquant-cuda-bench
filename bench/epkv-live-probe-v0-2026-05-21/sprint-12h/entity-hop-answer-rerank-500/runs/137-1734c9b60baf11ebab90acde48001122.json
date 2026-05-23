@@ -1,0 +1,66 @@
+{
+  "idx": 137,
+  "qid": "1734c9b60baf11ebab90acde48001122",
+  "gold": "Agrippina the Elder",
+  "candidates": [
+    "No information provided in the passages about Lollia Paulina's mother-in-law",
+    "There is no mother-in-law of Lollia Paulina mentioned in the provided passages",
+    "Lollia Paulina",
+    "Beatrix of the Netherlands",
+    "The Tender Years",
+    "The Child",
+    "The Hero",
+    "Scipio Africanus",
+    "Caligula",
+    "Steven Spielberg",
+    "Model",
+    "Cornelia (mother of the Gracchi)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: No information provided in the passages about Lollia Paulina's mother-in-law\nC2: There is no mother-in-law of Lollia Paulina mentioned in the provided passages\nC3: Lollia Paulina\nC4: Beatrix of the Netherlands\nC5: The Tender Years\nC6: The Child\nC7: The Hero\nC8: Scipio Africanus\nC9: Caligula\nC10: Steven Spielberg\nC11: Model\nC12: Cornelia (mother of the Gracchi)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Lollia Paulina -> Caligula\n- Priscilla Pointer -> Steven Spielberg\n- Baroness Gösta von dem Bussche-Haddenhausen -> Beatrix of the Netherlands\n- Donna Harun -> Model\n- Tender years doctrine -> The Tender Years\n- Tender years doctrine -> The Child\n- Cornelia (mother of the Gracchi) -> Scipio Africanus\n- Cornelia (mother of the Gracchi) -> The Hero\nPassages:\nP1: Lollia Paulina: Lollia Paulina, also known as Lollia Paullina (15-49) was a Roman Empress for six months in 38 as the third wife and consort of the Roman emperor Caligula. Outside of her term as a Roman Empress, she was a noble Roman woman who lived in the Roman Empire of the 1st century.\nP2: Beatrix of the Netherlands: Beatrix (Beatrix Wilhelmina Armgard, ; born 31 January 1938) is a princess of the Dutch royal house who reigned as Queen of the Netherlands from 30 April 1980 until her abdication on 30 April 2013. Beatrix is the eldest daughter of Queen Juliana and her husband, Prince Bernhard of Lippe-Biesterfeld. Upon her mother's accession in 1948, she became heir presumptive. Beatrix attended a public primary school in Canada during World War II, and then finished her primary ...\nP3: The Tender Years: The Tender Years is a 1948 American drama film directed by Harold D. Schuster, written by Arnold Belgard, Abem Finkel and Jack Jungmeyer, and starring Joe E. Brown, Richard Lyon, Noreen Nash, Charles Drake, Josephine Hutchinson and James Millican. It was released on January 3, 1948, by 20th Century Fox.\nP4: The Child: The Child may refer to:\nP5: The Hero: The Hero may refer to:\nP6: Scipio Africanus: Publius Cornelius Scipio Africanus (236–183 BC), also known as Scipio Africanus Major, Scipio Africanus the Elder, and Scipio the Great, was a Roman general and later consul who is often regarded as one of the greatest military commanders and strategists of all time. His main achievements were during the Second Punic War. He is best known for defeating Hannibal at the final Battle of Zama (near modern Zama, Tunisia) in 202 BC. The victory was one of the feats that earned him ...\nP7: Caligula: Caligula (31 August 12 – 24 January 41 AD) was Roman emperor from 37 to 41 AD. The son of the popular Roman general Germanicus and Augustus's granddaughter Agrippina the Elder, Caligula was born into the first ruling family of the Roman Empire, conventionally known as the Julio-Claudian dynasty. Germanicus's uncle and adoptive father, Tiberius, succeeded Augustus as emperor of Rome in 14 AD. Although he was born Gaius Caesar, after Julius Caesar, he acquired the nickname \"Caligula\" ( ...\nP8: Steven Spielberg: Steven Allan Spielberg( born December 18, 1946) is an American filmmaker. He is considered one of the founding pioneers of the New Hollywood era and one of the most popular directors and producers in film history. Spielberg started in Hollywood directing television and several minor theatrical releases. He became a household name as the director of\" Jaws\"( 1975), which was critically and commercially successful and is considered the first summer blockbuster. His subsequent ...\nP9: Model: Model or modeling may refer to:\nP10: Cornelia (mother of the Gracchi): Cornelia( c. 190s – c. 115 BC) was the second daughter of Publius Cornelius Scipio Africanus, the hero of the Second Punic War, and Aemilia Paulla. She is remembered as a prototypical example of a virtuous Roman woman. She was the mother of the Gracchi brothers, and the mother- in- law of Scipio Aemilianus.\nQuestion: Who is the mother-in-law of Lollia Paulina?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"C1|C2\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide any information about Lollia Paulina's mother-in-law. The candidate entity graph mentions Cornelia (mother of the Gracchi) as the mother-in-law of Scipio Aemilianus, but there is no information linking her to Lollia Paulina.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "C1|C2",
+    "confidence": "low",
+    "reason": "The evidence does not provide any information about Lollia Paulina's mother-in-law. The candidate entity graph mentions Cornelia (mother of the Gracchi) as the mother-in-law of Scipio Aemilianus, but there is no information linking her to Lollia Paulina."
+  },
+  "final": "No information provided in the passages about Lollia Paulina's mother-in-law.",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-823a2a451f0321f6",
+    "object": "chat.completion",
+    "created": 1779536017,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"C1|C2\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide any information about Lollia Paulina's mother-in-law. The candidate entity graph mentions Cornelia (mother of the Gracchi) as the mother-in-law of Scipio Aemilianus, but there is no information linking her to Lollia Paulina.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1242,
+      "total_tokens": 1325,
+      "completion_tokens": 83,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.4709625244140625
+}

@@ -1,0 +1,66 @@
+{
+  "idx": 84,
+  "qid": "e6688a7e0baf11ebab90acde48001122",
+  "gold": "Charles I of Naples",
+  "candidates": [
+    "King Charles I of Sicily",
+    "Philip II of Spain",
+    "Maria Amalia of Naples and Sicily",
+    "Charles III of Spain",
+    "Ferdinand I of the Two Sicilies",
+    "Beatrice of Provence",
+    "Peter III of Aragon",
+    "Marie of Brienne",
+    "Philip of Sicily",
+    "Philip III of France",
+    "Philip I, Latin Emperor",
+    "Beatrice of Sicily, Latin Empress"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: King Charles I of Sicily\nC2: Philip II of Spain\nC3: Maria Amalia of Naples and Sicily\nC4: Charles III of Spain\nC5: Ferdinand I of the Two Sicilies\nC6: Beatrice of Provence\nC7: Peter III of Aragon\nC8: Marie of Brienne\nC9: Philip of Sicily\nC10: Philip III of France\nC11: Philip I, Latin Emperor\nC12: Beatrice of Sicily, Latin Empress\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Philip I, Latin Emperor -> Beatrice of Provence\n- Philip I, Latin Emperor -> Marie of Brienne\n- Philip of Sicily -> Beatrice of Provence\n- Beatrice of Sicily, Latin Empress -> Beatrice of Provence\n- Infante Philip, Duke of Calabria -> Ferdinand I of the Two Sicilies\n- Infante Philip, Duke of Calabria -> Charles III of Spain\n- Philip III of France -> Peter III of Aragon\n- Ferdinand Philippe, Duke of Orléans -> Maria Amalia of Naples and Sicily\n- Philip III of Spain -> Philip II of Spain\nPassages:\nP1: Philip II of Spain: Philip II of Spain (21 May 1527 – 13 September 1598) was King of Spain (1556–98), King of Portugal (1581–98, as Philip I), King of Naples and Sicily (both from 1554), and \"jure uxoris\" King of England and Ireland (during his marriage to Queen Mary I from 1554 to 1558). He was also Duke of Milan, and from 1555, lord of the Seventeen Provinces of the Netherlands. The son of Holy Roman Emperor and King of the Spanish kingdoms Charles V and Isabella of Portugal, Philip was ...\nP2: Maria Amalia of Naples and Sicily: Maria Amalia of Naples and Sicily (Maria Amalia Teresa; 26 April 1782 – 24 March 1866) was a French queen by marriage to Louis Philippe I, King of the French.\nP3: Charles III of Spain: Charles III (Spanish: \"Carlos\"; Italian: \"Carlo\"; 20 January 1716 – 14 December 1788) was King of Spain (1759–1788), after ruling Naples as Charles VII and Sicily as Charles V (1734–1759). He was the fifth son of Philip V of Spain, and the eldest son of Philip's second wife, Elisabeth Farnese. A proponent of enlightened absolutism, he succeeded to the Spanish throne on 10 August 1759, upon the death of his half-brother Ferdinand VI, who left no heirs. In 1731, the ...\nP4: Ferdinand I of the Two Sicilies: Ferdinand I (12 January 1751 – 4 January 1825), was the King of the Two Sicilies from 1816, after his restoration following victory in the Napoleonic Wars. Before that he had been, since 1759, Ferdinand IV of the Kingdom of Naples and Ferdinand III of the Kingdom of Sicily. He was also King of Gozo. He was deposed twice from the throne of Naples: once by the revolutionary Parthenopean Republic for six months in 1799 and again by Napoleon Bonaparte in 1805. ...\nP5: Beatrice of Provence: Beatrice of Provence (c. 122923 September 1267), was ruling Countess of Provence and Forcalquier from 1245 until her death, as well as Countess of Anjou and Maine, Queen of Sicily and Naples by marriage to Charles I of Naples. She was the fourth and youngest daughter of Ramon Berenguer IV, Count of Provence and Forcalquier by his wife Beatrice, in turn daughter of Count Thomas I of Savoy and Margaret of Geneva.\nP6: Beatrice of Provence: Beatrice of Provence( c. 122923 September 1267), was ruling Countess of Provence and Forcalquier from 1245 until her death, as well as Countess of Anjou and Maine, Queen of Sicily and Naples by marriage to Charles I of Naples. She was the fourth and youngest daughter of Ramon Berenguer IV, Count of Provence and Forcalquier by his wife Beatrice, in turn daughter of Count Thomas I of Savoy and Margaret of Geneva.\nP7: Peter III of Aragon: Peter III of Aragon( November 1285) was King of Aragon, King of Valencia( as Peter I), and Count of Barcelona( as) from 1276 to his death. At the invitation of some rebels, he conquered the Kingdom of Sicily and became King of Sicily in 1282, pressing the claim of his wife, Constance II of Sicily, uniting the kingdom to the crown.\nP8: Marie of Brienne: Marie of Brienne( c. 1224–1275) was Latin Empress as the wife of Baldwin II of Courtenay. She served as regent during the absence of Baldwin II twice: in 1237 – 1239, and in 1243 – 1257.\nP9: Philip of Sicily: Philip (born 1255/56, died 1277), of the Capetian House of Anjou, was the second son of King Charles I of Sicily and Countess Beatrice of Provence. He was at various times set up to become King of Sardinia, Prince of Achaea or King of Thessalonica, but ultimately ascended no throne.\nP10: Philip III of France: Philip III (30 April 1245 – 5 October 1285), called the Bold , was King of France from 1270 to 1285. Philip proved indecisive, soft in nature, and timid. The strong personalities of his parents apparently crushed him, and policies of his father dominated him. People called him \"the Bold\" on the basis of his abilities in combat and on horseback and not on the basis of his political or personal character. He was pious but not cultivated. He followed the suggestions of ...\nQuestion: Who is Philip Of Sicily's father?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"King Charles I of Sicily\",\"selected\":\"C1|C2|UNKNOWN\",\"confidence\":\"high\",\"reason\":\"C9 is the only candidate directly supported by the evidence passages. C9 states that Philip of Sicily was the second son of King Charles I of Sicily and Countess Beatrice of Provence.\"}",
+  "verifier": {
+    "final_answer": "King Charles I of Sicily",
+    "selected": "C1|C2|UNKNOWN",
+    "confidence": "high",
+    "reason": "C9 is the only candidate directly supported by the evidence passages. C9 states that Philip of Sicily was the second son of King Charles I of Sicily and Countess Beatrice of Provence."
+  },
+  "final": "King Charles I of Sicily",
+  "selected": "C1|C2|UNKNOWN",
+  "response": {
+    "id": "chatcmpl-a0e86cb1c2cf348f",
+    "object": "chat.completion",
+    "created": 1779535976,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"King Charles I of Sicily\",\"selected\":\"C1|C2|UNKNOWN\",\"confidence\":\"high\",\"reason\":\"C9 is the only candidate directly supported by the evidence passages. C9 states that Philip of Sicily was the second son of King Charles I of Sicily and Countess Beatrice of Provence.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1605,
+      "total_tokens": 1675,
+      "completion_tokens": 70,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.3149609565734863
+}

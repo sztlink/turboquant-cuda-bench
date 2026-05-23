@@ -1,0 +1,48 @@
+{
+  "qid": "ea6738c60bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "1 October 1844",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Ellen Roosval von Hallwyl -> Wilhelmina von Hallwyl\n- Ebba von Eckermann -> Ellen Roosval von Hallwyl\n- Ebba von Eckermann -> Wilhelmina von Hallwyl\n- Franz Josef von Hallwyl -> White Eagle\n- Franz Josef von Hallwyl -> Abraham\n- Ellen Marsvin -> Kirsten Munk\n- When the Bells Sound Clearly -> Eduard von Borsody\n- When the Bells Sound Clearly -> Comedy!\nPassages:\nP1: Eduard von Borsody: Eduard von Borsody( 13 June 1898 – 1 January 1970) was an Austrian cameraman, film editor, film director and screenplay writer.\nP2: Abraham: Abraham (né Abram) is the common patriarch of Christianity, Islam, Judaism, and other religions. In Judaism, he is the founding father of the covenant of the pieces, the special relationship between the Hebrews and God; in Christianity, he is the prototype of all believers, Jewish or Gentile; and in Islam he is seen as a link in the chain of prophets that begins with Adam and culminates in Muhammad. The narrative in the Book of Genesis revolves around the themes of posterity and land. ...\nP3: Kirsten Munk: Kirsten Munk (sometimes \"Christina Munk\"; 6 July 1598 19 April 1658) was a Danish noble, the second spouse of King Christian IV of Denmark, and mother to twelve of his children.\nP4: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP5: White Eagle: White Eagle or White Eagles may refer to:\nP6: Ellen Roosval von Hallwyl: Ellen Roosval von Hallwyl (1867-1952), was a Swedish painter, sculptor and composer. She was the daughter of Count Walther and Countess Wilhelmina von Hallwyl. She was a student of the Wallinska skolan. She married the courtier and diplomat Henrik de Maré in 1887 and was the mother of Rolf de Maré, founder of the Ballets suédois. After divorcing de Maré in 1906, Ellen married the art historian Johnny Roosval the year after. Roosval was twelve years her junior and her ...\nP7: Franz Josef von Hallwyl: Franz Josef von Hallwyl, born 1719 in from Solothurn, son of lieutenant-colonel Abraham Gabriel von Hallwyl and Anna Franziska de Tayac, dead 1785 in Colmar, France, was a Swiss officer, marechal de camp in French service, colonel-proprietor of the Swiss regiment de Karrer. He married Marie Therese de Mydorge in 1757. Hallwyl was rewarded multiple times; becoming a knight of the Order of Saint Louis in 1745 for meritorious service in the battle of Fontenoy, a knight of ...\nP8: Wilhelmina von Hallwyl: Countess Anna Fridrica Wilhelmina von Hallwyl, née Kempe (1 October 1844 − 25 July 1930) was a Swedish collector and donor whose accumulation of art and other objects constitute the current Hallwyl Museum in Stockholm.\nP9: Ebba von Eckermann: Ebba Johanna Cecilia von Eckermann née\" von Hallwyl\"( 21 May 1866 – 16 October 1960) was a Swedish women's rights activist. Ebba von Eckermann was the daughter of Walther and Wilhelmina von Hallwyl and sister of Ellen Roosval von Hallwyl. She was a student of the\" Wallinska skolan\" in 1882- 84, and had the wish to continue to study architecture at the university; her parents, however, disagreed and wished for her to follow custom, and instead, she was introduced in high ...\nP10: Alexandra von Fürstenberg: Alexandra von Fürstenberg( née Alexandra Natasha Miller, formerly Princess Alexandra von Fürstenberg, born October 3, 1972) is a furniture designer and the image director for DvF, the clothing label which was founded by her former mother- in- law, Diane von Fürstenberg, and helped revive the company ’s famous 1970s wrap dress.\nQuestion: When was Ellen Roosval Von Hallwyl's mother born?\nFinal answer:",
+  "output": "1 October 1844",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-bbc461041a9d3af7",
+    "object": "chat.completion",
+    "created": 1779535906,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "1 October 1844",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1087,
+      "total_tokens": 1095,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

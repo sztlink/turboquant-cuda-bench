@@ -1,0 +1,48 @@
+{
+  "qid": "f414cc960bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Forest Lawn Memorial Park",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- The Secret of Dr. Kildare -> Harold S. Bucquet\n- The Secret of Dr. Kildare -> Lew Ayres\n- The Secret of Dr. Kildare -> Harold S. Bucquet\n- The Secret of Dr. Kildare -> Lew Ayres\n- A Secret -> Claude Miller\n- Dr. Kildare Goes Home -> Harold S. Bucquet\n- Dr. Kildare Goes Home -> Lew Ayres\n- Dr. Kildare's Crisis -> Harold S. Bucquet\n- Dr. Kildare's Crisis -> Lew Ayres\n- Calling Dr. Kildare -> Harold S. Bucquet\n- Calling Dr. Kildare -> Lew Ayres\n- Dr. Kildare's Strange Case -> Harold S. Bucquet\n- Dr. Kildare's Strange Case -> Taxi!\n- Book of Burial -> The Mystic\nPassages:\nP1: The Secret of Dr. Kildare: The Secret of Dr. Kildare is a 1939 American film directed by Harold S. Bucquet and produced by Metro-Goldwyn-Mayer. This was the fourth of a total of ten Dr. Kildare pictures, Lew Ayres starred in the last nine.\nP2: The Secret of Dr. Kildare: The Secret of Dr. Kildare is a 1939 American film directed by Harold S. Bucquet and produced by Metro- Goldwyn- Mayer. This was the fourth of a total of ten Dr. Kildare pictures, Lew Ayres starred in the last nine.\nP3: A Secret: A Secret is a 2007 French film directed and written by Claude Miller. The screenplay was based on the novel by Philippe Grimbert.\nP4: The Mystic: The Mystic is a 1925 American MGM silent drama film directed by Tod Browning, who later directed MGM's\" Freaks\"( 1932). It was co-written by Browning and Waldemar Young, writing a similar storyline to their earlier 1925 hit film\" The Unholy Three\". Browning was unable however to hire his favorite star Lon Chaney this time around, and\" The Mystic\" wound up a little- known film with a cast of now- forgotten names. Aileen Pringle's gowns in the film were by already famous Romain de ...\nP5: Lew Ayres: Lewis Frederick Ayres III( December 28, 1908 – December 30, 1996) was an American actor whose film and television career spanned 65 years. He is best known for starring as German soldier Paul Bäumer in the film\" All Quiet on the Western Front\"( 1930) and for playing Dr. Kildare in nine movies. He was nominated for an Academy Award for his performance in\" Johnny Belinda\"( 1948).\nP6: Harold S. Bucquet: Harold S. Bucquet (10 April 1891 – 13 February 1946) was an English film director. He directed 26 films between 1936 and 1945. His 1937 film \"Torture Money\" won an Academy Award for the Best Short Subject (Two-Reel). He was born in London, England and died in Los Angeles, California. He is interred at Glendale's Forest Lawn Memorial Park Cemetery.\nP7: Harold S. Bucquet: Harold S. Bucquet( 10 April 1891 – 13 February 1946) was an English film director. He directed 26 films between 1936 and 1945. His 1937 film\" Torture Money\" won an Academy Award for the Best Short Subject( Two- Reel). He was born in London, England and died in Los Angeles, California. He is interred at Glendale's Forest Lawn Memorial Park Cemetery.\nP8: Taxi!: Taxi! is a 1932 American pre-Code gangster film directed by Roy Del Ruth and starring James Cagney and Loretta Young. The film includes two famous Cagney dialogues, one of which features Cagney conducting a conversation with a passenger in Yiddish, and the other when Cagney is speaking to his brother's killer through a locked closet, Come out and take it, you dirty yellow- bellied rat, or I'll give it to you through the door! The provenance of this sequence led to Cagney being famously ...\nP9: Claude Miller: Claude Miller( 20 February 1942 – 4 April 2012) was a French film director, producer and screenwriter.\nP10: Dr. Kildare Goes Home: Dr. Kildare Goes Home is a 1940 American drama film directed by Harold S. Bucquet, starring Lew Ayres, Lionel Barrymore and Laraine Day. This was the fifth in the MGM series of nine Dr. Kildare, from 1938- 1942 with Lew Ayres as Dr. Kildare. This was the sixth of a series of ten Dr. Kildare pictures; the first of which starred Joel McCrea as Kildare.\nQuestion: Where was the place of burial of the director of film The Secret Of Dr. Kildare?\nFinal answer:",
+  "output": "Glendale's Forest Lawn Memorial Park Cemetery",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.8
+  },
+  "response": {
+    "id": "chatcmpl-b016a784d0379047",
+    "object": "chat.completion",
+    "created": 1779535897,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Glendale's Forest Lawn Memorial Park Cemetery",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1244,
+      "total_tokens": 1253,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

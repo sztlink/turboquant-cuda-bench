@@ -1,0 +1,66 @@
+{
+  "idx": 490,
+  "qid": "0c0b964c0bdb11eba7f7acde48001122",
+  "gold": "Eva-Riitta Siitonen",
+  "candidates": [
+    "Fredi",
+    "Pump-Pump",
+    "The Room",
+    "October 1",
+    "Part",
+    "Spouse of the President of the People's Republic of China",
+    "Spouse of the Prime Minister of Cambodia",
+    "Spouse of the Prime Minister of Singapore",
+    "Spouse of the Prime Minister of Malaysia",
+    "The Pump Room, Chicago",
+    "List of spouses of Prime Ministers of Thailand",
+    "Fredi (singer)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Fredi\nC2: Pump-Pump\nC3: The Room\nC4: October 1\nC5: Part\nC6: Spouse of the President of the People's Republic of China\nC7: Spouse of the Prime Minister of Cambodia\nC8: Spouse of the Prime Minister of Singapore\nC9: Spouse of the Prime Minister of Malaysia\nC10: The Pump Room, Chicago\nC11: List of spouses of Prime Ministers of Thailand\nC12: Fredi (singer)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- The Pump Room, Chicago -> October 1\n- The Pump Room, Chicago -> The Room\n- Fredi (singer) -> Part\nPassages:\nP1: Pump-Pump: \"For Snoop Doggy Dogg's song named *Pump Pump\", see here\"\n\"Pump-Pump\" was the Finnish entry in the Eurovision Song Contest 1976, performed in English by Fredi & Ystävät (Fredi & Friends). This was Fredi's second Eurovision entry, he had made his debut in Vienna, Austria in 1967 with \"Varjoon - suojaan\", placing 12th in a field of 17. The song was performed eleventh on the night (following Greece's Mariza Koch with \"Panayia Mou, Panayia Mou\" and preceding Spain's Braulio with \"Sobran ...\nP2: The Room: The Room may refer to:\nP3: October 1: It is the first day of the fourth quarter of the year.\nP4: Part: Part, parts or PART may refer to:\nP5: Spouse of the President of the People's Republic of China: The Spouse of the President of the People's Republic of China, is the spouse of the President of the People's Republic of China. To date there have been 7 women who have been married to the Chinese president while in office.\nP6: Spouse of the Prime Minister of Cambodia: The Spouse of the Prime Minister of Cambodia refers to the wife of the head of government of the Kingdom of Cambodia, the Prime Minister. Since 1993, 3 women have been the spouse of the Prime Minister of Cambodia. The title\" First Lady\" is also commonly used. The spouse of the current Prime Minister is Dr. Bun Rany.\nP7: Spouse of the Prime Minister of Singapore: The Spouse of the Prime Minister of Singapore refers to the spouse of the head of government of Singapore, the Prime Minister. Since, Singapore became an internally self-governing state within the Commonwealth, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. To date, three women have held the title of the spouse of the Prime Minister of Singapore. Ho Ching is the spouse of the incumbent Prime ...\nP8: Spouse of the Prime Minister of Malaysia: The Spouse of the Prime Minister of Malaysia refers to the spouse of the head of government of Malaysia, the Prime Minister. Since independence in 1957, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. Some commentators have tried to style prime ministers' wives as\" First Lady of Malaysia\", similar to the style of First Lady used in republics, but this is not a recognised title. To date, seven women ...\nP9: The Pump Room, Chicago: The Pump Room was a restaurant established on October 1, 1938 by Ernie Byfield and closed in 2017. It was located in the Ambassador Chicago hotel, formerly The Ambassador East, on the northeast corner of State Parkway and Goethe St in Chicago's Gold Coast area.\nP10: List of spouses of Prime Ministers of Thailand: The spouse of the Prime Minister of Thailand is the wife or husband of the Prime Minister of Thailand. The spouse of the current Prime Minister is Associate Professor Naraporn Chan- o-cha.\nQuestion: Who is the spouse of the performer of song Pump-Pump?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Fredi\",\"selected\":\"C1|C2\",\"confidence\":\"high\",\"reason\":\"The song 'Pump-Pump' was performed by Fredi & Friends, and Fredi is identified as the performer in the context.\"}",
+  "verifier": {
+    "final_answer": "Fredi",
+    "selected": "C1|C2",
+    "confidence": "high",
+    "reason": "The song 'Pump-Pump' was performed by Fredi & Friends, and Fredi is identified as the performer in the context."
+  },
+  "final": "Fredi",
+  "selected": "C1|C2",
+  "response": {
+    "id": "chatcmpl-8f6a364f08955181",
+    "object": "chat.completion",
+    "created": 1779536261,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Fredi\",\"selected\":\"C1|C2\",\"confidence\":\"high\",\"reason\":\"The song 'Pump-Pump' was performed by Fredi & Friends, and Fredi is identified as the performer in the context.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1030,
+      "total_tokens": 1081,
+      "completion_tokens": 51,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.9296219348907471
+}

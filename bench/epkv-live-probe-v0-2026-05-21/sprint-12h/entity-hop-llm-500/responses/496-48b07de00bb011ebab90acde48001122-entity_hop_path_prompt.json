@@ -1,0 +1,48 @@
+{
+  "qid": "48b07de00bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Frederick Francis I, Grand Duke of Mecklenburg-Schwerin",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Duchess Marie Louise of Mecklenburg-Schwerin -> Frederick Louis, Hereditary Grand Duke of Mecklenburg-Schwerin\n- Duchess Marie Louise of Mecklenburg-Schwerin -> Louise\n- Duchess Louise Charlotte of Mecklenburg-Schwerin -> Christian VIII of Denmark\n- Duchess Louise Charlotte of Mecklenburg-Schwerin -> Queen Victoria\n- Duchess Marie Antoinette of Mecklenburg -> Princess Marie of Windisch-Graetz\n- Duchess Marie Antoinette of Mecklenburg -> Marie Antoinette\n- Princess Louise of Saxe-Gotha-Altenburg (1756–1808) -> Francis I\n- Princess Louise of Saxe-Gotha-Altenburg (1756–1808) -> Louise\n- Princess Alexandrine of Prussia (1803–1892) -> Louise\nPassages:\nP1: Louise: Louise or Luise may refer to:\nP2: Frederick Louis, Hereditary Grand Duke of Mecklenburg-Schwerin: Frederick Louis of Mecklenburg- Schwerin( 13 June 1778 – 29 November 1819) was a hereditary prince of the Grand Duchy of Mecklenburg- Schwerin, one of the constituent states of the German Confederation. He was the son of Frederick Francis I, Grand Duke of Mecklenburg- Schwerin, and of Princess Louise of Saxe- Gotha- Altenburg.\nP3: Frederick Louis, Hereditary Grand Duke of Mecklenburg-Schwerin: Frederick Louis of Mecklenburg-Schwerin (13 June 1778 – 29 November 1819) was a hereditary prince of the Grand Duchy of Mecklenburg-Schwerin, one of the constituent states of the German Confederation. He was the son of Frederick Francis I, Grand Duke of Mecklenburg-Schwerin, and of Princess Louise of Saxe-Gotha-Altenburg.\nP4: Princess Marie of Windisch-Graetz: Princess Marie of Windisch- Graetz( 11 December 1856 – 9 August 1929) was an Austrian noble. She was the daughter of Hugo, Prince of Windisch- Grätz, and Princess Louise of Mecklenburg- Schwerin( herself the eldest daughter of Grand Duke Paul Frederick and Princess Alexandrine of Prussia).\nP5: Marie Antoinette: Marie Antoinette (born Maria Antonia Josepha Johanna; 2 November 1755 – 16 October 1793) was the last Queen of France before the French Revolution. She was born an Archduchess of Austria and was the penultimate child and youngest daughter of Empress Maria Theresa and Francis I, Holy Roman Emperor. She became Dauphine of France in May 1770 at age 14 upon her marriage to Louis-Auguste, heir apparent to the French throne. On 10 May 1774, her husband ascended the throne as Louis ...\nP6: Christian VIII of Denmark: Christian VIII (18 September 1786 – 20 January 1848) was the King of Denmark from 1839 to 1848 and, as Christian Frederick, King of Norway in 1814.\nP7: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nP8: Francis I: Francis I or Francis the First may refer to:\nP9: Duchess Marie Louise of Mecklenburg-Schwerin: Duchess Marie Louise of Mecklenburg-Schwerin (31 March 180326 October 1862) was daughter of Frederick Louis, Hereditary Grand Duke of Mecklenburg-Schwerin and consort of Georg, Duke of Saxe-Altenburg.\nP10: Duchess Louise Charlotte of Mecklenburg-Schwerin: Duchess Louise Charlotte of Mecklenburg- Schwerin( 19 November 1779 – 4 January 1801) was the maternal grandmother of Prince Albert, husband of Queen Victoria of the United Kingdom. Louise Charlotte was born Duchess of Mecklenburg- Schwerin, her father being Friedrich Franz I, Grand Duke of Mecklenburg- Schwerin. Her mother was Princess Louise of Saxe- Gotha- Altenburg; her sister Charlotte of Mecklenburg- Schwerin( 1784–1840) married King ...\nQuestion: Who is Duchess Marie Louise Of Mecklenburg-Schwerin's paternal grandfather?\nFinal answer:",
+  "output": "Frederick Francis I, Grand Duke of Mecklenburg-Schwerin",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-9e68fefc5566e3ba",
+    "object": "chat.completion",
+    "created": 1779535915,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Frederick Francis I, Grand Duke of Mecklenburg-Schwerin",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1212,
+      "total_tokens": 1230,
+      "completion_tokens": 18,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

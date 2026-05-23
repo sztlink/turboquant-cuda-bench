@@ -1,0 +1,48 @@
+{
+  "qid": "5a34b04e0bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "France",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Matilda of Frisia -> Liudolf, Margrave of Frisia\n- Matilda of Frisia -> Four Years\n- Mathilda of Dendermonde -> Walter II\nPassages:\nP1: Liudolf, Margrave of Frisia: Liudolf of Brunswick (c. 1003 – 23 April 1038) was Margrave of Frisia, Count of Brunswick, Count in the Derlingau and the Gudingau. Liudolf was a descendant of the Saxon family of the Brunonen. He was a son of Bruno I, Count of Brunswick, and Gisela of Swabia. The later Roman Emperor Henry III was his half-brother. He married Gisela and had four children. He controlled the Frisian counties Oostergo, Zuidergo and Westergo. For two more generations the Brunonen family ...\nP2: Four Years: Four Years or 4 Years may refer to:\nP3: Walter II: Walter II may refer to:\nP4: Matilda of Frisia: Matilda of Frisia (died in 1044) was the first queen of Henry I, King of the Franks. Her date of birth is unknown. She was the daughter of Liudolf, Margrave of Frisia, and Gertrude of Egisheim. Matilda and Henry were married in 1034 after the death of his fiancée Matilda of Franconia. Around 1040, Matilda of Frisia gave birth to a daughter via Caesarian section, but four years later in 1044 both she and her daughter died only weeks apart. Matilda was buried in St Denis Abbey, ...\nP5: List of Victoria Cross recipients of uncertain nationality: The following is a list of Victoria Cross recipients whose nationality is uncertain.\nP6: Enno I, Count of East Frisia: Enno I of East Frisia, count of East Frisia( 1 June 1460 – Friedeburg, 19 February 1491) was the eldest son of Ulrich I of East Frisia and Theda Ukena, of a chiefly East Frisian family.\nP7: Japanese nationality law: Japanese nationality is a legal designation and set of rights granted to those people who have met the criteria for citizenship by parentage or by naturalization. Nationality is in the jurisdiction of the Minister of Justice and is generally governed by the Nationality Law of 1950.\nP8: Mathilda of Dendermonde: Matilda of Dendermonde( died 14 April 1224) was a Belgian noblewoman. She was a daughter of Walter II of Dendermonde and his wife, Adela of Buischeure. She was the heiress of Dendermonde and a peer of Flanders. Matilda married twice. Her first husband was Gerard III of Grimbergen. This marriage remained childless. Her second husband was William II of Béthune. Matilda and William II had three sons together:\nP9: Iraqi nationality law: Iraqi nationality is transmitted by one's parents.\nP10: Hatebrand: Hatebrand was a Benedictine abbot. A native of Frisia, Netherlands, he became the Abbot of, Frisia in 1183. He is famed for having revived the Benedictine order, in the area of Frisia.\nQuestion: What nationality is Matilda Of Frisia's husband?\nFinal answer:",
+  "output": "Frankish",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-860bef82183180a7",
+    "object": "chat.completion",
+    "created": 1779535722,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Frankish",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 830,
+      "total_tokens": 833,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "3d3bc0720bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Queens",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Damage (Pharoahe Monch song) -> Pharoahe Monch\n- Place of birth -> Place of origin\n- Tarkus (song) -> Keith Emerson\n- Tarkus (song) -> Karn Evil 9\n- Motherland (disambiguation) -> Place of origin\n- January 26 (song) -> The Last Time\n- January 26 (song) -> The Feature\nPassages:\nP1: Damage (Pharoahe Monch song): \"Damage\" is a song by American hip hop artist Pharoahe Monch, released as the lead single from his fourth studio album, \"P.T.S.D. (Post Traumatic Stress Disorder)\". Prior to its release date, Pharoahe Monch's independent label, W.A.R. Media, published a visual trailer to YouTube on September 22, 2012. The song was officially made available for purchase worldwide on September 27, 2012, on the iTunes Music Store by W.A.R. Media in conjunction with Duck Down Music ...\nP2: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP3: Pharoahe Monch: Troy Donald Jamerson (born October 31, 1972), better known by his stage name Pharoahe Monch, is an American rapper from South Jamaica, Queens, New York. He is known for his complex lyrics, intricate delivery, and internal and multisyllabic rhyme schemes.\nP4: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP5: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP6: The Last Time: The Last Time or Last Time may refer to:\nP7: Karn Evil 9: \" Karn Evil 9\" is an extended work by progressive rock group Emerson, Lake& Palmer, appearing on the album\" Brain Salad Surgery\". A futuristic fusion of rock and classical themes, it is regarded by some to be their best work together with the song\" Tarkus\". At nearly half an hour long, it is also their longest studio recording.\nP8: Keith Emerson: Keith Noel Emerson (2 November 1944 – 11 March 2016) was an English keyboardist, songwriter, and film composer. He played keyboards in a number of bands before finding his first commercial success with the Nice in the late 1960s. He became internationally famous for his work with the Nice, which included writing rock arrangements of classical music. After leaving the Nice in 1970, he was a founding member of Emerson, Lake & Palmer (ELP), one of the early progressive rock ...\nP9: Song of Moses (disambiguation): There are two songs in the Hebrew Bible known as the Song of Moses: The song of the Saints in Revelation 15:3- 4 is described as the\" song of Moses, the servant of God\". The Latin name\" Canticum Moysis\" may be used for either of the songs. \" The Song of Moses\" is also the title of an oratorio written by the English composer Thomas Linley the Younger in 1777.\nP10: Song of Songs (disambiguation): Song of Songs, also known as the\" Song of Solomon\", is a book of the Hebrew Bible or Old Testament. Song of Songs or The Song of Songs may also refer to:\nQuestion: What is the place of birth of the performer of song Damage (Pharoahe Monch Song)?\nFinal answer:",
+  "output": "South Jamaica, Queens, New York",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.33333333333333337
+  },
+  "response": {
+    "id": "chatcmpl-95f765ff4ac59365",
+    "object": "chat.completion",
+    "created": 1779535617,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "South Jamaica, Queens, New York",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1070,
+      "total_tokens": 1078,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "idx": 360,
+  "qid": "9affe3e40bdb11eba7f7acde48001122",
+  "gold": "Přerov",
+  "candidates": [
+    "Kelč in Moravia",
+    "We (1982 film)",
+    "The Next of Kin",
+    "The Vengeance of Fu Manchu",
+    "Place of origin",
+    "The Castle of Fu Manchu",
+    "Vojtěch Jasný",
+    "Abraham",
+    "Offer",
+    "Labour Party",
+    "Jehovah-jireh",
+    "Dag Ole Teigen"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Kelč in Moravia\nC2: We (1982 film)\nC3: The Next of Kin\nC4: The Vengeance of Fu Manchu\nC5: Place of origin\nC6: The Castle of Fu Manchu\nC7: Vojtěch Jasný\nC8: Abraham\nC9: Offer\nC10: Labour Party\nC11: Jehovah-jireh\nC12: Dag Ole Teigen\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- We (1982 film) -> Vojtěch Jasný\n- Jehovah-jireh -> Abraham\n- Jehovah-jireh -> Offer\n- Dag Ole Teigen -> Labour Party\n- Next of Kin (1982 film) -> The Next of Kin\n- The Brides of Fu Manchu -> The Vengeance of Fu Manchu\n- The Brides of Fu Manchu -> The Castle of Fu Manchu\n- Place of birth -> Place of origin\nPassages:\nP1: We (1982 film): We  is a 1982 German science fiction film written by Claus Hubalek, directed by Vojtěch Jasný and produced by German TV network ZDF. The film presents a world of harmony and conformity within a united state of technocratic progressivism. It is based on the 1921 novel \"We\" by the Russian writer Yevgeny Zamyatin.\nP2: The Next of Kin: The Next of Kin, also known as Next of Kin, is a 1942 Second World War propaganda film produced by Ealing Studios. The film was originally commissioned by the British War Office as a training film to promote the government message that\" Careless talk costs lives\". After being taken on by Ealing Studios, the project was expanded and given a successful commercial release. After the war and up until at least the mid 1960s, services in British Commonwealth countries continued to ...\nP3: The Vengeance of Fu Manchu: The Vengeance of Fu Manchu is a 1967 British film directed by Jeremy Summers and starring Christopher Lee, Horst Frank, Douglas Wilmer and Tsai Chin. It was the third British/ West German Constantin Film co-production of the Dr. Fu Manchu series and the first to be filmed in Hong Kong. It was generally released in the U.K. through Warner- Pathé( as a support feature to the Lindsay Shonteff film\" The Million Eyes of Sumuru\") on 3 December 1967.\nP4: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP5: The Castle of Fu Manchu: The Castle of Fu Manchu( also known as The Torture Chamber of Dr. Fu Manchu and also known by its German title Die Folterkammer des Dr. Fu Man Chu) is a 1969 film and the fifth and final Dr. Fu Manchu film with Christopher Lee portraying the title character.\nP6: Vojtěch Jasný: Vojtěch Jasný (30 November 1925 – 15 November 2019) was a Czech director who came to prominence in the sixties. He won a Cannes Special Jury Prize for \"The Cassandra Cat\" (1963). He was born in Kelč in Moravia. An active filmmaker in Czechoslovakia throughout the 1950s and 1960s , he was among many artists and intellectuals who left the country after the USSR-led invasion following the Prague Spring of 1968. Jasný worked in other European countries for several years including ...\nP7: Vojtěch Jasný: Vojtěch Jasný( 30 November 1925 – 15 November 2019) was a Czech director who came to prominence in the sixties. He won a Cannes Special Jury Prize for\" The Cassandra Cat\"( 1963). He was born in Kelč in Moravia. An active filmmaker in Czechoslovakia throughout the 1950s and 1960s, he was among many artists and intellectuals who left the country after the USSR- led invasion following the Prague Spring of 1968. Jasný worked in other European countries for several years including ...\nP8: Abraham: Abraham (né Abram) is the common patriarch of Christianity, Islam, Judaism, and other religions. In Judaism, he is the founding father of the covenant of the pieces, the special relationship between the Hebrews and God; in Christianity, he is the prototype of all believers, Jewish or Gentile; and in Islam he is seen as a link in the chain of prophets that begins with Adam and culminates in Muhammad. The narrative in the Book of Genesis revolves around the themes of posterity and land. ...\nP9: Offer: Offer or offers may refer to:\nP10: Labour Party: Labour Party or Labor Party may refer to:\nQuestion: Where was the place of death of the director of film We (1982 Film)?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided evidence does not include information about the place of death of Vojtěch Jasný. All the passages only mention his place of birth, Kelč in Moravia, but not his place of death.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The provided evidence does not include information about the place of death of Vojtěch Jasný. All the passages only mention his place of birth, Kelč in Moravia, but not his place of death."
+  },
+  "final": "Kelč in Moravia",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-8281ec76ca0965bf",
+    "object": "chat.completion",
+    "created": 1779536152,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided evidence does not include information about the place of death of Vojtěch Jasný. All the passages only mention his place of birth, Kelč in Moravia, but not his place of death.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1312,
+      "total_tokens": 1375,
+      "completion_tokens": 63,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.1530709266662598
+}

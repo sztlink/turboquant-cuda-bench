@@ -1,0 +1,48 @@
+{
+  "qid": "2db288200bde11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "New York",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Alexander Kerensky: Alexander Fyodorovich Kerensky (original spelling: ; – 11 June 1970) was a Russian lawyer and revolutionist who was a key political figure in the Russian Revolution of 1917. After the February Revolution of 1917, he joined the newly formed Russian Provisional Government, first as Minister of Justice, then as Minister of War, and after July as the government's second Minister-Chairman. A leader of the moderate-socialist Trudovik faction of the Socialist Revolutionary Party, ...\nP2: Benjamin Christensen: Benjamin Christensen( 28 September 1879 – 2 April 1959) was a Danish film director, screenwriter and an actor both in film and on the stage. As a director he is most well known for the 1922 film\" Häxan\" and as an actor, he is best known for his performance in the film\" Michael\"( 1924), in which he plays Claude Zoret, the jilted lover of the film's title character.\nP3: Fadil Hadžić: Fadil Hadžić( 23 April 1922 – 3 January 2011) was a Croatian film director, screenwriter, playwright and journalist, mainly known for his comedy films and plays. He was of Bosnian origin, but mainly lived and worked in Croatia, and was well known throughout Yugoslavia.\nP4: The Good Man: The Good Man is a 2012 film by Phil Harrison starring Aidan Gillen.\nP5: The Dead: The Dead may refer to:\nP6: A Secret: A Secret is a 2007 French film directed and written by Claude Miller. The screenplay was based on the novel by Philippe Grimbert.\nP7: Oleg Kerensky: Oleg Aleksandrovich Kerensky CBE FRS , (16 April 1905 – 25 June 1984) was a Russian civil engineer, one of the foremost bridge designers of his time. Kerensky was born in St. Petersburg, Russia, the son of future Russian prime minister Alexander Kerensky, who survived the events of the Russian Civil War and emigrated to Paris in 1918. Both Oleg and his younger brother Gleb graduated as engineers in 1927, and both settled in England. As an associate of Dorman Long, Kerensky ...\nP8: Did a Good Man Die?: Did a Good Man Die? (\" Da li je umro dobar čovjek?\") is a Croatian film directed by Fadil Hadžić and starring Boris Dvornik. It was released in 1962.\nP9: Where the Dead Go to Die: Where the Dead Go to Die is a 2012 American adult animated anthology horror film written, directed, composed, edited, and animated by James\" Jimmy ScreamerClauz\" Creamer.\nP10: Where Did We Go Wrong: Where Did We Go Wrong may refer to:\nQuestion: Where did Oleg Kerensky's father die?\nFinal answer:",
+  "output": "Alexander Kerensky died in Paris.",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-86eceaec574e614c",
+    "object": "chat.completion",
+    "created": 1779535834,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Alexander Kerensky died in Paris.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 749,
+      "total_tokens": 758,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

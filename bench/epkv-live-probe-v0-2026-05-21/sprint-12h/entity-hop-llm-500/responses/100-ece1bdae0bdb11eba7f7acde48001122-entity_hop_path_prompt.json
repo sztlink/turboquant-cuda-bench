@@ -1,0 +1,48 @@
+{
+  "qid": "ece1bdae0bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "British",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Madeleine (1950 film) -> Secret Life\n- Madeleine (1950 film) -> A Secret\n- Leo Martinez -> The General\n- Under the Cards -> André Cayatte\n- Under the Cards -> Story\n- On the Streets (film) -> Victor Trivas\n- On the Streets (film) -> Streets (film)\nPassages:\nP1: Madeleine (1950 film): Madeleine is a 1950 film directed by David Lean, based on a true story about Madeleine Smith, a young Glasgow woman from a wealthy family who was tried in 1857 for the murder of her lover, Emile L'Angelier. The trial was much publicised in the newspapers of the day and labelled \"the trial of the century\". Lean's adaptation of the story starred his wife, Ann Todd, with Ivan Desny as her French lover. Norman Wooland played the respectable suitor and Leslie Banks the ...\nP2: Streets (film): Streets is a 1990 American drama film directed by Katt Shea and starring Christina Applegate and David Mendenhall.\nP3: The General: The General or The Generals may refer to:\nP4: André Cayatte: André Cayatte( 3 February 1909, in Carcassonne – 6 February 1989, in Paris) was a French filmmaker and lawyer, who became known for his films centering on themes of crime, justice, and moral responsibility. Cayatte began his directoral career at the German- controlled Continental Films during the French occupation. Some of Cayatte's earlier films that addressed his characteristic themes include\" Justice est faiteJustice is Done\"; 1950),\" Nous sommes tous des assassins We Are All ...\nP5: André Cayatte: André Cayatte (3 February 1909, in Carcassonne – 6 February 1989, in Paris) was a French filmmaker and lawyer, who became known for his films centering on themes of crime, justice, and moral responsibility. Cayatte began his directoral career at the German-controlled Continental Films during the French occupation. Some of Cayatte's earlier films that addressed his characteristic themes include \"Justice est faiteJustice is Done\"; 1950), \"Nous sommes tous des assassinsWe Are All ...\nP6: A Secret: A Secret is a 2007 French film directed and written by Claude Miller. The screenplay was based on the novel by Philippe Grimbert.\nP7: Victor Trivas: Victor Trivas( July 9, 1896 – April 12, 1970) was a Russian- Jewish screenwriter and film director. He was nominated at the 1946 Academy Awards for Best Story for the film\" The Stranger\".\nP8: Secret Life: Secret Life, The Secret Life or The Secret Life of ... may refer to:\nP9: Story: Story or stories, may refer to:\nP10: Sins of Madeleine: Sins of Madeleine( French: Dupont Barbès) is a 1951 French drama film directed by Henri Lepage and starring Madeleine Lebeau, Henri Vilbert and Yves Furet. It was shot at the Epinay Studios in Paris. The film's sets were designed by the art director Claude Bouxin.\nQuestion: What nationality is the director of film Madeleine (1950 Film)?\nFinal answer:",
+  "output": "British",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-8dcf82333b9f447a",
+    "object": "chat.completion",
+    "created": 1779535561,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "British",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 813,
+      "total_tokens": 815,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

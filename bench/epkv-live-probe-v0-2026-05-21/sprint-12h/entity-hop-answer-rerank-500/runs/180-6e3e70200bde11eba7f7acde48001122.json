@@ -1,0 +1,66 @@
+{
+  "idx": 180,
+  "qid": "6e3e70200bde11eba7f7acde48001122",
+  "gold": "China",
+  "candidates": [
+    "China",
+    "Maury Dexter",
+    "Young Love",
+    "Connie Chan",
+    "Martin Luther King Jr",
+    "Coretta Scott King",
+    "Román Chalbaud",
+    "Gene Watson",
+    "Bob Hoskins",
+    "Revenge",
+    "A. Vincent",
+    "Dexter Young"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: China\nC2: Maury Dexter\nC3: Young Love\nC4: Connie Chan\nC5: Martin Luther King Jr\nC6: Coretta Scott King\nC7: Román Chalbaud\nC8: Gene Watson\nC9: Bob Hoskins\nC10: Revenge\nC11: A. Vincent\nC12: Dexter Young\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Dexter Young -> Connie Chan\n- The Young Animals -> Maury Dexter\n- Dexter King -> Martin Luther King Jr.\n- Dexter King -> Coretta Scott King\n- Dexter King -> Martin Luther King Jr.\n- Dexter King -> Coretta Scott King\n- Cuchillos de fuego -> Román Chalbaud\n- Cuchillos de fuego -> Revenge!\n- Young Love (Strong Love) -> Young Love\n- Naomi Bristow -> Gene Watson\n- Naomi Bristow -> A. Vincent\n- The Raggedy Rawney -> Bob Hoskins\n- The Raggedy Rawney -> Ian Dury\nPassages:\nP1: Maury Dexter: Maury Dexter( born Morris Gene Poindexter; June 12, 1927 – May 28, 2017) was an American producer and director of film and TV. He worked several times for Robert Lippert and American International Pictures.\nP2: Young Love: Young Love may refer to:\nP3: Connie Chan: Connie Chan Po-chu was born in 1947 to impoverished parents, one of at least nine siblings, in Guangdong, China. To increase their children's chances of survival, Chan's birth parents gave away some of their youngest to other families. As a result, Chan was adopted by Chan Fei-nung and his wife, Kung Fan-hung, who were renowned Cantonese opera stars. During the 1960s, Connie Chan was one of Hong Kong cinema's most beloved teen idols. She made more than 230 films in a variety of ...\nP4: Martin Luther King Jr.: Martin Luther King Jr. (January 15, 1929 – April 4, 1968) was an American Christian minister and activist who became the most visible spokesperson and leader in the Civil Rights Movement from 1955 until his assassination in 1968. Born in Atlanta, Georgia, King is best known for advancing civil rights through nonviolence and civil disobedience, inspired by his Christian beliefs and the nonviolent activism of Mahatma Gandhi. King led the 1955 Montgomery bus boycott and in ...\nP5: Coretta Scott King: Coretta Scott King (née Scott; April 27, 1927 – January 30, 2006) was an American author, activist, civil rights leader, and the wife of Martin Luther King Jr. An active advocate for African-American equality , she was a leader for the Civil Rights Movement in the 1960s. King was also a singer who often incorporated music into her civil rights work. King met her husband while attending graduate school in Boston. They both became increasingly active in the American Civil ...\nP6: Román Chalbaud: Román Chalbaud( born 10 October 1931) is a Venezuelan film director and screenwriter, as well as a prominent playwright. Starting work in television after prestigious training, Chalbaud moved into making films before the industry took off in his home country, returning to theatre where he had been a great success for several years until filmmaking became a viable industry again. He has served as the president of Venezuela's leading theatre, television, and film organisations. A ...\nP7: Gene Watson: Gary Gene Watson( born October 11, 1943) is an American country singer. He is most famous for his 1975 hit\" Love in the Hot Afternoon,\" his 1981# 1 hit\" Fourteen Carat Mind,\" and his signature 1979 song\" Farewell Party.\" Watson's long career has notched five number ones, 23 top tens and over 76 charted singles.\nP8: Bob Hoskins: Robert William Hoskins( 26 October 1942 – 29 April 2014) was an English actor. His work included lead roles in\" Pennies from Heaven\"( 1978),\" The Long Good Friday\"( 1980),\" Mona Lisa\"( 1986),\" Who Framed Roger Rabbit\"( 1988),\" Mermaids\"( 1990), and\" Super Mario Bros.\"( 1993), and supporting performances in\" Brazil\"( 1985),\" Hook\"( 1991),\" Nixon\"( 1995),\" Enemy at the Gates\"( 2001),\" Mrs. Henderson Presents\"( 2005),\" A Christmas Carol\"( 2009),\" Made in Dagenham\"( 2010), and\" Snow ...\nP9: Revenge!: Revenge! is a 1971 American made- for- television horror thriller film directed by Jud Taylor and starring Shelley Winters, Bradford Dillman and Stuart Whitman. The film premiered as the\" ABC Movie of the Week\" on November 6, 1971.\nP10: A. Vincent: Aloysius Vincent( 14 June 1928 – 25 February 2015) was an Indian cinematographer and director known for his works in Malayalam, Tamil, Telugu and Hindi language films. From the mid-1960s on, he directed some 30 movies including the landmark Malayalam films\" Bhargavi Nilayam\", and\" Murappennu\". He received the Filmfare Best Cinematographer Award for\" Prem Nagar\"( 1974) starring Rajesh Khanna. In 2003, the Indian Society of Cinematographers( ISC) awarded him an Honorary Membership, ...\nQuestion: Which country Dexter Young's mother is from?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"China\",\"selected\":\"C1\",\"confidence\":\"medium\",\"reason\":\"The evidence does not directly provide information about Dexter Young's mother's country of origin. However, it mentions that Connie Chan, who is connected to Dexter Young in the candidate entity graph, was born in Guangdong, China. While this does not explicitly state that Connie Chan is Dexter Young's mother, it is the closest information provided in the passages and graph that can be inferred to answer the question.\"}",
+  "verifier": {
+    "final_answer": "China",
+    "selected": "C1",
+    "confidence": "medium",
+    "reason": "The evidence does not directly provide information about Dexter Young's mother's country of origin. However, it mentions that Connie Chan, who is connected to Dexter Young in the candidate entity graph, was born in Guangdong, China. While this does not explicitly state that Connie Chan is Dexter Young's mother, it is the closest information provided in the passages and graph that can be inferred to answer the question."
+  },
+  "final": "China",
+  "selected": "C1",
+  "response": {
+    "id": "chatcmpl-ad2958f8cc73f1c1",
+    "object": "chat.completion",
+    "created": 1779536039,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"China\",\"selected\":\"C1\",\"confidence\":\"medium\",\"reason\":\"The evidence does not directly provide information about Dexter Young's mother's country of origin. However, it mentions that Connie Chan, who is connected to Dexter Young in the candidate entity graph, was born in Guangdong, China. While this does not explicitly state that Connie Chan is Dexter Young's mother, it is the closest information provided in the passages and graph that can be inferred to answer the question.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1476,
+      "total_tokens": 1575,
+      "completion_tokens": 99,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.7760531902313232
+}

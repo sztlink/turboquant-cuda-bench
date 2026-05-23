@@ -1,0 +1,48 @@
+{
+  "qid": "0bedb7e80bdc11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "tuberculosis",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Katherine Mansfield: Kathleen Mansfield Murry (\"née\" Beauchamp; 14 October 1888 – 9 January 1923) was a prominent New Zealand modernist short story writer and poet who was born and brought up in colonial New Zealand and wrote under the pen name of Katherine Mansfield. At the age of 19, she left New Zealand and settled in England, where she became a friend of writers such as D. H. Lawrence and Virginia Woolf. Mansfield was diagnosed with extrapulmonary tuberculosis in 1917; the disease claimed ...\nP2: The General: The General or The Generals may refer to:\nP3: The Rock: The Rock or The Rocks may refer to:\nP4: John Middleton Murry: John Middleton Murry (6 August 1889 – 12 March 1957) was an English writer. He was a prolific author, producing more than 60 books and thousands of essays and reviews on literature, social issues, politics, and religion during his lifetime. A prominent critic, Murry is best remembered for his association with Katherine Mansfield, whom he married in 1918 as her second husband, for his friendship with D. H. Lawrence and T. S. Eliot, and for his friendship (and brief affair) ...\nP5: John Middleton Murry Jr.: John Middleton Murry Jr. (9 May 1926 – 31 March 2002) was an English writer who used the names Colin Murry and Richard Cowper.\nP6: John Middleton (architect): John Middleton( 1820–1885) was an English architect of the 19th century. He was born in York, in August 1820.\nP7: John Middleton (footballer, born 1955): John Middleton( born 11 July 1955) is an English former footballer who played for Bradford City and Macclesfield Town. He was born in Rawmarsh, near Rotherham.\nP8: Why Did It Have to Be Me?: \" Why Did It Have to Be Me?\" is a song by the Swedish pop band ABBA. The song was released on the 1976 album\" Arrival Why Did It Have to Be Me?\" has been called a\" Fats Domino flavoured\" song. The song has been noted for its mix of blues, jazz, pop and rock stylings. A live version of the song appears on the album\" Live at Wembley Arena\".\nP9: J. W. N. Sullivan: John William Navin Sullivan( 1886–1937) was a popular science writer and literary journalist, and the author of a study of Beethoven. He wrote some of the earliest non-technical accounts of Einstein ’s General Theory of Relativity, and was known personally to many important writers in London in the 1920s, including Aldous Huxley, John Middleton Murry, Wyndham Lewis, Aleister Crowley and T. S. Eliot.\nP10: Anne Estelle Rice: Anne Estelle Rice( 1877 – 1959) was an American sculptor and artist who was one of the chief illustrators for the British periodical\" Rhythm\", edited by John Middleton Murry and Michael Sadleir from 1911 to 1913. She established a close relationship with Katherine Mansfield, and famously painted her wearing red.\nQuestion: Why did John Middleton Murry's wife die?\nFinal answer:",
+  "output": "Katherine Mansfield was diagnosed with extrapulmonary tuberculosis and died.",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.19999999999999998
+  },
+  "response": {
+    "id": "chatcmpl-8edc7228f7c49562",
+    "object": "chat.completion",
+    "created": 1779535483,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Katherine Mansfield was diagnosed with extrapulmonary tuberculosis and died.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 839,
+      "total_tokens": 855,
+      "completion_tokens": 16,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

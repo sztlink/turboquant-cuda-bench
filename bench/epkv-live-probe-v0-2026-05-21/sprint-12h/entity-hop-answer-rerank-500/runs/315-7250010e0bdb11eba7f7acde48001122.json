@@ -1,0 +1,65 @@
+{
+  "idx": 315,
+  "qid": "7250010e0bdb11eba7f7acde48001122",
+  "gold": "Wawel Cathedral",
+  "candidates": [
+    "Dresden",
+    "Allerton Cemetery",
+    "The Mystic",
+    "Amalie of Zweibrücken-Birkenfeld",
+    "Władysław Dominik Zasławski",
+    "Kunigunde of Poland",
+    "Book of Burial",
+    "Kunigunde of Hohenstaufen",
+    "Kunigunde of Sternberg",
+    "Princess Maria Augusta of Saxony",
+    "Teofila Ludwika Zasławska"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Dresden\nC2: Allerton Cemetery\nC3: The Mystic\nC4: Amalie of Zweibrücken-Birkenfeld\nC5: Władysław Dominik Zasławski\nC6: Kunigunde of Poland\nC7: Book of Burial\nC8: Kunigunde of Hohenstaufen\nC9: Kunigunde of Sternberg\nC10: Princess Maria Augusta of Saxony\nC11: Teofila Ludwika Zasławska\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Book of Burial -> The Mystic\n- Teofila Ludwika Zasławska -> Władysław Dominik Zasławski\n- Princess Maria Augusta of Saxony -> Amalie of Zweibrücken-Birkenfeld\nPassages:\nP1: The Mystic: The Mystic is a 1925 American MGM silent drama film directed by Tod Browning, who later directed MGM's\" Freaks\"( 1932). It was co-written by Browning and Waldemar Young, writing a similar storyline to their earlier 1925 hit film\" The Unholy Three\". Browning was unable however to hire his favorite star Lon Chaney this time around, and\" The Mystic\" wound up a little- known film with a cast of now- forgotten names. Aileen Pringle's gowns in the film were by already famous Romain de ...\nP2: Amalie of Zweibrücken-Birkenfeld: Amalie of Zweibrücken-Birkenfeld-Bischweiler (Maria Amalie Auguste; 10 May 1752 – 15 November 1828) was the last Electress and first Queen of Saxony and Duchess of Warsaw.\nP3: Władysław Dominik Zasławski: Prince Wladysław Dominik Zasławski-Ostrogski (ca. 1616 – 1656) was a Polish nobleman (szlachcic) of Ruthenian stock. Prince of the Princely Houses of Poland, Ostroh Ordynat, Grand Koniuszy of The Crown. Zasławski was the mightiest magnate in Volhynia at that time. He was voivode of Sandomierz Voivodeship from 1645 and voivode of Kraków Voivodeship from 1649. Starosta of Lutsk 1639-1653, regimentarz of the Crown 1648, second richest, after Stanisław Lubomirski, ...\nP4: Kunigunde of Poland: Kunigunde of Poland( c. 1298 – 9 April 1331) was a daughter of Władysław I the Elbow-high and his wife Jadwiga of Greater Poland. Her siblings included, Casimir III of Poland and Elisabeth, Queen of Hungary. She was a member of the House of Piast.\nP5: Book of Burial: The Book of Burial( Chinese:,,\" Zàngshū\") was an AD 4th- or 5 th- century work by the Taoist mystic Guo Pu. The work was a commentary on the now- lost\" Classic of Burial\"; as it survived and transmitted the classic's teachings, the\" Book of Burial\"'s principles relating the flow of\" qi\" to the appropriateness of a tomb's location were influential on the development of\" fengshui\".\nP6: Kunigunde of Hohenstaufen: Kunigunde of Hohenstaufen or Kunigunde of Swabia( February/ March 1202 – 13 September 1248) was the third daughter of Philip, Duke of Swabia and his wife, Irene Angelina.\nP7: Kunigunde of Sternberg: Kunigunde of Sternberg (18 November 1425, Konopiště – 19 November 1449, Poděbrady) was the first wife of George of Poděbrady, who later became King of Bohemia.\nP8: Kunigunde of Sternberg: Kunigunde of Sternberg( 18 November 1425, Konopiště – 19 November 1449, Poděbrady) was the first wife of George of Poděbrady, who later became King of Bohemia.\nP9: Princess Maria Augusta of Saxony: Maria Augusta Nepomucena Antonia Francisca Xaveria Aloysia  of Saxony (born Dresden, 21 June 1782; died Dresden, 14 March 1863) of the House of Wettin was the daughter of Frederick Augustus I of Saxony and Amalie of Zweibrücken-Birkenfeld. Her father, Frederick Augustus, was the King of Saxony and prince of the Duchy of Warsaw. She was his only child to reach adulthood. Her family had a claim to the throne of Poland (Polish–Lithuanian Commonwealth) and the ...\nP10: Allerton Cemetery: Allerton Cemetery is a cemetery in Allerton, Liverpool, England. The cemetery, of, is one of the main burial sites for the Metropolitan Borough of Liverpool and is Grade II listed. Springwood Crematorium is situated opposite the cemetery on Springwood Avenue. Purchase of the land for the cemetery was completed in October 1906, the Church of England section was consecrated by the Bishop of Liverpool on 24 September 1909, and the first burial in the cemetery took place on 29 ...\nQuestion: Where was the place of burial of Kunigunde Of Poland's father?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the place of burial of Kunigunde of Poland's father. While passage P9 mentions Kunigunde of Poland and her father Frederick Augustus I of Saxony, it does not specify where he was buried.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence passages do not provide information about the place of burial of Kunigunde of Poland's father. While passage P9 mentions Kunigunde of Poland and her father Frederick Augustus I of Saxony, it does not specify where he was buried."
+  },
+  "final": "Dresden",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-b296c27e031f65ba",
+    "object": "chat.completion",
+    "created": 1779536121,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the place of burial of Kunigunde of Poland's father. While passage P9 mentions Kunigunde of Poland and her father Frederick Augustus I of Saxony, it does not specify where he was buried.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1401,
+      "total_tokens": 1470,
+      "completion_tokens": 69,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.264195442199707
+}

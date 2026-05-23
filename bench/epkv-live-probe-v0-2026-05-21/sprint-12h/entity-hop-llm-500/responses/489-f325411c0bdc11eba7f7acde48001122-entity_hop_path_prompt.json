@@ -1,0 +1,48 @@
+{
+  "qid": "f325411c0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Bouxwiller",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Johanna Sibylla of Hanau-Lichtenberg -> Ludowika Margaretha of Zweibrücken-Bitsch\n- Johanna Sibylla of Hanau-Lichtenberg -> Philipp V, Count of Hanau-Lichtenberg\n- Countess Johanna Magdalene of Hanau-Lichtenberg -> Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler\nPassages:\nP1: Philipp V, Count of Hanau-Lichtenberg: Philipp V of Hanau- Lichtenberg( 21 February 1541, Bouxwiller – 2 June 1599, Niederbronn) was Count of Hanau- Lichtenberg from 1590 until his death.\nP2: Ludowika Margaretha of Zweibrücken-Bitsch: Ludowika Margaretha of Zweibrücken-Bitsch (19 July 1540, Ingwiller – 15 December 1569, Bouxwiller), was the only child and heiress of Count James of Zweibrücken-Bitsch (born: 19 July 1510; died: 22 March 1570) by his wife Catherine, born Countess of Honstein zu Klettenberg. She was buried in Ingwiller.\nP3: Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler: Countess Palatine Anna Magdalena of Birkenfeld- Bischweiler( 14 February 1640, Strasbourg – 12 December 1693, Babenhausen) was a daughter of Christian I, Count Palatine of Birkenfeld- Bischweiler( 1598 – 1654) and his first wife, Countess Palatine Magdalene Catherine of Zweibrücken( 1606 – 1648).\nP4: Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler: Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler (14 February 1640, Strasbourg – 12 December 1693, Babenhausen) was a daughter of Christian I, Count Palatine of Birkenfeld-Bischweiler (1598–1654) and his first wife, Countess Palatine Magdalene Catherine of Zweibrücken (1606–1648).\nP5: Johanna Sibylla of Hanau-Lichtenberg: Johanna Sibylla of Hanau-Lichtenberg (6 July 1564 at Château de Lichtenberg – 24 March 1636 in Runkel) was the first child of Philipp V, Count of Hanau-Lichtenberg from his first marriage with Countess Ludowika Margaretha of Zweibrücken-Bitsch (1540-1569).\nP6: Countess Johanna Magdalene of Hanau-Lichtenberg: Countess Johanna Magdalene of Hanau-Lichtenberg (18 December 1660, Bischofsheim am Hohen Steg – 21 August 1715, Hanau) was a daughter of Johann Reinhard II of Hanau-Lichtenberg (1628–1666) and the Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler (1640–1693). She died on 21 August 1715 and is said to have been buried in the St. Mary's Church in Hanau.\nP7: Johanna of Hanau-Lichtenberg, Countess of Eberstein: Johanna of Hanau- Lichtenberg, Countess of Eberstein( 1507 – 27 January 1572) was a German noblewoman, the eldest daughter of Philipp III, Count of Hanau- Lichtenberg( 18 October 1482 – 15 May 1538) and Margravine Sibylle of Baden( 26 April 1485 – 10 July 1518).\nP8: Countess Charlotte of Hanau-Lichtenberg: Charlotte, Countess of Hanau- Lichtenberg, full name:\" Countess Charlotte Christine Magdalene Johanna of Hanau- Lichtenberg\"( 2 May 1700, Bouxwiller – 1 July 1726, Darmstadt) was the wife of landgrave Louis VIII of Hesse- Darmstadt.\nP9: Philipp Wolfgang, Count of Hanau-Lichtenberg: Philipp Wolfgang, Count of Hanau- Lichtenberg( 31 July 1595, Bouxwiller –, Bouxwiller) was a count of Hanau- Lichtenberg. He ruled the county from 1625 until his death.\nP10: Friedrich Casimir, Count of Hanau-Lichtenberg: Friedrich Casimir of Hanau( born 4 August 1623 in Bouxwiller; died: 30 March 1685 in Hanau) was a member of the Hanau- Lichtenberg branch of the House of Hanau. He was the ruling Count of Hanau- Lichtenberg from 1641 and of Hanau- Münzenberg from 1642.\nQuestion: Where was the place of death of Johanna Sibylla Of Hanau-Lichtenberg's mother?\nFinal answer:",
+  "output": "Bouxwiller",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-896d47825fc196d2",
+    "object": "chat.completion",
+    "created": 1779535909,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Bouxwiller",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1295,
+      "total_tokens": 1300,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "2bde31980bde11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "American",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: The Wedding Video (2003 film): The Wedding Video is a mockumentary film in the genre of gay and lesbian comedy, starring, directed, and written by Norman Korpi. Filmed in 1998 and completed in 2001 it was not released until 2003 by TLA Video. The film stars a variety of alum from various seasons of the reality television show \"The Real World\". Within the context of the film they ostensibly play themselves; however their \"characters\" (as perceived by viewers of \"The Real World\") are exaggerated ...\nP2: The Smell of Success: The Smell of Success is a 2009 Initiate Productions film directed by Michael Polish and starring Billy Bob Thornton, Téa Leoni, Kyle MacLachlan, and Ed Helms. The film ’s original title was\" Manure\".\nP3: Wedding Night: Wedding Night( French: Nuit de noces) is a 2001 Canadian comedy film.\nP4: The Vampire: The Vampire may refer to:\nP5: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP6: Pol Cruchten: Pol Cruchten( 30 July 1963 – 3 July 2019) was a Luxembourgish film director and producer. His film\" Hochzäitsnuecht\" was screened in the Un Certain Regard section at the 1992 Cannes Film Festival.\nP7: Pol Cruchten: Pol Cruchten (30 July 1963 – 3 July 2019) was a Luxembourgish film director and producer. His film \"Hochzäitsnuecht\" was screened in the Un Certain Regard section at the 1992 Cannes Film Festival.\nP8: Norman Korpi: Norman Korpi (born 1967, in Wakefield, Michigan) is an American painter, fashion designer, filmmaker and reality television star. He is best known for being one of the original cast members /roommates on the of the MTV reality show \"The Real World\".\nP9: September 30: It is the last day of the third quarter, midway point of the second half of the year.\nP10: The Wedding Video (2012 film): The Wedding Video is a 2012 British comedy film directed by Nigel Cole and written by Tim Firth. Presented in the\" found footage\" style, the film stars Rufus Hound, Lucy Punch and Robert Webb. It follows an engaged couple's best man as he creates a video documentary of their wedding.\nQuestion: Where was the director of film The Wedding Video (2003 Film) born?\nFinal answer:",
+  "output": "Wakefield, Michigan",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-ac537c635055dbf9",
+    "object": "chat.completion",
+    "created": 1779535800,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Wakefield, Michigan",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 682,
+      "total_tokens": 687,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "e15b1fe20baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Ansegisel",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Tiberius Claudius Nero (praetor 42 BC) -> Drusus Julius Caesar\n- Tiberius Claudius Nero (praetor 42 BC) -> Nero Claudius Drusus\n- Prince Foulques, Duke of Aumale -> Prince Jacques, Duke of Orléans\n- Prince Foulques, Duke of Aumale -> Prince Jacques, Duke of Orléans\n- Grimoald the Younger -> Pepin of Herstal\n- Grimoald the Younger -> Charles Martel\n- Grimoald the Younger -> Pepin of Herstal\n- Grimoald the Younger -> Charles Martel\n- Lucius Vibullius Hipparchus (grandson of Herodes Atticus) -> Aspasia Annia Regilla\n- Lucius Vibullius Hipparchus (grandson of Herodes Atticus) -> Herodes Atticus\n- Charles, Duke of Vendôme -> Henry IV of France\n- Charles, Duke of Vendôme -> Francis I\nPassages:\nP1: Nero Claudius Drusus: Nero Claudius Drusus Germanicus (January 14, 38 BC – summer of 9 BC), born Decimus Claudius Drusus, also called Drusus Claudius Nero, Drusus, Drusus I, Nero Drusus, or Drusus the Elder was a Roman politician and military commander. He was a patrician Claudian on his birth father's side but his maternal grandmother was from a plebeian family. He was the son of Livia Drusilla and the legal stepson of her second husband, the Emperor Augustus. He was also brother of the ...\nP2: Drusus Julius Caesar: Drusus Julius Caesar (14 BC – 14 September AD 23), was the son of Emperor Tiberius, and heir to the Roman Empire following the death of his adoptive brother Germanicus in AD 19. He was born at Rome to a prominent branch of the \"gens Claudia\", the son of Tiberius and his first wife, Vipsania Agrippina. His name at birth was Nero Claudius Drusus after his paternal uncle, Drusus the Elder. In AD 4, he assumed the name \"Julius Caesar\" following his father's adoption into the ...\nP3: Pepin of Herstal: Pepin II (c. 635 – 16 December 714), commonly known as Pepin of Herstal, was a Frankish statesman and military leader who de facto ruled Francia as the Mayor of the Palace from 680 until his death. He took the title Duke and Prince of the Franks upon his conquest of all the Frankish realms. The son of the powerful Frankish statesman Ansegisel, Pepin worked to establish his family, the Pippinids, as the strongest in Francia. He became Mayor of the Palace in Austrasia in 680. ...\nP4: Charles Martel: Charles Martel (688 – 22 October 741) was a Frankish statesman and military leader who, as Duke and Prince of the Franks and Mayor of the Palace, was the \"de facto\" ruler of Francia from 718 until his death. He was a son of the Frankish statesman Pepin of Herstal and Pepin's mistress, a noblewoman named Alpaida. Charles successfully asserted his claims to power as successor to his father as the power behind the throne in Frankish politics. Continuing and building on his father's ...\nP5: Henry IV of France: Henry IV (read as ; 13 December 1553 – 14 May 1610), also known by the epithet Good King Henry or Henry the Great, was King of Navarre (as Henry III) from 1572 and King of France from 1589 to 1610. He was the first monarch of France from the House of Bourbon, a cadet branch of the Capetian dynasty. He was assassinated in 1610 by François Ravaillac, a fanatical Catholic, and was succeeded by his son Louis XIII. The son of Antoine de Bourbon, Duke of Vendôme and Jeanne ...\nP6: Prince Jacques, Duke of Orléans: Prince Jacques of Orléans, Duke of Orléans,\" fils de France\"( Jacques Jean Jaroslaw Marie; born 25 June 1941 in Rabat, Morocco), is the son of Henri, Count of Paris( the Orléanist claimant to the French throne from 1940 until his death) and his wife, Princess Isabelle of Orléans- Braganza.\nP7: Prince Jacques, Duke of Orléans: Prince Jacques of Orléans, Duke of Orléans, \"fils de France\" (Jacques Jean Jaroslaw Marie; born 25 June 1941 in Rabat, Morocco), is the son of Henri, Count of Paris (the Orléanist claimant to the French throne from 1940 until his death) and his wife, Princess Isabelle of Orléans-Braganza.\nP8: Aspasia Annia Regilla: Aspasia Annia Regilla, full name Appia Annia Regilla Atilia Caucidia Tertulla (Greek:, 125-160), was a wealthy, aristocratic and influential Roman woman, who was a distant relative of several Roman emperors and empresses. She was the wife of the prominent Greek Herodes Atticus.\nP9: Herodes Atticus: Herodes Atticus (\"Hērōidēs ho Attikos\"; 177), or Atticus Herodes, was a Greco-Roman politician and sophist who served as a Roman senator. Appointed consul at Rome in 143 , he was the first Greek to hold the rank of \"consul ordinarius\", as opposed to \"consul suffectus\". In Latin, his full name was given as Lucius Vibullius Hipparchus Tiberius Claudius Atticus Herodes . According to Philostratus, Herodes Atticus was a notable proponent of the Second Sophistic. M.I. Finley ...\nP10: Francis I: Francis I or Francis the First may refer to:\nQuestion: Who is Grimoald The Younger's paternal grandfather?\nFinal answer:",
+  "output": "Pepin of Herstal",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-ba9888d3ca4866f8",
+    "object": "chat.completion",
+    "created": 1779535892,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Pepin of Herstal",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1478,
+      "total_tokens": 1486,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

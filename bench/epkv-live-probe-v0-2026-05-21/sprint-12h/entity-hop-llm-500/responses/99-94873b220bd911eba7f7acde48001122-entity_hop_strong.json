@@ -1,0 +1,48 @@
+{
+  "qid": "94873b220bd911eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Florence",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Francis II of France: Francis II (19 January 1544 – 5 December 1560) was King of France from 1559 to 1560. He was also King consort of Scotland as a result of his marriage to Mary, Queen of Scots, from 1558 until his death in 1560. He ascended the throne of France at the age of fifteen after the accidental death of his father, Henry II, in 1559. His short reign was dominated by the first stirrings of the French Wars of Religion. Although the royal age of majority had been set at fourteen, his ...\nP2: Philip II of France: Philip II (21 August 1165 – 14 July 1223), known as Philip Augustus , was King of France from 1180 to 1223. His predecessors had been known as kings of the Franks, but from 1190 onward, Philip became the first French monarch to style himself \"King of France\". The son of King Louis VII and his third wife, Adela of Champagne, he was originally nicknamed \"Dieudonné\" (God-given) because he was a first son and born late in his father's life. Philip was given the epithet ...\nP3: Theobald II, Count of Champagne: Theobald the Great (French: Thibaut de Blois) (1090–1152) was Count of Blois and of Chartres as Theobald IV from 1102 and was Count of Champagne and of Brie as Theobald II from 1125. He held Auxerre, Maligny, Ervy, Troyes, and Châteauvillain as fiefs from Odo II, Duke of Burgundy. He was the son of Stephen II, Count of Blois, and Adela of Normandy, and the elder brother of King Stephen of England. Although he was the second son, Theobald was appointed above his ...\nP4: Claude of France: Claude of France( 13 October 1499 – 20 July 1524) was a queen consort of France by marriage to Francis I. She was also ruling Duchess of Brittany from 1514. She was a daughter of the French king Louis XII of France and Anne of Brittany.\nP5: Claude of France: Claude of France (13 October 1499 – 20 July 1524) was a queen consort of France by marriage to Francis I. She was also ruling Duchess of Brittany from 1514. She was a daughter of the French king Louis XII of France and Anne of Brittany.\nP6: Edward III of England: Edward III (13 November 1312 – 21 June 1377) was king of England and Lord of Ireland from January 1327 until his death; he is noted for his military success and for restoring royal authority after the disastrous and unorthodox reign of his father, Edward II. Edward III transformed the Kingdom of England into one of the most formidable military powers in Europe. His long reign of 50 years was the second-longest in medieval England (after that of his great-grandfather Henry ...\nP7: Joan I of Navarre: Joan I (14 January 1273 – 31 March/2 April 1305)  was queen regnant of Navarre and countess of Champagne from 1274 until 1305; she was also queen consort of France by marriage to Philip IV of France. She was the daughter of king Henry I of Navarre and Blanche of Artois.\nP8: Francis I: Francis I or Francis the First may refer to:\nP9: Catherine de' Medici: Catherine de' Medici (13 April 1519 – 5 January 1589), was an Italian noblewoman who was queen consort of France from 1547 until 1559, by marriage to King Henry II, and Queen mother of kings Francis II, Charles IX and Henry III from 1559 to 1589. The years during which her sons reigned have been called \"the age of Catherine de' Medici\" as she had extensive, if at times varying, influence in the political life of France. She was born in Florence to Lorenzo de’ Medici, Duke ...\nP10: Claudine de Brosse: Claudine de Brosse (1450–1513), was a Duchess Consort of Savoy; married in 1485 to Philip II, Duke of Savoy. She was a daughter of Jean II de Brosse and Nicole de Châtillon. Issue:\nQuestion: Where was the mother of Francis Ii Of France born?\nFinal answer:",
+  "output": "Florence",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-b4085e18e8172969",
+    "object": "chat.completion",
+    "created": 1779535560,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Florence",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1123,
+      "total_tokens": 1126,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

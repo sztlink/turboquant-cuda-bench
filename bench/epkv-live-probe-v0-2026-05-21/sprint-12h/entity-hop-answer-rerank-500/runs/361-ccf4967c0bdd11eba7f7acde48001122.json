@@ -1,0 +1,66 @@
+{
+  "idx": 361,
+  "qid": "ccf4967c0bdd11eba7f7acde48001122",
+  "gold": "American",
+  "candidates": [
+    "United States",
+    "British-American",
+    "Downloaded (film)",
+    "The Feature",
+    "1919 (film)",
+    "The Miner's Daughter",
+    "The Singer",
+    "Roger Corman",
+    "Funny Face",
+    "Alex Winter",
+    "Irvin Willat",
+    "A Secret"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: United States\nC2: British-American\nC3: Downloaded (film)\nC4: The Feature\nC5: 1919 (film)\nC6: The Miner's Daughter\nC7: The Singer\nC8: Roger Corman\nC9: Funny Face\nC10: Alex Winter\nC11: Irvin Willat\nC12: A Secret\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Downloaded (film) -> Alex Winter\n- Downloaded (film) -> The Feature\n- The Secret of the Storm Country -> A Secret\n- Back to God's Country (1927 film) -> Irvin Willat\n- Back to God's Country (1927 film) -> 1919 (film)\n- Donna Fargo -> Funny Face\n- Donna Fargo -> The Singer\n- Nashville Girl -> The Miner's Daughter\n- Nashville Girl -> Roger Corman\nPassages:\nP1: Downloaded (film): Downloaded is a documentary film directed by Alex Winter about the downloading generation and the impact of filesharing on the Internet. A teaser of the film premiered at SXSW on March 14, 2012. The feature film made its world premiere at SXSW on March 10, 2013, and was shown at other film festivals around the world. VH1 partnered with AOL to distribute the film widely and was broadcast as a \"VH1 Rock Docs\" feature in late 2014.\nP2: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP3: 1919 (film): 1919 is a 1985 British drama film directed by Hugh Brody and written by Michael Ignatieff together with Brody. It stars Paul Scofield. It was entered into the 35th Berlin International Film Festival.\nP4: The Miner's Daughter: The Miner's Daughter is a 1927 Australian silent film set in Sydney and Bendigo. Little is known about it and It is considered a lost film.\nP5: The Singer: The Singer may refer to:\nP6: Roger Corman: Roger William Corman( born April 5, 1926) is an American director, producer, and actor. He has been called\" The Pope of Pop Cinema\" and is known as a trailblazer in the world of independent film. Much of Corman's work has an established critical reputation, such as his cycle of low- budget cult films adapted from the tales of Edgar Allan Poe. Admired by members of the French New Wave and\" Cahiers du cinéma\", in 1964 Corman was the youngest filmmaker to have a retrospective at the ...\nP7: Funny Face: Funny Face is a 1957 American musical romantic comedy film directed by Stanley Donen and written by Leonard Gershe, containing assorted songs by George and Ira Gershwin. Although having the same title as the 1927 Broadway musical\" Funny Face\" by the Gershwin brothers, and featuring the same male star( Fred Astaire), the plot is totally different and only four of the songs from the stage musical are included. Alongside Astaire, the film stars Audrey Hepburn and Kay Thompson.\nP8: Alex Winter: Alexander Ross Winter (born July 17, 1965) is a British-American actor, film director, and screenwriter, best known for his role as \"Bill S. Preston, Esq.\" in the 1989 film \"Bill & Ted's Excellent Adventure\", its 1991 sequel \"Bill & Ted's Bogus Journey\", and a planned sequel \"Bill & Ted Face the Music\". He is also known for his role as Marko in the 1987 vampire film \"The Lost Boys\"; co-writing, co-directing, and starring in the 1993 film \"Freaked\"; and directing documentaries in ...\nP9: Irvin Willat: Irvin V. Willat (November 18, 1890 – April 17, 1976) was an American film director of the silent film era. He directed 39 films between 1917 and 1937. Early in his career Willat worked as a cinematographer on several films. His older brother Edwin Willat (1882–1950) was cinematographer on several silent films.\nP10: A Secret: A Secret is a 2007 French film directed and written by Claude Miller. The screenplay was based on the novel by Philippe Grimbert.\nQuestion: Which country the director of film Downloaded (Film) is from?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"United States\",\"selected\":\"C1|C2|UNKNOWN\",\"confidence\":\"medium\",\"reason\":\"Alex Winter is identified as the director of the film Downloaded in passage P1, and he is described as British-American in the candidate entity graph.\"}",
+  "verifier": {
+    "final_answer": "United States",
+    "selected": "C1|C2|UNKNOWN",
+    "confidence": "medium",
+    "reason": "Alex Winter is identified as the director of the film Downloaded in passage P1, and he is described as British-American in the candidate entity graph."
+  },
+  "final": "United States",
+  "selected": "C1|C2|UNKNOWN",
+  "response": {
+    "id": "chatcmpl-868a26b56622409e",
+    "object": "chat.completion",
+    "created": 1779536153,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"United States\",\"selected\":\"C1|C2|UNKNOWN\",\"confidence\":\"medium\",\"reason\":\"Alex Winter is identified as the director of the film Downloaded in passage P1, and he is described as British-American in the candidate entity graph.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1264,
+      "total_tokens": 1319,
+      "completion_tokens": 55,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.0167248249053955
+}

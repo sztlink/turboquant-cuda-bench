@@ -1,0 +1,48 @@
+{
+  "qid": "db787f5c0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "British",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- What Women Want (2011 film) -> What Women Want\n- What Women Want (2011 film) -> The First Day\n- Ebar Shabor -> Arindam Sil\n- Ebar Shabor -> Story\nPassages:\nP1: Detachment (film): Detachment is a 2011 American drama film about the high school education system directed by Tony Kaye, starring Adrien Brody with an ensemble supporting cast.\nP2: What Women Want: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt. The film earned mixed reviews from critics, but was a box office success, with a North American domestic gross of $182 million and a worldwide gross of $374 million against a budget of $70 million. A loose remake, \"What Men Want\" starring Taraji P. Henson and Aldis Hodge came out in early 2019.\nP3: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP4: The First Day: The First Day may refer to:\nP5: Arindam Sil: Arindam Sil( born 12 March 1964) is an Indian film star, film director and line producer.\nP6: First Day: First Day may refer to:\nP7: Story: Story or stories, may refer to:\nP8: What's the Matter with Kansas? (film): What's the Matter with Kansas? is a 2009 documentary film by filmmakers Joe Winston and Laura Cohen. It is based on the book\" What's the Matter with Kansas? How Conservatives Won the Heart of America\"( 2004) by Thomas Frank.\nP9: What Women Want (2011 film): What Women Want is a 2011 Chinese-Hong Kong romantic action comedy film remake of the 2000 American film of the same name. The film stars Andy Lau and Gong Li. \"What Women Want\" was released in China on the 3 February 2011, the first day of Chinese New Year. The plot is a very close remake of the American version with some minor changes. The plot takes place mostly in an advertising company in Beijing, in which Lau plays a slick ad agency creative director who gets ...\nP10: List of Victoria Cross recipients of uncertain nationality: The following is a list of Victoria Cross recipients whose nationality is uncertain.\nQuestion: What nationality is the director of film Detachment (Film)?\nFinal answer:",
+  "output": "Uncertain",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a6a58976dcce9885",
+    "object": "chat.completion",
+    "created": 1779535816,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Uncertain",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 694,
+      "total_tokens": 697,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

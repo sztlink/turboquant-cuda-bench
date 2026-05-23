@@ -1,0 +1,48 @@
+{
+  "qid": "1011a79c0bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Northamptonshire",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- William Parr, 1st Marquess of Northampton -> Maud Green\n- William Parr, 1st Marquess of Northampton -> Sir Thomas Green\n- Elizabeth FitzHugh -> William Parr, 1st Marquess of Northampton\n- Elizabeth FitzHugh -> Countess of Pembroke\n- Helena, Marchioness of Northampton -> William Parr, 1st Marquess of Northampton\n- Anne Bourchier, 7th Baroness Bourchier -> William Parr, 1st Marquess of Northampton\n- William Parr, 1st Baron Parr of Horton -> Elizabeth FitzHugh\n- Elisabeth Parr, Marchioness of Northampton -> William Parr, 1st Marquess of Northampton\n- Dorothy Bray, Baroness Chandos -> William Parr, 1st Marquess of Northampton\n- Dorothy Bray, Baroness Chandos -> Anne Bourchier, 7th Baroness Bourchier\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP3: Countess of Pembroke: Countess of Pembroke is a title that has been borne by several women throughout history, including:\nP4: Maud Green: Maud Green (6 April 1492 – 1 December 1531) was the mother of Catherine Parr, the sixth wife of King Henry VIII of England. She was a close friend and lady-in-waiting to Catherine of Aragon. She was also co-heiress to her father, Sir Thomas Green of Green's Norton in Northamptonshire along with her sister, Anne, Lady Vaux.\nP5: Sir Thomas Green: Sir Thomas Green( c.1461 – 9 November 1506) was a member of the English gentry who died in the Tower of London, where he had been imprisoned for treason. He is best known as the grandfather of Catherine Parr, last wife of King Henry VIII.\nP6: William Parr, 1st Marquess of Northampton: William Parr, 1st Marquess of Northampton, 1st Earl of Essex and 1st Baron Parr, KG (14 August 151328 October 1571) was the son of Sir Thomas Parr and his wife, Maud Green, daughter of Sir Thomas Green, of Broughton and Greens Norton. William Parr was brother of the Queen consort, Catherine Parr, the sixth and final wife of Henry VIII, and of Anne Parr.\nP7: William Parr, 1st Baron Parr of Horton: William Parr, 1st Baron Parr of Horton( c. 1483 – 10 September 1547) was the son of William Parr, 1st Baron Parr of Kendal and his second wife, the Hon. Elizabeth Fitzhugh, later Lady Vaux of Harrowden.\nP8: Elisabeth Parr, Marchioness of Northampton: Elisabeth Brooke( 25 June 1526 – 2 April 1565) was the eldest daughter of George Brooke, 9th Baron Cobham of Kent and Anne, his wife. She was the niece of Sir Thomas Wyatt the elder, the courtier- poet credited with bringing the sonnet form into the English language, and Elizabeth Brooke who was associated with Henry VIII of England. Elisabeth openly lived in adultery with William Parr, 1st Marquess of Northampton and bigamously married him. At times, ...\nP9: Helena, Marchioness of Northampton: Elin Ulfsdotter Snakenborg, Marchioness of Northampton, also known as Helena, and Helena the Red for her red hair,( 1548/ 1549 – 10 April 1635) was a Swedish- born noblewoman, Maid of Honour of Queen Elizabeth I of England, and Marchioness of Northampton by her marriage to William Parr, 1st Marquess of Northampton.\nP10: Elizabeth FitzHugh: Elizabeth FitzHugh( 1455/65- before 10 July 1507) was an English noblewoman. She is best known for being the grandmother of Catherine Parr, sixth queen consort to Henry VIII, and her siblings Anne Herbert, Countess of Pembroke, and William Parr, 1st Marquess of Northampton.\nQuestion: What is the place of birth of William Parr, 1St Marquess Of Northampton's mother?\nFinal answer:",
+  "output": "Place of origin",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-87b6c998f9b800d8",
+    "object": "chat.completion",
+    "created": 1779535872,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Place of origin",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1205,
+      "total_tokens": 1209,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

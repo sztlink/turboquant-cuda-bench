@@ -1,0 +1,48 @@
+{
+  "qid": "146c16520bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Florida Atlantic",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Barracuda (1978 film) -> Wayne Crawford\n- Now Where Did the 7th Company Get to? -> Robert Lamoureux\n- Now Where Did the 7th Company Get to? -> Comedy!\n- Where Did You Get That Girl? -> Get That Girl\n- Where Did You Get That Girl? -> Arthur Lubin\n- Irena Salina -> The Feature\n- Jānis Streičs -> Cilvēka bērns\nPassages:\nP1: Barracuda (1978 film): Barracuda is a 1977 American horror/thriller film about a small Florida coastal town that is menaced by chemically induced and highly aggressive barracuda fish. The cast included Wayne Crawford, Jason Evers, Roberta Leighton, Cliff Emmich, William Kerwin and Bert Freed. It was directed by Harry Kerwin, with the underwater sequences handled by Wayne Crawford.\nP2: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP3: Wayne Crawford: Wayne David Crawford (1947 – April 30, 2016) was an American film and television actor, and film producer, screenwriter, and director. Crawford appeared in nearly thirty films, produced fifteen, wrote nine, and directed seven.\nCrawford received his Bachelor of Arts degree from Florida Atlantic University and served at the University of North Carolina School of the Arts teaching directing for their School of Filmmaking. He portrayed the title character in the film \"Jake Speed\", ...\nP4: Robert Lamoureux: Robert Lamoureux( 4 January 1920 – 29 October 2011) was a French actor, screenwriter and film director. He appeared in 37 films between 1951 and 1994. He starred in the film\" The Adventures of Arsène Lupin\", which was entered into the 7th Berlin International Film Festival.\nP5: Arthur Lubin: Arthur Lubin( July 25, 1898 – May 12, 1995) was an American film director and producer who directed several\" Abbott& Costello\" films,\" Phantom of the Opera\"( 1943), the\" Francis the Talking Mule\" series and created the talking- horse TV series\" Mister Ed\". A prominent director for Universal Pictures in the 1940s and 1950s, he is perhaps best known today as the man who gave Clint Eastwood his first contract in film.\nP6: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP7: Cilvēka bērns: Cilvēka bērns is a 1991 Latvian film directed by Jānis Streičs, starring Akvelīna Līvmane, Jānis Paukštello, and others. The film was selected as the Latvian entry for the Best Foreign Language Film at the 65th Academy Awards, but was not accepted as a nominee. The film was awarded the Latvian National Film Prize Lielais Kristaps in 1991 for the best film of the year. In 1994, along with\" Karakum\", it received the\" Rights of the Child Award\" in the Chicago International ...\nP8: Get That Girl: Get That Girl may refer to:\nP9: Now Where Did the 7th Company Get to?: Now Where Did the 7th Company Get To? is a 1973 French- Italian comedy war film directed by Robert Lamoureux. The film portrays the adventures of a French Army squad lost somewhere on the front in May 1940 during the Battle of France.\nP10: Where Did You Get That Girl?: Where Did You Get That Girl? is a 1941 comedy film directed by Arthur Lubin and starring Leon Errol. The title comes from the popular song of the same name, which dates to 1913 and was written by Bert Kalmar and Harry Puck. The song figures prominently in the film. The plot of the film is about the misadventures of a swing band trying to break into the big time. Helen Parrish plays the band's vocalist.\nQuestion: Where did the director of film Barracuda (1978 Film) study?\nFinal answer:",
+  "output": "University of North Carolina School of the Arts",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-bb2565edd5b26cd1",
+    "object": "chat.completion",
+    "created": 1779535733,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "University of North Carolina School of the Arts",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1139,
+      "total_tokens": 1148,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

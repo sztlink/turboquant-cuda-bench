@@ -1,0 +1,48 @@
+{
+  "qid": "1b911ab00bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Torgau",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Elizabeth of Denmark, Electress of Brandenburg -> Christina of Saxony\n- Eric V of Denmark -> Christopher I of Denmark\n- Eric V of Denmark -> Afterwards\n- Anna of Saxony, Electress of Brandenburg -> Anna of Saxony\n- Elizabeth Stuart, Queen of Bohemia -> Frederick V of the Palatinate\n- Elizabeth Stuart, Queen of Bohemia -> Frederick V of the Palatinate\nPassages:\nP1: Elizabeth of Denmark, Electress of Brandenburg: Elizabeth of Denmark, Norway, and Sweden (24 June 1485 – 10 June 1555) was a Scandinavian princess who became Electress of Brandenburg as the spouse of Joachim I Nestor, Elector of Brandenburg. She was the daughter of King Hans of Denmark, Norway and Sweden and his spouse, Christina of Saxony.\nP2: Christopher I of Denmark: Christopher I  (1219 – 29 May 1259) was King of Denmark between 1252 and 1259. He was the son of Valdemar II of Denmark by his second wife, Berengaria of Portugal. He succeeded his brothers Eric IV Plovpenning and Abel of Denmark on the throne. Christopher was elected King upon the death of his older brother Abel in the summer of 1252. He was crowned at Lund Cathedral on Christmas Day 1252.\nP3: Frederick V of the Palatinate: Frederick V (26 August 1596 – 29 November 1632) was the Elector Palatine of the Rhine in the Holy Roman Empire from 1610 to 1623, and reigned as King of Bohemia from 1619 to 1620. He was forced to abdicate both roles, and the brevity of his reign in Bohemia earned him the derisive sobriquet \"the Winter King\" (Czech: \"Zimní král\"; German: \"Winterkönig\"). Frederick was born at the  (a hunting lodge) near Amberg in the Upper Palatinate. He was the son of Frederick IV ...\nP4: Christina of Saxony: Christina of Saxony (b. Torgau, 25 December 1461 – d. Odense, 8 December 1521), was Queen consort of Denmark, Norway, and Sweden. She was born a granddaughter of Frederick the Gentle of Saxony, and daughter of Ernest, Elector of Saxony and Elisabeth of Bavaria. She was the grandmother of Christina of Denmark through her son Christian II.\nP5: Christina of Saxony: Christina of Saxony( b. Torgau, 25 December 1461 – d. Odense, 8 December 1521), was Queen consort of Denmark, Norway, and Sweden. She was born a granddaughter of Frederick the Gentle of Saxony, and daughter of Ernest, Elector of Saxony and Elisabeth of Bavaria. She was the grandmother of Christina of Denmark through her son Christian II.\nP6: Anna of Saxony: Anna of Saxony (23 December 1544 – 18 December 1577) was the heiress of Maurice, Elector of Saxony, and Agnes, eldest daughter of Philip I, Landgrave of Hesse. Maurice's only son, Albert, died in infancy. Anna was the second wife of William the Silent. Anna was born and died in Dresden. Her wealth drew many suitors; before the proposal of Orange in 1560, there were negotiations with the Swedish royal house. She accepted the suit of William I of Orange, and they were married on ...\nP7: Afterwards: Afterwards is a 2008 English- language psychological thriller film directed by Gilles Bourdos and starring Romain Duris, John Malkovich and Evangeline Lilly. Based on Guillaume Musso's novel\" Et après ...\", the story tells of a workaholic lawyer who is told by a self- proclaimed visionary that he must try to prevent his imminent death. The film was shot in New York City, Montreal and various New Mexico locations over June to July 2007, and had a French release in January 2009.\nP8: Elizabeth Charlotte of the Palatinate, Electress of Brandenburg: Elisabeth Charlotte of the Palatinate (19 November 1597 – 26 April 1660) was an Electress consort of Brandenburg as the wife of George William, Elector of Brandenburg and Duke of Prussia, and the mother of Frederick William of Brandenburg, the \"Great Elector\".\nP9: Anna of Saxony, Electress of Brandenburg: Anna of Saxony (7 March 1437 – 31 October 1512) was a princess of Saxony by birth and Electress of Brandenburg by marriage.\nP10: Eric V of Denmark: Eric V Klipping (1249 – 22 November 1286) was King of Denmark (1259–1286) and son of King Christopher I of Denmark. From 1259-1266, he ruled under the auspices of his competent mother, Margaret Sambiria (1230-1282). Between 1261 and 1262, the young King Eric was a prisoner in Holstein following a military defeat. Afterwards, he lived in Brandenburg, where he was initially held captive by John I, Margrave of Brandenburg (c. 1213-1266) .\nQuestion: Where was the mother of Elizabeth Of Denmark, Electress Of Brandenburg born?\nFinal answer:",
+  "output": "Torgau",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-af95c6844387e5fa",
+    "object": "chat.completion",
+    "created": 1779535730,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Torgau",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1317,
+      "total_tokens": 1321,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

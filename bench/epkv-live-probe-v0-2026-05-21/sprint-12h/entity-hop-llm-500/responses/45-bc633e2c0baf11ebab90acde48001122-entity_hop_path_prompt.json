@@ -1,0 +1,48 @@
+{
+  "qid": "bc633e2c0baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Louis, Grand Dauphin",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Princess Maria Luisa of Savoy (1729–1767) -> Maria Luisa of Savoy\n- Maria Luisa of Savoy -> Philip V of Spain\n- Princess Luisa Maria of Belgium, Archduchess of Austria-Este -> The Child\n- Princess Maria Vittoria Margherita of Savoy -> Margherita of Savoy\n- Princess Maria Vittoria Margherita of Savoy -> Margherita of Savoy\n- Maria Luisa, Duchess of Lucca -> Maria Luisa of Parma\n- Maria Luisa, Duchess of Lucca -> Part\n- Princess Maria Pia of Bourbon-Parma -> Princess Maria Beatrice of Savoy\n- Princess Maria Pia of Bourbon-Parma -> Maria Beatrice of Savoy\n- Princess Luisa Cristina of Savoy -> Victor Amadeus I, Duke of Savoy\n- Princess Luisa Cristina of Savoy -> Charles II of England\nPassages:\nP1: Princess Maria Beatrice of Savoy: Princess Maria Beatrice of Savoy( born 2 February 1943) is the youngest daughter of Italy's last King, Umberto II, and his wife, Queen Marie José.\nP2: Maria Luisa of Parma: Maria Luisa of Parma (9 December 1751 – 2 January 1819) was Queen consort of Spain from 1788 to 1808 by marriage to King Charles IV of Spain. She was the youngest daughter of Philip, Duke of Parma, the fourth son of Philip V of Spain and Louise Élisabeth of France, the eldest daughter of King Louis XV.\nP3: Maria Beatrice of Savoy: Maria Beatrice of Savoy (Maria Beatrice Vittoria Giuseppina; 6 December 1792 – 15 September 1840) was a Princess of Savoy and Duchess of Modena by marriage.\nP4: Margherita of Savoy: Margherita of Savoy(\" Margherita Maria Teresa Giovanna\"; 20 November 1851 – 4 January 1926) was the Queen consort of the Kingdom of Italy by marriage to Umberto I.\nP5: Victor Amadeus I, Duke of Savoy: Victor Amadeus I( 8 May 1587 – 7 October 1637) was the Duke of Savoy from 1630 to 1637. He was also known as the\" Lion of Susa\".\nP6: Philip V of Spain: Philip V (19 December 1683 – 9 July 1746) was King of Spain from 1 November 1700 to his abdication in favour of his son Louis on 14 January 1724, and from his reaccession of the throne upon his son's death, 6 September 1724 to his own death on 9 July 1746. Before his reign, Philip occupied an exalted place in the royal family of France as a grandson of King Louis XIV. His father, Louis, Grand Dauphin, had the strongest genealogical claim to the throne of Spain when it became ...\nP7: Charles II of England: Charles II (29 May 1630 – 6 February 1685) was king of England, Scotland, and Ireland. He was king of Scotland from 1649 until his deposition in 1651, and king of England, Scotland and Ireland from the 1660 Restoration of the monarchy until his death. Charles II was the eldest surviving child of Charles I of England, Scotland and Ireland and Henrietta Maria of France. After Charles I's execution at Whitehall on 30 January 1649, at the climax of the English Civil War, the ...\nP8: The Child: The Child may refer to:\nP9: Part: Part, parts or PART may refer to:\nP10: Maria Luisa of Savoy: Maria Luisa of Savoy (Maria Luisa Gabriella; 17 September 1688 – 14 February 1714) was a queen consort of Spain by marriage to Philip V of Spain. She acted as Regent of Spain during the absence of her spouse from 1702 until 1703, and had great influence over him as his adviser, while she was herself in turn influenced by the Princesse des Ursins.\nQuestion: Who is Maria Luisa Of Savoy's father-in-law?\nFinal answer:",
+  "output": "Philip V of Spain",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-85f2780a5f282f92",
+    "object": "chat.completion",
+    "created": 1779535513,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Philip V of Spain",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1064,
+      "total_tokens": 1069,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

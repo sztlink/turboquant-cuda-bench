@@ -1,0 +1,66 @@
+{
+  "idx": 463,
+  "qid": "5fa12b860bdc11eba7f7acde48001122",
+  "gold": "Bogotá",
+  "candidates": [
+    "Place of origin",
+    "César Castellanos Domínguez",
+    "Place of birth",
+    "Claudia Rodríguez",
+    "Fernando Rodríguez de Castro",
+    "The Cell",
+    "Ferdinand IV of Castile",
+    "@Home",
+    "Claudia Rodríguez de Castellanos",
+    "Fernando Rodríguez de Castro (died 1304)",
+    "Leonor Rodríguez de Castro",
+    "Motherland (disambiguation)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of origin\nC2: César Castellanos Domínguez\nC3: Place of birth\nC4: Claudia Rodríguez\nC5: Fernando Rodríguez de Castro\nC6: The Cell\nC7: Ferdinand IV of Castile\nC8: @Home\nC9: Claudia Rodríguez de Castellanos\nC10: Fernando Rodríguez de Castro (died 1304)\nC11: Leonor Rodríguez de Castro\nC12: Motherland (disambiguation)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Claudia Rodríguez de Castellanos -> Claudia Rodríguez\n- Motherland (disambiguation) -> Place of origin\n- César Castellanos (pastor) -> The Cell\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Fernando Rodríguez de Castro (died 1304) -> Fernando Rodríguez de Castro\n- Fernando Rodríguez de Castro (died 1304) -> Ferdinand IV of Castile\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Claudia Rodríguez: Claudia Rodríguez Abella( born 2 May 1995) is a Venezuelan footballer who plays as a defender for Spanish Primera Nacional club and the Venezuela women's national team. She also holds Spanish citizenship.\nP3: Fernando Rodríguez de Castro: Fernando Rodríguez (or Fernán Ruiz) de Castro  (1125–1185) was a Castilian nobleman, statesman and military leader who made his career in León. He was the leader of the House of Castro during the civil wars that followed the death of Sancho III of Castile and the succession of the infant Alfonso VIII. He was nicknamed el Castellano (\"the Castilian\") in León and el Leonés (\"the Leonese\") in Castile. Fernando was the eldest son of Rodrigo Fernández de Castro and his ...\nP4: The Cell: The Cell is a 2000 science fiction horror film directed by Tarsem Singh in his directorial debut, and starring Jennifer Lopez, Vince Vaughn, and Vincent D'Onofrio. It received mixed reviews upon its release, with critics praising its visuals, direction, make- up, costumes and D'Onofrio's performance, while criticizing its\" Silence of the Lambs\"- inspired plot, an emphasis on style rather than substance, and masochistic imagery.\nP5: Ferdinand IV of Castile: Ferdinand IV of Castile (6 December 1285 – 7 September 1312) called the Summoned (\"el Emplazado\"), was a King of Castile and León from 1295 until his death. During his minority, his upbringing and the custody of his person were entrusted to his mother, Queen María de Molina, while his tutorship was entrusted to the \"Infante\" Henry of Castile the Senator, son of King Fernando III of Castile. At that time, and also for the rest of his reign, his mother tried to placate ...\nP6: @Home: @Home or @home may refer to:\nP7: Claudia Rodríguez de Castellanos: Claudia Yadira Inés Rodríguez is a Colombian Evangelical pastor and politician. She is married to César Castellanos Domínguez, an Evangelical pastor and leader of the International Charismatic Mission Church. She was twice elected to the Senate of Colombia, first from 1991 to 1994, and again from 2006 to 2010; she also served as Ambassador of Colombia to Brazil from 2004 to 2005.\nP8: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP9: Fernando Rodríguez de Castro (died 1304): Fernando Rodríguez de Castro( died 1304), was a Galician noble and a member of the House of Castro. He was the son of Esteban Fernández de Castro, Lord of Lemos and Sarria, and Alzonza Rodríguez de León. His paternal grandparents were Fernando Gutiérrez de Castro and Emilia Iniguez de Mendoza. His maternal grandparents were Rodrigo Alfonso de León, son of Alfonso IX of León, and Ines Rodríguez Cabrera. Following the death of his father, Esteban ...\nP10: Leonor Rodríguez de Castro: Leonor Rodríguez de Castro( died after 20 December 1275) was an infanta of the Kingdom of Castile as the third wife of Philip of Castile.\nQuestion: What is the place of birth of Claudia Rodríguez De Castellanos's husband?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"César Castellanos Domínguez\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The question asks for the place of birth of Claudia Rodríguez De Castellanos's husband, but none of the provided passages or candidate entities directly state his place of birth. The evidence only provides information about his name and occupation as an Evangelical pastor, but not his birthplace.\"}",
+  "verifier": {
+    "final_answer": "César Castellanos Domínguez",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The question asks for the place of birth of Claudia Rodríguez De Castellanos's husband, but none of the provided passages or candidate entities directly state his place of birth. The evidence only provides information about his name and occupation as an Evangelical pastor, but not his birthplace."
+  },
+  "final": "César Castellanos Domínguez",
+  "selected": "UNKNOWN",
+  "response": {
+    "id": "chatcmpl-9c0ed13c8c9198db",
+    "object": "chat.completion",
+    "created": 1779536238,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"César Castellanos Domínguez\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The question asks for the place of birth of Claudia Rodríguez De Castellanos's husband, but none of the provided passages or candidate entities directly state his place of birth. The evidence only provides information about his name and occupation as an Evangelical pastor, but not his birthplace.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1369,
+      "total_tokens": 1454,
+      "completion_tokens": 85,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.5352199077606201
+}

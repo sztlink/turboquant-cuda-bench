@@ -1,0 +1,66 @@
+{
+  "idx": 395,
+  "qid": "abaff0940bdb11eba7f7acde48001122",
+  "gold": "Mymensingh Medical College",
+  "candidates": [
+    "Taslima Nasrin",
+    "Information not available in the provided passages",
+    "Muhammad",
+    "Pandiya Naadu",
+    "Ravi Shankar",
+    "Abdullah Al-Salim Al-Sabah",
+    "Faiz Muhammad",
+    "First Time",
+    "Rudra Mohammad Shahidullah",
+    "Where Did We Go Wrong",
+    "Where Did the Night Fall",
+    "Faiz Mohammad Khan"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Taslima Nasrin\nC2: Information not available in the provided passages\nC3: Muhammad\nC4: Pandiya Naadu\nC5: Ravi Shankar\nC6: Abdullah Al-Salim Al-Sabah\nC7: Faiz Muhammad\nC8: First Time\nC9: Rudra Mohammad Shahidullah\nC10: Where Did We Go Wrong\nC11: Where Did the Night Fall\nC12: Faiz Mohammad Khan\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Rudra Mohammad Shahidullah -> Taslima Nasrin\n- Faiz Mohammad Khan -> Faiz Muhammad\n- Faiz Mohammad Khan -> Muhammad\n- Sami Mohammad -> Abdullah Al-Salim Al-Sabah\n- Sami Mohammad -> First Time\n- Rudra Tandava -> Pandiya Naadu\n- Rudra Tandava -> Ravi Shankar\nPassages:\nP1: Taslima Nasrin: Taslima Nasrin (also Taslima Nasreen, born 25 August 1962) is a Bangladeshi-Swedish writer, physician, feminist, secular humanist and human rights activist. She is known for her writing on women's oppression and criticism of religion, despite forced exile and multiple fatwas calling for her death. Nasrin's works have been translated into 30 different languages. Some of her books are banned in Bangladesh. She has been blacklisted and banished from the Bengal region (both from ...\nP2: Muhammad: Muhammad (c. 570 CE – 8 June 632 CE) was an Arab religious, social and political leader and the founder of Islam. According to Islamic doctrine, he was a prophet, sent to present and confirm the monotheistic teachings preached previously by Adam, Abraham, Moses, Jesus, and other prophets. He is viewed as the final prophet of God in all the main branches of Islam, though some modern denominations diverge from this belief. Muhammad united Arabia into a single Muslim polity, with the ...\nP3: Pandiya Naadu: Pandiya Naadu is a 2013 Indian Tamil- language action film written and directed by Suseenthiran and produced by Vishal. The film features Vishal and Lakshmi Menon in the lead roles, while Bharathiraja, Soori, and Sharath Lohitashwa play other pivotal roles. The film has music composed by D. Imman. The film received positive reviews and was successful at the box office. It was dubbed in Hindi as\" Shiva Ka Badla\" and in Telugu as\" Palnadu\". The film was remade in Kannada as\" Rudra ...\nP4: Ravi Shankar: Ravi Shankar( born Robindro Shaunkor Chowdhury, spelled Ravindra Shankar Chowdhury in Sanskrit; 7 April 192011 December 2012), whose name is often preceded by the title Pandit( Master) and\" Sitar maestro\", was an Indian musician and a composer of Hindustani classical music. He was the best- known proponent of the sitar in the second half of the 20th century and influenced many other musicians throughout the world. Shankar was awarded India's highest civilian honour, the Bharat ...\nP5: Abdullah Al-Salim Al-Sabah: Sheikh Abdullah III Al-Salim Al-Sabah (1895 – 24 November 1965) (الشيخ الشيخ) was the eleventh ruler of Kuwait, the first Emir of the State of Kuwait, and Commander-in-chief of Kuwait Military Forces from 29 January 1950 until his death. He was the eldest son of Salim Al-Mubarak Al-Sabah. As the eleventh ruler of the Al Sabah dynasty in Kuwait, he took power after the death of his cousin Sheikh Ahmad Al-Jaber Al-Sabah. He also ruled as regent upon the death of his ...\nP6: Faiz Muhammad: Faiz Muhammad( 23 September 1937 – 2014) was a Pakistani freestyle wrestler. He was, during his time, one of the unbeatable National Champions and Army Champions of Pakistan.\nP7: First Time: First Time or The First Time may refer to:\nP8: Rudra Mohammad Shahidullah: Rudra Mohammad Shahidullah (16 October 1956 – 21 June 1991) was a Bengali poet. He was noted for his revolutionary and romantic poetry. He is considered one of the leading Bengali poets of the 1970s. He was the recipient of \"Munir Chaudhury Memorial Award\" in 1980. He is most notable for the song \"Bhalo Achi Bhalo Theko\". This song is regarded by him as a suicide note to Taslima Nasrin. It was later adopted as a song for using in a Bengali movie Starring Salman Shah.\nP9: Where Did We Go Wrong: Where Did We Go Wrong may refer to:\nP10: Where Did the Night Fall: Where Did the Night Fall is the fourth regular studio album from British electronic music act Unkle, released on.\nQuestion: Where did Rudra Mohammad Shahidullah's wife study at?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages do not contain any information about Rudra Mohammad Shahidullah's wife or her educational background.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The provided passages do not contain any information about Rudra Mohammad Shahidullah's wife or her educational background."
+  },
+  "final": "Taslima Nasrin",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-9b6bbd97591b90c0",
+    "object": "chat.completion",
+    "created": 1779536183,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages do not contain any information about Rudra Mohammad Shahidullah's wife or her educational background.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1310,
+      "total_tokens": 1350,
+      "completion_tokens": 40,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.7731544971466064
+}

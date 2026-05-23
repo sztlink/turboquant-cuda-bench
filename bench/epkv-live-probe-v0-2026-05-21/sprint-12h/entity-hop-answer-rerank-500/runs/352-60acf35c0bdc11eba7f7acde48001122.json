@@ -1,0 +1,64 @@
+{
+  "idx": 352,
+  "qid": "60acf35c0bdc11eba7f7acde48001122",
+  "gold": "Fearless Nadia",
+  "candidates": [
+    "Zabak",
+    "Homi Wadia",
+    "David Lynch",
+    "Martha De Laurentiis",
+    "Story",
+    "Spouse of the President of the People's Republic of China",
+    "Spouse of the Prime Minister of Cambodia",
+    "Spouse of the Prime Minister of Singapore",
+    "Spouse of the Prime Minister of Malaysia",
+    "Mary Sweeney"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Zabak\nC2: Homi Wadia\nC3: David Lynch\nC4: Martha De Laurentiis\nC5: Story\nC6: Spouse of the President of the People's Republic of China\nC7: Spouse of the Prime Minister of Cambodia\nC8: Spouse of the Prime Minister of Singapore\nC9: Spouse of the Prime Minister of Malaysia\nC10: Mary Sweeney\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Zabak -> Homi Wadia\n- Zabak -> Story\n- Mary Sweeney -> Martha De Laurentiis\n- Mary Sweeney -> David Lynch\nPassages:\nP1: Zabak: Zabak is a 1961 Hindi/Urdu action costume drama film produced and directed by Homi Wadia for his Basant Pictures under the Wadia Productions banner. The story and dialogue were by C. L. Cavish, with screenplay by JBH Wadia. The music composer was Chitragupta, with lyrics by Prem Dhawan. The cast of the film included Shyama, Mahipal, Sahira, Achala Sachdev, Manhar Desai, Muzaffar Adeeb and Krishna Kumari. The film was a costume drama about a middle-class man in love with a princess. He ...\nP2: Homi Wadia: Homi Wadia( 22 May 1911 – 10 December 2004) was an Indian film director and producer in Bollywood( Hindi cinema). He was the co-founder of Wadia Movietone productions, established in 1933 and later after the closure of Wadiatone, he founded Basant Pictures in 1942. In a career spanning five decades, he directed over 40 films, including\" Hunterwali\"( 1935),\" Miss Frontier Mail\"( 1936),\" Diamond Queen\"( 1940) and fantasy film\" Hatim Tai\"( 1956). He was also a founding member of the ...\nP3: Homi Wadia: Homi Wadia (22 May 1911 – 10 December 2004) was an Indian film director and producer in Bollywood (Hindi cinema). He was the co-founder of Wadia Movietone productions, established in 1933 and later after the closure of Wadiatone, he founded Basant Pictures in 1942. In a career spanning five decades, he directed over 40 films, including \"Hunterwali\" (1935), \"Miss Frontier Mail\" (1936), \"Diamond Queen\" (1940) and fantasy film \" Hatim Tai\" (1956). He was also a founding member of the ...\nP4: David Lynch: David Keith Lynch (born January 20, 1946) is an American filmmaker, painter, musician, actor, and photographer. He is best known for films such as \"Eraserhead\" (1977), \"Blue Velvet\" (1986) and \"Mulholland Drive\" (2001), often regarded by critics as among the best films of their respective decades, and for his successful 1990–91 television series \"Twin Peaks\", which led to him being labeled \"the first popular Surrealist\" by noted film critic Pauline Kael. A recipient of an Academy ...\nP5: Martha De Laurentiis: Martha De Laurentiis( born 10 July 1954 as\" Martha Schumacher\") is an American film producer. She was credited as Martha Schumacher until 1995. She is known for producing films such as\" Breakdown Hannibal\" and\" Red Dragon\" with her late husband Dino De Laurentiis, and TV series\" Hannibal\". In 1980, she and Dino De Laurentiis founded the production company the Dino De Laurentiis Company, and she is currently the company's chairman. With her husband Dino, whom she married in ...\nP6: Story: Story or stories, may refer to:\nP7: Spouse of the President of the People's Republic of China: The Spouse of the President of the People's Republic of China, is the spouse of the President of the People's Republic of China. To date there have been 7 women who have been married to the Chinese president while in office.\nP8: Spouse of the Prime Minister of Cambodia: The Spouse of the Prime Minister of Cambodia refers to the wife of the head of government of the Kingdom of Cambodia, the Prime Minister. Since 1993, 3 women have been the spouse of the Prime Minister of Cambodia. The title\" First Lady\" is also commonly used. The spouse of the current Prime Minister is Dr. Bun Rany.\nP9: Spouse of the Prime Minister of Singapore: The Spouse of the Prime Minister of Singapore refers to the spouse of the head of government of Singapore, the Prime Minister. Since, Singapore became an internally self-governing state within the Commonwealth, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. To date, three women have held the title of the spouse of the Prime Minister of Singapore. Ho Ching is the spouse of the incumbent Prime ...\nP10: Spouse of the Prime Minister of Malaysia: The Spouse of the Prime Minister of Malaysia refers to the spouse of the head of government of Malaysia, the Prime Minister. Since independence in 1957, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. Some commentators have tried to style prime ministers' wives as\" First Lady of Malaysia\", similar to the style of First Lady used in republics, but this is not a recognised title. To date, seven women ...\nQuestion: Who is the spouse of the director of film Zabak?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Homi Wadia\",\"selected\":\"C1|C2\",\"confidence\":\"high\",\"reason\":\"Zabak is a film produced and directed by Homi Wadia as mentioned in P1. Therefore, the spouse of the director of film Zabak is Homi Wadia.\"}",
+  "verifier": {
+    "final_answer": "Homi Wadia",
+    "selected": "C1|C2",
+    "confidence": "high",
+    "reason": "Zabak is a film produced and directed by Homi Wadia as mentioned in P1. Therefore, the spouse of the director of film Zabak is Homi Wadia."
+  },
+  "final": "Homi Wadia",
+  "selected": "C1|C2",
+  "response": {
+    "id": "chatcmpl-82a901a58b4ebc5d",
+    "object": "chat.completion",
+    "created": 1779536147,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Homi Wadia\",\"selected\":\"C1|C2\",\"confidence\":\"high\",\"reason\":\"Zabak is a film produced and directed by Homi Wadia as mentioned in P1. Therefore, the spouse of the director of film Zabak is Homi Wadia.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1440,
+      "total_tokens": 1503,
+      "completion_tokens": 63,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.167088508605957
+}

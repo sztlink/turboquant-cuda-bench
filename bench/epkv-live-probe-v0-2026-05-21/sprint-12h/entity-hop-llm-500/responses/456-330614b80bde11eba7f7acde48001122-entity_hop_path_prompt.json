@@ -1,0 +1,48 @@
+{
+  "qid": "330614b80bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Peabody Conservatory",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Now Where Did the 7th Company Get to? -> Robert Lamoureux\n- Now Where Did the 7th Company Get to? -> Comedy!\n- The Bandit of Port Avon -> Bice Valerian\n- Ghosts of Port Arthur -> Ken G. Hall\n- Little Rock Port Authority Railroad -> The Rock\n- Where Did You Get That Girl? -> Get That Girl\n- Where Did You Get That Girl? -> Arthur Lubin\n- Dradenau -> Part\n- Dradenau -> (Otto)\n- Mustafa Zaman Abbasi -> The Centre\nPassages:\nP1: Port Djema: Port Djema is a 1997 French drama film directed by Eric Heumann. It was entered into the 47th Berlin International Film Festival where Heumann won the Silver Bear for Best Director. The music for the film was written by Sanjay Mishra and released as a soundtrack album called \"Port Djema\".\nP2: The Rock: The Rock or The Rocks may refer to:\nP3: The Centre: The Centre or The Center may refer to:\nP4: Robert Lamoureux: Robert Lamoureux( 4 January 1920 – 29 October 2011) was a French actor, screenwriter and film director. He appeared in 37 films between 1951 and 1994. He starred in the film\" The Adventures of Arsène Lupin\", which was entered into the 7th Berlin International Film Festival.\nP5: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP6: Bice Valerian: Bice Valerian( 8 May 1886 – 1969) was an Italian film actress of the silent era. She was the wife of the actor and director Roberto Roberti and the mother of Sergio Leone.\nP7: Ken G. Hall: Kenneth George Hall, AO, OBE( 22 February 1901 – 8 February 1994), better known as Ken G. Hall, was an Australian film producer and director, considered one of the most important figures in the history of the Australian film industry. He was the first Australian to win an Academy Award.\nP8: Ken G. Hall: Kenneth George Hall, AO, OBE (22 February 1901 – 8 February 1994), better known as Ken G. Hall, was an Australian film producer and director, considered one of the most important figures in the history of the Australian film industry. He was the first Australian to win an Academy Award.\nP9: Arthur Lubin: Arthur Lubin( July 25, 1898 – May 12, 1995) was an American film director and producer who directed several\" Abbott& Costello\" films,\" Phantom of the Opera\"( 1943), the\" Francis the Talking Mule\" series and created the talking- horse TV series\" Mister Ed\". A prominent director for Universal Pictures in the 1940s and 1950s, he is perhaps best known today as the man who gave Clint Eastwood his first contract in film.\nP10: (Otto): (Otto) is a 2015 Dutch animated short film directed by Job Roggeveen, Joris Oprins and Marieke Blaauw, from the Dutch animation studio Job, Joris & Marieke. The film had its international premiere at the Toronto International Film Festival. (Otto) was chosen to be the official Dutch entry for the Academy Award Best Animated Short Film 2016. Job, Joris & Marieke's previous film A Single Life was nominated Academy Award for Best Animated Short Film at the 87th Academy Awards.\nQuestion: Where did the composer of film Port Djema study?\nFinal answer:",
+  "output": "None of the provided passages mention where the composer of film Port Djema studied.",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-89f13b61b0996f6e",
+    "object": "chat.completion",
+    "created": 1779535878,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "None of the provided passages mention where the composer of film Port Djema studied.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 929,
+      "total_tokens": 946,
+      "completion_tokens": 17,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

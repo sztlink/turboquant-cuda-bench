@@ -1,0 +1,48 @@
+{
+  "qid": "de7c73480bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Jerseyville",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Venus Makes Trouble -> Gordon Wiles\n- Venus Makes Trouble -> Comedy!\n- Place of birth -> Place of origin\n- Motherland (disambiguation) -> Place of origin\n- Inn for Trouble -> Comedy!\n- Inn for Trouble -> Graham\n- Venus Against the Son of Hercules -> Marcello Baldi\n- Place of origin -> Place of birth\n- Place of origin -> @Home\nPassages:\nP1: Venus Makes Trouble: Venus Makes Trouble is a 1937 American comedy film directed by Gordon Wiles. The plot of this inexpensive Columbia programmer revolves around the schemes of fast-talking publicity man Buzz Martin, from dropping fake money from an airplane, to betting on turtle races, to selling swampland for real estate, which eventually lands him in front of a grand jury.\nP2: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP3: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP4: Gordon Wiles: Gordon Wiles (October 10, 1904 – October 17, 1950) was an American art director and film director. He won an Oscar for Best Art Direction for the film \"Transatlantic\". He was born in St. Louis, Missouri. His father, Albert Wiles, was a doctor in Jerseyville, Illinois.\nP5: Marcello Baldi: Marcello Baldi( August 1, 1923 – July 22, 2008) was an Italian director and a screenwriter.\nP6: Graham: Graham and Graeme may refer to:\nP7: @Home: @Home or @home may refer to:\nP8: The Birth of Venus (disambiguation): The Birth of Venus may refer to the birth of the mythological goddess Venus. Other uses include: In paintings, the term\" the birth of Venus\" has often been interchanged with\" Venus Anadyomene\". For examples of this theme, see: In literature: In music:\nP9: Venus Against the Son of Hercules: Venus Against the Son of Hercules( also known as Mars, God of War and The Son of Hercules vs. Venus) is a 1962 Italian peplum film written and directed by Marcello Baldi and starring Roger Browne and Jackie Lane.\nP10: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nQuestion: What is the place of birth of the director of film Venus Makes Trouble?\nFinal answer:",
+  "output": "St. Louis, Missouri",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9b65a41a30985a79",
+    "object": "chat.completion",
+    "created": 1779535833,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "St. Louis, Missouri",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 779,
+      "total_tokens": 785,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

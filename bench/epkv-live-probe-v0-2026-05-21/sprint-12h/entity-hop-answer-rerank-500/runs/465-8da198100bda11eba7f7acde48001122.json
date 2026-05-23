@@ -1,0 +1,66 @@
+{
+  "idx": 465,
+  "qid": "8da198100bda11eba7f7acde48001122",
+  "gold": "Père Lachaise Cemetery",
+  "candidates": [
+    "Bordighera, Italy",
+    "Brighton, England",
+    "The Mystic",
+    "The General",
+    "The Singer",
+    "Giovanni Matteo Mario",
+    "Gian Galeazzo Visconti",
+    "Cecilia Maria de Candia",
+    "Princess Cecilia of Sweden",
+    "Cecilia Bowes-Lyon, Countess of Strathmore and Kinghorne",
+    "Book of Burial",
+    "Cecilia Maria Barthélemon"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Bordighera, Italy\nC2: Brighton, England\nC3: The Mystic\nC4: The General\nC5: The Singer\nC6: Giovanni Matteo Mario\nC7: Gian Galeazzo Visconti\nC8: Cecilia Maria de Candia\nC9: Princess Cecilia of Sweden\nC10: Cecilia Bowes-Lyon, Countess of Strathmore and Kinghorne\nC11: Book of Burial\nC12: Cecilia Maria Barthélemon\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Cecilia Maria de Candia -> Giulia Grisi\n- Cecilia Maria de Candia -> The General\n- Book of Burial -> The Mystic\n- Giulia Grisi -> Giovanni Matteo Mario\n- Giulia Grisi -> The Singer\n- Caterina Visconti -> Gian Galeazzo Visconti\n- Cecilia Maria Barthélemon -> The Singer\nPassages:\nP1: The Mystic: The Mystic is a 1925 American MGM silent drama film directed by Tod Browning, who later directed MGM's\" Freaks\"( 1932). It was co-written by Browning and Waldemar Young, writing a similar storyline to their earlier 1925 hit film\" The Unholy Three\". Browning was unable however to hire his favorite star Lon Chaney this time around, and\" The Mystic\" wound up a little- known film with a cast of now- forgotten names. Aileen Pringle's gowns in the film were by already famous Romain de ...\nP2: The General: The General or The Generals may refer to:\nP3: The Singer: The Singer may refer to:\nP4: Giovanni Matteo Mario: Giovanni Matteo De Candia, also known as Mario( 17 October 1810 – 11 December 1883), was an Italian opera singer. The most celebrated tenor of his era, he was lionized by audiences in Paris and London. He was the partner of the opera singer Giulia Grisi.\nP5: Gian Galeazzo Visconti: Gian Galeazzo Visconti (16 October 1351 – 3 September 1402), son of Galeazzo II Visconti and Bianca of Savoy, was the first Duke of Milan (1395) and ruled the late-medieval city just before the dawn of the Renaissance. He was the founding patron of the Certosa di Pavia, completing the Visconti Castle at Pavia begun by his father and furthering work on the Duomo of Milan.\nP6: Cecilia Maria de Candia: Cecilia Maria de Candia (24 December 1853, Brighton, England – 26 May 1926, Bordighera, Italy), later Mrs Godfrey Pearse, was a British-Italian writer, amateur singer and society hostess. She was the daughter of two famous opera singers, Giulia Grisi and the Cavaliere don Giovanni Matteo de Candia, who sang under the popular name of Mario the tenor, the youngest son of Stefano de Candia, Royal Governor General of Nice, Marquis of Candia and Aide-de-Camp to the King of ...\nP7: Princess Cecilia of Sweden: Cecilia of Sweden( Swedish:\" Cecilia Gustavsdotter Vasa\")( 16 November 1540 in Stockholm – 27 January 1627 in Brussels), was Princess of Sweden as the daughter of King Gustav I and his second queen, Margaret Leijonhufvud, and Margravine of Baden- Rodemachern through marriage with Christopher II, Margrave of Baden- Rodemachern. She is the most famous of the daughters of Gustav Vasa, known for a courtship scandal in connection with a sister's wedding and for a lengthy ...\nP8: Cecilia Bowes-Lyon, Countess of Strathmore and Kinghorne: Cecilia Nina Bowes- Lyon, Countess of Strathmore and Kinghorne(\" née\" Cavendish- Bentinck; 11 September 1862 – 23 June 1938) was the mother of Queen Elizabeth The Queen Mother and maternal grandmother and godmother of Queen Elizabeth II.\nP9: Book of Burial: The Book of Burial( Chinese:,,\" Zàngshū\") was an AD 4th- or 5 th- century work by the Taoist mystic Guo Pu. The work was a commentary on the now- lost\" Classic of Burial\"; as it survived and transmitted the classic's teachings, the\" Book of Burial\"'s principles relating the flow of\" qi\" to the appropriateness of a tomb's location were influential on the development of\" fengshui\".\nP10: Cecilia Maria Barthélemon: Cecilia Maria Barthélemon (1 September 1767 - 5 December 1859) was an English singer, composer, pianist, and organist. She was the daughter of Maria Barthélemon, née Mary (Polly) Young, and François-Hippolyte Barthélemon. She published sonatas and other compositions.\nQuestion: Where was the place of burial of Cecilia Maria De Candia's mother?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the place of burial of Cecilia Maria De Candia's mother. The only relevant information is about Cecilia Maria De Candia's birthplace and place of death, but not about her mother's burial place.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence passages do not provide information about the place of burial of Cecilia Maria De Candia's mother. The only relevant information is about Cecilia Maria De Candia's birthplace and place of death, but not about her mother's burial place."
+  },
+  "final": "Bordighera, Italy",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-ae63a7c4fdfb7891",
+    "object": "chat.completion",
+    "created": 1779536240,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the place of burial of Cecilia Maria De Candia's mother. The only relevant information is about Cecilia Maria De Candia's birthplace and place of death, but not about her mother's burial place.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1306,
+      "total_tokens": 1375,
+      "completion_tokens": 69,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.2473773956298828
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "410ea9b20bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Esparza",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Princess Barbara of Prussia -> Princess Irene of Hesse and by Rhine\n- Princess Barbara of Prussia -> Princess Charlotte of Saxe-Altenburg\n- Princess Barbara of Prussia -> Frederick III, German Emperor\n- Princess Charlotte of Prussia (1831–1855) -> Princess Marianne of the Netherlands\n- Princess Charlotte of Prussia (1831–1855) -> Louise\n- Princess Alexandrine of Prussia (1842–1906) -> Princess Marianne of the Netherlands\n- Princess Alexandrine of Prussia (1842–1906) -> Louise\n- Princess Marianne of Prussia -> Prince Friedrich Wilhelm of Prussia\n- Princess Marie of Prussia (1855–1888) -> Marie of Prussia\n- Princess Marie of Prussia (1855–1888) -> Louise\n- Princess Elisabeth Anna of Prussia -> Princess Maria Anna of Anhalt-Dessau\n- Princess Elisabeth Anna of Prussia -> The Child\n- Princess Sophia Dorothea of Prussia -> Sophia Dorothea of Hanover\n- Princess Sophia Dorothea of Prussia -> The Child\nPassages:\nP1: Princess Marianne of the Netherlands: Princess Marianne of the Netherlands, Princess of Orange- Nassau(\" Wilhelmina Frederika Louise Charlotte Marianne\"; 9 May 1810 – 29 May 1883), was a member of the House of Orange- Nassau.\nP2: Princess Irene of Hesse and by Rhine: Princess Irene of Hesse and by Rhine(\" Irene Luise Marie Anne, Princess of Hesse and by Rhine\", 11 July 1866 – 11 November 1953) was the third child and third daughter of Princess Alice of the United Kingdom and Louis IV, Grand Duke of Hesse and by Rhine. Her maternal grandparents were Queen Victoria and Prince Albert of Saxe- Coburg and Gotha. Her paternal grandparents were Prince Charles of Hesse and by Rhine and Princess Elizabeth of Prussia. She was the ...\nP3: Princess Irene of Hesse and by Rhine: Princess Irene of Hesse and by Rhine (\"Irene Luise Marie Anne, Princess of Hesse and by Rhine\", 11 July 1866 – 11 November 1953) was the third child and third daughter of Princess Alice of the United Kingdom and Louis IV, Grand Duke of Hesse and by Rhine. Her maternal grandparents were Queen Victoria and Prince Albert of Saxe-Coburg and Gotha. Her paternal grandparents were Prince Charles of Hesse and by Rhine and Princess Elizabeth of Prussia. She was the ...\nP4: Princess Maria Anna of Anhalt-Dessau: Princess Maria Anna of Anhalt-Dessau (14 September 1837, Dessau – 12 May 1906, Friedrichroda) was a princess from the House of Ascania. She was the third child of Leopold IV, Duke of Anhalt and Princess Frederica of Prussia.\nP5: Princess Charlotte of Saxe-Altenburg: Princess Charlotte Agnes of Saxe- Altenburg( 4 March 189916 February 1989) was the eldest child of Ernst II, the last reigning duke of Saxe- Altenburg.\nP6: Prince Friedrich Wilhelm of Prussia: Prince Friedrich Wilhelm of Prussia( 12 July 18809 March 1925) was a member of the House of Hohenzollern, great- grandson of Frederick William III of Prussia.\nP7: Marie of Prussia: Marie of Prussia (October 15, 1825 – May 17, 1889) was Queen of Bavaria and the mother of Kings Ludwig II and Otto of Bavaria.\nP8: Sophia Dorothea of Hanover: Sophia Dorothea of Hanover( – 28 June 1757) was a Queen consort in Prussia as spouse of Frederick William I. She was the sister of George II, King of Great Britain, and the mother of Frederick II, King of Prussia.\nP9: The Child: The Child may refer to:\nP10: Frederick III, German Emperor: Frederick III (18 October 1831 – 15 June 1888) was German Emperor and King of Prussia for ninety-nine days in 1888, the Year of the Three Emperors. Known informally as \"Fritz\", he was the only son of Emperor Wilhelm I and was raised in his family's tradition of military service. Although celebrated as a young man for his leadership and successes during the Second Schleswig, Austro-Prussian and Franco-Prussian wars, he nevertheless professed a hatred of warfare and ...\nQuestion: Where was the place of burial of Princess Barbara Of Prussia's father?\nFinal answer:",
+  "output": "Friedrichroda",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a23934f27dec41f2",
+    "object": "chat.completion",
+    "created": 1779535838,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Friedrichroda",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1155,
+      "total_tokens": 1161,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

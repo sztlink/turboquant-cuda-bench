@@ -1,0 +1,66 @@
+{
+  "idx": 58,
+  "qid": "e8d8f7200bdd11eba7f7acde48001122",
+  "gold": "Chuck Schumer",
+  "candidates": [
+    "Anthony Weiner worked as a Democratic congressman",
+    "The New Phil Silvers Show",
+    "disgraced former congressman",
+    "Peter Sellers",
+    "Anthony Weiner",
+    "Rod Amateau",
+    "Disgraced",
+    "My Heart",
+    "Sybille Schmitz",
+    "Herbert Selpin",
+    "Huma Abedin",
+    "Where Does It Hurt"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Anthony Weiner worked as a Democratic congressman\nC2: The New Phil Silvers Show\nC3: disgraced former congressman\nC4: Peter Sellers\nC5: Anthony Weiner\nC6: Rod Amateau\nC7: Disgraced\nC8: My Heart\nC9: Sybille Schmitz\nC10: Herbert Selpin\nC11: Huma Abedin\nC12: Where Does It Hurt\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Huma Abedin -> Anthony Weiner\n- Huma Abedin -> Disgraced!\n- Where Does It Hurt? -> Peter Sellers\n- Where Does It Hurt? -> Rod Amateau\n- Robert White Johnson -> My Heart\n- An Ideal Husband (1935 film) -> Sybille Schmitz\n- An Ideal Husband (1935 film) -> Herbert Selpin\nPassages:\nP1: Peter Sellers: Peter Sellers, CBE (born Richard Henry Sellers; 8 September 1925 – 24 July 1980) was an English film actor, comedian, and singer. He performed in the BBC Radio comedy series \"The Goon Show\", featured on a number of hit comic songs, and became known to a worldwide audience through his many film roles, among them Chief Inspector Clouseau in \"The Pink Panther\" series of films. Born in Portsmouth to a theatrical family, Sellers made his stage debut at the Kings Theatre, Southsea, ...\nP2: Anthony Weiner: Anthony David Weiner (born September 4, 1964) is an American former Democratic congressman, convicted felon who represented from January 1999 until June 2011. He won seven terms as a Democrat, never receiving less than 60% of the vote. Weiner resigned from Congress in June 2011 after an incident in which a sexually suggestive photo that he sent to a woman via Twitter was captured and publicized. On May 19, 2017, Weiner pleaded guilty to another, unrelated sexting charge of ...\nP3: Rod Amateau: Rodney\" Rod\" Amateau( December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were\" The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's Island The Bob Cummings Show\" and\" The New Phil Silvers Show\". He produced\" My Mother the Car\" and\" Supertrain\", and wrote the story for the 1988 film\" Sunset\". Amateau also directed a few episodes of\" The Dukes of Hazzard\", and appeared in a ...\nP4: Rod Amateau: Rodney \"Rod\" Amateau (December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were \"The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's IslandThe Bob Cummings Show\" and \"The New Phil Silvers Show\". He produced \"My Mother the Car\" and \"Supertrain\", and wrote the story for the 1988 film \"Sunset\". Amateau also directed a few episodes of \"The Dukes of Hazzard\", and appeared in a ...\nP5: Disgraced!: Disgraced! is a 1933 American pre-Code mystery film directed by Erle C. Kenton and written by Francis Martin and Alice D. G. Miller. The film stars Helen Twelvetrees, Bruce Cabot, Adrienne Ames, William Harrigan, Ken Murray, Charles Middleton and Adrienne D'Ambricourt. The film was released on July 7, 1933, by Paramount Pictures.\nP6: My Heart: My Heart may refer to:\nP7: Sybille Schmitz: Sybille Maria Christina Schmitz (2 December 1909 – 13 April 1955) was a German actress.\nP8: Herbert Selpin: Herbert Selpin( 29 May 1904 – 1 August 1942) was a German film director and screenwriter of light entertainment during the 1930s and 1940s. He is best known for his final film, the partly suppressed\" Titanic\", during the production of which he was arrested by Propaganda Minister Joseph Goebbels. He was later found dead in his prison cell.\nP9: Huma Abedin: Huma Mahmood Abedin (born July 28, 1976) is an American political staffer who was vice chair of Hillary Clinton's 2016 campaign for President of the United States. Prior to that, Abedin was deputy chief of staff to Clinton, who was U.S. Secretary of State from 2009 to 2013. She was also the traveling chief of staff and former assistant for Clinton during Clinton's campaign for the Democratic nomination in the 2008 presidential election. During Hillary Clinton's tenure at the State ...\nP10: Where Does It Hurt?: Where Does it Hurt? is a 1972 American comedy film written and directed by Rod Amateau and starring Peter Sellers, Jo Ann Pflug, Rick Lenz, Pat Morita, and Harold Gould. The film is a darkly satirical look at capitalism in a hospital environment.\nQuestion: Where does Huma Abedin's husband work at?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Anthony Weiner\",\"selected\":\"C3|C1\",\"confidence\":\"high\",\"reason\":\"Anthony Weiner is described as a former Democratic congressman, and Huma Abedin is mentioned as his wife in the graph.\"}",
+  "verifier": {
+    "final_answer": "Anthony Weiner",
+    "selected": "C3|C1",
+    "confidence": "high",
+    "reason": "Anthony Weiner is described as a former Democratic congressman, and Huma Abedin is mentioned as his wife in the graph."
+  },
+  "final": "Anthony Weiner",
+  "selected": "C3|C1",
+  "response": {
+    "id": "chatcmpl-852c51e05d8f6685",
+    "object": "chat.completion",
+    "created": 1779535958,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Anthony Weiner\",\"selected\":\"C3|C1\",\"confidence\":\"high\",\"reason\":\"Anthony Weiner is described as a former Democratic congressman, and Huma Abedin is mentioned as his wife in the graph.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1363,
+      "total_tokens": 1410,
+      "completion_tokens": 47,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.8959982395172119
+}

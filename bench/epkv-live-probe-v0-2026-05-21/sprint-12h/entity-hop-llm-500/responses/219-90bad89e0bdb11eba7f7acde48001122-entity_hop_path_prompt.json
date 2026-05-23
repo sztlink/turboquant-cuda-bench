@@ -1,0 +1,48 @@
+{
+  "qid": "90bad89e0bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "San Juan, Puerto Rico",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Dawn of Life -> Fernando Cortés\n- Motherland (disambiguation) -> Place of origin\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Night of the Living Dead: Darkest Dawn -> Night of the Living Dead\n- Night of the Living Dead: Darkest Dawn -> Simon\n- Roy Frumkes -> Document of the Dead\n- Roy Frumkes -> The Dead\n- Curse of the Maya -> The Grave\n- Curse of the Maya -> The Dead\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Dawn of Life: Dawn of Life (Spanish: Amanecer a la vida) is a 1950 Venezuelan drama film directed by Fernando Cortés and starring Susana Guízar, Luis Salazar and Néstor Zavarce.\nP3: Document of the Dead: Document of the Dead is a 1979 documentary film by American filmmaker Roy Frumkes that was largely shot during the production of the 1978 film\" Dawn of the Dead\". Originally a 66- minute feature, it has since been expanded two times, first to 85 minutes in 1989, then to 102 minutes in 2012.\nP4: Night of the Living Dead: Night of the Living Dead is a 1968 American independent horror film written, directed, photographed and edited by George A. Romero, co-written by John Russo, and starring Duane Jones and Judith O' Dea. The story follows seven people who are trapped in a rural farmhouse in western Pennsylvania, which is under assault by an enlargening group of cannibalistic, undead corpses. The film was completed on a budget and shot outside Pittsburgh, where it had its theatrical ...\nP5: The Dead: The Dead may refer to:\nP6: The Grave: The Grave may refer to:\nP7: Fernando Cortés: Fernando \"Papi\" Cortés (October 4, 1909 – 1979) was a Puerto Rican film actor, writer and director. He was born in San Juan, Puerto Rico, but he spent most of his adult life in Mexico City, where he died. On 1932, while in New York City, Fernando Cortés married Puerto Rican childhood friend María del Pilar Cordero, who adopted the stage name of Mapy Cortés. The couple soon traveled to Spain with a Cuban theatrical troupe. They worked on the Spanish stage, radio and film until ...\nP8: Fernando Cortés: Fernando\" Papi\" Cortés( October 4, 1909 – 1979) was a Puerto Rican film actor, writer and director. He was born in San Juan, Puerto Rico, but he spent most of his adult life in Mexico City, where he died. On 1932, while in New York City, Fernando Cortés married Puerto Rican childhood friend María del Pilar Cordero, who adopted the stage name of Mapy Cortés. The couple soon traveled to Spain with a Cuban theatrical troupe. They worked on the Spanish stage, radio and film until ...\nP9: @Home: @Home or @home may refer to:\nP10: Simon: Simon may refer to:\nQuestion: What is the place of birth of the director of film Dawn Of Life?\nFinal answer:",
+  "output": "Place of birth: San Juan, Puerto Rico",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.7272727272727273
+  },
+  "response": {
+    "id": "chatcmpl-a8260854ff83d227",
+    "object": "chat.completion",
+    "created": 1779535674,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Place of birth: San Juan, Puerto Rico",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 897,
+      "total_tokens": 907,
+      "completion_tokens": 10,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

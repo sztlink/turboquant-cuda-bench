@@ -1,0 +1,48 @@
+{
+  "qid": "4a0422f00bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Frederick Francis III, Grand Duke of Mecklenburg-Schwerin",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Prince Hubertus of Prussia -> Duchess Cecilie of Mecklenburg-Schwerin\n- Prince Hubertus of Hohenzollern -> Prince Johann Georg of Hohenzollern\n- Prince Hubertus of Hohenzollern -> The Child\n- Princess Magdalena Reuss of Köstritz -> Prince Hubertus of Prussia\n- Hubertus, Hereditary Prince of Saxe-Coburg and Gotha -> The Head of the Family\n- Prince Hubertus of Hohenlohe-Langenburg -> The Singer\nPassages:\nP1: Prince Johann Georg of Hohenzollern: Johann Georg, Prince von Hohenzollern (\"Johann Georg Carl Leopold Eitel-Friedrich Meinrad Maria Hubertus Michael\"; 31 July 1932 – 2 March 2016) was a German prince, and through his marriage to Princess Birgitta of Sweden, was brother-in-law of King Carl XVI Gustaf of Sweden. Prince Johann Georg was the sixth child of Frederick, Prince of Hohenzollern (Heiligendamm 30 August 1891 – Krauchenwies 6 February 1965) and his wife Princess Margarete Karola of Saxony ...\nP2: Duchess Cecilie of Mecklenburg-Schwerin: Duchess Cecilie of Mecklenburg-Schwerin (Cecilie Auguste Marie; 20 September 1886 – 6 May 1954) was the last German Crown Princess and Crown Princess of Prussia as the wife of German Crown Prince Wilhelm, the son of German Emperor Wilhelm II. Cecilie was a daughter of Frederick Francis III, Grand Duke of Mecklenburg-Schwerin and Grand Duchess Anastasia Mikhailovna of Russia. She was brought up with simplicity and her early life was peripatetic, spending ...\nP3: The Head of the Family: The Head of the Family may refer to:\nP4: The Child: The Child may refer to:\nP5: The Singer: The Singer may refer to:\nP6: Prince Hubertus of Prussia: Prince Hubertus of Prussia (Hubertus Karl Wilhelm; 30 September 1909 – 8 April 1950) was the third son of Crown Prince Wilhelm of Germany and Duchess Cecilie of Mecklenburg-Schwerin.\nP7: Georg Friedrich, Prince of Prussia: Georg Friedrich Ferdinand, Prince of Prussia( born 10 June 1976) is a German businessman who is the current head of the Prussian branch of the House of Hohenzollern, the former ruling dynasty of the German Empire and of the Kingdom of Prussia. He is the great- great- grandson and historic heir of Wilhelm II, the last German Emperor and King of Prussia, who abdicated and went into exile upon Germany's defeat in World War I in 1918.\nP8: Prince Hubertus of Hohenzollern: Prince Hubertus of Hohenzollern( Hubertus Gustav Adolf Veit Georg Meinrad Maria Alexander)( born 10 June 1966) is the third child of Prince Johann Georg of Hohenzollern and of his wife Princess Birgitta of Sweden, sister of King Carl XVI Gustaf of Sweden. Hubertus was born in Munich, Germany.\nP9: Hubertus, Hereditary Prince of Saxe-Coburg and Gotha: Hubertus Michael, Hereditary Prince of Saxe- Coburg and Gotha, Duke of Saxony( born 16 September 1975) is the heir- apparent of the head of the family which ruled the Duchy of Saxe- Coburg and Gotha until 1918.\nP10: Prince Hubertus of Hohenlohe-Langenburg: Prince Hubertus of Hohenlohe- Langenburg( born 2 February 1959 in Mexico City as Hubertus Rudolph zu Hohenlohe- Langenburg) is a Mexican Alpine skier, photographer, businessman, and a pop singer known as Andy Himalaya and Royal Disaster. He belongs to a family which reigned over a principality in what is now the northeastern of Baden- Württemberg in Germany until the early 19th century.\nQuestion: Who is Prince Hubertus Of Prussia's maternal grandfather?\nFinal answer:",
+  "output": "Frederick Francis III, Grand Duke of Mecklenburg-Schwerin",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-abc833257decc58e",
+    "object": "chat.completion",
+    "created": 1779535896,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Frederick Francis III, Grand Duke of Mecklenburg-Schwerin",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1037,
+      "total_tokens": 1055,
+      "completion_tokens": 18,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "idx": 337,
+  "qid": "361b56400bde11eba7f7acde48001122",
+  "gold": "Bakersfield",
+  "candidates": [
+    "Place of origin",
+    "If You Want to Be My Woman",
+    "Place of birth",
+    "What You Need",
+    "The Singer",
+    "The Hours",
+    "The Favorite",
+    "The Girls",
+    "The Rock",
+    "Johnny Dorelli",
+    "Merle Haggard",
+    "If You Want My Lovin"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of origin\nC2: If You Want to Be My Woman\nC3: Place of birth\nC4: What You Need\nC5: The Singer\nC6: The Hours\nC7: The Favorite\nC8: The Girls\nC9: The Rock\nC10: Johnny Dorelli\nC11: Merle Haggard\nC12: If You Want My Lovin\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- If You Want to Be My Woman -> Merle Haggard\n- Place of birth -> Place of origin\n- If You Want My Lovin' -> The Singer\n- If You Want My Love (Twenty 4 Seven song) -> Seven Days\n- If You Want My Love (Twenty 4 Seven song) -> The Hours\n- Join the Cavalry -> The Favorite\n- Girls Got Rhythm -> The Girls\n- Girls Got Rhythm -> The Rock\n- I Want You to Be My Baby -> Johnny Dorelli\n- I Want You to Be My Baby -> @Home\n- If It's Lovin' that You Want -> Makeba Riddick\n- If It's Lovin' that You Want -> What You Need\nPassages:\nP1: If You Want to Be My Woman: \"If You Want to Be My Woman\" is a song written and recorded by American country music artist Merle Haggard backed by The Strangers. It was released in December 1989 as the third single from his album . The song peaked at number 23 on the \"Billboard\" Hot Country Singles & Tracks chart and reached number 15 on the \"RPM\" Country Tracks chart in Canada. \"If You Want to Be My Woman\" was Haggard's last top-40 country hit; like most classic country artists, Haggard's chart ...\nP2: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP3: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP4: What You Need: What You Need may refer to:\nP5: The Singer: The Singer may refer to:\nP6: The Hours: The Hours can refer to:\nP7: The Favorite: The Favorite may refer to:\nP8: The Girls: The Girls may be:\nP9: The Rock: The Rock or The Rocks may refer to:\nP10: Johnny Dorelli: Johnny Dorelli( real name Giorgio Guidi; born 20 February 1937, in Meda) is an Italian actor, singer and Television host. Dorelli was born in Italy. In 1946 he moved to New York with his family, where his father, Nino D'Aurelio( born Aurelio Guidi), found work as opera singer. Dorelli studied double bass and piano at the High School of Music and Art in New York. He returned in Italy in 1955. He debuted as singer in the late 1950s for CGD label. In 1958 he won the Sanremo ...\nQuestion: What is the place of birth of the performer of song If You Want To Be My Woman?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Place of birth\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"The evidence passage P1 directly states that 'If You Want to Be My Woman' is a song by Merle Haggard, and the candidate entity graph links 'If You Want to Be My Woman' to Merle Haggard. The passage P3 provides information about the place of origin, but the question specifically asks for the place of birth. Since the graph does not provide a specific place of birth for Merle Haggard, the most appropriate answer based on the given information is 'Place of birth'.\"}",
+  "verifier": {
+    "final_answer": "Place of birth",
+    "selected": "C1",
+    "confidence": "high",
+    "reason": "The evidence passage P1 directly states that 'If You Want to Be My Woman' is a song by Merle Haggard, and the candidate entity graph links 'If You Want to Be My Woman' to Merle Haggard. The passage P3 provides information about the place of origin, but the question specifically asks for the place of birth. Since the graph does not provide a specific place of birth for Merle Haggard, the most appropriate answer based on the given information is 'Place of birth'."
+  },
+  "final": "Place of birth",
+  "selected": "C1",
+  "response": {
+    "id": "chatcmpl-b1d6f1bc860478ee",
+    "object": "chat.completion",
+    "created": 1779536139,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Place of birth\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"The evidence passage P1 directly states that 'If You Want to Be My Woman' is a song by Merle Haggard, and the candidate entity graph links 'If You Want to Be My Woman' to Merle Haggard. The passage P3 provides information about the place of origin, but the question specifically asks for the place of birth. Since the graph does not provide a specific place of birth for Merle Haggard, the most appropriate answer based on the given information is 'Place of birth'.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 989,
+      "total_tokens": 1116,
+      "completion_tokens": 127,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 2.1588008403778076
+}

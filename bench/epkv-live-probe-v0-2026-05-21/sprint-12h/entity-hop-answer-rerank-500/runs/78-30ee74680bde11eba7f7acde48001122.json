@@ -1,0 +1,66 @@
+{
+  "idx": 78,
+  "qid": "30ee74680bde11eba7f7acde48001122",
+  "gold": "Villafranca del Bierzo",
+  "candidates": [
+    "Florence",
+    "Eleonora di Garzia di Toledo",
+    "Anne of Brittany",
+    "Renée of France",
+    "Them",
+    "For a Woman",
+    "Eleanor of Toledo",
+    "Andrea di Bonaiuto da Firenze",
+    "Eleonora d'Este (1537–1581)",
+    "Andrea di Niccolò",
+    "Isabella de' Medici",
+    "Pietro de' Medici"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Florence\nC2: Eleonora di Garzia di Toledo\nC3: Anne of Brittany\nC4: Renée of France\nC5: Them\nC6: For a Woman\nC7: Eleanor of Toledo\nC8: Andrea di Bonaiuto da Firenze\nC9: Eleonora d'Este (1537–1581)\nC10: Andrea di Niccolò\nC11: Isabella de' Medici\nC12: Pietro de' Medici\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Eleonora di Garzia di Toledo -> Isabella de' Medici\n- Eleonora di Garzia di Toledo -> Eleanor of Toledo\n- Isabella de' Medici -> For a Woman\n- Eleonora d'Este (1537–1581) -> Anne of Brittany\n- Eleonora d'Este (1537–1581) -> Renée of France\n- Pietro de' Medici -> Eleonora di Garzia di Toledo\n- Pietro de' Medici -> Them!\nPassages:\nP1: Eleonora di Garzia di Toledo: Eleonora di Garzia di Toledo or Leonor Álvarez de Toledo Osorio (March 1553 – 10 July 1576), more often known as \"Leonora\" or \"Dianora\", was the daughter of García Álvarez de Toledo, 4th Marquis of Villafranca, Duke of Fernandina. Leonora was born in Florence, where she was brought up by Cosimo I de' Medici, Grand Duke of Tuscany and his wife Eleanor of Toledo, her aunt and namesake. Betrothed to their son Pietro at the age of 15, she blossomed under the wing of ...\nP2: Anne of Brittany: Anne of Brittany  (25/26 January 1477 – 9 January 1514) was Duchess of Brittany from 1488 until her death, and queen consort of France from 1491 to 1498 and from 1499 to her death. She is the only woman to have been queen consort of France twice. During the Italian Wars, Anne also became queen consort of Naples, from 1501 to 1504, and duchess consort of Milan, in 1499–1500 and from 1500 to 1512. Anne was raised in Nantes during a series of conflicts in which the king of France ...\nP3: Renée of France: Renée of France( 25 October 1510 – 12 June 1574), was the Duchess of Ferrara due to her marriage to Ercole II d' Este, grandson of Pope Alexander VI. She was the younger surviving child of Louis XII of France and Anne of Brittany. In her later life she became an important supporter of the Protestant Reformation and ally of John Calvin.\nP4: Them!: Them! is a 1954 American black- and- white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \" Them!\" is one of the first of the 1950s\" nuclear monster\" films, and the first\" big bug\" feature. A nest ...\nP5: Them!: Them! is a 1954 American black-and-white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \"Them!\" is one of the first of the 1950s \"nuclear monster\" films, and the first \"big bug\" feature. A nest of ...\nP6: For a Woman: For a Woman( original title: Pour une femme) is a 2013 French drama film directed by Diane Kurys.\nP7: Eleanor of Toledo: Eleanor of Toledo ( Italian:\" Eleonora di Toledo\"( 11 January 1519 – 17 December 1562), born Doña Leonor Álvarez de Toledo y Osorio, was a Spanish noblewoman who was the wife of Cosimo I de' Medici and the Duchess of Florence. Although Eleanor is often referred to as the Grand Duchess of Tuscany, she predeceased the creation of the Grand Duchy of Tuscany. She is credited with being the first modern first lady, or consort. She served as regent of Florence during the absence of ...\nP8: Andrea di Bonaiuto da Firenze: Andrea di Bonaiuto da Firenze or Andrea da Firenze( I)( active 1343 – 1377) was an Italian painter active in Florence. He was probably born in Florence where he was active from 1343. His earliest works suggest that he must have been in close contact with the workshop of Andrea di Cione. Andrea di Bonaiuto is known for his stained glass window of the\" Coronation of Mary\" in the Basilica of Santa Maria Novella, and his fresco decorations in the Spanish chapel( then ...\nP9: Eleonora d'Este (1537–1581): Eleonora d' Este( 19 June 1537, Ferrara- 19 February 1581) was a Ferrarese noblewoman. She was the fourth daughter of Ercole II d' Este, Duke of Ferrara and his wife Renée of France, the second daughter of Louis XII of France and Anne of Brittany. She and her elder sister Lucrezia d' Este were the dedicatees of Torquato Tasso's poem\" O figlie di RenataO daughters of Renata\").\nP10: Andrea di Niccolò: Andrea di Niccolò, also Andrea di Niccolò di Giacomo,( 1440 – 1514) was an Italian painter of the Sienese School.\nQuestion: Where was the father of Eleonora Di Garzia Di Toledo born?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages and candidate entity graph do not contain any information about the birthplace of the father of Eleonora di Garzia di Toledo.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The provided passages and candidate entity graph do not contain any information about the birthplace of the father of Eleonora di Garzia di Toledo."
+  },
+  "final": "Florence",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-aeb513fe43fad467",
+    "object": "chat.completion",
+    "created": 1779535970,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages and candidate entity graph do not contain any information about the birthplace of the father of Eleonora di Garzia di Toledo.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1575,
+      "total_tokens": 1622,
+      "completion_tokens": 47,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.9323744773864746
+}

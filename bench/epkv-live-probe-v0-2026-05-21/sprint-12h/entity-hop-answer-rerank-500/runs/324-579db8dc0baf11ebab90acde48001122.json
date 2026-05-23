@@ -1,0 +1,66 @@
+{
+  "idx": 324,
+  "qid": "579db8dc0baf11ebab90acde48001122",
+  "gold": "Iyasu I",
+  "candidates": [
+    "Tekle Giyorgis I",
+    "Yohannes II",
+    "Afterwards",
+    "Rebel",
+    "William the Conqueror",
+    "Fashion Model",
+    "Capital City",
+    "Gunnor",
+    "Tekle Haymanot II",
+    "Tekle Haymanot I",
+    "Tewoflos",
+    "Salomon III"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Tekle Giyorgis I\nC2: Yohannes II\nC3: Afterwards\nC4: Rebel\nC5: William the Conqueror\nC6: Fashion Model\nC7: Capital City\nC8: Gunnor\nC9: Tekle Haymanot II\nC10: Tekle Haymanot I\nC11: Tewoflos\nC12: Salomon III\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Tekle Giyorgis I -> Tekle Haymanot II\n- Tekle Giyorgis I -> Yohannes II\n- Tekle Haymanot I -> Capital City\n- Tekle Haymanot I -> Rebel\n- Tekle Haymanot II -> Yohannes II\n- Tewoflos -> Tekle Haymanot I\n- Tewoflos -> Afterwards\n- Salomon III -> Tekle Haymanot II\n- Salomon III -> Tekle Haymanot II\n- Richard II, Duke of Normandy -> William the Conqueror\n- Richard II, Duke of Normandy -> Gunnor\n- Princess Maria-Olympia of Greece and Denmark -> Fashion Model\nPassages:\nP1: Yohannes II: Yohannes II or John II (Ge'ez ዮሓንስ), (1699 – 18 October 1769) was \"nəgusä nägäst\" of Ethiopia, and a member of the Solomonic dynasty. He was the son of Iyasu I, and brother of Emperors Tekle Haymanot I, Dawit III and Bakaffa. According to James Bruce, during the reign of his brother Bakaffa (1721-1730), the Emperor had vanished from view and a rumor circulated that Bakaffa had died. Qegnazmach Giyorgis acted on this by bringing Yohannes down from the royal prison on Wehni to rule, ...\nP2: Afterwards: Afterwards is a 2008 English- language psychological thriller film directed by Gilles Bourdos and starring Romain Duris, John Malkovich and Evangeline Lilly. Based on Guillaume Musso's novel\" Et après ...\", the story tells of a workaholic lawyer who is told by a self- proclaimed visionary that he must try to prevent his imminent death. The film was shot in New York City, Montreal and various New Mexico locations over June to July 2007, and had a French release in January 2009.\nP3: Rebel: A rebel is a participant in a rebellion. Rebel or rebels may also refer to:\nP4: William the Conqueror: William I (c. 1028 – 9 September 1087), usually known as William the Conqueror and sometimes William the Bastard, was the first Norman King of England, reigning from 1066 until his death in 1087. He was a descendant of Rollo and was Duke of Normandy from 1035 onward. His hold was secure on Normandy by 1060, following a long struggle to establish his throne, and he launched the Norman conquest of England six years later. The rest of his life was marked by struggles to ...\nP5: Fashion Model: Fashion Model is a 1945 comedy mystery film directed by William Beaudine, starring Robert Lowery, Marjorie Weaver, and Tim Ryan, and written by Victor Hammond and Tim Ryan. The film is considered to be the third in a series of Beaudine films featuring a female detective after\" Detective Kitty O' Day\"( 1944) and\" Adventures of Kitty O' Day\"( 1944).\nP6: Capital City: Capital City or Capitol City or variants, may refer to:\nP7: Gunnor: Gunnor or Gunnora( circa 936 – 5 Jan 1031) was a Duchess of Normandy by marriage to Richard I of Normandy.\nP8: Tekle Haymanot II: Tekle Haymanot II (Ge'ez ተክለ ሃይማኖት, \"Anchor of the faith\"; 1754 – 7 September 1777) was \"nəgusä nägäst\" as Admas Sagad III (Ge'ez አድማስ ሰገድ \"to whom the horizon bows\"; 18 October 1769 – 13 April 1777) of Ethiopia, and a member of the Solomonic dynasty. He was the son of Yohannes II by \"Woizero\" Sancheviyar, at the Imperial prison of Mount Wehni. The Scots explorer James Bruce (who was in Ethiopia from September 1769 to November 1771) described his appearance as follows:\nP9: Tekle Haymanot I: Tekle Haymanot I(\" Plant of religion,\" throne name Le`al Sagad,\" to whom the exalted bows\"),( 28 March 1684 – 30 June 1708) was\" nəgusä nägäst\"( 27 March 1706- 30 June 1708) of Ethiopia, and a member of the Solomonic dynasty. He was the son of Iyasu I and Empress Malakotawit. He is often referred to as\" Irgum Tekle Haymanot\" or\" Tekle Haymanot the Cursed\" Tekle Haymanot became Emperor following Iyasus' retirement to an island in Lake Tana. With the support of his mother ...\nP10: Tekle Giyorgis I: Tekle Giyorgis I (\"Plant of Saint George\"; c. 1751 – 12 December 1817) was Emperor of Ethiopia (throne name Feqr Sagad) intermittently between 20 July 1779 and June 1800, and a member of the Solomonic dynasty. He was the youngest son of Yohannes II and Woizoro Sancheviyer, and the brother of Tekle Haymanot II. According to Sven Rubenson, who described Tekle Giyorgis as the last emperor to exercise authority on his own, \"It is not without justification that he has in Ethiopian ...\nQuestion: Who is Tekle Haymanot Ii's paternal grandfather?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Yohannes II\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"Tekle Haymanot II is the son of Yohannes II, as stated in P8 and the candidate entity graph shows the relationship between Tekle Haymanot II and Yohannes II.\"}",
+  "verifier": {
+    "final_answer": "Yohannes II",
+    "selected": "C2",
+    "confidence": "high",
+    "reason": "Tekle Haymanot II is the son of Yohannes II, as stated in P8 and the candidate entity graph shows the relationship between Tekle Haymanot II and Yohannes II."
+  },
+  "final": "Yohannes II",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-819fa0a446233e72",
+    "object": "chat.completion",
+    "created": 1779536130,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Yohannes II\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"Tekle Haymanot II is the son of Yohannes II, as stated in P8 and the candidate entity graph shows the relationship between Tekle Haymanot II and Yohannes II.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1561,
+      "total_tokens": 1624,
+      "completion_tokens": 63,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.1782052516937256
+}

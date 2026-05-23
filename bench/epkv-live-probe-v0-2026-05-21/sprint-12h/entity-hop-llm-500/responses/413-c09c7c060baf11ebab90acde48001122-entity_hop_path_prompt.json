@@ -1,0 +1,48 @@
+{
+  "qid": "c09c7c060baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Princess Therese of Nassau-Weilburg",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Countess Alexandra von Zarnekau -> Duke Constantine Petrovich of Oldenburg\n- Countess Alexandra von Zarnekau -> Prince George Alexandrovich Yuryevsky\n- Baroness Gösta von dem Bussche-Haddenhausen -> Beatrix of the Netherlands\n- Alexander, Hereditary Prince of Hohenzollern -> Karl Friedrich, Prince of Hohenzollern\n- Alexandra, Countess of Frederiksborg -> Prince Joachim of Denmark\n- Alexandra, Countess of Frederiksborg -> Margrethe II of Denmark\nPassages:\nP1: Beatrix of the Netherlands: Beatrix (Beatrix Wilhelmina Armgard, ; born 31 January 1938) is a princess of the Dutch royal house who reigned as Queen of the Netherlands from 30 April 1980 until her abdication on 30 April 2013. Beatrix is the eldest daughter of Queen Juliana and her husband, Prince Bernhard of Lippe-Biesterfeld. Upon her mother's accession in 1948, she became heir presumptive. Beatrix attended a public primary school in Canada during World War II, and then finished her primary ...\nP2: Duke Constantine Petrovich of Oldenburg: Duke Constantine Frederick Peter of Oldenburg (tr. ; 9 May 1850 - 18 March 1906) was a son of Duke Peter Georgievich of Oldenburg and his wife Princess Therese of Nassau-Weilburg Known in the court of Tsar Nicholas II as Prince Constantine Petrovich Oldenburgsky, he was the father of the Russian Counts and Countesses von Zarnekau.\nP3: Karl Friedrich, Prince of Hohenzollern: Karl Friedrich, Prince of Hohenzollern( born 20 April 1952) is the eldest son of the late Friedrich Wilhelm, Prince of Hohenzollern and Princess Margarita of Leiningen. He became head of the Princely House of Hohenzollern, the Roman Catholic Swabian branch of the dynasty, upon his father's death on 16 September 2010.\nP4: Prince Joachim of Denmark: Prince Joachim of Denmark, Count of Monpezat, (Joachim Holger Waldemar Christian; born 7 June 1969 at Rigshospitalet in Copenhagen) is the younger son of Queen Margrethe II and Prince Henrik. Joachim is sixth in the line of succession to the Danish throne, following his elder brother, Crown Prince Frederik, and Frederik's four children.\nP5: Prince George Alexandrovich Yuryevsky: Prince George Alexandrovich Yuryevsky (12 May 1872 [30 April 1872 O. S.] – 13 September 1913) was the natural son of Alexander II of Russia by his mistress (and later wife), Catherine Dolgorukov. The morganatic marriage of George's parents on 6 July 1880, eight years after his birth, resulted in the legitimation of their three surviving children, and George gained the style of \"Serene Highness\".\nP6: Margrethe II of Denmark: Margrethe II( full name:\" Margrethe Alexandrine Þórhildur Ingrid\"; born 16 April 1940) is Queen of Denmark, as well as the supreme authority of the Church of Denmark and commander- in- chief of the Danish Defence. Born into the House of Glücksburg, a royal house with origins in northern Germany, she was the eldest child of Frederick IX of Denmark and Ingrid of Sweden. She became heir presumptive to her father in 1953, when a constitutional amendment allowed women to ...\nP7: Countess Alexandra von Zarnekau: Countess Alexandra Constantinovna von Zarnekau (Russian: графиня Александра Константиновна Зарнекау, 10 May 1883 - 28 May 1957) was the eldest daughter of Duke Constantine Petrovich of Oldenburg and his morganatic wife, Agrippina Japaridze, Countess von Zarnekau. At age 17, on 11 February 1900, Countess Alexandra married Prince George Alexandrovich Yuryevsky, the son of Tsar Alexander II by his mistress (and later wife), Ekaterina Mikhailovna Dolgorukova, the ...\nP8: Alexandra von Fürstenberg: Alexandra von Fürstenberg( née Alexandra Natasha Miller, formerly Princess Alexandra von Fürstenberg, born October 3, 1972) is a furniture designer and the image director for DvF, the clothing label which was founded by her former mother- in- law, Diane von Fürstenberg, and helped revive the company ’s famous 1970s wrap dress.\nP9: Alexandra, Countess of Frederiksborg: Alexandra, Countess of Frederiksborg, (\"née\" Alexandra Christina Manley; born 30 June 1964) is the first wife of Prince Joachim of Denmark, the younger son of Margrethe II of Denmark. She was born in Hong Kong and is of mixed Chinese-European ancestry. She was introduced to Prince Joachim in 1994. They married in 1995 and had two sons together, until the marriage was dissolved in 2005.\nP10: Baroness Gösta von dem Bussche-Haddenhausen: Baroness Gösta von dem Bussche- Haddenhausen( 26 January 1902 – 13 June 1996) was the mother of Prince Claus of the Netherlands, who was the Prince Consort of Queen Beatrix of the Netherlands, thus making her the mother- in- law of the former Dutch Queen. She is also the paternal grandmother of King Willem- Alexander of the Netherlands, who is the current Dutch King.\nQuestion: Who is Countess Alexandra Von Zarnekau's paternal grandmother?\nFinal answer:",
+  "output": "Duke Peter Georgievich of Oldenburg",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.22222222222222224
+  },
+  "response": {
+    "id": "chatcmpl-a28f36a951e26372",
+    "object": "chat.completion",
+    "created": 1779535839,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Duke Peter Georgievich of Oldenburg",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1401,
+      "total_tokens": 1411,
+      "completion_tokens": 10,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "e5c738900bdc11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "New York",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Mary Jane's Pa: Mary Jane's Pa is a 1935 American drama film directed by William Keighley and written by Tom Reed and Peter Milne. The film stars Aline MacMahon, Guy Kibbee, Tom Brown, Robert McWade, Minor Watson and Nan Grey. The film was released by Warner Bros. on April 27, 1935.\nP2: William Keighley: William Jackson Keighley( August 4, 1889, Philadelphia, Pennsylvania – June 24, 1984, New York, New York) was an American stage actor and Hollywood film director. After graduating from the Ludlum School of Dramatic Art, Keighley began acting at the age of 23. By the 1910s and 1920s, he was acting and directing on Broadway. With the advent of talking pictures, he relocated to Hollywood. He eventually signed with Warner Bros., where he proved adept at directing in a wide variety ...\nP3: William Keighley: William Jackson Keighley (August 4, 1889, Philadelphia, Pennsylvania – June 24, 1984, New York, New York) was an American stage actor and Hollywood film director. After graduating from the Ludlum School of Dramatic Art, Keighley began acting at the age of 23. By the 1910s and 1920s, he was acting and directing on Broadway. With the advent of talking pictures, he relocated to Hollywood. He eventually signed with Warner Bros., where he proved adept at directing in a wide variety ...\nP4: Friedrich Feher: Friedrich Feher( 16 March 1889 – 30 September 1950) was an Austrian- Jewish actor and film director. He first entered the film business in 1913, starting out as an actor but quickly gravitating toward directing. He is perhaps best remembered as Francis, the protagonist of\" The Cabinet of Dr. Caligari\"( 1920). He directed\" The House Without Windows\" that same year( based on a book by Thea von Harbou), in which his art directors mimicked the Expressionist set designs of\" ...\nP5: Robert Wiene: Robert Wiene (27 April 1873 – 17 July 1938) was a film director of the silent era of German cinema. He is particularly known for directing the German silent film \"The Cabinet of Dr. Caligari\" and a succession of other expressionist films. Wiene also directed a variety of other films of varying styles and genres. Following the Nazi rise to power in Germany, Wiene, who was of Jewish descent, fled into exile.\nP6: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP7: Edward Sedgwick: Edward Sedgwick( November 7, 1889 – March 7, 1953) was an American film director, writer, actor and producer.\nP8: Charles Lamont: Charles Lamont( May 5, 1895 – September 12, 1993) was a prolific filmmaker, directing over 200 titles and producing and writing many others. A California native, Lamont was born in San Francisco and died in Los Angeles.\nP9: The Three Dances of Mary Wilford: The Three Dances of Mary Wilford( German: Die drei Tänze der Mary Wilford) is a 1920 German silent drama film directed by Robert Wiene and starring Friedrich Feher, Erika Glässner and Ludwig Hartau. It was a sequel to the 1919 film\" Die Sünderin\".\nP10: Ma and Pa Kettle Back on the Farm: Ma and Pa Kettle Back on the Farm is a 1951 American comedy film directed by Edward Sedgwick. It is the third installment of Universal- International's\" Ma and Pa Kettle\" series starring Marjorie Main and Percy Kilbride. It was also the last completed film of director Sedgwick's long career.\nQuestion: Where did the director of film Mary Jane'S Pa die?\nFinal answer:",
+  "output": "New York, New York",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.6666666666666666
+  },
+  "response": {
+    "id": "chatcmpl-8fe4b5d8bfe7a5e8",
+    "object": "chat.completion",
+    "created": 1779535862,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "New York, New York",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1011,
+      "total_tokens": 1017,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

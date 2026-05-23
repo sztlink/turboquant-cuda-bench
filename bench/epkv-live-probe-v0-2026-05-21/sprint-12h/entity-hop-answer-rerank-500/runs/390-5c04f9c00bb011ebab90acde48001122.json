@@ -1,0 +1,66 @@
+{
+  "idx": 390,
+  "qid": "5c04f9c00bb011ebab90acde48001122",
+  "gold": "Richard de Umfraville",
+  "candidates": [
+    "Richard de Umfraville",
+    "Richard de Umfraville, Lord of Redesdale",
+    "Gilbert de Umfraville, Earl of Angus",
+    "Gilbert de Umfraville",
+    "Simon de Montfort, 6th Earl of Leicester",
+    "Joan of Acre",
+    "Alexander Stewart, 4th High Steward of Scotland",
+    "Walter Stewart, 3rd High Steward of Scotland",
+    "Plague",
+    "Master",
+    "Story",
+    "Robert de Umfraville, Earl of Angus"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Richard de Umfraville\nC2: Richard de Umfraville, Lord of Redesdale\nC3: Gilbert de Umfraville, Earl of Angus\nC4: Gilbert de Umfraville\nC5: Simon de Montfort, 6th Earl of Leicester\nC6: Joan of Acre\nC7: Alexander Stewart, 4th High Steward of Scotland\nC8: Walter Stewart, 3rd High Steward of Scotland\nC9: Plague\nC10: Master\nC11: Story\nC12: Robert de Umfraville, Earl of Angus\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Gilbert de Umfraville, Earl of Angus -> Simon de Montfort, 6th Earl of Leicester\n- Gilbert de Umfraville, Earl of Angus -> Robert de Umfraville, Earl of Angus\n- Archibald Douglas, 6th Earl of Angus -> Master\n- Gille Críst, Earl of Angus -> Alexander Stewart, 4th High Steward of Scotland\n- Gille Críst, Earl of Angus -> Walter Stewart, 3rd High Steward of Scotland\n- William Douglas, 2nd Earl of Angus -> Plague\n- William Douglas, 2nd Earl of Angus -> Story\n- Elizabeth de Clare -> Joan of Acre\n- Elizabeth de Clare -> Joan of Acre\nPassages:\nP1: Gilbert de Umfraville, Earl of Angus: Gilbert de Umfraville, Earl of Angus (r. 1246–1308) was the first of the Anglo-French de Umfraville line to rule the Earldom of Angus in his own right. His father was Gilbert de Umfraville (d. shortly before 13 March 1245), a Norman, and feudal Baron of Prudhoe in Northumberland, and his mother was Matilda, Countess of Angus. He succeeded his father in infancy. He also carried on the line of the earlier Gaelic earls through his mother. He succeeded her ...\nP2: Gilbert de Umfraville: Gilbert de Umfraville (died 1245) was a 13th-century baron. Gilbert was the eldest son of Richard de Umfraville, Lord of Redesdale. He succeeded his father as Lord of Redesdale and Baron Prudhoe from 1226 at his seat of Prudhoe Castle. He also had lands at Otterburn.\nP3: Simon de Montfort, 6th Earl of Leicester: Simon de Montfort, 6th Earl of Leicester (– 4 August 1265), sometimes referred to as Simon V de Montfort to distinguish him from his namesake relatives, was a nobleman of French origin and a member of the English peerage, who led the baronial opposition to the rule of King Henry III of England, culminating in the Second Barons' War. Following his initial victories over royal forces, he became \"de facto\" ruler of the country, and played a major role in ...\nP4: Joan of Acre: Joan of Acre (April 1272 – 23 April 1307) was an English princess, a daughter of King Edward I of England and Queen Eleanor of Castile. The name \"Acre\" derives from her birthplace in the Holy Land while her parents were on a crusade. She was married twice; her first husband was Gilbert de Clare, 7th Earl of Gloucester, one of the most powerful nobles in her father's kingdom; her second husband was Ralph de Monthermer, a squire in her household whom she married in secret. Joan is ...\nP5: Alexander Stewart, 4th High Steward of Scotland: Alexander Stewart (died 1283), also known as Alexander of Dundonald, was 4th hereditary High Steward of Scotland from his father's death in 1246. A son of Walter Stewart, 3rd High Steward of Scotland by his wife Bethóc, daughter of Gille Críst, Earl of Angus , Alexander is said to have accompanied Louis IX of France on the Seventh Crusade (1248–1254). In 1255 he was one of the councillors of King Alexander III, though under age. He was the ...\nP6: Walter Stewart, 3rd High Steward of Scotland: Walter Steward of Dundonald (died 1246) was 3rd hereditary High Steward of Scotland and Justiciar of Scotia. He was the eldest son of Alan fitz Walter, 2nd High Steward of Scotland but which wife of Alan's was his mother is not clear. He was the first to use Stewart as a surname, and was designated \"of Dundonald\". He witnessed a charter by King Alexander II, under the designation of \"Walterus filius Alani, Senescallus, Justiciar Scotiae\" and it may ...\nP7: Plague: Plague or The Plague may refer to:\nP8: Master: Master or masters may refer to:\nP9: Story: Story or stories, may refer to:\nP10: Robert de Umfraville, Earl of Angus: Robert de Umfraville, 8th Earl of Angus, of Prudhoe, Chollerton, Harbottle, and Whelpington, Northumberland( 1277 – 1325) was an Anglo- Norman baron in Northumberland and the eighth Earl of Angus.\nQuestion: Who is the paternal grandfather of Gilbert De Umfraville, Earl Of Angus?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Richard de Umfraville, Lord of Redesdale\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"P2 explicitly states that Gilbert de Umfraville was the eldest son of Richard de Umfraville, Lord of Redesdale, and therefore Richard de Umfraville, Lord of Redesdale, is the paternal grandfather of Gilbert de Umfraville, Earl of Angus.\"}",
+  "verifier": {
+    "final_answer": "Richard de Umfraville, Lord of Redesdale",
+    "selected": "C2",
+    "confidence": "high",
+    "reason": "P2 explicitly states that Gilbert de Umfraville was the eldest son of Richard de Umfraville, Lord of Redesdale, and therefore Richard de Umfraville, Lord of Redesdale, is the paternal grandfather of Gilbert de Umfraville, Earl of Angus."
+  },
+  "final": "Richard de Umfraville, Lord of Redesdale",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-b32cf0a358c57e3d",
+    "object": "chat.completion",
+    "created": 1779536177,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Richard de Umfraville, Lord of Redesdale\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"P2 explicitly states that Gilbert de Umfraville was the eldest son of Richard de Umfraville, Lord of Redesdale, and therefore Richard de Umfraville, Lord of Redesdale, is the paternal grandfather of Gilbert de Umfraville, Earl of Angus.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1376,
+      "total_tokens": 1466,
+      "completion_tokens": 90,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.5979011058807373
+}

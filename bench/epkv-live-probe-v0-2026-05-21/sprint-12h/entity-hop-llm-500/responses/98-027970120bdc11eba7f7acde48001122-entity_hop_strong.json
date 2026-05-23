@@ -1,0 +1,48 @@
+{
+  "qid": "027970120bdc11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Århus",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Bag Skyerne: \"Bag Skyerne\" is a song by Danish singer and songwriter Anne Gadegaard. It was released as a digital download in Denmark on 6 May 2013 through Awake Music. The song peaked to number 10 on the Danish Singles Chart\nP2: The Magic of Belle Isle: The Magic of Belle Isle is a 2012 drama film directed by Rob Reiner and written by Guy Thomas. The film stars Morgan Freeman, Virginia Madsen, Emma Fuhrmann, Madeline Carroll, Kenan Thompson, Nicolette Pierini, Kevin Pollak and Fred Willard. The film was released on July 6, 2012, by Magnolia Pictures. It s title in the UK is\" Once More\".\nP3: The Singer: The Singer may refer to:\nP4: Where Are You: Where Are You may refer to:\nP5: Felix Powell: Felix Lloyd Powell (23 May 1878 – 10 February 1942) was a Welsh British Army Staff Sergeant most famous for writing the music for marching song \"Pack Up Your Troubles in Your Old Kit Bag and Smile, Smile, Smile\", in 1915, during World War I. The words were written by his brother George Henry Powell (under the pseudonym George Asaf), and the song was entered into a competition for \"best morale-building song\". It won first prize and was noted as \"perhaps the most optimistic song ...\nP6: Anne Gadegaard: Anne Mondrup Gadegaard Jensen (born 7 November 1991 in Århus, Region Midtjylland, Denmark), better known as Anne Gadegaard, is a Danish singer and songwriter. She is best known for finishing 5th at the \"Junior Eurovision Song Contest 2003\" while representing Denmark.\nP7: Occidentali's Karma: \" Occidentali's Karma\" is a song performed by Italian singer Francesco Gabbani. The song was released as a digital download on 10 February 2017 through BMG Rights Management as the lead single from his third studio album\" Magellano\"( 2017). The song was written by Gabbani, Filippo Gabbani, Fabio Ilacqua, and Luca Chiaravalli. It won the Sanremo Music Festival 2017 and represented Italy in the Eurovision Song Contest 2017.\nP8: Belle Isle: Belle Isle may refer to:\nP9: Bag of the Collector: Bag of the Collector is a 1979 Soviet crime drama directed by Augusto Baltrušaitis.\nP10: Where Are You? (1937 song): \" Where Are You?\" is a popular song composed by Jimmy McHugh, with lyrics by Harold Adamson. The song was written for the 1937 film\" Top of the Town\" and was originally performed by Gertrude Niesen. Niesen also made a commercial recording of the song for Brunswick Records and this was popular. \" Where Are You?\" has been recorded by many performers.\nQuestion: Where was the performer of song Bag Skyerne born?\nFinal answer:",
+  "output": "Århus, Region Midtjylland, Denmark",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.4
+  },
+  "response": {
+    "id": "chatcmpl-b8ea773c7974a82a",
+    "object": "chat.completion",
+    "created": 1779535560,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Århus, Region Midtjylland, Denmark",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 746,
+      "total_tokens": 757,
+      "completion_tokens": 11,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

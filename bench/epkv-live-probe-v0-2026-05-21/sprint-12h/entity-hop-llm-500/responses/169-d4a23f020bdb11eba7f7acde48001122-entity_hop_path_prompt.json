@@ -1,0 +1,48 @@
+{
+  "qid": "d4a23f020bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Qing dynasty",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Imperial Noble Consort Chunhui -> Qianlong Emperor\n- Imperial Noble Consort Zhemin -> Qianlong Emperor\n- Imperial Noble Consort Huixian -> Qianlong Emperor\n- Imperial Noble Consort Dunsu -> Yongzheng Emperor\nPassages:\nP1: Qianlong Emperor: The Qianlong Emperor (25 September 1711 – 7 February 1799) was the sixth Emperor of the Qing dynasty, and the fourth Qing emperor to rule over China proper, reigned from 1735 to 1796. Born Hongli, the fourth son of the Yongzheng Emperor, he reigned officially from 11 October 1735 to 8 February 1796. On 8 February, he abdicated in favour of his son, the Jiaqing Emperor—a filial act in order not to reign longer than his grandfather, the illustrious Kangxi Emperor. Despite his ...\nP2: Yongzheng Emperor: The Yongzheng Emperor (13 December 1678 – 8 October 1735), born Yinzhen, was the fifth Emperor of the Qing dynasty, and the third Qing emperor to rule over China proper, reigned from 1722 to 1735. A hard-working ruler, the Yongzheng Emperor's main goal was to create an effective government at minimal expense. Like his father, the Kangxi Emperor, the Yongzheng Emperor used military force to preserve the dynasty's position. His reign was known for being despotic, efficient, and ...\nP3: Imperial Noble Consort Chunhui: Imperial Noble Consort Chunhui (13 June 1713 – 2 June 1760), of the Han Chinese Plain White Banner Su clan, was a consort of the Qianlong Emperor. She was two years his junior.\nP4: Imperial Noble Consort Zhemin: Imperial Noble Consort Zhemin( died 20 August 1735), of the Manchu Plain Yellow Banner Fuca clan, was a consort of the Qianlong Emperor.\nP5: Imperial Noble Consort Huixian: Imperial Noble Consort Huixian( 1711 – 25 February 1745), of the Manchu Bordered Yellow Banner Gaogiya clan, was a consort of the Qianlong Emperor.\nP6: Imperial Noble Consort Dunsu: Imperial Noble Consort Dunsu( died 27 December 1725), of the Han Chinese Bordered Yellow Banner Nian clan, was a consort of the Yongzheng Emperor.\nP7: Imperial Noble Consort Xianzhe: Imperial Noble Consort Xianzhe( 2 July 1856 – 3 February 1932), of the Manchu Bordered Blue Banner Hešeri clan, was a consort of the Tongzhi Emperor.\nP8: Imperial Noble Consort Dunhui: Imperial Noble Consort Dunhui( 6 September 1856 – 18 May 1933), of the Manchu Bordered Blue Banner Sirin Gioro clan, was a consort of the Tongzhi Emperor.\nP9: Imperial Noble Consort Zhuangshun: Imperial Noble Consort Zhuangshun( 29 November 1822 – 13 December 1866), of the Manchu Uya clan, was a consort of the Daoguang Emperor. She was 40 years his junior.\nP10: Imperial Noble Consort Quehui: Imperial Noble Consort Quehui( 1668 – 24 April 1743), of the Manchu Bordered Yellow Banner Tunggiya clan, was a consort of the Kangxi Emperor. She was 14 years his junior.\nQuestion: What nationality is Imperial Noble Consort Chunhui's husband?\nFinal answer:",
+  "output": "Han Chinese",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-891891c73ddc8c14",
+    "object": "chat.completion",
+    "created": 1779535626,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Han Chinese",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 900,
+      "total_tokens": 903,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

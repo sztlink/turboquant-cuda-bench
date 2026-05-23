@@ -1,0 +1,48 @@
+{
+  "qid": "d082dda80bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "UCLA",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Kitty Dukakis -> Michael Dukakis\n- Jane Scovell -> Kitty Dukakis\n- Where Does It Hurt? -> Peter Sellers\n- Where Does It Hurt? -> Rod Amateau\n- The Marriage of Kitty -> George Melford\n- Detective Kitty O'Day -> William Beaudine\n- Detective Kitty O'Day -> The Only One\n- The Third (Kitty, Daisy & Lewis album) -> Kitty, Daisy & Lewis\n- The Third (Kitty, Daisy & Lewis album) -> Daisy Lewis\nPassages:\nP1: Kitty, Daisy & Lewis: Kitty, Daisy& Lewis are a British five- piece band fronted by the siblings of the Durham family. Their music is influenced heavily by R&B, Blues, Soul, Punk, Rock and Roll and West- Indian music. They are all multi-instrumentalists playing guitar, piano, bass, drums, harmonica, banjo, lapsteel guitar, ukulele, xylophone, accordion and more between them. Kitty, Daisy& Lewis have sold over a quarter of a million records worldwide. Kitty Durham is the youngest of the group ...\nP2: Peter Sellers: Peter Sellers, CBE (born Richard Henry Sellers; 8 September 1925 – 24 July 1980) was an English film actor, comedian, and singer. He performed in the BBC Radio comedy series \"The Goon Show\", featured on a number of hit comic songs, and became known to a worldwide audience through his many film roles, among them Chief Inspector Clouseau in \"The Pink Panther\" series of films. Born in Portsmouth to a theatrical family, Sellers made his stage debut at the Kings Theatre, Southsea, ...\nP3: Rod Amateau: Rodney\" Rod\" Amateau( December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were\" The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's Island The Bob Cummings Show\" and\" The New Phil Silvers Show\". He produced\" My Mother the Car\" and\" Supertrain\", and wrote the story for the 1988 film\" Sunset\". Amateau also directed a few episodes of\" The Dukes of Hazzard\", and appeared in a ...\nP4: Rod Amateau: Rodney \"Rod\" Amateau (December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were \"The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's IslandThe Bob Cummings Show\" and \"The New Phil Silvers Show\". He produced \"My Mother the Car\" and \"Supertrain\", and wrote the story for the 1988 film \"Sunset\". Amateau also directed a few episodes of \"The Dukes of Hazzard\", and appeared in a ...\nP5: George Melford: George H. Melford( born George Henry Knauff, February 19, 1877 – April 25, 1961) was an American stage and film actor, director, producer, and screenwriter. Often taken for granted as a director today, the stalwart Melford's name by the 1920s was, like Cecil B. DeMille's, appearing in big bold letters above the title of his films.\nP6: George Melford: George H. Melford (born George Henry Knauff, February 19, 1877 – April 25, 1961) was an American stage and film actor, director, producer, and screenwriter. Often taken for granted as a director today, the stalwart Melford's name by the 1920s was, like Cecil B. DeMille's, appearing in big bold letters above the title of his films.\nP7: William Beaudine: William Washington Beaudine (January 15, 1892 – March 18, 1970) was an American film actor and director. He was one of Hollywood's most prolific directors, turning out films in remarkable numbers and in a wide variety of genres.\nP8: The Only One: The Only One( s) or Only One may refer to:\nP9: Daisy Lewis: Daisy Lewis is a British actress and producer.\nP10: Kitty Dukakis: Katharine Dickson Dukakis (born December 26, 1936), known as Kitty Dukakis, is an American author. She is the wife of former Massachusetts governor and U.S. presidential candidate Michael Dukakis.\nQuestion: Where does Kitty Dukakis's husband work at?\nFinal answer:",
+  "output": "former Massachusetts governor",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b49d1ebcc11307a8",
+    "object": "chat.completion",
+    "created": 1779535745,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "former Massachusetts governor",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1118,
+      "total_tokens": 1122,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

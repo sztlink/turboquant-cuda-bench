@@ -1,0 +1,48 @@
+{
+  "qid": "3068a40c0baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Sigrid the Haughty",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Ingegerd Olofsdotter of Sweden -> Estrid of the Obotrites\n- Ingegerd Olofsdotter of Sweden -> Olof Skötkonung\n- Estrid of the Obotrites -> Olof Skötkonung\n- Estrid of the Obotrites -> Anund Jacob\n- Vyacheslav Yaroslavich -> Ingegerd Olofsdotter of Sweden\n- Vyacheslav Yaroslavich -> Boris Vyacheslavich\n- Vyacheslav Yaroslavich -> Ingegerd Olofsdotter of Sweden\n- Vyacheslav Yaroslavich -> Boris Vyacheslavich\n- Ingegerd Birgersdotter of Bjelbo -> Birger Brosa\n- Ingegerd Birgersdotter of Bjelbo -> The Child\n- Princess Ingeborg of Denmark -> Henri, Grand Duke of Luxembourg\n- Princess Ingeborg of Denmark -> Louise\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Queen Victoria\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Louise\n- Baroness Gösta von dem Bussche-Haddenhausen -> Beatrix of the Netherlands\nPassages:\nP1: Ingegerd Olofsdotter of Sweden: Ingegerd Olofsdotter of Sweden, also known as Irene, Anna and Saint Anna (1001 – 10 February 1050), was a Swedish princess and a Grand Princess of Kiev. She was the daughter of Swedish King Olof Skötkonung and Estrid of the Obotrites and the consort of Yaroslav I the Wise of Kiev. Ingegerd or Saint Anna is often confused with the mother of Saint Vladimir “the Enlightener” of the Rus. This is mainly because Ingegerd and Yaroslav also had a son named Vladimir. ...\nP2: Beatrix of the Netherlands: Beatrix (Beatrix Wilhelmina Armgard, ; born 31 January 1938) is a princess of the Dutch royal house who reigned as Queen of the Netherlands from 30 April 1980 until her abdication on 30 April 2013. Beatrix is the eldest daughter of Queen Juliana and her husband, Prince Bernhard of Lippe-Biesterfeld. Upon her mother's accession in 1948, she became heir presumptive. Beatrix attended a public primary school in Canada during World War II, and then finished her primary ...\nP3: Henri, Grand Duke of Luxembourg: Henri( born 16 April 1955) is the Grand Duke of Luxembourg, reigning since 7 October 2000. He is the eldest son of Grand Duke Jean and Princess Joséphine- Charlotte of Belgium, and a first cousin of Philippe, King of the Belgians. In 2019, his net worth was estimated around.\nP4: The Child: The Child may refer to:\nP5: Birger Brosa: Birger Brosa (Old Norse: \"Birgir Brósa\" where \"Brósa\" means \"smiling\"), jarl of Sweden 1174–1202, d. 9 January 1202 on Visingsö, was a son of Bengt Snivil and a member of the powerful House of Bjälbo. In the medieval texts he is either called the \"jarl of the Swedes\" or the \"jarl of the Swedes and the Geats\". Birger was appointed to the position of jarl during the reign of Knut Eriksson. He maintained the position during Knut's successor Sverker II until his death in 1202. Before ...\nP6: Olof Skötkonung: Olof Skötkonung (c. 980–1022) was King of Sweden, son of Eric the Victorious and, according to Icelandic sources, Sigrid the Haughty. He succeeded his father in c. 995. He stands at the threshold of recorded history, since he is the first Swedish ruler about whom there is substantial knowledge. He is regarded as the first king known to have ruled both the Swedes and the Geats.\nP7: Anund Jacob: Anund Jacob or James, Swedish: \"Anund Jakob\" was King of Sweden from 1022 until around 1050. He is believed to have been born on July 25, in either 1008 or 1010 as \"Jakob\", the son of King Olof Skötkonung and Queen Estrid. Being the second Christian king of the Swedish realm, his long and partly turbulent reign saw the increasing dissemination of Christianity. He is referred to in positive terms in German and Norse historical sources.\nP8: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nP9: Boris Vyacheslavich: Boris Vyacheslavich was Prince of Chernigov for eight days in 1077. He was the son of Vyacheslav Yaroslavich, Prince of Smolensk. Following his father's death in 1057, the child Boris was debarred from his inheritance. He died fighting against his unclesVsevolod Yaroslavich, Prince of Chernigov and Izyaslav Yaroslavich, Grand Prince of Kievon 3 October 1078.\nP10: Louise: Louise or Luise may refer to:\nQuestion: Who is the paternal grandmother of Ingegerd Olofsdotter Of Sweden?\nFinal answer:",
+  "output": "Estrid of the Obotrites",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9a3be4e20eb0c0f8",
+    "object": "chat.completion",
+    "created": 1779535620,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Estrid of the Obotrites",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1438,
+      "total_tokens": 1447,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

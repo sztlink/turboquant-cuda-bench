@@ -1,0 +1,64 @@
+{
+  "idx": 102,
+  "qid": "09b7d46a0bda11eba7f7acde48001122",
+  "gold": "2 September 1770",
+  "candidates": [
+    "1770",
+    "2 September 1770",
+    "William Annesley, 1st Viscount Glerawly",
+    "House of Lords",
+    "Richard Annesley, 2nd Earl Annesley",
+    "George Annesley, 2nd Earl of Mountnorris",
+    "William Annesley, 3rd Earl Annesley",
+    "Francis Annesley, 1st Earl Annesley",
+    "William Annesley, 4th Earl Annesley",
+    "Richard Annesley, 3rd Baron Altham"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: 1770\nC2: 2 September 1770\nC3: William Annesley, 1st Viscount Glerawly\nC4: House of Lords\nC5: Richard Annesley, 2nd Earl Annesley\nC6: George Annesley, 2nd Earl of Mountnorris\nC7: William Annesley, 3rd Earl Annesley\nC8: Francis Annesley, 1st Earl Annesley\nC9: William Annesley, 4th Earl Annesley\nC10: Richard Annesley, 3rd Baron Altham\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- William Annesley, 3rd Earl Annesley -> Richard Annesley, 2nd Earl Annesley\n- William Annesley, 3rd Earl Annesley -> Richard Annesley, 2nd Earl Annesley\n- Richard Annesley, 2nd Earl Annesley -> William Annesley, 1st Viscount Glerawly\n- Richard Annesley, 2nd Earl Annesley -> William Annesley, 1st Viscount Glerawly\n- Francis Annesley, 1st Earl Annesley -> William Annesley, 1st Viscount Glerawly\n- Francis Annesley, 1st Earl Annesley -> House of Lords\nPassages:\nP1: William Annesley, 1st Viscount Glerawly: William Annesley, 1st Viscount Glerawly( 1710 – 2 September 1770) was an Irish politician and noble.\nP2: House of Lords: The House of Lords, also known as the House of Peers and domestically usually referred to simply as the Lords, is the upper house of the Parliament of the United Kingdom. Membership is granted by appointment or else by heredity or official function. Like the House of Commons, it meets in the Palace of Westminster. Officially, the full name of the house is the Right Honourable the Lords Spiritual and Temporal of the United Kingdom of Great Britain and Northern Ireland in ...\nP3: Richard Annesley, 2nd Earl Annesley: Richard Annesley, 2nd Earl Annesley PC( Ire)( 14 April 1745 – 9 November 1824), styled The Honourable from 1758 to 1802, was an Anglo- Irish politician and noble. Lord Annesley was the second son of William Annesley, 1st Viscount Glerawly and Lady Anne Beresford. He inherited the earldom created for his childless brother through the terms of the special remainder, as well as the viscountcy which had been created for his father, in 1802. He represented ...\nP4: Richard Annesley, 2nd Earl Annesley: Richard Annesley, 2nd Earl Annesley PC (Ire) (14 April 1745 – 9 November 1824), styled The Honourable from 1758 to 1802, was an Anglo-Irish politician and noble. Lord Annesley was the second son of William Annesley, 1st Viscount Glerawly and Lady Anne Beresford. He inherited the earldom created for his childless brother through the terms of the special remainder, as well as the viscountcy which had been created for his father, in 1802. He represented ...\nP5: George Annesley, 2nd Earl of Mountnorris: George Annesley, 2nd Earl of Mountnorris FRS( 4 December 1770 – 23 July 1844), styled Viscount Valentia between 1793 and 1816, was a British peer and politician.\nP6: William Annesley, 3rd Earl Annesley: William Richard Annesley, 3rd Earl Annesley (16 July 1772 – 25 August 1838) was an Anglo-Irish noble and British Member of Parliament. Lord Annesley was the eldest son of Richard Annesley, 2nd Earl Annesley and Anne Lambert. He married Lady Isabella St. Lawrence, a daughter of William St. Lawrence, 2nd Earl of Howth on 19 May 1803 and with her had one daughter:\nLord Annesley divorced Lady Isabella St. Lawrene by Act of Parliament in 1821. He then married ...\nP7: William Annesley, 3rd Earl Annesley: William Richard Annesley, 3rd Earl Annesley( 16 July 1772 – 25 August 1838) was an Anglo- Irish noble and British Member of Parliament. Lord Annesley was the eldest son of Richard Annesley, 2nd Earl Annesley and Anne Lambert. He married Lady Isabella St. Lawrence, a daughter of William St. Lawrence, 2nd Earl of Howth on 19 May 1803 and with her had one daughter: Lord Annesley divorced Lady Isabella St. Lawrene by Act of Parliament in 1821. He then married ...\nP8: Francis Annesley, 1st Earl Annesley: Francis Annesley, 1st Earl Annesley( 27 November 1740 – 19 December 1802) was an Anglo- Irish politician and peer. He was the son of William Annesley, 1st Viscount Glerawly and Lady Anne Beresford, the daughter of Marcus Beresford, 1st Earl of Tyrone. He held the office of Member of Parliament for Downpatrick between 1761 and 1770. On 12 September 1770 he succeeded his father as Viscount Glerawly and assumed his seat in the Irish House of Lords. On 17 August ...\nP9: William Annesley, 4th Earl Annesley: William Richard Annesley, 4th Earl Annesley( 21 February 1830 – 10 August 1874), styled Viscount Glerawley until 1838, was an Irish- born British Conservative politician.\nP10: Richard Annesley, 3rd Baron Altham: Richard Annesley, 3rd Baron Altham( 1655 – 19 November 1701), styled The Honourable Richard Annesley between 1681 and 1700, was Dean of Exeter between 1681 and 1701. Richard Annesley was the son of Arthur Annesley, 1st Earl of Anglesey, and his wife Elizabeth. He was educated at Magdalen College, Oxford, graduating M.A. in 1670- 1 and B.D. in 1677( incorporated at Cambridge 1678). He became Prebendary of Westminster in 1679, and Prebendary and then Dean of ...\nQuestion: When did Richard Annesley, 2Nd Earl Annesley's father die?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"2 September 1770\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"The passage P1 states that William Annesley, 1st Viscount Glerawly died on 2 September 1770, which is Richard Annesley, 2nd Earl Annesley's father according to the candidate entity graph.\"}",
+  "verifier": {
+    "final_answer": "2 September 1770",
+    "selected": "C2",
+    "confidence": "high",
+    "reason": "The passage P1 states that William Annesley, 1st Viscount Glerawly died on 2 September 1770, which is Richard Annesley, 2nd Earl Annesley's father according to the candidate entity graph."
+  },
+  "final": "2 September 1770",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-a6b9a1321e5efc88",
+    "object": "chat.completion",
+    "created": 1779535992,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"2 September 1770\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"The passage P1 states that William Annesley, 1st Viscount Glerawly died on 2 September 1770, which is Richard Annesley, 2nd Earl Annesley's father according to the candidate entity graph.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1769,
+      "total_tokens": 1848,
+      "completion_tokens": 79,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.4777328968048096
+}

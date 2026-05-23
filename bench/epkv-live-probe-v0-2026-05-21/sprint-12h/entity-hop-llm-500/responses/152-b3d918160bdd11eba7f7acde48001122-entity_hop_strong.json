@@ -1,0 +1,48 @@
+{
+  "qid": "b3d918160bdd11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Nine Network",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: The Warriors: The Warriors may refer to:\nP2: Chris Warren (rugby league): Chris Warren (born 1 September 1970) is an Australian television presenter/producer and former professional rugby league footballer. He is the son of Australian Sports Commentator Ray Warren, best known as the \"voice\" of Rugby league.\nP3: Chris Warren III: Chris Warren III( born June 6, 1996) is an American football running back who is currently a free agent. He played college football at University of Texas and signed with the Oakland Raiders as an undrafted free agent in 2018.\nP4: Richard Parker (rugby league): Richard Parker is a former professional rugby league footballer who played in the 1960s. He played at club level for Castleford( Heritage №).\nP5: Ray Warren: Raymond \"Rabbits\" Warren OAM (born 11 June 1943) is an Australian sports commentator, known for his coverage of televised professional rugby league matches and to an extent swimming on the Nine Network. On occasions he is referred to as \"The Voice of Rugby League\". Ray also used to call Australian swimming team events and the FINA World Championships until Nine lost the rights to these events in 2008 and in 2012 participated in Nine's coverage of the London Olympics. On Saturday ...\nP6: Glen Fisiiahi: Glen Fisiiahi is a rugby league and rugby union footballer of Tongan and Niue descent. He previously played rugby league professionally for the New Zealand Warriors in the National Rugby League where he played as a and and has represented the Tonga international rugby league team.\nP7: Jaco Booysen: Jaco Booysen is a South African former rugby union and rugby league footballer who played in the 1980s, 1990s and 2000s. He played representative rugby league( RL) for South Africa in rugby league at the 1995 Rugby League World Cup and 2000 Rugby League World Cup.\nP8: Phil Houston: Phil Houston is a former New Zealand rugby league referee. An international referee, Houston has also controlled Auckland Rugby League, New Zealand Rugby League, Australian Rugby League and Super League matches.\nP9: Nathan Hinton: Nathan Hinton was a rugby league footballer for the Newcastle Knights of the National Rugby League. He played in the National Rugby League for two years before being leaving the Knights.\nQuestion: Where does Chris Warren (Rugby League)'s father work at?\nFinal answer:",
+  "output": "Nine Network",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-9c7a46bf078479c0",
+    "object": "chat.completion",
+    "created": 1779535612,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Nine Network",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 620,
+      "total_tokens": 623,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

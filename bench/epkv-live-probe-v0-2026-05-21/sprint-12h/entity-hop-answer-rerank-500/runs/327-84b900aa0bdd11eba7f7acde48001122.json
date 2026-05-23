@@ -1,0 +1,59 @@
+{
+  "idx": 327,
+  "qid": "84b900aa0bdd11eba7f7acde48001122",
+  "gold": "Camas",
+  "candidates": [
+    "Place of origin",
+    "Are You Really Mine",
+    "Place of birth",
+    "The Room",
+    "Dusty Springfield",
+    "Barbra Streisand",
+    "What Are You Doing the Rest of Your Life",
+    "What Are You So Scared Of",
+    "Motherland (disambiguation)",
+    "Julie Holland"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of origin\nC2: Are You Really Mine\nC3: Place of birth\nC4: The Room\nC5: Dusty Springfield\nC6: Barbra Streisand\nC7: What Are You Doing the Rest of Your Life\nC8: What Are You So Scared Of\nC9: Motherland (disambiguation)\nC10: Julie Holland\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- What Are You Doing the Rest of Your Life? -> Dusty Springfield\n- What Are You Doing the Rest of Your Life? -> Barbra Streisand\n- Motherland (disambiguation) -> Place of origin\n- Julie Holland -> Missing\n- Julie Holland -> The Room\nPassages:\nP1: Are You Really Mine?: \"Are You Really Mine?\" is a popular song. It was written by Al Hoffman, Dick Manning, and Hugo Peretti and Luigi Creatore and published in 1958. The best-known recording of the song was done by Jimmie Rodgers, charting at #10 on the U.S. Billboard chart in 1958.\nP2: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP3: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP4: The Room: The Room may refer to:\nP5: Dusty Springfield: Mary Isobel Catherine Bernadette O'Brien (16 April 1939 – 2 March 1999), professionally known as Dusty Springfield, was an English pop singer and record producer whose career extended from the late 1950s to the 1990s. With her distinctive mezzo-soprano sound, she was an important singer of blue-eyed soul and at her peak was one of the most successful British female performers, with six top 20 singles on the US \"Billboard\" Hot 100 and sixteen on the UK Singles Chart from 1963 ...\nP6: Barbra Streisand: Barbara Joan \"Barbra\" Streisand (born April 24, 1942) is an American singer, actress, and filmmaker. In a career spanning six decades, she has achieved success in multiple fields of entertainment and has been recognized with two Academy Awards, ten Grammy Awards including the Grammy Lifetime Achievement Award and the Grammy Legend Award, five Emmy Awards including one Daytime Emmy, a Special Tony Award, an American Film Institute award, a Kennedy Center Honors prize, four ...\nP7: Barbra Streisand: Barbara Joan \"Barbra\" Streisand (born April 24, 1942) is an American singer, actress, and filmmaker. In a career spanning six decades, she has achieved success in multiple fields of entertainment and has been recognized with two Academy Awards, ten Grammy Awards including the Grammy Lifetime Achievement Award and the Grammy Legend Award, five Emmy Awards including one Daytime Emmy, a Special Tony Award, an American Film Institute award, a Kennedy Center Honors prize, four ...\nP8: Missing: Missing or The Missing may refer to:\nP9: What Are You Doing the Rest of Your Life?: \" What Are You Doing the Rest of Your Life?\" is a song with lyrics written by Alan Bergman and Marilyn Bergman and original music written by Michel Legrand for the 1969 film\" The Happy Ending\". The song was nominated for an Academy Award for Best Original Song but lost out to\" Raindrops Keep Fallin' on My Head\". Alan Bergman would recall that after Michel Legrand had written eight melodies which were somehow not viable for the film, Marilyn Bergman ...\nP10: What Are You So Scared Of?: What Are You So Scared Of? is the debut studio album by Australian rock band Tonight Alive, released on 14 October 2011 through Sony Music Australia. The standard CD version of\" What Are You So Scared Of?\" contains 10 pre-gap hidden acoustic takes of the album. \" Let It Land\" EP was released to accompany it; it shares the track\" Let It Land\", and also contains a new song and the three acoustic versions which were unable to fit on the album. Tonight Alive traveled to ...\nQuestion: What is the place of birth of the performer of song Are You Really Mine??\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the place of birth of the performer of the song \"Are You Really Mine\".\"}",
+  "verifier": {},
+  "final": "Place of origin",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-8cd956b110b6758a",
+    "object": "chat.completion",
+    "created": 1779536133,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the place of birth of the performer of the song \"Are You Really Mine\".\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1229,
+      "total_tokens": 1271,
+      "completion_tokens": 42,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.8032996654510498
+}

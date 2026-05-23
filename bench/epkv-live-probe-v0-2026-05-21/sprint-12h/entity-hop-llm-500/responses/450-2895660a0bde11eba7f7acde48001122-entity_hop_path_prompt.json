@@ -1,0 +1,48 @@
+{
+  "qid": "2895660a0bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Khenifra",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Princess Lalla Khadija of Morocco -> Moulay Hassan, Crown Prince of Morocco\n- Princess Lalla Khadija of Morocco -> The Child\n- Lalla Latifa -> Royal Children\n- Lalla Latifa -> Royal Children\n- Princess Lalla Meryem of Morocco -> First Daughter\n- Princess Lalla Meryem of Morocco -> Lalla Latifa\n- Princess Lalla Asma of Morocco -> Lalla Latifa\n- Princess Lalla Asma of Morocco -> The Child\n- Princess Lalla Aicha of Morocco -> Lalla Abla bint Tahar\n- Princess Lalla Hasna of Morocco -> Lalla Latifa\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP3: Moulay Hassan, Crown Prince of Morocco: Prince Moulay Hassan( born 8 May 2003) is the heir apparent to the Moroccan throne. He is the elder child of King Mohammed VI of Morocco and his wife Princess Lalla Salma. He has a younger sister, Princess Lalla Khadija. He is named after his grandfather Hassan II; when he ascends the throne, he is expected to reign as Hassan III. In 2015 Hassan began appearing in public with his father at official engagements.\nP4: Lalla Abla bint Tahar: Princess Lalla Abla bint Tahar (5 September 1909 - 1 March 1992) was the second wife of Mohammed V of Morocco. She was the daughter of \"Moulay\" Mohammed al-Tahar bin Hassan. Her father was a son of Sultan Hassan I of Morocco, and the chauffeur of Thami El Glaoui, Pasha of Marrakesh. She married her first cousin Sultan Mohammed V of Morocco in 1929. Her elder sister Princess Lalla Hania bint Tahar married Sultan Mohammed Ben Aarafa of Morocco. She had five children: Her ...\nP5: The Child: The Child may refer to:\nP6: Royal Children: Royal Children is a 1950 West German comedy film directed by Helmut Käutner and starring Jenny Jugo, Peter van Eyck and Hedwig Wangel. It was shot at the Bavaria Studios in Munich and on location in Bad Wimpfen and at Hornberg Castle. The film's sets were designed by the art director Bruno Monden and Hermann Warm. It was a major commercial failure on release.\nP7: First Daughter: First Daughter may refer to:\" See also First Family and First Family of the United States.\"\nP8: Princess Lalla Meryem of Morocco: Princess Lalla Meryem of Morocco (born 26 August 1962 in Rome, Italy) is the first daughter and eldest child of the late King Hassan II of Morocco and his second wife, Lalla Latifa Hammou. After she obtained her Baccalaureat in 1981, Princess Lalla Meryem was appointed by her father as the President of Social Works of the Royal Army Forces. On 15 September 1984, she married Fuad Filali (born 1957), ex-CEO of ONA Group, and the son of former Prime Minister and ...\nP9: Princess Lalla Khadija of Morocco: Princess Lalla Khadija of Morocco( born 28 February 2007) is the younger child of King Mohammed VI of Morocco and his wife, Princess Lalla Salma. Lalla Khadija's elder brother is Moulay Hassan, Crown Prince of Morocco. In honour of her birth, the king granted a royal pardon to thousands of prison inmates.\nP10: Princess Lalla Asma of Morocco: Princess Lalla Asma of Morocco( born 29 September 1965, Rabat) is the second daughter and third eldest child of Hassan II of Morocco and his second wife, Lalla Latifa Hammou.\nQuestion: What is the place of birth of Princess Lalla Meryem Of Morocco's mother?\nFinal answer:",
+  "output": "Rome, Italy",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-baa4057562cbf6b8",
+    "object": "chat.completion",
+    "created": 1779535873,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Rome, Italy",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1104,
+      "total_tokens": 1109,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

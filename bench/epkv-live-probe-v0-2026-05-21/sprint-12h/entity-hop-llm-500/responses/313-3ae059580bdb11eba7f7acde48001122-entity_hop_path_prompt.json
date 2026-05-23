@@ -1,0 +1,48 @@
+{
+  "qid": "3ae059580bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Albuquerque, New Mexico",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Encino Man -> Pauly Shore\n- Encino Man -> Les Mayfield\n- Motherland (disambiguation) -> Place of origin\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Tarkus (song) -> Keith Emerson\n- Tarkus (song) -> Karn Evil 9\n- The Man with the Magic Box -> Bodo Kox\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Encino Man: Encino Man (known as California Man in Europe and New Zealand) is a 1992 American comedy film directed by Les Mayfield and starring Brendan Fraser, Sean Astin and Pauly Shore. The plot revolves around two geeky teenagers from Encino, Los Angeles, California, played by Astin and Shore, who discover a caveman in Morgan's backyard frozen in a block of ice. The caveman, played by Fraser, has to learn to live in the 20th century. Along the way, he teaches them about life.\nP3: Pauly Shore: Paul Montgomery Shore( born February 1, 1968) is an American actor, comedian and filmmaker best known for his roles in several comedy films in the 1990s. Shore began as a stand up comedian at the age of 17, before becoming an MTV VJ in 1989. This led to a starring role in comedy film\" Encino Man\" in 1992 which was a modest hit. Roles in other films followed, including\" Son in Law\"( 1993) and\" Bio- Dome\"( 1996).\nP4: Bodo Kox: Bodo Kox( born April 22, 1977, Wrocław, Poland, birth name: Bartosz Koszała), is a Polish film director, actor, and screenwriter, known for award- winning feature films\" The Girl from the Wardrobe\"( 2013) and\" The Man with the Magic Box\"( 2017). He officially changed his name to Bodo Kox in 2006.\nP5: Les Mayfield: Les Mayfield (born in Albuquerque, New Mexico) is an American film director and producer.\nP6: Keith Emerson: Keith Noel Emerson (2 November 1944 – 11 March 2016) was an English keyboardist, songwriter, and film composer. He played keyboards in a number of bands before finding his first commercial success with the Nice in the late 1960s. He became internationally famous for his work with the Nice, which included writing rock arrangements of classical music. After leaving the Nice in 1970, he was a founding member of Emerson, Lake & Palmer (ELP), one of the early progressive rock ...\nP7: Karn Evil 9: \" Karn Evil 9\" is an extended work by progressive rock group Emerson, Lake& Palmer, appearing on the album\" Brain Salad Surgery\". A futuristic fusion of rock and classical themes, it is regarded by some to be their best work together with the song\" Tarkus\". At nearly half an hour long, it is also their longest studio recording.\nP8: @Home: @Home or @home may refer to:\nP9: The Man with the Magic Box: The Man with the Magic Box is a science fiction dystopia thriller film directed by Polish film director Bodo Kox. The film is set in 2030 of Orwellian Poland and involves elements of time travel to the times of Communist Poland of 1950s.\nP10: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nQuestion: What is the place of birth of the director of film Encino Man?\nFinal answer:",
+  "output": "Albuquerque, New Mexico",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-a25a23eec173cd43",
+    "object": "chat.completion",
+    "created": 1779535753,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Albuquerque, New Mexico",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1040,
+      "total_tokens": 1046,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

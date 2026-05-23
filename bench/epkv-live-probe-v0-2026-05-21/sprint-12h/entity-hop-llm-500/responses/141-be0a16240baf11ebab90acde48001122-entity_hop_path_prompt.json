@@ -1,0 +1,48 @@
+{
+  "qid": "be0a16240baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Princess Mary of Great Britain",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Prince William of Hesse-Kassel -> Princess Caroline of Nassau-Usingen\n- Prince William of Hesse-Kassel -> Prince Frederick of Hesse-Kassel\n- Christine of Hesse-Kassel (1578–1658) -> William IV, Landgrave of Hesse-Kassel\n- Prince Frederick William of Hesse-Kassel -> Louise\n- Princess Augusta of Hesse-Kassel -> Mary of Teck\n- Princess Augusta of Hesse-Kassel -> The Child\n- Prince Frederick of Hesse-Kassel -> Princess Mary of Great Britain\n- Prince Frederick of Hesse-Kassel -> George II of Great Britain\nPassages:\nP1: Prince William of Hesse-Kassel: Prince William of Hesse-Kassel (24 December 1787 – 5 September 1867), was the first son of Prince Frederick of Hesse-Kassel and Princess Caroline of Nassau-Usingen.\nP2: Prince William of Hesse-Kassel: Prince William of Hesse- Kassel( 24 December 1787 – 5 September 1867), was the first son of Prince Frederick of Hesse- Kassel and Princess Caroline of Nassau- Usingen.\nP3: Prince Frederick of Hesse-Kassel: Prince Frederick of Hesse- Kassel( 11 September 1747 – 20 May 1837) was a younger member of the dynasty that ruled the Landgraviate of Hesse- Kassel( or Hesse- Cassel) and a Danish general. He was born as the youngest son of Hereditary Prince Frederick of Hesse- Kassel( the future Landgrave Frederick II) and Princess Mary of Great Britain. He was the last surviving grandchild of George II of Great Britain, dying one month before Queen Victoria( granddaughter of ...\nP4: George II of Great Britain: George II (George Augustus; ; 30 October / 9 November 1683 – 25 October 1760) was King of Great Britain and Ireland, Duke of Brunswick-Lüneburg (Hanover) and a prince-elector of the Holy Roman Empire from 11 June 1727 (O.S.) until his death in 1760. George is the most recent British monarch born outside Great Britain: he was born and brought up in northern Germany. The Act of Settlement 1701 and the Acts of Union 1707 positioned his grandmother, Sophia of Hanover, ...\nP5: Princess Caroline of Nassau-Usingen: Princess Caroline of Nassau- Usingen( 4 April 176217 August 1823) was the elder daughter of Karl Wilhelm, Prince of Nassau- Usingen, and wife of Landgrave Frederick of Hesse- Kassel.\nP6: Mary of Teck: Mary of Teck (Victoria Mary Augusta Louise Olga Pauline Claudine Agnes; 26 May 1867 – 24 March 1953) was Queen consort of the United Kingdom and the British Dominions and Empress consort of India as the wife of King George V. Although technically a princess of Teck, in the Kingdom of Württemberg, she was born and raised in the United Kingdom. Her parents were Francis, Duke of Teck, who was of German extraction, and Princess Mary Adelaide of Cambridge, who was a granddaughter of ...\nP7: Princess Mary of Great Britain: Princess Mary of Great Britain (5 March 1723 – 14 January 1772) was the second-youngest daughter of King George II of Great Britain and his wife, Caroline of Ansbach, and Landgravine of Hesse-Kassel as the wife of Frederick II, Landgrave of Hesse-Kassel.\nP8: The Child: The Child may refer to:\nP9: Louise: Louise or Luise may refer to:\nP10: Prince Frederick William of Hesse-Kassel: Frederick William George Adolphus, Landgrave of Hesse( 25 November 1820 – 14 October 1884) was the only son of Wilhelm I, Landgrave of Hesse- Kassel- Rumpenheim and Princess Louise Charlotte of Denmark.\nQuestion: Who is the paternal grandmother of Prince William Of Hesse-Kassel?\nFinal answer:",
+  "output": "Princess Mary of Great Britain",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-863c4c3594ce2e1b",
+    "object": "chat.completion",
+    "created": 1779535602,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Princess Mary of Great Britain",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1006,
+      "total_tokens": 1013,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -764,9 +764,55 @@ Gated rerank v1:              EM 0.230 | contains 0.327 | F1 0.340 | wins 3 | lo
 Gated rerank v1:              EM 0.270 | contains 0.360 | F1 0.345 | wins 2 | losses 0
 ```
 
+## Machine-only Reality Check 500
+
+Completed N=500 scale-up:
+
+```txt
+MACHINE-ONLY-REALITY-500.md
+machine-reality-500/
+entity-hop-llm-500/
+entity-hop-answer-rerank-500/
+entity-hop-answer-rerank-gated-v1-500/
+```
+
+Retrieval diagnostics:
+
+```txt
+support_title_recall:      0.727
+full_support_recall:       0.454
+answer_string_present:     0.786
+```
+
+Results:
+
+```txt
+BM25→BGE ref:                 EM 0.018 | contains 0.032 | F1 0.037
+Entity-hop strong:            EM 0.172 | contains 0.288 | F1 0.285
+Entity-hop path prompt:       EM 0.216 | contains 0.306 | F1 0.324
+Raw answer rerank:            EM 0.212 | contains 0.308 | F1 0.322
+Gated rerank v1:              EM 0.216 | contains 0.304 | F1 0.323
+```
+
+Paired gated v1 vs path:
+
+```txt
+wins 2 | losses 2 | ties 496 | p=1.0
+EM delta 0.000, 95% CI [-0.008, 0.008]
+F1 delta -0.000, 95% CI [-0.007, 0.007]
+```
+
+Conclusion:
+
+```txt
+N=500 does not support a quality-delta claim for answer rerank / gated rerank over direct entity-hop path prompting.
+The scaled result is effectively: entity-hop path prompt == gated rerank v1.
+Freeze hand-written verifier gates.
+```
+
 Current next target:
 
 ```txt
-learn/select override policy from features rather than hand-write more rules;
-validate on held-out slices before any stronger public receipt.
+Improve retrieval/path construction or build a held-out learned override selector;
+do not publish RS3 as a positive result.
 ```

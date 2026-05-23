@@ -1,0 +1,48 @@
+{
+  "qid": "799ec8c80bdb11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Buenos Aires",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Bewitching Kisses: Bewitching Kisses  is a 1937 Argentine romantic drama film musical directed and written by José A. Ferreyra, based on a story by Enrique García Velloso. Starring Libertad Lamarque and Floren Delbene. The film tells the story of a singer estranged from her fiancé and abducted by an admirer to a backwoods hovel.\nP2: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP3: The Admirer: The Admirer  is a 1999 Russian thriller film directed by Nikolai Lebedev.\nP4: José A. Ferreyra: José A(gustín) Ferreyra (28 August 1889 – 29 January 1943), popularly known as \"Negro Ferreyra\" (Black Ferreyra, due to his mulato ethnicity), was an early Argentine film director, screenwriter and film producer. He was also sometimes credited as production designer. Ferreyra was born in Vicente López, Gran Buenos Aires. He began simultaneously directing and screenwriting for film in 1915, and moved on to success directing films such as \"Palomas rubias\" in 1920. His films ...\nP5: José A. Ferreyra: José A( gustín) Ferreyra( 28 August 1889 – 29 January 1943), popularly known as\" Negro Ferreyra\"( Black Ferreyra, due to his mulato ethnicity), was an early Argentine film director, screenwriter and film producer. He was also sometimes credited as production designer. Ferreyra was born in Vicente López, Gran Buenos Aires. He began simultaneously directing and screenwriting for film in 1915, and moved on to success directing films such as\" Palomas rubias\" in 1920. His films ...\nP6: Curtis Bernhardt: Curtis Bernhardt( 15 April 1899 – 22 February 1981) was a German film director born in Worms, Germany, under the name Kurt Bernhardt. He trained as an actor in Germany, and performed on the stage, before starting as a film director in 1924, with\" Nameless Heroes\". Other films include\" A Stolen Life\"( 1946) and\" Sirocco\"( 1951). Bernhardt made films in Germany from 1925 until 1933, when he was forced to flee the Nazi regime — who briefly had him arrested — because he was ...\nP7: Curtis Bernhardt: Curtis Bernhardt (15 April 1899 – 22 February 1981) was a German film director born in Worms, Germany, under the name Kurt Bernhardt. He trained as an actor in Germany, and performed on the stage, before starting as a film director in 1924, with \"Nameless Heroes\". Other films include \"A Stolen Life\" (1946) and \"Sirocco\" (1951). Bernhardt made films in Germany from 1925 until 1933, when he was forced to flee the Nazi regime — who briefly had him arrested — because he was ...\nP8: Víctor Erice: Víctor Erice Aras( born 30 June 1940) is a Spanish film director. He is best known for his two feature fiction films,\" The Spirit of the Beehive\"( 1973), which many regard as one of the greatest Spanish films ever made, and\" El Sur\"( 1983).\nP9: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP10: Barbara Hammer: Barbara Jean Hammer( May 15, 1939 – March 16, 2019) was an American feminist filmmaker known for being one of the pioneers of lesbian film whose career spanned over 50 years. Hammer is known for having created experimental films dealing with women's issues such as gender roles, lesbian relationships and coping with aging and family. She resided in New York City and Kerhonkson, New York, and taught each summer at the European Graduate School.\nQuestion: Where was the director of film Bewitching Kisses born?\nFinal answer:",
+  "output": "Vicente López, Gran Buenos Aires",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.5714285714285715
+  },
+  "response": {
+    "id": "chatcmpl-a9ed29a07d106b77",
+    "object": "chat.completion",
+    "created": 1779535893,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Vicente López, Gran Buenos Aires",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1135,
+      "total_tokens": 1144,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

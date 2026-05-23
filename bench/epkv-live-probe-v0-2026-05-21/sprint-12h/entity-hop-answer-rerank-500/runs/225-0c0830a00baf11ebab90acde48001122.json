@@ -1,0 +1,66 @@
+{
+  "idx": 225,
+  "qid": "0c0830a00baf11ebab90acde48001122",
+  "gold": "Elizabeth the Cuman",
+  "candidates": [
+    "Irene of Montferrat",
+    "Maria Laskarina",
+    "Michael VIII Palaiologos",
+    "Stephen V of Hungary",
+    "Constantine Angelos",
+    "The Descendants",
+    "The Wanted",
+    "The General",
+    "Constantine Palaiologos (son of Andronikos II)",
+    "John Palaiologos (son of Andronikos II)",
+    "Constantine Palaiologos (son of Michael VIII)",
+    "Constantine Palaiologos (half-brother of Michael VIII)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Irene of Montferrat\nC2: Maria Laskarina\nC3: Michael VIII Palaiologos\nC4: Stephen V of Hungary\nC5: Constantine Angelos\nC6: The Descendants\nC7: The Wanted\nC8: The General\nC9: Constantine Palaiologos (son of Andronikos II)\nC10: John Palaiologos (son of Andronikos II)\nC11: Constantine Palaiologos (son of Michael VIII)\nC12: Constantine Palaiologos (half-brother of Michael VIII)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Constantine Palaiologos (son of Andronikos II) -> Michael VIII Palaiologos\n- Constantine Palaiologos (son of Andronikos II) -> Irene of Montferrat\n- Constantine Palaiologos (son of Michael VIII) -> The General\n- Irene of Montferrat -> The Descendants\n- John Palaiologos (son of Andronikos II) -> Irene of Montferrat\n- John Palaiologos (son of Andronikos II) -> The Wanted\n- Constantine Palaiologos (half-brother of Michael VIII) -> Michael VIII Palaiologos\n- Anna of Hungary (Byzantine empress) -> Stephen V of Hungary\n- Isaac II Angelos -> Constantine Angelos\nPassages:\nP1: Michael VIII Palaiologos: Michael VIII Palaiologos or Palaeologus (1223 – 11 December 1282) reigned as the co-emperor of the Empire of Nicaea from 1259 to 1261, and as Byzantine Emperor from 1261 until his death. Michael VIII was the founder of the Palaiologan dynasty that would rule the Byzantine Empire until the Fall of Constantinople in 1453. He recovered Constantinople from the Latin Empire in 1261 and transformed the Empire of Nicaea into a restored Byzantine Empire. His reign would see ...\nP2: Stephen V of Hungary: Stephen V (before 18 October 1239 – 6 August 1272, Csepel Island) was King of Hungary and Croatia between 1270 and 1272, and Duke of Styria from 1258 to 1260. He was the oldest son of King Béla IV and Maria Laskarina. King Béla had his son crowned king at the age of six and appointed him Duke of Slavonia. Still a child, Stephen married Elizabeth, a daughter of a chieftain of the Cumans whom his father settled in the Great Hungarian Plain. King Béla appointed Stephen Duke ...\nP3: Constantine Angelos: Constantine Angelos (– after 1166) was a Byzantine aristocrat who married into the Komnenian dynasty and served as a military commander under Manuel I Komnenos, serving in the western and northern Balkans and as an admiral against the Normans. He was the founder of the Angelos dynasty, which went on to rule the Byzantine Empire in 1185–1204 and found and rule the Despotate of Epirus (1205–1318) and the Empire of Thessalonica (1224–1242/46).\nP4: The Descendants: The Descendants is a 2011 American comedy- drama film directed by Alexander Payne. The screenplay by Payne, Nat Faxon and Jim Rash is based on the 2007 novel of the same name by Kaui Hart Hemmings. The film stars George Clooney, Shailene Woodley, Amara Miller, Beau Bridges, Judy Greer, Matthew Lillard, and Robert Forster, and was released by Fox Searchlight Pictures in the United States on November 18, 2011 after being screened at the 2011 Toronto International Film Festival. ...\nP5: The Wanted: The Wanted are a British- Irish boy band consisting of members Max George, Siva Kaneswaran, Jay McGuiness, Tom Parker and Nathan Sykes. They formed in 2009 and were signed worldwide to Universal Music subsidiaries Island Records and Mercury Records, and managed by Scooter Braun. The band's debut album,\" The Wanted\", was released on 25 October 2010 and peaked at number four on the UK Albums Chart. The album spawned three UK top 20 singles: their debut single,\" All Time Low\", which ...\nP6: The General: The General or The Generals may refer to:\nP7: Constantine Palaiologos (son of Andronikos II): Constantine Doukas Komnenos Palaiologos (1278/81–1334/35) was a Byzantine prince of the Palaiologos dynasty, who received the supreme title of Despot and served as provincial governor. Constantine was the second son of Emperor Andronikos II Palaiologos (r. 1282–1328) and his first wife, Empress Anna of Hungary. He was born sometime between 1278 and 1281. As his father was already a reigning co-emperor alongside Michael VIII Palaiologos, he was ...\nP8: John Palaiologos (son of Andronikos II): John Palaiologos (1286–1307) was a son of the Byzantine Emperor Andronikos II Palaiologos (reigned 1282–1328) and his second wife, Irene of Montferrat. He received the supreme courtly dignity of Despot on 22 May 1295, and married Irene Palaiologina Choumnaina, the daughter of Nikephoros Choumnos, in 1303. The pair did not have any children. From 1304, he served as governor of Thessalonica, where he made donations of property to the Hodegetria Monastery. ...\nP9: Constantine Palaiologos (son of Michael VIII): Constantine Palaiologos or Palaeologus( 1261 – 5 May 1306) was a Byzantine prince of the Palaiologos dynasty, who also served as a general in the wars against the Serbs and Turks.\nP10: Constantine Palaiologos (half-brother of Michael VIII): Constantine Palaiologos or Palaeologus( died 1271) was a Byzantine nobleman and the younger half- brother of the Byzantine Emperor Michael VIII Palaiologos.\nQuestion: Who is Constantine Palaiologos (Son Of Andronikos Ii)'s maternal grandmother?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Maria Laskarina\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide information about the maternal grandmother of Constantine Palaiologos (son of Andronikos II).\"}",
+  "verifier": {
+    "final_answer": "Maria Laskarina",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence does not provide information about the maternal grandmother of Constantine Palaiologos (son of Andronikos II)."
+  },
+  "final": "Maria Laskarina",
+  "selected": "UNKNOWN",
+  "response": {
+    "id": "chatcmpl-b50fcb3fa3e3890e",
+    "object": "chat.completion",
+    "created": 1779536075,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Maria Laskarina\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide information about the maternal grandmother of Constantine Palaiologos (son of Andronikos II).\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1669,
+      "total_tokens": 1717,
+      "completion_tokens": 48,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.9448845386505127
+}

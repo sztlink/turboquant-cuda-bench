@@ -1,0 +1,66 @@
+{
+  "idx": 259,
+  "qid": "c77037480baf11ebab90acde48001122",
+  "gold": "Archibald Acheson, 2nd Earl of Gosford",
+  "candidates": [
+    "Archibald Acheson, 2nd Earl of Gosford",
+    "Anthony Brabazon",
+    "John Brabazon, 10th Earl of Meath",
+    "House of Lords",
+    "Lucretia",
+    "A. Vincent",
+    "The General",
+    "Master",
+    "Archibald Acheson, 4th Earl of Gosford",
+    "Archibald Acheson, 3rd Earl of Gosford",
+    "Archibald Primrose, 4th Earl of Rosebery",
+    "Archibald Douglas, 6th Earl of Angus"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Archibald Acheson, 2nd Earl of Gosford\nC2: Anthony Brabazon\nC3: John Brabazon, 10th Earl of Meath\nC4: House of Lords\nC5: Lucretia\nC6: A. Vincent\nC7: The General\nC8: Master\nC9: Archibald Acheson, 4th Earl of Gosford\nC10: Archibald Acheson, 3rd Earl of Gosford\nC11: Archibald Primrose, 4th Earl of Rosebery\nC12: Archibald Douglas, 6th Earl of Angus\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Archibald Acheson, 2nd Earl of Gosford -> The General\n- Archibald Acheson, 4th Earl of Gosford -> Archibald Acheson, 3rd Earl of Gosford\n- Archibald Acheson, 4th Earl of Gosford -> House of Lords\n- Archibald Acheson, 3rd Earl of Gosford -> Archibald Acheson, 2nd Earl of Gosford\n- Archibald Acheson, 3rd Earl of Gosford -> John Brabazon, 10th Earl of Meath\n- Archibald Douglas, 6th Earl of Angus -> Master\n- Archibald Primrose, 4th Earl of Rosebery -> A. Vincent\n- Archibald Montgomerie, 16th Earl of Eglinton -> House of Lords\n- Archibald Montgomerie, 16th Earl of Eglinton -> Lucretia\nPassages:\nP1: John Brabazon, 10th Earl of Meath: John Chambre Brabazon, 10th Earl of Meath KP PC (I) (9 April 1772 – 15 March 1851) was an Anglo-Irish peer. He was the third son of Anthony Brabazon, 8th Earl of Meath and Grace Leigh. He became Earl of Meath in 1797 after the death of his brother William Brabazon, 9th Earl of Meath, who was killed in a duel with a Mr. Gore. He became Custos Rotulorum of County Wicklow from 1797 to 1851 and, from 1831 to 1851, Lord Lieutenant of County Dublin. On 10 September ...\nP2: House of Lords: The House of Lords, also known as the House of Peers and domestically usually referred to simply as the Lords, is the upper house of the Parliament of the United Kingdom. Membership is granted by appointment or else by heredity or official function. Like the House of Commons, it meets in the Palace of Westminster. Officially, the full name of the house is the Right Honourable the Lords Spiritual and Temporal of the United Kingdom of Great Britain and Northern Ireland in ...\nP3: Lucretia: According to Roman tradition, Lucretia (died), anglicized as Lucrece, was a noblewoman in ancient Rome whose rape by Sextus Tarquinius (Tarquin), an Etruscan king's son, was the cause of a rebellion that overthrew the Roman monarchy and led to the transition of Roman government from a kingdom to a republic. There are no contemporary sources; information regarding Lucretia, her rape and suicide, and the consequence of this being the start of the Roman Republic, come from the later ...\nP4: A. Vincent: Aloysius Vincent( 14 June 1928 – 25 February 2015) was an Indian cinematographer and director known for his works in Malayalam, Tamil, Telugu and Hindi language films. From the mid-1960s on, he directed some 30 movies including the landmark Malayalam films\" Bhargavi Nilayam\", and\" Murappennu\". He received the Filmfare Best Cinematographer Award for\" Prem Nagar\"( 1974) starring Rajesh Khanna. In 2003, the Indian Society of Cinematographers( ISC) awarded him an Honorary Membership, ...\nP5: The General: The General or The Generals may refer to:\nP6: Master: Master or masters may refer to:\nP7: Archibald Acheson, 4th Earl of Gosford: Archibald Brabazon Sparrow Acheson, 4th Earl of Gosford, (2 August 1841 – 11 April 1922) was a British peer. The son of Archibald Acheson, 3rd Earl of Gosford, he was born at Worlingham Hall, Suffolk, in 1841, and succeeded to the earldom upon the death of his father in 1864. Since there are two United Kingdom peerages (e.g. Baron Worlingham) subsumed in that Irish Earldom, he was entitled to an automatic seat in the House of Lords. He was Lord Lieutenant ...\nP8: Archibald Acheson, 2nd Earl of Gosford: Archibald Acheson, 2nd Earl of Gosford,( 1 August 1776 – 27 March 1849), styled The Honourable Archibald Acheson from 1790 to 1806 and Lord Acheson from 1806 to 1807, was a British politician who served as Lieutenant- Governor of Lower Canada and Governor General of British North America in the 19th century.\nP9: Archibald Acheson, 3rd Earl of Gosford: Archibald Acheson, 3rd Earl of Gosford KP (20 August 1806 – 15 June 1864), styled Viscount Acheson between 1807 and 1849, was a British peer and Member of Parliament. He was the only son of Archibald Acheson, 2nd Earl of Gosford of Gosford Castle, County Armagh and educated at Harrow School and Christ Church, Oxford. He succeeded to his father's Irish titles and estates in 1849. He was elected in 1830 as the Member of Parliament for County Armagh in the ...\nP10: Archibald Primrose, 4th Earl of Rosebery: Archibald John Primrose, 4th Earl of Rosebery, KT, PC, FRS( 14 October 1783 – 4 March 1868), styled Viscount Primrose until 1814, was a British politician. He was the eldest son of Neil Primrose, 3rd Earl of Rosebery, and his second wife, Mary Vincent. Primrose was educated at Pembroke College, Cambridge, gaining his MA in 1804. He was Member of Parliament for Helston from 1805 to 1806 and Cashel from 1806 to 1807. He succeeded to the earldom in 1814, ...\nQuestion: Who is Archibald Acheson, 4Th Earl Of Gosford's paternal grandfather?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided evidence does not contain information about Archibald Acheson, 4th Earl of Gosford's paternal grandfather.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The provided evidence does not contain information about Archibald Acheson, 4th Earl of Gosford's paternal grandfather."
+  },
+  "final": "Archibald Acheson, 2nd Earl of Gosford",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-bb190b5b5cc8ab46",
+    "object": "chat.completion",
+    "created": 1779536086,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided evidence does not contain information about Archibald Acheson, 4th Earl of Gosford's paternal grandfather.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1752,
+      "total_tokens": 1796,
+      "completion_tokens": 44,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.8843283653259277
+}

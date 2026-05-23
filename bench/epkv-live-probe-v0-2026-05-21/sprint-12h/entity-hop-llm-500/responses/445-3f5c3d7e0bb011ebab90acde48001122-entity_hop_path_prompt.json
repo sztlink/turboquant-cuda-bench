@@ -1,0 +1,48 @@
+{
+  "qid": "3f5c3d7e0bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Henry VIII the Sparrow",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Wenceslaus of Żagań -> Jan I of Żagań\n- Wenceslaus of Żagań -> Jan I of Żagań\n- Balthasar of Żagań -> Balthasar, Landgrave of Thuringia\n- Balthasar of Żagań -> Jan I of Żagań\n- Henry VI the Older -> Wenceslaus of Płock\n- Henry VI the Older -> Henry V of Iron\n- Rudolf of Żagań -> Jan I of Żagań\n- Rudolf of Żagań -> Jan I of Żagań\n- Henry VIII the Sparrow -> Wenceslaus of Płock\n- Henry VIII the Sparrow -> Henry V of Iron\n- Henry VIII the Sparrow -> Wenceslaus of Płock\n- Henry VIII the Sparrow -> Henry V of Iron\nPassages:\nP1: Jan I of Żagań: Jan I of Żagań  (– 12 April 1439) was a Duke of Żagań-Głogów, since 1397 (until 1412 with his brothers as co-rulers), since 1403 Duke of Żagań, Krosno Odrzańskie and Świebodzin (again, until 1412 with his brothers as co-rulers) and since 1412 sole ruler of Żagań and Przewóz. He was the eldest son of Henry VIII the Sparrow, Duke of Głogów by his wife Katharina, daughter of Duke Władysław of Opole.\nP2: Wenceslaus of Płock: Wenceslaus( Wańko) of Płock( Masovian dialect:\" Wańko Puocky\"; 1293/97 – 23 May 1336), was a Polish prince member of the House of Piast, Duke of Płock since 1313 and vassal of Bohemia from 1329. He was the third son of Bolesław II of Płock but the only born from his second marriage with Kunigunde, daughter of King Ottakar II of Bohemia. He was probably named after his maternal uncle, King Wenceslaus II of Bohemia.\nP3: Henry V of Iron: Henry V( III) of Iron( – after 8 April 1369), was a Duke of Żagań since 1342, from 1349 Duke of half- Głogów, and from 1363 Duke of half- Ścinawa. He was the only son of Henry IV( II) the Faithful, Duke of Żagań, by his wife Matilda, daughter of Herman, Margrave of Brandenburg- Salzwedel.\nP4: Balthasar, Landgrave of Thuringia: Landgrave Balthasar of Thuringia( 21 December 1336 in Weißenfels – 18 May 1406 at the Wartburg in Eisenach) was Margrave of Meissen and Landgrave of Thuringia from the House of Wettin.\nP5: Wenceslaus of Żagań: Wenceslaus of Żagań  (ca. 1434 – 29 April 1488) was a Duke of Żagań-Przewóz since 1439 (with his brothers as co-rulers until 1449), from 1449 Duke of Przewóz (as co-ruler of his younger brother). He was the third son of Duke Jan I of Żagań by his wife Scholastika, daughter of Rudolf III, Duke of Saxe-Wittemberg and Elector of Saxony. His uncle, Joe II of Żagań, was his guiding mentor through childhood.\nP6: Wenceslaus of Żagań: Wenceslaus of Żagań( ca. 1434 – 29 April 1488) was a Duke of Żagań- Przewóz since 1439( with his brothers as co-rulers until 1449), from 1449 Duke of Przewóz( as co-ruler of his younger brother). He was the third son of Duke Jan I of Żagań by his wife Scholastika, daughter of Rudolf III, Duke of Saxe- Wittemberg and Elector of Saxony. His uncle, Joe II of Żagań, was his guiding mentor through childhood.\nP7: Balthasar of Żagań: Balthasar, Duke of Żagań( – Przewóz, 15 July 1472), was a Duke of Żagań- Przewóz since 1439( with his brothers as co-rulers until 1449), from 1449 Duke of Żagań. Deposed during 1461 – 1468, he recovered the Duchy in this year until shortly before his death. He was the oldest son of Duke Jan I of Żagań by his wife Scholastika, daughter of Rudolf III, Duke of Saxe- Wittemberg and Elector of Saxony. He was named after his maternal great- grandfather, Balthasar, Landgrave of ...\nP8: Rudolf of Żagań: Rudolf of Żagań( ca. 1418 – 18 September 1454) was a Duke of Żagań- Przewóz since 1439( with his brothers as co-rulers until 1449), from 1449 Duke of Żagań( as co-ruler of his older brother). He was the second son of Duke Jan I of Żagań by his wife Scholastika, daughter of Rudolf III, Duke of Saxe- Wittemberg and Elector of Saxony. He was named after his maternal grandfather.\nP9: Rudolf of Żagań: Rudolf of Żagań  (ca. 1418 – 18 September 1454) was a Duke of Żagań-Przewóz since 1439 (with his brothers as co-rulers until 1449), from 1449 Duke of Żagań (as co-ruler of his older brother). He was the second son of Duke Jan I of Żagań by his wife Scholastika, daughter of Rudolf III, Duke of Saxe-Wittemberg and Elector of Saxony. He was named after his maternal grandfather.\nP10: Henry VIII the Sparrow: Henry VIII (VI) the Sparrow (– 14 March 1397) was a Duke of Żagań–Głogów during 1368–1378 (as a co-ruler with his brothers), from 1378 ruler over Zielona Góra, Szprotawa, Kożuchów, Przemków and Sulechów, and since 1395 ruler over half of Głogów, Ścinawa and Bytom Odrzański. He was the second son of Henry V of Iron, Duke of Żagań–Głogów, by his wife Anna, daughter of Duke Wenceslaus of Płock. The origin of his nickname \"SparrowWróbel\") is unknown.\nQuestion: Who is Wenceslaus Of Żagań's paternal grandfather?\nFinal answer:",
+  "output": "Henry VI the Older",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.3333333333333333
+  },
+  "response": {
+    "id": "chatcmpl-baaaea1db016b54f",
+    "object": "chat.completion",
+    "created": 1779535868,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Henry VI the Older",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1705,
+      "total_tokens": 1710,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

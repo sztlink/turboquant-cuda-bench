@@ -1,0 +1,48 @@
+{
+  "qid": "8b884d040bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "San Ferdinando di Puglia",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Mister Scarface -> Fernando Di Leo\n- Mister Scarface -> Fernando Di Leo\n- The Inevitable Defeat of Mister & Pete -> Story\n- The Thirteenth Guest -> Mystery of the 13th Guest\n- The Thirteenth Guest -> Comedy!\n- Arthur Lubin -> Clint Eastwood\n- Michael Tuchner -> Mister Quilp\n- Michael Tuchner -> A Secret\n- Mister Quilp -> Michael Tuchner\n- Mister Quilp -> David Hemmings\nPassages:\nP1: Mister Scarface: Mister Scarface( originally l Padroni della città, also known as Rulers of the City) is a 1976 Italian\" poliziottesco\" film directed by Fernando Di Leo and starring Jack Palance.\nP2: Mister Scarface: Mister Scarface (originally l Padroni della città, also known as Rulers of the City) is a 1976 Italian \"poliziottesco\" film directed by Fernando Di Leo and starring Jack Palance.\nP3: Mystery of the 13th Guest: The Mystery of the 13th Guest is a 1943 American crime/ mystery film directed by William Beaudine. It is based on Armitage Trail's 1929 novel\" The 13th Guest\" and is an updated version of the 1932 film\" The Thirteenth Guest\". The film stars Helen Parrish as a young woman who returns to her grandfather's house 13 years after his passing to read his will as per his wishes.\nP4: Clint Eastwood: Clinton Eastwood Jr.( born May 31, 1930) is an American actor, filmmaker, musician, and politician. After achieving success in the Western TV series\" Rawhide\", he rose to international fame with his role as the Man with No Name in Italian filmmaker Sergio Leone's\" Dollars\" Trilogy of spaghetti Westerns during the 1960s and as antihero cop Harry Callahan in the five\" Dirty Harry\" films throughout the 1970s and 1980s. These roles, among others, have made Eastwood an enduring ...\nP5: Fernando Di Leo: Fernando Di Leo( 11 January 1932 – 2 December 2003) was an Italian film director and script writer born in San Ferdinando di Puglia, Italy. During his career from 1964 to 1985, Di Leo directed 20 films and was involved in the writing process in 43. His films influenced many popular contemporary directors, such as Quentin Tarantino and John Woo. Di Leo started his career mostly writing scripts for spaghetti westerns. He worked on the script for\" Per un pugno di dollariA Fistful ...\nP6: Fernando Di Leo: Fernando Di Leo (11 January 1932 – 2 December 2003) was an Italian film director and script writer born in San Ferdinando di Puglia, Italy. During his career from 1964 to 1985, Di Leo directed 20 films and was involved in the writing process in 43. His films influenced many popular contemporary directors, such as Quentin Tarantino and John Woo. Di Leo started his career mostly writing scripts for spaghetti westerns. He worked on the script for \"Per un pugno di dollariA Fistful ...\nP7: David Hemmings: David Edward Leslie Hemmings (18 November 1941 – 3 December 2003) was an English actor, director, and producer of film, television, and theatre. He co-founded the Hemdale Film Corporation in 1967. Considered an icon of the \"Groovy London\" pop cultural movement, Hemmings is best remembered for his roles in British films and television programmes of the 1960s and 70s, particularly the 1966 mystery film \"Blowup\", directed by Michelangelo Antonioni. Early in his career, Hemmings was ...\nP8: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP9: A Secret: A Secret is a 2007 French film directed and written by Claude Miller. The screenplay was based on the novel by Philippe Grimbert.\nP10: Story: Story or stories, may refer to:\nQuestion: Where was the director of film Mister Scarface born?\nFinal answer:",
+  "output": "San Ferdinando di Puglia, Italy",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.888888888888889
+  },
+  "response": {
+    "id": "chatcmpl-a234dff3c7b44fbf",
+    "object": "chat.completion",
+    "created": 1779535759,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "San Ferdinando di Puglia, Italy",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1066,
+      "total_tokens": 1077,
+      "completion_tokens": 11,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

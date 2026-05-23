@@ -1,0 +1,48 @@
+{
+  "qid": "37f8b9d20bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "November 7, 1916",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Hot Time in the Town of Berlin -> Bing Crosby\n- Hot Time in the Town of Berlin -> Joe Bushkin\n- Waterloo North -> Part\n- Cengaver Katrancı -> The Accident\n- This Time (Waylon Jennings song) -> Waylon Jennings\n- You Are the Song (Inside of Me) -> First Time\n- One More Time (Daft Punk song) -> One More Time\n- One More Time (Daft Punk song) -> First Time\nPassages:\nP1: Hot Time in the Town of Berlin: \"(There'll Be a) Hot Time in the Town of Berlin (When the Yanks Go Marching In)\" is a 1943 song with music and lyrics by Joe Bushkin and John DeVries, published by Barton Music Corp. The song was originally recorded by Bing Crosby and the Andrews Sisters on June 30, 1944 and reached number one on the top 100 U.S. songs of 1944. The song was introduced on Frank Sinatra's CBS radio show and became popular due to its patriotic lyrics, swinging rhythm, and its ...\nP2: First Time: First Time or The First Time may refer to:\nP3: The Accident: The Accident may refer to:\nP4: One More Time: One More Time may refer to:\nP5: Joe Bushkin: Joe Bushkin (November 7, 1916 – November 3, 2004) was an American jazz pianist. Born in New York City, Bushkin began his career by playing trumpet and piano with New York City dance bands, including Frank LaMare's Band at the Roseland Ballroom in Brooklyn. He joined Bunny Berigan's band in 1935, played with Eddie Condon from 1936–37, and with Max Kaminsky and Joe Marsala, before rejoining Berigan in 1938. He then left to join Muggsy Spanier's Ragtime Band in 1939. From the late ...\nP6: Waylon Jennings: Waylon Arnold Jennings (June 15, 1937 – February 13, 2002) was an American singer, songwriter, and musician. Jennings began playing guitar at age eight and began performing at age twelve on KVOW radio, after which he formed his first band, The Texas Longhorns. Jennings left high school at age sixteen, determined to become a musician, and bounced around as a performer and DJ on KVOW, KDAV, KYTI, KLLL, in Coolidge, Arizona, and Phoenix. In 1958, Buddy Holly arranged Jennings's ...\nP7: Bing Crosby: Harold Lillis \"Bing\" Crosby Jr. (May 3, 1903 – October 14, 1977) was an American singer, comedian and actor. The first multimedia star, Crosby was a leader in record sales, radio ratings, and motion picture grosses from 1931 to 1954. His early career coincided with recording innovations that allowed him to develop an intimate singing style that influenced many male singers who followed him, including Perry Como, Frank Sinatra, Dick Haymes, and Dean Martin. \"Yank\" magazine said that ...\nP8: Part: Part, parts or PART may refer to:\nP9: There'll Be a Hot Time in the Old Town Tonight: \" A Hot Time in the Old Town\", also titled as\" There ’ll Be a Hot Time in the Old Town Tonight\", is an American popular song, copyrighted and perhaps composed in 1896 by Theodore August Metz with lyrics by Joe Hayden. Metz was the band leader of the McIntyre and Heath Minstrels.\nP10: You Are the Song (Inside of Me): \" You Are the Song( Inside of Me)\" is a single by American country music artist Freddie Hart. Released in January 1976, it was the third single from his album\" The First Time\". The song peaked at number 11 on the\" Billboard\" Hot Country Singles chart. It also reached number 1 on the\" RPM\" Country Tracks chart in Canada.\nQuestion: When was the composer of song Hot Time In The Town Of Berlin born?\nFinal answer:",
+  "output": "November 7, 1916",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-904c6df8409e9c24",
+    "object": "chat.completion",
+    "created": 1779535845,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "November 7, 1916",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 983,
+      "total_tokens": 993,
+      "completion_tokens": 10,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

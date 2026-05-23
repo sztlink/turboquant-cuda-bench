@@ -1,0 +1,48 @@
+{
+  "qid": "bbaa84b60bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Hanover",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Princess Amelia of Great Britain -> George II of Great Britain\n- Princess Mary of Great Britain -> George II of Great Britain\n- Princess Caroline of Great Britain -> George II of Great Britain\n- Princess Caroline of Great Britain -> The Child\n- Duke Alexander of Württemberg (1804–1885) -> George II of Great Britain\n- Duke Alexander of Württemberg (1804–1885) -> Francis, Duke of Teck\n- Duke Alexander of Württemberg (1804–1885) -> George II of Great Britain\n- Duke Alexander of Württemberg (1804–1885) -> Francis, Duke of Teck\n- Princess Louise of Denmark (1750–1831) -> Louise of Great Britain\n- Princess Louise of Denmark (1750–1831) -> Frederick V of Denmark\n- Princess Louise of Denmark (1750–1831) -> Louise of Great Britain\n- Princess Louise of Denmark (1750–1831) -> Frederick V of Denmark\n- Amelia of Masovia -> Siemowit IV, Duke of Masovia\nPassages:\nP1: Princess Amelia of Great Britain: Princess Amelia of Great Britain (Amelia Sophia Eleanor; 10 June 1711 (New Style) – 31 October 1786) was the second daughter of King George II of Great Britain and Queen Caroline.\nP2: George II of Great Britain: George II (George Augustus; ; 30 October / 9 November 1683 – 25 October 1760) was King of Great Britain and Ireland, Duke of Brunswick-Lüneburg (Hanover) and a prince-elector of the Holy Roman Empire from 11 June 1727 (O.S.) until his death in 1760. George is the most recent British monarch born outside Great Britain: he was born and brought up in northern Germany. The Act of Settlement 1701 and the Acts of Union 1707 positioned his grandmother, Sophia of Hanover, ...\nP3: Louise of Great Britain: Louise of Great Britain (originally Louisa; 18 December 1724 – 19 December 1751) was Queen of Denmark and Norway from 1746 until her death, as the first wife of King Frederick V. She was the youngest surviving daughter of King George II of Great Britain and Caroline of Ansbach.\nP4: Francis, Duke of Teck: Francis, Duke of Teck GCB GCVO (Francis Paul Charles Louis Alexander; 28 August 1837 – 21 January 1900), known as Count Francis von Hohenstein until 1863, was an Austrian-born nobleman who married into the British royal family. He was the father of Queen Mary, and thus a great-grandfather of the current British monarch, Queen Elizabeth II. Francis held the Austrian title of Count of Hohenstein (\"Graf von Hohenstein\"), and the German titles of Prince (\"Fürst\") and later ...\nP5: Siemowit IV, Duke of Masovia: Siemowit IV (Ziemowit IV), also known as Siemowit IV the Younger (pl: \" Siemowit IV Młodszy\"; ca. 1353/1356 – 21 January 1426) , was a Polish prince member of the House of Piast from the Masovian branch, from 1373/74 Duke of Rawa, and after the division of the paternal inheritance between him and his brother in 1381, ruler over Rawa, Płock, Sochaczew, Gostynin, Płońsk and Wizna, since 1386 hereditary Polish vassal, since 1388 ruler over Belz, during 1382–1401 he ...\nP6: Frederick V of Denmark: Frederick V( Danish and Norwegian:\" Frederik\"; 31 March 172314 January 1766) was king of Denmark – Norway and Duke of Schleswig- Holstein from 1746 until his death. He was the son of Christian VI of Denmark and Sophie Magdalene of Brandenburg- Kulmbach.\nP7: The Child: The Child may refer to:\nP8: Princess Mary of Great Britain: Princess Mary of Great Britain (5 March 1723 – 14 January 1772) was the second-youngest daughter of King George II of Great Britain and his wife, Caroline of Ansbach, and Landgravine of Hesse-Kassel as the wife of Frederick II, Landgrave of Hesse-Kassel.\nP9: Princess Caroline of Great Britain: Princess Caroline of Great Britain (Caroline Elizabeth; 10 June 1713 – 28 December 1757) was the fourth child and third daughter of King George II of Great Britain and his wife Caroline of Ansbach.\nP10: Princess Louise of Denmark (1750–1831): Princess Louise of Denmark and Norway( 20 January 1750 – 12 January 1831) was born to Frederick V of Denmark and Louise of Great Britain. Her eldest daughter, Marie of Hesse- Kassel, was the wife of Frederick VI of Denmark.\nQuestion: Where was the father of Princess Amelia Of Great Britain born?\nFinal answer:",
+  "output": "northern Germany",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-ad23fb44ebf17d12",
+    "object": "chat.completion",
+    "created": 1779535824,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "northern Germany",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1296,
+      "total_tokens": 1300,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

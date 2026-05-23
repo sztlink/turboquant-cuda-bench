@@ -1,0 +1,74 @@
+{
+  "schema": "epkv.machine_only_reality_report.v0",
+  "source_summary": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-answer-rerank-gated-v1-500/summary.json",
+  "total": 500,
+  "macro": {
+    "bge_ref": {
+      "em": 0.018,
+      "contains": 0.032,
+      "f1": 0.03700634920634921
+    },
+    "strong": {
+      "em": 0.172,
+      "contains": 0.288,
+      "f1": 0.28495608162496033
+    },
+    "path_prompt": {
+      "em": 0.216,
+      "contains": 0.306,
+      "f1": 0.32392338772338775
+    },
+    "rerank": {
+      "em": 0.212,
+      "contains": 0.308,
+      "f1": 0.32174765234765235
+    },
+    "gated_rerank_v1": {
+      "em": 0.216,
+      "contains": 0.304,
+      "f1": 0.3234469308469309
+    }
+  },
+  "paired": {
+    "base": "path_prompt",
+    "test": "gated_rerank_v1",
+    "wins": 2,
+    "losses": 2,
+    "ties": 496,
+    "discordant": 4,
+    "binom_p_two_sided": 1.0,
+    "win_indices": [
+      183,
+      204
+    ],
+    "loss_indices": [
+      100,
+      368
+    ]
+  },
+  "bootstrap_vs_baseline": {
+    "em": {
+      "mean_diff": 0.0,
+      "ci95": [
+        -0.008,
+        0.008
+      ]
+    },
+    "contains": {
+      "mean_diff": -0.002,
+      "ci95": [
+        -0.012,
+        0.006
+      ]
+    },
+    "f1": {
+      "mean_diff": -0.0004764568764568765,
+      "ci95": [
+        -0.0067645454545454545,
+        0.00655515151515152
+      ]
+    }
+  },
+  "retrieval": {},
+  "caveat": "Machine-only exact-answer benchmark. No human adjudication."
+}

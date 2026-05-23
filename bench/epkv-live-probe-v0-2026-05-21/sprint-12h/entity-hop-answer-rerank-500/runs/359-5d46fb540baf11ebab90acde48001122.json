@@ -1,0 +1,66 @@
+{
+  "idx": 359,
+  "qid": "5d46fb540baf11ebab90acde48001122",
+  "gold": "Elisabeth Farnese",
+  "candidates": [
+    "Princess Louise of Saxe-Gotha-Altenburg",
+    "Maria Luisa of Savoy",
+    "Philip V of Spain",
+    "Jean, Grand Duke of Luxembourg",
+    "Charles III of Spain",
+    "Princess Anne of Orléans",
+    "Ferdinand I of the Two Sicilies",
+    "Prince Carlos of Bourbon-Two Sicilies",
+    "Anne of Orléans",
+    "Queen Victoria",
+    "Prince Pedro, Duke of Calabria",
+    "Infante Philip, Duke of Calabria"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Princess Louise of Saxe-Gotha-Altenburg\nC2: Maria Luisa of Savoy\nC3: Philip V of Spain\nC4: Jean, Grand Duke of Luxembourg\nC5: Charles III of Spain\nC6: Princess Anne of Orléans\nC7: Ferdinand I of the Two Sicilies\nC8: Prince Carlos of Bourbon-Two Sicilies\nC9: Anne of Orléans\nC10: Queen Victoria\nC11: Prince Pedro, Duke of Calabria\nC12: Infante Philip, Duke of Calabria\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Prince Pedro, Duke of Calabria -> Princess Anne of Orléans\n- Prince Pedro, Duke of Calabria -> Anne of Orléans\n- Infante Philip, Duke of Calabria -> Ferdinand I of the Two Sicilies\n- Infante Philip, Duke of Calabria -> Charles III of Spain\n- Infanta Alicia, Duchess of Calabria -> Infante Alfonso, Duke of Calabria\n- Infanta Alicia, Duchess of Calabria -> Jean, Grand Duke of Luxembourg\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Queen Victoria\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Louise\n- Philip of Spain (1712–1719) -> Maria Luisa of Savoy\n- Philip of Spain (1712–1719) -> Philip V of Spain\n- Infante Alfonso, Duke of Calabria -> Prince Carlos of Bourbon-Two Sicilies\n- Infante Alfonso, Duke of Calabria -> Queen Victoria\n- Infante Alfonso, Duke of Calabria -> Queen Victoria\nPassages:\nP1: Philip V of Spain: Philip V (19 December 1683 – 9 July 1746) was King of Spain from 1 November 1700 to his abdication in favour of his son Louis on 14 January 1724, and from his reaccession of the throne upon his son's death, 6 September 1724 to his own death on 9 July 1746. Before his reign, Philip occupied an exalted place in the royal family of France as a grandson of King Louis XIV. His father, Louis, Grand Dauphin, had the strongest genealogical claim to the throne of Spain when it became ...\nP2: Jean, Grand Duke of Luxembourg: Jean (Jean Benoît Guillaume Robert Antoine Louis Marie Adolphe Marc d'Aviano; 5 January 1921 – 23 April 2019) was the Grand Duke of Luxembourg from 1964 until his abdication in 2000. He was the first Grand Duke of Luxembourg of French agnatic descent. Jean was the eldest son of Grand Duchess Charlotte and Prince Felix. Jean's primary education was initially in Luxembourg, before attending Ampleforth College in England. In 1938, he was officially named Hereditary ...\nP3: Charles III of Spain: Charles III (Spanish: \"Carlos\"; Italian: \"Carlo\"; 20 January 1716 – 14 December 1788) was King of Spain (1759–1788), after ruling Naples as Charles VII and Sicily as Charles V (1734–1759). He was the fifth son of Philip V of Spain, and the eldest son of Philip's second wife, Elisabeth Farnese. A proponent of enlightened absolutism, he succeeded to the Spanish throne on 10 August 1759, upon the death of his half-brother Ferdinand VI, who left no heirs. In 1731, the ...\nP4: Princess Anne of Orléans: Princess Anne of Orléans(\" Anne Hélène Marie\"; 5 August 1906, Le Nouvion- en- Thiérache, Aisne – 19 March 1986, Sorrento) was a member of the House of Orléans and the Duchess of Aosta by marriage. She was the daughter of Prince Jean, Duke of Guise and Princess Isabelle of Orléans.\nP5: Princess Anne of Orléans: Princess Anne of Orléans (\"Anne Hélène Marie\"; 5 August 1906, Le Nouvion-en-Thiérache, Aisne – 19 March 1986, Sorrento) was a member of the House of Orléans and the Duchess of Aosta by marriage. She was the daughter of Prince Jean, Duke of Guise and Princess Isabelle of Orléans.\nP6: Ferdinand I of the Two Sicilies: Ferdinand I (12 January 1751 – 4 January 1825), was the King of the Two Sicilies from 1816, after his restoration following victory in the Napoleonic Wars. Before that he had been, since 1759, Ferdinand IV of the Kingdom of Naples and Ferdinand III of the Kingdom of Sicily. He was also King of Gozo. He was deposed twice from the throne of Naples: once by the revolutionary Parthenopean Republic for six months in 1799 and again by Napoleon Bonaparte in 1805. ...\nP7: Maria Luisa of Savoy: Maria Luisa of Savoy (Maria Luisa Gabriella; 17 September 1688 – 14 February 1714) was a queen consort of Spain by marriage to Philip V of Spain. She acted as Regent of Spain during the absence of her spouse from 1702 until 1703, and had great influence over him as his adviser, while she was herself in turn influenced by the Princesse des Ursins.\nP8: Prince Carlos of Bourbon-Two Sicilies: Don Carlos, Prince of Bourbon-Two Sicilies, Infante of Spain (Full Italian name: \"Carlo Maria Francesco d'Assisi Pasquale Ferdinando Antonio di Padova Francesco de Paola Alfonso Andrea Avelino Tancredi, Principe di Borbone delle Due Sicilie, Infante di Spagna\"; 10 November 1870, , Bolzano, Austria-Hungary – 11 November 1949, Seville, Spain) was the son of Prince Alfonso of the Two Sicilies, Count of Caserta and his wife Princess Maria Antonietta of ...\nP9: Anne of Orléans: Anne of Orléans may refer to:\nP10: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nQuestion: Who is Infante Philip, Duke Of Calabria's paternal grandmother?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide direct information about Infante Philip, Duke of Calabria's paternal grandmother. The graph connects Infante Philip, Duke of Calabria to Ferdinand I of the Two Sicilies and Charles III of Spain, but not to a grandmother.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence does not provide direct information about Infante Philip, Duke of Calabria's paternal grandmother. The graph connects Infante Philip, Duke of Calabria to Ferdinand I of the Two Sicilies and Charles III of Spain, but not to a grandmother."
+  },
+  "final": "Princess Louise of Saxe-Gotha-Altenburg",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-9132d4e3aadd083a",
+    "object": "chat.completion",
+    "created": 1779536151,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide direct information about Infante Philip, Duke of Calabria's paternal grandmother. The graph connects Infante Philip, Duke of Calabria to Ferdinand I of the Two Sicilies and Charles III of Spain, but not to a grandmother.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1792,
+      "total_tokens": 1863,
+      "completion_tokens": 71,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.345653772354126
+}

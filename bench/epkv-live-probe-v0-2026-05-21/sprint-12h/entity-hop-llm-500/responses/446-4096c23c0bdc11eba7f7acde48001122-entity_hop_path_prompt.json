@@ -1,0 +1,48 @@
+{
+  "qid": "4096c23c0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "San Ferdinando di Puglia",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Naked Violence (film) -> Fernando Di Leo\n- Naked Violence (film) -> Fernando Di Leo\n- The Naked Witch -> Larry Buchanan\n- The Naked Witch -> Andy Milligan\n- The Naked Proof -> The Feature\n- The End of Violence -> Wim Wenders\n- Don Taylor (American actor and director) -> Escape from the Planet of the Apes\n- David Zucker (director) -> Scary Movie\nPassages:\nP1: Naked Violence (film): Naked Violence  is a 1969 Italian crime film directed by Fernando Di Leo and based on the novel \"I ragazzi del massacro\" written by Giorgio Scerbanenco.\nP2: Naked Violence (film): Naked Violence is a 1969 Italian crime film directed by Fernando Di Leo and based on the novel\" I ragazzi del massacro\" written by Giorgio Scerbanenco.\nP3: Escape from the Planet of the Apes: Escape from the Planet of the Apes is a 1971 science fiction film directed by Don Taylor and written by Paul Dehn. It stars Roddy McDowall, Kim Hunter, Bradford Dillman and Ricardo Montalbán. It is the third of five films in the original\" Planet of the Apes\" series produced by Arthur P. Jacobs, the second being\" Beneath the Planet of the Apes\"( 1970). Its plot centers on many social issues of the day including scientific experimentation on animals, nuclear ...\nP4: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP5: Fernando Di Leo: Fernando Di Leo( 11 January 1932 – 2 December 2003) was an Italian film director and script writer born in San Ferdinando di Puglia, Italy. During his career from 1964 to 1985, Di Leo directed 20 films and was involved in the writing process in 43. His films influenced many popular contemporary directors, such as Quentin Tarantino and John Woo. Di Leo started his career mostly writing scripts for spaghetti westerns. He worked on the script for\" Per un pugno di dollariA Fistful ...\nP6: Fernando Di Leo: Fernando Di Leo (11 January 1932 – 2 December 2003) was an Italian film director and script writer born in San Ferdinando di Puglia, Italy. During his career from 1964 to 1985, Di Leo directed 20 films and was involved in the writing process in 43. His films influenced many popular contemporary directors, such as Quentin Tarantino and John Woo. Di Leo started his career mostly writing scripts for spaghetti westerns. He worked on the script for \"Per un pugno di dollariA Fistful ...\nP7: Larry Buchanan: Larry Buchanan (January 31, 1923 − December 2, 2004), born Marcus Larry Seale Jr., was a film director, producer and writer, who proclaimed himself a \"schlockmeister\". Many of his titles have landed on \"worst movie\" lists or in the public domain, but all at least broke even and many made a profit. He is perhaps most famous for the films \"In the Year 2889The Eye CreaturesZontar, the Thing from VenusCurse of the Swamp CreatureIt's Alive!\" , and \"Mars Needs Women\".\nP8: Wim Wenders: Ernst Wilhelm\" Wim\" Wenders( born 14 August 1945) is a German filmmaker, playwright, author, and photographer. He is a major figure in New German Cinema. Among many honors, he has received three nominations for the Academy Award for Best Documentary Feature: for\" Buena Vista Social Club\"( 1999), about Cuban music culture;\" Pina\"( 2011), about the contemporary dance choreographer Pina Bausch; and\" The Salt of the Earth\"( 2014), about Brazilian photographer Sebastião Salgado. One of ...\nP9: Scary Movie: Scary Movie is a 2000 American parody slasher film directed by Keenen Ivory Wayans. The film spoofs multiple genres including the horror, slasher, and mystery film genres. Several 1990s films and TV shows are also spoofed, and the script primarily follows the plot of slasher films\" Scream\"( 1996), and\" I Know What You Did Last Summer\"( 1997). Despite a mixed critical reception, the film has since attracted a large cult following, and was a box office success, grossing$ 278 million ...\nP10: Andy Milligan: Andy Milligan( February 12, 1929 – June 3, 1991) was an American playwright, screenwriter, actor, and filmmaker, whose work includes 27 films made between 1965 and 1988. In spite of the fact that he directed a number of films that have become cult favorites with horror movie buffs, he died in abject poverty in 1991 from AIDS and was buried in an unmarked pauper's grave in Los Angeles, California.\nQuestion: Where was the director of film Naked Violence (Film) born?\nFinal answer:",
+  "output": "San Ferdinando di Puglia, Italy",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.888888888888889
+  },
+  "response": {
+    "id": "chatcmpl-b4bfe024e78b1fc4",
+    "object": "chat.completion",
+    "created": 1779535869,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "San Ferdinando di Puglia, Italy",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1310,
+      "total_tokens": 1321,
+      "completion_tokens": 11,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "58e236320baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Fernando García de Hita",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Fernando Rodríguez de Castro (died 1304) -> Fernando Rodríguez de Castro\n- Fernando Rodríguez de Castro (died 1304) -> Ferdinand IV of Castile\n- Pedro Fernández de Castro (died 1214) -> Fernando Rodríguez de Castro\n- Pedro Fernández de Castro (died 1214) -> Pedro Fernández de Castro\n- Gutierre Rodríguez de Castro -> Rodrigo Fernández de Castro\n- Stephanie Alfonso of Castile -> Alfonso VII of León and Castile\n- Stephanie Alfonso of Castile -> Fernando Rodríguez de Castro\n- Stephanie Alfonso of Castile -> Alfonso VII of León and Castile\n- Stephanie Alfonso of Castile -> Fernando Rodríguez de Castro\nPassages:\nP1: Fernando Rodríguez de Castro: Fernando Rodríguez (or Fernán Ruiz) de Castro  (1125–1185) was a Castilian nobleman, statesman and military leader who made his career in León. He was the leader of the House of Castro during the civil wars that followed the death of Sancho III of Castile and the succession of the infant Alfonso VIII. He was nicknamed el Castellano (\"the Castilian\") in León and el Leonés (\"the Leonese\") in Castile. Fernando was the eldest son of Rodrigo Fernández de Castro and his ...\nP2: Pedro Fernández de Castro: Pedro Fernández de Castro( Algeciras, 1342), nicknamed\" el de la Guerra\"('of the War'), was a powerful Galician noble and military figure of the House of Castro, descended by illegitimate lines from the kings of Castile- Leon- Galicia. Pedro Fernandez de Castro was Lord(\" Señor\") of Lemos and Sarria and served as\" mayordomo mayor\"( lord steward) of Alfonso XI of Castile,\" adelantado de la frontera\"( governor) of Andalusia, Galicia and Murcia and\" pertiguero mayor\"( a ...\nP3: Ferdinand IV of Castile: Ferdinand IV of Castile (6 December 1285 – 7 September 1312) called the Summoned (\"el Emplazado\"), was a King of Castile and León from 1295 until his death. During his minority, his upbringing and the custody of his person were entrusted to his mother, Queen María de Molina, while his tutorship was entrusted to the \"Infante\" Henry of Castile the Senator, son of King Fernando III of Castile. At that time, and also for the rest of his reign, his mother tried to placate ...\nP4: Alfonso VII of León and Castile: Alfonso VII (1 March 110521 August 1157), called the Emperor (\"el Emperador\"), became the King of Galicia in 1111 and King of León and Castile in 1126. Alfonso, born Alfonso Raimúndez, first used the title Emperor of All Spain, alongside his mother Urraca, once she vested him with the direct rule of Toledo in 1116. Alfonso later held another investiture in 1135 in a grand ceremony reasserting his claims to the imperial title. He was the son of Urraca of León and ...\nP5: Fernando Rodríguez de Castro (died 1304): Fernando Rodríguez de Castro( died 1304), was a Galician noble and a member of the House of Castro. He was the son of Esteban Fernández de Castro, Lord of Lemos and Sarria, and Alzonza Rodríguez de León. His paternal grandparents were Fernando Gutiérrez de Castro and Emilia Iniguez de Mendoza. His maternal grandparents were Rodrigo Alfonso de León, son of Alfonso IX of León, and Ines Rodríguez Cabrera. Following the death of his father, Esteban ...\nP6: Fernando Augusto de Castro Ribeiro: Fernando Augusto de Castro Ribeiro( born 30 March 1997), known as Fernando Castro or simply Fernando, is a Brazilian footballer who plays for Bahia as a goalkeeper.\nP7: Gutierre Rodríguez de Castro: Gutierre Rodríguez de Castro also known as Gutierre Ruiz de Castro and nicknamed el Escalabrado( died) was a Castilian nobleman, member of the House of Castro as the son of Rodrigo Fernández de Castro and his wife Elo Álvarez, daughter of Álvar Fáñez and his wife Mayor Pérez, daughter of Count Pedro Ansúrez.\nP8: Leonor Rodríguez de Castro: Leonor Rodríguez de Castro( died after 20 December 1275) was an infanta of the Kingdom of Castile as the third wife of Philip of Castile.\nP9: Rodrigo Fernández de Castro: Rodrigo Fernández de Castro (died after 1144), called the Bald (\"el Calvo\"), was a Castilian nobleman and soldier. One of the founders of the House of Castro, he was the second son of Fernando García de Hita and Tegridia (or Trigidia), sister or aunt of Count Rodrigo Martínez and relative of the Ansúrez family. His paternal grandfather may have been García Ordóñez, who died at the battle of Uclés in 1108.\nP10: Pedro Fernández de Castro (died 1214): Pedro Fernández de Castro\" the Castilian\"( 18 August, 1214, Morocco) was a Castilian nobleman, son of Fernando Rodríguez de Castro and Estefanía Alfonso la Desdichada( Stephanie\" The Unfortunate\"). He inherited the\" Infantazgo\" of León from his parents and was\" mayordomo mayor\" of Fernando II and his son Alfonso IX of León.\nQuestion: Who is Fernando Rodríguez De Castro's paternal grandfather?\nFinal answer:",
+  "output": "García Ordóñez",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.3333333333333333
+  },
+  "response": {
+    "id": "chatcmpl-8183a52ca38430cb",
+    "object": "chat.completion",
+    "created": 1779535800,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "García Ordóñez",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1408,
+      "total_tokens": 1416,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

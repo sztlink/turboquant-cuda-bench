@@ -1,0 +1,48 @@
+{
+  "qid": "956a70660bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "10 November 1871",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Prince Gustav of Thurn and Taxis (1848–1914) -> Princess Mathilde Sophie of Oettingen-Oettingen and Oettingen-Spielberg\n- Prince Gustav of Thurn and Taxis (1848–1914) -> Maximilian Karl, 6th Prince of Thurn and Taxis\n- Prince Raphael Rainer of Thurn and Taxis -> Archduchess Margarethe Klementine of Austria\n- Prince Raphael Rainer of Thurn and Taxis -> Prince Max Emanuel of Thurn and Taxis\nPassages:\nP1: Prince Gustav of Thurn and Taxis: Prince Gustav Franz Maria of Thurn and Taxis, full German name:\" Gustav Franz Maria, Prinz von Thurn und Taxis\"( 22 August 1888, Dresden, Kingdom of Saxony – 30 April 1919, Munich, Bavarian Soviet Republic), was a member of the House of Thurn and Taxis and a Prince of Thurn and Taxis by birth. As a member of the Thule Society, Gustav was killed by the Bavarian Soviet Republic government during the German Revolution of 1918 – 19.\nP2: Princess Mathilde Sophie of Oettingen-Oettingen and Oettingen-Spielberg: Princess Mathilde Sophie of Oettingen-Oettingen and Oettingen-Spielberg (in German: \" Mathilde Sophie, Prinzessin zu Oettingen-Oettingen und Oettingen-Spielberg\"; 9 February 1816, Oettingen, Kingdom of Bavaria– 20 January 1886, Obermais, Meran, County of Tyrol, Austria–Hungary) was a member of the Princely House of Oettingen-Spielberg and a Princess of Oettingen-Oettingen and Oettingen-Spielberg by birth. Through her ...\nP3: Archduchess Margarethe Klementine of Austria: Archduchess Margarethe Klementine Maria of Austria (in German: \"Margarethe Klementine Maria, Erzherzogin von Österreich\"; in Hungarian: \"Habsburg–Toscanai Margit Klementina Mária főhercegnő\"; 6 July 1870, Alcsút, Austria-Hungary– 2 May 1955, Regensburg) was a member of the Hungarian line of the House of Habsburg and an Archduchess of Austria by birth. Through her marriage to Albert, 8th Prince of Thurn and Taxis, Margarethe Klementine was also a ...\nP4: Prince Gustav of Thurn and Taxis (1848–1914): Prince \"Gustav\" Otto Maximilian Lamoral of Thurn and Taxis (1848–1914), full German name: \" Gustav Otto Maximilian Lamoral Prinz von Thurn und Taxis\", was the sixth child of Maximilian Karl, 6th Prince of Thurn and Taxis and his second wife Princess Mathilde Sophie of Oettingen-Oettingen and Oettingen-Spielberg. He was born on 2 February 1848 in Regensburg, Kingdom of Bavaria.\nP5: Prince Gabriel of Thurn and Taxis: Prince Gabriel Albert Maria Michael Franz Joseph Gallus Lamoral of Thurn and Taxis( 16 October 1922 – 17 December 1942) was a member of the Princely House of Thurn and Taxis and a Prince of Thurn and Taxis. Gabriel was second in the line of succession to the Headship of the House of Thurn and Taxis after his father Franz Joseph, Hereditary Prince of Thurn and Taxis until his death in the Battle of Stalingrad, at which point he was replaced by his uncle Prince ...\nP6: Prince Raphael Rainer of Thurn and Taxis: \"Raphael Rainer\" Karl Maria Joseph Antonius Ignatius Hubertus Lamoral Prince of Thurn and Taxis (30 May 1906 at Regensburg, Germany - 8 June 1993 at Schwangau, Germany) was the sixth son of Albert, 8th Prince of Thurn and Taxis and his wife Archduchess Margarethe Klementine of Austria. He is the father of Prince Max Emanuel of Thurn and Taxis, the heir presumptive to Albert, 12th Prince of Thurn and Taxis.\nP7: Prince Max Emanuel of Thurn and Taxis: Father\" Emmeram\" of Thurn and Taxis OSB, until his profession Prince\" Max Emanuel\" Maria Siegfried Joseph Antonius Ignatius Lamoral of Thurn and Taxis( 1 March 1902, Regensburg, Kingdom of Bavaria – 3 October 1994, Regensburg, Bavaria, Germany) was a German Benedictine and member of the Princely House of Thurn and Taxis.\nP8: Prince Victor of Thurn and Taxis: Prince\" Victor\" of Thurn and Taxis( 18 January 1876, Ecska – 28 January 1928, Vienna, Austria) was a member of the Princely House of Thurn and Taxis and a Prince of Thurn and Taxis.\nP9: Maximilian Karl, 6th Prince of Thurn and Taxis: Maximilian Karl, 6th Prince of Thurn and Taxis, full German name: \"Maximilian Karl Fürst von Thurn und Taxis\" (3 November 1802 – 10 November 1871) was the sixth Prince of Thurn and Taxis, head of the Thurn-und-Taxis-Post, and Head of the Princely House of Thurn and Taxis from 15 July 1827 until his death on 10 November 1871.\nP10: Prince Nikolaus of Thurn and Taxis (1885–1919): Prince Nikolaus of Thurn and Taxis( later Nikolaus, Baron of Hochstadt)( 21 January 1885 – 8 June 1919) was a member of the Princely House of Thurn and Taxis and a Prince of Thurn and Taxis. Nikolaus was a Lieutenant in the German Imperial Navy.\nQuestion: When did Prince Gustav Of Thurn And Taxis (1848–1914)'s father die?\nFinal answer:",
+  "output": "10 November 1871",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-800db0eaca27b89a",
+    "object": "chat.completion",
+    "created": 1779535729,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "10 November 1871",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1505,
+      "total_tokens": 1514,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

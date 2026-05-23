@@ -1,0 +1,48 @@
+{
+  "qid": "d61d3fd20bd911eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "New York",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Torrid Zone: Torrid Zone is a 1940 adventure film directed by William Keighley and starring James Cagney, Ann Sheridan, and Pat O'Brien.\nP2: William Keighley: William Jackson Keighley( August 4, 1889, Philadelphia, Pennsylvania – June 24, 1984, New York, New York) was an American stage actor and Hollywood film director. After graduating from the Ludlum School of Dramatic Art, Keighley began acting at the age of 23. By the 1910s and 1920s, he was acting and directing on Broadway. With the advent of talking pictures, he relocated to Hollywood. He eventually signed with Warner Bros., where he proved adept at directing in a wide variety ...\nP3: William Keighley: William Jackson Keighley (August 4, 1889, Philadelphia, Pennsylvania – June 24, 1984, New York, New York) was an American stage actor and Hollywood film director. After graduating from the Ludlum School of Dramatic Art, Keighley began acting at the age of 23. By the 1910s and 1920s, he was acting and directing on Broadway. With the advent of talking pictures, he relocated to Hollywood. He eventually signed with Warner Bros., where he proved adept at directing in a wide variety ...\nP4: Robert Lamoureux: Robert Lamoureux( 4 January 1920 – 29 October 2011) was a French actor, screenwriter and film director. He appeared in 37 films between 1951 and 1994. He starred in the film\" The Adventures of Arsène Lupin\", which was entered into the 7th Berlin International Film Festival.\nP5: Benjamin Christensen: Benjamin Christensen( 28 September 1879 – 2 April 1959) was a Danish film director, screenwriter and an actor both in film and on the stage. As a director he is most well known for the 1922 film\" Häxan\" and as an actor, he is best known for his performance in the film\" Michael\"( 1924), in which he plays Claude Zoret, the jilted lover of the film's title character.\nP6: Alfred Hitchcock: Sir Alfred Joseph Hitchcock,( 13 August 1899 – 29 April 1980) was an English film director and producer, widely regarded as one of the most influential and extensively studied filmmakers in the history of cinema. Known as\" the Master of Suspense\", he directed over 50 feature films in a career spanning six decades, becoming as well known as any of his actors thanks to his many interviews, his cameo roles in most of his films, and his hosting and producing of the television ...\nP7: Amazing Stories: Amazing Stories is an American science fiction magazine launched in April 1926 by Hugo Gernsback's Experimenter Publishing. It was the first magazine devoted solely to science fiction. Science fiction stories had made regular appearances in other magazines, including some published by Gernsback, but \"Amazing\" helped define and launch a new genre of pulp fiction. As of 2018, \"Amazing\" has been published, with some interruptions, for ninety-two years, going through a half-dozen ...\nP8: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP9: Ann Sheridan: Clara Lou Sheridan( February 21, 1915 – January 21, 1967), known professionally as Ann Sheridan, was an American actress and singer. She worked regularly from 1934 until her death, first in film and later in television. Notable roles include\" San Quentin\"( 1937) with Pat O'Brien and Humphrey Bogart,\" Angels with Dirty Faces\"( 1938) with James Cagney and Bogart,\" They Drive by Night\"( 1940) with George Raft and Bogart,\" The Man Who Came to Dinner\"( 1942) with Monty Woolley,\" Kings ...\nP10: Julius Caesar: Gaius Julius Caesar (12 July 100 BC – 15 March 44 BC), known by his nomen and cognomen Julius Caesar, was a populist Roman dictator, politician, and military general who played a critical role in the events that led to the demise of the Roman Republic and the rise of the Roman Empire. He was also a historian and wrote Latin prose. In 60 BC, Caesar, Crassus and Pompey formed the First Triumvirate, a political alliance that dominated Roman politics for several years. Their attempts ...\nQuestion: Where did the director of film Torrid Zone die?\nFinal answer:",
+  "output": "New York, New York",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.6666666666666666
+  },
+  "response": {
+    "id": "chatcmpl-bae36d01e0dcc80f",
+    "object": "chat.completion",
+    "created": 1779535919,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "New York, New York",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1149,
+      "total_tokens": 1155,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

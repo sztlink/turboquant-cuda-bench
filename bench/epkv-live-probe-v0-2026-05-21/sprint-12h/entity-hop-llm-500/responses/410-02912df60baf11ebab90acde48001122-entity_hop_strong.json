@@ -1,0 +1,48 @@
+{
+  "qid": "02912df60baf11ebab90acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Eleanor of Aquitaine",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: John, King of England: John (24 December 1166 – 19 October 1216) was King of England from 1199 until his death in 1216. He lost the Duchy of Normandy and most of his other French lands to King Philip II of France, resulting in the collapse of the Angevin Empire and contributing to the subsequent growth in power of the French Capetian dynasty during the 13th century. The baronial revolt at the end of John's reign led to the sealing of \", a document sometimes considered an early step in the ...\nP2: Simon de Montfort, 6th Earl of Leicester: Simon de Montfort, 6th Earl of Leicester (– 4 August 1265), sometimes referred to as Simon V de Montfort to distinguish him from his namesake relatives, was a nobleman of French origin and a member of the English peerage, who led the baronial opposition to the rule of King Henry III of England, culminating in the Second Barons' War. Following his initial victories over royal forces, he became \"de facto\" ruler of the country, and played a major role in ...\nP3: Edward I of England: Edward I (17/18 June 1239 – 7 July 1307), also known as Edward Longshanks and the Hammer of the Scots , was King of England from 1272 to 1307. Before his accession to the throne, he was commonly referred to as The Lord Edward. The first son of Henry III, Edward was involved from an early age in the political intrigues of his father's reign, which included an outright rebellion by the English barons. In 1259, he briefly sided with a baronial reform movement, supporting the ...\nP4: Eleanor of Castile: Eleanor of Castile (1241 – 28 November 1290) was an English queen consort, the first wife of Edward I, whom she married as part of a political deal to affirm English sovereignty over Gascony. The marriage was known to be particularly close, and Eleanor travelled extensively with her husband. She was with him on the Ninth Crusade, when he was wounded at Acre, but the popular story of her saving his life by sucking out the poison has long been discredited. When she died, at ...\nP5: Robert Sidney, 1st Earl of Leicester: Robert Sidney, 1st Earl of Leicester (19 November 1563 – 13 July 1626), second son of Sir Henry Sidney, was a statesman of Elizabethan and Jacobean England. He was also a patron of the arts and an interesting poet. His mother, Mary Sidney \"née\" Dudley, was a lady-in-waiting to Queen Elizabeth I and a sister of Robert Dudley, 1st Earl of Leicester, an advisor and favourite of the Queen.\nP6: Isabella of Angoulême: Isabella of Angoulême (c. 1186/1188 – 4 June 1246) was queen consort of England as the second wife of King John from 1200 until John's death in 1216. She was also suo jure Countess of Angoulême from 1202 until 1246. Isabella had five children by the king, including his heir, later Henry III. In 1220, Isabella married Hugh X of Lusignan, Count of La Marche, by whom she had another nine children. Some of Isabella's contemporaries, as well as later writers, claim that ...\nP7: Simon: Simon may refer to:\nP8: Eleanor of England, Countess of Leicester: Eleanor of England (also called Eleanor Plantagenet and Eleanor of Leicester) (1215 – 13 April 1275) was the youngest child of John, King of England and Isabella of Angoulême.\nP9: Eleanor of England, Countess of Leicester: Eleanor of England( also called Eleanor Plantagenet and Eleanor of Leicester)( 1215 – 13 April 1275) was the youngest child of John, King of England and Isabella of Angoulême.\nP10: Eleanor of England, Countess of Bar: Eleanor of England (18 June 1269 – 29 August 1298) was an English princess, the eldest surviving daughter of King Edward I of England and his first wife, Queen Eleanor of Castile. What evidence exists for Eleanor's early years suggests that while her parents were absent on Crusade between 1270 and 1274, she became very close to her paternal grandmother, Eleanor of Provence, with whom she continued to spend a good deal of time. She was also close to her ...\nQuestion: Who is Eleanor Of England, Countess Of Leicester's paternal grandmother?\nFinal answer:",
+  "output": "Eleanor of Provence",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.6666666666666666
+  },
+  "response": {
+    "id": "chatcmpl-95f930624c61526f",
+    "object": "chat.completion",
+    "created": 1779535837,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Eleanor of Provence",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1137,
+      "total_tokens": 1143,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

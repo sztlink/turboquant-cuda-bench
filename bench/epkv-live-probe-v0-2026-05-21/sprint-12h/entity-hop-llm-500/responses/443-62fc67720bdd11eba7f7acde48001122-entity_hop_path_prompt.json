@@ -1,0 +1,48 @@
+{
+  "qid": "62fc67720bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "New York",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- A Tale of Two Worlds -> Frank Lloyd\n- A Tale of Two Worlds -> Lloyd (film)\n- The Fantasy Film Worlds of George Pal -> Arnold Leibovit\n- The Fantasy Film Worlds of George Pal -> Part\n- Caesar Must Die -> Julius Caesar\n- Mistress of the World -> William Dieterle\n- Mistress of the World -> Part\n- Now Where Did the 7th Company Get to? -> Robert Lamoureux\n- Now Where Did the 7th Company Get to? -> Comedy!\nPassages:\nP1: A Daughter of Two Worlds: A Daughter of Two Worlds is a surviving 1920 silent film adventure drama directed by James Young and starring Norma Talmadge, Jack Crosby, and Virginia Lee.\nP2: Lloyd (film): Lloyd is a 2001 American comedy film. The film was released on May 4, 2001.\nP3: Arnold Leibovit: Arnold Leibovit (born June 18, 1950) is an American director, producer, and screenwriter of feature films and musical productions. An acting member of the Producers Guild of America, he has produced, directed, and written several feature films. As part of his career, he has devoted over 40 years to the work of George Pal. Included is the production of the George Pal biopic \"The Fantasy Film Worlds of George Pal\", for which he received a CINE Golden Eagle Award in the Arts ...\nP4: Frank Lloyd: Frank William George Lloyd( 2 February 1886 – 10 August 1960) was a British- born American film director, actor, scriptwriter, and producer. He was among the founders of the Academy of Motion Picture Arts and Sciences, and was its president from 1934 to 1935.\nP5: Frank Lloyd: Frank William George Lloyd (2 February 1886 – 10 August 1960) was a British-born American film director, actor, scriptwriter, and producer. He was among the founders of the Academy of Motion Picture Arts and Sciences, and was its president from 1934 to 1935.\nP6: William Dieterle: William Dieterle( July 15, 1893 – December 9, 1972) was a German- American actor and film director, who emigrated to the United States in 1930 to leave a worsening political situation. He worked in Hollywood primarily as a director for much of his career, becoming a United States citizen in 1937. His best- known films include\" The Devil and Daniel Webster The Story of Louis Pasteur\"( 1936) and\" The Hunchback of Notre Dame\". His 1937 film\" The Life of Emile Zola\" won the ...\nP7: Robert Lamoureux: Robert Lamoureux( 4 January 1920 – 29 October 2011) was a French actor, screenwriter and film director. He appeared in 37 films between 1951 and 1994. He starred in the film\" The Adventures of Arsène Lupin\", which was entered into the 7th Berlin International Film Festival.\nP8: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP9: Julius Caesar: Gaius Julius Caesar (12 July 100 BC – 15 March 44 BC), known by his nomen and cognomen Julius Caesar, was a populist Roman dictator, politician, and military general who played a critical role in the events that led to the demise of the Roman Republic and the rise of the Roman Empire. He was also a historian and wrote Latin prose. In 60 BC, Caesar, Crassus and Pompey formed the First Triumvirate, a political alliance that dominated Roman politics for several years. Their attempts ...\nP10: Part: Part, parts or PART may refer to:\nQuestion: Where did the director of film A Daughter Of Two Worlds die?\nFinal answer:",
+  "output": "Frank Lloyd died on 10 August 1960.",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a247aed6163fe98b",
+    "object": "chat.completion",
+    "created": 1779535867,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Frank Lloyd died on 10 August 1960.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 982,
+      "total_tokens": 997,
+      "completion_tokens": 15,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

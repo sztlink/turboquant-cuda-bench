@@ -1,0 +1,48 @@
+{
+  "qid": "8171f7920bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "pneumonia",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Blues Run the Game -> Jackson C. Frank\n- The True Game of Death -> Game of Death\n- Oh aint I got the Blues! -> I Got the Blues\n- Oh aint I got the Blues! -> The Dancer\n- He Was a Friend of Mine -> Death of a Friend\n- He Was a Friend of Mine -> The Singer\n- Game of Death -> Enter the Dragon\n- Game of Death -> Robert Clouse\n- Richmond Is a Hard Road -> Jordan Is a Hard Road\n- Richmond Is a Hard Road -> The First Battle\n- I Have Got the Blues To Day! -> The Singer\nPassages:\nP1: Blues Run the Game: \"Blues Run the Game\" is a 1965 song by the American singer-songwriter Jackson C. Frank. The song was the opening track on Frank's self-titled debut album.\nP2: The Cause: The Cause may refer to:\nP3: I Got the Blues: \" I Got the Blues\" is a song from the Rolling Stones' 1971 album\" Sticky Fingers\". Written by Mick Jagger and Keith Richards,\" I Got the Blues\" is a slow- paced, bluesy song. It features languid guitars with heavy influence of both blues and soul feel.\nP4: Death of a Friend: Death of a Friend  is a 1959 Italian film, by the Director Franco Rossi, starring Spyros Focas, Gianni Garko, Angela Luce, Anna Mzzuchelli and Didi Perego. The film was released in Italy in 1959.\nP5: Enter the Dragon: Enter the Dragon is a 1973 martial arts action film produced by and starring Bruce Lee. The film, which co-stars John Saxon and Jim Kelly, was directed by Robert Clouse. It would be Bruce Lee's final completed film appearance before his death on 20 July 1973 at age 32. A joint American and Hong Kong production, it premiered in Los Angeles on 19 August 1973, one month after Lee's death and went on to gross worldwide, equivalent to adjusted for inflation. Enter the Dragon is ...\nP6: Jordan Is a Hard Road: Jordan Is a Hard Road is a 1915 American silent drama film directed by Allan Dwan and starring Dorothy Gish, Frank Campeau and Sarah Truax. The production was under the overall supervision of D. W. Griffith, and was the first film made by Dwan for Griffith's company Fine Arts. The evangelist Billy Sunday acted as a consultant. The film is set in Canada, with location shooting taking place for two weeks around Big Bear Lake in the San Bernardino Mountains. No prints are ...\nP7: The Dancer: The Dancer may refer to:\nP8: The Singer: The Singer may refer to:\nP9: The First Battle: The First Battle may refer to:\nP10: Robert Clouse: Robert Clouse( March 6, 1928 – February 4, 1997) was an American film director and producer, known primarily for his work in the action/ adventure and martial arts genres. He died on February 4, 1997 in Oregon of kidney failure. Clouse directed Bruce Lee in Lee's second English- speaking film starring role,( the other being\" Marlowe) 1973's\" Enter the Dragon\". After Lee's death, Clouse completed Lee's final film\" Game of Death\" and released it in 1978 with a new storyline and ...\nQuestion: What is the cause of death of performer of song Blues Run The Game?\nFinal answer:",
+  "output": "Jackson C. Frank's performance in \"Blues Run the Game\" is not directly related to the passages provided, as",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-84e3e4bc0da28f4d",
+    "object": "chat.completion",
+    "created": 1779535836,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Jackson C. Frank's performance in \"Blues Run the Game\" is not directly related to the passages provided, as",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 856,
+      "total_tokens": 880,
+      "completion_tokens": 24,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

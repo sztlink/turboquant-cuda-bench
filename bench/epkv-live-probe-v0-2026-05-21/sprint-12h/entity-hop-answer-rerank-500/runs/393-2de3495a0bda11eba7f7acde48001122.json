@@ -1,0 +1,66 @@
+{
+  "idx": 393,
+  "qid": "2de3495a0bda11eba7f7acde48001122",
+  "gold": "Hunsur",
+  "candidates": [
+    "Place of origin",
+    "P6: H. R. Bhargava: Hunsur Ramachandra Bhagyachandra, known mon",
+    "Place of birth",
+    "Samarpane",
+    "Night of the Living Dead",
+    "What Women Want",
+    "The First Day",
+    "H. R. Bhargava",
+    "D. W. Griffith",
+    "Hombisilu",
+    "George A. Romero",
+    "Motherland (disambiguation)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of origin\nC2: P6: H. R. Bhargava: Hunsur Ramachandra Bhagyachandra, known mon\nC3: Place of birth\nC4: Samarpane\nC5: Night of the Living Dead\nC6: What Women Want\nC7: The First Day\nC8: H. R. Bhargava\nC9: D. W. Griffith\nC10: Hombisilu\nC11: George A. Romero\nC12: Motherland (disambiguation)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Samarpane -> H. R. Bhargava\n- Samarpane -> Hombisilu\n- Motherland (disambiguation) -> Place of origin\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- What Women Want (2011 film) -> What Women Want\n- What Women Want (2011 film) -> The First Day\n- Birth of the Living Dead -> Night of the Living Dead\n- Birth of the Living Dead -> George A. Romero\n- The Fall of a Nation -> D. W. Griffith\n- Tarkus (song) -> Keith Emerson\n- Tarkus (song) -> Karn Evil 9\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Samarpane: Samarpane (Kannada: ಸಮರ್ಪಣೆ) is a 1983 Indian Kannada film based on the novel of the same name by Usha Navratnaram, directed by H. R. Bhargava and produced by P. Krishnaraj. The film stars Aarathi in the main role of the female protagonist Sarla opposite Rajeev and Jai Jagadish. The film has musical score by M. Ranga Rao. Saritha had initially been approached for the role but could not accommodate her dates. Aarathi who had previously starred in two movies based on Usha Navratnaram's ...\nP3: Night of the Living Dead: Night of the Living Dead is a 1968 American independent horror film written, directed, photographed and edited by George A. Romero, co-written by John Russo, and starring Duane Jones and Judith O' Dea. The story follows seven people who are trapped in a rural farmhouse in western Pennsylvania, which is under assault by an enlargening group of cannibalistic, undead corpses. The film was completed on a budget and shot outside Pittsburgh, where it had its theatrical ...\nP4: What Women Want: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt. The film earned mixed reviews from critics, but was a box office success, with a North American domestic gross of $182 million and a worldwide gross of $374 million against a budget of $70 million. A loose remake, \"What Men Want\" starring Taraji P. Henson and Aldis Hodge came out in early 2019.\nP5: The First Day: The First Day may refer to:\nP6: H. R. Bhargava: Hunsur Ramachandra Bhagyachandra , known mononymously as Bhargava, is an Indian film director who worked primarily in Kannada cinema. Originally a producer, he came to be considered one of the best directors in Kannada cinema, and he was awarded the Puttanna Kanagal Award, the highest award in Kannada cinema, in 2012. he has directed over 50 films.\nP7: H. R. Bhargava: Hunsur Ramachandra Bhagyachandra, known mononymously as Bhargava, is an Indian film director who worked primarily in Kannada cinema. Originally a producer, he came to be considered one of the best directors in Kannada cinema, and he was awarded the Puttanna Kanagal Award, the highest award in Kannada cinema, in 2012. he has directed over 50 films.\nP8: D. W. Griffith: David Wark Griffith( January 22, 1875 – July 23, 1948) was an American film director. Widely considered as the most important filmmaker of his generation, he pioneered the feature- length movie and many enduring cinematic techniques, such as the close- up. His film\" The Birth of a Nation\"( 1915) broke box- office records but also attracted much controversy, as it depicted African Americans in a negative light and glorified the Ku Klux Klan. \" Intolerance\"( 1916) was made as an ...\nP9: Hombisilu: Hombisilu is a 1978 Indian Kannada romantic drama film directed by Geethapriya. It is based on the novel of the same name by Usha Navarathnaram. The film starred Vishnuvardhan, Aarathi and Leelavathi in the lead roles. Vishnuvardhan was awarded with Karnataka State Film Award for Best Actor for his performance in this film. The film was a musical blockbuster with all the songs composed by Rajan- Nagendra considered evergreen hits. Rajan- Nagendra re-used the song\" Jeeva Veene\" in the ...\nP10: George A. Romero: George Andrew Romero( February 4, 1940 – July 16, 2017) was an American filmmaker, writer, and editor. He is best known for his series of gruesome and satirical horror films about an imagined zombie apocalypse, beginning with\" Night of the Living Dead\"( 1968). This film is often considered a progenitor of the fictional zombie of modern culture. Other films in the series include\" Dawn of the Dead\"( 1978) and\" Day of the Dead\"( 1985). Aside from this series, his works include\" ...\nQuestion: What is the place of birth of the director of film Samarpane?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Hunsur Ramachandra Bhagyachandra\",\"selected\":\"C2|C1\",\"confidence\":\"medium\",\"reason\":\"The candidate entity C2 provides the mononym for H. R. Bhargava, and C1 confirms the relationship between the director and the place of birth. However, the specific place of birth is not directly stated in the evidence.\"}",
+  "verifier": {
+    "final_answer": "Hunsur Ramachandra Bhagyachandra",
+    "selected": "C2|C1",
+    "confidence": "medium",
+    "reason": "The candidate entity C2 provides the mononym for H. R. Bhargava, and C1 confirms the relationship between the director and the place of birth. However, the specific place of birth is not directly stated in the evidence."
+  },
+  "final": "Hunsur Ramachandra Bhagyachandra",
+  "selected": "C2|C1",
+  "response": {
+    "id": "chatcmpl-bc133e2f675fc17c",
+    "object": "chat.completion",
+    "created": 1779536182,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Hunsur Ramachandra Bhagyachandra\",\"selected\":\"C2|C1\",\"confidence\":\"medium\",\"reason\":\"The candidate entity C2 provides the mononym for H. R. Bhargava, and C1 confirms the relationship between the director and the place of birth. However, the specific place of birth is not directly stated in the evidence.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1581,
+      "total_tokens": 1660,
+      "completion_tokens": 79,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.439342737197876
+}

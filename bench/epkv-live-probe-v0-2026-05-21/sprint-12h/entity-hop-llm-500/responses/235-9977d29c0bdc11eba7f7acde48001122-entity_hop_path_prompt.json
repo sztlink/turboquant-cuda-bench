@@ -1,0 +1,48 @@
+{
+  "qid": "9977d29c0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "illness",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Voi Voi -> Nora Brockstedt\n- Voi Voi -> Sommer i Palma\n- Some of These Days -> Sophie Tucker\nPassages:\nP1: The Cause: The Cause may refer to:\nP2: Sommer i Palma: \"Sommer i PalmaSummer in Palma\") was the Norwegian entry in the Eurovision Song Contest 1961, performed in Norwegian by Nora Brockstedt. The song is in the \"chanson\" style, popular in the early years of the Contest. Brockstedt describes a romance at the Spanish holiday resort of Palma de Mallorca. In spite of the language barrier (her lover variously speaks Spanish and French), she sings that \"I understand the looks you are sending\". The song was performed twelfth on the night, ...\nP3: Sophie Tucker: Sophie Tucker (January 13, 1886 – February 9, 1966) was a Ukrainian-born American singer, comedian, actress, and radio personality. Known for her powerful delivery of comical and risqué songs, she was one of the most popular entertainers in America during the first half of the 20th century. She was widely known by the superlative nickname \"The Last of the Red Hot Mamas\".\nP4: Nora Brockstedt: Nora Brockstedt (20 January 1923 – 5 November 2015) was a Norwegian singer. In her last years, she focused more on the jazz genre, with successful albums like \" As Time Goes By\" (JazzAvdelingen, 2004) and \"Christmas Songs\" (JazzAvdelingen, 2005). She sang jazz in the 1960s, but was more known for her 'conventional' pop songs. She died after a short illness at Ullevaal Hospital in Oslo on 5 November 2015.\nP5: Voi Voi: \"Voi Voi\" (English: \" Hey Hey\", , a supposed Sami expression) was the Norwegian entry in the Eurovision Song Contest 1960, performed in Norwegian by Nora Brockstedt. This was Norway's debut at the Eurovision Song Contest, and consequently the first occasion on which the Norwegian language was used at the Contest. The title being in Sami was also the first use of the language in the Contest, the next entry being Sámiid Ædnan in 1980. The song is in the \"chanson\" style popular in the ...\nP6: Some of These Days: \"Some of These Days\" is a popular song, written and composed by Shelton Brooks, published in 1910, and associated with the performer Sophie Tucker.\nP7: Danilo I, Serbian Archbishop: Danilo I( 1271 – 72) was the fourth Archbishop of Serbs. After the death of Archbishop Sava II( s. 1263–1271) on 8 February 1271, Danilo was chosen as the next Archbishop. However, he was replaced after a year in 1272 by Joanikije I( s. 1272– 1276). Archbishop Danilo II( s. 1324–1337) wrote\" Archbishop Danilo succeeded on the holy seat, but due to some cause was removed\". The cause of his removal is unknown, it may have been due to Danilo having been unsupportive ...\nP8: Fabio Ravezzani: Fabio Ravezzani( Milan, Italy, February 24, 1960) is an Italian sports journalist and TV presenter of Qui studio a voi stadio.\nP9: Claudio Garioni: Claudio Garioni( Milan, Italy, 12 December 1979) is an Italian sports journalist and TV presenter of Qui studio a voi stadio.\nP10: Stefano Donati: Stefano Donati( Treviglio, Italy, 27 August 1982) is an Italian sports journalist and TV presenter of Qui studio a voi stadio.\nQuestion: What is the cause of death of performer of song Voi Voi?\nFinal answer:",
+  "output": "Nora Brockstedt died after a short illness at Ullevaal Hospital in Oslo.",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.16666666666666669
+  },
+  "response": {
+    "id": "chatcmpl-81a4ec4d5fb049e2",
+    "object": "chat.completion",
+    "created": 1779535687,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Nora Brockstedt died after a short illness at Ullevaal Hospital in Oslo.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 984,
+      "total_tokens": 1003,
+      "completion_tokens": 19,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

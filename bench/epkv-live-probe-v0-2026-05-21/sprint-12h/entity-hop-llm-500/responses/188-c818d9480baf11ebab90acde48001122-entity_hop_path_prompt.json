@@ -1,0 +1,48 @@
+{
+  "qid": "c818d9480baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Wigeric of Lotharingia",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Frederick of Luxembourg -> Hedwig of Nordgau\n- Frederick of Luxembourg -> Hedwig of Nordgau\n- Imiza of Luxembourg -> Frederick of Luxembourg\n- Princess Ingeborg of Denmark -> Henri, Grand Duke of Luxembourg\n- Princess Ingeborg of Denmark -> Louise\n- Princess Amalia of Nassau -> The Child\nPassages:\nP1: Henri, Grand Duke of Luxembourg: Henri( born 16 April 1955) is the Grand Duke of Luxembourg, reigning since 7 October 2000. He is the eldest son of Grand Duke Jean and Princess Joséphine- Charlotte of Belgium, and a first cousin of Philippe, King of the Belgians. In 2019, his net worth was estimated around.\nP2: Hedwig of Nordgau: Hedwig of Nordgau( c. 922 – after 993) was the wife of Siegfried of Luxembourg, first count of Luxembourg and founder of the country. They were married c. 950. She was of Saxon origin but her parentage is not known for sure. Some sources claim that she was connected to the family of Otto I, Holy Roman Emperor. Described as\" saintly\" herself, Hedwig of Nordgau was the mother of Saint Cunigunde of Luxembourg, the seventh of eleven children from her marriage to Siegfried.\nP3: Hedwig of Nordgau: Hedwig of Nordgau (c. 922 – after 993) was the wife of Siegfried of Luxembourg, first count of Luxembourg and founder of the country. They were married c. 950. She was of Saxon origin but her parentage is not known for sure. Some sources claim that she was connected to the family of Otto I, Holy Roman Emperor. Described as \"saintly\" herself, Hedwig of Nordgau was the mother of Saint Cunigunde of Luxembourg, the seventh of eleven children from her marriage to Siegfried.\nP4: Louise: Louise or Luise may refer to:\nP5: The Child: The Child may refer to:\nP6: Frederick of Luxembourg: Frederick of Luxembourg (965 – 6 October 1019), Count of Moselgau, was a son of Siegfried of Luxembourg and Hedwig of Nordgau. By a wife whose name is unknown (certain historians give her as Ermentrude, Countess of Gleiberg), he had:\nP7: Frederick of Luxembourg: Frederick of Luxembourg( 965 – 6 October 1019), Count of Moselgau, was a son of Siegfried of Luxembourg and Hedwig of Nordgau. By a wife whose name is unknown( certain historians give her as Ermentrude, Countess of Gleiberg), he had:\nP8: The Count of Luxembourg (1926 film): The Count of Luxembourg is a 1926 silent drama film directed by Arthur Gregor and starring George Walsh, Helen Lee Worthing and Michael Dark. It is based on the plot of Franz Lehar's operetta\" The Count of Luxembourg\".\nP9: Imiza of Luxembourg: Imiza of Luxembourg( also Irmentrude and Ermentrude)( died after), was a German noblewoman. She was the daughter of Frederick of Luxembourg, and the wife of Welf II of Swabia.\nP10: Princess Ingeborg of Denmark: Princess Ingeborg of Denmark( Ingeborg Charlotte Caroline Frederikke Louise; 2 August 1878 – 12 March 1958), was a Princess of Sweden by marriage to Prince Carl, Duke of Västergötland. She was the daughter of Frederick VIII of Denmark, and the maternal grandmother of Harald V of Norway, Baudouin and Albert II of Belgium, the matrilineal great grandmother of Henri, Grand Duke of Luxembourg, and the paternal great- grandaunt of Carl XVI Gustaf of Sweden.\nQuestion: Who is Frederick Of Luxembourg's paternal grandfather?\nFinal answer:",
+  "output": "Otto I, Holy Roman Emperor",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b908a08e4d4da4d1",
+    "object": "chat.completion",
+    "created": 1779535645,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Otto I, Holy Roman Emperor",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 950,
+      "total_tokens": 958,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

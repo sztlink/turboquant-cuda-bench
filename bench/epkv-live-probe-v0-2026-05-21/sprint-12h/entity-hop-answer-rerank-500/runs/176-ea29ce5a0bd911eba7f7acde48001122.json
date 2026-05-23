@@ -1,0 +1,66 @@
+{
+  "idx": 176,
+  "qid": "ea29ce5a0bd911eba7f7acde48001122",
+  "gold": "Sangeet Natak Akademi Award",
+  "candidates": [
+    "Oscar",
+    "Final answer",
+    "Bhookh (1947 film)",
+    "The Feature",
+    "A Place in the Sun",
+    "Roman Polanski",
+    "Konrad Wolf",
+    "Neethi",
+    "Story",
+    "Franz Waxman",
+    "Paweł Pawlikowski",
+    "Singeetam Srinivasa Rao"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Oscar\nC2: Final answer\nC3: Bhookh (1947 film)\nC4: The Feature\nC5: A Place in the Sun\nC6: Roman Polanski\nC7: Konrad Wolf\nC8: Neethi\nC9: Story\nC10: Franz Waxman\nC11: Paweł Pawlikowski\nC12: Singeetam Srinivasa Rao\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Franz Waxman -> A Place in the Sun\n- Franz Waxman -> Story\n- Paweł Pawlikowski -> The Feature\n- Singeetam Srinivasa Rao -> The Feature\n- Singeetam Srinivasa Rao -> Neethi\n- Carol Reed -> Roman Polanski\n- Martin Todsharow -> Konrad Wolf\nPassages:\nP1: Bhookh (1947 film): Bookh (Hunger) is a Bollywood film. It was released in 1947. Safdar Aah, a writer and lyricist, turned producer and director with \"Bhookh\". Made under the Rang Mahal Ltd. banner, the film starred Sheikh Mukhtar, Kanhaiyalal, and new find actress Husna, in the main lead with music by Anil Biswas. Actress Kiran played the second female lead in her debut role. Others in the cast included Agha, Dulari, Narmada Shankar and Abu Bakar. The film was a social drama about the poor ...\nP2: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP3: A Place in the Sun: A Place in the Sun may refer to:\nP4: Roman Polanski: Roman Polański( born 18 August 1933 in Paris; original name Raymond Thierry Liebling) is a French- Polish film director, producer, writer, and actor. Since 1978, Polanski has been a fugitive from the U.S. criminal justice system; he fled the country while awaiting sentencing in his sexual abuse case, in which he pleaded guilty to statutory rape. His Polish- Jewish parents moved the family back from Paris to Kraków in 1937. Two years later, Poland was invaded by Nazi Germany ...\nP5: Roman Polanski: Roman Polański (born 18 August 1933 in Paris; original name Raymond Thierry Liebling) is a French-Polish film director, producer, writer, and actor. Since 1978, Polanski has been a fugitive from the U.S. criminal justice system; he fled the country while awaiting sentencing in his sexual abuse case, in which he pleaded guilty to statutory rape. His Polish-Jewish parents moved the family back from Paris to Kraków in 1937. Two years later, Poland was invaded by Nazi Germany ...\nP6: Konrad Wolf: Konrad Wolf( 20 October 1925 – 7 March 1982) was an East German film director. He was the son of writer, doctor and diplomat Friedrich Wolf, and the younger brother of Stasi spymaster Markus Wolf.\nP7: Konrad Wolf: Konrad Wolf (20 October 1925 – 7 March 1982) was an East German film director. He was the son of writer, doctor and diplomat Friedrich Wolf, and the younger brother of Stasi spymaster Markus Wolf.\nP8: Neethi: Neethi  is a 1971 Indian Malayalam-language film, directed by A. B. Raj and produced by Prem Nawas. The film stars Prem Nazir, Sheela, Thikkurissy Sukumaran Nair and Adoor Bhasi in lead roles.\nP9: Story: Story or stories, may refer to:\nP10: Franz Waxman: Franz Waxman (né Wachsmann; 24 December 190624 February 1967) was a German and American composer of Jewish descent, known primarily for his work in the film music genre. His film scores include \"Bride of FrankensteinRebeccaSunset BoulevardA Place in the SunStalag 17Rear WindowPeyton PlaceThe Nun's Story\", and \"Taras Bulba\". He received twelve Academy Award nominations, and won two Oscars in consecutive years (for \"Sunset Boulevard\" and \"A Place in the Sun\"). He also received a ...\nQuestion: Which award the composer of film Bhookh (1947 Film) won?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the composer of Bhookh (1947 film) or any awards won by the composer.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence passages do not provide information about the composer of Bhookh (1947 film) or any awards won by the composer."
+  },
+  "final": "Oscar",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-b24f23901dbfe166",
+    "object": "chat.completion",
+    "created": 1779536036,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the composer of Bhookh (1947 film) or any awards won by the composer.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1249,
+      "total_tokens": 1296,
+      "completion_tokens": 47,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.9053604602813721
+}

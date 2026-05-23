@@ -1,0 +1,66 @@
+{
+  "idx": 27,
+  "qid": "931a85420bdd11eba7f7acde48001122",
+  "gold": "London",
+  "candidates": [
+    "Grosvenor Square, London",
+    "Lord Patrick Crichton-Stuart",
+    "John Crichton-Stuart, 2nd Marquess of Bute",
+    "Patrick Lyon, 1st Lord Glamis",
+    "The Accident",
+    "The Centre",
+    "The Hours",
+    "John Crichton-Stuart, 6th Marquess of Bute",
+    "John Crichton-Stuart, 5th Marquess of Bute",
+    "John Stuart, Lord Mount Stuart",
+    "Alexander Lyon, 2nd Lord Glamis",
+    "Ninian Stuart"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Grosvenor Square, London\nC2: Lord Patrick Crichton-Stuart\nC3: John Crichton-Stuart, 2nd Marquess of Bute\nC4: Patrick Lyon, 1st Lord Glamis\nC5: The Accident\nC6: The Centre\nC7: The Hours\nC8: John Crichton-Stuart, 6th Marquess of Bute\nC9: John Crichton-Stuart, 5th Marquess of Bute\nC10: John Stuart, Lord Mount Stuart\nC11: Alexander Lyon, 2nd Lord Glamis\nC12: Ninian Stuart\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Lord Patrick Crichton-Stuart -> John Crichton-Stuart, 2nd Marquess of Bute\n- Lord Patrick Crichton-Stuart -> John Stuart, Lord Mount Stuart\n- Lord Patrick Crichton-Stuart -> John Stuart, Lord Mount Stuart\n- Lord Patrick Crichton-Stuart -> The Accident\n- Alexander Lyon, 2nd Lord Glamis -> Patrick Lyon, 1st Lord Glamis\n- Ninian Stuart -> The Centre\n- Ninian Stuart -> The Hours\nPassages:\nP1: Lord Patrick Crichton-Stuart: Born Patrick Stuart , he was the second son of John Stuart, Lord Mount Stuart, eldest son of John Stuart, 1st Marquess of Bute, son of Prime Minister John Stuart, 3rd Earl of Bute. His mother was Lady Elizabeth Penelope, daughter and heiress of Patrick McDouall-Crichton, 6th Earl of Dumfries, while John Crichton-Stuart, 2nd Marquess of Bute, was his elder brother. His father was killed in a riding accident six months before he was born and his mother died when he ...\nP2: Lord Patrick Crichton-Stuart: Born Patrick Stuart, he was the second son of John Stuart, Lord Mount Stuart, eldest son of John Stuart, 1st Marquess of Bute, son of Prime Minister John Stuart, 3rd Earl of Bute. His mother was Lady Elizabeth Penelope, daughter and heiress of Patrick McDouall- Crichton, 6th Earl of Dumfries, while John Crichton- Stuart, 2nd Marquess of Bute, was his elder brother. His father was killed in a riding accident six months before he was born and his mother died when he ...\nP3: John Crichton-Stuart, 2nd Marquess of Bute: John Crichton-Stuart, 2nd Marquess of Bute, KT, FRS (10 August 1793 – 18 March 1848), styled Lord Mount Stuart between 1794 and 1814, was a wealthy aristocrat and industrialist in Georgian and early Victorian Britain. He developed the coal and iron industries across South Wales and built the Cardiff Docks. Bute's father, John, Lord Mount Stuart, died a few months after he was born and as a young child he was brought up first by his mother, the former ...\nP4: Patrick Lyon, 1st Lord Glamis: Patrick Lyon, 1st Lord Glamis (1402 – 21 March 1459) P.C. was a Scottish nobleman, created Lord Glamis on 28 June 1445. He was the son of Sir John Lyon of Glamis (c.1377–c.1435) and Elizabeth Graham, daughter of Sir Patrick Graham of Dundaff and Kincardine and Euphemia Stewart, Countess of Strathearn. Sir John was the son of Sir John Lyon (d. 1382) and Princess Joanna Stewart, daughter of Robert II of Scotland. Patrick Lyon was hostage in England for King James I ...\nP5: Patrick Lyon, 1st Lord Glamis: Patrick Lyon, 1st Lord Glamis( 1402 – 21 March 1459) P.C. was a Scottish nobleman, created Lord Glamis on 28 June 1445. He was the son of Sir John Lyon of Glamis( c.1377–c.1435) and Elizabeth Graham, daughter of Sir Patrick Graham of Dundaff and Kincardine and Euphemia Stewart, Countess of Strathearn. Sir John was the son of Sir John Lyon( d. 1382) and Princess Joanna Stewart, daughter of Robert II of Scotland. Patrick Lyon was hostage in England for King James I ...\nP6: The Accident: The Accident may refer to:\nP7: The Centre: The Centre or The Center may refer to:\nP8: The Hours: The Hours can refer to:\nP9: John Crichton-Stuart, 6th Marquess of Bute: John Crichton- Stuart, 6th Marquess of Bute, KBE FRSE FRIAS( Hon) FRSA LLD( 27 February 1933 – 21 July 1993) was a Scottish peer, benefactor and patron of the arts. He was largely known either as Lord Bute or simply John Bute.\nP10: John Crichton-Stuart, 5th Marquess of Bute: John Crichton- Stuart, 5th Marquess of Bute( 4 August 1907 – 14 August 1956) was the son of John Crichton- Stuart, 4th Marquess of Bute and Augusta Bellingham.\nQuestion: Where was the father of Lord Patrick Crichton-Stuart born?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages and candidate entity graph do not contain any information about the birthplace of Lord Patrick Crichton-Stuart's father.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The provided passages and candidate entity graph do not contain any information about the birthplace of Lord Patrick Crichton-Stuart's father."
+  },
+  "final": "The passages do not provide information about the birthplace of Lord Patrick Crichton-Stuart's father.",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-93c249e75aae3c56",
+    "object": "chat.completion",
+    "created": 1779535938,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages and candidate entity graph do not contain any information about the birthplace of Lord Patrick Crichton-Stuart's father.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1406,
+      "total_tokens": 1451,
+      "completion_tokens": 45,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.8887100219726562
+}

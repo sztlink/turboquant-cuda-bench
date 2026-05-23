@@ -1,0 +1,66 @@
+{
+  "idx": 124,
+  "qid": "671322a00bde11eba7f7acde48001122",
+  "gold": "London",
+  "candidates": [
+    "Place of origin",
+    "No answer found in the provided passages",
+    "Edward III of England",
+    "Joan of Kent",
+    "The Child",
+    "The Dance",
+    "Albert Lilar",
+    "Abraham",
+    "Vivien Leigh",
+    "Toussaint Louverture",
+    "Toussaint",
+    "Suzanne Farrington"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of origin\nC2: No answer found in the provided passages\nC3: Edward III of England\nC4: Joan of Kent\nC5: The Child\nC6: The Dance\nC7: Albert Lilar\nC8: Abraham\nC9: Vivien Leigh\nC10: Toussaint Louverture\nC11: Toussaint\nC12: Suzanne Farrington\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Suzanne Farrington -> Vivien Leigh\n- Suzanne Farrington -> The Child\n- Suzanne Lilar -> Albert Lilar\n- Suzanne Simone Baptiste Louverture -> Toussaint Louverture\n- Suzanne Simone Baptiste Louverture -> Toussaint\n- Joan Holland, Duchess of Brittany -> Edward III of England\n- Joan Holland, Duchess of Brittany -> Joan of Kent\n- Place of birth -> Place of origin\n- Jehovah-jireh -> Abraham\n- Jehovah-jireh -> Offer\n- Suzanne Dance -> The Dance\nPassages:\nP1: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP2: Edward III of England: Edward III (13 November 1312 – 21 June 1377) was king of England and Lord of Ireland from January 1327 until his death; he is noted for his military success and for restoring royal authority after the disastrous and unorthodox reign of his father, Edward II. Edward III transformed the Kingdom of England into one of the most formidable military powers in Europe. His long reign of 50 years was the second-longest in medieval England (after that of his great-grandfather Henry ...\nP3: Joan of Kent: Joan, Countess of Kent( 29 September 1326/ 7 – 7 August 1385), known to history as The Fair Maid of Kent, was the mother of King Richard II of England, whom she bore to her third husband Edward the Black Prince, son and heir apparent of King Edward III. Although the French chronicler Jean Froissart called her\" the most beautiful woman in all the realm of England, and the most loving\", the appellation\" Fair Maid of Kent\" does not appear to be contemporary. Joan inherited the titles ...\nP4: The Child: The Child may refer to:\nP5: The Dance: The Dance may refer to:\nP6: Albert Lilar: Albert Jean Julien François, Baron Lilar( 21 December 1900 – 16 March 1976) was a Belgian politician of the Liberal Party and a Minister of Justice. Lilar was a renowned lawyer of Admiralty and International Private Law in Antwerp, and Chairman of the International Maritime Committee. He was also a Professor of Law at the Université Libre de Bruxelles and the Vrije Universiteit Brussel. He married in 1929 the writer Suzanne Lilar( née Vebist), and fathered 2 daughters: writer ...\nP7: Abraham: Abraham (né Abram) is the common patriarch of Christianity, Islam, Judaism, and other religions. In Judaism, he is the founding father of the covenant of the pieces, the special relationship between the Hebrews and God; in Christianity, he is the prototype of all believers, Jewish or Gentile; and in Islam he is seen as a link in the chain of prophets that begins with Adam and culminates in Muhammad. The narrative in the Book of Genesis revolves around the themes of posterity and land. ...\nP8: Vivien Leigh: Vivien Leigh , born Vivian Mary Hartley and styled as Lady Olivier after 1947 (5 November 1913 – 8 July 1967) was a British stage and film actress. She won two Academy Awards for Best Actress, for her definitive performances as Scarlett O'Hara in \"Gone with the Wind\" (1939) and Blanche DuBois in the film version of \"A Streetcar Named Desire\" (1951), a role she had also played on stage in London's West End in 1949. She also won a Tony Award for her work in the Broadway musical ...\nP9: Toussaint Louverture: François-Dominique Toussaint Louverture (20 May 1743 – 7 April 1803), also known as Toussaint L'Ouverture or Toussaint Bréda, was a Haitian general and best-known leader of the Haitian Revolution. He was a leader of the growing resistance. His military and political acumen saved the gains of the first black insurrection in November 1791. He first fought for the Spanish against the French; then for France against Spain and Great Britain; and finally, he fought on behalf of ...\nP10: Toussaint: Toussaint (French for All Saints' Day, literally: \"All Saints\") may refer to:\nQuestion: Where was the place of death of Suzanne Farrington's mother?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"C2\",\"confidence\":\"low\",\"reason\":\"The passages do not provide information about Suzanne Farrington's mother or her place of death.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "C2",
+    "confidence": "low",
+    "reason": "The passages do not provide information about Suzanne Farrington's mother or her place of death."
+  },
+  "final": "Place of origin",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-b4d36c054c54c568",
+    "object": "chat.completion",
+    "created": 1779536010,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"C2\",\"confidence\":\"low\",\"reason\":\"The passages do not provide information about Suzanne Farrington's mother or her place of death.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1278,
+      "total_tokens": 1315,
+      "completion_tokens": 37,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.7294590473175049
+}

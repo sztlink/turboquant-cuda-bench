@@ -1,0 +1,48 @@
+{
+  "qid": "5b44ffb00bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Paris",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Blood Father -> Jean-François Richet\n- The Scent of Blood -> Goffredo Parise\n- The Mad Doctor of Blood Island -> Brides of Blood\n- The Mad Doctor of Blood Island -> Eddie Romero\n- Beast of Blood (film) -> The Mad Doctor of Blood Island\n- Beast of Blood (film) -> Eddie Romero\n- Blood of My Blood (2015 film) -> Marco Bellocchio\n- Corridors of Blood -> The Feature\n- Corridors of Blood -> The Girls\n- Blood Thirst -> Newt Arnold\nPassages:\nP1: Blood Father: Blood Father is a 2016 English-language French action crime thriller film directed by Jean-François Richet, written by Peter Craig based on his novel of the same name, and starring Mel Gibson, Erin Moriarty, Diego Luna, Michael Parks, and William H. Macy. The film had its world premiere at the 2016 Cannes Film Festival on 21 May 2016 and was released on 12 August 2016, by Lionsgate Premiere.\nP2: Brides of Blood: Brides of Blood( a.k.a. Brides of the Beast and Grave Desires) is a 1968 Filipino horror film, co- directed by Eddie Romero and Gerardo de Leon, and starring John Ashley, Kent Taylor, Beverly Hills, Eva Darren and Mario Montenegro. It was the first movie that Ashley made in the Philippines, beginning a long association between Ashley and that country. \" Brides of Blood\" was the second in a series of four horror films produced by Romero and Kane W. Lynn known as the\" Blood ...\nP3: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP4: The Girls: The Girls may be:\nP5: Newt Arnold: Newt Arnold( February 22, 1922 – February 12, 2000) was an American film director, producer and screenwriter. Arnold directed\" Bloodsport\", which was released in 1988 and has since become a cult film and several other screen works. Arnold was the two- time recipient of the Directors Guild of America Award for his work as an assistant director of\" The Godfather Part II\" and\" 12 Angry Men\".\nP6: Jean-François Richet: Jean-François Richet (born 1966), is a French screenwriter, director, and producer. He grew up in Meaux, a suburb east of Paris.\nP7: Eddie Romero: Edgar Sinco Romero( July 7, 1924 – May 28, 2013) was a Filipino film director, film producer and screenwriter.\nP8: Marco Bellocchio: Marco Bellocchio( born 9 November 1939) is an Italian film director, screenwriter, and actor.\nP9: Goffredo Parise: Goffredo Parise (8 December 1929 in Vicenza – 31 August 1986 in Treviso) was an Italian writer, journalist, and screenwriter. He won the Viareggio Prize in 1965 for his novel \"Il padrone(The Boss)\" and the Strega Prize in 1982 for \"Sillabario n.2\".\nP10: The Scent of Blood: The Scent of Blood( also known as\" The Smell of Blood\") is a 2004 Italian thriller- drama film written and directed by Mario Martone. It was screened at the 2004 Cannes Film Festival in the Director's Fortnight section. It is based on a novel by Goffredo Parise.\nQuestion: Where was the director of film Blood Father born?\nFinal answer:",
+  "output": "Meaux",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-955a6d49264062ae",
+    "object": "chat.completion",
+    "created": 1779535787,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Meaux",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 984,
+      "total_tokens": 987,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "5deff9420bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "25 July 1182",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Matilda of Boulogne, Duchess of Brabant -> Marie I, Countess of Boulogne\n- Matilda of Boulogne, Duchess of Brabant -> Matthew, Count of Boulogne\n- Matilda of Boulogne, Duchess of Brabant -> Marie I, Countess of Boulogne\n- Matilda of Boulogne, Duchess of Brabant -> Matthew, Count of Boulogne\n- Margaret of Flanders, Duchess of Brabant -> Matilda of Béthune\n- Matilda II, Countess of Boulogne -> Ida, Countess of Boulogne\n- Margaret of England, Duchess of Brabant -> Edward I of England\n- Margaret of England, Duchess of Brabant -> Eleanor of Castile\n- Matilda of Frisia -> Liudolf, Margrave of Frisia\n- Matilda of Frisia -> Four Years\n- Arnulf II, Count of Boulogne -> Arnulf III, Count of Boulogne\nPassages:\nP1: Matthew, Count of Boulogne: Matthew, Count of Boulogne, also known as\" Matthew of Alsace\"( – 1173) was the second son of Thierry, Count of Flanders and Sibylla of Anjou. Matthew forcibly abducted the nun Marie de Boulogne, daughter of Stephen, King of England, and constrained her into marriage, claiming the title of Count of Boulogne in 1160. The forced marriage was opposed by the Church and finally annulled in 1170, but he continued to rule as Count until his death. Matthew and Marie had 2 ...\nP2: Matilda of Béthune: Matilda of Béthune( died 8 November 1264), was countess of Flanders by marriage to Guy, Count of Flanders, and heir to the titles Lady of Béthune, of Dendermonde, of Richebourg and of Warneton, as well as Advocatess of the Abbey of Saint Vaast at Arras. She was the mother of Robert, Count of Flanders, known as Robert of Béthune after his mother.\nP3: Marie I, Countess of Boulogne: Marie I or Mary (1136 – 25 July 1182 in St Austrebert, Montreuil, France) was the \"suo jure\" Countess of Boulogne from 1159 to 1170. She also held the post of Abbess of Romsey for five years until her abduction by Matthew of Alsace, who forced her to marry him.\nP4: Ida, Countess of Boulogne: Ida of Boulogne( c. 1160 – 1216) was suo jure Countess of Boulogne from 1173 until her death.\nP5: Arnulf III, Count of Boulogne: Arnulf III of Boulogne( † 990) was a son of Arnulf II, Count of Boulogne. He succeeded his father as count of Boulogne from 972 to 990. On his death his lands were divided between his three sons:\nP6: Edward I of England: Edward I (17/18 June 1239 – 7 July 1307), also known as Edward Longshanks and the Hammer of the Scots , was King of England from 1272 to 1307. Before his accession to the throne, he was commonly referred to as The Lord Edward. The first son of Henry III, Edward was involved from an early age in the political intrigues of his father's reign, which included an outright rebellion by the English barons. In 1259, he briefly sided with a baronial reform movement, supporting the ...\nP7: Liudolf, Margrave of Frisia: Liudolf of Brunswick (c. 1003 – 23 April 1038) was Margrave of Frisia, Count of Brunswick, Count in the Derlingau and the Gudingau. Liudolf was a descendant of the Saxon family of the Brunonen. He was a son of Bruno I, Count of Brunswick, and Gisela of Swabia. The later Roman Emperor Henry III was his half-brother. He married Gisela and had four children. He controlled the Frisian counties Oostergo, Zuidergo and Westergo. For two more generations the Brunonen family ...\nP8: Eleanor of Castile: Eleanor of Castile (1241 – 28 November 1290) was an English queen consort, the first wife of Edward I, whom she married as part of a political deal to affirm English sovereignty over Gascony. The marriage was known to be particularly close, and Eleanor travelled extensively with her husband. She was with him on the Ninth Crusade, when he was wounded at Acre, but the popular story of her saving his life by sucking out the poison has long been discredited. When she died, at ...\nP9: Four Years: Four Years or 4 Years may refer to:\nP10: Matilda of Boulogne, Duchess of Brabant: Matilda of Boulogne ( 1170 – 16 October 1210) was the younger daughter of Matthew, Count of Boulogne and Marie I, Countess of Boulogne. Matilda became Duchess of Brabant by her marriage to Henry I, Duke of Brabant. Matilda's parents' marriage was annulled the year she was born and her mother became a Benedictine nun at St. Austrebert, Montreuil and died in 1182. Matilde's father continued to reign as Count of Boulogne until his death in 1173, when her ...\nQuestion: What is the date of death of Matilda Of Boulogne, Duchess Of Brabant's mother?\nFinal answer:",
+  "output": "25 July 1182",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-931582b01f94ebbd",
+    "object": "chat.completion",
+    "created": 1779535763,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "25 July 1182",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1367,
+      "total_tokens": 1376,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

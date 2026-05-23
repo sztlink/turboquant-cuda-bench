@@ -1,0 +1,48 @@
+{
+  "qid": "051f62de0bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Osterholz",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Augustus William, Duke of Brunswick-Bevern -> Ernest Ferdinand, Duke of Brunswick-Lüneburg\n- Augustus William, Duke of Brunswick-Bevern -> Part\n- Ferdinand Albert I, Duke of Brunswick-Wolfenbüttel-Bevern -> The Inheritance\n- Duke Louis Ernest of Brunswick-Lüneburg -> Seven Years\n- Duke Louis Ernest of Brunswick-Lüneburg -> The General\nPassages:\nP1: Augustus William, Duke of Brunswick-Bevern: August Wilhelm, Duke of Brunswick-Bevern (1715 in Braunschweig1781 in Stettin), Prussian soldier, son of Ernest Ferdinand, Duke of Brunswick-Lüneburg, was born in Braunschweig in 1715, and entered the Prussian army in 1731, becoming colonel of an infantry regiment in 1739. He won great distinction at the battle of Hohenfriedberg as a major-general, and was promoted lieutenant-general in 1750. Bevern was one of the most experienced and exact soldiers ...\nP2: The Inheritance: The Inheritance may refer to:\nP3: The General: The General or The Generals may refer to:\nP4: Part: Part, parts or PART may refer to:\nP5: Seven Years: Seven Years or 7 Years may refer to:\nP6: Augustus William, Duke of Brunswick-Lüneburg: Augustus William( 8 March 1662 – 23 March 1731), a member of the House of Welf, was Duke of Brunswick- Lüneburg and ruling Prince of Wolfenbüttel from 1714 until his death.\nP7: William, Duke of Brunswick: William, Duke of Brunswick( 25 April 1806 – 18 October 1884), was ruling duke of the Duchy of Brunswick from 1830 until his death. William was the second son of Frederick William, Duke of Brunswick- Lüneburg, and after the death of his father in 1815, was under the guardianship of King George IV of the United Kingdom. He became a Prussian major in 1823. When his brother, Charles, was deposed as ruling duke by a rebellion in 1830, William took over the government ...\nP8: Ferdinand Albert I, Duke of Brunswick-Wolfenbüttel-Bevern: Ferdinand Albert I( 22 May 1636 – 23 April 1687), a member of the House of Welf, was a Duke of Brunswick- Lüneburg. After a 1667 inheritance agreement in the Principality of Brunswick- Wolfenbüttel, he received the secundogeniture of Brunswick- Bevern, which he ruled until his death.\nP9: Duke Louis Ernest of Brunswick-Lüneburg: Louis Ernest of Brunswick- Lüneburg- Bevern( 25 September 1718, Wolfenbüttel – 12 May 1788, Eisenach) was a field- marshal in the armies of the Holy Roman Empire and the Dutch Republic, the elected Duke of Courland( 1741). From 13 November 1750 to 1766 he was the Captain- General of the Netherlands, where he was known as the Duke of Brunswick or( to distinguish him from his eldest brother Charles, who succeeded to their father's title of Duke of ...\nP10: Ernest Ferdinand, Duke of Brunswick-Lüneburg: Ernest Ferdinand of Brunswick-Wolfenbüttel-Bevern (4 March 1682 in Osterholz – 14 April 1746 in Brunswick) was a titular Duke of Brunswick and Lüneburg. He was Prince of Brunswick-Bevern and founder of the younger Brunswick-Bevern line.\nQuestion: Where was the father of Augustus William, Duke Of Brunswick-Bevern born?\nFinal answer:",
+  "output": "Braunschweig",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-acf8cb83b4a39730",
+    "object": "chat.completion",
+    "created": 1779535595,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Braunschweig",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 943,
+      "total_tokens": 949,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

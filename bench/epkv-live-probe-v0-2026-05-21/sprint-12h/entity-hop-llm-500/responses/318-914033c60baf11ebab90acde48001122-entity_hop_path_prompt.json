@@ -1,0 +1,48 @@
+{
+  "qid": "914033c60baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Odo II, Count of Blois",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Conan II, Duke of Brittany -> Bertha of Blois\n- Conan II, Duke of Brittany -> The Child\n- Conan II, Duke of Brittany -> Bertha of Blois\n- Conan II, Duke of Brittany -> The Child\n- Conan III, Duke of Brittany -> Empress Matilda\n- Hawise, Duchess of Brittany -> Bertha of Blois\n- Hawise, Duchess of Brittany -> The Child\n- Marie of Brittany, Countess of Saint-Pol -> Beatrice of England\n- Margaret of Huntingdon, Duchess of Brittany -> Kings\n- John Pointz -> James Butler, 1st Duke of Ormond\n- Bertha, Duchess of Brittany -> Henry I of England\nPassages:\nP1: Conan II, Duke of Brittany: Conan II of Rennes (c. 1033 – 11 December 1066) was Duke of Brittany, from 1040 to his death. Conan was the eldest child and heir of Alan III, Duke of Brittany by his wife Bertha of Blois, and member of the House of Rennes. He was the elder brother of Hawise, who succeeded him as \"suo jure\" duchess.\nP2: Conan II, Duke of Brittany: Conan II of Rennes( c. 1033 – 11 December 1066) was Duke of Brittany, from 1040 to his death. Conan was the eldest child and heir of Alan III, Duke of Brittany by his wife Bertha of Blois, and member of the House of Rennes. He was the elder brother of Hawise, who succeeded him as\" suo jure\" duchess.\nP3: James Butler, 1st Duke of Ormond: Lieutenant- General James FitzThomas Butler, 1st Duke of Ormond, 1st Marquess of Ormond, 12th Earl of Ormond, 5th Earl of Ossory, 4th Viscount Thurles, 1st Baron Butler of Llanthony, 1st Earl of Brecknock, KG, PC( 1610 – 1688) was an Irish statesman and soldier, known as Earl of Ormond from 1634 to 1642 and Marquess of Ormond from 1642 to 1661. Following the failure of the senior line of the Butler family, he was the second of the Kilcash branch to inherit the ...\nP4: Bertha of Blois: Bertha of Blois (French: \"Berthe de Blois\"; c. 1005 — c. 1080), was a Duchess consort of Brittany and a countess consort of Maine, married in 1018 to Alain III, Duke of Brittany, and in 1046 to Hugh IV, Count of Maine. She was the daughter of Odo II, Count of Blois and Ermengarde of Auvergne.\nP5: Henry I of England: Henry I (c. 1068 – 1 December 1135), also known as Henry Beauclerc, was King of England from 1100 to his death in 1135. He was the fourth son of William the Conqueror and was educated in Latin and the liberal arts. On William's death in 1087, Henry's elder brothers Robert Curthose and William Rufus inherited Normandy and England, respectively, but Henry was left landless. He purchased the County of Cotentin in western Normandy from Robert, but his brothers deposed him in ...\nP6: Beatrice of England: Beatrice of England( 25 June 1242 – 24 March 1275) was a member of the House of Plantagenet, the daughter of Henry III of England and Eleanor of Provence.\nP7: Beatrice of England: Beatrice of England (25 June 1242 – 24 March 1275) was a member of the House of Plantagenet, the daughter of Henry III of England and Eleanor of Provence.\nP8: The Child: The Child may refer to:\nP9: Empress Matilda: Empress Matilda (c. 7 February 110210 September 1167), also known as the Empress Maude, was one of the claimants to the English throne during the civil war known as the Anarchy. The daughter of King Henry I of England, she moved to Germany as a child when she married the future Holy Roman Emperor Henry V. She travelled with her husband into Italy in 1116, was controversially crowned in St. Peter's Basilica, and acted as the imperial regent in Italy. Matilda and Henry V had no ...\nP10: Kings: Kings or King's may refer to:\nQuestion: Who is the maternal grandfather of Conan Ii, Duke Of Brittany?\nFinal answer:",
+  "output": "Henry I of England",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.22222222222222224
+  },
+  "response": {
+    "id": "chatcmpl-be2ba05b367895e0",
+    "object": "chat.completion",
+    "created": 1779535756,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Henry I of England",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1143,
+      "total_tokens": 1148,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

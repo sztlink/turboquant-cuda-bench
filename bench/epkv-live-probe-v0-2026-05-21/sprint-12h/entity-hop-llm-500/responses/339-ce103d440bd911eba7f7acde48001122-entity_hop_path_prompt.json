@@ -1,0 +1,48 @@
+{
+  "qid": "ce103d440bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Theni",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Veera Thalattu -> Kasthuri Raja\n- Daana Veera Soora Karna -> Nandamuri Harikrishna\n- Daana Veera Soora Karna -> N. T. Rama Rao\n- Y. R. Swamy -> Puttanna Kanagal\n- László Nemes -> The Feature\n- László Nemes -> The Jury\n- Giorgio Pressburger -> Story\nPassages:\nP1: Veera Thalattu: Veera Thalattu (English: \"Brave Lullaby\") is a 1998 Indian Tamil language action drama film directed by Kasthuri Raja. The film features Murali, Vineetha and Kushboo in the lead roles, while Rajkiran, Raadhika and Lakshmi play other supporting roles. The film, which has music by Ilaiyaraaja, released in April 1998.\nP2: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP3: The Jury: The Jury may refer to:\nP4: Nandamuri Harikrishna: Nandamuri Harikrishna ( 2 September 1953 – 29 August 2018) was an Indian film actor, producer and politician who was the Member of Parliament in the Rajya Sabha from Andhra Pradesh. He was known for his works in Telugu cinema. Harikrishna was the fourth son of Telugu matinee idol, and former Chief Minister of Andhra Pradesh, N. T. Rama Rao. Harikrishna was the father of actors N. T. Rama Rao Jr., and Nandamuri Kalyan Ram. Harikrishna made his acting debut in 1964 as a ...\nP5: N. T. Rama Rao: Nandamuri Taraka Rama Rao( 28 May 1923 – 18 January 1996), popularly known as NTR, was an Indian actor, producer, director, editor and politician who served as Chief Minister of Andhra Pradesh for seven years over three terms. He is widely regarded as one of the greatest actors of Indian cinema and one of the two legends of Telugu cinema, along wih Akkineni Nageswara Rao. NTR received three National Film Awards for co-producing\" Thodu Dongalu\"( 1954) and\" Seetharama Kalyanam\"( ...\nP6: N. T. Rama Rao: Nandamuri Taraka Rama Rao (28 May 1923 – 18 January 1996), popularly known as NTR, was an Indian actor, producer, director, editor and politician who served as Chief Minister of Andhra Pradesh for seven years over three terms. He is widely regarded as one of the greatest actors of Indian cinema and one of the two legends of Telugu cinema, along wih Akkineni Nageswara Rao. NTR received three National Film Awards for co-producing \"Thodu Dongalu\" (1954) and \"Seetharama Kalyanam\" ...\nP7: Kasthuri Raja: Kasthuri Raja is an Indian film director based in Chennai, India, and his native place is Mallingapuram near Pannaipuram, Theni District, Tamil Nadu. He is the father of actor Dhanush and director Selvaraghavan. He worked as an assistant director with Director K.S.G. Most of the films he directed were either village based or infatuation of youngsters. He also worked with Director Visu on more than 16 films. He began his life, running away from home to Chennai and working in a ...\nP8: Puttanna Kanagal: S. R. Puttanna Kanagal( born Shubraveshti Ramaswamiah Seetharama Sharma, 1 December 1933 – 5 June 1985), fondly called the' Chitra Bramha'( God of Films, Kannada) was an Indian filmmaker and is considered as one of Indian cinema's greatest filmmakers.\nP9: Story: Story or stories, may refer to:\nP10: Pierre Caron (director): Pierre Caron( 15 August 1901- 22 February 1971) was a French film director. At the end of the Second World War he was forced to flee to South America, where he later died.\nQuestion: Where was the director of film Veera Thalattu born?\nFinal answer:",
+  "output": "Mallingapuram near Pannaipuram, Theni District, Tamil Nadu",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.25
+  },
+  "response": {
+    "id": "chatcmpl-ab5c84261596cbb7",
+    "object": "chat.completion",
+    "created": 1779535774,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Mallingapuram near Pannaipuram, Theni District, Tamil Nadu",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1160,
+      "total_tokens": 1177,
+      "completion_tokens": 17,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

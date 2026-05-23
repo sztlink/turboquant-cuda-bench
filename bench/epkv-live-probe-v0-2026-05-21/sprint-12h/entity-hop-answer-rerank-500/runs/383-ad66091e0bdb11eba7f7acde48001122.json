@@ -1,0 +1,66 @@
+{
+  "idx": 383,
+  "qid": "ad66091e0bdb11eba7f7acde48001122",
+  "gold": "Southampton",
+  "candidates": [
+    "Place of origin",
+    "Place of birth",
+    "Caroline Kennedy",
+    "The Child",
+    "Captured",
+    "Four Years",
+    "Three Days",
+    "John F. Kennedy Jr",
+    "Edward M. Kennedy Jr",
+    "Stan Stearns",
+    "Eric Etheridge",
+    "Jack Schlossberg"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of origin\nC2: Place of birth\nC3: Caroline Kennedy\nC4: The Child\nC5: Captured\nC6: Four Years\nC7: Three Days\nC8: John F. Kennedy Jr\nC9: Edward M. Kennedy Jr\nC10: Stan Stearns\nC11: Eric Etheridge\nC12: Jack Schlossberg\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Stan Stearns -> John F. Kennedy Jr.\n- Stan Stearns -> Captured!\n- Eric Etheridge -> John F. Kennedy Jr.\n- Jack Schlossberg -> Caroline Kennedy\n- Jack Schlossberg -> The Child\n- John F. Kennedy Jr. -> Caroline Kennedy\n- John F. Kennedy Jr. -> Four Years\n- John F. Kennedy Jr. -> Three Days\n- Tatiana Schlossberg -> Caroline Kennedy\n- Tatiana Schlossberg -> Caroline Kennedy\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP3: Caroline Kennedy: Caroline Bouvier Kennedy (born November 27, 1957) is an American author, attorney, and diplomat who served as the United States Ambassador to Japan from 2013 to 2017. She is a prominent member of the Kennedy family and the only surviving child of President John F. Kennedy and First Lady Jacqueline Bouvier Kennedy. Kennedy was five days shy of her sixth birthday when her father was assassinated on November 22, 1963. The following year, Caroline, her mother, and brother John F. ...\nP4: The Child: The Child may refer to:\nP5: Captured!: Captured!( aka Fellow Prisoners) is a 1933 American pre-Code film about World War I prisoners of war in a German camp. The film was directed by Roy Del Ruth and stars Leslie Howard and Douglas Fairbanks Jr..\" Captured!\" was based on the short story\" Fellow Prisoners\"( 1930) by Sir Philip Gibbs.\nP6: Four Years: Four Years or 4 Years may refer to:\nP7: Three Days: Three Days or 3 Days may refer to:\nP8: John F. Kennedy Jr.: John Fitzgerald Kennedy Jr. (November 25, 1960 – July 16, 1999) often referred to as John John Kennedy or JFK Jr., was an American lawyer, journalist, and magazine publisher. He was a son of President John F. Kennedy and First Lady Jacqueline Kennedy, and a younger brother of Caroline Kennedy. His father was assassinated three days before his third birthday. From his childhood years at the White House, Kennedy was the subject of much media scrutiny, and became a popular ...\nP9: Edward M. Kennedy Jr.: Edward Moore Kennedy Jr.( born September 26, 1961) is an American lawyer and politician. He is a partner at Epstein Becker& Green, a firm headquartered in New York City, and previously represented Connecticut's 12th Senate district in the Connecticut Senate from 2015 to 2019. He is the son of Senator Edward M.\" Ted\" Kennedy from Massachusetts and nephew of President John F. Kennedy and Senator Robert F. Kennedy.\nP10: Stan Stearns: Stanley Frank\" Stan\" Stearns( May 11, 1935 – March 2, 2012) was an American photographer who captured the iconic image of a three- year- old John F. Kennedy Jr. saluting the coffin of his father, US President John F. Kennedy, at his father's funeral.\nQuestion: What is the place of birth of John F. Kennedy Jr.'s mother?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide specific information about the place of birth of John F. Kennedy Jr.'s mother, Jacqueline Kennedy. The passages mention John F. Kennedy Jr.'s place of birth and the place of birth of his father, but not his mother's place of birth.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence passages do not provide specific information about the place of birth of John F. Kennedy Jr.'s mother, Jacqueline Kennedy. The passages mention John F. Kennedy Jr.'s place of birth and the place of birth of his father, but not his mother's place of birth."
+  },
+  "final": "Place of origin",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-a928cc1122ec6bbb",
+    "object": "chat.completion",
+    "created": 1779536170,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide specific information about the place of birth of John F. Kennedy Jr.'s mother, Jacqueline Kennedy. The passages mention John F. Kennedy Jr.'s place of birth and the place of birth of his father, but not his mother's place of birth.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1133,
+      "total_tokens": 1208,
+      "completion_tokens": 75,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.3438019752502441
+}

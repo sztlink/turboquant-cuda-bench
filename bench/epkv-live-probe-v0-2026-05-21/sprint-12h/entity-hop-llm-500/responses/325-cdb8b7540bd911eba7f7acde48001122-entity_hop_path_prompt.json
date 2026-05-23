@@ -1,0 +1,48 @@
+{
+  "qid": "cdb8b7540bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Westwood Village Memorial Park Cemetery",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Broadway Bad -> Sidney Lanfield\n- Broadway Bad -> Ricardo Cortez\n- Book of Burial -> The Mystic\n- William Rockhill Nelson -> @Home\n- Jehovah-jireh -> Abraham\n- Jehovah-jireh -> Offer\n- Marjorie Lane -> Broadway Melody of 1936\n- Marjorie Lane -> The Broadway Melody\n- Mary Hunter Wolf -> American Theater\n- Mary Hunter Wolf -> Horton Foote\nPassages:\nP1: Broadway Bad: Broadway Bad is a 1933 American Pre-Code drama film directed by Sidney Lanfield and written by Maude Fulton. The film stars Joan Blondell, Ricardo Cortez, Ginger Rogers, Adrienne Ames, and Francis McDonald. The film was released on February 24, 1933, by Fox Film Corporation.\nP2: Broadway Melody of 1936: Broadway Melody of 1936 is a musical film released by Metro- Goldwyn- Mayer in 1935. In New York, the film opened at the Capitol Theatre, the site of many prestigious MGM premieres. It was a follow- up of sorts to the successful\" The Broadway Melody\", which had been released in 1929, although, there is no story connection with the earlier film beyond the title and some music. The film was written by Harry W. Conn, Moss Hart, Jack McGowan and Sid Silvers. It was directed ...\nP3: The Broadway Melody: The Broadway Melody, also known as The Broadway Melody of 1929, is a 1929 American pre-Code musical film and the first sound film to win an Academy Award for Best Picture. It was one of the first musicals to feature a Technicolor sequence, which sparked the trend of color being used in a flurry of musicals that would hit the screens in 1929 – 1930. Today the Technicolor sequence is lost; only a black and white copy survives in available versions. The film was the first ...\nP4: The Mystic: The Mystic is a 1925 American MGM silent drama film directed by Tod Browning, who later directed MGM's\" Freaks\"( 1932). It was co-written by Browning and Waldemar Young, writing a similar storyline to their earlier 1925 hit film\" The Unholy Three\". Browning was unable however to hire his favorite star Lon Chaney this time around, and\" The Mystic\" wound up a little- known film with a cast of now- forgotten names. Aileen Pringle's gowns in the film were by already famous Romain de ...\nP5: Sidney Lanfield: Sidney Lanfield (April 20, 1898 – June 20, 1972) was an American film director known for directing romances and light comedy films and later television programs. The one-time jazz musician and vaudevillian star started his first directing job for the Fox Film Corporation in 1930; he went on to direct a number of films for 20th Century Fox. In 1941, he directed the Fred Astaire film \" You'll Never Get Rich\" for Columbia Pictures, then moved to Paramount Pictures. There Lanfield ...\nP6: Sidney Lanfield: Sidney Lanfield( April 20, 1898 – June 20, 1972) was an American film director known for directing romances and light comedy films and later television programs. The one- time jazz musician and vaudevillian star started his first directing job for the Fox Film Corporation in 1930; he went on to direct a number of films for 20th Century Fox. In 1941, he directed the Fred Astaire film\" You'll Never Get Rich\" for Columbia Pictures, then moved to Paramount Pictures. There Lanfield ...\nP7: Horton Foote: Albert Horton Foote Jr.( March 14, 1916 March 4, 2009) was an American playwright and screenwriter, perhaps best known for his screenplays for the 1962 film\" To Kill a Mockingbird\" and the 1983 film\" Tender Mercies\", and his notable live television dramas during the Golden Age of Television. He received the Pulitzer Prize for Drama in 1995 for his play\" The Young Man From Atlanta\" and two Academy Awards, one for an original screenplay(\" Tender Mercies\") and one for adapted ...\nP8: Ricardo Cortez: Ricardo Cortez (born Jacob Kranze or Jacob Krantz; September 19, 1900 – April 28, 1977) was an American film actor and director. He was also credited as Jack Crane early in his acting career.\nP9: Ricardo Cortez: Ricardo Cortez( born Jacob Kranze or Jacob Krantz; September 19, 1900 – April 28, 1977) was an American film actor and director. He was also credited as Jack Crane early in his acting career.\nP10: Abraham: Abraham (né Abram) is the common patriarch of Christianity, Islam, Judaism, and other religions. In Judaism, he is the founding father of the covenant of the pieces, the special relationship between the Hebrews and God; in Christianity, he is the prototype of all believers, Jewish or Gentile; and in Islam he is seen as a link in the chain of prophets that begins with Adam and culminates in Muhammad. The narrative in the Book of Genesis revolves around the themes of posterity and land. ...\nQuestion: Where was the place of burial of the director of film Broadway Bad?\nFinal answer:",
+  "output": "Fox Film Corporation",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-ba26889ffcb09c5c",
+    "object": "chat.completion",
+    "created": 1779535762,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Fox Film Corporation",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1296,
+      "total_tokens": 1300,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

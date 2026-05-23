@@ -1,0 +1,48 @@
+{
+  "qid": "791396a60bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "BRIT Awards",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Beating Heart (Ellie Goulding song) -> Ellie Goulding\n- Beating Heart (Ellie Goulding song) -> The Singer\n- Amit Mishra (singer) -> Ae Dil Hai Mushkil\n- Amit Mishra (singer) -> The Singer\n- Baby Come On -> Come On Baby\n- The Man That Got Away -> Ira Gershwin\n- Chahunga Main Tujhe -> The Singer\n- Heart on Fire (Ruslana song) -> Ruslana\n- Heart on Fire (Ruslana song) -> FIRE\n- Dear Heart (song) -> Andy Williams\nPassages:\nP1: Beating Heart (Ellie Goulding song): \"Beating Heart\" is a song recorded by English singer Ellie Goulding for the soundtrack to the film \"Divergent\" (2014). The song was written by Goulding and Joe Janiak, and produced by Greg Kurstin. It was released on 22 April 2014 as the second single from the soundtrack.\nP2: Ellie Goulding: Elena Jane Goulding (born 30 December 1986) is an English singer and songwriter. Her career began when she met record producers Starsmith and Frankmusik, and she was later spotted by Jamie Lillywhite, who later became her manager and A&R. After signing to Polydor Records in July 2009, Goulding released her debut extended play, \"An Introduction to Ellie Goulding\" later that year. In 2010, she became the second artist to top the BBC's annual Sound of... poll and win the Critics' ...\nP3: The Singer: The Singer may refer to:\nP4: Ruslana: Ruslana Stepanivna Lyzhychko (\"Ruslana Lyžyčko\"; born 24 May 1973), known mononymously as Ruslana, is a World Music Award and Eurovision Song Contest winning recording artist, holding the title of People's Artist of Ukraine. She is also a former MP serving as deputy in the Ukrainian parliament (Verkhovna Rada) for the Our Ukraine Party. Ruslana was the UNICEF Goodwill Ambassador in Ukraine in 2004-2005. She is recognized as the most successful Ukrainian female solo artist ...\nP5: Ira Gershwin: Ira Gershwin( born Israel Gershowitz, December 6, 1896 – August 17, 1983) was an American lyricist who collaborated with his younger brother, composer George Gershwin, to create some of the most memorable songs in the English language of the 20th century. With George he wrote more than a dozen Broadway shows, featuring songs such as\" I Got RhythmEmbraceable You The Man I Love\" and\" Someone to Watch Over Me\". He was also responsible, along with DuBose Heyward, for the libretto to ...\nP6: Andy Williams: Howard Andrew Williams (December 3, 1927 – September 25, 2012) was an American singer. He recorded 43 albums in his career, of which 15 have been gold-certified and 3 platinum-certified. He was also nominated for six Grammy Awards. He hosted \"The Andy Williams Show\", a television variety show, from 1962 to 1971, and numerous TV specials. \" The Andy Williams Show\" won three Emmy awards. The Moon River Theatre in Branson, Missouri is named after the song for which he is best ...\nP7: Ae Dil Hai Mushkil: Ae Dil Hai Mushkil  is an Indian 2016 Hindi-language musical romantic drama film directed, co-written and produced by Karan Johar. The story is based on the concept of unrequited love. The film stars Ranbir Kapoor, Anushka Sharma and Aishwarya Rai, with Fawad Khan appearing in a supporting role. It also features cameo appearances by Shah Rukh Khan and Alia Bhatt. The film was released on 28 October 2016 during the Diwali festival. Made with a budget of , \"Ae Dil Hai Mushkil\" ...\nP8: Come On Baby: C'mon Baby or Come On Baby may refer to:\nP9: FIRE: FIRE or F.I.R.E. may stand for:\nP10: The Man That Got Away: \" The Man that Got Away\" is a torch song, published in 1953 and written for the 1954 version of the film\" A Star Is Born.\" The music was written by Harold Arlen, and the lyrics by Ira Gershwin. In 1955, it was nominated for the Academy Award for Best Original Song. In 2004, Judy Garland's performance of the song was selected by the American Film Institute as the eleventh greatest song in American cinema history.\nQuestion: Which award the performer of song Beating Heart (Ellie Goulding Song) got?\nFinal answer:",
+  "output": "Grammy Awards",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.5
+  },
+  "response": {
+    "id": "chatcmpl-943083c0256d585a",
+    "object": "chat.completion",
+    "created": 1779535829,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Grammy Awards",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1161,
+      "total_tokens": 1165,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

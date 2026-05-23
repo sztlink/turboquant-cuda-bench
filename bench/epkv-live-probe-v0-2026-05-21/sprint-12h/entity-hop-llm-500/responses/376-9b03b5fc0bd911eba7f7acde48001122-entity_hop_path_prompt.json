@@ -1,0 +1,48 @@
+{
+  "qid": "9b03b5fc0bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Austrian",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Funny Games (2007 film) -> Michael Haneke\n- Funny Games (2007 film) -> Brady Corbet\n- Brady Corbet -> Kiefer Sutherland\n- Brady Corbet -> Mysterious Skin\n- Donna Fargo -> Funny Face\n- Donna Fargo -> The Singer\n- Funny Face (soundtrack) -> Funny Face\n- Funny Face (soundtrack) -> George Gershwin\n- Funny Face -> Stanley Donen\n- Funny Face -> Fred Astaire\n- Jon Ritman -> From Bedrooms to Billions\n- Jon Ritman -> The Feature\n- Jon Ritman -> Story\n- The Clown (2011 film) -> The Feature\n- The Clown (2011 film) -> Comedy!\n- The Enchanted Desna -> Yuliya Solntseva\n- The Enchanted Desna -> The Jury\nPassages:\nP1: Funny Games (2007 film): Funny Games (alternatively titled Funny Games U.S.) is a 2007 internationally co-produced psychological thriller film written and directed by Michael Haneke, and a remake of his own 1997 film of the same name. Naomi Watts, Tim Roth, Michael Pitt, and Brady Corbet star in the main roles. The film is a shot-for-shot remake of the 1997 film, albeit in English and set in the United States with different actors. Exterior scenes were filmed on Long Island. The film is an ...\nP2: From Bedrooms to Billions: From Bedrooms to Billions is a 2014 documentary film by British filmmakers Anthony and Nicola Caulfield that tells the story of the British video games industry from 1979 to the present day. The film focuses on how the creativity and vision of a relatively small number of individuals allowed the UK to play a key, pioneering role in the shaping of the billion dollar video games industry which today dominates the modern world's entertainment landscape. The film features ...\nP3: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP4: The Singer: The Singer may refer to:\nP5: The Jury: The Jury may refer to:\nP6: Michael Haneke: Michael Haneke (born 23 March 1942) is an Austrian film director and screenwriter. His work often examines social issues and depicts the feelings of estrangement experienced by individuals in modern society. Haneke has made films in French, German, and English and has worked in television‚ theatre, and cinema. He also teaches film direction at the Film Academy Vienna. His directorial debut, \"The Seventh Continent\", won the Bronze Leopard at the Locarno International Film ...\nP7: Stanley Donen: Stanley Donen( April 13, 1924 – February 21, 2019) was an American film director and choreographer whose most celebrated works are\" On the Town\"( 1949) and\" Singin' in the Rain\"( 1952), both of which starred Gene Kelly who co-directed. His other films include\" Royal Wedding\"( 1951),\" Seven Brides for Seven Brothers\"( 1954),\" Funny Face\"( 1957),\" Indiscreet\"( 1958), and\" Charade\"( 1963). He began his career in the chorus line on Broadway for director George Abbott, where he ...\nP8: Kiefer Sutherland: Kiefer William Frederick Dempsey George Rufus Sutherland (born 21 December 1966) is a British-Canadian actor, voice actor, producer, director, and singer-songwriter. He is known for his starring role as Jack Bauer in the Fox drama series \"24\" (2001–2010, 2014), for which he won an Emmy Award, a Golden Globe Award, two Screen Actors Guild Awards, and two Satellite Awards. He is the son of Canadian actors Donald Sutherland and Shirley Douglas, grandson of Canadian politician ...\nP9: Yuliya Solntseva: Yuliya Ippolitovna Solntseva( 7 August 1901 – 28 October 1989) was a Soviet actress and film director. As an actress, she is known for starring in the silent sci-fi classic\" Aelita\"( 1924). She is the first female winner of the Best Director Award at Cannes film festival in the 20th century and the first woman to win a directing prize at any of the major European film festivals, for the film\" Chronicle of Flaming Years\", a war drama about Soviet resistance to Nazi occupation ...\nP10: Mysterious Skin: Mysterious Skin is a 2004 coming- of- age drama film directed by Gregg Araki, who also wrote the screenplay based on Scott Heim's 1995 novel of the same name. The film is Araki's eighth, premiering at the 61st Venice International Film Festival in 2004, although it was not more widely distributed until 2005. \" Mysterious Skin\" tells the story of two pre-adolescent boys who are sexually abused by their baseball coach, and how it affects their lives in different ways into their ...\nQuestion: Which country the director of film Funny Games (2007 Film) is from?\nFinal answer:",
+  "output": "Austria",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-97cea3b6bdd2eeae",
+    "object": "chat.completion",
+    "created": 1779535807,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Austria",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1322,
+      "total_tokens": 1325,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

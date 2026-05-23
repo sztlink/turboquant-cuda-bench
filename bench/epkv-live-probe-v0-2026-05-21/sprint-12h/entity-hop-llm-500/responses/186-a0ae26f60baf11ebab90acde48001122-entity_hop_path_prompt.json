@@ -1,0 +1,48 @@
+{
+  "qid": "a0ae26f60baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Jules Lederer",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Adam Coleman Howard -> Adam Coleman\n- Adam Coleman Howard -> Margo Howard\n- John Pointz -> James Butler, 1st Duke of Ormond\n- Lucius Vibullius Hipparchus (grandson of Herodes Atticus) -> Aspasia Annia Regilla\n- Lucius Vibullius Hipparchus (grandson of Herodes Atticus) -> Herodes Atticus\n- Simon Russell, 3rd Baron Russell of Liverpool -> Edward Russell, 2nd Baron Russell of Liverpool\n- Simon Russell, 3rd Baron Russell of Liverpool -> House of Lords\n- The Kid from Left Field (1979 film) -> Comedy!\n- The Private Lives of Adam and Eve -> Comedy!\n- Thomas Howard, 2nd Duke of Norfolk -> John Howard, 1st Duke of Norfolk\nPassages:\nP1: Adam Coleman Howard: Adam Coleman Howard is an American actor, screenwriter and film director. He is the son of advice columnist Margo Howard, the grandson of advice columnist Ann Landers and the stepson of actor Ken Howard.\nP2: Adam Coleman: Adam Coleman( born 7 October 1991) is an Australian rugby union player living in Melbourne who plays lock for the Melbourne Rebels in Super Rugby.\nP3: John Howard, 1st Duke of Norfolk: John Howard, 1st Duke of Norfolk (c. 142522 August 1485), was an English nobleman, soldier, politician, and the first Howard Duke of Norfolk. He was a close friend and loyal supporter of King Richard III, with whom he was slain at the Battle of Bosworth in 1485.\nP4: Margo Howard: Margo Howard (née Lederer; born March 15, 1940) is an American writer and former advice columnist. She is the only child of businessman/innovator Jules Lederer and Eppie Lederer (better known as Ann Landers after her long-time advice column \" Ask Ann Landers\"), the niece of Pauline Phillips, and the cousin of Jeanne Phillips (the latter two both better known as Abigail Van Buren and authors of the advice column \"Dear Abby\").\nP5: House of Lords: The House of Lords, also known as the House of Peers and domestically usually referred to simply as the Lords, is the upper house of the Parliament of the United Kingdom. Membership is granted by appointment or else by heredity or official function. Like the House of Commons, it meets in the Palace of Westminster. Officially, the full name of the house is the Right Honourable the Lords Spiritual and Temporal of the United Kingdom of Great Britain and Northern Ireland in ...\nP6: James Butler, 1st Duke of Ormond: Lieutenant- General James FitzThomas Butler, 1st Duke of Ormond, 1st Marquess of Ormond, 12th Earl of Ormond, 5th Earl of Ossory, 4th Viscount Thurles, 1st Baron Butler of Llanthony, 1st Earl of Brecknock, KG, PC( 1610 – 1688) was an Irish statesman and soldier, known as Earl of Ormond from 1634 to 1642 and Marquess of Ormond from 1642 to 1661. Following the failure of the senior line of the Butler family, he was the second of the Kilcash branch to inherit the ...\nP7: Edward Russell, 2nd Baron Russell of Liverpool: Edward Frederick Langley Russell, 2nd Baron Russell of Liverpool CBE, MC( 10 April 1895 – 8 April 1981), known as Langley Russell, was a British soldier, lawyer, historian and writer.\nP8: Aspasia Annia Regilla: Aspasia Annia Regilla, full name Appia Annia Regilla Atilia Caucidia Tertulla (Greek:, 125-160), was a wealthy, aristocratic and influential Roman woman, who was a distant relative of several Roman emperors and empresses. She was the wife of the prominent Greek Herodes Atticus.\nP9: Herodes Atticus: Herodes Atticus (\"Hērōidēs ho Attikos\"; 177), or Atticus Herodes, was a Greco-Roman politician and sophist who served as a Roman senator. Appointed consul at Rome in 143 , he was the first Greek to hold the rank of \"consul ordinarius\", as opposed to \"consul suffectus\". In Latin, his full name was given as Lucius Vibullius Hipparchus Tiberius Claudius Atticus Herodes . According to Philostratus, Herodes Atticus was a notable proponent of the Second Sophistic. M.I. Finley ...\nP10: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nQuestion: Who is the maternal grandfather of Adam Coleman Howard?\nFinal answer:",
+  "output": "Herodes Atticus",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a5b5010e7f8787ac",
+    "object": "chat.completion",
+    "created": 1779535643,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Herodes Atticus",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1185,
+      "total_tokens": 1190,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

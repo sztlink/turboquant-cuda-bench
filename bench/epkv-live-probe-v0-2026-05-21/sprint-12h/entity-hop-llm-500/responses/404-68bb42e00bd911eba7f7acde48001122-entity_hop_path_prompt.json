@@ -1,0 +1,48 @@
+{
+  "qid": "68bb42e00bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Yale",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- The Price of Everything -> Nathaniel Kahn\n- I Believe in Everything (song) -> Head Against the Wall\n- I Believe in Everything (song) -> Them!\n- The Price of Milk -> Harry Sinclair\n- Pearl of Great Price (Mormonism) -> Joseph Smith\n- Pearl of Great Price (Mormonism) -> Part\n- The Price of Life (1994 film) -> Bogdan Žižić\n- Now Where Did the 7th Company Get to? -> Robert Lamoureux\n- Now Where Did the 7th Company Get to? -> Comedy!\nPassages:\nP1: The Price of Everything: The Price of Everything is an English-language US documentary directed by Nathaniel Kahn and produced by Jennifer Blei Stockman, Debi Wisch, Carla Solomon.\nP2: Head Against the Wall: Head Against the Wall  is a 1959 French drama film directed by Georges Franju which stars Pierre Brasseur, Paul Meurisse, Jean-Pierre Mocky, Anouk Aimée, and Charles Aznavour. Called The Keepers on its English release, the story follows an aimless young man who is institutionalized for defying his wealthy father, and in the process airs several questions about how society defines and treats mental illness.\nP3: Harry Sinclair: Harry Sinclair is a film director, writer, and actor. In his early career he was an actor and member of The Front Lawn, a musical theater duo. He went on to write and direct several short films, a TV series and three feature films. He is best known for his role as Isildur in Peter Jackson's 2001 film.\nP4: Bogdan Žižić: Bogdan Žižić( born 8 November 1934 in Solin) is a Croatian film director and screenwriter. Žižić is regarded as one of the most prolific Croatian directors of short documentary films, and is also known for several critically acclaimed feature films made in the 1970s. Žižić had graduated from the University of Zagreb Faculty of Law before taking up filmmaking in the early 1960s. From 1960 to 1964 he worked as a dramaturge at the Zagreb Film production company, and he had his ...\nP5: Robert Lamoureux: Robert Lamoureux( 4 January 1920 – 29 October 2011) was a French actor, screenwriter and film director. He appeared in 37 films between 1951 and 1994. He starred in the film\" The Adventures of Arsène Lupin\", which was entered into the 7th Berlin International Film Festival.\nP6: Them!: Them! is a 1954 American black- and- white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \" Them!\" is one of the first of the 1950s\" nuclear monster\" films, and the first\" big bug\" feature. A nest ...\nP7: Them!: Them! is a 1954 American black-and-white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \"Them!\" is one of the first of the 1950s \"nuclear monster\" films, and the first \"big bug\" feature. A nest of ...\nP8: Joseph Smith: Joseph Smith Jr. (December 23, 1805 – June 27, 1844) was an American religious leader and founder of Mormonism and the Latter Day Saint movement. When he was 24, Smith published the Book of Mormon. By the time of his death, 14 years later, he had attracted tens of thousands of followers and founded a religion that continues to the present. Smith was born in Sharon, Vermont. By 1817, he had moved with his family to the burned-over district of western New York; an area of intense ...\nP9: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP10: Nathaniel Kahn: Nathaniel Kahn (born November 9, 1962 in Philadelphia, Pennsylvania) is an American filmmaker. His documentaries \"My Architect\" (2003) — about his father, the famous architect Louis Kahn — and  (2006) were nominated for Academy Awards. His mother is Harriet Pattison. Kahn is a graduate of Germantown Friends School and Yale University.\nQuestion: Where did the director of film The Price Of Everything study?\nFinal answer:",
+  "output": "University of Zagreb Faculty of Law",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b7cda0ce3c079d75",
+    "object": "chat.completion",
+    "created": 1779535832,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "University of Zagreb Faculty of Law",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1204,
+      "total_tokens": 1212,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

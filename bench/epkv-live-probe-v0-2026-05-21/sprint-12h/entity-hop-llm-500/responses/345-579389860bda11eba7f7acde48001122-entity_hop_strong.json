@@ -1,0 +1,48 @@
+{
+  "qid": "579389860bda11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Béziers",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: House in the Sun: House in the Sun (French: La maison au soleil) is a 1929 French silent film directed by Gaston Roudès and starring France Dhélia, Gaston Jacquet and Georges Melchior.\nP2: A Sunday in September: A Sunday in September is a 1963 Swedish drama film directed by Jörn Donner. It is the first feature- length film directed by Donner. The film follows a man named Stig( played by Thommy Berggren) and a woman named Birgitta( played by Harriet Andersson) through their short- lived marriage. Harriet Andersson was widely praised by critics for her performance. The film was shown at the 24th Venice International Film Festival where it received the Opera Prima prize for best ...\nP3: The Rock: The Rock or The Rocks may refer to:\nP4: Gaston Roudès: Gaston Roudès (born 24 March 1878, Béziers, Hérault; d. 5 November 1958, Villejuif, Val-de-Marne) was a French actor, film director and screenwriter best known for his silent films of the 1920s and early 1930s. He directed over 60 films between 1911 and 1939.\nP5: Gaston Roudès: Gaston Roudès( born 24 March 1878, Béziers, Hérault; d. 5 November 1958, Villejuif, Val- de- Marne) was a French actor, film director and screenwriter best known for his silent films of the 1920s and early 1930s. He directed over 60 films between 1911 and 1939.\nP6: Captured!: Captured!( aka Fellow Prisoners) is a 1933 American pre-Code film about World War I prisoners of war in a German camp. The film was directed by Roy Del Ruth and stars Leslie Howard and Douglas Fairbanks Jr..\" Captured!\" was based on the short story\" Fellow Prisoners\"( 1930) by Sir Philip Gibbs.\nP7: Hubert Moest: Hubert Moest( December 3, 1877 to December 5, 1953) was a German film director, writer, producer and actor.\nP8: A Division: A Division or A-Division or Division A or variant has the following meanings:\nP9: First Time: First Time or The First Time may refer to:\nP10: Division: Division or divider may refer to:\nQuestion: Where was the director of film House In The Sun born?\nFinal answer:",
+  "output": "Béziers, Hérault",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.6666666666666666
+  },
+  "response": {
+    "id": "chatcmpl-ae8cb0807951dfe4",
+    "object": "chat.completion",
+    "created": 1779535781,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Béziers, Hérault",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 673,
+      "total_tokens": 682,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

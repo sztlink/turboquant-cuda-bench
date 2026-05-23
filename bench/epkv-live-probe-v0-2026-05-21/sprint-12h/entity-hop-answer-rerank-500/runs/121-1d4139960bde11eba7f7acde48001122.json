@@ -1,0 +1,66 @@
+{
+  "idx": 121,
+  "qid": "1d4139960bde11eba7f7acde48001122",
+  "gold": "New Brunswick, New Jersey",
+  "candidates": [
+    "Place of birth",
+    "Roy Mack",
+    "Double or Nothing (1940 film)",
+    "What Women Want",
+    "The Intended",
+    "The First Day",
+    "Comedy",
+    "Voices",
+    "@Home",
+    "What Women Want (2011 film)",
+    "Place of origin",
+    "Motherland (disambiguation)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of birth\nC2: Roy Mack\nC3: Double or Nothing (1940 film)\nC4: What Women Want\nC5: The Intended\nC6: The First Day\nC7: Comedy\nC8: Voices\nC9: @Home\nC10: What Women Want (2011 film)\nC11: Place of origin\nC12: Motherland (disambiguation)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Double or Nothing (1940 film) -> Comedy!\n- Place of birth -> Place of origin\n- Motherland (disambiguation) -> Place of origin\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Automatic double tracking -> The Intended\n- Automatic double tracking -> Voices\n- What Women Want (2011 film) -> What Women Want\n- What Women Want (2011 film) -> The First Day\nPassages:\nP1: Double or Nothing (1940 film): Double or Nothing (1940) is a short comedy film released by Warner Brothers, directed by Roy Mack, and starring Lee Dixon along with the real-life \"doubles\" of famous Hollywood actors. Actor Tom Herbert appears as the double for his brother, comedian Hugh Herbert.\nP2: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP3: What Women Want: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt. The film earned mixed reviews from critics, but was a box office success, with a North American domestic gross of $182 million and a worldwide gross of $374 million against a budget of $70 million. A loose remake, \"What Men Want\" starring Taraji P. Henson and Aldis Hodge came out in early 2019.\nP4: The Intended: The Intended is 2002 English- language period drama film directed by Kristian Levring and starring Janet McTeer( who also co-wrote the screenplay), JJ Feild, Olympia Dukakis, Tony Maudsley and Brenda Fricker. It centres on a surveyor and his fiancée who arrive in a remote Malaysian trading post and encounter a close- fisted ivory trader and her ill- meaning family.\nP5: The First Day: The First Day may refer to:\nP6: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP7: Voices: Voices or The Voices may refer to:\nP8: @Home: @Home or @home may refer to:\nP9: First Day: First Day may refer to:\nP10: What Women Want (2011 film): What Women Want is a 2011 Chinese-Hong Kong romantic action comedy film remake of the 2000 American film of the same name. The film stars Andy Lau and Gong Li. \"What Women Want\" was released in China on the 3 February 2011, the first day of Chinese New Year. The plot is a very close remake of the American version with some minor changes. The plot takes place mostly in an advertising company in Beijing, in which Lau plays a slick ad agency creative director who gets ...\nQuestion: What is the place of birth of the director of film Double Or Nothing (1940 Film)?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Roy Mack\",\"selected\":\"C2\",\"confidence\":\"medium\",\"reason\":\"The evidence passage P1 states that 'Double or Nothing (1940) is a short comedy film released by Warner Brothers, directed by Roy Mack', but it does not provide information about Roy Mack's place of birth. The term 'place of birth' is mapped to 'Place of origin' in the candidate entity graph, which is not directly supported by the passage. Therefore, based on the given information, we can only identify the director of the film, Roy Mack, but cannot determine his place of birth.\"}",
+  "verifier": {
+    "final_answer": "Roy Mack",
+    "selected": "C2",
+    "confidence": "medium",
+    "reason": "The evidence passage P1 states that 'Double or Nothing (1940) is a short comedy film released by Warner Brothers, directed by Roy Mack', but it does not provide information about Roy Mack's place of birth. The term 'place of birth' is mapped to 'Place of origin' in the candidate entity graph, which is not directly supported by the passage. Therefore, based on the given information, we can only identify the director of the film, Roy Mack, but cannot determine his place of birth."
+  },
+  "final": "Roy Mack",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-a5ce0d8f8c777c5b",
+    "object": "chat.completion",
+    "created": 1779536007,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Roy Mack\",\"selected\":\"C2\",\"confidence\":\"medium\",\"reason\":\"The evidence passage P1 states that 'Double or Nothing (1940) is a short comedy film released by Warner Brothers, directed by Roy Mack', but it does not provide information about Roy Mack's place of birth. The term 'place of birth' is mapped to 'Place of origin' in the candidate entity graph, which is not directly supported by the passage. Therefore, based on the given information, we can only identify the director of the film, Roy Mack, but cannot determine his place of birth.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1030,
+      "total_tokens": 1155,
+      "completion_tokens": 125,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 2.139406681060791
+}

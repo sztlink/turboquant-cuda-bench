@@ -1,0 +1,63 @@
+{
+  "idx": 476,
+  "qid": "c8104dcc0bdd11eba7f7acde48001122",
+  "gold": "3 February 1735",
+  "candidates": [
+    "14 February 1459",
+    "1459",
+    "John I, Count Palatine of Zweibrücken",
+    "Magdalene of Jülich-Cleves-Berg",
+    "Elisabeth of Nuremberg",
+    "Frederick Michael, Count Palatine of Zweibrücken",
+    "Stephen, Count Palatine of Simmern-Zweibrücken",
+    "Frederick I, Count Palatine of Simmern",
+    "John Casimir, Count Palatine of Kleeburg"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: 14 February 1459\nC2: 1459\nC3: John I, Count Palatine of Zweibrücken\nC4: Magdalene of Jülich-Cleves-Berg\nC5: Elisabeth of Nuremberg\nC6: Frederick Michael, Count Palatine of Zweibrücken\nC7: Stephen, Count Palatine of Simmern-Zweibrücken\nC8: Frederick I, Count Palatine of Simmern\nC9: John Casimir, Count Palatine of Kleeburg\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Stephen, Count Palatine of Simmern-Zweibrücken -> Elisabeth of Nuremberg\n- Stephen, Count Palatine of Simmern-Zweibrücken -> Elisabeth of Nuremberg\n- John Casimir, Count Palatine of Kleeburg -> Magdalene of Jülich-Cleves-Berg\n- John Casimir, Count Palatine of Kleeburg -> John I, Count Palatine of Zweibrücken\nPassages:\nP1: John I, Count Palatine of Zweibrücken: John I of Zweibrücken( known as the Lame;; 8 May 1550 – 12 August 1604) was Count Palatine and Duke of Zweibrücken during 1569 – 1604. He was born in Meisenheim as the second son of Wolfgang, Count Palatine of Zweibrücken and his wife Anna of Hesse. In 1588 he changed the state religion from Lutheranism to Calvinism. He died in Germersheim in 1604 and was buried in the Alexanderkirche in Zweibrücken.\nP2: John I, Count Palatine of Zweibrücken: John I of Zweibrücken (known as the Lame; ; 8 May 1550 – 12 August 1604) was Count Palatine and Duke of Zweibrücken during 1569–1604. He was born in Meisenheim as the second son of Wolfgang, Count Palatine of Zweibrücken and his wife Anna of Hesse. In 1588 he changed the state religion from Lutheranism to Calvinism. He died in Germersheim in 1604 and was buried in the Alexanderkirche in Zweibrücken.\nP3: Magdalene of Jülich-Cleves-Berg: Duchess Magdalene of Jülich-Cleves-Berg (2 November 1553 – 30 August 1633) was the fifth child of Duke William \"the rich\" of Jülich-Cleves-Berg and Maria of Austria, a daughter of Emperor Ferdinand I. She married in 1579 with Count Palatine John I \"the lame\" of Zweibrücken. Emperor Charles V had in 1546 granted the Duchy of Jülich-Cleves-Berg the right of female succession. So, when her brother, Duke John William, died in 1609 without a male heir of his own, ...\nP4: Magdalene of Jülich-Cleves-Berg: Duchess Magdalene of Jülich- Cleves- Berg ( 2 November 1553 – 30 August 1633) was the fifth child of Duke William\" the rich\" of Jülich- Cleves- Berg and Maria of Austria, a daughter of Emperor Ferdinand I. She married in 1579 with Count Palatine John I\" the lame\" of Zweibrücken. Emperor Charles V had in 1546 granted the Duchy of Jülich- Cleves- Berg the right of female succession. So, when her brother, Duke John William, died in 1609 without a male heir of his ...\nP5: Elisabeth of Nuremberg: Elisabeth of Nuremberg( 1358 – 26 July 1411) was the daughter of Frederick V, Burgrave of Nuremberg and Elisabeth of Meissen. She was a member of the House of Hohenzollern, and the wife of Rupert of Germany. In 1398, she became the Electress of the Palatinate of the Rhine, and in 1400 she became Queen of the Romans.\nP6: Elisabeth of Nuremberg: Elisabeth of Nuremberg (1358 – 26 July 1411) was the daughter of Frederick V, Burgrave of Nuremberg and Elisabeth of Meissen. She was a member of the House of Hohenzollern, and the wife of Rupert of Germany. In 1398, she became the Electress of the Palatinate of the Rhine, and in 1400 she became Queen of the Romans.\nP7: Frederick Michael, Count Palatine of Zweibrücken: Frederick Michael, Count Palatine of Zweibrücken-Birkenfeld (Ribeauvillé, Alsace, 27 February 1724 – 15 August 1767 in Schwetzingen) was a member of the Wittelsbach dynasty. He was the son of Christian III of Palatinate-Zweibrücken and Caroline of Nassau-Saarbrücken and a member of the House of Palatinate-Zweibrücken-Birkenfeld, a branch of the House of Wittelsbach. He was the father of the Bavarian King Maximilian I Joseph.\nP8: Stephen, Count Palatine of Simmern-Zweibrücken: Stephen of Simmern-Zweibrücken  (23 June 1385 – 14 February 1459, Simmern) was Count Palatine of Simmern and Zweibrücken from 1410 until his death in 1459. He was the son of King Rupert of Germany and his wife Elisabeth of Nuremberg. After the death of Rupert the Palatinate was divided between four of his surviving sons. Louis III received the main part, John received Palatinate-Neumarkt, Stephen received Palatinate-Simmern and Otto received ...\nP9: Stephen, Count Palatine of Simmern-Zweibrücken: Stephen of Simmern- Zweibrücken( 23 June 1385 – 14 February 1459, Simmern) was Count Palatine of Simmern and Zweibrücken from 1410 until his death in 1459. He was the son of King Rupert of Germany and his wife Elisabeth of Nuremberg. After the death of Rupert the Palatinate was divided between four of his surviving sons. Louis III received the main part, John received Palatinate- Neumarkt, Stephen received Palatinate- Simmern and Otto received ...\nP10: Frederick I, Count Palatine of Simmern: Frederick I, the Hunsrücker (German: Friedrich I.; 19 November 1417 – 29 November 1480) was the Count Palatine of Simmern from 1459 until 1480. Frederick was born in 1417 to Stephen, Count Palatine of Simmern and Zweibrücken and his wife, Anna of Veldenz. In 1444 his father partitioned his territories between Frederick and his younger brother Louis. Frederick married Margaret of Guelders, daughter of Duke Arnold, on 16 August 1454. Frederick died in ...\nQuestion: What is the date of death of Frederick Michael, Count Palatine Of Zweibrücken's father?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"14 February 1459\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"C1 is directly supported by P8 and P9, which state that Stephen, Count Palatine of Simmern-Zweibrücken, died on 14 February 1459. The father of Stephen, Count Palatine of Simmern-Zweibrücken, is Frederick Michael, Count Palatine of Zweibrücken, as shown in the candidate entity graph.\"}",
+  "verifier": {
+    "final_answer": "14 February 1459",
+    "selected": "C1",
+    "confidence": "high",
+    "reason": "C1 is directly supported by P8 and P9, which state that Stephen, Count Palatine of Simmern-Zweibrücken, died on 14 February 1459. The father of Stephen, Count Palatine of Simmern-Zweibrücken, is Frederick Michael, Count Palatine of Zweibrücken, as shown in the candidate entity graph."
+  },
+  "final": "14 February 1459",
+  "selected": "C1",
+  "response": {
+    "id": "chatcmpl-b5bb56670f75c79c",
+    "object": "chat.completion",
+    "created": 1779536247,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"14 February 1459\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"C1 is directly supported by P8 and P9, which state that Stephen, Count Palatine of Simmern-Zweibrücken, died on 14 February 1459. The father of Stephen, Count Palatine of Simmern-Zweibrücken, is Frederick Michael, Count Palatine of Zweibrücken, as shown in the candidate entity graph.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1862,
+      "total_tokens": 1969,
+      "completion_tokens": 107,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.9288949966430664
+}

@@ -1,0 +1,60 @@
+{
+  "idx": 414,
+  "qid": "c92dac4e0bd911eba7f7acde48001122",
+  "gold": "Kassel",
+  "candidates": [
+    "1563",
+    "Christine of Saxony",
+    "Charles I Louis, Elector Palatine",
+    "Louis VI, Elector Palatine",
+    "James Louis Sobieski",
+    "Elisabeth of Hesse, Electress Palatine",
+    "Elisabeth of Hesse, Countess Palatine of Zweibrücken",
+    "Countess Palatine Elisabeth Auguste of Sulzbach",
+    "Countess Palatine Hedwig Elisabeth of Neuburg",
+    "Landgravine Charlotte of Hesse-Kassel",
+    "Frederick IV, Elector Palatine"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: 1563\nC2: Christine of Saxony\nC3: Charles I Louis, Elector Palatine\nC4: Louis VI, Elector Palatine\nC5: James Louis Sobieski\nC6: Elisabeth of Hesse, Electress Palatine\nC7: Elisabeth of Hesse, Countess Palatine of Zweibrücken\nC8: Countess Palatine Elisabeth Auguste of Sulzbach\nC9: Countess Palatine Hedwig Elisabeth of Neuburg\nC10: Landgravine Charlotte of Hesse-Kassel\nC11: Frederick IV, Elector Palatine\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Elisabeth of Hesse, Electress Palatine -> Louis VI, Elector Palatine\n- Elisabeth of Hesse, Electress Palatine -> Christine of Saxony\n- Frederick IV, Elector Palatine -> Louis VI, Elector Palatine\n- Countess Palatine Hedwig Elisabeth of Neuburg -> James Louis Sobieski\n- Landgravine Charlotte of Hesse-Kassel -> Charles I Louis, Elector Palatine\n- Landgravine Charlotte of Hesse-Kassel -> Charles I Louis, Elector Palatine\nPassages:\nP1: Christine of Saxony: Christine of Saxony (25 December 1505 – 15 April 1549) was a German noble, landgravine of Hesse. She was the regent of Hesse in 1547-1549. She was the daughter of George the Bearded, Duke of Saxony and Barbara Jagiellon. On 11 December 1523 in Kassel, she married Landgrave Philip I, Landgrave of Hesse. The marriage was arranged to forge an alliance between Hesse and Saxony and was unhappy; Philip claimed to be disgusted by her and only shared her bed by duty. They had ten ...\nP2: Charles I Louis, Elector Palatine: Charles Louis,, Elector Palatine KG( 22 December 1617 – 28 August 1680) was the second son of Frederick V of the Palatinate, the\" Winter King\" of Bohemia, and of Elizabeth Stuart, Queen of Bohemia and sister of Charles I of England. After living the first half of his life in exile during the German Thirty Years' War and the English Civil War, in 1649 Charles Louis reclaimed his father's title of Elector Palatine along with most of his former territories.\nP3: Charles I Louis, Elector Palatine: Charles Louis, , Elector Palatine KG (22 December 1617 – 28 August 1680) was the second son of Frederick V of the Palatinate, the \"Winter King\" of Bohemia, and of Elizabeth Stuart, Queen of Bohemia and sister of Charles I of England. After living the first half of his life in exile during the German Thirty Years' War and the English Civil War, in 1649 Charles Louis reclaimed his father's title of Elector Palatine along with most of his former territories.\nP4: Louis VI, Elector Palatine: Ludwig VI, Elector Palatine (4 July 1539 in Simmern – 22 October 1583 in Heidelberg), was an Elector from the Palatinate-Simmern branch of the house of Wittelsbach. He was the first-born son of Frederick III, Elector Palatine and Marie of Brandenburg-Kulmbach.\nP5: James Louis Sobieski: James Louis Sobieski (full name in Polish: \"Jakub Ludwik Henryk Sobieski\"; 2 November 1667 – 19 December 1737) was a Polish nobleman, politician, diplomat, scholar, traveller and the son of King John III of Poland and Marie Casimire Louise de La Grange d'Arquien.\nP6: Elisabeth of Hesse, Electress Palatine: Elisabeth of Hesse (13 February 1539 – 14 March 1582) was a German noblewoman. She was a daughter of Philip I, Landgrave of Hesse and Christine of Saxony, daughter of George, Duke of Saxony. On 8 July 1560 she married Louis VI, Elector Palatine. They had the following children:\nP7: Elisabeth of Hesse, Countess Palatine of Zweibrücken: Elisabeth of Hesse (4 March 1503 – 4 January 1563, Lauingen) was a Landgravine of Hesse by birth and by marriage Countess Palatine of Zweibrücken and later Countess Palatine of Simmern.\nP8: Countess Palatine Elisabeth Auguste of Sulzbach: Elisabeth Auguste of Sulzbach (Elisabeth Auguste; 17 January 1721 – 17 August 1794) was the eldest granddaughter of the Elector of the Palatinate Charles III Philip, and by her marriage to Elector Palatine Charles IV Theodore, Electress Palatine and later Electress of Bavaria.\nP9: Countess Palatine Hedwig Elisabeth of Neuburg: Hedwig Elisabeth of Neuburg (Hedwig Elisabeth Amelia; 18 July 1673 – 10 August 1722) was a Polish princess by marriage to James Louis Sobieski. She was the daughter of Philip William, Duke of Neuburg, Berg and Jülich, Elector Palatine of Neuburg, and Landgravine Elisabeth Amalie of Hesse-Darmstadt. She was the grandmother of Charles Edward Stuart, the \"Young Pretender\".\nP10: Landgravine Charlotte of Hesse-Kassel: Charlotte of Hesse-Kassel (20 November 1627 – 26 March 1686) was the consort of Charles I Louis, Elector Palatine and mother of Elizabeth Charlotte of the Palatinate.\nQuestion: Where did Elisabeth Of Hesse, Electress Palatine's mother die?\nFinal answer:",
+  "verifier_text": "UNKNOWN",
+  "verifier": {},
+  "final": "The information provided does not specify where Elisabeth of Hesse, Electress Palatine's mother died.",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-b049b0b6c96e2081",
+    "object": "chat.completion",
+    "created": 1779536195,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "UNKNOWN",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1527,
+      "total_tokens": 1529,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.17571711540222168
+}

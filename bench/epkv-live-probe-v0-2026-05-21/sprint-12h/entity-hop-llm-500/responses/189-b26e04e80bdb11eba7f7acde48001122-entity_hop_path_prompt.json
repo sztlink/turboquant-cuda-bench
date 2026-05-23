@@ -1,0 +1,48 @@
+{
+  "qid": "b26e04e80bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Daniel Alomía Robles",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Mirage (1972 film) -> Armando Robles Godoy\n- Which Way Is Up? -> The Seduction of Mimi\n- Which Way Is Up? -> Michael Schultz\n- Which Way Is Up? -> The Seduction\n- Peju Ogunmola -> The Comic\n- The Cannibal Man -> The Apartment\n- The Cannibal Man -> The Week Of\n- The Call of the Wild (1972 film) -> Michèle Mercier\n- The Call of the Wild (1972 film) -> Ken Annakin\nPassages:\nP1: Mirage (1972 film): Mirage  is a 1972 Peruvian drama film directed by Armando Robles Godoy. Robles Godoy wrote the screenplay together with Bernardo Batievsky. It is the only Peruvian film to date to be nominated for a Golden Globe Award.\nP2: The Seduction of Mimi: Mimì metallurgico ferito nell'onore( 1972) is an Italian language film directed by Lina Wertmüller, starring Giancarlo Giannini as Mimi and featuring Mariangela Melato, Turi Ferro, and Agostina Belli. It was released in the United States as The Seduction of Mimi, although a literal translation of the title would be\" Mimi the metalworker, wounded in honor\". The film was entered into the 1972 Cannes Film Festival. The screenplay was very loosely adapted for the 1977 film\" ...\nP3: The Week Of: The Week Of is a 2018 American comedy film written and directed by Robert Smigel, and co-written by and starring Adam Sandler. It co-stars Chris Rock, Rachel Dratch, Steve Buscemi, Allison Strong, and Noah Robbins, and follows two fathers the week of the wedding of their children. The film is the fourth collaboration between Sandler and Netflix, and was released on the streaming service on April 27, 2018.\nP4: The Apartment: The Apartment is a 1960 American romantic comedy film produced and directed by Billy Wilder from a screenplay he co-wrote with I. A. L. Diamond, starring Jack Lemmon and Shirley MacLaine, alongside Fred MacMurray, Ray Walston, Jack Kruschen, David Lewis, Willard Waterman, David White, Hope Holiday and Edie Adams. The story follows C. C. “ Bud ” Baxter( Lemmon), an insurance clerk who, in the hope of climbing the corporate ladder, lets more-senior coworkers use his Upper West Side ...\nP5: The Comic: The Comic is a 1969 Pathécolor comedy film co-written, co-produced, and directed by Carl Reiner. It stars Dick Van Dyke as Billy Bright( which was the original title of the film), Michele Lee as Bright's love interest, and Reiner himself and Mickey Rooney as Bright's friends and work colleagues. Reiner wrote the screenplay with Aaron Ruben; it was inspired by the end of silent film era, and, in part, by the life of silent film superstar Buster Keaton.\nP6: The Seduction: The Seduction may refer to:\nP7: Armando Robles Godoy: Armando Robles Godoy (February 7, 1923 – August 10, 2010) was a Peruvian film director. He was son of the Peruvian composer Daniel Alomía Robles and Carmela Godoy. His 1967 film \"En la selva no hay estrellas\" won the Golden Prize at the 5th Moscow International Film Festival in 1967. In 1971 he was a member of the jury at the 7th Moscow International Film Festival. Director of \"Espejismo\", so far the only Peruvian film to have been nominated to a Golden Globe award.\nP8: Michael Schultz: Michael Schultz( born November 10, 1938) is an American director and producer of film and television.\nP9: Michael Schultz: Michael Schultz (born November 10, 1938) is an American director and producer of film and television.\nP10: Michèle Mercier: Michèle Mercier( born 1 January 1939 as Jocelyne Yvonne Renée Mercier) is a French actress. In the course of her career she has worked with leading directors like François Truffaut, Jean- Pierre Melville, Jacques Deray, Dino Risi, Mario Monicelli, Mario Bava, Peter Collinson and Ken Annakin. Her leading men have included Marcello Mastroianni, Vittorio Gassman, Jean- Paul Belmondo, Jean Gabin, Charles Aznavour, Robert Hossein, Charles Bronson, Tony Curtis and Charlton Heston. ...\nQuestion: Who is the father of the director of film Mirage (1972 Film)?\nFinal answer:",
+  "output": "Daniel Alomía Robles",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-adfc31aa0ae460d9",
+    "object": "chat.completion",
+    "created": 1779535645,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Daniel Alomía Robles",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1140,
+      "total_tokens": 1147,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

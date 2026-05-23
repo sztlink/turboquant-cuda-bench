@@ -1,0 +1,48 @@
+{
+  "qid": "b583abd20baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "'Adud al-Dawla",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Sultan al-Dawla -> Baha al-Dawla\n- Asfar ibn Kurduya -> An Event\n- Ziyar ibn Shahrakuya -> Abu Kalijar\n- Ziyar ibn Shahrakuya -> Them!\n- Safiyy al-Dawla -> First Time\n- Safiyy al-Dawla -> The General\n- Khalifa bin Zayed bin Khalifa Al Nahyan -> Sultan bin Zayed bin Khalifa Al Nahyan\n- Khalifa bin Zayed bin Khalifa Al Nahyan -> Zayed bin Khalifa Al Nahyan\n- Diya al-Dawla -> 'Adud al-Dawla\nPassages:\nP1: Sultan al-Dawla: Abu Shuja (993 – December 1024), better known by his \"laqab\" of Sultan al-Dawla (Persian: سلطان الدوله, \"Power of the Dynasty\"), was the Buyid amir of Fars (1012–1024) and Iraq (1012–1021). He was the son of Baha' al-Dawla.\nP2: Sultan al-Dawla: Abu Shuja( 993 – December 1024), better known by his\" laqab\" of Sultan al- Dawla( Persian: سلطان الدوله,\" Power of the Dynasty\"), was the Buyid amir of Fars( 1012–1024) and Iraq( 1012 – 1021). He was the son of Baha' al- Dawla.\nP3: Sultan bin Zayed bin Khalifa Al Nahyan: Sheikh Sultan bin Zayed bin Khalifa Al Nahyan was the grandfather of current Ruler Khalifa bin Zayed Al Nahyan and father of previous ruler Zayed bin Sultan Al Nahyan. He killed his brother Hamdan in 1922 to rule Abu Dhabi, but was himself toppled and killed by another brother Saqr in 1926.\nP4: 'Adud al-Dawla: Fannā (Panāh) Khusraw , better known by his laqab of ʿAḍud al-Dawla (\"Pillar of the [Abbasid] Dynasty\") (September 24, 936 – March 26, 983) was an emir of the Buyid dynasty, ruling from 949 to 983, and at his height of power ruling an empire stretching from Makran as far to Yemen and the shores of the Mediterranean Sea. He is widely regarded as the greatest monarch of the dynasty, and by the end of his reign was the most powerful ruler in the Middle East. The son of Rukn ...\nP5: 'Adud al-Dawla: Fannā( Panāh) Khusraw, better known by his laqab of ʿ Aḍud al- Dawla(\" Pillar of the[ Abbasid] Dynasty\") ( September 24, 936 – March 26, 983) was an emir of the Buyid dynasty, ruling from 949 to 983, and at his height of power ruling an empire stretching from Makran as far to Yemen and the shores of the Mediterranean Sea. He is widely regarded as the greatest monarch of the dynasty, and by the end of his reign was the most powerful ruler in the Middle East. The son of Rukn al- ...\nP6: Baha al-Dawla: Abu Nasr Firuz Kharshadh (died December 22, 1012), better known by his \"laqab\" of Baha al-Dawla  was the Buyid amir of Iraq (988–1012), along with Fars and Kerman (998–1012). His early reign was dominated by struggles with his rival relatives over control of the western Persian provinces, but by 998 he managed to establish his supremacy over the Buyid confederation. His reign nevertheless saw the increasing encroachment of neighbouring powers on Buyid territory, and marks the ...\nP7: Zayed bin Khalifa Al Nahyan: Sheikh Zayed bin Khalifa Al Nahyan (1835–1909), also known as Zayed the Great or Zayed the First was the grandfather and namesake of Sheikh Zayed bin Sultan, founder of the United Arab Emirates.\nP8: The General: The General or The Generals may refer to:\nP9: Abu Kalijar: Abu Kalijar Marzuban( died October 1048) was the Buyid amir of Fars( 1024 – 1048), Kerman( 1028–1048) and Iraq( 1044 – 1048). He was the eldest son of Sultan al- Dawla.\nP10: Abu Kalijar: Abu Kalijar Marzuban (died October 1048) was the Buyid amir of Fars (1024–1048), Kerman (1028–1048) and Iraq (1044–1048). He was the eldest son of Sultan al-Dawla.\nQuestion: Who is the paternal grandfather of Sultan Al-Dawla?\nFinal answer:",
+  "output": "Baha al-Dawla",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.5
+  },
+  "response": {
+    "id": "chatcmpl-97a9dc862c89943b",
+    "object": "chat.completion",
+    "created": 1779535806,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Baha al-Dawla",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1245,
+      "total_tokens": 1252,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "idx": 291,
+  "qid": "9caa68c80bda11eba7f7acde48001122",
+  "gold": "20 April 1434",
+  "candidates": [
+    "17 February 1442",
+    "1442",
+    "Konrad I of Masovia",
+    "A Division",
+    "Siemowit V of Masovia",
+    "Siemowit IV, Duke of Masovia",
+    "Siemowit III, Duke of Masovia",
+    "Siemowit I of Masovia",
+    "Alexander of Masovia",
+    "Hedwig of Masovia",
+    "Alexandra of Lithuania"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: 17 February 1442\nC2: 1442\nC3: Konrad I of Masovia\nC4: A Division\nC5: Siemowit V of Masovia\nC6: Siemowit IV, Duke of Masovia\nC7: Siemowit III, Duke of Masovia\nC8: Siemowit I of Masovia\nC9: Alexander of Masovia\nC10: Hedwig of Masovia\nC11: Alexandra of Lithuania\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Siemowit V of Masovia -> Siemowit IV, Duke of Masovia\n- Siemowit V of Masovia -> Alexandra of Lithuania\n- Siemowit I of Masovia -> Konrad I of Masovia\n- Alexandra of Lithuania -> Siemowit IV, Duke of Masovia\n- Siemowit IV, Duke of Masovia -> Siemowit III, Duke of Masovia\n- Siemowit IV, Duke of Masovia -> Division\n- Alexander of Masovia -> Siemowit IV, Duke of Masovia\n- Alexander of Masovia -> Alexandra of Lithuania\n- Hedwig of Masovia -> Siemowit IV, Duke of Masovia\n- Hedwig of Masovia -> Siemowit IV, Duke of Masovia\nPassages:\nP1: Konrad I of Masovia: Konrad I of Masovia( ca. 1187/88 – 31 August 1247), from the Polish Piast dynasty, was the sixth Duke of Masovia and Kujawy from 1194 until his death as well as High Duke of Poland from 1229 to 1232 and again from 1241 to 1243.\nP2: Konrad I of Masovia: Konrad I of Masovia  (ca. 1187/88 – 31 August 1247), from the Polish Piast dynasty, was the sixth Duke of Masovia and Kujawy from 1194 until his death as well as High Duke of Poland from 1229 to 1232 and again from 1241 to 1243.\nP3: A Division: A Division or A-Division or Division A or variant has the following meanings:\nP4: Division: Division or divider may refer to:\nP5: Siemowit V of Masovia: Siemowit V of Rawa (pl: \"Siemowit V rawski\"; 1389 - 17 February 1442), was a Polish prince member of the House of Piast from the Masovian branch. He was a Duke of Rawa Mazowiecka, Płock, Sochaczew, Gostynin, Płońsk, Wizna and Belz during 1426-1434 jointly with his brothers, and after the division of the paternal inheritance between him and his brothers in 1434, sole ruler over Rawa Mazowiecka, Gostynin and Sochaczew. He was the eldest son of Siemowit IV, Duke of Masovia ...\nP6: Siemowit IV, Duke of Masovia: Siemowit IV (Ziemowit IV), also known as Siemowit IV the Younger (pl: \" Siemowit IV Młodszy\"; ca. 1353/1356 – 21 January 1426) , was a Polish prince member of the House of Piast from the Masovian branch, from 1373/74 Duke of Rawa, and after the division of the paternal inheritance between him and his brother in 1381, ruler over Rawa, Płock, Sochaczew, Gostynin, Płońsk and Wizna, since 1386 hereditary Polish vassal, since 1388 ruler over Belz, during 1382–1401 he ...\nP7: Siemowit III, Duke of Masovia: Siemowit III of Masovia( his name also rendered Ziemowit; – 1381) was a prince of Masovia and a co-regent( with his brother Casimir I of Warsaw) of the lands of Warsaw, Czersk, Rawa, Gostynin and other parts of Masovia.\nP8: Siemowit I of Masovia: Siemowit I of Masovia( c. 1224/28 – 23 June 1262), was a Polish prince member of the House of Piast, Duke of Czersk during 1247- 1248, Duke of Masovia( except Dobrzy ń) during 1248- 1262, ruler over Sieradz during 1259- 1260. He was the sixth son of Konrad I of Masovia and his wife Agafia of Rus. He was named after his older brother Siemowit, who died young in 1224.\nP9: Alexander of Masovia: Alexander of Masovia (pl: \"Aleksander mazowiecki\"; 1400 - 2 June 1444) was a Polish prince member of the House of Piast from the Masovian branch. He was Bishop of Trento since 1425, titular Patriarch of Aquileia since 1439, Cardinal nominated by Antipope Felix V as titular of the diocese of St. Lawrence at Damascus (\"San Lorenzo in Damaso\") since 1440, titular Bishop of Chur since 1442 and rector at St. Stephen's Cathedral, Vienna since 1442, a diplomat. He was the second ...\nP10: Hedwig of Masovia: Hedwig of Masovia (ca. 1392 – after 19 February 1439), was a Polish princess, member of the House of Piast in the Masovian branch. She was the eldest daughter of Siemowit IV, Duke of Masovia and Alexandra, a daughter of Algirdas, Grand Duke of Lithuania and sister of King Władysław II Jagiełło of Poland.\nQuestion: What is the date of death of Siemowit V Of Masovia's mother?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"17 February 1442\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide a specific date of death for Siemowit V of Masovia's mother. The only date mentioned in the passages is related to Siemowit V himself, not his mother.\"}",
+  "verifier": {
+    "final_answer": "17 February 1442",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence does not provide a specific date of death for Siemowit V of Masovia's mother. The only date mentioned in the passages is related to Siemowit V himself, not his mother."
+  },
+  "final": "17 February 1442",
+  "selected": "UNKNOWN",
+  "response": {
+    "id": "chatcmpl-bb37ba0a31dbfd08",
+    "object": "chat.completion",
+    "created": 1779536106,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"17 February 1442\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide a specific date of death for Siemowit V of Masovia's mother. The only date mentioned in the passages is related to Siemowit V himself, not his mother.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1626,
+      "total_tokens": 1695,
+      "completion_tokens": 69,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.2950968742370605
+}

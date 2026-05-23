@@ -1,0 +1,48 @@
+{
+  "qid": "17ba791a0bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "French",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Top Floor Girl -> Max Varnel\n- The Cannibal Man -> The Apartment\n- The Cannibal Man -> The Week Of\n- Place of birth -> Place of origin\n- País do Desejo -> To Life\n- País do Desejo -> Story\nPassages:\nP1: Top Floor Girl: Top Floor Girl is a 1959 British drama film directed by Max Varnel and starring Kay Callard, Neil Hallett and Robert Raikes. The screenplay was co-written by Brian Clemens.\nP2: The Week Of: The Week Of is a 2018 American comedy film written and directed by Robert Smigel, and co-written by and starring Adam Sandler. It co-stars Chris Rock, Rachel Dratch, Steve Buscemi, Allison Strong, and Noah Robbins, and follows two fathers the week of the wedding of their children. The film is the fourth collaboration between Sandler and Netflix, and was released on the streaming service on April 27, 2018.\nP3: The Apartment: The Apartment is a 1960 American romantic comedy film produced and directed by Billy Wilder from a screenplay he co-wrote with I. A. L. Diamond, starring Jack Lemmon and Shirley MacLaine, alongside Fred MacMurray, Ray Walston, Jack Kruschen, David Lewis, Willard Waterman, David White, Hope Holiday and Edie Adams. The story follows C. C. “ Bud ” Baxter( Lemmon), an insurance clerk who, in the hope of climbing the corporate ladder, lets more-senior coworkers use his Upper West Side ...\nP4: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP5: Max Varnel: Max Varnel (21 March 1925 – 15 January 1996) was a French-born Australian film and television director who worked primarily in the United Kingdom and Australia.\nP6: To Life: To Life may refer to:\nP7: Story: Story or stories, may refer to:\nP8: List of Victoria Cross recipients of uncertain nationality: The following is a list of Victoria Cross recipients whose nationality is uncertain.\nP9: The Cannibal Man: The Cannibal Man( Spanish La Semana del asesino, literally\" Week of the Killer\") is a 1972 horror film, directed by Eloy de la Iglesia and written by de la Iglesia and Antonio Fos. Despite the international title, the film contains no scenes of cannibalism. The film is also known as The Apartment On The 13th Floor. The film was featured on the British Director of Public Prosecutions' list of\" Video Nasties\".\nP10: Gay Meets Girl: Gay Meets Girl( lit. \" A man does not know what he is missing\") is a 2013 Dutch documentary film written, directed by and starring Tim den Besten and Nicolaas Veul. The documentary film explores the subjects of sexual fluidity and bisexuality through a gay man's quest to have sex with a woman. The original Dutch title means\" A man does n't know what he's missing\" in English, a reference to a gay man not know what he is missing out on by not having sex with women. The documentary ...\nQuestion: What nationality is the director of film Top Floor Girl?\nFinal answer:",
+  "output": "Australian",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-92eb31a62ce7e4b9",
+    "object": "chat.completion",
+    "created": 1779535809,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Australian",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 843,
+      "total_tokens": 845,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

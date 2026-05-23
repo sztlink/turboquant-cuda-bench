@@ -1,0 +1,48 @@
+{
+  "qid": "c5315db80baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Bernard I, Margrave of Baden-Baden",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- John II of Baden -> Adolph II of Nassau\n- John II of Baden -> Narrow Margin\n- John II of Baden -> Part\n- Maximilian, Margrave of Baden -> Princess Theodora of Greece and Denmark\n- Philip II, Margrave of Baden-Baden -> Mechthild of Bavaria\n- Philip II, Margrave of Baden-Baden -> Mechthild of Bavaria\n- Richard II, Duke of Normandy -> William the Conqueror\n- Richard II, Duke of Normandy -> Gunnor\n- Princess Maria-Olympia of Greece and Denmark -> Fashion Model\n- Catherine of Lorraine, Margravine of Baden-Baden -> Margaret of the Palatinate\nPassages:\nP1: John II of Baden: John II of Baden (1434 at Hohenbaden Castle in Baden-Baden – 9 February 1503 in Ehrenbreitstein) was a titular Margrave of Baden and was Archbishop and Elector of Trier as \"John II of Baden\" from 1456 until his death in 1503. John II of Baden was the third son of Margrave Jacob I of Baden-Baden and his wife Catherine de Lorraine. John was given a strict religious upbringing, as he was destined from an early age for an ecclesiastical career. At the urging of his father, most of ...\nP2: Adolph II of Nassau: Adolph II( or III) of Nassau- Wiesbaden- Idstein( German: Adolf II. von Nassau- Wiesbaden- Idstein)( c. 1423 – 6 September 1475) was Archbishop of Mainz from 1461 until 1475. Adolph was a son of Count Adolph II of Nassau- Wiesbaden- Idstein. In 1459 he was defeated in the election to the Archbishopric of Mainz by Theodoric of Isenburg- Büdingen. In 1461 Pope Pius II declared Adolph the archbishop of Mainz following the confrontational reforms of Theodoric. Since the city of ...\nP3: Margaret of the Palatinate: Margaret of the Palatinate( German:\" Margarete von der Pfalz\"; 1376 – 26 August 1434, Einville- au- Jard) was the daughter of Rupert of Germany and his wife Elisabeth of Nuremberg. She married Charles II, Duke of Lorraine on 6 February 1393. Her maternal grandparents were Frederick V, Burgrave of Nuremberg and Elisabeth of Meissen. One of her grandchildren was Margaret of Anjou, Queen Consort of King Henry VI of England. Her children with Charles II of Lorraine ...\nP4: Mechthild of Bavaria: Mechthild of Bavaria (12 July 1532 – 2 November 1565 in Baden-Baden) was a German noblewoman. She was the daughter of William IV, Duke of Bavaria and his wife Marie. She was buried in the Stiftskirche at Baden-Baden. On 17 January 1557 she married Philibert, Margrave of Baden-Baden, and they had the following children: Mechthild is a German form of Matilde.\nP5: The Narrow Margin: The Narrow Margin is a 1952 American film noir directed by Richard Fleischer and written by Earl Felton, based on an unpublished story written by Martin Goldsmith and Jack Leonard. The screenplay by Earl Felton was nominated for an Academy Award. The picture stars Charles McGraw, Marie Windsor, and Jacqueline White. It was released by RKO Radio Pictures. A police detective plays a deadly game of cat- and- mouse aboard a train with mob assassins out to stop a slain gangster's ...\nP6: Princess Theodora of Greece and Denmark: Princess Theodora of Greece and Denmark( born 9 June 1983 in St Mary's Hospital, London), also known under her stage name Theodora Greece, is a British actress and member of the Greek royal family and Danish Royal Family. She is currently ninth in the line of succession to the defunct Greek throne.\nP7: William the Conqueror: William I (c. 1028 – 9 September 1087), usually known as William the Conqueror and sometimes William the Bastard, was the first Norman King of England, reigning from 1066 until his death in 1087. He was a descendant of Rollo and was Duke of Normandy from 1035 onward. His hold was secure on Normandy by 1060, following a long struggle to establish his throne, and he launched the Norman conquest of England six years later. The rest of his life was marked by struggles to ...\nP8: Narrow Margin: Narrow Margin is a 1990 American crime thriller film directed by Peter Hyams and released by TriStar Pictures, loosely based on the 1952 film noir\" The Narrow Margin\". It tells the story of a Los Angeles deputy district attorney who attempts to keep a murder witness safe from hit men while traveling through the Canadian wilderness aboard a train. The film stars Gene Hackman and Anne Archer.\nP9: Fashion Model: Fashion Model is a 1945 comedy mystery film directed by William Beaudine, starring Robert Lowery, Marjorie Weaver, and Tim Ryan, and written by Victor Hammond and Tim Ryan. The film is considered to be the third in a series of Beaudine films featuring a female detective after\" Detective Kitty O' Day\"( 1944) and\" Adventures of Kitty O' Day\"( 1944).\nP10: Gunnor: Gunnor or Gunnora( circa 936 – 5 Jan 1031) was a Duchess of Normandy by marriage to Richard I of Normandy.\nQuestion: Who is the paternal grandfather of John Ii Of Baden?\nFinal answer:",
+  "output": "Jacob I of Baden-Baden",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.6666666666666665
+  },
+  "response": {
+    "id": "chatcmpl-9536c8660623aa68",
+    "object": "chat.completion",
+    "created": 1779535650,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Jacob I of Baden-Baden",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1394,
+      "total_tokens": 1402,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

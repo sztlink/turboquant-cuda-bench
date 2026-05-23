@@ -1,0 +1,48 @@
+{
+  "qid": "16ef62f20bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Great Britain",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Horace Seymour -> Lord Hugh Seymour\n- What Happened to Mary -> Story\n- What Is Father Doing in Italy? -> Comedy!\nPassages:\nP1: Lord Hugh Seymour: Vice-Admiral Lord Hugh Seymour (29 April 1759 – 11 September 1801) was a senior British Royal Navy officer of the late 18th century who was the fifth son of Francis Seymour-Conway, 1st Marquess of Hertford and became known for being both a prominent society figure and a highly competent naval officer. He served during the American Revolutionary and French Revolutionary Wars and later in his career performed a period of shore duty on the Admiralty board. Seymour maintained a ...\nP2: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP3: Story: Story or stories, may refer to:\nP4: What Is Father Doing in Italy?: What Is Father Doing in Italy? is a 1961 West German musical comedy film directed by and starring Willy Fritsch, Gerhard Riedmann and Peter Kraus. It was shot in Agfacolor.\nP5: Horace Seymour: Colonel Sir Horace Beauchamp Seymour KCH (22 November 1791 – 23 November 1851) was a Peelite Member of Parliament for Lisburn 1819–26, Orford (1820), Bodmin (1826–32), Midhurst (1841–45), Antrim (1845–47), and Lisburn 1847–51. He was an ancestor of Diana, Princess of Wales. Horace Seymour was the son of Admiral Lord Hugh Seymour (son of Francis Seymour-Conway, 1st Marquess of Hertford) and Lady Anne Horatia Waldegrave. He married, firstly, Elizabeth Malet Palk, daughter of Sir ...\nP6: What Happened to Mary: What Happened to Mary( sometimes erroneously referred to as What Happened to Mary?) is the first motion picture serial made in the United States. Made by Edison Studios, the action serial starred Mary Fuller in twelve one- reel episodes released monthly beginning July 26, 1912 to coincide with the serial story of the same name published in McClure's\" The Ladies' World\" magazine. \" What Happened to Mary\" was performed as a stage play and published as a single- volume print ...\nP7: Iraqi nationality law: Iraqi nationality is transmitted by one's parents.\nP8: Japanese nationality law: Japanese nationality is a legal designation and set of rights granted to those people who have met the criteria for citizenship by parentage or by naturalization. Nationality is in the jurisdiction of the Minister of Justice and is generally governed by the Nationality Law of 1950.\nP9: List of Victoria Cross recipients of uncertain nationality: The following is a list of Victoria Cross recipients whose nationality is uncertain.\nP10: Catherine Fillol: Catherine Fillol( or Filliol)( c. 1507- c. 1535) was the daughter and co-heiress of Sir William Fillol( 1453- 9 July 1527), of Woodlands, Horton, Dorset, and of Fillol's Hall, Essex. She became the first wife of Sir Edward Seymour, who went on to become the first Duke of Somerset of a new creation, Lord Protector of England and the uncle of King Edward VI, after his sister Jane married King Henry VIII. A 17th- century marginal note to copy of\" Vincent's Baronage\" at College of ...\nQuestion: What nationality is Horace Seymour's father?\nFinal answer:",
+  "output": "British",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-966af876ff1c5b0c",
+    "object": "chat.completion",
+    "created": 1779535920,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "British",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 902,
+      "total_tokens": 904,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

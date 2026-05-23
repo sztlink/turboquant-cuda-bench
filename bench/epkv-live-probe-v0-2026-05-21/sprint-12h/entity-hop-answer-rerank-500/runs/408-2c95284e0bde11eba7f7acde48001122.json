@@ -1,0 +1,66 @@
+{
+  "idx": 408,
+  "qid": "2c95284e0bde11eba7f7acde48001122",
+  "gold": "Foshan",
+  "candidates": [
+    "Guangzhou City, Guangdong",
+    "Mok Kwai-lan",
+    "Long Arm of the Law (film)",
+    "Long Arm of the Law",
+    "Oei Tiong Ham",
+    "Wong Fei-hung",
+    "Tharrawaddy Min",
+    "Anawrahta",
+    "Lethal Weapon",
+    "Lethal Weapon 4",
+    "Thai",
+    "Oei Hui-lan"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Guangzhou City, Guangdong\nC2: Mok Kwai-lan\nC3: Long Arm of the Law (film)\nC4: Long Arm of the Law\nC5: Oei Tiong Ham\nC6: Wong Fei-hung\nC7: Tharrawaddy Min\nC8: Anawrahta\nC9: Lethal Weapon\nC10: Lethal Weapon 4\nC11: Thai\nC12: Oei Hui-lan\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Mok Kwai-lan -> Wong Fei-hung\n- Oei Hui-lan -> Oei Tiong Ham\n- Hsinbyushin Medaw -> Nawrahta Minsaw\n- Samsenethai -> Thai\n- Nawrahta Minsaw -> Tharrawaddy Min\n- Nawrahta Minsaw -> Anawrahta\n- Long Arm of the Law Part 3 -> Long Arm of the Law (film)\n- Long Arm of the Law Part 3 -> Long Arm of the Law\n- Corey Yuen -> Lethal Weapon 4\n- Corey Yuen -> Lethal Weapon\nPassages:\nP1: Mok Kwai-lan: Mok Kwai-lan (October 15, 1892 – November 3, 1982) was the fourth spouse of Lingnan martial arts grandmaster Wong Fei-hung.\nP2: Long Arm of the Law (film): Long Arm of the Law( 省港旗兵,\" Guangdong and Hong Kong Criminals\") is a 1984 Hong Kong film directed by Johnny Mak Tong- hung. The film was followed by two sequels:\" Long Arm of the Law II\"( 1987) and\" Long Arm of the Law III\"( 1989).\nP3: Long Arm of the Law: Long Arm of the Law may refer to:\nP4: Oei Tiong Ham: Oei Tiong Ham, Majoor-titulair der Chinezen (1866–1924) was a Chinese Indonesian tycoon and the son of Oei Tjie Sien, the founder of the Kian Gwan, a multinational trading company. Born in Semarang, Central Java, Dutch East Indies (now Indonesia), he became the wealthiest person in the Far East at the start of the twentieth century. Part of his wealth originated in his involvement in the sugar industry. He served as \"Luitenant der Chinezen\" in the Dutch colonial administration in ...\nP5: Wong Fei-hung: Wong Fei-hung ( born Wong Sek-cheung with the courtesy name Tat-wun; 9 July 1847 – 17 April 1925) was a Chinese martial artist, physician, and folk hero. He has become the subject of numerous martial arts films and television series. He was considered an expert in the Hung Ga style of Chinese martial arts. As a physician, Wong practised and taught acupuncture, Dit Da and other forms of traditional Chinese medicine in Po Chi Lam , a medical clinic in Guangzhou City, Guangdong ...\nP6: Tharrawaddy Min: Tharrawaddy Min (14 March 1787 – 17 November 1846) was the 8th king of the Konbaung Dynasty of Burma. He repudiated the Treaty of Yandabo and almost went to war with the British. Tharrawaddy was born Maung Khin to Crown Prince Thado Minsaw (son of King Bodawpaya) and Princess Min Kye on 14 March 1787. When his elder brother Bagyidaw ascended the throne in 1819, Tharrawaddy was appointed Heir Apparent. As crown prince, he fought in the First Anglo-Burmese War. In February 1837, ...\nP7: Anawrahta: Anawrahta Minsaw (11 May 1014 – 11 April 1077) was the founder of the Pagan Empire. Considered the father of the Burmese nation, Anawrahta turned a small principality in the dry zone of Upper Burma into the first Burmese Empire that formed the basis of modern-day Burma (Myanmar). Historically verifiable Burmese history begins with his accession to the Pagan throne in 1044. Anawrahta unified the entire Irrawaddy valley for the first time in history, and placed peripheral regions such ...\nP8: Lethal Weapon: Lethal Weapon is a 1987 American buddy cop action comedy film directed by Richard Donner, and produced by Joel Silver, and written by Shane Black. It stars Mel Gibson and Danny Glover alongside Gary Busey, Tom Atkins, Darlene Love, and Mitchell Ryan. In\" Lethal Weapon\", a pair of mismatched LAPD detectives – Martin Riggs( Gibson), a former Green Beret who has become suicidal following the death of his wife, and Roger Murtaugh( Glover), a 50- year- old veteran of the force – work ...\nP9: Lethal Weapon 4: Lethal Weapon 4 is a 1998 American buddy cop action comedy film directed and produced by Richard Donner, and starring Mel Gibson, Danny Glover, Joe Pesci, Rene Russo, Chris Rock, and Jet Li( in his American film debut). It is the fourth and final installment in the\" Lethal Weapon\" film series.\nP10: Thai: Thai or THAI may refer to:\nQuestion: Where was the husband of Mok Kwai-Lan born?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Guangzhou City, Guangdong\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide information about the birthplace of Wong Fei-hung's husband. Mok Kwai-lan was the fourth spouse of Wong Fei-hung, but the passages do not mention Wong Fei-hung's spouse or his birthplace.\"}",
+  "verifier": {
+    "final_answer": "Guangzhou City, Guangdong",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence does not provide information about the birthplace of Wong Fei-hung's husband. Mok Kwai-lan was the fourth spouse of Wong Fei-hung, but the passages do not mention Wong Fei-hung's spouse or his birthplace."
+  },
+  "final": "Guangzhou City, Guangdong",
+  "selected": "UNKNOWN",
+  "response": {
+    "id": "chatcmpl-92821330aa0eae11",
+    "object": "chat.completion",
+    "created": 1779536190,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Guangzhou City, Guangdong\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide information about the birthplace of Wong Fei-hung's husband. Mok Kwai-lan was the fourth spouse of Wong Fei-hung, but the passages do not mention Wong Fei-hung's spouse or his birthplace.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1393,
+      "total_tokens": 1471,
+      "completion_tokens": 78,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.4091789722442627
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "772c5c660bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Catherine of Braganza",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- George FitzRoy, 1st Duke of Northumberland -> Henry FitzRoy, 1st Duke of Grafton\n- George FitzRoy, 1st Duke of Northumberland -> Seven Years\n- Henry FitzRoy, 1st Duke of Grafton -> Charles II of England\n- Henry FitzRoy, 12th Duke of Grafton -> Charles II of England\n- Jane Percy, Duchess of Northumberland -> Jane Miller\n- Isabella Percy, Countess of Beverley -> Algernon Percy, 1st Earl of Beverley\nPassages:\nP1: Algernon Percy, 1st Earl of Beverley: Algernon Percy, 1st Earl of Beverley FSA( 21 January 1750 – 21 October 1830), styled Lord Algernon Percy between 1766 and 1786 and known as The Lord Lovaine between 1786 and 1790, was a British politician who sat in the House of Commons from 1774 to 1786 when he succeeded to the Peerage.\nP2: Charles II of England: Charles II (29 May 1630 – 6 February 1685) was king of England, Scotland, and Ireland. He was king of Scotland from 1649 until his deposition in 1651, and king of England, Scotland and Ireland from the 1660 Restoration of the monarchy until his death. Charles II was the eldest surviving child of Charles I of England, Scotland and Ireland and Henrietta Maria of France. After Charles I's execution at Whitehall on 30 January 1649, at the climax of the English Civil War, the ...\nP3: Jane Miller: Jane Miller( born 1949) is an American poet.\nP4: Seven Years: Seven Years or 7 Years may refer to:\nP5: George FitzRoy, 1st Duke of Northumberland: Lieutenant-General George FitzRoy, 1st Duke of Northumberland, KG, PC (28 December 1665 – 28 June 1716) was the third and youngest illegitimate son of King Charles II of England; his mother was Barbara Villiers, Countess of Castlemaine (also known as Barbara Villiers, Duchess of Cleveland). On 1 October 1674, he was created Earl of Northumberland, Baron of Pontefract (Yorkshire) and Viscount Falmouth (Cornwall). On 6 April 1683, he was created Duke of ...\nP6: Hugh Percy, 1st Duke of Northumberland: Hugh Percy, 1st Duke of Northumberland,( c. 17146 June 1786), was an English peer, landowner, and art patron.\nP7: Henry FitzRoy, 1st Duke of Grafton: Henry FitzRoy, 1st Duke of Grafton, (28 September 16639 October 1690) was the illegitimate son of King Charles II of England. A military commander, Henry FitzRoy was appointed colonel of the Grenadier Guards in 1681 and Vice-Admiral of England from 1682 to 1689. He was killed in the storming of Cork during the Williamite–Jacobite War in 1690.\nP8: Henry FitzRoy, 12th Duke of Grafton: Henry Oliver Charles FitzRoy, 12th Duke of Grafton( born 6 April 1978), known as Harry Grafton, is an English peer and music promoter. He inherited the Dukedom of Grafton from his grandfather, Hugh FitzRoy, 11th Duke of Grafton, on 7 April 2011. He is also a direct male- line descendant of Charles II of England.\nP9: George Tailboys, 2nd Baron Tailboys of Kyme: George Tailboys( c. 1523 – c. 6 September 1540) was the eldest son of Elizabeth Blount and Gilbert Tailboys, 1st Baron Tailboys of Kyme. Through his mother he was the half brother of Henry FitzRoy, 1st Duke of Richmond and Somerset, who was the only illegitimate offspring acknowledged by Henry VIII, King of England.\nP10: Jane Percy, Duchess of Northumberland: Isobel Jane Miller Percy, Duchess of Northumberland( née Richard; born 11 May 1958), is a British businesswoman. She has served as Lord Lieutenant of Northumberland since 2009, and is best known for redeveloping The Alnwick Garden at Alnwick Castle. She is the first woman to serve as Lord Lieutenant of Northumberland. Her husband, Ralph, is the 12th Duke of Northumberland.\nQuestion: Who is George Fitzroy, 1St Duke Of Northumberland's stepmother?\nFinal answer:",
+  "output": "Barbara Villiers, Countess of Castlemaine",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.25
+  },
+  "response": {
+    "id": "chatcmpl-a359866f13fdd31f",
+    "object": "chat.completion",
+    "created": 1779535605,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Barbara Villiers, Countess of Castlemaine",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1159,
+      "total_tokens": 1171,
+      "completion_tokens": 12,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

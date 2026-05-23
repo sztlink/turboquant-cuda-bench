@@ -1,0 +1,48 @@
+{
+  "qid": "32eca0e20bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Louise d'Aumont",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Princess Florestine of Monaco -> Maria Caroline Gibert de Lametz\n- Princess Florestine of Monaco -> Florestan I, Prince of Monaco\n- Princess Florestine of Monaco -> Maria Caroline Gibert de Lametz\n- Princess Florestine of Monaco -> Florestan I, Prince of Monaco\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Queen Victoria\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Louise\n- Albert II, Prince of Monaco -> Caroline, Princess of Hanover\n- Albert II, Prince of Monaco -> Grace Kelly\n- Princess Stéphanie of Monaco -> Caroline, Princess of Hanover\n- Princess Stéphanie of Monaco -> Albert II, Prince of Monaco\n- Princess Stéphanie of Monaco -> Caroline, Princess of Hanover\n- Princess Stéphanie of Monaco -> Albert II, Prince of Monaco\n- Elisabeth-Anne de Massy -> Princess Stéphanie of Monaco\nPassages:\nP1: Caroline, Princess of Hanover: Caroline, Princess of Hanover( Caroline Louise Marguerite Grimaldi; born 23 January 1957), is the eldest child of Rainier III, Prince of Monaco, and the American actress Grace Kelly. She is the elder sister of Prince Albert II and Princess Stéphanie. Until the births of her niece and nephew, Princess Gabriella and Prince Jacques, in December 2014, she had been heiress presumptive to the throne of Monaco since 2005, a position which she previously held from 1957 to ...\nP2: Caroline, Princess of Hanover: Caroline, Princess of Hanover (Caroline Louise Marguerite Grimaldi; born 23 January 1957), is the eldest child of Rainier III, Prince of Monaco, and the American actress Grace Kelly. She is the elder sister of Prince Albert II and Princess Stéphanie. Until the births of her niece and nephew, Princess Gabriella and Prince Jacques, in December 2014, she had been heiress presumptive to the throne of Monaco since 2005, a position which she previously held from 1957 to ...\nP3: Florestan I, Prince of Monaco: Florestan I (10 October 1785, in Paris – 20 June 1856) was Prince of Monaco and Duke of Valentinois from 2 October 1841 until his death. He was born Tancrède Florestan Roger Louis Grimaldi the second son of Prince Honoré IV and Louise d'Aumont Mazarin and succeeded to the throne on the death of his brother, Honoré V.\nP4: Grace Kelly: Grace Patricia Kelly (November 12, 1929September 14, 1982) was an American film actress who, after starring in several significant films in the early- to mid-1950s, became Princess of Monaco by marrying Prince Rainier III in April 1956. After embarking on an acting career in 1950 when she was 20, Kelly appeared in New York City theatrical productions and more than 40 episodes of live drama productions broadcast during the early 1950s Golden Age of Television. From 1952 to 1956 she ...\nP5: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nP6: Maria Caroline Gibert de Lametz: Marie Caroline Gibert de Lametz, (18 July 1793 – 25 November 1879), was a French stage actress and a Princess Consort and regent de facto of Monaco by marriage to Florestan I, Prince of Monaco.\nP7: Louise: Louise or Luise may refer to:\nP8: Princess Florestine of Monaco: Princess Florestine Gabrielle Antoinette of Monaco (Full French name: \"Florestine Gabrielle Antoinette, Princesse de Monaco\") (22 October 1833 in Fontenay-aux-Roses, Kingdom of the French – 4 April 1897 in Stuttgart, Kingdom of Württemberg) was the youngest child and only daughter of Florestan I, Prince of Monaco, and his wife Maria Caroline Gibert de Lametz. Florestine was a member of the House of Grimaldi and a Princess of Monaco by birth and a member of the ...\nP9: Princess Florestine of Monaco: Princess Florestine Gabrielle Antoinette of Monaco( Full French name:\" Florestine Gabrielle Antoinette, Princesse de Monaco\")( 22 October 1833 in Fontenay- aux- Roses, Kingdom of the French – 4 April 1897 in Stuttgart, Kingdom of Württemberg) was the youngest child and only daughter of Florestan I, Prince of Monaco, and his wife Maria Caroline Gibert de Lametz. Florestine was a member of the House of Grimaldi and a Princess of Monaco by birth and a member of the ...\nP10: Princess Stéphanie of Monaco: Princess Stéphanie of Monaco, Countess of Polignac (Stéphanie Marie Elisabeth Grimaldi; born 1 February 1965) is the youngest child of Rainier III, Prince of Monaco, and the American actress Grace Kelly. She is the younger sister of Albert II, Prince of Monaco, and Caroline, Princess of Hanover. Currently 14th in the line of succession to the Monegasque throne, she has been a singer, swimwear designer and fashion model.\nQuestion: Who is Princess Florestine Of Monaco's paternal grandmother?\nFinal answer:",
+  "output": "Maria Caroline Gibert de Lametz",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-804f1ebed67ae4ea",
+    "object": "chat.completion",
+    "created": 1779535749,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Maria Caroline Gibert de Lametz",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1447,
+      "total_tokens": 1455,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

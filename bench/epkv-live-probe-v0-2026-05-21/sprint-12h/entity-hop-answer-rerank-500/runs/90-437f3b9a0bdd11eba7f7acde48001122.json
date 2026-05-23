@@ -1,0 +1,66 @@
+{
+  "idx": 90,
+  "qid": "437f3b9a0bdd11eba7f7acde48001122",
+  "gold": "Hackney",
+  "candidates": [
+    "Place of origin",
+    "I Wish (Gabrielle song)",
+    "Place of birth",
+    "The Rest of My Life",
+    "The Singer",
+    "Going Nowhere",
+    "Karn Evil 9",
+    "Phil Collins",
+    "Because of You (Gabrielle song)",
+    "Find",
+    "Tarkus (song)",
+    "Keith Emerson"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of origin\nC2: I Wish (Gabrielle song)\nC3: Place of birth\nC4: The Rest of My Life\nC5: The Singer\nC6: Going Nowhere\nC7: Karn Evil 9\nC8: Phil Collins\nC9: Because of You (Gabrielle song)\nC10: Find\nC11: Tarkus (song)\nC12: Keith Emerson\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- I Wish (Gabrielle song) -> Going Nowhere\n- I Wish (Gabrielle song) -> The Singer\n- I Wish (Gabrielle song) -> Going Nowhere\n- I Wish (Gabrielle song) -> The Singer\n- Place of birth -> Place of origin\n- Because of You (Gabrielle song) -> The Singer\n- Because of You (Gabrielle song) -> Find\n- Tarkus (song) -> Keith Emerson\n- Tarkus (song) -> Karn Evil 9\n- What Am I Gonna Do (With the Rest of My Life) -> Rest of My Life\n- What Am I Gonna Do (With the Rest of My Life) -> Merle Haggard\n- Fading Lights -> Phil Collins\n- Fading Lights -> PAST\nPassages:\nP1: I Wish (Gabrielle song): \"I Wish\" is a song by English singer Gabrielle. It was written by Gabrielle and Jon Douglas for her debut album \" Find Your Way\" (1993), while production was helmed by Douglas. Released as the album's third single, the song was not as successful as its predecessors \"Dreams\" and \"Going Nowhere\", which both reached the top ten of the UK Singles Chart, peaking at number 26. In North America, \"I Wish\" reached number 52 in the United States and number 76 in Canada.\nP2: I Wish (Gabrielle song): \" I Wish\" is a song by English singer Gabrielle. It was written by Gabrielle and Jon Douglas for her debut album\" Find Your Way\"( 1993), while production was helmed by Douglas. Released as the album's third single, the song was not as successful as its predecessors\" Dreams\" and\" Going Nowhere\", which both reached the top ten of the UK Singles Chart, peaking at number 26. In North America,\" I Wish\" reached number 52 in the United States and number 76 in Canada.\nP3: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP4: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP5: The Rest of My Life: \" The Rest of My Life\" is a song by Canadian rock band Sloan. The song was released as the first single from their seventh studio album,\" Action Pact\". The song's lyrics deal with the fear of not growing up fast enough. The song received notable radio airplay, being the# 1 most added single at radio by the Canadian Music Network.\nP6: Rest of My Life: Rest of My Life or The Rest of My Life may refer to:\nP7: The Singer: The Singer may refer to:\nP8: Going Nowhere: \" Going Nowhere\" is a song by English singer Gabrielle. It was written by Gabrielle and George McFarlane and produced by Pete Cragie for her debut studio album\" Find Your Way\"( 1993). Released as the album's second single,\" Going Nowhere\" reached number nine on the UK Singles Chart and number 18 in Ireland. It also peaked at number three on the Canadian dance chart and number 14 on the US\" Billboard\" Hot Dance Club Play chart.\nP9: Karn Evil 9: \" Karn Evil 9\" is an extended work by progressive rock group Emerson, Lake& Palmer, appearing on the album\" Brain Salad Surgery\". A futuristic fusion of rock and classical themes, it is regarded by some to be their best work together with the song\" Tarkus\". At nearly half an hour long, it is also their longest studio recording.\nP10: Phil Collins: Philip David Charles Collins (born 30 January 1951) is an English drummer, singer, songwriter, multi-instrumentalist, record producer, and actor. He was the drummer and later became singer of the rock band Genesis, and is also a solo artist. Between 1982 and 1989, Collins scored three UK and seven US number-one singles in his solo career. When his work with Genesis, his work with other artists, as well as his solo career is totalled, he had more US Top 40 singles than any other ...\nQuestion: What is the place of birth of the performer of song I Wish (Gabrielle Song)?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the place of birth of the performer of the song 'I Wish'.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence passages do not provide information about the place of birth of the performer of the song 'I Wish'."
+  },
+  "final": "Place of origin",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-ab7201f84ef56549",
+    "object": "chat.completion",
+    "created": 1779535980,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the place of birth of the performer of the song 'I Wish'.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1335,
+      "total_tokens": 1375,
+      "completion_tokens": 40,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.7996938228607178
+}

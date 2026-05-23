@@ -1,0 +1,48 @@
+{
+  "qid": "d61d801e0bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Rudolf Hausner",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Little Joe (film) -> Jessica Hausner\n- Little Joe (film) -> Emily Beecham\n- The Ballad of Little Joe -> Voices\n- The Ballad of Little Joe -> Story\n- Father of the Bride Part II -> Comedy!\n- Father of the Bride Part II -> Part\n- Little Joe Cook -> The Singer\n- Under the Rainbow -> Phil Fondacaro\n- Under the Rainbow -> Comedy!\n- Little Joe McLerran -> The Singer\n- Howard Franklin -> The Man Who Knew Too Little\n- About the Little Red Riding Hood -> Story\n- About the Little Red Riding Hood -> Part\nPassages:\nP1: Little Joe (film): Little Joe is a 2019 internationally co-produced drama film directed by Jessica Hausner. It was selected to compete for the Palme d'Or at the 2019 Cannes Film Festival. At Cannes, Emily Beecham won the award for Best Actress. Beecham stars as Alice Woodard, a plant breeder and single mother who creates \"Little Joe\" a plant that gives its caretakers joy.\nP2: The Man Who Knew Too Little: The Man Who Knew Too Little is a 1997 spy comedy film starring Bill Murray, directed by Jon Amiel, and written by Robert Farrar and Howard Franklin. The film is based on Farrar's novel\" Watch That Man\", and the title is a parody of Alfred Hitchcock's 1934 film\" The Man Who Knew Too Much\" and his 1956 remake of the same title.\nP3: The Singer: The Singer may refer to:\nP4: Jessica Hausner: Jessica Hausner (born 6 October 1972) is an Austrian film director and screenwriter. She received international attention in 2001 when her film \"Lovely Rita\", a portrait of a young girl who feels confined by family constraints, was screened in the Un Certain Regard section at the 2001 Cannes Film Festival. Three years later she returned to Cannes with her film \"Hotel\". Her 2014 film \"Amour Fou\" was selected to compete in the Un Certain Regard section at the 2014 Cannes Film ...\nP5: Emily Beecham: Emily Beecham( born 12 May 1984) is an English actress. She is best known for her role in the Coen Brothers film\" Hail, Caesar!\", for the AMC television series\" Into the Badlands\", and for the title role in the 2017 film\" Daphne\". In 2019, she starred in Austrian director Jessica Hausner's film\" Little Joe\", for which she received the Best Actress award at the Cannes Film Festival.\nP6: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP7: Phil Fondacaro: Phil Fondacaro( born November 8, 1958) is an American actor and stuntman. A dwarf at 3' 6\", Fondacaro is best known for his performance in the horror comedy\" Bordello of Blood\", as well as his roles in the fantasy films\" The Black CauldronTroll\" and\" Willow\". He also had several prominent television roles, such as a recurring role as Roland on the TV series\" Sabrina the Teenage Witch\".\nP8: Voices: Voices or The Voices may refer to:\nP9: Story: Story or stories, may refer to:\nP10: Part: Part, parts or PART may refer to:\nQuestion: Who is the father of the director of film Little Joe (Film)?\nFinal answer:",
+  "output": "Howard Franklin",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-83cbe555dca557c8",
+    "object": "chat.completion",
+    "created": 1779535911,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Howard Franklin",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 876,
+      "total_tokens": 879,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

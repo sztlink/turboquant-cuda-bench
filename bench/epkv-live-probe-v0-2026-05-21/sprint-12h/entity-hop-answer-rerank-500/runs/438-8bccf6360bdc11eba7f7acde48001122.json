@@ -1,0 +1,66 @@
+{
+  "idx": 438,
+  "qid": "8bccf6360bdc11eba7f7acde48001122",
+  "gold": "Leicester",
+  "candidates": [
+    "Gary Lineker",
+    "Gary Lineker's place of birth is not provided in the given passages",
+    "Place of birth",
+    "The Child",
+    "Love Star",
+    "October 1",
+    "Model",
+    "@Home",
+    "Golden Boot",
+    "Place of origin",
+    "Danielle Lineker",
+    "Count Claus-Casimir of Orange-Nassau"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Gary Lineker\nC2: Gary Lineker's place of birth is not provided in the given passages\nC3: Place of birth\nC4: The Child\nC5: Love Star\nC6: October 1\nC7: Model\nC8: @Home\nC9: Golden Boot\nC10: Place of origin\nC11: Danielle Lineker\nC12: Count Claus-Casimir of Orange-Nassau\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Danielle Lineker -> Gary Lineker\n- Danielle Lineker -> Model\n- Motherland (disambiguation) -> Place of origin\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Danielle Bisutti -> Love Star\n- Danielle Bisutti -> October 1\n- Gary Lineker -> Golden Boot\n- Count Claus-Casimir of Orange-Nassau -> The Child\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: The Child: The Child may refer to:\nP3: Love Star: Love Star is a bilingual electropop duo formed by Mexican singer Adriana Fernandez Arias( Starla), and Los Angeles guitarist William Ferreira Alves III( The Doctor). The group formed in LA in 2010 and their debut EP “\" Happiness\" ” included the iTunes Download of the Week in the US and Mexico single, “\" Felicidad\" ”. Their brand of Latin- influenced electropop has earned them recognition by major publications like People en Español and El Mexicano among others. The success of their ...\nP4: October 1: It is the first day of the fourth quarter of the year.\nP5: Model: Model or modeling may refer to:\nP6: @Home: @Home or @home may refer to:\nP7: Golden Boot: Golden Boot or Golden Shoe may refer to:\nP8: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP9: Danielle Lineker: Danielle Maria Bux (born 15 June 1979) is a Welsh actress and model. She made her modelling début in 1999 winning a place on the Miss Hawaiian Tropic beauty pageant in Las Vegas. She was married to former England footballer Gary Lineker from 2009 until 2016.\nP10: Count Claus-Casimir of Orange-Nassau: Count Claus- Casimir of Orange- Nassau, Jonkheer van Amsberg( Claus- Casimir Bernhard Marius Max; born 21 March 2004), is the second child of Prince Constantijn and Princess Laurentien of the Netherlands and their only son. He is a member of the Dutch Royal Family and is sixth in the line of succession to the Dutch throne. His birth was overshadowed by the death, only a day before, of his great- grandmother, the former Queen Juliana. He is the only grandson ...\nQuestion: What is the place of birth of Danielle Lineker's husband?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Gary Lineker\",\"selected\":\"C1|C2\",\"confidence\":\"medium\",\"reason\":\"The candidate entity graph shows that Danielle Lineker is married to Gary Lineker, and while the place of birth for Gary Lineker is not directly stated in the passages, it is implied that the place of origin information could be relevant, and the graph does not provide any conflicting information. However, the passages do not explicitly state Gary Lineker's place of birth, so the confidence is medium.\"}",
+  "verifier": {
+    "final_answer": "Gary Lineker",
+    "selected": "C1|C2",
+    "confidence": "medium",
+    "reason": "The candidate entity graph shows that Danielle Lineker is married to Gary Lineker, and while the place of birth for Gary Lineker is not directly stated in the passages, it is implied that the place of origin information could be relevant, and the graph does not provide any conflicting information. However, the passages do not explicitly state Gary Lineker's place of birth, so the confidence is medium."
+  },
+  "final": "Gary Lineker",
+  "selected": "C1|C2",
+  "response": {
+    "id": "chatcmpl-8ce0589aef97c815",
+    "object": "chat.completion",
+    "created": 1779536215,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Gary Lineker\",\"selected\":\"C1|C2\",\"confidence\":\"medium\",\"reason\":\"The candidate entity graph shows that Danielle Lineker is married to Gary Lineker, and while the place of birth for Gary Lineker is not directly stated in the passages, it is implied that the place of origin information could be relevant, and the graph does not provide any conflicting information. However, the passages do not explicitly state Gary Lineker's place of birth, so the confidence is medium.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 972,
+      "total_tokens": 1075,
+      "completion_tokens": 103,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.7786827087402344
+}

@@ -1,0 +1,61 @@
+{
+  "idx": 406,
+  "qid": "0a65b7300bb011ebab90acde48001122",
+  "gold": "Joseph, Duke of Saxe-Altenburg",
+  "candidates": [
+    "Princess Alexandra of Saxe-Altenburg's father, Joseph, Duke of Saxe-Altenburg",
+    "Grand Duke Constantine Nikolaievich",
+    "Grand Duke Paul Alexandrovich of Russia",
+    "George I of Greece",
+    "Princess Alexandra of Saxe-Altenburg",
+    "Adolf Frederick, King of Sweden",
+    "Prince Christopher of Greece and Denmark",
+    "Princess Marie Bonaparte",
+    "The Child",
+    "Olga Constantinovna of Russia",
+    "Grand Duchess Olga Pavlovna of Russia",
+    "Princess Vera Constantinovna of Russia"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Princess Alexandra of Saxe-Altenburg's father, Joseph, Duke of Saxe-Altenburg\nC2: Grand Duke Constantine Nikolaievich\nC3: Grand Duke Paul Alexandrovich of Russia\nC4: George I of Greece\nC5: Princess Alexandra of Saxe-Altenburg\nC6: Adolf Frederick, King of Sweden\nC7: Prince Christopher of Greece and Denmark\nC8: Princess Marie Bonaparte\nC9: The Child\nC10: Olga Constantinovna of Russia\nC11: Grand Duchess Olga Pavlovna of Russia\nC12: Princess Vera Constantinovna of Russia\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Grand Duchess Olga Pavlovna of Russia -> The Child\n- Princess Anastasia of Greece and Denmark -> Prince Christopher of Greece and Denmark\n- Princess Anastasia of Greece and Denmark -> Olga Constantinovna of Russia\n- Olga Constantinovna of Russia -> Princess Alexandra of Saxe-Altenburg\n- Olga Constantinovna of Russia -> George I of Greece\n- Princess Eugénie of Greece and Denmark -> Olga Constantinovna of Russia\n- Princess Eugénie of Greece and Denmark -> Princess Marie Bonaparte\n- Princess Eugénie of Greece and Denmark -> Olga Constantinovna of Russia\n- Princess Eugénie of Greece and Denmark -> Princess Marie Bonaparte\n- Princess Olga Paley -> Grand Duke Paul Alexandrovich of Russia\n- Christian August of Holstein-Gottorp, Prince of Eutin -> Adolf Frederick, King of Sweden\nPassages:\nP1: Grand Duke Paul Alexandrovich of Russia: Grand Duke Paul Alexandrovich of Russia (3 October 1860 – 28 January 1919) was the sixth son and youngest child of Emperor Alexander II of Russia by his first wife, Empress Maria Alexandrovna. He was a brother of Emperor Alexander III and uncle of Nicholas II, Russia's last monarch. He entered the Russian Army, was a general in the Cavalry and adjutant general to his brother Emperor Alexander III, and a Knight of the Order of St. Andrew. In 1889, he ...\nP2: George I of Greece: George I (Greek: Γεώργιος Α΄, Geórgios I; 24 December 1845 – 18 March 1913) was King of Greece from 1863 until his assassination in 1913. Originally a Danish prince, he was born in Copenhagen, and seemed destined for a career in the Royal Danish Navy. He was only 17 years old when he was elected king by the Greek National Assembly, which had deposed the unpopular former king Otto. His nomination was both suggested and supported by the Great Powers: the United Kingdom of ...\nP3: Princess Alexandra of Saxe-Altenburg: Grand Duchess Alexandra Iosifovna of Russia (8 July 1830 – 6 July 1911), born Princess Alexandra Friederike Henriette of Saxe-Altenburg, was the fifth daughter of Joseph, Duke of Saxe-Altenburg and Amelie Theresa Luise, Duchess of Württemberg. She is an ancestor of the British, Greek, Romanian, Yugoslavian and Spanish Royal Families through her elder daughter Olga.\nP4: Adolf Frederick, King of Sweden: Adolf Frederick or Adolph Frederick (14 May 171012 February 1771) was King of Sweden from 1751 until his death. He was the son of Christian August of Holstein-Gottorp, Prince of Eutin, and Albertina Frederica of Baden-Durlach. The first king from the House of Holstein-Gottorp, Adolf Frederick was a weak monarch, instated as first in line of the throne following the parliamentary government's failure to reconquer the Baltic provinces in 1741–43. Aside from a few ...\nP5: Prince Christopher of Greece and Denmark: Prince Christopher of Greece and Denmark (10 August 1888 – 21 January 1940) was the fifth and youngest son and youngest child of King George I of Greece, belonging to a dynasty which mounted and lost the throne of Greece several times during his lifetime. Much of his life was spent living abroad.\nP6: Princess Marie Bonaparte: Princess Marie Bonaparte (2 July 1882 – 21 September 1962), known as Princess George of Greece and Denmark upon her marriage, was a French author and psychoanalyst, closely linked with Sigmund Freud. Her wealth contributed to the popularity of psychoanalysis, and enabled Freud's escape from Nazi Germany. Marie Bonaparte was a great-grandniece of Emperor Napoleon I of France. She was the only child of Prince Roland Bonaparte (19 May 1858 – 14 April 1924) and Marie-Félix ...\nP7: The Child: The Child may refer to:\nP8: Olga Constantinovna of Russia: Olga Constantinovna of Russia (18 June 1926) was Queen consort of the Hellenes as the wife of King George I. She was briefly the regent of Greece in 1920. A member of the Romanov dynasty , she was the daughter of Grand Duke Constantine Nikolaievich and his wife, Princess Alexandra of Saxe-Altenburg. She spent her childhood in Saint Petersburg, Poland and the Crimea, and married King George I of Greece in 1867 at the age of sixteen. At first, she felt ill at ease ...\nP9: Grand Duchess Olga Pavlovna of Russia: Grand Duchess Olga Pavlovna of Russia  was a \"Grand Duchess of Russia\" as the second youngest daughter and seventh child of Emperor Paul I of Russia and his empress consort, Sophie Dorothea of Württemberg.\nP10: Princess Vera Constantinovna of Russia: Princess Vera Constantinovna of Russia, also Vera Konstantinovna( 24 April 1906 – 11 January 2001), was the youngest child of Grand Duke Konstantine Konstantinovich of Russia and his wife, Grand Duchess Elizabeth Mavrikievna. A great- granddaughter of Tsar Nicholas I of Russia, she was born in the Russian Empire and was a childhood playmate of the younger children of Emperor Nicholas II of Russia. She lost much of her family during World War I and the ...\nQuestion: Who is Olga Constantinovna Of Russia's maternal grandfather?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Joseph, Duke of Saxe-Altenburg\",\"selected\":\"C3|UNKNOWN\",\"confidence\":\"medium\",\"reason\":\"Based on the evidence, Olga Constantinovna of Russia is the daughter of Grand Duke Constantine Nikolaievich and Princess Alexandra of Saxe-Altenburg. Princess Alexandra of Saxe-Altenburg's father is Joseph, Duke of Saxe-Altenburg, making him Olga Constantinovna's maternal grandfather. However, the graph contains a distractor where it incorrectly states that Grand Duchess Olga Pavlovna of Russia is related to The Child, which is not directly relevant to the question",
+  "verifier": {},
+  "final": "Princess Alexandra of Saxe-Altenburg's father, Joseph, Duke of Saxe-Altenburg.",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-a37b3d802e2bfd62",
+    "object": "chat.completion",
+    "created": 1779536186,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Joseph, Duke of Saxe-Altenburg\",\"selected\":\"C3|UNKNOWN\",\"confidence\":\"medium\",\"reason\":\"Based on the evidence, Olga Constantinovna of Russia is the daughter of Grand Duke Constantine Nikolaievich and Princess Alexandra of Saxe-Altenburg. Princess Alexandra of Saxe-Altenburg's father is Joseph, Duke of Saxe-Altenburg, making him Olga Constantinovna's maternal grandfather. However, the graph contains a distractor where it incorrectly states that Grand Duchess Olga Pavlovna of Russia is related to The Child, which is not directly relevant to the question",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1585,
+      "total_tokens": 1713,
+      "completion_tokens": 128,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 2.2424685955047607
+}

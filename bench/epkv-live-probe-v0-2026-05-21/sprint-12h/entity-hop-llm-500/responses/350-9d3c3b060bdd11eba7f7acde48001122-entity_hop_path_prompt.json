@@ -1,0 +1,48 @@
+{
+  "qid": "9d3c3b060bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "English",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Æthelwald, Ealdorman of East Anglia -> Offer\n- Sigeberht of East Anglia -> The Descendants\n- Sigeberht of East Anglia -> It's a King\n- June Thoburn -> University of the East\n- Ordgar, Ealdorman of Devon -> Æthelred the Unready\n- Ordgar, Ealdorman of Devon -> Great West\n- Sally-Ann Wilson -> University of the East\n- Sally-Ann Wilson -> Sally Ann\n- David Richardson (academic) -> University of the East\nPassages:\nP1: University of the East: The University of the East also known as UE, is a private university located in Manila, Philippines. It was founded in 1946. Business tycoon Lucio Tan acquired the university in 1990. UE was once labeled as the\" largest university in Asia\" when its enrollment in the past reached over 65,000 students. UE was granted the\" Autonomous Status\" by the Commission on Higher Education( CHED) which has only been given to selected higher educational institutions with excellent ...\nP2: It's a King: It's a King is a 1933 British comedy film directed by Jack Raymond and starring Sydney Howard, Joan Maude and Cecil Humphreys. It was made at Elstree Studios by the producer Herbert Wilcox's British and Dominions company.\nP3: Æthelred the Unready: Æthelred II (Old English: \"Æþelræd\", ; 966 – 23 April 1016), known as the Unready, was King of the English from 978 to 1013 and again from 1014 until his death. His epithet does not derive from the modern word \"unready\", but rather from the Old English \"unræd\" meaning \"poorly advised\"; it is a pun on his name, which means \"well advised\". Æthelred was the son of King Edgar and Queen Ælfthryth. He came to the throne at about the age of 12, following the assassination of his ...\nP4: The Descendants: The Descendants is a 2011 American comedy- drama film directed by Alexander Payne. The screenplay by Payne, Nat Faxon and Jim Rash is based on the 2007 novel of the same name by Kaui Hart Hemmings. The film stars George Clooney, Shailene Woodley, Amara Miller, Beau Bridges, Judy Greer, Matthew Lillard, and Robert Forster, and was released by Fox Searchlight Pictures in the United States on November 18, 2011 after being screened at the 2011 Toronto International Film Festival. ...\nP5: Offer: Offer or offers may refer to:\nP6: Great West: Great West may mean:\nP7: Sally Ann: Sally Ann may refer to:\nP8: Æthelwald, Ealdorman of East Anglia: Æthelwald (died 962) was ealdorman of East Anglia. He is mentioned in Byrhtferth's life of Oswald of Worcester along with other members of his family. He was probably the oldest son of Æthelstan Half-King and succeeded to some of his father's offices in 956 when Æthelstan became a monk at Glastonbury Abbey. He was a benefactor of Ramsey Abbey and a supporter of the Benedictine reform movement which began in the reign of King Edgar. He was the first husband ...\nP9: Sigeberht of East Anglia: Sigeberht of East Anglia( also known as Saint Sigebert),( Old English:\" Sigebryht\") was a saint and a king of East Anglia, the Anglo- Saxon kingdom which today includes the English counties of Norfolk and Suffolk. He was the first English king to receive a Christian baptism and education before his succession and the first to abdicate in order to enter the monastic life. The principal source for Sigeberht is Bede's\" Ecclesiastical History of the English People\", which ...\nP10: Eohric of East Anglia: Eohric( died 902) was a Danish Viking king of East Anglia. The name\" Eohric\" is the Old English form of the Old Norse\" Eiríkr\". Little is known of Eohric or of the kingdom of East Anglia in his time. The\" Anglo- Saxon Chronicle\" recorded that an army from East Anglia raided Mercia and Wessex, and a West Saxon army raided East Anglia in retaliation. The Vikings met a section of the West Saxons at the Battle of the Holme on 13 December 902, and Eohric was killed.\nQuestion: Which country Æthelwald, Ealdorman Of East Anglia's wife is from?\nFinal answer:",
+  "output": "Distractors in the graph. No information about Æthelwald's wife's origin is provided in the passages",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-93b9a0b675114bee",
+    "object": "chat.completion",
+    "created": 1779535786,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Distractors in the graph. No information about Æthelwald's wife's origin is provided in the passages",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1142,
+      "total_tokens": 1166,
+      "completion_tokens": 24,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

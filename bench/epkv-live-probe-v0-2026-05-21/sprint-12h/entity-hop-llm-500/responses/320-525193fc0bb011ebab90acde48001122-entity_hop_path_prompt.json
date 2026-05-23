@@ -1,0 +1,48 @@
+{
+  "qid": "525193fc0bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Jacques",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Henri II, Duke of Nemours -> Louise de Bourbon\n- Henri II, Duke of Nemours -> Louise\n- Prince Foulques, Duke of Aumale -> Prince Jacques, Duke of Orléans\n- Prince Foulques, Duke of Aumale -> Prince Jacques, Duke of Orléans\n- Prince Robert, Count of La Marche -> Princess Claude of Orléans\n- Jacques, Duke of Nemours -> Renée of France\n- Jacques, Duke of Nemours -> The Supporter\n- Louise de Bourbon -> Louise\nPassages:\nP1: Prince Jacques, Duke of Orléans: Prince Jacques of Orléans, Duke of Orléans,\" fils de France\"( Jacques Jean Jaroslaw Marie; born 25 June 1941 in Rabat, Morocco), is the son of Henri, Count of Paris( the Orléanist claimant to the French throne from 1940 until his death) and his wife, Princess Isabelle of Orléans- Braganza.\nP2: Prince Jacques, Duke of Orléans: Prince Jacques of Orléans, Duke of Orléans, \"fils de France\" (Jacques Jean Jaroslaw Marie; born 25 June 1941 in Rabat, Morocco), is the son of Henri, Count of Paris (the Orléanist claimant to the French throne from 1940 until his death) and his wife, Princess Isabelle of Orléans-Braganza.\nP3: Princess Claude of Orléans: Princess Claude of Orléans (Claude Marie Agnès Catherine; born 11 December 1943) is a French princess of the House of Orléans. She is the former wife of Prince Amedeo, Duke of Aosta, a disputed head of the House of Savoy.\nP4: Princess Claude of Orléans: Princess Claude of Orléans( Claude Marie Agnès Catherine; born 11 December 1943) is a French princess of the House of Orléans. She is the former wife of Prince Amedeo, Duke of Aosta, a disputed head of the House of Savoy.\nP5: Renée of France: Renée of France( 25 October 1510 – 12 June 1574), was the Duchess of Ferrara due to her marriage to Ercole II d' Este, grandson of Pope Alexander VI. She was the younger surviving child of Louis XII of France and Anne of Brittany. In her later life she became an important supporter of the Protestant Reformation and ally of John Calvin.\nP6: The Supporter: El Acompañamiento( English language: The Supporter) is a 1991 Argentine musical drama film directed and written by Carlos Orgambide. The musical was based on a play by Carlos Gorostiza.\nP7: Louise: Louise or Luise may refer to:\nP8: Henri II, Duke of Nemours: Henri of Savoy (7 November 1625, Paris – 4 January 1659, Paris) was the seventh Duc de Nemours (1652–59), and was also Count of Geneva. Henri, as the third son of Henri de Savoie, 4th Duc de Nemours, was not expected to succeed to the dukedom and entered the priesthood. By 1651, he had become Archbishop of Reims. When his brothers Louis and Charles both predeceased him without leaving sons, he was relieved of his vows and became Duc de Nemours in 1652. He married ...\nP9: Jacques, Duke of Nemours: Jacques of Savoy, 2nd duke of Nemours( 12 October 153115 June 1585) was the son of Philippe, Duke of Nemours, and became Duke of Nemours on his father's death in 1533. He distinguished himself at the sieges of Lens and Metz( 1552 – 1553), at the Battle of Renty( 1554) and in the campaign of Piedmont( 1555). He was a supporter of the house of Guise, and had to retire for some time into Savoy in consequence of a plot. On his return to France he fought the Huguenots, and ...\nP10: Prince Foulques, Duke of Aumale: Prince Foulques of Orléans, Duke of Aumale and Count of Eu (Foulques Thibaut Robert Jacques Géraud Jean Marie; born 9 July 1974) is the younger son of Prince Jacques, Duke of Orléans and Gersende de Sabran-Pontevès. His paternal grandfather was the late Henri, Count of Paris, who was the Orléanist claimant to the French throne with the title of Henri VI. As such, Foulques would have the status of \"Petit-Fils de France\", with the style of Royal Highness.\nQuestion: Who is Henri Ii, Duke Of Nemours's paternal grandfather?\nFinal answer:",
+  "output": "Henri, Count of Paris",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b8e4de1eb53c4a35",
+    "object": "chat.completion",
+    "created": 1779535758,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Henri, Count of Paris",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1199,
+      "total_tokens": 1206,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "idx": 127,
+  "qid": "39ca32a80bdd11eba7f7acde48001122",
+  "gold": "15 November 1784",
+  "candidates": [
+    "The information provided does not contain Prince Napoléon Bonaparte's father's birthday",
+    "The passage does not provide Prince Napoléon Bonaparte's father's birthday",
+    "Princess Béatrice of Bourbon-Two Sicilies",
+    "Antoine de Caunes",
+    "The Child",
+    "Marie Walewska",
+    "Story",
+    "Prince Napoléon Bonaparte",
+    "Jérôme Napoléon Bonaparte",
+    "Princess Caroline Napoléon",
+    "Jérôme Bonaparte",
+    "Alexandre Colonna-Walewski"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: The information provided does not contain Prince Napoléon Bonaparte's father's birthday\nC2: The passage does not provide Prince Napoléon Bonaparte's father's birthday\nC3: Princess Béatrice of Bourbon-Two Sicilies\nC4: Antoine de Caunes\nC5: The Child\nC6: Marie Walewska\nC7: Story\nC8: Prince Napoléon Bonaparte\nC9: Jérôme Napoléon Bonaparte\nC10: Princess Caroline Napoléon\nC11: Jérôme Bonaparte\nC12: Alexandre Colonna-Walewski\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Princess Caroline Napoléon -> The Child\n- Princess Caroline Napoléon -> Princess Béatrice of Bourbon-Two Sicilies\n- Princess Caroline Napoléon -> The Child\n- Prince Napoléon Bonaparte -> Jérôme Bonaparte\n- Prince Napoléon Bonaparte -> Jérôme Bonaparte\n- Jérôme Napoléon Bonaparte -> Jérôme Bonaparte\n- Alexandre Colonna-Walewski -> Marie Walewska\n- Monsieur N. -> Antoine de Caunes\n- Monsieur N. -> Story\nPassages:\nP1: Princess Béatrice of Bourbon-Two Sicilies: Princess Béatrice Marie Caroline Louise Françoise of Bourbon-Two Sicilies (born 16 June 1950 in Saint-Raphaël, Var, France) is the eldest daughter of Prince Ferdinand, Duke of Castro, Castro-line claimant to the headship of the House of Bourbon-Two Sicilies, and his wife, Chantal de Chevron-Villette. Her younger brother, Prince Carlo, Duke of Castro, is the current Castro-line claimant to the headship of the House of Bourbon-Two Sicilies. Since 2014, ...\nP2: Antoine de Caunes: Antoine de Caunes (born 1 December 1953) is a French television presenter, actor, writer and film director. He is the son of two prominent French personalities, television journalist-reporter Georges de Caunes and television announcer Jacqueline Joubert. He is the father of the actress Emma de Caunes.\nP3: The Child: The Child may refer to:\nP4: Marie Walewska: Marie Countess Walewska (née Łączyńska; ; 7 December 1786 – 11 December 1817) was a Polish noblewoman and a mistress of Emperor Napoleon I. In her later years she married count Philippe Antoine d'Ornano, an influential Napoleonic officer.\nP5: Story: Story or stories, may refer to:\nP6: Prince Napoléon Bonaparte: Napoléon Joseph Charles Paul Bonaparte (9 September 1822 – 17 March 1891), usually called Napoléon-Jérôme Bonaparte or Jérôme Bonaparte, was the second son of Jerome, King of Westphalia and his second wife Catharina of Württemberg. An oustpoken liberal, he became the \"de facto\" head of the House of Bonaparte from 1879 to his death. He wasn't considered a legitimate pretender to the throne by many Bonapartists, due to his fathers previous marriage without divorce. They ...\nP7: Prince Napoléon Bonaparte: Napoléon Joseph Charles Paul Bonaparte( 9 September 1822 – 17 March 1891), usually called Napoléon- Jérôme Bonaparte or Jérôme Bonaparte, was the second son of Jerome, King of Westphalia and his second wife Catharina of Württemberg. An oustpoken liberal, he became the\" de facto\" head of the House of Bonaparte from 1879 to his death. He was n't considered a legitimate pretender to the throne by many Bonapartists, due to his fathers previous marriage without divorce. ...\nP8: Jérôme Napoléon Bonaparte: Jérôme Napoléon \" Bo\" Bonaparte( 5 July 1805 – 17 June 1870) was a French- American farmer, chairman of the Maryland Agricultural Society, first president of the Maryland Club, and the son of Elizabeth Patterson and Jérôme Bonaparte, brother of Napoleon I.\nP9: Princess Caroline Napoléon: Princess Caroline Marie Constance Napoléon( born 24 October 1980) is a member of the House of Bonaparte, which reigned as Emperors of the French twice during the 19th century. She is the first child and eldest daughter of Prince Charles Napoléon and his first wife, Princess Béatrice of Bourbon- Two Sicilies.\nP10: Princess Caroline Napoléon: Princess Caroline Marie Constance Napoléon (born 24 October 1980) is a member of the House of Bonaparte, which reigned as Emperors of the French twice during the 19th century. She is the first child and eldest daughter of Prince Charles Napoléon and his first wife, Princess Béatrice of Bourbon-Two Sicilies.\nQuestion: When is Prince Napoléon Bonaparte's father's birthday?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages do not contain information about Prince Napoléon Bonaparte's father's birthday. The passages mention his father, Jerome Bonaparte, but do not provide his birthday.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The provided passages do not contain information about Prince Napoléon Bonaparte's father's birthday. The passages mention his father, Jerome Bonaparte, but do not provide his birthday."
+  },
+  "final": "The information provided does not contain Prince Napoléon Bonaparte's father's birthday.",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-bd2d5955ffaa9dc5",
+    "object": "chat.completion",
+    "created": 1779536011,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages do not contain information about Prince Napoléon Bonaparte's father's birthday. The passages mention his father, Jerome Bonaparte, but do not provide his birthday.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1349,
+      "total_tokens": 1406,
+      "completion_tokens": 57,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.0584907531738281
+}

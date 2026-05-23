@@ -1,0 +1,66 @@
+{
+  "idx": 13,
+  "qid": "c531e7560baf11ebab90acde48001122",
+  "gold": "Marie Leszczyńska",
+  "candidates": [
+    "Margaret of Artois",
+    "Maria Josepha of Saxony",
+    "Henry IV of France",
+    "Duchess Marie Elisabeth of Saxony",
+    "Joan II of Navarre",
+    "Philip III of Navarre",
+    "Princess Claude of Orléans",
+    "Frederick VII, Margrave of Baden-Durlach",
+    "Queen Victoria",
+    "Marie Zéphyrine of France",
+    "The Hours",
+    "Marie of Évreux"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Margaret of Artois\nC2: Maria Josepha of Saxony\nC3: Henry IV of France\nC4: Duchess Marie Elisabeth of Saxony\nC5: Joan II of Navarre\nC6: Philip III of Navarre\nC7: Princess Claude of Orléans\nC8: Frederick VII, Margrave of Baden-Durlach\nC9: Queen Victoria\nC10: Marie Zéphyrine of France\nC11: The Hours\nC12: Marie of Évreux\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Marie Zéphyrine of France -> The Hours\n- Marie of Évreux -> Philip III of Navarre\n- Marie of Évreux -> Margaret of Artois\n- Marie of Évreux -> Joan II of Navarre\n- Marie of Évreux -> Philip III of Navarre\n- Marie of Évreux -> Margaret of Artois\n- Marie of Évreux -> Joan II of Navarre\n- Marie of Armagnac -> Henry IV of France\n- Prince Robert, Count of La Marche -> Princess Claude of Orléans\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Queen Victoria\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Louise\n- Marian Montagu Douglas Scott -> Lord Herbert Montagu Douglas Scott\n- Marian Montagu Douglas Scott -> First Daughter\n- Augusta Marie of Holstein-Gottorp -> Frederick VII, Margrave of Baden-Durlach\n- Augusta Marie of Holstein-Gottorp -> Duchess Marie Elisabeth of Saxony\nPassages:\nP1: Henry IV of France: Henry IV (read as ; 13 December 1553 – 14 May 1610), also known by the epithet Good King Henry or Henry the Great, was King of Navarre (as Henry III) from 1572 and King of France from 1589 to 1610. He was the first monarch of France from the House of Bourbon, a cadet branch of the Capetian dynasty. He was assassinated in 1610 by François Ravaillac, a fanatical Catholic, and was succeeded by his son Louis XIII. The son of Antoine de Bourbon, Duke of Vendôme and Jeanne ...\nP2: Duchess Marie Elisabeth of Saxony: Duchess Marie Elisabeth of Saxony (22 November 1610 – 24 October 1684) was duchess consort of Holstein-Gottorp as the spouse of Duke Friedrich III of Holstein-Gottorp.\nP3: Joan II of Navarre: Joan II (28 January 1312 – 6 October 1349) was Queen of Navarre from 1328 until her death. She was the only surviving child of Louis X of France, King of France and Navarre, and Margaret of Burgundy. Joan's paternity was dubious because her mother was involved in a scandal, but Louis X declared her his legitimate daughter before he died in 1316. However, the French lords were opposed to the idea of a female monarch and elected Louis X's brother, Philip V, king. The Navarrese ...\nP4: Philip III of Navarre: Philip III (27 March 1306 – 16 September 1343), called the Noble or the Wise, was King of Navarre from 1328 until his death. He was born a minor member of the French royal family but gained prominence when the Capetian main line went extinct, as he and his wife and cousin, Joan II of Navarre, acquired the Iberian kingdom and a number of French fiefs. Philip and Joan's accession signified the end of the 44-year-long personal union between France and Navarre. Although ...\nP5: Princess Claude of Orléans: Princess Claude of Orléans (Claude Marie Agnès Catherine; born 11 December 1943) is a French princess of the House of Orléans. She is the former wife of Prince Amedeo, Duke of Aosta, a disputed head of the House of Savoy.\nP6: Princess Claude of Orléans: Princess Claude of Orléans( Claude Marie Agnès Catherine; born 11 December 1943) is a French princess of the House of Orléans. She is the former wife of Prince Amedeo, Duke of Aosta, a disputed head of the House of Savoy.\nP7: Margaret of Artois: Margaret of Artois( 1285–1311) was the eldest child of Philip of Artois and his wife, Blanche of Brittany. She was a member of the House of Artois. She was married to Louis d'Évreux. By her marriage, Margaret was Countess consort of Évreux.\nP8: Margaret of Artois: Margaret of Artois (1285–1311) was the eldest child of Philip of Artois and his wife, Blanche of Brittany. She was a member of the House of Artois. She was married to Louis d'Évreux. By her marriage, Margaret was Countess consort of Évreux.\nP9: Frederick VII, Margrave of Baden-Durlach: Friedrich VII Magnus of Zähringen (23 September 1647 – 25 June 1709) was the Margrave of Baden-Durlach from 1677 until his death. Born at Ueckermünde, he was the son of Margrave Friedrich VI and Countess Palatine Christine Magdalene of Cleeburg. He succeeded his father as Margrave in 1677. He got involved in the Nine Years' War and after the Treaty of Ryswick in 1697, he received the title of Margrave of Basel, although it was only a formal title and he ...\nP10: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nQuestion: Who is Marie Zéphyrine Of France's paternal grandmother?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide any information about Marie Zéphyrine of France's paternal grandmother.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence passages do not provide any information about Marie Zéphyrine of France's paternal grandmother."
+  },
+  "final": "Margaret of Artois",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-be581fef0776e0cd",
+    "object": "chat.completion",
+    "created": 1779535929,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide any information about Marie Zéphyrine of France's paternal grandmother.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1655,
+      "total_tokens": 1694,
+      "completion_tokens": 39,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.8140170574188232
+}

@@ -1,0 +1,65 @@
+{
+  "idx": 181,
+  "qid": "967b39ca0bdd11eba7f7acde48001122",
+  "gold": "Efva Attling",
+  "candidates": [
+    "Eva Dahlgren",
+    "Eva Dahlgren's spouse is not mentioned in the provided passages",
+    "Ängeln i rummet",
+    "In the Room",
+    "Spouse of the President of the People's Republic of China",
+    "Spouse of the Prime Minister of Cambodia",
+    "Spouse of the Prime Minister of Singapore",
+    "Spouse of the Prime Minister of Malaysia",
+    "Eleanor of Toledo",
+    "List of spouses of Prime Ministers of Thailand",
+    "Mehdi Abrishamchi"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Eva Dahlgren\nC2: Eva Dahlgren's spouse is not mentioned in the provided passages\nC3: Ängeln i rummet\nC4: In the Room\nC5: Spouse of the President of the People's Republic of China\nC6: Spouse of the Prime Minister of Cambodia\nC7: Spouse of the Prime Minister of Singapore\nC8: Spouse of the Prime Minister of Malaysia\nC9: Eleanor of Toledo\nC10: List of spouses of Prime Ministers of Thailand\nC11: Mehdi Abrishamchi\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Ängeln i rummet -> Eva Dahlgren\n- Ängeln i rummet -> In the Room\nPassages:\nP1: Ängeln i rummet: \"Ängeln i rummet\" (Swedish for \"The Angel in the Room\") is a single released by Swedish singer Eva Dahlgren from the 1989 album \"Fria Världen 1.989\" released through BMG and Big Mama Music. Peaking at number four in 1989, it is her highest charting song ever, tied with \"Vem tänder stjärnorna?\" in 1991. The song won a Grammis for Song of the Year. Dahlgren also performs an English version of the song called \"Angel in My Room\". The song was covered in 2011 by Laleh, whose version ...\nP2: In the Room: In the Room may refer to:\nP3: Eva Dahlgren: Eva Charlotte Dahlgren (in English; born 9 June 1960 in Umeå, Sweden) is a Swedish pop musician. Dahlgren was discovered by musician/producer Bruno Glenmark in 1978 after appearing on the TV show \"Sveriges magasin\" and her debut album \"Finns det nån som bryr sej om\" was released the same year. In 1979 she placed third in Melodifestivalen (the tryout competition for the Eurovision Song Contest in Sweden). She toured Sweden in 1987 with Swedish pop duo Roxette, a tour that was ...\nP4: Spouse of the President of the People's Republic of China: The Spouse of the President of the People's Republic of China, is the spouse of the President of the People's Republic of China. To date there have been 7 women who have been married to the Chinese president while in office.\nP5: Spouse of the Prime Minister of Cambodia: The Spouse of the Prime Minister of Cambodia refers to the wife of the head of government of the Kingdom of Cambodia, the Prime Minister. Since 1993, 3 women have been the spouse of the Prime Minister of Cambodia. The title\" First Lady\" is also commonly used. The spouse of the current Prime Minister is Dr. Bun Rany.\nP6: Spouse of the Prime Minister of Singapore: The Spouse of the Prime Minister of Singapore refers to the spouse of the head of government of Singapore, the Prime Minister. Since, Singapore became an internally self-governing state within the Commonwealth, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. To date, three women have held the title of the spouse of the Prime Minister of Singapore. Ho Ching is the spouse of the incumbent Prime ...\nP7: Spouse of the Prime Minister of Malaysia: The Spouse of the Prime Minister of Malaysia refers to the spouse of the head of government of Malaysia, the Prime Minister. Since independence in 1957, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. Some commentators have tried to style prime ministers' wives as\" First Lady of Malaysia\", similar to the style of First Lady used in republics, but this is not a recognised title. To date, seven women ...\nP8: Eleanor of Toledo: Eleanor of Toledo ( Italian:\" Eleonora di Toledo\"( 11 January 1519 – 17 December 1562), born Doña Leonor Álvarez de Toledo y Osorio, was a Spanish noblewoman who was the wife of Cosimo I de' Medici and the Duchess of Florence. Although Eleanor is often referred to as the Grand Duchess of Tuscany, she predeceased the creation of the Grand Duchy of Tuscany. She is credited with being the first modern first lady, or consort. She served as regent of Florence during the absence of ...\nP9: List of spouses of Prime Ministers of Thailand: The spouse of the Prime Minister of Thailand is the wife or husband of the Prime Minister of Thailand. The spouse of the current Prime Minister is Associate Professor Naraporn Chan- o-cha.\nP10: Mehdi Abrishamchi: Mehdi Abrishamchi is an Iranian People's Mujahedin of Iran( MEK) politician who has been described as\" the right hand man of Massoud Rajavi\". He is the former spouse of the group's current leader, Maryam Rajavi, whom he divorced so that she could become the spouse of Massoud Rajavi.\nQuestion: Who is the spouse of the performer of song Ängeln I Rummet?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Eva Dahlgren\",\"selected\":\"C1|C2\",\"confidence\":\"high\",\"reason\":\"The song Ängeln i rummet is performed by Eva Dahlgren as evidenced in P1 and P3. Since C1 and C2 are both referring to Eva Dahlgren, they are directly supported as the spouse of the performer of the song.\"}",
+  "verifier": {
+    "final_answer": "Eva Dahlgren",
+    "selected": "C1|C2",
+    "confidence": "high",
+    "reason": "The song Ängeln i rummet is performed by Eva Dahlgren as evidenced in P1 and P3. Since C1 and C2 are both referring to Eva Dahlgren, they are directly supported as the spouse of the performer of the song."
+  },
+  "final": "Eva Dahlgren",
+  "selected": "C1|C2",
+  "response": {
+    "id": "chatcmpl-934195be041c1182",
+    "object": "chat.completion",
+    "created": 1779536041,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Eva Dahlgren\",\"selected\":\"C1|C2\",\"confidence\":\"high\",\"reason\":\"The song Ängeln i rummet is performed by Eva Dahlgren as evidenced in P1 and P3. Since C1 and C2 are both referring to Eva Dahlgren, they are directly supported as the spouse of the performer of the song.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1296,
+      "total_tokens": 1375,
+      "completion_tokens": 79,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.4326155185699463
+}

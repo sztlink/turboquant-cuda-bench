@@ -1,0 +1,66 @@
+{
+  "idx": 63,
+  "qid": "4b1b91720bde11eba7f7acde48001122",
+  "gold": "India",
+  "candidates": [
+    "Korean",
+    "Indian",
+    "Queen Hogu",
+    "Kings",
+    "The General",
+    "Geodeung of Geumgwan Gaya",
+    "Mapum of Geumgwan Gaya",
+    "Gyeomji of Geumgwan Gaya",
+    "Chwihui of Geumgwan Gaya",
+    "Isipum of Geumgwan Gaya",
+    "Geojilmi of Geumgwan Gaya",
+    "Queen Mojong"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Korean\nC2: Indian\nC3: Queen Hogu\nC4: Kings\nC5: The General\nC6: Geodeung of Geumgwan Gaya\nC7: Mapum of Geumgwan Gaya\nC8: Gyeomji of Geumgwan Gaya\nC9: Chwihui of Geumgwan Gaya\nC10: Isipum of Geumgwan Gaya\nC11: Geojilmi of Geumgwan Gaya\nC12: Queen Mojong\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Mapum of Geumgwan Gaya -> Queen Mojong\n- Mapum of Geumgwan Gaya -> Queen Hogu\n- Geodeung of Geumgwan Gaya -> Queen Mojong\n- Queen Mojong -> Geodeung of Geumgwan Gaya\n- Queen Mojong -> Mapum of Geumgwan Gaya\n- Sin Po -> Geodeung of Geumgwan Gaya\n- Sin Po -> Queen Mojong\n- Sin Po -> Kings\n- Chwihui of Geumgwan Gaya -> The General\n- Gyeomji of Geumgwan Gaya -> The General\n- Geojilmi of Geumgwan Gaya -> Queen Hogu\nPassages:\nP1: Queen Hogu: Queen Hogu was the third wife of Mapum of Geumgwan Gaya. She bore the fourth ruler of the Gaya confederacy, Geojilmi of Geumgwan Gaya. She was the granddaughter of Cho Kuang, who was an attendant of Heo Hwang- ok for her marriage from India.\nP2: Kings: Kings or King's may refer to:\nP3: The General: The General or The Generals may refer to:\nP4: Geodeung of Geumgwan Gaya: Geodeung of Gaya, also called Geodeung Wang, was the king of Gaya, a confederacy of chiefdoms that existed in the Nakdong River valley of Korea during the Three Kingdoms era, from 199 to 259. Legend holds that he was the son of King Suro of Gaya and Suro's queen, Heo Hwang-ok. Legend says also they had in total ten sons. Geodeung Wang was married with Queen Mojong, who was the daughter of Sin Po Ch'onpukyong and Mojong. Sin Po was a courtier in Heo Hwang-ok's ...\nP5: Mapum of Geumgwan Gaya: Mapum of Geumgwan Gaya( died 291, r. 259–291) was king of Geumgwan Gaya, a member state of the Gaya confederacy. He was preceded by his father, King Geodeung and succeeded by his son King Geojilmi. Like the other members of the Geumgwan royal line, his surname was Kim. His mother was Queen Mojong. Mapum married Queen Hogu, who was the granddaughter of the high official Jo Gwang.\nP6: Gyeomji of Geumgwan Gaya: Gyeomji of Geumgwan Gaya( r. 492–521) was the ninth ruler of Geumgwan Gaya, a Gaya state of ancient Korea. He was the son of King Jilji and Queen Bangwon. He married Queen Suk, who was the daughter of the general(\" gakgan\") Chulchung. She gave birth to Guhyeong, who would be the kingdom's final ruler.\nP7: Chwihui of Geumgwan Gaya: Chwihui of Geumgwan Gaya( died 451)( r. 421–451) was the seventh ruler of Geumgwan Gaya, a Gaya state of ancient Korea. He was the son of King Jwaji and Queen Boksu. He married Indeok, daughter of the general(\" gakgan\") Jinsa.\nP8: Isipum of Geumgwan Gaya: Ipum of Geumgwan Gaya( died 407)( r. 346–407) was the fifth ruler of Geumgwan Gaya, a Gaya state of ancient Korea. He was the son of King Geojilmi and Queen Aji. He married Queen Jeongsin, and she gave birth to his heir, Jwaji.\nP9: Geojilmi of Geumgwan Gaya: Geojilmi of Geumgwan Gaya( died 346, r. 291–346) was the fourth ruler of Geumgwan Gaya, a Gaya state of ancient Korea. He was the son of King Mapum and Queen Hogu. King Geojilmi married Queen Aji, who was the granddaughter of a high official(\" agan\") named Agung. She gave birth to his heir, Ipum.\nP10: Queen Mojong: Queen Mojong was a wife of Geodeung of Geumgwan Gaya, the second king of Gaya confederacy. She gave birth of the third king, Mapum of Geumgwan Gaya. She was a daughter of Sin Po who was attendant of Heo Hwang- ok for her marriage from India. In\" Hwarang Segi\", she was recorded as Sin Po ’s daughter, but in\" Samgungnyusa\", she was recorded as Sin Po ’s wife.\nQuestion: What nationality is Geodeung Of Geumgwan Gaya's mother?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the nationality of Geodeung of Geumgwan Gaya's mother. While it is mentioned that Geodeung's mother, Queen Mojong, was a daughter of Sin Po and had a marriage from India, this does not specify her nationality.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence passages do not provide information about the nationality of Geodeung of Geumgwan Gaya's mother. While it is mentioned that Geodeung's mother, Queen Mojong, was a daughter of Sin Po and had a marriage from India, this does not specify her nationality."
+  },
+  "final": "Korean",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-b168b8a98ebe3c84",
+    "object": "chat.completion",
+    "created": 1779535959,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the nationality of Geodeung of Geumgwan Gaya's mother. While it is mentioned that Geodeung's mother, Queen Mojong, was a daughter of Sin Po and had a marriage from India, this does not specify her nationality.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1392,
+      "total_tokens": 1469,
+      "completion_tokens": 77,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.3838675022125244
+}

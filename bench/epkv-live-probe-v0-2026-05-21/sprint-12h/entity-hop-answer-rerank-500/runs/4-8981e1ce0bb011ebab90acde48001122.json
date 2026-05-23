@@ -1,0 +1,63 @@
+{
+  "idx": 4,
+  "qid": "8981e1ce0bb011ebab90acde48001122",
+  "gold": "Charles Armand René de La Trémoille",
+  "candidates": [
+    "Charles Armand René de La Trémoille",
+    "Prince Henri de La Trémoille, 3rd Duke of Thouars",
+    "Henry de La Trémoille",
+    "Charles Belgique Hollande de La Trémoille",
+    "Charles Bretagne Marie de La Trémoille",
+    "Charles Louis Bretagne de La Trémoille",
+    "Jean Bretagne Charles de La Trémoille",
+    "Louis Charles Marie de La Trémoille",
+    "Louis Charles de La Trémoille"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Charles Armand René de La Trémoille\nC2: Prince Henri de La Trémoille, 3rd Duke of Thouars\nC3: Henry de La Trémoille\nC4: Charles Belgique Hollande de La Trémoille\nC5: Charles Bretagne Marie de La Trémoille\nC6: Charles Louis Bretagne de La Trémoille\nC7: Jean Bretagne Charles de La Trémoille\nC8: Louis Charles Marie de La Trémoille\nC9: Louis Charles de La Trémoille\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Charles Bretagne Marie de La Trémoille -> Jean Bretagne Charles de La Trémoille\n- Jean Bretagne Charles de La Trémoille -> Charles Armand René de La Trémoille\n- Jean Bretagne Charles de La Trémoille -> Charles Armand René de La Trémoille\n- Charles Armand René de La Trémoille -> Charles Belgique Hollande de La Trémoille\n- Charles Armand René de La Trémoille -> Jean Bretagne Charles de La Trémoille\n- Louis Charles de La Trémoille -> Charles Bretagne Marie de La Trémoille\n- Louis Charles de La Trémoille -> Charles Bretagne Marie de La Trémoille\n- Charles Louis Bretagne de La Trémoille -> Charles Belgique Hollande de La Trémoille\n- Charles Louis Bretagne de La Trémoille -> Charles Armand René de La Trémoille\n- Louis Charles Marie de La Trémoille -> Louis Charles de La Trémoille\nPassages:\nP1: Charles Belgique Hollande de La Trémoille: Prince Charles Belgique Hollande de La Trémoïlle( May 1655 – 1 June 1709), 4th Duke of Thouars, was a French nobleman. He was the second child and eldest son of Prince Henri Charles de La Trémoille( son and heir of Prince Henri de La Trémoille, 3rd Duke of Thouars and his wife Princess Marie de La Tour d' Auvergne of Bouillon) and his wife Princess Emilie of Hesse- Kassel( daughter of Prince William V, Prince of Hesse- Kassel and his wife Countess ...\nP2: Charles Bretagne Marie de La Trémoille: Prince Charles Bretagne Marie de La Trémoille (24 March 1764 – 10 November 1839), 8th Duke of Thouars, 7th Duke of La Trémoïlle, 10th prince de Tarente, 14th prince de Talmond and 14th Count of Laval, was a French aristocrat and soldier; he was the son of Jean Bretagne Charles de La Trémoille and his wife Princess Marie-Maximilienne of Salm-Kyrburg.\nP3: Charles Louis Bretagne de La Trémoille: Charles Louis Bretagne de La Trémoille (15 March 1683 – 9 October 1719), 6th duke of Thouars, was the son of Charles Belgique Hollande de La Trémoille and Madeleine de Créquy, daughter and heiress of Charles III de Créquy. He became duke of Thouars upon his father's death in 1709. He was also count of Laval and Montfort and inherited the ancient French claim to the Kingdom of Naples. The Neapolitan claim gave the family the rank of \"princes étrangers\" at ...\nP4: Jean Bretagne Charles de La Trémoille: Prince Jean-Bretagne-Charles de La Trémoille (5 February 1737 – 19 May 1792), 7th Duke of Thouars, was a French soldier and the son of Charles Armand René de La Trémoille and his wife, Marie Hortense de La Tour d'Auvergne of Bouillon.\nP5: Jean Bretagne Charles de La Trémoille: Prince Jean- Bretagne- Charles de La Trémoille( 5 February 1737 – 19 May 1792), 7th Duke of Thouars, was a French soldier and the son of Charles Armand René de La Trémoille and his wife, Marie Hortense de La Tour d'Auvergne of Bouillon.\nP6: Louis Charles Marie de La Trémoille: Louis Charles Marie de La Trémoille( 28 March 1863 –17 June 1921), 10th Duke of Thouars, 16th Count of Laval was a French nobleman and the son of Louis Charles de La Trémoille and his wife Marguerite Églé Jeanne Caroline Duchâtel( daughter of Count Charles Marie Tanneguy Duchâtel, Count Duchâtel and his wife Rosalie(\" Eglé\") Paulée) La Trémoille was a deputy for Gironde from 1906 to 1919, and mayor of Margaux from 1904 to 1919. He was a member of the ...\nP7: Charles Armand René de La Trémoille: Charles Armand René de La Trémoille (14 January 1708, in Paris – 23 May 1741), 6th duc de Thouars, was the son of Charles Louis Bretagne de La Trémoille and his wife, Marie Madeleine Motier de la Fayette. La Trémoille was a French soldier and president of the States of Brittany. He joined the military at a young age and became a colonel of the Champagne regiment at the age of eighteen. Later, he became governor of Île-de-France. He distinguished himself in ...\nP8: Louis Charles de La Trémoille: Prince Louis Charles de La Trémoille( 26 October 1838 – 4 July 1911), 9th Duke of Thouars, 8th Duke of La Trémoïlle, 11th prince de Tarente, 15th prince de Talmond and 15th Count of Laval was a French aristocrat and the son of Charles Bretagne Marie de La Trémoille and his third wife, Valentine Eugénie Joséphine Walsh de Serrant. Louis Charles was also an archivist, bibliophile and also collector.\nP9: Louis Charles de La Trémoille: Prince Louis Charles de La Trémoille (26 October 1838 – 4 July 1911), 9th Duke of Thouars, 8th Duke of La Trémoïlle, 11th prince de Tarente, 15th prince de Talmond and 15th Count of Laval was a French aristocrat and the son of Charles Bretagne Marie de La Trémoille and his third wife, Valentine Eugénie Joséphine Walsh de Serrant. Louis Charles was also an archivist, bibliophile and also collector.\nQuestion: Who is Charles Bretagne Marie De La Trémoille's paternal grandfather?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Charles Armand René de La Trémoille\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"P4 and P5 both explicitly state that Jean Bretagne Charles de La Trémoille is the son of Charles Armand René de La Trémoille and Marie Hortense de La Tour d'Auvergne of Bouillon, establishing Charles Armand René de La Trémoille as the paternal grandfather of Charles Bretagne Marie de La Trémoille.\"}",
+  "verifier": {
+    "final_answer": "Charles Armand René de La Trémoille",
+    "selected": "C1",
+    "confidence": "high",
+    "reason": "P4 and P5 both explicitly state that Jean Bretagne Charles de La Trémoille is the son of Charles Armand René de La Trémoille and Marie Hortense de La Tour d'Auvergne of Bouillon, establishing Charles Armand René de La Trémoille as the paternal grandfather of Charles Bretagne Marie de La Trémoille."
+  },
+  "final": "Charles Armand René de La Trémoille",
+  "selected": "C1",
+  "response": {
+    "id": "chatcmpl-a4811bc44f29b2c7",
+    "object": "chat.completion",
+    "created": 1779535922,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Charles Armand René de La Trémoille\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"P4 and P5 both explicitly state that Jean Bretagne Charles de La Trémoille is the son of Charles Armand René de La Trémoille and Marie Hortense de La Tour d'Auvergne of Bouillon, establishing Charles Armand René de La Trémoille as the paternal grandfather of Charles Bretagne Marie de La Trémoille.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1754,
+      "total_tokens": 1861,
+      "completion_tokens": 107,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.934556484222412
+}

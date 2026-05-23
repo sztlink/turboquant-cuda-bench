@@ -1,0 +1,66 @@
+{
+  "idx": 316,
+  "qid": "6842323e0bb011ebab90acde48001122",
+  "gold": "Christian August of Holstein-Gottorp, Prince of Eutin",
+  "candidates": [
+    "Charles, Duke of Vendôme",
+    "Charles de Bourbon",
+    "Henry IV of France",
+    "Ulla von Höpken",
+    "Francis I",
+    "The Singer",
+    "Charles XIII of Sweden",
+    "Françoise-Éléonore Villain",
+    "Brita Horn",
+    "Augusta Löwenhielm",
+    "Mariana Koskull",
+    "Hans Michelsen"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Charles, Duke of Vendôme\nC2: Charles de Bourbon\nC3: Henry IV of France\nC4: Ulla von Höpken\nC5: Francis I\nC6: The Singer\nC7: Charles XIII of Sweden\nC8: Françoise-Éléonore Villain\nC9: Brita Horn\nC10: Augusta Löwenhielm\nC11: Mariana Koskull\nC12: Hans Michelsen\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Mariana Koskull -> Charles XIII of Sweden\n- Charles, Duke of Vendôme -> Henry IV of France\n- Charles, Duke of Vendôme -> Francis I\n- Françoise-Éléonore Villain -> Charles XIII of Sweden\n- Brita Horn -> Charles XIII of Sweden\n- Hans Michelsen -> Charles XIII of Sweden\n- Augusta Löwenhielm -> Charles XIII of Sweden\n- Augusta Löwenhielm -> Ulla von Höpken\n- Charlotte Eckerman -> Charles XIII of Sweden\n- Charlotte Eckerman -> The Singer\nPassages:\nP1: Henry IV of France: Henry IV (read as ; 13 December 1553 – 14 May 1610), also known by the epithet Good King Henry or Henry the Great, was King of Navarre (as Henry III) from 1572 and King of France from 1589 to 1610. He was the first monarch of France from the House of Bourbon, a cadet branch of the Capetian dynasty. He was assassinated in 1610 by François Ravaillac, a fanatical Catholic, and was succeeded by his son Louis XIII. The son of Antoine de Bourbon, Duke of Vendôme and Jeanne ...\nP2: Ulla von Höpken: Ulrika\" Ulla\" Eleonora von Höpken, later von Wright, née von Fersen( 24 March 1749 – 17 September 1810), was a Swedish countess and courtier. She is also famous in history as one of\" the three graces\" of the Gustavian age; three ladies- in- waiting( Augusta von Fersen, Ulla von Höpken and Louise Meijerfeldt) immortalized in the poem\" Gracernas döpelse\" by Johan Henric Kellgren, and known profiles of the epoch. She was a leading socialite and trendsetter in contemporary Sweden, ...\nP3: Francis I: Francis I or Francis the First may refer to:\nP4: The Singer: The Singer may refer to:\nP5: Charles XIII of Sweden: Charles XIII, or Carl XIII, (7 October 1748 – 5 February 1818), was King of Sweden (as \"Charles XIII\") from 1809 and King of Norway (proclaimed as Charles XIII but in recent times accurately referred to as Charles II) from 1814 to his death. He was the second son of King Adolf Frederick of Sweden and Louisa Ulrika of Prussia, sister of Frederick the Great. Though known as King Charles XIII in Sweden, he was actually the seventh Swedish king by that name, as Charles IX ...\nP6: Charles, Duke of Vendôme: Charles de Bourbon (2 June 1489 – 25 March 1537) was a French \"prince du sang\" and military commander at the court of Francis I of France. He is notable as the paternal grandfather of King Henry IV of France.\nP7: Françoise-Éléonore Villain: Françoise- Éléonore Villain( 1761 in Liège, Prince- Bishopric of Liège – Stockholm 26 March 1783) was a Liégeois actress known under her stage name Mlle Baron or Mademoiselle Baron the Younger. She was engaged in Sweden in The French Theater of Gustav III from 1781 until 1783, where she was viewed as one of its most prominent members, and she is also known in history as the lover of Charles XIII of Sweden.\nP8: Brita Horn: Brita Margaretha Horn( 1745 – 13 March 1791), was a Swedish countess and courtier. She is known for being the love interest of Charles XIII of Sweden from 1765 to 1771, during which time Charles' wish to marry her was given political significance and used by the Caps and Hats parties during the Age of Liberty. She is also known for her correspondence with her spouse from 1775 to 1791, which has been partially published.\nP9: Augusta Löwenhielm: Christina \"Augusta\" Löwenhielm née von Fersen (10 March 1754 – 8 April 1846), was a Swedish countess and courtier. She is known for her love affair with the later Charles XIII of Sweden. She is also famous in history as one of \"the three graces\" of the Gustavian age; three ladies-in-waiting (Augusta von Fersen, Ulla von Höpken and Louise Meijerfeldt) immortalized in the poem \"Gracernas döpelse\" by Johan Henric Kellgren, and known profiles of the epoch.\nP10: Mariana Koskull: Henrietta Mariana\" Marianne\" Charlotta Koskull( 19 February 1785, in Växjö – 30 March 1841, in Stockholm) was a Swedish noble and lady- in- waiting, known as the royal mistress of King Charles XIII of Sweden and King Charles XIV John of Sweden.\nQuestion: Who is Charles Xiii Of Sweden's paternal grandfather?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Charles de Bourbon\",\"selected\":\"C6|C2\",\"confidence\":\"high\",\"reason\":\"P6 states that Charles de Bourbon (Charles, Duke of Vendôme) was the paternal grandfather of King Henry IV of France, who is mentioned in the graph as Charles XIII of Sweden's predecessor.\"}",
+  "verifier": {
+    "final_answer": "Charles de Bourbon",
+    "selected": "C6|C2",
+    "confidence": "high",
+    "reason": "P6 states that Charles de Bourbon (Charles, Duke of Vendôme) was the paternal grandfather of King Henry IV of France, who is mentioned in the graph as Charles XIII of Sweden's predecessor."
+  },
+  "final": "Charles de Bourbon",
+  "selected": "C6|C2",
+  "response": {
+    "id": "chatcmpl-9de0a558356e19af",
+    "object": "chat.completion",
+    "created": 1779536122,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Charles de Bourbon\",\"selected\":\"C6|C2\",\"confidence\":\"high\",\"reason\":\"P6 states that Charles de Bourbon (Charles, Duke of Vendôme) was the paternal grandfather of King Henry IV of France, who is mentioned in the graph as Charles XIII of Sweden's predecessor.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1426,
+      "total_tokens": 1490,
+      "completion_tokens": 64,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.1810863018035889
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "60c67bce0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "French",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Louis François, Prince of Conti -> Louise Élisabeth de Bourbon\n- Louis François, Prince of Conti -> Louise Henriette de Bourbon\n- François Louis, Prince of Conti -> Armand de Bourbon, Prince of Conti\n- François Louis, Prince of Conti -> Anne Marie Martinozzi\n- Louis Armand II, Prince of Conti -> Marie Thérèse de Bourbon\n- Louis Armand II, Prince of Conti -> Louis XIV of France\n- Anne Marie Martinozzi -> Armand de Bourbon, Prince of Conti\n- Anne Marie Martinozzi -> François Louis, Prince of Conti\n- Anne Marie Martinozzi -> Armand de Bourbon, Prince of Conti\n- Anne Marie Martinozzi -> François Louis, Prince of Conti\n- Maria Fortunata d'Este -> Louis François Joseph, Prince of Conti\nPassages:\nP1: Armand de Bourbon, Prince of Conti: Armand de Bourbon, Prince of Conti( 11 October 162926 February 1666) was a French nobleman, the younger son of Henri II, Prince of Condé and Charlotte Marguerite de Montmorency, daughter of Henri I, Duke of Montmorency. He was the brother of\" le Grand Condé\" and Anne Geneviève, Duchess of Longueville. As a member of the reigning House of Bourbon, he was a\" Prince du Sang\".\nP2: Armand de Bourbon, Prince of Conti: Armand de Bourbon, Prince of Conti (11 October 162926 February 1666) was a French nobleman, the younger son of Henri II, Prince of Condé and Charlotte Marguerite de Montmorency, daughter of Henri I, Duke of Montmorency. He was the brother of \"le Grand Condé\" and Anne Geneviève, Duchess of Longueville. As a member of the reigning House of Bourbon, he was a \"Prince du Sang\".\nP3: Louis XIV of France: Louis XIV (Louis Dieudonné; 5 September 16381 September 1715), known as Louis the Great  or the Sun King , was King of France from 14 May 1643 until his death in 1715. His reign of 72 years and 110 days is the longest recorded of any monarch of a sovereign country in European history. In the age of absolutism in Europe, Louis XIV's France was a leader in the growing centralisation of power. Louis began his personal rule of France in 1661, after the death of his chief ...\nP4: Louise Henriette de Bourbon: Louise Henriette de Bourbon( 20 June 1726 – 9 February 1759),\" Mademoiselle de Conti\" at birth, was a French princess, who, by marriage, became Duchess of Chartres( 1743 – 1752), then Duchess of Orléans( 1752 – 1759) upon the death of her father- in- law. On 4 February 1752, her husband became the head of the House of Orléans, and the First Prince of the Blood(\" Premier prince du sang\"), the most important personage after the immediate members of the royal family. ...\nP5: Louise Élisabeth de Bourbon: Louise Élisabeth de Bourbon( Louise Élisabeth; 22 November 1693 – 27 May 1775) was a daughter of Louis III de Bourbon, Prince of Condé, and his wife, Louise Françoise de Bourbon,\" légitimée de France\", a legitimised daughter of King Louis XIV of France and his famous mistress, Madame de Montespan. She was the wife of Louis Armand II de Bourbon,\" Prince of Conti\". It was Louise Élisabeth who presented Madame de Pompadour to the court of King Louis XV of France; she ...\nP6: Marie Thérèse de Bourbon: Marie Thérèse de Bourbon (1 February 1666 – 22 February 1732) was the titular Queen consort of Poland in 1697. She was the daughter of the Prince of Condé. As a member of France's reigning House of Bourbon, she was a \"princesse du sang\".\nP7: Louis François, Prince of Conti: Louis François de Bourbon, or Louis François I, Prince of Conti( 13 August 1717 – 2 August 1776), was a French nobleman, who was the Prince of Conti from 1727 to his death, following his father, Louis Armand II de Bourbon. His mother was Louise Élisabeth de Bourbon, the daughter of Louis III, Prince of Condé and Louise Françoise de Bourbon, legitimized daughter of King Louis XIV of France. His younger sister, Louise Henriette de Bourbon, was the mother of\" ...\nP8: François Louis, Prince of Conti: François Louis de Bourbon, le Grand Conti (30 April 1664 – 9 February 1709), was Prince de Conti, succeeding his brother, Louis Armand de Bourbon, in 1685. Until this date, he used the title of Prince of La Roche-sur-Yon. He was son of Armand de Bourbon, Prince of Conti and Anne Marie Martinozzi, daughter of Girolamo Martinozzi and niece of Cardinal Mazarin, through her mother. He was proclaimed as the King of Poland in 1697. He is the most famous member of the ...\nP9: Louis François Joseph, Prince of Conti: Louis François Joseph de Bourbon or Louis François II, Prince of Conti( 1 September 1734 – 13 March 1814), was the last Prince of Conti, scion of a cadet branch of the House of Bourbon, whose senior branches ruled France until 1848. His title was honorary and did not carry any territorial jurisdiction.\nP10: Louis Armand II, Prince of Conti: Louis Armand de Bourbon( 10 November 1695 – 4 May 1727) was Prince of Conti, from 1709 to his death, succeeding his father, François Louis de Bourbon. As a member of the reigning House of Bourbon, he was a\" Prince du Sang\". His mother was Marie Thérèse de Bourbon, daughter of Henri Jules, Prince of Condé and granddaughter of Louis de Bourbon,\" le Grand Condé\". He was nominated as the Prince of Orange by King Louis XIV of France in 1712. His male line ...\nQuestion: Which country François Louis, Prince Of Conti's father is from?\nFinal answer:",
+  "output": "France",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-bc620e55c6fbf3b6",
+    "object": "chat.completion",
+    "created": 1779535865,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "France",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1554,
+      "total_tokens": 1556,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "700dfeea0baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Bernard-Roger, Count of Bigorre",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Sancho Ramírez, Count of Ribagorza -> Sancho Ramírez\n- Sancho Ramírez -> Ermesinda of Bigorre\n- Sancho Ramírez -> Ermesinda\n- Sancho Ramírez -> Ermesinda of Bigorre\n- Sancho Ramírez -> Ermesinda\n- Isabella of Urgell -> Ermengol III, Count of Urgell\n- Isabella of Urgell -> Sancho Ramírez\n- Isabella of Urgell -> Ermengol III, Count of Urgell\n- Isabella of Urgell -> Sancho Ramírez\n- Talesa of Aragon -> Sancho Ramírez, Count of Ribagorza\n- Talesa of Aragon -> Sancho Ramírez\n- Talesa of Aragon -> Sancho Ramírez, Count of Ribagorza\n- Talesa of Aragon -> Sancho Ramírez\nPassages:\nP1: Ermesinda of Bigorre: Ermesinda of Bigorre (Aragonese: \"Ermisenda de Bigorra\"), born Gerberga or Gisberga (1015 – 1 December 1049), was a Queen of Aragon, a daughter of Bernard-Roger, Count of Bigorre and his wife Garsenda, Heiress of Bigorre. She was a member of the House of Foix, the sister of Bernard II, Count of Bigorre, Roger I, Count of Foix, and perhaps of Stephanie who married García Sánchez III of Navarre. Gerberga married on 22 August 1036 to King Ramiro I of Aragon. After her wedding ...\nP2: Ermesinda: Ermesinda( c. 720 or c. 730 —?) alternatively Ormisenda, Ermisenda, Ermesinde, Ermessenda) was queen consort of the Kingdom of Asturias, wife of King Alfonso I of Asturias(\" Alfonso the Catholic\"). She was the daughter of King Pelagius of Asturias and his queen, Gaudiosa.\nP3: Ermesinda: Ermesinda (c. 720 or c. 730 — ?) alternatively Ormisenda, Ermisenda, Ermesinde, Ermessenda) was queen consort of the Kingdom of Asturias, wife of King Alfonso I of Asturias (\"Alfonso the Catholic\"). She was the daughter of King Pelagius of Asturias and his queen, Gaudiosa.\nP4: Ermengol III, Count of Urgell: Ermengol( or Armengol) III( 10321065), called\" el de Barbastro\", was the count of Urgell from 1038 to his death. He was the son of Ermengol II, Count of Urgell and his wife Velasquita\" Constance\", probably the daughter of Bernard I, Count of Besalú.\nP5: Ermengol III, Count of Urgell: Ermengol (or Armengol) III (10321065), called \"el de Barbastro\", was the count of Urgell from 1038 to his death. He was the son of Ermengol II, Count of Urgell and his wife Velasquita \"Constance\", probably the daughter of Bernard I, Count of Besalú.\nP6: Sancho Ramírez, Count of Ribagorza: Sancho Ramírez (before 10431105/November 1110) was an illegitimate son of King Ramiro I of Aragon and Amuña, the firstborn and brother of his namesake who would inherit the throne and reign as Sancho Ramírez.\nP7: Sancho Ramírez: Sancho Ramírez (1042 – 4 June, 1094) was King of Aragon from 1063 until 1094 and King of Pamplona from 1076 under the name of Sancho V . He was the eldest son of Ramiro I and Ermesinda of Bigorre. His father was the first king of Aragon and an illegitimate son of Sancho III of Pamplona. He inherited the Aragonese crown from his father in 1063. Sancho Ramírez was chosen king of Pamplona by Navarrese noblemen after Sancho IV was murdered by his siblings.\nP8: Sancho Ramírez: Sancho Ramírez( 1042 – 4 June, 1094) was King of Aragon from 1063 until 1094 and King of Pamplona from 1076 under the name of Sancho V. He was the eldest son of Ramiro I and Ermesinda of Bigorre. His father was the first king of Aragon and an illegitimate son of Sancho III of Pamplona. He inherited the Aragonese crown from his father in 1063. Sancho Ramírez was chosen king of Pamplona by Navarrese noblemen after Sancho IV was murdered by his siblings.\nP9: Ordoño Ramírez: Ordoño Ramírez, called\" the Blind\"( 981 – before 1024) was the son of King Ramiro III of León and Sancha Gómez, grandson of Sancho I of León and Queen Teresa Ansúrez and, on the maternal side, of Gómez Díaz, Count of Saldaña and Countess Muniadona Fernández.\nP10: Isabella of Urgell: Isabella of Urgel (Aragonese: \"Isabel d'Urchel\"; died 1071) was Queen of Aragon; the only daughter of Ermengol III, Count of Urgell by his first wife Adelaide of Besalú. Isabella is mentioned in her brother Ermengol IV's testament. Isabella married in 1065 King Sancho Ramírez; by this marriage, Isabella was Queen of Aragon. The couple had one son, Peter I, Sancho's successor who left no surviving children. The couple divorced in 1070, and both remarried. Isabella may have ...\nQuestion: Who is Sancho Ramírez's maternal grandfather?\nFinal answer:",
+  "output": "Sancho I of León",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.25
+  },
+  "response": {
+    "id": "chatcmpl-859202978f1ee09d",
+    "object": "chat.completion",
+    "created": 1779535611,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Sancho I of León",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1486,
+      "total_tokens": 1493,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "593381a80bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "St. Peter's Basilica",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Lorenzo Cybo -> Lorenzo de' Medici\n- Lorenzo Cybo -> The General\n- Giulio Cybo -> Piero Strozzi\n- Giulio Cybo -> Lorenzo Cybo\n- Book of Burial -> The Mystic\n- Carlo I Cybo-Malaspina -> Marfisa d'Este\n- Carlo I Cybo-Malaspina -> Them!\n- Clarice Orsini -> Lorenzo de' Medici\n- Clarice Orsini -> Lorenzo de' Medici\nPassages:\nP1: Lorenzo de' Medici: Lorenzo de' Medici (1 January 1449 – 8 April 1492) was an Italian statesman, \"de facto\" ruler of the Florentine Republic and the most powerful and enthusiastic patron of Renaissance culture in Italy. Also known as Lorenzo the Magnificent (\"Lorenzo il Magnifico\") by contemporary Florentines, he was a magnate, diplomat, politician and patron of scholars, artists and poets. As a patron, he is best known for his sponsorship of artists such as Botticelli and Michelangelo. He held ...\nP2: The Mystic: The Mystic is a 1925 American MGM silent drama film directed by Tod Browning, who later directed MGM's\" Freaks\"( 1932). It was co-written by Browning and Waldemar Young, writing a similar storyline to their earlier 1925 hit film\" The Unholy Three\". Browning was unable however to hire his favorite star Lon Chaney this time around, and\" The Mystic\" wound up a little- known film with a cast of now- forgotten names. Aileen Pringle's gowns in the film were by already famous Romain de ...\nP3: The General: The General or The Generals may refer to:\nP4: Marfisa d'Este: Marfisa d'Este (c.1554 in Ferrara – 16 October 1608 in Ferrara) was a Ferrarese noblewoman. She was the illegitimate daughter of Francesco d'Este - her mother's name is unknown. She and her sister Bradamante (born 1559) were legitimised by both pope Gregory XIII and Alfonso II d'Este. She was also notable as a patron of the arts and the protector of Torquato Tasso. On 5 May 1578 she married her cousin Alfonsino di Montecchio, son of Alfonso di Montecchio, who died just under ...\nP5: Piero Strozzi: Piero( or Pietro) Strozzi( c. 1510 – 21 June 1558) was an Italian military leader. He was a member of the rich Florentine family of the Strozzi.\nP6: Them!: Them! is a 1954 American black- and- white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \" Them!\" is one of the first of the 1950s\" nuclear monster\" films, and the first\" big bug\" feature. A nest ...\nP7: Them!: Them! is a 1954 American black-and-white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \"Them!\" is one of the first of the 1950s \"nuclear monster\" films, and the first \"big bug\" feature. A nest of ...\nP8: Lorenzo Cybo: Lorenzo Cybo Malaspina (20 July 1500 – 14 March 1549) was an Italian general, who was duke of Ferentillo. Born at Sampierdarena (in what is modern Genoa), he was the son of Franceschetto Cybo and Maddalena de' Medici, daughter of \"Lorenzo de' Medici\" and his uncle was Pope Leo X. His paternal grandfather was Pope Innocent VIII. The latter pushed him to marry Ricciarda Malaspina, heir of the Malaspina family, by which he founded the Cybo-Malaspina family, including later the ...\nP9: Book of Burial: The Book of Burial( Chinese:,,\" Zàngshū\") was an AD 4th- or 5 th- century work by the Taoist mystic Guo Pu. The work was a commentary on the now- lost\" Classic of Burial\"; as it survived and transmitted the classic's teachings, the\" Book of Burial\"'s principles relating the flow of\" qi\" to the appropriateness of a tomb's location were influential on the development of\" fengshui\".\nP10: Giulio Cybo: Giulio I Cybo-Malaspina (1525 – 18 May 1548) (or Cibo) was an Italian noble from Genoa who was marquis of Massa and lord of Carrara from 1546 until 1548. Born in Rome, he was the son of Ricciarda Malaspina, duchess of Massa and Carrara and Lorenzo Cybo, duke of Ferentillo who changed his name to Cybo-Malaspina, and a great-grandson of Pope Innocent VIII. His mother was the heir of the state of Massa and Carrara, which she had inherited from her father. In 1546, he challenged his ...\nQuestion: Where was the place of burial of Lorenzo Cybo's mother?\nFinal answer:",
+  "output": "Ferentillo",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a56e775552d691ea",
+    "object": "chat.completion",
+    "created": 1779535848,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Ferentillo",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1368,
+      "total_tokens": 1373,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

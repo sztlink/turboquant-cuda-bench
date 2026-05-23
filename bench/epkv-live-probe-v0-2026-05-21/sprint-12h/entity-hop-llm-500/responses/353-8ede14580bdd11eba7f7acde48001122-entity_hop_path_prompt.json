@@ -1,0 +1,48 @@
+{
+  "qid": "8ede14580bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Dresden",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Maurice de Saxe -> Augustus II the Strong\n- Maurice de Saxe -> Decisive victory\n- Avenue de Saxe -> Maurice de Saxe\n- Maurice Wilhelm, Duke of Saxe-Merseburg -> Christian II, Duke of Saxe-Merseburg\n- Christian III Maurice, Duke of Saxe-Merseburg -> Christian II, Duke of Saxe-Merseburg\n- Marie-Aurore de Saxe -> Maurice de Saxe\n- Victor-Maurice, comte de Broglie -> Maurice de Broglie\n- Victor-Maurice, comte de Broglie -> The General\nPassages:\nP1: Maurice de Saxe: Maurice, Count of Saxony (28 October 1696 – 20 November 1750) was a notable soldier and officer as well as the son of Augustus II the Strong, King of Poland and Elector of Saxony. He initially served in the Army of the Holy Roman Empire, then the Imperial Army and finally in French service de Saxe became a Marshal and later also a Marshal General of France. He is best known for his decisive victory at the Battle of Fontenoy and is honoured by the Walhalla Memorial.\nP2: Maurice de Broglie: Louis- César- Victor- Maurice, 6th duc de Broglie( 27 April 1875 – 14 July 1960) was a French physicist. Brother of the theoretical physicist, Louis de Broglie.\nP3: Christian II, Duke of Saxe-Merseburg: Christian II of Saxe- Merseburg( 19 November 1653 – 20 October 1694), was a duke of Saxe- Merseburg and member of the House of Wettin. He was the second( but eldest surviving) son of Christian I, Duke of Saxe- Merseburg, and Christiana of Schleswig- Holstein- Sonderburg- Glücksburg.\nP4: Augustus II the Strong: Augustus II the Strong (12 May 16701 February 1733), also known in Saxony as Frederick Augustus I, was Elector of Saxony from 1697, Imperial Vicar and elected King of Poland and Grand Duke of Lithuania in the years 1697–1706 and from 1709 until his death in 1733. He was succeeded by his son, Augustus III of Poland. Augustus' great physical strength earned him the nicknames \"the Strongthe Saxon Hercules\" and \"Iron-Hand\". He liked to show that he lived up to his name by ...\nP5: The General: The General or The Generals may refer to:\nP6: Decisive victory: A decisive victory is a military victory in battle that definitively resolves the objective being fought over, ending one stage of the conflict and beginning another stage. Until a decisive victory is achieved, conflict over the competing objectives will continue. Like all concepts of warfare, a decisive battle can take place from the tactical or unit level( Pavlov's House during the Battle of Stalingrad or the Chew House at the Battle of Germantown), the operational level( ...\nP7: Maurice Wilhelm, Duke of Saxe-Merseburg: Maurice Wilhelm, Duke of Saxe-Merseburg (5 February 1688 – 21 April 1731) was a duke of Saxe-Merseburg and member of the House of Wettin. He was born in Merseburg, the fifth (but second surviving) son of Christian II, Duke of Saxe-Merseburg, and Erdmuthe Dorothea of Saxe-Zeitz.\nP8: Maurice, Duke of Saxe-Zeitz: Maurice of Saxe-Zeitz (28 March 1619 – 4 December 1681) was a duke of Saxe-Zeitz and member of the House of Wettin. Born in Dresden, he was the youngest surviving son of John George I, Elector of Saxony, and his second wife Magdalene Sibylle of Prussia.\nP9: Christian III Maurice, Duke of Saxe-Merseburg: Christian III Maurice, Duke of Saxe-Merseburg (Merseburg, 7 November 1680 – Merseburg, 14 November 1694), was a duke of Saxe-Merseburg and member of the House of Wettin. He was the eldest son of Christian II, Duke of Saxe-Merseburg, and Erdmuthe Dorothea of Saxe-Zeitz.\nP10: Maurice de Féraudy: Maurice de Féraudy( born in Joinville- le- Pont on December 3, 1859- died in Paris May 12, 1932) was a French songwriter and actor at the Comédie- Française. He was the father of actor Jacques de Féraudy.\nQuestion: Where was the father of Maurice De Saxe born?\nFinal answer:",
+  "output": "Dresden",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-bfcdf61e9bafd4c1",
+    "object": "chat.completion",
+    "created": 1779535789,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Dresden",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1183,
+      "total_tokens": 1186,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

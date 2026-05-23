@@ -1,0 +1,63 @@
+{
+  "idx": 109,
+  "qid": "30885e540bb011ebab90acde48001122",
+  "gold": "Franz Joseph I",
+  "candidates": [
+    "Johann Josef Adam",
+    "Franz Joseph I, Prince of Liechtenstein",
+    "Paula",
+    "Johann I Joseph, Prince of Liechtenstein",
+    "Prince Alfred of Liechtenstein",
+    "Prince Franz de Paula of Liechtenstein",
+    "Franz I, Prince of Liechtenstein",
+    "Prince Louis of Liechtenstein",
+    "Johann Nepomuk Karl, Prince of Liechtenstein"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Johann Josef Adam\nC2: Franz Joseph I, Prince of Liechtenstein\nC3: Paula\nC4: Johann I Joseph, Prince of Liechtenstein\nC5: Prince Alfred of Liechtenstein\nC6: Prince Franz de Paula of Liechtenstein\nC7: Franz I, Prince of Liechtenstein\nC8: Prince Louis of Liechtenstein\nC9: Johann Nepomuk Karl, Prince of Liechtenstein\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Prince Franz de Paula of Liechtenstein -> Johann I Joseph, Prince of Liechtenstein\n- Prince Franz de Paula of Liechtenstein -> Paula\n- Prince Franz de Paula of Liechtenstein -> Johann I Joseph, Prince of Liechtenstein\n- Prince Franz de Paula of Liechtenstein -> Paula\n- Franz I, Prince of Liechtenstein -> Paula\n- Prince Louis of Liechtenstein -> Prince Franz de Paula of Liechtenstein\n- Prince Louis of Liechtenstein -> Prince Alfred of Liechtenstein\n- Prince Louis of Liechtenstein -> Prince Franz de Paula of Liechtenstein\n- Prince Louis of Liechtenstein -> Prince Alfred of Liechtenstein\n- Franz Joseph I, Prince of Liechtenstein -> Paula\n- Johann Nepomuk Karl, Prince of Liechtenstein -> Paula\nPassages:\nP1: Paula: Paula or PAULA may refer to:\nP2: Johann I Joseph, Prince of Liechtenstein: Johann I Joseph(\" Johann Baptist Josef Adam Johann Nepomuk Aloys Franz de Paula\"; 26 June 1760 – 20 April 1836) was Prince of Liechtenstein between 1805 and 1806 and again from 1814 until 1836. He was the last Liechtenstein prince to rule under the Holy Roman Empire between 1805 and 1806 and as regent of Liechtenstein from 1806 until 1814. He was the fourth son of Franz Joseph I, Prince of Liechtenstein.\nP3: Prince Alfred of Liechtenstein: Prince Alfred Louis of Liechtenstein (Alfred Aloys Eduard; 11 June 1842 in Prague – 8 October 1907 in Frauenthal castle) was the son of Prince Franz de Paula of Liechtenstein (1802–1887) and Countess Julia Eudoxia Potocka-Piława (1818–1895), older brother of Prince Louis of Liechtenstein, and cousin and brother-in-law of Franz I of Liechtenstein. He was the 1,143rd Knight of the Order of the Golden Fleece in Austria in 1903.\nP4: Prince Franz de Paula of Liechtenstein: Prince Franz de Paula of Liechtenstein (\" Franz de Paula Joachim Joseph\") (Vienna, 25 February 1802 – Vienna, 31 March 1887) was a son of Johann I Joseph, Prince of Liechtenstein (1760-1836) and wife Landgravine Josepha of Fürstenberg-Weitra, nephew of Aloys I, brother of Aloys II and uncle of Johann II and Franz I.\nP5: Prince Franz de Paula of Liechtenstein: Prince Franz de Paula of Liechtenstein(\" Franz de Paula Joachim Joseph\") ( Vienna, 25 February 1802 – Vienna, 31 March 1887) was a son of Johann I Joseph, Prince of Liechtenstein( 1760- 1836) and wife Landgravine Josepha of Fürstenberg- Weitra, nephew of Aloys I, brother of Aloys II and uncle of Johann II and Franz I.\nP6: Franz I, Prince of Liechtenstein: Franz I, Prince of Liechtenstein, born\" Franz de Paula Maria Karl August\"( 28 August 1853 – 25 July 1938), was the Prince of Liechtenstein between 1929 and 1938.\nP7: Franz Joseph I, Prince of Liechtenstein: Franz Joseph I, Prince of Liechtenstein, born\" Franz de Paula Josef Johann Nepomuk Andreas\"( 19 November 1726 – 18 August 1781), was the Prince of Liechtenstein from 1772 until his death.\nP8: Prince Louis of Liechtenstein: Prince Aloys Franz de Paula Maria( 18 November 1846 – 25 March 1920), known in English as Prince Louis, was the son of Prince Franz de Paula of Liechtenstein( 1802 – 1887) and younger brother of Prince Alfred of Liechtenstein. He was the cousin of Johann II, Prince of Liechtenstein. He was nicknamed\" The Red Princeder rote Prinz\").\nP9: Prince Louis of Liechtenstein: Prince Aloys Franz de Paula Maria (18 November 1846 – 25 March 1920), known in English as Prince Louis, was the son of Prince Franz de Paula of Liechtenstein (1802–1887) and younger brother of Prince Alfred of Liechtenstein. He was the cousin of Johann II, Prince of Liechtenstein. He was nicknamed \"The Red Princeder rote Prinz\").\nP10: Johann Nepomuk Karl, Prince of Liechtenstein: Johann Nepomuk Karl, Prince of Liechtenstein( Johann Nepomuk Karl Borromäus Josef Franz de Paula; 6 July 1724 – 22 December 1748) was the Prince of Liechtenstein between 1732 and 1748. He was the son of Johann Josef Adam.\nQuestion: Who is Prince Franz De Paula Of Liechtenstein's paternal grandfather?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Johann Josef Adam\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not directly state Prince Franz de Paula of Liechtenstein's paternal grandfather. The graph mentions a relationship between Prince Franz de Paula of Liechtenstein and Paula, but it does not provide the paternal grandfather's name.\"}",
+  "verifier": {
+    "final_answer": "Johann Josef Adam",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence does not directly state Prince Franz de Paula of Liechtenstein's paternal grandfather. The graph mentions a relationship between Prince Franz de Paula of Liechtenstein and Paula, but it does not provide the paternal grandfather's name."
+  },
+  "final": "Johann Josef Adam",
+  "selected": "UNKNOWN",
+  "response": {
+    "id": "chatcmpl-8be28388321a40f3",
+    "object": "chat.completion",
+    "created": 1779535996,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Johann Josef Adam\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not directly state Prince Franz de Paula of Liechtenstein's paternal grandfather. The graph mentions a relationship between Prince Franz de Paula of Liechtenstein and Paula, but it does not provide the paternal grandfather's name.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1454,
+      "total_tokens": 1522,
+      "completion_tokens": 68,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.2668709754943848
+}

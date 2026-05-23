@@ -1,0 +1,48 @@
+{
+  "qid": "65e000ee0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "1947",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Teddy Hart -> B.J. Annis\n- Teddy Hart -> The Gate\n- Brian Pillman Jr. -> Davey Boy Smith Jr.\n- Brian Pillman Jr. -> Teddy Hart\n- Helen of Sweden (12th century) -> Canute V of Denmark\n- Place of birth -> Place of origin\n- Julia Agricola -> The General\n- Julia Agricola -> Tacitus\n- Hippolytus (archbishop of Gniezno) -> Part\nPassages:\nP1: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP2: Canute V of Denmark: Canute V Magnussen  (– 9 August 1157) was a King of Denmark from 1146 to 1157, as co-regent in shifting alliances with Sweyn III and Valdemar I. Canute was killed at the so-called \"Bloodfeast of Roskilde\" in 1157. Nothing certain is known about his person and character.\nP3: The Gate: The Gate may refer to:\nP4: The General: The General or The Generals may refer to:\nP5: Davey Boy Smith Jr.: Harry Francis Smith (born August 2, 1985) is a Canadian professional wrestler who is currently working for Major League Wrestling (MLW) as Davey Boy Smith Jr. Smith is a former three-time IWGP Tag Team Champion, two-time GHC Tag Team Champion, two-time NWA World Tag Team Champion and one-time MLW World Tag Team Champion. He is also appearing for World of Sport Wrestling (WOS Wrestling) using the name British Bulldog Jr. He is also known for his tenure in New Japan ...\nP6: Tacitus: Publius (or Gaius) Cornelius Tacitus  was a senator and a historian of the Roman Empire. Tacitus is considered to be one of the greatest Roman historians. He lived in what has been called the Silver Age of Latin literature, and is known for the brevity and compactness of his Latin prose, as well as for his penetrating insights into the psychology of power politics. The surviving portions of his two major works—the \"Annals\" and the \"Histories\"—examine the reigns of the emperors ...\nP7: B.J. Annis: Bradley Joseph Annis (born 1947) is a retired bodybuilder, powerlifter, fitness guru, professional wrestler, gym owner and firefighter. Annis is best known for his work for Stampede Wrestling and his ownership and handling of the Calgary gym at which many of the wrestlers trained. Annis is married to Georgia Hart, the daughter of wrestler Stu and wrestling promoter Helen Hart.\nP8: Part: Part, parts or PART may refer to:\nP9: List of prime ministers of New Zealand by date of birth: The following is a list of prime ministers of New Zealand, organised by date of birth, plus additional lists of birth related statistics.\nP10: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nQuestion: What is the date of birth of Teddy Hart's father?\nFinal answer:",
+  "output": "1947",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-a2c5efaec63f2542",
+    "object": "chat.completion",
+    "created": 1779535895,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "1947",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 882,
+      "total_tokens": 887,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

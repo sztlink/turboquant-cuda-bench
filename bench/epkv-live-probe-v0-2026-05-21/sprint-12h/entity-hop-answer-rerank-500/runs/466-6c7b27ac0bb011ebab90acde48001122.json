@@ -1,0 +1,66 @@
+{
+  "idx": 466,
+  "qid": "6c7b27ac0bb011ebab90acde48001122",
+  "gold": "Adolph I",
+  "candidates": [
+    "William III, Duke of Bavaria",
+    "Duke Karl Theodor in Bavaria",
+    "William of Bavaria-Munich",
+    "Adolf of Germany",
+    "James Butler, 1st Duke of Ormond",
+    "Duchess Marie Gabrielle in Bavaria",
+    "Imagina of Isenburg-Limburg",
+    "Jan I of Żagań",
+    "Balthasar, Landgrave of Thuringia",
+    "The Child",
+    "Adolf, Duke of Bavaria",
+    "Mechtild of Nassau"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: William III, Duke of Bavaria\nC2: Duke Karl Theodor in Bavaria\nC3: William of Bavaria-Munich\nC4: Adolf of Germany\nC5: James Butler, 1st Duke of Ormond\nC6: Duchess Marie Gabrielle in Bavaria\nC7: Imagina of Isenburg-Limburg\nC8: Jan I of Żagań\nC9: Balthasar, Landgrave of Thuringia\nC10: The Child\nC11: Adolf, Duke of Bavaria\nC12: Mechtild of Nassau\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Adolf, Duke of Bavaria -> William of Bavaria-Munich\n- Mechtild of Nassau -> Imagina of Isenburg-Limburg\n- Mechtild of Nassau -> Adolf of Germany\n- Mechtild of Nassau -> Adolf of Germany\n- Mechtild of Nassau -> The Child\n- Albrecht, Duke of Bavaria -> Duchess Marie Gabrielle in Bavaria\n- Albrecht, Duke of Bavaria -> Duchess Marie Gabrielle in Bavaria\n- John Pointz -> James Butler, 1st Duke of Ormond\n- Balthasar of Żagań -> Balthasar, Landgrave of Thuringia\n- Balthasar of Żagań -> Jan I of Żagań\nPassages:\nP1: William of Bavaria-Munich: William of Bavaria- Munich( 1435 – 1435) was a German nobleman. He was the son of Margaret of Cleves and her first husband William III, Duke of Bavaria. He was born after his father ’s death and died in infancy, being buried in the church of the Carmelites in Straubing. His elder brother Adolf nominally ruled as duke alongside his uncle Ernest and his cousin Albert III until he died at age seven.\nP2: Adolf of Germany: Adolf (c. 1255 – 2 July 1298) was Count of Nassau from about 1276 and elected King of Germany (King of the Romans) from 1292 until his deposition by the prince-electors in 1298. He was never crowned by the Pope, which would have secured him the title of Holy Roman Emperor. He was the first physically and mentally healthy ruler of the Holy Roman Empire ever to be deposed without a papal excommunication. Adolf died shortly afterwards in the Battle of Göllheim fighting against ...\nP3: James Butler, 1st Duke of Ormond: Lieutenant- General James FitzThomas Butler, 1st Duke of Ormond, 1st Marquess of Ormond, 12th Earl of Ormond, 5th Earl of Ossory, 4th Viscount Thurles, 1st Baron Butler of Llanthony, 1st Earl of Brecknock, KG, PC( 1610 – 1688) was an Irish statesman and soldier, known as Earl of Ormond from 1634 to 1642 and Marquess of Ormond from 1642 to 1661. Following the failure of the senior line of the Butler family, he was the second of the Kilcash branch to inherit the ...\nP4: Duchess Marie Gabrielle in Bavaria: Duchess Marie Gabrielle in Bavaria( 9 October 1878 in Tegernsee, Bavaria – 24 October 1912 in Sorrento, Italy) was the youngest daughter of Duke Karl Theodor in Bavaria and his second wife, Infanta Maria Josepha of Portugal. She married Prince Rupprecht of Bavaria in 1900 but died before he became Crown Prince. Through her second son Albrecht, Marie Gabrielle was the grandmother of the present Duke of Bavaria, Franz.\nP5: Duchess Marie Gabrielle in Bavaria: Duchess Marie Gabrielle in Bavaria (9 October 1878 in Tegernsee, Bavaria – 24 October 1912 in Sorrento, Italy) was the youngest daughter of Duke Karl Theodor in Bavaria and his second wife, Infanta Maria Josepha of Portugal. She married Prince Rupprecht of Bavaria in 1900 but died before he became Crown Prince. Through her second son Albrecht, Marie Gabrielle was the grandmother of the present Duke of Bavaria, Franz.\nP6: Imagina of Isenburg-Limburg: Imagina of Isenburg- Limburg( ca. 1255 – 29 September 1313?) was the Queen consort of Adolf of Nassau, King of Germany.\nP7: Imagina of Isenburg-Limburg: Imagina of Isenburg-Limburg (ca. 1255 – 29 September 1313?) was the Queen consort of Adolf of Nassau, King of Germany.\nP8: Jan I of Żagań: Jan I of Żagań  (– 12 April 1439) was a Duke of Żagań-Głogów, since 1397 (until 1412 with his brothers as co-rulers), since 1403 Duke of Żagań, Krosno Odrzańskie and Świebodzin (again, until 1412 with his brothers as co-rulers) and since 1412 sole ruler of Żagań and Przewóz. He was the eldest son of Henry VIII the Sparrow, Duke of Głogów by his wife Katharina, daughter of Duke Władysław of Opole.\nP9: Balthasar, Landgrave of Thuringia: Landgrave Balthasar of Thuringia( 21 December 1336 in Weißenfels – 18 May 1406 at the Wartburg in Eisenach) was Margrave of Meissen and Landgrave of Thuringia from the House of Wettin.\nP10: The Child: The Child may refer to:\nQuestion: Who is Adolf, Duke Of Bavaria's maternal grandfather?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"William III, Duke of Bavaria\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"P1 states that Adolf of Germany nominally ruled as duke alongside his uncle Ernest and his cousin Albert III, and he was the son of Margaret of Cleves and her first husband William III, Duke of Bavaria. This information directly supports that William III, Duke of Bavaria is Adolf, Duke of Bavaria's maternal grandfather.\"}",
+  "verifier": {
+    "final_answer": "William III, Duke of Bavaria",
+    "selected": "C1",
+    "confidence": "high",
+    "reason": "P1 states that Adolf of Germany nominally ruled as duke alongside his uncle Ernest and his cousin Albert III, and he was the son of Margaret of Cleves and her first husband William III, Duke of Bavaria. This information directly supports that William III, Duke of Bavaria is Adolf, Duke of Bavaria's maternal grandfather."
+  },
+  "final": "William III, Duke of Bavaria",
+  "selected": "C1",
+  "response": {
+    "id": "chatcmpl-9ce94803584056a0",
+    "object": "chat.completion",
+    "created": 1779536241,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"William III, Duke of Bavaria\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"P1 states that Adolf of Germany nominally ruled as duke alongside his uncle Ernest and his cousin Albert III, and he was the son of Margaret of Cleves and her first husband William III, Duke of Bavaria. This information directly supports that William III, Duke of Bavaria is Adolf, Duke of Bavaria's maternal grandfather.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1502,
+      "total_tokens": 1594,
+      "completion_tokens": 92,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.6422297954559326
+}

@@ -1,0 +1,61 @@
+{
+  "idx": 79,
+  "qid": "f491b33e0bda11eba7f7acde48001122",
+  "gold": "Jean Hersholt Humanitarian Award",
+  "candidates": [
+    "Jean Hersholt Humanitarian Award",
+    "The Last Night of the Barbary Coast",
+    "Last Night",
+    "The Street",
+    "Domenico Paolella",
+    "Sol Lesser",
+    "Lew Landers",
+    "Find",
+    "@Home",
+    "Part",
+    "Law of the Barbary Coast",
+    "Pirates of the Coast"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Jean Hersholt Humanitarian Award\nC2: The Last Night of the Barbary Coast\nC3: Last Night\nC4: The Street\nC5: Domenico Paolella\nC6: Sol Lesser\nC7: Lew Landers\nC8: Find\nC9: @Home\nC10: Part\nC11: Law of the Barbary Coast\nC12: Pirates of the Coast\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- The Last Night of the Barbary Coast -> Last Night\n- The Last Night of the Barbary Coast -> Sol Lesser\n- The Last Night of the Barbary Coast -> Last Night\n- The Last Night of the Barbary Coast -> Sol Lesser\n- Law of the Barbary Coast -> Lew Landers\n- Pirates of the Coast -> Domenico Paolella\n- Barbary Coast, San Francisco -> The Street\n- Barbary Coast, San Francisco -> Find\n- Coast Guard Unit Commendation -> @Home\n- Coast Guard Unit Commendation -> Part\nPassages:\nP1: The Last Night of the Barbary Coast: The Last Night of the Barbary Coast( 1913) was an early example of the exploitation film, showing what was purported to be the last night of the Barbary Coast red-light section of San Francisco. In reality, the Barbary Coast was n't shut down until 1917. The film, directed by Hal Mohr and Sol Lesser, is now considered a lost film. Mohr, later an Academy Award winner, did the cinematography, and Lesser went on to become a Hollywood producer.\nP2: The Last Night of the Barbary Coast: The Last Night of the Barbary Coast (1913) was an early example of the exploitation film, showing what was purported to be the last night of the Barbary Coast red-light section of San Francisco. In reality, the Barbary Coast wasn't shut down until 1917. The film, directed by Hal Mohr and Sol Lesser, is now considered a lost film. Mohr, later an Academy Award winner, did the cinematography, and Lesser went on to become a Hollywood producer.\nP3: Last Night: Last Night, The Last Night or Last Nite may refer to:\nP4: The Street: The Street may refer to:\nP5: Domenico Paolella: Domenico Paolella( 18 October 1915- 7 October 2002) was an Italian director, screenwriter and journalist. Born in Foggia, between 1933 and 1935 Paolella won several contests for amateur directors; in the same years he started working as a journalist for several newspapers and magazines. In 1937 he entered the film industry as assistant of Carmine Gallone for\" Scipio the African\", and the following year made his debut as a director of short films. During the war he was ...\nP6: Sol Lesser: Sol Lesser (February 17, 1890 – September 19, 1980) was an American film producer. He received a star on the Hollywood Walk of Fame in 1960 and was awarded the Jean Hersholt Humanitarian Award in 1961.\nP7: Lew Landers: Lew Landers( born Louis Friedlander, January 2, 1901 – December 16, 1962) was an American independent film and television director.\nP8: Find: Find or FIND or Finding may refer to:\nP9: @Home: @Home or @home may refer to:\nP10: Part: Part, parts or PART may refer to:\nQuestion: What is the award that the director of film The Last Night Of The Barbary Coast got?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Jean Hersholt Humanitarian Award\",\"selected\":\"C1\",\"confidence\":\"medium\",\"reason\":\"The candidate entity 'Jean Hersholt Humanitarian Award' is not directly mentioned in the passages. However, Sol Lesser, who is identified as the director of 'The Last Night of the Barbary Coast' in the passages, is awarded the 'Jean Hersholt Humanitarian Award' in one of the passages. Although the passages do not explicitly state that Sol Lesser was the director of the film, the candidate entity graph supports this by linking 'The Last Night of the Barbary Coast' to 'Sol Lesser'. Given",
+  "verifier": {},
+  "final": "Jean Hersholt Humanitarian Award",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-b7414110b51ab1b0",
+    "object": "chat.completion",
+    "created": 1779535970,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Jean Hersholt Humanitarian Award\",\"selected\":\"C1\",\"confidence\":\"medium\",\"reason\":\"The candidate entity 'Jean Hersholt Humanitarian Award' is not directly mentioned in the passages. However, Sol Lesser, who is identified as the director of 'The Last Night of the Barbary Coast' in the passages, is awarded the 'Jean Hersholt Humanitarian Award' in one of the passages. Although the passages do not explicitly state that Sol Lesser was the director of the film, the candidate entity graph supports this by linking 'The Last Night of the Barbary Coast' to 'Sol Lesser'. Given",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 982,
+      "total_tokens": 1110,
+      "completion_tokens": 128,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 2.193065881729126
+}

@@ -1,0 +1,66 @@
+{
+  "idx": 462,
+  "qid": "5a79e5060bde11eba7f7acde48001122",
+  "gold": "Tower",
+  "candidates": [
+    "Westminster Palace",
+    "Elizabeth of York",
+    "Margaret Tudor",
+    "Edward IV of England",
+    "Lady Margaret Beaufort",
+    "Anne of Brittany",
+    "Jacquetta of Luxembourg",
+    "Charles VIII of France",
+    "Edward V of England",
+    "The Child",
+    "Elizabeth Tudor (1492–1495)",
+    "Henry Stewart, 1st Lord Methven"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Westminster Palace\nC2: Elizabeth of York\nC3: Margaret Tudor\nC4: Edward IV of England\nC5: Lady Margaret Beaufort\nC6: Anne of Brittany\nC7: Jacquetta of Luxembourg\nC8: Charles VIII of France\nC9: Edward V of England\nC10: The Child\nC11: Elizabeth Tudor (1492–1495)\nC12: Henry Stewart, 1st Lord Methven\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Elizabeth Tudor (1492–1495) -> Elizabeth of York\n- Elizabeth Tudor (1492–1495) -> The Child\n- Elizabeth Tudor (1492–1495) -> Elizabeth of York\n- Elizabeth Tudor (1492–1495) -> The Child\n- Henry Stewart, 1st Lord Methven -> Elizabeth of York\n- Henry Stewart, 1st Lord Methven -> Margaret Tudor\n- Charles Orlando, Dauphin of France -> Charles VIII of France\n- Charles Orlando, Dauphin of France -> Anne of Brittany\n- Catherine Woodville, Duchess of Buckingham -> Jacquetta of Luxembourg\n- Catherine Woodville, Duchess of Buckingham -> Edward IV of England\n- Elizabeth Woodville -> Lady Margaret Beaufort\n- Elizabeth Woodville -> Jacquetta of Luxembourg\n- Elizabeth Woodville -> Edward V of England\nPassages:\nP1: Elizabeth of York: Elizabeth of York (11 February 1466 – 11 February 1503) was the first queen consort of England of the Tudor dynasty from 18 January 1486 until her death, as the wife of Henry VII. She married Henry in 1485 after his victory at the Battle of Bosworth Field, which marked the end of the Wars of the Roses. Together, Elizabeth and Henry had seven, possibly eight, children. After the death of her father, King Edward IV, Elizabeth's brothers the \"Princes in the Tower\" disappeared, ...\nP2: Margaret Tudor: Margaret Tudor (28 November 1489 – 18 October 1541) was Queen of Scots from 1503 until 1513 by marriage to James IV of Scotland and then, after her husband died fighting the English, she became regent for their son James V of Scotland from 1513 until 1515. She was born at Westminster Palace as the eldest daughter of King Henry VII of England and Elizabeth of York, and granddaughter of Margaret Beaufort, Edward IV of England and Queen Elizabeth Woodville. Margaret Tudor had ...\nP3: Edward IV of England: Edward IV (28 April 1442 – 9 April 1483) was King of England from 4 March 1461 to 3 October 1470, and again from 11 April 1471 until his death. His father, Richard of York, leader of the Yorkist faction, was a lineal descendant of Edward III and until 1453, heir presumptive to Henry VI, from the ruling House of Lancaster, or Lancastrians. Less than a year old when he came to the throne in September 1422 , Henry's minority was marked by political infighting within the ...\nP4: Lady Margaret Beaufort: Lady Margaret Beaufort (usually pronounced: , ; or) (31 May 1441/3 – 29 June 1509) was the mother of King Henry VII and paternal grandmother of King Henry VIII of England. She was a key figure in the Wars of the Roses and an influential matriarch of the House of Tudor. She is credited with the establishment of two prominent Cambridge colleges, founding Christ's College in 1505 and beginning the development of St John's College, which was completed posthumously by her ...\nP5: Anne of Brittany: Anne of Brittany  (25/26 January 1477 – 9 January 1514) was Duchess of Brittany from 1488 until her death, and queen consort of France from 1491 to 1498 and from 1499 to her death. She is the only woman to have been queen consort of France twice. During the Italian Wars, Anne also became queen consort of Naples, from 1501 to 1504, and duchess consort of Milan, in 1499–1500 and from 1500 to 1512. Anne was raised in Nantes during a series of conflicts in which the king of France ...\nP6: Jacquetta of Luxembourg: Jacquetta of Luxembourg, Countess Rivers (1415/16 – 30 May 1472) was the eldest daughter of Peter I of Luxembourg, Count of Saint-Pol, Conversano and Brienne, and his wife Margaret of Baux (Margherita del Balzo of Andria). She was a prominent, though often overlooked, figure in the Wars of the Roses. Through her short-lived first marriage to the Duke of Bedford, brother of King Henry V, she was firmly allied to the House of Lancaster. However, following the emphatic ...\nP7: Charles VIII of France: Charles VIII, called the Affable (30 June 1470 – 7 April 1498), was King of France from 1483 to his death in 1498. He succeeded his father Louis XI at the age of 13. His elder sister Anne acted as regent jointly with her husband Peter II, Duke of Bourbon until 1491 when the young king turned 21 years of age. During Anne's regency, the great lords rebelled against royal centralisation efforts in a conflict known as the Mad War (1485–1488), which resulted in a victory for ...\nP8: Edward V of England: Edward V (2 November 1470) succeeded his father, Edward IV, as King of England and Lord of Ireland upon the latter's death on 9 April 1483. Edward V was never crowned, and his brief reign was dominated by the influence of his uncle and Lord Protector, the Duke of Gloucester, who deposed him to reign as Richard III on 26 June 1483; this was confirmed by the Act entitled Titulus Regius, which denounced any further claims through his father's heirs. Edward and his younger ...\nP9: The Child: The Child may refer to:\nP10: Elizabeth Tudor (1492–1495): Elizabeth Tudor( 2 July 1492 – 14 September 1495) was the second daughter and fourth child of Henry VII of England and Elizabeth of York.\nQuestion: Where did Elizabeth Tudor (1492–1495)'s mother die?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages do not contain any information about the death location of Elizabeth Tudor's mother.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The provided passages do not contain any information about the death location of Elizabeth Tudor's mother."
+  },
+  "final": "Westminster Palace",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-bf2b83e20e4846fb",
+    "object": "chat.completion",
+    "created": 1779536238,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The provided passages do not contain any information about the death location of Elizabeth Tudor's mother.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1684,
+      "total_tokens": 1721,
+      "completion_tokens": 37,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.782158613204956
+}

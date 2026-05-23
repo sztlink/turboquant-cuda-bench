@@ -1,0 +1,48 @@
+{
+  "qid": "b8e03e4c0bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "American",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Jessie Harlan Lincoln -> Robert Todd Lincoln\n- Jessie Harlan Lincoln -> Abraham\n- Warren Wallace Beckwith -> Jessie Harlan Lincoln\n- Warren Wallace Beckwith -> Robert Todd Lincoln\n- Mary Harlan Lincoln -> March 31\n- Harlan County, Kentucky -> Harlan County\n- Her Country's Call -> Lloyd Ingraham\n- Her Country's Call -> Abraham\n- Jan Harlan -> Christiane Kubrick\n- Robert Todd Lincoln -> Mary Todd Lincoln\n- Robert Todd Lincoln -> Ulysses S. Grant\nPassages:\nP1: Ulysses S. Grant: Ulysses S. Grant (born Hiram Ulysses Grant; April 27, 1822 – July 23, 1885) was an American soldier and politician who served as the 18th president of the United States from 1869 to 1877. Before his presidency, Grant led the Union Army in winning the American Civil War. As president, Grant worked with the Radical Republicans in the Reconstruction of the Union while having to deal with corruption in his administration. Raised in Ohio, young Grant possessed an exceptional ...\nP2: Mary Todd Lincoln: Mary Todd Lincoln (Mary Ann Todd; December 13, 1818 – July 16, 1882) was the wife of the 16th President of the United States, Abraham Lincoln, and as such the First Lady of the United States from 1861 to 1865. She dropped the name Ann after her younger sister, Ann Todd (Clark), was born, and did not use the name Todd after marrying. Mary was a member of a large, wealthy Kentucky family, and was well educated. After finishing school during her teens, she moved to Springfield, ...\nP3: Harlan County: Harlan County may refer to:\nP4: Abraham: Abraham (né Abram) is the common patriarch of Christianity, Islam, Judaism, and other religions. In Judaism, he is the founding father of the covenant of the pieces, the special relationship between the Hebrews and God; in Christianity, he is the prototype of all believers, Jewish or Gentile; and in Islam he is seen as a link in the chain of prophets that begins with Adam and culminates in Muhammad. The narrative in the Book of Genesis revolves around the themes of posterity and land. ...\nP5: Christiane Kubrick: Christiane Susanne Kubrick (née Harlan; born 10 May 1932) is a German actress, dancer, painter, and singer. She was born into a theatrical family (her uncle was the infamous film director Veit Harlan), and was the wife of filmmaker Stanley Kubrick from 1958 until his death in 1999.\nP6: March 31: It is the last day of the first quarter of the year.\nP7: Lloyd Ingraham: Lloyd Chauncey Ingraham( November 30, 1874 – April 4, 1956) was an American film actor and director.\nP8: Jessie Harlan Lincoln: Jessie Harlan Lincoln (November 6, 1875 – January 4, 1948) was the second daughter of Robert Todd Lincoln, the granddaughter of Abraham Lincoln, and the mother of Mary Lincoln Beckwith and Robert Todd Lincoln Beckwith, the last undisputed Lincoln descendant.\nP9: Her Country's Call: Her Country's Call is a 1917 American silent drama film directed by Lloyd Ingraham. The film is the final installment in a series a films written by Abraham Lincoln impersonator Benjamin Chapin. The film starred Mary Miles Minter, George Periolat, and Allan Forrest. The film's writer, Benjamin Chapin, also appeared as Abraham Lincoln. It is presumed to be a lost film.\nP10: Mary Harlan Lincoln: Mary Eunice Harlan Lincoln (September 25, 1846 – March 31, 1937) was the daughter of United States Senator James Harlan and the wife of Robert T. Lincoln.\nQuestion: Which country Jessie Harlan Lincoln's father is from?\nFinal answer:",
+  "output": "United States",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9fc0d153087009d3",
+    "object": "chat.completion",
+    "created": 1779535769,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "United States",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 980,
+      "total_tokens": 983,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

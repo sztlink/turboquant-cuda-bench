@@ -1,0 +1,48 @@
+{
+  "qid": "3d682f700bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "German",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Marie Antoinette -> Francis I\n- Marie Antoinette Murat -> Marie Antoinette\n- Karl Anton, Prince of Hohenzollern -> Prince Karl Anton of Hohenzollern\n- Karl Anton, Prince of Hohenzollern -> Marie Antoinette Murat\n- Karl Anton, Prince of Hohenzollern -> Karl, Prince of Hohenzollern-Sigmaringen\n- Karl Anton, Prince of Hohenzollern -> Marie Antoinette Murat\n- Rose Marie Antoinette Blommers-Schlösser -> Marie Antoinette\n- Countess Lerchenfeld -> Marie Antoinette\n- Countess Lerchenfeld -> Maria Theresa\n- Duchess Marie Antoinette of Mecklenburg -> Princess Marie of Windisch-Graetz\n- Duchess Marie Antoinette of Mecklenburg -> Marie Antoinette\n- Évelyne Lever -> Marie Antoinette\nPassages:\nP1: Marie Antoinette: Marie Antoinette (born Maria Antonia Josepha Johanna; 2 November 1755 – 16 October 1793) was the last Queen of France before the French Revolution. She was born an Archduchess of Austria and was the penultimate child and youngest daughter of Empress Maria Theresa and Francis I, Holy Roman Emperor. She became Dauphine of France in May 1770 at age 14 upon her marriage to Louis-Auguste, heir apparent to the French throne. On 10 May 1774, her husband ascended the throne as Louis ...\nP2: Princess Marie of Windisch-Graetz: Princess Marie of Windisch- Graetz( 11 December 1856 – 9 August 1929) was an Austrian noble. She was the daughter of Hugo, Prince of Windisch- Grätz, and Princess Louise of Mecklenburg- Schwerin( herself the eldest daughter of Grand Duke Paul Frederick and Princess Alexandrine of Prussia).\nP3: Karl, Prince of Hohenzollern-Sigmaringen: Karl, Prince of Hohenzollern-Sigmaringen (20 February 1785 – 11 March 1853) was the reigning Prince of Hohenzollern-Sigmaringen from 1831 to 1848. In 1833, Karl summoned a constitutional assembly (\"Landtag\") and promulgated a constitutional charter as the law in his lands. He founded a hospital for his subjects, and had the \"Ständehaus\" built on the modern \"Leopoldsplatz\" in Sigmaringen (today owned by the Hohenzollerische Landesbank). Karl also removed ...\nP4: Maria Theresa: Maria Theresa Walburga Amalia Christina (13 May 1717 – 29 November 1780) was the only female ruler of the Habsburg dominions and the last of the House of Habsburg. She was the sovereign of Austria, Hungary, Croatia, Bohemia, Transylvania, Mantua, Milan, Lodomeria and Galicia, the Austrian Netherlands, and Parma. By marriage, she was Duchess of Lorraine, Grand Duchess of Tuscany and Holy Roman Empress. She started her 40-year reign when her father, Emperor Charles VI, died in ...\nP5: Prince Karl Anton of Hohenzollern: Prince Karl Anton of Hohenzollern- Sigmaringen( 1 September 1868 – 21 February 1919) was a member of the Princely House of Hohenzollern- Sigmaringen. Karl Anton was the third and youngest son of Leopold, Prince of Hohenzollern and his wife Infanta Antónia of Portugal. Karl Anton's elder brothers were William, Prince of Hohenzollern and Ferdinand I of Romania.\nP6: Francis I: Francis I or Francis the First may refer to:\nP7: Marie Antoinette Murat: Marie Antoinette Murat, (3 January 1793, Labastide-Murat, Lot, French Republic – 19 January 1847, Sigmaringen, Principality of Hohenzollern-Sigmaringen) was a member of the House of Murat. Through her marriage to Charles, Prince of Hohenzollern-Sigmaringen, Marie Antoinette was also a member of the House of Hohenzollern-Sigmaringen and Princess consort of Hohenzollern-Sigmaringen. Marie Antoinette was the niece of Joachim Murat, King of Naples from 1808 to 1815 and a ...\nP8: Rose Marie Antoinette Blommers-Schlösser: Rose Marie Antoinette Blommers- Schlösser( Eindhoven, 1944) is a Dutch herpetologist and entomologist.\nP9: Duchess Marie Antoinette of Mecklenburg: Duchess Marie Antoinette of Mecklenburg-Schwerin, also \"Manette\" (Marie Antoinette Margarethe Mathilde; 28 May 1884 – 26 October 1944) was the second daughter of Duke Paul Frederick of Mecklenburg and the Austrian-born Princess Marie of Windisch-Graetz.\nP10: Karl Anton, Prince of Hohenzollern: Prince Karl Anton of Hohenzollern- Sigmaringen( 7 September 1811 – 2 June 1885) was head of the Princely House of Hohenzollern- Sigmaringen, Hohenzollern from 1869 and Prime Minister of Prussia. He was the son of Karl, Prince of Hohenzollern- Sigmaringen, who abdicated in favour of his son on 27 August 1848, and his first wife Marie Antoinette Murat, niece of Joachim Murat.\nQuestion: Which country Marie Antoinette Murat's husband is from?\nFinal answer:",
+  "output": "Prussia",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a5511e45d8ffa023",
+    "object": "chat.completion",
+    "created": 1779535907,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Prussia",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1405,
+      "total_tokens": 1408,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

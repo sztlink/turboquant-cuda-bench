@@ -1,0 +1,48 @@
+{
+  "qid": "619580300bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "John George I, Duke of Saxe-Eisenach",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- John of Hesse-Braubach -> Louis V, Landgrave of Hesse-Darmstadt\n- John of Hesse-Braubach -> Louise Juliane of Erbach\n- John of Hesse-Braubach -> Magdalene of Brandenburg\n- Johannetta of Sayn-Wittgenstein (1632–1701) -> John George I, Duke of Saxe-Eisenach\n- Princess Tatiana of Sayn-Wittgenstein-Berleburg -> Moritz, Landgrave of Hesse\n- Princess Tatiana of Sayn-Wittgenstein-Berleburg -> Princess Benedikte of Denmark\n- Princess Tatiana of Sayn-Wittgenstein-Berleburg -> Gustav Albrecht, 5th Prince of Sayn-Wittgenstein-Berleburg\n- Princess Tatiana of Sayn-Wittgenstein-Berleburg -> Moritz, Landgrave of Hesse\n- Landgravine Marie Louise of Hesse-Kassel -> Charles I, Landgrave of Hesse-Kassel\n- Landgravine Marie Louise of Hesse-Kassel -> Louise of Hesse-Kassel\nPassages:\nP1: John George I, Duke of Saxe-Eisenach: Johann Georg I, Duke of Saxe-Eisenach (Weimar, 12 July 1634 – hunting accident, Eckhartshausen, Marksuhl, 19 September 1686). He was the fifth but third surviving son of Wilhelm, Duke of Saxe-Weimar and Eleonore Dorothea of Anhalt-Dessau. After the death of his father (1662), his older brother Johann Ernst II inherited Weimar, and his second brother Adolf Wilhelm received Eisenach. Johann Georg received an income from the new duchy of Saxe-Eisenach and took ...\nP2: John George I, Duke of Saxe-Eisenach: Johann Georg I, Duke of Saxe- Eisenach( Weimar, 12 July 1634 – hunting accident, Eckhartshausen, Marksuhl, 19 September 1686). He was the fifth but third surviving son of Wilhelm, Duke of Saxe- Weimar and Eleonore Dorothea of Anhalt- Dessau. After the death of his father( 1662), his older brother Johann Ernst II inherited Weimar, and his second brother Adolf Wilhelm received Eisenach. Johann Georg received an income from the new duchy of Saxe- Eisenach and ...\nP3: Louis V, Landgrave of Hesse-Darmstadt: Louis V of Hesse-Darmstadt (24 September 1577 – 27 July 1626) was the Landgrave of Hesse-Darmstadt from 1596 to 1626. He was born on 24 September 1577 as the son of George I, Landgrave of Hesse-Darmstadt and Magdalene of Lippe. In 1604 he inherited a part of Hessen-Marburg after the death of Louis IV of Hesse-Marburg who was childless. The other half went to Maurice of Hesse-Kassel (or Hesse-Cassel), but since Maurice was a Calvinist, Ludwig claimed a ...\nP4: Moritz, Landgrave of Hesse: Moritz, Prince and Landgrave of Hesse(\" Moritz Friedrich Karl Emanuel Humbert\" 6 August 1926 – 23 May 2013) was the son of Prince Philip, Landgrave of Hesse, and the head of the House of Brabant and the German House of Hesse.\nP5: Moritz, Landgrave of Hesse: Moritz, Prince and Landgrave of Hesse (\"Moritz Friedrich Karl Emanuel Humbert\" 6 August 1926 – 23 May 2013) was the son of Prince Philip, Landgrave of Hesse, and the head of the House of Brabant and the German House of Hesse.\nP6: Charles I, Landgrave of Hesse-Kassel: Charles of Hesse- Kassel( 3 August 1654 – 23 March 1730), of the House of Hesse, was the Landgrave of Hesse- Kassel from 1670 to 1730.\nP7: Louise of Hesse-Kassel: Louise of Hesse-Kassel (7 September 1817 – 29 September 1898) was Queen of Denmark by marriage to King Christian IX of Denmark.\nP8: Magdalene of Brandenburg: Magdalene of Brandenburg, also Magdalene and Magdalen, (7 January 1582 – 4 May 1616) was the daughter of John George, Elector of Brandenburg and his third wife Elisabeth of Anhalt-Zerbst. She married Louis V, Landgrave of Hesse-Darmstadt.\nP9: Princess Benedikte of Denmark: Princess Benedikte of Denmark, Princess of Sayn-Wittgenstein-Berleburg (Benedikte Astrid Ingeborg Ingrid, born 29 April 1944) is the second daughter and child of King Frederick IX and Queen Ingrid of Denmark. She is the younger sister of the reigning Queen of Denmark, Margrethe II, and the older sister of Queen Anne-Marie of Greece. Princess Benedikte often represents her elder sister at official or semi-official events. She and her late husband, Richard, 6th ...\nP10: Louise Juliane of Erbach: Countess Louise Juliane of Erbach( 1603 at Fürstenau Castle near Michelstadt – 28 September 1670 in Friedewald) was a German regent; Countess of Sayn- Wittgenstein- Sayn by marriage to Ernest of Sayn- Wittgenstein- Sayn, she acted temporarily as regent of Sayn- Wittgenstein- Sayn. She is remembered as the title character of the novel\" Die Gräfin von Sayn The Countess of Sayn\") by Karl Ramseger- Mühle.\nQuestion: Who is John Of Hesse-Braubach's co-husband?\nFinal answer:",
+  "output": "Louise Juliane of Erbach",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.2
+  },
+  "response": {
+    "id": "chatcmpl-99965bf1dcda1796",
+    "object": "chat.completion",
+    "created": 1779535912,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Louise Juliane of Erbach",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1426,
+      "total_tokens": 1434,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

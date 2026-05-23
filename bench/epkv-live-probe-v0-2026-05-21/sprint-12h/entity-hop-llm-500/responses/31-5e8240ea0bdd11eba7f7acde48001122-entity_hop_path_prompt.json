@@ -1,0 +1,48 @@
+{
+  "qid": "5e8240ea0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Roma",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Mole Men Against the Son of Hercules -> Antonio Leonviola\n- The Terror of Rome Against the Son of Hercules -> Mario Caiano\n- Devil of the Desert Against the Son of Hercules -> Antonio Margheriti\n- Fire Monsters Against the Son of Hercules -> FIRE\n- The Beast of Babylon Against the Son of Hercules -> Siro Marcellini\n- The Beast of Babylon Against the Son of Hercules -> Gordon Scott\n- Venus Against the Son of Hercules -> Marcello Baldi\n- Ulysses Against the Son of Hercules -> Mario Caiano\n- Hercules Against the Sons of the Sun -> Osvaldo Civirani\nPassages:\nP1: Mole Men Against the Son of Hercules: Mole Men Against the Son of Hercules (/ \"Maciste, the Strongest Man in the World\") is a 1961 Italian \"peplum\" film directed by Antonio Leonviola and starring Mark Forest.\nP2: Antonio Leonviola: Antonio Leonviola, sometimes Leon Viola (1913–1995), was an Italian screenwriter and film director and co-founder of the \"Libera Università del Cinema di Roma\".\nP3: Mario Caiano: Mario Caiano (February 13, 1933 – September 20, 2015) was an Italian film director, screenwriter, producer and second unit director. Born in Rome, he has directed nearly 50 films between 1961 and 2001 and wrote some 27 films and TV scripts since 1954. He is primarily known for his work on Spaghetti Westerns, Peplums, Euro Crime and to a slightly lesser degree on horror films. Caiano directed (as Allen Grünewald) and wrote the script for \"Nightmare CastleAmanti d'oltretomba\", ...\nP4: Siro Marcellini: Siro Marcellini( born 16 September 1921) is an Italian director and screenwriter. Born in Genzano di Roma, Marcellini started his career as a theater director before moving to films, where he first worked as an assistant director. He directed eleven films between 1953 and 1970, also writing the screenplays for several of them.\nP5: Siro Marcellini: Siro Marcellini (born 16 September 1921) is an Italian director and screenwriter. Born in Genzano di Roma, Marcellini started his career as a theater director before moving to films, where he first worked as an assistant director. He directed eleven films between 1953 and 1970, also writing the screenplays for several of them.\nP6: Gordon Scott: Gordon Scott( August 3, 1926 – April 30, 2007) was an American film and television actor known for his portrayal of the fictional character Tarzan in five films( and one compilation of three made- as- a-pilot television episodes) of the\" Tarzan\" film series from 1955 to 1960. Gordon Scott was the eleventh Tarzan, starting with\" Tarzan ’s Hidden Jungle\"( 1955). He was\" discovered\" poolside, and offered\" a seven- year contract, a loin cloth, and a new last name.\"\nP7: Antonio Margheriti: Antonio Margheriti( 19 September 1930 – 4 November 2002), also known under the pseudonyms Anthony M. Dawson and Antony Daisies(\" daisies\" is\" margherite\" in Italian), was an Italian filmmaker. Margheriti worked in many different genres in the Italian film industry, and was known for his sometimes derivative but often stylish and entertaining science fiction, sword and sandal, horror/ giallo, Eurospy, spaghetti western, Vietnam War and action movies that were released to a ...\nP8: Osvaldo Civirani: Osvaldo Civirani( 19 May 1917- 20 February 2008) was an Italian still photographer, producer, director, cinematographer, screenwriter and author. Until 1963, Civirani worked mainly as still photographer on over two hundred films. From 1963 until 1976, Civirani produced and directed 20 films in such diverse genres as erotic mondo film, peplum, eurospy film, spaghetti western, costume drama, comedy, giallo, and exotic erotic drama. As author, he wrote two autobiographical books ...\nP9: Marcello Baldi: Marcello Baldi( August 1, 1923 – July 22, 2008) was an Italian director and a screenwriter.\nP10: FIRE: FIRE or F.I.R.E. may stand for:\nQuestion: Where was the place of death of the director of film Mole Men Against The Son Of Hercules?\nFinal answer:",
+  "output": "Antonio Leonviola",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9bc07cb8c0f10ac5",
+    "object": "chat.completion",
+    "created": 1779535499,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Antonio Leonviola",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1144,
+      "total_tokens": 1150,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

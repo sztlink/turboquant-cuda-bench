@@ -1,0 +1,61 @@
+{
+  "idx": 300,
+  "qid": "5ff9cc8c0baf11ebab90acde48001122",
+  "gold": "Sir Thomas Lawley, 1st Baronet",
+  "candidates": [
+    "Sir Thomas Lawley, 1st Baronet of Spoonhill",
+    "Sir Thomas Lawley, 1st Baronet",
+    "Sir Thomas Lawley, 3rd Baronet",
+    "Sir Humphrey de Trafford, 3rd Baronet",
+    "Sir John Wodehouse, 4th Baronet",
+    "John Wodehouse, 1st Earl of Kimberley",
+    "Sir Francis Lawley, 2nd Baronet",
+    "Sir Thomas Rivers, 2nd Baronet",
+    "Sir Samuel Fludyer, 3rd Baronet",
+    "Sir Philip Wodehouse, 3rd Baronet",
+    "Sir Thomas Gerard, 2nd Baronet",
+    "Sir Armine Wodehouse, 5th Baronet"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Sir Thomas Lawley, 1st Baronet of Spoonhill\nC2: Sir Thomas Lawley, 1st Baronet\nC3: Sir Thomas Lawley, 3rd Baronet\nC4: Sir Humphrey de Trafford, 3rd Baronet\nC5: Sir John Wodehouse, 4th Baronet\nC6: John Wodehouse, 1st Earl of Kimberley\nC7: Sir Francis Lawley, 2nd Baronet\nC8: Sir Thomas Rivers, 2nd Baronet\nC9: Sir Samuel Fludyer, 3rd Baronet\nC10: Sir Philip Wodehouse, 3rd Baronet\nC11: Sir Thomas Gerard, 2nd Baronet\nC12: Sir Armine Wodehouse, 5th Baronet\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Sir Thomas Lawley, 3rd Baronet -> Sir Francis Lawley, 2nd Baronet\n- Sir Humphrey de Trafford, 4th Baronet -> Sir Humphrey de Trafford, 3rd Baronet\n- Sir Armine Wodehouse, 5th Baronet -> John Wodehouse, 1st Earl of Kimberley\n- Sir Armine Wodehouse, 5th Baronet -> Sir John Wodehouse, 4th Baronet\nPassages:\nP1: Sir Thomas Lawley, 3rd Baronet: Sir Thomas Lawley, 3rd Baronet (ca. 1650–1729) was an English politician who sat in the House of Commons from 1684 to 1689. Lawley was the son of Sir Francis Lawley, 2nd Baronet and his wife Anne Whitmore, daughter of Sir Thomas Whitmore, 1st Baronet of Apley. In 1685, Lawley was elected Member of Parliament for Wenlock and held the seat until 1689. He succeeded to the baronetcy on the death of his father in 1696. Lawley married firstly Rebecca Winch, daughter of ...\nP2: Sir Humphrey de Trafford, 3rd Baronet: Sir Humphrey Francis de Trafford (3 July 1862 – 10 January 1929) was an English landowner and racehorse breeder. He was the son of Sir Humphrey de Trafford, 2nd Baronet and Lady Annette Mary Talbot. On the death of his father on 4 May 1886, Humphrey became the 3rd Baronet de Trafford. Later the same year, on 9 August, he married Violet Alice Maud Franklin, daughter of James Franklin. They had four children: In 1896, Sir Humphrey put the family estate of ...\nP3: Sir John Wodehouse, 4th Baronet: Sir John Wodehouse, 4th Baronet( 23 March 1669 – 6 August 1754), was a British Tory Member of Parliament. A member of an old Norfolk family, Wodehouse succeeded his grandfather Sir Philip Wodehouse, 3rd Baronet, in the baronetcy on 6 May 1681. He was the son of Thomas Wodehouse and Anne Airmine, daughter and co-heiress of Sir William Airmine, 2nd Baronet. In 1695 he was elected to the House of Commons for Thetford, a seat he held until 1698 and again from 1701 ...\nP4: John Wodehouse, 1st Earl of Kimberley: John Wodehouse, 1st Earl of Kimberley,( 7 January 18268 April 1902), known as The 3rd Baron Wodehouse from 1846 to 1866, was a British Liberal politician. He held office in every Liberal administration from 1852 to 1895, notably as Secretary of State for the Colonies and as Foreign Secretary.\nP5: Sir Francis Lawley, 2nd Baronet: Sir Francis Lawley, 2nd Baronet (c. 1630 – 25 October 1696) was an English courtier and politician who sat in the House of Commons between 1659 and 1679. Lawley was the son of Sir Thomas Lawley, 1st Baronet of Spoonhill, near Much Wenlock, Shropshire. He inherited the Baronetcy and the estate on the death of his father in 1646. Lawley acquired the estate of the dissolved monastery of Canwell, in the parish of Hints, Staffordshire, which became the family seat. ...\nP6: Sir Thomas Rivers, 2nd Baronet: Sir Thomas Rivers, 2nd Baronet( died 1657) was an English politician who sat in the House of Commons in 1656. Rivers was the son of James Rivers and his wife Charity Shirley, daughter of Sir John Shirley of Isfield Sussex. He succeeded his grandfather Sir John Rivers, 1st Baronet to the baronetcy in around 1651, his father having died earlier. In 1656, Rivers was elected Member of Parliament for Sussex in the First Protectorate Parliament. Rivers died unmarried ...\nP7: Sir Samuel Fludyer, 3rd Baronet: Sir Samuel Fludyer, 3rd Baronet( 1800 – 1876) was the grandson of the first Baronet, Sir Samuel Fludyer, who was reckoned at the time of his death to be the richest man in the country with a wealth of £ 900,000. He was the only son of Sir Samuel Brudenell Fludyer, who inherited most of the first Sir Samuel's fortune, and had his children painted by Thomas Lawrence, the foremost portrait painter of the time, indicating the family's wealth and social standing. The ...\nP8: Sir Philip Wodehouse, 3rd Baronet: Sir Philip Wodehouse, 3rd Baronet( 24 July 1608 – 6 May 1681) was an English politician who sat in the House of Commons at various times between 1654 and 1660. Wodehouse was the son of Sir Thomas Wodehouse, 2nd Baronet, and Blanche, daughter of John Carey, 3rd Baron Hunsdon. In 1654, he was elected Member of Parliament for Norfolk in the First Protectorate Parliament. He was re-elected MP for Norfolk in 1656 for the Second Protectorate Parliament. He succeeded ...\nP9: Sir Thomas Gerard, 2nd Baronet: Sir Thomas Gerard, 2nd Baronet( c 1584- 15 May 1630) was an English landowner and politician who sat in the House of Commons in 1624. Gerard was the son of Sir Thomas Gerard, 1st Baronet of Bryn and of Etwall and his wife Cecily Maney, daughter of Sir Walter Maney, of Staplehurst. He succeeded to the baronetcy on the death of his father in February 1621. In 1624, he was elected Member of Parliament for Liverpool. Gerard died in 1630 at the age of about 45. Sir ...\nP10: Sir Armine Wodehouse, 5th Baronet: Sir Armine Wodehouse, 5th Baronet( c. 1714 – 21 May 1777), was a British Tory Member of Parliament. Wodehouse was the son of Sir John Wodehouse, 4th Baronet, and Mary Fermor. His unusual first name reflects his connection with the Airmine Baronets through his grandmother Anne Airmine. He was elected to the House of Commons for Norfolk in 1737, a seat he held until 1768. In 1754 he succeeded his father in the baronetcy and to the family seat of Kimberley Hall ...\nQuestion: Who is the paternal grandfather of Sir Thomas Lawley, 3Rd Baronet?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Sir Thomas Lawley, 1st Baronet of Spoonhill\",\"selected\":\"C1|UNKNOWN\",\"confidence\":\"medium\",\"reason\":\"The evidence passage P1 mentions that Sir Thomas Lawley, 3rd Baronet was the son of Sir Francis Lawley, 2nd Baronet. However, it does not provide information about the paternal grandfather of Sir Thomas Lawley, 3rd Baronet. The passage P5 provides information about Sir Francis Lawley, 2nd Baronet, stating he was the son of Sir Thomas Lawley, 1st Baronet, but this information is not directly linked",
+  "verifier": {},
+  "final": "Sir Thomas Lawley, 1st Baronet of Spoonhill",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-93ea9b95a1126c5a",
+    "object": "chat.completion",
+    "created": 1779536110,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Sir Thomas Lawley, 1st Baronet of Spoonhill\",\"selected\":\"C1|UNKNOWN\",\"confidence\":\"medium\",\"reason\":\"The evidence passage P1 mentions that Sir Thomas Lawley, 3rd Baronet was the son of Sir Francis Lawley, 2nd Baronet. However, it does not provide information about the paternal grandfather of Sir Thomas Lawley, 3rd Baronet. The passage P5 provides information about Sir Francis Lawley, 2nd Baronet, stating he was the son of Sir Thomas Lawley, 1st Baronet, but this information is not directly linked",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1954,
+      "total_tokens": 2082,
+      "completion_tokens": 128,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 2.3033461570739746
+}

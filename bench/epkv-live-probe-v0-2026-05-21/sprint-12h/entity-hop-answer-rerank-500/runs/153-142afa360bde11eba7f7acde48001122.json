@@ -1,0 +1,61 @@
+{
+  "idx": 153,
+  "qid": "142afa360bde11eba7f7acde48001122",
+  "gold": "Stampede Wrestling",
+  "candidates": [
+    "Brownwood",
+    "Robert E. Howard",
+    "Teddy Hart",
+    "Elite Squad",
+    "The Child",
+    "Davey Boy Smith Jr",
+    "Frank M. Smith Jr",
+    "Samuel Smith Jr",
+    "Brian Pillman Jr",
+    "Robert Paul Smith",
+    "Tevis Clyde Smith",
+    "Diana Hart"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Brownwood\nC2: Robert E. Howard\nC3: Teddy Hart\nC4: Elite Squad\nC5: The Child\nC6: Davey Boy Smith Jr\nC7: Frank M. Smith Jr\nC8: Samuel Smith Jr\nC9: Brian Pillman Jr\nC10: Robert Paul Smith\nC11: Tevis Clyde Smith\nC12: Diana Hart\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Davey Boy Smith Jr. -> Elite Squad\n- Davey Boy Smith Jr. -> Diana Hart\n- Brian Pillman Jr. -> Davey Boy Smith Jr.\n- Brian Pillman Jr. -> Teddy Hart\n- Diana Hart -> The Child\n- Tevis Clyde Smith -> Robert E. Howard\nPassages:\nP1: Robert E. Howard: Robert Ervin Howard (January 22, 1906 – June 11, 1936) was an American author who wrote pulp fiction in a diverse range of genres. He is well known for his character Conan the Barbarian and is regarded as the father of the sword and sorcery subgenre. Howard was born and raised in Texas. He spent most of his life in the town of Cross Plains, with some time spent in nearby Brownwood. A bookish and intellectual child, he was also a fan of boxing and spent some time in his late ...\nP2: Teddy Hart: Edward Ellsworth Annis (born February 2, 1980) is a Canadian professional wrestler, better known by his ring name Teddy Hart. He currently wrestles on the independent circuit. He most recently wrestled on a National scale for Major League Wrestling (MLW) as the leader of The Hart Foundation, where he was the longest reigning MLW World Middleweight Champion and also held the MLW World Tag Team Championship. He has also wrestled for AAA, the short-lived Wrestling Society X, Jersey All ...\nP3: Elite Squad: Elite Squad is a 2007 Brazilian crime film directed by José Padilha. The film is a semi-fictional account of the\" Batalhão de Operações Policiais Especiais\"( BOPE), the Special Police Operations Battalion of the Rio de Janeiro Military Police, analogous to the American SWAT teams. It is the second feature film and first fiction film of Padilha, who had previously directed the documentary\" Bus 174\". The script was written by Bráulio Mantovani(\" City of God\") and Padilha, based on ...\nP4: The Child: The Child may refer to:\nP5: Davey Boy Smith Jr.: Harry Francis Smith (born August 2, 1985) is a Canadian professional wrestler who is currently working for Major League Wrestling (MLW) as Davey Boy Smith Jr. Smith is a former three-time IWGP Tag Team Champion, two-time GHC Tag Team Champion, two-time NWA World Tag Team Champion and one-time MLW World Tag Team Champion. He is also appearing for World of Sport Wrestling (WOS Wrestling) using the name British Bulldog Jr. He is also known for his tenure in New Japan ...\nP6: Frank M. Smith Jr.: Frank McGregor Smith Jr.( May 28, 1927 – April 2, 1998) was a sports broadcaster.\nP7: Samuel Smith Jr.: Samuel Smith Jr. is a former Democratic member of the Indiana Senate, representing the 2nd District from 1998 to 2008.\nP8: Brian Pillman Jr.: Brian Zachary Pillman( born September 9, 1993) is an American professional wrestler, better known by his ring name Brian Pillman Jr. He is currently signed to Major League Wrestling( MLW) where he is a part of the New Era Hart Foundation with Davey Boy Smith Jr. and Teddy Hart. Pillman is a second generation wrestler, as he is the son of professional wrestler Brian Pillman.\nP9: Robert Paul Smith: Robert Paul Smith( April 16, 1915 – January 30, 1977) was an American author, most famous for his classic evocation of childhood,\" Where Did You Go? Out. What Did You Do? Nothing\".\nP10: Tevis Clyde Smith: Tevis Clyde Smith, Jr.( February 11, 1908 – December 24, 1984) was an American historian, fantasy writer, poet and amateur publisher, best known for his association with Robert E. Howard. Most of his writing appeared as by Tevis Clyde Smith; he also wrote as T. C. Smith, Jr., and under his full name, Tevis Clyde Smith, Jr. He lived in Brownwood, Brown County, Texas.\nQuestion: Where did Davey Boy Smith Jr.'s mother study?\nFinal answer:",
+  "verifier_text": "UNKNOWN",
+  "verifier": {},
+  "final": "Brownwood",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-bf5967046127bb0b",
+    "object": "chat.completion",
+    "created": 1779536028,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "UNKNOWN",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1190,
+      "total_tokens": 1192,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.15083718299865723
+}

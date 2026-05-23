@@ -1,0 +1,66 @@
+{
+  "idx": 385,
+  "qid": "9a1b06b60bdb11eba7f7acde48001122",
+  "gold": "Florida Atlantic",
+  "candidates": [
+    "Sergio Martino",
+    "Suman Ghosh",
+    "Podokkhep",
+    "The Quotations",
+    "The Feature",
+    "Word of God",
+    "Peter Sellers",
+    "Rod Amateau",
+    "Gennaro Righelli",
+    "Alfred Hitchcock",
+    "Amazing Stories",
+    "Thomas Aquinas Dictionary"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Sergio Martino\nC2: Suman Ghosh\nC3: Podokkhep\nC4: The Quotations\nC5: The Feature\nC6: Word of God\nC7: Peter Sellers\nC8: Rod Amateau\nC9: Gennaro Righelli\nC10: Alfred Hitchcock\nC11: Amazing Stories\nC12: Thomas Aquinas Dictionary\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Thomas Aquinas Dictionary -> The Quotations\n- Břetislav Pojar -> The Feature\n- Břetislav Pojar -> Master\n- Where Does It Hurt? -> Peter Sellers\n- Where Does It Hurt? -> Rod Amateau\n- Sergio Martino -> Gennaro Righelli\n- Robert Stevens (director) -> Alfred Hitchcock\n- Robert Stevens (director) -> Amazing Stories\n- Assent of faith -> Word of God\nPassages:\nP1: Podokkhep: Podokkhep (\"Footstep\") is a 2006 Bengali film by Suman Ghosh.\nP2: The Quotations: The Quotations are an American doo- wop band, primarily from James Madison High School in East Brooklyn, New York, United States. The group started in 1958 at Barney's Pool Room on Kings Highway in East Brooklyn, New York. The original members of the group were Richie Schwartz( first tenor), Lew Arno( second tenor) and Harvey Hersh[ kowitz]( baritone) who hung out together harmonizing. Larry Kassman later asked if he could sing with the group; Kassman soon became lead for the ...\nP3: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP4: Word of God: Word of God or God's Word may refer to:\nP5: Peter Sellers: Peter Sellers, CBE (born Richard Henry Sellers; 8 September 1925 – 24 July 1980) was an English film actor, comedian, and singer. He performed in the BBC Radio comedy series \"The Goon Show\", featured on a number of hit comic songs, and became known to a worldwide audience through his many film roles, among them Chief Inspector Clouseau in \"The Pink Panther\" series of films. Born in Portsmouth to a theatrical family, Sellers made his stage debut at the Kings Theatre, Southsea, ...\nP6: Rod Amateau: Rodney\" Rod\" Amateau( December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were\" The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's Island The Bob Cummings Show\" and\" The New Phil Silvers Show\". He produced\" My Mother the Car\" and\" Supertrain\", and wrote the story for the 1988 film\" Sunset\". Amateau also directed a few episodes of\" The Dukes of Hazzard\", and appeared in a ...\nP7: Rod Amateau: Rodney \"Rod\" Amateau (December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were \"The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's IslandThe Bob Cummings Show\" and \"The New Phil Silvers Show\". He produced \"My Mother the Car\" and \"Supertrain\", and wrote the story for the 1988 film \"Sunset\". Amateau also directed a few episodes of \"The Dukes of Hazzard\", and appeared in a ...\nP8: Gennaro Righelli: Gennaro Righelli( 12 December 1886 – 6 January 1949) was an Italian film director, screenwriter and actor. He directed more than 110 films in Italy and Germany between 1910 and 1947. In 1930, he directed the first Italian sound film,\" The Song of Love\". He was married to the film star Maria Jacobini who he frequently cast in his films.\nP9: Alfred Hitchcock: Sir Alfred Joseph Hitchcock,( 13 August 1899 – 29 April 1980) was an English film director and producer, widely regarded as one of the most influential and extensively studied filmmakers in the history of cinema. Known as\" the Master of Suspense\", he directed over 50 feature films in a career spanning six decades, becoming as well known as any of his actors thanks to his many interviews, his cameo roles in most of his films, and his hosting and producing of the television ...\nP10: Amazing Stories: Amazing Stories is an American science fiction magazine launched in April 1926 by Hugo Gernsback's Experimenter Publishing. It was the first magazine devoted solely to science fiction. Science fiction stories had made regular appearances in other magazines, including some published by Gernsback, but \"Amazing\" helped define and launch a new genre of pulp fiction. As of 2018, \"Amazing\" has been published, with some interruptions, for ninety-two years, going through a half-dozen ...\nQuestion: Where does the director of film Podokkhep work at?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Suman Ghosh\",\"selected\":\"C2\",\"confidence\":\"medium\",\"reason\":\"Podokkhep is a film by Suman Ghosh, but the evidence does not specify where Suman Ghosh works. Therefore, the answer is based on the assumption that the director works at the same entity that produced the film.\"}",
+  "verifier": {
+    "final_answer": "Suman Ghosh",
+    "selected": "C2",
+    "confidence": "medium",
+    "reason": "Podokkhep is a film by Suman Ghosh, but the evidence does not specify where Suman Ghosh works. Therefore, the answer is based on the assumption that the director works at the same entity that produced the film."
+  },
+  "final": "Suman Ghosh",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-8f89363fd71db9c2",
+    "object": "chat.completion",
+    "created": 1779536173,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Suman Ghosh\",\"selected\":\"C2\",\"confidence\":\"medium\",\"reason\":\"Podokkhep is a film by Suman Ghosh, but the evidence does not specify where Suman Ghosh works. Therefore, the answer is based on the assumption that the director works at the same entity that produced the film.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1425,
+      "total_tokens": 1496,
+      "completion_tokens": 71,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.3134663105010986
+}

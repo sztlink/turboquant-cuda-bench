@@ -1204,3 +1204,46 @@ Conclusion:
 Small but clean 300-case gain. The next real step is learned/selected override policy,
 not more hand-written verifier-confidence rules.
 ```
+
+## Machine-only Reality Check 500
+
+Scale-up artifact:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/MACHINE-ONLY-REALITY-500.md
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/machine-reality-500/RESULTS.md
+```
+
+Retrieval diagnostics:
+
+```txt
+support_title_recall:      0.727
+full_support_recall:       0.454
+answer_string_present:     0.786
+```
+
+Results:
+
+```txt
+BM25→BGE ref:                 EM 0.018 | contains 0.032 | F1 0.037
+Entity-hop strong:            EM 0.172 | contains 0.288 | F1 0.285
+Entity-hop path prompt:       EM 0.216 | contains 0.306 | F1 0.324
+Raw answer rerank:            EM 0.212 | contains 0.308 | F1 0.322
+Gated rerank v1:              EM 0.216 | contains 0.304 | F1 0.323
+```
+
+Paired gated v1 vs path:
+
+```txt
+wins 2 | losses 2 | ties 496 | p=1.0
+EM delta 0.000, 95% CI [-0.008, 0.008]
+F1 delta -0.000, 95% CI [-0.007, 0.007]
+```
+
+Conclusion:
+
+```txt
+N=500 does not support a quality-delta claim for answer rerank / gated rerank over direct entity-hop path prompting.
+The scaled result is effectively: entity-hop path prompt == gated rerank v1.
+Freeze hand-written verifier gates.
+```

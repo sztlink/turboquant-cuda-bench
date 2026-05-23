@@ -1,0 +1,48 @@
+{
+  "qid": "327a14420baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Louis X of France",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Agnès of Navarre -> Philip III of Navarre\n- Agnès of Navarre -> Joan II of Navarre\n- Agnès of Navarre -> Philip III of Navarre\n- Agnès of Navarre -> Joan II of Navarre\n- Isabella of Navarre, Viscountess of Rohan -> Henry IV of France\n- John Pointz -> James Butler, 1st Duke of Ormond\n- Blanche of Navarre, Countess of Champagne -> Berengaria of Navarre\n- Blanche of Navarre, Countess of Champagne -> Sancho VI of Navarre\n- Lucius Vibullius Hipparchus (grandson of Herodes Atticus) -> Aspasia Annia Regilla\n- Lucius Vibullius Hipparchus (grandson of Herodes Atticus) -> Herodes Atticus\n- Thihathu of Prome -> Narathihapate\n- Thihathu of Prome -> Thihathu\n- Princess Maria-Olympia of Greece and Denmark -> Fashion Model\nPassages:\nP1: Agnès of Navarre: Agnès of Navarre  (1334 – 1396) was the daughter of Philip III of Navarre and Joan II of Navarre, and became Countess of Foix on marriage to Gaston III, Count of Foix. She was rumoured to have had an affair with poet Guillaume de Machaut and so inspired his poem \"Le Voir Dit\".\nP2: Agnès of Navarre: Agnès of Navarre( 1334 – 1396) was the daughter of Philip III of Navarre and Joan II of Navarre, and became Countess of Foix on marriage to Gaston III, Count of Foix. She was rumoured to have had an affair with poet Guillaume de Machaut and so inspired his poem\" Le Voir Dit\".\nP3: Joan II of Navarre: Joan II (28 January 1312 – 6 October 1349) was Queen of Navarre from 1328 until her death. She was the only surviving child of Louis X of France, King of France and Navarre, and Margaret of Burgundy. Joan's paternity was dubious because her mother was involved in a scandal, but Louis X declared her his legitimate daughter before he died in 1316. However, the French lords were opposed to the idea of a female monarch and elected Louis X's brother, Philip V, king. The Navarrese ...\nP4: Philip III of Navarre: Philip III (27 March 1306 – 16 September 1343), called the Noble or the Wise, was King of Navarre from 1328 until his death. He was born a minor member of the French royal family but gained prominence when the Capetian main line went extinct, as he and his wife and cousin, Joan II of Navarre, acquired the Iberian kingdom and a number of French fiefs. Philip and Joan's accession signified the end of the 44-year-long personal union between France and Navarre. Although ...\nP5: Berengaria of Navarre: Berengaria of Navarre (1165–1170 – 23 December 1230) was queen of England as the wife of Richard I of England. She was the eldest daughter of Sancho VI of Navarre and Sancha of Castile. As is the case with many of the medieval English queens, relatively little is known of her life. Traditionally known as \"the only English queen never to set foot in the country\", she may in fact have visited the country after her husband's death, but did not do so before, nor did she see ...\nP6: Sancho VI of Navarre: Sancho Garcés VI (21 April 1132 - 27 June 1194), called the Wise  was King of Navarre from 1150 until his death in 1194. He was the first monarch to officially drop the title of \"King of Pamplona\" in favour of King of Navarre, thus changing the designation of his kingdom. Sancho Garcés was responsible for bringing his kingdom into the political orbit of Europe. He was the eldest son of García Ramírez, \"the Restorer\" and Margaret of L'Aigle.\nP7: Henry IV of France: Henry IV (read as ; 13 December 1553 – 14 May 1610), also known by the epithet Good King Henry or Henry the Great, was King of Navarre (as Henry III) from 1572 and King of France from 1589 to 1610. He was the first monarch of France from the House of Bourbon, a cadet branch of the Capetian dynasty. He was assassinated in 1610 by François Ravaillac, a fanatical Catholic, and was succeeded by his son Louis XIII. The son of Antoine de Bourbon, Duke of Vendôme and Jeanne ...\nP8: James Butler, 1st Duke of Ormond: Lieutenant- General James FitzThomas Butler, 1st Duke of Ormond, 1st Marquess of Ormond, 12th Earl of Ormond, 5th Earl of Ossory, 4th Viscount Thurles, 1st Baron Butler of Llanthony, 1st Earl of Brecknock, KG, PC( 1610 – 1688) was an Irish statesman and soldier, known as Earl of Ormond from 1634 to 1642 and Marquess of Ormond from 1642 to 1661. Following the failure of the senior line of the Butler family, he was the second of the Kilcash branch to inherit the ...\nP9: Narathihapate: Narathihapate (also Sithu IV of Pagan; 23 April 1238 – 1 July 1287) was the last king of the Pagan Empire who reigned from 1256 to 1287. The king is known in Burmese history as the \"Taruk-Pyay Minthe King who Fled from the Taruk [Mongols]\") for his flight from Pagan (Bagan) to Lower Burma in 1285 during the first Mongol invasion (1277–87) of the kingdom. He eventually submitted to Kublai Khan, founder of the Yuan dynasty in January 1287 in exchange for a Mongol withdrawal from ...\nP10: Aspasia Annia Regilla: Aspasia Annia Regilla, full name Appia Annia Regilla Atilia Caucidia Tertulla (Greek:, 125-160), was a wealthy, aristocratic and influential Roman woman, who was a distant relative of several Roman emperors and empresses. She was the wife of the prominent Greek Herodes Atticus.\nQuestion: Who is the maternal grandfather of Agnès Of Navarre?\nFinal answer:",
+  "output": "Philip III of Navarre",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.25
+  },
+  "response": {
+    "id": "chatcmpl-ba34f5b9be5b425d",
+    "object": "chat.completion",
+    "created": 1779535876,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Philip III of Navarre",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1654,
+      "total_tokens": 1661,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

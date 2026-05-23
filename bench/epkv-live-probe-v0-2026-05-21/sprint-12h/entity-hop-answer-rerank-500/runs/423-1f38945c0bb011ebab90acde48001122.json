@@ -1,0 +1,64 @@
+{
+  "idx": 423,
+  "qid": "1f38945c0bb011ebab90acde48001122",
+  "gold": "George III, Count of Erbach-Breuberg",
+  "candidates": [
+    "George III, Count of Erbach-Breuberg",
+    "Eberhard XII, Count of Erbach-Freienstein",
+    "George Albert I, Count of Erbach-Schönberg",
+    "Louis I, Count of Erbach-Erbach",
+    "The Child",
+    "George Frederick, Count of Erbach-Breuberg",
+    "Frederick Magnus, Count of Erbach-Fürstenau",
+    "George IV, Count of Erbach-Fürstenau",
+    "John Casimir, Count of Erbach-Breuberg",
+    "George Louis I, Count of Erbach-Erbach"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: George III, Count of Erbach-Breuberg\nC2: Eberhard XII, Count of Erbach-Freienstein\nC3: George Albert I, Count of Erbach-Schönberg\nC4: Louis I, Count of Erbach-Erbach\nC5: The Child\nC6: George Frederick, Count of Erbach-Breuberg\nC7: Frederick Magnus, Count of Erbach-Fürstenau\nC8: George IV, Count of Erbach-Fürstenau\nC9: John Casimir, Count of Erbach-Breuberg\nC10: George Louis I, Count of Erbach-Erbach\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- George Frederick, Count of Erbach-Breuberg -> George Albert I, Count of Erbach-Schönberg\n- George Frederick, Count of Erbach-Breuberg -> The Child\n- George Frederick, Count of Erbach-Breuberg -> The Child\n- John Casimir, Count of Erbach-Breuberg -> The Child\n- Frederick Magnus, Count of Erbach-Fürstenau -> The Child\n- George III, Count of Erbach-Breuberg -> The Child\n- George Louis I, Count of Erbach-Erbach -> George Albert I, Count of Erbach-Schönberg\n- George Louis I, Count of Erbach-Erbach -> Louis I, Count of Erbach-Erbach\n- George Louis I, Count of Erbach-Erbach -> Louis I, Count of Erbach-Erbach\n- George Louis I, Count of Erbach-Erbach -> The Child\n- George IV, Count of Erbach-Fürstenau -> The Child\nPassages:\nP1: George Albert I, Count of Erbach-Schönberg: George Albert I, Count of Erbach-Schönberg (16 December 1597 – 25 November 1647), was a German prince member of the House of Erbach and ruler over Schönberg, Seeheim, Reichenberg, Fürstenau and since 1643 over all the Erbach family lands. Born in Erbach, he was the fourth child and second (but eldest surviving) son of George III, Count of Erbach-Breuberg and his fourth wife Maria, a daughter of Count Albert X of Barby-Mühlingen.\nP2: George Albert I, Count of Erbach-Schönberg: George Albert I, Count of Erbach- Schönberg( 16 December 1597 – 25 November 1647), was a German prince member of the House of Erbach and ruler over Schönberg, Seeheim, Reichenberg, Fürstenau and since 1643 over all the Erbach family lands. Born in Erbach, he was the fourth child and second( but eldest surviving) son of George III, Count of Erbach- Breuberg and his fourth wife Maria, a daughter of Count Albert X of Barby- Mühlingen.\nP3: Louis I, Count of Erbach-Erbach: Louis I, Count of Erbach- Erbach( 3 September 1579 – 12 April 1643), was a German prince member of the House of Erbach and ruler over Erbach, Freienstein, Michelstadt, Bad König and Wildenstein. Born in Erbach, he was the seventh child and third( but second surviving) son of George III, Count of Erbach- Breuberg and his second wife Anna, a daughter of Frederick Magnus, Count of Solms- Laubach- Sonnenwalde.\nP4: The Child: The Child may refer to:\nP5: George Frederick, Count of Erbach-Breuberg: George Frederick, Count of Erbach-Breuberg (6 October 1636 – 23 April 1653), was a German prince member of the House of Erbach and ruler over Breuberg. He was the eldest child of George Albert I, Count of Erbach-Schönberg and his third wife Elisabeth Dorothea, a daughter of George Frederick II, Count of Hohenlohe-Waldenburg in Schillingsfürst.\nP6: George Frederick, Count of Erbach-Breuberg: George Frederick, Count of Erbach- Breuberg( 6 October 1636 – 23 April 1653), was a German prince member of the House of Erbach and ruler over Breuberg. He was the eldest child of George Albert I, Count of Erbach- Schönberg and his third wife Elisabeth Dorothea, a daughter of George Frederick II, Count of Hohenlohe- Waldenburg in Schillingsfürst.\nP7: George III, Count of Erbach-Breuberg: George III, Count of Erbach- Breuberg( 15 July 1548 – 26 February 1605), was Count of Erbach in Lauterbach and Breuberg. Born in Erbach, he was the fifth and youngest child but only son of Eberhard XII, Count of Erbach- Freienstein and Margareta, a daughter of Count Philipp of Salm, Wild- and Rhinegrave of Dhaun.\nP8: Frederick Magnus, Count of Erbach-Fürstenau: Frederick Magnus, Count of Erbach- Fürstenau( 18 April 1575 – 26 March 1618), was a German prince member of the House of Erbach and ruler over Fürstenau and Reichenberg. Born in Erbach, he was the third child and second( but eldest surviving) son of George III, Count of Erbach- Breuberg and his second wife Anna, a daughter of Frederick Magnus, Count of Solms- Laubach- Sonnenwalde. He was named after his maternal grandfather.\nP9: George IV, Count of Erbach-Fürstenau: George IV, Count of Erbach- Fürstenau( 12 May 1646 – 20 June 1678), was a member of the German House of Erbach who held the fiefs of Fürstenau, Michelstadt, Reichenberg, Bad König and Breuberg. Born in Hanau, he was the eighth child and fifth( but third surviving) son of George Albert I, Count of Erbach- Schönberg and his third wife Elisabeth Dorothea, a daughter of George Frederick II, Count of Hohenlohe- Waldenburg in Schillingsfürst.\nP10: John Casimir, Count of Erbach-Breuberg: John Casimir, Count of Erbach- Breuberg( 10 August 1584 – 14 January 1627), was a German prince member of the House of Erbach and ruler over Breuberg, Wildenstein and Fürstenau. Born in Erbach, he was the eleventh child and fourth( but third surviving) son of George III, Count of Erbach- Breuberg and his second wife Anna, a daughter of Frederick Magnus, Count of Solms- Laubach- Sonnenwalde.\nQuestion: Who is George Frederick, Count Of Erbach-Breuberg's paternal grandfather?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Eberhard XII, Count of Erbach-Freienstein\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide information about George Frederick, Count of Erbach-Breuberg's paternal grandfather. The graph and passages only provide information about his maternal grandfather and other relatives, but not his paternal grandfather.\"}",
+  "verifier": {
+    "final_answer": "Eberhard XII, Count of Erbach-Freienstein",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence does not provide information about George Frederick, Count of Erbach-Breuberg's paternal grandfather. The graph and passages only provide information about his maternal grandfather and other relatives, but not his paternal grandfather."
+  },
+  "final": "Eberhard XII, Count of Erbach-Freienstein",
+  "selected": "UNKNOWN",
+  "response": {
+    "id": "chatcmpl-892f7e8aed3cecfc",
+    "object": "chat.completion",
+    "created": 1779536203,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Eberhard XII, Count of Erbach-Freienstein\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide information about George Frederick, Count of Erbach-Breuberg's paternal grandfather. The graph and passages only provide information about his maternal grandfather and other relatives, but not his paternal grandfather.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1736,
+      "total_tokens": 1809,
+      "completion_tokens": 73,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.358999252319336
+}

@@ -1,0 +1,64 @@
+{
+  "idx": 392,
+  "qid": "61964be60bb011ebab90acde48001122",
+  "gold": "Anne Gore",
+  "candidates": [
+    "Isabella Wycliffe",
+    "Elizabeth Annesley",
+    "Arthur Gore, 1st Earl of Arran",
+    "Sir Arthur Gore, 1st Baronet",
+    "John Browne, 1st Earl of Altamont",
+    "House of Lords",
+    "Arthur Gore, 2nd Earl of Arran",
+    "Philip Gore, 4th Earl of Arran",
+    "Sir Arthur Gore, 2nd Baronet",
+    "Paul Annesley Gore"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Isabella Wycliffe\nC2: Elizabeth Annesley\nC3: Arthur Gore, 1st Earl of Arran\nC4: Sir Arthur Gore, 1st Baronet\nC5: John Browne, 1st Earl of Altamont\nC6: House of Lords\nC7: Arthur Gore, 2nd Earl of Arran\nC8: Philip Gore, 4th Earl of Arran\nC9: Sir Arthur Gore, 2nd Baronet\nC10: Paul Annesley Gore\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Arthur Gore, 1st Earl of Arran -> Sir Arthur Gore, 2nd Baronet\n- Arthur Gore, 1st Earl of Arran -> John Browne, 1st Earl of Altamont\n- Arthur Gore, 1st Earl of Arran -> Sir Arthur Gore, 2nd Baronet\n- Arthur Gore, 1st Earl of Arran -> John Browne, 1st Earl of Altamont\n- Arthur Gore, 2nd Earl of Arran -> Arthur Gore, 1st Earl of Arran\n- Arthur Gore, 2nd Earl of Arran -> House of Lords\n- Arthur Gore, 2nd Earl of Arran -> Arthur Gore, 1st Earl of Arran\n- Arthur Gore, 2nd Earl of Arran -> House of Lords\n- Paul Annesley Gore -> Arthur Gore, 1st Earl of Arran\n- Paul Annesley Gore -> Sir Arthur Gore, 2nd Baronet\n- Sir Arthur Gore, 2nd Baronet -> Sir Arthur Gore, 1st Baronet\n- Sir Arthur Gore, 2nd Baronet -> John Browne, 1st Earl of Altamont\n- Sir Arthur Gore, 2nd Baronet -> Sir Arthur Gore, 1st Baronet\n- Sir Arthur Gore, 2nd Baronet -> John Browne, 1st Earl of Altamont\n- Philip Gore, 4th Earl of Arran -> Arthur Gore, 2nd Earl of Arran\nPassages:\nP1: Arthur Gore, 1st Earl of Arran: Arthur Gore, 1st Earl of Arran PC (Ire) (1703 – 17 April 1773), known as Sir Arthur Gore, 3rd Baronet from 1741 to 1757 and as Viscount Sudley from 1758 to 1762, was an Irish politician. Arran was the son of Sir Arthur Gore, 2nd Baronet, and Elizabeth Annesley, and was educated at Trinity College, Dublin. In 1727 he was elected to the Irish House of Commons for Donegal Borough, a seat he held until 1758. He was also High Sheriff of Wexford in 1738 and was ...\nP2: Arthur Gore, 1st Earl of Arran: Arthur Gore, 1st Earl of Arran PC( Ire)( 1703 – 17 April 1773), known as Sir Arthur Gore, 3rd Baronet from 1741 to 1757 and as Viscount Sudley from 1758 to 1762, was an Irish politician. Arran was the son of Sir Arthur Gore, 2nd Baronet, and Elizabeth Annesley, and was educated at Trinity College, Dublin. In 1727 he was elected to the Irish House of Commons for Donegal Borough, a seat he held until 1758. He was also High Sheriff of Wexford in 1738 and was ...\nP3: Sir Arthur Gore, 1st Baronet: Sir Arthur Gore, 1st Baronet (c. 1640 – 20 December 1697) was an Irish soldier and politician. Gore was the second son of Sir Paul Gore, 1st Baronet and his wife Isabella Wycliffe, daughter of Francis Wycliffe. In 1656, he was High Sheriff of Mayo and additionally High Sheriff of County Galway. He was appointed constable of Fort Falkland for life in August 1660 and in December of that year he became major of a company of foot. He entered the Irish House of Commons ...\nP4: John Browne, 1st Earl of Altamont: John Browne, 1st Earl of Altamont( c.1709 – 4 July 1776), known as The Lord Mount Eagle between 1760 and 1768 and as The Viscount Westport between 1768 and 1771, was an Irish peer and politician.\nP5: House of Lords: The House of Lords, also known as the House of Peers and domestically usually referred to simply as the Lords, is the upper house of the Parliament of the United Kingdom. Membership is granted by appointment or else by heredity or official function. Like the House of Commons, it meets in the Palace of Westminster. Officially, the full name of the house is the Right Honourable the Lords Spiritual and Temporal of the United Kingdom of Great Britain and Northern Ireland in ...\nP6: Arthur Gore, 2nd Earl of Arran: Arthur Saunders Gore, 2nd Earl of Arran KP, PC( Ire)( 25 July 1734 – 8 October 1809) styled The Honourable Arthur Gore from 1758 to 1762 and Viscount Sudley from 1762 to 1773, was an Irish peer and politician. Arran was the eldest son of Arthur Gore, 1st Earl of Arran, and Jane Saunders. He was elected to the Irish House of Commons for Donegal Borough in 1759, a seat he held until 1761 and again from 1768 to 1774 and also represented Wexford County between 1761 ...\nP7: Arthur Gore, 2nd Earl of Arran: Arthur Saunders Gore, 2nd Earl of Arran KP, PC (Ire) (25 July 1734 – 8 October 1809) styled The Honourable Arthur Gore from 1758 to 1762 and Viscount Sudley from 1762 to 1773, was an Irish peer and politician. Arran was the eldest son of Arthur Gore, 1st Earl of Arran, and Jane Saunders. He was elected to the Irish House of Commons for Donegal Borough in 1759, a seat he held until 1761 and again from 1768 to 1774 and also represented Wexford County between 1761 ...\nP8: Philip Gore, 4th Earl of Arran: Philip Yorke Gore, 4th Earl of Arran( 23 November 1801 – 25 June 1884), known as Philip Gore until 1837, was an Anglo- Irish peer and diplomat. Born at Dublin Castle, Arran was the eldest son of Colonel the Hon. William John Gore, second son of Arthur Gore, 2nd Earl of Arran, and his wife Caroline, daughter of Sir Thomas Hales, 4th Baronet. In 1820 Gore was sent as attaché to the British embassy in Stockholm, was transferred to Paris in 1825 and to Lisbon a year ...\nP9: Sir Arthur Gore, 2nd Baronet: Sir Arthur Gore, 2nd Baronet (c. 1685 – 10 February 1742) was an Irish politician and baronet. He was the son of Paul Gore, himself son of Sir Arthur Gore, 1st Baronet, and his wife Anne Gore, daughter of Sir John Gore. Gore succeeded his grandfather as baronet in 1697. He was High Sheriff of Mayo in 1711 and Member of Parliament (MP) in the Irish House of Commons. Gore represented Ballynakill from 1703 to 1713 and then for Donegal Borough until 1715. Subsequently, ...\nP10: Sir Arthur Gore, 2nd Baronet: Sir Arthur Gore, 2nd Baronet( c. 1685 – 10 February 1742) was an Irish politician and baronet. He was the son of Paul Gore, himself son of Sir Arthur Gore, 1st Baronet, and his wife Anne Gore, daughter of Sir John Gore. Gore succeeded his grandfather as baronet in 1697. He was High Sheriff of Mayo in 1711 and Member of Parliament( MP) in the Irish House of Commons. Gore represented Ballynakill from 1703 to 1713 and then for Donegal Borough until 1715. Subsequently, ...\nQuestion: Who is the paternal grandmother of Arthur Gore, 1St Earl Of Arran?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Isabella Wycliffe\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The passages provide information about the parents of Arthur Gore, 1st Earl of Arran, but do not explicitly state who his paternal grandmother is. While it is mentioned that Arthur Gore, 1st Earl of Arran's father was Sir Arthur Gore, 2nd Baronet, and his mother was Elizabeth Annesley, there is no direct evidence linking Elizabeth Annesley to a specific paternal grandmother.\"}",
+  "verifier": {
+    "final_answer": "Isabella Wycliffe",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The passages provide information about the parents of Arthur Gore, 1st Earl of Arran, but do not explicitly state who his paternal grandmother is. While it is mentioned that Arthur Gore, 1st Earl of Arran's father was Sir Arthur Gore, 2nd Baronet, and his mother was Elizabeth Annesley, there is no direct evidence linking Elizabeth Annesley to a specific paternal grandmother."
+  },
+  "final": "Isabella Wycliffe",
+  "selected": "UNKNOWN",
+  "response": {
+    "id": "chatcmpl-aa758a728697ce1e",
+    "object": "chat.completion",
+    "created": 1779536180,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Isabella Wycliffe\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The passages provide information about the parents of Arthur Gore, 1st Earl of Arran, but do not explicitly state who his paternal grandmother is. While it is mentioned that Arthur Gore, 1st Earl of Arran's father was Sir Arthur Gore, 2nd Baronet, and his mother was Elizabeth Annesley, there is no direct evidence linking Elizabeth Annesley to a specific paternal grandmother.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 2134,
+      "total_tokens": 2239,
+      "completion_tokens": 105,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.9236211776733398
+}

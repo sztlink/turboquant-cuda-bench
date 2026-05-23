@@ -1,0 +1,48 @@
+{
+  "qid": "04b5e0320bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Weimar",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Christiane Eberhardine of Brandenburg-Bayreuth -> Augustus II the Strong\n- Christiana of Schleswig-Holstein-Sonderburg-Glücksburg -> Christian I, Duke of Saxe-Merseburg\n- Christiane Kubrick -> Stanley Kubrick\n- Christiane Kubrick -> The Singer\n- Lucia of Rügen -> Canute V of Denmark\n- Christiane of Saxe-Merseburg -> Christiana of Schleswig-Holstein-Sonderburg-Glücksburg\n- Christiane of Saxe-Merseburg -> Christian I, Duke of Saxe-Merseburg\n- Christiane of Saxe-Merseburg -> The Child\n- Begga -> Ansegisel\nPassages:\nP1: Augustus II the Strong: Augustus II the Strong (12 May 16701 February 1733), also known in Saxony as Frederick Augustus I, was Elector of Saxony from 1697, Imperial Vicar and elected King of Poland and Grand Duke of Lithuania in the years 1697–1706 and from 1709 until his death in 1733. He was succeeded by his son, Augustus III of Poland. Augustus' great physical strength earned him the nicknames \"the Strongthe Saxon Hercules\" and \"Iron-Hand\". He liked to show that he lived up to his name by ...\nP2: Christian I, Duke of Saxe-Merseburg: Christian I of Saxe-Merseburg (Dresden, 27 October 1615 – Merseburg, 18 October 1691), was the first duke of Saxe-Merseburg and a member of the House of Wettin. He was the sixth (third surviving) son of Johann Georg I, Elector of Saxony, and his second wife Magdalene Sibylle of Prussia.\nP3: Canute V of Denmark: Canute V Magnussen  (– 9 August 1157) was a King of Denmark from 1146 to 1157, as co-regent in shifting alliances with Sweyn III and Valdemar I. Canute was killed at the so-called \"Bloodfeast of Roskilde\" in 1157. Nothing certain is known about his person and character.\nP4: The Singer: The Singer may refer to:\nP5: The Child: The Child may refer to:\nP6: Stanley Kubrick: Stanley Kubrick (July 26, 1928 – March 7, 1999) was an American film director, screenwriter, and producer. He is frequently cited as one of the most influential filmmakers in cinematic history. His films, which are mostly adaptations of novels or short stories, cover a wide range of genres, and are noted for their realism, dark humor, unique cinematography, extensive set designs, and evocative use of music. Kubrick was raised in the Bronx, New York City, and attended William ...\nP7: Ansegisel: Ansegisel (c. 602 or 610 – murdered before 679 or 662) was the younger son of Saint Arnulf, bishop of Metz. He served King Sigebert III of Austrasia (634–656) as a duke (Latin \"dux\", a military leader) and \"domesticus\". He was killed sometime before 679, slain in a feud by his enemy Gundewin. Through his son Pepin, Ansegisel's descendants would eventually become Frankish kings and rule over the Carolingian Empire.\nP8: Christiane Eberhardine of Brandenburg-Bayreuth: Christiane Eberhardine of Brandenburg-Bayreuth (19 December 1671 – 4 September 1727) was Electress of Saxony from 1694 to 1727 (her death) and titular Queen of the Polish–Lithuanian Commonwealth from 1697 to 1727 by marriage to Augustus II the Strong. Not once throughout the whole of her thirty-year queenship did she set foot in Poland, instead living in Saxony in self-imposed exile. Born a German margravine, she was called \"Sachsens ...\nP9: Christiane Vulpius: Johanna Christiana Sophie Vulpius (1 June 1765 – 6 June 1816) was the mistress and wife of Johann Wolfgang Goethe.\nP10: Christiane of Saxe-Merseburg: Christiane of Saxe-Merseburg (1 June 1659 – 13 March 1679), was a German noblewoman member of the House of Wettin and by marriage Duchess of Saxe-Gotha-Altenburg. Born in Merseburg, she was a child of Christian I, Duke of Saxe-Merseburg and his wife Christiana of Schleswig-Holstein-Sonderburg-Glücksburg.\nQuestion: Where was the place of death of Christiane Vulpius's husband?\nFinal answer:",
+  "output": "Dresden",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-af9911d20633965b",
+    "object": "chat.completion",
+    "created": 1779535659,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Dresden",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1196,
+      "total_tokens": 1199,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

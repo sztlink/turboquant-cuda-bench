@@ -1,0 +1,48 @@
+{
+  "qid": "b8ef144a0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "British",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Thomas Lyon-Bowes, Lord Glamis -> Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne\n- Charlotte Lyon-Bowes, Lady Glamis -> Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne\n- Charlotte Lyon-Bowes, Lady Glamis -> Thomas Lyon-Bowes, Lord Glamis\n- Claude Bowes-Lyon, 13th Earl of Strathmore and Kinghorne -> Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne\n- Alexander Lyon, 2nd Lord Glamis -> Patrick Lyon, 1st Lord Glamis\n- George Lyon, 5th Lord Glamis -> John Lyon, 6th Lord Glamis\n- George Lyon, 5th Lord Glamis -> John Lyon, 4th Lord Glamis\n- George Lyon, 5th Lord Glamis -> John Lyon, 6th Lord Glamis\n- George Lyon, 5th Lord Glamis -> John Lyon, 4th Lord Glamis\nPassages:\nP1: Patrick Lyon, 1st Lord Glamis: Patrick Lyon, 1st Lord Glamis (1402 – 21 March 1459) P.C. was a Scottish nobleman, created Lord Glamis on 28 June 1445. He was the son of Sir John Lyon of Glamis (c.1377–c.1435) and Elizabeth Graham, daughter of Sir Patrick Graham of Dundaff and Kincardine and Euphemia Stewart, Countess of Strathearn. Sir John was the son of Sir John Lyon (d. 1382) and Princess Joanna Stewart, daughter of Robert II of Scotland. Patrick Lyon was hostage in England for King James I ...\nP2: Patrick Lyon, 1st Lord Glamis: Patrick Lyon, 1st Lord Glamis( 1402 – 21 March 1459) P.C. was a Scottish nobleman, created Lord Glamis on 28 June 1445. He was the son of Sir John Lyon of Glamis( c.1377–c.1435) and Elizabeth Graham, daughter of Sir Patrick Graham of Dundaff and Kincardine and Euphemia Stewart, Countess of Strathearn. Sir John was the son of Sir John Lyon( d. 1382) and Princess Joanna Stewart, daughter of Robert II of Scotland. Patrick Lyon was hostage in England for King James I ...\nP3: Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne: Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne (3 May 1773 – 27 August 1846) was a Scottish nobleman and peer. He was the third son of John Bowes, 9th Earl of Strathmore and Kinghorne, and Mary Bowes, Countess of Strathmore and Kinghorne. His mother was the author of the verse drama, \"The Siege of Jerusalem\" (1769). He is the great-great-grandfather of Queen Elizabeth The Queen Mother. The eldest brother was John Bowes, 10th ...\nP4: Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne: Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne( 3 May 1773 – 27 August 1846) was a Scottish nobleman and peer. He was the third son of John Bowes, 9th Earl of Strathmore and Kinghorne, and Mary Bowes, Countess of Strathmore and Kinghorne. His mother was the author of the verse drama,\" The Siege of Jerusalem\"( 1769). He is the great- great- grandfather of Queen Elizabeth The Queen Mother. The eldest brother was John Bowes, 10th ...\nP5: John Lyon, 6th Lord Glamis: John Lyon, 6th Lord Glamis( died 1528) was a Scottish nobleman. He was the second son of John Lyon, 4th Lord Glamis, and succeeded his brother as Lord Glamis in 1505. He married Janet Douglas( died 17 July 1537) Janet was falsely charged with witchcraft by King James V, and burned at the stake on Castle Hill, Edinburgh, Scotland. She was a daughter of George Douglas, Master of Angus, and sister to Archibald Douglas, 6th Earl of Angus. His son John Lyon, 7th Lord ...\nP6: John Lyon, 6th Lord Glamis: John Lyon, 6th Lord Glamis (died 1528) was a Scottish nobleman. He was the second son of John Lyon, 4th Lord Glamis, and succeeded his brother as Lord Glamis in 1505. He married Janet Douglas (died 17 July 1537) Janet was falsely charged with witchcraft by King James V, and burned at the stake on Castle Hill, Edinburgh, Scotland. She was a daughter of George Douglas, Master of Angus, and sister to Archibald Douglas, 6th Earl of Angus. His son John Lyon, 7th Lord ...\nP7: John Lyon, 4th Lord Glamis: John Lyon, 4th Lord Glamis( died 1500), son of John Lyon, 3rd Lord Glamis was a Scottish nobleman. He married Elizabeth Gray, the daughter of Andrew, Lord Gray. They had two children:\nP8: John Lyon, 4th Lord Glamis: John Lyon, 4th Lord Glamis (died 1500), son of John Lyon, 3rd Lord Glamis was a Scottish nobleman. He married Elizabeth Gray, the daughter of Andrew, Lord Gray. They had two children:\nP9: Thomas Lyon-Bowes, Lord Glamis: Thomas George Lyon-Bowes, Lord Glamis (6 February 1801 – 27 January 1834) was an heir to the Earldom of Strathmore and Kinghorne. He was the only son of Thomas Lyon-Bowes, 11th Earl of Strathmore and Kinghorne and Mary Elizabeth Louisa Rodney Carpenter. He is the great grandfather of Queen Elizabeth, the Queen Mother. On 21 December 1820, he married Charlotte Grimstead, daughter of Joseph Valentine Grimstead, of Ewood Park and Merry Hall, and Charlotte Jane Sarah ...\nP10: Thomas Lyon-Bowes, Master of Glamis (born 1821): Thomas Lyon-Bowes( 21 October 1821 – 21 October 1821) was the first child of Thomas Lyon -Bowes, Lord Glamis, and his wife Charlotte Lyon- Bowes\" née\" Grimstead, great- grandparents of Elizabeth Bowes- Lyon, who became Queen Consort in 1936. Although Thomas is recorded in Robert Douglas's\" Peerage of Scotland\" as\" born and died, October 21, 1821\", rumours began to circulate during the late 19th century that the child had been born deformed, and ...\nQuestion: Which country Thomas Lyon-Bowes, Lord Glamis's father is from?\nFinal answer:",
+  "output": "Scotland",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-bdaca6039cb1310e",
+    "object": "chat.completion",
+    "created": 1779535614,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Scotland",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1689,
+      "total_tokens": 1691,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

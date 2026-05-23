@@ -1,0 +1,48 @@
+{
+  "qid": "9e506db00bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Käbi Laretei",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Brenda Brave -> Astrid Lindgren\n- Brenda Brave -> Daniel Bergman\n- The Brave Archer and His Mate -> Little Dragon Maiden\n- The Brave Archer and His Mate -> The Brave Archer 2\n- The Brave Archer 3 -> The Brave Archer and His Mate\n- The Brave Archer 3 -> Little Dragon Maiden\n- The Brave Archer 3 -> The Brave Archer 2\n- The Brave Archer -> The Brave Archer and His Mate\n- The Brave Archer -> Little Dragon Maiden\n- The Brave Archer -> The Brave Archer 2\n- The Brave Archer 2 -> The Brave Archer and His Mate\n- The Brave Archer 2 -> Little Dragon Maiden\n- Little Dragon Maiden -> The Brave Archer and His Mate\n- Little Dragon Maiden -> The Brave Archer 2\n- None but the Brave (1960 film) -> None but the Brave\n- The Land Before Time XIV: Journey of the Brave -> The Feature\n- The Land Before Time XIV: Journey of the Brave -> Voices\nPassages:\nP1: Brenda Brave: Brenda Brave (original title: Kajsa Kavat) is a 1989 Swedish film directed by Daniel Bergman and based on the novel \"Brenda Brave Helps Grandmother\" by Astrid Lindgren.\nP2: None but the Brave: None but the Brave, also known as in Japan, is a 1965 war film with Frank Sinatra, Clint Walker, Tatsuya Mihashi, Tommy Sands and Brad Dexter. This is the only film directed by Frank Sinatra, and the first Japanese- American co-production.\nP3: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP4: Daniel Bergman: Daniel Sebastian Bergman (born 7 September 1962) is a Swedish film director. He is the son of Ingmar Bergman and Käbi Laretei. As a child, Bergman appeared in a 1967 Swedish program called \"Stimulantia\", which consisted of eight episodes, one of which was directed by his father Ingmar. The short, 10-minute film focuses on the first two years of Daniel's life. His mother Käbi is also seen. He was the assistant director of Andrei Tarkovsky on Offret (The Sacrifice, 1986). Bergman ...\nP5: Astrid Lindgren: Astrid Anna Emilia Lindgren( 14 November 1907 – 28 January 2002) was a Swedish writer of fiction and screenplays. She is best known for several children's book series, featuring Pippi Longstocking, Emil i Lönneberga, Karlsson- on- the- Roof, and the Six Bullerby Children(\" Children of Noisy Village\" in the US), and for the children's fantasy novels\" Mio, My SonRonia the Robber's Daughter\", and\" The Brothers Lionheart\". Lindgren worked on the Children's Literature Editorial ...\nP6: Voices: Voices or The Voices may refer to:\nP7: The Land Before Time XIV: Journey of the Brave: The Land Before Time: Journey of the Brave( also known as The Land Before Time XIV: Journey of the Brave) is a 2016 direct- to- video animated feature and the fourteenth film in\" The Land Before Time\" series. It is the first installment in the franchise to be released since 2007's. The film was directed by Davis Doi and written by Cliff Ruby and Elana Lesser. It was made available on DVD and Digital HD on February 2, 2016, with the DVD version ...\nP8: None but the Brave (1960 film): None But the Brave is a 1960 American film starring Richard Basehart. It was also known as The Golden Touch and For the Love of Mike.\nP9: The Brave Archer and His Mate: The Brave Archer and His Mate, also known as The Brave Archer 4 and Mysterious Island, is a 1982 Hong Kong film adapted from Louis Cha's novels\" The Legend of the Condor Heroes\" and\" The Return of the Condor Heroes\". Together with\" Little Dragon Maiden\"( 1983),\" The Brave Archer and His Mate\" is regarded as an unofficial sequel to the\" Brave Archer\" film trilogy(\" The Brave Archer The Brave Archer 2\" and\" The Brave Archer 3\").\nP10: The Brave Archer 3: The Brave Archer 3, also known as Blast of the Iron Palm, is a 1981 Hong Kong film adapted from Louis Cha's novel\" The Legend of the Condor Heroes\". The film was produced by the Shaw Brothers Studio and directed by Chang Cheh, starring Alexander Fu Sheng and Niu- niu in the lead roles. The film is the third part of a trilogy and was preceded by\" The Brave Archer\"( 1977) and\" The Brave Archer 2\"( 1978). The film has two unofficial sequels,\" The Brave Archer and His Mate\"( ...\nQuestion: Who is the mother of the director of film Brenda Brave?\nFinal answer:",
+  "output": "Käbi Laretei",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-92d1df7dbd2e82b6",
+    "object": "chat.completion",
+    "created": 1779535681,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Käbi Laretei",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1261,
+      "total_tokens": 1269,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

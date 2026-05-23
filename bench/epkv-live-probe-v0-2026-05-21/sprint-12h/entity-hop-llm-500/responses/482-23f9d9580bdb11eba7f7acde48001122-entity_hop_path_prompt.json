@@ -1,0 +1,48 @@
+{
+  "qid": "23f9d9580bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Buenos Aires",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Muchachos de la ciudad -> José A. Ferreyra\n- Garci Lasso de la Vega II -> Alfonso XI of Castile\n- Charles de La Cerda -> Edward III of England\n- Charles de La Cerda -> Alfonso de la Cerda\n- Charles de La Cerda -> Joan II of Navarre\n- Magnus Julius De la Gardie -> Axel Julius De la Gardie\nPassages:\nP1: Muchachos de la ciudad: Muchachos de la ciudad is a Argentine film directed and written by José A. Ferreyra.\nP2: Alfonso de la Cerda: Alfonso de la Cerda, (Valladolid 1270 - Ávila 1333), called the disinherited, was the elder son of Ferdinand de la Cerda and his wife Blanche of France, and was a grandson of Alfonso X of Castile. Alfonso and his brother Fernando were candidates for the Castilian-Leonese crown during the reigns of Sancho IV of Castile, Ferdinand IV of Castile and Alfonso XI of Castile. In 1331, Alfonso renounced his rights and swore allegiance to Alfonso XI of Castile.\nP3: Axel Julius De la Gardie: Axel Julius de la Gardie (1637–1710) was a Swedish Field Marshal and was appointed Governor-General over Estonia. Axel Julius was the son of military commander Jacob De la Gardie and Ebba Brahe. He became colonel of an infantry regiment and a cavalry regiment and in 1684 he attained the rank of major general in the cavalry, and was a colonel in the Royal Guard. In 1668 he became lieutenant general and finally, later, Field Marshal. Upon the threat of war with Russia, ...\nP4: Edward III of England: Edward III (13 November 1312 – 21 June 1377) was king of England and Lord of Ireland from January 1327 until his death; he is noted for his military success and for restoring royal authority after the disastrous and unorthodox reign of his father, Edward II. Edward III transformed the Kingdom of England into one of the most formidable military powers in Europe. His long reign of 50 years was the second-longest in medieval England (after that of his great-grandfather Henry ...\nP5: Alfonso XI of Castile: Alfonso XI of Castile( 13 August 131126 March 1350), called the Avenger(\" el Justiciero\"), was the king of Castile, León and Galicia. He was the son of Ferdinand IV of Castile and his wife Constance of Portugal. Upon his father's death in 1312, several disputes ensued over who would hold regency, which were resolved in 1313. Once Alfonso was declared adult in 1325, he began a reign that would serve to strengthen royal power. His achievements include solving the problems ...\nP6: Alfonso XI of Castile: Alfonso XI of Castile (13 August 131126 March 1350), called the Avenger (\"el Justiciero\"), was the king of Castile, León and Galicia. He was the son of Ferdinand IV of Castile and his wife Constance of Portugal. Upon his father's death in 1312, several disputes ensued over who would hold regency, which were resolved in 1313. Once Alfonso was declared adult in 1325, he began a reign that would serve to strengthen royal power. His achievements include solving the problems ...\nP7: Joan II of Navarre: Joan II (28 January 1312 – 6 October 1349) was Queen of Navarre from 1328 until her death. She was the only surviving child of Louis X of France, King of France and Navarre, and Margaret of Burgundy. Joan's paternity was dubious because her mother was involved in a scandal, but Louis X declared her his legitimate daughter before he died in 1316. However, the French lords were opposed to the idea of a female monarch and elected Louis X's brother, Philip V, king. The Navarrese ...\nP8: José A. Ferreyra: José A(gustín) Ferreyra (28 August 1889 – 29 January 1943), popularly known as \"Negro Ferreyra\" (Black Ferreyra, due to his mulato ethnicity), was an early Argentine film director, screenwriter and film producer. He was also sometimes credited as production designer. Ferreyra was born in Vicente López, Gran Buenos Aires. He began simultaneously directing and screenwriting for film in 1915, and moved on to success directing films such as \"Palomas rubias\" in 1920. His films ...\nP9: José A. Ferreyra: José A( gustín) Ferreyra( 28 August 1889 – 29 January 1943), popularly known as\" Negro Ferreyra\"( Black Ferreyra, due to his mulato ethnicity), was an early Argentine film director, screenwriter and film producer. He was also sometimes credited as production designer. Ferreyra was born in Vicente López, Gran Buenos Aires. He began simultaneously directing and screenwriting for film in 1915, and moved on to success directing films such as\" Palomas rubias\" in 1920. His films ...\nP10: Universidad Autónoma de la Ciudad de México: The Universidad Autónoma de la Ciudad de México( UACM)( Autonomous University of Mexico City) is a public university from México City founded in 2001. Before, the Federal District was the only federal entity without a state university.\nQuestion: Where was the place of death of the director of film Muchachos De La Ciudad?\nFinal answer:",
+  "output": "Gran Buenos Aires",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.8
+  },
+  "response": {
+    "id": "chatcmpl-ad4c6d0ee4f51bc0",
+    "object": "chat.completion",
+    "created": 1779535903,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Gran Buenos Aires",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1382,
+      "total_tokens": 1386,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

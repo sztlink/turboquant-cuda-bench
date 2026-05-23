@@ -1,0 +1,48 @@
+{
+  "qid": "93dec34e0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "France",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Theobald III, Count of Blois: Theobald III of Blois( French:\" Thibaut\")( 1012–1089) was count of Blois, Meaux and Troyes. He was son of Odo II, Count of Blois and Ermengarde of Auvergne.\nP2: The Descendants: The Descendants is a 2011 American comedy- drama film directed by Alexander Payne. The screenplay by Payne, Nat Faxon and Jim Rash is based on the 2007 novel of the same name by Kaui Hart Hemmings. The film stars George Clooney, Shailene Woodley, Amara Miller, Beau Bridges, Judy Greer, Matthew Lillard, and Robert Forster, and was released by Fox Searchlight Pictures in the United States on November 18, 2011 after being screened at the 2011 Toronto International Film Festival. ...\nP3: Part: Part, parts or PART may refer to:\nP4: Gilduin of Le Puiset: Gilduin of Le Puiset( d. between 1130 and 1135) was the son of Hugh I of Le Puiset and Alice of Monthléry, daughter of Guy I of Montlhéry. Monk at St. Martin- des- Champs, prior at Cluny Abbey, prior at Lurey- le- Bourg, abbot of St. Mary of the Valley of Jehosaphat. It is unclear when Gilduin became abbot of St. Mary, but he was in this position when his cousin Baldwin II confirmed the privileges of the abbey, the chief Marian shrine in Jerusalem, on 31 January 1120. In ...\nP5: Hugh I of Le Puiset: Hugh I of Le Puiset( died 23 December 1096), son of Everard I of Breteuil and his wife Humberge. In 1067, taking advantage of the weakness of Philip I of France, he seized the royal castle of Puiset and settled there. In 1073, Theobald III, Count of Blois, became Count of Chartres and did not hesitate to defy royal order, defeating the royal army in 1079 at Le Puiset. He took as prisoner Ivo, Bishop of Chartres, and kept him confined for two years. Hugh married Alice of ...\nP6: Hugh I of Le Puiset: Hugh I of Le Puiset (died 23 December 1096), son of Everard I of Breteuil and his wife Humberge. In 1067, taking advantage of the weakness of Philip I of France, he seized the royal castle of Puiset and settled there. In 1073, Theobald III, Count of Blois, became Count of Chartres and did not hesitate to defy royal order, defeating the royal army in 1079 at Le Puiset. He took as prisoner Ivo, Bishop of Chartres, and kept him confined for two years. Hugh married Alice of ...\nP7: Éverard III of Puiset, Viscount of Chartres: Éverard III (killed in Palestine on 21 August 1099), son of Hugh I of Le Puiset and Alice of Monthléry (daughter of Guy I, lord of Monthléry). Seigneur of Puiset and Viscount of Chartres. Éverard was in the army of Hugh the Great, that of Stephen of Blois, and then joined with Robert II, Count of Flanders, in the First Crusade. He was instrumental in rallying troops during the siege of Jerusalem and was killed after the capture of Jerusalem. Éverard ...\nP8: Hugh I of Jaffa: Hugh I( died between 1112 and 1118) was the Lord of Le Puiset( as Hugh II) from 1097 and Count of Jaffa from 1106. He was the son of Hugh I of Le Puiset and Alice of Montlhéry. He is often confused with his son, who was also known as Hugh II of Le Puiset, though he was actually only Hugh II of Jaffa. Through his mother he was a cousin of Baldwin of Le Bourg and Joscelin of Courtenay, who were lords in Outremer. Hugh acted as lord of Le Puiset until 1106 as tutor to his young ...\nP9: Guy I of Dampierre: Guy I of Dampierre( died 1151), son of Thibaut of Dampierre- sur- l’ Aube and Elizabeth of Montlhéry, daughter of Milo I of Montlhéry, Viscount of Troyes. Seigneur of Dampierre, Saint- Dizier, and Moëlain. Guy travelled with Hugh I of Troyes on his pilgrimage to the Holy Land in 1125. It is not known whether Guy became a Knight Templar, although his son William approved the donation of property to the Templars at Provins. Guy was associated with Barisan the Old, who ...\nP10: Guy I of Montlhéry: Guy I( died 1095) was the second lord of Bray and the second lord of Montlhéry( Latin:\" Monte Leterico\"). He was probably the son of Thibaud of Montmorency, but some sources say that his father was named Milo. Thibaud may instead have been his grandfather. He married Hodierna of Gometz, daughter of William, lord of Gometz. They had seven children: Guy died in 1095, the same year Pope Urban II launched the First Crusade. Many of his descendants had illustrious careers in the ...\nQuestion: Which country Gilduin Of Le Puiset's father is from?\nFinal answer:",
+  "output": "France",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-ac4da6f357720803",
+    "object": "chat.completion",
+    "created": 1779535717,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "France",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1355,
+      "total_tokens": 1357,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

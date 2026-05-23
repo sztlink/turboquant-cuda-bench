@@ -1,0 +1,48 @@
+{
+  "qid": "0464f5040bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Cahiers du cinéma",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- The Witnesses -> André Téchiné\n- Thomas Aquinas Dictionary -> The Quotations\n- Břetislav Pojar -> The Feature\n- Břetislav Pojar -> Master\n- Robert Stevens (director) -> Alfred Hitchcock\n- Robert Stevens (director) -> Amazing Stories\n- Grdeša -> The Witnesses\n- The Hourglass Sanatorium -> Story\n- The Hourglass Sanatorium -> The Jury\n- John Robinson (17th century) -> William Shakespeare\n- John Robinson (17th century) -> The Witnesses\nPassages:\nP1: The Witnesses: The Witnesses  is a 2007 French drama film directed by André Téchiné, starring Michel Blanc, Sami Bouajila, Emmanuelle Béart and Johan Libéreau. The film, set in Paris in 1984, explores the lives of a closely knit group of friends who are impacted with the sudden outbreak of the AIDS epidemic. \" The Witnesses\" was critically acclaimed.\nP2: The Quotations: The Quotations are an American doo- wop band, primarily from James Madison High School in East Brooklyn, New York, United States. The group started in 1958 at Barney's Pool Room on Kings Highway in East Brooklyn, New York. The original members of the group were Richie Schwartz( first tenor), Lew Arno( second tenor) and Harvey Hersh[ kowitz]( baritone) who hung out together harmonizing. Larry Kassman later asked if he could sing with the group; Kassman soon became lead for the ...\nP3: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP4: The Jury: The Jury may refer to:\nP5: William Shakespeare: William Shakespeare (bapt. 26 April 1564 – 23 April 1616) was an English poet, playwright, and actor, widely regarded as the greatest writer in the English language and the world's greatest dramatist. He is often called England's national poet and the \"Bard of Avon\" (or simply \"the Bard\"). His extant works, including collaborations, consist of some 39 plays, 154 sonnets, two long narrative poems, and a few other verses, some of uncertain authorship. His plays have been ...\nP6: André Téchiné: André Téchiné (born 13 March 1943) is a French screenwriter and film director. He has a long and distinguished career that places him among the most accomplished post-New Wave French film directors. Téchiné belongs to a second generation of French film critics associated with \"Cahiers du cinéma\" who followed François Truffaut, Claude Chabrol, Jean-Luc Godard and others from criticism into filmmaking. He is noted for his elegant and emotionally charged films that often delve into ...\nP7: Alfred Hitchcock: Sir Alfred Joseph Hitchcock,( 13 August 1899 – 29 April 1980) was an English film director and producer, widely regarded as one of the most influential and extensively studied filmmakers in the history of cinema. Known as\" the Master of Suspense\", he directed over 50 feature films in a career spanning six decades, becoming as well known as any of his actors thanks to his many interviews, his cameo roles in most of his films, and his hosting and producing of the television ...\nP8: Amazing Stories: Amazing Stories is an American science fiction magazine launched in April 1926 by Hugo Gernsback's Experimenter Publishing. It was the first magazine devoted solely to science fiction. Science fiction stories had made regular appearances in other magazines, including some published by Gernsback, but \"Amazing\" helped define and launch a new genre of pulp fiction. As of 2018, \"Amazing\" has been published, with some interruptions, for ninety-two years, going through a half-dozen ...\nP9: Master: Master or masters may refer to:\nP10: Story: Story or stories, may refer to:\nQuestion: Where does the director of film The Witnesses work at?\nFinal answer:",
+  "output": "Cahiers du cinéma",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-91fa793bb6ca28d6",
+    "object": "chat.completion",
+    "created": 1779535859,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Cahiers du cinéma",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1062,
+      "total_tokens": 1068,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

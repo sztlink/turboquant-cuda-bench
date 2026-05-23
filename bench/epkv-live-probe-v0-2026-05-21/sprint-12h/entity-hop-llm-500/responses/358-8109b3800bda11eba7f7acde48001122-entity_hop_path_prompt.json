@@ -1,0 +1,48 @@
+{
+  "qid": "8109b3800bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "17 November 1845",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Princess Joséphine Marie of Belgium -> Princess Henriette of Belgium\n- Princess Joséphine Marie of Belgium -> Princess Marie of Hohenzollern-Sigmaringen\n- Princess Joséphine Marie of Belgium -> Princess Henriette of Belgium\n- Princess Henriette of Belgium -> Princess Joséphine Marie of Belgium\n- Princess Joséphine Charlotte of Belgium -> Leopold III of Belgium\n- Archduchess Marie Astrid of Austria -> Archduke Carl Christian of Austria\n- Prince Alexandre of Belgium -> Lilian, Princess of Réthy\n- Prince Alexandre of Belgium -> Leopold III of Belgium\nPassages:\nP1: Leopold III of Belgium: Leopold III (3 November 1901 – 25 September 1983) was King of the Belgians from 1934 until 1951, when he abdicated in favour of the heir apparent, his son Baudouin. From 1944 until 1950, Leopold's brother, Charles, served as prince regent while Leopold was declared unable to reign. Leopold's controversial actions during the Second World War resulted in a political crisis known as the Royal Question. In 1950, the debate about whether Leopold could resume his royal ...\nP2: Lilian, Princess of Réthy: Princess Lilian of Belgium (née Mary Lilian Baels, –) better known as Lilian, Princess of Réthy, was the second wife of King Leopold III of Belgium.\nP3: Archduke Carl Christian of Austria: Archduke Carl Christian of Austria (born 26 August 1954 at Château de Belœil in Belœil, Belgium) is a Belgian aristocrat and a member of the formerly ruling Austro-Hungarian House of Habsburg-Lorraine. He is the third child of Archduke Carl Ludwig of Austria and his wife, Princess Yolande de Ligne.\nP4: Archduke Carl Christian of Austria: Archduke Carl Christian of Austria( born 26 August 1954 at Château de Belœil in Belœil, Belgium) is a Belgian aristocrat and a member of the formerly ruling Austro- Hungarian House of Habsburg- Lorraine. He is the third child of Archduke Carl Ludwig of Austria and his wife, Princess Yolande de Ligne.\nP5: Princess Joséphine Marie of Belgium: Princess Joséphine Marie of Belgium( 30 November 1870 — 18 January 1871) was the daughter of Prince Philippe, Count of Flanders, and Princess Marie of Hohenzollern- Sigmaringen. She was the older twin to Princess Henriette of Belgium. In 1872 Joséphine Marie's mother gave birth to another daughter, who was named Joséphine in her memory.\nP6: Princess Joséphine Marie of Belgium: Princess Joséphine Marie of Belgium (30 November 1870 — 18 January 1871) was the daughter of Prince Philippe, Count of Flanders, and Princess Marie of Hohenzollern-Sigmaringen. She was the older twin to Princess Henriette of Belgium. In 1872 Joséphine Marie's mother gave birth to another daughter, who was named Joséphine in her memory.\nP7: Princess Joséphine Caroline of Belgium: Princess Joséphine Caroline of Belgium( 18 October 1872 – 6 January 1958) was the youngest daughter of Prince Philippe, Count of Flanders and Princess Marie of Hohenzollern- Sigmaringen. She was an older sister of Albert I of Belgium.\nP8: Princess Joséphine Charlotte of Belgium: Princess Joséphine Charlotte of Belgium( Joséphine Charlotte Stéphanie Ingeborg Elisabeth Marie- José Marguerite Astrid; 11 October 1927 – 10 January 2005) was Grand Duchess consort of Luxembourg as the wife of Grand Duke Jean. She was a first cousin of Harald V of Norway. She was the first child of King Leopold III of Belgium, and sister of the late King Baudouin I and former King Albert II and aunt of King Philippe I.\nP9: Princess Henriette of Belgium: Princess Henriette of Belgium, later Princess Henriette of Orléans, Duchess of Vendôme( 30 November 1870 – 28 March 1948), was the daughter of Prince Philippe, Count of Flanders, and Princess Marie of Hohenzollern- Sigmaringen. She was the younger twin sister of Princess Joséphine Marie of Belgium, who died at the age of six weeks in 1871.\nP10: Princess Marie of Hohenzollern-Sigmaringen: Princess Marie of Hohenzollern-Sigmaringen, later Princess Marie of Belgium, Countess of Flanders (Marie Luise Alexandrine Karoline; 17 November 1845 – 26 November 1912) was a Princess of Hohenzollern-Sigmaringen, later simply of Hohenzollern, and mother of King Albert I of Belgium.\nQuestion: When is Princess Joséphine Marie Of Belgium's mother's birthday?\nFinal answer:",
+  "output": "17 November 1845",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-b4a49e59a1bba8d9",
+    "object": "chat.completion",
+    "created": 1779535793,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "17 November 1845",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1237,
+      "total_tokens": 1246,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

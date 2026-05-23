@@ -1,0 +1,66 @@
+{
+  "idx": 424,
+  "qid": "1bb538ec0bda11eba7f7acde48001122",
+  "gold": "Leningrad",
+  "candidates": [
+    "Place of birth",
+    "Chronicles of a Dive Bomber",
+    "What Women Want",
+    "The Grave",
+    "The First Day",
+    "D. W. Griffith",
+    "Naum Birman",
+    "Everyday",
+    "@Home",
+    "Place of origin",
+    "Aleksandr Grave",
+    "Motherland (disambiguation)"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of birth\nC2: Chronicles of a Dive Bomber\nC3: What Women Want\nC4: The Grave\nC5: The First Day\nC6: D. W. Griffith\nC7: Naum Birman\nC8: Everyday\nC9: @Home\nC10: Place of origin\nC11: Aleksandr Grave\nC12: Motherland (disambiguation)\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Chronicles of a Dive Bomber -> Naum Birman\n- Chronicles of a Dive Bomber -> Everyday\n- Place of birth -> Place of origin\n- Aleksandr Grave -> Chronicles of a Dive Bomber\n- Aleksandr Grave -> The Grave\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Motherland (disambiguation) -> Place of origin\n- The Fall of a Nation -> D. W. Griffith\n- What Women Want (2011 film) -> What Women Want\n- What Women Want (2011 film) -> The First Day\nPassages:\nP1: Chronicles of a Dive Bomber: Chronicles of a Dive Bomber  is a 1967 Soviet war film directed by Naum Birman based on the novel of the same name by Vladimir Kunin about the everyday life of frontline aviation during the Great Patriotic War.\nP2: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP3: What Women Want: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt. The film earned mixed reviews from critics, but was a box office success, with a North American domestic gross of $182 million and a worldwide gross of $374 million against a budget of $70 million. A loose remake, \"What Men Want\" starring Taraji P. Henson and Aldis Hodge came out in early 2019.\nP4: The Grave: The Grave may refer to:\nP5: The First Day: The First Day may refer to:\nP6: D. W. Griffith: David Wark Griffith( January 22, 1875 – July 23, 1948) was an American film director. Widely considered as the most important filmmaker of his generation, he pioneered the feature- length movie and many enduring cinematic techniques, such as the close- up. His film\" The Birth of a Nation\"( 1915) broke box- office records but also attracted much controversy, as it depicted African Americans in a negative light and glorified the Ku Klux Klan. \" Intolerance\"( 1916) was made as an ...\nP7: Naum Birman: Naum Borisovich Birman (1924—1989) was a Soviet director of theater and cinema, screenwriter.\nCavalier of the Order of Friendship of Peoples (1986). He worked as an actor and director in the Leningrad theaters, director of the productions of Arkady Raikin. He was buried at the Memorial Cemetery in Komarovo near Leningrad. First wife (1928—2001), actress of Tovstonogov Bolshoi Drama Theater. Son Anatoly Popov, actor. Since the second marriage there is a son (born 1966).\nP8: Everyday: Everyday or Every Day may refer to:\nP9: @Home: @Home or @home may refer to:\nP10: First Day: First Day may refer to:\nQuestion: What is the place of birth of the director of film Chronicles Of A Dive Bomber?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Place of birth\",\"selected\":\"C1|C2|UNKNOWN\",\"confidence\":\"medium\",\"reason\":\"The evidence suggests that Chronicles of a Dive Bomber was directed by Naum Birman, but it does not provide his place of birth. The term 'place of birth' is used in the passages, but no specific place is mentioned for Naum Birman.\"}",
+  "verifier": {
+    "final_answer": "Place of birth",
+    "selected": "C1|C2|UNKNOWN",
+    "confidence": "medium",
+    "reason": "The evidence suggests that Chronicles of a Dive Bomber was directed by Naum Birman, but it does not provide his place of birth. The term 'place of birth' is used in the passages, but no specific place is mentioned for Naum Birman."
+  },
+  "final": "Place of birth",
+  "selected": "C1|C2|UNKNOWN",
+  "response": {
+    "id": "chatcmpl-aa57438f65fba78d",
+    "object": "chat.completion",
+    "created": 1779536204,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Place of birth\",\"selected\":\"C1|C2|UNKNOWN\",\"confidence\":\"medium\",\"reason\":\"The evidence suggests that Chronicles of a Dive Bomber was directed by Naum Birman, but it does not provide his place of birth. The term 'place of birth' is used in the passages, but no specific place is mentioned for Naum Birman.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1060,
+      "total_tokens": 1139,
+      "completion_tokens": 79,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.3862416744232178
+}

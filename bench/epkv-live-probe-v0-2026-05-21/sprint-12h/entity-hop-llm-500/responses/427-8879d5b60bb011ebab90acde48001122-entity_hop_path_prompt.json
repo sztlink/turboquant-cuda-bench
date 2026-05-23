@@ -1,0 +1,48 @@
+{
+  "qid": "8879d5b60bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Grand Duke Paul Alexandrovich of Russia",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Prince Feodor Alexandrovich of Russia -> Grand Duchess Xenia Alexandrovna of Russia\n- Prince Nikita Alexandrovich of Russia -> Grand Duchess Xenia Alexandrovna of Russia\n- Prince Nikita Alexandrovich of Russia -> The Child\n- Prince Dmitri Alexandrovich of Russia -> Grand Duchess Xenia Alexandrovna of Russia\n- Prince Dmitri Alexandrovich of Russia -> The Child\n- Prince Dmitri Alexandrovich of Russia -> Grand Duchess Xenia Alexandrovna of Russia\n- Prince Dmitri Alexandrovich of Russia -> The Child\n- Prince Alexander Romanov -> Prince Nikita Alexandrovich of Russia\n- Prince Alexander Romanov -> Prince Nikita Alexandrovich of Russia\n- Prince Nikita Romanov -> Prince Nikita Alexandrovich of Russia\n- Prince Nikita Romanov -> Born American\nPassages:\nP1: Prince Feodor Alexandrovich of Russia: Prince Feodor Alexandrovich of Russia (23 December 1898 – 30 November 1968) was the second son and third child of Grand Duke Alexander Mikhailovich of Russia and Grand Duchess Xenia Alexandrovna of Russia. He was also a nephew of Nicholas II of Russia, the last Tsar. Born and raised in Imperial Russia during the reign of his uncle Nicholas II, he followed a military career and entered the Corps of Pages during World War I. With the fall of the Russian ...\nP2: Grand Duchess Xenia Alexandrovna of Russia: Grand Duchess Xenia Alexandrovna of Russia (– 20 April 1960) was the elder daughter and fourth child of Tsar Alexander III of Russia and Empress Maria Feodorovna of Russia (née Princess Dagmar of Denmark) and the sister of Emperor Nicholas II. She married a cousin, Grand Duke Alexander Mikhailovich of Russia, with whom she had seven children. She was the mother-in-law of Felix Yusupov and a cousin of Grand Duke Dmitri Pavlovich of Russia who, ...\nP3: The Child: The Child may refer to:\nP4: Born American: Born American( Finnish: Jäätävä polte; also known as Arctic Heat) is a 1986 Finnish film directed by Renny Harlin. It was originally supposed to star Chuck Norris but he backed out when filming was delayed by funding problems and his son, Mike Norris, landed the lead instead. A Finnish production, this was at that time the most expensive film ever to have been made in Finland. The Finnish Board of Film Classification first banned the movie, because of excessive violence and ...\nP5: Prince Nikita Alexandrovich of Russia: Prince Nikita Alexandrovich of Russia (13 January 1900 – 12 September 1974) was the third son and fourth child of Grand Duke Alexander Mikhailovich of Russia and Grand Duchess Xenia Alexandrovna of Russia. He was a nephew of Tsar Nicholas II of Russia. Born in Imperial Russia during the reign of his uncle, Prince Nikita escaped the fate of many of his relatives who were killed by the Bolsheviks. He left Russia in April 1919, at age nineteen. In 1922 he ...\nP6: Prince Dmitri Alexandrovich of Russia: Prince Dmitri Alexandrovich of Russia( 15 August 1901 – 7 July 1980) was the fourth son and fifth child of Grand Duke Alexander Mikhailovich of Russia and Grand Duchess Xenia Alexandrovna of Russia. He was a nephew of Tsar Nicholas II of Russia.\nP7: Prince Dmitri Alexandrovich of Russia: Prince Dmitri Alexandrovich of Russia (15 August 1901 – 7 July 1980) was the fourth son and fifth child of Grand Duke Alexander Mikhailovich of Russia and Grand Duchess Xenia Alexandrovna of Russia. He was a nephew of Tsar Nicholas II of Russia.\nP8: Prince George Alexandrovich Yuryevsky: Prince George Alexandrovich Yuryevsky (12 May 1872 [30 April 1872 O. S.] – 13 September 1913) was the natural son of Alexander II of Russia by his mistress (and later wife), Catherine Dolgorukov. The morganatic marriage of George's parents on 6 July 1880, eight years after his birth, resulted in the legitimation of their three surviving children, and George gained the style of \"Serene Highness\".\nP9: Prince Alexander Romanov: Prince Alexander Nikitich Romanov( 4 November 1929 – 22 September 2002) was a member of the Romanov family. He was a son of Prince Nikita Alexandrovich of Russia and a great nephew of Nicholas II of Russia, the last Tsar. Born in France, he took British citizenship in 1938 and lived with his grand mother Grand Duchess Xenia Alexandrovna in England until her death in 1960. The following year, Prince Alexander Nikitich became the first member of the Romanov family to ...\nP10: Prince Alexander Romanov: Prince Alexander Nikitich Romanov (4 November 1929 – 22 September 2002) was a member of the Romanov family. He was a son of Prince Nikita Alexandrovich of Russia and a great nephew of Nicholas II of Russia, the last Tsar. Born in France, he took British citizenship in 1938 and lived with his grand mother Grand Duchess Xenia Alexandrovna in England until her death in 1960. The following year, Prince Alexander Nikitich became the first member of the Romanov family to ...\nQuestion: Who is the father-in-law of Prince Feodor Alexandrovich Of Russia?\nFinal answer:",
+  "output": "Grand Duke Alexander Mikhailovich of Russia",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.6666666666666666
+  },
+  "response": {
+    "id": "chatcmpl-825cd3c60ceaa7c6",
+    "object": "chat.completion",
+    "created": 1779535854,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Grand Duke Alexander Mikhailovich of Russia",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1316,
+      "total_tokens": 1324,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

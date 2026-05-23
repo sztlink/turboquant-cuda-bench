@@ -1,0 +1,65 @@
+{
+  "idx": 381,
+  "qid": "08d00bcc0bde11eba7f7acde48001122",
+  "gold": "14 September 1964",
+  "candidates": [
+    "1847",
+    "18 April 1526",
+    "Charles Somerset, 1st Earl of Worcester",
+    "For the Service",
+    "The Hero",
+    "FitzRoy Somerset, 5th Baron Raglan",
+    "FitzRoy Somerset, 4th Baron Raglan",
+    "Richard Somerset, 2nd Baron Raglan",
+    "Geoffrey Somerset, 6th Baron Raglan",
+    "Mary FitzRoy, Duchess of Richmond and Somerset",
+    "Henry Somerset, 2nd Earl of Worcester"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: 1847\nC2: 18 April 1526\nC3: Charles Somerset, 1st Earl of Worcester\nC4: For the Service\nC5: The Hero\nC6: FitzRoy Somerset, 5th Baron Raglan\nC7: FitzRoy Somerset, 4th Baron Raglan\nC8: Richard Somerset, 2nd Baron Raglan\nC9: Geoffrey Somerset, 6th Baron Raglan\nC10: Mary FitzRoy, Duchess of Richmond and Somerset\nC11: Henry Somerset, 2nd Earl of Worcester\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- FitzRoy Somerset, 4th Baron Raglan -> The Hero\n- Richard Somerset, 2nd Baron Raglan -> For the Service\n- Henry Somerset, 2nd Earl of Worcester -> Charles Somerset, 1st Earl of Worcester\nPassages:\nP1: Charles Somerset, 1st Earl of Worcester: Charles Somerset, 1st Earl of Worcester, (c. 146015 March 1526) was an English nobleman and politician. He was the legitimised bastard son of Henry Beaufort, 3rd Duke of Somerset by his mistress Joan Hill.\nP2: Charles Somerset, 1st Earl of Worcester: Charles Somerset, 1st Earl of Worcester,( c. 146015 March 1526) was an English nobleman and politician. He was the legitimised bastard son of Henry Beaufort, 3rd Duke of Somerset by his mistress Joan Hill.\nP3: For the Service: For the Service is a 1936 American Western film directed by Buck Jones and written by Isadore Bernstein. The film stars Buck Jones, Phillip Trent, Edward Keane, Fred Kohler, Beth Marion, Frank McGlynn, Sr. and Ben Corbett. The film was released on June 1, 1936, by Universal Pictures.\nP4: The Hero: The Hero may refer to:\nP5: FitzRoy Somerset, 5th Baron Raglan: FitzRoy John Somerset, 5th Baron Raglan (6 November 1927 – 24 January 2010) was a British peer, the son of FitzRoy Richard Somerset, 4th Baron Raglan and the Hon. Julia Hamilton. He married Alice Baily, daughter of Peter Baily, in 1973. He and Alice were divorced in 1981. They had no children.\nP6: FitzRoy Somerset, 4th Baron Raglan: Fitzroy Richard Somerset, 4th Baron Raglan (10 June 1885 – 14 September 1964) was a British soldier, author, and amateur anthropologist. His books include \"The Hero, A Study in Tradition, Myth and Drama\" and \"Monmouthshire Houses\", with Cyril Fox.\nP7: Richard Somerset, 2nd Baron Raglan: Richard Henry FitzRoy Somerset, 2nd Baron Raglan( 24 May 1817 – 3 May 1884) was a British peer. The second son of FitzRoy Somerset, 1st Baron Raglan, he was born in Paris and educated at Christ Church, Oxford. He went to Ceylon with Lieutenant- General Sir Colin Campbell KCB( 1776 – 13 June 1847) as his Private Secretary and was subsequently taken into the Ceylon civil service in 1841. In 1844 he was the assistant government agent of Colombo. He left the ...\nP8: Geoffrey Somerset, 6th Baron Raglan: Geoffrey Somerset, 6th Baron Raglan( born 29 August 1932) is a British peer, businessman, and Conservative politician.\nP9: Mary FitzRoy, Duchess of Richmond and Somerset: Mary FitzRoy, Duchess of Richmond and Somerset( Howard; 1519 – 7 December 1557), born Lady Mary Howard, was the only daughter- in- law of King Henry VIII of England, being the wife of his only acknowledged illegitimate son, Henry FitzRoy, 1st Duke of Richmond and Somerset.\nP10: Henry Somerset, 2nd Earl of Worcester: Henry Somerset, 2nd Earl of Worcester( 26 November 1549) was an English nobleman. He was the son of Charles Somerset, 1st Earl of Worcester and Elizabeth Herbert, 3rd Baroness Herbert. On his father's death on 15 April 1526, he succeeded as the second Earl of Worcester. From his mother, he inherited the title of Baron Herbert. Somerset obtained Tintern Abbey after the Dissolution of the Monasteries. He married twice:\nQuestion: What is the date of death of Fitzroy Somerset, 5Th Baron Raglan's father?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"15 April 1526\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"The passage P7 provides the exact date of death for Richard Somerset, 2nd Baron Raglan, who is identified as the father of FitzRoy Somerset, 5th Baron Raglan in the candidate entity graph.\"}",
+  "verifier": {
+    "final_answer": "15 April 1526",
+    "selected": "C2",
+    "confidence": "high",
+    "reason": "The passage P7 provides the exact date of death for Richard Somerset, 2nd Baron Raglan, who is identified as the father of FitzRoy Somerset, 5th Baron Raglan in the candidate entity graph."
+  },
+  "final": "15 April 1526",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-ba5cac61d6f7aece",
+    "object": "chat.completion",
+    "created": 1779536167,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"15 April 1526\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"The passage P7 provides the exact date of death for Richard Somerset, 2nd Baron Raglan, who is identified as the father of FitzRoy Somerset, 5th Baron Raglan in the candidate entity graph.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1217,
+      "total_tokens": 1287,
+      "completion_tokens": 70,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.2597529888153076
+}

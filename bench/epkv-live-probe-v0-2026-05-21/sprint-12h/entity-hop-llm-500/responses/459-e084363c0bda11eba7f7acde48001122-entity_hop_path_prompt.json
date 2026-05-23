@@ -1,0 +1,48 @@
+{
+  "qid": "e084363c0bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "January 26, 1955",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Vermont Studio Center -> Jonathan Gregg\n- Vermont Studio Center -> Louise\n- Noli Principe Manalang -> Vermont Studio Center\n- Noli Principe Manalang -> Part\n- Ruth Ellen Kocher -> Vermont Studio Center\n- Catherine Toll -> The General\n- E.J. Miller Laino -> Vermont Studio Center\n- E.J. Miller Laino -> The Keys\n- Stephen Tobolowsky's Birthday Party -> Birthday Party\nPassages:\nP1: Vermont Studio Center: The Vermont Studio Center (VSC) is a non-profit organization located in the town of Johnson in the U.S. state of Vermont. VSC conducts the largest fine arts and writing residency program in the U.S., with a significant population of international artists in residency. The center operates one- to three-month residencies, with 52 fine artists and writers in the residency program at a time. The programs are highly selective and include a broad variety of media, cultures, and ...\nP2: Birthday Party: A birthday party is a party to celebrate the anniversary of someone's birth. \" Birthday Party\" or\" The Birthday Party\" may also refer to:\nP3: The General: The General or The Generals may refer to:\nP4: The Keys: The Keys may refer to:\nP5: Jonathan Gregg: Jonathan Gregg (born January 26, 1955) is an American singer, songwriter, and multi-instrumentalist (pedal steel, guitar, and dobro). Based in New York City, he is the founder of Jonathan Gregg & the Lonesome Debonaires and The Combine, and co-leader of alt-country band The Linemen.\nP6: Louise: Louise or Luise may refer to:\nP7: Part: Part, parts or PART may refer to:\nP8: University of Arkansas at Little Rock: The University of Arkansas at Little Rock( UA Little Rock) is a public research university in Little Rock, Arkansas. Established as Little Rock Junior College by the Little Rock School District in 1927, the institution became a private four- year university under the name Little Rock University in 1957. It returned to public status in 1969 when it merged with the University of Arkansas System under its present name. The former campus of Little Rock Junior ...\nP9: Stephen Tobolowsky's Birthday Party: Stephen Tobolowsky's Birthday Party is a 2005 documentary film about character actor Stephen Tobolowsky in which he tells stories from his life. The actor, who is usually in a supporting role, takes center stage in the 87- minute birthday party.\nP10: Noli Principe Manalang: Noli Principe Manalang( born 1980) is a Filipino artist from Bulacan province, the Philippines. Although a graduate of Architecture from the Royal Pontifical University of Santo Tomas in 2000, he is known for oil and watercolor paintings of traditional Roman Catholic imagery inspired by his alma mater. He has been embellishing three- dimensional church artworks with his kind of realism, including one given to a chapel in the Czech Republic by the Philippine Chargé ...\nQuestion: When is the founder of university Vermont Studio Center 's birthday?\nFinal answer:",
+  "output": "January 26, 1955",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-977e1542960076e7",
+    "object": "chat.completion",
+    "created": 1779535884,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "January 26, 1955",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 767,
+      "total_tokens": 778,
+      "completion_tokens": 11,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "idx": 266,
+  "qid": "a022d8580bdc11eba7f7acde48001122",
+  "gold": "Ridley Scott",
+  "candidates": [
+    "Neal Purvis",
+    "Gary Oldman",
+    "Plunkett & Macleane",
+    "The Comic",
+    "Comedy",
+    "Them",
+    "Alberto Cavalcanti",
+    "Story",
+    "Part",
+    "Father of the Bride Part II",
+    "The Life of Na Woon-gyu",
+    "For Them That Trespass"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Neal Purvis\nC2: Gary Oldman\nC3: Plunkett & Macleane\nC4: The Comic\nC5: Comedy\nC6: Them\nC7: Alberto Cavalcanti\nC8: Story\nC9: Part\nC10: Father of the Bride Part II\nC11: The Life of Na Woon-gyu\nC12: For Them That Trespass\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Plunkett & Macleane -> Comedy!\n- Plunkett & Macleane -> Story\n- For Them That Trespass -> Alberto Cavalcanti\n- For Them That Trespass -> Patricia Plunkett\n- Patricia Plunkett -> For Them That Trespass\n- Patricia Plunkett -> Them!\n- Peju Ogunmola -> The Comic\n- Father of the Bride Part II -> Comedy!\n- Father of the Bride Part II -> Part\nPassages:\nP1: Plunkett & Macleane: Plunkett & Macleane is a 1999 British historical action comedy film directed by Jake Scott, and starring Robert Carlyle, Jonny Lee Miller and Liv Tyler. Gary Oldman was executive producer. The story was co-written by Neal Purvis and Robert Wade. It follows the story of Captain James Macleane (Miller) and Will Plunkett (Carlyle), two men in eighteenth century Britain who are both struggling to survive. The characters are loosely based on two genuine highwaymen of the ...\nP2: The Comic: The Comic is a 1969 Pathécolor comedy film co-written, co-produced, and directed by Carl Reiner. It stars Dick Van Dyke as Billy Bright( which was the original title of the film), Michele Lee as Bright's love interest, and Reiner himself and Mickey Rooney as Bright's friends and work colleagues. Reiner wrote the screenplay with Aaron Ruben; it was inspired by the end of silent film era, and, in part, by the life of silent film superstar Buster Keaton.\nP3: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP4: Them!: Them! is a 1954 American black- and- white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \" Them!\" is one of the first of the 1950s\" nuclear monster\" films, and the first\" big bug\" feature. A nest ...\nP5: Them!: Them! is a 1954 American black-and-white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \"Them!\" is one of the first of the 1950s \"nuclear monster\" films, and the first \"big bug\" feature. A nest of ...\nP6: Alberto Cavalcanti: Alberto de Almeida Cavalcanti (February 6, 1897 – August 23, 1982) was a Brazilian-born film director and producer.\nP7: Story: Story or stories, may refer to:\nP8: Part: Part, parts or PART may refer to:\nP9: Father of the Bride Part II: Father of the Bride Part II is a 1995 American comedy film starring Steve Martin, Diane Keaton and Martin Short. It is a sequel to\" Father of the Bride\" and a remake of the 1951 film\" Father's Little Dividend\", the sequel to the original\" Father of the Bride\" film released in 1950.\nP10: The Life of Na Woon-gyu: The Life of Na Woon-gyu( 나운규 일생\" Na Woon- Gyui ilsaeng\") is 1967 South Korean film is about life and death of Na Woon- gyu who was film actor and director who struggled for rise of Korean cinema during Japanese rule of Korea. Na was played by the film's actor and director Choi Moo-ryong who was father of Choi Min- soo\nQuestion: Who is the father of the director of film Plunkett & Macleane?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Neal Purvis\",\"selected\":\"C1\",\"confidence\":\"medium\",\"reason\":\"Plunkett & Macleane is a film, and Patricia Plunkett is mentioned as a writer of the story for For Them That Trespass. However, there is no direct evidence linking Patricia Plunkett to the director of Plunkett & Macleane. The graph suggests that Plunkett & Macleane is associated with comedy, but does not provide information about the director's family. Given that Neal Purvis is one of the co-writers of the story for Plunkett & Macleane and considering the",
+  "verifier": {},
+  "final": "Neal Purvis",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-93da41d5154ca064",
+    "object": "chat.completion",
+    "created": 1779536091,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Neal Purvis\",\"selected\":\"C1\",\"confidence\":\"medium\",\"reason\":\"Plunkett & Macleane is a film, and Patricia Plunkett is mentioned as a writer of the story for For Them That Trespass. However, there is no direct evidence linking Patricia Plunkett to the director of Plunkett & Macleane. The graph suggests that Plunkett & Macleane is associated with comedy, but does not provide information about the director's family. Given that Neal Purvis is one of the co-writers of the story for Plunkett & Macleane and considering the",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "length",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1188,
+      "total_tokens": 1316,
+      "completion_tokens": 128,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 2.216230869293213
+}

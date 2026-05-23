@@ -1,0 +1,66 @@
+{
+  "idx": 480,
+  "qid": "fa3a75300baf11ebab90acde48001122",
+  "gold": "Casimir I of Oświęcim",
+  "candidates": [
+    "Duke Wenceslaus I of Zator",
+    "Urban Kopczowski",
+    "Casimir II of Zator",
+    "Casimir II the Just",
+    "Casimir I of Oświęcim",
+    "Casimir I of Opole",
+    "Konrad I of Masovia",
+    "William the Conqueror",
+    "Fashion Model",
+    "Gunnor",
+    "Wenceslaus I of Zator",
+    "Wenceslaus II of Zator"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Duke Wenceslaus I of Zator\nC2: Urban Kopczowski\nC3: Casimir II of Zator\nC4: Casimir II the Just\nC5: Casimir I of Oświęcim\nC6: Casimir I of Opole\nC7: Konrad I of Masovia\nC8: William the Conqueror\nC9: Fashion Model\nC10: Gunnor\nC11: Wenceslaus I of Zator\nC12: Wenceslaus II of Zator\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Casimir II of Zator -> Wenceslaus I of Zator\n- Wenceslaus I of Zator -> Casimir I of Oświęcim\n- Wenceslaus II of Zator -> Wenceslaus I of Zator\n- Casimir II of Łęczyca -> Casimir I of Kuyavia\n- Casimir II of Łęczyca -> Casimir I of Opole\n- Casimir I of Kuyavia -> Konrad I of Masovia\n- Casimir I of Kuyavia -> Casimir II the Just\n- Richard II, Duke of Normandy -> William the Conqueror\n- Richard II, Duke of Normandy -> Gunnor\n- Princess Maria-Olympia of Greece and Denmark -> Fashion Model\n- Jan V of Zator -> Wenceslaus I of Zator\nPassages:\nP1: Casimir II of Zator: Casimir II of Zator (– 8 January/7 July 1490), was a Duke of Zator during 1468–1474 (with his brothers as co-rulers), and ruler over half of Zator from 1474 until his death (during 1474–1487 with his brother as co-ruler). He was the eldest son of Duke Wenceslaus I of Zator by his wife Maria, daughter of Urban Kopczowski, a noblemen from the Duchy of Siewierz.\nP2: Casimir II the Just: Casimir II the Just (1138 – 5 May 1194) was a Lesser Polish Duke of Wiślica from 1166–1173, and of Sandomierz after 1173. He became ruler over the Polish Seniorate Province at Kraków and thereby High Duke of Poland in 1177; a position he held until his death, though interrupted once by his elder brother and predecessor Mieszko III the Old. In 1186 Casimir also inherited the Duchy of Masovia from his nephew Leszek, becoming the progenitor of the Masovian branch of the royal ...\nP3: Casimir I of Oświęcim: Casimir I of Oświęcim  (1396 – 7 April 1434) was a Duke of Oświęcim since 1406 (under regency until 1414), ruler over Toszek (from 1414) and Strzelin (during 1416–1427). He was the only child of Duke Przemysław of Oświęcim by his unknown wife.\nP4: Casimir I of Oświęcim: Casimir I of Oświęcim( 1396 – 7 April 1434) was a Duke of Oświęcim since 1406( under regency until 1414), ruler over Toszek( from 1414) and Strzelin( during 1416 – 1427). He was the only child of Duke Przemysław of Oświęcim by his unknown wife.\nP5: Casimir I of Opole: Casimir I of Opole( – 13 May 1230), a member of the Piast dynasty, was a Silesian duke of Opole and Racibórz from 1211 until his death.\nP6: Konrad I of Masovia: Konrad I of Masovia( ca. 1187/88 – 31 August 1247), from the Polish Piast dynasty, was the sixth Duke of Masovia and Kujawy from 1194 until his death as well as High Duke of Poland from 1229 to 1232 and again from 1241 to 1243.\nP7: Konrad I of Masovia: Konrad I of Masovia  (ca. 1187/88 – 31 August 1247), from the Polish Piast dynasty, was the sixth Duke of Masovia and Kujawy from 1194 until his death as well as High Duke of Poland from 1229 to 1232 and again from 1241 to 1243.\nP8: William the Conqueror: William I (c. 1028 – 9 September 1087), usually known as William the Conqueror and sometimes William the Bastard, was the first Norman King of England, reigning from 1066 until his death in 1087. He was a descendant of Rollo and was Duke of Normandy from 1035 onward. His hold was secure on Normandy by 1060, following a long struggle to establish his throne, and he launched the Norman conquest of England six years later. The rest of his life was marked by struggles to ...\nP9: Fashion Model: Fashion Model is a 1945 comedy mystery film directed by William Beaudine, starring Robert Lowery, Marjorie Weaver, and Tim Ryan, and written by Victor Hammond and Tim Ryan. The film is considered to be the third in a series of Beaudine films featuring a female detective after\" Detective Kitty O' Day\"( 1944) and\" Adventures of Kitty O' Day\"( 1944).\nP10: Gunnor: Gunnor or Gunnora( circa 936 – 5 Jan 1031) was a Duchess of Normandy by marriage to Richard I of Normandy.\nQuestion: Who is the paternal grandfather of Casimir Ii Of Zator?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Duke Wenceslaus I of Zator\",\"selected\":\"C1|C11\",\"confidence\":\"high\",\"reason\":\"Casimir II of Zator is described in P1 as the eldest son of Duke Wenceslaus I of Zator, making Wenceslaus I his paternal grandfather.\"}",
+  "verifier": {
+    "final_answer": "Duke Wenceslaus I of Zator",
+    "selected": "C1|C11",
+    "confidence": "high",
+    "reason": "Casimir II of Zator is described in P1 as the eldest son of Duke Wenceslaus I of Zator, making Wenceslaus I his paternal grandfather."
+  },
+  "final": "Duke Wenceslaus I of Zator",
+  "selected": "C1|C11",
+  "response": {
+    "id": "chatcmpl-9e40e7b9008ec066",
+    "object": "chat.completion",
+    "created": 1779536250,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Duke Wenceslaus I of Zator\",\"selected\":\"C1|C11\",\"confidence\":\"high\",\"reason\":\"Casimir II of Zator is described in P1 as the eldest son of Duke Wenceslaus I of Zator, making Wenceslaus I his paternal grandfather.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1542,
+      "total_tokens": 1607,
+      "completion_tokens": 65,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.2096400260925293
+}

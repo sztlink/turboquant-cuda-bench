@@ -1,0 +1,48 @@
+{
+  "qid": "07e964920bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Pavia",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Caterina Visconti -> Gian Galeazzo Visconti\n- Gian Maria Visconti -> Gian Galeazzo Visconti\n- Gian Maria Visconti -> Caterina Visconti\n- Gian Maria Visconti -> Gian Galeazzo Visconti\n- Gian Maria Visconti -> Caterina Visconti\n- Giacomo Feo -> Caterina Sforza\n- Giacomo Feo -> Caterina Sforza\n- Alboino I della Scala -> Alberto I della Scala\n- Alboino I della Scala -> Caterina Visconti\n- Bianca Riario -> Girolamo Riario\n- Bianca Riario -> Caterina Sforza\n- John III, Count of Armagnac -> Gian Galeazzo Visconti\nPassages:\nP1: Caterina Visconti: Caterina Visconti (1361 – 17 October 1404) was Duchess of Milan as the second spouse of Gian Galeazzo Visconti, the first Duke of Milan, and was the mother of two succeeding Dukes of Milan, Gian Maria and Filippo Maria Visconti. Caterina served as Regent of Milan from 1402 to 1404, during her elder son's minority, but due to Gian Maria's suspicion of her alleged treason (planted in his mind by her enemy, the condottiero Facino Cane), he had his mother arrested and imprisoned ...\nP2: Caterina Sforza: Caterina Sforza (1463 – 28 May 1509) was an Italian noblewoman along with the Countess of Forlì and Lady of Imola, firstly with her husband Girolamo Riario, and after his death as a regent of her son Ottaviano. Caterina was the illegitimate daughter of Galeazzo Maria Sforza, Duke of Milan and Lucrezia, the wife of the courtier Gian Piero Landriani, a close friend of the Duke. She was raised in the refined Milanese court. The descendant of a dynasty of noted condottieri, from an ...\nP3: Gian Galeazzo Visconti: Gian Galeazzo Visconti (16 October 1351 – 3 September 1402), son of Galeazzo II Visconti and Bianca of Savoy, was the first Duke of Milan (1395) and ruled the late-medieval city just before the dawn of the Renaissance. He was the founding patron of the Certosa di Pavia, completing the Visconti Castle at Pavia begun by his father and furthering work on the Duomo of Milan.\nP4: Alberto I della Scala: Alberto I della Scala( died 3 September 1301) was lord of Verona from 1277, a member of the Scaliger family. The son of Jacopino della Scala, he was\" podestà\" of Mantua in 1272 and 1275. In 1277, after the assassination of his brother Mastino, inherited the seigniory of Verona. Alberto died in Verona in 1301. His son Bartolomeo succeeded him. His other sons Alboino and Francesco( Cangrande) were also lord of Verona from 1304 and 1312, respectively. His daughter Costanza ...\nP5: Girolamo Riario: Girolamo Riario (1443 – 14 April 1488) was Lord of Imola (from 1473) and Forlì (from 1480). He served as Captain General of the Church under his uncle Pope Sixtus IV. He took part in the 1478 Pazzi Conspiracy against the Medici, and was assassinated 10 years later by members of the Forlivese Orsi family.\nP6: Gian Maria Visconti: Gian Maria Visconti (or Giovanni Maria; 7 September 1388 in Abbiategrasso – 16 May 1412) was the second Visconti Duke of Milan, the son of Gian Galeazzo Visconti and Caterina Visconti.\nP7: Gian Maria Visconti: Gian Maria Visconti( or Giovanni Maria; 7 September 1388 in Abbiategrasso – 16 May 1412) was the second Visconti Duke of Milan, the son of Gian Galeazzo Visconti and Caterina Visconti.\nP8: John III, Count of Armagnac: John III of Armagnac (1359 – July 25, 1391) was a Count of Armagnac, of Fézensac and Rodez from 1384 to 1391. He was the son of John II of Armagnac, and Jeanne of Périgord. In 1390, John claimed the kingdom of Majorca, but was overcome by the troops of Juan I of Aragon in a battle near Navata. John III consequently led military actions in Roussillon. In 1391, he had to leave for Italy in order to go to the assistance of Charles Visconti, Lord of Parma and husband of ...\nP9: Giacomo Feo: Giacomo Feo (c. 1471 – 27 August 1495), was the second husband of Caterina Sforza, Countess of Forlì. He was born and died in Forlì.\nP10: Giacomo Feo: Giacomo Feo( c. 1471 – 27 August 1495), was the second husband of Caterina Sforza, Countess of Forlì. He was born and died in Forlì.\nQuestion: Where was the husband of Caterina Visconti born?\nFinal answer:",
+  "output": "Forlì",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a44866a103a72ee2",
+    "object": "chat.completion",
+    "created": 1779535488,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Forlì",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1324,
+      "total_tokens": 1328,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

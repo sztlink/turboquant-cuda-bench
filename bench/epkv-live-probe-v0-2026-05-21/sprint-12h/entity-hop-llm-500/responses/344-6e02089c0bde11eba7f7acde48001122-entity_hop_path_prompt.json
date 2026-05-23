@@ -1,0 +1,48 @@
+{
+  "qid": "6e02089c0bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "German",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Princess Katherine of Greece and Denmark -> Constantine I of Greece\n- Princess Katherine of Greece and Denmark -> Sophia of Prussia\n- Princess Alexia of Greece and Denmark -> The Child\n- Princess Irene of Greece and Denmark -> Queen Sofía of Spain\n- Princess Irene of Greece and Denmark -> The Child\n- Princess Sophie of Greece and Denmark -> Prince Andrew of Greece and Denmark\n- Princess Sophie of Greece and Denmark -> Princess Alice of Battenberg\n- Princess Sophie of Greece and Denmark -> Prince Andrew of Greece and Denmark\n- Princess Sophie of Greece and Denmark -> Princess Alice of Battenberg\n- Princess Maria-Olympia of Greece and Denmark -> Fashion Model\nPassages:\nP1: Prince Andrew of Greece and Denmark: Prince Andrew of Greece and Denmark (– 3 December 1944) of the House of Schleswig-Holstein-Sonderburg-Glücksburg, was the seventh child and fourth son of King George I of Greece and Olga Constantinovna of Russia. He was a grandson of Christian IX of Denmark and father of Prince Philip, Duke of Edinburgh. He was from birth a prince of both Denmark and Greece by virtue of his patrilineal descent. He began military training at an early age, and was commissioned ...\nP2: Princess Alice of Battenberg: Princess Alice of Battenberg (Victoria Alice Elizabeth Julia Marie; 25 February 1885 – 5 December 1969) was the mother of Prince Philip and mother-in-law of Queen Elizabeth II. A great-granddaughter of Queen Victoria , she was born in Windsor Castle and grew up in the United Kingdom, the German Empire, and the Mediterranean. A Hessian princess by birth, she was a member of the Battenberg family, a morganatic branch of the House of Hesse-Darmstadt. She was ...\nP3: Constantine I of Greece: Constantine I (\"Konstantínos I\"; – 11 January 1923) was King of Greece from 1913 to 1917 and from 1920 to 1922. He was commander-in-chief of the Hellenic Army during the unsuccessful Greco-Turkish War of 1897 and led the Greek forces during the successful Balkan Wars of 1912–1913, in which Greece expanded to include Thessaloniki, doubling in area and population. He succeeded to the throne of Greece on 18 March 1913, following his father's assassination. His disagreement ...\nP4: Sophia of Prussia: Sophia of Prussia (\"Sophia Dorothea Ulrike Alice\"; 14 June 1870 – 13 January 1932) was Queen consort of Greece during 1913–1917 and 1920–1922. A member of the House of Hohenzollern and daughter of Frederick III, German Emperor, Sophia received a liberal and anglophile education, under the supervision of her mother, Victoria, Princess Royal. In 1889, less than a year after the death of her father, she married her third cousin Constantine, heir apparent to the Greek throne. ...\nP5: Queen Sofía of Spain: Sophia of Greece and Denmark (born 2 November 1938) is a member of the Spanish royal family who served as Queen of Spain during the reign of her husband, King Juan Carlos I, from 1975 to 2014. Queen Sofía is the first child of King Paul of Greece and Frederica of Hanover. As her family was forced into exile during the Second World War, she spent part of her childhood in South Africa, returning to Greece in 1946. She completed her secondary education in a boarding school in ...\nP6: Fashion Model: Fashion Model is a 1945 comedy mystery film directed by William Beaudine, starring Robert Lowery, Marjorie Weaver, and Tim Ryan, and written by Victor Hammond and Tim Ryan. The film is considered to be the third in a series of Beaudine films featuring a female detective after\" Detective Kitty O' Day\"( 1944) and\" Adventures of Kitty O' Day\"( 1944).\nP7: The Child: The Child may refer to:\nP8: Princess Katherine of Greece and Denmark: Princess Katherine of Greece and Denmark (4 May 1913 – 2 October 2007), styled in the UK as Lady Katherine Brandram from 1947 till her death, was the third daughter and youngest child of King Constantine I of Greece and Sophia of Prussia.\nP9: Princess Alexia of Greece and Denmark: Princess Alexia of Greece and Denmark( born 10 July 1965) is the eldest child of Constantine II and Anne- Marie of Denmark, who were king and queen of Greece from 1964 until the abolition of the monarchy in 1973.\nP10: Princess Theodora of Greece and Denmark: Princess Theodora of Greece and Denmark( born 9 June 1983 in St Mary's Hospital, London), also known under her stage name Theodora Greece, is a British actress and member of the Greek royal family and Danish Royal Family. She is currently ninth in the line of succession to the defunct Greek throne.\nQuestion: Which country Princess Katherine Of Greece And Denmark's mother is from?\nFinal answer:",
+  "output": "Prussia",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8aff265a16334266",
+    "object": "chat.completion",
+    "created": 1779535781,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Prussia",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1245,
+      "total_tokens": 1248,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "a59539480bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Mills College",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Rivers and Tides -> Fred Frith\n- Rivers and Tides -> Into the Wind\n- Thomas Aquinas Dictionary -> The Quotations\n- Where Does It Hurt? -> Peter Sellers\n- Where Does It Hurt? -> Rod Amateau\n- The Ironmaster (1933 film) -> Abel Gance\n- Vladimír Godár -> Georges Delerue\n- Vladimír Godár -> The Singer\nPassages:\nP1: Rivers and Tides: Rivers and Tides is a 2001 documentary film directed by Thomas Riedelsheimer about the British artist Andy Goldsworthy, who creates intricate and ephemeral sculptures from natural materials such as rocks, leaves, flowers, and icicles. The music was composed and performed by Fred Frith and was released on a soundtrack, \"Rivers and Tides (2003)\". The film received a number of awards, including the ‘Best Documentary’ awards of the San Diego Film Critics Society and the San ...\nP2: The Quotations: The Quotations are an American doo- wop band, primarily from James Madison High School in East Brooklyn, New York, United States. The group started in 1958 at Barney's Pool Room on Kings Highway in East Brooklyn, New York. The original members of the group were Richie Schwartz( first tenor), Lew Arno( second tenor) and Harvey Hersh[ kowitz]( baritone) who hung out together harmonizing. Larry Kassman later asked if he could sing with the group; Kassman soon became lead for the ...\nP3: Into the Wind: Into the Wind may refer to:\nP4: The Singer: The Singer may refer to:\nP5: Fred Frith: Jeremy Webster \"Fred\" Frith (born 17 February 1949) is an English multi-instrumentalist, composer, and improvisor. Probably best known for his guitar work, Frith first came to attention as one of the founding members of the English avant-rock group Henry Cow. He was also a member of the groups Art Bears, Massacre, and Skeleton Crew. He has collaborated with a number of prominent musicians, including Robert Wyatt, Derek Bailey, the Residents, Lol Coxhill, John Zorn, Brian Eno, Mike ...\nP6: Peter Sellers: Peter Sellers, CBE (born Richard Henry Sellers; 8 September 1925 – 24 July 1980) was an English film actor, comedian, and singer. He performed in the BBC Radio comedy series \"The Goon Show\", featured on a number of hit comic songs, and became known to a worldwide audience through his many film roles, among them Chief Inspector Clouseau in \"The Pink Panther\" series of films. Born in Portsmouth to a theatrical family, Sellers made his stage debut at the Kings Theatre, Southsea, ...\nP7: Georges Delerue: Georges Delerue (12 March 1925 – 20 March 1992) was a French composer who composed over 350 scores for cinema and television. Delerue won numerous important film music awards, including an Academy Award for \"A Little Romance\" (1980), three César Awards (1979, 1980, 1981), two ASCAP Awards (1988, 1990), and one Gemini Award for \"Sword of Gideon\" (1987). He was also nominated for four additional Academy Awards for \"Anne of the Thousand Days\" (1969), \"The Day of the Dolphin\" ...\nP8: Rod Amateau: Rodney\" Rod\" Amateau( December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were\" The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's Island The Bob Cummings Show\" and\" The New Phil Silvers Show\". He produced\" My Mother the Car\" and\" Supertrain\", and wrote the story for the 1988 film\" Sunset\". Amateau also directed a few episodes of\" The Dukes of Hazzard\", and appeared in a ...\nP9: Rod Amateau: Rodney \"Rod\" Amateau (December 20, 1923 – June 29, 2003) was an American film and television screenwriter, director, and producer. Among the programs that he directed were \"The Dennis Day ShowThe Many Loves of Dobie GillisMister EdGilligan's IslandThe Bob Cummings Show\" and \"The New Phil Silvers Show\". He produced \"My Mother the Car\" and \"Supertrain\", and wrote the story for the 1988 film \"Sunset\". Amateau also directed a few episodes of \"The Dukes of Hazzard\", and appeared in a ...\nP10: Abel Gance: Abel Gance( 25 October 188910 November 1981) was a French film director and producer, writer and actor. A pioneer in the theory and practice of montage, he is best known for three major silent films:\" J'accuse\"( 1919),\" La Roue\"( 1923), and\" Napoléon\"( 1927).\nQuestion: Where does the composer of film Rivers And Tides work at?\nFinal answer:",
+  "output": "Fred Frith",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b527ff3ce16c7069",
+    "object": "chat.completion",
+    "created": 1779535808,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Fred Frith",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1244,
+      "total_tokens": 1248,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

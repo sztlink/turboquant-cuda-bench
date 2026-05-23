@@ -1,0 +1,48 @@
+{
+  "qid": "702515e80bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "India",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- I See You (2006 film) -> Vivek Agrawal\n- I See You (2006 film) -> Marc Levy\n- What You See Is What You Get (album) -> Beer Never Broke My Heart\n- What You See Is What You Get (album) -> The Singer\n- I See You (Theme from Avatar) -> Leona Lewis\n- I See You (Theme from Avatar) -> James Cameron\n- I'll Always Know What You Did Last Summer -> I Know What You Did Last Summer\n- I'll Always Know What You Did Last Summer -> The Last Summer\n- On a Clear Day You Can See Forever (film) -> On a Clear Day You Can See Forever\n- On a Clear Day You Can See Forever (film) -> Burton Lane\n- See You in Montevideo -> Comedy!\nPassages:\nP1: I See You (2006 film): I See You is a 2006 Indian romantic comedy film directed by Vivek Agrawal and produced by Mehr Jesia. The film stars Arjun Rampal and introducing Vipasha Agarwal in lead roles. Chunky Pandey, Sonali Kulkarni, Sophie Chaudhary, Boman Irani and Kirron Kher are featured in supporting roles. The film was released on 29 December 2006. It was filmed in London. The movie is based on the novel \" If Only It Were TrueEt si c'était vrai...\") by Marc Levy. It also has elements from ...\nP2: I Know What You Did Last Summer: I Know What You Did Last Summer is a 1997 American slasher film directed by Jim Gillespie, written by Kevin Williamson, and starring Jennifer Love Hewitt, Sarah Michelle Gellar, Ryan Phillippe, and Freddie Prinze Jr.. Loosely based on the 1973 novel of the same name by Lois Duncan and is the first installment in\" I Know What You Did Last Summer\" trilogy. The film centers on four young friends who are stalked by a hook- wielding killer one year after covering up ...\nP3: On a Clear Day (You Can See Forever): \" On a Clear Day( You Can See Forever)\" is a song written by Burton Lane( music) and Alan Jay Lerner( lyrics) for the 1965 musical\" On a Clear Day You Can See Forever\". It was subsequently performed by American actress and vocalist Barbra Streisand in the 1970 film adaptation of the musical. Three variations of the song appear in the film and on the accompanying soundtrack album produced by Wally Gold: the initial version sung by co-star Yves Montand, a ...\nP4: On a Clear Day You Can See Forever: On a Clear Day You Can See Forever is a musical with music by Burton Lane and a book and lyrics by Alan Jay Lerner based loosely on\" Berkeley Square\", written in 1926 by John L. Balderston. It concerns a woman who has ESP and has been reincarnated. The musical received three Tony Award nominations.\nP5: The Singer: The Singer may refer to:\nP6: The Last Summer: Last Summer or The Last Summer can refer to:\nP7: Leona Lewis: Leona Louise Lewis (born 3 April 1985) is a British singer, songwriter, actress, model and activist. She was born and raised in the London Borough of Islington in London, where she attended the BRIT School for Performing Arts and Technology. Lewis achieved national recognition when she won the third series of \"The X Factor\" in 2006, winning a £1 million recording contract with Simon Cowell's record label, Syco Music. Her winner's single, a cover of Kelly Clarkson's \"A Moment Like ...\nP8: Beer Never Broke My Heart: \" Beer Never Broke My Heart\" is a song co-written and recorded by American country music singer Luke Combs. It is Combs's sixth single release to country radio, and the first from his second studio album\" What You See Is What You Get\" on Columbia Records Nashville.\nP9: James Cameron: James Francis Cameron( born August 16, 1954) is a Canadian filmmaker, artist, and environmentalist, who is best known for making science fiction and epic films for the Hollywood mainstream. Cameron first gained recognition for directing\" The Terminator\"( 1984). He found further critical and commercial success with\" Aliens\"( 1986),\" The Abyss\"( 1989),( 1991) and\" True Lies\"( 1994). His greatest big-budget productions have been\" Titanic\"( 1997) and\" Avatar\"( 2009), the former ...\nP10: Vivek Agrawal: Vivek Agrawal, is a National Award-winning producer of the English feature film Land Gold Women (2011). The film is the world's first English language feature to explore the issue of honour killing. The film was released in India in conjunction with the Movement to End Honour Violence. The film and the movement were produced by A Richer Lens. A Richer Lens is run by Vivek and Avantika Hari Agrawal and Vivek serves as its CEO. A Richer Lens operates with offices in Mumbai, Dubai ...\nQuestion: Which country the director of film I See You (2006 Film) is from?\nFinal answer:",
+  "output": "India",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-86d5f8e4510894c1",
+    "object": "chat.completion",
+    "created": 1779535716,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "India",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1229,
+      "total_tokens": 1231,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

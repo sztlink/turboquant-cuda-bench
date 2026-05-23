@@ -1,0 +1,48 @@
+{
+  "qid": "06d9b7aa0bde11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Moreno Valley",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Battle Taxi: Battle Taxi is a 1955 American aviation drama film directed by Herbert L. Strock and written by Malvin Wald. The film stars Sterling Hayden, Arthur Franz, Marshall Thompson, Leo Needham and Jay Barney. The film was released on January 26, 1955 by United Artists.\nP2: Taxi!: Taxi! is a 1932 American pre-Code gangster film directed by Roy Del Ruth and starring James Cagney and Loretta Young. The film includes two famous Cagney dialogues, one of which features Cagney conducting a conversation with a passenger in Yiddish, and the other when Cagney is speaking to his brother's killer through a locked closet, Come out and take it, you dirty yellow- bellied rat, or I'll give it to you through the door! The provenance of this sequence led to Cagney being famously ...\nP3: The Battle of El Alamein: There were two battles of El Alamein:\nP4: Taxi nach Kairo: Taxi nach Kairo is a 1987 film written and directed by Frank Ripploh and the sequel to Taxi zum Klo. The film is about a love triangle between Frank, Klara, an actress posing as Frank's wife in order to appease his mother, and their neighbor, Eugen. The title translates to Taxi to Cairo.\nP5: Barney (film): Barney is a 1976 Australian film for children set during the convict era. A 12- year- old boy and a convict are shipwrecked together. It was also known as Lost in the Wild.\nP6: The Dancer: The Dancer may refer to:\nP7: The General: The General or The Generals may refer to:\nP8: Herbert L. Strock: Herbert L. Strock (January 13, 1918 – November 30, 2005) was an American television producer and director, and a B-movie director of titles such as \"I Was a Teenage Frankenstein\" (1957), \"How to Make a Monster\" (1958), and \"The Crawling Hand\" (1963). Strock was born in Boston, and moved with his family to Los Angeles when he was 13. By 17, while a student at Beverly Hills High School, Strock was director of gossip columnist Jimmy Fidler's Hollywood segments for Fox Movietone ...\nP9: Robert Lamoureux: Robert Lamoureux( 4 January 1920 – 29 October 2011) was a French actor, screenwriter and film director. He appeared in 37 films between 1951 and 1994. He starred in the film\" The Adventures of Arsène Lupin\", which was entered into the 7th Berlin International Film Festival.\nP10: Denys de La Patellière: Denys de La Patellière( 8 March 1921 in Nantes, France – 21 July 2013) was a French film director and scriptwriter. De La Patellière died on 21 July 2013 at the age of 92.\nQuestion: Where did the director of film Battle Taxi die?\nFinal answer:",
+  "output": "Boston",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8e1961f32150eb99",
+    "object": "chat.completion",
+    "created": 1779535855,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Boston",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 785,
+      "total_tokens": 787,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

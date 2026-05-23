@@ -1,0 +1,48 @@
+{
+  "qid": "d9b00ab80bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "2 August 1288",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Joan I, Countess of Burgundy -> Margaret, Countess of Blois\n- Joan I, Countess of Burgundy -> Otto I, Count of Burgundy\n- Joan I, Countess of Burgundy -> Margaret, Countess of Blois\n- Joan I, Countess of Burgundy -> Otto I, Count of Burgundy\n- Joan, Countess of Blois -> Alix of Brittany, Dame de Pontarcy\n- Blanche of Burgundy, Countess of Savoy -> Edward, Count of Savoy\n- Blanche of Burgundy, Countess of Savoy -> Joan of Savoy\n- Guy III, Count of Saint-Pol -> Matilda of Brabant, Countess of Artois\n- Guy III, Count of Saint-Pol -> Mary, Countess of Blois\n- Guy III, Count of Saint-Pol -> Hugh I, Count of Blois\n- Joan FitzGerald, Countess of Carrick -> Edmund Butler, Earl of Carrick\n- Joan de Beauchamp, Countess of Ormond -> James Butler, 4th Earl of Ormond\nPassages:\nP1: Mary, Countess of Blois: Mary, Countess of Blois, also known as\" Marie of Avesnes\",( 1200 – 1241) was countess of Blois from 1230 to 1241. She was the daughter of Walter of Avesnes and Margaret of Blois. In 1226, Mary married Hugh I of Châtillon, a count from Châtillon- sur- Marne, son of Gaucher III of Châtillon and Elisabeth of Saint Pol. They had five children: Her eldest son John, succeeded her in Blois.\nP2: Joan of Savoy: Joan of Savoy (1310 – 29 June 1344), was Duchess consort of Brittany, wife of John III, Duke of Brittany. Joan was also a claimant to the County of Savoy upon the death of her father. She was a member of the House of Savoy and married into the House of Dreux. Joan was born in 1310, she was the only child of Edward, Count of Savoy, and his wife, Blanche of Burgundy. Joan married in 1329 aged nineteen to the forty-three-year-old, childless John III, Duke of Brittany; she was his ...\nP3: Hugh I, Count of Blois: Hugh I, Count of Blois, also known as\" Hugh I of Châtillon\"( c.1198 – 9 April 1248) was Count of Blois from 1230 to 1241, and Count of Saint Pol( as Hugh V) from 1226 to 1248. Hugh was son of Gaucher III of Châtillon and Elisabeth( 1180 – 1212), daughter of Hugo IV, Count of Saint- Pol. He married Agnes of Bar- le- Duc, daughter of Thibaut I of Bar- le- Duc and Hermesend of Bar-sur- Seine, in 1216. By 1225, Agnes was dead and Hugh married Marie. In 1226, Hugh married ...\nP4: Matilda of Brabant, Countess of Artois: Matilda of Brabant( 14 June 1224 – 29 September 1288) was the eldest daughter of Henry II, Duke of Brabant and his first wife Marie of Hohenstaufen.\nP5: Alix of Brittany, Dame de Pontarcy: Alix of Brittany, Dame de Pontarcy, Countess of Blois (6 June 1243 – 2 August 1288), was a Breton noblewoman and a member of the House of Dreux as the eldest daughter of John I, Duke of Brittany. She married John I, Count of Blois. Alix was known for founding religious houses including the Monastery of La Guiche, where she was later buried. Alix, named after her paternal grandmother, Alix of Thouars, was born on 6 June 1243 at the Château de Suscinio in ...\nP6: Otto I, Count of Burgundy: Otto I( between 1167 and 1171 – 13 January 1200) was Count of Burgundy from 1190 to his death and briefly Count of Luxembourg from 1196 to 1197. He was the fourth son of Frederick I, Holy Roman Emperor, by his second wife Beatrice I, Countess of Burgundy, daughter of Count Renaud III.\nP7: Otto I, Count of Burgundy: Otto I (between 1167 and 1171 – 13 January 1200) was Count of Burgundy from 1190 to his death and briefly Count of Luxembourg from 1196 to 1197. He was the fourth son of Frederick I, Holy Roman Emperor, by his second wife Beatrice I, Countess of Burgundy, daughter of Count Renaud III.\nP8: Edward, Count of Savoy: Edward (1284–1329), surnamed the Liberal, was the Count of Savoy from 1323 to 1329. He was the son of Amadeus V, Count of Savoy, and his first wife Sybille of Bâgé. Edward was born at Baugé. He was married to Blanche (Bianca) of Burgundy, daughter of Robert II, Duke of Burgundy and Agnes of France, Duchess of Burgundy. They had a daughter, Joan, who married John III the Good, duke of Brittany. In 1325, Edward was attacked at Varey by Guigues VIII of Viennois and Amadeus ...\nP9: Edmund Butler, Earl of Carrick: Edmund Butler, Earl of Carrick and 6th Chief Butler of Ireland (1268 – 13 September 1321) was a noble in the Peerage of Ireland. He was the second son of Theobald Butler, 4th Chief Butler of Ireland. Edmund went on pilgrimage to Santiago de Compostela in 1321 but died in London on 13 September 1321. He was buried in St. Mary's Collegiate Church Gowran, County Kilkenny on 10 November 1321.\nP10: James Butler, 4th Earl of Ormond: James Butler, 4th Earl of Ormond (23 May 139323 August 1452) was the son of James Butler, 3rd Earl of Ormond. He was called 'The White Earl' and was esteemed for his learning. He was the patron of the Irish literary work, 'The Book of the White Earl'. His career was marked by his long and bitter feud with the Talbot family.\nQuestion: What is the date of death of Joan, Countess Of Blois's mother?\nFinal answer:",
+  "output": "1241",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-816d500ef0c77a9c",
+    "object": "chat.completion",
+    "created": 1779535610,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "1241",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1624,
+      "total_tokens": 1629,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

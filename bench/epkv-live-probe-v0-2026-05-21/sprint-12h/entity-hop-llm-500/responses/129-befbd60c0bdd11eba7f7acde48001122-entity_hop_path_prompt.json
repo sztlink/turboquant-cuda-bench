@@ -1,0 +1,48 @@
+{
+  "qid": "befbd60c0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Harvard",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- William S. Burroughs -> Brion Gysin\n- William S. Burroughs Jr. -> William S. Burroughs\n- Speed (novel) -> William S. Burroughs Jr.\n- Speed (novel) -> William S. Burroughs\n- William S. Burroughs bibliography -> William S. Burroughs\n- John Coleman Burroughs -> Edgar Rice Burroughs\nPassages:\nP1: William S. Burroughs: William Seward Burroughs II (February 5, 1914 – August 2, 1997) was an American writer and visual artist. Burroughs was a primary figure of the Beat Generation and a major postmodernist author whose influence is considered to have affected a range of popular culture as well as literature. Burroughs wrote eighteen novels and novellas, six collections of short stories and four collections of essays. Five books have been published of his interviews and correspondences. He ...\nP2: Edgar Rice Burroughs: Edgar Rice Burroughs (September 1, 1875 – March 19, 1950) was an American fiction writer best known for his celebrated and prolific output in the adventure and science-fiction genres. Among the most notable of his creations are the jungle hero Tarzan, the heroic Mars adventurer John Carter, and the fictional landmass within Earth known as Pellucidar. Burroughs' California ranch is now the center of the Tarzana neighborhood in Los Angeles.\nP3: Brion Gysin: Brion Gysin( 19 January 1916 – 13 July 1986) was a painter, writer, sound poet, and performance artist born in Taplow, Buckinghamshire. He is best known for his discovery of the cut- up technique, used by his friend, the novelist William S. Burroughs. With the engineer Ian Sommerville he invented the Dreamachine, a flicker device designed as an art object to be viewed with the eyes closed. It was in painting and drawing, however, that Gysin devoted his greatest efforts, creating ...\nP4: William S. Burroughs Jr.: William Seward Burroughs III (July 21, 1947 – March 3, 1981) was an American novelist, also known as William S. Burroughs Jr. and Billy Burroughs. He bears the name of both his father and his great grandfather, William Seward Burroughs I, the original inventor of the Burroughs adding machine. He wrote three novels, two of which were published as \"Speed\" (1970) and \"Kentucky Ham\" (1973). His third novel, \"Prakriti Junction,\" begun in 1977, was never completed, although ...\nP5: William S. Burroughs bibliography: This is a bibliography of the works of William S. Burroughs.\nP6: Sir William Burroughs, 1st Baronet: Sir William Burroughs, 1st Baronet( c. 1753 – 1 June 1829) was an Anglo- Irish judge and politician.\nP7: John A. Burroughs Jr.: John Andrew Burroughs Jr.( July 31, 1936- September 11, 2014) was the United States Ambassador to Malawi from 1981 – 1984 and the United States Ambassador to Uganda from 1988- 1991. He was a lineman for the University of Iowa football team before spending over three decades in government service.\nP8: John Coleman Burroughs: John Coleman \"Jack\" Burroughs (28 February 1913 – 22 February 1979) was an American illustrator known for his illustrations of the works of his father, Edgar Rice Burroughs.\nP9: Speed (novel): Speed, first published in 1970, was the first of three published works by William S. Burroughs, Jr., the son of the Beat Generation author William S. Burroughs.\nP10: John W. Boehne: John William Boehne( October 28, 1856 – December 27, 1946) was a U.S. Representative from Indiana, father of John William Boehne, Jr.\nQuestion: Where did William S. Burroughs Jr.'s father study?\nFinal answer:",
+  "output": "The passages do not provide information about where William S. Burroughs Jr.'s father studied.",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b05018927d5bd54b",
+    "object": "chat.completion",
+    "created": 1779535589,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "The passages do not provide information about where William S. Burroughs Jr.'s father studied.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1044,
+      "total_tokens": 1065,
+      "completion_tokens": 21,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

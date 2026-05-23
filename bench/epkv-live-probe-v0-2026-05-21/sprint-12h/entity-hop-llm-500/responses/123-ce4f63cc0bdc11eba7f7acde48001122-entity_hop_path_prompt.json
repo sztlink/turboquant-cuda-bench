@@ -1,0 +1,48 @@
+{
+  "qid": "ce4f63cc0bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "National Film School in Łódź",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Ręce do góry -> Jerzy Skolimowski\n- Krzysztof Grabowski -> Ręce do góry\n- Krzysztof Grabowski -> First Time\n- Now Where Did the 7th Company Get to? -> Robert Lamoureux\n- Now Where Did the 7th Company Get to? -> Comedy!\n- Jahan Ara (film) -> Jahanara Begum\n- Jahan Ara (film) -> First Time\n- Kristofor Brown -> The Feature\n- Berengaria of Navarre -> Sancho VI of Navarre\nPassages:\nP1: Ręce do góry: Ręce do góry (known in its subtitled English version as Hands Up!) is a Polish drama film directed by Jerzy Skolimowski. It is the fourth of a series of semi-autobiographical films in which Skolimowski himself plays his \"alter ego\", Andrzej Leszczyc. At the time it was banned in Poland, under the Communist regime, for 18 years because it depicted the Stalinist past. The film was originally made in 1967 in monochrome by studio. In a twenty-minute section (filmed in colour) added by ...\nP2: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP3: Sancho VI of Navarre: Sancho Garcés VI (21 April 1132 - 27 June 1194), called the Wise  was King of Navarre from 1150 until his death in 1194. He was the first monarch to officially drop the title of \"King of Pamplona\" in favour of King of Navarre, thus changing the designation of his kingdom. Sancho Garcés was responsible for bringing his kingdom into the political orbit of Europe. He was the eldest son of García Ramírez, \"the Restorer\" and Margaret of L'Aigle.\nP4: Jerzy Skolimowski: Jerzy Skolimowski (born 5 May 1938) is a Polish film director, screenwriter, dramatist and actor. A graduate of the prestigious National Film School in Łódź, Skolimowski has directed more than twenty films since his 1960 début \"Oko wykolThe Menacing Eye\"). In 1967 he was awarded Golden Bear for his film \"Le départ\". His most famous film is \"Deep End\" (1970), starring Jane Asher and John Moulder Brown. He lived in Los Angeles for over 20 years where he painted in a figurative, ...\nP5: Jerzy Skolimowski: Jerzy Skolimowski( born 5 May 1938) is a Polish film director, screenwriter, dramatist and actor. A graduate of the prestigious National Film School in Łódź, Skolimowski has directed more than twenty films since his 1960 début\" Oko wykol The Menacing Eye\"). In 1967 he was awarded Golden Bear for his film\" Le départ\". His most famous film is\" Deep End\"( 1970), starring Jane Asher and John Moulder Brown. He lived in Los Angeles for over 20 years where he painted in a ...\nP6: Robert Lamoureux: Robert Lamoureux( 4 January 1920 – 29 October 2011) was a French actor, screenwriter and film director. He appeared in 37 films between 1951 and 1994. He starred in the film\" The Adventures of Arsène Lupin\", which was entered into the 7th Berlin International Film Festival.\nP7: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP8: Jahanara Begum: Jahanara Begum (23 March 1614 – 16 September 1681) was a Mughal princess and the Padshah Begum of the Mughal Empire between 1631 to 1681. She was the eldest child of Emperor Shah Jahan and his wife, Mumtaz Mahal. Often referred to simply as Begum Sahib (\"Princess of Princesses\"), she was also the older sister of the crown prince Dara Shikoh and Emperor Aurangzeb. After Mumtaz Mahal's untimely death in 1631, the 17-year-old Jahanara took her mother's place as First Lady (Padshah ...\nP9: First Time: First Time or The First Time may refer to:\nP10: Now Where Did the 7th Company Get to?: Now Where Did the 7th Company Get To? is a 1973 French- Italian comedy war film directed by Robert Lamoureux. The film portrays the adventures of a French Army squad lost somewhere on the front in May 1940 during the Battle of France.\nQuestion: Where did the director of film Ręce Do Góry study?\nFinal answer:",
+  "output": "National Film School in Łódź",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-b4d774a918031570",
+    "object": "chat.completion",
+    "created": 1779535584,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "National Film School in Łódź",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1292,
+      "total_tokens": 1300,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

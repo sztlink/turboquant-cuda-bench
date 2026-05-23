@@ -1,0 +1,48 @@
+{
+  "qid": "f66993ce0bae11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Anna of Eppstein-Königstein",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Anna of Nassau-Dillenburg (1541–1616) -> Juliana of Stolberg\n- Anna of Nassau-Dillenburg (1541–1616) -> Juliana of Stolberg\n- Countess Anna of Nassau -> William Louis, Count of Nassau-Dillenburg\n- Countess Anna of Nassau -> Anna of Saxony\n- William I, Count of Nassau-Dillenburg -> William the Silent\n- Christian, Prince of Nassau-Dillenburg -> Part\nPassages:\nP1: William Louis, Count of Nassau-Dillenburg: William Louis of Nassau-Dillenburg (13 March 1560, Dillenburg, Hesse – 13 July 1620, Leeuwarden, Netherlands) was Count of Nassau-Dillenburg from 1606 to 1620, and stadtholder of Friesland, Groningen, and Drenthe.\nP2: Anna of Saxony: Anna of Saxony (23 December 1544 – 18 December 1577) was the heiress of Maurice, Elector of Saxony, and Agnes, eldest daughter of Philip I, Landgrave of Hesse. Maurice's only son, Albert, died in infancy. Anna was the second wife of William the Silent. Anna was born and died in Dresden. Her wealth drew many suitors; before the proposal of Orange in 1560, there were negotiations with the Swedish royal house. She accepted the suit of William I of Orange, and they were married on ...\nP3: Juliana of Stolberg: Juliana, Countess of Stolberg-Wernigerode (15 February 1506 in Stolberg, Saxony-Anhalt – 18 June 1580) was the mother of William the Silent, the leader of the successful Dutch Revolt against the Spanish in the 16th century. Juliana was born in Stolberg as the daughter of Bodo VIII, Count of Stolberg-Wernigerode and Anna of Eppstein-Königstein. She was raised a Roman Catholic but changed her religion twice, first to Lutheranism and later to Calvinism. She, along with her ...\nP4: William the Silent: William I, Prince of Orange (24 April 1533 – 10 July 1584), also known as William the Silent or William the Taciturn (translated from), or more commonly known as William of Orange , was the main leader of the Dutch Revolt against the Spanish Habsburgs that set off the Eighty Years' War (1568–1648) and resulted in the formal independence of the United Provinces in 1581. He was born in the House of Nassau as Count of Nassau-Dillenburg. He became Prince of Orange in 1544 and is ...\nP5: Part: Part, parts or PART may refer to:\nP6: Anna of Nassau-Dillenburg (1541–1616): Anna of Nassau-Dillenburg (21 September 1541 in Dillenburg – 12 February 1616 in Weilburg) was a daughter of Count William \"the Rich\" of Nassau-Dillenburg and his second wife, Juliana of Stolberg. She married Count Albert of Nassau-Weilburg on 16 June 1559 and had the following children:\nP7: Anna of Nassau-Dillenburg (1541–1616): Anna of Nassau- Dillenburg( 21 September 1541 in Dillenburg – 12 February 1616 in Weilburg) was a daughter of Count William\" the Rich\" of Nassau- Dillenburg and his second wife, Juliana of Stolberg. She married Count Albert of Nassau- Weilburg on 16 June 1559 and had the following children:\nP8: William I, Count of Nassau-Dillenburg: William I, Count of Nassau- Dillenburg( nicknamed\" William the Rich\",; 10 April 1487 – 6 October 1559) was a count of Nassau- Dillenburg from the House of Nassau. His nickname\" the Rich\" refers to him having many children. However, he owned a number of counties: Nassau- Dillenburg, Nassau- Siegen, Nassau- Dietz and Vianden. William was born in Dillenburg as the younger son of Count John V of Nassau- Dillenburg and Landgravine Elisabeth, daughter of ...\nP9: Albert, Count of Nassau-Dillenburg: Albert, Count of Nassau-Dillenburg (1 November 1596 in Dillenburg – 16 June 1626 in Quakenbrück) was a son of Count George of Nassau-Dillenburg and his first wife, Anna Amalia of Nassau-Saarbruucken. After his father died in 1623, he ruled Nassau-Dillenburg jointly with his elder brother Louis Henry until Albert died himself in 1626.\nP10: Henry, Prince of Nassau-Dillenburg: Henry, Prince of Nassau-Dillenburg (born 28 August 1641 in Dillenburg; died: 18 April 1701 at Ludwigsbrunn Castle) was ruler (i.e. Fürst) of Nassau-Dillenburg from 1662 until his death. He was the son of George Louis, Prince of Nassau-Dillenburg (1618–1656) and his wife, Anna Augusta (17 December 1612 – 9 June 1673), a daughter of Duke Henry Julius of Brunswick-Wolfenbüttel.\nQuestion: Who is Anna Of Nassau-Dillenburg (1541–1616)'s maternal grandmother?\nFinal answer:",
+  "output": "Landgravine Elisabeth",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a922aeff723d8695",
+    "object": "chat.completion",
+    "created": 1779535853,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Landgravine Elisabeth",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1389,
+      "total_tokens": 1395,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

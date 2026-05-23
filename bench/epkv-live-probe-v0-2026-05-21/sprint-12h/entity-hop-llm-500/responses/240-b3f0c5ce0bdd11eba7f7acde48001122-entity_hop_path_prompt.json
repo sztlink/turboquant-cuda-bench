@@ -1,0 +1,48 @@
+{
+  "qid": "b3f0c5ce0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Germany",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Florent of Hainaut -> Isabella of Villehardouin\n- Florent of Hainaut -> Adelaide of Holland\n- Engilbert of Liederkerque -> Isabella of Villehardouin\n- Engilbert of Liederkerque -> Florent of Hainaut\n- Place of birth -> Place of origin\n- Helena Angelina Komnene -> Michael VIII Palaiologos\n- Helena Angelina Komnene -> Isabella of Villehardouin\nPassages:\nP1: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP2: Adelaide of Holland: Adelaide of Holland (– buried 9 April 1284), Countess of Hainaut, was a Dutch regent. She was a daughter of Floris IV, Count of Holland and Matilda of Brabant. She was also a sister of William II, Count of Holland and King of Germany. She acted as regent for her nephew Count Floris V during his minority.\nP3: Adelaide of Holland: Adelaide of Holland( – buried 9 April 1284), Countess of Hainaut, was a Dutch regent. She was a daughter of Floris IV, Count of Holland and Matilda of Brabant. She was also a sister of William II, Count of Holland and King of Germany. She acted as regent for her nephew Count Floris V during his minority.\nP4: Isabella of Villehardouin: Isabella of Villehardouin (1260/1263 – 23 January 1312) was sovereign princess of Achaea from 1289 to 1307. She was the elder daughter of William II of Villehardouin, Prince of Achaea, and of his third wife Anna, the second daughter of Michael II Komnenos Doukas, the despot of Epiros.\nP5: Michael VIII Palaiologos: Michael VIII Palaiologos or Palaeologus (1223 – 11 December 1282) reigned as the co-emperor of the Empire of Nicaea from 1259 to 1261, and as Byzantine Emperor from 1261 until his death. Michael VIII was the founder of the Palaiologan dynasty that would rule the Byzantine Empire until the Fall of Constantinople in 1453. He recovered Constantinople from the Latin Empire in 1261 and transformed the Empire of Nicaea into a restored Byzantine Empire. His reign would see ...\nP6: Florent of Hainaut: Florent of Hainaut (also \"Floris\" or \"Florence\"; Hainaut, also spelled \"Hainault\") (c. 1255 – 23 January 1297) was Prince of Achaea from 1289 to his death, in right of his wife, Isabella of Villehardouin. He was the son of John I of Avesnes and Adelaide of Holland. From his father he received the stadholdership (government) of Zeeland. After he left Zeeland, he took up service with Charles II of Naples, who made him constable of the Kingdom of Naples. After his marriage with ...\nP7: List of Victoria Cross recipients of uncertain nationality: The following is a list of Victoria Cross recipients whose nationality is uncertain.\nP8: Engilbert of Liederkerque: Engilbert of Liederkerque was a Flemish knight( from Liedekerke) who, along with his younger brother Walter, accompanied their uncle Florent of Hainaut to the Peloponnese( Morea) in southern Greece, following Florent's proclamation as Prince of Achaea in 1289. There, Engilbert married a daughter of Richard Orsini, Count palatine of Cephalonia and Zakynthos. In 1294, after the death of John Chauderon, who was his brother- in- law, Engilbert succeeded him as Grand ...\nP9: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP10: Japanese nationality law: Japanese nationality is a legal designation and set of rights granted to those people who have met the criteria for citizenship by parentage or by naturalization. Nationality is in the jurisdiction of the Minister of Justice and is generally governed by the Nationality Law of 1950.\nQuestion: What nationality is Florent Of Hainaut's mother?\nFinal answer:",
+  "output": "Dutch",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-95e5f5b727da6637",
+    "object": "chat.completion",
+    "created": 1779535691,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Dutch",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1184,
+      "total_tokens": 1187,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

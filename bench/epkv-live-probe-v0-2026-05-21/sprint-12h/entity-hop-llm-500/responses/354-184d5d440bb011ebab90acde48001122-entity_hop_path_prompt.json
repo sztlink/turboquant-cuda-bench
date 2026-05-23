@@ -1,0 +1,48 @@
+{
+  "qid": "184d5d440bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Siemowit III, Duke of Masovia",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Alexandra of Lithuania -> Siemowit IV, Duke of Masovia\n- Michiel Vos -> Alexandra Pelosi\n- Alexandra, Countess of Frederiksborg -> Prince Joachim of Denmark\n- Alexandra, Countess of Frederiksborg -> Margrethe II of Denmark\n- Duchess Alexandra of Oldenburg -> Duke Peter of Oldenburg\nPassages:\nP1: Siemowit IV, Duke of Masovia: Siemowit IV (Ziemowit IV), also known as Siemowit IV the Younger (pl: \" Siemowit IV Młodszy\"; ca. 1353/1356 – 21 January 1426) , was a Polish prince member of the House of Piast from the Masovian branch, from 1373/74 Duke of Rawa, and after the division of the paternal inheritance between him and his brother in 1381, ruler over Rawa, Płock, Sochaczew, Gostynin, Płońsk and Wizna, since 1386 hereditary Polish vassal, since 1388 ruler over Belz, during 1382–1401 he ...\nP2: Prince Joachim of Denmark: Prince Joachim of Denmark, Count of Monpezat, (Joachim Holger Waldemar Christian; born 7 June 1969 at Rigshospitalet in Copenhagen) is the younger son of Queen Margrethe II and Prince Henrik. Joachim is sixth in the line of succession to the Danish throne, following his elder brother, Crown Prince Frederik, and Frederik's four children.\nP3: Margrethe II of Denmark: Margrethe II( full name:\" Margrethe Alexandrine Þórhildur Ingrid\"; born 16 April 1940) is Queen of Denmark, as well as the supreme authority of the Church of Denmark and commander- in- chief of the Danish Defence. Born into the House of Glücksburg, a royal house with origins in northern Germany, she was the eldest child of Frederick IX of Denmark and Ingrid of Sweden. She became heir presumptive to her father in 1953, when a constitutional amendment allowed women to ...\nP4: Duke Peter of Oldenburg: Duke Constantine Frederick Peter of Oldenburg( 26 August 1812 in Yaroslavl, Russian Empire – 14 May 1881 in St. Petersburg, Russian Empire) was a Duke of the House of Oldenburg. He was the grandfather of Duke Peter of Oldenburg as well as grandfather of Grand Duke Nicholas Nikolaevich, General of the Imperial Russian Army during World War I. His great- great grandson, Nicholas Romanov, was the President of the Romanov Family Association until his death in 2014. Peter of ...\nP5: Alexandra Pelosi: Alexandra C. Pelosi (born October 5, 1970) is an American journalist, documentary filmmaker, and writer. She is a daughter of the Speaker of the United States House of Representatives Nancy Pelosi and Paul Pelosi.\nP6: Alexandra of Lithuania: Alexandra (died 20 April 1434 in Płock) was the youngest daughter of Algirdas, Grand Duke of Lithuania, and his second wife, Uliana of Tver. Though Alexandra's exact date of birth is not known, it is thought that she was born in the late 1360s or early 1370s. In 1387, she married Siemowit IV, Duke of Masovia, and bore him thirteen children.\nP7: Duchess Alexandra of Oldenburg: Grand Duchess Alexandra Petrovna of Russia( tr.; Born Duchess Alexandra Frederica Wilhelmina of Oldenburg; 2 June 1838 – 25 April 1900) was a great- granddaughter of Emperor Paul I of Russia and the wife of Grand Duke Nicholas Nikolaevich of Russia, the elder. Born Duchess Alexandra of Oldenburg, she was the eldest daughter of Duke Peter of Oldenburg and his wife Princess Therese of Nassau- Weilburg. She grew up in Russia in close proximity to the Romanovs as her ...\nP8: Alexandra, Princess of Leiningen: Princess Alexandra of Hanover, Duchess of Brunswick- Lüneburg, Princess of Leiningen( born 18 February 1959), is the wife of Andreas, 8th Prince of Leiningen. Born in Hanover, Lower Saxony, Germany, Alexandra is the youngest daughter of Ernest Augustus, Prince of Hanover( 1914 – 1987), and his wife, Princess Ortrud of Schleswig- Holstein- Sonderburg- Glücksburg( 1925–1980). Her eldest brother is Ernst August, Prince of Hanover, current head of the House of ...\nP9: Alexandra, Countess of Frederiksborg: Alexandra, Countess of Frederiksborg, (\"née\" Alexandra Christina Manley; born 30 June 1964) is the first wife of Prince Joachim of Denmark, the younger son of Margrethe II of Denmark. She was born in Hong Kong and is of mixed Chinese-European ancestry. She was introduced to Prince Joachim in 1994. They married in 1995 and had two sons together, until the marriage was dissolved in 2005.\nP10: Law Kar Po: Law Kar Po (born 1947/1948) is a Hong Kong billionaire businessman, chairman of the Park Hotel Group. Law Kar Po is the founder, retailer, and franchisor of the apparel brand Bossini— Kar-po where he grew his father’s textile empire and eventually shifted its focus into property and hotels. He is the chairman of the Park Hotel and Park Capital Group. Park Hotel Group manages 12 hotels in eight cities and five countries in the Asia-Pacific region. His elder brother is fellow ...\nQuestion: Who is Alexandra Of Lithuania's father-in-law?\nFinal answer:",
+  "output": "Siemowit IV, Duke of Masovia",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.8000000000000002
+  },
+  "response": {
+    "id": "chatcmpl-b2a2d6ba7168f162",
+    "object": "chat.completion",
+    "created": 1779535790,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Siemowit IV, Duke of Masovia",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1399,
+      "total_tokens": 1411,
+      "completion_tokens": 12,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

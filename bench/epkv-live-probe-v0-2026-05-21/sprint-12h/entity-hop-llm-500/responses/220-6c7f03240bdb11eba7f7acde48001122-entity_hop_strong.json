@@ -1,0 +1,48 @@
+{
+  "qid": "6c7f03240bdb11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Évreux",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Jeanne Raunay: Jeanne Richomme Raunay (25 November 1868 – 1942) was a French mezzo-soprano opera singer. She was also the daughter of painter Jules Richomme, and the wife of French writer André Beaunier.\nP2: Jeanne Raunay: Jeanne Richomme Raunay( 25 November 1868 – 1942) was a French mezzo- soprano opera singer. She was also the daughter of painter Jules Richomme, and the wife of French writer André Beaunier.\nP3: Margaret of Artois: Margaret of Artois( 1285–1311) was the eldest child of Philip of Artois and his wife, Blanche of Brittany. She was a member of the House of Artois. She was married to Louis d'Évreux. By her marriage, Margaret was Countess consort of Évreux.\nP4: Margaret of Artois: Margaret of Artois (1285–1311) was the eldest child of Philip of Artois and his wife, Blanche of Brittany. She was a member of the House of Artois. She was married to Louis d'Évreux. By her marriage, Margaret was Countess consort of Évreux.\nP5: Louis, Count of Évreux: Louis of Évreux( 3 May 1276 – 19 May 1319, Paris) was a prince, the only son of King Philip III of France and his second wife Maria of Brabant, and thus a half- brother of King Philip IV of France. Louis had a quiet and reflective personality and was politically opposed to the scheming of his half- brother Charles of Valois. He was, however, close with his nephew Philip V of France. He married Margaret of Artois, daughter of Philip of Artois and sister of Robert III of ...\nP6: Louis, Count of Évreux: Louis of Évreux (3 May 1276 – 19 May 1319, Paris) was a prince, the only son of King Philip III of France and his second wife Maria of Brabant, and thus a half-brother of King Philip IV of France. Louis had a quiet and reflective personality and was politically opposed to the scheming of his half-brother Charles of Valois. He was, however, close with his nephew Philip V of France. He married Margaret of Artois, daughter of Philip of Artois and sister of Robert III of ...\nP7: The Beast: The Beast may refer to:\nP8: Théodore Richomme: Théodore Richomme (28 May 1785, Paris - 22 September 1849, Paris) was a French engraver. A street in the 18th arrondissement of Paris is named after him.\nP9: André Grétry: André Ernest Modeste Grétry (baptised 11 February 1741; died 24 September 1813) was a\ncomposer from the Prince-Bishopric of Liège (present-day Belgium), who worked from 1767 onwards in France and took French nationality. He is most famous for his \"opéras comiques\".\nP10: André Beaunier: André Beaunier (22 September 1869, Évreux – 9 December 1925, Paris) was a French novelist and literary critic.\nQuestion: Where was the husband of Jeanne Raunay born?\nFinal answer:",
+  "output": "Évreux",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-a98c6ef704c03249",
+    "object": "chat.completion",
+    "created": 1779535674,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Évreux",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 866,
+      "total_tokens": 870,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

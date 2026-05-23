@@ -1,0 +1,48 @@
+{
+  "qid": "7f20efa00baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Maria Amalia of Naples and Sicily",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Prince Robert, Duke of Chartres -> Ferdinand Philippe, Duke of Orléans\n- Prince Robert, Duke of Chartres -> Exiled\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Queen Victoria\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Louise\n- Prince Charles Louis, Duke of Chartres -> Prince Jacques, Duke of Orléans\n- Prince Henri of Orléans -> Prince Robert, Duke of Chartres\n- Prince Henri of Orléans -> Prince Robert, Duke of Chartres\n- Prince Foulques, Duke of Aumale -> Prince Jacques, Duke of Orléans\n- Prince Foulques, Duke of Aumale -> Prince Jacques, Duke of Orléans\n- Baroness Gösta von dem Bussche-Haddenhausen -> Beatrix of the Netherlands\nPassages:\nP1: Prince Robert, Duke of Chartres: Prince Robert Philippe Louis Eugène Ferdinand of Orléans, Duke of Chartres (November 9, 1840 – December 5, 1910) was the son of Prince Ferdinand Philippe, Duke of Orléans, and thus grandson of King Louis-Philippe of France. He fought for the Union in the American Civil War, and then for France in the 1870 Franco-Prussian War. In 1863 he married his cousin Princess Françoise of Orléans, the daughter of François, Prince of Joinville. In 1886, he was exiled from ...\nP2: Prince Jacques, Duke of Orléans: Prince Jacques of Orléans, Duke of Orléans,\" fils de France\"( Jacques Jean Jaroslaw Marie; born 25 June 1941 in Rabat, Morocco), is the son of Henri, Count of Paris( the Orléanist claimant to the French throne from 1940 until his death) and his wife, Princess Isabelle of Orléans- Braganza.\nP3: Prince Jacques, Duke of Orléans: Prince Jacques of Orléans, Duke of Orléans, \"fils de France\" (Jacques Jean Jaroslaw Marie; born 25 June 1941 in Rabat, Morocco), is the son of Henri, Count of Paris (the Orléanist claimant to the French throne from 1940 until his death) and his wife, Princess Isabelle of Orléans-Braganza.\nP4: Ferdinand Philippe, Duke of Orléans: Prince Ferdinand Philippe of Orléans (3 September 1810 – 13 July 1842) was the eldest son of Louis Philippe d'Orléans, Duke of Orléans (the future King Louis Philippe I) and Maria Amalia of Naples and Sicily. Born in exile in his mother's native Sicily, he was heir to the House of Orléans from birth. Following his father's succession as King of the French in 1830, he became the \"Prince Royal\" and subsequently Duke of Orléans (French: \"Duc d'Orléans\"), the ...\nP5: Beatrix of the Netherlands: Beatrix (Beatrix Wilhelmina Armgard, ; born 31 January 1938) is a princess of the Dutch royal house who reigned as Queen of the Netherlands from 30 April 1980 until her abdication on 30 April 2013. Beatrix is the eldest daughter of Queen Juliana and her husband, Prince Bernhard of Lippe-Biesterfeld. Upon her mother's accession in 1948, she became heir presumptive. Beatrix attended a public primary school in Canada during World War II, and then finished her primary ...\nP6: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nP7: Exiled: Exiled  is a 2006 Hong Kong action drama film produced and directed by Johnnie To, and starring Anthony Wong, Francis Ng, Nick Cheung, Josie Ho, Roy Cheung and Lam Suet, with special appearances by Richie Jen and Simon Yam. The action takes place in contemporary Macau. The film made its premiere at the 63rd Venice International Film Festival, and was in competition for the Golden Lion.\nP8: Louise: Louise or Luise may refer to:\nP9: Prince Charles Louis, Duke of Chartres: Prince Charles Louis of Orléans, Duke of Chartres (Charles Louis Henri Foulques Benoît Elzéar Jean Marie; born 28 July 1972) is the elder son of Prince Jacques, Duke of Orléans and Gersende de Sabran-Pontevès.\nP10: Prince Foulques, Duke of Aumale: Prince Foulques of Orléans, Duke of Aumale and Count of Eu( Foulques Thibaut Robert Jacques Géraud Jean Marie; born 9 July 1974) is the younger son of Prince Jacques, Duke of Orléans and Gersende de Sabran- Pontevès. His paternal grandfather was the late Henri, Count of Paris, who was the Orléanist claimant to the French throne with the title of Henri VI. As such, Foulques would have the status of\" Petit- Fils de France\", with the style of Royal Highness.\nQuestion: Who is the paternal grandmother of Prince Robert, Duke Of Chartres?\nFinal answer:",
+  "output": "Princess Louise of Saxe-Gotha-Altenburg",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.2
+  },
+  "response": {
+    "id": "chatcmpl-ae9c6a338036c347",
+    "object": "chat.completion",
+    "created": 1779535747,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Princess Louise of Saxe-Gotha-Altenburg",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1415,
+      "total_tokens": 1428,
+      "completion_tokens": 13,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

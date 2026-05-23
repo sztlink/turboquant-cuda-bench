@@ -1,0 +1,48 @@
+{
+  "qid": "c1b9c0ac0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "23 February 1473",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Margaret of Guelders (1436–1486) -> Frederick I, Count Palatine of Simmern\n- Margaret of Guelders (1436–1486) -> Adolph I, Duke of Cleves\n- Catherine of Cleves (1417–1479) -> Arnold, Duke of Guelders\n- Catherine of Cleves (1417–1479) -> Catherine of Cleves\n- Catherine of Guelders -> Arnold, Duke of Guelders\n- Catherine of Guelders -> Catherine of Cleves\n- Catherine of Guelders -> Frederick I, Count Palatine of Simmern\n- Catherine of Guelders -> Arnold, Duke of Guelders\n- Gerard III, Count of Guelders -> (Otto)\n- Gerard III, Count of Guelders -> (Otto)\n- Megingoz of Guelders -> Godfrey, Count Palatine of Lotharingia\n- Megingoz of Guelders -> Gerberga of Lorraine\n- Reginald I of Guelders -> Otto II, Count of Guelders\nPassages:\nP1: Arnold, Duke of Guelders: Arnold of Egmond (14 July 1410 – 23 February 1473) was Duke of Guelders, Count of Zutphen. Arnold was born in Egmond-Binnen, North Holland, the son of John II of Egmond and Maria van Arkel. On 11 July 1423, Arnold, still a boy, succeeded Duke Reinald IV. Arnold was the grandson of Reinald's sister, Johanna. Although the Emperor Sigismund had invested the Duke of Berg with the duchy of Gelders, Arnold retained the confidence of the Estates by enlarging their privileges, ...\nP2: Catherine of Cleves: Catherine de Clèves( or de Nevers), Countess of Eu( 1548 – 11 May 1633) was the wife of Henry, Duke of Guise, and matriarch of the numerous and influential House of Guise. By marriage she was Duchess of Guise from 1570 to 1588, and Dowager Duchess of Guise thereafter. She was Countess of Eu in her own right from 1564.\nP3: Otto II, Count of Guelders: Otto II, Count of Guelders( Dutch: Otto II, Graaf van Gelre) was a nobleman from the 13th century. He was the son of Gerard III, Count of Guelders and Margaretha of Brabant.\nP4: Otto II, Count of Guelders: Otto II, Count of Guelders (Dutch: Otto II, Graaf van Gelre) was a nobleman from the 13th century. He was the son of Gerard III, Count of Guelders and Margaretha of Brabant.\nP5: Godfrey, Count Palatine of Lotharingia: Godfrey, Count Palatine of Lotharingia (c. 905 – 1 Jun aft. 949) was count of the Jülichgau from at least 924 to 936 and probably even until 949. He was the son of Gerhard I of Metz and Oda of Saxony, a daughter of Otto I, Duke of Saxony from the family of the Liudolfings, and thus a nephew of King Henry the Fowler. Moreover, he was the younger brother of Wigfried, who was archbishop of Cologne from 924 to 953 and arch-chancellor of his cousin King Otto I ...\nP6: Gerberga of Lorraine: Gerberga of Lorraine( c. 925–995) was a lady of the highest European nobility who became the wife of Megingoz of Guelders around 945. She was a daughter of Godfrey, Count Palatine of Lotharingia and Ermentrude, possibly the eldest daughter of Charles the Simple. On her father's side she was a granddaughter of Gerhard I of Metz and Oda of Saxony, daughter of Otto I, Duke of Saxony. She founded the abbey of Vilich, northeast of Bonn. She died in 995. Megingoz died shortly ...\nP7: Frederick I, Count Palatine of Simmern: Frederick I, the Hunsrücker (German: Friedrich I.; 19 November 1417 – 29 November 1480) was the Count Palatine of Simmern from 1459 until 1480. Frederick was born in 1417 to Stephen, Count Palatine of Simmern and Zweibrücken and his wife, Anna of Veldenz. In 1444 his father partitioned his territories between Frederick and his younger brother Louis. Frederick married Margaret of Guelders, daughter of Duke Arnold, on 16 August 1454. Frederick died in ...\nP8: Frederick I, Count Palatine of Simmern: Frederick I, the Hunsrücker( German: Friedrich I.; 19 November 1417 – 29 November 1480) was the Count Palatine of Simmern from 1459 until 1480. Frederick was born in 1417 to Stephen, Count Palatine of Simmern and Zweibrücken and his wife, Anna of Veldenz. In 1444 his father partitioned his territories between Frederick and his younger brother Louis. Frederick married Margaret of Guelders, daughter of Duke Arnold, on 16 August 1454. Frederick died in ...\nP9: Adolph I, Duke of Cleves: Adolph I of Cleves( 2 August 1373 – 23 September 1448) was the second Count of Cleves and the fourth Count of Mark.\nP10: (Otto): (Otto) is a 2015 Dutch animated short film directed by Job Roggeveen, Joris Oprins and Marieke Blaauw, from the Dutch animation studio Job, Joris & Marieke. The film had its international premiere at the Toronto International Film Festival. (Otto) was chosen to be the official Dutch entry for the Academy Award Best Animated Short Film 2016. Job, Joris & Marieke's previous film A Single Life was nominated Academy Award for Best Animated Short Film at the 87th Academy Awards.\nQuestion: What is the date of death of Catherine Of Guelders's father?\nFinal answer:",
+  "output": "949",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9b974a3a00be2913",
+    "object": "chat.completion",
+    "created": 1779535661,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "949",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1539,
+      "total_tokens": 1543,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

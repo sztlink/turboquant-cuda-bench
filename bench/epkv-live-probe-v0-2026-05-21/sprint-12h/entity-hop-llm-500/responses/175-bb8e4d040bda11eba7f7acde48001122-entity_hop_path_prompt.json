@@ -1,0 +1,48 @@
+{
+  "qid": "bb8e4d040bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Ashgabat",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Muza Niyazova -> Saparmurat Niyazov\n- Did a Good Man Die? -> Fadil Hadžić\n- Did a Good Man Die? -> The Good Man\n- Where the Dead Go to Die -> The Dead\n- The Woman Who Did (1925 film) -> Benjamin Christensen\n- Now Where Did the 7th Company Get to? -> Robert Lamoureux\n- Now Where Did the 7th Company Get to? -> Comedy!\nPassages:\nP1: Saparmurat Niyazov: Saparmurat Atayevich Niyazov (Cyrillic: Сапармырат Атаевич Ныязов; 19 February 1940 – 21 December 2006; also known as Türkmenbaşy (Head of the Turkmen) or Beýik Türkmenbaşy (Great Head of the Turkmen) was a Turkmen politician who served as the leader of Turkmenistan from 1985 until his death in 2006. He was First Secretary of the Turkmen Communist Party from 1985 until 1991 and supported the 1991 Soviet coup d'état attempt. He continued to lead Turkmenistan for 15 years ...\nP2: Benjamin Christensen: Benjamin Christensen( 28 September 1879 – 2 April 1959) was a Danish film director, screenwriter and an actor both in film and on the stage. As a director he is most well known for the 1922 film\" Häxan\" and as an actor, he is best known for his performance in the film\" Michael\"( 1924), in which he plays Claude Zoret, the jilted lover of the film's title character.\nP3: Fadil Hadžić: Fadil Hadžić( 23 April 1922 – 3 January 2011) was a Croatian film director, screenwriter, playwright and journalist, mainly known for his comedy films and plays. He was of Bosnian origin, but mainly lived and worked in Croatia, and was well known throughout Yugoslavia.\nP4: The Good Man: The Good Man is a 2012 film by Phil Harrison starring Aidan Gillen.\nP5: The Dead: The Dead may refer to:\nP6: Robert Lamoureux: Robert Lamoureux( 4 January 1920 – 29 October 2011) was a French actor, screenwriter and film director. He appeared in 37 films between 1951 and 1994. He starred in the film\" The Adventures of Arsène Lupin\", which was entered into the 7th Berlin International Film Festival.\nP7: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP8: Muza Niyazova: Muza Niyazova née Melnikova is a Turkmen public figure who served as the First Lady of Turkmenistan from 1991 until 2006. She is the widow of former President of Turkmenistan Saparmurat Niyazov, with whom she had two children.\nP9: Did a Good Man Die?: Did a Good Man Die? (\" Da li je umro dobar čovjek?\") is a Croatian film directed by Fadil Hadžić and starring Boris Dvornik. It was released in 1962.\nP10: Where the Dead Go to Die: Where the Dead Go to Die is a 2012 American adult animated anthology horror film written, directed, composed, edited, and animated by James\" Jimmy ScreamerClauz\" Creamer.\nQuestion: Where did Muza Niyazova's husband die?\nFinal answer:",
+  "output": "Saparmurat Niyazov died in 2006.",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-8a5046107f53aec9",
+    "object": "chat.completion",
+    "created": 1779535631,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Saparmurat Niyazov died in 2006.",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 935,
+      "total_tokens": 952,
+      "completion_tokens": 17,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

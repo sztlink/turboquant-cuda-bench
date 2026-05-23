@@ -1,0 +1,48 @@
+{
+  "qid": "1efc66b60bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Forlì",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Bianca Riario -> Girolamo Riario\n- Bianca Riario -> Caterina Sforza\n- Angela de' Rossi -> Alessandro Vitelli\n- Angela de' Rossi -> Bianca Riario\n- Angela de' Rossi -> Alessandro Vitelli\n- Angela de' Rossi -> Bianca Riario\n- Did a Good Man Die? -> Fadil Hadžić\n- Did a Good Man Die? -> The Good Man\n- Ottaviano Riario -> Caterina Sforza\n- Where the Dead Go to Die -> The Dead\n- Sinibaldo II Ordelaffi -> Pino III Ordelaffi\n- Sinibaldo II Ordelaffi -> Girolamo Riario\nPassages:\nP1: Girolamo Riario: Girolamo Riario (1443 – 14 April 1488) was Lord of Imola (from 1473) and Forlì (from 1480). He served as Captain General of the Church under his uncle Pope Sixtus IV. He took part in the 1478 Pazzi Conspiracy against the Medici, and was assassinated 10 years later by members of the Forlivese Orsi family.\nP2: Pino III Ordelaffi: Pino III Ordelaffi (March 1436 – October 1480) was an Italian condottiero and lord of Forlì. He was a member of the Ordelaffi family. The son of Antonio I Ordelaffi, he was the brother of Francesco IV Ordelaffi, lord of Forlì from 1448. In 1462 he married Barbara Manfredi, daughter of Astorre II, lord of Faenza. In 1463 Pino fell ill: Francesco was suspected of having poisoned him, but he recovered. In 1466, as Francesco lay ill in turn, Pino's seized the city and assumed ...\nP3: Caterina Sforza: Caterina Sforza (1463 – 28 May 1509) was an Italian noblewoman along with the Countess of Forlì and Lady of Imola, firstly with her husband Girolamo Riario, and after his death as a regent of her son Ottaviano. Caterina was the illegitimate daughter of Galeazzo Maria Sforza, Duke of Milan and Lucrezia, the wife of the courtier Gian Piero Landriani, a close friend of the Duke. She was raised in the refined Milanese court. The descendant of a dynasty of noted condottieri, from an ...\nP4: Alessandro Vitelli: Alessandro Vitelli (1500 - 1554) was an Italian condottiero in the service of the Holy Roman Empire, the Papal States and the Grand Duchy of Tuscany. He was an illegitimate son of Paolo Vitelli and the second husband of Angela de' Rossi. He also became count of Montone, count of Citerna and lord of Amatrice. He was born in Città di Castello and died in Citerna.\nP5: Fadil Hadžić: Fadil Hadžić( 23 April 1922 – 3 January 2011) was a Croatian film director, screenwriter, playwright and journalist, mainly known for his comedy films and plays. He was of Bosnian origin, but mainly lived and worked in Croatia, and was well known throughout Yugoslavia.\nP6: The Good Man: The Good Man is a 2012 film by Phil Harrison starring Aidan Gillen.\nP7: The Dead: The Dead may refer to:\nP8: Bianca Riario: Bianca Riario (March 1478 – 1522) was an Italian noble and regent, Marchioness of San Secondo by marriage to Troilo I de' Rossi, and regent of the marquisate and county of San Secondo for her son Pier Maria during his minority between 1521 and 1522. She was the eldest child and only daughter of Caterina Sforza by the latter's first husband, Girolamo Riario, a nephew of Pope Sixtus IV. Bianca married twice; her first husband was Astorre III Manfredi, Lord of Faenza, and her second ...\nP9: Did a Good Man Die?: Did a Good Man Die? (\" Da li je umro dobar čovjek?\") is a Croatian film directed by Fadil Hadžić and starring Boris Dvornik. It was released in 1962.\nP10: Where the Dead Go to Die: Where the Dead Go to Die is a 2012 American adult animated anthology horror film written, directed, composed, edited, and animated by James\" Jimmy ScreamerClauz\" Creamer.\nQuestion: Where did Bianca Riario's father die?\nFinal answer:",
+  "output": "Imola",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-92eb7c3e19db1d3e",
+    "object": "chat.completion",
+    "created": 1779535664,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Imola",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1152,
+      "total_tokens": 1155,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "0f1ac1a00bdb11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Grammy",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Sunday Papers -> Joe Jackson\n- Shabir -> The Will\n- Amit Mishra (singer) -> Ae Dil Hai Mushkil\n- Amit Mishra (singer) -> The Singer\n- Sunday's Children -> Fanny and Alexander\n- Sunday's Children -> Daniel Bergman\n- That's What I Like About the South -> Phil Harris\n- That's What I Like About the South -> Part\n- Angel's Rage -> Dan Bigras\n- Angel's Rage -> Dan Bigras\n- Sunday Morning (The Velvet Underground song) -> Morning\n- Sunday Morning (The Velvet Underground song) -> Nico\nPassages:\nP1: Sunday Papers: \"Sunday Papers\" is a song written and performed by British new wave musician Joe Jackson. It was released on his debut album, \"Look Sharp!\". Written as a critique of the British press, \"Sunday Papers\" features mocking lyrics and reggae inspired music. \"Sunday Papers\" was released as a single in the UK as the follow-up to his single, \"Is She Really Going Out with Him?\", but did not chart. Despite this, the song has generally received positive critical reception.\nP2: The Will: The Will may refer to:\nP3: The Singer: The Singer may refer to:\nP4: Fanny and Alexander: Fanny and Alexander is a 1982 historical period drama film written and directed by Ingmar Bergman. The plot focuses on two siblings and their large family in Uppsala, Sweden during the first decade of the twentieth century. Following the death of the eponymous children's father( Allan Edwall), their mother( Ewa Fröling) remarries a prominent bishop( Jan Malmsjö) who becomes abusive towards Alexander for his vivid imagination. Bergman intended\" Fanny and Alexander\" to be his ...\nP5: Daniel Bergman: Daniel Sebastian Bergman (born 7 September 1962) is a Swedish film director. He is the son of Ingmar Bergman and Käbi Laretei. As a child, Bergman appeared in a 1967 Swedish program called \"Stimulantia\", which consisted of eight episodes, one of which was directed by his father Ingmar. The short, 10-minute film focuses on the first two years of Daniel's life. His mother Käbi is also seen. He was the assistant director of Andrei Tarkovsky on Offret (The Sacrifice, 1986). Bergman ...\nP6: Ae Dil Hai Mushkil: Ae Dil Hai Mushkil  is an Indian 2016 Hindi-language musical romantic drama film directed, co-written and produced by Karan Johar. The story is based on the concept of unrequited love. The film stars Ranbir Kapoor, Anushka Sharma and Aishwarya Rai, with Fawad Khan appearing in a supporting role. It also features cameo appearances by Shah Rukh Khan and Alia Bhatt. The film was released on 28 October 2016 during the Diwali festival. Made with a budget of , \"Ae Dil Hai Mushkil\" ...\nP7: Dan Bigras: Dan Bigras (born 23 December 1957) is a francophone rock singer and actor from Canada. He has released a number of albums of rock music, beginning with \"Ange Animal\" in 1990. He is the spokesman of \"Refuge des Jeunes de Montréal\" ( meaning Refuge of Montreal's young people), an agency to help homeless and at-risk youth. The organisation produces \"le show du Refuge\" each year.\nP8: Morning: Morning is the period of time from sunrise to noon. There are no exact times for when morning begins( also true for evening and night) because it can vary according to one's lifestyle and the hours of daylight at each time of year. However, morning strictly ends at noon, which is when afternoon starts. Morning can be defined as starting from midnight to noon, or from sunrise( which varies throughout the year) to noon, or from when one wakes up to noon. Morning precedes afternoon, ...\nP9: Nico: Christa Päffgen (16 October 1938 – 18 July 1988), known by her stage name Nico, was a German singer, songwriter, musician, model, and actress. She had roles in several films, including Federico Fellini's \"La Dolce Vita\" (1960) and Andy Warhol's \"Chelsea Girls\" (1966). At the insistence of Warhol, she recorded vocals for three songs of the Velvet Underground's debut album \"The Velvet Underground & Nico\" (1967). At the same time, she started a solo career and released \"Chelsea Girl\". Nico's ...\nP10: Phil Harris: Wonga Philip Harris (June 24, 1904 – August 11, 1995) was an American comedian, actor, singer, and jazz musician. He was an orchestra leader and a pioneer in radio situation comedy, first with Jack Benny, then in a series in which he co-starred with his wife, singer-actress Alice Faye, for eight years. Harris is also noted for his voice acting in animated films. He played Baloo in \"The Jungle Book\" (1967), Thomas O'Malley in \"The Aristocats\" (1970), and Little John in \"Robin Hood\" ...\nQuestion: What is the award that the performer of song Sunday Papers earned?\nFinal answer:",
+  "output": "No award mentioned for Joe Jackson regarding \"Sunday Papers\".",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b17c74b69e4b5751",
+    "object": "chat.completion",
+    "created": 1779535507,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "No award mentioned for Joe Jackson regarding \"Sunday Papers\".",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1255,
+      "total_tokens": 1267,
+      "completion_tokens": 12,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "f4a616ac0bae11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Adelaide, Countess of Soissons",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Renaud III, Count of Soissons -> John I, Count of Soissons\n- Renaud III, Count of Soissons -> John I, Count of Soissons\n- Renaud II, Count of Soissons -> Adelaide, Countess of Soissons\n- Renaud II, Count of Soissons -> William Busac\n- Renaud II, Count of Soissons -> Adelaide, Countess of Soissons\n- Renaud II, Count of Soissons -> William Busac\n- Adelaide, Countess of Soissons -> William Busac\n- Adelaide, Countess of Soissons -> William Busac\n- John I, Count of Soissons -> Adelaide, Countess of Soissons\n- John I, Count of Soissons -> William Busac\nPassages:\nP1: Renaud III, Count of Soissons: Renaud III (d. 1141), son of John I, Count of Soissons, and Aveline de Pierrefonds. Count of Soissons. Little is known about Renaud other than he inherited the Count of Soissons from his father in 1115. Upon Renaud's death in 1141, Ivo II de Nesle was chosen as his successor by the Bishop of Soisson, Joscelin de Vierzi. Renaud married Bathilde, of an unknown family, in 1137. No children are recorded. Renaud was the last of the Norman counts of Soissons.\nP2: Renaud III, Count of Soissons: Renaud III( d. 1141), son of John I, Count of Soissons, and Aveline de Pierrefonds. Count of Soissons. Little is known about Renaud other than he inherited the Count of Soissons from his father in 1115. Upon Renaud's death in 1141, Ivo II de Nesle was chosen as his successor by the Bishop of Soisson, Joscelin de Vierzi. Renaud married Bathilde, of an unknown family, in 1137. No children are recorded. Renaud was the last of the Norman counts of Soissons.\nP3: William Busac: William Busac( 1020- 1076), son of William I, Count of Eu, and his wife Lesceline. Count of Eu, Count of Soissons,\" de jure uxoris\". William was given the nickname Busac by the medieval chronicler Robert of Torigni. William appealed to King Henry I of France, who gave him in marriage Adelaide, the heiress of the county of Soissons. Adelaide was daughter of Renaud I, Count of Soissons, and Grand Master of the Hotel de France. William then became Count of Soissons in right of his ...\nP4: William Busac: William Busac (1020-1076), son of William I, Count of Eu, and his wife Lesceline. Count of Eu, Count of Soissons, \"de jure uxoris\". William was given the nickname Busac by the medieval chronicler Robert of Torigni. William appealed to King Henry I of France, who gave him in marriage Adelaide, the heiress of the county of Soissons. Adelaide was daughter of Renaud I, Count of Soissons, and Grand Master of the Hotel de France. William then became Count of Soissons in right of his ...\nP5: Renaud II, Count of Soissons: Renaud II( died 1099), son of William Busac, Count of Eu and Soissons, and Adelaide, Countess of Soissons. Count of Soissons. It is unclear when Renaud assumed the countship of Soissons from his disgraced father. The latter was stripped of the County of Eu in 1050 but it is unclear when he relinquished the countship of Soissons. Alberic of Trois- Fontaines identifies Renaud in his\" Chronicles\" but little is known about his rule. It is not known whether Renaud ...\nP6: Renaud II, Count of Soissons: Renaud II (died 1099), son of William Busac, Count of Eu and Soissons, and Adelaide, Countess of Soissons. Count of Soissons. It is unclear when Renaud assumed the countship of Soissons from his disgraced father. The latter was stripped of the County of Eu in 1050 but it is unclear when he relinquished the countship of Soissons. Alberic of Trois-Fontaines identifies Renaud in his \"Chronicles\" but little is known about his rule. It is not known whether Renaud ...\nP7: Guy II, Count of Soissons: Guy II( d. 1057), son of Renaud I, Count of Soissons, and his wife( name unknown), widow of Hilduin III, Count of Montdidier. Count of Soissons. Guy was identified as Count of Soissons in 1042 in a charter in which Gaunilo of Marmoutiers, the treasurer of St. Martin, denoted property. Guy died with his father in 1057 at the siege of Soissons. It is not known whether or not Guy was married and no children are recorded. Upon his death, his sister Adelaide assumed the ...\nP8: John I, Count of Soissons: John I (d. after 1115), son of William Busac, Count of Eu and Soissons, and Adelaide, Countess of Soissons. Count of Soissons. John became Count of Soissons after the death of his brother Renaud II in 1099. John was involved with the Abbey of St. Jean des Vignes. John married Aveline de Pierrefonds, daughter of Nivelon II, Seigneur de Pierrefonds. John and Aveline had one child: Upon the death of John, his son Renaud became the last of the Norman Counts of Soissons.\nP9: Adelaide, Countess of Soissons: Adelaide( died 1105), was sovereign Countess of Soissons from 1057 until 1105. She was the daughter of Renaud I, Count of Soissons, and his wife, whose name is unknown, widow of Hilduin III, Count of Montdidier.. Adelaide became ruler of the County of Soissons upon the death of her father and brother, Guy II, Count of Soissons, in 1057. Adelaide married William Busac, Count of Eu, grandson of Richard I, Duke of Normandy. Adelaide and William had five children: ...\nP10: Adelaide, Countess of Soissons: Adelaide (died 1105), was sovereign Countess of Soissons from 1057 until 1105. She was the daughter of Renaud I, Count of Soissons, and his wife, whose name is unknown, widow of Hilduin III, Count of Montdidier. . Adelaide became ruler of the County of Soissons upon the death of her father and brother, Guy II, Count of Soissons, in 1057. Adelaide married William Busac, Count of Eu, grandson of Richard I, Duke of Normandy. Adelaide and William had five ...\nQuestion: Who is the paternal grandmother of Renaud Iii, Count Of Soissons?\nFinal answer:",
+  "output": "Aveline de Pierrefonds",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b928e50e4c148dc2",
+    "object": "chat.completion",
+    "created": 1779535850,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Aveline de Pierrefonds",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1708,
+      "total_tokens": 1716,
+      "completion_tokens": 8,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

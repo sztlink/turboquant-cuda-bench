@@ -1,0 +1,48 @@
+{
+  "qid": "bffe56600bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Swiss",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- I Might Have Been Queen -> Tina Turner\n- I Might Have Been Queen -> The Dancer\n- I Have Got the Blues To Day! -> The Singer\n- Vi ere en Nation, vi med -> André Grétry\n- Where Was I (song) -> Where Was I\n- Morsgrisar -> The Child\n- I'm Not Gonna Miss You -> September 30\n- I'm Not Gonna Miss You -> Tim McGraw\n- Berengaria of Navarre -> Sancho VI of Navarre\nPassages:\nP1: I Might Have Been Queen: \"I Might Have Been Queen\" is a song written for Tina Turner as the first track on her highly successful \"Private Dancer\" album, and later included as a re-mixed version, with an additional lyric added to the bridge, on her \"What's Love Got to Do With It\" soundtrack album. The song was written by Jeanette Obstoj, Rupert Hine, and Jamie West-Oram for the \"Private Dancer\" album. The lyrics are meant to be autobiographical, telling Turner's story. Following a discussion ...\nP2: Sancho VI of Navarre: Sancho Garcés VI (21 April 1132 - 27 June 1194), called the Wise  was King of Navarre from 1150 until his death in 1194. He was the first monarch to officially drop the title of \"King of Pamplona\" in favour of King of Navarre, thus changing the designation of his kingdom. Sancho Garcés was responsible for bringing his kingdom into the political orbit of Europe. He was the eldest son of García Ramírez, \"the Restorer\" and Margaret of L'Aigle.\nP3: The Dancer: The Dancer may refer to:\nP4: The Singer: The Singer may refer to:\nP5: Where Was I: \" Where Was I?\" may refer to:\nP6: The Child: The Child may refer to:\nP7: Tina Turner: Tina Turner (born Anna Mae Bullock, November 26, 1939) is an American-Swiss singer and actress. Originally from the United States, she became a Swiss citizen in 2013. Turner rose to prominence as part of the Ike & Tina Turner Revue before launching a successful career as a solo performer. One of the best-selling recording artists of all time, she has been referred to as The Queen of Rock 'n' Roll and has sold more than 200 million records worldwide. Turner is noted for her ...\nP8: Tim McGraw: Samuel Timothy McGraw (born May 1, 1967) is an American singer and actor. McGraw has released fifteen studio albums (eleven for Curb Records, three for Big Machine Records and one for Arista Nashville). 10 of those albums have reached number 1 on the Top Country Albums charts, with his 1994 breakthrough album \" Not a Moment Too Soon\" being the top country album of 1994. All of these albums have produced 65 singles, 25 of which have reached number 1 on the Hot Country Songs or ...\nP9: André Grétry: André Ernest Modeste Grétry (baptised 11 February 1741; died 24 September 1813) was a\ncomposer from the Prince-Bishopric of Liège (present-day Belgium), who worked from 1767 onwards in France and took French nationality. He is most famous for his \"opéras comiques\".\nP10: September 30: It is the last day of the third quarter, midway point of the second half of the year.\nQuestion: Which country the performer of song I Might Have Been Queen is from?\nFinal answer:",
+  "output": "United States",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-ad6e33e66045f5d9",
+    "object": "chat.completion",
+    "created": 1779535756,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "United States",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 896,
+      "total_tokens": 899,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

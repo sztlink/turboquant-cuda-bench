@@ -1,0 +1,48 @@
+{
+  "qid": "dea2ea800bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Munich",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Princess Margaretha of Saxony -> Amalie Auguste of Bavaria\n- Princess Margaretha of Saxony -> Amalie Auguste of Bavaria\n- Princess Margaretha of Liechtenstein -> Princess Joséphine Charlotte of Belgium\n- Princess Margaretha of Liechtenstein -> The Child\n- Princess Maria Josepha of Saxony (1867–1944) -> The Child\n- Princess Anna of Saxony (1929–2012) -> Princess Elisabeth Helene of Thurn and Taxis\n- Princess Anna of Saxony (1929–2012) -> Friedrich Christian, Margrave of Meissen\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP3: Princess Elisabeth Helene of Thurn and Taxis: Princess Elisabeth Helene of Thurn and Taxis  (15 December 1903, Regensburg, Kingdom of Bavaria – 22 October 1976, Munich, Bavaria, Germany) was a Princess of Thurn and Taxis by birth and a Princess and Duchess of Saxony, Margravine of Meissen, and titular Queen consort of Saxony through her marriage to Friedrich Christian, Margrave of Meissen. Elisabeth was the sixth child of Albert, 8th Prince of Thurn and Taxis and his wife Archduchess Margarethe ...\nP4: Princess Joséphine Charlotte of Belgium: Princess Joséphine Charlotte of Belgium( Joséphine Charlotte Stéphanie Ingeborg Elisabeth Marie- José Marguerite Astrid; 11 October 1927 – 10 January 2005) was Grand Duchess consort of Luxembourg as the wife of Grand Duke Jean. She was a first cousin of Harald V of Norway. She was the first child of King Leopold III of Belgium, and sister of the late King Baudouin I and former King Albert II and aunt of King Philippe I.\nP5: Friedrich Christian, Margrave of Meissen: Albert Leopold Friedrich Christian Sylvester Anno Macarius, Prince of Saxony, Duke of Saxony, Margrave of Meissen (31 December 1893 – 9 August 1968) was the second son of Frederick Augustus III, the last reigning king of Saxony before the abolition of the monarchy in 1918. Upon his father's death in 1932, he became the head of the Royal House of Saxony. He was Captain à la suite in the Royal Bulgarian Infantry, and Grand Master of the Order of the Rue ...\nP6: Amalie Auguste of Bavaria: Amalie Auguste (Munich, 13 November 1801 – Dresden, 8 November 1877) was a Princess of Bavaria and Queen of Saxony.\nP7: The Child: The Child may refer to:\nP8: Princess Margaretha of Saxony: Princess Margaretha of Saxony, Duchess of Saxony  (24 May 1840 – 15 September 1858) was the eighth child and fifth eldest daughter of John of Saxony and his wife Amalie Auguste of Bavaria and a younger sister of Albert of Saxony and George of Saxony. She was born in Dresden, then in the Kingdom of Saxony. Through her marriage to Archduke Charles Louis of Austria, Margaretha was a member of the House of Habsburg-Lorraine and an Archduchess and Princess of Austria ...\nP9: Princess Margaretha of Saxony: Princess Margaretha of Saxony, Duchess of Saxony( 24 May 1840 – 15 September 1858) was the eighth child and fifth eldest daughter of John of Saxony and his wife Amalie Auguste of Bavaria and a younger sister of Albert of Saxony and George of Saxony. She was born in Dresden, then in the Kingdom of Saxony. Through her marriage to Archduke Charles Louis of Austria, Margaretha was a member of the House of Habsburg- Lorraine and an Archduchess and Princess of Austria ...\nP10: Princess Margaretha of Liechtenstein: Princess Margaretha of Liechtenstein( born Princess Margaretha of Luxembourg on 15 May 1957) is the fourth child and second and youngest daughter of Grand Duke Jean of Luxembourg and Princess Joséphine- Charlotte of Belgium. As the sister of Grand Duke Henri of Luxembourg and the sister- in- law of Prince Hans- Adam II of Liechtenstein, she is a princess of two current realms and a member of the Luxembourg and Liechtenstein reigning dynasties.\nQuestion: What is the place of birth of Princess Margaretha Of Saxony's mother?\nFinal answer:",
+  "output": "Dresden",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-b478fcb1d6d4949a",
+    "object": "chat.completion",
+    "created": 1779535676,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Dresden",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1287,
+      "total_tokens": 1290,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "5f5002360bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Hyderabad",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Bollywood Calling -> Perizaad Zorabian\n- Bollywood Calling -> Nagesh Kukunoor\n- Calling Bulldog Drummond -> Victor Saville\n- Calling the Tune -> Reginald Denham\n- Bombay Calling -> The Feature\n- Armaan (1953 film) -> Fali Mistry\n- Armaan (1953 film) -> Dev Anand\n- William Clemens (film director) -> The Case of the Stuttering Bishop\n- William Clemens (film director) -> Calling Philo Vance\nPassages:\nP1: Bollywood Calling: Bollywood Calling is a 2001 Indian English-language dramedy film written and directed by Nagesh Kukunoor. The film starred Pat Cusick, Navin Nischol, Om Puri, and Perizaad Zorabian in pivotal roles. The film showcases the satirical nuances of bollywood. It was showcased at the Rome Film Festival, and the MAMI Film Festival.\nP2: The Case of the Stuttering Bishop: The Case of the Stuttering Bishop is a 1937 drama film directed by William Clemens. It stars Donald Woods as Perry Mason and Ann Dvorak as Della Street, his secretary. Edward McWade plays the role of stuttering Bishop William Mallory. It is the sixth and final film in the Warner Bros. Perry Mason series. It is based on the novel \"The Case of the Stuttering Bishop\" (1936) by Erle Stanley Gardner.\nP3: Calling Philo Vance: Calling Philo Vance is a 1940 American mystery/comedy released by Warner Bros. and starring James Stephenson as the dilettante detective Philo Vance, his only appearance as the character; Margot Stevenson co-stars. The film also features Henry O'Neill, Edward Brophy, Sheila Bromley and Ralph Forbes. It was directed by William Clemens from a screenplay by Tom Reed, based on the 1933 novel \"The Kennel Murder Case\" by S. S. Van Dine, which had previously been made into a film ...\nP4: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP5: Nagesh Kukunoor: Nagesh Kukunoor (born 30 March 1967) is an Indian film director, producer, screenwriter and actor known for his works predominantly in Bollywood. He is known for his works in parallel cinema, such as \"Hyderabad Blues\" (1998), \"Rockford\" (1999), \"Iqbal\" (2005), \"Dor\" (2006), \"Aashayein\" (2010), \"Lakshmi\" (2014), and \"Dhanak\" (2016). Kukunoor has received seven International Awards, and two National Film Awards for his works. In 2003, he directed \"3 Deewarein\", which was ...\nP6: Nagesh Kukunoor: Nagesh Kukunoor( born 30 March 1967) is an Indian film director, producer, screenwriter and actor known for his works predominantly in Bollywood. He is known for his works in parallel cinema, such as\" Hyderabad Blues\"( 1998),\" Rockford\"( 1999),\" Iqbal\"( 2005),\" Dor\"( 2006),\" Aashayein\"( 2010),\" Lakshmi\"( 2014), and\" Dhanak\"( 2016). Kukunoor has received seven International Awards, and two National Film Awards for his works. In 2003, he directed\" 3 Deewarein\", which was ...\nP7: Dev Anand: Dharamdev Pishorimal Anand( 26 September 1923 – 3 December 2011), known as Dev Anand, was a noted Hindi film actor, writer, director and producer known for his work in Hindi films, through a career that spanned over six decades. He is considered as one of the greatest and most influential actors in the history of Indian Cinema.\nP8: Perizaad Zorabian: Perizaad Zorabian is an Indian actress. Her film debut was with Nagesh Kukunoor's\" Bollywood Calling\" and she gained international recognition for her role as Jenny in Subhash Ghai's\" Joggers' Park\"( 2003).\nP9: Fali Mistry: Fali Mistry (1919 - 1979) was a noted Indian cinematographer, who worked in Bollywood films, from the 1940s to 1980, both in black white and colour cinema, and along with younger brother Jal Mistry, he was one of the most acclaimed cinematographers of his era. He also produced and directed a few films. He won the Filmfare Award for Best Cinematographer twice, \"Guide\" (colour) (1967) and \"Fakira\" (1977).\nP10: Victor Saville: Victor Saville( 25 September 1895 – 8 May 1979) was an English film director, producer, and screenwriter. He directed 39 films between 1927 and 1954. He also produced 36 films between 1923 and 1962.\nQuestion: Where was the director of film Bollywood Calling born?\nFinal answer:",
+  "output": "30 March 1967",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-92dad3c076e7c97e",
+    "object": "chat.completion",
+    "created": 1779535664,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "30 March 1967",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1373,
+      "total_tokens": 1382,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

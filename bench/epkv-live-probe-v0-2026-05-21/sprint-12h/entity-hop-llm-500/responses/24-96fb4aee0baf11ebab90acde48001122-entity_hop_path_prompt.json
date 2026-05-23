@@ -1,0 +1,48 @@
+{
+  "qid": "96fb4aee0baf11ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Urraca of Castile",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Blanche of Portugal (1259–1321) -> Afonso III of Portugal\n- Blanche of Portugal (1259–1321) -> The Child\n- Blanche of Lancaster, Baroness Wake of Liddell -> Blanche of Lancaster\n- Blanche of Lancaster, Baroness Wake of Liddell -> Maud Chaworth\n- Blanche of Lancaster, Baroness Wake of Liddell -> Blanche of Lancaster\n- Blanche of Lancaster, Baroness Wake of Liddell -> Maud Chaworth\n- Eleanor of Viseu -> Eleanor of Lancaster\n- Archduchess Elisabeth Amalie of Austria -> Archduke Karl Ludwig of Austria\n- Archduchess Elisabeth Amalie of Austria -> Franz Joseph II, Prince of Liechtenstein\n- Diana Guardato -> Juan Carlos I of Spain\n- Diana Guardato -> Manuel II of Portugal\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Queen Victoria\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Louise\n- Baroness Gösta von dem Bussche-Haddenhausen -> Beatrix of the Netherlands\nPassages:\nP1: Blanche of Lancaster: Blanche of Lancaster (25 March 1342 – 12 September 1368) was a member of the English royal House of Plantagenet and the daughter of the kingdom's wealthiest and most powerful peer, Henry of Grosmont, 1st Duke of Lancaster. She was the first wife of John of Gaunt, the mother of King Henry IV, and the grandmother of King Henry V of England.\nP2: Afonso III of Portugal: Afonso III (rare English alternatives: \"Alphonzo\" or \"Alphonse\"), or \"Affonso\" (Archaic Portuguese), \"Alfonso\" or \"Alphonso\" (Portuguese-Galician) or \"Alphonsus\" (Latin), the Boulonnais (Port. \" o Bolonhês\"), King of Portugal (5 May 121016 February 1279) was the first to use the title \"King of Portugal and the Algarve\", from 1249. He was the second son of King Afonso II of Portugal and his wife, Urraca of Castile; he succeeded his brother, King Sancho II of Portugal, who ...\nP3: Manuel II of Portugal: \"Dom\" Manuel II (15 November 1889 – 2 July 1932), \"the Patriot\"  or \"the Unfortunate\" , was the last King of Portugal, ascending the throne after the assassination of his father, King Carlos I, and his elder brother, Luís Filipe, the Prince Royal. Before ascending the throne he held the title of Duke of Beja. His reign ended with the dissolution of the monarchy in the 5 October 1910 revolution, and Manuel lived the rest of his life in exile in Twickenham, Middlesex, ...\nP4: Juan Carlos I of Spain: Juan Carlos I( Juan Carlos Alfonso Víctor María de Borbón y Borbón- Dos Sicilias, born 5 January 1938) is a member of the Spanish royal family who reigned as King of Spain from November 1975 until his abdication in June 2014. Juan Carlos is the grandson of Alfonso XIII, the last king of Spain before the abolition of the monarchy in 1931 and the subsequent declaration of the Second Spanish Republic. Juan Carlos was born in Rome, Italy, during his family's exile. \" ...\nP5: Juan Carlos I of Spain: Juan Carlos I (Juan Carlos Alfonso Víctor María de Borbón y Borbón-Dos Sicilias, born 5 January 1938) is a member of the Spanish royal family who reigned as King of Spain from November 1975 until his abdication in June 2014. Juan Carlos is the grandson of Alfonso XIII, the last king of Spain before the abolition of the monarchy in 1931 and the subsequent declaration of the Second Spanish Republic. Juan Carlos was born in Rome, Italy, during his family's exile. \" ...\nP6: Beatrix of the Netherlands: Beatrix (Beatrix Wilhelmina Armgard, ; born 31 January 1938) is a princess of the Dutch royal house who reigned as Queen of the Netherlands from 30 April 1980 until her abdication on 30 April 2013. Beatrix is the eldest daughter of Queen Juliana and her husband, Prince Bernhard of Lippe-Biesterfeld. Upon her mother's accession in 1948, she became heir presumptive. Beatrix attended a public primary school in Canada during World War II, and then finished her primary ...\nP7: Eleanor of Lancaster: Eleanor of Lancaster, Countess of Arundel( sometimes called Eleanor Plantagenet; 11 September 1318 – 11 January 1372) was the fifth daughter of Henry, 3rd Earl of Lancaster and Maud Chaworth.\nP8: Eleanor of Lancaster: Eleanor of Lancaster, Countess of Arundel (sometimes called Eleanor Plantagenet; 11 September 1318 – 11 January 1372) was the fifth daughter of Henry, 3rd Earl of Lancaster and Maud Chaworth.\nP9: Archduke Karl Ludwig of Austria: Archduke Karl Ludwig Joseph Maria of Austria( 30 July 1833 – 19 May 1896) was the younger brother of Franz Joseph I of Austria( 1830 – 1916), the father of Archduke Franz Ferdinand of Austria( 1863 – 1914), whose assassination ignited World War I, and grandfather of the last emperor, Charles I.\nP10: Franz Joseph II, Prince of Liechtenstein: Franz Joseph II( Franz Josef Maria Aloys Alfred Karl Johannes Heinrich Michael Georg Ignaz Benediktus Gerhardus Majella; 16 August 1906 – 13 November 1989) was the reigning Prince of Liechtenstein from 1938 until his death. Franz Joseph was the son of Prince Aloys of Liechtenstein and Archduchess Elisabeth Amalie of Austria. He succeeded his childless grand- uncle, Prince Franz I, after his father renounced his right of succession in his favour in 1923. ...\nQuestion: Who is Blanche Of Portugal (1259–1321)'s paternal grandmother?\nFinal answer:",
+  "output": "Eleanor of Viseu",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.3333333333333333
+  },
+  "response": {
+    "id": "chatcmpl-9c8b189f5c02730c",
+    "object": "chat.completion",
+    "created": 1779535489,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Eleanor of Viseu",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1554,
+      "total_tokens": 1561,
+      "completion_tokens": 7,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

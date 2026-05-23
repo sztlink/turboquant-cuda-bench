@@ -1,0 +1,48 @@
+{
+  "qid": "48ad0aca0bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Roger Mortimer, 1st Earl of March",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Maurice de Berkeley -> Rebel\n- Maurice de Berkeley, 4th Baron Berkeley -> Hugh Despenser the younger\n- Maurice de Berkeley, 4th Baron Berkeley -> Elizabeth le Despenser\n- Maurice de Berkeley, 2nd Baron Berkeley -> Maurice de Berkeley\n- Robert Clifford, 3rd Baron Clifford -> Thomas de Clare, Lord of Thomond\n- Robert Clifford, 3rd Baron Clifford -> Maurice de Berkeley, 2nd Baron Berkeley\n- Robert Clifford, 3rd Baron Clifford -> Maurice de Berkeley\n- Robert Clifford, 3rd Baron Clifford -> Thomas de Clare, Lord of Thomond\n- Robert Clifford, 3rd Baron Clifford -> Maurice de Berkeley, 2nd Baron Berkeley\n- Robert Clifford, 3rd Baron Clifford -> Maurice de Berkeley\n- Margaret Beaufort, Countess of Stafford -> Edmund Beaufort, 2nd Duke of Somerset\nPassages:\nP1: Maurice de Berkeley: Sir Maurice de Berkeley\" the Resolute\"( 1218- 4 April 1281), 5th( feudal) Baron de Berkeley, was an English soldier and rebel, residing at Berkeley Castle in the English county of Gloucestershire.\nP2: Thomas de Clare, Lord of Thomond: Thomas de Clare, 1st Lord of Thomond, 1st Lord of Inchiquin and Youghal( 1244×124729 August 1287) was a Hiberno- Norman peer and soldier. He was the second son of Richard de Clare, 6th Earl of Gloucester and his wife Maud de Lacy, Countess of Gloucester. In 1272 he served a term as Lieutenant of the Duchy of Aquitaine. On 26 January 1276 he was granted the Lordship of Thomond by Edward I of England; he spent the next eight years attempting to conquer it from ...\nP3: Thomas de Clare, Lord of Thomond: Thomas de Clare, 1st Lord of Thomond, 1st Lord of Inchiquin and Youghal (1244×124729 August 1287) was a Hiberno-Norman peer and soldier. He was the second son of Richard de Clare, 6th Earl of Gloucester and his wife Maud de Lacy, Countess of Gloucester. In 1272 he served a term as Lieutenant of the Duchy of Aquitaine. On 26 January 1276 he was granted the Lordship of Thomond by Edward I of England; he spent the next eight years attempting to conquer it from the ...\nP4: Elizabeth le Despenser: Elizabeth Despenser( died 10 April/ 11 April 1408) was an English noblewoman of the late 14th century. She should not be confused with Elizabeth le Despenser, Baroness Berkeley who was her great- aunt and who was the daughter of her great- grandmother, Eleanor de Clare. She was the daughter of Sir Edward le Despencer, 1st Baron le Despencer, by Lady Elizabeth Burghersh, daughter and heiress of Bartholomew de Burghersh, 2nd Baron Burghersh.\nP5: Rebel: A rebel is a participant in a rebellion. Rebel or rebels may also refer to:\nP6: Hugh Despenser the younger: Hugh le Despenser, 1st Lord Despenser (c. 1286 – 24 November 1326), also referred to as \"the younger Despenser\", was the son and heir of Hugh le Despenser, Earl of Winchester (the elder Despenser) by his wife Isabella de Beauchamp, daughter of William de Beauchamp, 9th Earl of Warwick. He rose to national prominence as royal chamberlain and a favourite of Edward II of England. Despenser made many enemies across the nobility of England which, after the overthrow of ...\nP7: Hugh Despenser the younger: Hugh le Despenser, 1st Lord Despenser( c. 1286 – 24 November 1326), also referred to as\" the younger Despenser\", was the son and heir of Hugh le Despenser, Earl of Winchester( the elder Despenser) by his wife Isabella de Beauchamp, daughter of William de Beauchamp, 9th Earl of Warwick. He rose to national prominence as royal chamberlain and a favourite of Edward II of England. Despenser made many enemies across the nobility of England which, after the overthrow of ...\nP8: Edmund Beaufort, 2nd Duke of Somerset: Edmund Beaufort, 2nd Duke of Somerset, KG( 22 May 1455), was an English nobleman and an important figure in the Wars of the Roses and in the Hundred Years' War. He also succeeded in the title of 4th Earl of Somerset and was created 1st Earl of Dorset and 1st Marquess of Dorset( previously held by his father and later forfeited), and Count of Mortain. He was known for his deadly rivalry with Richard of York, 3rd Duke of York.\nP9: Edmund Beaufort, 2nd Duke of Somerset: Edmund Beaufort, 2nd Duke of Somerset, KG (22 May 1455), was an English nobleman and an important figure in the Wars of the Roses and in the Hundred Years' War. He also succeeded in the title of 4th Earl of Somerset and was created 1st Earl of Dorset and 1st Marquess of Dorset (previously held by his father and later forfeited), and Count of Mortain. He was known for his deadly rivalry with Richard of York, 3rd Duke of York.\nP10: Maurice de Berkeley, 4th Baron Berkeley: Maurice de Berkeley, 4th Baron Berkeley (c. 1330 – 8 June 1368), \"The Valiant\", feudal baron of Berkeley, of Berkeley Castle in Gloucestershire, was an English peer. His epithet, and that of each previous and subsequent head of his family, was coined by John Smyth of Nibley (died 1641), steward of the Berkeley estates, the biographer of the family and author of \"Lives of the Berkeleys\". He was born in Berkeley Castle in Gloucestershire, the eldest son ...\nQuestion: Who is Maurice De Berkeley, 4Th Baron Berkeley's maternal grandfather?\nFinal answer:",
+  "output": "Robert Clifford, 3rd Baron Clifford",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-a22acf476e2a4ab2",
+    "object": "chat.completion",
+    "created": 1779535785,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Robert Clifford, 3rd Baron Clifford",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1491,
+      "total_tokens": 1500,
+      "completion_tokens": 9,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

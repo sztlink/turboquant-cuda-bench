@@ -1,0 +1,48 @@
+{
+  "qid": "9042c21c0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "31 January 1330",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- John III, Marquis of Namur -> William I, Marquis of Namur\n- John II, Marquis of Namur -> John I, Marquis of Namur\n- John II, Marquis of Namur -> John III, Duke of Brabant\n- John II, Marquis of Namur -> John I, Marquis of Namur\n- John II, Marquis of Namur -> John III, Duke of Brabant\n- Philip III, Marquis of Namur -> John I, Marquis of Namur\n- Philip III, Marquis of Namur -> Them!\n- Henry II of Namur -> Enguerrand III, Lord of Coucy\n- Henry II of Namur -> Yolanda of Flanders\n- William II, Marquis of Namur -> Louis VII, Duke of Bavaria\nPassages:\nP1: John I, Marquis of Namur: John I of Namur (1267 – 31 January 1330) was the ruler of Namur from 1305 to 1330. He was a member of the House of Dampierre, the son of Guy of Dampierre, Count of Flanders and Marquis of Namur, and his second wife Isabelle of Luxembourg. John was the father of Blanche of Namur, Queen of Sweden and Norway. He was the elder brother of Guy of Namur, whom he sent to command the Flemish rebels against the French Kingdom in the 1302 Battle of the Golden Spurs.\nP2: John III, Duke of Brabant: John III( 1300 – 5 December 1355) was Duke of Brabant, Lothier, and Limburg( 1312 – 1355). He was the son of John II, Duke of Brabant, and Margaret of England.\nP3: Enguerrand III, Lord of Coucy: Enguerrand III de Boves, Lord of Coucy( c.1182–1242) was the eldest son and successor of Ralph I, Lord of Coucy( c. 1134 – 1191) and Alix de Dreux. He succeeded as Lord of Coucy(\" sieur de Couci\") in 1191, and held it until his death; he was also lord of Marle and Boves.\nP4: Yolanda of Flanders: Yolanda of Flanders, Marchioness of Namur (1175 – August 1219) was Empress of the Latin Empire in Constantinople in her own right from 1216 to 1219 and from 1217 as a sole ruler, after her spouse Peter II of Courtenay was captured and imprisoned before he could reach Constantinople. She was ruling Marchioness of Namur from 1212 until 1219.\nP5: Louis VII, Duke of Bavaria: Duke Louis VII of Bavaria ( c. 1368 – 1 May 1447, Burghausen) (German: \"Ludwig VII. der Bärtige, Herzog von Bayern\") was Duke of Bavaria-Ingolstadt from 1413 until 1443. He was a son of Stephen III and Taddea Visconti.\nP6: Them!: Them! is a 1954 American black- and- white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \" Them!\" is one of the first of the 1950s\" nuclear monster\" films, and the first\" big bug\" feature. A nest ...\nP7: Them!: Them! is a 1954 American black-and-white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \"Them!\" is one of the first of the 1950s \"nuclear monster\" films, and the first \"big bug\" feature. A nest of ...\nP8: Philip III, Marquis of Namur: Philip III of Namur (1319 – September 1337 in Famagusta) was Count of Namur from 1336 to 1337. He was the fourth son of John I, Marquis of Namur, and Mary of Artois. When his older brother Guy was killed in a tournament in Flanders in March 1336, Philip became his successor. At that time, Philip was in Sweden at the court of his sister Blanche of Namur, Queen consort of Sweden and Norway. From there he traveled to the Holy Land via Cyprus, with his brother-in-law ...\nP9: John III, Marquis of Namur: John III( died 10 March 1429) was between 1418 and 1429 the last independent Marquis of Namur. He was the youngest son of William I, Marquis of Namur and Catherine of Savoy( † 1388), daughter of Louis II of Savoy, baron of Vaud, and Isabella of Châlon.< br> When his father died in 1391, he inherited Wijnendale and Ronse. He succeeded his elder brother William II as Marquis of Namur, when William died without children in 1418. John never married, but had an ...\nP10: John II, Marquis of Namur: John II of Namur, (1311 – 2 April 1335), was Marquis of Namur from 1330 to 1335. He was the eldest son of John I, Marquis of Namur, and Mary of Artois. He succeeded his father on 26 January 1330. He joined an alliance against John III, Duke of Brabant, but by the intervention of King Philip VI of France, a conflict was averted. He died unmarried, but had an illegitimate son Philip, who was killed in 1380, while defending Dendermonde.<br > He was succeeded by his ...\nQuestion: When did Philip Iii, Marquis Of Namur's father die?\nFinal answer:",
+  "output": "1335",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-bf37afec3629cb30",
+    "object": "chat.completion",
+    "created": 1779535856,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "1335",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1533,
+      "total_tokens": 1538,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

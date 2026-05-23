@@ -1,0 +1,66 @@
+{
+  "idx": 131,
+  "qid": "43208df60bde11eba7f7acde48001122",
+  "gold": "French",
+  "candidates": [
+    "France",
+    "Israel",
+    "Benjamin Millepied",
+    "Rachel Weisz",
+    "The Accompanist",
+    "Miloš Forman",
+    "Ted Demme",
+    "The Dancer",
+    "Natalie Portman",
+    "Goya's Ghosts",
+    "Natalie Ascencios",
+    "My Blueberry Nights"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: France\nC2: Israel\nC3: Benjamin Millepied\nC4: Rachel Weisz\nC5: The Accompanist\nC6: Miloš Forman\nC7: Ted Demme\nC8: The Dancer\nC9: Natalie Portman\nC10: Goya's Ghosts\nC11: Natalie Ascencios\nC12: My Blueberry Nights\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Neta Riskin -> Natalie Portman\n- Beautiful Girls (film) -> Natalie Portman\n- Beautiful Girls (film) -> Ted Demme\n- Aki Avni -> Natalie Portman\n- Natalie Portman -> Benjamin Millepied\n- Natalie Portman -> The Dancer\n- Robert Marks (vocal coach) -> Natalie Portman\n- Robert Marks (vocal coach) -> The Accompanist\n- Goya's Ghosts -> Natalie Portman\n- Goya's Ghosts -> Miloš Forman\n- My Blueberry Nights -> Natalie Portman\n- My Blueberry Nights -> Rachel Weisz\nPassages:\nP1: Benjamin Millepied: Benjamin Millepied (born 10 June 1977) is a French dancer and choreographer, who has lived and worked in the United States after joining the New York City Ballet in 1995, where he became a soloist in 1998 and a principal in 2002. He has also created choreography for the company, and choreographed pieces for other major companies. He retired from NYCB in 2011. He initiated the LA Dance Project, leading it from 2011 to 2014. He was Director of Dance at the Paris Opera Ballet ...\nP2: Rachel Weisz: Rachel Hannah Weisz (born 7 March 1970) is a British-American actress. She is the recipient of several accolades, including an Academy Award and a British Academy Film Award. Weisz began acting in British stage and television in the early 1990s, and made her film debut in \"Death Machine\" (1994). She won a Critics' Circle Theatre Award for her role in the 1994 revival of Noël Coward's play \"Design for Living\" and she went on to appear in the 1999 Donmar Warehouse production of ...\nP3: The Accompanist: The Accompanist( French:\" L'Accompagnatrice\") is a 1992 French film directed by Claude Miller from a novel by Nina Berberova, and starring Romane Bohringer, Yelena Safonova and Richard Bohringer.\nP4: Miloš Forman: Jan Tomáš\" Miloš\" Forman( 18 February 1932 – 13 April 2018) was a Czech- American film director, screenwriter, actor, and professor who rose to fame in his native Czechoslovakia before emigrating to the United States 1968. Forman was an important figure in the Czechoslovak New Wave. Film scholars and Czechoslovakian authorities saw his 1967 film\" The Firemen's Ball\" as a biting satire on Eastern European Communism, and it was banned for many years in his home country. He left ...\nP5: Ted Demme: Edward Kern \"Ted\" Demme (October 26, 1963 – January 13, 2002) was an American director, producer, and actor.\nP6: The Dancer: The Dancer may refer to:\nP7: Natalie Portman: Natalie Portman (born Neta-Lee Hershlag; June 9, 1981) is an actress and filmmaker with dual Israeli and American citizenship. Prolific in film since a teenager, she has starred in blockbusters and also played psychologically troubled women in independent films, for which she has received several accolades, including an Academy Award and two Golden Globe Awards. Portman began her acting career at age 12 by starring as the young protégée of a hitman in the action drama film  ...\nP8: Goya's Ghosts: Goya's Ghosts is a 2006 Spanish- American film, directed by Miloš Forman( his final directorial feature before his death in 2018), and written by him and Jean- Claude Carrière. The film stars Javier Bardem, Natalie Portman and Stellan Skarsgård, and was filmed on location in Spain during late 2005. The film was written, produced, and performed in English although it is a Spanish production. Although the historical setting of the film is authentic, the story about Goya trying to ...\nP9: Natalie Ascencios: Natalie Ascencios is a painter and illustrator.\nP10: My Blueberry Nights: My Blueberry Nights is a 2007 American romantic drama film directed by Wong Kar-wai, his first feature in English. The screenplay by Wong and Lawrence Block is based on a short Chinese-language film written and directed by Wong. \"My Blueberry Nights\" was the debut of jazz singer Grammy-winner Norah Jones as an actress, and also starred Jude Law, David Strathairn, Rachel Weisz, Natalie Portman, and Benjamin Kanes. The cinematographer of this film was Darius Khondji. ...\nQuestion: Which country Natalie Portman's husband is from?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"France\",\"selected\":\"C1\",\"confidence\":\"medium\",\"reason\":\"Natalie Portman is from Israel and the United States, and her husband Benjamin Millepied is a French dancer and choreographer.\"}",
+  "verifier": {
+    "final_answer": "France",
+    "selected": "C1",
+    "confidence": "medium",
+    "reason": "Natalie Portman is from Israel and the United States, and her husband Benjamin Millepied is a French dancer and choreographer."
+  },
+  "final": "France",
+  "selected": "C1",
+  "response": {
+    "id": "chatcmpl-9ad8651ca96b339b",
+    "object": "chat.completion",
+    "created": 1779536014,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"France\",\"selected\":\"C1\",\"confidence\":\"medium\",\"reason\":\"Natalie Portman is from Israel and the United States, and her husband Benjamin Millepied is a French dancer and choreographer.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1341,
+      "total_tokens": 1389,
+      "completion_tokens": 48,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 0.9115335941314697
+}

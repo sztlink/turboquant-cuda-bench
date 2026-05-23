@@ -1,0 +1,48 @@
+{
+  "qid": "dfe93efe0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "1983",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Jean Martin (singer) -> The Singer\n- Did a Good Man Die? -> Fadil Hadžić\n- Did a Good Man Die? -> The Good Man\n- Meet Him and Die -> Franco Prosperi\n- Jean-Martin Petit -> The General\n- Áine Furey -> Finbar Furey\n- Áine Furey -> The Singer\nPassages:\nP1: The Singer: The Singer may refer to:\nP2: Fadil Hadžić: Fadil Hadžić( 23 April 1922 – 3 January 2011) was a Croatian film director, screenwriter, playwright and journalist, mainly known for his comedy films and plays. He was of Bosnian origin, but mainly lived and worked in Croatia, and was well known throughout Yugoslavia.\nP3: The Good Man: The Good Man is a 2012 film by Phil Harrison starring Aidan Gillen.\nP4: Franco Prosperi: Franco Prosperi (2 September 1926 – 17 October 2004) was an Italian film director and screenwriter, active between the mid-1960s and the early 1980s. Born Francesco Prosperi in Rome, Prosperi began his career as an assistant director with Mario Bava and with whom he also wrote several screenplays. In 1966, he made his directorial debut, credited as Frank Shannon, with the thriller film, \"Tecnica di un omicidio\" and over the years he built a solid reputation as a director of ...\nP5: The General: The General or The Generals may refer to:\nP6: Finbar Furey: Finbar Furey (born 28 September 1946), is a multi-instrumental Irish folk musician, best known for his band of brothers, The Fureys who were formed in Ballyfermot, Dublin, where they grew up.\nP7: Jean Martin (singer): Jean Martin (1919–2004) was an American singer and actor. Born in Texas, she moved to New York and worked in radio and television during the 1950s. She was married to William Black, who was the founder of the Chock full o'Nuts restaurant chain and coffee brand.\nP8: Jean Martin (disambiguation): Jean Martin may refer to:\nP9: Did a Good Man Die?: Did a Good Man Die? (\" Da li je umro dobar čovjek?\") is a Croatian film directed by Fadil Hadžić and starring Boris Dvornik. It was released in 1962.\nP10: Jean-Martin Petit: Jean- Martin Petit( 22 July 1772 in Paris – 8 June 1856 in Paris) was a French General during the Napoleonic Wars.\nQuestion: When did Jean Martin (Singer)'s husband die?\nFinal answer:",
+  "output": "2004",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9d4f08b3093e5d0e",
+    "object": "chat.completion",
+    "created": 1779535477,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "2004",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 720,
+      "total_tokens": 725,
+      "completion_tokens": 5,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

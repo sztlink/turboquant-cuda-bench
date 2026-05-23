@@ -1,0 +1,48 @@
+{
+  "qid": "4c070b620bb011ebab90acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Queen Sofía of Spain",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Felipe de Marichalar y Borbón -> Jaime de Marichalar\n- Felipe de Marichalar y Borbón -> Jaime de Marichalar\n- Victoria de Marichalar y Borbón -> Infanta Elena, Duchess of Lugo\n- Victoria de Marichalar y Borbón -> Jaime de Marichalar\n- Victoria de Marichalar y Borbón -> Infanta Elena, Duchess of Lugo\n- Victoria de Marichalar y Borbón -> Jaime de Marichalar\n- Jaime de Marichalar -> Infanta Elena, Duchess of Lugo\n- Infanta Elena, Duchess of Lugo -> Juan Carlos I of Spain\n- Infanta Elena, Duchess of Lugo -> Queen Sofía of Spain\nPassages:\nP1: Felipe de Marichalar y Borbón: \"Don\" Felipe Juan Froilán de Todos los Santos de Marichalar y Borbón (born 17 July 1998 in Madrid) is the elder child and only son of the Duchess of Lugo, Infanta Elena of Spain, and \"Don\" Jaime de Marichalar. Felipe is fourth in the line of succession to the Spanish Throne, after his mother.\nP2: Felipe de Marichalar y Borbón: \" Don\" Felipe Juan Froilán de Todos los Santos de Marichalar y Borbón( born 17 July 1998 in Madrid) is the elder child and only son of the Duchess of Lugo, Infanta Elena of Spain, and\" Don\" Jaime de Marichalar. Felipe is fourth in the line of succession to the Spanish Throne, after his mother.\nP3: Juan Carlos I of Spain: Juan Carlos I( Juan Carlos Alfonso Víctor María de Borbón y Borbón- Dos Sicilias, born 5 January 1938) is a member of the Spanish royal family who reigned as King of Spain from November 1975 until his abdication in June 2014. Juan Carlos is the grandson of Alfonso XIII, the last king of Spain before the abolition of the monarchy in 1931 and the subsequent declaration of the Second Spanish Republic. Juan Carlos was born in Rome, Italy, during his family's exile. \" ...\nP4: Juan Carlos I of Spain: Juan Carlos I (Juan Carlos Alfonso Víctor María de Borbón y Borbón-Dos Sicilias, born 5 January 1938) is a member of the Spanish royal family who reigned as King of Spain from November 1975 until his abdication in June 2014. Juan Carlos is the grandson of Alfonso XIII, the last king of Spain before the abolition of the monarchy in 1931 and the subsequent declaration of the Second Spanish Republic. Juan Carlos was born in Rome, Italy, during his family's exile. \" ...\nP5: Queen Sofía of Spain: Sophia of Greece and Denmark (born 2 November 1938) is a member of the Spanish royal family who served as Queen of Spain during the reign of her husband, King Juan Carlos I, from 1975 to 2014. Queen Sofía is the first child of King Paul of Greece and Frederica of Hanover. As her family was forced into exile during the Second World War, she spent part of her childhood in South Africa, returning to Greece in 1946. She completed her secondary education in a boarding school in ...\nP6: Victoria de Marichalar y Borbón: \" Doña\" Victoria Federica de Todos los Santos de Marichalar y Borbón( born 9 September 2000) is the younger child and only daughter of the Spanish Infanta Elena, Duchess of Lugo, and\" Don\" Jaime de Marichalar. \" Doña\" Victoria Federica is fifth in the line of succession to the Spanish Throne, after her brother Felipe.\nP7: Victoria de Marichalar y Borbón: \"Doña\" Victoria Federica de Todos los Santos de Marichalar y Borbón (born 9 September 2000) is the younger child and only daughter of the Spanish Infanta Elena, Duchess of Lugo, and \"Don\" Jaime de Marichalar. \" Doña\" Victoria Federica is fifth in the line of succession to the Spanish Throne, after her brother Felipe.\nP8: Jaime de Marichalar: \"Don\" Jaime de Marichalar y Sáenz de Tejada, Lord of the Manor of Tejada (born 7 April 1963) is the former husband of the Infanta Elena, Duchess of Lugo, the eldest daughter of King Juan Carlos and Queen Sofia of Spain.\nP9: Infanta Cristina of Spain: Infanta Cristina of Spain (\"Cristina Federica Victoria Antonia de la Santísima Trinidad de Borbón y de Grecia\", born 13 June 1965) is the younger daughter of King Juan Carlos I and Queen Sofía. she is sixth in the line of succession to the Spanish throne, after her brother King Felipe VI's children, her sister Elena, and Elena's children. From 2013 she was investigated and later tried for fraud relating to accusations of corruption involving a company owned by ...\nP10: Infanta Elena, Duchess of Lugo: Infanta Elena, Duchess of Lugo (Elena María Isabel Dominica de Silos de Borbón y de Grecia; born 20 December 1963) is the first child and elder daughter of King Juan Carlos I of Spain and Queen Sofía of Spain, and third in the line of succession to the Spanish throne. She has a younger sister, Infanta Cristina, and a younger brother, King Felipe VI. Infanta Elena has represented her family abroad on several occasions, having travelled to Germany, the United ...\nQuestion: Who is the maternal grandmother of Felipe De Marichalar Y Borbón?\nFinal answer:",
+  "output": "Queen Sofía of Spain",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-97a84327a28f3bea",
+    "object": "chat.completion",
+    "created": 1779535591,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Queen Sofía of Spain",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1356,
+      "total_tokens": 1362,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

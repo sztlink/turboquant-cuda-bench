@@ -1,0 +1,48 @@
+{
+  "qid": "2fcf02980bdc11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "American",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: West 32nd: West 32nd is a 2007 film directed by Michael Kang and starring John Cho, Jun-seong Kim, Grace Park, Jane Kim and Jeong Jun-ho. The plot concerns John Kim, an ambitious young lawyer in New York, who takes on a pro-bono case involving a fourteen-year-old Korean boy accused of murder. Upon investigating the case, he meets Mike Juhn, a street level Mobster from Flushing. The two try to use each other to climb their respective ladders.\nP2: 1939 (film): 1939 is a Swedish drama film which was released to cinemas in Sweden on 25 December 1989, directed by Göran Carmback. It's set in Stockholm in 1939 where 18 year old Annika from Värmland comes to work as a waitress girl.\nP3: House of Lords: The House of Lords, also known as the House of Peers and domestically usually referred to simply as the Lords, is the upper house of the Parliament of the United Kingdom. Membership is granted by appointment or else by heredity or official function. Like the House of Commons, it meets in the Palace of Westminster. Officially, the full name of the house is the Right Honourable the Lords Spiritual and Temporal of the United Kingdom of Great Britain and Northern Ireland in ...\nP4: Accused of Murder: Accused of Murder is a 1956 American Trucolor film noir crime film directed by Joseph Kane and starring David Brian and Vera Ralston, Sidney Blackmer.\nP5: The Street: The Street may refer to:\nP6: Lev Kuleshov: Lev Vladimirovich Kuleshov( – 29 March 1970) was a Russian and Soviet filmmaker and film theorist, one of the founders of the world's first film school, the Moscow Film School. He was given the title People's Artist of the RSFSR in 1969. He was intimately involved in development of the style of film making known as Soviet montage, especially its psychological underpinning, including the use of editing and the cut to emotionally influence the audience, a principle known as the ...\nP7: Louis Malle: Louis Marie Malle( 30 October 1932 – 23 November 1995) was a French film director, screenwriter and producer. His film\" Le Monde du silence\" won the Palme d' Or in 1956 and the Academy Award for Best Documentary in 1957, although he was not credited at the ceremony; the award was instead presented to the film's co-director Jacques Cousteau. Later in his career he was nominated multiple times for Academy Awards. Malle is also one of only four directors to have won the Golden Lion ...\nP8: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP9: Point: Point or points may refer to:\nP10: Six Years: 6 Years or Six Years may refer to:\nQuestion: Which country the director of film West 32Nd is from?\nFinal answer:",
+  "output": "South Korea",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-87bed8f2f2430ae8",
+    "object": "chat.completion",
+    "created": 1779535724,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "South Korea",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 774,
+      "total_tokens": 777,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

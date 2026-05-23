@@ -1,0 +1,64 @@
+{
+  "idx": 389,
+  "qid": "169e179a0bb011ebab90acde48001122",
+  "gold": "Muryeong",
+  "candidates": [
+    "Francis I",
+    "Guisin of Baekje",
+    "Henry IV of France",
+    "Part",
+    "Hye of Baekje",
+    "Seong of Baekje",
+    "Asin of Baekje",
+    "Han Hye-yong",
+    "Charles, Duke of Vendôme",
+    "William Montagu Douglas Scott, 6th Duke of Buccleuch"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Francis I\nC2: Guisin of Baekje\nC3: Henry IV of France\nC4: Part\nC5: Hye of Baekje\nC6: Seong of Baekje\nC7: Asin of Baekje\nC8: Han Hye-yong\nC9: Charles, Duke of Vendôme\nC10: William Montagu Douglas Scott, 6th Duke of Buccleuch\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Han Hye-yong -> Part\n- Charles, Duke of Vendôme -> Henry IV of France\n- Charles, Duke of Vendôme -> Francis I\nPassages:\nP1: Henry IV of France: Henry IV (read as ; 13 December 1553 – 14 May 1610), also known by the epithet Good King Henry or Henry the Great, was King of Navarre (as Henry III) from 1572 and King of France from 1589 to 1610. He was the first monarch of France from the House of Bourbon, a cadet branch of the Capetian dynasty. He was assassinated in 1610 by François Ravaillac, a fanatical Catholic, and was succeeded by his son Louis XIII. The son of Antoine de Bourbon, Duke of Vendôme and Jeanne ...\nP2: Part: Part, parts or PART may refer to:\nP3: Francis I: Francis I or Francis the First may refer to:\nP4: Hye of Baekje: King Hye of Baekje (died 599) (r. 598–599) was the 28th king of Baekje, one of the Three Kingdoms of Korea. The second son of the 26th king Seong, he assumed the throne after the death of his older brother and 27th king Wideok, but reigned only briefly before his own death. The Samguk Yusa describes him as the son of Wideok, but this is considered an error. His reign saw major inroads from the neighbouring Silla and Goguryeo kingdoms, with Silla occupying the present-day Seoul ...\nP5: Seong of Baekje: Seong of Baekje (also \"Holy King\", died 554) (r. 523–554) was the 26th king of Baekje, one of the Three Kingdoms of Korea. He was a son of Muryeong of Baekje and is best known for making Buddhism the state religion, moving the national capital to Sabi (present-day Buyeo County), and reclaiming the center of the Korean Peninsula. His demise eventually came at the hands of an ally who betrayed him. The name Seong translates as 'The Holy.'\nP6: Guisin of Baekje: Guisin of Baekje (?–427, r. 420–427) was the nineteenth king of Baekje, one of the Three Kingdoms of Korea. He was the eldest son of King Jeonji and Lady Palsu. The traditional dates of Guisin's rule are based on the \"Samguk Sagi\". On the basis of more contemporaneous Chinese records, the historian J. W. Best has suggested that the years 414–429 or 430 are more plausible.\nP7: Asin of Baekje: Asin of Baekje (died 405) (r. 392–405) was the seventeenth king of Baekje, one of the Three Kingdoms of Korea.\nP8: Han Hye-yong: Han Hye- yong( or; born) is a female North Korean football goalkeeper. She was part of the North Korea women's national football team at the 2008 Summer Olympics. On club level she played for Pyongyang City.\nP9: Charles, Duke of Vendôme: Charles de Bourbon (2 June 1489 – 25 March 1537) was a French \"prince du sang\" and military commander at the court of Francis I of France. He is notable as the paternal grandfather of King Henry IV of France.\nP10: William Montagu Douglas Scott, 6th Duke of Buccleuch: William Henry Walter Montagu Douglas Scott, 6th Duke of Buccleuch and 8th Duke of Queensberry (9 September 1831 – 5 November 1914) was a Scottish Member of Parliament and peer. He was the paternal grandfather of Princess Alice, Duchess of Gloucester, and the maternal great-grandfather of Prince William of Gloucester and Prince Richard, Duke of Gloucester. He was a paternal great-great-grandfather to Sarah, Duchess of York.\nQuestion: Who is Hye Of Baekje's paternal grandfather?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about Hye of Baekje's paternal grandfather. The passages mention Seong of Baekje and Wideok as related figures, but there is no information linking them to Hye of Baekje's lineage.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence passages do not provide information about Hye of Baekje's paternal grandfather. The passages mention Seong of Baekje and Wideok as related figures, but there is no information linking them to Hye of Baekje's lineage."
+  },
+  "final": "Francis I",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-9027ae1e2ef620e1",
+    "object": "chat.completion",
+    "created": 1779536176,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about Hye of Baekje's paternal grandfather. The passages mention Seong of Baekje and Wideok as related figures, but there is no information linking them to Hye of Baekje's lineage.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1217,
+      "total_tokens": 1286,
+      "completion_tokens": 69,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.2605788707733154
+}

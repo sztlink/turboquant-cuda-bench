@@ -1,0 +1,48 @@
+{
+  "qid": "d52aa2a20bdb11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "Strasbourg",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Louise Sophie of Hanau-Lichtenberg: Countess Louise Sophie of Hanau-Lichtenberg (11 April 1662 in Bischofsheim am Hohen Steg – 9 April 1751 in Ottweiler) was a daughter of Johann Reinhard II, Count of Hanau-Lichtenberg (1628–1666) and Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler (1640–1693). She married on 27 September 1697 to Frederick Louis, Count of Nassau-Ottweiler (13 November 1651 – 25 May 1728). This was his second marriage; it remained childless.\nP2: Louise: Louise or Luise may refer to:\nP3: Johann Reinhard II, Count of Hanau-Lichtenberg: Count Johann Reinhard II of Hanau- Lichtenberg( in Bouxwiller – 25 April 1666 in Bischofsheim am Hohen Steg) was a younger son of Count Philipp Wolfgang of Hanau- Lichtenberg( 1595 – 1641) and Countess Johanna of Oettingen- Oettingen( d. 1639).\nP4: Johann Reinhard II, Count of Hanau-Lichtenberg: Count Johann Reinhard II of Hanau-Lichtenberg (in Bouxwiller – 25 April 1666 in Bischofsheim am Hohen Steg) was a younger son of Count Philipp Wolfgang of Hanau-Lichtenberg (1595–1641) and Countess Johanna of Oettingen-Oettingen (d. 1639).\nP5: Philipp V, Count of Hanau-Lichtenberg: Philipp V of Hanau- Lichtenberg( 21 February 1541, Bouxwiller – 2 June 1599, Niederbronn) was Count of Hanau- Lichtenberg from 1590 until his death.\nP6: Ludowika Margaretha of Zweibrücken-Bitsch: Ludowika Margaretha of Zweibrücken-Bitsch (19 July 1540, Ingwiller – 15 December 1569, Bouxwiller), was the only child and heiress of Count James of Zweibrücken-Bitsch (born: 19 July 1510; died: 22 March 1570) by his wife Catherine, born Countess of Honstein zu Klettenberg. She was buried in Ingwiller.\nP7: Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler: Countess Palatine Anna Magdalena of Birkenfeld- Bischweiler( 14 February 1640, Strasbourg – 12 December 1693, Babenhausen) was a daughter of Christian I, Count Palatine of Birkenfeld- Bischweiler( 1598 – 1654) and his first wife, Countess Palatine Magdalene Catherine of Zweibrücken( 1606 – 1648).\nP8: Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler: Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler (14 February 1640, Strasbourg – 12 December 1693, Babenhausen) was a daughter of Christian I, Count Palatine of Birkenfeld-Bischweiler (1598–1654) and his first wife, Countess Palatine Magdalene Catherine of Zweibrücken (1606–1648).\nP9: Friedrich Casimir, Count of Hanau-Lichtenberg: Friedrich Casimir of Hanau( born 4 August 1623 in Bouxwiller; died: 30 March 1685 in Hanau) was a member of the Hanau- Lichtenberg branch of the House of Hanau. He was the ruling Count of Hanau- Lichtenberg from 1641 and of Hanau- Münzenberg from 1642.\nP10: Philipp III, Count of Hanau-Lichtenberg: Philipp III of Hanau- Lichtenberg( 18 October 1482 – 15 May 1538, Bouxwiller) was the third Count of Hanau- Lichtenberg.\nQuestion: Where was the mother of Louise Sophie Of Hanau-Lichtenberg born?\nFinal answer:",
+  "output": "Strasbourg",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-bbd4cda5a1531ea5",
+    "object": "chat.completion",
+    "created": 1779535746,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Strasbourg",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1095,
+      "total_tokens": 1098,
+      "completion_tokens": 3,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "qid": "5750bfd20bdc11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Jean Harlow",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Worldly Goods -> Paul Bern\n- Worldly Goods -> Comedy!\n- Mary Sweeney -> Martha De Laurentiis\n- Mary Sweeney -> David Lynch\nPassages:\nP1: Worldly Goods: Worldly Goods is a 1924 American comedy silent film directed by Paul Bern and written by Sophie Kerr and A. P. Younger. The film stars Agnes Ayres, Patrick H. O'Malley, Jr., Victor Varconi, Edythe Chapman, Bert Woodruff, Maude George and Cecille Evans. The film was released on November 24, 1924, by Paramount Pictures.\nP2: Paul Bern: Paul Bern (born Paul Levy; December 3, 1889September 5, 1932) was a German-born American film director, screenwriter, and producer for Metro-Goldwyn-Mayer, where he became the assistant to Irving Thalberg. He helped launch the career of Jean Harlow, whom he married in July 1932; two months later, he was found dead of a gunshot wound, leaving what appeared to be a suicide note. Various alternative theories of his death have been proposed. Film producer Samuel Marx believed that he was ...\nP3: David Lynch: David Keith Lynch (born January 20, 1946) is an American filmmaker, painter, musician, actor, and photographer. He is best known for films such as \"Eraserhead\" (1977), \"Blue Velvet\" (1986) and \"Mulholland Drive\" (2001), often regarded by critics as among the best films of their respective decades, and for his successful 1990–91 television series \"Twin Peaks\", which led to him being labeled \"the first popular Surrealist\" by noted film critic Pauline Kael. A recipient of an Academy ...\nP4: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP5: Martha De Laurentiis: Martha De Laurentiis( born 10 July 1954 as\" Martha Schumacher\") is an American film producer. She was credited as Martha Schumacher until 1995. She is known for producing films such as\" Breakdown Hannibal\" and\" Red Dragon\" with her late husband Dino De Laurentiis, and TV series\" Hannibal\". In 1980, she and Dino De Laurentiis founded the production company the Dino De Laurentiis Company, and she is currently the company's chairman. With her husband Dino, whom she married in ...\nP6: Spouse of the President of the People's Republic of China: The Spouse of the President of the People's Republic of China, is the spouse of the President of the People's Republic of China. To date there have been 7 women who have been married to the Chinese president while in office.\nP7: Spouse of the Prime Minister of Cambodia: The Spouse of the Prime Minister of Cambodia refers to the wife of the head of government of the Kingdom of Cambodia, the Prime Minister. Since 1993, 3 women have been the spouse of the Prime Minister of Cambodia. The title\" First Lady\" is also commonly used. The spouse of the current Prime Minister is Dr. Bun Rany.\nP8: Spouse of the Prime Minister of Singapore: The Spouse of the Prime Minister of Singapore refers to the spouse of the head of government of Singapore, the Prime Minister. Since, Singapore became an internally self-governing state within the Commonwealth, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. To date, three women have held the title of the spouse of the Prime Minister of Singapore. Ho Ching is the spouse of the incumbent Prime ...\nP9: Spouse of the Prime Minister of Malaysia: The Spouse of the Prime Minister of Malaysia refers to the spouse of the head of government of Malaysia, the Prime Minister. Since independence in 1957, the title has been occupied by women, therefore the spouse is also known as the Prime Minister's wife. Some commentators have tried to style prime ministers' wives as\" First Lady of Malaysia\", similar to the style of First Lady used in republics, but this is not a recognised title. To date, seven women ...\nP10: List of spouses of Prime Ministers of Thailand: The spouse of the Prime Minister of Thailand is the wife or husband of the Prime Minister of Thailand. The spouse of the current Prime Minister is Associate Professor Naraporn Chan- o-cha.\nQuestion: Who is the spouse of the director of film Worldly Goods?\nFinal answer:",
+  "output": "Mary Sweeney",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-927c158bc0341985",
+    "object": "chat.completion",
+    "created": 1779535803,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Mary Sweeney",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1095,
+      "total_tokens": 1099,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

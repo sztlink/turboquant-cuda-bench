@@ -1,0 +1,48 @@
+{
+  "qid": "314f72c20bde11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "United States",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Rise Above: The Tribe 8 Documentary -> Tracy Flannigan\n- Rise Above: The Tribe 8 Documentary -> Four Years\n- Black Fox: The Rise and Fall of Adolf Hitler -> The Feature\n- Tracy Flannigan -> The Feature\n- Tracy Flannigan -> @Home\nPassages:\nP1: Rise Above: The Tribe 8 Documentary: Rise Above: The Tribe 8 Documentary is a feature film about the all women queercore punk band Tribe 8 directed and produced by Tracy Flannigan. The film chronicles live performances, candid moments of their lives at work and on the road, and the controversy at the Michigan Womyn's Music Festival, an all women's music festival, that landed them in a quagmire of protest and praise from a fiercely divided crowd. It also captures the truly funny and warm people ...\nP2: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP3: Four Years: Four Years or 4 Years may refer to:\nP4: @Home: @Home or @home may refer to:\nP5: Going to Pieces: The Rise and Fall of the Slasher Film: Going to Pieces: The Rise and Fall of the Slasher Film is a 2006 documentary film about slasher films. It makes reference to many popular horror and thriller films as well.\nP6: The Rise and Rise of Bitcoin: The Rise and Rise of Bitcoin is a 2014 American documentary film directed by Nicholas Mross. The film interviews multiple companies and people that have played important roles in the expansion of Bitcoin. It first premiered at the Tribeca Film Festival in New York on April 23, 2014. The film was nominated for the “ Best International Documentary Film ” at the 2014 Zurich Film Festival. This film has a run time of 96 minutes.\nP7: Black Fox: The Rise and Fall of Adolf Hitler: Black Fox: The Rise and Fall of Adolf Hitler is a 1962 documentary directed by Louis Clyde Stoumen, depicting the rise and fall of Nazi Germany. It won the Academy Award for Best Documentary Feature in 1962.\nP8: The Weather Underground (film): The Weather Underground is a 2002 documentary film based on the rise and fall of the American radical organization Weather Underground.\nP9: Japanese nationality law: Japanese nationality is a legal designation and set of rights granted to those people who have met the criteria for citizenship by parentage or by naturalization. Nationality is in the jurisdiction of the Minister of Justice and is generally governed by the Nationality Law of 1950.\nP10: Tracy Flannigan: Tracy Flannigan is an award winning independent filmmaker residing in the Echo Park area of Los Angeles who began making movies when she was seventeen years old. She has worked professionally for the last fifteen years in the film business and has created numerous short films and music videos. Her work has been screened at many film festivals throughout the United States. Tracy’s feature-length screenplay, \"The Late Great W.J.\", won a fellowship at the Squaw Valley Community of ...\nQuestion: What nationality is the director of film Rise Above: The Tribe 8 Documentary?\nFinal answer:",
+  "output": "American",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9b310173c655ed79",
+    "object": "chat.completion",
+    "created": 1779535715,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "American",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 850,
+      "total_tokens": 852,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

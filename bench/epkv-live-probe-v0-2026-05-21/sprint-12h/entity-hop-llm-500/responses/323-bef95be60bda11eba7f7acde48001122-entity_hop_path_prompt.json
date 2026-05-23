@@ -1,0 +1,48 @@
+{
+  "qid": "bef95be60bda11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "Pyay",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Salin Mibaya -> Thado Dhamma Yaza II of Prome\n- Salin Mibaya -> Hsinbyushin Medaw\n- Salin Mibaya -> Nawrahta Minsaw\n- Lucia of Rügen -> Canute V of Denmark\n- Begga -> Ansegisel\n- Jehovah-jireh -> Abraham\n- Jehovah-jireh -> Offer\n- Yolande of Aragon, Duchess of Calabria -> Raymond Berengar of Andria\n- Yolande of Aragon, Duchess of Calabria -> Peter III of Aragon\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Elizabeth Howard, Countess of Effingham -> Richard Howard, 4th Earl of Effingham\n- Elizabeth Howard, Countess of Effingham -> Thomas Howard, 2nd Earl of Effingham\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Thomas Howard, 2nd Earl of Effingham: Lieutenant-General Thomas Howard, 2nd Earl of Effingham (1714 – 19 November 1763), styled Lord Howard from 1731 to 1743, was a British nobleman and Army officer, the son of Francis Howard, 1st Earl of Effingham. Lord Howard was appointed a Deputy Lieutenant of the West Riding of Yorkshire on 19 February 1734. On 7 January 1739, he was commissioned a guidon in the 2nd Troop of Horse Grenadier Guards, of which his father was then captain and colonel. He was ...\nP3: Raymond Berengar of Andria: Raymond Berengar (between 1279 and 1282–1307) was the count of Andria and possibly Count of Provence and Prince of Piedmont. Raymond Berengar was the fifth son of Charles II of Naples and Maria of Hungary. He was born in Provence during a brief return of his father to take command of a fleet there. His homeland is evidenced in his Provençal name and the name of his nurse, Adelasia of Aix-en-Provence. He was known to have been born after Robert and no document of the ...\nP4: Peter III of Aragon: Peter III of Aragon( November 1285) was King of Aragon, King of Valencia( as Peter I), and Count of Barcelona( as) from 1276 to his death. At the invitation of some rebels, he conquered the Kingdom of Sicily and became King of Sicily in 1282, pressing the claim of his wife, Constance II of Sicily, uniting the kingdom to the crown.\nP5: Thado Dhamma Yaza II of Prome: Thado Dhamma Yaza II (1520s–1588) was viceroy of Prome (Pyay) from 1551 to 1588, during the reigns of kings Bayinnaung and Nanda of Toungoo Dynasty of Burma (Myanmar). Having begun his military career in the service of King Tabinshwehti, the youngest full brother of Bayinnaung was part of the small core group loyal to Bayinnaung, following the assassination of Tabinshwehti in 1550. Alongside his brothers Bayinnaung, Minye Sithu, Minkhaung II, Thado Minsaw and his ...\nP6: Canute V of Denmark: Canute V Magnussen  (– 9 August 1157) was a King of Denmark from 1146 to 1157, as co-regent in shifting alliances with Sweyn III and Valdemar I. Canute was killed at the so-called \"Bloodfeast of Roskilde\" in 1157. Nothing certain is known about his person and character.\nP7: Richard Howard, 4th Earl of Effingham: Richard Howard, 4th Earl of Effingham( 21 February 1748 – 11 December 1816) was a British peer and a member of the House of Lords, styled Hon. Richard Howard until 1791.\nP8: Nawrahta Minsaw: Nawrahta Minsaw (formally, Anawrahta Minsaw; also known as Nawrahta Saw and Tharrawaddy Min; 1551/52–1607/08) was king of Lan Na from 1579 to 1607/08, and the first Burmese-born vassal king of Lan Na. He was also an accomplished poet. Appointed to the Lan Na throne by his father King Bayinnaung of Burma, Nawrahta dutifully contributed to his half-brother King Nanda's debilitating war effort against Siam (1584–95). He declared independence in 1597 after having defeated a 1595–96 ...\nP9: Abraham: Abraham (né Abram) is the common patriarch of Christianity, Islam, Judaism, and other religions. In Judaism, he is the founding father of the covenant of the pieces, the special relationship between the Hebrews and God; in Christianity, he is the prototype of all believers, Jewish or Gentile; and in Islam he is seen as a link in the chain of prophets that begins with Adam and culminates in Muhammad. The narrative in the Book of Genesis revolves around the themes of posterity and land. ...\nP10: Ansegisel: Ansegisel (c. 602 or 610 – murdered before 679 or 662) was the younger son of Saint Arnulf, bishop of Metz. He served King Sigebert III of Austrasia (634–656) as a duke (Latin \"dux\", a military leader) and \"domesticus\". He was killed sometime before 679, slain in a feud by his enemy Gundewin. Through his son Pepin, Ansegisel's descendants would eventually become Frankish kings and rule over the Carolingian Empire.\nQuestion: Where was the place of death of Salin Mibaya's husband?\nFinal answer:",
+  "output": "Place of birth",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9cbfb66ff9e21b57",
+    "object": "chat.completion",
+    "created": 1779535760,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Place of birth",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1529,
+      "total_tokens": 1533,
+      "completion_tokens": 4,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

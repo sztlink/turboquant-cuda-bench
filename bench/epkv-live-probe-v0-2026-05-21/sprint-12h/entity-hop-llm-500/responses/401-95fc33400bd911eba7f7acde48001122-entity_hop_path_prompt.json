@@ -1,0 +1,48 @@
+{
+  "qid": "95fc33400bd911eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "French",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Princess Caroline Napoléon -> The Child\n- Princess Caroline Napoléon -> Princess Béatrice of Bourbon-Two Sicilies\n- Princess Caroline Napoléon -> The Child\n- Prince Napoléon Bonaparte -> Jérôme Bonaparte\n- Prince Napoléon Bonaparte -> Jérôme Bonaparte\n- Jérôme Napoléon Bonaparte -> Jérôme Bonaparte\n- Alexandre Colonna-Walewski -> Marie Walewska\nPassages:\nP1: Princess Béatrice of Bourbon-Two Sicilies: Princess Béatrice Marie Caroline Louise Françoise of Bourbon-Two Sicilies (born 16 June 1950 in Saint-Raphaël, Var, France) is the eldest daughter of Prince Ferdinand, Duke of Castro, Castro-line claimant to the headship of the House of Bourbon-Two Sicilies, and his wife, Chantal de Chevron-Villette. Her younger brother, Prince Carlo, Duke of Castro, is the current Castro-line claimant to the headship of the House of Bourbon-Two Sicilies. Since 2014, ...\nP2: The Child: The Child may refer to:\nP3: Marie Walewska: Marie Countess Walewska (née Łączyńska; ; 7 December 1786 – 11 December 1817) was a Polish noblewoman and a mistress of Emperor Napoleon I. In her later years she married count Philippe Antoine d'Ornano, an influential Napoleonic officer.\nP4: Prince Napoléon Bonaparte: Napoléon Joseph Charles Paul Bonaparte (9 September 1822 – 17 March 1891), usually called Napoléon-Jérôme Bonaparte or Jérôme Bonaparte, was the second son of Jerome, King of Westphalia and his second wife Catharina of Württemberg. An oustpoken liberal, he became the \"de facto\" head of the House of Bonaparte from 1879 to his death. He wasn't considered a legitimate pretender to the throne by many Bonapartists, due to his fathers previous marriage without divorce. They ...\nP5: Prince Napoléon Bonaparte: Napoléon Joseph Charles Paul Bonaparte( 9 September 1822 – 17 March 1891), usually called Napoléon- Jérôme Bonaparte or Jérôme Bonaparte, was the second son of Jerome, King of Westphalia and his second wife Catharina of Württemberg. An oustpoken liberal, he became the\" de facto\" head of the House of Bonaparte from 1879 to his death. He was n't considered a legitimate pretender to the throne by many Bonapartists, due to his fathers previous marriage without divorce. ...\nP6: Jérôme Napoléon Bonaparte: Jérôme Napoléon \" Bo\" Bonaparte( 5 July 1805 – 17 June 1870) was a French- American farmer, chairman of the Maryland Agricultural Society, first president of the Maryland Club, and the son of Elizabeth Patterson and Jérôme Bonaparte, brother of Napoleon I.\nP7: Princess Caroline Napoléon: Princess Caroline Marie Constance Napoléon( born 24 October 1980) is a member of the House of Bonaparte, which reigned as Emperors of the French twice during the 19th century. She is the first child and eldest daughter of Prince Charles Napoléon and his first wife, Princess Béatrice of Bourbon- Two Sicilies.\nP8: Princess Caroline Napoléon: Princess Caroline Marie Constance Napoléon (born 24 October 1980) is a member of the House of Bonaparte, which reigned as Emperors of the French twice during the 19th century. She is the first child and eldest daughter of Prince Charles Napoléon and his first wife, Princess Béatrice of Bourbon-Two Sicilies.\nP9: Jérôme Bonaparte: Jérôme-Napoléon Bonaparte (born Girolamo Buonaparte; 15 November 1784 – 24 June 1860) was the youngest brother of Napoleon I and reigned as Jerome I (formally Hieronymus Napoleon in German), King of Westphalia, between 1807 and 1813. From 1816 onward, he bore the title of Prince of Montfort. After 1848, when his nephew, Louis Napoleon, became President of the French Second Republic, he served in several official roles, including Marshal of France from 1850 onward, and ...\nP10: Iraqi nationality law: Iraqi nationality is transmitted by one's parents.\nQuestion: What nationality is Prince Napoléon Bonaparte's father?\nFinal answer:",
+  "output": "French",
+  "metrics": {
+    "em": 1.0,
+    "contains": 1.0,
+    "f1": 1.0
+  },
+  "response": {
+    "id": "chatcmpl-81993bfbb035c186",
+    "object": "chat.completion",
+    "created": 1779535829,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "French",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1169,
+      "total_tokens": 1171,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

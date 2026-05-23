@@ -1,0 +1,48 @@
+{
+  "qid": "2d907ba60bdc11eba7f7acde48001122",
+  "condition": "entity_hop_strong",
+  "gold": "New York",
+  "prompt": "You are answering a multi-hop question using retrieved passages.\nSome passages may be irrelevant or distracting.\nUse only passages that directly support the answer.\nAnswer with only the final answer string. No explanation.\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Operation Secret: Operation Secret is a 1952 American drama film directed by Lewis Seiler and written by Harold Medford and James R. Webb. The film stars Cornel Wilde, Steve Cochran, Phyllis Thaxter, Karl Malden, Paul Picerni and Lester Matthews. The film was released by Warner Bros. on November 8, 1952. The film is based on the exploit of US Marine Corps Major Peter Ortiz.\nP3: A Secret: A Secret is a 2007 French film directed and written by Claude Miller. The screenplay was based on the novel by Philippe Grimbert.\nP4: Secret Life: Secret Life, The Secret Life or The Secret Life of ... may refer to:\nP5: Walt Disney: Walter Elias Disney (December 5, 1901December 15, 1966) was an American entrepreneur, animator, voice actor and film producer. A pioneer of the American animation industry, he introduced several developments in the production of cartoons. As a film producer, Disney holds the record for most Academy Awards earned by an individual, having won 22 Oscars from 59 nominations. He was presented with two Golden Globe Special Achievement Awards and an Emmy Award, among other honors. Several ...\nP6: Charles Jarrott: Charles Jarrott( 16 June 1927 – 4 March 2011) was a British film and television director. He was best known for costume dramas he directed for producer Hal B. Wallis, among them\" Anne of the Thousand Days\", which earned him a Golden Globe for Best Director in 1970. Although\" Anne\" was nominated for several awards, critic Pauline Kael wrote in her book\" Reeling\"( Warner Books, p. 198), that as a director, Jarrott had no style or personality, and that he was just\" a traffic ...\nP7: Cornel Wilde: Cornel Wilde( born Kornél Lajos Weisz; October 13, 1912 – October 16, 1989) was a Hungarian- American actor and film director. Wilde's acting career began in 1935, when he made his debut on Broadway. In 1936 he began making small, uncredited appearances in films. By the 1940s, he had signed a contract with 20th Century Fox, and by the mid-1940s, he was a major leading man. He was nominated for the Academy Award for Best Actor for his performance in 1945's\" A Song to Remember\". In ...\nP8: Cornel Wilde: Cornel Wilde (born Kornél Lajos Weisz; October 13, 1912 – October 16, 1989) was a Hungarian-American actor and film director. Wilde's acting career began in 1935, when he made his debut on Broadway. In 1936 he began making small, uncredited appearances in films. By the 1940s, he had signed a contract with 20th Century Fox, and by the mid-1940s, he was a major leading man. He was nominated for the Academy Award for Best Actor for his performance in 1945's \"A Song to Remember\". In ...\nP9: Lewis Seiler: Lewis Seiler (September 30, 1891 – January 8, 1963) was an American film director. He directed 88 films between 1923 and 1958. He was born in New York, New York and died in Hollywood, California.\nP10: Claude Miller: Claude Miller( 20 February 1942 – 4 April 2012) was a French film director, producer and screenwriter.\nQuestion: What is the place of birth of the director of film Operation Secret?\nFinal answer:",
+  "output": "New York, New York",
+  "metrics": {
+    "em": 0.0,
+    "contains": 1.0,
+    "f1": 0.6666666666666666
+  },
+  "response": {
+    "id": "chatcmpl-b9c48560691af1c9",
+    "object": "chat.completion",
+    "created": 1779535663,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "New York, New York",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1024,
+      "total_tokens": 1030,
+      "completion_tokens": 6,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

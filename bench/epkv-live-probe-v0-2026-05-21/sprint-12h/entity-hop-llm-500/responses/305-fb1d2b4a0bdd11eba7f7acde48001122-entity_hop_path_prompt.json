@@ -1,0 +1,48 @@
+{
+  "qid": "fb1d2b4a0bdd11eba7f7acde48001122",
+  "condition": "entity_hop_path_prompt",
+  "gold": "France",
+  "prompt": "You are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Isabella of France (disambiguation) -> Edward III of England\n- Isabella of France (disambiguation) -> Joan I of Navarre\n- Isabella of Valois -> Isabeau of Bavaria\n- Isabella of Valois -> Charles, Duke of Orléans\n- Isabella of England -> Isabella of Angoulême\n- Isabella of England -> John, King of England\n- Isabella of England -> Isabella of Angoulême\n- Isabella of England -> John, King of England\n- Isabella of Lusignan -> Isabella of Angoulême\n- Isabella of Lusignan -> Hugh X of Lusignan\n- Isabella of Lusignan -> Isabella of Angoulême\n- Isabella of Lusignan -> Hugh X of Lusignan\nPassages:\nP1: Edward III of England: Edward III (13 November 1312 – 21 June 1377) was king of England and Lord of Ireland from January 1327 until his death; he is noted for his military success and for restoring royal authority after the disastrous and unorthodox reign of his father, Edward II. Edward III transformed the Kingdom of England into one of the most formidable military powers in Europe. His long reign of 50 years was the second-longest in medieval England (after that of his great-grandfather Henry ...\nP2: Isabella of Angoulême: Isabella of Angoulême (c. 1186/1188 – 4 June 1246) was queen consort of England as the second wife of King John from 1200 until John's death in 1216. She was also suo jure Countess of Angoulême from 1202 until 1246. Isabella had five children by the king, including his heir, later Henry III. In 1220, Isabella married Hugh X of Lusignan, Count of La Marche, by whom she had another nine children. Some of Isabella's contemporaries, as well as later writers, claim that ...\nP3: John, King of England: John (24 December 1166 – 19 October 1216) was King of England from 1199 until his death in 1216. He lost the Duchy of Normandy and most of his other French lands to King Philip II of France, resulting in the collapse of the Angevin Empire and contributing to the subsequent growth in power of the French Capetian dynasty during the 13th century. The baronial revolt at the end of John's reign led to the sealing of \", a document sometimes considered an early step in the ...\nP4: Hugh X of Lusignan: Hugh X de Lusignan, Hugh V of La Marche or Hugh I of Angoulême (c. 1183 – c. 5 June 1249, Angoulême) succeeded his father Hugh IX as Seigneur de Lusignan and Count of La Marche in November 1219 and was Count of Angoulême by marriage. His father, Hugh IX de Lusignan was betrothed to marry 12-year-old Isabel of Angoulême in 1200, when King John of England took her for his Queen, an action which resulted in the entire de Lusignan family rebelling against the English king. ...\nP5: Isabeau of Bavaria: Isabeau of Bavaria (or Isabelle; also Elisabeth of Bavaria-Ingolstadt; c. 1370 – 24 September 1435) was queen of France between 1385 and 1422. She was born into the House of Wittelsbach as the eldest daughter of Duke Stephen III of Bavaria-Ingolstadt and Taddea Visconti of Milan. At age 15 or 16, Isabeau was sent to the young King Charles VI of France; the couple wed three days after their first meeting. Isabeau was honored in 1389 with a lavish coronation ceremony and entry ...\nP6: Charles, Duke of Orléans: Charles of Orléans( 24 November 1394 – 5 January 1465) was Duke of Orléans from 1407, following the murder of his father, Louis I, Duke of Orléans, on the orders of John the Fearless, Duke of Burgundy. He was also Duke of Valois, Count of Beaumont- sur- Oise and of Blois, Lord of Coucy, and the inheritor of Asti in Italy via his mother Valentina Visconti, daughter of Gian Galeazzo Visconti, Duke of Milan. He is now remembered as an accomplished medieval poet owing to ...\nP7: Charles, Duke of Orléans: Charles of Orléans (24 November 1394 – 5 January 1465) was Duke of Orléans from 1407, following the murder of his father, Louis I, Duke of Orléans, on the orders of John the Fearless, Duke of Burgundy. He was also Duke of Valois, Count of Beaumont-sur-Oise and of Blois, Lord of Coucy, and the inheritor of Asti in Italy via his mother Valentina Visconti, daughter of Gian Galeazzo Visconti, Duke of Milan. He is now remembered as an accomplished medieval poet owing to the ...\nP8: Joan I of Navarre: Joan I (14 January 1273 – 31 March/2 April 1305)  was queen regnant of Navarre and countess of Champagne from 1274 until 1305; she was also queen consort of France by marriage to Philip IV of France. She was the daughter of king Henry I of Navarre and Blanche of Artois.\nP9: Isabella of England: Isabella of England (1214 – 1 December 1241) was Holy Roman Empress, Queen of the Germans, and queen consort of Sicily. She was the fourth child and second daughter of John, King of England and Isabella of Angoulême.\nP10: Isabella of England: Isabella of England( 1214 – 1 December 1241) was Holy Roman Empress, Queen of the Germans, and queen consort of Sicily. She was the fourth child and second daughter of John, King of England and Isabella of Angoulême.\nQuestion: What nationality is Isabella Of England's mother?\nFinal answer:",
+  "output": "French",
+  "metrics": {
+    "em": 0.0,
+    "contains": 0.0,
+    "f1": 0.0
+  },
+  "response": {
+    "id": "chatcmpl-9ff5c3a8a2466375",
+    "object": "chat.completion",
+    "created": 1779535746,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "French",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1537,
+      "total_tokens": 1539,
+      "completion_tokens": 2,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  }
+}

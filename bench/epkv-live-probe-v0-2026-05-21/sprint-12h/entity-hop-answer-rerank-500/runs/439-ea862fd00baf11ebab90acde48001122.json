@@ -1,0 +1,65 @@
+{
+  "idx": 439,
+  "qid": "ea862fd00baf11ebab90acde48001122",
+  "gold": "Hirini Moko Mead",
+  "candidates": [
+    "Marianne Williams",
+    "Harry Smith (athlete)",
+    "Graham Smith (Māori academic)",
+    "Graham",
+    "Linda Tuhiwai Smith",
+    "A Missionary",
+    "Graham Smith (footballer, born 1951)",
+    "Michael Graham-Smith",
+    "Alan R. Graham",
+    "Ewan McKendrick",
+    "Michael Broyde"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Marianne Williams\nC2: Harry Smith (athlete)\nC3: Graham Smith (Māori academic)\nC4: Graham\nC5: Linda Tuhiwai Smith\nC6: A Missionary\nC7: Graham Smith (footballer, born 1951)\nC8: Michael Graham-Smith\nC9: Alan R. Graham\nC10: Ewan McKendrick\nC11: Michael Broyde\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Graham Smith (Māori academic) -> Linda Tuhiwai Smith\n- Alan R. Graham -> Graham\n- Graham Smith (footballer, born 1951) -> Graham\n- Marianne Williams -> A Missionary\nPassages:\nP1: Graham Smith (Māori academic): Graham Hingangaroa Smith (born 1950) is a New Zealand Māori academic and educationalist of Ngāti Porou, Ngāi Tahu, Ngāti Apa and Ngāti Kahungunu descent. Smith grew up with his grandmother in the Wairarapa region. He received a scholarship to a private boarding school in Auckland, which led to university and a teaching career. After a Diploma of Teaching and a PhD at the University of Auckland, he was Pro Vice-Chancellor (Māori) there for five years. He is now CEO ...\nP2: Graham: Graham and Graeme may refer to:\nP3: Linda Tuhiwai Smith: Linda Tuhiwai Te Rina Smith (née Mead) is a professor of indigenous education at the University of Waikato in Hamilton, New Zealand. The daughter of Hirini Moko Mead, she affiliates to the Ngāti Awa and Ngāti Porou iwi.\nP4: A Missionary: A Missionary( French: Un missionnaire) is a 1955 French drama film directed by Maurice Cloche and starring Yves Massard, Marie- France Planeze and René Blancard. It was shot in Guinea and Cameroon. The film is in Eastmancolor.\nP5: Graham Smith (footballer, born 1951): Graham Smith( born 8 August 1951) is an English retired professional football midfielder and forward who appeared in the Football League for Brentford.\nP6: Michael Graham-Smith: Michael Graham- Smith( born 5 August 1969 in Burnie, Tasmania) is an Australian cricket umpire. He made his List A debut on 4 October 2013, during the Ryobi One- Day Cup. Graham- Smith teaches mathematics at Elizabeth College in Hobart.\nP7: Alan R. Graham: Alan Robert Graham( born June 20, 1942) is a Canadian retired politician in the Province of New Brunswick and he is the father of Shawn Graham, who was Premier of New Brunswick from 2006 to 2010.\nP8: Harry Smith (athlete): Harry James Smith( July 30, 1888 – November 20, 1962) was an American long- distance runner. He was most notable for competing in the 1912 Olympics in Stockholm. He was also the father of Hart wrestling family matriarch Helen Hart and the father- in- law of Stu Hart.\nP9: Ewan McKendrick: Ewan Gordon McKendrick( born 1960) is Professor of English Private Law at the University of Oxford. He is known for his academic work on the law of contract, as well as publications in the law of unjust enrichment and commercial law.\nP10: Michael Broyde: Michael Jay Broyde( born May 12, 1964) is a professor of law and the academic director of the Law and Religion Program at Emory University School of Law. He is also a senior fellow in the Center for the Study of Law and Religion at Emory University. His primary areas of interest are law and religion, Jewish law and Jewish ethics, and comparative religious law. Broyde has published 200 articles on various aspects of law and religion and Jewish law, and a number of articles in the ...\nQuestion: Who is the father-in-law of Graham Smith (Māori Academic)?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide a direct relationship between Graham Smith (Māori academic) and any of the candidates. There is no information linking Graham Smith (Māori academic) to a father-in-law.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence does not provide a direct relationship between Graham Smith (Māori academic) and any of the candidates. There is no information linking Graham Smith (Māori academic) to a father-in-law."
+  },
+  "final": "Marianne Williams",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-b234d6edb068dc16",
+    "object": "chat.completion",
+    "created": 1779536216,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide a direct relationship between Graham Smith (Māori academic) and any of the candidates. There is no information linking Graham Smith (Māori academic) to a father-in-law.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1083,
+      "total_tokens": 1143,
+      "completion_tokens": 60,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.0976314544677734
+}
