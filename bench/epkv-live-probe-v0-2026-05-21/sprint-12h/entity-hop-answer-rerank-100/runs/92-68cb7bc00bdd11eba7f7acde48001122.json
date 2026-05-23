@@ -1,0 +1,66 @@
+{
+  "idx": 92,
+  "qid": "68cb7bc00bdd11eba7f7acde48001122",
+  "gold": "Huahine",
+  "candidates": [
+    "Huahine",
+    "Huahine and Mai'ao",
+    "Pape'ete",
+    "John VI of Werle",
+    "Hugh X of Lusignan",
+    "Isabella of Angoulême",
+    "Mathilde of Angoulême",
+    "Nicholas IV of Werle",
+    "Ari'imate",
+    "William VI of Angoulême",
+    "Tamatoa VI",
+    "Nicholas V of Werle"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Huahine\nC2: Huahine and Mai'ao\nC3: Pape'ete\nC4: John VI of Werle\nC5: Hugh X of Lusignan\nC6: Isabella of Angoulême\nC7: Mathilde of Angoulême\nC8: Nicholas IV of Werle\nC9: Ari'imate\nC10: William VI of Angoulême\nC11: Tamatoa VI\nC12: Nicholas V of Werle\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Tamatoa VI -> Ari'imate\n- William VI of Angoulême -> Isabella of Angoulême\n- William VI of Angoulême -> Mathilde of Angoulême\n- William VI of Angoulême -> Hugh X of Lusignan\n- Nicholas V of Werle -> Nicholas IV of Werle\n- Nicholas V of Werle -> John VI of Werle\nPassages:\nP1: John VI of Werle: John VI, Lord of Werle-Waren-Goldberg (born: after 1341; died: after 16 October 1385) was Lord of Werle-Goldberg from 1382 to 1385. He was the son of Bernard II of Werle and Elizabeth, daughter of John III, Count of Holstein-Plön. He reigned only along with his father and after his father's death in 1382 alone, over the Lordships of Werle-Goldberg and Werle-Waren. He was married with Agnes, daughter of Nicholas IV of Werle-Goldberg. It is not known when he died. In a document ...\nP2: Hugh X of Lusignan: Hugh X de Lusignan, Hugh V of La Marche or Hugh I of Angoulême (c. 1183 – c. 5 June 1249, Angoulême) succeeded his father Hugh IX as Seigneur de Lusignan and Count of La Marche in November 1219 and was Count of Angoulême by marriage. His father, Hugh IX de Lusignan was betrothed to marry 12-year-old Isabel of Angoulême in 1200, when King John of England took her for his Queen, an action which resulted in the entire de Lusignan family rebelling against the English king. ...\nP3: Isabella of Angoulême: Isabella of Angoulême (c. 1186/1188 – 4 June 1246) was queen consort of England as the second wife of King John from 1200 until John's death in 1216. She was also suo jure Countess of Angoulême from 1202 until 1246. Isabella had five children by the king, including his heir, later Henry III. In 1220, Isabella married Hugh X of Lusignan, Count of La Marche, by whom she had another nine children. Some of Isabella's contemporaries, as well as later writers, claim that ...\nP4: Mathilde of Angoulême: Mathilde of Angoulême( also Mahaut; after marriage Taillifer)( 1181–1233) was the sole daughter of Wulgrin III, Count of Angoulême. After the death of her father, the title passed to her uncle, William VII of Angoulême. After her marriage to Hugh IX of Lusignan, she became his consort, and the centre of the dynastic struggle between the Kings of England and France, after the death of Aymer of Angoulême. The defeat of John of England, ensured that the title passed to the ...\nP5: Nicholas IV of Werle: Nicholas IV, Lord of Werle[ Goldberg], nicknamed\" PoogenogePig's eyes\")( born: before 1331; died: between 14 March and 13 November 1354) was from 1350 to 1354 to Lord of Werle- Goldberg.\nP6: Ari'imate: King Ari'imate Teurura'i (1824 – 14 April 1874) was a member and founder of a Polynesian royal family (House of Teurura'i) which reigned on the Tahitian island of Huahine and Mai'ao during the 19th century. In Tahitian, his name translate as \"sovereign-demised\" and \"the-sky-forest\" respectively. He was installed as king of Huahine in 1852 until his deposition in 1868.\nP7: William VI of Angoulême: William VI of Angoulême( died 1179) was also known as William Taillefer IV. The eldest son of Count Wulgrin II of Angoulême and his first wife, Poncia, daughter of Roger the Poitevin and Almodis, he succeeded his father at the head of the county of Angoulême in 1140. William married Emma of Limoges( d?). He married a second time to Marguerite of Turenne, daughter of viscount Raymond I of Turenne. It is from him, that the territory was passed down through sons of William ...\nP8: Tamatoa VI: Prince Ari'imate Teururai later known as King Tamatoa VI (1853 – 15 September 1905), was a member of a Tahitian royal family, the \"House of Teururai\" which reigned on the Tahitian island of Huahiné and Maia'o during the 19th century. He was installed as king of Ra'iatea and Taha'a in 1884, but was deposed in 1888.\nP9: Nicholas V of Werle: Lord Nicholas V of Werle[ Goldberg and- Waren]( between 1341 and 1385 – after 21 January 1408) was Lord of Werle- Goldberg and Werle- Waren from 1385( or 1395) until 1408. He was the son of John VI of Werle and Agnes, the daughter of Nicholas IV of Werle- Goldberg. He reigned jointly with his father and after his father's death, he ruled alone until 1401. After 1401, he ruled jointly with his brother Christopher on the rule Werle. After 1397 he married Sophie( died: before ...\nP10: Philip of France (1116–1131): Philip( 29 August 1116 – 13 October 1131) was the King of France from 1129, co-ruling with his father, Louis VI. His mother was Louis VI's second wife, Adelaide of Maurienne.\nQuestion: Where was the place of death of Tamatoa Vi's father?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the place of death of Tamatoa VI's father. The passage for Tamatoa VI mentions his father but does not specify where Tamatoa VI's father died.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence passages do not provide information about the place of death of Tamatoa VI's father. The passage for Tamatoa VI mentions his father but does not specify where Tamatoa VI's father died."
+  },
+  "final": "Huahine",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-875fa72d35ca9f05",
+    "object": "chat.completion",
+    "created": 1779515866,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence passages do not provide information about the place of death of Tamatoa VI's father. The passage for Tamatoa VI mentions his father but does not specify where Tamatoa VI's father died.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1698,
+      "total_tokens": 1759,
+      "completion_tokens": 61,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.176722526550293
+}

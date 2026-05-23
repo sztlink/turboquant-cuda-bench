@@ -1098,3 +1098,41 @@ Updated direction:
 stop sweeping first-token bias blindly.
 Next: confidence-gated fallback / answer rerank on top of entity-hop path prompt.
 ```
+
+## Entity-hop confidence-gated answer rerank 100
+
+Follow-up:
+
+```txt
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/ENTITY-HOP-ANSWER-RERANK-100.md
+```
+
+Results:
+
+```txt
+BM25→BGE strong:              EM 0.090 | contains 0.160 | F1 0.185
+Entity-hop path prompt:       EM 0.250 | contains 0.340 | F1 0.330
+Raw answer rerank:            EM 0.240 | contains 0.350 | F1 0.325
+Confidence-gated rerank:      EM 0.270 | contains 0.360 | F1 0.345
+```
+
+Gate:
+
+```txt
+default keep path prompt;
+override only if verifier confidence=high and verifier/path outputs do not overlap.
+```
+
+Win/loss vs path:
+
+```txt
+wins: 2
+losses: 0
+overrides: 3
+```
+
+Updated best non-oracle RealRAG result:
+
+```txt
+confidence-gated answer rerank: EM 0.270 | F1 0.345
+```

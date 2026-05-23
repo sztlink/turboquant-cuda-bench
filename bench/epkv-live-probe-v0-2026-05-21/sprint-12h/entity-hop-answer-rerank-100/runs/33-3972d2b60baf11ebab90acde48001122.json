@@ -1,0 +1,66 @@
+{
+  "idx": 33,
+  "qid": "3972d2b60baf11ebab90acde48001122",
+  "gold": "Jeanne d'Albret",
+  "candidates": [
+    "Eleanor of Navarre",
+    "Marie de' Medici",
+    "Marie of Cleves",
+    "Prince Jacques, Duke of Orléans",
+    "Louis XIV of France",
+    "John of Foix, Viscount of Narbonne",
+    "Queen Victoria",
+    "The Descendants",
+    "Louise",
+    "Gaston, Duke of Orléans",
+    "Gaston of Foix, Duke of Nemours",
+    "Prince Foulques, Duke of Aumale"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Eleanor of Navarre\nC2: Marie de' Medici\nC3: Marie of Cleves\nC4: Prince Jacques, Duke of Orléans\nC5: Louis XIV of France\nC6: John of Foix, Viscount of Narbonne\nC7: Queen Victoria\nC8: The Descendants\nC9: Louise\nC10: Gaston, Duke of Orléans\nC11: Gaston of Foix, Duke of Nemours\nC12: Prince Foulques, Duke of Aumale\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Gaston of Foix, Duke of Nemours -> John of Foix, Viscount of Narbonne\n- Gaston of Foix, Duke of Nemours -> Eleanor of Navarre\n- Prince Foulques, Duke of Aumale -> Prince Jacques, Duke of Orléans\n- Prince Foulques, Duke of Aumale -> Prince Jacques, Duke of Orléans\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Queen Victoria\n- Princess Louise of Saxe-Gotha-Altenburg (1800–1831) -> Louise\n- Élisabeth Marguerite d'Orléans -> Louis XIV of France\n- Élisabeth Marguerite d'Orléans -> The Descendants\nPassages:\nP1: Prince Jacques, Duke of Orléans: Prince Jacques of Orléans, Duke of Orléans,\" fils de France\"( Jacques Jean Jaroslaw Marie; born 25 June 1941 in Rabat, Morocco), is the son of Henri, Count of Paris( the Orléanist claimant to the French throne from 1940 until his death) and his wife, Princess Isabelle of Orléans- Braganza.\nP2: Prince Jacques, Duke of Orléans: Prince Jacques of Orléans, Duke of Orléans, \"fils de France\" (Jacques Jean Jaroslaw Marie; born 25 June 1941 in Rabat, Morocco), is the son of Henri, Count of Paris (the Orléanist claimant to the French throne from 1940 until his death) and his wife, Princess Isabelle of Orléans-Braganza.\nP3: Louis XIV of France: Louis XIV (Louis Dieudonné; 5 September 16381 September 1715), known as Louis the Great  or the Sun King , was King of France from 14 May 1643 until his death in 1715. His reign of 72 years and 110 days is the longest recorded of any monarch of a sovereign country in European history. In the age of absolutism in Europe, Louis XIV's France was a leader in the growing centralisation of power. Louis began his personal rule of France in 1661, after the death of his chief ...\nP4: John of Foix, Viscount of Narbonne: John of Foix (1450 – 1500, Étampes, France) was a younger son of Count Gaston IV of Foix and Queen Eleanor of Navarre. His elder brother was Gaston, Prince of Viana.\nP5: John of Foix, Viscount of Narbonne: John of Foix( 1450 – 1500, Étampes, France) was a younger son of Count Gaston IV of Foix and Queen Eleanor of Navarre. His elder brother was Gaston, Prince of Viana.\nP6: Eleanor of Navarre: Eleanor of Navarre (and) (2 February 1426 – 12 February 1479), was the regent of Navarre from 1455 to 1479, then briefly the queen regnant of Navarre in 1479. She was crowned on 28 January 1479 in Tudela.\nP7: Queen Victoria: Victoria (Alexandrina Victoria; 24 May 1819 – 22 January 1901) was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death. On 1 May 1876, she adopted the additional title of Empress of India. Known as the Victorian era, her reign of 63 years and seven months was longer than that of any of her predecessors. It was a period of industrial, cultural, political, scientific, and military change within the United Kingdom, and was marked by a great ...\nP8: The Descendants: The Descendants is a 2011 American comedy- drama film directed by Alexander Payne. The screenplay by Payne, Nat Faxon and Jim Rash is based on the 2007 novel of the same name by Kaui Hart Hemmings. The film stars George Clooney, Shailene Woodley, Amara Miller, Beau Bridges, Judy Greer, Matthew Lillard, and Robert Forster, and was released by Fox Searchlight Pictures in the United States on November 18, 2011 after being screened at the 2011 Toronto International Film Festival. ...\nP9: Louise: Louise or Luise may refer to:\nP10: Gaston, Duke of Orléans: Gaston, Duke of Orléans (24 April 1608 – 2 February 1660), was the third son of King Henry IV of France and his wife Marie de' Medici. As a son of the king, he was born a \"Fils de France\". He later acquired the title Duke of Orléans, by which he was generally known during his adulthood. As the eldest surviving brother of King Louis XIII, he was known at court by the traditional honorific Monsieur.\nQuestion: Who is Gaston, Duke Of Orléans's paternal grandmother?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Marie de' Medici\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"C2: Marie de' Medici is directly supported by the evidence in passage P10, which states that Gaston, Duke of Orléans was the third son of King Henry IV of France and his wife Marie de' Medici.\"}",
+  "verifier": {
+    "final_answer": "Marie de' Medici",
+    "selected": "C2",
+    "confidence": "high",
+    "reason": "C2: Marie de' Medici is directly supported by the evidence in passage P10, which states that Gaston, Duke of Orléans was the third son of King Henry IV of France and his wife Marie de' Medici."
+  },
+  "final": "Marie de' Medici",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-9fad9eaaaed51394",
+    "object": "chat.completion",
+    "created": 1779515823,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Marie de' Medici\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"C2: Marie de' Medici is directly supported by the evidence in passage P10, which states that Gaston, Duke of Orléans was the third son of King Henry IV of France and his wife Marie de' Medici.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1481,
+      "total_tokens": 1556,
+      "completion_tokens": 75,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.3805997371673584
+}

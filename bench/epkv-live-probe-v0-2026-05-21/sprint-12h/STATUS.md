@@ -670,3 +670,36 @@ Current next target:
 confidence-gated fallback / answer rerank on top of entity-hop path prompt,
 not more unconditional first-token bias sweeps.
 ```
+
+## Entity-hop confidence-gated answer rerank 100
+
+Completed:
+
+```txt
+ENTITY-HOP-ANSWER-RERANK-100.md
+entity-hop-answer-rerank-100/
+entity-hop-answer-rerank-gated-100/
+```
+
+Results:
+
+```txt
+BM25→BGE strong:              EM 0.090 | contains 0.160 | F1 0.185
+Entity-hop path prompt:       EM 0.250 | contains 0.340 | F1 0.330
+Raw answer rerank:            EM 0.240 | contains 0.350 | F1 0.325
+Confidence-gated rerank:      EM 0.270 | contains 0.360 | F1 0.345
+```
+
+Win/loss vs path:
+
+```txt
+wins: 2
+losses: 0
+overrides: 3
+```
+
+Current next target:
+
+```txt
+scale gated rerank to 300 cases and add stricter exact-span preference / abstention rules.
+```

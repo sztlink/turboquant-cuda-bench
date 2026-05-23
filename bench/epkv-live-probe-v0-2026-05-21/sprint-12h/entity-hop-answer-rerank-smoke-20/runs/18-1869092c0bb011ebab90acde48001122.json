@@ -1,0 +1,65 @@
+{
+  "idx": 18,
+  "qid": "1869092c0bb011ebab90acde48001122",
+  "gold": "Rukn al-Dawla",
+  "candidates": [
+    "Adud al-Dawla",
+    "Rukn al-Dawla",
+    "Taj al-Dawla",
+    "Abu Kalijar",
+    "Them",
+    "An Event",
+    "First Time",
+    "Safiyy al-Dawla",
+    "Asfar ibn Kurduya",
+    "Ziyar ibn Shahrakuya",
+    "Diya al-Dawla"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Adud al-Dawla\nC2: Rukn al-Dawla\nC3: Taj al-Dawla\nC4: Abu Kalijar\nC5: Them\nC6: An Event\nC7: First Time\nC8: Safiyy al-Dawla\nC9: Asfar ibn Kurduya\nC10: Ziyar ibn Shahrakuya\nC11: Diya al-Dawla\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Taj al-Dawla -> 'Adud al-Dawla\n- Asfar ibn Kurduya -> An Event\n- Ziyar ibn Shahrakuya -> Abu Kalijar\n- Ziyar ibn Shahrakuya -> Them!\n- Safiyy al-Dawla -> First Time\n- Diya al-Dawla -> 'Adud al-Dawla\nPassages:\nP1: Taj al-Dawla: Abu'l-Husain Ahmad , better known by his \"laqab\" of Taj al-Dawla (Arabic: تاج الدولة،, \"Crown of the Dynasty\"), was the Buyid ruler of Khuzestan during the 980s. He was the son of 'Adud al-Dawla.\nP2: 'Adud al-Dawla: Fannā (Panāh) Khusraw , better known by his laqab of ʿAḍud al-Dawla (\"Pillar of the [Abbasid] Dynasty\") (September 24, 936 – March 26, 983) was an emir of the Buyid dynasty, ruling from 949 to 983, and at his height of power ruling an empire stretching from Makran as far to Yemen and the shores of the Mediterranean Sea. He is widely regarded as the greatest monarch of the dynasty, and by the end of his reign was the most powerful ruler in the Middle East. The son of Rukn ...\nP3: 'Adud al-Dawla: Fannā( Panāh) Khusraw, better known by his laqab of ʿ Aḍud al- Dawla(\" Pillar of the[ Abbasid] Dynasty\") ( September 24, 936 – March 26, 983) was an emir of the Buyid dynasty, ruling from 949 to 983, and at his height of power ruling an empire stretching from Makran as far to Yemen and the shores of the Mediterranean Sea. He is widely regarded as the greatest monarch of the dynasty, and by the end of his reign was the most powerful ruler in the Middle East. The son of Rukn al- ...\nP4: Abu Kalijar: Abu Kalijar Marzuban( died October 1048) was the Buyid amir of Fars( 1024 – 1048), Kerman( 1028–1048) and Iraq( 1044 – 1048). He was the eldest son of Sultan al- Dawla.\nP5: Abu Kalijar: Abu Kalijar Marzuban (died October 1048) was the Buyid amir of Fars (1024–1048), Kerman (1028–1048) and Iraq (1044–1048). He was the eldest son of Sultan al-Dawla.\nP6: Them!: Them! is a 1954 American black- and- white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \" Them!\" is one of the first of the 1950s\" nuclear monster\" films, and the first\" big bug\" feature. A nest ...\nP7: Them!: Them! is a 1954 American black-and-white science fiction monster film from Warner Bros. Pictures, produced by David Weisbart, directed by Gordon Douglas, and starring James Whitmore, Edmund Gwenn, Joan Weldon, and James Arness. The film is based on an original story treatment by George Worthing Yates, which was then developed into a screenplay by Ted Sherdeman and Russell Hughes. \"Them!\" is one of the first of the 1950s \"nuclear monster\" films, and the first \"big bug\" feature. A nest of ...\nP8: An Event: An Event  is a 1969 Yugoslav feature film directed by Vatroslav Mimica, based on a short story by Anton Chekhov.\nP9: First Time: First Time or The First Time may refer to:\nP10: Safiyy al-Dawla: Ṣafiyy al- Dawla Muḥammad ibn ʿ Ali ibn Jaʾfar ibn Falāh was the Fatimid governor of Aleppo between October 1022 and April 1023. He was specifically assigned to govern the city, while the citadel of Aleppo was assigned to a separate governor, the eunuch Yumn al- Dawla Sa'adat. This marked the first time the Fatimids appointed separate rulers for the city and citadel of Aleppo since they gained direct control over the city in October 1016. Safiyy al- Dawla belonged to the ...\nQuestion: Who is the paternal grandfather of Taj Al-Dawla?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Rukn al-Dawla\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"P2 and P3 mention that 'Adud al-Dawla's father is Rukn al-Dawla. Since Taj al-Dawla is 'Adud al-Dawla's son, Rukn al-Dawla is Taj al-Dawla's paternal grandfather.\"}",
+  "verifier": {
+    "final_answer": "Rukn al-Dawla",
+    "selected": "C2",
+    "confidence": "high",
+    "reason": "P2 and P3 mention that 'Adud al-Dawla's father is Rukn al-Dawla. Since Taj al-Dawla is 'Adud al-Dawla's son, Rukn al-Dawla is Taj al-Dawla's paternal grandfather."
+  },
+  "final": "Rukn al-Dawla",
+  "selected": "C2",
+  "response": {
+    "id": "chatcmpl-a4b27a05ed2a9948",
+    "object": "chat.completion",
+    "created": 1779515781,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Rukn al-Dawla\",\"selected\":\"C2\",\"confidence\":\"high\",\"reason\":\"P2 and P3 mention that 'Adud al-Dawla's father is Rukn al-Dawla. Since Taj al-Dawla is 'Adud al-Dawla's son, Rukn al-Dawla is Taj al-Dawla's paternal grandfather.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1401,
+      "total_tokens": 1485,
+      "completion_tokens": 84,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.5084037780761719
+}

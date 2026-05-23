@@ -1,0 +1,66 @@
+{
+  "idx": 65,
+  "qid": "94dd39d80bdd11eba7f7acde48001122",
+  "gold": "Herstal",
+  "candidates": [
+    "Place of origin",
+    "Charles Martel was born in Francia",
+    "Rouen",
+    "Place of birth",
+    "Louis the Pious",
+    "Alexandra, Countess of Frederiksborg",
+    "The Will",
+    "Charles Martel",
+    "@Home",
+    "William Alexander",
+    "Remigius of Rouen",
+    "Nicasius of Rouen"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Place of origin\nC2: Charles Martel was born in Francia\nC3: Rouen\nC4: Place of birth\nC5: Louis the Pious\nC6: Alexandra, Countess of Frederiksborg\nC7: The Will\nC8: Charles Martel\nC9: @Home\nC10: William Alexander\nC11: Remigius of Rouen\nC12: Nicasius of Rouen\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Place of birth -> Place of origin\n- Place of birth -> The Will\n- Remigius of Rouen -> Charles Martel\n- Motherland (disambiguation) -> Place of origin\n- Place of origin -> Place of birth\n- Place of origin -> @Home\n- Hieronymus, son of Charles Martel -> Charles Martel\n- Hieronymus, son of Charles Martel -> Louis the Pious\n- Prince Nikolai of Denmark -> Alexandra, Countess of Frederiksborg\n- Prince Nikolai of Denmark -> William Alexander\nPassages:\nP1: Place of birth: The place of birth( POB) or birthplace is the place where a person was born. This place is often used in legal documents, together with name and date of birth, to uniquely identify a person. As a general rule with respect to passports, the place of birth is determined to be the country that currently has\" sovereignty\" over the actual place of birth, regardless of when the birth actually occurred. The place of birth is not necessarily the place where the parents of the new baby ...\nP2: Louis the Pious: Louis the Pious (778 – 20 June 840), also called the Fair, and the Debonaire, was the King of the Franks and co-emperor with his father, Charlemagne, from 813. He was also King of Aquitaine from 781. As the only surviving adult son of Charlemagne and Hildegard, he became the sole ruler of the Franks after his father's death in 814, a position which he held until his death, save for the period 833–34, during which he was deposed. During his reign in Aquitaine, Louis was charged ...\nP3: Alexandra, Countess of Frederiksborg: Alexandra, Countess of Frederiksborg, (\"née\" Alexandra Christina Manley; born 30 June 1964) is the first wife of Prince Joachim of Denmark, the younger son of Margrethe II of Denmark. She was born in Hong Kong and is of mixed Chinese-European ancestry. She was introduced to Prince Joachim in 1994. They married in 1995 and had two sons together, until the marriage was dissolved in 2005.\nP4: The Will: The Will may refer to:\nP5: Charles Martel: Charles Martel (688 – 22 October 741) was a Frankish statesman and military leader who, as Duke and Prince of the Franks and Mayor of the Palace, was the \"de facto\" ruler of Francia from 718 until his death. He was a son of the Frankish statesman Pepin of Herstal and Pepin's mistress, a noblewoman named Alpaida. Charles successfully asserted his claims to power as successor to his father as the power behind the throne in Frankish politics. Continuing and building on his father's ...\nP6: @Home: @Home or @home may refer to:\nP7: William Alexander: William or Bill Alexander may refer to:\nP8: Remigius of Rouen: Remigius (or Remedius) (died 771) was the illegitimate son of Charles Martel and probably Ruodhaid. He was also the third archbishop of Rouen from 755 to 762. Along with his brothers, he was denied any claim to the legacy of his father. He became archbishop during the reign of his half brother Pepin the Short. Remigius is also known as Saint Remigius. His feast day is January 19. He was instrumental in implementing the Roman rite and chant in the Gallic church. Remigius also ...\nP9: Place of origin: In Switzerland, the place of origin( literally\" home place\" or\" citizen place\") denotes where a Swiss citizen has their municipal citizenship. It is not to be confused with the place of birth or place of residence, although two or all three of these locations may be identical depending on the person's circumstances.\nP10: Nicasius of Rouen: Saint Nicasius of Rouen( d. perhaps 260), often known as the Apostle of the Vexin, was a 3rd- century saint and martyr in Gaul. He is sometimes considered the first Bishop of Rouen, although probably incorrectly.\nQuestion: What is the place of birth of Remigius Of Rouen's father?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Francia\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide the specific place of birth for Remigius of Rouen's father, Charles Martel. The graph and passages only state that Charles Martel was born in Francia, but do not specify his place of birth in a way that directly answers the question.\"}",
+  "verifier": {
+    "final_answer": "Francia",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence does not provide the specific place of birth for Remigius of Rouen's father, Charles Martel. The graph and passages only state that Charles Martel was born in Francia, but do not specify his place of birth in a way that directly answers the question."
+  },
+  "final": "Francia",
+  "selected": "UNKNOWN",
+  "response": {
+    "id": "chatcmpl-a575d8b16d584bf6",
+    "object": "chat.completion",
+    "created": 1779515844,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Francia\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide the specific place of birth for Remigius of Rouen's father, Charles Martel. The graph and passages only state that Charles Martel was born in Francia, but do not specify his place of birth in a way that directly answers the question.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1241,
+      "total_tokens": 1317,
+      "completion_tokens": 76,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.3680377006530762
+}

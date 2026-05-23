@@ -1,0 +1,63 @@
+{
+  "idx": 1,
+  "qid": "e2a3bf2a0bdd11eba7f7acde48001122",
+  "gold": "12 June 1516",
+  "candidates": [
+    "12 June 1516",
+    "1561",
+    "Ernest I, Prince of Anhalt-Dessau",
+    "John VII, Count of Oldenburg",
+    "John V, Prince of Anhalt-Zerbst",
+    "John VI, Prince of Anhalt-Zerbst",
+    "John Augustus, Prince of Anhalt-Zerbst",
+    "Karl I, Prince of Anhalt-Zerbst",
+    "Bernhard VII, Prince of Anhalt-Zerbst"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: 12 June 1516\nC2: 1561\nC3: Ernest I, Prince of Anhalt-Dessau\nC4: John VII, Count of Oldenburg\nC5: John V, Prince of Anhalt-Zerbst\nC6: John VI, Prince of Anhalt-Zerbst\nC7: John Augustus, Prince of Anhalt-Zerbst\nC8: Karl I, Prince of Anhalt-Zerbst\nC9: Bernhard VII, Prince of Anhalt-Zerbst\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- John V, Prince of Anhalt-Zerbst -> Ernest I, Prince of Anhalt-Dessau\n- Bernhard VII, Prince of Anhalt-Zerbst -> John V, Prince of Anhalt-Zerbst\n- John VI, Prince of Anhalt-Zerbst -> John VII, Count of Oldenburg\nPassages:\nP1: Ernest I, Prince of Anhalt-Dessau: Ernest I, Prince of Anhalt-Dessau (died Dessau, 12 June 1516), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Dessau. He was the second son of George I, Prince of Anhalt-Dessau, yet the first born by his fourth wife Anna, daughter of Albert VIII, Count of Lindow-Ruppin.\nP2: Ernest I, Prince of Anhalt-Dessau: Ernest I, Prince of Anhalt- Dessau( died Dessau, 12 June 1516), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Dessau. He was the second son of George I, Prince of Anhalt- Dessau, yet the first born by his fourth wife Anna, daughter of Albert VIII, Count of Lindow- Ruppin.\nP3: John VII, Count of Oldenburg: Count John VII of Oldenburg and Delmenhorst( nicknamed\" the Dike Builder\"; 9 September 1540 in Oldenburg – 12 November 1603 in Oldenburg) was a member of the House of Oldenburg and was the ruling Count of County of Oldenburg from 1573 until his death. His parents were Count Anthony I of Oldenburg and Sophie of Saxe- Lauenburg.\nP4: John V, Prince of Anhalt-Zerbst: John V of Anhalt- Zerbst( Dessau, 4 September 1504 – Zerbst, 4 February 1551), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Dessau. From 1544, he assumed rule of the re-created principality of Anhalt- Zerbst. John was the second( but eldest surviving) son of Ernest I, Prince of Anhalt- Dessau, by his wife Margarete, daughter of Henry I, Duke of Münsterberg- Oels, and granddaughter of George of Poděbrady, King of Bohemia.\nP5: John V, Prince of Anhalt-Zerbst: John V of Anhalt-Zerbst (Dessau, 4 September 1504 – Zerbst, 4 February 1551), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Dessau. From 1544, he assumed rule of the re-created principality of Anhalt-Zerbst. John was the second (but eldest surviving) son of Ernest I, Prince of Anhalt-Dessau, by his wife Margarete, daughter of Henry I, Duke of Münsterberg-Oels, and granddaughter of George of Poděbrady, King of Bohemia.\nP6: John VI, Prince of Anhalt-Zerbst: John VI of Anhalt-Zerbst (Zerbst, 24 March 1621 – Zerbst, 4 July 1667), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Zerbst. He was the only son of Rudolph, Prince of Anhalt-Zerbst, by his second wife Magdalene, daughter of John VII, Count of Oldenburg.\nP7: John Augustus, Prince of Anhalt-Zerbst: John Augustus, Prince of Anhalt- Zerbst( 29 July 1677 in Zerbst – 7 November 1742 in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the eldest son of Karl William, Prince of Anhalt- Zerbst, by his wife Sophie, daughter of August, Duke of Saxe- Weissenfels.\nP8: Karl I, Prince of Anhalt-Zerbst: Karl I of Anhalt- Zerbst( 17 November 1534 in Dessau – 4 May 1561 in Zerbst), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was the eldest son of John V, Prince of Anhalt- Zerbst, by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg.\nP9: Bernhard VII, Prince of Anhalt-Zerbst: Bernhard VII of Anhalt-Zerbst (17 March 1540 – 1 March 1570), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Zerbst. He was born and died in Dessau, and was the third and youngest son of John V, Prince of Anhalt-Zerbst by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg.\nP10: Bernhard VII, Prince of Anhalt-Zerbst: Bernhard VII of Anhalt- Zerbst( 17 March 1540 – 1 March 1570), was a German prince of the House of Ascania and ruler of the principality of Anhalt- Zerbst. He was born and died in Dessau, and was the third and youngest son of John V, Prince of Anhalt- Zerbst by his wife Margaret, daughter of Joachim I Nestor, Elector of Brandenburg.\nQuestion: When did John V, Prince Of Anhalt-Zerbst's father die?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"12 June 1516\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"C1 (12 June 1516) is directly supported by evidence in P1 and P2, which state that Ernest I, Prince of Anhalt-Dessau died on 12 June 1516. The candidate entity graph also links John V, Prince of Anhalt-Zerbst to his father Ernest I, Prince of Anhalt-Dessau, confirming the father-son relationship.\"}",
+  "verifier": {
+    "final_answer": "12 June 1516",
+    "selected": "C1",
+    "confidence": "high",
+    "reason": "C1 (12 June 1516) is directly supported by evidence in P1 and P2, which state that Ernest I, Prince of Anhalt-Dessau died on 12 June 1516. The candidate entity graph also links John V, Prince of Anhalt-Zerbst to his father Ernest I, Prince of Anhalt-Dessau, confirming the father-son relationship."
+  },
+  "final": "12 June 1516",
+  "selected": "C1",
+  "response": {
+    "id": "chatcmpl-8d7bea086a31eac6",
+    "object": "chat.completion",
+    "created": 1779515795,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"12 June 1516\",\"selected\":\"C1\",\"confidence\":\"high\",\"reason\":\"C1 (12 June 1516) is directly supported by evidence in P1 and P2, which state that Ernest I, Prince of Anhalt-Dessau died on 12 June 1516. The candidate entity graph also links John V, Prince of Anhalt-Zerbst to his father Ernest I, Prince of Anhalt-Dessau, confirming the father-son relationship.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1579,
+      "total_tokens": 1691,
+      "completion_tokens": 112,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 2.0883688926696777
+}

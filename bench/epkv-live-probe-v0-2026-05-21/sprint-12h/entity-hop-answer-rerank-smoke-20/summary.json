@@ -1,0 +1,1032 @@
+{
+  "schema": "epkv.entity_hop_answer_rerank.v0",
+  "elapsed_sec": 19.32614302635193,
+  "total": 20,
+  "macro": {
+    "bge_ref": {
+      "em": 0.05,
+      "contains": 0.15,
+      "f1": 0.12222222222222223
+    },
+    "strong": {
+      "em": 0.3,
+      "contains": 0.45,
+      "f1": 0.40888888888888886
+    },
+    "path_prompt": {
+      "em": 0.3,
+      "contains": 0.45,
+      "f1": 0.4142857142857143
+    },
+    "rerank": {
+      "em": 0.4,
+      "contains": 0.55,
+      "f1": 0.48428571428571426
+    }
+  },
+  "wins_losses": {
+    "rerank_wins_vs_path": 2,
+    "rerank_losses_vs_path": 0,
+    "rerank_wins_vs_bge": 7,
+    "rerank_losses_vs_bge": 0,
+    "disagreements": 13
+  },
+  "rows": [
+    {
+      "idx": 0,
+      "qid": "8813f87c0bdd11eba7f7acde48001122",
+      "gold": "Małgorzata Braunek",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Dorota Masłowska"
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Małgorzata Braunek"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Małgorzata Braunek"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Małgorzata Braunek",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Małgorzata Braunek",
+        "Dorota Masłowska",
+        "Polish-Russian War (film)",
+        "The Rock",
+        "Roman Polanski",
+        "Xawery Żuławski",
+        "Władysław Pasikowski",
+        "Renny Harlin",
+        "Carl Gustaf Creutz",
+        "Story",
+        "The House of the Sun (film)",
+        "Aleksander Ford"
+      ]
+    },
+    {
+      "idx": 1,
+      "qid": "e2a3bf2a0bdd11eba7f7acde48001122",
+      "gold": "12 June 1516",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passage does not provide the death year of John V's father, Ernest I, Prince of Anhalt-Dessau."
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1561"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "12 June 1516"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "12 June 1516",
+        "selected": "C1",
+        "verifier": {
+          "final_answer": "12 June 1516",
+          "selected": "C1",
+          "confidence": "high",
+          "reason": "John V, Prince of Anhalt-Zerbst's father is identified as Ernest I, Prince of Anhalt-Dessau in passages P1 and P2, and his death date is provided in both passages."
+        },
+        "latency_sec": 1.6802740097045898
+      },
+      "candidates": [
+        "12 June 1516",
+        "1561",
+        "Ernest I, Prince of Anhalt-Dessau",
+        "John VII, Count of Oldenburg",
+        "John V, Prince of Anhalt-Zerbst",
+        "John VI, Prince of Anhalt-Zerbst",
+        "John Augustus, Prince of Anhalt-Zerbst",
+        "Karl I, Prince of Anhalt-Zerbst",
+        "Bernhard VII, Prince of Anhalt-Zerbst"
+      ]
+    },
+    {
+      "idx": 2,
+      "qid": "0cd3bdea0bde11eba7f7acde48001122",
+      "gold": "Myanmar Motion Picture Academy Awards",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Maung Wunna won the Golden Rooster Award for Best Directorial Debut with \"Wearing Velvet Slippers Under A Golden Umbrella\"."
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Myanmar Motion Picture Academy Awards"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Myanmar Motion Picture Academy Awards"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Myanmar Motion Picture Academy Awards",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Myanmar Motion Picture Academy Awards",
+        "Wearing Velvet Slippers under a Golden Umbrella",
+        "The Feature",
+        "The Way We Were",
+        "The Jury",
+        "The Singer",
+        "Rust and Bone",
+        "Lou Reed",
+        "Comedy",
+        "Michel Audiard",
+        "Wunna",
+        "Heaven & Hell: A Tribute to the Velvet Underground"
+      ]
+    },
+    {
+      "idx": 3,
+      "qid": "f9dcb4a60bda11eba7f7acde48001122",
+      "gold": "Missoula, Montana",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "David Lynch was the director of the film Ronnie Rocket, and the passage does not state his birthplace. Therefore, the question cannot be answered based on the given"
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Bakersfield, California"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question is about the director of the film \"Ronnie Rocket,\" but the passages do not provide information about the birth"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Bakersfield, California",
+        "selected": "C6",
+        "verifier": {
+          "final_answer": "Bakersfield, California",
+          "selected": "C6",
+          "confidence": "medium",
+          "reason": "C6 (Barry Mahon) is the only candidate directly supported by evidence as the director of the film project Ronnie Rocket, and P6 provides Barry Mahon's birthplace as Bakersfield, California. However, the evidence is not clear that Barry Mahon was born before Wilhelm von Opel, who is mentioned as a founder of Opel and has a later birth year, creating some uncertainty."
+        },
+        "latency_sec": 1.8071181774139404
+      },
+      "candidates": [
+        "Bakersfield, California",
+        "Ronnie Rocket",
+        "Rocket to the Moon",
+        "The Feature",
+        "The Intended",
+        "The Rock",
+        "Barry Mahon",
+        "Wilhelm von Opel",
+        "Orson Desaix Munn",
+        "First Time",
+        "Story",
+        "The Rocket (2005 film)"
+      ]
+    },
+    {
+      "idx": 4,
+      "qid": "8981e1ce0bb011ebab90acde48001122",
+      "gold": "Charles Armand René de La Trémoille",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.6,
+        "output": "Henry de La Trémoille"
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4,
+        "output": "Prince Henri de La Trémoille, 3rd Duke of Thouars"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Charles Armand René de La Trémoille"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Charles Armand René de La Trémoille",
+        "selected": "C1",
+        "verifier": {
+          "final_answer": "Charles Armand René de La Trémoille",
+          "selected": "C1",
+          "confidence": "high",
+          "reason": "P4 and P5 both explicitly state that Jean Bretagne Charles de La Trémoille is the son of Charles Armand René de La Trémoille and Marie Hortense de La Tour d'Auvergne of Bouillon, establishing Charles Armand René de La Trémoille as the paternal grandfather of Charles Bretagne Marie de La Trémoille."
+        },
+        "latency_sec": 1.9153625965118408
+      },
+      "candidates": [
+        "Charles Armand René de La Trémoille",
+        "Prince Henri de La Trémoille, 3rd Duke of Thouars",
+        "Henry de La Trémoille",
+        "Charles Belgique Hollande de La Trémoille",
+        "Charles Bretagne Marie de La Trémoille",
+        "Charles Louis Bretagne de La Trémoille",
+        "Jean Bretagne Charles de La Trémoille",
+        "Louis Charles Marie de La Trémoille",
+        "Louis Charles de La Trémoille"
+      ]
+    },
+    {
+      "idx": 5,
+      "qid": "019bed300bde11eba7f7acde48001122",
+      "gold": "Galați",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Bucharest"
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Galați"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Galați"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Galați",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Galați",
+        "Bucharest",
+        "Ștefan I. Nenițescu",
+        "Engelbert I, Count of the Mark",
+        "The Child",
+        "Them",
+        "Revenge",
+        "Eberhard I, Count of the Mark",
+        "Where I Was From",
+        "Ioan S. Nenițescu",
+        "The Question (Emery album)",
+        "Petru Rareș"
+      ]
+    },
+    {
+      "idx": 6,
+      "qid": "2ec440560bb011ebab90acde48001122",
+      "gold": "Ptolemy IX Lathyros",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Antiochus IX Cyzicenus"
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4,
+        "output": "Antiochus IX"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Antiochus IX Cyzicenus"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Antiochus IX Cyzicenus",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide information about the maternal grandfather of Antiochus X Eusebes. The passages mention his father, Antiochus IX, and his possible Egyptian mother, Cleopatra IV, but there is no information about his maternal grandfather."
+        },
+        "latency_sec": 1.2985265254974365
+      },
+      "candidates": [
+        "Antiochus IX Cyzicenus",
+        "Antiochus IX",
+        "Antiochus X Eusebes",
+        "Antiochus VII Sidetes",
+        "The Wanted",
+        "Afterwards",
+        "Revenge",
+        "Cleopatra",
+        "Kings",
+        "Laodice of the Sameans",
+        "Antiochus III of Commagene",
+        "Philip I Philadelphus"
+      ]
+    },
+    {
+      "idx": 7,
+      "qid": "464cfa460bd911eba7f7acde48001122",
+      "gold": "Brooklyn",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The director of the film \"Thomas Jefferson\" (1997) is Ken Burns, and the passage does not provide information about his birthplace."
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Ken Burns was born in the colonial Carolinas to a American family, but the specific state is not mentioned in the given"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Kenneth Lauren Burns was born in 1953."
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1953",
+        "selected": "C1|C2",
+        "verifier": {
+          "final_answer": "1953",
+          "selected": "C1|C2",
+          "confidence": "high",
+          "reason": "The evidence passage P7 directly states that Kenneth Lauren Burns was born in 1953, and the candidate entity graph links Thomas Jefferson (film) to Ken Burns. Therefore, it can be inferred that Ken Burns, the director of the film Thomas Jefferson, was born in 1953."
+        },
+        "latency_sec": 1.5589687824249268
+      },
+      "candidates": [
+        "Kenneth Lauren Burns was born in 1953",
+        "Thomas Jefferson (film)",
+        "Thomas Jefferson",
+        "Born American",
+        "The Singer",
+        "Alice Nakamura",
+        "John Adams",
+        "Ken Burns",
+        "Andrew Jackson",
+        "Quarters",
+        "Guy Orcutt",
+        "Sally Hemings"
+      ]
+    },
+    {
+      "idx": 8,
+      "qid": "c05e16a40bdd11eba7f7acde48001122",
+      "gold": "stroke",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.1111111111111111,
+        "output": "Victoria Melita of Saxe-Coburg and Gotha died after suffering a stroke while visiting her daughter Maria in Amorbach."
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Grand Duchess Kira Kirillovna of Russia, his wife, died on 8 September 1967"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936",
+        "selected": "C1|C9",
+        "verifier": {
+          "final_answer": "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936",
+          "selected": "C1|C9",
+          "confidence": "high",
+          "reason": "The evidence passage P8 directly states that Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936, and C1 and C9 are consistent with this information."
+        },
+        "latency_sec": 1.6157281398773193
+      },
+      "candidates": [
+        "Princess Victoria Melita of Saxe-Coburg and Gotha died on 2 March 1936",
+        "Grand Duke Vladimir Alexandrovich of Russia",
+        "Grand Duchess Maria Alexandrovna of Russia",
+        "Queen Victoria",
+        "PAST",
+        "Grand Duke Kirill Vladimirovich of Russia",
+        "Grand Duke Vyacheslav Konstantinovich of Russia",
+        "Grand Duchess Kira Kirillovna of Russia",
+        "Princess Victoria Melita of Saxe-Coburg and Gotha",
+        "Prince Karl Emich of Leiningen",
+        "Andreas, Prince of Leiningen",
+        "Prince Karl of Leiningen"
+      ]
+    },
+    {
+      "idx": 9,
+      "qid": "2935f1640bda11eba7f7acde48001122",
+      "gold": "Nice",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Westport, Connecticut"
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Nice"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Nice"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Nice",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Nice",
+        "Westport, Connecticut",
+        "Beat Girl",
+        "Place of origin",
+        "The Feature",
+        "The Will",
+        "Gillian Hills",
+        "Cecil B. DeMille",
+        "Dorothy Arzner",
+        "Robert Wise",
+        "Edmond T. Gréville",
+        "A Girl with Guitar"
+      ]
+    },
+    {
+      "idx": 10,
+      "qid": "dfe93efe0bdd11eba7f7acde48001122",
+      "gold": "1983",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1987"
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "2004"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "2004"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "2004",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "2004",
+        "1987",
+        "The Singer",
+        "Fadil Hadžić",
+        "The Good Man",
+        "Franco Prosperi",
+        "The General",
+        "Finbar Furey",
+        "Jean Martin (singer)",
+        "Jean Martin (disambiguation)",
+        "Did a Good Man Die",
+        "Jean-Martin Petit"
+      ]
+    },
+    {
+      "idx": 11,
+      "qid": "2207e9060bda11eba7f7acde48001122",
+      "gold": "United States",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "American"
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "American"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "American"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "American",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "American",
+        "World and Time Enough",
+        "Champion of the World",
+        "Ghosts of Abu Ghraib",
+        "The Feature",
+        "Place of origin",
+        "The Dancer",
+        "The Will",
+        "Eric Mueller",
+        "Bobby Fischer",
+        "Atom Egoyan",
+        "Ekaterina Vaganova"
+      ]
+    },
+    {
+      "idx": 12,
+      "qid": "2002bf0c0bb011ebab90acde48001122",
+      "gold": "Rupert",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "John, Count Palatine of Neumarkt"
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.4,
+        "output": "Rupert III of the Palatinate"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.5,
+        "output": "Rupert of Germany"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.4,
+        "output": "Rupert III of the Palatinate",
+        "selected": "UNKNOWN",
+        "verifier": {
+          "final_answer": "Rupert III of the Palatinate",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not directly state Catherine of Pomerania's father-in-law. It mentions John, Count Palatine of Neumarkt as her husband, and his father as Rupert III of the Palatinate, but this connection is not explicitly made for Catherine of Pomerania."
+        },
+        "latency_sec": 1.517200231552124
+      },
+      "candidates": [
+        "Rupert of Germany",
+        "Rupert III of the Palatinate",
+        "John, Count Palatine of Neumarkt",
+        "Elisabeth of Nuremberg",
+        "Part",
+        "Catherine of Pomerania, Countess Palatine of Neumarkt",
+        "Countess Palatine Magdalene Catherine of Zweibrücken",
+        "Countess Palatine Dorothea Catherine of Birkenfeld-Bischweiler",
+        "Countess Palatine Anna Magdalena of Birkenfeld-Bischweiler",
+        "Stephen, Count Palatine of Simmern-Zweibrücken"
+      ]
+    },
+    {
+      "idx": 13,
+      "qid": "c531e7560baf11ebab90acde48001122",
+      "gold": "Marie Leszczyńska",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Maria Josepha of Saxony"
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.1111111111111111,
+        "output": "Passages provided do not contain information about Marie Zéphyrine Of France or her paternal grandmother. Therefore, the"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Margaret of Artois"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Margaret of Artois",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence passages do not provide any information about Marie Zéphyrine Of France or her paternal grandmother."
+        },
+        "latency_sec": 0.8037106990814209
+      },
+      "candidates": [
+        "Margaret of Artois",
+        "Maria Josepha of Saxony",
+        "Henry IV of France",
+        "Duchess Marie Elisabeth of Saxony",
+        "Joan II of Navarre",
+        "Philip III of Navarre",
+        "Princess Claude of Orléans",
+        "Frederick VII, Margrave of Baden-Durlach",
+        "Queen Victoria",
+        "Marie of Évreux",
+        "Marie of Armagnac",
+        "Prince Robert, Count of La Marche"
+      ]
+    },
+    {
+      "idx": 14,
+      "qid": "a9cc5f240bdb11eba7f7acde48001122",
+      "gold": "Catherine Robbe-Grillet",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The information about the spouse of the director of film Eden And After is not provided in the given passages."
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Catherine Robbe-Grillet"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Martha De Laurentiis"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Catherine Robbe-Grillet",
+        "selected": "C3|C1",
+        "verifier": {
+          "final_answer": "Catherine Robbe-Grillet",
+          "selected": "C3|C1",
+          "confidence": "high",
+          "reason": "The director of the film Eden and After is Alain Robbe-Grillet, and the candidate entity graph shows that Alain Robbe-Grillet was married to Catherine Robbe-Grillet (née Rstakian)."
+        },
+        "latency_sec": 1.344402551651001
+      },
+      "candidates": [
+        "Martha De Laurentiis",
+        "Catherine Robbe-Grillet",
+        "Eden and After",
+        "Alain Robbe-Grillet",
+        "Charles Calvert, 5th Baron Baltimore",
+        "Part",
+        "Spouse of the President of the People's Republic of China",
+        "Spouse of the Prime Minister of Cambodia",
+        "Spouse of the Prime Minister of Singapore",
+        "Spouse of the Prime Minister of Malaysia",
+        "Eden (CDP), New York",
+        "Mary Sweeney"
+      ]
+    },
+    {
+      "idx": 15,
+      "qid": "6ebe05740bde11eba7f7acde48001122",
+      "gold": "Hilandar",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Sirmium"
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "June 22, 1200"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Serbia"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Sirmium",
+        "selected": "UNKNOWN",
+        "verifier": {
+          "final_answer": "Sirmium",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence provided does not mention the place of death of Stefan Nemanja, Anastasia of Serbia's husband. The only information about a place related to Stefan Nemanja is that he was the Grand Prince of the Serbian Principality, but no specific place of death is given."
+        },
+        "latency_sec": 1.3995282649993896
+      },
+      "candidates": [
+        "Serbia",
+        "June 22, 1200",
+        "Sirmium",
+        "Simon de Montfort, 6th Earl of Leicester",
+        "Guy de Montfort, Count of Nola",
+        "Stefan Nemanja",
+        "Flavia Maximiana Theodora",
+        "Constantius Chlorus",
+        "Tiberius",
+        "Anastasia of Serbia",
+        "Princess Helen of Serbia",
+        "Anastasia (sister of Constantine I)"
+      ]
+    },
+    {
+      "idx": 16,
+      "qid": "7a1d9d7c0bb011ebab90acde48001122",
+      "gold": "Pompey",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.4,
+        "output": "Pompeius Magnus (\"Pompey the Great\")"
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Julia (daughter of Cornelia and mother of Caesar's child-in-law)"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Scribonia (wife of Crassus)"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Julia (daughter of Cornelia and mother of Caesar's child-in-law)",
+        "selected": "C2",
+        "verifier": {
+          "final_answer": "Julia (daughter of Cornelia and mother of Caesar's child-in-law)",
+          "selected": "C2",
+          "confidence": "medium",
+          "reason": "The evidence suggests that Julia is the daughter of Cornelia and the mother of someone who is a child-in-law to Caesar. While the passages do not explicitly state who this child-in-law is, the context and the graph support that Julia is the correct candidate among the given options."
+        },
+        "latency_sec": 1.568716049194336
+      },
+      "candidates": [
+        "Scribonia (wife of Crassus)",
+        "Julia (daughter of Cornelia and mother of Caesar's child-in-law)",
+        "Pompeius Magnus (\"Pompey the Great\")",
+        "Julius Caesar",
+        "The Child",
+        "Scipio Africanus",
+        "Elagabalus",
+        "Pompeia Magna",
+        "The Tender Years",
+        "The Hero",
+        "Paula",
+        "Cornelia (wife of Caesar)"
+      ]
+    },
+    {
+      "idx": 17,
+      "qid": "0bedb7e80bdc11eba7f7acde48001122",
+      "gold": "tuberculosis",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passage does not provide information about John Middleton Murry's wife's death."
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.19999999999999998,
+        "output": "Katherine Mansfield was diagnosed with extrapulmonary tuberculosis and died."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.2857142857142857,
+        "output": "Katherine Mansfield died of extrapulmonary tuberculosis."
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.2857142857142857,
+        "output": "Katherine Mansfield died of extrapulmonary tuberculosis",
+        "selected": "C2",
+        "verifier": {
+          "final_answer": "Katherine Mansfield died of extrapulmonary tuberculosis",
+          "selected": "C2",
+          "confidence": "high",
+          "reason": "Katherine Mansfield was diagnosed with extrapulmonary tuberculosis in 1917 and died in 1923, and the graph indicates that John Middleton Murry was her second husband."
+        },
+        "latency_sec": 1.2539153099060059
+      },
+      "candidates": [
+        "Katherine Mansfield died of extrapulmonary tuberculosis",
+        "Katherine Mansfield was diagnosed with extrapulmonary tuberculosis and died",
+        "The passage does not provide information about John Middleton Murry's wife's death",
+        "Katherine Mansfield",
+        "The General",
+        "The Rock",
+        "John Middleton Murry",
+        "John Middleton Murry Jr",
+        "John Middleton (architect)",
+        "John Middleton (footballer, born 1955)",
+        "Why Did It Have to Be Me",
+        "J. W. N. Sullivan"
+      ]
+    },
+    {
+      "idx": 18,
+      "qid": "1869092c0bb011ebab90acde48001122",
+      "gold": "Rukn al-Dawla",
+      "disagree": true,
+      "bge_ref": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Rukn al-Dawla"
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Rukn al-Dawla"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "'Adud al-Dawla"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Rukn al-Dawla",
+        "selected": "C2",
+        "verifier": {
+          "final_answer": "Rukn al-Dawla",
+          "selected": "C2",
+          "confidence": "high",
+          "reason": "P2 and P3 mention that 'Adud al-Dawla's father is Rukn al-Dawla. Since Taj al-Dawla is 'Adud al-Dawla's son, Rukn al-Dawla is Taj al-Dawla's paternal grandfather."
+        },
+        "latency_sec": 1.5084037780761719
+      },
+      "candidates": [
+        "Adud al-Dawla",
+        "Rukn al-Dawla",
+        "Taj al-Dawla",
+        "Abu Kalijar",
+        "Them",
+        "An Event",
+        "First Time",
+        "Safiyy al-Dawla",
+        "Asfar ibn Kurduya",
+        "Ziyar ibn Shahrakuya",
+        "Diya al-Dawla"
+      ]
+    },
+    {
+      "idx": 19,
+      "qid": "c19b72520bdb11eba7f7acde48001122",
+      "gold": "Xi'an",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question does not provide enough information to determine the director's place of birth. The passage about Hugh Hamilton Wilson Jr. mentions he is a director but does not"
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "Xi'an, Shaanxi"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "Xi'an, Shaanxi"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "Xi'an, Shaanxi",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Xi'an, Shaanxi",
+        "And the Spring Comes",
+        "Place of birth",
+        "Place of origin",
+        "Night of the Living Dead",
+        "The Feature",
+        "The Will",
+        "Gu Changwei",
+        "George A. Romero",
+        "Benny Brunner",
+        "Red Main",
+        "South Fork Spring River"
+      ]
+    }
+  ]
+}

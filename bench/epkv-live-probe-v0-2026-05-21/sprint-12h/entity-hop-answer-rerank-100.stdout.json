@@ -1,0 +1,34 @@
+{
+  "out_dir": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-answer-rerank-100",
+  "total": 100,
+  "macro": {
+    "bge_ref": {
+      "em": 0.09,
+      "contains": 0.16,
+      "f1": 0.18503174603174602
+    },
+    "strong": {
+      "em": 0.19,
+      "contains": 0.31,
+      "f1": 0.2903306138306138
+    },
+    "path_prompt": {
+      "em": 0.25,
+      "contains": 0.34,
+      "f1": 0.3295238095238095
+    },
+    "rerank": {
+      "em": 0.24,
+      "contains": 0.35,
+      "f1": 0.3251904761904762
+    }
+  },
+  "wins_losses": {
+    "rerank_wins_vs_path": 2,
+    "rerank_losses_vs_path": 3,
+    "rerank_wins_vs_bge": 17,
+    "rerank_losses_vs_bge": 2,
+    "disagreements": 57
+  }
+}
+EPKV_ENTITY_HOP_ANSWER_RERANK_DONE

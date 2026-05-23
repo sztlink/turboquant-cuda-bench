@@ -1,0 +1,66 @@
+{
+  "idx": 62,
+  "qid": "b5b63b160bdb11eba7f7acde48001122",
+  "gold": "Tisch",
+  "candidates": [
+    "Tisch School of the Arts of New York University",
+    "Yale Drama School",
+    "The Feature",
+    "Andrew Bowler",
+    "Febbre da cavallo",
+    "Sancho VI of Navarre",
+    "Comedy",
+    "Carlo Vanzina",
+    "Get That Girl",
+    "Arthur Lubin",
+    "Where Did You Get That Girl",
+    "Where Did the Night Fall"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Tisch School of the Arts of New York University\nC2: Yale Drama School\nC3: The Feature\nC4: Andrew Bowler\nC5: Febbre da cavallo\nC6: Sancho VI of Navarre\nC7: Comedy\nC8: Carlo Vanzina\nC9: Get That Girl\nC10: Arthur Lubin\nC11: Where Did You Get That Girl\nC12: Where Did the Night Fall\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Gigi Causey -> Andrew Bowler\n- Kristofor Brown -> The Feature\n- Kristofor Brown -> Comedy!\n- Febbre da cavallo - La mandrakata -> Febbre da cavallo\n- Febbre da cavallo - La mandrakata -> Carlo Vanzina\n- Berengaria of Navarre -> Sancho VI of Navarre\n- Where Did You Get That Girl? -> Get That Girl\n- Where Did You Get That Girl? -> Arthur Lubin\nPassages:\nP1: The Feature: The Feature is a collaboration between filmmakers Michel Auder and Andrew Neel. Using a collection of videos that Auder had created over the previous 40 years, in combination with original present-day footage of Auder shot by Neel, the two filmmakers made a feature-length film loosely based on the story of Auder’s life. Auder created a form of video diary, starting with his first Sony Portapak camera in 1969, documenting the people, places, and events in his life, which included ...\nP2: Andrew Bowler: Andrew Bowler is an American filmmaker. On January 24, 2012, he was nominated for an Academy Award for the short film \"Time Freak\". In 2018, he made it a feature-length film. Bowler graduated from the Tisch School of the Arts of New York University in 1996.\nP3: Febbre da cavallo: Febbre da cavallo is a 1976 Italian comedy film directed by Steno and starring Gigi Proietti. It was shown as part of a retrospective on Italian comedy at the 67th Venice International Film Festival.\nP4: Sancho VI of Navarre: Sancho Garcés VI (21 April 1132 - 27 June 1194), called the Wise  was King of Navarre from 1150 until his death in 1194. He was the first monarch to officially drop the title of \"King of Pamplona\" in favour of King of Navarre, thus changing the designation of his kingdom. Sancho Garcés was responsible for bringing his kingdom into the political orbit of Europe. He was the eldest son of García Ramírez, \"the Restorer\" and Margaret of L'Aigle.\nP5: Comedy!: Comedy! is a 1987 French drama film written and directed by Jacques Doillon. The film was entered into the main competition at the 44th edition of the Venice Film Festival.\nP6: Carlo Vanzina: Carlo Vanzina( 13 March 1951 – 8 July 2018) was an Italian film director, producer and screenwriter. Vanzina was born in Rome, the son of Maria Teresa Nati and film director Stefano Vanzina and brother of Enrico Vanzina. In 2001, he directed the romantic comedy film\" South Kensington\" starring Rupert Everett and Elle Macpherson. Two of his films,\" Eccezzziunale ... veramente\"( 1982) and\" Vacanze di Natale\"( 1983), were shown as part of a retrospective on Italian comedy at the ...\nP7: Get That Girl: Get That Girl may refer to:\nP8: Arthur Lubin: Arthur Lubin( July 25, 1898 – May 12, 1995) was an American film director and producer who directed several\" Abbott& Costello\" films,\" Phantom of the Opera\"( 1943), the\" Francis the Talking Mule\" series and created the talking- horse TV series\" Mister Ed\". A prominent director for Universal Pictures in the 1940s and 1950s, he is perhaps best known today as the man who gave Clint Eastwood his first contract in film.\nP9: Where Did You Get That Girl?: Where Did You Get That Girl? is a 1941 comedy film directed by Arthur Lubin and starring Leon Errol. The title comes from the popular song of the same name, which dates to 1913 and was written by Bert Kalmar and Harry Puck. The song figures prominently in the film. The plot of the film is about the misadventures of a swing band trying to break into the big time. Helen Parrish plays the band's vocalist.\nP10: Where Did the Night Fall: Where Did the Night Fall is the fourth regular studio album from British electronic music act Unkle, released on.\nQuestion: Where did Gigi Causey's husband graduate from?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"Tisch School of the Arts of New York University\",\"selected\":\"C1|C2|UNKNOWN\",\"confidence\":\"medium\",\"reason\":\"Gigi Causey is connected to Andrew Bowler through the candidate entity graph. The passage P2 states that Andrew Bowler graduated from the Tisch School of the Arts of New York University in 1996. While there is no direct statement about Gigi Causey's husband, it is reasonable to infer that Andrew Bowler is her husband given the connection in the graph, and thus the answer is Tisch School of the Arts of New York University.\"}",
+  "verifier": {
+    "final_answer": "Tisch School of the Arts of New York University",
+    "selected": "C1|C2|UNKNOWN",
+    "confidence": "medium",
+    "reason": "Gigi Causey is connected to Andrew Bowler through the candidate entity graph. The passage P2 states that Andrew Bowler graduated from the Tisch School of the Arts of New York University in 1996. While there is no direct statement about Gigi Causey's husband, it is reasonable to infer that Andrew Bowler is her husband given the connection in the graph, and thus the answer is Tisch School of the Arts of New York University."
+  },
+  "final": "Tisch School of the Arts of New York University",
+  "selected": "C1|C2|UNKNOWN",
+  "response": {
+    "id": "chatcmpl-b4a3e67ac247d92b",
+    "object": "chat.completion",
+    "created": 1779515842,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"Tisch School of the Arts of New York University\",\"selected\":\"C1|C2|UNKNOWN\",\"confidence\":\"medium\",\"reason\":\"Gigi Causey is connected to Andrew Bowler through the candidate entity graph. The passage P2 states that Andrew Bowler graduated from the Tisch School of the Arts of New York University in 1996. While there is no direct statement about Gigi Causey's husband, it is reasonable to infer that Andrew Bowler is her husband given the connection in the graph, and thus the answer is Tisch School of the Arts of New York University.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1271,
+      "total_tokens": 1398,
+      "completion_tokens": 127,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 2.19212007522583
+}

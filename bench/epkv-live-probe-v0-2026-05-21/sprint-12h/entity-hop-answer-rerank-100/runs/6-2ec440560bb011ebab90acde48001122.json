@@ -1,0 +1,66 @@
+{
+  "idx": 6,
+  "qid": "2ec440560bb011ebab90acde48001122",
+  "gold": "Ptolemy IX Lathyros",
+  "candidates": [
+    "Antiochus IX Cyzicenus",
+    "Antiochus IX",
+    "Antiochus X Eusebes",
+    "Antiochus VII Sidetes",
+    "The Wanted",
+    "Afterwards",
+    "Revenge",
+    "Cleopatra",
+    "Kings",
+    "Laodice of the Sameans",
+    "Antiochus III of Commagene",
+    "Philip I Philadelphus"
+  ],
+  "verifier_prompt": "You are a strict answer verifier for a multi-hop QA task.\nUse ONLY the evidence passages and candidate entity graph inside the original prompt.\nChoose the candidate that is directly supported by the evidence and best answers the question.\nIf none are supported, return UNKNOWN.\nReturn ONLY valid JSON with this schema:\n{\"final_answer\":\"...\",\"selected\":\"C1|C2|...|UNKNOWN\",\"confidence\":\"high|medium|low\",\"reason\":\"short\"}\n\nCandidates:\nC1: Antiochus IX Cyzicenus\nC2: Antiochus IX\nC3: Antiochus X Eusebes\nC4: Antiochus VII Sidetes\nC5: The Wanted\nC6: Afterwards\nC7: Revenge\nC8: Cleopatra\nC9: Kings\nC10: Laodice of the Sameans\nC11: Antiochus III of Commagene\nC12: Philip I Philadelphus\n\nOriginal prompt with evidence:\nYou are answering a multi-hop question using retrieved passages and a candidate entity graph.\nThe graph is heuristic and may contain distractors. Use it only if the passages support it.\nAnswer with only the final answer string. No explanation.\nCandidate entity/title graph:\n- Antiochus X Eusebes -> Cleopatra\n- Antiochus X Eusebes -> Cleopatra\n- Laodice of the Sameans -> Antiochus X Eusebes\n- Antiochus IX Cyzicenus -> Antiochus VII Sidetes\n- Antiochus IX Cyzicenus -> Afterwards\n- Philip I Philadelphus -> Cleopatra\n- Seleucus VI Epiphanes -> Revenge!\n- Seleucus VI Epiphanes -> Kings\n- Antiochus III of Commagene -> The Wanted\nPassages:\nP1: Antiochus X Eusebes: Antiochus X Eusebes Philopator (–92 or 88 BC) was a Hellenistic Seleucid monarch who reigned as the King of Syria between 95 BC and 92 BC or 89/88 BC (224 SE (Seleucid year)). He was the son of Antiochus IX and perhaps his Egyptian wife Cleopatra IV. He lived in a period during which there was a general disintegration of Seleucid Syria characterized by civil wars, foreign interference by Ptolemaic Egypt and incursions by the Parthians. Antiochus IX was killed in 95BC at the ...\nP2: Antiochus X Eusebes: Antiochus X Eusebes Philopator( –92 or 88 BC) was a Hellenistic Seleucid monarch who reigned as the King of Syria between 95 BC and 92 BC or 89/88 BC( 224 SE( Seleucid year)). He was the son of Antiochus IX and perhaps his Egyptian wife Cleopatra IV. He lived in a period during which there was a general disintegration of Seleucid Syria characterized by civil wars, foreign interference by Ptolemaic Egypt and incursions by the Parthians. Antiochus IX was killed in 95 BC at ...\nP3: Antiochus VII Sidetes: Antiochus VII Euergetes (c.164/160 BC - 129 BC) , nicknamed Sidetes  (from Side, a city in Asia Minor), also known as Antiochus the Pious, was ruler of the Hellenistic Seleucid Empire who reigned from July/August 138 to 129 BC. He was the last Seleucid king of any stature. After Antiochus was killed in battle, the Seleucid realm was restricted to Syria.\nP4: The Wanted: The Wanted are a British- Irish boy band consisting of members Max George, Siva Kaneswaran, Jay McGuiness, Tom Parker and Nathan Sykes. They formed in 2009 and were signed worldwide to Universal Music subsidiaries Island Records and Mercury Records, and managed by Scooter Braun. The band's debut album,\" The Wanted\", was released on 25 October 2010 and peaked at number four on the UK Albums Chart. The album spawned three UK top 20 singles: their debut single,\" All Time Low\", which ...\nP5: Afterwards: Afterwards is a 2008 English- language psychological thriller film directed by Gilles Bourdos and starring Romain Duris, John Malkovich and Evangeline Lilly. Based on Guillaume Musso's novel\" Et après ...\", the story tells of a workaholic lawyer who is told by a self- proclaimed visionary that he must try to prevent his imminent death. The film was shot in New York City, Montreal and various New Mexico locations over June to July 2007, and had a French release in January 2009.\nP6: Revenge!: Revenge! is a 1971 American made- for- television horror thriller film directed by Jud Taylor and starring Shelley Winters, Bradford Dillman and Stuart Whitman. The film premiered as the\" ABC Movie of the Week\" on November 6, 1971.\nP7: Cleopatra: Cleopatra VII Philopator (69 – 10 or 12 August 30 BC) was the last active ruler of the Ptolemaic Kingdom of Egypt, nominally survived as pharaoh by her son Caesarion. As a member of the Ptolemaic dynasty, she was a descendant of its founder Ptolemy I Soter, a Macedonian Greek general and companion of Alexander the Great. After the death of Cleopatra, Egypt became a province of the Roman Empire, marking the end of the Hellenistic period that had lasted since the reign of Alexander ...\nP8: Kings: Kings or King's may refer to:\nP9: Laodice of the Sameans: Laodice was a Queen of an unknown Kingdom in Asia. She lived at the time of the Seleucid king of Syria Antiochus X Eusebes who reigned 95 BC- 92 or 88 BC.\nP10: Antiochus III of Commagene: Antiochus III Epiphanes (flourished 1st century BC and 1st century AD) was the ruler of the Kingdom of Commagene from 12 BC to 17 AD. He was the son and successor of King Mithridates III of Commagene and Iotapa, and of mixed Armenian, Greek and Median descent--the last through his mother. His parents were first cousins. When Antiochus died in 17 AD, his death created major issues for the kingdom, which was in political turmoil at the time. The reasons for this ...\nQuestion: Who is the maternal grandfather of Antiochus X Eusebes?\nFinal answer:",
+  "verifier_text": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide information about the maternal grandfather of Antiochus X Eusebes. It only mentions his father, Antiochus IX, and his possible Egyptian wife Cleopatra IV, but not his mother's father.\"}",
+  "verifier": {
+    "final_answer": "UNKNOWN",
+    "selected": "UNKNOWN",
+    "confidence": "low",
+    "reason": "The evidence does not provide information about the maternal grandfather of Antiochus X Eusebes. It only mentions his father, Antiochus IX, and his possible Egyptian wife Cleopatra IV, but not his mother's father."
+  },
+  "final": "Antiochus IX Cyzicenus",
+  "selected": "PATH_FALLBACK",
+  "response": {
+    "id": "chatcmpl-999f710807833868",
+    "object": "chat.completion",
+    "created": 1779515800,
+    "model": "local-vllm",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"final_answer\":\"UNKNOWN\",\"selected\":\"UNKNOWN\",\"confidence\":\"low\",\"reason\":\"The evidence does not provide information about the maternal grandfather of Antiochus X Eusebes. It only mentions his father, Antiochus IX, and his possible Egyptian wife Cleopatra IV, but not his mother's father.\"}",
+          "refusal": null,
+          "annotations": null,
+          "audio": null,
+          "function_call": null,
+          "tool_calls": [],
+          "reasoning": null
+        },
+        "logprobs": null,
+        "finish_reason": "stop",
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.1.dev1+g36fc04825-nohash",
+    "usage": {
+      "prompt_tokens": 1513,
+      "total_tokens": 1580,
+      "completion_tokens": 67,
+      "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null,
+    "prompt_token_ids": null,
+    "kv_transfer_params": null
+  },
+  "latency_sec": 1.112823724746704
+}
