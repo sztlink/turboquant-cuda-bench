@@ -1057,3 +1057,13 @@ Updated next step:
 ```txt
 soft/multi-candidate ECD: bias N candidate entities/paths from entity-hop graph + path prompt output, not one strict extractor candidate.
 ```
+
+## Public reproducibility receipt
+
+Boring Receipts Lab now carries this result as a research sibling receipt:
+
+```txt
+https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md
+```
+
+It preserves the boundary: the probe/RAG program stays here; Boring Receipts gets the public, boring, reproducible card.

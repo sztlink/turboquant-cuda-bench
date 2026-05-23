@@ -630,3 +630,11 @@ Do not force single-candidate ECD. Use soft/multi-candidate evidence control:
 ```txt
 entity-hop docs -> N answer/path candidates -> multi-candidate sampler bias -> fallback to direct path prompt when extractor is missing
 ```
+
+## Public reproducibility receipt
+
+The current RealRAG bridge is now mirrored as a Boring Receipts Lab research sibling card:
+
+```txt
+https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md
+```
