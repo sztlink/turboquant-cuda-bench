@@ -9,7 +9,22 @@ bench/_datasets/
 # Future raw experiment dumps (promote compact RESULTS.md/summary.json instead)
 bench/**/responses/
 bench/**/runs/
+bench/**/cases/
+bench/**/span-maps/
+bench/**/relation-path/
+bench/**/quality-eval/baseline/
+bench/**/ecd/
+bench/**/extract/
+bench/**/run.log
+bench/**/events-*.jsonl
+bench/**/outputs-*.jsonl
+bench/**/internal-sampler-hook-*.json*
+bench/**/evidence-derived-terminal-object*.json
 bench/**/*.stdout.json
 bench/**/*.stdout.log
 bench/**/*.tmp.json
 bench/**/*.tmp.log
+
+# Local retrieval-only/smoke dumps from exploratory EPKV runs
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-retrieval-only-*/
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-smoke-*/

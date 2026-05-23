@@ -90,7 +90,7 @@ R3I  prompt/schema ablation
 R3J  non-gold sentence compression falsification
 ```
 
-Note: local R6/R7/R8 artifacts existed in the lab history, but they are not part of the current public entry path unless promoted and indexed in `bench/MANIFEST.md`.
+Note: R6/R7/R8 are preserved as historical 2Wiki construction artifacts and indexed in `bench/MANIFEST.md`, but they do not supersede the N=500 no-delta state.
 
 ## Telemetry / protection artifacts
 

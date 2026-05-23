@@ -1,0 +1,278 @@
+{
+  "schema": "realrag.r4c.calibration_readiness.summary.v1",
+  "status": "ready",
+  "created_at": "2026-05-21T19:43:53.647Z",
+  "batch": "bench/evidence-utilization-realrag-r4b-v2-human-calibration-deduped-2026-05-21/human-calibration-batch.jsonl",
+  "batch_sha256": "ac5f2ac0e22dfdbdab437bd149067a5a3e57128f282d6d90ed59417e953c4727",
+  "panel": "bench/evidence-utilization-realrag-r4a-llm-judge-panel-2026-05-21/panel-records.jsonl",
+  "panel_sha256": "e78f42c0dcff5b7dd99e91959fd33a4e3ea164156cc2c565fa038066ef4a3253",
+  "rows": 150,
+  "unique_qid_hashes": 150,
+  "labeled_rows": 18,
+  "unlabeled_rows": 132,
+  "human_label_counts": {
+    "correct": 10,
+    "partial": 5,
+    "unclear": 1,
+    "wrong": 2
+  },
+  "labeled_by_dataset": {
+    "2wiki": 11,
+    "hotpotqa": 7
+  },
+  "labeled_by_condition": {
+    "bge_rerank_top10": 6,
+    "bm25_top10": 2,
+    "no_support": 9,
+    "oracle_first": 1
+  },
+  "labeled_by_bucket": {
+    "2wiki_all_support_conditions_fail": 2,
+    "2wiki_bge_only_success": 2,
+    "2wiki_no_support_success_leakage": 7,
+    "hotpot_metric_closed_judge_negative": 2,
+    "hotpot_metric_open_judge_positive": 5
+  },
+  "panel_exact_agreement_on_labeled": {
+    "true": 11,
+    "false": 7
+  },
+  "panel_polarity_agreement_on_labeled": {
+    "false": 4,
+    "neutral": 1,
+    "true": 13
+  },
+  "metric_relation_on_labeled": {
+    "false": 5,
+    "neutral": 1,
+    "true": 12
+  },
+  "queue_top_risk_reasons": {
+    "metric_closed_panel_negative": 1,
+    "metric_open_panel_positive": 7,
+    "no_support_condition": 22,
+    "no_support_metric_closed": 22,
+    "no_support_success_bucket": 22,
+    "panel_disagreement": 41,
+    "panel_metric_error_metric_false_negative": 7,
+    "panel_metric_error_metric_false_positive": 1,
+    "panel_partial": 6,
+    "support_absent": 22
+  },
+  "queue_top_20": [
+    {
+      "priority_rank": 1,
+      "priority_score": 51,
+      "r4_review_id": "r4b-v2-0017",
+      "source_review_id": "r3k-0031",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;panel_disagreement;support_absent"
+    },
+    {
+      "priority_rank": 2,
+      "priority_score": 51,
+      "r4_review_id": "r4b-v2-0018",
+      "source_review_id": "r3k-0045",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;panel_disagreement;support_absent"
+    },
+    {
+      "priority_rank": 3,
+      "priority_score": 51,
+      "r4_review_id": "r4b-v2-0019",
+      "source_review_id": "r3k-0053",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;panel_disagreement;support_absent"
+    },
+    {
+      "priority_rank": 4,
+      "priority_score": 51,
+      "r4_review_id": "r4b-v2-0020",
+      "source_review_id": "r3k-0077",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;panel_disagreement;support_absent"
+    },
+    {
+      "priority_rank": 5,
+      "priority_score": 51,
+      "r4_review_id": "r4b-v2-0021",
+      "source_review_id": "r3k-0080",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;panel_disagreement;support_absent"
+    },
+    {
+      "priority_rank": 6,
+      "priority_score": 51,
+      "r4_review_id": "r4b-v2-0022",
+      "source_review_id": "r3k-0087",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;panel_disagreement;support_absent"
+    },
+    {
+      "priority_rank": 7,
+      "priority_score": 51,
+      "r4_review_id": "r4b-v2-0023",
+      "source_review_id": "r3k-0100",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;panel_disagreement;support_absent"
+    },
+    {
+      "priority_rank": 8,
+      "priority_score": 51,
+      "r4_review_id": "r4b-v2-0024",
+      "source_review_id": "r3k-0137",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;panel_disagreement;support_absent"
+    },
+    {
+      "priority_rank": 9,
+      "priority_score": 51,
+      "r4_review_id": "r4b-v2-0025",
+      "source_review_id": "r3k-0147",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;panel_disagreement;support_absent"
+    },
+    {
+      "priority_rank": 10,
+      "priority_score": 51,
+      "r4_review_id": "r4b-v2-0026",
+      "source_review_id": "r3k-0153",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;panel_disagreement;support_absent"
+    },
+    {
+      "priority_rank": 11,
+      "priority_score": 51,
+      "r4_review_id": "r4b-v2-0027",
+      "source_review_id": "r3k-0182",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;panel_disagreement;support_absent"
+    },
+    {
+      "priority_rank": 12,
+      "priority_score": 38,
+      "r4_review_id": "r4b-v2-0028",
+      "source_review_id": "r3k-0176",
+      "condition": "bge_rerank_top10",
+      "bucket": "2wiki_bge_only_success",
+      "panel_majority": "wrong",
+      "risk_reasons": "metric_closed_panel_negative;panel_disagreement;panel_metric_error_metric_false_positive"
+    },
+    {
+      "priority_rank": 13,
+      "priority_score": 37,
+      "r4_review_id": "r4b-v2-0032",
+      "source_review_id": "r3k-0036",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;support_absent"
+    },
+    {
+      "priority_rank": 14,
+      "priority_score": 37,
+      "r4_review_id": "r4b-v2-0033",
+      "source_review_id": "r3k-0042",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;support_absent"
+    },
+    {
+      "priority_rank": 15,
+      "priority_score": 37,
+      "r4_review_id": "r4b-v2-0034",
+      "source_review_id": "r3k-0043",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;support_absent"
+    },
+    {
+      "priority_rank": 16,
+      "priority_score": 37,
+      "r4_review_id": "r4b-v2-0035",
+      "source_review_id": "r3k-0050",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;support_absent"
+    },
+    {
+      "priority_rank": 17,
+      "priority_score": 37,
+      "r4_review_id": "r4b-v2-0037",
+      "source_review_id": "r3k-0091",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;support_absent"
+    },
+    {
+      "priority_rank": 18,
+      "priority_score": 37,
+      "r4_review_id": "r4b-v2-0039",
+      "source_review_id": "r3k-0094",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;support_absent"
+    },
+    {
+      "priority_rank": 19,
+      "priority_score": 37,
+      "r4_review_id": "r4b-v2-0040",
+      "source_review_id": "r3k-0119",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;support_absent"
+    },
+    {
+      "priority_rank": 20,
+      "priority_score": 37,
+      "r4_review_id": "r4b-v2-0041",
+      "source_review_id": "r3k-0126",
+      "condition": "no_support",
+      "bucket": "2wiki_no_support_success_leakage",
+      "panel_majority": "correct",
+      "risk_reasons": "no_support_condition;no_support_metric_closed;no_support_success_bucket;support_absent"
+    }
+  ],
+  "files": [
+    "labeled-analysis.csv",
+    "labeled-analysis.jsonl",
+    "unlabeled-priority-queue.csv",
+    "unlabeled-priority-queue.jsonl",
+    "summary.json",
+    "RESULTS.md"
+  ],
+  "boundary": [
+    "readiness analysis only",
+    "no new human labels",
+    "does not convert LLM panel into ground truth",
+    "does not publish or mutate serving infrastructure"
+  ]
+}

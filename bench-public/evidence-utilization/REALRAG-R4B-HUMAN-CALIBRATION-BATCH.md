@@ -1,6 +1,6 @@
 # RealRAG R4B — human calibration batch
 
-Status: ready for human review
+Status: superseded for continued review by [`REALRAG-R4B-V2-HUMAN-CALIBRATION-DEDUPED.md`](REALRAG-R4B-V2-HUMAN-CALIBRATION-DEDUPED.md)
 Primary artifact: `bench/evidence-utilization-realrag-r4b-human-calibration-batch-2026-05-21/`
 
 ## Boundary

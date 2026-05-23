@@ -1,0 +1,82 @@
+{
+  "schema": "realrag.r4b_v2.human_calibration_batch.summary.v1",
+  "status": "ready",
+  "created_at": "2026-05-21T19:20:44.819Z",
+  "input": "bench/evidence-utilization-realrag-r4a-llm-judge-panel-2026-05-21/panel-records.jsonl",
+  "input_sha256": "e78f42c0dcff5b7dd99e91959fd33a4e3ea164156cc2c565fa038066ef4a3253",
+  "previous": "bench/evidence-utilization-realrag-r4b-human-calibration-batch-2026-05-21/human-calibration-batch.jsonl",
+  "previous_sheet_id": "1QCdip9Ul0-ES_pz4rD8FTxm5ZHjthya93YIW_DX7WTs",
+  "requested_n": 150,
+  "selected_n": 150,
+  "unique_qid_hashes": 150,
+  "removed_duplicate_rows": 9,
+  "fill_rows_added": 9,
+  "preserved_human_work_rows": 18,
+  "preserved_human_label_rows": 18,
+  "boundary": [
+    "deduplicated human calibration batch",
+    "one row per question/qid",
+    "preserves already-filled human_* fields from sheet",
+    "LLM panel used only for triage"
+  ],
+  "counts": {
+    "dataset": {
+      "2wiki": 133,
+      "hotpotqa": 17
+    },
+    "condition": {
+      "no_support": 31,
+      "bge_rerank_top10": 72,
+      "bm25_top10": 41,
+      "oracle_first": 6
+    },
+    "bucket": {
+      "2wiki_no_support_success_leakage": 29,
+      "hotpot_metric_open_judge_positive": 14,
+      "hotpot_metric_closed_judge_negative": 3,
+      "2wiki_all_support_conditions_fail": 32,
+      "2wiki_bge_only_success": 21,
+      "2wiki_natural_success_oracle_fail": 26,
+      "2wiki_bm25_only_success": 25
+    },
+    "metricState": {
+      "metric_closed": 104,
+      "metric_open": 46
+    },
+    "panelMajority": {
+      "wrong": 36,
+      "correct": 106,
+      "partial": 8
+    },
+    "selectionPhase": {
+      "r4b_v1_preserved_deduped": 141,
+      "r4b_v2_fill_high_score": 9
+    }
+  },
+  "files": [
+    "human-calibration-batch.csv",
+    "human-calibration-batch.jsonl",
+    "INSTRUCTIONS.md",
+    "summary.json",
+    "dedupe-report.json",
+    "google-sheet.json"
+  ],
+  "google_sheet": {
+    "title": "RealRAG R4B-v2 human calibration — deduped — 150 — 2026-05-21",
+    "spreadsheetId": "19B_Ug7fcGce8nIC-cNz39kzOamCKZBEDr4_46Xvhc1s",
+    "webViewLink": "https://docs.google.com/spreadsheets/d/19B_Ug7fcGce8nIC-cNz39kzOamCKZBEDr4_46Xvhc1s/edit?usp=drivesdk",
+    "rows": 150,
+    "permissions": [
+      {
+        "emailAddress": "felipe@aya.cx",
+        "role": "writer",
+        "ok": true
+      },
+      {
+        "emailAddress": "felipesztutman@gmail.com",
+        "role": "writer",
+        "ok": true
+      }
+    ]
+  }
+}
