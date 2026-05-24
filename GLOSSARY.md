@@ -13,6 +13,18 @@ A KV-cache quantization family for long-context inference. In this repo it appea
 
 The key/value memory used by transformer attention to avoid recomputing prior context. Long context increases KV-cache memory pressure, which motivates quantization, eviction, compression, and retrieval/splice strategies.
 
+## KV-cache dtype (`-ctk` / `-ctv`)
+
+The numeric format used for the runtime K and V cache. llama.cpp flags expose this as `-ctk` for keys and `-ctv` for values, e.g. `-ctk q8_0 -ctv q8_0`. K and V can have different quality/speed sensitivity, so receipts must report both.
+
+## BF16 / FP16 / F16
+
+16-bit floating-point precision. `BF16` usually refers to bfloat16 PyTorch/vLLM/SGLang-style weights; `F16` is the common llama.cpp name for half-precision tensors or KV cache. BF16 Qwen3.6-27B is roughly a 54 GB weight load before KV and runtime overhead.
+
+## Q8_0 / q8_0 / Q4_K_M
+
+Quantization names. `Q4_K_M`/`Q8_0` often refer to GGUF weight quantization; lowercase `q8_0`/`q4_0` frequently appears as a llama.cpp runtime/KV dtype. A result should state whether the quantization applies to weights, K cache, V cache, or another tensor.
+
 ## KV-cache compression
 
 Any method that reduces the memory footprint or active working set of the KV cache. Examples here include TurboQuant, CASK, TriAttention, and FP8 KV variants.
@@ -122,6 +134,22 @@ Local consumer GPUs used for receipts:
 
 - RTX 4090, SM89, 24 GB, main CUDA/vLLM bench host.
 - RTX 3090, SM86, 24 GB, comparison/fallback host.
+
+## A100 / H100 / H200 / B200
+
+NVIDIA datacenter GPUs. They matter for reproduction because 80 GB+ VRAM can run BF16 27B-class models plus long KV cache directly, while 24 GB consumer cards generally require weight quantization.
+
+## CUDA
+
+NVIDIA's GPU compute stack. CUDA receipts depend on NVIDIA driver/runtime versions, kernel implementation, VRAM, power and thermals.
+
+## Metal
+
+Apple's GPU compute API. In LLM runs it usually means Apple Silicon unified memory via llama.cpp or a related runtime. Metal can fit larger BF16 models on high-memory Macs, but performance must be measured separately.
+
+## MLX
+
+Apple's machine-learning framework for Apple Silicon. MLX is a different runtime from llama.cpp/GGUF; do not infer GGUF flags like `-ctk q8_0` from an MLX run unless a receipt says so explicitly.
 
 ## Public package
 
