@@ -14,18 +14,20 @@ The CUDA kernel work lives primarily in the llama.cpp fork, not the Python `turb
 
 ## Mental model
 
-TurboQuant CUDA touches two different surfaces:
+There are **two separate TurboQuant runtime stacks** in play:
 
-1. **KV-cache runtime types**: `GGML_TYPE_TURBO2_0`, `GGML_TYPE_TURBO3_0`, `GGML_TYPE_TURBO4_0`.
+1. **llama.cpp TurboQuant CUDA** — the code mapped below.
+   - KV-cache runtime types: `GGML_TYPE_TURBO2_0`, `GGML_TYPE_TURBO3_0`, `GGML_TYPE_TURBO4_0`.
    - Activated by `-ctk/-ctv turbo*` or `--cache-type-k/--cache-type-v turbo*`.
    - Hot path is attention over K/V cache.
    - Primary files: `set-rows.cu`, `fattn-vec.cuh`, `dequantize.cuh`, `turbo-wht.cu`, `turbo-quant.cuh`.
-2. **TQ weight types**: `GGML_TYPE_TQ3_1S`, `GGML_TYPE_TQ4_1S`.
-   - Activated by loading/quantizing a model with TQ weight type.
-   - Hot path is matrix multiply / conversion.
-   - Primary file: `mmvq-tq.cu`, plus `convert.cu` and `dequantize.cuh`.
+   - TQ weight types: `GGML_TYPE_TQ3_1S`, `GGML_TYPE_TQ4_1S`, primarily in `mmvq-tq.cu`, `convert.cu`, `dequantize.cuh`.
+2. **vLLM TurboQuant / TriAttention on the live AYA-4090 service** — a different stack.
+   - The 4090 currently serves vLLM commit `36fc048` with `kv_cache_dtype=turboquant_k8v4` and TriAttention V3.
+   - It **does have TurboQuant kernels**, but they are Triton JIT/Python custom-op kernels, not CUDA-C++ `.cu` kernels.
+   - Primary files observed read-only on the 4090: `vllm/v1/attention/ops/triton_turboquant_store.py`, `triton_turboquant_decode.py`, `vllm/v1/attention/backends/turboquant_attn.py`, `vllm/v1/attention/triattention/scoring_kernel.py`, and `vllm/model_executor/layers/quantization/turboquant/`.
 
-Do not conflate these. KV turbo and weight TQ share WHT/codebook vocabulary but hit different tensors, dispatch paths and quality risks.
+Do not conflate these. llama.cpp TurboQuant and vLLM TurboQuant are implementations of related ideas, but their kernel files, dispatch paths, profiler targets and receipt metadata are different.
 
 ## CUDA kernel inventory
 
@@ -85,6 +87,21 @@ Do not conflate these. KV turbo and weight TQ share WHT/codebook vocabulary but 
 | `mmvq-tq.cu::k_convert_tq4_1s_to_q8_0` | TQ4 weight → q8_0 | Load-time conversion to q8_0. | `GGML_TQ_CONVERT_Q8=1` path. | Converts away TQ runtime behavior; receipt must say if enabled. | Trades VRAM for faster prefill. |
 | `mmvq-tq.cu::ggml_cuda_mul_mat_tq4_1s_cublas` | TQ4 → fp16 scratch + cuBLAS | Large prefill path. | `ncols_dst > 8` large prefill. | Tensor-core path changes numeric surface vs native TQ. | Likely faster prefill but extra scratch allocation. |
 
+### vLLM live runtime note (AYA-4090)
+
+The live 4090 service is not using the llama.cpp CUDA-C++ files above. Read-only inspection of `/home/felipe/vllm-lab/vllm-turboquant-fresh-20260515` found TurboQuant-specific Triton/Python code:
+
+| file | role |
+|---|---|
+| `vllm/v1/attention/ops/triton_turboquant_store.py` | Triton fused store/quant kernels for TurboQuant KV cache. |
+| `vllm/v1/attention/ops/triton_turboquant_decode.py` | Triton decode/dequant path for TurboQuant KV cache. |
+| `vllm/v1/attention/backends/turboquant_attn.py` | vLLM custom attention backend registration/dispatch. |
+| `vllm/v1/attention/triattention/scoring_kernel.py` | Triton scoring kernel for TriAttention V3. |
+| `vllm/model_executor/layers/quantization/turboquant/` | Quantization config, centroids and policy layer. |
+| `vllm/v1/attention/triattention/` | TriAttention engine, policy, hooks, integration and prefill rehydrate. |
+
+No TurboQuant-specific `.cu/.cuh/.cpp` files were found in that vLLM repo. That does **not** mean no kernels exist; it means the custom TurboQuant kernels are authored in Triton (`@triton.jit`) and compiled JIT at runtime. Profiling the live 4090 service therefore targets Triton kernels / vLLM metrics, not the llama.cpp kernels above.
+
 ### Host-side integration and graph decisions
 
 | file | role | why it matters |
@@ -112,6 +129,11 @@ Do not conflate these. KV turbo and weight TQ share WHT/codebook vocabulary but 
 ## 4090 week-2 profiling candidates
 
 Do not start these while the 3090 AIME long run is active unless explicitly moving to the 4090. The 4090 status check on 2026-05-24 showed 0% GPU util but high resident VRAM (~22 GB). Runbook context says this is expected for the default `VLLM-AutoStart` service on port `11435` serving Qwen2.5-7B with TurboQuant/TriAttention. Freeing that VRAM means stopping/changing an infra service, so it requires `[CONFIRMAR:INFRA]`; read-only health checks are fine.
+
+Important fork in the road:
+
+- **Profile live AYA-4090 runtime:** target vLLM/Triton files listed above; no llama.cpp build is needed and no service stop is needed for read-only health/version work.
+- **Profile llama.cpp CUDA kernels:** build llama.cpp on the 4090 and free VRAM by stopping `VLLM-AutoStart`; this requires `[CONFIRMAR:INFRA]`.
 
 ### Candidate A — build/path sanity only
 
