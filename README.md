@@ -31,6 +31,7 @@ This repo is a research ledger and archive. It is not a production RAG claim, no
 |---|---|
 | [STATE.md](STATE.md) | current truth, non-claims, latest falsifications |
 | [REPO-AUDIT-2026-05-23.md](REPO-AUDIT-2026-05-23.md) | hostile-but-fair audit of repo shape |
+| [KERNEL-MAP.md](KERNEL-MAP.md) | CUDA kernel entry map for TurboQuant validation/profiling |
 | [bench/MANIFEST.md](bench/MANIFEST.md) | status map for major bench directories |
 | [bench-public/](bench-public/) | public-safe promoted result packages |
 | [KEY-FINDINGS.md](KEY-FINDINGS.md) | legacy public findings index; read with STATE.md caveats |
