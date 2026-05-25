@@ -31,7 +31,9 @@ This repo is a research ledger and archive. It is not a production RAG claim, no
 |---|---|
 | [STATE.md](STATE.md) | current truth, non-claims, latest falsifications |
 | [REPO-AUDIT-2026-05-23.md](REPO-AUDIT-2026-05-23.md) | hostile-but-fair audit of repo shape |
-| [KERNEL-MAP.md](KERNEL-MAP.md) | CUDA kernel entry map for TurboQuant validation/profiling |
+| [KERNEL-MAP.md](KERNEL-MAP.md) | CUDA kernel entry map for llama.cpp TurboQuant validation/profiling |
+| [VLLM-RUNTIME-LINEAGE-4090.md](VLLM-RUNTIME-LINEAGE-4090.md) | separates TheTom upstream, local build, sztlink overlay, and live 4090 service |
+| [THETOM-CLEAN-BASELINE-PLAN.md](THETOM-CLEAN-BASELINE-PLAN.md) | plan for a clean upstream validation lane before any bug report/PR |
 | [bench/MANIFEST.md](bench/MANIFEST.md) | status map for major bench directories |
 | [bench-public/](bench-public/) | public-safe promoted result packages |
 | [KEY-FINDINGS.md](KEY-FINDINGS.md) | legacy public findings index; read with STATE.md caveats |
