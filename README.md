@@ -30,6 +30,8 @@ This repo is a research ledger and archive. It is not a production RAG claim, no
 | path | purpose |
 |---|---|
 | [STATE.md](STATE.md) | current truth, non-claims, latest falsifications |
+| [TURBOQUANT-ATLAS.md](TURBOQUANT-ATLAS.md) | reading architecture for what survived, failed, froze, or remains lab-only |
+| [bench-public/WHAT-SURVIVED.md](bench-public/WHAT-SURVIVED.md) | public field guide to the surviving value after the N=500 no-delta |
 | [REPO-AUDIT-2026-05-23.md](REPO-AUDIT-2026-05-23.md) | hostile-but-fair audit of repo shape |
 | [KERNEL-MAP.md](KERNEL-MAP.md) | CUDA kernel entry map for llama.cpp TurboQuant validation/profiling |
 | [VLLM-RUNTIME-LINEAGE-4090.md](VLLM-RUNTIME-LINEAGE-4090.md) | separates TheTom upstream, local build, sztlink overlay, and live 4090 service |
@@ -46,10 +48,12 @@ This repo is a research ledger and archive. It is not a production RAG claim, no
 
 ```txt
 1. Public answer-closure probes show evidence placement/rank/path effects.
-2. Entity-hop/path prompting is the strongest non-oracle natural RealRAG baseline so far.
-3. Oracle/compact evidence control is a useful upper bound, not natural RealRAG proof.
-4. KV/cache and vLLM intervention work is technically real, but currently lab/observability.
-5. N=500 falsified the scaled positive claim for hand-written gated verifier control.
+2. 2Wiki shows path/schema sensitivity beyond paragraph reranking.
+3. KVFidelity remains useful as paired action-trace evaluation for KV/cache changes.
+4. vLLM cross-stack replays reproduced meaningful long-context and decoy/ranking behavior.
+5. Oracle/compact evidence control is a useful upper bound, not natural RealRAG proof.
+6. KV/cache and EPKV intervention work is technically real, but currently lab/observability.
+7. N=500 falsified the scaled positive claim for hand-written gated verifier control.
 ```
 
 ## What not to claim

@@ -12,6 +12,8 @@ EPKV/sampler/runtime work is lab/observability, not natural RealRAG quality proo
 
 This directory is an index of promoted summaries, **not a roadmap** and not a production benchmark leaderboard.
 
+For a curated public guide to the value that survived later falsification, start with [`WHAT-SURVIVED.md`](WHAT-SURVIVED.md).
+
 ## Current falsification above the fold
 
 N=500 machine-only RealRAG check:
@@ -33,6 +35,7 @@ Canonical artifact:
 | If you want to know... | Start here |
 |---|---|
 | What the repo currently claims and does not claim | [`../STATE.md`](../STATE.md) |
+| What survived the N=500 no-delta and where to start reading | [`WHAT-SURVIVED.md`](WHAT-SURVIVED.md) |
 | Which bench dirs are canonical/superseded/negative | [`../bench/MANIFEST.md`](../bench/MANIFEST.md) |
 | What HotpotQA shows about answer closure and rank | [`evidence-utilization/REALRAG-HOTPOTQA-R1.md`](evidence-utilization/REALRAG-HOTPOTQA-R1.md), [`R2`](evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md), [`R3B`](evidence-utilization/REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md), [`R3L`](evidence-utilization/REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md) |
 | What 2Wiki shows about schema/path sensitivity | [`evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md`](evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md), [`R3I`](evidence-utilization/REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md), [`R3J`](evidence-utilization/REALRAG-2WIKI-R3J-SENTENCE-COMPRESSION.md) |
