@@ -58,6 +58,19 @@ Status vocabulary:
 | `bench/evidence-utilization-realrag-2wiki-r8-slot-filling-2026-05-21/` | 2Wiki | SUPPORTING | yes, historical | Structured slot filling improved small sample; does not supersede N=500 state | later entity-hop/N=500 runs |
 | `bench/evidence-utilization-realrag-r5-statistical-robustness-2026-05-21/` | stats | SUPPORTING | yes | Offline bootstrap/paired deltas for earlier phase | N=500 report for current path line |
 
+## KV-cache quantization fidelity archive
+
+| path | family | status | public? | summary | superseded_by |
+|---|---|---|---|---|---|
+| `bench/rotorquant/results-llama8b.md` | RotorQuant / PPL / cache size | SUPPORTING | yes | Llama 3.1 8B head_dim=128: iso3 PPL edge holds, but K cache and throughput shape fail in this harness | `TECHNICAL-FINDINGS.md` |
+| `bench/rotorquant/results.md` | RotorQuant / PPL / cache size | SUPPORTING | yes | Qwen3.6-27B head_dim=256: turbo3 wins PPL and memory/throughput over planar3/iso3 | `TECHNICAL-FINDINGS.md` |
+| `bench/refract-attnfix/results.md` | REFRACT / dense KV trajectory | CANONICAL | yes | Dense 27B/32B: GTM permissive, Trajectory exposes V-cache turbo3 drift, cross-GPU sanity included | `TECHNICAL-FINDINGS.md` |
+| `bench/q4-hybrid-refract/results.md` | REFRACT / hybrid q4_0 trajectory | CANONICAL | yes | Hybrid 35B-A3B: q4_0 looks good under GTM/KLD but degrades under Trajectory; K-only q4 slightly worse in this run | `TECHNICAL-FINDINGS.md` |
+| `bench/sparse-v/results.md` | CUDA sparse-V | SUPPORTING | yes | sparse-V dequant skip is net-negative on CUDA in tested 3090/4090 depths | `TECHNICAL-FINDINGS.md` |
+| `bench/iq4nl-repro/results.md` | long-context turbo4 / weight quant | SUPPORTING | yes | IQ4_NL and Q4_K_M share the same long-context q8/turbo4 degradation curve; penalty dominated by KV dequant kernel in this setup | `TECHNICAL-FINDINGS.md` |
+| `bench/dflash/results.md` | DFlash speculative decoding | SUPPORTING | yes | DFlash depth bench limited by non-causal drafter and 24 GB VRAM | `TECHNICAL-FINDINGS.md` |
+| `bench/dflash/adaptive-draft-results.md` | DFlash speculative decoding | SUPPORTING | yes | p-min=0.9 and fixed draft=8 beat default p-min=0.75 in tested setup | `TECHNICAL-FINDINGS.md` |
+
 ## KV/cache and long-context methodology archive
 
 | path | family | status | public? | summary | superseded_by |

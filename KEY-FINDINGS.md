@@ -1,8 +1,8 @@
 # Key findings
 
-Read this with [STATE.md](STATE.md). This file is the short public readout; `STATE.md` is the canonical current stance.
+Read this with [TECHNICAL-FINDINGS.md](TECHNICAL-FINDINGS.md) and [STATE.md](STATE.md). This file is a legacy short public readout with a RealRAG emphasis; `TECHNICAL-FINDINGS.md` is the fuller three-axis technical map, and `STATE.md` is the canonical current stance.
 
-## Current top-line result
+## Current RealRAG top-line result
 
 The latest large machine-only RealRAG check found **no quality delta** for gated verifier/rerank control over direct entity-hop path prompting.
 

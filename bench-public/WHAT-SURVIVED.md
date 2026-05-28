@@ -4,8 +4,11 @@
 
 This is not a new claim, not a leaderboard, and not a production benchmark. It is a curated map of what remains useful after the strongest later caveats are applied.
 
+Important correction: the N=500 no-delta belongs to the RealRAG/verifier line. It does not define the whole repository. The broader archive has three axes: KV-cache quantization fidelity, action-trace fidelity, and runtime/kernel engineering.
+
 Read first:
 
+- [`../TECHNICAL-FINDINGS.md`](../TECHNICAL-FINDINGS.md) - three-axis technical map.
 - [`../STATE.md`](../STATE.md) - canonical current stance.
 - [`../TURBOQUANT-ATLAS.md`](../TURBOQUANT-ATLAS.md) - wider reading architecture.
 - [`../bench/MANIFEST.md`](../bench/MANIFEST.md) - artifact status map.
@@ -31,6 +34,33 @@ So these are **not** current claims:
 Canonical falsification:
 
 - [`../bench/epkv-live-probe-v0-2026-05-21/sprint-12h/MACHINE-ONLY-REALITY-500.md`](../bench/epkv-live-probe-v0-2026-05-21/sprint-12h/MACHINE-ONLY-REALITY-500.md)
+
+## 0. KV-cache quantization fidelity is a first-class axis
+
+**Status:** `SURVIVED`
+
+This is the large buried axis that the RealRAG no-delta does not touch.
+
+What survived:
+
+```txt
+PPL, KLD, and token match are not enough to call a KV-cache change lossless.
+Generation-path preservation needs a trajectory-level gate.
+The fragile cache axis depends on architecture, quantization scheme, and metric family.
+```
+
+Main receipts:
+
+- [`../TECHNICAL-FINDINGS.md#axis-i-kv-cache-quantization-fidelity`](../TECHNICAL-FINDINGS.md#axis-i-kv-cache-quantization-fidelity)
+- [`../bench/rotorquant/results-llama8b.md`](../bench/rotorquant/results-llama8b.md)
+- [`../bench/rotorquant/results.md`](../bench/rotorquant/results.md)
+- [`../bench/refract-attnfix/results.md`](../bench/refract-attnfix/results.md)
+- [`../bench/q4-hybrid-refract/results.md`](../bench/q4-hybrid-refract/results.md)
+- [`../bench/sparse-v/results.md`](../bench/sparse-v/results.md)
+- [`../bench/iq4nl-repro/results.md`](../bench/iq4nl-repro/results.md)
+- [`../bench/dflash/adaptive-draft-results.md`](../bench/dflash/adaptive-draft-results.md)
+
+Boundary: regime-specific receipts, not a universal ranking of KV-cache schemes.
 
 ## 1. Answer closure is placement-sensitive
 

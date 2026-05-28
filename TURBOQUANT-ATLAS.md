@@ -1,8 +1,8 @@
 # TurboQuant Atlas
 
-> A public-safe reading architecture for the TurboQuant / KVFidelity / RealRAG / EPKV archive.
+> A public-safe reading architecture for the TurboQuant / REFRACT / KVFidelity / RealRAG / vLLM / EPKV archive.
 
-This atlas is not a new result. It is a map of what survived, what failed, what remains an upper bound, and what should stay lab-only after the N=500 no-delta check.
+This atlas is not a new result. It is a map of what survived, what failed, what remains an upper bound, and what should stay lab-only. The N=500 no-delta is a promoted falsification inside the archive, not the whole thesis of the repo.
 
 If this file and [`STATE.md`](STATE.md) disagree, [`STATE.md`](STATE.md) wins.
 
@@ -10,10 +10,12 @@ If this file and [`STATE.md`](STATE.md) disagree, [`STATE.md`](STATE.md) wins.
 
 The short version:
 
-- **SURVIVED:** evidence placement, retrieval, rank, path construction, and schema shape affect answer closure.
+- **SURVIVED:** KV-cache quantization fidelity needs trajectory-level gates, not just PPL, KLD, or token match.
+- **SURVIVED:** REFRACT shows the fragile cache axis depends on architecture, quantization scheme, and metric family.
 - **SURVIVED:** KVFidelity is a useful paired action-trace lens for KV/V-cache runtime configuration changes.
 - **SURVIVED:** vLLM and llama.cpp cross-stack replays reproduced useful long-context and decoy/ranking behavior.
 - **SURVIVED:** Evidence-Paged KV has valid kernel and runtime-observability receipts, but not a production serving claim.
+- **SURVIVED:** evidence placement, retrieval, rank, path construction, and schema shape affect answer closure.
 - **UPPER BOUND:** compact/oracle evidence control can produce large answer-quality lift when evidence is already clean and targetable.
 - **NEGATIVE:** hand-written verifier/rerank gates did not beat direct entity-hop path prompting at N=500.
 - **FROZEN:** no more hand-written verifier gates as the main path.
@@ -21,6 +23,7 @@ The short version:
 
 Canonical status pages:
 
+- [`TECHNICAL-FINDINGS.md`](TECHNICAL-FINDINGS.md) - three-axis technical map.
 - [`STATE.md`](STATE.md) - current truth and non-claims.
 - [`KEY-FINDINGS.md`](KEY-FINDINGS.md) - public readout, caveated by `STATE.md`.
 - [`bench/MANIFEST.md`](bench/MANIFEST.md) - canonical, supporting, negative, superseded, archive-only map.
@@ -47,6 +50,55 @@ question -> what survived -> boundary -> canonical artifact -> public status
 ```
 
 This repo is an archive of decisions and receipts, not a leaderboard.
+
+## Technical axis map
+
+```txt
+Axis I   : KV-cache quantization fidelity   (llama.cpp / PPL / KLD / REFRACT)
+Axis II  : action-trace fidelity             (KVFidelity / CASK bridge)
+Axis III : runtime and kernel engineering    (vLLM cross-stack / EPKV kernels v1-v7)
+```
+
+The RealRAG line belongs to answer-closure and path-construction diagnostics. It is not the whole archive.
+
+## Lane 0 - KV-cache quantization fidelity
+
+**Question:** do KV-cache quantization claims preserve quality, memory shape, throughput shape, and generation trajectory across architectures and metrics?
+
+### What survived
+
+`SURVIVED` PPL, KLD, and token-match are insufficient alone. Generation-path preservation needs a trajectory-level gate.
+
+RotorQuant retest:
+
+- Llama 3.1 8B, head_dim=128: iso3 beats turbo3 on PPL, but planar3/iso3 K cache is larger than q8_0 and measured throughput is much worse in this harness.
+- Qwen3.6-27B, head_dim=256: turbo3 beats planar3/iso3 on PPL and memory/throughput shape.
+
+REFRACT:
+
+- Dense 27B/32B under turbo3: GTM can pass while Trajectory degrades or fails, with V-cache turbo3 as the suspicious axis.
+- Hybrid 35B-A3B under q4_0: q4_0 looks strong under GTM/KLD but degrades under Trajectory; K-only q4 is slightly worse than V-only q4 in this run.
+
+Runtime/kernel-adjacent reproductions:
+
+- CUDA sparse-V dequant skip is net-negative in tested 3090/4090 depths.
+- IQ4_NL and Q4_K_M share the same long-context q8/turbo4 degradation curve; the penalty is dominated by the KV dequant kernel in this setup.
+- DFlash default `p-min=0.75` is worse than `p-min=0.9` and fixed draft=8; a proper high-depth DFlash test needs larger-memory hardware.
+
+### Boundary
+
+These are regime-specific receipts. Do not claim a universal best KV scheme, universal architecture law, or downstream task-accuracy equivalence from REFRACT bands.
+
+### Canonical artifacts
+
+- [`TECHNICAL-FINDINGS.md`](TECHNICAL-FINDINGS.md)
+- [`bench/rotorquant/results-llama8b.md`](bench/rotorquant/results-llama8b.md)
+- [`bench/rotorquant/results.md`](bench/rotorquant/results.md)
+- [`bench/refract-attnfix/results.md`](bench/refract-attnfix/results.md)
+- [`bench/q4-hybrid-refract/results.md`](bench/q4-hybrid-refract/results.md)
+- [`bench/sparse-v/results.md`](bench/sparse-v/results.md)
+- [`bench/iq4nl-repro/results.md`](bench/iq4nl-repro/results.md)
+- [`bench/dflash/adaptive-draft-results.md`](bench/dflash/adaptive-draft-results.md)
 
 ## Lane A - Answer closure and RealRAG
 
