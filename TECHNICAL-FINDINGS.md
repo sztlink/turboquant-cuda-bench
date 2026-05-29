@@ -79,6 +79,7 @@ Boundary: the throughput columns are from the available perplexity/chunked-batch
 
 Artifacts:
 
+- [`bench-public/refract-trajectory/RESULTS.md`](bench-public/refract-trajectory/RESULTS.md)
 - [`bench/refract-attnfix/results.md`](bench/refract-attnfix/results.md)
 - [`bench/q4-hybrid-refract/results.md`](bench/q4-hybrid-refract/results.md)
 

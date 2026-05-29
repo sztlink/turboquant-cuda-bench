@@ -40,7 +40,7 @@ Canonical artifact:
 | What the repo currently claims and does not claim | [`../STATE.md`](../STATE.md) |
 | What survived the N=500 no-delta and where to start reading | [`WHAT-SURVIVED.md`](WHAT-SURVIVED.md) |
 | Which bench dirs are canonical/superseded/negative | [`../bench/MANIFEST.md`](../bench/MANIFEST.md) |
-| What the KV-cache quantization and REFRACT receipts show | [`../TECHNICAL-FINDINGS.md#axis-i-kv-cache-quantization-fidelity`](../TECHNICAL-FINDINGS.md#axis-i-kv-cache-quantization-fidelity) |
+| What the KV-cache quantization and REFRACT receipts show | [`refract-trajectory/RESULTS.md`](refract-trajectory/RESULTS.md), [`../TECHNICAL-FINDINGS.md#axis-i-kv-cache-quantization-fidelity`](../TECHNICAL-FINDINGS.md#axis-i-kv-cache-quantization-fidelity) |
 | What HotpotQA shows about answer closure and rank | [`evidence-utilization/REALRAG-HOTPOTQA-R1.md`](evidence-utilization/REALRAG-HOTPOTQA-R1.md), [`R2`](evidence-utilization/REALRAG-HOTPOTQA-R2-RANKCURVE.md), [`R3B`](evidence-utilization/REALRAG-HOTPOTQA-R3B-NATURAL-RETRIEVAL.md), [`R3L`](evidence-utilization/REALRAG-HOTPOTQA-R3L-32B-NATURAL-RETRIEVAL.md) |
 | What 2Wiki shows about schema/path sensitivity | [`evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md`](evidence-utilization/REALRAG-2WIKI-R3G-NATURAL-RETRIEVAL.md), [`R3I`](evidence-utilization/REALRAG-2WIKI-R3I-PROMPT-SCHEMA-ABLATION.md), [`R3J`](evidence-utilization/REALRAG-2WIKI-R3J-SENTENCE-COMPRESSION.md) |
 | Whether earlier deltas were statistically stable | [`evidence-utilization/REALRAG-R5-STATISTICAL-ROBUSTNESS.md`](evidence-utilization/REALRAG-R5-STATISTICAL-ROBUSTNESS.md) |
@@ -53,6 +53,7 @@ Canonical artifact:
 | Package | What it shows | Start here |
 |---|---|---|
 | `evidence-utilization/` | Public-dataset answer-closure diagnostics and default-off telemetry/protection archive. | [`README.md`](evidence-utilization/README.md) |
+| `refract-trajectory/` | REFRACT dense-model receipt: GTM/KLD can stay high while trajectory path score collapses. | [`RESULTS.md`](refract-trajectory/RESULTS.md) |
 | `vllm-cross-stack/` | vLLM vs llama.cpp cross-stack replay: 192K needles pass, decoy failures replicate, policy splice recovers. | [`decoy-replay-results.md`](vllm-cross-stack/decoy-replay-results.md) |
 | `cask-kvfidelity-bridge/` | Action/target/source-rank split under FullKV, CASK, and TriAttention. | [`RESULTS.md`](cask-kvfidelity-bridge/RESULTS.md) |
 | `kvfidelity/` | Paired action-trace evaluation for KV/cache changes, including v2 comparator, hold-out, and order-sensitivity notes. | [`kvfidelity-2026-05-07-summary.md`](kvfidelity/kvfidelity-2026-05-07-summary.md) |

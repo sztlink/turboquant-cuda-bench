@@ -51,10 +51,10 @@ The fragile cache axis depends on architecture, quantization scheme, and metric 
 
 Main receipts:
 
+- [`refract-trajectory/RESULTS.md`](refract-trajectory/RESULTS.md)
 - [`../TECHNICAL-FINDINGS.md#axis-i-kv-cache-quantization-fidelity`](../TECHNICAL-FINDINGS.md#axis-i-kv-cache-quantization-fidelity)
 - [`../bench/rotorquant/results-llama8b.md`](../bench/rotorquant/results-llama8b.md)
 - [`../bench/rotorquant/results.md`](../bench/rotorquant/results.md)
-- [`../bench/refract-attnfix/results.md`](../bench/refract-attnfix/results.md)
 - [`../bench/q4-hybrid-refract/results.md`](../bench/q4-hybrid-refract/results.md)
 - [`../bench/sparse-v/results.md`](../bench/sparse-v/results.md)
 - [`../bench/iq4nl-repro/results.md`](../bench/iq4nl-repro/results.md)

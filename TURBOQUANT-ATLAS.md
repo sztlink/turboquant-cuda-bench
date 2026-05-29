@@ -92,9 +92,9 @@ These are regime-specific receipts. Do not claim a universal best KV scheme, uni
 ### Canonical artifacts
 
 - [`TECHNICAL-FINDINGS.md`](TECHNICAL-FINDINGS.md)
+- [`bench-public/refract-trajectory/RESULTS.md`](bench-public/refract-trajectory/RESULTS.md)
 - [`bench/rotorquant/results-llama8b.md`](bench/rotorquant/results-llama8b.md)
 - [`bench/rotorquant/results.md`](bench/rotorquant/results.md)
-- [`bench/refract-attnfix/results.md`](bench/refract-attnfix/results.md)
 - [`bench/q4-hybrid-refract/results.md`](bench/q4-hybrid-refract/results.md)
 - [`bench/sparse-v/results.md`](bench/sparse-v/results.md)
 - [`bench/iq4nl-repro/results.md`](bench/iq4nl-repro/results.md)
