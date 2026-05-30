@@ -1,0 +1,123 @@
+# Entity-Hop Retrieval
+
+total: 100
+corpus_docs: 56687
+
+## Retrieval
+
+| metric | value |
+|---|---:|
+| support_title_recall | 0.525 |
+| full_support_recall | 0.230 |
+| answer_string_present_rate | 0.610 |
+
+## Answer quality
+
+| condition | EM | contains | F1 |
+|---|---:|---:|---:|
+| bge_ref | 0.090 | 0.160 | 0.185 |
+
+## Rows
+
+| qid | gold | support | answer in docs | bge | hop strong | path | extract | ecd |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| 8813f87c0bdd11eba7f7acde48001122 | Małgorzata Braunek | 0.67 | 1 | 0/0.00 |  |  |  |  |
+| e2a3bf2a0bdd11eba7f7acde48001122 | 12 June 1516 | 0.67 | 1 | 0/0.00 |  |  |  |  |
+| 0cd3bdea0bde11eba7f7acde48001122 | Myanmar Motion Picture Academy Awards | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| f9dcb4a60bda11eba7f7acde48001122 | Missoula, Montana | 0.50 | 0 | 0/0.00 |  |  |  |  |
+| 8981e1ce0bb011ebab90acde48001122 | Charles Armand René de La Trémoille | 1.00 | 1 | 0/0.60 |  |  |  |  |
+| 019bed300bde11eba7f7acde48001122 | Galați | 0.50 | 0 | 0/0.00 |  |  |  |  |
+| 2ec440560bb011ebab90acde48001122 | Ptolemy IX Lathyros | 0.33 | 0 | 0/0.33 |  |  |  |  |
+| 464cfa460bd911eba7f7acde48001122 | Brooklyn | 0.67 | 0 | 0/0.00 |  |  |  |  |
+| c05e16a40bdd11eba7f7acde48001122 | stroke | 0.00 | 1 | 0/0.11 |  |  |  |  |
+| 2935f1640bda11eba7f7acde48001122 | Nice | 0.50 | 0 | 0/0.00 |  |  |  |  |
+| dfe93efe0bdd11eba7f7acde48001122 | 1983 | 0.25 | 0 | 0/0.00 |  |  |  |  |
+| 2207e9060bda11eba7f7acde48001122 | United States | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| 2002bf0c0bb011ebab90acde48001122 | Rupert | 0.33 | 1 | 0/0.00 |  |  |  |  |
+| c531e7560baf11ebab90acde48001122 | Marie Leszczyńska | 0.00 | 0 | 0/0.00 |  |  |  |  |
+| a9cc5f240bdb11eba7f7acde48001122 | Catherine Robbe-Grillet | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| 6ebe05740bde11eba7f7acde48001122 | Hilandar | 0.50 | 1 | 0/0.00 |  |  |  |  |
+| 7a1d9d7c0bb011ebab90acde48001122 | Pompey | 0.25 | 1 | 0/0.40 |  |  |  |  |
+| 0bedb7e80bdc11eba7f7acde48001122 | tuberculosis | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| 1869092c0bb011ebab90acde48001122 | Rukn al-Dawla | 0.50 | 1 | 1/1.00 |  |  |  |  |
+| c19b72520bdb11eba7f7acde48001122 | Xi'an | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| b3110a5e0bda11eba7f7acde48001122 | German | 0.33 | 1 | 0/0.00 |  |  |  |  |
+| 3705552a0bb011ebab90acde48001122 | Louis-Alexandre Berthier | 0.67 | 1 | 0/0.50 |  |  |  |  |
+| 07e964920bde11eba7f7acde48001122 | Pavia | 0.50 | 1 | 0/0.00 |  |  |  |  |
+| c3c94d0a0bdc11eba7f7acde48001122 | Víctor Bó | 0.33 | 0 | 0/0.00 |  |  |  |  |
+| 96fb4aee0baf11ebab90acde48001122 | Urraca of Castile | 0.33 | 1 | 0/0.67 |  |  |  |  |
+| e41c14820bd911eba7f7acde48001122 | Cahiers du cinéma | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| 27e835ee0bb011ebab90acde48001122 | Sir Arthur Gore, 2nd Baronet | 0.67 | 1 | 0/0.80 |  |  |  |  |
+| 931a85420bdd11eba7f7acde48001122 | London | 0.33 | 0 | 0/0.50 |  |  |  |  |
+| 0bbded440bda11eba7f7acde48001122 | Pakistan | 0.33 | 0 | 0/0.00 |  |  |  |  |
+| 258867240bdd11eba7f7acde48001122 | Winnipeg, Manitoba | 0.50 | 0 | 0/0.00 |  |  |  |  |
+| 3cbd107e0bde11eba7f7acde48001122 | Fukuoka | 0.00 | 0 | 0/0.00 |  |  |  |  |
+| 5e8240ea0bdd11eba7f7acde48001122 | Roma | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| 6638110e0bdb11eba7f7acde48001122 | Moscow, USSR | 0.50 | 0 | 1/1.00 |  |  |  |  |
+| 3972d2b60baf11ebab90acde48001122 | Jeanne d'Albret | 0.00 | 0 | 0/0.00 |  |  |  |  |
+| a8cbc4c40bdc11eba7f7acde48001122 | New York | 0.33 | 1 | 0/0.00 |  |  |  |  |
+| 32e50df00bb011ebab90acde48001122 | Louis II | 0.33 | 0 | 0/0.00 |  |  |  |  |
+| deb907f80bdd11eba7f7acde48001122 | Bohemia | 0.25 | 1 | 0/0.00 |  |  |  |  |
+| b81fbe620bdc11eba7f7acde48001122 | Gura Humorului | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| 3717c0600bde11eba7f7acde48001122 | Meran | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| 0f1ac1a00bdb11eba7f7acde48001122 | Grammy | 0.33 | 1 | 0/0.00 |  |  |  |  |
+| 07388c7c0bb011ebab90acde48001122 | Peter I | 1.00 | 1 | 0/0.29 |  |  |  |  |
+| 6b55ac320bdb11eba7f7acde48001122 | 24 March 1927 | 0.25 | 0 | 0/0.50 |  |  |  |  |
+| 424d56700bde11eba7f7acde48001122 | Ostrogothic Kingdom | 0.00 | 0 | 0/0.00 |  |  |  |  |
+| 5c0c69f80bdd11eba7f7acde48001122 | Kurdish | 0.50 | 0 | 0/0.00 |  |  |  |  |
+| 29427eea0bdd11eba7f7acde48001122 | Liverpool | 0.67 | 1 | 1/1.00 |  |  |  |  |
+| bc633e2c0baf11ebab90acde48001122 | Louis, Grand Dauphin | 0.50 | 1 | 0/0.00 |  |  |  |  |
+| 2b4bd5020baf11ebab90acde48001122 | Kujō Michiie | 0.33 | 0 | 1/1.00 |  |  |  |  |
+| 3647118c0bdd11eba7f7acde48001122 | Madrid | 0.33 | 0 | 0/0.00 |  |  |  |  |
+| ea1fc06c0bda11eba7f7acde48001122 | United Nations | 0.50 | 1 | 0/0.00 |  |  |  |  |
+| 00c75ffc0bde11eba7f7acde48001122 | Paris | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| 94198d580bb011ebab90acde48001122 | Mathilde of Bourbon | 0.50 | 1 | 0/0.00 |  |  |  |  |
+| 71d8e20e0bdb11eba7f7acde48001122 | London | 0.33 | 1 | 1/1.00 |  |  |  |  |
+| e701105e0bdd11eba7f7acde48001122 | Königsberg | 0.67 | 1 | 0/0.00 |  |  |  |  |
+| b5e9ef2c0bdd11eba7f7acde48001122 | Homs | 0.50 | 1 | 0/0.00 |  |  |  |  |
+| 48c8f7f80bdd11eba7f7acde48001122 | Alain Poiré | 0.67 | 1 | 0/0.50 |  |  |  |  |
+| aa0370860bdb11eba7f7acde48001122 | Naha, Okinawa | 0.67 | 1 | 0/0.00 |  |  |  |  |
+| a5bed06e0bdc11eba7f7acde48001122 | Byzantine | 0.25 | 0 | 0/0.00 |  |  |  |  |
+| 2294ccfc0bdc11eba7f7acde48001122 | August 8, 1975 | 0.50 | 0 | 1/1.00 |  |  |  |  |
+| e8d8f7200bdd11eba7f7acde48001122 | Chuck Schumer | 0.33 | 1 | 0/0.00 |  |  |  |  |
+| 844fe30c0bda11eba7f7acde48001122 | Florence | 0.50 | 1 | 0/0.00 |  |  |  |  |
+| c32ac4ca0bda11eba7f7acde48001122 | Helsingfors | 0.50 | 0 | 0/0.00 |  |  |  |  |
+| 6021e2d80bde11eba7f7acde48001122 | Dutch | 0.67 | 1 | 0/0.00 |  |  |  |  |
+| b5b63b160bdb11eba7f7acde48001122 | Tisch | 0.50 | 1 | 0/0.00 |  |  |  |  |
+| 4b1b91720bde11eba7f7acde48001122 | India | 0.33 | 0 | 0/0.00 |  |  |  |  |
+| 0458640a0bdd11eba7f7acde48001122 | leukemia | 0.00 | 0 | 0/0.67 |  |  |  |  |
+| 94dd39d80bdd11eba7f7acde48001122 | Herstal | 0.50 | 1 | 0/0.00 |  |  |  |  |
+| abc68a180bd911eba7f7acde48001122 | 22 January 1794 | 0.33 | 0 | 0/0.00 |  |  |  |  |
+| 97ce0ec00baf11ebab90acde48001122 | Stanisław Leszczyński | 0.33 | 1 | 0/0.00 |  |  |  |  |
+| 04a544a40bde11eba7f7acde48001122 | 3 August 979 | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| a08505d20bdc11eba7f7acde48001122 | Aldo Parisot | 0.00 | 0 | 0/0.00 |  |  |  |  |
+| 982f8e440bdb11eba7f7acde48001122 | 1886 | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| 5142f59e0bda11eba7f7acde48001122 | Nevele | 0.00 | 0 | 1/1.00 |  |  |  |  |
+| 041581680bdc11eba7f7acde48001122 | Manchester | 0.33 | 1 | 0/0.00 |  |  |  |  |
+| ad43c9300bdb11eba7f7acde48001122 | Tantallon Castle | 0.00 | 0 | 0/0.57 |  |  |  |  |
+| 5839dbac0bde11eba7f7acde48001122 | American | 0.33 | 0 | 0/0.00 |  |  |  |  |
+| 22d296de0bde11eba7f7acde48001122 | Sochi | 0.33 | 1 | 0/0.00 |  |  |  |  |
+| 9c3ff1040bdb11eba7f7acde48001122 | French | 0.50 | 1 | 0/0.00 |  |  |  |  |
+| 81ca57e60bdc11eba7f7acde48001122 | Winnipeg, Manitoba | 0.50 | 0 | 0/0.00 |  |  |  |  |
+| 30ee74680bde11eba7f7acde48001122 | Villafranca del Bierzo | 0.50 | 0 | 0/0.00 |  |  |  |  |
+| f491b33e0bda11eba7f7acde48001122 | Jean Hersholt Humanitarian Award | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| 5b637e060bb011ebab90acde48001122 | Princess Madeleine, Duchess of Hälsingland and Gästrikland | 0.33 | 1 | 0/0.44 |  |  |  |  |
+| 1a2188840bb011ebab90acde48001122 | Princess Augusta of Schwarzburg-Sondershausen | 0.33 | 0 | 0/0.50 |  |  |  |  |
+| d1fd9cbe0bdc11eba7f7acde48001122 | Cahiers du cinéma | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| f6e2b9280bdd11eba7f7acde48001122 | China | 0.67 | 1 | 0/0.00 |  |  |  |  |
+| e6688a7e0baf11ebab90acde48001122 | Charles I of Naples | 0.50 | 1 | 0/0.67 |  |  |  |  |
+| 49ec1ade0bdd11eba7f7acde48001122 | Argentina | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| e4e02a240bda11eba7f7acde48001122 | Jacques Cousteau | 1.00 | 1 | 0/0.50 |  |  |  |  |
+| c9b515020bda11eba7f7acde48001122 | Thessaloniki | 0.33 | 1 | 0/0.00 |  |  |  |  |
+| 652d7dac0bdc11eba7f7acde48001122 | New York | 0.50 | 0 | 0/0.00 |  |  |  |  |
+| 2b7db0200bde11eba7f7acde48001122 | University of Paris | 0.33 | 1 | 0/0.10 |  |  |  |  |
+| 437f3b9a0bdd11eba7f7acde48001122 | Hackney | 0.25 | 0 | 0/0.00 |  |  |  |  |
+| 37c6703a0bdc11eba7f7acde48001122 | 1969 | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| 68cb7bc00bdd11eba7f7acde48001122 | Huahine | 0.00 | 0 | 0/0.00 |  |  |  |  |
+| 74207b920bdd11eba7f7acde48001122 | Brighton | 0.33 | 0 | 0/0.00 |  |  |  |  |
+| 00c727580bde11eba7f7acde48001122 | 10 May 1912 | 1.00 | 1 | 1/1.00 |  |  |  |  |
+| 77f41ab20bb011ebab90acde48001122 | John de Vere, 15th Earl of Oxford | 1.00 | 1 | 0/0.86 |  |  |  |  |
+| b1b78c480bdd11eba7f7acde48001122 | Kreuzlingen | 1.00 | 1 | 1/1.00 |  |  |  |  |
+| 3c68e44c0bdc11eba7f7acde48001122 | Florence | 0.33 | 0 | 0/0.00 |  |  |  |  |
+| 027970120bdc11eba7f7acde48001122 | Århus | 1.00 | 1 | 0/0.00 |  |  |  |  |
+| 94873b220bd911eba7f7acde48001122 | Florence | 0.50 | 0 | 0/0.00 |  |  |  |  |

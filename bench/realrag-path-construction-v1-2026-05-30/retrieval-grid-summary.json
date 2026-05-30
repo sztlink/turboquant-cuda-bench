@@ -1,0 +1,97 @@
+{
+  "schema": "realrag.path_construction.retrieval_grid_summary.v1",
+  "status": "coverage_gate_passed_no_llm",
+  "offsets": [0, 500, 1000],
+  "limit_per_offset": 100,
+  "top_k": 10,
+  "best_config_all_offsets": {
+    "config_id": 0,
+    "bm25_first": 8,
+    "seed_top": 0,
+    "second_per_mention": 0,
+    "max_seed_expansions": 4,
+    "max_doc_mentions": 3,
+    "pool_limit": 80
+  },
+  "best_by_offset": {
+    "0": {
+      "support_title_recall": 0.69,
+      "full_support_recall": 0.42,
+      "answer_string_present_rate": 0.73,
+      "full_support_and_answer": 0.42,
+      "avg_pool_size": 15.06,
+      "avg_edge_count": 9.08
+    },
+    "500": {
+      "support_title_recall": 0.7125,
+      "full_support_recall": 0.39,
+      "answer_string_present_rate": 0.76,
+      "full_support_and_answer": 0.39,
+      "avg_pool_size": 14.97,
+      "avg_edge_count": 8.69
+    },
+    "1000": {
+      "support_title_recall": 0.6725,
+      "full_support_recall": 0.38,
+      "answer_string_present_rate": 0.7,
+      "full_support_and_answer": 0.38,
+      "avg_pool_size": 15.15,
+      "avg_edge_count": 8.62
+    }
+  },
+  "current_config_comparison": {
+    "config": {
+      "bm25_first": 12,
+      "seed_top": 3,
+      "second_per_mention": 1,
+      "max_doc_mentions": 5,
+      "pool_limit": 80
+    },
+    "offset_0": {
+      "current": {
+        "support_title_recall": 0.525,
+        "full_support_recall": 0.23,
+        "answer_string_present_rate": 0.61,
+        "full_support_and_answer": 0.23
+      },
+      "grid_best": {
+        "support_title_recall": 0.69,
+        "full_support_recall": 0.42,
+        "answer_string_present_rate": 0.73,
+        "full_support_and_answer": 0.42
+      },
+      "delta": {
+        "support_title_recall": 0.165,
+        "full_support_recall": 0.19,
+        "answer_string_present_rate": 0.12,
+        "full_support_and_answer": 0.19
+      }
+    },
+    "offset_500": {
+      "current": {
+        "support_title_recall": 0.5816666666666667,
+        "full_support_recall": 0.26,
+        "answer_string_present_rate": 0.72,
+        "full_support_and_answer": 0.26
+      },
+      "grid_best": {
+        "support_title_recall": 0.7125,
+        "full_support_recall": 0.39,
+        "answer_string_present_rate": 0.76,
+        "full_support_and_answer": 0.39
+      },
+      "delta": {
+        "support_title_recall": 0.13083333333333336,
+        "full_support_recall": 0.13,
+        "answer_string_present_rate": 0.04,
+        "full_support_and_answer": 0.13
+      }
+    }
+  },
+  "gate": {
+    "coverage_continue_criterion": "full_support_and_answer +0.05 absolute or answer_string_present +0.08 without lowering full_support_recall",
+    "result": "pass",
+    "reason": "full_support_and_answer improved +0.190 at offset 0 and +0.130 at offset 500 vs current-config retrieval-only baseline"
+  },
+  "next_step": "bounded 4090 answer-quality run for winning retrieval config on offset 500 n100, then offset 1000 if no regression"
+}
