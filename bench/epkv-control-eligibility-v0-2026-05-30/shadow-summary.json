@@ -1,0 +1,100 @@
+{
+  "schema": "epkv.control_eligibility_shadow_summary.v0",
+  "run_id": "epkv-control-eligibility-v0-day2-shadow-2026-05-30",
+  "total": 500,
+  "detector_is_shadow_only": true,
+  "detector_inputs_forbidden_gold_features": true,
+  "counts": {
+    "eligible": 4,
+    "not_eligible": 496,
+    "by_state": {
+      "closed": 438,
+      "guarded_no_claim": 53,
+      "out_of_scope_for_control": 5,
+      "open_broken": 3,
+      "near_closed": 1
+    },
+    "by_lane": {
+      "abstain_preserve_path": 438,
+      "guarded_no_claim": 53,
+      "no_claim": 5,
+      "path_failure_rescue": 3,
+      "alias_or_answer_repair": 1
+    },
+    "by_guard": {
+      "containment_preserve_path": 460,
+      "answer_type_mismatch": 28,
+      "relation_depth_confusion_risk": 23,
+      "unsupported_inference_risk": 13,
+      "attribute_owner_as_attribute_risk": 1
+    }
+  },
+  "posthoc_eval": {
+    "baseline_control_relevant_rate_all_rows": 0.374,
+    "eligible_control_relevant_rate": 1,
+    "eligible_target_relevant_count": 4,
+    "eligible_retrieval_path_limited_count": 0,
+    "eligible_path_solved_count": 0,
+    "eligible_primary_path_status_counts": {
+      "model_refusal_or_unknown": 2,
+      "answer_extraction_or_scoring_artifact": 1,
+      "evidence_present_not_closed": 1
+    },
+    "eligible_outcome_em_counts": {
+      "tie": 2,
+      "win": 2
+    },
+    "eligible_em_wins": [
+      183,
+      204
+    ],
+    "eligible_em_losses": [],
+    "eligible_em_ties": [
+      128,
+      415
+    ],
+    "projected_global_em_diff_if_shadow_policy_used": 0.004,
+    "projected_eligible_slice_em_diff_mean": 0.5,
+    "projected_global_f1_diff_if_shadow_policy_used": 0.002153846153846154,
+    "projected_eligible_slice_f1_diff_mean": 0.2692307692307693
+  },
+  "bootstrap": {
+    "gated_v1_vs_path_em_diff": {
+      "reps": 5000,
+      "seed": 20260530,
+      "mean": 0,
+      "ci95": [
+        -0.008,
+        0.008
+      ]
+    },
+    "shadow_policy_vs_path_em_diff": {
+      "reps": 5000,
+      "seed": 20260530,
+      "mean": 0.004,
+      "ci95": [
+        0,
+        0.01
+      ]
+    }
+  },
+  "criteria": {
+    "promote_to_override_pilot": {
+      "eligible_count_at_least_20": false,
+      "em_wins_greater_than_losses": true,
+      "no_unexplained_em_losses": true,
+      "not_dominated_by_retrieval_path_limited": true,
+      "no_material_path_solved_damage": true,
+      "pass": false
+    },
+    "continue_detector_iteration": {
+      "eligible_count_at_least_5": false,
+      "em_wins_at_least_losses": true,
+      "higher_target_concentration_than_baseline": true,
+      "no_obvious_em_loss": true,
+      "pass": false
+    }
+  },
+  "decision": "do_not_promote_pivot_or_redesign_detector",
+  "caveat": "Posthoc gold evaluation is not used by the detector. The detector only sees operational text and verifier metadata."
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "epkv.control_eligibility_run_manifest.v0",
+  "run_id": "epkv-control-eligibility-v0-day2-shadow-2026-05-30",
+  "generated_at_utc": "2026-05-30T20:21:20.830Z",
+  "git": {
+    "sha": "aa8247a175011ebe1f2c636d1b1151918eed621c",
+    "status_short": "?? bench/epkv-control-eligibility-v0-2026-05-30/"
+  },
+  "source_files": {
+    "llmSummary": {
+      "path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-llm-500/summary.json",
+      "sha256": "b32b6ed1deabbab53bbe92e2f80384e971be3c6d97443c1e41fd73256ecbbc4d"
+    },
+    "gatedSummary": {
+      "path": "bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-answer-rerank-gated-v1-500/summary.json",
+      "sha256": "7f0dd96e67baaf5f96ce4b1b9413e8d9f33a20bd473133a93abc446af086905e"
+    },
+    "day1Taxonomy": {
+      "path": "bench/epkv-control-eligibility-v0-2026-05-30/n500-taxonomy-all.jsonl",
+      "sha256": "5c3688edf63a82664868cb3754bb17ebc9452e922848ccce032112ea6da928d8"
+    },
+    "spec": {
+      "path": "bench/epkv-control-eligibility-v0-2026-05-30/ELIGIBILITY-SPEC.md",
+      "sha256": "5b9e6bfdf18a7395d2929d67675b896636b470ed0c34655f86fffc3089d23b21"
+    }
+  },
+  "outputs": {
+    "receipts": "bench/epkv-control-eligibility-v0-2026-05-30/eligibility-receipts.jsonl",
+    "summary": "bench/epkv-control-eligibility-v0-2026-05-30/shadow-summary.json",
+    "report": "bench/epkv-control-eligibility-v0-2026-05-30/SHADOW-RUN.md"
+  },
+  "detector": {
+    "name": "eligibility-shadow-v0",
+    "implementation": "bench/epkv-control-eligibility-v0-2026-05-30/build-eligibility-shadow.mjs",
+    "operational_inputs": [
+      "question",
+      "path_prompt.output",
+      "rerank.output",
+      "rerank.verifier.confidence",
+      "rerank.verifier.selected",
+      "rerank.verifier.reason",
+      "candidates",
+      "selected_titles"
+    ],
+    "forbidden_operational_inputs": [
+      "gold",
+      "em",
+      "contains",
+      "f1",
+      "answer_string_present_in_docs",
+      "support_title_recall",
+      "full_support_recall",
+      "primary_path_status",
+      "candidate_has_gold"
+    ]
+  }
+}

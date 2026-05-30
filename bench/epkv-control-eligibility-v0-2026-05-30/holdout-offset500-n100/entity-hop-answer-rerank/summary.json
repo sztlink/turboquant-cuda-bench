@@ -1,0 +1,5023 @@
+{
+  "schema": "epkv.entity_hop_answer_rerank.v0",
+  "elapsed_sec": 88.09329271316528,
+  "total": 100,
+  "macro": {
+    "bge_ref": {
+      "em": 0.0,
+      "contains": 0.0,
+      "f1": 0.0
+    },
+    "strong": {
+      "em": 0.18,
+      "contains": 0.31,
+      "f1": 0.29178837622645676
+    },
+    "path_prompt": {
+      "em": 0.21,
+      "contains": 0.27,
+      "f1": 0.2945252525252525
+    },
+    "rerank": {
+      "em": 0.21,
+      "contains": 0.32,
+      "f1": 0.3219617604617605
+    }
+  },
+  "wins_losses": {
+    "rerank_wins_vs_path": 2,
+    "rerank_losses_vs_path": 2,
+    "rerank_wins_vs_bge": 21,
+    "rerank_losses_vs_bge": 0,
+    "disagreements": 63
+  },
+  "rows": [
+    {
+      "idx": 500,
+      "qid": "709430f20bda11eba7f7acde48001122",
+      "gold": "America",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.0,
+        "output": "American"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "America"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "America",
+        "selected": "C1|C2",
+        "verifier": {
+          "final_answer": "America",
+          "selected": "C1|C2",
+          "confidence": "high",
+          "reason": "The evidence passage P1 states that 'That's Good, That's Bad' is a hit song sung by and written by Jo Stafford and Frankie Laine. Passage P2 provides information about Frankie Laine, identifying him as an American singer. Therefore, the performer of the song 'That's Good, That's Bad' is from America."
+        },
+        "latency_sec": 1.9732136726379395
+      },
+      "candidates": [
+        "America",
+        "American",
+        "That's Good, That's Bad (Frankie Laine song)",
+        "Frankie Laine",
+        "That's the Way",
+        "The Rest of My Life",
+        "The One That Got Away",
+        "Occidentali's Karma",
+        "Like That",
+        "The Singer",
+        "Four Years",
+        "Love Happens Like That"
+      ]
+    },
+    {
+      "idx": 501,
+      "qid": "6de887fc0bdc11eba7f7acde48001122",
+      "gold": "Karnataka",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.0909090909090909,
+        "output": "G. V. Iyer, the director and producer of Post Master, was born in Nanjanagud in Mysore district of Karnataka state in South"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Mysore"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Mysore",
+        "selected": "C1",
+        "verifier": {
+          "final_answer": "Mysore",
+          "selected": "C1",
+          "confidence": "high",
+          "reason": "G. V. Iyer, who composed the music for the film Post Master, is mentioned in P4 as being born in Mysore, which is directly supported by the evidence."
+        },
+        "latency_sec": 1.1009838581085205
+      },
+      "candidates": [
+        "Mysore",
+        "Post Master",
+        "Master",
+        "Vijaya Bhaskar",
+        "G. V. Iyer",
+        "Heinrich von Hohenlohe",
+        "Part",
+        "Master of the Worcester Panel",
+        "Painted Post, New York",
+        "Biberach Master",
+        "George Duning",
+        "Matee Molefe"
+      ]
+    },
+    {
+      "idx": 502,
+      "qid": "ca3fdcde0bdd11eba7f7acde48001122",
+      "gold": "Öland",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Krauchenwies"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Kletsk"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Krauchenwies",
+        "selected": "C2",
+        "verifier": {
+          "final_answer": "Krauchenwies",
+          "selected": "C2",
+          "confidence": "high",
+          "reason": "Prince Johann Georg of Hohenzollern is the father of Carl Gustaf Creutz according to the candidate entity graph. Passage P5 states that Prince Johann Georg of Hohenzollern died in Krauchenwies, which is the place of death of The General (C2) as mentioned in the candidate entity graph."
+        },
+        "latency_sec": 1.6244637966156006
+      },
+      "candidates": [
+        "Kletsk",
+        "Krauchenwies",
+        "Carl, 3rd Prince of Leiningen",
+        "Adolphe, Grand Duke of Luxembourg",
+        "Princess Margaret of Connaught",
+        "Prince Johann Georg of Hohenzollern",
+        "Princess Margaretha of Sweden",
+        "Henri, Grand Duke of Luxembourg",
+        "Sophia of Nassau",
+        "The General",
+        "The Child",
+        "Carl Gustaf Creutz"
+      ]
+    },
+    {
+      "idx": 503,
+      "qid": "45a190120bdd11eba7f7acde48001122",
+      "gold": "Reykjavík",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "29 June 1947"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "29 June 1947"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "29 June 1947",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "29 June 1947",
+        "Outlaw: The Saga of Gisli",
+        "Ágúst Guðmundsson",
+        "James Szalapski",
+        "Bill Condon",
+        "Captured",
+        "Them",
+        "Jackson Rathbone",
+        "Story",
+        "Thorvald Eiriksson",
+        "Part",
+        "The Twilight Saga: Breaking Dawn – Part 2 (soundtrack)"
+      ]
+    },
+    {
+      "idx": 504,
+      "qid": "374844b20baf11ebab90acde48001122",
+      "gold": "Adalbert I, Margrave of Tuscany",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Ingerman"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Herodes Atticus"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Herodes Atticus",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide a direct paternal grandfather for Ermengarde of Tuscany. The graph connects her to Adalbert II, Margrave of Tuscany, but not to his paternal grandfather."
+        },
+        "latency_sec": 1.2912883758544922
+      },
+      "candidates": [
+        "Herodes Atticus",
+        "Ingerman",
+        "Adalbert II, Margrave of Tuscany",
+        "Reginald I of Guelders",
+        "Henry IV of France",
+        "Lothair I",
+        "Nero Claudius Drusus",
+        "Julius Caesar",
+        "Tiberius",
+        "Claudius",
+        "Drusus Julius Caesar",
+        "Ermengarde of Tuscany"
+      ]
+    },
+    {
+      "idx": 505,
+      "qid": "e8b086280bdd11eba7f7acde48001122",
+      "gold": "Indian",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "India"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "India"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "India",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "India",
+        "Ata Pata Laapata",
+        "The Godfather",
+        "1919 (film)",
+        "The General",
+        "Funny Face",
+        "United Nations",
+        "Waylon Jennings",
+        "Rajpal Yadav",
+        "Irvin Willat",
+        "A Secret",
+        "Misapata (Cabana-Lucanas)"
+      ]
+    },
+    {
+      "idx": 506,
+      "qid": "9ba526540bdd11eba7f7acde48001122",
+      "gold": "Liria Palace",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "Liria Palace in Madrid"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Madrid"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "Liria Palace in Madrid",
+        "selected": "C2",
+        "verifier": {
+          "final_answer": "Liria Palace in Madrid",
+          "selected": "C2",
+          "confidence": "high",
+          "reason": "C4 states that Cayetana Fitz-James Stuart, 18th Duchess of Alba, was born at Liria Palace in Madrid. This information is directly supported by the evidence passage P4."
+        },
+        "latency_sec": 1.2353060245513916
+      },
+      "candidates": [
+        "Madrid",
+        "Liria Palace in Madrid",
+        "Jesús Aguirre",
+        "The Vengeance of Fu Manchu",
+        "The Castle of Fu Manchu",
+        "Cayetana Fitz-James Stuart, 18th Duchess of Alba",
+        "Jesús Franco",
+        "The Death Kiss",
+        "The General",
+        "Ana María Huarte",
+        "Alfredo Zacarías",
+        "Jesús Aguirre (athlete)"
+      ]
+    },
+    {
+      "idx": 507,
+      "qid": "ac354ea00baf11ebab90acde48001122",
+      "gold": "Louise of Mecklenburg-Güstrow",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575,
+        "output": "Sophie Magdalene of Brandenburg-Kulmbach"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575,
+        "output": "Sophie Magdalene of Brandenburg-Kulmbach"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575,
+        "output": "Sophie Magdalene of Brandenburg-Kulmbach",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Sophie Magdalene of Brandenburg-Kulmbach",
+        "Princess Louise of Denmark (1726–1756)",
+        "Louise",
+        "Princess Thyra of Denmark",
+        "Christian VI of Denmark",
+        "Louise of Sweden",
+        "Louise of Great Britain",
+        "Frederick V of Denmark",
+        "Henri, Grand Duke of Luxembourg",
+        "Prince René of Bourbon-Parma",
+        "Ernest Frederick III, Duke of Saxe-Hildburghausen",
+        "Princess Ingeborg of Denmark"
+      ]
+    },
+    {
+      "idx": 508,
+      "qid": "6f0a15860bde11eba7f7acde48001122",
+      "gold": "Tony Award for Best Actress in a Musical",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.9333333333333333,
+        "output": "2000 Tony Award for Best Actress in a Musical"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4444444444444445,
+        "output": "Tony Award"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.9333333333333333,
+        "output": "2000 Tony Award for Best Actress in a Musical",
+        "selected": "C2",
+        "verifier": {
+          "final_answer": "2000 Tony Award for Best Actress in a Musical",
+          "selected": "C2",
+          "confidence": "high",
+          "reason": "Heather Headley is directly linked to the 2000 Tony Award for Best Actress in a Musical in the evidence passages, and In My Mind (Heather Headley song) is linked to Heather Headley in the candidate entity graph."
+        },
+        "latency_sec": 1.436922311782837
+      },
+      "candidates": [
+        "Tony Award",
+        "2000 Tony Award for Best Actress in a Musical",
+        "In My Mind (Heather Headley song)",
+        "Heather Headley",
+        "The Rest of My Life",
+        "The One That Got Away",
+        "I Got the Blues",
+        "That's the Way",
+        "The Dance",
+        "The Singer",
+        "I've Got My Baby on My Mind",
+        "My Baby"
+      ]
+    },
+    {
+      "idx": 509,
+      "qid": "2c7d1dd00bde11eba7f7acde48001122",
+      "gold": "American",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "American"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "American"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "American",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "American",
+        "Inescapable (song)",
+        "The Rest of My Life",
+        "The Wanted",
+        "The Girls",
+        "The Singer",
+        "That's the Way",
+        "The Rock",
+        "Jessica Mauboy",
+        "Diane Warren",
+        "Ami Banglay Gaan Gai",
+        "(What Is) Love"
+      ]
+    },
+    {
+      "idx": 510,
+      "qid": "a06475340bdb11eba7f7acde48001122",
+      "gold": "Panthéon",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "N/A"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence passages do not provide information about Adèle Hugo's father's place of burial."
+        },
+        "latency_sec": 0.7426187992095947
+      },
+      "candidates": [
+        "Place of origin",
+        "Adèle of Dreux",
+        "Victor Hugo",
+        "The Mystic",
+        "The Child",
+        "The General",
+        "François Truffaut",
+        "Bruce Robinson",
+        "Story",
+        "@Home",
+        "Adèle Hugo",
+        "Adèle Foucher"
+      ]
+    },
+    {
+      "idx": 511,
+      "qid": "23ae34720bda11eba7f7acde48001122",
+      "gold": "Villupuram",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passage does not provide information about the birthplace of Prabhu's father, Sivaji Ganesan."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "Villupuram, India"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "Villupuram, India",
+        "selected": "C1",
+        "verifier": {
+          "final_answer": "Villupuram, India",
+          "selected": "C1",
+          "confidence": "high",
+          "reason": "Prabhu (actor) is associated with Sivaji Ganesan in the candidate entity graph, and Sivaji Ganesan is further linked to Villupuram, India in the same graph. P1 confirms that Sivaji Ganesan, also known as Prabhu's father, was an Indian actor born in Villupuram, India."
+        },
+        "latency_sec": 1.8421885967254639
+      },
+      "candidates": [
+        "Villupuram, India",
+        "Prabhu (actor)",
+        "Father of Four",
+        "The Superstars",
+        "The Feature",
+        "The Singer",
+        "The Will",
+        "Sivaji Ganesan",
+        "Timothy West",
+        "Victor Sjöström",
+        "Ramkumar Ganesan",
+        "Lockwood West"
+      ]
+    },
+    {
+      "idx": 512,
+      "qid": "4c1772720bb011ebab90acde48001122",
+      "gold": "Charles I of Austria",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4444444444444445,
+        "output": "Archduke Maximilian Eugen of Austria"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4444444444444445,
+        "output": "Archduke Maximilian Eugen of Austria"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4444444444444445,
+        "output": "Archduke Maximilian Eugen of Austria",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Archduke Maximilian Eugen of Austria",
+        "George Albert I, Count of Erbach-Schönberg",
+        "Karl Aloys zu Fürstenberg",
+        "A Secret",
+        "The Child",
+        "Princess Franziska of Hohenlohe-Waldenburg-Schillingsfürst",
+        "Princess Katharina of Hohenlohe-Waldenburg-Schillingsfürst",
+        "Charles Albert II, Prince of Hohenlohe-Waldenburg-Schillingsfürst",
+        "Charles Albert III, Prince of Hohenlohe-Waldenburg-Schillingsfürst",
+        "Friedrich Franz von Hohenlohe-Waldenburg-Schillingsfürst",
+        "George Frederick, Count of Erbach-Breuberg",
+        "George IV, Count of Erbach-Fürstenau"
+      ]
+    },
+    {
+      "idx": 513,
+      "qid": "a70f3a840bdd11eba7f7acde48001122",
+      "gold": "April 23, 1716",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "1716"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "1716"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5,
+        "output": "1716",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "1716",
+        "Bartholomeus van Hove",
+        "Like That",
+        "Fadil Hadžić",
+        "The Good Man",
+        "Master",
+        "The Light",
+        "The Room",
+        "Jacob van Huysum",
+        "Zeger Jacob van Helmont",
+        "Jan van Huysum",
+        "Justus van Huysum"
+      ]
+    },
+    {
+      "idx": 514,
+      "qid": "21a3b9fa0bde11eba7f7acde48001122",
+      "gold": "1 August 10",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question cannot be answered with the provided passages."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4,
+        "output": "10 BC"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4,
+        "output": "10 BC",
+        "selected": "C1",
+        "verifier": {
+          "final_answer": "10 BC",
+          "selected": "C1",
+          "confidence": "high",
+          "reason": "The relationship between Britannicus and his father, Claudius, is established in the candidate entity graph. Claudius's birth year, 10 BC, is directly provided in passage P5."
+        },
+        "latency_sec": 1.1886239051818848
+      },
+      "candidates": [
+        "10 BC",
+        "The question cannot be answered with the provided passages",
+        "Father of Four",
+        "Caligula",
+        "Emir Kusturica",
+        "Claudius",
+        "William St Lawrence, 12th Baron Howth",
+        "Abdulah Sidran",
+        "Dean Saunders",
+        "Agrippina the Younger",
+        "Aelia Paetina",
+        "Britannicus"
+      ]
+    },
+    {
+      "idx": 515,
+      "qid": "4b145f0a0bda11eba7f7acde48001122",
+      "gold": "New York",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.07692307692307693,
+        "output": "The place of birth of the director of film The New Kids is not directly provided in the given passages. However, Sean S. Cunningham, who is mentioned to"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of birth: Connecticut"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Connecticut",
+        "selected": "C1|C2|UNKNOWN",
+        "verifier": {
+          "final_answer": "Connecticut",
+          "selected": "C1|C2|UNKNOWN",
+          "confidence": "high",
+          "reason": "The candidate entity 'C2: Place of birth' is not directly supported by the evidence, but 'C1: Place of birth: Connecticut' is directly supported by the evidence passage P9 which states that Sean S. Cunningham, the director of The New Kids, was raised in Connecticut."
+        },
+        "latency_sec": 1.5088984966278076
+      },
+      "candidates": [
+        "Place of birth: Connecticut",
+        "Place of birth",
+        "The New Kids",
+        "Night of the Living Dead",
+        "What Women Want",
+        "The General",
+        "The Child",
+        "The Will",
+        "The First Day",
+        "Sean S. Cunningham",
+        "D. W. Griffith",
+        "Place of origin"
+      ]
+    },
+    {
+      "idx": 516,
+      "qid": "968068d20bdd11eba7f7acde48001122",
+      "gold": "England",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "English"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "English"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "English",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "English",
+        "Waleran de Beaumont, 1st Earl of Worcester",
+        "William de Warenne, 2nd Earl of Surrey",
+        "Henry III of England",
+        "Henry I of England",
+        "John, King of England",
+        "Henry the Young King",
+        "The Cell",
+        "The Holding",
+        "Henry de Beaumont, 5th Earl of Warwick",
+        "Waleran de Beaumont, 4th Earl of Warwick",
+        "Margaret de Beaumont, 7th Countess of Warwick"
+      ]
+    },
+    {
+      "idx": 517,
+      "qid": "cd1dfa560bda11eba7f7acde48001122",
+      "gold": "Käthe von Nagy",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Käthe von Nagy"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Käthe von Nagy"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Käthe von Nagy",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Käthe von Nagy",
+        "The Untouched Woman",
+        "David Lynch",
+        "Constantin J. David",
+        "Martha De Laurentiis",
+        "Oscar Wilde",
+        "Fred Niblo",
+        "Nunzio Malasomma",
+        "A Division",
+        "20 Years",
+        "Mary Sweeney",
+        "A Woman of No Importance (1937 film)"
+      ]
+    },
+    {
+      "idx": 518,
+      "qid": "57eb21ba0bde11eba7f7acde48001122",
+      "gold": "Los Angeles County",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8571428571428571,
+        "output": "Los Angeles County, California"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8571428571428571,
+        "output": "Los Angeles County, California"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8571428571428571,
+        "output": "Los Angeles County, California",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Los Angeles County, California",
+        "The Iron Man (serial)",
+        "Flash Gordon Conquers the Universe",
+        "1939 (film)",
+        "The Feature",
+        "The Hero",
+        "The General",
+        "Walt Disney",
+        "Rebecca Hall",
+        "Jay Marchant",
+        "Shane Black",
+        "Iron Man 2"
+      ]
+    },
+    {
+      "idx": 519,
+      "qid": "0d77cf5a0bdb11eba7f7acde48001122",
+      "gold": "Taiyuan",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.10526315789473684,
+        "output": "Ning Hao: Ning Hao (born 9 September 1977) is a Chinese film director. Ning studied at the Taiyuan Film School"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Ning Hao"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Ning Hao",
+        "selected": "C1|C2|C3",
+        "verifier": {
+          "final_answer": "Ning Hao",
+          "selected": "C1|C2|C3",
+          "confidence": "high",
+          "reason": "C3 (Crazy Alien) is connected to Ning Hao (C1) through C2 (Place of birth). Ning Hao directed the film Crazy Alien, as mentioned in the evidence passage P2."
+        },
+        "latency_sec": 1.2287397384643555
+      },
+      "candidates": [
+        "Ning Hao",
+        "Place of birth",
+        "Crazy Alien",
+        "Night of the Living Dead",
+        "What Women Want",
+        "The General",
+        "The Child",
+        "The Will",
+        "The First Day",
+        "The Rock",
+        "Place of origin",
+        "Comedy"
+      ]
+    },
+    {
+      "idx": 520,
+      "qid": "96b7c1a60bdd11eba7f7acde48001122",
+      "gold": "Palencia",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Palermo, Sicily, Italy"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Palermo"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Palermo, Sicily, Italy",
+        "selected": "UNKNOWN",
+        "verifier": {
+          "final_answer": "Palermo, Sicily, Italy",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide information about Sancha of Castile, Queen of Navarre's mother's place of death."
+        },
+        "latency_sec": 1.1189885139465332
+      },
+      "candidates": [
+        "Palermo",
+        "Palermo, Sicily, Italy",
+        "Charles III of Navarre",
+        "Alfonso VII of León and Castile",
+        "Eleanor of Castile",
+        "Sancho VI of Navarre",
+        "Eleanor of Navarre",
+        "Theobald II of Navarre",
+        "Sancho III of Castile",
+        "Manuel of Castile",
+        "In the Name Of",
+        "Alfonso II, Count of Provence"
+      ]
+    },
+    {
+      "idx": 521,
+      "qid": "e33d85f00bd911eba7f7acde48001122",
+      "gold": "San Diego State University",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Denis Sanders worked as a film director, and he directed Shock Treatment (1964 film). There is no specific workplace mentioned for him in the given"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Denis Sanders worked as an American film director, screenwriter, and producer."
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Denis Sanders",
+        "selected": "C1|C7",
+        "verifier": {
+          "final_answer": "Denis Sanders",
+          "selected": "C1|C7",
+          "confidence": "high",
+          "reason": "The evidence passage P1 directly states that Denis Sanders directed the 1964 film 'Shock Treatment', and C1 and C7 in the candidate entity graph both point to Denis Sanders as the director of 'Shock Treatment (1964 film)'. Therefore, Denis Sanders is the director of the film 'Shock Treatment (1964 Film)' mentioned in the question."
+        },
+        "latency_sec": 1.8855009078979492
+      },
+      "candidates": [
+        "Denis Sanders worked as an American film director, screenwriter, and producer",
+        "Shock Treatment (1964 film)",
+        "The Rocky Horror Picture Show",
+        "The Quotations",
+        "Alain Jessua",
+        "Orson Welles",
+        "Denis Sanders",
+        "Al Adamson",
+        "Michael Schultz",
+        "Shock Treatment (1995 film)",
+        "Shock Treatment (1973 film)",
+        "Jim Sharman"
+      ]
+    },
+    {
+      "idx": 522,
+      "qid": "247f29b00bda11eba7f7acde48001122",
+      "gold": "Harvard",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Harvard"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Harvard"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Harvard",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Harvard",
+        "Saadia (film)",
+        "The Feature",
+        "Albert Lewin",
+        "Robert Lamoureux",
+        "Arthur Lubin",
+        "Cornel Wilde",
+        "Comedy",
+        "Sorority Row",
+        "Get That Girl",
+        "Kristofor Brown",
+        "Now Where Did the 7th Company Get to"
+      ]
+    },
+    {
+      "idx": 523,
+      "qid": "4f6bc4a20bdb11eba7f7acde48001122",
+      "gold": "United Nations",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "United Nations"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "United Nations"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "United Nations",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "United Nations",
+        "Husayn ibn Ali",
+        "Ali ibn Muhammad",
+        "Hussein of Jordan",
+        "Muhammad",
+        "Muhammad ibn Ja'far",
+        "Lakhdar Brahimi",
+        "Princess Rym al-Ali",
+        "Ali ibn al-Husayn (Ibn al-Walid)",
+        "Ali Sulayman al-Assad",
+        "Ali ibn al-Husayn ibn Ali ibn Hanzala",
+        "Al-Qassab"
+      ]
+    },
+    {
+      "idx": 524,
+      "qid": "1c8a39d20bdc11eba7f7acde48001122",
+      "gold": "Samos",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "No answer found in the provided passages."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Pythagoras"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Pythagoras",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide information about Damo (Philosopher)'s father's place of birth."
+        },
+        "latency_sec": 0.7598233222961426
+      },
+      "candidates": [
+        "Pythagoras",
+        "No answer found in the provided passages",
+        "Place of birth",
+        "What Women Want",
+        "The Mess",
+        "Alexandra, Countess of Frederiksborg",
+        "Canute V of Denmark",
+        "The General",
+        "The Child",
+        "The Will",
+        "The Rock",
+        "The First Day"
+      ]
+    },
+    {
+      "idx": 525,
+      "qid": "a6ecf1040bdd11eba7f7acde48001122",
+      "gold": "America",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Scottish"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Scotland"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Scotland",
+        "selected": "C1",
+        "verifier": {
+          "final_answer": "Scotland",
+          "selected": "C1",
+          "confidence": "high",
+          "reason": "David Barclay of Cheapside is described as a Scottish merchant and banker in the evidence passage P10, which directly supports that his father, Robert Barclay, is from Scotland."
+        },
+        "latency_sec": 1.0567162036895752
+      },
+      "candidates": [
+        "Scotland",
+        "Scottish",
+        "Coretta Scott King",
+        "Gene Watson",
+        "In Society",
+        "Christopher Reitz",
+        "Curly Seckler",
+        "Scott King",
+        "Robert F. Hill",
+        "The Girls",
+        "The Path",
+        "David Barclay of Cheapside"
+      ]
+    },
+    {
+      "idx": 526,
+      "qid": "3cfe44540bde11eba7f7acde48001122",
+      "gold": "Shanghai",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "No answer found in the provided passages."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The Will"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The Will",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence passages and candidate entity graph do not provide any information about Bea Ballard's father or his place of birth."
+        },
+        "latency_sec": 0.8041326999664307
+      },
+      "candidates": [
+        "The Will",
+        "No answer found in the provided passages",
+        "Place of birth",
+        "What Women Want",
+        "The Mess",
+        "Alexandra, Countess of Frederiksborg",
+        "The General",
+        "The Child",
+        "The Warriors",
+        "The Rock",
+        "The First Day",
+        "Place of origin"
+      ]
+    },
+    {
+      "idx": 527,
+      "qid": "057f68740bdd11eba7f7acde48001122",
+      "gold": "Volker Schlöndorff",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question is based on a misinterpretation of the film title. There is no film titled \"The Second Awakening Of Christa Klages\" in the provided"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.18181818181818182,
+        "output": "Margarethe von Trotta's spouse is Volker Schlöndorff, but he is not mentioned in the passages. There is no information about her"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.18181818181818182,
+        "output": "Margarethe von Trotta's spouse is Volker Schlöndorff, but he is not mentioned in the passages. There is no information about her",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide information about the spouse of the director of the film The Second Awakening of Christa Klages. The director of this film is Margarethe von Trotta, but there is no information linking her to the title of spouse of the President of the People's Republic of China or any other spouse mentioned in the passages."
+        },
+        "latency_sec": 1.5457241535186768
+      },
+      "candidates": [
+        "The Second Awakening of Christa Klages",
+        "The Mummy's Tomb",
+        "Margarethe von Trotta",
+        "David Lynch",
+        "Martha De Laurentiis",
+        "A Division",
+        "20 Years",
+        "Spouse of the President of the People's Republic of China",
+        "The Awakening (1980 film)",
+        "Mary Sweeney"
+      ]
+    },
+    {
+      "idx": 528,
+      "qid": "812d167e0bb011ebab90acde48001122",
+      "gold": "Thomas de Beauchamp",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.2222222222222222,
+        "output": "Thomas of Woodstock, Duke of Gloucester"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.2,
+        "output": "Ralph de Stafford, 1st Earl of Stafford"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.2,
+        "output": "Ralph de Stafford, 1st Earl of Stafford",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 2.284869909286499
+      },
+      "candidates": [
+        "Ralph de Stafford, 1st Earl of Stafford",
+        "Thomas of Woodstock, Duke of Gloucester",
+        "Edmund Stafford, 5th Earl of Stafford",
+        "Ralph Stafford, 1st Earl of Stafford",
+        "Hugh Stafford, 2nd Earl of Stafford",
+        "Humphrey Stafford, 1st Duke of Buckingham",
+        "Edmund Beaufort, 2nd Duke of Somerset",
+        "Anne of Gloucester",
+        "Philippa de Beauchamp",
+        "Richard Stafford, 1st Baron Stafford of Clifton",
+        "Edmund Stafford, 1st Baron Stafford",
+        "Thomas Stafford, 3rd Earl of Stafford"
+      ]
+    },
+    {
+      "idx": 529,
+      "qid": "895740ae0bb011ebab90acde48001122",
+      "gold": "Elizabeth Willoughby",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Elizabeth Willoughby"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Elizabeth Willoughby"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Elizabeth Willoughby",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Elizabeth Willoughby",
+        "William Paulet, 4th Marquess of Winchester",
+        "William Paulet, 3rd Marquess of Winchester",
+        "William Paulet, 1st Marquess of Winchester",
+        "John Paulet, 5th Marquess of Winchester",
+        "John Paulet, 2nd Marquess of Winchester",
+        "Nigel Paulet, 18th Marquess of Winchester",
+        "Richard Paulet, 17th Marquess of Winchester",
+        "Henry, Lord Paulet",
+        "Christopher Lambert (MP)"
+      ]
+    },
+    {
+      "idx": 530,
+      "qid": "be9369c80bdd11eba7f7acde48001122",
+      "gold": "Georgia",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question cannot be answered based on the provided passages. There is no information about Lucy Beall Candler Owens or Heinz Leide's father's place of"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Asa Griggs Candler"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Asa Griggs Candler",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The passages do not provide information about the place of burial of Lucy Beall Candler Owens Heinz Leide's father. The only information related to burial is about the Book of Burial, but it does not connect to the individuals mentioned in the question."
+        },
+        "latency_sec": 1.2782716751098633
+      },
+      "candidates": [
+        "Asa Griggs Candler",
+        "The Mystic",
+        "Medal of Honor",
+        "Richard Bruno Heydrich",
+        "Abraham",
+        "Western Auto",
+        "Charles Orlando Bridgeman",
+        "George Augustus",
+        "@Home",
+        "FIRE",
+        "Master",
+        "Lucy Beall Candler Owens Heinz Leide"
+      ]
+    },
+    {
+      "idx": 531,
+      "qid": "692515880bdb11eba7f7acde48001122",
+      "gold": "Northern Ireland",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Northern Ireland"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Northern Ireland"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Northern Ireland",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Northern Ireland",
+        "Inconceivable (2008 film)",
+        "Rise of the Planet of the Apes",
+        "Boogeyman (film)",
+        "The Jury",
+        "The General",
+        "Bharathan",
+        "Francesco Maselli",
+        "Ennio Morricone",
+        "Woman Basketball Player No. 5",
+        "Mary McGuckian",
+        "Jules Dassin"
+      ]
+    },
+    {
+      "idx": 532,
+      "qid": "73165fb60bdb11eba7f7acde48001122",
+      "gold": "Ottoman Empire",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Turkey"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Ottoman Empire"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Turkey",
+        "selected": "C2",
+        "verifier": {
+          "final_answer": "Turkey",
+          "selected": "C2",
+          "confidence": "high",
+          "reason": "Mehmed V is the father of Şehzade Ömer Hilmi, and he is from the Ottoman Empire, which is in Turkey."
+        },
+        "latency_sec": 1.0132312774658203
+      },
+      "candidates": [
+        "Ottoman Empire",
+        "Turkey",
+        "Ömer Kavur",
+        "The Feature",
+        "Ismail I",
+        "The Comic",
+        "Bayezid II",
+        "The Wanted",
+        "Abdülaziz",
+        "Mehmed V",
+        "Afterwards",
+        "Comedy"
+      ]
+    },
+    {
+      "idx": 533,
+      "qid": "57e24dd60bdb11eba7f7acde48001122",
+      "gold": "Austria",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Norway"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Norway"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Norway",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Norway",
+        "Shocking Asia II: The Last Taboos",
+        "Shocking Asia",
+        "The Last Seduction",
+        "Wizards of the Lost Kingdom",
+        "The Feature",
+        "Empire of Ash",
+        "The Warrior and the Sorceress",
+        "The Seduction",
+        "The Warriors",
+        "Terry Marcel",
+        "Shocking Dark"
+      ]
+    },
+    {
+      "idx": 534,
+      "qid": "2ed1a68c0bde11eba7f7acde48001122",
+      "gold": "Wolverhampton",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Beverley Knight was born in the UK. However, the passages do not explicitly state her birthplace."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "UK"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "UK",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 2.2045841217041016
+      },
+      "candidates": [
+        "UK",
+        "Rewind (Find a Way)",
+        "Find",
+        "The Singer",
+        "Find You",
+        "Where Are You",
+        "The Only One",
+        "The Dance",
+        "The Will",
+        "Going Nowhere",
+        "Phil Collins",
+        "Because of You (Gabrielle song)"
+      ]
+    },
+    {
+      "idx": 535,
+      "qid": "429615320bb011ebab90acde48001122",
+      "gold": "Jean de Laval",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.25,
+        "output": "François II de La Trémoille"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.25,
+        "output": "Louis III de La Trémoille"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.25,
+        "output": "Louis III de La Trémoille",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The provided passages and candidate entity graph do not contain any direct information about Anne De Laval, Viscountess Of Thouars's paternal grandfather."
+        },
+        "latency_sec": 0.9224867820739746
+      },
+      "candidates": [
+        "Louis III de La Trémoille",
+        "François II de La Trémoille",
+        "Anne of Brittany",
+        "Louis Charles Marie de La Trémoille",
+        "Jean Bretagne Charles de La Trémoille",
+        "Charlotte Stanley, Countess of Derby",
+        "Isabella of Brittany",
+        "The Child",
+        "The Will",
+        "Francis I",
+        "Anne de Laval, Viscountess of Thouars",
+        "André de Laval-Montmorency"
+      ]
+    },
+    {
+      "idx": 536,
+      "qid": "9494fa760bdb11eba7f7acde48001122",
+      "gold": "Reykjavík",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Icelandic"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Reykjavík"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Reykjavík",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence passages do not provide information about the birthplace of the composer of the song 'Unravel'. The candidate entity 'Björk' is an artist, not a composer, and the evidence does not mention a specific composer for 'Unravel'."
+        },
+        "latency_sec": 1.359259843826294
+      },
+      "candidates": [
+        "Reykjavík",
+        "Icelandic",
+        "Unravel",
+        "Where Was I",
+        "Consort Song",
+        "The Singer",
+        "Where Are You",
+        "Björk",
+        "Alex P",
+        "Them",
+        "Where Was I (song)",
+        "Ami Banglay Gaan Gai"
+      ]
+    },
+    {
+      "idx": 537,
+      "qid": "4aee95dc0bd911eba7f7acde48001122",
+      "gold": "New York",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Leigh Jason was born in the United States. However, the passage does not provide the exact birthplace of Leigh Jason."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Germany"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Germany",
+        "selected": "C1",
+        "verifier": {
+          "final_answer": "Germany",
+          "selected": "C1",
+          "confidence": "high",
+          "reason": "The candidate entity 'Douglas Sirk' is directly linked to 'Meet Me on Broadway' in the evidence passages as the director. Additionally, Douglas Sirk's birthplace is mentioned in the candidate entity graph as 'Germany'."
+        },
+        "latency_sec": 1.2229812145233154
+      },
+      "candidates": [
+        "Germany",
+        "Meet Me on Broadway",
+        "Broadway Melody of 1936",
+        "The Feature",
+        "Gone with the Wind",
+        "The Wind",
+        "The Child",
+        "Believe Me",
+        "You Were Meant for Me",
+        "Douglas Sirk",
+        "Leigh Jason",
+        "Comedy"
+      ]
+    },
+    {
+      "idx": 538,
+      "qid": "19ab7c2a0bdd11eba7f7acde48001122",
+      "gold": "San Antonio",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8,
+        "output": "San Antonio, Texas"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.4,
+        "output": "Hamilton P. Bee died in San Antonio, Texas."
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8,
+        "output": "San Antonio, Texas",
+        "selected": "C1|C2|UNKNOWN",
+        "verifier": {
+          "final_answer": "San Antonio, Texas",
+          "selected": "C1|C2|UNKNOWN",
+          "confidence": "high",
+          "reason": "P9 states that Carlos Bee was the son of Hamilton P. Bee, and P1 mentions that Hamilton P. Bee lived in San Antonio, Texas after returning from Mexico. While P10 provides additional information about Carlos Bee, it does not directly answer the question about his father's death place. Therefore, the most supported answer is from P9 and the evidence passage C1, which indicates Carlos Bee's father died in San Antonio, Texas."
+        },
+        "latency_sec": 2.0733225345611572
+      },
+      "candidates": [
+        "Hamilton P. Bee died in San Antonio, Texas",
+        "San Antonio, Texas",
+        "Hamilton P. Bee",
+        "Benjamin Christensen",
+        "Fadil Hadžić",
+        "The Good Man",
+        "The Dead",
+        "Comedy",
+        "Friedrich Schiller",
+        "Philip II of Spain",
+        "Carlos Bee",
+        "Carlos Bee (California politician)"
+      ]
+    },
+    {
+      "idx": 539,
+      "qid": "885ba7220bdc11eba7f7acde48001122",
+      "gold": "Venice",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Italy"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Italy"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Italy",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Italy",
+        "Eugene Fubini",
+        "Eugene C. Pulliam",
+        "Bonne of Berry",
+        "Amadeus VII, Count of Savoy",
+        "The Supporter",
+        "The General",
+        "The Child",
+        "Oona O'Neill",
+        "Dan Quayle",
+        "Guido Fubini",
+        "Four Years"
+      ]
+    },
+    {
+      "idx": 540,
+      "qid": "66f6f0e60baf11ebab90acde48001122",
+      "gold": "Theodora",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "No answer can be derived from the given passages regarding Alberic II of Spoleto's maternal grandmother."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Marozia"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Marozia",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide any information about Alberic II of Spoleto's maternal grandmother. The graph mentions Alberic II of Spoleto -> The Intended, but does not specify any maternal grandmother for him."
+        },
+        "latency_sec": 1.2564117908477783
+      },
+      "candidates": [
+        "Marozia",
+        "Aka II of Commagene",
+        "Manuel II of Portugal",
+        "Reginald I, Count of Bar",
+        "Juan Carlos I of Spain",
+        "Antiochis of Commagene",
+        "Adelaide, Countess of Vermandois",
+        "Antiochus I Theos of Commagene",
+        "Isias",
+        "Britannicus",
+        "Alberic II of Spoleto",
+        "The Intended"
+      ]
+    },
+    {
+      "idx": 541,
+      "qid": "6faf10f40bde11eba7f7acde48001122",
+      "gold": "Indian",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "American"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question cannot be answered based on the given passages and candidate entity graph."
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "American",
+        "selected": "C8|UNKNOWN",
+        "verifier": {
+          "final_answer": "American",
+          "selected": "C8|UNKNOWN",
+          "confidence": "medium",
+          "reason": "The candidate entity graph does not directly provide information about Ameena Begum's husband's nationality. However, given that Ameena Begum is associated with 'Munni Begum' and 'Munni Begum' is not listed in the graph, it is inferred that 'Lloyd Ingraham' might be her husband based on the context, and he is described as an American film actor and director in the passages."
+        },
+        "latency_sec": 1.9507310390472412
+      },
+      "candidates": [
+        "American",
+        "Inayat Khan",
+        "Them",
+        "Comedy",
+        "Master",
+        "Point",
+        "The Singer",
+        "Lloyd Ingraham",
+        "Six Years",
+        "Michał Waszyński",
+        "Ameena Begum (politician)",
+        "Ameena Begum"
+      ]
+    },
+    {
+      "idx": 542,
+      "qid": "6be347940baf11ebab90acde48001122",
+      "gold": "Mihnea Turcitul",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Nero Claudius Drusus Germanicus"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Tiberius"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Tiberius",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide a clear paternal grandfather for Alexandru Coconul. The graph and passages mention Radu Mihnea as the father of Alexandru Coconul, but do not provide information about his paternal grandfather."
+        },
+        "latency_sec": 1.2367618083953857
+      },
+      "candidates": [
+        "Tiberius",
+        "Nero Claudius Drusus Germanicus",
+        "Alexandru Coconul",
+        "Princess Claude of Orléans",
+        "Prince Jacques, Duke of Orléans",
+        "Henry IV of France",
+        "Agrippina the Younger",
+        "The Child",
+        "Nero Claudius Drusus",
+        "Radu Mihnea",
+        "Lucius Vibullius Hipparchus (grandson of Herodes Atticus)",
+        "Aspasia Annia Regilla"
+      ]
+    },
+    {
+      "idx": 543,
+      "qid": "db9c68800bdd11eba7f7acde48001122",
+      "gold": "Paris",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "28 December 2013"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "France"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "28 December 2013",
+        "selected": "UNKNOWN",
+        "verifier": {
+          "final_answer": "28 December 2013",
+          "selected": "UNKNOWN",
+          "confidence": "medium",
+          "reason": "The evidence does not directly state the place of death of the director of the film Judith Therpauve. However, it mentions Patrice Chéreau, who directed the film, and his date of death, which is 7 October 2013. Given the context, it is reasonable to infer that the place of death might be France, as Patrice Chéreau is described as a French director, but this is not explicitly confirmed in the passages."
+        },
+        "latency_sec": 2.1582062244415283
+      },
+      "candidates": [
+        "France",
+        "28 December 2013",
+        "Judith Therpauve",
+        "Judith of Bohemia",
+        "Rudolf I of Germany",
+        "William the Conqueror",
+        "Konrad III the Old",
+        "Henry, Count of Berg",
+        "Patrice Chéreau",
+        "Bolesław III Wrymouth",
+        "Abraham",
+        "Judith of Habsburg"
+      ]
+    },
+    {
+      "idx": 544,
+      "qid": "d4f53b200baf11ebab90acde48001122",
+      "gold": "Victor de Broglie",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5714285714285715,
+        "output": "Achille-Victor, Duc de Broglie"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5714285714285715,
+        "output": "Achille-Victor, Duc de Broglie"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.5714285714285715,
+        "output": "Achille-Victor, Duc de Broglie",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Achille-Victor, Duc de Broglie",
+        "Auguste-Théodore-Paul de Broglie",
+        "The General",
+        "Albertine, baroness Staël von Holstein",
+        "Francis I",
+        "Model",
+        "Part",
+        "Seven Years",
+        "Victor-François, 8th duc de Broglie",
+        "Louis de Broglie",
+        "Jean de Broglie",
+        "Victor-Maurice, comte de Broglie"
+      ]
+    },
+    {
+      "idx": 545,
+      "qid": "4faf4b760bb011ebab90acde48001122",
+      "gold": "Louise d'Aumont",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8,
+        "output": "Louise d'Aumont Mazarin"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Princess Carolina of Naples and Sicily"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8,
+        "output": "Louise d'Aumont Mazarin",
+        "selected": "UNKNOWN",
+        "verifier": {
+          "final_answer": "Louise d'Aumont Mazarin",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide a direct relationship between Maria Caroline Gibert de Lametz and her mother-in-law. The graph indicates a relationship between Maria Caroline Gibert de Lametz and Florestan I, Prince of Monaco, but not with Louise d'Aumont Mazarin, who is mentioned as Florestan I's mother."
+        },
+        "latency_sec": 1.6498756408691406
+      },
+      "candidates": [
+        "Princess Carolina of Naples and Sicily",
+        "Louise d'Aumont Mazarin",
+        "Maria Caroline Gibert de Lametz",
+        "Beatrix of the Netherlands",
+        "Florestan I, Prince of Monaco",
+        "Henri, Count of Chambord",
+        "The Child",
+        "The Singer",
+        "Monte Carlo",
+        "Steven Spielberg",
+        "Geoff Muldaur",
+        "Part"
+      ]
+    },
+    {
+      "idx": 546,
+      "qid": "07f908b20bdd11eba7f7acde48001122",
+      "gold": "Moscow",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Odessa"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Odessa"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Odessa",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Odessa",
+        "Foma Gordeyev (film)",
+        "The Blood of Fu Manchu",
+        "The Vengeance of Fu Manchu",
+        "The Castle of Fu Manchu",
+        "Enter the Dragon",
+        "The General",
+        "The Child",
+        "The Will",
+        "Mark Donskoy",
+        "Jehovah-jireh",
+        "Abraham"
+      ]
+    },
+    {
+      "idx": 547,
+      "qid": "1b99cbbc0bde11eba7f7acde48001122",
+      "gold": "London",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.33333333333333337,
+        "output": "London Borough of Islington, London"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "London"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.33333333333333337,
+        "output": "London Borough of Islington, London",
+        "selected": "C2",
+        "verifier": {
+          "final_answer": "London Borough of Islington, London",
+          "selected": "C2",
+          "confidence": "high",
+          "reason": "The evidence in P3 directly states that Leona Lewis was born and raised in the London Borough of Islington in London, which is a more specific place of birth compared to just London."
+        },
+        "latency_sec": 1.182662010192871
+      },
+      "candidates": [
+        "London",
+        "London Borough of Islington, London",
+        "Outta My Head (Leona Lewis song)",
+        "Place of birth",
+        "Leona Lewis",
+        "Place of origin",
+        "Rest of My Life",
+        "The Holding",
+        "The Mess",
+        "The Singer",
+        "The General",
+        "The Child"
+      ]
+    },
+    {
+      "idx": 548,
+      "qid": "76cacca20bde11eba7f7acde48001122",
+      "gold": "Grammy",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Academy Award for Best Actress"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Academy Award for Best Actress"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Academy Award for Best Actress",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Academy Award for Best Actress",
+        "The Trip to Bountiful",
+        "The Singer",
+        "The Room",
+        "The Will",
+        "The Rock",
+        "The Window",
+        "Clint Eastwood",
+        "Them",
+        "Pat Richter",
+        "In 20-0-3",
+        "Joe Jackson"
+      ]
+    },
+    {
+      "idx": 549,
+      "qid": "648a5df20baf11ebab90acde48001122",
+      "gold": "Sophia of Rheineck",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Sophia of Rheineck"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.25,
+        "output": "Floris III, Count of Holland"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Sophia of Rheineck",
+        "selected": "C2|UNKNOWN",
+        "verifier": {
+          "final_answer": "Sophia of Rheineck",
+          "selected": "C2|UNKNOWN",
+          "confidence": "medium",
+          "reason": "Ada of Scotland became Countess of Holland by marriage to Floris III, Count of Holland. Floris III's mother was Sophia of Rheineck, making her Ada of Scotland's mother-in-law."
+        },
+        "latency_sec": 1.2582435607910156
+      },
+      "candidates": [
+        "Floris III, Count of Holland",
+        "Sophia of Rheineck",
+        "Ada of Scotland",
+        "Beatrix of the Netherlands",
+        "Alexander Stewart, 4th High Steward of Scotland",
+        "Walter Stewart, 3rd High Steward of Scotland",
+        "Robert the Bruce",
+        "Henry I of France",
+        "William de Warenne, 2nd Earl of Surrey",
+        "The Hero",
+        "Ada de Warenne",
+        "Kings"
+      ]
+    },
+    {
+      "idx": 550,
+      "qid": "801915340bd911eba7f7acde48001122",
+      "gold": "Plainfield",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passage does not provide information about the birthplace of the director of Driftwood (2006 Film)."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Tim Sullivan was born in the United States. However, this information is not directly supported by the passages. The passages only mention that Driftwood was directed by"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Tim Sullivan was born in the United States. However, this information is not directly supported by the passages. The passages only mention that Driftwood was directed by",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The passages provide information about the film Driftwood (2006 film) and its director Tim Sullivan, but there is no information about Tim Sullivan's place of birth."
+        },
+        "latency_sec": 1.022183895111084
+      },
+      "candidates": [
+        "Driftwood (2006 film)",
+        "The Feature",
+        "In Search of",
+        "The Will",
+        "The Jury",
+        "Ajay Devgn",
+        "Vishal Bhardwaj",
+        "Saif Ali Khan",
+        "Bert Jansch",
+        "A Secret",
+        "Omkara (2006 film)",
+        "Ricardo Becher"
+      ]
+    },
+    {
+      "idx": 551,
+      "qid": "bd8cb9320bdb11eba7f7acde48001122",
+      "gold": "Hollywood",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passage does not provide the place of death of the composer of \"Bidin' My Time\"."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Not specified"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Not specified",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence passages do not provide information about the place of death of the composer of the song 'Bidin' My Time'. The composer is identified as George Gershwin, but his place of death is not mentioned."
+        },
+        "latency_sec": 1.1138408184051514
+      },
+      "candidates": [
+        "Not specified",
+        "Bidin' My Time",
+        "The Last Time",
+        "The Wanted",
+        "The Foursome",
+        "The Feature",
+        "My Life",
+        "The Singer",
+        "One More Time",
+        "The Only One",
+        "The Jury",
+        "George Gershwin"
+      ]
+    },
+    {
+      "idx": 552,
+      "qid": "9ec332a00baf11ebab90acde48001122",
+      "gold": "Henry I of Navarre",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.11764705882352941,
+        "output": "Passages P1-P10 do not provide information about Louis X of France's maternal grandfather."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575,
+        "output": "Louis of France"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575,
+        "output": "Louis of France",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide information about Louis X of France's maternal grandfather."
+        },
+        "latency_sec": 0.707564115524292
+      },
+      "candidates": [
+        "Louis of France",
+        "Agnes of France, Duchess of Burgundy",
+        "Charles Ferdinand, Duke of Berry",
+        "Joan I of Navarre",
+        "James Butler, 1st Duke of Ormond",
+        "Nicholas I of Opole",
+        "Francis I of the Two Sicilies",
+        "Mathilde Seigner",
+        "Afterwards",
+        "Margaret of Burgundy, Queen of France",
+        "Louis X of France",
+        "Louis, Dauphin of France (son of Louis XV)"
+      ]
+    },
+    {
+      "idx": 553,
+      "qid": "7e815a440bdc11eba7f7acde48001122",
+      "gold": "Chris Pérez",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.5714285714285715,
+        "output": "Selena's spouse is Chris Pérez."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "My Baby"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Chris Pérez",
+        "selected": "C2",
+        "verifier": {
+          "final_answer": "Chris Pérez",
+          "selected": "C2",
+          "confidence": "high",
+          "reason": "The evidence passage P1 states that 'Missing My Baby' is a song released by American singer Selena. The passage C2 states that Selena's spouse is Chris Pérez, which directly answers the question."
+        },
+        "latency_sec": 1.1842002868652344
+      },
+      "candidates": [
+        "My Baby",
+        "Selena's spouse is Chris Pérez",
+        "Missing My Baby",
+        "One of Our Aircraft Is Missing",
+        "The Intended",
+        "The Singer",
+        "The Rock",
+        "Johnny Dorelli",
+        "Elvis Presley",
+        "Morning",
+        "I've Got My Baby on My Mind",
+        "I Want You to Be My Baby"
+      ]
+    },
+    {
+      "idx": 554,
+      "qid": "04a065a60bde11eba7f7acde48001122",
+      "gold": "Topeka",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Final answer: Not provided in the given passages."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "West Middlesex, Pennsylvania"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "West Middlesex, Pennsylvania",
+        "selected": "C1",
+        "verifier": {
+          "final_answer": "West Middlesex, Pennsylvania",
+          "selected": "C1",
+          "confidence": "high",
+          "reason": "Nancy Kassebaum is connected to Alf Landon in the candidate entity graph, and P6 mentions that Alf Landon was born in West Middlesex, Pennsylvania. Since the question asks about Nancy Kassebaum's father, and the graph provides a link between Nancy Kassebaum and Alf Landon, it is reasonable to infer that the place of birth mentioned for Alf Landon is also the place of death of Nancy Kassebaum's father."
+        },
+        "latency_sec": 2.0379953384399414
+      },
+      "candidates": [
+        "West Middlesex, Pennsylvania",
+        "Final answer: Not provided in the given passages",
+        "Place of origin",
+        "René of Anjou",
+        "The Child",
+        "The General",
+        "The Will",
+        "Alf Landon",
+        "Abraham",
+        "Shah Jahan",
+        "Mumtaz Mahal",
+        "Dara Shikoh"
+      ]
+    },
+    {
+      "idx": 555,
+      "qid": "18a5ef800bde11eba7f7acde48001122",
+      "gold": "Florence, Italy",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Ireland"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "County Tipperary, Ireland"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "County Tipperary, Ireland",
+        "selected": "C1",
+        "verifier": {
+          "final_answer": "County Tipperary, Ireland",
+          "selected": "C1",
+          "confidence": "high",
+          "reason": "P1 mentions that David Ogilvy, 12th Earl of Airlie was born in Cahir, County Tipperary, Ireland. The passage also states that he was the eldest son of David Ogilvy, 11th Earl of Airlie, indicating that the 11th Earl of Airlie, who is the father of the 12th Earl, was born in County Tipperary, Ireland."
+        },
+        "latency_sec": 2.093830108642578
+      },
+      "candidates": [
+        "County Tipperary, Ireland",
+        "Ireland",
+        "David Ogilvy, 12th Earl of Airlie",
+        "Alexander Lindsay, 2nd Earl of Crawford",
+        "Charles Hope, 1st Earl of Hopetoun",
+        "Mary of Teck",
+        "Angus Ogilvy",
+        "James Ogilvy",
+        "House of Lords",
+        "The Descendants",
+        "The Child",
+        "The Will"
+      ]
+    },
+    {
+      "idx": 556,
+      "qid": "ace961ec0baf11ebab90acde48001122",
+      "gold": "Khentkaus II",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "No answer for Shepseskare's paternal grandmother as Shepseskare is not mentioned in any of the passages."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Seven Years"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Seven Years",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide information about Shepseskare's paternal grandmother."
+        },
+        "latency_sec": 0.8154647350311279
+      },
+      "candidates": [
+        "Seven Years",
+        "Queen Victoria",
+        "Beatrix of the Netherlands",
+        "Vipsania Marcella",
+        "Scipio Africanus",
+        "Britannicus",
+        "Marcus Annius Libo",
+        "Rupilia",
+        "Iullus Antonius",
+        "Claudius",
+        "Caligula",
+        "Shepseskare"
+      ]
+    },
+    {
+      "idx": 557,
+      "qid": "e07a39e80bda11eba7f7acde48001122",
+      "gold": "Roman",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.4,
+        "output": "Lugdunum in Roman Gaul"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of origin"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.4,
+        "output": "Lugdunum in Roman Gaul",
+        "selected": "C2",
+        "verifier": {
+          "final_answer": "Lugdunum in Roman Gaul",
+          "selected": "C2",
+          "confidence": "high",
+          "reason": "The evidence in P9 states that Claudius, who is Clodia Pulchra's mother, was born at Lugdunum in Roman Gaul. This directly supports the candidate entity C2 as the place of birth of Clodia Pulchra's mother."
+        },
+        "latency_sec": 1.4758098125457764
+      },
+      "candidates": [
+        "Place of origin",
+        "Lugdunum in Roman Gaul",
+        "Place of birth",
+        "Agrippina the Younger",
+        "Julia the Elder",
+        "The Condemned",
+        "The General",
+        "The Child",
+        "The Will",
+        "Quintus Caecilius Metellus Celer",
+        "Claudius",
+        "Julius Caesar"
+      ]
+    },
+    {
+      "idx": 558,
+      "qid": "b61f7c280bdd11eba7f7acde48001122",
+      "gold": "Parkinson's disease",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "No information provided in the passages about Charis Wilson's husband's death."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Did a Good Man Die?"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Did a Good Man Die?",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "C2",
+          "confidence": "low",
+          "reason": "The passages do not provide any information about Charis Wilson's husband's death. The candidate 'Did a Good Man Die' is a film title, not related to Charis Wilson's husband."
+        },
+        "latency_sec": 1.0395550727844238
+      },
+      "candidates": [
+        "Did a Good Man Die",
+        "No information provided in the passages about Charis Wilson's husband's death",
+        "Benjamin Christensen",
+        "Model",
+        "The Rock",
+        "The Singer",
+        "The Light",
+        "Fadil Hadžić",
+        "The Good Man",
+        "Bruce M. Mitchell",
+        "Charis Wilson",
+        "Why Did It Have to Be Me"
+      ]
+    },
+    {
+      "idx": 559,
+      "qid": "147c6e160bde11eba7f7acde48001122",
+      "gold": "29 March 1807",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "18 July 1958"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The information provided does not contain Luke Dillon, 4th Baron Clonbrock's father's birthday."
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The information provided does not contain Luke Dillon, 4th Baron Clonbrock's father's birthday.",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence passages do not provide any information about Luke Dillon, 4th Baron Clonbrock's father's birthday."
+        },
+        "latency_sec": 0.8573131561279297
+      },
+      "candidates": [
+        "18 July 1958",
+        "John de Mowbray, 4th Baron Mowbray",
+        "House of Lords",
+        "John Kelly",
+        "Luke Dillon, 4th Baron Clonbrock",
+        "Robert Dillon, 1st Baron Clonbrock",
+        "Robert Dillon, 3rd Baron Clonbrock",
+        "Carol Fellowes, 4th Baron Ailwyn",
+        "Henry Ashton, 4th Baron Ashton of Hyde",
+        "Thomas Dillon, 4th Viscount Dillon",
+        "Henry Gamble's Birthday Party",
+        "Eleanor de Mowbray"
+      ]
+    },
+    {
+      "idx": 560,
+      "qid": "49637d220bd911eba7f7acde48001122",
+      "gold": "Chuck Stone",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4,
+        "output": "Charles Stone III"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4,
+        "output": "Charles Stone III"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.4,
+        "output": "Charles Stone III",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Charles Stone III",
+        "Lila & Eve",
+        "The Queen of the Night",
+        "The Feature",
+        "The Comic",
+        "Maurice FitzGerald, Lord of Lanstephan",
+        "The Will",
+        "Herbert Wilcox",
+        "Comedy",
+        "To Sleep with Anger",
+        "The Private Lives of Adam and Eve",
+        "Caldecot Chubb"
+      ]
+    },
+    {
+      "idx": 561,
+      "qid": "08bc79d60bde11eba7f7acde48001122",
+      "gold": "Wellington",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "New Zealand"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "New Zealand"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "New Zealand",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "New Zealand",
+        "The Hobbit: An Unexpected Journey",
+        "Where the Boys Are",
+        "The Feature",
+        "A Long Journey",
+        "In Search of",
+        "The Will",
+        "Guillermo del Toro",
+        "Peter Jackson",
+        "Ömer Kavur",
+        "Sylvester McCoy",
+        "Henry Levin (film director)"
+      ]
+    },
+    {
+      "idx": 562,
+      "qid": "57eba38e0bb011ebab90acde48001122",
+      "gold": "Frederick Louis",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Duke Peter August of Holstein-Beck"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Duke Peter August of Holstein-Beck"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Duke Peter August of Holstein-Beck",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Duke Peter August of Holstein-Beck",
+        "Princess Catherine of Schleswig-Holstein-Sonderburg-Beck",
+        "Princess Ortrud of Schleswig-Holstein-Sonderburg-Glücksburg",
+        "Friedrich, Duke of Schleswig-Holstein-Sonderburg-Glücksburg",
+        "Princess Adelheid of Schaumburg-Lippe",
+        "Margrethe II of Denmark",
+        "Charles, Prince of Wales",
+        "Princess Anna",
+        "The Child",
+        "An Event",
+        "Prince Karl Anton August of Schleswig-Holstein-Sonderburg-Beck",
+        "Karl Anton"
+      ]
+    },
+    {
+      "idx": 563,
+      "qid": "b7af3ede0bdd11eba7f7acde48001122",
+      "gold": "Washington and Lee University",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Passage P1 does not provide information about William Henry Fitzhugh Lee's father's workplace. There is no information available in the given passages about William Henry"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passages do not provide information about William Henry Fitzhugh Lee's father's workplace."
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The passages do not provide information about William Henry Fitzhugh Lee's father's workplace.",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence passages do not provide information about William Henry Fitzhugh Lee's father's workplace."
+        },
+        "latency_sec": 0.7636547088623047
+      },
+      "candidates": [
+        "Henry Fitzhugh",
+        "Benjamin Henry Latrobe",
+        "William Penn",
+        "William Parr, 1st Marquess of Northampton",
+        "William Russell",
+        "Peter Sellers",
+        "Kings",
+        "Rod Amateau",
+        "Comedy",
+        "William Henry Fitzhugh Lee",
+        "The General",
+        "Henry FitzHugh, 3rd Baron FitzHugh"
+      ]
+    },
+    {
+      "idx": 564,
+      "qid": "61b3b8820bda11eba7f7acde48001122",
+      "gold": "People's Artist of the RSFSR",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "No award mentioned in the passage."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Vladimir Vengerov"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Vladimir Vengerov",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence passages do not mention any award for the director of the film Baltic Skies."
+        },
+        "latency_sec": 0.6814522743225098
+      },
+      "candidates": [
+        "Vladimir Vengerov",
+        "No award mentioned in the passage",
+        "Baltic Skies",
+        "The One That Got Away",
+        "I Got the Blues",
+        "The Keys",
+        "The Singer",
+        "The Cause",
+        "The Dancer",
+        "The Dance",
+        "Ira Gershwin",
+        "The Keys of Skies"
+      ]
+    },
+    {
+      "idx": 565,
+      "qid": "218609020bdc11eba7f7acde48001122",
+      "gold": "British",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "English"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "English"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "English",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "English",
+        "The Beach (film)",
+        "What Women Want",
+        "The Goose Woman",
+        "Place of origin",
+        "The General",
+        "The Child",
+        "The Will",
+        "The First Day",
+        "The Mills",
+        "Danny Boyle",
+        "Lucky Numbers"
+      ]
+    },
+    {
+      "idx": 566,
+      "qid": "df99f4120bdc11eba7f7acde48001122",
+      "gold": "Munich Waldfriedhof",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "There is no information provided about the place of burial of the director of the film \"Tag Der Freiheit: Unsere Wehrmacht\". The passage"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Not specified"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Not specified",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence passages do not provide information about the place of burial of the director of the film 'Tag der Freiheit: Unsere Wehrmacht'. The only information given is about the film's director, Leni Riefenstahl, but not about her place of burial."
+        },
+        "latency_sec": 1.4324069023132324
+      },
+      "candidates": [
+        "Not specified",
+        "Tag der Freiheit: Unsere Wehrmacht",
+        "End of the world",
+        "The Mystic",
+        "Conrad Fredrik von der Lippe",
+        "Anton Barth von der Lippe",
+        "The Shooting",
+        "The Will",
+        "The General",
+        "Leni Riefenstahl",
+        "Our Crazy Nieces",
+        "Hans von der Mosel"
+      ]
+    },
+    {
+      "idx": 567,
+      "qid": "746a799c0bdb11eba7f7acde48001122",
+      "gold": "Spanish",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Spanish"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Spanish"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Spanish",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Spanish",
+        "Fúlmine",
+        "What Women Want",
+        "The Comic",
+        "Place of origin",
+        "The General",
+        "The Child",
+        "The Will",
+        "The First Day",
+        "Luis Bayón Herrera",
+        "Place of birth",
+        "What Women Want (2011 film)"
+      ]
+    },
+    {
+      "idx": 568,
+      "qid": "7b076cc40bdb11eba7f7acde48001122",
+      "gold": "Southampton",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "English"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "United Kingdom"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "United Kingdom",
+        "selected": "C1",
+        "verifier": {
+          "final_answer": "United Kingdom",
+          "selected": "C1",
+          "confidence": "high",
+          "reason": "The passage P1 states that 'When You Were My Girl' is a song by English recording artist Matt Cardle. Since English people are born in the United Kingdom, this is the most direct answer supported by the evidence."
+        },
+        "latency_sec": 1.1534264087677002
+      },
+      "candidates": [
+        "United Kingdom",
+        "English",
+        "When You Were My Girl",
+        "When You Were Sweet Sixteen",
+        "When You Were Mine",
+        "The Name of Love",
+        "When You're Gone",
+        "Where Are You",
+        "In the Name Of",
+        "The Will",
+        "Get That Girl",
+        "The Singer"
+      ]
+    },
+    {
+      "idx": 569,
+      "qid": "2eaa7d9c0bb011ebab90acde48001122",
+      "gold": "Constantius Chlorus",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Constantius Chlorus"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Constantius Chlorus"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Constantius Chlorus",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Constantius Chlorus",
+        "Daughter of Julius Constantius",
+        "Julius Constantius",
+        "Julius Caesar",
+        "Drusus Julius Caesar",
+        "Agrippina the Younger",
+        "Henry IV of France",
+        "The Child",
+        "Flavia Maximiana Theodora",
+        "Tiberius Claudius Nero (praetor 42 BC)",
+        "Nero Claudius Drusus",
+        "Basilina"
+      ]
+    },
+    {
+      "idx": 570,
+      "qid": "285016800bda11eba7f7acde48001122",
+      "gold": "Maureen O'Sullivan",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Maureen O'Sullivan"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Maureen O'Sullivan"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Maureen O'Sullivan",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Maureen O'Sullivan",
+        "The Unholy Wife",
+        "The Cell",
+        "David Lynch",
+        "John Farrow",
+        "Martha De Laurentiis",
+        "A Division",
+        "Story",
+        "20 Years",
+        "Unholy Love",
+        "Mary Sweeney"
+      ]
+    },
+    {
+      "idx": 571,
+      "qid": "252694580bde11eba7f7acde48001122",
+      "gold": "Luxembourg",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "c. 925–995"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of birth: The passage does not provide specific information about the place of birth of Gerard I, Count of Guelders's wife, Clementia of Aqu"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of birth: The passage does not provide specific information about the place of birth of Gerard I, Count of Guelders's wife, Clementia of Aqu",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence passages do not provide specific information about the place of birth of Gerard I, Count of Guelders's wife. The candidate entity graph contains a name 'Gerberga of Lorraine' associated with 'Megerz of Guelders', but there is no direct evidence linking her as the wife of Gerard I, Count of Guelders, and her place of birth is not mentioned."
+        },
+        "latency_sec": 1.8521625995635986
+      },
+      "candidates": [
+        "c. 925–995",
+        "Place of birth",
+        "Frederick I, Count Palatine of Simmern",
+        "William I, Count of Burgundy",
+        "Godfrey, Count Palatine of Lotharingia",
+        "Place of origin",
+        "Adolph I, Duke of Cleves",
+        "Gerberga of Lorraine",
+        "Clementia of Aquitaine",
+        "Catherine of Cleves",
+        "The General",
+        "The Child"
+      ]
+    },
+    {
+      "idx": 572,
+      "qid": "02428f7e0bb011ebab90acde48001122",
+      "gold": "Cecile of France",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575,
+        "output": "Gersenda II of Sabran"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "Eleanor of Aquitaine"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575,
+        "output": "Gersenda II of Sabran",
+        "selected": "C2",
+        "verifier": {
+          "final_answer": "Gersenda II of Sabran",
+          "selected": "C2",
+          "confidence": "high",
+          "reason": "Bertrand, Count of Toulouse is connected to Helie of Burgundy and Helie of Burgundy is connected to Sibylla of Burgundy in the candidate entity graph. Although Sibylla of Burgundy is not directly linked to Bertrand, Count of Toulouse in the passages, the graph indicates a relationship, and among the provided candidates, Gersenda II of Sabran is the only one who has a direct connection to Bertrand, Count of Toulouse through Forcalquier lineage."
+        },
+        "latency_sec": 2.3090009689331055
+      },
+      "candidates": [
+        "Eleanor of Aquitaine",
+        "Gersenda II of Sabran",
+        "Alfonso II, Count of Provence",
+        "Ramon Berenguer IV, Count of Barcelona",
+        "Sibylla of Burgundy",
+        "Alfonso VII of León and Castile",
+        "Alfonso VI of León and Castile",
+        "The Child",
+        "The Descendants",
+        "Almodis de la Marche",
+        "Them",
+        "Bertrand, Count of Toulouse"
+      ]
+    },
+    {
+      "idx": 573,
+      "qid": "21ec1e0e0baf11ebab90acde48001122",
+      "gold": "Henrietta Maria of France",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Melusina von der Schulenburg"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Queen Victoria"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Queen Victoria",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide information about Charlotte Lee, Countess of Lichfield's paternal grandmother."
+        },
+        "latency_sec": 0.8960340023040771
+      },
+      "candidates": [
+        "Queen Victoria",
+        "Melusina von der Schulenburg",
+        "Melusina von der Schulenburg, Countess of Walsingham",
+        "Beatrix of the Netherlands",
+        "Robert Bertie, 3rd Earl of Lindsey",
+        "Charlotte de La Trémoille",
+        "Henri, Grand Duke of Luxembourg",
+        "Charles II of England",
+        "Britannicus",
+        "Agrippina the Younger",
+        "Claudia Antonia",
+        "Charlotte Lee, Countess of Lichfield"
+      ]
+    },
+    {
+      "idx": 574,
+      "qid": "8dc985120bdc11eba7f7acde48001122",
+      "gold": "Kaster",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Düsseldorf"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Düsseldorf"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Düsseldorf",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Düsseldorf",
+        "William, Duke of Jülich-Cleves-Berg",
+        "William VII of Jülich, 1st Duke of Berg",
+        "Adolf IX of Berg",
+        "William VIII of Jülich, Count of Ravensberg",
+        "Antonia of Lorraine",
+        "John III, Duke of Cleves",
+        "Albert Frederick, Duke of Prussia",
+        "Sibylle of Brandenburg",
+        "John William, Duke of Jülich-Cleves-Berg",
+        "Jakobea of Baden",
+        "Maria of Jülich-Berg"
+      ]
+    },
+    {
+      "idx": 575,
+      "qid": "a94f39220bdb11eba7f7acde48001122",
+      "gold": "Aldeburgh",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "University College Hospital"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Die Mutter"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Die Mutter",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The passages and evidence do not provide information about where Louisa Garrett Anderson's mother died."
+        },
+        "latency_sec": 0.6895909309387207
+      },
+      "candidates": [
+        "Die Mutter",
+        "University College Hospital",
+        "Benjamin Christensen",
+        "Part",
+        "Fadil Hadžić",
+        "The Good Man",
+        "Carl Boese",
+        "The Dead",
+        "Louisa Garrett Anderson",
+        "Elizabeth Garrett Anderson and Obstetric Hospital",
+        "Elizabeth Garrett Anderson",
+        "Janet Aitken"
+      ]
+    },
+    {
+      "idx": 576,
+      "qid": "29bd8c0c0bb011ebab90acde48001122",
+      "gold": "Robert de Ferrers, 2nd Earl of Derby",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.7142857142857143,
+        "output": "William de Ferrers, 3rd Earl of Derby"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Robert de Ferrers, 2nd Earl of Derby"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Robert de Ferrers, 2nd Earl of Derby",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence passages and candidate entity graph do not provide information about the paternal grandfather of William de Ferrers, 4th Earl of Derby. The graph connects William de Ferrers, 4th Earl of Derby to William de Ferrers, 3rd Earl of Derby, but it does not specify the relationship in terms of grandfather."
+        },
+        "latency_sec": 1.5713145732879639
+      },
+      "candidates": [
+        "Robert de Ferrers, 2nd Earl of Derby",
+        "William de Ferrers, 3rd Earl of Derby",
+        "William de Ferrers, 4th Earl of Derby",
+        "Robert de Ferrers, 2nd Baron Ferrers of Chartley",
+        "Humphrey de Bohun, 2nd Earl of Hereford",
+        "Ralph Stafford, 1st Earl of Stafford",
+        "The Head of the Family",
+        "Eleanor de Braose",
+        "Bertha of Hereford",
+        "Sir Thomas Green",
+        "Part",
+        "John de Ferrers, 1st Baron Ferrers of Chartley"
+      ]
+    },
+    {
+      "idx": 577,
+      "qid": "ee3233920bda11eba7f7acde48001122",
+      "gold": "1397",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1433"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1433"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1433",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "1433",
+        "Francesco I Crispo",
+        "Francesca Morosini",
+        "Petronilla Bembo",
+        "The Will",
+        "William II Crispo",
+        "Francesco II Crispo",
+        "Giacomo II Crispo",
+        "John II Crispo",
+        "Giacomo III Crispo",
+        "Giacomo Crispo, Governor of the Duchy of the Archipelago",
+        "Nicholas Crispo, Lord of Syros"
+      ]
+    },
+    {
+      "idx": 578,
+      "qid": "42a2068a0bdd11eba7f7acde48001122",
+      "gold": "Macau",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Clara Law"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of birth"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Place of birth",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide the place of birth of Clara Law, the director of Temptation of a Monk. The passages discuss the place of birth in general terms but do not specify the place of birth for Clara Law."
+        },
+        "latency_sec": 1.1599106788635254
+      },
+      "candidates": [
+        "Place of birth",
+        "Clara Law",
+        "Temptation of a Monk",
+        "Night of the Living Dead",
+        "End of the world",
+        "What Women Want",
+        "The Feature",
+        "The Intended",
+        "The General",
+        "The Child",
+        "The Will",
+        "Joan Chen"
+      ]
+    },
+    {
+      "idx": 579,
+      "qid": "3f2eb0120baf11ebab90acde48001122",
+      "gold": "Henry Beaufort",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "William Herbert, 2nd Earl of Pembroke"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Charles Somerset, 1st Earl of Worcester"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Charles Somerset, 1st Earl of Worcester",
+        "selected": "C1|C2|UNKNOWN",
+        "verifier": {
+          "final_answer": "Charles Somerset, 1st Earl of Worcester",
+          "selected": "C1|C2|UNKNOWN",
+          "confidence": "high",
+          "reason": "Elizabeth Somerset, Baroness Herbert inherited extensive lands in Wales and was made a ward of King Henry VII of England. She married Charles Somerset, 1st Earl of Worcester, who is directly linked as her father in the candidate entity graph."
+        },
+        "latency_sec": 1.5181448459625244
+      },
+      "candidates": [
+        "Charles Somerset, 1st Earl of Worcester",
+        "William Herbert, 2nd Earl of Pembroke",
+        "Elizabeth Somerset, Baroness Herbert",
+        "Beatrix of the Netherlands",
+        "Elizabeth of York",
+        "Edmund Beaufort, 2nd Duke of Somerset",
+        "William Seymour, 2nd Duke of Somerset",
+        "Elizabeth Woodville",
+        "Henry Cavendish, 2nd Duke of Newcastle",
+        "Mary Woodville",
+        "Henry Somerset, 2nd Earl of Worcester",
+        "Anne Devereux"
+      ]
+    },
+    {
+      "idx": 580,
+      "qid": "c5d56fe60bd911eba7f7acde48001122",
+      "gold": "15 August 1876",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "15 August 1876"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "15 August 1876"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "15 August 1876",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "15 August 1876",
+        "Isabel Marshal",
+        "Lancelot Lowther, 6th Earl of Lonsdale",
+        "James Lowther, 1st Earl of Lonsdale",
+        "James Lowther, 7th Earl of Lonsdale",
+        "Hugh Lowther, 5th Earl of Lonsdale",
+        "William Lowther, 1st Earl of Lonsdale",
+        "Henry Lowther, 3rd Earl of Lonsdale",
+        "Richard de Clare, 6th Earl of Gloucester"
+      ]
+    },
+    {
+      "idx": 581,
+      "qid": "c811e4200bdd11eba7f7acde48001122",
+      "gold": "Kyrgyzstan",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The place of birth of the director of film Centaur (2016 Film) is not mentioned in the provided passages."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Aktan Abdykalykov"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Aktan Abdykalykov",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 2.239041805267334
+      },
+      "candidates": [
+        "Aktan Abdykalykov",
+        "Centaur (2016 film)",
+        "Place of birth",
+        "Night of the Living Dead",
+        "What Women Want",
+        "The Feature",
+        "Queen of spades",
+        "The Mess",
+        "The General",
+        "The Child",
+        "Place of origin",
+        "The Will"
+      ]
+    },
+    {
+      "idx": 582,
+      "qid": "e5354de60bdb11eba7f7acde48001122",
+      "gold": "American",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Irish"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Irish"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Irish",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Irish",
+        "War of the Buttons (1994 film)",
+        "The Adventures of Priscilla, Queen of the Desert",
+        "Place of origin",
+        "The Light",
+        "The General",
+        "The Child",
+        "The Will",
+        "Bogdan Žižić",
+        "Comedy",
+        "John Roberts",
+        "Story"
+      ]
+    },
+    {
+      "idx": 583,
+      "qid": "a4f54a640baf11ebab90acde48001122",
+      "gold": "Ferdinand I",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575,
+        "output": "King John I of Portugal"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.3333333333333333,
+        "output": "John I of Portugal"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.28571428571428575,
+        "output": "King John I of Portugal",
+        "selected": "UNKNOWN",
+        "verifier": {
+          "final_answer": "King John I of Portugal",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not directly support any of the given candidates as Ferdinand's maternal grandfather. The passages mention that Ferdinand was the third son of Edward, King of Portugal, but do not provide information about his maternal grandparents."
+        },
+        "latency_sec": 1.205404281616211
+      },
+      "candidates": [
+        "John I of Portugal",
+        "King John I of Portugal",
+        "Beatriz, Duchess of Viseu",
+        "Fernando II, Duke of Braganza",
+        "James Butler, 1st Duke of Ormond",
+        "The Week Of",
+        "Jan I of Żagań",
+        "Balthasar, Landgrave of Thuringia",
+        "The Child",
+        "Master",
+        "Ferdinand, Duke of Viseu",
+        "Diogo, Duke of Viseu"
+      ]
+    },
+    {
+      "idx": 584,
+      "qid": "3a47b9960bdb11eba7f7acde48001122",
+      "gold": "Père Lachaise Cemetery",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Père Lachaise Cemetery"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Père Lachaise Cemetery"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Père Lachaise Cemetery",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Père Lachaise Cemetery",
+        "Fear and Trembling (film)",
+        "The Blood of Fu Manchu",
+        "Circus of Fear",
+        "The Vengeance of Fu Manchu",
+        "The Castle of Fu Manchu",
+        "The Mystic",
+        "The Feature",
+        "The Dead",
+        "Stanley Kubrick",
+        "Alain Corneau",
+        "Book of Burial"
+      ]
+    },
+    {
+      "idx": 585,
+      "qid": "4b443b0e0bde11eba7f7acde48001122",
+      "gold": "Hiroshima",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The place of birth of the director of film The Naked Island is not provided in the given passages."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Dunbar Island"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Dunbar Island",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence passages do not provide information about the director of the film The Naked Island or their place of birth."
+        },
+        "latency_sec": 0.7307240962982178
+      },
+      "candidates": [
+        "Dunbar Island",
+        "Place of birth",
+        "The Naked Island",
+        "Severny Island",
+        "The General",
+        "The Child",
+        "The Will",
+        "Russell Island",
+        "@Home",
+        "Point",
+        "Place of origin",
+        "Motherland (disambiguation)"
+      ]
+    },
+    {
+      "idx": 586,
+      "qid": "5569eb4e0baf11ebab90acde48001122",
+      "gold": "Marie d'Agoult",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question does not provide any information about Eva Chamberlain or her maternal grandmother. Therefore, the answer cannot be determined from the given passages."
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Cosima Wagner"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Antonia Minor",
+        "selected": "C1|C3",
+        "verifier": {
+          "final_answer": "Antonia Minor",
+          "selected": "C1|C3",
+          "confidence": "medium",
+          "reason": "Eva Chamberlain is connected to Cosima Wagner in the candidate entity graph, and P1 indicates that Cosima Wagner was the illegitimate daughter of Franz Liszt and Marie d'Agoult. However, the graph does not directly link Eva Chamberlain to any of the candidates. Given the information, we can infer that Eva Chamberlain's maternal grandmother is Antonia Minor, as she is linked to Cosima Wagner through Eva Chamberlain -> Cosima Wagner -> Marie d'Agoult -> Antonia Minor."
+        },
+        "latency_sec": 2.304116725921631
+      },
+      "candidates": [
+        "Cosima Wagner",
+        "Britannicus",
+        "Claudius",
+        "Caligula",
+        "Nero",
+        "An Event",
+        "Agrippina the Younger",
+        "Claudia Antonia",
+        "Tiberius",
+        "Julia Livia",
+        "Eva Chamberlain",
+        "Eva Dick"
+      ]
+    },
+    {
+      "idx": 587,
+      "qid": "67aaa1940bdd11eba7f7acde48001122",
+      "gold": "United Kingdom",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Future Medicine"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "British"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "British",
+        "selected": "C1",
+        "verifier": {
+          "final_answer": "British",
+          "selected": "C1",
+          "confidence": "medium",
+          "reason": "The evidence passage P1 states that Personalized Medicine is published by Future Medicine, and C1 'British' is not directly supported by the evidence. However, given the context and the fact that Future Medicine is not explicitly linked to any nationality in the provided evidence, and considering the company's name, it is reasonable to infer that Future Medicine is a British company. Therefore, the answer is British, but the confidence is medium due to the lack of direct evidence."
+        },
+        "latency_sec": 1.9423162937164307
+      },
+      "candidates": [
+        "British",
+        "Future Medicine",
+        "Personalized Medicine (journal)",
+        "The Art Journal",
+        "The General",
+        "George Mason",
+        "Springer Nature",
+        "Palgrave Macmillan",
+        "Paula",
+        "@Home",
+        "Lafayette",
+        "The Journal of General Psychology"
+      ]
+    },
+    {
+      "idx": 588,
+      "qid": "e50c35fa0bdb11eba7f7acde48001122",
+      "gold": "Salsomaggiore Terme",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Salsomaggiore Terme"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Salsomaggiore Terme"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Salsomaggiore Terme",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Salsomaggiore Terme",
+        "Suicide Commandos (film)",
+        "End of the world",
+        "The Intended",
+        "The General",
+        "When Do You Commit Suicide",
+        "The Will",
+        "The Favorite",
+        "Camillo Bazzoni",
+        "Manuel Romero",
+        "Roman Polanski",
+        "The Secret of Mayerling"
+      ]
+    },
+    {
+      "idx": 589,
+      "qid": "0a9f880a0bda11eba7f7acde48001122",
+      "gold": "Jean Harlow",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Olive Borden"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Adelaide Heilbron"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Olive Borden",
+        "selected": "UNKNOWN",
+        "verifier": {
+          "final_answer": "Olive Borden",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not directly state that Olive Borden was the spouse of the director of the film The Dressmaker From Paris. The passage mentions Olive Borden as having a small role in the film, but does not provide information about her marital status or relationship with the director."
+        },
+        "latency_sec": 1.3778820037841797
+      },
+      "candidates": [
+        "Adelaide Heilbron",
+        "Olive Borden",
+        "The Dressmaker from Paris",
+        "Howard Hawks",
+        "Paul Bern",
+        "David Lynch",
+        "Afterwards",
+        "Martha De Laurentiis",
+        "A Division",
+        "Story",
+        "20 Years",
+        "The Dressmaker (1988 film)"
+      ]
+    },
+    {
+      "idx": 590,
+      "qid": "cd59a6660bdd11eba7f7acde48001122",
+      "gold": "England",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The question does not match any of the provided passages. Waleran De Beaumont, 1st Earl of Worcester is not mentioned in any of the passages"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Normandy"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "Normandy",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The provided passages and candidate entity graph do not contain any information about the origin of Waleran de Beaumont, 1st Earl of Worcester's father."
+        },
+        "latency_sec": 1.0250675678253174
+      },
+      "candidates": [
+        "Normandy",
+        "Robert de Beaumont, 1st Earl of Leicester",
+        "Roger de Beaumont, 2nd Earl of Warwick",
+        "Robert de Beaumont, 2nd Earl of Leicester",
+        "Charles Somerset, 1st Earl of Worcester",
+        "William de Warenne, 2nd Earl of Surrey",
+        "Henry I of England",
+        "John, King of England",
+        "Waleran de Beaumont, 1st Earl of Worcester",
+        "Robert de Neubourg",
+        "Henry de Beaumont, 1st Earl of Warwick",
+        "The Holding"
+      ]
+    },
+    {
+      "idx": 591,
+      "qid": "1732aeb80bde11eba7f7acde48001122",
+      "gold": "New York",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8,
+        "output": "New York City"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8,
+        "output": "New York City"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.8,
+        "output": "New York City",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "New York City",
+        "Serial Killer (song)",
+        "Where Was I",
+        "The Singer",
+        "Where Are You",
+        "Lana Del Rey",
+        "Alex P",
+        "Occidentali's Karma",
+        "Part",
+        "Profile of a Serial Killer",
+        "Where Was I (song)",
+        "Eddie Noack"
+      ]
+    },
+    {
+      "idx": 592,
+      "qid": "fbc3b82c0bae11ebab90acde48001122",
+      "gold": "Philip III of France",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Philip III of France"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Philip III of France"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Philip III of France",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Philip III of France",
+        "Isabella of Valois",
+        "Baldwin II, Count of Hainaut",
+        "Charles, Count of Valois",
+        "Charles II of Navarre",
+        "Philippa of Hainault",
+        "Charles, Duke of Orléans",
+        "Baldwin VI, Count of Flanders",
+        "William V, Duke of Jülich",
+        "Joan of Valois, Countess of Hainaut",
+        "Margaret, Countess of Anjou",
+        "Them"
+      ]
+    },
+    {
+      "idx": 593,
+      "qid": "6a76a6b60bb011ebab90acde48001122",
+      "gold": "William, Duke of Nassau",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "William, Duke of Nassau"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.18181818181818182,
+        "output": "George I, Prince of Waldeck and Pyrmont"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.18181818181818182,
+        "output": "George I, Prince of Waldeck and Pyrmont",
+        "selected": "PATH_FALLBACK",
+        "verifier": {
+          "final_answer": "UNKNOWN",
+          "selected": "UNKNOWN",
+          "confidence": "low",
+          "reason": "The provided passages and candidate entity graph do not contain any information about Princess Marie of Waldeck and Pyrmont's maternal grandfather."
+        },
+        "latency_sec": 0.8994064331054688
+      },
+      "candidates": [
+        "George I, Prince of Waldeck and Pyrmont",
+        "William, Duke of Nassau",
+        "George Victor, Prince of Waldeck and Pyrmont",
+        "Princess Helena of Nassau",
+        "Nikolaus, Hereditary Grand Duke of Oldenburg",
+        "Adolphe, Grand Duke of Luxembourg",
+        "William, Prince of Wied",
+        "Guda",
+        "Princess Marie of Waldeck and Pyrmont",
+        "Princess Guda of Waldeck and Pyrmont",
+        "Princess Helena of Waldeck and Pyrmont (1899–1948)",
+        "Princess Helena of Waldeck and Pyrmont"
+      ]
+    },
+    {
+      "idx": 594,
+      "qid": "c9e655000bd911eba7f7acde48001122",
+      "gold": "23 January 1862",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "2 April 1841"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1736"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1736",
+        "selected": "C1|UNKNOWN",
+        "verifier": {
+          "final_answer": "1736",
+          "selected": "C1|UNKNOWN",
+          "confidence": "low",
+          "reason": "The evidence does not provide a direct date of death for Gustav von Leonhard's father. The only information about a Gustav von Leonhard is that he is associated with Karl von Habsburg, but no date of death is mentioned for his father. The date 1736 is provided for Hans Reinhold von Fersen, but there is no evidence linking him to Gustav von Leonhard's father."
+        },
+        "latency_sec": 1.9714007377624512
+      },
+      "candidates": [
+        "1736",
+        "2 April 1841",
+        "Gustav von Rauch",
+        "Karl von Habsburg",
+        "Johann Wolfgang von Goethe",
+        "Fedor von Rauch",
+        "Ulla von Höpken",
+        "Hans Reinhold von Fersen",
+        "St. Mary's Cathedral",
+        "Bonaventura von Rauch",
+        "The General",
+        "Abraham"
+      ]
+    },
+    {
+      "idx": 595,
+      "qid": "972eef2a0bdc11eba7f7acde48001122",
+      "gold": "Ozzy",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "Ozzy Osbourne"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "Ozzy Osbourne"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 1.0,
+        "f1": 0.6666666666666666,
+        "output": "Ozzy Osbourne",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Ozzy Osbourne",
+        "Come Dig Me Out",
+        "Come with Me",
+        "The Rock",
+        "The Singer",
+        "The Dance",
+        "Pete Townshend",
+        "Kelly Osbourne",
+        "Captured",
+        "William Beaudine",
+        "Point",
+        "Dig Me Out"
+      ]
+    },
+    {
+      "idx": 596,
+      "qid": "7683f0f20bde11eba7f7acde48001122",
+      "gold": "Hungarian",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Hungarian"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Hungarian"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Hungarian",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Hungarian",
+        "Comedy",
+        "Nikolaus, Count Esterházy",
+        "Lloyd Ingraham",
+        "Six Years",
+        "Michał Waszyński",
+        "What's Your Husband Doing",
+        "Krisztina Nyáry",
+        "What I Deserve",
+        "Iraqi nationality law",
+        "Japanese nationality law",
+        "Erzsébet Thurzó"
+      ]
+    },
+    {
+      "idx": 597,
+      "qid": "a8f3ff980bdc11eba7f7acde48001122",
+      "gold": "Tiflis",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Tiflis"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Tiflis"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Tiflis",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Tiflis",
+        "Place of origin",
+        "The Mystic",
+        "The Child",
+        "The General",
+        "The Will",
+        "Kato Svanidze",
+        "Abraham",
+        "@Home",
+        "Offer",
+        "Yakov Dzhugashvili",
+        "Yulia Meltzer"
+      ]
+    },
+    {
+      "idx": 598,
+      "qid": "e88629000bdd11eba7f7acde48001122",
+      "gold": "6 September 1868",
+      "disagree": true,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "The information provided does not contain any details about Alexander Baring, 4th Baron Ashburton or his father's date of death. Therefore, the answer"
+      },
+      "path_prompt": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1413"
+      },
+      "rerank": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": "1413",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 2.3329992294311523
+      },
+      "candidates": [
+        "1413",
+        "Edmund de Ferrers, 5th Baron Ferrers of Chartley",
+        "John de Ferrers, 3rd Baron Ferrers of Chartley",
+        "John Manners, 4th Earl of Rutland",
+        "Charles Calvert, 3rd Baron Baltimore",
+        "Charles Calvert, 5th Baron Baltimore",
+        "Walter Stewart, 3rd High Steward of Scotland",
+        "Gille Críst, Earl of Angus",
+        "House of Lords",
+        "The Child",
+        "Afterwards",
+        "Alexander Baring, 4th Baron Ashburton"
+      ]
+    },
+    {
+      "idx": 599,
+      "qid": "fa3d4e360bdc11eba7f7acde48001122",
+      "gold": "Rome",
+      "disagree": false,
+      "bge_ref": {
+        "em": 0.0,
+        "contains": 0.0,
+        "f1": 0.0,
+        "output": ""
+      },
+      "strong": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Rome"
+      },
+      "path_prompt": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Rome"
+      },
+      "rerank": {
+        "em": 1.0,
+        "contains": 1.0,
+        "f1": 1.0,
+        "output": "Rome",
+        "selected": "PATH_FALLBACK",
+        "verifier": {},
+        "latency_sec": 0.0
+      },
+      "candidates": [
+        "Rome",
+        "Hospitals: The White Mafia",
+        "The Comic",
+        "Rudolf Meinert",
+        "Robert Lamoureux",
+        "Benjamin Christensen",
+        "Arthur Lubin",
+        "Comedy",
+        "Julius Caesar",
+        "Luigi Zampa",
+        "The White Roses of Ravensberg (1929 film)",
+        "Now Where Did the 7th Company Get to"
+      ]
+    }
+  ]
+}

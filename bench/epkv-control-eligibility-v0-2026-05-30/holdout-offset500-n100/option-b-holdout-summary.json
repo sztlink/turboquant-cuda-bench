@@ -1,0 +1,86 @@
+{
+  "schema": "epkv.control_eligibility_option_b_shadow_summary.v0",
+  "run_id": "epkv-control-eligibility-option-b-holdout-offset500-n100-2026-05-30",
+  "exploratory_after_day2": true,
+  "detector_is_shadow_only": true,
+  "true_logits_or_probability_entropy_available": false,
+  "proxy_signals_used": [
+    "selection_entropy_proxy",
+    "answerer_agreement_entropy",
+    "surface_embedding_similarity_char_trigram",
+    "path_uncertainty_score",
+    "direct_evidence_score",
+    "specificity_direction",
+    "candidate_variant_evidence"
+  ],
+  "total": 100,
+  "counts": {
+    "eligible": 1,
+    "not_eligible": 99,
+    "by_lane": {
+      "abstain_or_no_claim": 99,
+      "low_selection_entropy_rescue": 1
+    },
+    "eligible_by_lane": {
+      "low_selection_entropy_rescue": 1
+    },
+    "by_guard": {
+      "semantic_replacement_of_concrete_path": 89,
+      "specificity_expansion_or_containment_not_allowed": 89,
+      "selected_unknown": 37,
+      "answer_type_mismatch": 8,
+      "path_uncertain_but_selection_dispersion_high": 7,
+      "unsupported_inference_risk": 4
+    }
+  },
+  "posthoc_eval": {
+    "eligible_outcome_em_counts": {
+      "tie": 1
+    },
+    "eligible_em_wins": [],
+    "eligible_em_losses": [],
+    "eligible_em_ties": [
+      557
+    ],
+    "eligible_primary_path_status_counts": {
+      "path_schema_miss_answer_present_elsewhere": 1
+    },
+    "eligible_target_relevant_count": 0,
+    "eligible_retrieval_path_limited_count": 1,
+    "eligible_path_solved_count": 0,
+    "baseline_control_relevant_rate_all_rows": 0.21,
+    "eligible_control_relevant_rate": 0,
+    "projected_global_em_diff_if_shadow_policy_used": 0,
+    "projected_global_f1_diff_if_shadow_policy_used": 0.004,
+    "projected_eligible_slice_em_diff_mean": 0,
+    "projected_eligible_slice_f1_diff_mean": 0.4
+  },
+  "bootstrap": {
+    "option_b_shadow_vs_path_em_diff": {
+      "reps": 5000,
+      "seed": 20260530,
+      "mean": 0,
+      "ci95": [
+        0,
+        0
+      ]
+    }
+  },
+  "exploratory_criteria": {
+    "continue_to_fresh_holdout_shadow": {
+      "eligible_count_at_least_5": false,
+      "no_em_losses": true,
+      "em_wins_at_least_3": false,
+      "not_dominated_by_retrieval_path_limited": false,
+      "bootstrap_lower_bound_nonnegative": true,
+      "target_concentration_above_baseline": false,
+      "pass": false
+    },
+    "promote_to_override_now": {
+      "pass": false,
+      "reason": "Forbidden by spec. Option B is exploratory and must be validated on fresh holdout first."
+    }
+  },
+  "decision": "stop_option_b_or_redesign_again_not_recommended",
+  "caveat": "This is an exploratory after-Day-2 detector. It cannot authorize an override policy without fresh holdout validation."
+}

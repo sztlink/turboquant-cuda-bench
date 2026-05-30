@@ -1,0 +1,81 @@
+{
+  "schema": "epkv.control_eligibility.n500_autopsy.v0",
+  "source": {
+    "llm_summary": "bench/epkv-control-eligibility-v0-2026-05-30/holdout-offset500-n100/entity-hop-llm/summary.json",
+    "gated_summary": "bench/epkv-control-eligibility-v0-2026-05-30/holdout-offset500-n100/entity-hop-answer-rerank/summary.json"
+  },
+  "total": 100,
+  "path_prompt": {
+    "em_successes": 21,
+    "em_failures": 79,
+    "em": 0.21,
+    "contains": 0.27,
+    "f1": 0.2945252525252525
+  },
+  "primary_path_status_counts": {
+    "retrieval_answer_absent": 28,
+    "partial_path_schema_or_support_miss": 26,
+    "solved_by_path_prompt": 21,
+    "evidence_present_not_closed": 13,
+    "answer_extraction_or_scoring_artifact": 6,
+    "model_refusal_or_unknown": 4,
+    "path_schema_miss_answer_present_elsewhere": 2
+  },
+  "failure_primary_status_counts": {
+    "retrieval_answer_absent": 28,
+    "partial_path_schema_or_support_miss": 26,
+    "evidence_present_not_closed": 13,
+    "answer_extraction_or_scoring_artifact": 6,
+    "model_refusal_or_unknown": 4,
+    "path_schema_miss_answer_present_elsewhere": 2
+  },
+  "failure_question_type_counts": {
+    "where": 27,
+    "who": 24,
+    "what": 18,
+    "which": 5,
+    "when": 4,
+    "other": 1
+  },
+  "signal_counts": {
+    "failures_answer_string_present": 49,
+    "failures_answer_string_absent": 30,
+    "failures_full_support_recall": 17,
+    "failures_partial_support_title_recall": 47,
+    "failures_no_support_title_recall": 15,
+    "failures_candidate_has_gold": 17,
+    "failures_model_refusal_like": 5,
+    "failures_strong_solved_path_failed": 2
+  },
+  "retrieval_means": {
+    "all_support_title_recall": 0.5599999999999999,
+    "all_full_support_recall": 0.24,
+    "failures_support_title_recall": 0.5126582278481012,
+    "failures_full_support_recall": 0.21518987341772153,
+    "successes_support_title_recall": 0.7380952380952379,
+    "successes_full_support_recall": 0.3333333333333333
+  },
+  "gated_control": {
+    "rule_counts": {
+      "rerank_as_comparison": 100
+    },
+    "overrides": 0,
+    "em_wins": 2,
+    "em_losses": 2,
+    "em_ties": 96,
+    "override_outcomes": {},
+    "win_indices": [
+      549,
+      553
+    ],
+    "loss_indices": [
+      532,
+      547
+    ]
+  },
+  "day1_gate": {
+    "retrieval_or_path_limited_failures": 56,
+    "potentially_control_relevant_failures": 21,
+    "note": "Heuristic machine-only split. Gold is used for autopsy labels, not for a deployable detector."
+  }
+}

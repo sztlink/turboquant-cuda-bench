@@ -1,0 +1,106 @@
+{
+  "schema": "epkv.control_eligibility_option_b_shadow_summary.v0",
+  "run_id": "epkv-control-eligibility-option-b-shadow-2026-05-30",
+  "exploratory_after_day2": true,
+  "detector_is_shadow_only": true,
+  "true_logits_or_probability_entropy_available": false,
+  "proxy_signals_used": [
+    "selection_entropy_proxy",
+    "answerer_agreement_entropy",
+    "surface_embedding_similarity_char_trigram",
+    "path_uncertainty_score",
+    "direct_evidence_score",
+    "specificity_direction",
+    "candidate_variant_evidence"
+  ],
+  "total": 500,
+  "counts": {
+    "eligible": 8,
+    "not_eligible": 492,
+    "by_lane": {
+      "abstain_or_no_claim": 492,
+      "compressed_span_repair": 3,
+      "low_selection_entropy_rescue": 3,
+      "alias_embedding_repair": 1,
+      "date_specificity_repair": 1
+    },
+    "eligible_by_lane": {
+      "compressed_span_repair": 3,
+      "low_selection_entropy_rescue": 3,
+      "alias_embedding_repair": 1,
+      "date_specificity_repair": 1
+    },
+    "by_guard": {
+      "specificity_expansion_or_containment_not_allowed": 456,
+      "semantic_replacement_of_concrete_path": 434,
+      "selected_unknown": 142,
+      "path_uncertain_but_selection_dispersion_high": 33,
+      "answer_type_mismatch": 28,
+      "relation_depth_confusion_risk": 23,
+      "unsupported_inference_risk": 13,
+      "attribute_owner_as_attribute_risk": 1
+    }
+  },
+  "posthoc_eval": {
+    "eligible_outcome_em_counts": {
+      "win": 5,
+      "tie": 3
+    },
+    "eligible_em_wins": [
+      102,
+      135,
+      183,
+      204,
+      219
+    ],
+    "eligible_em_losses": [],
+    "eligible_em_ties": [
+      128,
+      415,
+      418
+    ],
+    "eligible_primary_path_status_counts": {
+      "answer_extraction_or_scoring_artifact": 3,
+      "evidence_present_not_closed": 2,
+      "model_refusal_or_unknown": 2,
+      "retrieval_answer_absent": 1
+    },
+    "eligible_target_relevant_count": 7,
+    "eligible_retrieval_path_limited_count": 1,
+    "eligible_path_solved_count": 0,
+    "baseline_control_relevant_rate_all_rows": 0.374,
+    "eligible_control_relevant_rate": 0.875,
+    "projected_global_em_diff_if_shadow_policy_used": 0.01,
+    "projected_global_f1_diff_if_shadow_policy_used": 0.0046993006993007,
+    "projected_eligible_slice_em_diff_mean": 0.625,
+    "projected_eligible_slice_f1_diff_mean": 0.29370629370629375
+  },
+  "bootstrap": {
+    "option_b_shadow_vs_path_em_diff": {
+      "reps": 5000,
+      "seed": 20260530,
+      "mean": 0.01,
+      "ci95": [
+        0.002,
+        0.02
+      ]
+    }
+  },
+  "exploratory_criteria": {
+    "continue_to_fresh_holdout_shadow": {
+      "eligible_count_at_least_5": true,
+      "no_em_losses": true,
+      "em_wins_at_least_3": true,
+      "not_dominated_by_retrieval_path_limited": true,
+      "bootstrap_lower_bound_nonnegative": true,
+      "target_concentration_above_baseline": true,
+      "pass": true
+    },
+    "promote_to_override_now": {
+      "pass": false,
+      "reason": "Forbidden by spec. Option B is exploratory and must be validated on fresh holdout first."
+    }
+  },
+  "decision": "freeze_option_b_for_fresh_holdout_shadow_only",
+  "caveat": "This is an exploratory after-Day-2 detector. It cannot authorize an override policy without fresh holdout validation."
+}
