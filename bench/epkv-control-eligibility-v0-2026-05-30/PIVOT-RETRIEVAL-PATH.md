@@ -44,10 +44,35 @@ Name:
 Entity-Hop Path Construction v1
 ```
 
+Operational plan:
+
+```txt
+bench/realrag-path-construction-v1-2026-05-30/PLAN.md
+```
+
 Question:
 
 ```txt
 Can we improve path_prompt EM/F1 by changing retrieved evidence geometry and path/schema construction before the answer is generated?
+```
+
+Primary splits:
+
+| split | offset | n | purpose |
+|---|---:|---:|---|
+| inspect-a | 0 | 100 | rapid iteration against known historical slice |
+| inspect-b | 500 | 100 | known holdout from gated-control closure |
+| fresh-a | 1000 | 100 | first fresh validation if available |
+| scaled | 0 | 500 | only after a held-out win is observed |
+
+Primary baselines:
+
+```txt
+bge_ref
+entity_hop_strong
+entity_hop_path_prompt
+raw_answer_rerank as diagnostic only
+oracle support-present / compact evidence as upper bound only
 ```
 
 ## Initial targets
@@ -127,9 +152,48 @@ retrieval/path-limited split
 negative examples preserved
 ```
 
-## Stop rule
+## Success and stop rules
 
-If retrieval/path construction does not improve support/path coverage on fresh slices, stop before spending 4090 LLM time.
+Minimum continue criterion:
+
+```txt
+full_support_and_answer improves by >= +0.05 absolute
+or answer_string_present_rate improves by >= +0.08 absolute without lowering full_support_recall
+```
+
+Minimum answer-quality criterion:
+
+```txt
+EM wins > EM losses
+EM delta >= +0.03 absolute
+F1 delta >= +0.05 absolute
+no new recurring relation-depth or attribute-owner failure class
+```
+
+Strong receipt-worthy success criterion:
+
+```txt
+EM delta >= +0.08 absolute
+F1 delta >= +0.12 absolute
+bootstrap CI lower bound > 0
+losses qualitatively bounded and explained
+```
+
+Stop before spending 4090 LLM time if retrieval/path construction does not improve support/path coverage on fresh slices.
+
+Stop and preserve a negative receipt if answer gains are offset-specific, losses match wins, schema introduces relation-depth regressions, or the method needs gold-derived signals.
+
+## Non-goals
+
+Do not do in this phase:
+
+```txt
+No new hand-written answer override gate.
+No Option C unless new pre-scoring uncertainty signals are actually stored.
+No kernel/runtime claims.
+No public positive receipt from inspected slice only.
+No gold answer in operational detectors.
+```
 
 ## Non-claims
 
