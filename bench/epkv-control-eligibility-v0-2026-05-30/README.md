@@ -108,6 +108,7 @@ Artifacts:
 
 - [`RUN-HOLDOUT-FRESH.md`](RUN-HOLDOUT-FRESH.md)
 - [`FINAL-DECISION.md`](FINAL-DECISION.md)
+- [`PIVOT-RETRIEVAL-PATH.md`](PIVOT-RETRIEVAL-PATH.md)
 - [`holdout-offset500-n100/option-b-holdout-shadow-run.md`](holdout-offset500-n100/option-b-holdout-shadow-run.md)
 - [`holdout-offset500-n100/option-b-holdout-summary.json`](holdout-offset500-n100/option-b-holdout-summary.json)
 
