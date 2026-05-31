@@ -14,6 +14,7 @@ Key docs:
 - [`ANSWER-QUALITY-OFFSET1500.md`](ANSWER-QUALITY-OFFSET1500.md)
 - [`PATH-RISK-INSTRUMENTATION.md`](PATH-RISK-INSTRUMENTATION.md)
 - [`ANSWER-TYPE-GUARDS.md`](ANSWER-TYPE-GUARDS.md)
+- [`GUARDED-PATH-OFFSET1500.md`](GUARDED-PATH-OFFSET1500.md)
 - [`retrieval-grid-summary.json`](retrieval-grid-summary.json)
 - [`answer-quality-offset500-n100-comparison.json`](answer-quality-offset500-n100-comparison.json)
 - [`answer-quality-offset1500-n100-comparison.json`](answer-quality-offset1500-n100-comparison.json)
@@ -87,8 +88,23 @@ Guarded prompt support was added to:
 07-scripts/vllm-hook/epkv-entity-hop-retrieval.py --include-guarded-path
 ```
 
-Next step requires `[CONFIRMAR:INFRA]`:
+Guarded path offset1500 was tested and failed:
 
 ```txt
-test entity_hop_path_guarded vs entity_hop_path_prompt on offset1500 n100
+path prompt EM/F1:    0.150 / 0.271
+guarded path EM/F1:   0.080 / 0.120
+wins/losses/ties:     0 / 7 / 93
+UNKNOWN/refusal rate: 0.68
+```
+
+Decision:
+
+```txt
+guarded_prompt_failed_do_not_continue
+```
+
+Next step:
+
+```txt
+package a mixed/negative receipt, or test narrow local guard families instead of a global guarded prompt
 ```

@@ -1,0 +1,32 @@
+{
+  "out_dir": "bench/realrag-path-construction-v1-2026-05-30/guarded-path-offset1500-n100",
+  "total": 100,
+  "retrieval": {
+    "support_title_recall": 0.6708333333333333,
+    "full_support_recall": 0.38,
+    "answer_string_present_rate": 0.75
+  },
+  "macro": {
+    "bge_ref": {
+      "em": 0.0,
+      "contains": 0.0,
+      "f1": 0.0
+    },
+    "entity_hop_path_guarded": {
+      "em": 0.08,
+      "contains": 0.09,
+      "f1": 0.12011111111111111
+    },
+    "entity_hop_path_prompt": {
+      "em": 0.15,
+      "contains": 0.24,
+      "f1": 0.27100793650793653
+    },
+    "entity_hop_strong": {
+      "em": 0.13,
+      "contains": 0.22,
+      "f1": 0.24446984126984128
+    }
+  }
+}
+EPKV_ENTITY_HOP_RETRIEVAL_DONE
