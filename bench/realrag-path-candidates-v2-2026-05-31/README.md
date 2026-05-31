@@ -13,18 +13,24 @@ No 4090 until no-LLM path-object metrics improve.
 ## Start here
 
 - [`PLAN.md`](PLAN.md)
+- [`NO-LLM-PASS1.md`](NO-LLM-PASS1.md)
 
-## First task
+## Pass 1 artifacts
 
 ```txt
 build-path-candidates-v2.mjs
-```
-
-Read existing v1 summaries and emit:
-
-```txt
 path-candidates-offset1500-n100.jsonl
 path-candidate-summary.json
+build-answer-from-chain-packets.mjs
+answer-from-chain-packets-offset1500-n100.jsonl
 ```
 
-Operational metrics must not use the gold answer for selection.
+Operational metrics do not use the gold answer for selection. Gold/support/evidence
+fields are used only after candidate selection for diagnostics.
+
+## Pass 1 decision
+
+```txt
+manual_review_next
+no_4090_yet
+```

@@ -1,0 +1,471 @@
+{
+  "schema": "realrag.path_candidates.v2.summary",
+  "generated_at": "2026-05-31T03:45:09.095Z",
+  "input": {
+    "config0_summary": "bench/realrag-path-construction-v1-2026-05-30/answer-quality-offset1500-n100-config0/summary.json",
+    "current_summary": "bench/realrag-path-construction-v1-2026-05-30/answer-quality-offset1500-n100-current/summary.json",
+    "dataset": "bench/_datasets/2wiki/data/dev.json",
+    "dataset_use": "question/context text only for operational extraction; supporting_facts/evidences/gold used only for posthoc diagnostics"
+  },
+  "total": 100,
+  "operational_metrics": {
+    "start_entity_found_rate": 0.98,
+    "candidate_row_rate": 0.98,
+    "top_answer_candidate_rate": 0.71,
+    "single_top_candidate_rate": 0.29,
+    "ambiguous_top_candidate_rate": 0.32,
+    "generic_title_suppression_rows": 73,
+    "generic_title_suppression_count": 146,
+    "avg_candidate_count": 4.61
+  },
+  "posthoc_diagnostics_not_used_for_selection": {
+    "top_candidate_em": 0.4,
+    "top_candidate_contains": 0.48,
+    "top_candidate_f1": 0.49503174603174593,
+    "top_path_support_title_recall": 0.8250000000000002,
+    "top_path_full_support_rate": 0.64,
+    "config0_path_prompt_macro": {
+      "em": 0.18,
+      "contains": 0.26,
+      "f1": 0.288015873015873
+    },
+    "current_path_prompt_macro": {
+      "em": 0.14,
+      "contains": 0.2,
+      "f1": 0.24802380952380954
+    },
+    "top_candidate_vs_config0_path_prompt": {
+      "em_delta": 0.22000000000000003,
+      "contains_delta": 0.21999999999999997,
+      "f1_delta": 0.20701587301587293
+    },
+    "pairwise_em_movement": {
+      "vs_config0": {
+        "wins": 25,
+        "losses": 3,
+        "ties": 72
+      },
+      "vs_current": {
+        "wins": 28,
+        "losses": 2,
+        "ties": 70
+      }
+    }
+  },
+  "by_template": [
+    {
+      "template": "director_place_of_birth",
+      "count": 20,
+      "answer_candidate_rate": 0.6,
+      "posthoc_em": 0.45,
+      "posthoc_contains": 0.5,
+      "posthoc_f1": 0.5033333333333333,
+      "posthoc_support_recall": 0.9083333333333332,
+      "posthoc_full_support_rate": 0.8
+    },
+    {
+      "template": "paternal_grandfather",
+      "count": 12,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0.5,
+      "posthoc_contains": 0.6666666666666666,
+      "posthoc_f1": 0.738095238095238,
+      "posthoc_support_recall": 0.9097222222222222,
+      "posthoc_full_support_rate": 0.75
+    },
+    {
+      "template": "father_date_of_death",
+      "count": 5,
+      "answer_candidate_rate": 0.8,
+      "posthoc_em": 0.8,
+      "posthoc_contains": 0.8,
+      "posthoc_f1": 0.8,
+      "posthoc_support_recall": 0.8666666666666666,
+      "posthoc_full_support_rate": 0.6
+    },
+    {
+      "template": "director_country_of_citizenship",
+      "count": 4,
+      "answer_candidate_rate": 0.75,
+      "posthoc_em": 0.25,
+      "posthoc_contains": 0.25,
+      "posthoc_f1": 0.25,
+      "posthoc_support_recall": 0.75,
+      "posthoc_full_support_rate": 0.75
+    },
+    {
+      "template": "father_date_of_birth",
+      "count": 4,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0.75,
+      "posthoc_contains": 0.75,
+      "posthoc_f1": 0.75,
+      "posthoc_support_recall": 0.6666666666666666,
+      "posthoc_full_support_rate": 0.25
+    },
+    {
+      "template": "father_place_of_death",
+      "count": 4,
+      "answer_candidate_rate": 0.5,
+      "posthoc_em": 0.25,
+      "posthoc_contains": 0.25,
+      "posthoc_f1": 0.25,
+      "posthoc_support_recall": 0.9166666666666666,
+      "posthoc_full_support_rate": 0.75
+    },
+    {
+      "template": "paternal_grandmother",
+      "count": 4,
+      "answer_candidate_rate": 0.75,
+      "posthoc_em": 0.25,
+      "posthoc_contains": 0.5,
+      "posthoc_f1": 0.43333333333333335,
+      "posthoc_support_recall": 0.75,
+      "posthoc_full_support_rate": 0.75
+    },
+    {
+      "template": "spouse_place_of_birth",
+      "count": 4,
+      "answer_candidate_rate": 0,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0,
+      "posthoc_support_recall": 0.6875,
+      "posthoc_full_support_rate": 0.25
+    },
+    {
+      "template": "father_country_of_citizenship",
+      "count": 3,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0.3333333333333333,
+      "posthoc_contains": 0.3333333333333333,
+      "posthoc_f1": 0.3333333333333333,
+      "posthoc_support_recall": 0.8055555555555555,
+      "posthoc_full_support_rate": 0.3333333333333333
+    },
+    {
+      "template": "maternal_grandmother",
+      "count": 3,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0.3333333333333333,
+      "posthoc_contains": 0.6666666666666666,
+      "posthoc_f1": 0.5555555555555555,
+      "posthoc_support_recall": 0.8888888888888888,
+      "posthoc_full_support_rate": 0.6666666666666666
+    },
+    {
+      "template": "performer_place_of_birth",
+      "count": 3,
+      "answer_candidate_rate": 0.3333333333333333,
+      "posthoc_em": 0.3333333333333333,
+      "posthoc_contains": 0.3333333333333333,
+      "posthoc_f1": 0.3333333333333333,
+      "posthoc_support_recall": 0.5555555555555555,
+      "posthoc_full_support_rate": 0.3333333333333333
+    },
+    {
+      "template": "father_in_law",
+      "count": 2,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0.5,
+      "posthoc_contains": 0.5,
+      "posthoc_f1": 0.5,
+      "posthoc_support_recall": 0.8333333333333333,
+      "posthoc_full_support_rate": 0.5
+    },
+    {
+      "template": "father_place_of_birth",
+      "count": 2,
+      "answer_candidate_rate": 0,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0,
+      "posthoc_support_recall": 0.8333333333333333,
+      "posthoc_full_support_rate": 0.5
+    },
+    {
+      "template": "maternal_grandfather",
+      "count": 2,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 1,
+      "posthoc_contains": 1,
+      "posthoc_f1": 1,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "mother",
+      "count": 2,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0.5,
+      "posthoc_contains": 0.5,
+      "posthoc_f1": 0.6111111111111112,
+      "posthoc_support_recall": 0.375,
+      "posthoc_full_support_rate": 0
+    },
+    {
+      "template": "mother_in_law",
+      "count": 2,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0.42857142857142855,
+      "posthoc_support_recall": 0.5833333333333333,
+      "posthoc_full_support_rate": 0
+    },
+    {
+      "template": "performer_country_of_citizenship",
+      "count": 2,
+      "answer_candidate_rate": 0.5,
+      "posthoc_em": 0.5,
+      "posthoc_contains": 0.5,
+      "posthoc_f1": 0.5,
+      "posthoc_support_recall": 0.75,
+      "posthoc_full_support_rate": 0.5
+    },
+    {
+      "template": "spouse_date_of_birth",
+      "count": 2,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 1,
+      "posthoc_contains": 1,
+      "posthoc_f1": 1,
+      "posthoc_support_recall": 0.8333333333333333,
+      "posthoc_full_support_rate": 0.5
+    },
+    {
+      "template": "spouse_educated_at",
+      "count": 2,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 1,
+      "posthoc_contains": 1,
+      "posthoc_f1": 1,
+      "posthoc_support_recall": 0.8333333333333333,
+      "posthoc_full_support_rate": 0.5
+    },
+    {
+      "template": "composer_award_received",
+      "count": 1,
+      "answer_candidate_rate": 0,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0,
+      "posthoc_support_recall": 0,
+      "posthoc_full_support_rate": 0
+    },
+    {
+      "template": "composer_educated_at",
+      "count": 1,
+      "answer_candidate_rate": 0,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "composer_place_of_birth",
+      "count": 1,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0,
+      "posthoc_contains": 1,
+      "posthoc_f1": 0.8,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "director_child",
+      "count": 1,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "director_educated_at",
+      "count": 1,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0.8,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "director_employer",
+      "count": 1,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0,
+      "posthoc_contains": 1,
+      "posthoc_f1": 0.6666666666666666,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "director_place_of_death",
+      "count": 1,
+      "answer_candidate_rate": 0,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "director_spouse",
+      "count": 1,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0.3333333333333333,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "founder_place_of_birth",
+      "count": 1,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0,
+      "posthoc_contains": 1,
+      "posthoc_f1": 0.5,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "mother_place_of_birth",
+      "count": 1,
+      "answer_candidate_rate": 0,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0,
+      "posthoc_support_recall": 0,
+      "posthoc_full_support_rate": 0
+    },
+    {
+      "template": "performer_award_received",
+      "count": 1,
+      "answer_candidate_rate": 0,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "performer_date_of_birth",
+      "count": 1,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 1,
+      "posthoc_contains": 1,
+      "posthoc_f1": 1,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "performer_father",
+      "count": 1,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 1,
+      "posthoc_contains": 1,
+      "posthoc_f1": 1,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "spouse_country_of_citizenship",
+      "count": 1,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0,
+      "posthoc_support_recall": 0.6666666666666666,
+      "posthoc_full_support_rate": 0
+    },
+    {
+      "template": "spouse_date_of_death",
+      "count": 1,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 1,
+      "posthoc_contains": 1,
+      "posthoc_f1": 1,
+      "posthoc_support_recall": 0.5,
+      "posthoc_full_support_rate": 0
+    },
+    {
+      "template": "spouse_employer",
+      "count": 1,
+      "answer_candidate_rate": 0,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "spouse_place_of_burial",
+      "count": 1,
+      "answer_candidate_rate": 0,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    },
+    {
+      "template": "spouse_place_of_death",
+      "count": 1,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0,
+      "posthoc_contains": 0,
+      "posthoc_f1": 0,
+      "posthoc_support_recall": 1,
+      "posthoc_full_support_rate": 1
+    }
+  ],
+  "by_risk_flag": [
+    {
+      "flag": "multi_step_relation",
+      "count": 98,
+      "answer_candidate_rate": 0.7040816326530612,
+      "posthoc_em": 0.3979591836734694,
+      "posthoc_f1": 0.49266277939747316
+    },
+    {
+      "flag": "generic_title_suppressed",
+      "count": 73,
+      "answer_candidate_rate": 0.6301369863013698,
+      "posthoc_em": 0.3698630136986301,
+      "posthoc_f1": 0.43091976516634056
+    },
+    {
+      "flag": "attribute_owner_template",
+      "count": 70,
+      "answer_candidate_rate": 0.6,
+      "posthoc_em": 0.38571428571428573,
+      "posthoc_f1": 0.44047619047619047
+    },
+    {
+      "flag": "grandparent_template",
+      "count": 21,
+      "answer_candidate_rate": 0.9523809523809523,
+      "posthoc_em": 0.47619047619047616,
+      "posthoc_f1": 0.6789115646258502
+    },
+    {
+      "flag": "no_flag",
+      "count": 2,
+      "answer_candidate_rate": 1,
+      "posthoc_em": 0.5,
+      "posthoc_f1": 0.6111111111111112
+    }
+  ],
+  "stop_or_continue": {
+    "decision": "manual_review_next",
+    "reasons": [
+      "path_object_ready_for_manual_review_not_4090_yet"
+    ],
+    "no_4090": true
+  }
+}
