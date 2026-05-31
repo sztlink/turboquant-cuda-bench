@@ -4,15 +4,17 @@ Operational front opened after gated-control closure.
 
 ## Status
 
-Retrieval-only grid complete. Bounded offset500 answer-quality run complete.
+Retrieval-only grid complete. Offset500 answer-quality run complete. Fresh offset1500 answer-quality run complete.
 
 Key docs:
 
 - [`PLAN.md`](PLAN.md)
 - [`RETRIEVAL-GRID.md`](RETRIEVAL-GRID.md)
 - [`ANSWER-QUALITY-OFFSET500.md`](ANSWER-QUALITY-OFFSET500.md)
+- [`ANSWER-QUALITY-OFFSET1500.md`](ANSWER-QUALITY-OFFSET1500.md)
 - [`retrieval-grid-summary.json`](retrieval-grid-summary.json)
 - [`answer-quality-offset500-n100-comparison.json`](answer-quality-offset500-n100-comparison.json)
+- [`answer-quality-offset1500-n100-comparison.json`](answer-quality-offset1500-n100-comparison.json)
 
 ## Main finding
 
@@ -44,14 +46,32 @@ F1: 0.295 -> 0.376, delta +0.082
 wins/losses/ties: 10 / 4 / 86
 ```
 
-## Decision
+## Fresh answer-quality offset1500
 
-Coverage gate passed. Offset500 answer-quality gate passed.
-
-This is still not a final fresh claim because offset500 was already part of the known holdout context.
-
-Next step requires 4090 LLM time and therefore `[CONFIRMAR:INFRA]` before running:
+Against a same-slice current-config comparator:
 
 ```txt
-fresh answer-quality run on offset 1000 or a newer unseen offset, n100, same config0
+EM: 0.140 -> 0.180, delta +0.040
+F1: 0.248 -> 0.288, delta +0.040
+wins/losses/ties: 10 / 6 / 84
+CI95 crosses zero
+```
+
+Retrieval coverage still reproduced:
+
+```txt
+full_support_recall: 0.230 -> 0.380, delta +0.150
+answer_present:      0.570 -> 0.760, delta +0.190
+```
+
+## Decision
+
+Coverage gate passed. Offset500 answer-quality gate passed. Fresh offset1500 answer-quality gate did not pass.
+
+Do not promote config0 as a positive public result.
+
+Next step:
+
+```txt
+path-risk instrumentation and relation/answer-type guards before another 4090 LLM run
 ```
