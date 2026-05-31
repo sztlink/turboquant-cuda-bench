@@ -33,6 +33,9 @@ Status vocabulary:
 | `bench/epkv-live-probe-v0-2026-05-21/sprint-12h/ENTITY-HOP-ECD-100.md` | RealRAG / strict extractor ECD | NEGATIVE | yes | Strict extractor+ECD was brittle and under path prompt | entity-hop path prompt |
 | `bench/epkv-live-probe-v0-2026-05-21/sprint-12h/RETRIEVED-RELATION-ECD-100.md` | RealRAG / retrieved relation ECD | NEGATIVE | yes | Retrieved relation extractor+ECD underperformed | entity-hop path prompt |
 | `bench/epkv-live-probe-v0-2026-05-21/RESULTS.md` | EPKV live probe | CANONICAL | yes | Local canonical ledger for EPKV/RealRAG live-probe family | — |
+| `bench/epkv-control-eligibility-v0-2026-05-30/FINAL-DECISION.md` | RealRAG / gated control | NEGATIVE | yes | Option A too small, Option B failed fresh holdout; hand-written gated control closed for now | `bench/realrag-path-construction-v1-2026-05-30/` |
+| `bench/realrag-path-construction-v1-2026-05-30/` | RealRAG / retrieval path | NEGATIVE | yes, mixed | Retrieval coverage reproduced, answer quality mixed, prompt guards failed by over-refusal | `bench/realrag-path-candidates-v2-2026-05-31/` |
+| `bench/realrag-path-candidates-v2-2026-05-31/NO-LLM-PASS1.md` | RealRAG / explicit path candidates | SUPPORTING | internal, no quality claim | No-LLM explicit path candidates on fresh offset1500: posthoc EM/F1 0.400/0.495 vs config0 path prompt 0.180/0.288; manual review next, no 4090 yet | none |
 
 ## Public RealRAG / evidence-placement archive
 
