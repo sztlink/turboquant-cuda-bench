@@ -14,6 +14,7 @@ No 4090 until no-LLM path-object metrics improve.
 
 - [`PLAN.md`](PLAN.md)
 - [`NO-LLM-PASS1.md`](NO-LLM-PASS1.md)
+- [`MANUAL-REVIEW-NEXT.md`](MANUAL-REVIEW-NEXT.md)
 
 ## Pass 1 artifacts
 
