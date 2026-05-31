@@ -12,6 +12,8 @@ Key docs:
 - [`RETRIEVAL-GRID.md`](RETRIEVAL-GRID.md)
 - [`ANSWER-QUALITY-OFFSET500.md`](ANSWER-QUALITY-OFFSET500.md)
 - [`ANSWER-QUALITY-OFFSET1500.md`](ANSWER-QUALITY-OFFSET1500.md)
+- [`PATH-RISK-INSTRUMENTATION.md`](PATH-RISK-INSTRUMENTATION.md)
+- [`ANSWER-TYPE-GUARDS.md`](ANSWER-TYPE-GUARDS.md)
 - [`retrieval-grid-summary.json`](retrieval-grid-summary.json)
 - [`answer-quality-offset500-n100-comparison.json`](answer-quality-offset500-n100-comparison.json)
 - [`answer-quality-offset1500-n100-comparison.json`](answer-quality-offset1500-n100-comparison.json)
@@ -70,8 +72,23 @@ Coverage gate passed. Offset500 answer-quality gate passed. Fresh offset1500 ans
 
 Do not promote config0 as a positive public result.
 
-Next step:
+Path-risk instrumentation is now complete:
 
 ```txt
-path-risk instrumentation and relation/answer-type guards before another 4090 LLM run
+offset500 + offset1500 analyzed
+200 cases
+20 wins / 10 losses / 170 ties overall
+56 config0 output type mismatches flagged
+```
+
+Guarded prompt support was added to:
+
+```txt
+07-scripts/vllm-hook/epkv-entity-hop-retrieval.py --include-guarded-path
+```
+
+Next step requires `[CONFIRMAR:INFRA]`:
+
+```txt
+test entity_hop_path_guarded vs entity_hop_path_prompt on offset1500 n100
 ```

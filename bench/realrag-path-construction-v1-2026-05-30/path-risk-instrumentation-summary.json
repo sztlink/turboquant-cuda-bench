@@ -1,0 +1,307 @@
+{
+  "schema": "realrag.path_risk_instrumentation_summary.v1",
+  "generated_at": "2026-05-31T01:19:36.282Z",
+  "runs": [
+    {
+      "id": "offset500",
+      "n": 100,
+      "wins": 10,
+      "losses": 4,
+      "ties": 86,
+      "avg_em_delta": 0.06,
+      "avg_f1_delta": 0.0819,
+      "output_type_mismatch_count": 25,
+      "by_flag": [
+        {
+          "flag": "answer_granularity_risk",
+          "count": 62,
+          "share": 0.62,
+          "wins": 6,
+          "losses": 2,
+          "ties": 54,
+          "avg_em_delta": 0.0645,
+          "avg_f1_delta": 0.1086,
+          "loss_rate": 0.032
+        },
+        {
+          "flag": "attribute_owner_risk",
+          "count": 57,
+          "share": 0.57,
+          "wins": 5,
+          "losses": 2,
+          "ties": 50,
+          "avg_em_delta": 0.0526,
+          "avg_f1_delta": 0.0836,
+          "loss_rate": 0.035
+        },
+        {
+          "flag": "same_family_title_neighborhood",
+          "count": 56,
+          "share": 0.56,
+          "wins": 6,
+          "losses": 2,
+          "ties": 48,
+          "avg_em_delta": 0.0714,
+          "avg_f1_delta": 0.0971,
+          "loss_rate": 0.036
+        },
+        {
+          "flag": "relation_depth_risk",
+          "count": 46,
+          "share": 0.46,
+          "wins": 7,
+          "losses": 2,
+          "ties": 37,
+          "avg_em_delta": 0.1087,
+          "avg_f1_delta": 0.1363,
+          "loss_rate": 0.043
+        },
+        {
+          "flag": "candidate_crowding",
+          "count": 20,
+          "share": 0.2,
+          "wins": 2,
+          "losses": 0,
+          "ties": 18,
+          "avg_em_delta": 0.1,
+          "avg_f1_delta": 0.0875,
+          "loss_rate": 0
+        },
+        {
+          "flag": "generic_distractor_density",
+          "count": 18,
+          "share": 0.18,
+          "wins": 1,
+          "losses": 0,
+          "ties": 17,
+          "avg_em_delta": 0.0556,
+          "avg_f1_delta": 0.0463,
+          "loss_rate": 0
+        },
+        {
+          "flag": "target_entity_sparse",
+          "count": 10,
+          "share": 0.1,
+          "wins": 1,
+          "losses": 0,
+          "ties": 9,
+          "avg_em_delta": 0.1,
+          "avg_f1_delta": 0.0469,
+          "loss_rate": 0
+        },
+        {
+          "flag": "no_flag",
+          "count": 5,
+          "share": 0.05,
+          "wins": 0,
+          "losses": 0,
+          "ties": 5,
+          "avg_em_delta": 0,
+          "avg_f1_delta": 0,
+          "loss_rate": 0
+        }
+      ]
+    },
+    {
+      "id": "offset1500",
+      "n": 100,
+      "wins": 10,
+      "losses": 6,
+      "ties": 84,
+      "avg_em_delta": 0.04,
+      "avg_f1_delta": 0.04,
+      "output_type_mismatch_count": 31,
+      "by_flag": [
+        {
+          "flag": "answer_granularity_risk",
+          "count": 64,
+          "share": 0.64,
+          "wins": 6,
+          "losses": 4,
+          "ties": 54,
+          "avg_em_delta": 0.0313,
+          "avg_f1_delta": 0.0503,
+          "loss_rate": 0.063
+        },
+        {
+          "flag": "same_family_title_neighborhood",
+          "count": 57,
+          "share": 0.57,
+          "wins": 6,
+          "losses": 5,
+          "ties": 46,
+          "avg_em_delta": 0.0175,
+          "avg_f1_delta": 0.0212,
+          "loss_rate": 0.088
+        },
+        {
+          "flag": "attribute_owner_risk",
+          "count": 57,
+          "share": 0.57,
+          "wins": 6,
+          "losses": 5,
+          "ties": 46,
+          "avg_em_delta": 0.0175,
+          "avg_f1_delta": 0.0249,
+          "loss_rate": 0.088
+        },
+        {
+          "flag": "relation_depth_risk",
+          "count": 49,
+          "share": 0.49,
+          "wins": 6,
+          "losses": 3,
+          "ties": 40,
+          "avg_em_delta": 0.0612,
+          "avg_f1_delta": 0.0578,
+          "loss_rate": 0.061
+        },
+        {
+          "flag": "generic_distractor_density",
+          "count": 17,
+          "share": 0.17,
+          "wins": 2,
+          "losses": 0,
+          "ties": 15,
+          "avg_em_delta": 0.1176,
+          "avg_f1_delta": 0.1578,
+          "loss_rate": 0
+        },
+        {
+          "flag": "candidate_crowding",
+          "count": 17,
+          "share": 0.17,
+          "wins": 2,
+          "losses": 0,
+          "ties": 15,
+          "avg_em_delta": 0.1176,
+          "avg_f1_delta": 0.1578,
+          "loss_rate": 0
+        },
+        {
+          "flag": "target_entity_sparse",
+          "count": 10,
+          "share": 0.1,
+          "wins": 0,
+          "losses": 1,
+          "ties": 9,
+          "avg_em_delta": -0.1,
+          "avg_f1_delta": -0.1537,
+          "loss_rate": 0.1
+        },
+        {
+          "flag": "no_flag",
+          "count": 7,
+          "share": 0.07,
+          "wins": 1,
+          "losses": 0,
+          "ties": 6,
+          "avg_em_delta": 0.1429,
+          "avg_f1_delta": 0.2381,
+          "loss_rate": 0
+        }
+      ]
+    }
+  ],
+  "overall": {
+    "id": "overall",
+    "n": 200,
+    "wins": 20,
+    "losses": 10,
+    "ties": 170,
+    "avg_em_delta": 0.05,
+    "avg_f1_delta": 0.0609,
+    "output_type_mismatch_count": 56,
+    "by_flag": [
+      {
+        "flag": "answer_granularity_risk",
+        "count": 126,
+        "share": 0.63,
+        "wins": 12,
+        "losses": 6,
+        "ties": 108,
+        "avg_em_delta": 0.0476,
+        "avg_f1_delta": 0.079,
+        "loss_rate": 0.048
+      },
+      {
+        "flag": "attribute_owner_risk",
+        "count": 114,
+        "share": 0.57,
+        "wins": 11,
+        "losses": 7,
+        "ties": 96,
+        "avg_em_delta": 0.0351,
+        "avg_f1_delta": 0.0543,
+        "loss_rate": 0.061
+      },
+      {
+        "flag": "same_family_title_neighborhood",
+        "count": 113,
+        "share": 0.565,
+        "wins": 12,
+        "losses": 7,
+        "ties": 94,
+        "avg_em_delta": 0.0442,
+        "avg_f1_delta": 0.0588,
+        "loss_rate": 0.062
+      },
+      {
+        "flag": "relation_depth_risk",
+        "count": 95,
+        "share": 0.475,
+        "wins": 13,
+        "losses": 5,
+        "ties": 77,
+        "avg_em_delta": 0.0842,
+        "avg_f1_delta": 0.0958,
+        "loss_rate": 0.053
+      },
+      {
+        "flag": "candidate_crowding",
+        "count": 37,
+        "share": 0.185,
+        "wins": 4,
+        "losses": 0,
+        "ties": 33,
+        "avg_em_delta": 0.1081,
+        "avg_f1_delta": 0.1198,
+        "loss_rate": 0
+      },
+      {
+        "flag": "generic_distractor_density",
+        "count": 35,
+        "share": 0.175,
+        "wins": 3,
+        "losses": 0,
+        "ties": 32,
+        "avg_em_delta": 0.0857,
+        "avg_f1_delta": 0.1005,
+        "loss_rate": 0
+      },
+      {
+        "flag": "target_entity_sparse",
+        "count": 20,
+        "share": 0.1,
+        "wins": 1,
+        "losses": 1,
+        "ties": 18,
+        "avg_em_delta": 0,
+        "avg_f1_delta": -0.0534,
+        "loss_rate": 0.05
+      },
+      {
+        "flag": "no_flag",
+        "count": 12,
+        "share": 0.06,
+        "wins": 1,
+        "losses": 0,
+        "ties": 11,
+        "avg_em_delta": 0.0833,
+        "avg_f1_delta": 0.1389,
+        "loss_rate": 0
+      }
+    ]
+  },
+  "guard_decision": "do_not_spend_4090_until_guarded_prompt_or_path_filter_is_tested"
+}

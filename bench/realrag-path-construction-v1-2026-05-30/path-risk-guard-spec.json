@@ -1,0 +1,43 @@
+{
+  "schema": "realrag.path_guard_spec.v1",
+  "status": "ready_for_shadow_or_llm_test",
+  "no_gold_in_operational_triggers": true,
+  "guards": [
+    {
+      "id": "answer_type_contract",
+      "trigger": "question surface: when/where/who/nationality/country/place/date/graduated",
+      "rule": "Infer expected answer type before generation and reject outputs that are relation labels or wrong semantic type.",
+      "prompt_line": "Answer must match the expected type from the question: date, country, nationality, place, person, organization, or short entity/value."
+    },
+    {
+      "id": "attribute_owner_guard",
+      "trigger": "question asks an attribute of father/mother/spouse/performer/director/composer or other owner entity",
+      "rule": "Resolve owner entity first, then answer the requested attribute of that owner. Do not answer the owner or the generic attribute label.",
+      "prompt_line": "First resolve the owner entity, then answer only that owner's requested attribute."
+    },
+    {
+      "id": "relation_depth_guard",
+      "trigger": "question contains father/mother/grandfather/grandmother/paternal/maternal",
+      "rule": "Require the relation depth requested by the question. Do not answer a direct parent when a grandparent is requested.",
+      "prompt_line": "A grandparent answer needs a two-hop parent-of-parent chain. A parent answer needs exactly the requested parent relation."
+    },
+    {
+      "id": "generic_title_guard",
+      "trigger": "selected titles contain generic ontology/document titles",
+      "rule": "Treat generic titles as evidence hints only, never as final answers.",
+      "prompt_line": "Generic titles like Place of birth, Place of origin, The Singer, The Child, Story, Model, or The General are not final answers."
+    },
+    {
+      "id": "same_neighborhood_guard",
+      "trigger": "many selected titles share surname, dynasty, title, or family-neighborhood tokens",
+      "rule": "Require direct evidence tying the exact relation target, not just a nearby family or title neighbor.",
+      "prompt_line": "In dense family/title neighborhoods, answer only if the passage directly supports the exact relation target."
+    },
+    {
+      "id": "media_chain_guard",
+      "trigger": "question contains film/song plus performer/director/composer",
+      "rule": "Resolve exact media work first, then relation, then final attribute.",
+      "prompt_line": "Resolve the exact film/song first, then the requested performer/director/composer, then the final attribute."
+    }
+  ]
+}

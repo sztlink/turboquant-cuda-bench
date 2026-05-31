@@ -259,6 +259,58 @@ def make_path_prompt(question: str, docs: list[dict[str, Any]], edges: list[tupl
     ])
 
 
+def answer_contract_lines(question: str) -> list[str]:
+    q = str(question).lower()
+    lines: list[str] = []
+    if re.search(r"\b(when|date)\b|date of (birth|death)|born|died", q):
+        lines.append("Expected answer type: date or year. Do not answer with a person, title, country, or relation label.")
+    elif re.search(r"nationality", q):
+        lines.append("Expected answer type: nationality/demonym. Do not answer with a city, person, film, or generic title.")
+    elif re.search(r"which country|what country|country .* from|\bfrom\?", q):
+        lines.append("Expected answer type: country. Do not answer with a city, region, person, film, or generic title.")
+    elif re.search(r"\bwhere\b|place of (birth|death|origin)|born|died|graduated", q):
+        lines.append("Expected answer type: place or institution. Do not answer with a person, film, song, or relation label.")
+    elif re.search(r"\bwho\b|spouse|father|mother|grandfather|grandmother|performer|director|composer", q):
+        lines.append("Expected answer type: person or organization name. Do not answer with a place, date, nationality, or relation label.")
+    else:
+        lines.append("Expected answer type: short entity/value string matching the question.")
+
+    if re.search(r"paternal grandfather|maternal grandfather|paternal grandmother|maternal grandmother|grandfather|grandmother", q):
+        lines.append("Relation-depth guard: a grandparent answer needs a two-hop parent-of-parent chain. Do not answer with the direct parent.")
+    elif re.search(r"father|mother|parent", q):
+        lines.append("Relation-depth guard: answer the requested parent relation only. Do not drift to grandparent, spouse, child, or same-family neighbor.")
+    elif re.search(r"spouse|husband|wife", q):
+        lines.append("Relation guard: answer the spouse of the requested entity, not the entity itself or another family member.")
+
+    if re.search(r"(place|date|country|nationality).*(father|mother|spouse|husband|wife|performer|director|composer)|(father|mother|spouse|husband|wife|performer|director|composer).*(born|died|from|nationality|graduated|place|date)", q):
+        lines.append("Attribute-owner guard: first resolve the owner entity, then answer that owner's requested attribute. Do not answer the owner entity or the generic attribute label.")
+
+    if re.search(r"film|song|performer|director|composer", q):
+        lines.append("Media-chain guard: resolve the exact film/song first, then the requested performer/director/composer relation, then the final attribute.")
+
+    lines.append("Generic-title guard: titles like Place of birth, Place of origin, The Singer, The Child, The Feature, Story, Model, or The General are evidence hints, not final answers.")
+    return lines
+
+
+def make_guarded_path_prompt(question: str, docs: list[dict[str, Any]], edges: list[tuple[str, str]], max_chars: int = 700) -> str:
+    edge_lines = [f"- {a} -> {b}" for a, b in edges[:50]] or ["- no explicit title-link edges found"]
+    doc_lines = [f"P{i+1}: {doc_text(d, max_chars)}" for i, d in enumerate(docs)]
+    return "\n".join([
+        "You are answering a multi-hop question using retrieved passages and a candidate entity graph.",
+        "The graph is heuristic and may contain distractors. Use it only if the passages support it.",
+        "Before answering, silently enforce these guards:",
+        *[f"- {line}" for line in answer_contract_lines(question)],
+        "If the passages do not support the required relation and answer type, answer UNKNOWN.",
+        "Answer with only the final answer string. No explanation.",
+        "Candidate entity/title graph:",
+        *edge_lines,
+        "Passages:",
+        *doc_lines,
+        f"Question: {question}",
+        "Final answer:",
+    ])
+
+
 def extractor_prompt(question: str, docs: list[dict[str, Any]], edges: list[tuple[str, str]], max_chars: int = 700) -> str:
     edge_lines = [f"- {a} -> {b}" for a, b in edges[:80]] or ["- none"]
     doc_lines = [f"P{i+1}: {doc_text(d, max_chars)}" for i, d in enumerate(docs)]
@@ -437,6 +489,7 @@ def main() -> None:
     p.add_argument("--disable-ecd", action="store_true")
     p.add_argument("--skip-extract", action="store_true")
     p.add_argument("--skip-llm", action="store_true", help="Only compute retrieval/path stats; do not call vLLM")
+    p.add_argument("--include-guarded-path", action="store_true", help="Also run a guarded path prompt with relation and answer-type constraints")
     p.add_argument("--bias", type=float, default=3.0)
     args = p.parse_args()
 
@@ -484,10 +537,13 @@ def main() -> None:
         answer_present = any(normalize_answer(gold) in normalize_answer(d["text"]) for d in docs)
         conditions: dict[str, Any] = {}
         if not args.skip_llm:
-            for cname, prompt in [
+            prompt_jobs = [
                 ("entity_hop_strong", make_strong_prompt(q, docs, args.doc_chars)),
                 ("entity_hop_path_prompt", make_path_prompt(q, docs, edges, args.doc_chars)),
-            ]:
+            ]
+            if args.include_guarded_path:
+                prompt_jobs.append(("entity_hop_path_guarded", make_guarded_path_prompt(q, docs, edges, args.doc_chars)))
+            for cname, prompt in prompt_jobs:
                 output, resp, latency = call_llm(args.endpoint, args.model, prompt, args.max_tokens, args.timeout)
                 m = metrics(output, gold)
                 conditions[cname] = {**m, "output": output, "latency_sec": latency}
@@ -561,13 +617,13 @@ def main() -> None:
     md.extend(["", "## Answer quality", "", "| condition | EM | contains | F1 |", "|---|---:|---:|---:|"])
     for c, m in summary["macro"].items():
         md.append(f"| {c} | {m['em']:.3f} | {m['contains']:.3f} | {m['f1']:.3f} |")
-    md.extend(["", "## Rows", "", "| qid | gold | support | answer in docs | bge | hop strong | path | extract | ecd |", "|---|---|---:|---:|---:|---:|---:|---:|---:|"])
+    md.extend(["", "## Rows", "", "| qid | gold | support | answer in docs | bge | hop strong | path | guarded | extract | ecd |", "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|"])
     for r in rows:
         def f(c: str) -> str:
             if c not in r["conditions"]:
                 return ""
             return f"{r['conditions'][c]['em']:.0f}/{r['conditions'][c]['f1']:.2f}"
-        md.append(f"| {r['qid']} | {r['gold']} | {r['support_title_recall']:.2f} | {int(r['answer_string_present_in_docs'])} | {r['bge_ref']['em']:.0f}/{r['bge_ref']['f1']:.2f} | {f('entity_hop_strong')} | {f('entity_hop_path_prompt')} | {f('entity_hop_path_extract')} | {f('entity_hop_path_ecd')} |")
+        md.append(f"| {r['qid']} | {r['gold']} | {r['support_title_recall']:.2f} | {int(r['answer_string_present_in_docs'])} | {r['bge_ref']['em']:.0f}/{r['bge_ref']['f1']:.2f} | {f('entity_hop_strong')} | {f('entity_hop_path_prompt')} | {f('entity_hop_path_guarded')} | {f('entity_hop_path_extract')} | {f('entity_hop_path_ecd')} |")
     (out_dir / "RESULTS.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     print(json.dumps({"out_dir": str(out_dir), "total": len(rows), "retrieval": summary["retrieval"], "macro": summary["macro"]}, indent=2, ensure_ascii=False))
     print("EPKV_ENTITY_HOP_RETRIEVAL_DONE")
