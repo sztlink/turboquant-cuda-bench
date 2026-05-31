@@ -1,0 +1,80 @@
+{
+  "schema": "realrag.answer_interface_v0.summary",
+  "generated_at": "2026-05-31T23:15:18.835Z",
+  "policy": {
+    "name": "candidate_direct_rendered_else_config0_path_prompt",
+    "description": "Return the explicit path-candidate answer directly when present; otherwise fall back to the config0 path-prompt output. No LLM call.",
+    "uses_llm": false,
+    "uses_4090": false,
+    "uses_gold_for_selection": false
+  },
+  "total": 100,
+  "route_counts": {
+    "candidate_direct_rendered": 72,
+    "fallback_config0_path_prompt": 28
+  },
+  "route_rates": {
+    "candidate_direct_rendered": 0.72,
+    "fallback_config0_path_prompt": 0.28
+  },
+  "macro": {
+    "answer_interface_v0": {
+      "em": 0.46,
+      "contains": 0.57,
+      "f1": 0.557031746031746,
+      "refusal_rate": 0.01
+    },
+    "candidate_direct_unrendered": {
+      "em": 0.44,
+      "contains": 0.54,
+      "f1": 0.5273347763347762,
+      "refusal_rate": 0.28
+    },
+    "answer_from_chain_smoke": {
+      "em": 0.3,
+      "contains": 0.37,
+      "f1": 0.34988888888888886,
+      "refusal_rate": 0.51
+    },
+    "config0_path_prompt": {
+      "em": 0.18,
+      "contains": 0.26,
+      "f1": 0.28801587301587306,
+      "refusal_rate": 0.02
+    },
+    "current_path_prompt": {
+      "em": 0.14,
+      "contains": 0.2,
+      "f1": 0.24802380952380954,
+      "refusal_rate": 0.02
+    }
+  },
+  "pairwise_em_movement": {
+    "vs_config0_path_prompt": {
+      "wins": 28,
+      "losses": 0,
+      "ties": 72
+    },
+    "vs_current_path_prompt": {
+      "wins": 33,
+      "losses": 1,
+      "ties": 66
+    },
+    "vs_answer_from_chain_smoke": {
+      "wins": 16,
+      "losses": 0,
+      "ties": 84
+    },
+    "vs_candidate_direct_unrendered": {
+      "wins": 2,
+      "losses": 0,
+      "ties": 98
+    }
+  },
+  "decision": {
+    "readout": "overrefusal_fixed_by_not_asking_llm_to_regenerate_candidate_answer",
+    "next": "use_answer_interface_v0_as_local_policy_then_review_alias_normalization",
+    "no_runtime_mapping_yet": true,
+    "no_megakernel_yet": true
+  }
+}

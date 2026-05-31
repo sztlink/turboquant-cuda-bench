@@ -36,7 +36,8 @@ Status vocabulary:
 | `bench/epkv-control-eligibility-v0-2026-05-30/FINAL-DECISION.md` | RealRAG / gated control | NEGATIVE | yes | Option A too small, Option B failed fresh holdout; hand-written gated control closed for now | `bench/realrag-path-construction-v1-2026-05-30/` |
 | `bench/realrag-path-construction-v1-2026-05-30/` | RealRAG / retrieval path | NEGATIVE | yes, mixed | Retrieval coverage reproduced, answer quality mixed, prompt guards failed by over-refusal | `bench/realrag-path-candidates-v2-2026-05-31/` |
 | `bench/realrag-path-candidates-v2-2026-05-31/NO-LLM-PASS2.md` | RealRAG / explicit path candidates | SUPPORTING | internal, no quality claim | No-LLM explicit path candidates on fresh offset1500: posthoc EM/F1 0.440/0.527 vs config0 path prompt 0.180/0.288; answer smoke later failed refusal gate | `bench/realrag-path-candidates-v2-2026-05-31/answer-from-chain-smoke-offset1500-n100-4090/RESULTS.md` |
-| `bench/realrag-path-candidates-v2-2026-05-31/answer-from-chain-smoke-offset1500-n100-4090/RESULTS.md` | RealRAG / answer from explicit chain | NEGATIVE | internal, 4090 smoke | F1 improved over config0, but refusal rate jumped to 0.510; no runtime mapping or megakernel | none |
+| `bench/realrag-path-candidates-v2-2026-05-31/answer-from-chain-smoke-offset1500-n100-4090/RESULTS.md` | RealRAG / answer from explicit chain | NEGATIVE | internal, 4090 smoke | F1 improved over config0, but refusal rate jumped to 0.510; no runtime mapping or megakernel | `bench/realrag-path-candidates-v2-2026-05-31/ANSWER-INTERFACE-V0.md` |
+| `bench/realrag-path-candidates-v2-2026-05-31/ANSWER-INTERFACE-V0.md` | RealRAG / answer interface | SUPPORTING | internal, no-LLM | Local policy returns rendered candidate answer or falls back to config0 path prompt; EM/F1 0.460/0.557, 28 wins / 0 losses vs config0 | none |
 
 ## Public RealRAG / evidence-placement archive
 

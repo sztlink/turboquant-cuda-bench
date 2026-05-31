@@ -52,18 +52,20 @@ losses: 0
 ties: 74
 ```
 
-Authorized answer-from-chain smoke:
+Authorized answer-from-chain smoke and local answer-interface fix:
 
 | object | EM | contains | F1 | refusal/missing |
 |---|---:|---:|---:|---:|
+| answer interface v0 | 0.460 | 0.570 | 0.557 | 0.010 |
 | answer from chain | 0.300 | 0.370 | 0.350 | 0.510 |
 | direct candidate object | 0.440 | 0.540 | 0.527 | 0.280 |
 | config0 path prompt | 0.180 | 0.260 | 0.288 | 0.020 |
 
-Smoke readout:
+Answer Interface v0 readout:
 
 ```txt
-F1 improved over config0, but refusal rate failed the gate.
+overrefusal fixed locally by not asking the LLM to regenerate a complete path answer
+28 wins / 0 losses / 72 ties vs config0 path prompt
 No runtime mapping yet.
 No megakernel yet.
 ```
@@ -75,7 +77,8 @@ This is not a new natural RealRAG quality claim.
 Candidate selection did not use gold answers, but the metric is posthoc.
 Pass 2 candidate cleanup resolved the three EM losses vs config0.
 The answer smoke showed that the model over-refuses when asked to re-answer from the path object.
-Next step is not kernel work; it is revising the answer interface/path object without another GPU run by default.
+Answer Interface v0 fixes that specific failure locally with a no-LLM rendering/fallback policy.
+Next step is not kernel work; it is alias/granularity normalization and fresh no-LLM validation before any new GPU run.
 ```
 
 ## Key falsification: N=500 machine-only RealRAG check

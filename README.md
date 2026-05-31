@@ -33,7 +33,7 @@ gated_v1   EM 0.216 / F1 0.323
 wins/losses/ties = 2 / 2 / 496
 ```
 
-This no-delta result freezes one RealRAG/verifier direction. The later path-construction sprint reproduced retrieval coverage but failed prompt guards. Explicit path candidates improved strongly as a no-LLM object, but the first answer-from-chain smoke failed the refusal gate. The next object is the path/answer interface, not another verifier, prompt rule, or megakernel. It does not erase the KV-cache, REFRACT, KVFidelity, vLLM, or kernel-engineering receipts.
+This no-delta result freezes one RealRAG/verifier direction. The later path-construction sprint reproduced retrieval coverage but failed prompt guards. Explicit path candidates improved strongly as a no-LLM object; the first answer-from-chain smoke failed the refusal gate, and Answer Interface v0 fixed that specific failure locally by not asking the LLM to regenerate a complete path answer. The next object is still the path/answer interface, not another verifier, prompt rule, or megakernel. It does not erase the KV-cache, REFRACT, KVFidelity, vLLM, or kernel-engineering receipts.
 
 ## Entry points
 
