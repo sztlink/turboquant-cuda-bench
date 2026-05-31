@@ -260,47 +260,91 @@ def make_path_prompt(question: str, docs: list[dict[str, Any]], edges: list[tupl
 
 
 def answer_contract_lines(question: str) -> list[str]:
-    q = str(question).lower()
     lines: list[str] = []
-    if re.search(r"\b(when|date)\b|date of (birth|death)|born|died", q):
-        lines.append("Expected answer type: date or year. Do not answer with a person, title, country, or relation label.")
-    elif re.search(r"nationality", q):
-        lines.append("Expected answer type: nationality/demonym. Do not answer with a city, person, film, or generic title.")
-    elif re.search(r"which country|what country|country .* from|\bfrom\?", q):
-        lines.append("Expected answer type: country. Do not answer with a city, region, person, film, or generic title.")
-    elif re.search(r"\bwhere\b|place of (birth|death|origin)|born|died|graduated", q):
-        lines.append("Expected answer type: place or institution. Do not answer with a person, film, song, or relation label.")
-    elif re.search(r"\bwho\b|spouse|father|mother|grandfather|grandmother|performer|director|composer", q):
-        lines.append("Expected answer type: person or organization name. Do not answer with a place, date, nationality, or relation label.")
+    for family in ["answer_granularity", "relation_depth", "attribute_owner", "media_chain", "generic_title"]:
+        lines.extend(guard_family_lines(question, family))
+    return unique_guard_lines(lines)
+
+
+def unique_guard_lines(lines: list[str]) -> list[str]:
+    out: list[str] = []
+    seen = set()
+    for line in lines:
+        if line not in seen:
+            seen.add(line)
+            out.append(line)
+    return out
+
+
+def guard_family_lines(question: str, family: str) -> list[str]:
+    q = str(question).lower()
+    family = family.replace("-", "_").strip().lower()
+    lines: list[str] = []
+    if family == "answer_granularity":
+        if re.search(r"\b(when|date)\b|date of (birth|death)|born|died", q):
+            lines.append("Answer-type guard: expected answer is a date or year, not a person, title, country, or relation label.")
+        elif re.search(r"nationality", q):
+            lines.append("Answer-type guard: expected answer is a nationality or demonym, not a city, person, film, or generic title.")
+        elif re.search(r"which country|what country|country .* from|\bfrom\?", q):
+            lines.append("Answer-type guard: expected answer is a country, not a city, region, person, film, or generic title.")
+        elif re.search(r"\bwhere\b|place of (birth|death|origin)|born|died|graduated", q):
+            lines.append("Answer-type guard: expected answer is a place or institution, not a person, film, song, or relation label.")
+        elif re.search(r"\bwho\b|spouse|father|mother|grandfather|grandmother|performer|director|composer", q):
+            lines.append("Answer-type guard: expected answer is a person or organization name, not a place, date, nationality, or relation label.")
+        else:
+            lines.append("Answer-type guard: expected answer is a short entity or value string matching the question.")
+        lines.append("Granularity guard: prefer the shortest supported answer that satisfies the question. Do not add broader region/country details unless asked.")
+    elif family == "relation_depth":
+        if re.search(r"paternal grandfather|maternal grandfather|paternal grandmother|maternal grandmother|grandfather|grandmother", q):
+            lines.append("Relation-depth guard: a grandparent answer needs a two-hop parent-of-parent chain. Do not answer with the direct parent.")
+        elif re.search(r"father|mother|parent", q):
+            lines.append("Relation-depth guard: answer the requested parent relation only. Do not drift to grandparent, spouse, child, or same-family neighbor.")
+        elif re.search(r"spouse|husband|wife", q):
+            lines.append("Relation guard: answer the spouse of the requested entity, not the entity itself or another family member.")
+        else:
+            lines.append("Relation-depth guard: follow the exact relation requested by the question and ignore nearby family/title neighbors.")
+    elif family == "attribute_owner":
+        if re.search(r"(place|date|country|nationality).*(father|mother|spouse|husband|wife|performer|director|composer)|(father|mother|spouse|husband|wife|performer|director|composer).*(born|died|from|nationality|graduated|place|date)", q):
+            lines.append("Attribute-owner guard: first resolve the owner entity, then answer that owner's requested attribute. Do not answer the owner entity or the generic attribute label.")
+        else:
+            lines.append("Attribute-owner guard: when the question asks for an attribute, answer the attribute value, not the entity that owns it.")
+    elif family == "media_chain":
+        if re.search(r"film|song|performer|director|composer", q):
+            lines.append("Media-chain guard: resolve the exact film/song first, then the requested performer/director/composer relation, then the final attribute.")
+        else:
+            lines.append("Media-chain guard: if media works appear, do not jump from a nearby film/song to the answer without the requested relation.")
+    elif family == "generic_title":
+        lines.append("Generic-title guard: titles like Place of birth, Place of origin, The Singer, The Child, The Feature, Story, Model, or The General are evidence hints, not final answers.")
+        lines.append("Generic-title guard: do not answer with ontology labels, section labels, or generic document titles.")
     else:
-        lines.append("Expected answer type: short entity/value string matching the question.")
-
-    if re.search(r"paternal grandfather|maternal grandfather|paternal grandmother|maternal grandmother|grandfather|grandmother", q):
-        lines.append("Relation-depth guard: a grandparent answer needs a two-hop parent-of-parent chain. Do not answer with the direct parent.")
-    elif re.search(r"father|mother|parent", q):
-        lines.append("Relation-depth guard: answer the requested parent relation only. Do not drift to grandparent, spouse, child, or same-family neighbor.")
-    elif re.search(r"spouse|husband|wife", q):
-        lines.append("Relation guard: answer the spouse of the requested entity, not the entity itself or another family member.")
-
-    if re.search(r"(place|date|country|nationality).*(father|mother|spouse|husband|wife|performer|director|composer)|(father|mother|spouse|husband|wife|performer|director|composer).*(born|died|from|nationality|graduated|place|date)", q):
-        lines.append("Attribute-owner guard: first resolve the owner entity, then answer that owner's requested attribute. Do not answer the owner entity or the generic attribute label.")
-
-    if re.search(r"film|song|performer|director|composer", q):
-        lines.append("Media-chain guard: resolve the exact film/song first, then the requested performer/director/composer relation, then the final attribute.")
-
-    lines.append("Generic-title guard: titles like Place of birth, Place of origin, The Singer, The Child, The Feature, Story, Model, or The General are evidence hints, not final answers.")
+        raise ValueError(f"unknown guard family: {family}")
     return lines
 
 
-def make_guarded_path_prompt(question: str, docs: list[dict[str, Any]], edges: list[tuple[str, str]], max_chars: int = 700) -> str:
+def make_guarded_path_prompt(
+    question: str,
+    docs: list[dict[str, Any]],
+    edges: list[tuple[str, str]],
+    max_chars: int = 700,
+    *,
+    guard_families: list[str] | None = None,
+    strict_unknown: bool = True,
+) -> str:
     edge_lines = [f"- {a} -> {b}" for a, b in edges[:50]] or ["- no explicit title-link edges found"]
     doc_lines = [f"P{i+1}: {doc_text(d, max_chars)}" for i, d in enumerate(docs)]
+    if guard_families is None:
+        guard_lines = answer_contract_lines(question)
+    else:
+        guard_lines = unique_guard_lines([line for family in guard_families for line in guard_family_lines(question, family)])
+    unknown_line = "If the passages do not support the required relation and answer type, answer UNKNOWN."
+    if not strict_unknown:
+        unknown_line = "If evidence is incomplete, still return the best short supported answer. Use UNKNOWN only when no answer value is supported."
     return "\n".join([
         "You are answering a multi-hop question using retrieved passages and a candidate entity graph.",
         "The graph is heuristic and may contain distractors. Use it only if the passages support it.",
         "Before answering, silently enforce these guards:",
-        *[f"- {line}" for line in answer_contract_lines(question)],
-        "If the passages do not support the required relation and answer type, answer UNKNOWN.",
+        *[f"- {line}" for line in guard_lines],
+        unknown_line,
         "Answer with only the final answer string. No explanation.",
         "Candidate entity/title graph:",
         *edge_lines,
@@ -489,7 +533,9 @@ def main() -> None:
     p.add_argument("--disable-ecd", action="store_true")
     p.add_argument("--skip-extract", action="store_true")
     p.add_argument("--skip-llm", action="store_true", help="Only compute retrieval/path stats; do not call vLLM")
-    p.add_argument("--include-guarded-path", action="store_true", help="Also run a guarded path prompt with relation and answer-type constraints")
+    p.add_argument("--include-guarded-path", action="store_true", help="Also run guarded path prompt condition(s)")
+    p.add_argument("--guarded-path-families", default="all", help="Comma-separated guard families: all, attribute_owner, relation_depth, answer_granularity, generic_title, media_chain")
+    p.add_argument("--guarded-path-soft-unknown", action="store_true", help="Use best-supported answer instead of strict UNKNOWN pressure in guarded prompts")
     p.add_argument("--bias", type=float, default=3.0)
     args = p.parse_args()
 
@@ -542,7 +588,13 @@ def main() -> None:
                 ("entity_hop_path_prompt", make_path_prompt(q, docs, edges, args.doc_chars)),
             ]
             if args.include_guarded_path:
-                prompt_jobs.append(("entity_hop_path_guarded", make_guarded_path_prompt(q, docs, edges, args.doc_chars)))
+                guard_families = [x.strip().replace("-", "_") for x in str(args.guarded_path_families).split(",") if x.strip()]
+                if not guard_families or guard_families == ["all"]:
+                    prompt_jobs.append(("entity_hop_path_guarded", make_guarded_path_prompt(q, docs, edges, args.doc_chars, strict_unknown=not args.guarded_path_soft_unknown)))
+                else:
+                    for family in guard_families:
+                        cname = f"entity_hop_path_guard_{family}"
+                        prompt_jobs.append((cname, make_guarded_path_prompt(q, docs, edges, args.doc_chars, guard_families=[family], strict_unknown=not args.guarded_path_soft_unknown)))
             for cname, prompt in prompt_jobs:
                 output, resp, latency = call_llm(args.endpoint, args.model, prompt, args.max_tokens, args.timeout)
                 m = metrics(output, gold)
@@ -617,13 +669,18 @@ def main() -> None:
     md.extend(["", "## Answer quality", "", "| condition | EM | contains | F1 |", "|---|---:|---:|---:|"])
     for c, m in summary["macro"].items():
         md.append(f"| {c} | {m['em']:.3f} | {m['contains']:.3f} | {m['f1']:.3f} |")
-    md.extend(["", "## Rows", "", "| qid | gold | support | answer in docs | bge | hop strong | path | guarded | extract | ecd |", "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|"])
+    md.extend(["", "## Rows", "", "| qid | gold | support | answer in docs | bge | hop strong | path | guards | extract | ecd |", "|---|---|---:|---:|---:|---:|---:|---|---:|---:|"])
     for r in rows:
         def f(c: str) -> str:
             if c not in r["conditions"]:
                 return ""
             return f"{r['conditions'][c]['em']:.0f}/{r['conditions'][c]['f1']:.2f}"
-        md.append(f"| {r['qid']} | {r['gold']} | {r['support_title_recall']:.2f} | {int(r['answer_string_present_in_docs'])} | {r['bge_ref']['em']:.0f}/{r['bge_ref']['f1']:.2f} | {f('entity_hop_strong')} | {f('entity_hop_path_prompt')} | {f('entity_hop_path_guarded')} | {f('entity_hop_path_extract')} | {f('entity_hop_path_ecd')} |")
+        guard_cells = []
+        for c in sorted(k for k in r["conditions"] if k.startswith("entity_hop_path_guard")):
+            label = c.replace("entity_hop_path_guard_", "").replace("entity_hop_path_guarded", "all")
+            guard_cells.append(f"{label}:{f(c)}")
+        guards = "<br>".join(guard_cells)
+        md.append(f"| {r['qid']} | {r['gold']} | {r['support_title_recall']:.2f} | {int(r['answer_string_present_in_docs'])} | {r['bge_ref']['em']:.0f}/{r['bge_ref']['f1']:.2f} | {f('entity_hop_strong')} | {f('entity_hop_path_prompt')} | {guards} | {f('entity_hop_path_extract')} | {f('entity_hop_path_ecd')} |")
     (out_dir / "RESULTS.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     print(json.dumps({"out_dir": str(out_dir), "total": len(rows), "retrieval": summary["retrieval"], "macro": summary["macro"]}, indent=2, ensure_ascii=False))
     print("EPKV_ENTITY_HOP_RETRIEVAL_DONE")

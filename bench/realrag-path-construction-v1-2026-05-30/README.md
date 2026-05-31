@@ -15,6 +15,7 @@ Key docs:
 - [`PATH-RISK-INSTRUMENTATION.md`](PATH-RISK-INSTRUMENTATION.md)
 - [`ANSWER-TYPE-GUARDS.md`](ANSWER-TYPE-GUARDS.md)
 - [`GUARDED-PATH-OFFSET1500.md`](GUARDED-PATH-OFFSET1500.md)
+- [`NARROW-GUARDS-OFFSET1500.md`](NARROW-GUARDS-OFFSET1500.md)
 - [`retrieval-grid-summary.json`](retrieval-grid-summary.json)
 - [`answer-quality-offset500-n100-comparison.json`](answer-quality-offset500-n100-comparison.json)
 - [`answer-quality-offset1500-n100-comparison.json`](answer-quality-offset1500-n100-comparison.json)
@@ -103,8 +104,23 @@ Decision:
 guarded_prompt_failed_do_not_continue
 ```
 
+Narrow guard-family prompts were tested and also failed:
+
+```txt
+attribute_owner:     EM/F1 0.130 / 0.221, delta -0.020 / -0.056
+relation_depth:      EM/F1 0.130 / 0.212, delta -0.020 / -0.065
+generic_title:       EM/F1 0.100 / 0.186, delta -0.050 / -0.091
+answer_granularity:  EM/F1 0.100 / 0.173, delta -0.050 / -0.104
+```
+
+Decision:
+
+```txt
+all_narrow_guard_families_failed_vs_same_run_path_prompt
+```
+
 Next step:
 
 ```txt
-package a mixed/negative receipt, or test narrow local guard families instead of a global guarded prompt
+package a mixed/negative receipt, or move upstream to explicit path-candidate construction
 ```
