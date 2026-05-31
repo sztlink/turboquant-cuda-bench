@@ -47,6 +47,7 @@ This no-delta result freezes one RealRAG/verifier direction. The later path-cons
 | [`bench-public/`](bench-public/) | public-safe promoted result packages |
 | [`REPO-AUDIT-2026-05-23.md`](REPO-AUDIT-2026-05-23.md) | hostile-but-fair audit of repo shape |
 | [`KERNEL-MAP.md`](KERNEL-MAP.md) | CUDA kernel entry map for llama.cpp TurboQuant validation/profiling |
+| [`MEGAKERNELS.md`](MEGAKERNELS.md) | megakernel stance: no full transformer megakernel now, prepare EPKV dispatcher boundary |
 | [`VLLM-RUNTIME-LINEAGE-4090.md`](VLLM-RUNTIME-LINEAGE-4090.md) | separates TheTom upstream, local build, sztlink overlay, and live 4090 service |
 | [`THETOM-CLEAN-BASELINE-PLAN.md`](THETOM-CLEAN-BASELINE-PLAN.md) | plan for a clean upstream validation lane before bug report or PR |
 | [`KEY-FINDINGS.md`](KEY-FINDINGS.md) | legacy public findings index, read with `STATE.md` caveats |

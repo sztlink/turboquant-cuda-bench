@@ -94,6 +94,7 @@ Status vocabulary:
 | `bench/evidence-protection-layer-v0-span-provenance-2026-05-21/` | protection layer | SUPPORTING | yes, caveated | Hook-off span provenance | protection index |
 | `bench/evidence-protection-layer-v01-packing-invariance-2026-05-21/` | protection layer | SUPPORTING | yes, caveated | Structural packing invariance | protection index |
 | `bench/evidence-protection-layer-v03-replay-compatibility-2026-05-21/` | protection layer | SUPPORTING | yes, caveated | Real-record replay compatibility | protection index |
+| `bench/epkv-megakernel-readiness-v0-2026-05-31/` | EPKV / megakernel readiness | SUPPORTING | internal, planning only | Defines dispatcher boundary, readiness gates, and receipt template; no kernel run, no serving mutation | none |
 
 ## Scratch / raw-output policy
 
