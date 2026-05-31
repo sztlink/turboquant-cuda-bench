@@ -33,7 +33,7 @@ gated_v1   EM 0.216 / F1 0.323
 wins/losses/ties = 2 / 2 / 496
 ```
 
-This no-delta result freezes one RealRAG/verifier direction. It does not erase the KV-cache, REFRACT, KVFidelity, vLLM, or kernel-engineering receipts.
+This no-delta result freezes one RealRAG/verifier direction. The later path-construction sprint reproduced retrieval coverage but failed prompt guards; the current next object is explicit path candidates before answer generation, not another verifier or prompt rule. It does not erase the KV-cache, REFRACT, KVFidelity, vLLM, or kernel-engineering receipts.
 
 ## Entry points
 
@@ -76,6 +76,7 @@ Axis III: runtime and kernel engineering
 RealRAG answer-closure line
 9. Evidence placement, retrieval, rank, path construction, and schema shape affect answer closure.
 10. N=500 falsified the scaled positive claim for hand-written gated verifier control.
+11. Prompt guards failed by over-refusal; explicit path candidates are now the upstream object to inspect.
 ```
 
 ## What not to claim

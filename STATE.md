@@ -1,6 +1,6 @@
 # Current State — turboquant-cuda-bench
 
-Last updated: 2026-05-23
+Last updated: 2026-05-31
 
 ## One-line state
 
@@ -10,13 +10,57 @@ This is a research archive for answer-closure, path-construction, KV/cache fidel
 
 ```txt
 Evidence placement, retrieval, and path construction affect answer closure.
-Direct entity-hop path prompting is the strongest non-oracle natural RealRAG baseline so far.
+Direct entity-hop path prompting is the strongest LLM natural RealRAG baseline so far.
 Hand-written verifier/rerank gates did not beat direct path prompting at N=500.
+Prompt-level path guards failed by over-refusal on the fresh offset1500 slice.
+No-LLM explicit path candidates are the current upstream object to inspect before another answer run.
 Oracle/compact evidence control remains an upper bound, not natural retrieval proof.
 Runtime EPKV/sampler work remains lab/observability, not production proof.
 ```
 
-## Latest falsification: N=500 machine-only RealRAG check
+## Latest path-construction state: explicit candidates before answers
+
+Artifacts:
+
+```txt
+bench/realrag-path-construction-v1-2026-05-30/
+bench/realrag-path-candidates-v2-2026-05-31/NO-LLM-PASS1.md
+```
+
+Path Construction v1 result:
+
+```txt
+retrieval coverage reproduced on fresh offset1500
+answer quality stayed mixed and failed the F1 gate
+global guarded prompt failed by over-refusal
+narrow guard-family prompts also underperformed same-run path prompt
+```
+
+No-LLM Path Candidates v2 pass 1:
+
+| object | EM | contains | F1 |
+|---|---:|---:|---:|
+| config0 path prompt, offset1500 | 0.180 | 0.260 | 0.288 |
+| explicit path candidate, posthoc diagnostic | 0.400 | 0.480 | 0.495 |
+
+Pairwise EM movement vs config0 path prompt:
+
+```txt
+wins: 25
+losses: 3
+ties: 72
+```
+
+Boundary:
+
+```txt
+This is not a new natural RealRAG quality claim.
+Candidate selection did not use gold answers, but the metric is posthoc.
+Next step is manual review of candidate ranking and normalization.
+No 4090 answer-from-chain run until that review is done and infra is explicitly authorized.
+```
+
+## Key falsification: N=500 machine-only RealRAG check
 
 Artifact:
 
@@ -55,17 +99,26 @@ Small-slice gains at N=100/N=300 were slice-sensitive.
 Freeze hand-written verifier gates.
 ```
 
-## Best current non-oracle natural RealRAG baseline
+## Best current natural RealRAG baseline and upstream object
+
+LLM answer baseline:
 
 ```txt
 entity-hop retrieval + graph/path prompt
 ```
 
+Upstream object under inspection:
+
+```txt
+explicit path candidates before answer generation
+```
+
 Why:
 
 ```txt
-It improved over weak BM25/BGE references in the 2Wiki entity-hop series.
+Entity-hop path prompting improved over weak BM25/BGE references in the 2Wiki series.
 It remained the baseline that gated answer control failed to beat at N=500.
+The no-LLM explicit path candidate pass now catches many missing-hop errors before answer generation.
 ```
 
 ## Oracle / compact-evidence upper bound
@@ -89,6 +142,7 @@ This does not prove natural RealRAG performance. It proves that when evidence is
 - Position/rank/path presentation affects answer closure.
 - Synthetic and public QA probes can expose closure failures even when support is present.
 - Strong retrieval/path construction matters more than downstream verifier control in current natural 2Wiki runs.
+- Explicit path candidates can expose the missing hop that direct path prompting often stops before.
 - vLLM runtime/sampler/KV intervention is technically feasible in a lab setting.
 - KV/cache probes can separate action/rank/payload fidelity.
 - The research workflow can falsify its own claims and preserve negative results.
@@ -133,9 +187,10 @@ internal evidence use
 
 ```txt
 No more hand-written verifier gate tweaks.
+No more prompt-guard wording tweaks for RealRAG.
 No more sampler/Triton/kernel work until a quality delta exists.
 No new raw per-case dumps in the active repo by default.
-Next work should be repo membrane / auditability, retrieval/path construction, or a held-out learned override selector.
+Next work should be explicit path-candidate review, path normalization, and then a small answer-from-selected-chain smoke only after infra authorization.
 ```
 
 ## Repo organization state
