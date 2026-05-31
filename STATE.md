@@ -13,7 +13,7 @@ Evidence placement, retrieval, and path construction affect answer closure.
 Direct entity-hop path prompting is the strongest LLM natural RealRAG baseline so far.
 Hand-written verifier/rerank gates did not beat direct path prompting at N=500.
 Prompt-level path guards failed by over-refusal on the fresh offset1500 slice.
-No-LLM explicit path candidates are the current upstream object to inspect before another answer run.
+No-LLM explicit path candidates improved, but the first answer-from-chain smoke failed the refusal gate.
 Oracle/compact evidence control remains an upper bound, not natural retrieval proof.
 Runtime EPKV/sampler work remains lab/observability, not production proof.
 ```
@@ -24,7 +24,8 @@ Artifacts:
 
 ```txt
 bench/realrag-path-construction-v1-2026-05-30/
-bench/realrag-path-candidates-v2-2026-05-31/NO-LLM-PASS1.md
+bench/realrag-path-candidates-v2-2026-05-31/NO-LLM-PASS2.md
+bench/realrag-path-candidates-v2-2026-05-31/answer-from-chain-smoke-offset1500-n100-4090/RESULTS.md
 ```
 
 Path Construction v1 result:
@@ -36,19 +37,35 @@ global guarded prompt failed by over-refusal
 narrow guard-family prompts also underperformed same-run path prompt
 ```
 
-No-LLM Path Candidates v2 pass 1:
+No-LLM Path Candidates v2 pass 2:
 
 | object | EM | contains | F1 |
 |---|---:|---:|---:|
 | config0 path prompt, offset1500 | 0.180 | 0.260 | 0.288 |
-| explicit path candidate, posthoc diagnostic | 0.400 | 0.480 | 0.495 |
+| explicit path candidate, posthoc diagnostic | 0.440 | 0.540 | 0.527 |
 
 Pairwise EM movement vs config0 path prompt:
 
 ```txt
-wins: 25
-losses: 3
-ties: 72
+wins: 26
+losses: 0
+ties: 74
+```
+
+Authorized answer-from-chain smoke:
+
+| object | EM | contains | F1 | refusal/missing |
+|---|---:|---:|---:|---:|
+| answer from chain | 0.300 | 0.370 | 0.350 | 0.510 |
+| direct candidate object | 0.440 | 0.540 | 0.527 | 0.280 |
+| config0 path prompt | 0.180 | 0.260 | 0.288 | 0.020 |
+
+Smoke readout:
+
+```txt
+F1 improved over config0, but refusal rate failed the gate.
+No runtime mapping yet.
+No megakernel yet.
 ```
 
 Boundary:
@@ -56,8 +73,9 @@ Boundary:
 ```txt
 This is not a new natural RealRAG quality claim.
 Candidate selection did not use gold answers, but the metric is posthoc.
-Next step is manual review of candidate ranking and normalization.
-No 4090 answer-from-chain run until that review is done and infra is explicitly authorized.
+Pass 2 candidate cleanup resolved the three EM losses vs config0.
+The answer smoke showed that the model over-refuses when asked to re-answer from the path object.
+Next step is not kernel work; it is revising the answer interface/path object without another GPU run by default.
 ```
 
 ## Key falsification: N=500 machine-only RealRAG check

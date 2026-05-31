@@ -1,0 +1,325 @@
+{
+  "schema": "realrag.answer_from_chain_smoke.summary.v1",
+  "generated_at": "2026-05-31T09:11:53.506Z",
+  "endpoint": "local_vllm_endpoint",
+  "model": "local-vllm",
+  "total": 100,
+  "macro": {
+    "answer_from_chain": {
+      "em": 0.3,
+      "contains": 0.37,
+      "f1": 0.34988888888888886,
+      "refusal_rate": 0.51
+    },
+    "candidate_direct": {
+      "em": 0.44,
+      "contains": 0.54,
+      "f1": 0.5273347763347762,
+      "missing_rate": 0.28
+    },
+    "config0_path_prompt": {
+      "em": 0.18,
+      "contains": 0.26,
+      "f1": 0.28801587301587306,
+      "refusal_rate": 0.02
+    },
+    "current_path_prompt": {
+      "em": 0.14,
+      "contains": 0.2,
+      "f1": 0.24802380952380954,
+      "refusal_rate": 0.02
+    }
+  },
+  "pairwise_em_movement": {
+    "vs_config0_path_prompt": {
+      "wins": 14,
+      "losses": 2,
+      "ties": 84
+    },
+    "vs_current_path_prompt": {
+      "wins": 19,
+      "losses": 3,
+      "ties": 78
+    },
+    "vs_candidate_direct": {
+      "wins": 0,
+      "losses": 14,
+      "ties": 86
+    }
+  },
+  "ok_count": 100,
+  "error_count": 0,
+  "latency_ms": {
+    "avg": 106.79,
+    "max": 500
+  },
+  "by_template": [
+    {
+      "template": "director_place_of_birth",
+      "count": 20,
+      "em": 0.45,
+      "f1": 0.5033333333333333,
+      "refusal_rate": 0.45
+    },
+    {
+      "template": "paternal_grandfather",
+      "count": 12,
+      "em": 0,
+      "f1": 0.05555555555555555,
+      "refusal_rate": 0.75
+    },
+    {
+      "template": "father_date_of_death",
+      "count": 5,
+      "em": 0.4,
+      "f1": 0.4,
+      "refusal_rate": 0.6
+    },
+    {
+      "template": "director_country_of_citizenship",
+      "count": 4,
+      "em": 0.25,
+      "f1": 0.25,
+      "refusal_rate": 0.25
+    },
+    {
+      "template": "father_date_of_birth",
+      "count": 4,
+      "em": 0.5,
+      "f1": 0.5,
+      "refusal_rate": 0.5
+    },
+    {
+      "template": "father_place_of_death",
+      "count": 4,
+      "em": 0.25,
+      "f1": 0.25,
+      "refusal_rate": 0.25
+    },
+    {
+      "template": "paternal_grandmother",
+      "count": 4,
+      "em": 0,
+      "f1": 0.1,
+      "refusal_rate": 0.75
+    },
+    {
+      "template": "spouse_place_of_birth",
+      "count": 4,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    {
+      "template": "father_country_of_citizenship",
+      "count": 3,
+      "em": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "refusal_rate": 0.3333333333333333
+    },
+    {
+      "template": "maternal_grandmother",
+      "count": 3,
+      "em": 0.3333333333333333,
+      "f1": 0.5555555555555555,
+      "refusal_rate": 0.3333333333333333
+    },
+    {
+      "template": "performer_place_of_birth",
+      "count": 3,
+      "em": 0.3333333333333333,
+      "f1": 0.3333333333333333,
+      "refusal_rate": 0.6666666666666666
+    },
+    {
+      "template": "father_in_law",
+      "count": 2,
+      "em": 0.5,
+      "f1": 0.5,
+      "refusal_rate": 0.5
+    },
+    {
+      "template": "father_place_of_birth",
+      "count": 2,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 0.5
+    },
+    {
+      "template": "maternal_grandfather",
+      "count": 2,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    {
+      "template": "mother",
+      "count": 2,
+      "em": 0.5,
+      "f1": 0.6111111111111112,
+      "refusal_rate": 0
+    },
+    {
+      "template": "mother_in_law",
+      "count": 2,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 0.5
+    },
+    {
+      "template": "performer_country_of_citizenship",
+      "count": 2,
+      "em": 0.5,
+      "f1": 0.5,
+      "refusal_rate": 0
+    },
+    {
+      "template": "spouse_date_of_birth",
+      "count": 2,
+      "em": 1,
+      "f1": 1,
+      "refusal_rate": 0
+    },
+    {
+      "template": "spouse_educated_at",
+      "count": 2,
+      "em": 1,
+      "f1": 1,
+      "refusal_rate": 0
+    },
+    {
+      "template": "composer_award_received",
+      "count": 1,
+      "em": 1,
+      "f1": 1,
+      "refusal_rate": 0
+    },
+    {
+      "template": "composer_educated_at",
+      "count": 1,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    {
+      "template": "composer_place_of_birth",
+      "count": 1,
+      "em": 0,
+      "f1": 0.8,
+      "refusal_rate": 0
+    },
+    {
+      "template": "director_child",
+      "count": 1,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    {
+      "template": "director_educated_at",
+      "count": 1,
+      "em": 1,
+      "f1": 1,
+      "refusal_rate": 0
+    },
+    {
+      "template": "director_employer",
+      "count": 1,
+      "em": 0,
+      "f1": 0.6666666666666666,
+      "refusal_rate": 0
+    },
+    {
+      "template": "director_place_of_death",
+      "count": 1,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    {
+      "template": "director_spouse",
+      "count": 1,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    {
+      "template": "founder_place_of_birth",
+      "count": 1,
+      "em": 0,
+      "f1": 0.5,
+      "refusal_rate": 0
+    },
+    {
+      "template": "mother_place_of_birth",
+      "count": 1,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    {
+      "template": "performer_award_received",
+      "count": 1,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    {
+      "template": "performer_date_of_birth",
+      "count": 1,
+      "em": 1,
+      "f1": 1,
+      "refusal_rate": 0
+    },
+    {
+      "template": "performer_father",
+      "count": 1,
+      "em": 1,
+      "f1": 1,
+      "refusal_rate": 0
+    },
+    {
+      "template": "spouse_country_of_citizenship",
+      "count": 1,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    {
+      "template": "spouse_date_of_death",
+      "count": 1,
+      "em": 1,
+      "f1": 1,
+      "refusal_rate": 0
+    },
+    {
+      "template": "spouse_employer",
+      "count": 1,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    {
+      "template": "spouse_place_of_burial",
+      "count": 1,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    {
+      "template": "spouse_place_of_death",
+      "count": 1,
+      "em": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    }
+  ],
+  "decision": {
+    "gate": "fail_or_mixed",
+    "f1_delta_vs_config0": 0.06187301587301585,
+    "em_wins_vs_config0": 14,
+    "em_losses_vs_config0": 2,
+    "refusal_delta_vs_config0": 0.49,
+    "next": "revise_path_candidates_no_runtime"
+  }
+}

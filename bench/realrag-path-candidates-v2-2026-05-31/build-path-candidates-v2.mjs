@@ -27,7 +27,7 @@ const GENERIC_EXACT = new Set([
   'the employee', 'the bastard', 'the open road', 'the hours', 'the mess', 'story', 'master',
   'model', 'part', 'missing', 'point', 'division', 'a division', 'captured', 'captured!',
   '@home', 'them!', 'like that', 'fire', 'kings', 'comedy!', 'the name of love', 'in the name of',
-  'the name', 'the broken disk', 'the singer', 'the performer', 'the director', 'the husband',
+  'the name', 'the singer', 'the performer', 'the director', 'the husband',
 ]);
 
 const NATIONALITIES = [
@@ -176,7 +176,9 @@ function cleanForRelation(relation, value) {
       else if (/^now\b/i.test(parts[2])) out = parts[0];
       else out = `${parts[0]}, ${parts[1]}`;
     } else if (parts.length === 2) {
-      if (/^(canada|united states|usa|france|germany|italy|spain|england|scotland|wales|ireland|austria-hungary|australia)$/i.test(parts[1])) out = parts[0];
+      const sublocalityFirst = /^(cedofeita)$/i.test(parts[0]);
+      if (sublocalityFirst) out = parts[1];
+      else if (/^(canada|united states|usa|france|germany|italy|spain|england|scotland|wales|ireland|austria-hungary|australia)$/i.test(parts[1])) out = parts[0];
       else if (/county|province|department|pas-de-calais|ille-et-vilaine/i.test(parts[1])) out = parts[0];
       else out = parts[0];
     }
@@ -483,7 +485,7 @@ function extractRelationFromText(relation, subjectTitle, text) {
     for (const m of sentenceMatches(t, [
       /\bson\s+(?:and\s+[^.;]*?\s+)?of\s+([^.;]+)/i,
       /\bdaughter\s+(?:and\s+[^.;]*?\s+)?of\s+([^.;]+)/i,
-      /\bfather(?: was| is)?\s+([^.;]+)/i,
+      /\bfather(?: was| is)\s+([^.;]+)/i,
       /\bhis father(?: was| is)?\s+([^.;]+)/i,
       /\bher father(?: was| is)?\s+([^.;]+)/i,
     ])) {
@@ -492,6 +494,7 @@ function extractRelationFromText(relation, subjectTitle, text) {
     }
   } else if (relation === 'mother') {
     for (const m of sentenceMatches(t, [
+      /\bby\s+(?:his|her)\s+(?:first\s+)?wife,\s+([^.;]+)/i,
       /\bson of\s+[^.;]+?\s+and\s+(?:his|her|their)?\s*(?:wife\s+)?([^.;]+)/i,
       /\bdaughter of\s+[^.;]+?\s+and\s+(?:his|her|their)?\s*(?:wife\s+)?([^.;]+)/i,
       /\bmother(?: was| is)?\s+([^.;]+)/i,
@@ -545,7 +548,7 @@ function extractRelationFromText(relation, subjectTitle, text) {
       /\bstudied at\s+([^.;]+)/i,
       /\bstudy at\s+([^.;]+)/i,
       /\bsent to\s+([^.;]+?)\s+in\s+\d{4}\s+to compete/i,
-    ])) push(stripTrailingConjunctions(m.value), 18, 'text_educated_at', m.sentence);
+    ])) push(m.value, 18, 'text_educated_at', m.sentence);
   } else if (relation === 'employer') {
     for (const m of sentenceMatches(t, [
       /\bprofessor of [^.;]+ at\s+([^.;]+)/i,
@@ -553,7 +556,7 @@ function extractRelationFromText(relation, subjectTitle, text) {
       /\bworks? at\s+([^.;]+)/i,
       /\bemployed by\s+([^.;]+)/i,
       /\bserves? at\s+([^.;]+)/i,
-    ])) push(stripTrailingConjunctions(m.value), 18, 'text_employer', m.sentence);
+    ])) push(m.value, 18, 'text_employer', m.sentence);
   } else if (relation === 'country_of_citizenship') {
     const nat = NATIONALITY_RE.exec(first) || NATIONALITY_RE.exec(t);
     if (nat?.[1]) push(nat[1], 14, 'text_nationality_word', first);
@@ -571,6 +574,7 @@ function extractRelationFromText(relation, subjectTitle, text) {
       /\bwon\s+(?:the\s+)?([^.;]*?Award[^.;]*)/i,
       /\breceived\s+(?:the\s+)?([^.;]*?Award[^.;]*)/i,
       /\bawarded\s+(?:the\s+)?([^.;]*?Award[^.;]*)/i,
+      /\bnamed\s+(?:a|an|the)?\s*\"?([^\".;]*?(?:Artist|Laureate|Prize|Award|Medal|Order)[^\".;]*)\"?/i,
     ])) push(stripTrailingConjunctions(m.value), 14, 'text_award', m.sentence);
   }
 

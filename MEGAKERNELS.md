@@ -31,6 +31,7 @@ Current facts:
 RealRAG gated verifier control failed N=500.
 Prompt-level path guards failed by over-refusal.
 No-LLM explicit path candidates are promising but still posthoc diagnostics.
+The first answer-from-chain smoke improved F1 but failed the refusal gate.
 EPKV kernels have receipts, not production attention.
 vLLM runtime contact remains a separate boundary from microbench kernels.
 ```
@@ -70,7 +71,7 @@ path candidate object
   -> fail-open to normal attention when guard fails
 ```
 
-This is a micro-megakernel only if the path object earns runtime contact.
+This is a micro-megakernel only if the path object earns runtime contact. After the first answer-from-chain smoke, it has not earned runtime contact yet.
 
 ## Gates before any GPU/kernel run
 

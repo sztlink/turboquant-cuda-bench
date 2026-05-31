@@ -83,22 +83,31 @@ candidate handling and fallback policy are the real boundary
 
 ### Gate 0 - no-LLM path object
 
-Already partially passed:
+No-LLM path object passed its cleanup gate, but answer-generation did not pass.
 
 ```txt
 fresh offset1500 N=100
-explicit path candidate posthoc EM/F1: 0.400 / 0.495
+explicit path candidate pass 2 posthoc EM/F1: 0.440 / 0.527
 config0 path prompt EM/F1: 0.180 / 0.288
-pairwise vs config0: 25 wins / 3 losses / 72 ties
+pairwise vs config0: 26 wins / 0 losses / 74 ties
+```
+
+Authorized answer-from-chain smoke:
+
+```txt
+answer_from_chain EM/F1: 0.300 / 0.350
+config0 path prompt EM/F1: 0.180 / 0.288
+pairwise vs config0: 14 wins / 2 losses / 84 ties
+refusal delta vs config0: +0.490
+result: gate failed by refusal
 ```
 
 Still required:
 
 ```txt
-manual review of the 3 losses
-place granularity normalization
-institution truncation fix
-award/composer extraction
+revise path/answer interface without defaulting to another GPU prompt tweak
+reduce refusal behavior
+preserve candidate object gains
 country/nationality normalization
 ambiguous path ranking review
 ```
@@ -125,16 +134,22 @@ support_role
 
 ### Gate 2 - answer-from-selected-chain smoke
 
-Not run.
+Run once with infra authorization. It did not pass.
 
-Requires explicit infra authorization because it uses vLLM/4090.
-
-Minimum gate if run later:
+Minimum gate for any future rerun:
 
 ```txt
 F1 delta >= +0.05 vs unstructured path_prompt
 EM wins > losses
 UNKNOWN/refusal rate <= path_prompt + 0.05
+```
+
+Current state:
+
+```txt
+failed_by_refusal_delta
+no_runtime_mapping_yet
+no_megakernel_yet
 ```
 
 ### Gate 3 - hook safety
