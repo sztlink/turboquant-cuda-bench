@@ -70,6 +70,20 @@ No runtime mapping yet.
 No megakernel yet.
 ```
 
+Fresh offset2000 no-LLM holdout:
+
+| object | EM | contains | F1 | refusal/missing |
+|---|---:|---:|---:|---:|
+| answer interface v0, no baseline fallback available | 0.150 | 0.260 | 0.276 | 0.420 |
+
+Holdout readout:
+
+```txt
+retrieval coverage stayed good, but candidate extraction did not generalize strongly
+no positive RS6 receipt yet
+revise alias/granularity and relation templates before any more GPU
+```
+
 Boundary:
 
 ```txt
@@ -77,8 +91,8 @@ This is not a new natural RealRAG quality claim.
 Candidate selection did not use gold answers, but the metric is posthoc.
 Pass 2 candidate cleanup resolved the three EM losses vs config0.
 The answer smoke showed that the model over-refuses when asked to re-answer from the path object.
-Answer Interface v0 fixes that specific failure locally with a no-LLM rendering/fallback policy.
-Next step is not kernel work; it is alias/granularity normalization and fresh no-LLM validation before any new GPU run.
+Answer Interface v0 fixes that specific failure locally with a no-LLM rendering/fallback policy on offset1500.
+The offset2000 no-LLM holdout is weak, so next step is not kernel work; it is alias/granularity normalization and relation-template revision before any new GPU run.
 ```
 
 ## Key falsification: N=500 machine-only RealRAG check

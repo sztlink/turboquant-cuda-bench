@@ -18,6 +18,7 @@ No 4090 until no-LLM path-object metrics improve.
 - [`NO-LLM-PASS2.md`](NO-LLM-PASS2.md)
 - [`answer-from-chain-smoke-offset1500-n100-4090/RESULTS.md`](answer-from-chain-smoke-offset1500-n100-4090/RESULTS.md)
 - [`ANSWER-INTERFACE-V0.md`](ANSWER-INTERFACE-V0.md)
+- [`ANSWER-INTERFACE-V0-HOLDOUT-OFFSET2000.md`](ANSWER-INTERFACE-V0-HOLDOUT-OFFSET2000.md)
 
 ## Pass 1 artifacts
 
@@ -36,6 +37,8 @@ fields are used only after candidate selection for diagnostics.
 
 ```txt
 answer_interface_v0_fixes_overrefusal_locally
+fresh_no_llm_holdout_weak
+no_positive_RS6_receipt_yet
 no_runtime_mapping_yet
 no_megakernel_yet
 ```
@@ -49,3 +52,9 @@ Answer Interface v0 fixes that failure mode without another LLM call: return the
 rendered candidate answer when the path object is complete; otherwise fall back to
 config0 path prompt. On the same slice it gives EM/F1 `0.460 / 0.557` with
 `28 wins / 0 losses / 72 ties` vs config0.
+
+A fresh offset2000 N=100 no-LLM holdout did not validate the extractor as-is:
+retrieval coverage stayed good, but answer-interface metrics fell to EM/F1
+`0.150 / 0.276` with `0.420` missing/refusal because no path-prompt baseline was
+run for fallback. Next work is alias/granularity and explicit relation-template
+revision, not GPU.

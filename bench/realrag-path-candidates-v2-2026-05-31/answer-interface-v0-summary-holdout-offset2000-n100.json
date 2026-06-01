@@ -1,0 +1,85 @@
+{
+  "schema": "realrag.answer_interface_v0.summary",
+  "generated_at": "2026-06-01T00:10:47.538Z",
+  "policy": {
+    "name": "candidate_direct_rendered_else_config0_path_prompt",
+    "description": "Return the explicit path-candidate answer directly when present; otherwise fall back to the config0 path-prompt output. No LLM call.",
+    "uses_llm": false,
+    "uses_4090": false,
+    "uses_gold_for_selection": false
+  },
+  "availability": {
+    "config0_path_prompt_baseline": false,
+    "current_path_prompt_baseline": false,
+    "answer_from_chain_smoke": false
+  },
+  "total": 100,
+  "route_counts": {
+    "fallback_config0_path_prompt": 42,
+    "candidate_direct_rendered": 58
+  },
+  "route_rates": {
+    "fallback_config0_path_prompt": 0.42,
+    "candidate_direct_rendered": 0.58
+  },
+  "macro": {
+    "answer_interface_v0": {
+      "em": 0.15,
+      "contains": 0.26,
+      "f1": 0.2761939775910365,
+      "refusal_rate": 0.42
+    },
+    "candidate_direct_unrendered": {
+      "em": 0.15,
+      "contains": 0.26,
+      "f1": 0.27079471019176904,
+      "refusal_rate": 0.42
+    },
+    "answer_from_chain_smoke": {
+      "em": 0,
+      "contains": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    "config0_path_prompt": {
+      "em": 0,
+      "contains": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    },
+    "current_path_prompt": {
+      "em": 0,
+      "contains": 0,
+      "f1": 0,
+      "refusal_rate": 1
+    }
+  },
+  "pairwise_em_movement": {
+    "vs_config0_path_prompt": {
+      "wins": 15,
+      "losses": 0,
+      "ties": 85
+    },
+    "vs_current_path_prompt": {
+      "wins": 15,
+      "losses": 0,
+      "ties": 85
+    },
+    "vs_answer_from_chain_smoke": {
+      "wins": 15,
+      "losses": 0,
+      "ties": 85
+    },
+    "vs_candidate_direct_unrendered": {
+      "wins": 0,
+      "losses": 0,
+      "ties": 100
+    }
+  },
+  "decision": {
+    "readout": "fresh_no_llm_candidate_holdout_without_path_prompt_baseline",
+    "next": "revise_candidate_extractor_alias_granularity_before_more_gpu",
+    "no_runtime_mapping_yet": true,
+    "no_megakernel_yet": true
+  }
+}

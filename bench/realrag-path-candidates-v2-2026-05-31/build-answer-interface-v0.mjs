@@ -1,11 +1,20 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 
-const ROOT = 'bench/realrag-path-candidates-v2-2026-05-31';
-const CANDIDATES = `${ROOT}/path-candidates-offset1500-n100.jsonl`;
-const SMOKE = `${ROOT}/answer-from-chain-smoke-offset1500-n100-4090/outputs.jsonl`;
-const OUT_JSONL = `${ROOT}/answer-interface-v0-offset1500-n100.jsonl`;
-const OUT_SUMMARY = `${ROOT}/answer-interface-v0-summary.json`;
+function arg(name, fallback) {
+  const idx = process.argv.indexOf(`--${name}`);
+  if (idx >= 0 && process.argv[idx + 1]) return process.argv[idx + 1];
+  return fallback;
+}
+
+const ROOT = arg('root', 'bench/realrag-path-candidates-v2-2026-05-31');
+const LABEL = arg('label', 'offset1500-n100');
+const CANDIDATES = arg('candidates', `${ROOT}/path-candidates-${LABEL}.jsonl`);
+const SMOKE = arg('smoke', `${ROOT}/answer-from-chain-smoke-offset1500-n100-4090/outputs.jsonl`);
+const OUT_JSONL = arg('out-jsonl', `${ROOT}/answer-interface-v0-${LABEL}.jsonl`);
+const OUT_SUMMARY = arg('out-summary', LABEL === 'offset1500-n100'
+  ? `${ROOT}/answer-interface-v0-summary.json`
+  : `${ROOT}/answer-interface-v0-summary-${LABEL}.json`);
 
 function readJsonl(file) {
   if (!fs.existsSync(file)) return [];
@@ -136,6 +145,12 @@ function summarize(records) {
   const n = records.length || 1;
   const routes = new Map();
   for (const r of records) routes.set(r.route, (routes.get(r.route) || 0) + 1);
+  const config0Available = records.some((r) => r.prior_outputs?.config0_path_prompt || r.config0_metrics?.em || r.config0_metrics?.contains || r.config0_metrics?.f1);
+  const currentAvailable = records.some((r) => r.prior_outputs?.current_path_prompt || r.current_metrics?.em || r.current_metrics?.contains || r.current_metrics?.f1);
+  const smokeAvailable = records.some((r) => r.prior_outputs?.answer_from_chain || r.answer_from_chain_metrics?.em || r.answer_from_chain_metrics?.contains || r.answer_from_chain_metrics?.f1);
+  const candidateMacro = macro(records, 'candidate_direct_metrics');
+  const interfaceMacro = macro(records, 'answer_interface_v0_metrics');
+  const holdoutWeak = !config0Available && interfaceMacro.f1 < 0.35;
   return {
     schema: 'realrag.answer_interface_v0.summary',
     generated_at: new Date().toISOString(),
@@ -146,12 +161,17 @@ function summarize(records) {
       uses_4090: false,
       uses_gold_for_selection: false,
     },
+    availability: {
+      config0_path_prompt_baseline: config0Available,
+      current_path_prompt_baseline: currentAvailable,
+      answer_from_chain_smoke: smokeAvailable,
+    },
     total: records.length,
     route_counts: Object.fromEntries(routes),
     route_rates: Object.fromEntries([...routes.entries()].map(([k, v]) => [k, v / n])),
     macro: {
-      answer_interface_v0: macro(records, 'answer_interface_v0_metrics'),
-      candidate_direct_unrendered: macro(records, 'candidate_direct_metrics'),
+      answer_interface_v0: interfaceMacro,
+      candidate_direct_unrendered: candidateMacro,
       answer_from_chain_smoke: macro(records, 'answer_from_chain_metrics'),
       config0_path_prompt: macro(records, 'config0_metrics'),
       current_path_prompt: macro(records, 'current_metrics'),
@@ -163,8 +183,12 @@ function summarize(records) {
       vs_candidate_direct_unrendered: movement(records, 'answer_interface_v0_metrics', 'candidate_direct_metrics'),
     },
     decision: {
-      readout: 'overrefusal_fixed_by_not_asking_llm_to_regenerate_candidate_answer',
-      next: 'use_answer_interface_v0_as_local_policy_then_review_alias_normalization',
+      readout: config0Available
+        ? 'overrefusal_fixed_by_not_asking_llm_to_regenerate_candidate_answer'
+        : 'fresh_no_llm_candidate_holdout_without_path_prompt_baseline',
+      next: holdoutWeak
+        ? 'revise_candidate_extractor_alias_granularity_before_more_gpu'
+        : 'use_answer_interface_v0_as_local_policy_then_review_alias_normalization',
       no_runtime_mapping_yet: true,
       no_megakernel_yet: true,
     },

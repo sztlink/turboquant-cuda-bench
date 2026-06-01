@@ -2,15 +2,24 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const ROOT = 'bench/realrag-path-candidates-v2-2026-05-31';
+function arg(name, fallback) {
+  const idx = process.argv.indexOf(`--${name}`);
+  if (idx >= 0 && process.argv[idx + 1]) return process.argv[idx + 1];
+  return fallback;
+}
+
+const ROOT = arg('root', 'bench/realrag-path-candidates-v2-2026-05-31');
 const V1 = 'bench/realrag-path-construction-v1-2026-05-30';
-const DATASET = 'bench/_datasets/2wiki/data/dev.json';
+const DATASET = arg('dataset', 'bench/_datasets/2wiki/data/dev.json');
+const LABEL = arg('label', 'offset1500-n100');
 const INPUTS = {
-  current: `${V1}/answer-quality-offset1500-n100-current/summary.json`,
-  config0: `${V1}/answer-quality-offset1500-n100-config0/summary.json`,
+  current: arg('current', `${V1}/answer-quality-offset1500-n100-current/summary.json`),
+  config0: arg('config0', `${V1}/answer-quality-offset1500-n100-config0/summary.json`),
 };
-const OUT_JSONL = `${ROOT}/path-candidates-offset1500-n100.jsonl`;
-const OUT_SUMMARY = `${ROOT}/path-candidate-summary.json`;
+const OUT_JSONL = arg('out-jsonl', `${ROOT}/path-candidates-${LABEL}.jsonl`);
+const OUT_SUMMARY = arg('out-summary', LABEL === 'offset1500-n100'
+  ? `${ROOT}/path-candidate-summary.json`
+  : `${ROOT}/path-candidate-summary-${LABEL}.json`);
 
 const STOP_SEEDS = new Set([
   'who', 'what', 'which', 'when', 'where', 'was', 'were', 'is', 'are', 'did', 'do', 'does',

@@ -106,10 +106,31 @@ The LLM is not needed for rows where the path already resolved the answer.
 - It does not prove the path extractor generalizes globally.
 - It does not compare against a fresh unseen offset yet.
 
+## Fresh no-LLM holdout
+
+A fresh offset2000 N=100 retrieval-only holdout was added after this result:
+
+```txt
+ANSWER-INTERFACE-V0-HOLDOUT-OFFSET2000.md
+```
+
+Readout:
+
+```txt
+answer_interface_v0_did_not_generalize_as_a_no_llm_candidate_extractor_on_offset2000
+```
+
+The offset2000 slice had good retrieval coverage but weak answer closure:
+
+| object | EM | contains | F1 | missing/refusal |
+|---|---:|---:|---:|---:|
+| answer_interface_v0, no baseline fallback available | 0.150 | 0.260 | 0.276 | 0.420 |
+
 ## Decision
 
 ```txt
-use_answer_interface_v0_as_local_policy
+use_answer_interface_v0_as_local_policy_for_offset1500_result
+no_positive_RS6_receipt_yet
 no_more_answer_from_chain_prompt_smokes_by_default
 no_runtime_mapping_yet
 no_megakernel_yet
@@ -120,7 +141,8 @@ no_megakernel_yet
 No GPU required:
 
 ```txt
-alias and granularity normalization
+alias and granularity normalization spec
+missing explicit relation templates
 ambiguous candidate ranking review
-fresh no-LLM offset before any new 4090 run
+rerun offset1500 and offset2000 no-LLM after the spec
 ```

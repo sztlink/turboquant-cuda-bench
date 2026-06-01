@@ -33,7 +33,7 @@ gated_v1   EM 0.216 / F1 0.323
 wins/losses/ties = 2 / 2 / 496
 ```
 
-This no-delta result freezes one RealRAG/verifier direction. The later path-construction sprint reproduced retrieval coverage but failed prompt guards. Explicit path candidates improved strongly as a no-LLM object; the first answer-from-chain smoke failed the refusal gate, and Answer Interface v0 fixed that specific failure locally by not asking the LLM to regenerate a complete path answer. The next object is still the path/answer interface, not another verifier, prompt rule, or megakernel. It does not erase the KV-cache, REFRACT, KVFidelity, vLLM, or kernel-engineering receipts.
+This no-delta result freezes one RealRAG/verifier direction. The later path-construction sprint reproduced retrieval coverage but failed prompt guards. Explicit path candidates improved strongly as a no-LLM object; the first answer-from-chain smoke failed the refusal gate, and Answer Interface v0 fixed that specific failure locally by not asking the LLM to regenerate a complete path answer. A fresh offset2000 no-LLM holdout was weak, so the next object is still candidate extraction and path/answer interface design, not another verifier, prompt rule, runtime map, or megakernel. It does not erase the KV-cache, REFRACT, KVFidelity, vLLM, or kernel-engineering receipts.
 
 ## Entry points
 
@@ -78,6 +78,7 @@ RealRAG answer-closure line
 9. Evidence placement, retrieval, rank, path construction, and schema shape affect answer closure.
 10. N=500 falsified the scaled positive claim for hand-written gated verifier control.
 11. Prompt guards failed by over-refusal; explicit path candidates are now the upstream object to inspect.
+12. Answer Interface v0 fixed local over-refusal on offset1500, but a fresh offset2000 no-LLM holdout exposed weak candidate generalization.
 ```
 
 ## What not to claim
