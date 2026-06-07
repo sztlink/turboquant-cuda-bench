@@ -1,4 +1,6 @@
-# DRAFT — GitHub issue for huawei-csl/KVarN (NOT filed — Felipe review)
+# GitHub issue for huawei-csl/KVarN — FILED 2026-06-07 as huawei-csl/KVarN#12
+# https://github.com/huawei-csl/KVarN/issues/12
+# (draft below; final filed body is in /tmp/kvarn-issue-body.md / the issue itself)
 
 **Title:** `kvarn_k4v2_g128` decode kernel crashes on non-power-of-2 GQA ratios (e.g. Qwen2.5-7B, 7:1)
 
