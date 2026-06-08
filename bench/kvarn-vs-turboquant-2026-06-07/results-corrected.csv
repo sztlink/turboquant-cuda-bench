@@ -1,0 +1,13 @@
+model,config,benchmark,metric,value,kv_tokens,bpw,notes
+q4,fp16-kv,gsm8k,score,0.870,99296,16.0,baseline
+q4,fp16-kv,math,score,0.3829,99296,16.0,baseline
+q4,fp16-kv,humaneval,score,0.7195,99296,16.0,baseline
+q4,kvarn-k4v2,gsm8k,score,0.880,405120,3.92,prefix+chunked OFF; KVarN updated
+q4,kvarn-k4v2,math,score,0.3743,405120,3.92,prefix+chunked OFF; was 0.00 in buggy run
+q4,kvarn-k4v2,humaneval,score,0.7195,405120,3.92,prefix+chunked OFF
+q4,tq-k4v2nc,gsm8k,score,0.815,338768,4.69,prefix+chunked OFF; k4v2_nc preset
+q4,tq-k4v2nc,math,score,0.2914,338768,4.69,prefix+chunked OFF; k4v2_nc preset
+q4,tq-k4v2nc,humaneval,score,0.5793,338768,4.69,prefix+chunked OFF; k4v2_nc preset
+q4,tq-k8v4,gsm8k,score,0.845,216288,7.35,prefix+chunked OFF
+q4,tq-k8v4,math,score,0.3686,216288,7.35,prefix+chunked OFF
+q4,tq-k8v4,humaneval,score,0.7012,216288,7.35,prefix+chunked OFF

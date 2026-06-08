@@ -1,5 +1,12 @@
 # KVarN deepening: the 2-bit V failure is on the decode horizon, not the context
 
+> **SUPERSEDED / RETRACTED (2026-06-08).** This entire writeup chases a "MATH
+> failure" that does not exist. The degeneration was a config bug on my side
+> (vLLM prefix caching + chunked prefill ON, stale checkout), not a KVarN 2-bit-V
+> property. With the correct config, KVarN k4v2 is near-lossless on MATH
+> (0.374 vs fp16 0.383). The "decode horizon" framing is wrong. See
+> **`RESULTS-CORRECTED.md`**. Kept only for the record.
+
 Follow-up to `RESULTS.md`. Two probes on Qwen3-4B (the model where KVarN k4v2 runs; GQA 4:1) to localize *why* KVarN collapses on MATH.
 
 ## exp1 - is the MATH collapse a decode-config artifact? No.

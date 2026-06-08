@@ -1,5 +1,11 @@
 # KVarN vs TurboQuant — head-to-head KV-cache quantization benchmark
 
+> **SUPERSEDED (2026-06-08).** The KVarN MATH "collapse" reported below was a
+> configuration bug on my side (vLLM `enable_prefix_caching` + `enable_chunked_prefill`
+> ON, on a checkout ~57 commits behind), not a KVarN property. With the correct
+> config on current main, KVarN k4v2 is near-lossless. See **`RESULTS-CORRECTED.md`**
+> for the corrected table and conclusions. This file is kept for the record.
+
 **Date:** 2026-06-07 · **Hardware:** RTX 4090 (WSL2 Ubuntu-24.04) · **Status:** complete (4B); partial (7B, see limitation)
 
 Head-to-head of two KV-cache quantization backends, both vLLM forks:
