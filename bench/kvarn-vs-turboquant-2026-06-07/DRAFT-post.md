@@ -1,3 +1,5 @@
+> **SUPERSEDED 2026-06-20.** Este draft propaga a alegação "57% of KVarN outputs degenerate / 2-bit V error compounds over long decode" (ponto 2 abaixo), que foi RETRATADA no commit 45dabed: o "MATH collapse" do KVarN era config bug (vLLM prefix-caching + chunked-prefill ligados, checkout stale), NÃO comportamento do KVarN. RESULTS.md e EXP-deepening.md já carregam o banner de retração; este draft ficou para trás. NÃO usar nem citar o ponto 2. Mantido apenas como rastro histórico. Ver `memory-md/AYA1/research/2026-06-20-kv-github-deepdive-antagonize.md`.
+
 # DRAFT — KVarN vs TurboQuant, head-to-head at iso-bits (NOT published — Felipe review)
 
 > Tom: substância, sem hype/broadcast. Veículo a decidir (#research / discussion #20969 / X).
